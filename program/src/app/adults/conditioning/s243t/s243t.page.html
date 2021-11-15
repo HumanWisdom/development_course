@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            We are usually not aware we have been conditioned by the society we live in and all our experiences, and yet are attached to all our opinions and beliefs which come from that unconscious conditioning. If I read the telegraph newspaper and it is generally critical of immigration, they will become my views, and I will not realise they come from the particular newspaper I was reading. If you challenge my opinion on immigration I will want to defend myself, as if I am being personally attacked. We therefore become attached to our conditioning influences without realising it. This simple fact has profound implications for our lives
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

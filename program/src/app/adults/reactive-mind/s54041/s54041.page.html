@@ -1,0 +1,27 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      We are more reactive if:
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. We have been hurt before
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. People around us are reactive
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. If I am already stressed
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. If I’ve been drinking or taking drugs
+    </h3>
+
+  </form>
+</app-lengthy-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

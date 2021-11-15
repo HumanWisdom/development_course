@@ -1,0 +1,30 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Physical symptoms of anxiety include:
+    </h1>
+    <h1 class="txt1">
+      Fast breathing and pulse rate
+    </h1>  
+    <h1 class="txt1">
+      Sweating
+    </h1> 
+    <h1 class="txt1">                 
+      Stomach pains                   
+    </h1>
+    <h1 class="txt1">
+      Dry mouth
+    </h1>
+    <h1 class="txt1">
+      Tiredness
+    </h1>
+    <h1 class="txt1">
+      Dizziness
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+  </app-simple-text> 
+  
+  <app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

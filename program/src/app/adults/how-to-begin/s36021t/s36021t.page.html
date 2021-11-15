@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            A conversation is a great place to begin our journey of self-awareness and understanding. Just notice what happens and be curious.
+          </p>
+          <p>
+            When you notice the other person is interrupting you when you are speaking - that is awareness. When you realise that you are doing the same, that's self-awareness - and not easy.
+          </p>   
+          <p>
+            Did you notice also that when a response formed in your mind and you were waiting for the right gap to speak, you stopped listening?
+          </p>  
+          <p>
+            And lastly, did you notice yourself scanning the conversation for something interesting, otherwise you switched off and were only half-listening? 
+            You could then continue and ask why we prefer to speak rather than listen.
+            When we are curious and observant there is so much to learn about ourselves.
+          </p>                  
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

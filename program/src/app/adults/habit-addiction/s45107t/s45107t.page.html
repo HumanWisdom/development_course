@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Sometimes we carry the memories of events that have been hurtful, or people who have wronged us, and these thoughts keep buzzing in our heads, causing emotional pain in our lives now, long after the event. How can we forgive, forget and let go? Perhaps by realising that life is only in the moment and the past is gone.  We can have compassion for those who we feel have wronged us, realise that deep down they are the same human being we are, and let the anger go. This is a gift we can give ourselves.
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

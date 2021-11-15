@@ -1,0 +1,18 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      Insight is the moment something within us is seen clearly. 
+      </h1>
+      <h1 class="txt3">
+      It brings transformation without effort.
+    </h1>
+    <div class="clearfix"></div>
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

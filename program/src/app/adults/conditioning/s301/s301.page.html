@@ -1,0 +1,52 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+<app-multi-select [bg]="bg">
+  <form>
+    <h4 class="txt4">
+    {{question}}
+    </h4>
+    <div class="clearfix"></div>
+
+    <h6 class="txt5 pb10p">
+      Correct Answer
+    </h6>
+
+    <div *ngFor="let o of optionList"> 
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+          <a class="">
+            <div class="box cb_box tleft flex_left cb1_box">                        
+              <!-- svg checkbox -->
+              <input class="inp-cbx" [id]="o.OptId" type="checkbox" [checked]="sessionFetch(o.OptId)" (click)="selectOption(o.OptId,$event.target.checked)"/>
+              <label class="cbx mt0px" [for]="o.OptId">
+                <span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check"></use>
+                  </svg>
+                </span>
+                <span *ngIf="o.CorrectAns" class="txt46 cb_span">
+                 {{o.OptStr}}
+                </span>
+                <span *ngIf="!o.CorrectAns" class="txt46 cb_span">
+                  {{o.OptStr}}-wrong answer
+                 </span>
+              </label>
+              <!--SVG Sprites-->
+              <svg class="inline-svg">
+                <symbol id="check" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+              </svg>
+              <!-- /svg checkbox -->
+            </div>                    
+          </a>
+        </div>
+      </div>
+
+      <br>
+
+    </div>
+  </form>      
+</app-multi-select>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

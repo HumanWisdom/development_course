@@ -1,0 +1,12 @@
+ <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      To be deeply understood, we have to open our heart and allow the other person in. This can make us feel vulnerable, but can be deeply rewarding. In doing that we may also understand and connect with ourselves.
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

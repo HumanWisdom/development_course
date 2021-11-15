@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Consider this example to illustrate how our lack of peace comes from within. This pyramid represents the different layers of our thinking. Layer 1 is what is happening in the world, and say I work in a busy hospital. Layer 2 is my thoughts and feelings. I feel stressed because I feel nobody appreciates me and I think it's a thankless job. I blame the job for how I feel. Layer 3 represents the many unconscious patterns of thinking that operate in the background. Here is my unconscious need to feel important. I am not aware of it. It is this need that is behind my distress, not what is happening at work. Below that in layer 4 is the ‘I’ which feels restless and empty, and in need of pleasure to stop feeling uneasy. Once I recognise the hidden layers of my thinking, I can make intelligent choices, and question my need to feel important.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

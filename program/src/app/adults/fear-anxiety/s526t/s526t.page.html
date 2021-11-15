@@ -1,0 +1,25 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            We have a primal fear of having nothing to do, because we have not made peace with our own inner restlessness. This is why digital entertainment is so popular, and we spend an increasing amount of time on our phones. Or it makes us keep busy from morning to night, without any time to be still. The paradox is that if we just stop escaping, and sit quietly with that feeling of inner boredom or restlessness, it transforms to one of peace. Try it and see
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+

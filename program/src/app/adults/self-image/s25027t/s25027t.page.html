@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Sometimes we project an image of ourselves to the world that is different to who we really are. We  can even convince ourselves that that is the real me. For example, I may say I am interested in books, but last read a novel 5 years ago, just to make myself sound interesting to others, or I may project an image that I am successful and confident, when deep down I really doubt myself.  Keeping up all these images is tiring, and behind that I live with an anxiety that someone will discover the real me. In the same way I may project an image that I am a loving person when I know I act from self-interest most of the time, or I’m a good listener when I am not. I don’t seem to have control over this process, my mind does that automatically. All the small falsehoods I tell others and myself keep adding up, and I can feel lost, not knowing who I really am. I end up living someone else’s life, and not my own. What’s the answer?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

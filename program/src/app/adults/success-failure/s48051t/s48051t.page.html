@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There are of course many times in our life where we have to do what is necessary to bring food to the table and look after the people in our life. We don’t have the luxury of braving financial insecurity while we chase a dream. Children are forced to work in many parts of the world to support their families. In these situations we can harness our wisdom to love the thing we are doing, and do it with passion and dedication. Every job we do can be done with excellence and that can be its own reward.
+ 
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

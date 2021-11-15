@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Every long term relationship generates its memories of conflict and pain and they just seem to  bubble away under the surface. We do not know how to get over our old hurts and can carry them for years, often without being aware we are doing so. We see others through the screen of those painful memories, rather than freshly in the present. As a result we are much more likely to be triggered into conflict by the smallest event, which in normal circumstances we would have overlooked. We explore this more fully in the module on Self-Image.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

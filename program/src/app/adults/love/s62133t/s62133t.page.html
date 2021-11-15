@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Conflict in relationships drives out love, and so much of it can be avoided by understanding our many unconscious conditioning influences, which are behind all the opinions we become attached to, and which we want others to agree with. Our expectations of others are also rooted in our conditioning, and these can end in disappointment, hurt and anger. To live with wisdom, we need to become aware, without judgement, that every opinion we are attached to comes from our unconscious conditioning, and the other person is the same. This can help us avoid arguments and respect the other person's point of view. We could also let go of some unhealthy opinions altogether, and become less attached to others.
+
+
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

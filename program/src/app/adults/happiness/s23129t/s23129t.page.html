@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored this pyramid before. Deep down in our thinking, often hidden from our awareness, is the sense of ‘I’ which feels bored, restless, empty. By the time these feelings reach layer 2, they transform into a need for possessions and holidays, and off we go in pursuit of something else that we think will make us happy. This pattern repeats itself all our lives. If we can pause instead, become aware of this feeling in us, and stay with it, it transforms to a sense of peace, which you could say is layer 5. This is simple to say, but not easy to do and a journey no one can take for you. It can however be life-changing to discover this feeling of peace that lies within us. We can then live consciously, with intelligence and wisdom, where everything has its rightful place
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

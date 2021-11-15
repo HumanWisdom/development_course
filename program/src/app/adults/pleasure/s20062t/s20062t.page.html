@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            How do you explore a feeling like pleasure? Our motivation to do so is limited because our mind wants more and more of it, and doesn't want to consider anything that might limit it in some way. We are not saying it is good or bad or asking you to let go of it... but just to understand, because it directs the course of our lives in unconscious ways.
+          </p>
+          
+          <p>
+            If you haven't done the art of enquiry section yet, then this is a good time to do it, and apply all that you learn there to exploring this feeling of pleasure in yourself. Begin with the three steps to enquiry. Then go deeper to layers three and four and you may stumble upon an insight or clarity of understanding that may result in a deep sense of peace, as we are going to explore next.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

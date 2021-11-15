@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          It's normal to try and fix the problem that is causing our stress. If it's a flat tyre or a toothache it is straight-forward. It is much more difficult to change another person’s opinion, or the way they are doing things, or the state of the world, or if we have lost a job. It requires wisdom to know what we can change, and what we can’t, but also to know if our attempt to change things may make things worse.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

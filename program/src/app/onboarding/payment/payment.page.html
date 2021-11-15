@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accept a card payment</title>
+    <meta name="description" content="A demo of a card payment on Stripe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link rel="stylesheet" href="global.css" /> -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="client.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Display a payment form -->
+    <div class="row center_flex h100vh">
+      <div class="col-md-6 col-sm-8 col-xs-12">
+        <form id="payment-form">
+          <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+          <div id="card-element-errors" role="alert"></div>
+          <input id="name" type="text" />
+              <button id="btnsubmit" type="submit">Pay now</button>
+        </form>
+      </div>
+    </div>
+    
+  </body>
+</html>

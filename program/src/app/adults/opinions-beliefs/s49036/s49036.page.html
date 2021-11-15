@@ -1,0 +1,19 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      When our opinions are challenged instead of becoming defensive and trying to convince the other person we are right, we could ask a question and see what we can learn.
+
+
+
+     </h1>
+
+     
+    <div class="clearfix"></div>
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

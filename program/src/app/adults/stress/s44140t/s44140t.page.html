@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Whenever we are stressed we usually try and blame someone else, ourselves or the situation and this can result in anger. This is an automatic response from our thinking and does not help us solve the issue, and can make things worse if we blame others for example and decide to retaliate in some way, or are critical of ourselves. Stepping away from judging ourselves or others as right or wrong is not easy, but does allow space to explore what we can learn about ourselves and others. This can allow us to respond with wisdom.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

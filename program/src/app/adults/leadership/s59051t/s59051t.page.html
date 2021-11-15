@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          What stops us delegating effectively to others? Or, what makes us want to do everything ourselves? 
+          Good leadership is about effective delegation. How can we do that? We may have a particular way we
+           want things done, and think others should do it our way. When we delegate we have to accept people
+            will have their own way of doing things, and as long as it achieves the same result, it should be
+             broadly okay, unless there are ethical issues involved. Our fear of things not getting done can 
+             make us want to micro-manage situations, and that can irritate people. The challenge in delegating authority is 
+          that we are not delegating responsibility. We are still responsible for what happens.
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

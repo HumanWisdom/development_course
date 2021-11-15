@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          When we listen we compare what we are hearing with what we know. We screen out what we do not understand, and can be critical of anything that is different to what we know, whether we express it or not. If the conversation is not interesting, we can tune out.
+         <br> Listening with generosity means being aware of this unconscious process in our thinking, pausing judgement, listening with curiosity and giving people the benefit of the doubt. It is looking for the best in people, and seeing the positive, rather than the negative. It needs a real generosity of spirit to do this, and it is something we need to nurture, because our mind will not do this for us.
+          
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

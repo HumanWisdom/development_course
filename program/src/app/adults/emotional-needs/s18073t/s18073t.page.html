@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          <p>
+            Our emotional needs are part of being human, but who is responsible for meeting them? We rarely ask ourselves this question. We are usually not aware we have them, and expect other people to meet them. If they are met we are happy and love people. If they are not met we get hurt and angry, and can blame others for how we feel or people can blame us, if we don’t meet their needs. How can we respond with intelligence?
+          </p>
+          <p>
+            We could begin by taking responsibility for our emotional needs since they come from within us. We could examine them using our intelligence. We can express them as a request rather than a demand from others. This can stop us getting angry with others, or forcing others to meet our needs. This is simple, but not easy, because our mind is wired to expect others to meet our needs
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

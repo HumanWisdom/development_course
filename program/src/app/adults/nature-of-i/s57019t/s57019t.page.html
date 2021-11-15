@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          At the heart of being human is a feeling of restlessness, emptiness and perhaps even boredom. It is usually covered over by all the activities of our thinking and by pleasure, so we may not experience it often, but it's always there. We notice it as loneliness or boredom and it  motivates our search for pleasure. Sometimes you may also notice how you are uncomfortable being in the moment you are in,and want to escape from it. This is a paradox because life is only in the moment we are alive, right now. Even on a most beautiful beach, on a perfect day and in a perfect moment, your mind may wander to a problem in the future, and be anxious, or think of the past with regret or nostalgia  and cause you to feel restless. This restlessness may be  a feeling you  want to escape from, but if you can stay with it, and meet it without language or words, just observe it without judgement, it transforms to a feeling of peace.          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

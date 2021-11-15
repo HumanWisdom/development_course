@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Welcome to this session where we are going to explore our various emotional needs in detail and how they impact our relationships, in ways that we may not be aware of.
+          These needs are not right or wrong, but a part of being human, and just need to be understood.
+          We need a mind open to learning about ourselves. Understanding them can help us avoid conflict, have better relationships and live with wisdom.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

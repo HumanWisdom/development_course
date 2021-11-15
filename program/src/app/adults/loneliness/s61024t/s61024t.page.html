@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Upto 40% of people in relationships feel lonely and say that this is more painful than the pain of being alone. It can occur if there is no feeling of connection with the other person and can occur if you don’t make the time to share what is actually going on with you - your hopes, fears, expectations, and disappointments, and if your communication remains superficial. You may still have a physical relationship, but stop being friends who take care of each other. All relationships require investment in time and care. You reap what you sow. We cover this in more detail in the relationship module. When we feel lonely we blame the other person for how we feel, but as we will explore, that may not be the case
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If we look at the world and our own lives, we can see the many problems money can cause. It seems to talk directly to our subconscious fears of not having enough, and make us want more and more. These fears can make us behave irrationally, without integrity, sometimes without realising it. People who have been friends for years can stop talking to each other, and families can be torn apart. It is behind all the corruption in the world, the burden of which usually falls on the already poor. The pursuit of it can blind us to the beauty of the world and neglect our loved ones.
+<br>Exploring these problems can help us avoid them in our own lives, and live with integrity, so money has its rightful place, and does not drive our thoughts and actions without us having any control over them.
+
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

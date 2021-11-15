@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Depending on our circumstances our fear of the future can compound the emotional pain we feel. We may have not only lost someone who met our emotional needs, but someone we were financially dependent on. We may worry about the future and how we will cope financially or emotionally.  As we have explored in the module on fear, our imagination magnifies the threats in the future and we can be convinced those problems are definitely going to happen, but they rarely do. Life finds a way of looking after us. 
+          Understanding the nature of fear can help us cope better and just do the next thing that needs doing.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

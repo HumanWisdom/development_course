@@ -1,0 +1,22 @@
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+ 
+<app-tap-start [bg]="bg" (nextEmitter)="goNext()">  
+  <form>
+    <h4 class="mtb0px comparison">
+      fear-anxiety
+    </h4>
+    <div class="clearfix"></div>
+ 
+    <h5 class="mtb0px session">
+      Session #5
+    </h5>
+    <div class="clearfix"></div>
+ 
+    <br>
+ 
+    <h1 class="session_title ">
+      Meeting fear with intelligence
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-tap-start>

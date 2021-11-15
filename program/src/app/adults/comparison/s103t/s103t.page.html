@@ -1,0 +1,45 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            It’s helpful to consider our awareness in terms of a pyramid. At the very top is the thing that is making us envious or jealous, it could be a friend who has been on a great holiday.
+          </p>
+
+          <p>
+            The second layer is to notice what we are thinking or feeling and we may notice that we blame the other person for our envy, or may feel guilty.                        
+          </p>
+
+          <p>
+            Then our awareness goes deeper and in the third layer, we notice the process of comparison at work in the background. This is not always easy to spot, but if you look carefully it’s there... just observe it, without any judgment.                        
+          </p>
+
+          <p>
+            The last layer of awareness is one we are going to explore in a separate module, which is to ask - who feels the pain of envy?
+          </p>
+
+          <p>
+            Though, for the sake of describing envy I've divided it into 4 sections, you can be aware of all four levels at once. The more you notice, the more you see, and the easier it gets.
+          </p>
+
+          <p>
+            Understanding these 4 layers of thinking has many benefits. Normally I would blame you for making me feel jealous. This is because normally I am only aware of layers 1 and 2. Now I can see though that the automatic process of comparison which comes from layer 3 is the real cause of my envy. I stop blaming you for a start, and then ask myself what I can learn from this feeling that has arisen in me... and that leads me to begin a journey of a deeper understanding of myself, which can lead to transformation.
+          </p>
+        </h3>                
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4level.png" alt="" class="img-responsive">
+      </div>
+    </div> -->
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Some people love being alone and call it solitude. Others feel an acute pain when they are alone, and they call it loneliness. There is another curious phenomena which affects some people. When they are alone they want to be with others, and when they are with others, they yearn for solitude. The same situation can make us feel lonely, or at peace at different times. In the next session we will explore what we can learn from those
+           who are comfortable being alone. It all seems to boil down to whether you feel connected with yourself
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

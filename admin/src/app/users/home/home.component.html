@@ -1,0 +1,261 @@
+<div>
+    <app-top-nav></app-top-nav>
+    <app-side-nav></app-side-nav>
+    <!-- page content -->
+    <div class="right_col" role="main">
+				
+        <!-- Class -->
+        <div class="">
+                
+            <div class="page-title">							
+            </div>
+
+            <div class="clearfix"></div>
+            
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                            
+                        <div class="x_title">
+                            <h2>Add User</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Settings 1</a></li>
+                                        <li><a href="#">Settings 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+      
+                        <div class="x_content">
+                            <br />
+                                                            
+                            <form id="demo-form2" action="form_c.php" method="post">
+
+                                <div class="form-group">
+                                    <div class="row-centered">
+                                        <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                            <label for="f_name" class="control-label">First Name<span class="required">*</span></label>
+                                            <input type="text" id="f_name" name="f_name" required="required" class="form-control" pattern="" [(ngModel)]="firstName">														
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                            <label for="patient_name" class="control-label">Last Name<span class="required">*</span></label>
+                                            <input type="text" id="l_name" name="l_name" required="required" class="form-control" pattern="" [(ngModel)]="lastName">														
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row-centered">
+                                        <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                            <label for="l_name" class="control-label">Email Id<span class="required">*</span></label>
+                                            <input type="email" id="email" name="email" required="required" class="form-control" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" [(ngModel)]="email" #emailField="ngModel" >
+                                        </div>
+                                        <div *ngIf="emailField.invalid && emailField.touched">
+                                            <div *ngIf="emailField.errors?.required">Email is required</div>
+                                            <div *ngIf="emailField.errors?.pattern">Please enter a valid email address</div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                            <label for="patient_name" class="control-label">Role<span class="required">*</span></label>
+                                            <select  name="role" class="select2_group form-control" [(ngModel)]="selectedRoleID"  (change)="selectRole($event.target.value)"required>
+                                                <option *ngFor="let r of role" [value]="r.id" >{{r.name}}</option>                                              
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <!-- <div class="form-group">
+                                    <div class="row-centered">
+                                        <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                            <label for="patient_name" class="control-label">Role<span class="required">*</span></label>
+                                            <select  name="role" class="select2_group form-control" [(ngModel)]="selectedRoleID"  (change)="selectRole($event.target.value)"required>
+                                                <option *ngFor="let r of role" [value]="r.id" >{{r.name}}</option>                                              
+                                            </select>
+                                        </div>                                        
+                                    </div>
+                                </div> -->
+                                
+                               
+                                   
+                                            
+                                <div class="ln_solid"></div>
+                            
+                                <div class="form-group">
+                                  
+
+                                   
+                                    <div class="col-md-12 col-sm-6 col-xs-12" style="text-align:center;">
+                                        <div class="text-danger" *ngIf="!firstName || !lastName || !email || !selectedRoleID">
+                                            <small class="text-danger">Please fill all all details to submit</small>
+                                        </div>
+                                        <button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
+                                        <input name="method" id="method" type="hidden" value="<?=$method?>">
+                                        <input name="submit_Update" type="hidden">
+                                        <button [disabled]="!firstName || !lastName || !email || !selectedRoleID "
+                                         type="submit" form="demo-form2" class="btn btn-success" id="next" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3" (click)="addUser()">Submit</button>
+                                    </div>
+                                </div>
+                            
+                            </form>
+                            
+                        </div>
+                            
+                    </div>
+
+                    <div class="x_panel">	
+                        
+                        <div class="x_title">
+                            <h2>List of Users</h2>                                        
+                            <ul class="nav navbar-right panel_toolbox">
+                                                                          
+                            </ul>                                        
+                            <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="x_content">
+
+                            <div class="x_content">                                                                                        
+
+                                <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                    <div class="row">											
+                                        
+                                        <div class="col-md-8 col-sm-12 col-xs-12">                                                        
+                                            
+                                            <label class="filter_label display_initial"><input type="search" id="filter1" class="form-control input-sm w22" placeholder="Search by first name" aria-controls="datatable-checkbox" [(ngModel)]="this.searchedFirstName" (ngModelChange)="searchFirstName()"></label>
+                                            <label class="filter_label display_initial"><input type="search" id="filter1" class="form-control input-sm w22" placeholder="Search by last name" aria-controls="datatable-checkbox" [(ngModel)]="this.searchedLastName" (ngModelChange)="searchLastName()"></label>
+                                            <label class="filter_label display_initial"><input type="search" id="filter1" class="form-control input-sm w22" placeholder="Search by email id" aria-controls="datatable-checkbox" [(ngModel)]="this.searchedEmail" (ngModelChange)="searchEmail()"></label><br>
+                                            <!-- <label>
+                                                <input type="radio" value="Internal" id="userFilter"  name="userFilter" (click)="searchRole($event.target.value)">
+                                                  <span>Internal Users</span>
+                                              </label>
+                                              <label>
+                                                <input type="radio" value="Learners"  id="userFilter" name="userFilter" (click)="searchRole($event.target.value)">
+                                                  <span>Learners</span>
+                                              </label> -->
+                                            <!-- <label class="filter_label display_initial"><input type="search" id="filter1" class="form-control input-sm w22" placeholder="Search by role" aria-controls="datatable-checkbox" ></label> -->
+                                            
+                                           
+                                        </div>
+                                        
+                                        <div class="col-md-4 col-sm-12 col-xs-12">													
+                                            <div class="search_btn">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                
+                                <div class="table-responsive">                                            
+                                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email Id</th>                                                  
+                                            <th>Role</th>                                                  
+                                            <th>Date</th>
+                                            <th style="width: 11%;">Commands</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of displayUserList;let i=index"  >                                              
+                                            <td>{{item.FName}}</td>                                                  
+                                            <td>{{item.LName}}</td>
+                                            <td>{{item.Email}}</td>
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.DOJ}}</td>													
+                                            <td>
+                                                <!-- <button type="button" class="btn btn-xs btn-primary command-add"><span class="glyphicon glyphicon-eye-open"></span></button> -->
+                                                <button type="button" class="btn btn-xs btn-success command-add">
+                                                    <span class="glyphicon glyphicon-edit" data-toggle="modal" [attr.data-target]="'#updateModal'+item.UserID" 
+                                                        (click)="updateUserInit(item.UserID,item.FName,item.LName,item.Email,item.DOJ,item.RoleId)">
+                                                    </span>
+                                                </button>
+                                                <button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="deleteUser(item.UserID)"></span></button>                                                    
+                                            </td>
+                                            <div class="modal fade" [attr.id]="'updateModal'+item.UserID" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+                                                <!--<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">-->
+        
+                                                    <div class="modal-dialog vc70" role="document">
+                                                      <div class="modal-content cmodal-content">
+                                                        <div class="modal-header cmodal-header tcenter white">
+                                                          <h1 class="modal-title cmodal-title"
+                                                          >Update details of the user</h1>
+                                                          
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <!-- {{item.FName}}  {{item.LName}} | {{item.name}}<br>
+                                                            {{item.Email}}| {{item.DOJ}} -->
+                                                            <label for="updatedFName" class="control-label">First Name</label>
+                                                            <input type="text" name="updatedFName"  required="required" class="form-control" [(ngModel)]="this.updatedFName">
+
+                                                            <label for="updatedFName" class="control-label">Last Name</label>
+                                                            <input type="text" name="updatedLName"  required="required" class="form-control" [(ngModel)]="this.updatedLName">
+
+                                                            <label for="updatedFName" class="control-label">Email</label>
+                                                            <input type="text" name="updatedEmail"  required="required" class="form-control" [(ngModel)]="this.updatedEmail">
+                                                            
+                                                            <div class="row-centered">
+                                                                <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                                                    <label for="patient_name" class="control-label">Role<span class="required">*</span></label>
+                                                                   
+                                                                        
+                                                                        <select  name="role" class="select2_group form-control" [(ngModel)]="updatedRoleID"  (change)="updateRole($event.target.value)"required>
+                                                                            <option *ngFor="let r of role" [value]="r.id" >{{r.name}}</option>
+                                                                      
+                                                                        </select>
+                                                                       
+                                                                   
+                                                                </div>
+                                                                <!-- <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                                                    <label for="patient_name" class="control-label">Date<span class="required">*</span></label>
+                                                                    <input type="date" id="patient_name" name="patient_name" required="required" class="form-control" pattern="" [(ngModel)]="updatedDoj">														
+                                                                </div> -->
+                                                            </div>
+                                                           
+
+
+
+                                                         
+                                                        </div> 
+                                                        <div class="modal-footer cmodal-footer tcenter">        
+                                                          <button type="button" class="btn fill_now" data-dismiss="modal" (click)="updateUser(item.UserID)" >UPDATE</button>
+                                                          <button type="button" class="btn fill_later" data-dismiss="modal" >BACK</button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                            </div>   
+                                        </tr>
+                                                                                                                                 
+                                    </tbody>
+                                    </table>
+                                </div>
+                                
+                                
+                              </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/Class -->
+        
+    </div>
+    <!-- /page content -->
+
+    <app-footer></app-footer>
+
+</div>
+    
+
+
+

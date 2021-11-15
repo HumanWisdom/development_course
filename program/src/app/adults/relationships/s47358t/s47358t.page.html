@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+         <p>
+          Given the scale of the problem it is perhaps time for a fresh look, because existing measures are clearly not enough. The root of the problem lies in our unconscious thinking patterns, like conditioning, unresolved emotional trauma, fear, self-interest, and a need for power. If people had an insight into these unconscious drivers of behaviour, and could resolve their inner turmoil and live with a sense of peace, then their behaviour would change. This change would come from the inside, and be long lasting. What would motivate people to undertake this inner journey of enquiry and learning? Perhaps a realization that this inner exploration would be in their own interest - they could end up being happy and live with a sense of peace themselves and have more nourishing relationships.
+         </p>
+         <p>
+          Exploring the many hidden patterns of thinking that lock victims into their circumstances, including fear and conditioning, may give them the confidence to change them, break free, and seek help.
+         </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

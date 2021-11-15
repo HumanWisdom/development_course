@@ -1,0 +1,18 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+<app-kta-prevnext>
+
+  <form class="">
+
+    <h1 class="txt3">
+      ‘Fear is caused by our imagination playing up’ 
+      <br>
+      Ellie, aged 10.
+    </h1>
+        
+  </form> 
+    
+</app-kta-prevnext>
+  
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

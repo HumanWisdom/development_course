@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Sometimes stress can be an explosive reaction and difficult to control. A good example is people who have an anger issue - the same trigger can generate the same explosive reaction - for example a parent who sees a teenager still in bed in the afternoon, or towards someone who holds a political opinion that is very different to our own. We may not always express our stress, depending on the circumstances, but we feel it internally anyway. Perhaps the way forward is to examine our conditioning influences where the reaction came from and be sensitive to the beginning of the reaction so we can pause and ask if there is a better way to respond.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

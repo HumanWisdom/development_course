@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This is such an important question, and one we rarely ask ourselves. How much is enough. Of course you need to work and earn enough to look after yourself and your loved ones. But, how much is enough? Our fear, insecurity and need for constant stimulation make us want to keep accumulating and wanting more and more. A mind that does that is not at peace with itself. If we can make peace with our insecurity, fear of the future and our inner boredom, then we can make intelligent choices about what we really need for a fulfilled life. Contentment is knowing that you have enough
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

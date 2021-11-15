@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            If we are really smart we will pick a few people who know us well, and tell them that we are completely relaxed if they want to provide any negative feedback, and in fact you'd welcome it. Most people are hesitant to be critical because they are afraid of our reaction. There are many benefits though - it can sort out problems in relationships long before they become an issue, help us be better at what we do, and give us insights into ourselves that we may not have otherwise got. A deeper understanding of criticism makes this simpler.
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

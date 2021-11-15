@@ -1,0 +1,32 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Regular feedback is part of most jobs, and depending on where you are in the pyramid, 
+          it can seem very one way and create anxiety. Many teachers leave the profession because they
+           cannot cope with the constant assessment. We have explored this in more detail in the module 
+           on criticism, but if we adopt a more positive attitude to feedback, we can learn something new,
+            and get better at what we are doing. Perhaps we could avoid taking it personally. 
+            It is so much better to know what people think of our work, so we can have a chance
+           to address whatever problem it is we cannot see. We all have blind spots in our thinking and
+            behaviour and it is so helpful for someone to point it out, so we can deal with that.
+             Lastly, all employers love people with a positive attitude to feedback, since it's not
+              common.
+
+
+
+          
+          
+
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

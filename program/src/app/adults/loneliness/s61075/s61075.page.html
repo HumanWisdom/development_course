@@ -1,0 +1,31 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+<app-kta-prevnext>
+  
+  <form class="">
+
+    <h1 class="txt3">
+      To not be lonely we can either:
+    </h1>
+
+    <h1 class="txt21">
+      01. Travel inwards and make peace with the ‘I’ where the loneliness originates
+    </h1>
+
+    <h1 class="txt21">
+      02. Travel outwards and nurture relationships with a depth of connection      
+    </h1>
+
+    <h1 class="txt3">
+      Or both.
+    </h1>
+
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+			
+
+    

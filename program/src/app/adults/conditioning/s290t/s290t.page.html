@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Life has been tough for many of us, and we may carry the burdens of all our past sorrows.
+          </p>          
+          <p>
+            They cloud our life in the present if we have had a traumatic relationship we may struggle to trust someone again.
+          </p>
+          <p>
+            Or if we have been the victims of crime, we may be afraid to go out. Is it possible to be free of them, so that we can live with joy and a sense of peace right now? We seem to have such little control over them.
+          </p>
+          <p>
+            When a memory arises, it may flood your mind with emotion. Just watch it, and allow it to fully express itself. Be still with it as we explored in the art of enquiry. Become aware that it’s just a thought from the past, and right now, you are okay. You do not have to intervene. It will come and go and does not define who you are. Understanding how the process of conditioning operates in our daily lives, starting with small things, loosens its unconscious hold on our lives.
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

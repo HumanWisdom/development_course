@@ -1,0 +1,53 @@
+<app-top-nav></app-top-nav>
+<app-side-nav></app-side-nav>
+<!-- page content -->
+<div class="right_col" role="main">
+    <!-- Class -->
+    <div class="">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                                <h2 class="w100imp">Add Popup Content</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="x_content">
+                        <br />
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-6 col-xs-12">
+                                    <label class="control-label">Popup name</label>
+                                    <input type="text" id="settingname" value="{{setting_name}}" (keyup)="keyupinput($event.target.value)"
+                                        class="form-control">
+                                </div>
+                                <div class="col-md-8 col-sm-12 col-xs-12">
+                                  <label class="control-label">Popup value</label>
+                                  <input type="text" value="{{popupvalue}}" (keyup)="valuekeyupinput($event.target.value)"
+                                      class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ln_solid"></div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-6 col-xs-12" style="text-align:center;">
+                                <button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
+                                <button type="button" [disabled]="setting_name === '' || popupvalue === ''" form="demo-form2" class="btn btn-success" id="next"
+                                    data-toggle="collapse" data-target="#collapse3" aria-expanded="false"
+                                    aria-controls="collapse3" (click)="addPopupContent()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Class -->
+</div>
+<!-- /page content -->
+
+<app-footer></app-footer>

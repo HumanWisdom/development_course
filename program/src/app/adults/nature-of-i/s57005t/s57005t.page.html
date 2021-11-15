@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Let’s have a look at this pyramid which represents the different layers of our thinking.
+           At the top in layer 1 is what is happening in the world outside - say you see a new phone advertised.
+            In layer 2, which is what we can think and feel,  is the thought which says - I want that.
+             In layer 3 is our need for pleasure, which we do not realise. Deeper still in layer 4 is 
+             the ‘I’ which is restless, empty and wants more and more. All we are aware of is the thought 
+             which says ‘I want that phone’. We are not aware of the nature of the ‘I’ operating in the depths
+              of our thinking. 
+          Now you are aware of it, you can see it at work
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

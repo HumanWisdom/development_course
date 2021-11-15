@@ -1,0 +1,15 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Just as our hearts are anatomically and functionally the same in all human beings, the nature of the ‘I’ is the same as well. Studying the heart with curiosity helped us avoid and more easily solve so many problems linked to it. Exploring the ‘I’ can do the same.
+
+
+                  
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

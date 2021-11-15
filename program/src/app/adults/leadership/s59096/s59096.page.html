@@ -1,0 +1,15 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      In any disagreement there are often two hidden factors at play. Conditioning, which shapes our opinions, and to which we become emotionally attached. And our self-interest, which pushes us to defend our interests, or the interests of the group we identify with.
+      <span class="highligted_span">
+        (See modules on Conditioning and Self-interest)
+      </span>            
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

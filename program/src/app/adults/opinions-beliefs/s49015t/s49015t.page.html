@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored how our opinions come from our various conditioning influences, but why do we get so attached to them? 
+          We may have an opinion about a certain politician, and when that opinion is challenged we may feel as if we are being physically attacked ourselves and try to defend our opinion at all costs. Why do we do that?<br>
+Perhaps it's because our opinions become part of our identity or the ‘I’ and we want to defend them. Another way of saying the same thing is that our opinions meet our emotional need to be important and having an opinion strengthens the sense of ‘me’ which brings a subtle pleasure 
+
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

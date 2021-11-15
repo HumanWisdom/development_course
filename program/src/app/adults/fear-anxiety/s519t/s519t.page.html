@@ -1,0 +1,23 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            How does the fear of being unattractive shape our lives? The entire cosmetic industry stands on the foundation of the sometimes unconscious fear we may have of not being attractive enough. It leads to low esteem and a loss of self-confidence. Beauty is about so much more than our appearance though. It is much more about being loving, confidence, goodness, and passion. Our insecurities can also push us to have cosmetic surgery we may not need with all the risks that brings. If you have been widely admired for your looks when young, you may develop an anxiety of losing these looks, and the admirers as you get older. Accepting ourselves as we are at all times and realising that beauty is about the person we are, much more than how we look, may offer us a way to overcome this fear.
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+

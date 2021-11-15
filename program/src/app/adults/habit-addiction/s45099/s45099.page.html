@@ -1,0 +1,14 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      How can we respond to emotional pain, whatever the cause, with wisdom?<br>
+      Instead of running from the fire, we need to walk towards it, be firefighters and put out the fire in our own thinking. Let's explore how, step-by-step.
+      
+     </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

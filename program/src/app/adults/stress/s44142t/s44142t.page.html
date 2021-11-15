@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We sometimes experience stress like a fire in our brain and our first instinct is to escape if we feel we cannot cope. This may take the form of watching TV, going for a run, or talking to a friend. Sometimes our escapes harm us in the long-term - if we take to drugs or drinking too much.  This can lead to addiction and may be one reason why alcohol and drug addiction levels are so high. In extreme cases people take their own lives. The first step is to notice this in ourselves because our response is often unconscious. This allows us the space to ask what is the intelligence thing to do. We will talk more about this in the next section.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

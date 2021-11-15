@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          What does success mean to you? Your idea of success will drive your actions all through your life, even when you are not aware that is happening, so it is important to pause and ask yourself the question. If you want to be rich and famous, that will determine all the career choices you make. If you want to find God, that will take your life in a completely different direction. Your focus may not be money and instead you may want to make a difference in the world, and that will also influence the choices you make. When you look back on your life, what will you regard as a successful life, a life well lived? We are going to help you explore that question for yourself.
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

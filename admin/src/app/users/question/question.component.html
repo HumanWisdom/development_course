@@ -1,0 +1,355 @@
+<app-top-nav></app-top-nav>
+<app-side-nav></app-side-nav>
+<!-- page content -->
+<div class="right_col" role="main">
+				
+    <!-- Class -->
+    <div class="">
+            
+        <div class="page-title">							
+        </div>
+
+        <div class="clearfix"></div>
+        
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                        
+                    <div class="x_title">
+                        <h2>Add Question</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a></li>
+                                    <li><a href="#">Settings 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+  
+                    <div class="x_content">
+                        <br />
+                                                        
+                        <form id="demo-form2" action="" method="post">
+                            
+                            <div class="form-group">
+                                <div class="row-centered">
+                                    
+                                    <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                        <label for="p_name" class="control-label">Section<span class="required">*</span></label>
+                                        <select  name="program" class="select2_group form-control" [(ngModel)]="selectedSectionID"  (change)="selectSection($event.target.value)"required>
+                                            <option *ngFor="let s of sectionList" [value]="s.SectID" >{{s.SectName}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                                        <label for="p_name" class="control-label">Assessment<span class="required">*</span></label>
+                                        <select  name="program" class="select2_group form-control" [(ngModel)]="selectedAssessmentID"  (change)="selectAssessment($event.target.value)"required>
+                                            <option *ngFor="let a of assessmentSelectList" [value]="a.AssessmentId" >{{a.Assessment}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                           
+
+                            <div class="form-group">
+                                <div class="row-centered">
+                                    <div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+                                        <label for="patient_name" class="control-label" >Question<span class="required">*</span></label>
+                                        <textarea id="message" required="required" class="form-control" name="message" rows="3" [(ngModel)]="this.question"></textarea>
+                                        <button *ngIf="!isClicked" type="button" class="btn btn-primary" id="btnAdd" (click)="addQuestion()">Submit question to enter options</button>
+                                        <button  type="reset" class="btn btn-primary" id="btnAdd" (click)="reset()">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                                        
+                            <div class="ln_solid"></div>
+                        
+                            <div *ngIf="this.allow">
+                                <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#addOption">Add option</button>
+
+                                <div class="modal fade" id="addOption" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+                                    <!--<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">-->
+
+                                        <div class="modal-dialog vc70" role="document">
+                                          <div class="modal-content cmodal-content">
+                                            <div class="modal-header cmodal-header tcenter white">
+                                              <h1 class="modal-title cmodal-title"
+                                              >Enter Option and Points</h1>
+                                              
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <input type="text" placeholder= "option" name="option"  required="required" class="form-control" [(ngModel)]="this.OptionValue">
+                                                <input type="text" name="point" placeholder= "points" required="required" class="form-control" [(ngModel)]="this.point">
+                                                <input type="text" name="point" placeholder= "correct answer 1/0"  required="required" class="form-control" [(ngModel)]="this.correctAnswer">
+                                                
+                                            </div> 
+                                            <div class="modal-footer cmodal-footer tcenter"> 
+                                                <!--<button type="button" class="btn btn-xs btn-primary command-add"><span class="glyphicon glyphicon-eye-open"></span></button>-->
+                                              <button type="button" class="btn fill_now" data-dismiss="modal" (click)="addOption()" >ADD</button>
+                                              <button type="button" class="btn fill_later" data-dismiss="modal" >BACK</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                </div> 
+
+                                <div class="table-responsive">
+                                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>OptionId</th>
+                                            <th>Option</th>
+                                            <th>Points
+
+                                            </th>
+                                            
+                                                                                              
+                                            <th style="min-width: 10%;">Commands</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of OptionList;let i=index">
+                                            <td>{{item.OptionID}}</td>                                                    
+                                            <td>{{item.OptionStr}}</td>                                                  
+                                            <td>{{item.Points}}</td>
+                                                                                             
+                                            
+                                            <td>
+                                                <button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" data-toggle="modal" [attr.data-target]="'#updateModal'+item.OptionID" (click)="initOption(item.OptionID,item.OptionStr,item.Points)"></span></button>
+                                                <button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="deleteOption(item.OptionID)"></span></button>                                                    
+                                            </td>
+    
+                                           <!-- <div class="modal fade" [attr.id]="'updateModal'+item.QuestionID" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+        
+                                                    <div class="modal-dialog vc70" role="document">
+                                                      <div class="modal-content cmodal-content">
+                                                        <div class="modal-header cmodal-header tcenter white">
+                                                          <h1 class="modal-title cmodal-title"
+                                                          >Update</h1>
+                                                          
+                                                        </div>
+                                                        <div class="modal-body">
+                                                           
+                                                            <input type="text" name="updatedSection"  required="required" class="form-control" [(ngModel)]="this.updatedQuestion">
+                                                            <div *ngFor="let option of OptionList">
+                                                                {{option.OptionStr}},{{option.Points}}
+    
+                                                            </div>
+                                                        </div> 
+                                                        <div class="modal-footer cmodal-footer tcenter"> 
+                                                          <button type="button" class="btn fill_now" data-dismiss="modal" (click)="updateQuestion(item.QuesTypeId,item.SectID,item.QuestionID)" >UPDATE</button>
+                                                          <button type="button" class="btn fill_later" data-dismiss="modal" >BACK</button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                            </div> -->
+
+                                            <div class="modal fade" [attr.id]="'updateModal'+item.OptionID" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+                                                <!--<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">-->
+        
+                                                    <div class="modal-dialog vc70" role="document">
+                                                      <div class="modal-content cmodal-content">
+                                                        <div class="modal-header cmodal-header tcenter white">
+                                                          <h1 class="modal-title cmodal-title"
+                                                          >Edit the option/point value</h1>
+                                                          
+                                                        </div>
+                                                        <div class="modal-body">
+                                                           Option value
+                                                            <input type="text" name="updatedOption"  required="required" class="form-control" [(ngModel)]="this.updatedOptionValue">
+                                                            Points
+                                                            <input type="text" name="updatedPoint"  required="required" class="form-control" [(ngModel)]="this.updatedPointValue">
+
+                                                         
+                                                        </div> 
+                                                        <div class="modal-footer cmodal-footer tcenter">        
+                                                          <button type="button" class="btn fill_now" data-dismiss="modal" (click)="updateOption(item.QuestionID,item.OptionID)" >UPDATE</button>
+                                                          <button type="button" class="btn fill_later" data-dismiss="modal" >BACK</button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                            </div> 
+                                        </tr>                                                
+                                    </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        
+                        </form>
+                        
+                    </div>
+                        
+                </div>
+                
+                <div class="x_panel">	
+                    
+                    <div class="x_title">
+                        <h2>List of Questions</h2>                                        
+                        <ul class="nav navbar-right panel_toolbox">
+                            <!-- <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a></li>
+                                    <li><a href="#">Settings 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a></li> -->                                            
+                        </ul>                                        
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                    <div class="x_content">
+
+                        <div class="x_content">                                                                                        
+
+                            <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                <div class="row">											
+                                    
+                                    <div class="col-md-8 col-sm-12 col-xs-12">                                                        
+                                        
+                                        <label class="filter_label display_initial"><input type="search" id="filter1" class="form-control input-sm" placeholder="Search by module" aria-controls="datatable-checkbox" ></label>
+                                        <label class="filter_label display_initial"><input type="search" id="filter1" class="form-control input-sm" placeholder="Search by section" aria-controls="datatable-checkbox" ></label>
+                                        
+                                        <select id="filter9" name="filter9" class="select2_group form-control input-sm select_width" style="color:#999999;min-width: 25%;">
+                                            <option value="">Type of question</option>
+                                            <option value="children">MCQ</option>
+                                            <option value="teenager">SCQ</option>														
+                                            <option value="adults">Likert</option>                                                            
+                                        </select>
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 col-sm-12 col-xs-12">													
+                                        <div class="search_btn">
+                                            <!-- <button type="submit" class="btn btn-success" id="command-add" data-row-id="0" data-toggle="modal" data-target="#exampleModalCenter">Add Forum</button>														 -->
+                                            <!-- <button type="submit" class="btn btn-success" id="command-add" data-row-id="0" data-toggle="modal" data-target="#exampleModalCenter">Add Participants</button>														 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Section</th>
+                                        <th>Assessment ID</th>
+                                        <th>Assessment Type</th>
+                                        <th>Assessment Title</th>
+                                        <th>Question ID</th>
+                                        <th>Question</th>
+                                                                                          
+                                        <th style="min-width: 10%;">Commands</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of QuestionDisplayList;let i=index">                                                    
+                                        <td>{{item.SectName}}</td>                                                  
+                                        <td>{{item.AssessID}}</td>
+                                        <td>{{item.AssType}}</td>
+                                        <td>{{item.Assessment}}</td>
+                                        <td>{{item.QueId}}</td>
+                                        <td>{{item.Que}}</td>                                                  
+                                        
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" data-toggle="modal" [attr.data-target]="'#updateModal'+item.QueId" (click)=initUpdate(item.Que,item.QueId)></span></button>
+                                            <button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="deleteQuestion(item.QueId)"></span></button>                                                    
+                                        </td>
+
+                                        <div class="modal fade" [attr.id]="'updateModal'+item.QueId" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+                                            <!--<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">-->
+    
+                                                <div class="modal-dialog vc70" role="document">
+                                                  <div class="modal-content cmodal-content">
+                                                    <div class="modal-header cmodal-header tcenter white">
+                                                      <h1 class="modal-title cmodal-title"
+                                                      >Update Question</h1>
+                                                      
+                                                    </div>
+                                                    <div class="modal-body">
+                                                       
+                                                        <input type="text" name="updatedSection"  required="required" class="form-control" [(ngModel)]="this.updatedQuestion">
+                                                        <br>
+                                                        <!-- option table -->
+                                                        
+                                                        <div class="table-responsive">
+                                                            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Option</th>
+                                                                    <th>Points</th>
+                                                                    
+                                                                                                                      
+                                                                    <th style="min-width: 10%;">Commands</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let o of OptionList;let i=index">                                                    
+                                                                    <td>{{o.OptionStr}}</td>                                                  
+                                                                    <td>{{o.Points}}</td>
+                                                                                                                    
+                                                                    
+                                                                    <td>
+                                                                        <button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" data-toggle="modal" (click)=allowOptionEditing()></span></button>
+                                                                        <button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="deleteQuestion(item.QueId)"></span></button>                                                    
+                                                                    </td>
+
+                                                                 
+                            
+                                                                     
+                                                                </tr>                                                
+                                                            </tbody>
+                                                            </table>
+                                                            <div *ngIf="this.allowedOptionEditing">
+                                                                <input type="text" name="option"  required="required" class="form-control" placeholder="Enter new option value">
+                                                                <input type="text" name="option"  required="required" class="form-control" placeholder="Enter new point value">
+
+                                                                
+                                                             </div>
+                                                        
+                                                        </div>
+<!--                                                        
+                                                        <div *ngFor="let option of OptionList">
+                                                            {{option.OptionStr}},{{option.Points}}
+
+                                                        </div> -->
+
+
+                                                         
+                                                       
+                                                    </div> 
+                                                    <div class="modal-footer cmodal-footer tcenter"> 
+                                                      <button type="button" class="btn fill_now" data-dismiss="modal" (click)="updateQuestion(item.AssessID,item.QueId)" >UPDATE QUESTION</button>
+                                                      <button type="button" class="btn fill_later" data-dismiss="modal" >BACK</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                        </div> 
+                                    </tr>                                                
+                                </tbody>
+                                </table>
+                            </div>
+                            
+                            
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Class -->
+    
+</div>
+<!-- /page content -->
+<app-footer></app-footer>

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If we want to live with intelligence and wisdom and avoid the perils of addiction and our compulsive habits, we need to travel inwards and discover the peace that lies within us all. It's not just an idea, but actually possible. We can discover this by understanding the deeper layers of our thinking and the nature of the ‘I’. On this journey you may come across a feeling you call an inner loneliness, boredom or emptiness. The word is not important. It is not a negative feeling, but part of being human. It usually prompts us to escape from it. If you can stay with it, and meet it without language, it transforms to a sense of peace. It is simple, but not easy.  It is a journey you have to take yourself. It can however be life-changing. All your external needs then find their rightful place in your life and you can live with creative freedom. 
+
+
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

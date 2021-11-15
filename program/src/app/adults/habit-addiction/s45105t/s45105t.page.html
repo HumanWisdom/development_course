@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          All our reactions, including our emotional pain come from the deeper layers of our thinking.<br>
+           We explored this in the module on stress. If you want a long term solution to emotional pain and to live with a sense of peace, you are going to have to journey inwards and explore the many unconscious patterns of thinking that contribute to our pain, including our conditioning, the process of comparison, our emotional needs and so on. You could then go deeper still and ask ‘who feels this pain?’ We explore this in the module on the nature of the ‘I’.
+
+
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

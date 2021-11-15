@@ -1,0 +1,17 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In the art of enquiry, which is the foundation of this program, you are going to learn the art of looking at yourself clearly. We are going to walk with you and show you how to do this. We know how to look at the world, but not ourselves. We’ll start by giving you some tips on how to begin. Then talk about the steps to enquiry,explore insight, and introduce you to awareness. For this enquiry to succeed, we have to pause judgement of ourselves and ask questions. We will show you how to do this. We are going to introduce you to the beauty of looking at yourself simply, without language, and also explore the many obstacles you may find on this journey. There is so much to learn and it’s a bit like playing a musical instrument. Difficult to start with, perhaps, but a joy ever after.In the next screen we describe each of the 9 modules we are going to explore in this section. You can click on any one to find out more
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

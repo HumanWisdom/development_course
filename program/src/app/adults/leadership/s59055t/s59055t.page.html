@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          How can we inspire others to work hard towards the vision we have set out? If you embody all the
+           qualities of a good leader, and are seen to be hard working, fair, and honest, you will earn the
+            respect of others, and that is the first step. You then have to articulate a vision for where you 
+            want to get to in such a way that others want to get to the same place themselves. Everyone is
+             looking for work to give them a sense of purpose and you have to articulate that for them. 
+             You have to then support people and help them be better versions of themselves, and dream of 
+             being even better. You lead by your actions, not always by your words. To follow you, people 
+             have to feel that you listen to them and care for them. You can’t fake that. Your passion and 
+          positivity go a long way in inspiring others, especially in the face of difficult circumstances
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

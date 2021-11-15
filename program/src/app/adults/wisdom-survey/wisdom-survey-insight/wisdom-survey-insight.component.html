@@ -1,0 +1,299 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit nav_menu_01">
+   
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
+          </a>                  
+        </li>        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h6 class="txt88">
+              Insights
+            </h6>            
+          </a>                  
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav w20p no_bg"> 
+      </ul>
+    </nav>    
+    
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<app-likert-scale skipToPage="">
+  <form>
+    <div class="row" id="wsi_bg_white">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <ngx-charts-area-chart-stacked
+  [view]="view"
+  [scheme]="colorScheme"
+  [legend]="legend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="multi"
+  (select)="onSelect($event)">
+</ngx-charts-area-chart-stacked>
+      </div>
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Anxiety
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of anxiety; let i = index">
+                  <div>
+                    <div id="circle" style="background: #F55858;
+                    " [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Stress
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of Stress; let i = index">
+                  <div>
+                    <div id="circle" style="background: #F55858;"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Control over Emotion
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of Emotion; let i = index">
+                  <div>
+                    <div id="circle" style="background: #63A858"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Calmness
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of Calmness; let i = index">
+                  <div>
+                    <div id="circle" style="background: #63A858"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Self-confidence
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of confidence; let i = index">
+                  <div>
+                    <div id="circle" style="background: #63A858"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Conflict in relationships
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of relationships; let i = index">
+                  <div>
+                    <div id="circle" style="background: #F55858;"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Struggle with addictions
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of addictions; let i = index">
+                  <div>
+                    <div id="circle" style="background: #F55858;"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Copping with criticism
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of criticism; let i = index">
+                  <div>
+                    <div id="circle" style="background: #63A858"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Campassion
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of Campassion; let i = index">
+                  <div>
+                    <div id="circle" style="background: #63A858"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt40px mb20px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="txt143 mb0px">
+              Happiness
+            </h4>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 mb53px">
+            <div id="line">
+              <div style="display: flex; justify-content: space-between;">
+                <div *ngFor="let item of Happiness; let i = index">
+                  <div>
+                    <div id="circle" style="background: #63A858"
+                      [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+                    </div>
+                    <div class="dateclass">
+                      <span style="color: #5D5D5D;">{{item['date']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagebreak"></div>
+
+      </div>      
+  </form>
+</app-likert-scale>
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

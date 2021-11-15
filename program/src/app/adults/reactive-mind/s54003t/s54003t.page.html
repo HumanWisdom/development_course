@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module on the reactive mind, which is the 3rd circle of wisdom, where we explore how the mind works. It is connected to every other circle.
+          </p>
+          <p>
+            What do we mean by the reactive mind? It's when there is no gap between what we experience through our senses and our response. You see or hear something and instantly react. You can see it in operation when you instantly withdraw your hand if you touch a needle, or when you suddenly get angry if you are criticized. It's an essential tool for survival. In this module we are going to explore the many problems it can be responsible for, like anger and how we can develop a responsive mind which takes its time to consider the options and respond with wisdom. There are so many benefits of that. It’s one of the foundations of living with wisdom, so an important skill to learn
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

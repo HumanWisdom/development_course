@@ -1,0 +1,18 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#5</p>
+      Our hidden self-interest comes from the ‘I’. This stops us genuinely collaborating with others.
+       ‘Each man for himself’ has led humanity to the point where our survival is threatened by our own behaviour,
+        and behind that is the nature of the ‘I’. 
+
+
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

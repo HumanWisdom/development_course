@@ -1,0 +1,17 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            If you have a difficult decision to make and are afraid of the consequences you may delay making it for years. Your fear binds you to where you are, and you are afraid to let that go, not knowing what the future holds. You may feel trapped between your fear of the future and the pain or comfort of the present. You keep going over what would happen if you changed and each time you are pushed back by your fear. The day you decide to walk through your fear and do it anyway, your fear begins to subside, as Rosa Parks discovered when she resisted segregation in a bus, in 1955
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

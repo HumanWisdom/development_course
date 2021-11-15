@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Hi! Welcome to this module exploring happiness. It is in the 5th circle of our 5 circles of wisdom. We are going to apply all that we have explored in the other circles to explore happiness - which is the one thing all of us want and pursue all our lives.  It drives most of our actions in the world. We are going to explore what happiness is, the things that make us happy, what makes us unhappy, the patterns of thinking that govern our happiness, and explore how we can be happier. It was never taught to us through our education. A deeper understanding of it can allow us to find that happiness we all seek
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

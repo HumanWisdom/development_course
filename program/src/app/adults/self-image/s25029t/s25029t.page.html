@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          There are many hidden forces at work in the background that create our images that we then project to the world. The first step is to wake up to the fact that we have images of ourselves that are different to our reality and just observe the small lies we tell others and ourselves. This is not easy. It is made easier by realising the mind does this automatically. Behind this image forming machinery of thinking  is a hidden need to be accepted and liked by others, the unconscious process of comparison where we want to be better than others, and our conditioning that says this is what a ‘successful’ person should be like. Letting go of these images feels like a great weight being lifted from our shoulders. We can relax, be authentic, and be who we are. All the anxiety of keeping up this faced of being someone else fades away. How can this help us grow as human beings?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

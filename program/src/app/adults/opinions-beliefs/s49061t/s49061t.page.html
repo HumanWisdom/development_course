@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This pyramid which represents the different layers of our thinking helps us understand how our beliefs form. In layer 1 are all the external influences we grow up with - in this case say I grow up in a catholic family. Layer 2 represents my thoughts and feelings, and so I regard myself as catholic and go to church regularly. Because there is a history of conflict with protestants in Belfast where I grew up, I get influenced by that too, and start having negative thoughts about them. In layer 3 are the hidden patterns of thinking that are shaping my beliefs - in this case my conditioning, my emotional needs and my attachment to my beliefs. In layer 4 is the ‘I’ that feels restless, empty and where my fears and insecurities originate. All my beliefs help to cover over these feelings I have so I become attached to them.
+            </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

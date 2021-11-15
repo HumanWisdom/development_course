@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There will be times when you need to have difficult conversations with people. You may need to let them go, or talk to them 
+          about a complaint against them, or explain why they haven’t been promoted. How can you prepare for these meetings, and what's the best way of managing them? Begin by having empathy. The very fact you’ve asked for the meeting will have stressed the other person out. They will already be on the defensive. Keep your tone soft throughout. If there is something good you can say about them to start with, do so. If it's bad news, there is no way of sugar coating the pill, and you just have to let them know quickly. They will probably have a reaction. Train yourself not to react to their reaction. If the process is fair, and the news conveyed with kindness and empathy, it will be better received.
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

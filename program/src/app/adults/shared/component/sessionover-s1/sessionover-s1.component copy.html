@@ -1,0 +1,61 @@
+<!-- page content -->
+<div class="right_col ml0" [ngClass]="bg" role="main">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel center_flex mh100vh">
+          <div class="x_content c_white fwunset tcenter pt0px mt0px">
+            <form>             
+
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_owl.svg" alt="" class="img-responsive animate_rotate_scale se_owl ">                  
+                  <div class="prelative center_flex">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_02.svg" alt="" class="prelative">
+                    <h6 class="txt79 se_wpts_count">
+                      25
+                    </h6>
+                  </div>   
+                </div>
+              </div> -->
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_owl.svg" alt="" class="img-responsive pb30px animate_rotate_scale mw_owl">
+
+              <h1 class="txt80 tcenter wp_txt">
+                Well done!
+              </h1>           
+
+              <h1 class="txt12 tcenter c_white bg_transparent">
+                You’ve earned {{points}} wisdom points
+              </h1>           
+
+              <!-- progress bar  -->                
+              <div class="row tcenter pt26px">
+                <div class="col-md-12 col-sm-12 col-xs-12">                    
+
+                  <div class="progress">
+                    <div class="progress-bar" [style.width]="overallPercentage + '%'">{{points}}</div>
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /progress bar --> 
+              
+              <!-- <a routerLink="/adults/comparison/s16p2">
+                <h1 class="txt17 tcenter c_white pt80px fw_500 blink_ttc">
+                  TAP TO CONTINUE
+                </h1>           
+              </a>               -->
+              <ng-content></ng-content>   
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->

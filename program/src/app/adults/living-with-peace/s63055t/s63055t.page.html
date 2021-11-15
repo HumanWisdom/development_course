@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          So much of our lack of peace comes from our unmet expectations, of ourselves, our relationships and at work. We expect others to meet our expectations and get hurt and angry when they are not met. We are certain we are right and others are wrong. We may also get angry with ourselves for not achieving our own goals. 
+          <br>
+          We rarely pause to ask where our expectations come from and why we expect the world to meet them? This is not to say they are right or wrong or that we shouldnt have any..but a first step could be to take ownership of them as coming from ourselves. Even if we want others to meet them we can express it as a request, and not as a demand, and we could accept with grace when they cannot be met.
+          <br>
+          We could avoid so much conflict if we could do that
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

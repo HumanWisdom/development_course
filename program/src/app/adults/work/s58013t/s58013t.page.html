@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Most workplaces are organised as hierarchies, with the leader at the top, and several layers of
+           managers and workers beneath. This is necessary in large organisations. What challenges does this
+            pose, and how can we respond ? Suppose you don’t like your manager, or your colleagues - that can
+             be a challenge. We could begin by asking ourselves, why don't we like them? What is going on in
+              our thinking that makes us react to them in that way? Could we change how we see them, and would
+               that change how we feel about them? If we can, that is the simplest solution, because it does
+                not involve anyone else. If people don’t like us, instead of getting defensive and reactive, we could ask why that is, and if there is a blind spot in our attitude or behaviour we need to address. If we need to
+           have a difficult conversation to resolve matters, it is much better than letting things fester
+          
+
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

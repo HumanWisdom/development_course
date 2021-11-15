@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Let me share a story with you. I was speaking to some 10 year olds in a primary school, and we had been exploring the nature of pleasure. I asked them what they felt when a pleasure ended. They said they felt bored, and needed to find another pleasure to take its place. They said they weren’t aware of their boredom, just the thought they needed to do something new. I asked them what was the answer to our inner boredom - and there was a long silence. A girl said quietly, If I stay with it, it goes away. Try it for yourself and see if it's true for you.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

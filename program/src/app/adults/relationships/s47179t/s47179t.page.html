@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+         <p>
+          We sometimes face situations when a person reacts strongly to a simple remark, for example if you challenge their opinion. It is easy to shout back, but that makes the conflict escalate. What is the wise thing to do?
+         </p>
+         <p>
+          The first thing to realise is that they cannot help that reaction which was triggered by what you said. At that moment, they are sure you are to blame and there is no point arguing with them. The best thing is to talk about it later, when things have calmed down. Then both of you could ask ‘What can I learn’ and to do that we have to suspend judgement and blame. The person who had the reaction may learn about their attachment to a point of view, or about some underlying hurt. You may learn to be more sensitive, and avoid triggering them again.
+         </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

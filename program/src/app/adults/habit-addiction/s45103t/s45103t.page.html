@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+        Whatever feeling arises in you, try and meet it fully, offering no resistance, as if you are on a beach and a wave is crashing over you. The feeling rises and then recedes. If you resist it, or run away from it, it lingers and you never quite get over the pain, whereas if you allow the pain to be fully expressed, and feel it completely, it eventually goes away. It's like letting the feeling flow through you and not allowing yourself to escape. Just be still with it.
+
+
+
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

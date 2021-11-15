@@ -1,0 +1,159 @@
+<app-feature-header title="Your Journal"></app-feature-header>
+<!-- page content -->
+<div class="right_col bg_journal pt_rightcol" role="main">				
+  <!-- Class -->
+  <div class="cw100p dabsolute_07"> 
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
+        <div class="x_panel xpanel_01 p0">
+          <div class="x_content p0">
+            <form>                                
+              <div class="row mlr-10px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback p0 zi0">
+                  <input type="search" class="form-control has-feedback-left h60px searchtxt" id="inputSuccess2" name="searchEn" [(ngModel)]="searchedText" (ngModelChange)="searchText()"placeholder="Search Journal (ex. Comparison)">
+                  <span class="fa fa-search form-control-feedback left sfeedback" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="row center_flex pb2rem">
+                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+
+                  <!-- <div (click)="goBack()" class="col-md-1 col-sm-1 col-xs-2">                      
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/back.svg" alt="">
+                  </div>
+
+                  <hr class="shr"> -->
+
+                  <div class="col-md-9 col-sm-9 col-xs-9 cfjs">
+                    <a (click)="showAll()" class="anr">
+                      <h4 class="txt39">
+                        All
+                      </h4>
+                    </a>
+                    
+                    <a (click)="showNotes()" class="anr">
+                      <h4 class="txt39">
+                        Notes
+                      </h4>
+                    </a>
+                    
+                    <a (click)="showReflections()" class="anr">
+                      <h4 class="txt39">
+                        Reflections
+                      </h4>
+                    </a>                      
+                  </div>             
+                  
+                  <div class="col-md-3 col-sm-3 col-xs-3 cffe">
+                    <button type="button" class="btn btn-default btn_plus" (click)="goToNote(0,'','','note')">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/plus.svg" alt="" class="img-responsive">
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row plr10px" (click)="goToNote(d.QueId,d.Qtn,d.Ans,'dq')"></div>
+
+              <div class="row mlr-10px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <section class="carousel-fixed-height">
+                    <div id="jdqcarousel" class="carousel slide" data-ride="carousel" data-interval="3000000">
+                      <ol class="carousel-indicators">
+                        <li data-target="#jdqcarousel" attr.data-slide-to="{{i}}" [ngClass]="[(i === 0) ? 'active' : '']" *ngFor="let item of d; let i = index"></li>
+                        <!-- <li data-target="#jdqcarousel" data-slide-to="1" class=""></li>
+                        <li data-target="#jdqcarousel" data-slide-to="2" class=""></li>
+                        <li data-target="#jdqcarousel" data-slide-to="3" class=""></li> -->
+                      </ol>
+                      <div class="carousel-inner" role="listbox">          
+                        <div [ngClass]="[(i === 0) ? 'item active' : 'item']" *ngFor="let item of d; let i = index" (click)="goToNote(d[i].QueId,d[i].Qtn,d[i].Ans,'dq')">                            
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="txt181">
+                                YOUR PRIVATE DIARY
+                              </h4>
+                            </div>
+                          </div>
+          
+                          <div class="row mt6p">                  
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div class="panel panel-default cpdefault_01">
+                                <div class="panel-heading cptitle_01">
+                                  <h4 class="panel-title w100 tcenter">{{d[i].Qtn}}</h4>
+                                </div>
+                                <div class="panel-body">
+                                  <textarea class="form-control cptextarea_01" rows="5" placeholder="Type here...">{{d[i].Ans}}</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>    
+                        </div>
+
+                        
+    
+                      </div>
+                      <a class="left carousel-control" href="#jdqcarousel" role="button" data-slide="prev">
+                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="right carousel-control" href="#jdqcarousel" role="button" data-slide="next">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                  </section>
+                </div>
+              </div> 
+
+              <!-- <div class="row" (click)="goToNote(d.QueId,d.Qtn,d.Ans,'dq')">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="panel panel-default cpdefault">
+                    <div class="panel-heading cptitle">
+                      <h4 class="panel-title">{{dailyQuestion}}</h4>
+                    </div>
+                    <div class="panel-body">
+                      <textarea name="responseDaily" class="form-control cptextarea" rows="5" placeholder="Start typing...">{{dailyResponse}}</textarea>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <div *ngFor="let j of jrList" class="row plr10px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="panel panel-default cpdefault prelative">                      
+                    <div *ngIf="j.ProgName" (click)="goToNote(j.RowId,j.TitleQue,j.Response,'reflection')"class="panel-body">
+                      <div class="panel-heading absolute_ptitle">
+                        <h4 class="panel-title">{{j.ModuleName}}</h4>
+                      </div>
+                      <h4 class="txt36">{{j.Date| date}}</h4>
+                      <h4 class="txt37">{{j.TitleQue}}</h4>
+                      <h4 class="txt38">{{j.Response|slice:0:40}}...</h4>
+                    </div>
+
+                    <div *ngIf="!j.ProgName" (click)="goToNote(j.RowId,j.TitleQue,j.Response,'journal')"class="panel-body">
+                      
+                      <h4 class="txt36">{{j.Date| date}}</h4>
+                      <h4 class="txt37">{{j.TitleQue}}</h4>
+                      <h4 class="txt38">{{j.Response|slice:0:40}}...</h4>
+                    </div>
+                  </div>
+                </div>                
+                </div>
+              </form>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
+
+
+

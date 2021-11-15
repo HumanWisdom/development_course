@@ -1,0 +1,28 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          How does the unconscious process of comparison affect us at work?
+          We compare ourselves with what others are earning, the holidays they are going on, 
+          how they are doing in the organisation, and so on. Each time we do that, we may feel
+           a burst of envy which can be hurtful. This hurt can make us angry at others, erode our 
+           relationships, and lower our own self-esteem. If we think others are better than us, we 
+           may lose interest in the work we are doing because we may think we will never be good enough. 
+           This constant comparison with others can erode the quality of the relationships we have with 
+           others, and which we need to get our job done well. Its behind much of the dysfunction in 
+           organisations.
+          
+          
+
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

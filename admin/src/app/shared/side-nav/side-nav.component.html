@@ -1,0 +1,243 @@
+<div class="col-md-3 left_col menu_fixed w230 scrollbar">
+    <div class="left_col scroll-view">        
+        <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><img src="assets/images/logo_transparent.png" class=""><span></span></a>
+        </div>
+        <div class="clearfix"></div>  
+        <!-- menu profile quick info -->
+        <!-- <div class="profile">
+            <div class="profile_pic">
+                <img src="assets/images/img.jpg" alt="..." class="img-circle profile_img" />
+            </div>
+            <div class="profile_info">
+                <span>Welcome</span>
+                <h2>John Doe</h2>
+            </div>
+        </div> -->
+        <!-- /menu profile quick info -->
+        <br />
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">                
+                <ul class="nav side-menu">                
+                    <li>
+                        <a id="user" (click)="routeHome()">
+                            <i class="fa fa-home"></i> 
+                            User
+                            <!-- <span id="dashboardchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>
+                   <!-- <li>
+                        <a id="moderator" (click)="routeModerator()">
+                            <i class="fa fa-edit"></i> 
+                            Moderator
+                           
+                        </a>                        
+                    </li>-->
+                    <!--<li>
+                        <a id="forum" (click)="routeForum()">
+                            <i class="fa fa-desktop"></i> 
+                                Forum
+                            <span id="leadershipchevron" class="fa fa-chevron-down"></span> 
+                        </a>                        
+                    </li>-->   
+                    <li>
+                        <a id="forum" (click)="routeProgram()">
+                            <i class="fa fa-desktop"></i> 
+                                Program
+                            <!-- <span id="leadershipchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>            
+                           
+                    <li>
+                        <a id="section" (click)="routeSection()">
+                            <i class="fa fa-desktop"></i> 
+                                Section
+                            <!-- <span id="customerchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>     
+                    <li>
+                        <a id="module" (click)="routeModule()">
+                            <i class="fa fa-desktop"></i> 
+                                Module
+                            <!-- <span id="employeechevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="module" (click)="routeModulePercent()">
+                            <i class="fa fa-desktop"></i> 
+                                Module Percent
+                            <!-- <span id="employeechevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeScreens()">
+                            <i class="fa fa-desktop"></i> 
+                                Screens
+                            <!-- <span id="cashchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>
+                    <li>
+                        <a id="faq" (click)="routeAllot()">
+                            <i class="fa fa-desktop"></i> 
+                                Screen Range in Modules
+                            <!-- <span id="cashchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>  
+                    <li>
+                        <a id="faq" (click)="routeSessions()">
+                            <i class="fa fa-desktop"></i> 
+                                Sessions
+                            <!-- <span id="cashchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>          
+                    <li>
+                        <a id="pricing" (click)="routePricing()">
+                            <i class="fa fa-desktop"></i> 
+                                Pricing
+                            <!-- <span id="financialpartnerchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>
+                    <li>
+                        <a id="popup" (click)="routePopup()">
+                            <i class="fa fa-desktop"></i> 
+                                Add Popup Content
+                            <!-- <span id="financialpartnerchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>
+                    <li>
+                        <a id="affiliate" (click)="routeAffiliate()">
+                            <i class="fa fa-desktop"></i> 
+                                Add Affiliate
+                            <!-- <span id="financialpartnerchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>
+                    <li>
+                        <a id="affiliate" (click)="routeViewAffiliate()">
+                            <i class="fa fa-desktop"></i> 
+                                View Affiliate
+                            <!-- <span id="financialpartnerchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>
+                    <li>
+                        <a id="affiliate" (click)="routeAffiliateAllUser()">
+                            <i class="fa fa-desktop"></i> 
+                                Affiliate Revenue Report
+                            <!-- <span id="financialpartnerchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>  
+                    <li>
+                        <a id="faq" (click)="routeSiteSection()">
+                            <i class="fa fa-desktop"></i> 
+                                Faq Categories
+                            <!-- <span id="cashchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>          
+                    <li>
+                        <a id="faq" (click)="routeFaq()">
+                            <i class="fa fa-desktop"></i> 
+                                FAQ
+                            <!-- <span id="cashchevron" class="fa fa-chevron-down"></span> -->
+                        </a>                        
+                    </li>   
+                    <li>
+                        <a id="faq" (click)="routeReflection()">
+                            <i class="fa fa-desktop"></i> 
+                                Reflection
+                          
+                        </a>                        
+                    </li> 
+                     <!-- <li>
+                        <a id="faq" (click)="routeSubscription()">
+                            <i class="fa fa-desktop"></i> 
+                                Subscription
+                          
+                        </a>                        
+                    </li>   -->
+                    <li>
+                        <a id="faq" (click)="routeAssessment()">
+                            <i class="fa fa-desktop"></i> 
+                                Assessment
+                          
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeDailyQuestion()">
+                            <i class="fa fa-desktop"></i> 
+                                Daily Question
+                        </a>                        
+                    </li>  
+                    <li>
+                        <a id="faq" (click)="routeQuestion()">
+                            <i class="fa fa-desktop"></i> 
+                                Questions
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeOptions()">
+                            <i class="fa fa-desktop"></i> 
+                                Options
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeCategory()">
+                            <i class="fa fa-desktop"></i> 
+                                Categories
+                        </a>                        
+                    </li> 
+                    <!-- <li>
+                        <a id="faq" (click)="routeGroup()">
+                            <i class="fa fa-desktop"></i> 
+                                Wisdom Groups
+                        </a>                        
+                    </li>  -->
+                    <li>
+                        <a id="faq" (click)="routeCoupon()">
+                            <i class="fa fa-desktop"></i> 
+                                Coupons
+                        </a>                        
+                    </li>  
+                    <li>
+                        <a id="faq" (click)="routePoints()">
+                            <i class="fa fa-desktop"></i> 
+                                Point Settings
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeTags()">
+                            <i class="fa fa-desktop"></i> 
+                                Tags
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeScenarios()">
+                            <i class="fa fa-desktop"></i> 
+                                Scenarios
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeKeys()">
+                            <i class="fa fa-desktop"></i> 
+                                Activation Keys
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeTestimonial()">
+                            <i class="fa fa-desktop"></i> 
+                               Testimonials
+                        </a>                        
+                    </li> 
+                    <li>
+                        <a id="faq" (click)="routeForums()">
+                            <i class="fa fa-desktop"></i> 
+                               Forum
+                        </a>                        
+                    </li> 
+                           
+                </ul>
+            </div>        
+        </div>
+        <!-- /sidebar menu -->
+    </div>
+</div>
+    

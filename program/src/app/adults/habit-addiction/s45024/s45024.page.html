@@ -1,0 +1,67 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+<!-- page content -->
+<div class="right_col ml0  purple_w4" role="main">
+  <!-- Class -->  
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel cxpanel center_flex dflexblock">                        
+          <div class="x_content c_white fwunset tcenter">
+            <form>
+              <!-- <h5 class="txt4 justified_center"> -->
+              <h5 class="txt1">
+                What are the different types of addictions people have?
+
+                </h5>
+              <div class="clearfix"></div>
+
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
+
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="txt44 tleft">
+                     6.  Food: 
+
+                     </h4>
+
+                    <h4 class="txt45 tleft">
+                      Compulsive overeating is behind the obesity problem worldwide. 42% of Americans are obese and 28% of Britons. Obesity increases the risk of diabetes, heart disease and cancer. 
+                     </h4>
+                  </div>
+                </div>
+              </section>
+
+              
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              
+              
+            <!-- /multistep wizard -->       
+
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                 
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

@@ -1,0 +1,17 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      If you become aware of your hidden self-interest, you have a choice on how to respond. It then does not operate without your awareness or your consent, and allows you to live with integrity. 
+      <span class="highligted_span">
+        (See the module on self-interest)
+      </span>
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   

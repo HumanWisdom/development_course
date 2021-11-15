@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This pyramid represents the different layers of our thinking. Our emotional needs lie hidden from our awareness in layer 3. They are powerful and influence how we think and behave in layer 2. We look to the world outside, which is layer 1 to have these needs met. When these needs are met they cover over the feeling of emptiness we feel in layer 4, and we feel happy. These needs are part of being human and not right or wrong. They just need to be understood. Wherever our needs are met we become attached, for example to a relationship or a pet. When the relationship ends or a pet dies, we feel the searing pain of loneliness, which is just an expression of our emptiness in layer 4. The pain lasts till we can find other ways to cover over that emptiness, perhaps through a new relationship, or if we get a new pet, or join a group. You need to observe this in yourself and find out if it is true
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

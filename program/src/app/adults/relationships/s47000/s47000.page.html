@@ -1,0 +1,294 @@
+<!-- top navigation -->
+<!-- <div class="top_nav ml0 tcenter inav">
+  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/relationships.jpg" alt="" class="img-responsive iw100">
+  <div class="nav_menu absolute_top p20px">
+      <nav>          
+          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
+            <li class="">                    
+                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
+                  <h4 class="btn_back_white">
+                    Back
+                  </h4> 
+                </a>                  
+            </li>   
+            
+            <li class="lishare">                    
+              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
+              </a>                  
+            </li>
+          </ul>
+      </nav>
+  </div>
+</div> -->
+<!-- /top navigation -->
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
+          Relationships
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          Our relationships are the single biggest factor in determining our long term happiness so it is important we get them right. Even if one relationship is unhappy, we can’t be happy. In this module we are going to explore the subject in depth, so we can use our wisdom to make sure we can avoid conflict, and all our relationships flourish and thrive.
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/adults/relationships', relationshipResume]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_purple" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <a routerLink="/adults/relationships/s47001">
+          <button type="button" class="btn btn_default mb0 txt_purple" data-dismiss="modal">Start from the beginning</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/adults/relationships/s47001">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Why are relationships important?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              13 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+
+    <a routerLink="/adults/relationships/s47029">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Different types of relationships
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              17 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47058">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #3
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              How does our thinking impact relationships?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              16 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47104">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #4
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Our hidden emotional needs
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              12 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47132">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #5
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Causes of conflict
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              16 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47173">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #6
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Feeling hurt. Responding with intelligence.
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              29 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47201">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #7
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              What is our relationship with ourselves?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              10 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47227">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #8
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              The art of successful relationships
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              21 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47277">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #9
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Breaking up with intelligence
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              16 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/relationships/s47326">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #10
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Bullying and Abuse
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              18 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+  </form>    
+
+</app-index-content> 
+
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
+<app-index-footer></app-index-footer>

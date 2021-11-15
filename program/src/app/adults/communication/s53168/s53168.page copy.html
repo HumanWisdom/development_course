@@ -1,0 +1,37 @@
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [transcriptPage]="transcriptPage"></app-audio-header>
+
+<!-- page content -->
+<div class="right_col ml0 cright_col" [ngClass]="bg" role="main">				
+  <!-- Class -->  
+  <div class="cw100p cabsolute_audio_diagram">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0 dflexblock_audio_diagram">
+          <div class="x_content c_white fwunset tcenter pt0px mt0px">
+            <form class="p0">
+
+              <h1 class="txt1 tcenter mb0px">
+                {{title}}
+              </h1>             
+
+              <!-- angular audio player plugin  -->                              
+              <div class="row tcenter">
+                <div class="col-md-12 col-sm-12 col-xs-12 padding_ad">
+                  <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" #audio ></ngx-circular-player>                  
+                </div>
+              </div>
+              <!-- /angular audio player plugin -->     
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/diagram/communication/diagram_01.svg" alt="" class="p0">
+
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

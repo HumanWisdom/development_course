@@ -1,0 +1,17 @@
+
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#5  Acceptance can dissolve stress. </p>
+      Stress is just the difference between how things are, and how you want them to be. <br>If you can accept things as they are, your stress can dissolve.
+     </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

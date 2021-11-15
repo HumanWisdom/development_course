@@ -1,0 +1,27 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+<app-quotation [bg]="bg">
+  <form>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
+      </div>
+    </div>
+
+    <hr class="quotation_hr mt30px">
+
+    <h1 class="quotation_txt">
+      Self-enquiry is not asking you to believe or to trust - it is putting a mirror in front of you and asking you to look
+    </h1>
+
+    <hr class="quotation_hr">
+
+    <h1 class="quotation_writer">
+      Mooji
+    </h1>
+
+  </form>
+</app-quotation>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

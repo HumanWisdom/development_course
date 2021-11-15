@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We all have many emotional needs we are not aware of. They are a normal part of being human,
+           and operate in the background, without our awareness. We have explored these more fully in a 
+           separate module, but include a need to be loved, not to be lonely, to feel secure, to be occupied,
+            for pleasure and stimulation, and so on. These needs are often met by a close relationship.
+             Whenever these needs are met we feel happy and get attached to the object that meets those 
+             needs- whether it’s a pet, a person, or a job. When we lose the object that meets these needs,
+              we experience sorrow and a range of other emotions. The depth of our despair is dependent on 
+              the depth of our emotional attachment, or how much our emotional needs were being met
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

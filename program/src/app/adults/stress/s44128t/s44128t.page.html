@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Many of us worry what others are thinking of us, and that can cause a lot of stress. It starts in school and continues as adults. It is of course impossible to get inside other people’s minds and know what they are thinking, but we persist in doing that anyway. We are usually wrong anyway. Why do we do that? I asked this question to a group of 10 year olds, and to a group of young adults. Their response was the same - otherwise we would be alone. We are therefore constantly adjusting who we are so we can be liked and stay in the group. It occurs in the background, beyond our awareness and causes anxiety.. Through the process of enquiry we can make our peace with who we are, and with being alone, and the anxiety of this fades. It's also worth noting that others are too busy thinking of themselves to pay that much attention to us, and it's worth keeping that in mind.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

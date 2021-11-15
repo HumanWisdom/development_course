@@ -1,0 +1,127 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+   
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
+          </a>                  
+        </li>        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h6 class="txt88">
+              Wisdom Survey
+            </h6>            
+          </a>                  
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav w20p no_bg"> 
+      </ul>
+    </nav>    
+    
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<app-likert-scale skipToPage="">      
+  <form>
+    <div class="row" id="div_graph" *ngIf="enablebtn">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+  
+        <div class="row mt40px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+          </div>
+        </div>
+      
+        <div class="row mt17px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+          </div>
+        </div>
+        
+        <div class="row mb30px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <button type="button" class="btn btn-warning btn_vdi w100" routerLink="/adults/wisdom-survey/wisdom-survey-insight" data-dismiss="modal">View Survey Insights</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    <div class="row mt30px">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt177 tcenter mb0px">
+          Take the survey
+        </h4>
+      </div>
+    </div>
+
+    <div class="row mb30px">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h6 class="txt65 tcenter">
+          We recommend taking this survey at least twice a month
+        </h6>
+      </div>
+    </div>    
+
+    <!-- multistep wizard --> 
+    <app-progress-slider [q]="q1" r="1" nFilter="Very anxious" pFilter="Not at all anxious"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q2" r="2" pFilter="Not at all stressed" nFilter="Very stressed"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q3" r="3" pFilter="Very well" nFilter="Not well at all"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q4" r="4" pFilter="Very calm " nFilter="Not calm at all"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q5" r="5" pFilter="Very self confident" nFilter="Not self confident at all"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q6" r="6" pFilter="No conflict" nFilter="A lot of conflict"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q7" r="7" pFilter="I don’t have any addictions" nFilter="I struggle with an addiction"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q8" r="8" pFilter="I cope very well" nFilter="Not well at all, I get very upset"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q9" r="9" pFilter="I have a lot of compassion for others" nFilter="I don’t have much compassion for others"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>
+    <app-progress-slider [q]="q10" r="10" pFilter="Very happy" nFilter="Not happy at all"  (sendRating)="receiveRating($event)"></app-progress-slider>
+    <br>    
+   
+    <div class="row mt30px mb40px">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <a (click)="submitProgress()">
+          <button type="button" class="btn btn-warning btn_ws_submit w100">Submit</button>
+        </a>
+      </div>
+    </div>
+  </form>
+</app-likert-scale>
+
+<!-- old submit button -->
+<!--
+<div class="sidebar-footer hidden-small feedback_survey_footer" >
+  <div class="row lh5rem">
+    <div class="col-md-12 col-sm-12 col-xs-12 tcenter center_flex">      
+      <div class="col-md-2 col-sm-2 col-xs-4 btn_p0">
+                
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-6 p0">
+        <a (click)="submitProgress()">
+          <button type="button" class="btn btn-default w100 mb0 btn_next">Submit</button>
+        </a>
+      </div>    
+      <div class="col-md-2 col-sm-2 col-xs-4">        
+      </div>  
+    </div>
+  </div>
+</div>
+-->
+<!-- /old submit button -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

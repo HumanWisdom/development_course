@@ -1,0 +1,24 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Some people and governments use fear of punishment as a way of controlling the behaviour of others. This could be to exercise control in a relationship, or to control employees in an organisation, or entire populations. Where fear is used in this way, there is no love or goodness, and can drive affection out of relationships. It is tempting to use fear to get things done, if one is in a position of authority, but that may not get the best out of your team, and no one is going to go the extra mile for you’
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The fifth obstacle is our difficulty in accepting ourselves as we are. It may feel challenging when we begin learning about ourselves, because we do not like what we see.
+          </p>         
+          <p>
+            We have explored the importance of looking at ourselves without judgment, and in the comparison module we explore why we are critical of ourselves. It is challenging to take ownership of our feelings as thoughts that emerge from our own thinking. We have to also suspend judgment of whether those feelings are someone else's fault, are our own, and just ask a simple question 'what can I learn?' That learning opens the doorway to wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

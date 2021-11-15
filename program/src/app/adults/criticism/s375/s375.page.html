@@ -1,0 +1,40 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500">
+      We respond to criticism by:
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8">
+      01. Feeling hurt
+    </h3>
+
+    <h3 class="txt8">
+      02. Becoming defensive
+    </h3>
+
+    <h3 class="txt8">
+      03. Retaliating
+    </h3>
+
+    <h3 class="txt8">
+      04. Getting angry
+    </h3>
+
+    <h3 class="txt8">
+      05. Getting anxious
+    </h3>
+
+    <h3 class="txt8">
+      06. Avoiding people
+    </h3>
+
+  </form>
+          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

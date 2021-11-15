@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Habits allow us to do one thing and think of another, at the same time - like driving a car and talking to someone.  Habits contribute to obesity. We might eat a snack between meals and not be aware of it. Or we could be thinking of something else while eating. If we use food as a source of pleasure, then food habits are more difficult to break because pleasure suppresses the part of our brain that can make critical choices. To change a habit we can use the 5 circles of wisdom, and begin by nurturing a quiet mind. We can be more aware of what is going on in our thinking, like our need for pleasure, or our boredom. This allows us to make intelligent choices, and eat only when we are hungry. We can also break a bad habit, like snacking, by creating new ones, like eating fruit regularly. To break well established habits, we can also try breaking small ones - like changing our route to work, or skipping a morning coffee occasionally.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

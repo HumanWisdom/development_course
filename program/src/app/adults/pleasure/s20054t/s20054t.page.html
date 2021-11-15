@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The developed world consumes far more, per person, than the developing world, which is trying to catch up. The question no one asks is - why do we consume so much? Perhaps the human need for pleasure has a major part to play. This pleasure can come from buying things and having experiences like holidays, all of which contribute to global warming. I once met a teacher who had 176 pairs of shoes, and had no insight into the process behind it. We know this pleasure is short lived and when it ends it leaves a void which demands to be filled, by more of the same, and that is how we accumulate things which we soon don't even notice, but the cycle continues.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

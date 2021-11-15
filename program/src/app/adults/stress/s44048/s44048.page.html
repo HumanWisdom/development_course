@@ -1,0 +1,27 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      To not be stressed, I can either change the situation, or my reaction to it.
+       <br>To change my automatic reaction, I need to understand where it comes from. 
+       <br>That’s enquiry.
+    </h1>
+      <!--<h1 class="txt3">
+      Long term stress can affect our mental and physical health
+    </h1>
+      <h1 class="txt3">
+      Exploring it in detail allows us to avoid it and manage it better
+    </h1>
+      <h1 class="txt3">
+      Preventing it is far easier than dealing with it
+    </h1> -->
+    <div class="clearfix"></div>
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

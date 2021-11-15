@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module where I would like to invite you to explore the art of communication and how we all learn to be great communicators. It is part of the 5th circle of wisdom, where we apply our understanding of how the mind works, to live with wisdom. It is important in all areas of our life, and can contribute to our success at home and at work. We will also explore how we can have difficult conversations with people, and the problems poor communication can cause. In this session we begin with a simple question: How can we deepen our connection with others through communication. Let's get started
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

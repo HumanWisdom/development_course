@@ -1,0 +1,17 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module on self-esteem. It is part of the 5th circle of wisdom - or living with wisdom, and is influenced by every other circle.  We are going to explore the subject of self-esteem, which is how good we feel about ourselves, in other words how much you like yourself. It impacts our self-confidence and can be a major cause of stress and anxiety. We will explore what it is, the many unconscious patterns of thinking that can contribute to it, the impact of low self-esteem on our lives, and explore how we can respond with wisdom, so we can be confident and at peace with ourselves.
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

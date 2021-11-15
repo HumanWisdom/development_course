@@ -1,0 +1,14 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      <p>
+        If you live with an awareness of your conditioning, you can drive your car where you want to go in life. Otherwise it will take you where it wants to go, and convince you it was your decision.
+      </p>      
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

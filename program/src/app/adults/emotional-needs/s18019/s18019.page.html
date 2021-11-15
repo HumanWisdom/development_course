@@ -1,0 +1,49 @@
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [transcriptPage]="transcriptPage"></app-audio-header>
+
+<app-pyramid-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)="receiveAvDuration($event)"> 
+
+  <div class="row p0">
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_1.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_t1 mtb0px pno pno1">
+        01
+      </h6>
+      <h6 class="icenter_t1 mtb0px ptext">
+        We look to the world to meet our needs.
+      </h6>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">                  
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_2.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_tn mtb0px pno pnotn">
+        02
+      </h6>
+      <h6 class="icenter_tn mtb0px ptext">
+        Our needs influence our thoughts and behaviour.
+      </h6>        
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_3.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_tn mtb0px pno pnotn">
+        03
+      </h6>
+      <h6 class="icenter_tn mtb0px ptext">
+        Our emotional needs lie hidden from our awareness
+      </h6>                
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_4.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_tn mtb0px pno pnotn">
+        04
+      </h6>
+      <h6 class="icenter_tn mtb0px ptext">
+        The ‘I’ feels restless, empty. Our needs cover over this feeling.
+      </h6>                
+    </div>
+  </div>
+  
+</app-pyramid-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

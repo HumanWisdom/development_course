@@ -1,0 +1,103 @@
+
+<body class="login">
+  <div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <form>
+            <h1>Login</h1>
+            <!-- <div>
+              <input type="text" class="form-control" placeholder="Username" required="" [(ngModel)]="email" />
+            </div> -->
+            <div class="form-group">                                                
+              <div>
+                <input  class="form-control" required="required" type="text" name="email"placeholder="Email"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" [(ngModel)]="email" #emailField="ngModel">
+                <div *ngIf="emailField.invalid && emailField.touched">
+                  <div *ngIf="emailField.errors?.required">Email is required</div>
+                  <div *ngIf="emailField.errors?.pattern">Please enter a valid email address</div>
+
+                </div> 
+              </div>
+            </div>
+            <div>
+              <input type="password" name="password" class="form-control" placeholder="Password" required="" [(ngModel)]="password"/>
+            </div>
+            <div class="tcenter">
+              <a class="btn btn-default submit" (click)="submitCreds()">Log In</a>
+              <!-- <a class="reset_pass" href="#">Lost your password?</a> -->
+            </div>
+            <div *ngIf="showAlert" class="form-group">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="alert alert-danger w100  h5rem" >You have enetered wrong credentials. Please try again. <br>
+                   
+
+                  </div>                                                   
+              </div>
+          </div>
+
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">
+                <a href="#register" class="to_register"> Forgot Password ? </a>
+              </p>
+
+              <div class="clearfix"></div>
+              <br />
+
+              <div class="col-md-12 col-sm-12 col-xs-12">                      
+                  <div class="center_flex">
+                      <img src="assets/images/logo/HumanWisdom - Logo Transparent 3 .png" class="img-responsive mw70" alt="">                    
+                  </div>
+                <br>
+                <p>© 2020 Human Wisdom Ltd. All Rights Reserved.  </p>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div id="register" class="animate form registration_form">
+        <section class="login_content">
+          <form>
+            <h1>Forgot Password</h1>
+            <div>
+              <input type="email" class="form-control" placeholder="Email Id" required="" />
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="Username" required="" />
+            </div>                  
+            <div>
+              <input type="password" class="form-control" placeholder="Password" required="" />
+            </div>
+            <div>
+              <a class="btn btn-default submit" href="index.html">Submit</a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">Already a member ?
+                <a href="#signin" class="to_register"> Log in </a>
+              </p>
+
+              <div class="clearfix"></div>
+              <br />
+
+              <div class="col-md-12 col-sm-12 col-xs-12">                      
+                  <div class="center_flex">
+                      <img src="assets/images/logo/HumanWisdom - Logo Transparent 3 .png" class="img-responsive mw70" alt="">                    
+                  </div>
+                <br>
+                <p>© 2020 Human Wisdom Ltd. All Rights Reserved.  </p>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>

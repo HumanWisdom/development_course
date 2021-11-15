@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          How can we respond to this emptiness we feel with wisdom? The first step perhaps is to recognise it is there, and the various ways it shapes our life. It is behind your feeling of boredom, or loneliness, or wanting to go shopping, or drinking etc. Because it feels like an ache inside us, and our tendency is to want to escape from any emotional disturbance or pain, it is not something we are aware of or feel comfortable looking at and exploring. So the second step is to turn around and face it. It is not something to be avoided or feared. It does not bite. It is as much a part of you as your hand is. Running away from it just increases our fear of it. When we turn around and face it, the fear fades away and we can begin to explore it.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

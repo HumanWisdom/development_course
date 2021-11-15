@@ -1,0 +1,15 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      It is not easy to accept our self-interest without being critical of ourselves, or justifying it as ‘only human’, or saying ‘everyone is selfish’. To observe with curiosity and without judgement is an art we can all learn.
+
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   

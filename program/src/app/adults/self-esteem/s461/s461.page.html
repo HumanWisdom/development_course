@@ -1,0 +1,17 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#1</p>
+      Stop comparing. By observing the unconscious process of comparison and seeing clearly how it contributes to low self-esteem, we can accept ourselves for who we are, appreciate who we are and what we have, and be at peace
+      <span class="highligted_span">
+        (See comparison module)
+      </span>  
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

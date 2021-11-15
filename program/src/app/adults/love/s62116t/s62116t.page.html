@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          How can we be more loving. People who are loving bring out the best in others and also have the best chance of finding love themselves. In this session we are going to learn 
+          about the many hidden patterns of thinking that can get in the way of loving others, and how a deeper awareness of them can help us be more consciously loving. While being loved feels wonderful, it is in having that love inside us, for ourselves and others
+           that our lives become truly enriched. To begin, just ask yourself a simple question ‘How can I be more loving? Why is it important?’ In this session we are going to explore 7 practical ways in which we can be more loving.
+
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

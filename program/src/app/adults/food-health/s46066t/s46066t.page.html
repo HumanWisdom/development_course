@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We all have narratives or internal beliefs that build up in our thinking over the years. They usually come from our conditioning and we do not question them. We do not like it when they are questioned. For example we may believe we are too fat, even when we are not, and severely restrict our food intake. This can lead to anorexia - a serious medical condition. Or we may think being overweight is okay - its just our genes and we can do nothing about it. Or we may believe we need to eat 4 meals a day. Becoming aware of our narratives or internal beliefs around food is a first step. Write them down. Then ask where they come from, and if there is a different way of looking at them.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

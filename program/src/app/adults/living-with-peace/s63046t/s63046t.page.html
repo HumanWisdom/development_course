@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Of all the things we can do ourselves to live in peace, a radical acceptance of people and situations as they are can perhaps make the biggest difference. This needs to be done actively, and requires a real generosity of spirit. Perhaps zooming out and realising that in the long term most things don’t matter, and even if they do, if we cannot change what has happened, the quicker we can accept things as they are, the quicker we can get on with living fully in the present. This acceptance could apply to  who we are as well as external events like bereavement, the breakup of a relationship, our marks in an exam, disappointment at not getting a pay rise or a job, and so on. It is not easy to do, but without it, there is no peace. It is helped by realising that life is only in the moment we are alive right now, and being in it fully, requires us to accept whatever has happened.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,13 @@
+ <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Even if we are hurting, that hurt does not have to turn to anger and hate. Can we accept that pain as a price we have to pay for having loved someone, and let them go, with our best wishes for their future. That requires real courage and wisdom.
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

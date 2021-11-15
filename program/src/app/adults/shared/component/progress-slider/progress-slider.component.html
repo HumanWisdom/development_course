@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+    <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
+      <div class="box textarea_box">
+        <h4 class="pt1rem pb0_5rem txt15">
+           {{r}}. {{q}} 
+        </h4>  
+
+        <div class="row pt1rem">
+          <div class="col-md-5 col-sm-5 col-xs-5 p0 tleft">
+            <h6 class="mt0px txt16">
+              {{nFilter}}
+            </h6>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">
+            <h6 class="mt0px txt43 tcenter">
+               {{this.rating}} 
+            </h6>
+          </div>
+          <div class="col-md-5 col-sm-5 col-xs-5 p0 tright">
+            <h6 class="mt0px txt17">
+             {{pFilter}}
+            </h6>
+          </div>
+        </div>                    
+        
+         <ngx-slider name="slider" [(value)]="value" [options]="options" [(ngModel)]="this.rating" (userChange)="selectRating(this.rating)"></ngx-slider> 
+
+        <!-- range slider -->
+        <!-- <div id="pmd-slider" class="pmd-range-slider"></div> -->
+        
+        <div id="pmd-slider-tooltip"  class="pmd-range-slider pmd-range-tooltip"></div>
+        <!-- /range slider -->
+
+      </div>                    
+    </a>
+  </div>
+</div> 

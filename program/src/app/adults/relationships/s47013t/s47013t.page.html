@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          You have seen this pyramid before. It represents the different layers of our thinking. We are usually only conscious of our relationships in the world outside, in layer 1, and our thoughts and feelings in layer 2. The mirror of relationship allows us to explore layer 3, where several unconscious patterns of thinking operate - like conditioning, comparison, the nature of fear and our emotional needs. Our behaviour and our reactions help us discover these deeper layers of our thinking. This understanding awakens our inner intelligence and leads to wisdom, which can be life changing, and can also help us have happy relationships
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

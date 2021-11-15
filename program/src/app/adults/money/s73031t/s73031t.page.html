@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          I asked some children in a school what they wanted from their life, and almost without exception they said they wanted to be rich and famous. I asked why, and they said because they thought it would make them happy. I asked them why they hadn’t said they wanted to be healthy, for example, and they said because they already were. So why aren't you happy now I asked, and then said being happy is hard. If it's hard now, it's going to be hard then as well, I said. Being happy requires wisdom, which comes from self-understanding, and may not have as much to do with money as we think. Of course the lack of money can make us unhappy, but beyond a point, having more and more money is not a formula for automatic happiness. We explore the subject of happiness in a separate module.
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

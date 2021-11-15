@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our memories of the emotional pain we have suffered in our past can be a major cause of stress. We cannot change the past, so how can we move on and live freshly in the present? It's not easy because our mind is naturally conditioned by all our past influences. Our painful memories become woven into our identity, into our feeling of who we are and we identify with them as part of ‘us’. To move on from them we need to understand the nature of conditioning and our identity, both of which we have explored in separate modules. We also need to explore forgiveness, which also allows us to let go of the past. It’s an active process and change follows naturally as our understanding deepens.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

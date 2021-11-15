@@ -1,0 +1,37 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      The fear of getting hurt 
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. May stop us getting into a relationship
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. May make us keep the relationship superficial
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. May stop us being authentic, being ourselves
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. May make us possessive 
+
+    </h3>
+
+   
+  </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

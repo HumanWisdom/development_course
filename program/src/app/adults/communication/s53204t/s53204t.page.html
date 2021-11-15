@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          To explore what is going on in our thinking during a difficult conversation consider this pyramid which represents the different layers of our thinking. In layer 1, which is the world around you, you may be telling your flat-mate that he has left the kitchen too messy and you’d like him to clean up after he has cooked. In layer 2 you are feeling irritated and that reflects in the tone of your voice. In his layer 3, which represents the unconscious patterns of thinking he reacts to your tone of voice with anger and accuses you of making a fuss over nothing. In layer 4 is the sense of ‘I’ where your identity feels threatened and it makes both of you defensive and the argument escalates. It is no longer about the messy kitchen but personal. Understanding this process helps us respond with intelligence.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

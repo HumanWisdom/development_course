@@ -1,0 +1,68 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+<!-- page content -->
+<div class="right_col ml0 blue_w5" role="main">
+  <!-- Class -->  
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel cxpanel center_flex dflexblock">                        
+          <div class="x_content c_white fwunset tcenter">
+            <form>
+              <!-- <h5 class="txt4 justified_center"> -->
+              <h5 class="txt1">
+                #6 Questions to consider before speaking, to help you respond with intelligence
+              </h5>
+              <div class="clearfix"></div>
+
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
+
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="txt44 tleft">
+                      5. Is it true?
+                    </h4>
+
+                    <h4 class="txt45 tleft">
+                      Do my words reflect what I really think and feel? Do my words come from the ‘depth of my truth’? Are they a reflection of who I really am? Is what I am saying factually correct?
+                    </h4>
+                  </div>
+                </div>
+              </section>
+
+              
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+       
+             
+              
+                          
+                                    
+
+              <!-- /multistep wizard -->       
+
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                 
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

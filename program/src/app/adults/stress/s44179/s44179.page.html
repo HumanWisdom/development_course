@@ -1,0 +1,17 @@
+
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#8 </p>
+      It is quite possible to live a simple life, well within our means. We just need to understand the internal drivers that push us to do the opposite, and connect with the peace that is within us all.
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

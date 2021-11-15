@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          One of the commonest reasons we run blindly into the arms of an addiction is because we are running away from our emotional pain - which feels like a fire in the brain. We do not know how to put this fire out ourselves, so try to numb the feeling through alcohol or drugs or distract ourselves in some other way. This emotional pain has many other names - stress, anxiety, loneliness, boredom, bereavement, disappointment, painful memories, failure, and so on. The escape ends up causing more problems in the long run, but in our rush to escape we do not see that.
+<br>A fire in our brain is very different from a real fire and demands a different response. We run away from real fires and know the fire brigade will arrive and sort the fire out. When it comes to our emotional pain we need to be our own firefighters. We need to go towards the fire, understand the root cause of it and put it out ourselves. We will explore this in the next session
+
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Many people feel anxious about what they will find when they look at themselves. 
+            This is normal. After spending 40 years doing so, I can tell you there is nothing to be worried about, if you know how to look at yourself in the right way.
+            What is there to be afraid of? Whatever you discover has been there all along anyway and exerts its influence in your life. See all that clearly allows your intelligence to determine the course of your life.
+          </p>         
+          <p>
+            We are after all the same human being. On this journey of enquiry, which leads to wisdom, it is perhaps less important to go over the details of our own past, and more important to explore the hidden patterns of thinking in ourselves and the impact they have on our life.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

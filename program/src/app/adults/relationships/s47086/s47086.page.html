@@ -1,0 +1,74 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+<!-- page content -->
+<div class="right_col ml0 purple_w11" role="main">
+  <!-- Class -->  
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel cxpanel center_flex dflexblock">                        
+          <div class="x_content c_white fwunset tcenter">
+            <form>
+              <!-- <h5 class="txt4 justified_center"> -->
+              <h5 class="txt1">
+                <p class="mb0px fw_bold">How does our hidden self-interest operate in our relationships?
+                </p>
+                 </h5>
+              <div class="clearfix"></div>
+
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
+
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <!--<h4 class="txt44 tleft">
+                      1.  Depression
+                    </h4> -->
+                    
+                    <!--<h4 class="txt44 tleft">
+                      1.  Exercise regularly
+                    </h4> -->
+
+                    <h4 class="txt45 tleft">
+                      7. If I am rich or famous, I can get suspicious of everyone’s intentions and may struggle to form enduring relationships.
+                     </h4>
+                  </div>
+                </div>
+              </section>
+
+              
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              
+                          
+                                    
+
+              <!-- /multistep wizard -->       
+
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                 
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+

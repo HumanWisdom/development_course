@@ -1,0 +1,19 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+ 
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            When we are criticized we can get emotionally hurt and that pain can make us respond in different ways. We could get angry and become defensive, and look for ways we can verbally attack the other person or retaliate in other ways. If we are a country or political leader we may respond with force. The fear of being hurt by criticism again can make us anxious, and can change our behaviour as a result, so we find ways of avoiding it, sometimes even changing our profession to avoid it. Long-term criticism can convince us we are not good enough and that can lower our self-esteem, which has long term consequences 
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

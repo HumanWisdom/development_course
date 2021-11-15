@@ -1,0 +1,49 @@
+<app-transcript-header  [toc]="toc"[bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The human mind naturally thinks the cause of our anger is out there, but the real reason may lie in the hidden depths of our thinking and exploring that can illuminate the entire process and bring freedom, so it no longer operates without our awareness or our consent.
+          </p>
+
+          <p>
+            Spend some time examining this image because it illustrates an idea that is at the heart of the program. For the sake of explaining it clearly, you could say there are 4 layers to our thinking process, and we are not aware of them all.
+          </p>
+
+          <p>
+            Layer 1 is what is happening in the world outside.
+          </p>
+
+          <p>
+            Layer 2 is the content of our memory and all our reactions, thoughts and feelings are here too.
+          </p>
+
+          <p>
+            This is where human awareness usually stops.
+          </p>
+
+          <p>
+            Layer 3 contains all the unconscious patterns of thinking that are common to all human beings, like conditioning, comparison, our self-interest, our emotional needs and so on. These control what we feel and think in layer 2, but are not aware of it.
+          </p>
+
+          <p>
+            Layer 4 is the ‘I’ that feels and records everything and it’s where our sense of identity resides.
+          </p>
+
+          <p>
+            Though this is divided into 4 layers to explain it more easily, we can see them all at once if we have that depth of awareness of what is going on in our thinking.
+          </p>
+
+          <p>
+            We now explore 2 examples of how this can be applied to understanding anger.
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

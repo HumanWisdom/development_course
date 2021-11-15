@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Deep down, the human mind functions in similar ways. The nature of fear and pleasure is the same whether you are 5 or 50, though the external causes may be different. Understanding yourself helps you to understand others and as a result all your relationships can improve.
+          </p>
+
+          <p>
+            For example all human beings act from their unconscious conditioning which determines their opinions and behaviour. That helps us to understand others, and have compassion for them because our minds function in the same way.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

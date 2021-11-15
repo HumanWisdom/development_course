@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Please join me as we explore this idea, which may be unfamiliar, and feel strange. Looking at a feeling without thinking, or without language can help transform it. You have to explore it to find out if it is true, but could offer a new way of dealing with life's challenges.
+          </p>
+          <p>
+            The next time you feel stressed, anxious, angry or envious, try and meet that feeling completely without language. This means we remain with the feeling without trying to escape from it, through pleasure or distraction, and observe it without naming it, or judging ourselves or blaming others for it. It’s like letting a wave crash over you and offering no resistance. It eventually subsides. This is not easy and like all skills we learn, requires patience and perseverance. Just take the first step, and begin. You may make an amazing discovery.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

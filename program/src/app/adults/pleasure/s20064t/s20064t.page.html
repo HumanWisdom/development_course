@@ -1,0 +1,35 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Now that we have understood the nature of pleasure, its beauty, and the problems it can cause, how can we respond to what we have learned with wisdom?
+          </p>
+          
+          <p>
+            The first thing to realise is that we are not judging it as right or wrong. Just as we don't look at the sun and say it’s right or wrong, it’s just a fact and we are curious to find out more.
+          </p>
+
+          <p>
+            The pursuit of it can cause heartache if we do not get what we want, and the absence of it can make us confront our own inner boredom or our emptiness.
+          </p>
+
+          <p>
+            If we can find a way of making our peace with this inner boredom or emptiness, then pleasure can have its rightful place in our lives. We explore this more fully in the module on inner boredom.
+          </p>
+          
+          <p>
+            At present the search for pleasure operates unconsciously in the background, and becoming aware of it in operation, and its nature allows us to respond with wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

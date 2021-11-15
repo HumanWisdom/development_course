@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this session where we are going to explore what we can do to develop a healthy self-esteem, so we can avoid the many problems having a low self-esteem can cause. If you do have low self-esteem, you may not know what to do to change that.
+          </p>
+          <p>
+            Perhaps all we need to do is just observe all the unconscious patterns of thinking that contribute to low self-esteem, and explore them one by one, using our intelligence. Change follows naturally as you shine a light on them.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

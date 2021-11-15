@@ -1,0 +1,174 @@
+<app-likert-scale skipToPage="">
+  <h2 class="mtb0px txt13">Insights</h2>
+  <div>
+    <p class="heading">Anxiety</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #F55858;
+            " [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Stress</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #F55858;"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Control over Emotion</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #63A858"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Calmness</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #63A858"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Self-confidence</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #63A858"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Conflict in relationships</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #F55858;"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Struggle with addictions</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #F55858;"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Copping with criticism</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #63A858"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Campassion</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #63A858"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 85px;">
+    <p class="heading">Happiness</p>
+    <div id="line">
+      <div style="display: flex; justify-content: space-between;">
+        <div *ngFor="let item of chartdata; let i = index">
+          <div>
+            <div id="circle" style="background: #63A858"
+              [ngStyle]="{'height': item['r'] + 'px','width': item['r'] + 'px', 'right': item['last'] ? '0px' : '' }">
+            </div>
+            <div class="dateclass">
+              <span style="color: #5D5D5D;">{{item['date']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</app-likert-scale>

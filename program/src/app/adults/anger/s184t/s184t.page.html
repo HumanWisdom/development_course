@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Why do the patterns of anger repeat themselves in our lives? It is probably because our anger reaction comes from our particular slice of memory, which is our unconscious conditioning, and we are not aware of it. Our mind automatically compares what it sees with what it knows, and if there is a big difference, it creates a disturbance in our thinking, which creates a feeling of hurt, and we respond with anger.
+          </p>
+
+          <p>
+            Since everyone is conditioned differently this also explains why people have different triggers that make them angry.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          We have explored this idea in the section on nurturing a quiet mind.
+         <br> All suffering is linked to thinking, because it’s not there when we are sleeping.
+          It follows that if you can meet your suffering without thinking, without language, your sorrow can end, and in the quietness that follows, you can more clearly understand the roots of it in your thinking. This sorrow is not unique to you - and the same in all human being          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

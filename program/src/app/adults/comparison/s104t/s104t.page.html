@@ -1,0 +1,35 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We have explored the 3 steps to enquiry before, and are now going to apply it to explore envy.
+          </p>
+
+          <p>
+            Noticing I am envious is the first step.
+          </p>
+
+          <p>
+            The second step is to accept that feeling as arising in me and taking ownership of it.
+          </p>
+
+          <p>
+            I am not going to be critical of myself for feeling it, or the other person for causing it. I'm going to suspend judgment and just observe it.
+          </p>
+
+          <p>
+            The next step is the key - and opens the door to wisdom - and that is asking why do I feel this way? What is behind this feeling of envy? Why do I think the other person is responsible for how I feel? How can I respond with intelligence? That leads me deeper to explore layers 3 and 4 as we did in the previous pyramid diagram.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

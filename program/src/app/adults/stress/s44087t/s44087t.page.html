@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There are many ways of thinking, often hidden from our awareness, which can cause stress.. Self-understanding shines a light on them, so they do not operate in the background. This awakens our inner intelligence and we can respond with wisdom. Take your time over this section. If you are short of time, just pause, and come back again.  If you haven't done the rest of the program as yet, this list can feel daunting. The key is not to memorise and try and apply this list to reduce stress, but to observe these thinking patterns as they arise in real time. There is so much to learn and the prize could be living with much less stress. Lets begin.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

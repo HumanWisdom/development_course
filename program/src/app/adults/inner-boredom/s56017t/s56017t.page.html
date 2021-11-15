@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          We human beings have many emotional needs we are often not aware of. We have a need to be listened to, understood, have pleasure, power and stimulation, feel secure, feel important, and so on. We expect our jobs and our relationships to meet these needs, and when they are not met we can get frustrated and blame others for not meeting them. But where do these needs come from? Perhaps they all come from this inner emptiness we feel, because when they are met we do not feel this inner ache anymore. Perhaps they all bring us pleasure and that pleasure covers over this emptiness while it lasts. What do you think?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

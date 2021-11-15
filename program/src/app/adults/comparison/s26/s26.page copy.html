@@ -1,0 +1,179 @@
+<!-- page content -->
+<div class="right_col ml0 module1_w9" role="main">				
+  <!-- Class -->  
+  <div class="cw100p cabsolute t25px">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel cxpanel center_flex dflexblock">                                                
+          <div class="x_content c_white fwunset tcenter">
+            <form>
+              <h5 class="txt11">
+                <!-- Could you help feeling envious? -->
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="btn-group" data-toggle="buttons">
+                      <label *ngFor="let o1 of optionList0" class="btn btn-default btn_grp txt12"  (click)="selectOption(o1.OptId)">
+                        <div >
+                          <input type="radio" name="options1" id="o1.OptId"> {{o1.OptStr}}
+                        </div>
+                        
+                      </label>                        
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <h5 class="txt11">
+               {{q1}}
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="btn-group" data-toggle="buttons">
+                      <label *ngFor="let o2 of optionList1" class="btn btn-default btn_grp txt12"  (click)="selectOption(o2.OptId)">
+                        <div [ngClass]="{'btn btn-primary': sessionOptions.includes(o2.OptId)}">
+                          <input type="radio" name="options2" id="o2.OptId"> {{o2.OptStr}}
+                        </div>
+                        
+                      </label>                        
+                      <!-- <label class="btn btn-default btn_grp txt12">
+                        <input type="radio" name="options" id="option3"> No
+                      </label> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <h5 class="txt11">
+                {{q2}}
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="btn-group" data-toggle="buttons">
+                     
+                      <label *ngFor="let o of optionList2" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
+                        <div [ngClass]="{'btn btn-primary': sessionOptions.includes(o.OptId)}">
+                          <input type="radio" name="options" id="option1"> {{o.OptStr}}
+                        </div>
+                        
+                      </label>                        
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <h5 class="txt11">
+                {{q3}}
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="btn-group" data-toggle="buttons">
+                      <label *ngFor="let o of optionList3" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
+                        <div [ngClass]="{'btn btn-primary': sessionOptions.includes(o.OptId)}" >
+                          <input type="radio" name="options" id="option2"> {{o.OptStr}}
+                        </div>
+                       
+                      </label> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <h5 class="txt11">
+                {{q4}}
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="btn-group" data-toggle="buttons">
+                      <label *ngFor="let o of optionList4" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
+                        <div [ngClass]="{'btn btn-primary': sessionOptions.includes(o.OptId)}">
+                          <input  type="radio" name="options" id="option3"> {{o.OptStr}}
+                        </div>
+                        
+                      </label> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <h5 class="txt11">
+                {{q5}}
+              </h5>
+              <div class="clearfix"></div>
+              
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="btn-group" data-toggle="buttons">
+                      <label *ngFor="let o of optionList5" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
+                        <div [ngClass]="{'btn btn-primary': sessionOptions.includes(o.OptId)}">
+                          <input  type="radio" name="options" id="option4">{{o.OptStr}} 
+                        </div>
+                        
+                      </label> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="sidebar-footer hidden-small">
+  <div class="row lh5rem">
+    <div class="col-md-12 col-sm-12 col-xs-12 tcenter center_flex">
+      <div class="col-md-2 col-sm-2 col-xs-4">        
+        <a routerLink="/adults/comparison/s25"> 
+          <button type="button" class="btn w100 mb0 btn_prev">Previous</button>          
+        </a>        
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-6 p0">
+        <a routerLink="/adults/comparison/s27"> 
+          <button type="button" class="btn btn-default w100 mb0 btn_next">Next</button>
+        </a>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-4">        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /footer -->
+
+<!-- bottom navigation -->
+<app-botnav></app-botnav>
+<!-- /bottom navigation -->

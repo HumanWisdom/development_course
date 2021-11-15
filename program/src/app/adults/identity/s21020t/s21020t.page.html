@@ -1,0 +1,16 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          Have a look at layer 4 in this pyramid, which represents the different layers of our thinking.
+          Here is the nature of the ‘I’ which feels separate and experiences the ache of emptiness or restlessness. You only have to sit quietly doing nothing or be in a party where you don’t connect with anyone to notice it. All our various identities in layer 2, meet our emotional needs in layer 3, and these then cover over this ache of emptiness we feel in layer 4, and that may be one reason we get attached to them. When people say ‘I am trying to find myself’, or ‘Who is the real me’,  what they may actually be experiencing is the ache of emptiness from the deeper layers of their thinking but are not aware of it.  This understanding can help us live with peace, as we will explore later
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,17 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#6</p>
+      Re-define your idea of ‘success’, so it is a reflection of your own values, not the society around you. Success could be ‘doing what I love to do, having happy relationships and feeling content’’, for example. 
+      <span class="highligted_span">
+        (See success and failure module)
+      </span>
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

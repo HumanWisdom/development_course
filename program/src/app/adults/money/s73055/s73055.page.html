@@ -1,0 +1,20 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      $1.75 trillion changes hands in bribery worldwide every year.<br>
+      25% of all public procurement spending is lost in corruption.<br>
+      <span class="highligted_span">
+        (Transparency International)
+      </span>
+      $3.6 trillion is lost to corruption every year.<br>
+      <span class="highligted_span">
+        (United Nations)
+      </span>
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

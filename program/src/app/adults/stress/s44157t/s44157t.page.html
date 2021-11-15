@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          As we have explored there are many causes of stress which emerge from our own thinking and if we can understand them we can avoid them. The key is to have a mind that is sensitive, curious and open to learning. As your understanding deepens much of the stress these hidden patterns of thinking cause, drops away naturally. For example, Once I realise that my mind is comparing all the time and that is behind the ache of envy I feel, then I can respond with intelligence and my mind just stops doing that. Or if I notice its my own images of myself that are behind the pain of criticism, I can examine them and let them go.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

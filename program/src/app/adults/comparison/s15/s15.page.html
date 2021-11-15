@@ -1,0 +1,36 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+
+<app-kta-done>
+  <form class="">
+
+    <!-- <div class="row pb3rem">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="tcenter">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/body/keytakeaway.png" alt="" class="img_kta cmw">
+        </div>
+      </div>
+    </div>  			 -->
+
+    <h1 class="txt3">
+      A deeper understanding of comparison allows us to respond with wisdom and avoid many of the problems it can cause.
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <br><br><br><br><br> -->
+
+    <div class="row tcenter ptkta">
+      <div class="col-md-12 col-sm-12 col-xs-12">                    
+        <!-- <a class="btn_pulse_next_done" routerLink="/adults/comparison/m1s1-p15"> -->
+        <a class="kta_done_pulse_button" routerLink="/adults/comparison/s16p1">
+          <!-- <i class="fa fa-check"></i> -->
+          <h6 class="kta_done_pulse_button_label">
+            Done
+          </h6>
+        </a>
+      </div>
+    </div>
+    
+  </form>   
+</app-kta-done>
+
+<app-kta-footer [fbg]="bg" (previousEmitter)="prev()"></app-kta-footer>

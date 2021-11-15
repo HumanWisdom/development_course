@@ -1,0 +1,14 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt21">
+      There are many inner patterns of thinking that can contribute to our not feeling at ease, or at peace with ourselves. Understanding them opens the door to wisdom.
+    </h1>
+    
+  </form>  
+</app-kta-prevnext>
+ 
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+	

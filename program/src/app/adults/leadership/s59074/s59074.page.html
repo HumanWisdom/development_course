@@ -1,0 +1,17 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#8</p>
+      A deeper understanding of the nature of stress and the origins of it in your thinking, can help you to remain calm when the challenge arrives and focus on the solution. This builds resilience.
+      <span class="highligted_span">
+        (See the module on Stress)
+      </span>
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

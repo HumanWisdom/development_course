@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our hidden fears often play a big role in what we regard as success and what we spend our lives chasing. If we are afraid of being poor then the pursuit of money becomes our primary concern. If we are afraid of being a nobody, we pursue fame. If we have suffered at the hands of others our ambition in life may be to acquire power. These fears operate deep in our subconscious without our awareness. Our fears may stop us from pursuing what we love doing because it offers no financial security, so we put our passions to one side, and go for the safe option instead. Waking up to the role fear plays in our lives allows us to respond with wisdom
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

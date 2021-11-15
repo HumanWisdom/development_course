@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If we don't like something in the world outside, for example a person, we can't continue to look at the person. 
+            Similarly if we don't like something in ourselves, our inner gaze turns away and we cannot explore it further.
+          </p>
+          <p>
+            I may be jealous, or angry, or addicted, or behaved badly, or have lied, and so on. If we can pause our judgement and just observe what is going on, we can explore it further and learn something new about the root cause of our envy and anger.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

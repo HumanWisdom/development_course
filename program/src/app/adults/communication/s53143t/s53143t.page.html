@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          We have explored how we interpret what we are hearing based on our past influences. The meanings you attach to your words is based on your conditioning, and the meaning I attach to your words is based on my conditioning. SInce our conditioning is different, the meanings will be different. It is easy to see why it is so difficult to understand another person completely. Words are limited and if we place too much importance on them we can miss the essence of what someone is saying. Behind the words the other person is using is often a meaning or a feeling, and that is what we need to understand. This needs us to have a sensitive and quiet mind, which can listen without the chatter of our own thinking and without judgement.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          In the modern world money has become the most widely accepted measure of a person’s success and the lack of it a symbol of failure. Of course we need money for all our basic needs.
+          <br> Little children regard getting rich as their life goal and adults are no different. We pursue money in the world outside, in the hope that it will make us happy on the inside. Ask a wealthy person and they will tell you that isn’t really true.
+<br>What really matters is how you are on the inside - Do you live with a sense of peace? Do you have relationships without conflict? Have you overcome your fears? Do you have compassion for others? Is there love in your heart. Do you love the thing you do? Have you been of service to others? - and so on. So many people who look wealthy and successful on the outside continue to suffer on the inside, though there are exceptions of course.
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

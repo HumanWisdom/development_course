@@ -1,0 +1,25 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            How does the fear of the unknown shape our lives? It can make us fear death and become superstitious, or push us to follow someone who says they have the answers to our future. This may also explain why religions have had such a strong influence on humanity for millenia . But they do offer solace. Can we make our peace with not knowing what is going to happen tomorrow, or next year? If we can, so much of our anxiety can end
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+

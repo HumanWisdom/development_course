@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Despite knowing the dangers of addiction, what makes an intelligent mind slide into addiction? 
+          <br>Besides the human cost, the financial cost of it is estimated at $740 bn annually in the US. Our hidden patterns of thinking conspire sometimes to drag us into it. It happens slowly, driven by our environment, or need for pleasure or our need to escape from our stress and emotional pain.Our mind ignores the harm addictions can cause or we convince ourselves we are always in control, when we may not be. While an addiction to smoking, alcohol or drugs may be a way of escaping from stress initially, the harm it can cause is long-lasting. Exploring it allows us to avoid it and respond with intelligence.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

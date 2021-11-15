@@ -1,0 +1,23 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Understanding our unconscious conditioning can make us realise the past does not have to define ‘me’ right now, and that can free us of much of the pain of low self-esteem 
+      <span class="highligted_span">
+        (See conditioning module)
+      </span>        
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If we have been emotionally hurt through criticism, or lost a job or been angered by someone’s opinion, we can find ourselves going over and over what happened, sometimes for days. It often does not solve the problem, may make us dislike others even more, and think of ways of getting our own back. We are usually not aware we are doing this. This makes our stress carry on for days, and waking up to it may allow us to move on more quickly.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

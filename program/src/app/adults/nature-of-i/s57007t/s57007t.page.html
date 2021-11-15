@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          From the day we are born we are given a name. We grow up being told we are unique.
+           We look different to everyone else so it is easy for us to believe that. 
+           Through our education we are praised or criticised and told we need to be the best.
+            As our memories build up we identify with them as ours. The sense of I gets reinforced through 
+            all our activities and our mind pushes us to be unique and special. This happens unconsciously
+            and automatically, and is not right or wrong. 
+            The ‘I’ is perhaps just an identification with our memory. When we lose our memory,
+            say through dementia, this sense of ‘I’ also goes with it.
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

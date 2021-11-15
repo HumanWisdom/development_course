@@ -1,0 +1,96 @@
+<!-- top navigation -->
+<!-- <div class="top_nav ml0 tcenter inav">
+  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_enquiry.jpg" alt="" class="img-responsive iw100">
+  <div class="nav_menu absolute_top p20px">
+      <nav>          
+          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
+            <li class="">                    
+                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
+                  <h4 class="btn_back_white">
+                    Back
+                  </h4> 
+                </a>                  
+            </li>   
+            
+            <li class="lishare">                    
+              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
+              </a>                  
+            </li>
+          </ul>
+      </nav>
+  </div>
+</div> -->
+<!-- /top navigation -->
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
+          Benefits of Enquiry
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          Learn about the art of looking and learning about yourself, and how your mind works. It was never taught to us throughout our education, but is invaluable to learn. It can help you become a successful human being - on the inside, and in the world. 
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/adults/benefits-of-enquiry', resumeBenefitsEnquiry]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_green_yellow" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <a routerLink="/adults/benefits-of-enquiry/s26002">
+          <button type="button" class="btn btn_default mb0 txt_green_yellow" data-dismiss="modal">Start from the beginning</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/adults/benefits-of-enquiry/s26002">
+      <div class="row crow box bg_green_yellow">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Why bother with enquiry?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              13 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+    
+  </form>    
+
+</app-index-content> 
+
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
+<app-index-footer></app-index-footer>

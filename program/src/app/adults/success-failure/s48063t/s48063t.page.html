@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          On any journey you have to believe you can make it and that needs an extraordinary amount of self-belief. Think of Edmund Hilary and Tenzing Norgay who were the first to climb Mt Everest in 1953, or Neil Armstrong who walked on the moon in 1969, or Mahatma Gandhi who many thought had a crazy idea that you ask the British Army to leave India through non-violent protest. You can be that person too. Whatever your dream, begin. I met an aboriginee elder in Australia who told me, ‘Traveller there is no path. Paths are made by walking’.
+
+
+
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

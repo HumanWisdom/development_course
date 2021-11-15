@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          What can we learn from failure? If we ask ourselves the question it can teach us about the thing we were doing, so we can do it better next time. James Dyson highlighted the importance of failure when he said he made 5127 prototypes of his cyclonic vacuum cleaner before he got it right. There were 5126 failures.
+          <br>Failure can also teach us about ourselves. By getting up and going again, we learn resilience and discover our inner reserves of dogged determination to get things right. 
+          
+          
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

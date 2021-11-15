@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module. I’d like to invite you to join me in exploring the subject of death. We don’t often discuss it, but there is so much to learn, and it is quite fascinating. It is part of the 5th circle of wisdom, where we apply our understanding of ourselves and how our minds work, to live with wisdom. We are going to explore the subject from different perspectives. We will explore our fear of death and how that shapes our lives, how we can get over it, and how embracing the idea of death can help us live much richer and more fulfilled lives. Death is not to be feared, just to be understood. It is as much a part of life as breathing is.
+
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Being in a leadership role means the challenges never stop coming. How are you going to cope with all the stress these challenges bring? You don’t even know where the next one is going to come from. You know you need to be resilient, but how does one do that?
+          Almost 90% of stress is linked to how our mind reacts to a situation, rather than the situation itself. That reaction is mostly automatic and comes from our unconscious conditioning. A deeper understanding of the origins of stress in our thinking allows you to remain calm, zoom out and focus on solutions. You can ask for help and a wise leader knows when to do that, and that it is now a sign of weakness.
+          
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

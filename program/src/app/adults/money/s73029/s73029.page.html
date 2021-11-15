@@ -1,0 +1,44 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Why is money so important?
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. We need it to live comfortably
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. We can buy things and experiences, which bring pleasure
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. It can make us feel important
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. It can also make us feel we have power and influence
+
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. People are more deferential to those with money
+ </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      06. We think it will make us feel more secure.
+ </h3>
+
+
+   
+  </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

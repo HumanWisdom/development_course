@@ -1,0 +1,29 @@
+<!-- page content -->
+<div class="right_col ml0 cright_col" [ngClass]="bg" role="main">				
+  <!-- Class -->  
+  <div class="cw100p cabsolutep">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel cxpanel center_flex dflexblock p0">
+          <div class="x_content c_white fwunset tcenter pt0px mt0px p0">
+            <form class="p0">
+
+              <!-- <h1 class="txt1 tcenter">
+                The 4 levels of awareness
+              </h1> -->
+
+              <ng-content></ng-content>
+
+              <!-- audio  -->                
+              <ngx-circular-player></ngx-circular-player>  
+              <!-- /audio -->                
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->

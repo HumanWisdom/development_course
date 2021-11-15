@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Unexpected acts of kindness make people feel loved and create a positive spiral of goodness.
+          <br> We have to do this consciously, especially after the initial flush of a romantic relationship ebbs away, because our mind doesn’t think of this naturally. It could be something simple like calling people you haven’t spoken to, or saying a kind word, or cooking something, or leaving a note of appreciation. It does not have to be a grand gesture. Once you start thinking in this way, it can become a habit, and enhance your life in the most unexpected ways. Love is more about what you do, not just what you say or feel.
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

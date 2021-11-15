@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          How we react to failure depends on our personality and the importance of the thing we are pursuing. If we are already stressed and we don’t get the grades we want in our exams, our reaction can be severe, and some people try to take their own lives, because they cannot cope with the crushing disappointment of it all. The more important we build an event up to be, the more crushing the disappointment. We can also get depressed, withdraw, and give up.
+
+
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

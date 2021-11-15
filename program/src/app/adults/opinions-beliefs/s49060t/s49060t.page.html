@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We don’t wake up one day and decide which religion to follow. If you are born on one side of the street in Belfast you grow to be a Catholic. If you are born on the other side of the street you become a Protestant. You may grow up being suspicious of each other, and even hating each other, and never ask why. Similar examples apply all over the world. Our political and religious beliefs come to us from our various conditioning influences - from our parents, the country we are born in, the culture we grow up in, and so on. Because we are not aware we are being conditioned, we regard these beliefs as ours. The same applies to our political beliefs. If we are born into a family that usually supports one political party, that's the one we will grow up believing in.
+         </h3> 
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

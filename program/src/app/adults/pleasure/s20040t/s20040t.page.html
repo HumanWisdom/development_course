@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Drug addiction results in unimaginable hardship for everyone concerned and in the US alone the estimated cost is $600 billion. What makes the human mind prone to addiction? And could a better understanding of why this happens, help us avoid it and manage it more easily?
+          </p>
+          
+          <p>
+            It’s a complex issue, but the nature of pleasure probably plays a role. We have explored how the mind has this deep feeling of inner boredom or restlessness and the stimulation that pleasure brings covers this over for a while.
+          </p>
+
+          <p>
+            This lack of ease is made worse by any stress we may be experiencing and drugs seem like a simple way to escape the pain of that inner turmoil. What if there was another way though, using wisdom, to be at peace with ourselves? Could addiction be avoided?
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

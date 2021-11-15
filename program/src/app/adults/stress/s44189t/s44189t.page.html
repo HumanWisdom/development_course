@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The stress reaction can be explosive, and when it is, it leaves us reeling, unable to stop the reaction or the emotional pain that follows. It can feel sudden, and sharp and takes our breath away. Our reaction comes from our conditioning and usually follows a familiar pattern. What can we do to respond with intelligence? Take the analogy of learning to swim. You can’t do that when you're in the midst of a storm. If you have learned to swim before though, you can meet that challenge and swim right through it. That is why it's important to practise the breathing exercises in the nurturing a quiet mind section. When stress arrives just take a few deep breaths and tune into a breathing exercise. This grounds you to the present, and creates the space you need to consider the best course of action.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

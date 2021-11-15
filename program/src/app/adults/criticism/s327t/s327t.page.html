@@ -1,0 +1,20 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+ 
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this criticism module, which is part of the 5th circle of wisdom, or Living with Wisdom. It is connected to every other circle of wisdom. When we are criticized it can feel painful, as if someone had physically attacked us. Why does it feel so painful? On the other hand we easily criticize others, sometimes continually? Why do we do that and what impact does that have? We can be critical of ourselves resulting in low self-esteem. Why do we do that? In this module we are going to be exploring these and other questions. This understanding can help us respond with wisdom. Let's get started
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+        

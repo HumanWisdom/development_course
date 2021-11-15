@@ -1,0 +1,213 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit nav_menu_01">
+   
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a routerLink="/adults/adult-dashboard" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
+          </a>                  
+        </li>        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h6 class="txt88">
+              Forum
+            </h6>            
+          </a>                  
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav w20p no_bg">       
+        <li class="mr0px">
+          <a (click)="share()" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
+          </a>
+          <!-- dropdown content -->
+          <!-- <ul class="dropdown-menu dropdown-usermenu pull-right course_ul">
+            <li>
+              <div *ngIf="socialShare" class="center_flex_li">
+                <share-buttons 
+                [include]="['whatsapp','facebook','linkedin']"
+                [url]="path">      
+                </share-buttons>      
+              </div>
+            </li>  
+          </ul> -->
+          <!-- /dropdown content -->
+        </li>   
+      </ul>
+    </nav>    
+    
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<!-- page content -->
+<div class="right_col pt_rightcol" role="main">				
+  <!-- Class -->
+  <div class="cw100p dabsolute_09">   
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p ">
+        <div class="x_panel xpanel_01 p0">
+          <div class="x_content p0px_b">
+            <form>                                
+              <div class="row mlr-10px">
+                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                  <div class="form-group">                      
+                    <div class="all_threads">
+                      <select (change)="onChange($event)" type="text" name="threadlist"  class="form-control h60px all_threads_select" [(ngModel)]="selectthread" >
+                        <option *ngFor="let titl of threadlist" [ngValue]="titl.value">{{titl.label}}</option>
+                      </select>
+                      <!-- <select class="form-control h60px all_threads_select">
+                        <option>All threads</option>
+                        <option>Threads I’m following</option>
+                        <option>My threads</option>
+                        <option>Reflections</option>                         
+                      </select> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 form-group has-feedback p0 zi0">
+                  <input type="search" class="form-control has-feedback-left h60px searchtxt1 tleft" #threadsearch id="inputSuccess2" name="searchEn" placeholder="Search All threads">
+                  <span class="fa fa-search form-control-feedback left sfeedback" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="row pb2rem">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 plr10px_01">
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                    <a (click)="getAllposts(0)" class="">
+                      <h4 class="txt124">
+                        All Threads
+                      </h4>
+                    </a>                                          
+                  </div>             
+                  
+                  <div class="col-md-3 col-sm-3 col-xs-3 tright">
+                    <button type="button" class="btn btn-default btn_plus_1">
+                      <div class="center_flex">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/plus.svg" [routerLink]="['/forum/forum-thread-start-new']" routerLinkActive="router-link-active"  alt="" class="img-responsive">
+                      </div>                        
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- section 1 -->
+              <div *ngFor="let item of posts">
+                <div class="row center_flex">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10px_01 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" (click)="postnavigate(item)">
+                      <img src="{{'data:image/jpg;base64,' + item.UserImage}}" *ngIf="item.UserImage" alt="" class="w100 fimg_02">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!item.UserImage" alt="" class="w100 fimg_01">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px">
+                            <!-- <span class="txt127">{{item.UserName}}</span> -->
+                            
+                            <span class="txt127">{{item.POST}} </span>
+                            <span class="txt126">by {{item.UserName}}</span>
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+                
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+                      <div class="col-lg-7 col-md-8 col-sm-7 col-xs-7 lcs_div">
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai" (click)="like(item)">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
+                          <span class="txt128 lcs">{{item.PostLikeCount}}</span>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
+                          <span class="txt128 lcs">{{item.ReplyCount}}</span>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
+                          <span class="txt128 lcs">Share</span>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-2 col-sm-3 col-xs-2 tleft pr0" (click)="reportpost(item)">
+                        <span class="txt129 ws_nowrap">
+                          Report post
+                        </span>
+                      </div>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 tright pl0" (click)="follow(item)">
+                        <span class="txt129">
+                          Following
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- subsection 1A -->
+                <div class="row forum_pt20px" *ngIf="replyflag && activereply.PostID === item.PostID">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                    <div class="col-md-2 col-sm-2 col-xs-2 p0"></div>
+                
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
+                        <input type="text"name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Comment here">                    
+                      </div> 
+                
+                      <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px pl0 tright mt5px p0">
+                        <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item)">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" >
+                          Comment
+                        </button>             
+                      </div>                   
+                    </div>
+                  </div>
+                </div> 
+
+                <div class="row" *ngFor="let i of item.child">
+                  <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                    <div class="col-md-12 col-sm-12 col-xs-12 div_bl">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="txt127 commenter mtb0px">
+                          {{i.UserName}}
+                          <span class="txt130">
+                            {{i.PostDate}}
+                          </span>
+                        </h4>
+                        <h4 class="txt120 mtb0px">
+                          {{i.POST}}
+                        </h4>
+                      </div>                      
+                    </div>                    
+                  </div>
+                </div>
+
+                <hr class="hr_style_2">
+              </div>               
+              <!-- /section 1 -->           
+              
+              <div class="pagebreak"></div>
+            </form>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

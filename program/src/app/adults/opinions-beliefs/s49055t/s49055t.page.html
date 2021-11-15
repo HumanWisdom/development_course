@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Is a belief a fact? If it was, would there be so many arguments over it? Could we say a belief is not a fact, some people are convinced it is so?
+<br>For example there was a time we humans believed the earth was flat, but as soon as scientists proved otherwise, the debate around that ended. Today we would not say we believe the Earth is in an orbit around the Sun, because that is a fact. Though we could say, we believe in God, and someone else may have a different view, because nobody knows for sure.
+
+         </h3> 
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

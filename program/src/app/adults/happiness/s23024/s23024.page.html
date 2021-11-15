@@ -1,0 +1,32 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+<app-quotation [bg]="bg">
+  <form>
+ 
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="" class="cmw">
+      </div>
+    </div>
+ 
+    <hr class="quotation_hr mt30px">
+ 
+    <h1 class="quotation_txt">
+      He who is not content with what he has,<br> will not be content with what he would like to have
+    </h1>
+ 
+    <hr class="quotation_hr">
+ 
+    <h1 class="quotation_writer">
+      Socrates
+    </h1>
+ 
+  </form>
+</app-quotation>
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+      
+
+    
+      
+   

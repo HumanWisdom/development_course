@@ -1,0 +1,27 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      Key takeaways:
+    </h1>
+
+    <h1 class="txt21">
+      1. Comparison is an essential, unconscious, and automatic process.
+    </h1>
+
+    <h1 class="txt21">
+      2. It can cause many problems.
+    </h1>
+
+    <h1 class="txt21">
+      3. Exploring and understanding comparison allows us to respond with wisdom.
+    </h1>
+    
+  </form>  
+
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

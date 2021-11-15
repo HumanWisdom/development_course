@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We spend so much of our life at work. Work can be a source of great satisfaction, but also a 
+          source of great unhappiness. We have to build healthy relationships with people we have not 
+          met before, and who are probably very different to us. We also have to cope with unreasonable 
+          bosses, hierarchies, performance reviews, office politics, people pushing each other to get 
+          ahead, backbiting and bullying. Statistics vary but some studies suggest that 53% of Americans
+           are unhappy at work, as are 24% of Britons. A global gallup poll suggested that number could
+            be as high as 85%. Whatever the actual number, that is far too many. In this module we are
+             going to explore if we can use wisdom to make the most of the time we spend at work.
+
+
+          
+          
+
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

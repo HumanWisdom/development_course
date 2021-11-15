@@ -1,0 +1,34 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      How can we notice this inner emptiness in ourselves?
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. It is there when you feel bored or lonely
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. It is why your mind wants to be occupied all the time
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. It is also behind our need for pleasure, in different forms
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. It is behind all our emotional needs, which bring pleasure when they are met
+
+    </h3>
+
+   
+  </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

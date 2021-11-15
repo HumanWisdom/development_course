@@ -1,0 +1,16 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      All over the world, people vote for leaders with whom they share the same identity, believing that because of this, the leader will somehow favour them over others. 
+      </h1>
+        <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   
+
+

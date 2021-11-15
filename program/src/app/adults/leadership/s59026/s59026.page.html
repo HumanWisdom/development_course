@@ -1,0 +1,79 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Qualities we expect leaders to have:
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. Integrity/Honesty
+
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. Transparency
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Be visionary
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Be resilient
+
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. Be accountable
+
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      06. Have empathy
+
+
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      07. Be a good communicator
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      08. Able to delegate
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      09. Inspire others
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      10. Have courage
+
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      11. Manage relationships successfully
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      12. Be constantly learning
+
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      13. Have passion
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      14. Be a creative problem solver
+
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      15. Foresee challenges
+
+    </h3>
+    
+  </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

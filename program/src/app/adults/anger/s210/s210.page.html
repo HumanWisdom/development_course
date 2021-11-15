@@ -1,0 +1,16 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      While you may not be able to control the anger reaction, you can always manage the way you respond
+    </h1>
+    <div class="clearfix"></div>
+    
+  </form>  
+
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="previous()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+        
+          Both these stories are in the public domain and involve people taking their own lives. A deeper understanding of stress is so important because it can help prevent this, and is like learning to swim, so when the challenges of life arrive, and they can come anytime, we are ready, and do not go under. 
+The first was a well-respected doctor I knew who had no history of mental health problems, had a stable job and a lovely family. He had a patient complaint which was being investigated by the authorities and he was suspended from work while this was happening. He could not cope and took his own life.
+The second occurred when I was talking to some students in a high school about stress. Suddenly one girl burst into tears and left the room. The teacher told me that she had broken up with a boy a few months ago, and he had taken his life as a result. 
+The reason I mention these stories is that we never think this could happen to us or our loved ones, but we just don’t know how we would react, because the stress reaction is unconscious and so fast. We have never been taught how to meet loss and failure. Just as we take precautions to avoid fires breaking out in buildings and have a detailed plan when it does, so we need to avoid stress if we can by understanding it deeply and have strategies to deal with it when it does occur
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Firstly - why would you want to? Perhaps because you may want yourself and your children to live in a peaceful world and you see it's not the beliefs that divide man from man, but our attachment to them. Our attachment also binds us to a certain way of thinking and our mind is then not free. The entire process by which beliefs form, and our attachment to them is  unconscious. By shining a light on the process we realise that it is our unmet emotional needs that make us get attached to our beliefs. We then realise that these needs come from our inner emptiness, restlessness and insecurity. By going deeper and meeting this restlessness and insecurity without language, as we have explored elsewhere,  we may find it dissolves into a sense of peace. Our beliefs then find their rightful place in our lives, and do not divide us from others.
+          </h3> 
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

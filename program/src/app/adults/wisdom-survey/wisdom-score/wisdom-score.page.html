@@ -1,0 +1,44 @@
+<!-- <app-sessionover-s1 [bg]="bg" [points]="points"></app-sessionover-s1> -->
+<!-- page content -->
+<div class="right_col ml0" [ngClass]="bg" role="main">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel center_flex mh100vh">
+          <div class="x_content c_white fwunset tcenter pt0px mt0px">
+            <form>             
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_owl.svg" alt="" class="img-responsive animate_rotate_scale se_owl ">                  
+                  <div class="prelative center_flex">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_02.svg" alt="" class="prelative">
+                    <h6 class="txt79 se_wpts_count">
+                      {{points}}
+                    </h6>
+                  </div>   
+                </div>
+              </div>             
+
+                      
+
+              <h1 class="txt12  c_white bg_transparent">
+                Thank you for completing the Wisdom Survey. Your wisdom score is {{points}} %.<br><br>
+                Whatever your score, there is an opportunity for growth to discover the benefits of wisdom as you engage with this program.
+
+              </h1>    
+                            
+              <ng-content></ng-content>   
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

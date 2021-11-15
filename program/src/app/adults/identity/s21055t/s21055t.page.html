@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Consider this analogy. Say I like chocolate ice-cream , and think it's far superior to other flavours and it becomes part of my identity. I want others to like it as well, and am critical of others who like different flavors of it.
+          <br>
+          Letting go of my attachment would mean accepting that others flavours of ice-cream are equally fine - it's just a matter of choice. I would continue to enjoy chocolate ice-cream, but now be able to make close friendships with people who liked other flavours. I would certainly never get angry with or kill anyone who said they hated chocolate ice-cream. Occasionally, I may even try other flavours to see why people liked them. In real life I may still call myself American, Democrat, Christian, Vegan and so on - but completely let go of my attachment to these identities and be able to connect deeply with others who may be different.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

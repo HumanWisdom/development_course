@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          People expect a lot from their leaders? They expect them to be better than they are and
+           are disappointed when they fall short. Leaders realize they are under the spotlight and 
+           struggle to meet their own expectations of themselves sometimes. The list of qualities a 
+           leader is expected to have these days is long - they need to have integrity, be visionary, 
+           be fair, be a good communicator, be able to delegate to others, have courage, have 
+           self-awareness, be able to constantly learn new things, and  be able to foresee challenges
+            that have not yet appeared. They need to hire the right people  and be able to inspire and 
+            influence them. How can we expect one person to embody all of this? Nothing in our education teaches us any of these skills. 
+          That is why good leaders are difficult to find.
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

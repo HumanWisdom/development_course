@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The second step is to accept that the thought or feeling has risen from our thinking, so it is a fact and we need to take ownership of it. We need to do this without judging it as right or wrong, or being critical of ourselves or others. This is not easy because we often think that an external event or person is responsible for how we feel. This acceptance then allows us to look at it further and explore what is behind it. 
+          </p>
+          <p>
+            For example I was once angry with someone who I felt wasn't listening to me. I was convinced my anger was the other person's fault. When my anger subsided and I explored it further, I saw that it was as a result of my own unmet expectation, which I was not aware of.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

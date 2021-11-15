@@ -1,0 +1,130 @@
+<app-top-nav></app-top-nav>
+<app-side-nav></app-side-nav>
+
+<!-- page content -->
+<div class="right_col" role="main">
+
+    <!-- Class -->
+    <div class="">
+        <div class="page-title">							
+        </div>
+
+        <div class="clearfix"></div>
+        
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"> 
+                <!-- details -->
+                <!-- <div class="x_panel">
+                    <div class="x_title">
+                        <h2>
+                            Welcome 
+                            <i>
+                                Affiliate Name
+                            </i>
+                        </h2>                                        
+                        <ul class="nav navbar-right panel_toolbox">
+                            <ul class="breadcrumb breadcrumb_01">
+                                <li class=""><a href="#">Profile</a></li>
+                                <li class="active"><a href="#" class="bold underline">Reports</a></li>                                
+                            </ul>
+                        </ul>                                        
+                        <div class="clearfix"></div>
+                    </div>             
+                    <div class="x_content">
+                        <br />
+                        <form [formGroup]="affiliateParentData">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <label for="age" class="control-label">Coupon Code</label>
+                                        <input type="text" id="age" name="age" class="form-control" formControlName="CouponCode">
+                                    </div>
+                                    
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <label for="age" class="control-label">Coupon % Discount</label>
+                                        <input type="text" id="age" name="age" class="form-control" formControlName="CouponPercent">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <label for="patient_name" class="control-label">Percentage Commission</label>
+                                        <input type="text" id="patient_name" name="patient_name" class="form-control" formControlName="PercentageSelf">														
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <label for="patient_name" class="control-label">Level-1 Percentage Commission</label>
+                                        <input type="text" id="patient_name" name="patient_name" class="form-control" formControlName="Percent_Child">														
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <label for="patient_name" class="control-label">Level-2 Percentage Commission</label>
+                                        <input type="text" id="patient_name" name="patient_name" class="form-control" formControlName="Percent_GrandChild">														
+                                    </div>
+                                </div>
+                            </div>  
+                        </form>										
+                    </div>										
+                </div> -->
+                <!-- /details -->
+                
+                <div class="x_panel">
+                    <div class="x_title">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                                <h2 class="w100imp">Affiliate Details</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="x_content">                        
+                        <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                            <div class="row">											
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                    <label class="filter_label display_initial">
+                                        Select Level : <select id="levels" class="form-control input-sm w22 cinherit" [(ngModel)]="this.searchedLevel" (ngModelChange)="searchFilter()">
+                                            <option value="">All</option>
+                                            <option value="Level1">Level 1</option>
+                                            <option value="Level2">Level 2</option>
+                                            <option value="Level3">Level 3</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Level</th>     
+                                        <th>Name</th>     
+                                        <th>Date Of Joining</th>     
+                                        <th>Total Revenue</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let affiliate of affiliates; let i = index;">
+                                        <td>{{affiliate.Level}}</td>
+                                        <td>{{affiliate.AffName}}</td>
+                                        <td>{{affiliate.DOJ}}</td>
+                                        <td>{{affiliate.TotRevenue}}</td>
+                                    </tr>             
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Class -->
+    
+</div>
+<!-- /page content -->
+				
+<app-footer></app-footer>
+				

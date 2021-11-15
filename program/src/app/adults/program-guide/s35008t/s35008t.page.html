@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          As you go through you can record your reflections in your own online journal which is private to you. Writing taps into different parts of our brain and is a great way to explore  these questions. You will become part of our wisdom community and can connect with other users through our discussion forum and small group chats. There’s so much that we can learn from each other. Keep track of your progress by doing the wisdom survey at regular intervals. And lastly, you can bookmark slides that you like and view them all in one place on the dashboard.
+          </h3>
+          <h3 class="transcript_txt"> 
+            We have created a specially trained wisdom coaching team who’ll be available to answer your questions via our messaging service and guide you through the program. You can also set up one-to-one meetings with a particular wisdom coach. At the end of the program we will offer you a certificate of completion which you can share with others. As you go through the program, you will accumulate wisdom points which you can exchange for some of our features. 
+        </h3>    
+          <h3 class="transcript_txt">    
+            If you're enjoying the app and recommend it to a friend who subscribes, we will plant a tree on your behalf. We have curated some wisdom stories, of real-life situations and challenges people face and show how wisdom can help meet those challenges in a fresh way. We hope you enjoy them.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

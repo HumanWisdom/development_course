@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Welcome to this session where we are going to explore what we can do to have harmonious relationships, where we can also grow as human beings. You probably know many of these already but it is useful to spend time reflecting on them, reminding ourselves of them again, and perhaps learning something we may not have considered before. Happy relationships are the foundation of a happy life, so it is worth giving our heart and passion to learn this most difficult of human arts. These principles apply to all the different types of relationships we have.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

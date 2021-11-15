@@ -1,0 +1,33 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Our images of others are formed by:
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+
+      01. Our conditioning about the group they belong to (race, nationality, profession, religion), for example all girls are sensitive.
+
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. What others have said about them
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Our memories of them - especially the negative ones
+
+    </h3>
+
+    
+  </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

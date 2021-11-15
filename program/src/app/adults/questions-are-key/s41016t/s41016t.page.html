@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Have you noticed how our opinions and narratives about ourselves and others keep repeating themselves, and get embedded and fossilised in our thinking? Whenever they are challenged we feel obliged to repeat them and defend them, so they get reinforced. How often do we pause and say - Hang on a minute - is this point of view still true? Is there another way to look at that person or event? Where has that point of view come from? This simple exercise can bring freedom from so much conflict. We may be self-critical for example, and are convinced we are not good enough. Questions may make us realise that our view comes from our unconscious conditioning, and we could let it go. Or we can examine a long held grudge against someone, and find a fresh way to look at that too.
+          </p>         
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

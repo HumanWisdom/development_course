@@ -1,0 +1,13 @@
+<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [transcriptPage]="transcriptPage"></app-audio-header>
+
+<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)>
+  <!-- <form>
+
+    <h1 class="txt1 tcenter">
+      Navigating the process of comparison
+    </h1>           
+
+  </form> -->
+</app-audio-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

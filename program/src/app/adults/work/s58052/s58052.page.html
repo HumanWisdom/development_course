@@ -1,0 +1,17 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      A more positive attitude to feedback can allow us to learn something new about ourselves, become better at what we do, and enhance our prospects in the organisation. It is a skill we can all learn. 
+      <span class="highligted_span">
+        (See the module on Criticism)
+      </span>
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   

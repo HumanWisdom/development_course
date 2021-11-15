@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          When we are completely enveloped by the fog of emotional pain, it is useful to remind ourselves that all
+           pain eventually passes, even though it may not feel like that right now. I have met people who suffered the most unimaginable pain, in one case, a couple who lost their son to suicide. Even they, eventually, recovered and went on to live a full life. Whatever the circumstances, you will recover and move on. You will find other ways to meet your emotional needs, whether it's a new relationship, or a new job, or a new hobby. A positive attitude will help enormously.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

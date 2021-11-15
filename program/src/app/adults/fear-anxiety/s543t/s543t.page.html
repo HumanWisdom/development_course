@@ -1,0 +1,24 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes our fears are purely a product of our imagination, and have no basis in fact, but we believe them to be true. We might be afraid of aliens, or we may be convinced we have cancer, or that others are out to get us. Where do these imaginary fears come from, adn how do they establish themselves in our thinking? How can we see them as products of our thinking process? The first step could be to ask ourselves if they are imaginary, and what is the evidence for them?
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+

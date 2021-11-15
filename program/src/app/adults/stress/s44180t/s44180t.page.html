@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If we can do this so much of our stress could come to an end. Many of us are often self-critical, having an inner critic that we can’t seem to quieten. Why are we not able to easily accept ourselves as we are? Why do we want to change things that are impossible - like our height, or our looks, and often ignore the things we can - like our sense of goodness, compassion, and a sense of ease with ourselves?
+          </p>
+          <p>
+            We have explored the many processes of thinking that lead to this including our conditioning, the process of comparison and other factors which influence our self-esteem. Exploring them allows us to accept ourselves as we are. It’s made easier by realising that deep down we are the same as other human beings.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <!-- header -->
+  <app-toc-topnav></app-toc-topnav>
+  <!-- /header -->
+
+  <!-- page content -->
+  <div class="right_col pt_rightcol_01 ml0" role="main">				
+    <!-- Class -->
+    <div class="cw100p"> 
+      <div class="row drow center_flex safari_dblock">
+        <div class="col-md-6 col-sm-8 col-xs-12 p0">
+          <div class="x_panel p0">
+            <div class="x_content p0 bookmark_imgs" *ngIf="bookmarkList.length !== 0">                  
+              <div *ngFor="let item of allkeys; let i=index">                                
+                
+                <div class="row pb10px">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="txt113">
+                      {{item}}
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-4 col-sm-4 col-xs-4"  *ngFor="let data of bookmarkList[i][item]">
+                        <img src="{{urlPath + data['TPath']}}" (click)="imgClick(data)" alt="" class="img-responsive">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pagebreak"></div>
+
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/Class --> 
+  </div>
+  <!-- /page content -->
+
+  <!-- footer  -->
+  <app-bottom-navigation></app-bottom-navigation>
+  <!-- /footer -->
+</div>

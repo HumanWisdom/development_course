@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Accepting yourself as you are, and being comfortable in your own skin, creates a quiet self-confidence that people around you pick up. You do not need external validation as a balm for your own inner sense of insecurity. You are open to having your views challenged and a diverse team around you. You do not have to be right all the time, and are happy to own up to your mistakes. You can be at peace inside and not be constantly self-critical, or wonder if you are good enough for the job. You lose the anxiety of wondering what others are thinking about you, and don’t feel you need to please everybody. How can you do this? This requires a deeper understanding of how the mind functions,
+           the role your images play, and an understanding of your conditioning and the nature of the ‘I’.
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

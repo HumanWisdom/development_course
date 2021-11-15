@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Relationships can be a major source of conflict and stress in all our lives and we have explored this in more detail in a separate module. There are many reasons behind this including unmet emotional needs, differences of opinion, different expectations, the nature of pleasure which fades with time leaving people feeling bored but not realising why, the conflict from trying to change the other person to our way of thinking, and so on. All these patterns of thinking which cause conflict operate in the background, without our awareness. Waking up to them and observing them as they operate in our lives allows us to respond with wisdom, and much of the conflict they cause can cease. The conflict in our relationships can be an opportunity for learning about ourselves. Understanding ourselves allows us to understand others and that leads to empathy and compassion
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

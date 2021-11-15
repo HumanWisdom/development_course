@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We are not aware that we have been unconsciously conditioned by all our past influences and the role that plays in the stress we experience. We become attached to all our memories and opinions and regard them as our normal. If we encounter anything different to our idea of normal we can get stressed. For example, if someone is washing the dishes in a way that is different, that is enough to stress some people, or if someone has a different religious belief to ours, or a different political opinion. This happens automatically and we are not aware of the process behind it. If we can see this clearly, our attachment to our own point of view reduces, and we get much less stressed when we meet people who are different to us. A simple question can help us explore this: Is my stress linked to my conditioning in some way?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

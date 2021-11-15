@@ -1,0 +1,14 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+        <h1 class="txt1">    
+          We have approximately 2000 thoughts in an hour. Thoughts that generate fear are a small part of this. Thoughts are random and not real until we focus on them. Realizing this, you could use your intelligence to ignore the ones that cause fear and anxiety. 
+        </h1>
+            <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Do we love people for their sake, or for how they make us feel and what they do for us? The answer to this question may challenge the image we have of ourselves. The nature of the ‘I’, as we have explored, is that it operates primarily from self-interest, which extends to the things we identify with as ours. But it begins with ‘me’. If we look carefully we can see this in operation in our relationships. This understanding can help us understand others better, and have more compassion for them, because their mind is the same as ours. Observing our self-interest in the background can also ensure it does not corrupt our intentions and we love people for their sake, and not use them for ours
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When I unconsciously compare myself with you, and you have more than me, or are better than me, it can cause envy or jealousy.
+          </p>
+
+          <p>
+            If I am better than you or have more than you, I may feel a burst of pleasure or pride, and that may be one reason this process of comparison is so embedded in our thinking.
+          </p>
+
+          <p>
+            We are praised as children every time we do well in a test, or at sports, so we can get subtly conditioned to think that our happiness in life comes from being better than others.This can cause misery because there is always going to be someone better than us at something, and even if I am the best, I become anxious that others will overtake me.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

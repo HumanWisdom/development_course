@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Our children have different needs as they grow up. Do we grow with them? From doing everything for them, then telling them what to do, to being their friends? It requires intelligence to smoothly transition from one phase to the next. As they enter their teens for example, if we are still always telling them what to do they will react and conflict can follow. At that age they want to feel they are making their own decisions. At every point, our authority as parents and ability to criticise must be used with great care, and accompanied by an overall feeling of caring. Used without intelligence, criticism can strain the relationship and undermine their confidence. If you believe in them, they will believe in themselves. Knowing when to say nothing is perhaps the most difficult skill to learn.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

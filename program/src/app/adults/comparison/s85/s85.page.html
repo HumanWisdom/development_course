@@ -1,0 +1,39 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      Responding to comparison with intelligence could make you:
+    </h1>
+
+    <h1 class="txt21">
+      1. Be free of envy
+    </h1>
+
+    <h1 class="txt21">
+      2. Have happier relationships
+    </h1>
+
+    <h1 class="txt21">
+      3. Not judge others automatically
+    </h1>
+
+    <h1 class="txt21">
+      4. Not imitate others unconsciously
+    </h1>
+
+    <h1 class="txt21">
+      5. Not be self-critical
+    </h1>
+
+    <h1 class="txt21">
+      6. Be content with who you are and what you have
+    </h1>
+    
+  </form>  
+  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The third way comparison operates in our thinking is that we compare who we are with our ideal of who we want to be. It is a subtle process, hidden from our awareness. 
+          </p>
+
+          <p>
+            Many people are critical of themselves, increasingly so in the age of social media. We may want to be thinner, or smarter, or more popular and so on. It occurs because we compare who we are, with our image or ideal of who we want to be. This causes emotional pain and in some cases can result in low self esteem and self harm, because we feel there is no escape from that feeling.
+          </p>
+
+          <p>
+            Where do our ideas of who we want to be, or should be, come from? They are part of our many unconscious conditioning influences from social media, our friends, and the culture we grow up in. We are not aware of this process going on in the background.
+          </p>
+
+          <p>
+            How would your life change if you were deeply aware of this, and could respond with acceptance and wisdom?
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

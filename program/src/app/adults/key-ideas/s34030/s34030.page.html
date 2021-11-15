@@ -1,0 +1,38 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+        Key steps to change:
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. Observe the fact (e.g. anxiety)
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. Accept it without judgement (It's not a bad feeling, you are not a bad person)
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Question what lies behind that feeling (e.g fear)
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Explore the deeper layers of your thinking
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">        
+      05. Keep noticing and learning
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      06. You find something has shifted, and you are no longer anxious
+      </h3>
+  </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

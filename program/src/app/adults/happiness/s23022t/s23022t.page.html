@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Could we say that contentment is a state of feeling at ease with who we are, how we look, what we have, the people we have relationships with, and our careers? It comes from appreciating what one has, rather than focusing on what one doesn’t have. It comes not from pursuing every desire we have but from letting go of most of them. In today's hectic world it may seem an old fashioned idea, but it makes the poor man feel rich, and the rich man feel poor. It is a life lived in harmony and to do that we need to discover our own inner intelligence, which comes from self-understanding
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

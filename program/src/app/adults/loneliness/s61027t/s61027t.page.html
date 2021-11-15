@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          To find out what is going on in our thinking when we feel lonely, let's explore this pyramid, which represents the different layers of our thinking. Let's start from the bottom, layer 4, which represents the ‘I’, which feels unique and separate. It feels naturally restless, lonely, bored. The activities in layer 3, like being occupied, being in a relationship and seeking pleasure, covers over the loneliness we feel in layer 4. That is why we like to be occupied all the time and be with people. When the pleasure in a relationship ends, or we don't feel understood or the relationship ends, that feeling is back again. That ache of loneliness is always there but just covered over to different degrees
+           by the activities of our thinking. We will explore how this understanding can help us respond with wisdom
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

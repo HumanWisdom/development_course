@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            As we have discussed in the module on meditation, if you develop your own meditation practice and develop an awareness of the deeper layers of your thinking, you can discover for yourself the beauty of the silence that lies beyond thinking, when the nature of the ‘I’ is understood. You can then live with a sense of peace, and not want anything more. Your inner self-critic naturally disappears because you no longer need to be anything other than who you are. Please do not just accept this, or reject it - take the journey yourself and find out if it's true. So many riches await
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+           
+            

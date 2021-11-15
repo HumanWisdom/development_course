@@ -1,0 +1,17 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Comparison at work can make us feel insecure, envious, angry, have low self-esteem and damage our relationships. Waking up to it operating behind the scenes can help us put an end to it, and this brings freedom.
+      <span class="highligted_span">
+        (See the module on Comparison)
+      </span>
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   

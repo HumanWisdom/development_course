@@ -1,0 +1,23 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module on exploring anger. It is part of the 4th circle of wisdom, Understanding our emotions, and is connected to every other circle. It’s a natural human emotion which can protect us from harm, but can also impact our health, damage our relationships, and is a cause of so much violence in the world. Understanding its roots in our thinking allows us to understand others, and respond with wisdom. We are going to walk with you and show you how you can do this. 
+          </p>
+
+          <p>
+            Anger is a form of violence so needs to be used sparingly and with great care because its consequences can last for years, and create a chain reaction of escalating conflict.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

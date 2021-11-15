@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            We don’t even know where these ideas came from. They just appeared in our thinking one day. If you look carefully though you will find they come from your various influences - your parents, or friends, or social media or the culture you grew up. These ideas seeped into your thinking via the back-door without you realising it, and one day you woke up thinking that they were your ideas, but they weren’t. That's the nature of conditioning. Its not your fault - just the way the mind works. The unconscious process of comparison may also be responsible - if we are not aware, we compare ourselves with others all the time, and in this age of social media, even more so’
+                    </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+            

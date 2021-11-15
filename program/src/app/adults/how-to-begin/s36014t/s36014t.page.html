@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            This enquiry is simple, but not always easy. Any skill we want to learn needs commitment and passion, just like learning to play the piano. We learn so much better if we have a passion for the thing we are learning. 
+            This enquiry leads to wisdom which can be life-changing, so it is definitely worth giving all our passion to learning about ourselves.
+          </p>
+          <p>
+            What will motivate you to give your heart to this enquiry? It could be because you have a problem to solve, or you want to live a healthy and stress free life, or you want to have excellent relationships, or communicate better or because you want to be a successful human being, or because you want to find out whether it is possible to discover the sense of sacred in life. Whatever the driver, this enquiry will leave you changed.
+          </p>   
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

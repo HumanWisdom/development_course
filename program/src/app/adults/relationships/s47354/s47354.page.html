@@ -1,0 +1,28 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      How common is bullying?
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. 20% of young people aged 12-20 reported being bullied in the UK in 2019 (Charity - Ditch the Label)
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. About 10-15% of employees in Europe and North America report being bullied (Wikipedia)
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. These numbers may underestimate the problem, because not all cases are reported
+    </h3>
+
+    
+     </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

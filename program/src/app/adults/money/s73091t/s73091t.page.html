@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          What would be the benefits of living a simpler life? Could you be equally happy without as many possessions, holidays and meals out? Could you be content with what you have? This may allow you to live well within your means and avoid the problem of debt, or being discontented because others had more. You may not need to work as much and could have more time for your loved ones and your other interests. You’d have a smaller carbon footprint, and it would be kinder for the planet and your pocket. You could also afford to be more generous and look after the people you loved if they needed it. It is up to you to explore what a simpler life would look like for you. There are many examples of people whose lifestyle has not changed much, despite their vast wealth - Warren Bufffett is one.
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

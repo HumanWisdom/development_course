@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          If you understand yourself you also understand others because you realise that deep down you are the same human being. Just as you act from your conditioning and your self-interest without realising it, so does the other person. Just as you are attached to your opinions and beliefs, so is the other person. Just as your suffering can make you angry, so it is in the other person. This understanding leads to compassion and  helps us forgive people for the hurt they have caused, because most of the time they act unconsciously, without an awareness of the hidden patterns of thinking that govern their actions. We are the same. Forgiveness is a gift we give ourselves.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

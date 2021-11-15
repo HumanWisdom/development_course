@@ -1,0 +1,22 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Fear of being a nobody can drive ambition with all its ruthless pursuit of wealth, power and status, and decades can pass in that pursuit. At the end of that journey we may realize our hearts are still empty, and the promised pot of gold at the end of the rainbow was an illusion created by our own thinking. The joys of life are to be found as we travel, and life presents them to us everyday but we can overlook them, as our gaze is fixed on the horizon. Perhaps we could consider enjoying the journey as much as the destination, which may be very different to what we imagined anyway.
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+

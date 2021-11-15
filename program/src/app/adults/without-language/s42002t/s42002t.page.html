@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Let’s explore a simple idea, that has tremendous capacity to bring transformation - to look simply, without language. Language is so embedded into the way we look at the world, and it involves thinking. But we do not need thought to look at a sunrise or a tree, only to name it. You do not need thought to look at a bird flying across the sky. If we can look at a tree without language, we can also explore a feeling in the same way, and that can be life-changing.
+          </p>
+          <p>
+            All new ideas create resistance, and I urge you to keep an open mind as we explore this. Once you have grasped the beauty of this, you’ll be pleased that you did.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

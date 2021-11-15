@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We usually express our anger when we can’t control it anymore, or in situations where we have the upper hand or feel its safe to do so - towards our family members, or our employees, or to the waiter in a restaurant. We probably don’t express it to our friends because we may lose the friendship or to our boss at work. When we do express it , it feels like a release of a pent up emotion, and there is a subtle pleasure in that. Since we feel our anger is always justified, there is a subtle pleasure in feeling right about things too
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form> 
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

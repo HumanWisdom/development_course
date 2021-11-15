@@ -1,0 +1,15 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+ 
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      Our identities meet our deepest needs: to not be lonely, to feel secure, to belong to a group, for pleasure and for power. We get get attached wherever these needs are met
+    </h1>
+    
+  </form>  
+</app-kta-prevnext>
+ 
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+	

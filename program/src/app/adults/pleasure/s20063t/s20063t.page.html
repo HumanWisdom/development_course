@@ -1,0 +1,34 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            How can understanding pleasure lead to a sense of peace?
+            Let’s do this step-by-step. Take your time. This is so important. Lets follows this pyramid which represents the different layers of our thinking.
+            In layer 1 you see a new phone advertised and immediately think you need a new one. Notice the subtle pleasure and excitement you feel, in layer 2, and the strong urge to go after what you want, so you buy it.
+            Now ask yourself where this desire comes from? What gave rise to this idea to buy a new phone? You already have one that works perfectly well.
+          </p>
+          
+          <p>
+            You think by getting the new phone we will be  happy, and that will last a long time or even forever. Behind all desire is the same driver.
+            Now ask yourself why you don't feel happy or fulfilled right now - you will notice that ini layer 3, where the need for pleasure operates.
+            Look carefully. Do you notice the feeling of emptiness or loneliness or boredom behind that in layer 4 ? It’s a really subtle feeling, and not easy to spot.
+            If you do find it, say hello to that feeling, and sit with it quietly not moving from it.
+            If you just stay with it and meet it without language, it changes from an ache, to a feeling of peace - thats layer 5. You have discovered that inner source of nourishment for yourself and you then don’t need as much stimulation from the outside.
+          </p>
+
+          <p>
+            It is simple, but not easy. Take the journey inwards and find out for yourself.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,43 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Try this exercise as you listen to someone.
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Listen to the feeling that is being conveyed, not just the words
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Observe the non-verbal signals
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. Observe the response forming in your thinking
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. Observe your need to interrupt
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      05. Observe if you are being critical
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      06. Observe how you are feeling
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      07. Keep listening, without any resistance
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      08. Be curious. Ask a question
+    </h3>
+
+  </form>
+</app-lengthy-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

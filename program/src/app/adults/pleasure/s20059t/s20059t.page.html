@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this example, say, I work in a hospital and do a good job. I get increasingly frustrated and unhappy with my employers because I feel no one acknowledges my worth, or recognises the work I do. I blame my employers for how I am feeling.
+          </p>
+          
+          <p>
+            Hidden from my awareness my frustration comes from my own need to feel important and if I explore that further, I realise that brings pleasure and makes me feel good.
+          </p>
+
+          <p>
+            The need to feel good comes from my own inner emptiness and boredom, which I am unaware of.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

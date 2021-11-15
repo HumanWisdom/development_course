@@ -1,0 +1,43 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      What are some of our emotional needs?
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. To feel loved
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. To be listened to and understood
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. For pleasure
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. To not feel lonely
+
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. To feel secure
+    </h3>
+    <h3 class="txt8 oneliner_txt_pointer">
+      06. To be accepted
+
+    </h3>
+   
+  </form>          
+</app-oneline-text>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

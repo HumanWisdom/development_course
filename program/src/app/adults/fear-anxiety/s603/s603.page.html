@@ -1,0 +1,74 @@
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [transcriptPage]="transcriptPage"></app-audio-header>
+ 
+<!-- page content -->
+<div class="right_col ml0 cright_col" [ngClass]="bg" role="main">
+  <!-- Class -->
+  <div class="cw100p cabsolute">
+    <div class="row center_flex mrl0px">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">        
+        <div class="x_panel cxpanel center_flex">
+          <div class="x_content c_white fwunset tcenter pt0px mt0px">            
+            <form>
+ 
+              <!-- angular audio player plugin  -->               
+              <div class="row tcenter">
+                <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
+                  <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink"  #audio ></ngx-circular-player>
+                </div>
+              </div>
+              <!-- /angular audio player plugin  -->   
+
+              <div class="row pt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h1 class="txt1 tcenter">
+                    Put your fears into one of the 3 buckets
+                  </h1>
+                </div>
+              </div>
+          
+              <div class="row pt20px">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/fear_anxiety_bucket_01.svg" alt="">
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="txt104 tcenter">
+                      Really rare
+                    </h6>
+                  </div>        
+                </div>
+          
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/fear_anxiety_bucket_02.svg" alt="">
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="txt104 tcenter">
+                      Inevitable
+                    </h6>
+                  </div>        
+                </div>
+          
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/fear_anxiety_bucket_03.svg" alt="">
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h6 class="txt104 tcenter">
+                      Possible
+                    </h6>
+                  </div>        
+                </div>
+              </div>
+           
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+ 
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

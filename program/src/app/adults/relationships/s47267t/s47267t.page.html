@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          If you are in a relationship there is a good chance of conflict and getting hurt. Sometimes we carry the memory of that for years. We see the person through the screen of all those hurts, and it's difficult to feel close to them. Conflict is much more easily triggered as a result and we can bring up all the past memories of our hurts in an argument. Forgiveness comes more easily when you realise that deep down you are both the same human being - both of you operate from self-interest and your conditioning. Once you can forgive, then your mind naturally lets go and forgets. You forgive for your sake, and also because you want your relationship to thrive. It won’t if you carry that hurt with you.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

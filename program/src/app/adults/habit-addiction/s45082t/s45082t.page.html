@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored in a separate module how our many emotional needs operate in the background without our awareness or our consent. We have a need to be loved, and understood, and for physical affection, to feel important, and so on. If these needs are not met we feel an ache inside us and this emotional pain can be the driver that leads us to find something to take this pain away. This pain, if it is not understood, can lead us to want to escape from it, and to addiction.
+         </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

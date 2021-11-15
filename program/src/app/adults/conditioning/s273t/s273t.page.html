@@ -1,0 +1,17 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            So much enmity and conflict exists between human beings on our planet, based on differences of nationality, skin colour, sexual orientation and religion. Why is that? All our prejudices, many of which are unconscious, are rooted in our unconscious conditioning influences. Whether its racism or religious discrimination the underlying process is the same. I identify with my conditioning, and regard those who are different to me with suspicion. The unfamiliar causes fear, which leads to hatred and war. How can we respond to this with our intelligence?
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

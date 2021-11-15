@@ -1,0 +1,13 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      To love is to care deeply for. It need not be a person. It could be a love for nature, or for people you have never met. When love flows out of you, like a fountain of goodness, it nourishes everyone and everything it touches. 
+          
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Acceptance is perhaps the most powerful tool you have at your disposal to put out the fire of emotional pain in your mind. So much of our pain is just the difference between how things are  and how we want them to be. If you can accept things as they are your pain can dissolve. It is not always possible, or easy. You may for example accept that someone you love has left you, and they are always free to do so and your life will move on, or you may accept you’ve failed an exam and can do it again, or you made a mistake and someone suffered as a result.
+
+
+
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
