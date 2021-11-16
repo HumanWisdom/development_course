@@ -13,7 +13,7 @@ export class S235Page implements OnInit,OnDestroy {
   title="Conditioning – an introduction  "
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/conditioning+1.1.mp3'
+  audioLink=this.mediaAudio+'/conditioning/audios/con+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 "]
   text=[
         "Nurture a quiet mind",
