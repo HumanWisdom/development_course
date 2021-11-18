@@ -20,7 +20,14 @@ export class authLoginGuard implements CanActivate, OnInit {
     state: RouterStateSnapshot): boolean {
       let m: any = window.location.href;
       m = m.split('?')
+      let cookie = false;
+      if(localStorage.getItem('acceptcookie') === 'T') {
+        cookie = true;
+      }
       localStorage.clear()
+      if(cookie) {
+        localStorage.setItem('acceptcookie', 'T');
+      }
       if(m[1] !== undefined && m[1] !== '') {
       }else {
         localStorage.setItem("emailCode", 'F')
