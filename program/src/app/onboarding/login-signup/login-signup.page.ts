@@ -11,6 +11,10 @@ import { OnboardingService } from 'src/app/onboarding/onboarding.service';
   styleUrls: ['./login-signup.page.scss'],
 })
 export class LoginSignupPage implements OnInit {
+  //static progress mapping
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  mediaVideo="https://humanwisdoms3.s3.eu-west-2.amazonaws.com" 
+  
   @ViewChild('enablemodal') enablemodal:ElementRef;
   @ViewChild('closemodal') closemodal:ElementRef;
   @ViewChild('enabletab') enabletab:ElementRef;
@@ -49,6 +53,8 @@ export class LoginSignupPage implements OnInit {
   verificationCode:any
   codeVerified=false
   signUser:any
+  video=3
+  audio=4
  
   t = new Date();
   minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
@@ -243,6 +249,10 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem('guest', 'F');
               localStorage.setItem("remember", 'T')
               localStorage.setItem('socialLogin', 'T');
+              localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+              localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+              localStorage.setItem("video",JSON.stringify(this.video))
+              localStorage.setItem("audio",JSON.stringify(this.audio))
               localStorage.setItem('btnclick', 'F')
               localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
               sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
@@ -361,6 +371,10 @@ export class LoginSignupPage implements OnInit {
                 this.loginResponse=r
                 console.log(this.loginResponse)
                 localStorage.setItem('socialLogin', 'T');
+                localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+                localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+                localStorage.setItem("video",JSON.stringify(this.video))
+                localStorage.setItem("audio",JSON.stringify(this.audio))
                 localStorage.setItem("remember", 'T')
                 localStorage.setItem('guest', 'F');
                 localStorage.setItem('btnclick', 'F')
@@ -478,6 +492,10 @@ export class LoginSignupPage implements OnInit {
         localStorage.setItem("pswd", this.password)
         localStorage.setItem("name", res.Name)
         localStorage.setItem("first", 'T')
+        localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+        localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+        localStorage.setItem("video",JSON.stringify(this.video))
+        localStorage.setItem("audio",JSON.stringify(this.audio))
         if(res.UserId==0)
         {
           this.showAlert=true
@@ -511,8 +529,7 @@ export class LoginSignupPage implements OnInit {
 
 
           }
-
-
+          this.freescreens()
           let roleid = JSON.parse(localStorage.getItem('RoleID'));
                   let emailcode = localStorage.getItem("emailCode");
             
@@ -645,10 +662,10 @@ export class LoginSignupPage implements OnInit {
               arr = Array.prototype.concat.apply([], this.x);
             }
           })
-          this.closemodal.nativeElement.click()
+          // this.closemodal.nativeElement.click()
           localStorage.setItem("freeScreens",JSON.stringify(arr))
-          localStorage.setItem("isloggedin", 'T')
-          this.router.navigate(['/adults/adult-dashboard'])
+          // localStorage.setItem("isloggedin", 'T')
+          // this.router.navigate(['/adults/adult-dashboard'])
          console.log('homescreen')
         
         }

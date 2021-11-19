@@ -129,13 +129,15 @@ export class AdultDashboardPage implements OnInit {
     let rem = localStorage.getItem('remember');
     let guest = localStorage.getItem('guest');
     this.name = localStorage.getItem('name');
+    localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
     localStorage.setItem("first", 'F')
     localStorage.setItem("emailCode", 'F')
     localStorage.setItem('giftwisdom', 'F')
     if(userid === 'T') {
       this.isloggedIn = true
     }
-    if(rem === 'T' ||  guest === 'T') {
+    if(rem !== 'T' ||  guest === 'T') {
       if(guest === 'T') {
         localStorage.setItem("email", 'guest@humanwisdom.me');
         localStorage.setItem("pswd", '12345');
