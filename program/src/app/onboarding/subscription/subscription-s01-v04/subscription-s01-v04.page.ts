@@ -46,6 +46,7 @@ export class SubscriptionS01V04Page implements OnInit {
   enableMySelf = false
   typeList = ['Annual', 'Monthly']
   enableGift = false;
+  enableData = false;
   cartitemList = [];
   
 
@@ -86,6 +87,7 @@ setTimeout(() => {
     this.cartList[0].price = this.cartitemList[0].Amt
     this.cartList[0].selectedSubscription = this.cartitemList[0].Plan
   }
+  this.enableData = true
   this.cd.detectChanges()
 
 }, 7000)
@@ -179,12 +181,14 @@ submitcode(){
 
   laterradioevent(event) {
     if(event.target.checked) {
+      this.myself = 0;
       this.enableemail = false;
     }
   }
   
   someoneradioevent(event) {
     if(event.target.checked) {
+      this.myself = 0;
       this.enableemail = true;
     }
   }
