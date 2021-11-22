@@ -4,4 +4,4 @@
 <app-login-signup-splash *ngIf="!pageLoaded"></app-login-signup-splash>
 <!-- <div id="page-loader" class="fade" [ngClass]="[pageLoaded ? '' : 'show']"><span class="spinner"></span></div> -->
 
-<router-outlet></router-outlet>
+<router-outlet *ngIf="pageLoaded"></router-outlet>
