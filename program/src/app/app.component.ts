@@ -28,7 +28,9 @@ export class AppComponent {
   initializeApp() {
     this.router.events.subscribe(e => {
       if (e instanceof NavigationEnd) {
-        this.pageLoaded = true;
+        setTimeout(() => {
+          this.pageLoaded = true;
+        }, 2000)
       }
     });
   }
