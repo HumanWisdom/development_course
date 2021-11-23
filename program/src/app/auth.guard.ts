@@ -24,8 +24,11 @@ export class AuthGuard implements CanActivate,OnInit {
  canActivate( next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot):boolean{
     let m: any = window.location.href;
+    let test = m.split('login')
+
       m = m.split('?')
-      if(m[1] !== undefined) {
+      
+      if(!test || test === '' && m[1] !== undefined) {
         localStorage.setItem("isloggedin", 'T')
         let email = m[1].split('&')[0].split('=')[1].replace(/['"]+/g, '')
         if(m[1].includes('pswd')) {
