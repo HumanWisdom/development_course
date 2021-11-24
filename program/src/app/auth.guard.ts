@@ -23,6 +23,32 @@ export class AuthGuard implements CanActivate,OnInit {
  
  canActivate( next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot):boolean{
+    let m: any = window.location.href;
+    let test = m.split('login')
+
+      m = m.split('?')
+      
+      if(!test || test === '' && m[1] !== undefined) {
+        localStorage.setItem("isloggedin", 'T')
+        let email = m[1].split('&')[0].split('=')[1].replace(/['"]+/g, '')
+        if(m[1].includes('pswd')) {
+          localStorage.setItem('socialLogin', 'F');
+          let password = m[1].split('&')[1].split('=')[1].replace(/['"]+/g, '')
+          localStorage.setItem("pswd", password)
+        }else{
+          localStorage.setItem('socialLogin', 'T');
+          let firstname = m[1].split('&')[1].split('=')[1].replace(/['"]+/g, '')
+          let lastname = m[1].split('&')[2].split('=')[1].replace(/['"]+/g, '')
+          localStorage.setItem("FnName", firstname)
+          localStorage.setItem("LName", lastname)
+        }
+        localStorage.setItem("email", email)
+        localStorage.setItem('guest', 'F');
+        localStorage.setItem('btnclick', 'F')
+        localStorage.setItem("remember", 'T')
+        localStorage.setItem('adult', 'T')
+        return true;
+      }
     let res = localStorage.getItem("isloggedin")
     let rem = localStorage.getItem("remember")
     let first = localStorage.getItem("first")

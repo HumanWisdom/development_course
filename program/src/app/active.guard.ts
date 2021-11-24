@@ -34,7 +34,7 @@ export class ActiveGuard implements CanActivate, OnInit {
     let sub: any = localStorage.getItem("Subscriber")
     if (sub === '1') {
       return true;
-    } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
+    } else if (this.freeScreens !== null && this.freeScreens.includes(parseInt(this.scrId))) {
       return true;
     } else {
       // window.alert('You Have Reached Free Limit')
