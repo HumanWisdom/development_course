@@ -159,12 +159,12 @@ export class LoginSignupPage implements OnInit {
        {
        console.log(res)
        if(res>0){
-        window.alert('An email has been sent to you. Please click on the link shared with you or enter the verification code to verify your account')
-        let code = window.prompt('Verify Code', '')
-        if(code !== null) {
-          this.verificationCode = code;
-          this.verifyCode()
-        }
+        window.alert('An email has been sent to you. Please click on the link shared with you')
+        // let code = window.prompt('Verify Code', '')
+        // if(code !== null) {
+        //   this.verificationCode = code;
+        //   this.verifyCode()
+        // }
         this.showMessage=true
         this.signUser=res
         this.showWarning=false
