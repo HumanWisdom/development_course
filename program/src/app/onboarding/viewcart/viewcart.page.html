@@ -94,62 +94,91 @@
                 </div>
               </div>
 
-              <hr class="dhr">
-              
-              <div *ngFor="let c of cartList" class="row cpt10px">
-                <div class="row center_flex">
-                  <div class="col-md-5 col-sm-5 col-xs-4 pl0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/programs/subscription/adults.png" class="w100">
-                  </div>
-                  <div class="col-md-7 col-sm-7 col-xs-8 p0"> 
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h6 class="txt107">
-                          Adult (&gt;16 years)
-                        </h6>
-                      </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <hr class="shr1">
+                </div>
+              </div>
+
+              <!-- adults -->
+              <div class="row center_flex pt40px">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <h4 class="txt106">
+                    Adults (&lt;16 years)
+                  </h4>  
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                  <!-- quantity btn -->
+                  <div class="input-group mb0px ig1">
+                    <span class="quantity-field orange">{{this.cartList.length}}</span>
+                    <input type="button" value="+" (click)="getAddCartEvent()" data-toggle="modal" data-target="#modal_recipient" class="button-plus grey" data-field="quantity">
+                  </div>                    
+                  <!-- /quantity btn -->
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <hr class="shr1">
+                </div>
+              </div>
+              <ng-container *ngIf="cartList.length !== 0">
+                <div *ngFor="let c of cartList" class="row cpt10px">
+                  <div class="row center_flex">
+                    <div class="col-md-5 col-sm-5 col-xs-4 pl0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/programs/subscription/adults.png" class="w100">
                     </div>
-  
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-md-6 col-sm-6 col-xs-6 p0">
-                        <div class="form-group">                  
-                          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                            <select class="form-control subscribe_select1" disabled="true">
-                              <option>{{c.Plan}}</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-  
-                      <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                        <h6 class="txt108 tleft mtb0px">
-                          {{c.Amt}}
-                        </h6>
-                      </div>                        
-                    </div>    
-  
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-md-10 col-sm-10 col-xs-10 p0 flex_ai">
-                        <div class="col-md-9 col-sm-9 col-xs-9 p0">
-                          <h6 class="txt115">
-                            {{c.MySelf === 'True' ? userEmail : c.LearnerEmail === '' ? 'Unknown recipient' : c.LearnerEmail}}
+                    <div class="col-md-7 col-sm-7 col-xs-8 p0"> 
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <h6 class="txt107">
+                            Adult (&gt;16 years)
                           </h6>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 p0" *ngIf="c.LearnerEmail !== ''">                          
-                          <a data-toggle="modal" data-target="#modal_recipient" (click)="editCard(c)">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit_grey.svg" class="">
-                          </a>
-                        </div>
                       </div>
-  
-                      <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/trash_grey.svg" class="" (click)="removeFromCart(c.CartId)">
-                      </div>                        
-                    </div>   
+    
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                          <div class="form-group">                  
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <select class="form-control subscribe_select1" disabled="true">
+                                <option>{{c.Plan}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+    
+                        <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
+                          <h6 class="txt108 tleft mtb0px">
+                            {{c.Amt}}
+                          </h6>
+                        </div>                        
+                      </div>    
+    
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-md-10 col-sm-10 col-xs-10 p0 flex_ai">
+                          <div class="col-md-9 col-sm-9 col-xs-9 p0">
+                            <h6 class="txt115">
+                              {{c.MySelf === 'True' ? userEmail : c.LearnerEmail === '' ? 'Unknown recipient' : c.LearnerEmail}}
+                            </h6>
+                          </div>
+                          <div class="col-md-3 col-sm-3 col-xs-3 p0" *ngIf="c.LearnerEmail !== ''">                          
+                            <a data-toggle="modal" data-target="#modal_recipient" (click)="editCard(c)">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit_grey.svg" class="">
+                            </a>
+                          </div>
+                        </div>
+    
+                        <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/trash_grey.svg" class="" (click)="removeFromCart(c.CartId)">
+                        </div>                        
+                      </div>   
+                    </div>
                   </div>
+    
                 </div>
-  
-              </div>
+                
+              </ng-container>
               <!-- <div *ngFor="let c of cartList" class="row cpt10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px wdiv">
                   <div class="col-md-4 col-sm-4 col-xs-3">
@@ -325,7 +354,7 @@
 <!-- /footer -->
 
 <!-- modal -->
-<div class="modal fade" id="modal_recipient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modal_recipient"tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="">      
       <div class="modal-body p0">
@@ -334,7 +363,7 @@
           <div class="row center_flex pt40px">
             <div class="col-md-6 col-sm-6 col-xs-6">
               <h4 class="txt107 mb0px">
-                Children (&lt;16 years)
+                Adult (&gt;16 years)
               </h4>  
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6 tright">
@@ -363,10 +392,10 @@
           </div>
 
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
+            <div class="col-md-12 col-sm-12 col-xs-12 mt10px" *ngIf="enableMySelf">                  
               <div class="radio">
                 <label class="mt0px">
-                  <input type="radio" checked="{{myself}}" (click)="radioevent($event)" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                  <input type="radio" checked="false" (click)="radioevent($event)" value="option1" id="optionsRadios1" name="optionsRadios"> 
                   <span class="">
                     <span class="pl0_3rem">
                       Yes, I am buying this for myself. 
@@ -379,7 +408,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
               <div class="radio">
                 <label class="mt0px">
-                  <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                  <input type="radio" checked="false" value="option1" (click)="someoneradioevent($event)" id="optionsRadios1" name="optionsRadios"> 
                   <span class="">
                     <span class="pl0_3rem">
                       No, I am buying this for someone else. 
@@ -389,10 +418,10 @@
               </div>                  
             </div>                
 
-            <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
+            <div class="col-md-12 col-sm-12 col-xs-12 mt10px" *ngIf="enableDecide">                  
               <div class="radio">
                 <label class="mt0px">
-                  <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                  <input type="radio" checked="false" (click)="laterradioevent($event)" value="option1" id="optionsRadios1" name="optionsRadios"> 
                   <span class="">
                     <span class="pl0_3rem">
                       I will decide later.
@@ -403,15 +432,15 @@
             </div>                
           </div>
 
-          <div class="row mt20px">
+          <div class="row mt20px" *ngIf="enableemail">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <input type="text" class="form-control cfc6" value="{{learnermail}}" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
+                <input type="text" class="form-control cfc6" [(ngModel)]="learnermail" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
             </div>
           </div>
 
-          <div class="row mt10px">
+          <div class="row mt10px" *ngIf="enableemail">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <textarea class="form-control cfc6" rows="5" value="{{learnermsg}}" (keyup)="msginput($event)" placeholder="Message for Learner (optional)"></textarea>
+              <textarea class="form-control cfc6" rows="5" (keyup)="msginput($event)" [(ngModel)]="learnermsg" placeholder="Message for Learner (optional)"></textarea>
             </div>
           </div>
 
@@ -423,9 +452,11 @@
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h6 class="txt178 ml-20px mtb5px">
                   An invitation will be sent to this user after payment. You can view the activation status of this program in 
-                  <span class="txt64 underline">
-                    My Programs
-                  </span>                      
+                  <a routerLink="/onboarding/myprogram">
+                    <span class="txt64 underline">
+                      My Programs
+                    </span>                      
+                  </a>
                 </h6>
               </div>
             </div>                  
@@ -434,7 +465,7 @@
           <div class="row mt40px mb40px">
             <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
               <a>
-                <button type="button" class="btn btn-warning mb0 proceed_cart w100" [disabled]="learnermsg === '' || learnermail === ''" data-dismiss="modal" (click)="addToCart()">Done</button>
+                <button type="button" class="btn btn-warning mb0 proceed_cart w100" [disabled]="enableemail && learnermail === ''" data-dismiss="modal" (click)="enableedit ? addToCart() : addtoCart()">Done</button>
               </a>
             </div>
           </div> 
