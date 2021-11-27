@@ -23,13 +23,19 @@ export class AuthGuard implements CanActivate,OnInit {
  
  canActivate( next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot):boolean{
+    localStorage.setItem("enablebanner", 'T')
     let m: any = window.location.href;
     let test = m.split('login')
-
-      m = m.split('?')
+    let aff = m.split('AffrefCode')
+     if(aff[1] !== undefined && aff[1] !== '') {
+      let token = aff[1].split('=')[1]
+      localStorage.setItem("Affreftoken", token)
+     }
       
-      if(!test || test === '' && m[1] !== undefined) {
+      if(m.split('email')[1] !== undefined) {
+        m = m.split('?')
         localStorage.setItem("isloggedin", 'T')
+        localStorage.setItem("enablebanner", 'F')
         let email = m[1].split('&')[0].split('=')[1].replace(/['"]+/g, '')
         if(m[1].includes('pswd')) {
           localStorage.setItem('socialLogin', 'F');
