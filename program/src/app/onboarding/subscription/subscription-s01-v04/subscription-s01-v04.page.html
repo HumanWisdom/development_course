@@ -143,7 +143,7 @@
               <div class="row mt40px row_vc">
                 <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 tcenter p0">                    
                   <a>
-                    <button type="button" class="btn btn-warning mb0 proceed_cart w100" data-dismiss="modal" (click)="proceedcart()">View Cart</button>
+                    <button type="button" class="btn btn-warning mb0 proceed_cart w100" data-dismiss="modal" [disabled]="cartitemList.length === 0" (click)="proceedcart()">View Cart</button>
                   </a>
                 </div>
               </div>

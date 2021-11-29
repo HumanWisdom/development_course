@@ -113,6 +113,7 @@ export class AdultDashboardPage implements OnInit {
  isloggedIn=false
  x=[]
  isSubscribe = false
+ enablebanner = true;
 
  //static progress mapping
   mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
@@ -125,6 +126,15 @@ export class AdultDashboardPage implements OnInit {
      ) { }
 
   ngOnInit() {
+    if(localStorage.getItem('enablebanner') === 'F') this.enablebanner = false
+    if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
+      let token = localStorage.getItem("Affreftoken");
+      this.service.decrypt(token).subscribe((res: any) => {
+        if(res) {
+          localStorage.setItem("AffReferralCode", res)
+        }
+      })
+    }
     let userid = localStorage.getItem('isloggedin');
     let rem = localStorage.getItem('remember');
     let guest = localStorage.getItem('guest');
