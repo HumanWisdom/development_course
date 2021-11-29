@@ -31,6 +31,10 @@ export class ViewcartPage implements OnInit {
   activeId: any = 0;
   stripeId: any = 0;
   activeCard: any;
+  enableMySelf = false
+  enableemail=false
+  enableDecide = false
+  enableedit = false;
 
 
   constructor(private router: Router,private service:OnboardingService, private location:Location) { }
@@ -43,38 +47,8 @@ export class ViewcartPage implements OnInit {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
     else
       this.userId=JSON.parse(localStorage.getItem("userId"))
-   
-    this.service.viewCart({ "Id":this.userId})
-    .subscribe(res=>
-      {
-        console.log(res)
-        this.cartList=res
-        this.symbol=this.cartList[0].Symbol
-        
-        for(var i=0;i<this.cartList.length;i++){
-          this.cartList[i].Qty=parseFloat(this.cartList[i].Qty)
-          this.cartList[i].Amt=parseFloat(this.cartList[i].Amt)
-          this.cartList[i].RateId=parseFloat(this.cartList[i].RateId)
-          this.cartList[i].price=parseFloat(this.cartList[i].Qty)*parseFloat(this.cartList[i].Amt)
-
-          
-        }
-       // console.log(this.getMax(),"hey")
-        
-
-       
-
-       
-        
-        
-
-
-
-      },
-      error=>{
-        console.log(error)
-      },
-      ()=>this.totalPrice())
+    this.viewCart()
+     
     //console.log(this.cartList)
   }
  /* getMax(){
@@ -95,18 +69,58 @@ export class ViewcartPage implements OnInit {
   }*/
 
 
-  radioevent(event) {
-    if(event.target.checkd) {
-      this.myself = 1;
-    }else {
-      this.myself = 0;
-    }
+  viewCart() {
+    this.service.viewCart({ "Id":this.userId})
+    .subscribe(res=>
+      {
+        console.log(res)
+        this.cartList=res
+        this.symbol=this.cartList[0].Symbol
+        
+        for(var i=0;i<this.cartList.length;i++){
+          this.cartList[i].Qty=parseFloat(this.cartList[i].Qty)
+          this.cartList[i].Amt=parseFloat(this.cartList[i].Amt)
+          this.cartList[i].RateId=parseFloat(this.cartList[i].RateId)
+          this.cartList[i].price=parseFloat(this.cartList[i].Qty)*parseFloat(this.cartList[i].Amt)
+
+          this.cartList[i].ProgID = 9
+        }
+       // console.log(this.getMax(),"hey")
+        
+
+       
+
+       
+       if(res && res.length !== 0) {
+        if(res.some((d) => d['MySelf'] === "True")) {
+          this.enableMySelf = false
+        }else {
+          if(localStorage.getItem('giftwisdom') === 'F')   {
+            this.myself = 1
+            this.enableMySelf = true
+          } 
+        }
+      }
+        
+
+
+
+      },
+      error=>{
+        console.log(error)
+      },
+      ()=>this.totalPrice())
+    //console.log(this.cartList)
   }
 
   editCard(card) {
+    this.enableedit = true;
     this.activeCard = card;
     this.activeId = card.CartId
-    this.myself = card.MySelf
+    this.enableemail = true;
+    this.myself = 0;
+    this.enableMySelf = false;
+    this.enableDecide = false;
     this.learnermail = card.LearnerEmail
     this.learnermsg = card.LearnerMsg
   }
@@ -236,5 +250,120 @@ export class ViewcartPage implements OnInit {
     this.router.navigate(['/onboarding/payment'], { state: { quan:  this.cartList.length.toString(), plan: this.cartList[0]['Plan']}})
   }
   
+  radioevent(event) {
+    if(event.target.checked) {
+      this.myself = 1;
+      this.enableemail = false;
+    }else {
+      this.myself = 0;
+    }
+  }
+
+  laterradioevent(event) {
+    if(event.target.checked) {
+      this.myself = 0;
+      this.enableemail = false;
+    }
+  }
+  
+  someoneradioevent(event) {
+    if(event.target.checked) {
+      this.myself = 0;
+      this.enableemail = true;
+    }
+  }
+
+
+  addtoCart(){
+    let pid = this.cartList[0]['ProgID']
+    console.log(pid)
+   
+    
+      
+
+    if(this.cartList[0].Plan=="Monthly")
+    {
+      this.cartList[0].planId=1
+    }
+    else{
+      this.cartList[0].planId=2
+
+    }
+
+    
+          this.totalItemCount+=1
+         
+          //call service
+         
+            this.service.addItem({
+              "UserId":this.userId,
+              "RateId":this.cartList[0].RateId,
+              "Qty":this.cartList.length + 1,
+              "PlanId":this.cartList[0].planId,
+              "MySelf": this.myself,
+              "LearnerEmail": this.learnermail,
+              "LearnerMsg": this.learnermsg,
+              })
+              .subscribe(res=>{
+                console.log(res,"cartId")
+                for(var i=0;i<this.cartList.length;i++){
+                  if(this.cartList[i].ProgID === pid){
+                    this.cartList[i].cartId=res
+                  }
+                  
+                }
+                if(this.enableMySelf) this.enableMySelf = false;
+                this.myself = 0,
+                this.learnermail = '',
+                this.learnermsg = '',
+                this.enableemail = false
+                // this.cd.detectChanges()
+                this.viewCart()
+              },
+              error=>{
+                console.log(error)
+              },
+              ()=>{
+                console.log(this.cartList,"afteraddidtion")
+                this.totalPrice()  
+              })
+            
+             
+  
+          
+  
+         /* else{
+            this.cartList[i].cartId=this.cartId
+            this.service.editCart(
+              {"Id":parseInt(this.cartId)},
+              {"Id":parseInt(this.cartList[i].qty)}
+              )
+              .subscribe(res=>
+                {
+                  console.log(res)
+            })
+          }*/
+        
+       
+       
+          
+          
+      
+            
+  
+    
+    
+
+
+  }
+
+  getAddCartEvent() {
+    this.enableedit = false
+    this.enableMySelf = true;
+    this.enableDecide = true;
+    this.enableemail = false;
+    this.learnermail = ''
+    this.learnermsg = ''
+  }
 
 }
