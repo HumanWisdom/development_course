@@ -5,7 +5,7 @@
     <nav class="flex_ai">          
       <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
         <li class="">
-          <a class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+          <a class="cuser-profile dropdown-toggle p0" (click)="goBack()" data-toggle="dropdown" aria-expanded="false">                          
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
           </a>                  
         </li>        
@@ -29,10 +29,9 @@
 </div>
 <!-- /top navigation --> 
 
-<app-likert-scale skipToPage="">
   <form>
     <div class="row" id="wsi_bg_white">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 100px">
         <ngx-charts-area-chart-stacked
   [view]="view"
   [scheme]="colorScheme"
@@ -292,7 +291,6 @@
 
       </div>      
   </form>
-</app-likert-scale>
 
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
