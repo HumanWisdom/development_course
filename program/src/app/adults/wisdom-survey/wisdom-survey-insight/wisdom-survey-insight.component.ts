@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-wisdom-survey-insight',
@@ -41,7 +43,7 @@ export class WisdomSurveyInsightComponent implements OnInit {
   ]
   userId:any
 
-  constructor(    private service:AdultsService,    ) { 
+  constructor(    private service:AdultsService, private router: Router,     private location:Location    ) { 
     this.userId=JSON.parse(localStorage.getItem("userId"))
       service.wisdomSurveyinsightsummary(this.userId).subscribe((r)=>{
         console.log(r)
@@ -139,6 +141,10 @@ export class WisdomSurveyInsightComponent implements OnInit {
 
   onSelect(event){
 
+  }
+
+  goBack(){
+    this.location.back()
   }
 
 
