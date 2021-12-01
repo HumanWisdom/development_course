@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    APP_NAME: "angular-cicd-pipeline-demo"
+    APP_NAME: "ionic-angular-hwp"
 phases:
   install:
     runtime-versions:
@@ -11,11 +11,12 @@ phases:
       - npm install && npm install -g @angular/cli
   build:
     commands:
+      - cd program
       - echo build process started now
       - ng build --configuration=production
   post_build:
     commands:
       - echo build process finished, we should uplload to S3 now
-      - cd dist/$APP_NAME
+      - cd www/$APP_NAME
       - ls -la
       - aws s3 sync . s3://hw-awsome-bucket-of-files --delete
