@@ -21,10 +21,17 @@ export class authLoginGuard implements CanActivate, OnInit {
       let m: any = window.location.href;
       m = m.split('?')
       let cookie = false;
+      let affrefcode = '';
       if(localStorage.getItem('acceptcookie') === 'T') {
         cookie = true;
       }
+      if(localStorage.getItem('AffReferralCode') !== null) {
+        affrefcode = localStorage.getItem('AffReferralCode');
+      }
       localStorage.clear()
+      if(affrefcode !== ''){
+        localStorage.setItem("AffReferralCode", affrefcode)
+      }
       if(cookie) {
         localStorage.setItem('acceptcookie', 'T');
       }

@@ -67,7 +67,7 @@ export class OnboardingService {
   }
 
   editactiveCart(data:any):Observable<any>{
-    return this.http.post(this.path+'/EditCard',data)
+    return this.http.post(this.path+'/EditCart',data)
   }
 
   deleteItem(n:Number):Observable<any>{
