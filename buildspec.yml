@@ -7,14 +7,15 @@ phases:
     runtime-versions:
       nodejs: 14.x
     commands:
-      - echo install process started
-      - npm install
+      - echo Installing angular cli...
+      - npm install -g @angular/cli
+      - yarn add @angular-devkit/build-angular --dev
   build:
     commands:
       - cd program
       - ls -la
-      - echo build process started now
-      - npm run build --prod
+      - echo Build started...
+      - ng build --prod
   post_build:
     commands:
       - echo build process finished, we should uplload to S3 now
