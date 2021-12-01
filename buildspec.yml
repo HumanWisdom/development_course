@@ -12,11 +12,12 @@ phases:
   build:
     commands:
       - cd program
+      - ls -la
       - echo build process started now
       - ng build --configuration=production
   post_build:
     commands:
       - echo build process finished, we should uplload to S3 now
-      - cd www/$APP_NAME
+      - cd $APP_NAME
       - ls -la
       - aws s3 sync . s3://hw-awsome-bucket-of-files --delete
