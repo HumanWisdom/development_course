@@ -8,9 +8,10 @@ phases:
       nodejs: 14.x
     commands:
       - echo install process started
-      - npm install -g typescript
+      - rm -rf node_modules
+      - npm install -g @angular/cli
+      - npm install
       - npm install --save-dev @angular-devkit/build-angular
-      - npm install && npm install -g @angular/cli
   build:
     commands:
       - cd program
