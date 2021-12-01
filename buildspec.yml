@@ -1,13 +1,14 @@
 version: 0.2
 env:
   variables:
-    APP_NAME: "ionic-angular-hwp"
+    APP_NAME: "www"
 phases:
   install:
     runtime-versions:
       nodejs: 14.x
     commands:
       - echo install process started
+      - npm install --save-dev @angular-devkit/build-angular
       - npm install && npm install -g @angular/cli
   build:
     commands:
