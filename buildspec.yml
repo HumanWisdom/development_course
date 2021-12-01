@@ -8,16 +8,13 @@ phases:
       nodejs: 14.x
     commands:
       - echo install process started
-      - rm -rf node_modules
-      - npm install -g @angular/cli
       - npm install
-      - npm install --save-dev @angular-devkit/build-angular
   build:
     commands:
       - cd program
       - ls -la
       - echo build process started now
-      - ng build --configuration=production
+      - ng build --prod
   post_build:
     commands:
       - echo build process finished, we should uplload to S3 now
