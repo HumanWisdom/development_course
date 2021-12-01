@@ -14,7 +14,7 @@ phases:
       - cd program
       - ls -la
       - echo build process started now
-      - ng build --prod
+      - npm run build --prod
   post_build:
     commands:
       - echo build process finished, we should uplload to S3 now
