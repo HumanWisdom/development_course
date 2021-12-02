@@ -10,6 +10,7 @@ phases:
       - cd program
       - ls -la
       - echo Installing angular cli..;
+      - npm install -g @angular/cli@11.2.13
       - npm install
   build:
     commands:
