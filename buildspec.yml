@@ -13,10 +13,11 @@ phases:
       - npm install -g @angular/cli
       - npm install --save-dev typescript
       - yarn add @angular-devkit/build-angular --dev
+      - npx @angular/cli@13 update @angular/core@13 @angular/cli@13
   build:
     commands:
       - echo Build started...
-      - ng build --configuration=production
+      - ng build --prod
   post_build:
     commands:
       - echo build process finished, we should uplload to S3 now
