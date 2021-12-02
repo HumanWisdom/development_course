@@ -147,7 +147,8 @@
 
     .navbar_01 
     {
-        top: 7%;
+        /* top: 7%; */
+        margin-top: 16%;
     }
 
     ::-webkit-scrollbar 
@@ -305,7 +306,8 @@
 
     .navbar_01 
     {
-        top: 5.5%;
+        /* top: 5.5%; */
+        margin-top: 7.5%;
     }
 }
 
@@ -355,7 +357,8 @@
 
     .navbar_01 
     {
-        top: 4%;
+        /* top: 4%; */
+        margin-top: 5.5%;
     }
 
     /* width */
@@ -434,7 +437,8 @@
 
     .navbar_01 
     {
-        top: 7.5%;
+        /* top: 7.5%; */
+        margin-top: 4%;
     }
 }
 
