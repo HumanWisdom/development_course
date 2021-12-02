@@ -10,9 +10,10 @@ phases:
       - cd program
       - ls -la
       - echo Installing angular cli...
-      - npm @angular/cli@13 update @angular/core@13 @angular/cli@13
+      - npm install -g @angular/cli
       - npm install --save-dev typescript
       - yarn add @angular-devkit/build-angular --dev
+      - npm install
   build:
     commands:
       - echo Build started...
