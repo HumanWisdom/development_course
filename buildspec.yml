@@ -9,10 +9,7 @@ phases:
     commands:
       - cd program
       - ls -la
-      - echo Installing angular cli...
-      - npm install -g @angular/cli
-      - npm install --save-dev typescript
-      - yarn add @angular-devkit/build-angular --dev
+      - echo Installing angular cli..;
       - npm install
   build:
     commands:
