@@ -126,6 +126,7 @@ export class AdultDashboardPage implements OnInit {
      ) { }
 
   ngOnInit() {
+    localStorage.setItem('cicd', 'T')
     if(localStorage.getItem('enablebanner') === 'F') this.enablebanner = false
     if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
       let token = localStorage.getItem("Affreftoken");
