@@ -148,6 +148,8 @@ submitcode(){
     {console.log(res)
       // this.enableActivate = true;
       this.closemodal.nativeElement.click()
+      let code: any = 1
+      localStorage.setItem('Subscriber', code)
       this.router.navigate(['/adults/adult-dashboard'])
     },
     error=>{

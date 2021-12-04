@@ -147,7 +147,7 @@ export class AdultDashboardPage implements OnInit {
     if(userid === 'T') {
       this.isloggedIn = true
     }
-    if(rem !== 'T' ||  guest === 'T') {
+    if(rem === 'T' ||  guest === 'T') {
       if(guest === 'T') {
         localStorage.setItem("email", 'guest@humanwisdom.me');
         localStorage.setItem("pswd", '12345');

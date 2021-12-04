@@ -56,6 +56,8 @@ export class ActivationkeyPage implements OnInit {
       {console.log(res)
         if(res!=0)
           {this.showWarning=false}
+          let code: any = 1
+          localStorage.setItem('Subscriber', code)
         //this.activationCode=res
         //localStorage.setItem("activationCode",JSON.stringify(this.activationCode))
       },
