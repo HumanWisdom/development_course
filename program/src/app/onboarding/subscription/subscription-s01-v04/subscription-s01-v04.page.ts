@@ -51,6 +51,8 @@ export class SubscriptionS01V04Page implements OnInit {
   
 
   constructor(private router: Router,private service:OnboardingService, private location:Location, private cd: ChangeDetectorRef) {
+    let res = localStorage.getItem("isloggedin")
+    if(res !== 'T') this.router.navigate(['/onboarding/login'])
     if(localStorage.getItem('subscribepage') === 'T') {
       this.router.navigate(['/onboarding/login'])
     }
