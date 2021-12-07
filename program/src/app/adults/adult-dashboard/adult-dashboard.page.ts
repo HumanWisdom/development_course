@@ -126,6 +126,7 @@ export class AdultDashboardPage implements OnInit {
      ) { }
 
   ngOnInit() {
+    localStorage.setItem('cicd', 'T')
     if(localStorage.getItem('enablebanner') === 'F') this.enablebanner = false
     if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
       let token = localStorage.getItem("Affreftoken");
@@ -147,7 +148,7 @@ export class AdultDashboardPage implements OnInit {
     if(userid === 'T') {
       this.isloggedIn = true
     }
-    if(rem !== 'T' ||  guest === 'T') {
+    if(rem === 'T' ||  guest === 'T') {
       if(guest === 'T') {
         localStorage.setItem("email", 'guest@humanwisdom.me');
         localStorage.setItem("pswd", '12345');

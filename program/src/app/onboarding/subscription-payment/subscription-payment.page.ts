@@ -36,7 +36,8 @@ export class SubscriptionPaymentPage implements OnInit {
       ProgramID: '9',
       PlanId: plan === 'Annual' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
-      Quantity: quan
+      Quantity: quan,
+      AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : ''
     }
     this.service.stripe(obj)
       .subscribe(res => {
