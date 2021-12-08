@@ -1,3 +1,4 @@
+import { RelatedWisdomStoriesTilesComponent } from './component/related-wisdom-stories-tiles/related-wisdom-stories-tiles.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -126,7 +127,8 @@ import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project
     TopnavComponent,
     TocHeaderComponent,
     TocTopnavComponent,
-    TnHwpProjectComponent
+    TnHwpProjectComponent,
+    RelatedWisdomStoriesTilesComponent
   ],
   imports: [
     CommonModule,
@@ -209,7 +211,8 @@ import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project
     TopnavComponent,
     TocHeaderComponent,
     TocTopnavComponent,
-    TnHwpProjectComponent
+    TnHwpProjectComponent,
+    RelatedWisdomStoriesTilesComponent
   ]
 })
 export class SharedModule { }
