@@ -29,12 +29,16 @@ export class S162p0Page implements OnInit,OnDestroy {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/anger.png"
   tocColor="white"
   lastvisited = false;
+  stories: any = []
 
   constructor(
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
+  ) { 
+    this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    this.stories = JSON.parse(this.stories)
+  }
 
   ngOnInit() {
     // continue where you left    
