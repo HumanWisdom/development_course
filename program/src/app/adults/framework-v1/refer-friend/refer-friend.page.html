@@ -73,19 +73,19 @@
 
                   <div class="row mt30px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" id="first-name" class="form-control cfc7" placeholder="Friend’s Name">
+                      <input type="text" id="name" (keyup)="keyname($event.target)" class="form-control cfc7" placeholder="Friend’s Name">
                     </div>
                   </div>
 
                   <div class="row mt10px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" id="first-name" class="form-control cfc7" placeholder="Friend’s E-mail">
+                      <input type="text" id="email" (keyup)="keyemail($event.target)" class="form-control cfc7" placeholder="Friend’s E-mail">
                     </div>
                   </div>
 
                   <div class="row mt30px pb40px center_flex"> 
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                      <button type="submit" class="btn btn-warning btn_raf_submit w100">
+                      <button type="submit" class="btn btn-warning btn_raf_submit w100" [disabled]="email === '' || name === '' || name.length < 3" (click)="submitrefer()">
                         Submit
                       </button>  
                     </div>
