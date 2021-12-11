@@ -233,18 +233,20 @@ export class LoginSignupPage implements OnInit {
       this.socialEmail=user.email
       console.log(user)
 
-      this.service.verifyGoogle(this.idToken)
+      this.service.verifyGoogle({
+        "TokenID": user.idToken,
+        "FName":this.socialFirstName,
+        "LName": this.socialLastName,
+        "Email": this.socialEmail,
+         "VCode": "DeviceID"
+      })
       .subscribe(res=>
         {
           console.log(res)
           if(res){
-            this.service.socialLearner({"FnName":this.socialFirstName,
-          "LName":this.socialLastName,
-          "Email":this.socialEmail})
-          .subscribe(
-            r=>{
+            
           
-              this.loginResponse=r
+              this.loginResponse=res
               console.log(this.loginResponse)
               localStorage.setItem('guest', 'F');
               localStorage.setItem("remember", 'T')
@@ -261,7 +263,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("userId",JSON.stringify(this.userId))
               localStorage.setItem("email", this.socialEmail)
               localStorage.setItem("FnName", this.socialFirstName)
-              localStorage.setItem("RoleID",JSON.stringify(r.RoleID))
+              localStorage.setItem("RoleID",JSON.stringify(res.RoleID))
               localStorage.setItem("LName", this.socialLastName)
               localStorage.setItem("pswd", '')
               localStorage.setItem("name", this.loginResponse.Name)
@@ -330,10 +332,7 @@ export class LoginSignupPage implements OnInit {
                 }
 
             }
-          )
           
-            
-          }
         })
     },
     error=>console.log(error),
@@ -358,17 +357,19 @@ export class LoginSignupPage implements OnInit {
       this.socialLastName=user.lastName
       this.socialEmail=user.email
       if(user.email !== undefined) {
-        this.service.verifyFb(this.idToken)
+        this.service.verifyFb({
+          "TokenID": user.idToken,
+          "FName":this.socialFirstName,
+          "LName": this.socialLastName,
+          "Email": this.socialEmail,
+           "VCode": "DeviceID"
+        })
         .subscribe(res=>
           {
             console.log(res)
             if(res){
-              this.service.socialLearner({"FName":this.socialFirstName,
-            "LName":this.socialLastName,
-            "Email":this.socialEmail})
-            .subscribe(
-              r=>{
-                this.loginResponse=r
+             
+                this.loginResponse=res
                 console.log(this.loginResponse)
                 localStorage.setItem('socialLogin', 'T');
                 localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
@@ -385,7 +386,7 @@ export class LoginSignupPage implements OnInit {
                 localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
                 localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
                 localStorage.setItem("userId",JSON.stringify(this.userId))
-                localStorage.setItem("RoleID",JSON.stringify(r.RoleID))
+                localStorage.setItem("RoleID",JSON.stringify(res.RoleID))
                 localStorage.setItem("email", this.socialEmail)
                 localStorage.setItem("pswd", '')
                 localStorage.setItem("name", this.loginResponse.Name)
@@ -452,10 +453,7 @@ export class LoginSignupPage implements OnInit {
   
                   }
               }
-            )
             
-              
-            }
           })
       }else {
         window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
