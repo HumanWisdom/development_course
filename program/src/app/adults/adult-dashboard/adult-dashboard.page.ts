@@ -153,7 +153,7 @@ export class AdultDashboardPage implements OnInit {
         localStorage.setItem("email", 'guest@humanwisdom.me');
         localStorage.setItem("pswd", '12345');
       }
-      if(localStorage.getItem('socialLogin') === 'T') this.socialLogin();
+      if(localStorage.getItem('socialLogin') === 'T') return 0;
       else this.emaillogin()
     }
     setTimeout(() => {
