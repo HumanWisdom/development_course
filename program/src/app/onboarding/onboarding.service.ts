@@ -39,13 +39,11 @@ export class OnboardingService {
   }
 
   verifyGoogle(data:any):Observable<any>{
-    let param1=new HttpParams().set("idToken",data)
-    return this.http.get(this.path+'/verifyGoogleToken',{params:param1})
+    return this.http.post(this.path+'/verifyGoogleTokenAndLogin', data)
   }
 
   verifyFb(data:any):Observable<any>{
-    let param1=new HttpParams().set("idToken",data)
-    return this.http.get(this.path+'/verifyFaceBookToken',{params:param1})
+    return this.http.post(this.path+'/verifyFaceBookTokenAndLogin', data)
   }
 
   emailLogin(email:any,password:any):Observable<any>{
