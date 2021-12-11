@@ -53,6 +53,9 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <label for="fullname" class="txt189 mt0px">Password*</label>
                           <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();" id="fullname" class="form-control cfc8" name="fullname" required />
+                          <label class="txt189">
+                            Password must be Minimum 6 Characters. No Speaces allowed
+                          </label>
                         </div>
                         <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
                               
@@ -129,6 +132,9 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="fullname" class="txt189 mt0px">Password*</label>
                         <input type="password" id="fullname" [(ngModel)]="this.password" class="form-control cfc8" name="fullname" required />
+                        <label class="txt189">
+                          Password must be Minimum 6 Characters. No Speaces allowed
+                        </label>
                       </div>
                     </div>
 

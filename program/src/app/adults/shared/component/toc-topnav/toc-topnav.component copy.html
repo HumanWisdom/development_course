@@ -4,9 +4,9 @@
 
       <div class="navbar-header nh p0 onscrollbg">
 
-        <div class="row center_flex">
+        <div class="row center_flex headerp_01">
           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 center_flex">
-            <div class="col-md-8 col-sm-8 col-xs-7 p20px">
+            <div class="col-md-8 col-sm-8 col-xs-7 p0">
               <a class="cimg_01" href="#">
                 <!-- <h4 class="txt47 mtb0px">
                  HumanWisdom <span class="italic"></span>
@@ -14,33 +14,33 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo.svg" class="img-responsive" alt="HumanWisdom">
               </a>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-5 p0 center_flex">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+            <div class="col-md-4 col-sm-4 col-xs-5 p0">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex" *ngIf="!isloggedIn">
                 <!-- login -->
-                <div class="col-md-8 col-sm-8 col-xs-8 p0" *ngIf="!isloggedIn">
+                <div class="col-md-8 col-sm-8 col-xs-8 p0">
                   <h4 class="header_login tcenter" (click)="loginroute()">
                     Login
                   </h4>
                 </div>
                 <!-- /login -->
+              </div>
 
-                <!-- alert & bookmark --> 
-                <div class="col-md-8 col-sm-8 col-xs-8 p0 flex_ai" *ngIf="isloggedIn">
-                  <div class="col-md-6 col-sm-6 col-xs-6 center_flex p0">
-                    <button type="button" class="btn_dh" data-toggle="collapse" aria-expanded="false" aria-controls="navbar">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_unfilled.svg" class="img-responsive" alt="">
-                    </button>
-                  </div>
-                  <div class="col-md-6 col-sm-6 col-xs-6 center_flex p0">
-                    <button type="button" class="btn_dh" routerLink="/adults/bookmarks" data-toggle="collapse" aria-expanded="false" aria-controls="navbar">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_dashboard.svg" class="img-responsive" alt="">
-                    </button>
-                  </div>
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex" *ngIf="isloggedIn">
+                <!-- alert & bookmark -->
+                <div class="col-md-4 col-sm-4 col-xs-4 pr0 dflex_01">
+                  <button type="button" class="btn_dh" routerLink="/adults/bookmarks" data-toggle="collapse" aria-expanded="false" aria-controls="navbar">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_dashboard.svg" class="img-responsive" alt="">
+                  </button>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 pr0 dflex_01">
+                  <button type="button" class="btn_dh"  data-toggle="collapse" aria-expanded="false" aria-controls="navbar">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_unfilled.svg" class="img-responsive" alt="">
+                  </button>
                 </div>
                 <!-- /alert & bookmark -->
 
                 <!-- hamburger -->
-                <div class="col-md-4 col-sm-4 col-xs-4 p0 mr5px center_flex" (click)="getevent()">
+                <div class="col-md-4 col-sm-4 col-xs-4 pr0 dflex_01" (click)="getevent()">
                   <nav>
                     <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox">
                     <label class="m-menu__toggle m0px flex_ai" for="menu">                    
