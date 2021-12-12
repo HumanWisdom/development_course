@@ -564,9 +564,11 @@
                     <h4 class="txt187 mtb0px tleft">
                       {{name}}
                     </h4>
-                    <h4 class="txt158 mt5pxi mb0px tleft" *ngIf="isloggedIn">
-                      View Profile
-                    </h4>
+                    <a routerLink="/onboarding/user-profile">
+                      <h4 class="txt158 mt5pxi mb0px tleft" *ngIf="isloggedIn">
+                        View Profile
+                      </h4>
+                    </a>
                   </div>
                 </div>
               </div>
