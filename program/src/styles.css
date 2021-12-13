@@ -24556,3 +24556,13 @@ a
 {
   margin: 0 0 76px 0; 
 }
+
+.pl2rem 
+{
+  padding-left: 2rem;
+}
+
+.faq_question
+{
+  width: 95%;
+}
