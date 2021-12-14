@@ -24566,3 +24566,80 @@ a
 {
   width: 95%;
 }
+
+.ls_connect_with 
+{
+  margin: 63px 0 14px 0;
+}
+
+.ls_or_login 
+{
+  margin: 40px 0 47px 0;
+}
+
+.ls_or_signup 
+{
+  margin: 40px 0 32px 0;
+}
+
+.btn_ls_login 
+{
+  margin: 106px 0 21px 0;
+}
+
+.btn_ls_signup
+{
+  margin: 21px 0 0 0;
+}
+
+.ls_forgot_password 
+{
+  margin: 0 0 73px 0;
+}
+
+.ls_already_user 
+{
+  margin: 30px 0 65px 0;
+}
+
+.btn_login_signup:active:hover,
+.btn_login_signup:focus, 
+.btn_login_signup:hover,
+.btn_login_signup:visited
+{
+  /* background: #FFFFFF; */
+  color: #ADADAD;
+}
+
+.btn_scan_ios 
+{
+  padding: 10px;
+  border: 0;
+  height: 50px;
+  border-radius: 5px;
+  /* width: 100%; */
+  margin-right: 0;
+  margin-bottom: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome_hw
+{
+  margin: 56px 0 33px 0;
+}
+
+.affiliate_discount 
+{
+  margin-right: -32px;
+  margin-left: -32px;
+  background: #FFC455;
+  padding: 17px 40px 23px 40px;
+}
+
+.aff_connect_with 
+{
+  margin: 38px 0 14px 0;
+}
