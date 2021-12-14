@@ -253,6 +253,10 @@ const routes: Routes = [
     path: 'tree-planting-program',
     loadChildren: () => import('./framework-v1/tree-planting-program/tree-planting-program.module').then( m => m.TreePlantingProgramPageModule)
   },
+  {
+    path: 'faq',
+    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
+  },
   
 ];
 
