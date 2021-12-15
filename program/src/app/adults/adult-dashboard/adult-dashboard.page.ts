@@ -1033,6 +1033,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(28,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         natureR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
