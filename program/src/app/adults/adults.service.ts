@@ -128,4 +128,8 @@ export class AdultsService {
    decrypt(encrypt){
     return this.http.post(this.path + `/decryptURL?EncryptedKey=${encrypt}`, {})
   }
+
+  verifytoken(encrypt){
+    return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}`)
+  }
 }

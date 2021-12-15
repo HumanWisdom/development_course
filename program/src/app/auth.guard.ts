@@ -27,34 +27,30 @@ export class AuthGuard implements CanActivate,OnInit {
     let m: any = window.location.href;
     let test = m.split('login')
     let aff = m.split('AffrefCode')
+    let token = m.split('authtoken')
      if(aff[1] !== undefined && aff[1] !== '') {
       let token = aff[1].split('=')[1]
       localStorage.setItem("Affreftoken", token)
      }
-      
-      if(m.split('email')[1] !== undefined) {
-        m = m.split('?')
-        localStorage.setItem("isloggedin", 'T')
-        localStorage.setItem("enablebanner", 'F')
-        let email = m[1].split('&')[0].split('=')[1].replace(/['"]+/g, '')
-        if(m[1].includes('pswd')) {
-          localStorage.setItem('socialLogin', 'F');
-          let password = m[1].split('&')[1].split('=')[1].replace(/['"]+/g, '')
-          localStorage.setItem("pswd", password)
-        }else{
-          localStorage.setItem('socialLogin', 'T');
-          let firstname = m[1].split('&')[1].split('=')[1].replace(/['"]+/g, '')
-          let lastname = m[1].split('&')[2].split('=')[1].replace(/['"]+/g, '')
-          localStorage.setItem("FnName", firstname)
-          localStorage.setItem("LName", lastname)
-        }
-        localStorage.setItem("email", email)
-        localStorage.setItem('guest', 'F');
+     if(token[1] !== undefined && token[1] !== '') {
+       let cookie = localStorage.getItem('acceptcookie')
+       localStorage.clear()
+      let authtoken = token[1].split('=')[1];
+      localStorage.setItem("enablebanner", 'F')
+      localStorage.setItem("fromapp", 'T')
+      if(cookie){
+        localStorage.setItem('acceptcookie', 'T')
+      }
+      localStorage.setItem('guest', 'F');
         localStorage.setItem('btnclick', 'F')
         localStorage.setItem("remember", 'T')
         localStorage.setItem('adult', 'T')
-        return true;
-      }
+        localStorage.setItem("isloggedin", 'T')
+
+      localStorage.setItem("token",JSON.stringify(authtoken))
+      return true
+     }
+     localStorage.setItem("fromapp", 'F')
     let res = localStorage.getItem("isloggedin")
     let rem = localStorage.getItem("remember")
     let first = localStorage.getItem("first")
