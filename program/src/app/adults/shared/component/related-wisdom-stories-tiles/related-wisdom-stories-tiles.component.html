@@ -8,23 +8,23 @@
 </div>
 
 <!-- stories -->
-<ng-container *ngFor="let data of wisdomstories">
+
   
-<div class="row center_flex index_rwst">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngFor="let item of data">
+<div class="row index_rwst">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngFor="let data of wisdomstories">
    
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
-          <a (click)="viewstory(item)">
-            <img src="{{item['Img']}}" alt="" class="img-responsive img_index_rwst">
-            <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
-              {{item['Title']}}
-            </h4>
-          </a>
-        </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px" *ngFor="let item of data">
+      <a (click)="viewstory(item)">
+        <img src="{{item['Img']}}" alt="" class="img-responsive img_index_rwst">
+        <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
+          {{item['Title']}}
+        </h4>
+      </a>
+    </div>
      
   </div>
 </div>
-=</ng-container>
+
 <!-- /stories -->
 
 <!-- <div class="panel-group index_rwst_view_more" id="accordion_ws">
