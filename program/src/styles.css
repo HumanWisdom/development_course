@@ -7253,7 +7253,8 @@ span.right {
     /* background: #5d5d5d; */
     background: rgba(255,255,255,0.2);
     /* background: rgba(255,255,255,1); */
-    z-index:999;
+    /* z-index:999; */
+    z-index:98;
     box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
 .sidebar-footer .canchor {
@@ -10895,9 +10896,10 @@ body,
   top: 0;
 }
 
-.c_silver_chalice 
+.c_silver_chalice,
+.silver_chalice 
 {
-  color: #ADADAD;
+  color: #ADADAD !important;
 }
 
 .iw100 
@@ -15059,7 +15061,8 @@ input[type="number"] {
   left: 15px;
   white-space: pre-wrap;
   /* width: 50%; */
-  width: 75%;
+  /* width: 75%; */
+  width: 70%;
   text-align: left !important;
 }
 
@@ -19050,7 +19053,8 @@ share-buttons button
 
 .panel_subtitle
 {
-  margin: 5px 0;
+  /* margin: 5px 0; */
+  margin: 2px 0 5px 0;
 }
 
 .fp_subtitle 
@@ -20679,10 +20683,16 @@ and (orientation : portrait)
   }
 } */
 
+.bookmark_imgs
+{
+  margin-top: 34px;
+}
+
 .bookmark_imgs img
 {
   max-height: 227px;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 @media (max-width: 767px)
@@ -21017,7 +21027,7 @@ and (orientation : portrait)
 {
   background: #FFC455;
   padding: 30px 0 30px 0;
-  margin: 40px -15px 0 -15px;
+  margin: 26px -15px 72px -15px;
 }
 
 .mt60px 
@@ -21725,15 +21735,18 @@ ul.dh_ul li
   border-width: 0;
   border-color: transparent;  
   background: #FFFFFF;
-  box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%);
+  /* box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%); */
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.75);
   border-radius: 2px;
 }
 
 .ls_checkbox > input[type="checkbox"]:checked + *::before 
 {
-  background: #ffffff url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/tickmark.png) 3px 4px no-repeat;
-  border-color: #1393A8;
-  border-radius: 1px;
+  background: #ffffff url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/tickmark.png) 4px 4px no-repeat;
+  /* border-color: #1393A8; */
+  border-radius: 2px;
+  border-color: white;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
 .ls_footer 
@@ -22265,7 +22278,8 @@ ul.dh_ul li
 .onscrollbg_active
 {
   background: #FFFFFF;
-  margin: -1px;
+  /* margin: -1px; */
+  margin: 0;
   box-shadow: 0px 2px 2px rgb(0 0 0 / 10%);
 }
 
@@ -22466,12 +22480,12 @@ ul.dh_ul li
   justify-content: center;
 }
 
-.get_in_touch 
+/* .get_in_touch 
 {
   background: #FFC455;
   padding: 30px 0 30px 0;
   margin: 20px -15px 0 -15px;
-}
+} */
 
 .mt-1px 
 {
@@ -23062,7 +23076,8 @@ ul.dh_ul li
   right: 0;
   left: 0;
   margin: 0 auto;
-  z-index: 99;
+  z-index: 98;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .mr10px 
@@ -24642,4 +24657,76 @@ a
 .aff_connect_with 
 {
   margin: 38px 0 14px 0;
+}
+
+.fnavbar 
+{
+  position: fixed;
+  background: #FFFFFF;
+  width: 100%;
+  z-index: 99;
+}
+
+.ch_activation_code 
+{
+  padding: 4px 0 20px 0;
+}
+
+.cont_where_u_left
+{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.cmr-10px 
+{
+  margin-right: -10px;
+}
+
+.gsn 
+{
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.progress_sgp
+{
+  bottom: 8px;
+  left: 0px;
+  width: 75%;
+}
+
+.davy-s_grey
+{
+  color: #5D5D5D !important;
+}
+
+.bookmark_module_title
+{
+  margin: 40px 0 22px 0;
+}
+
+.project_get_involved
+{
+  margin: 50px 0 29px 0;
+}
+
+.project_mail_to 
+{
+  margin: 26px -15px 72px -15px;
+}
+
+.project_social_icons
+{
+  margin: 18px 0 60px 0;
+}
+
+.project_rights_reserved 
+{
+  margin: 0 0 16px 0;
+}
+
+.cfc8:focus 
+{
+  border-bottom: 1px solid rgba(255,255,255,0.50);
 }

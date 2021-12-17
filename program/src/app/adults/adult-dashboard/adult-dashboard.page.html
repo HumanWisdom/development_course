@@ -4,9 +4,9 @@
   <!-- /header -->
 
   <!-- google playstore -->
-  <div class="row p20px h60px center_flex mlr-10px_01 bg_01 p20px" id="div_google_playstore" *ngIf="enablebanner">
+  <div class="row p20px h60px center_flex mlr-10px_01 bg_01" id="div_google_playstore" *ngIf="enablebanner">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
         <div class="col-md-11 col-sm-11 col-xs-11 p0 flex_ai">
           <h4 class="txt83 mtb0px tleft mr10px ws_nowrap">
             Also available on
@@ -43,7 +43,7 @@
     </div> -->
 
     <!-- Carousel Fixed Height -->
-    <div class="row tcenter">
+    <div class="row tcenter cmtop">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex safari_dflex">
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dbg_black">
 
@@ -179,7 +179,7 @@
               <form>
 
                 <!-- for all the user-guest, subscribed, unsubscribed -->
-                <div class="row p10px mb27px center_flex mlr-10px_01 bg_01" id="div_user_guide">
+                <div class="row p10px mb20px center_flex mlr-10px_01 bg_01" id="div_user_guide">
                   <div class="col-md-12 col-sm-12 col-xs-12 plr0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
                       <div class="prelative center_flex">
@@ -246,17 +246,17 @@
                 </div> -->
                 <!-- /subscribed -->
 
-                <div class="row" *ngIf="isSubscribe">
+                <div class="row ch_activation_code" *ngIf="isSubscribe">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h6 class="txt152">
+                    <h6 class="txt152 mtb0px">
                       <a class="txt153" (click)="subscribenow()">Click here</a>
-                      if you already have a Subscription Code
+                      if you have a Subscription Code
                     </h6>
                   </div>
                 </div>
 
                 <!-- section 1 -->
-                <div class="row on_user_guide_pt">
+                <div class="row on_user_guide_pt cmr-10px">
                   <div class="col-md-12 col-sm-12 col-xs-12 odiv p0">
 
                     <div class="col-md-2 col-sm-4 col-xs-4">
@@ -482,7 +482,7 @@
                 </button>                -->
 
                 <!-- resume -->
-                <div class="row mlr-10px_01 accordion_row ">
+                <div class="row mlr-10px_01 accordion_row cont_where_u_left">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="panel-group dpanelgroup" id="accordion">
                       <div class="panel panel-default dpanel">
@@ -564,7 +564,7 @@
                         <div id="a1" class="panel-collapse collapse in">
                           <div class="panel-body p0 m-1px">
 
-                            <div class="row">
+                            <div class="row cmr-10px">
                               <div class="col-md-12 col-sm-12 col-xs-12 odiv p0">
 
                                 <div class="col-md-3 col-sm-6 col-xs-6 prelative">
@@ -675,13 +675,13 @@
                         <div id="a2" class="panel-collapse collapse in">
                           <div class="panel-body p0">
 
-                            <div class="row">
+                            <div class="row cmr-10px">
                               <div class="col-md-12 col-sm-12 col-xs-12 odiv p0">
                                 <div class="col-md-2 col-sm-4 col-xs-4 ty-10p">
                                   <a routerLink="/adults/get-support-now/s71001">
                                   <!-- <a href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/get_support_now/stress.mp4"> -->
                                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_support_now/01.svg" alt="Stress Management" class="crimg">
-                                    <h4 class="tcenter txt32 mt5px whitespace_preline">
+                                    <h4 class="tcenter txt32 gsn whitespace_preline">
                                       Stress
                                     </h4>
                                   </a>
@@ -690,7 +690,7 @@
                                   <a routerLink="/adults/get-support-now/s71002">
                                   <!-- <a href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/get_support_now/anxiety.mp4"> -->
                                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_support_now/02.svg" alt="Solution for Anxiety" class="crimg">
-                                    <h4 class="tcenter txt32 mt5px whitespace_preline">
+                                    <h4 class="tcenter txt32 gsn whitespace_preline">
                                       Anxiety
                                     </h4>
                                   </a>
@@ -700,7 +700,7 @@
                                   <a routerLink="/adults/get-support-now/s71003">
                                   <!-- <a href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/get_support_now/anger.mp4"> -->
                                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_support_now/03.svg" alt="Anger Management" class="crimg">
-                                    <h4 class="tcenter txt32 mt5px whitespace_preline">
+                                    <h4 class="tcenter txt32 gsn whitespace_preline">
                                       Anger
                                     </h4>
                                   </a>
@@ -710,7 +710,7 @@
                                   <a routerLink="/adults/get-support-now/s71004">
                                   <!-- <a href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/get_support_now/dealing_with_loss.mp4"> -->
                                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_support_now/04.svg" alt="Dealing with Loss" class="crimg">
-                                    <h4 class="tcenter txt32 mt5px whitespace_preline">
+                                    <h4 class="tcenter txt32 gsn whitespace_preline">
                                       Dealing with Loss
                                     </h4>
                                   </a>
@@ -719,7 +719,7 @@
                                   <a routerLink="/adults/get-support-now/s71005">
                                   <!-- <a href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/get_support_now/conflict_in_relationships.mp4"> -->
                                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_support_now/05.svg" alt="Conflict in Relationships" class="crimg">
-                                    <h4 class="tcenter txt32 mt5px whitespace_preline">
+                                    <h4 class="tcenter txt32 gsn whitespace_preline">
                                       Conflict in Relationships
                                     </h4>
                                   </a>
@@ -766,7 +766,7 @@
                           <div class="panel-body">
 
                             <!-- nurturing a quiet mind -->
-                            <div class="row">
+                            <div class="row cmr-10px">
 
                               <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="txt33 cptbm0 flex_ai fp_1">
@@ -875,7 +875,7 @@
                             <!-- /nurturing a quiet mind -->
 
                             <!-- art of enquiry -->
-                            <div class="row">
+                            <div class="row cmr-10px">
 
                               <br>
 
@@ -1039,7 +1039,7 @@
                             <!-- /art of enquiry -->
 
                             <!-- how the mind works -->
-                            <div class="row variable-width">
+                            <div class="row variable-width cmr-10px">
 
                               <br>
 
@@ -1206,7 +1206,7 @@
                             <!-- /how the mind works -->
 
                             <!-- emotions -->
-                            <div class="row">
+                            <div class="row cmr-10px">
 
                               <br>
 
@@ -1314,7 +1314,7 @@
                             <!-- /emotions -->
 
                             <!-- living with wisdom I -->
-                            <div class="row">
+                            <div class="row cmr-10px">
 
                               <br>
 
@@ -1450,7 +1450,7 @@
                             <!-- /living with wisdom I -->
 
                             <!-- living with wisdom II -->
-                            <div class="row">
+                            <div class="row cmr-10px">
 
                               <br>
 
@@ -1616,7 +1616,7 @@
                             <!-- /living with wisdom II -->
 
                             <!-- solving global problems -->
-                            <div class="row">
+                            <div class="row cmr-10px">
 
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="txt33 cptbm0">
@@ -1640,7 +1640,7 @@
                                       01
                                     </h4>
                                     <h4 class="tcenter txt31 attitle">Tackling Racism</h4>
-                                    <div class="progress dprogress">
+                                    <div class="progress dprogress progress_sgp">
                                       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </a>
@@ -1656,7 +1656,7 @@
                                       02
                                     </h4>
                                     <h4 class="tcenter txt31 attitle">Climate Change</h4>
-                                    <div class="progress dprogress">
+                                    <div class="progress dprogress progress_sgp">
                                       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </a>
@@ -1672,7 +1672,7 @@
                                       03
                                     </h4>
                                     <h4 class="tcenter txt31 attitle">Global Health Challenges</h4>
-                                    <div class="progress dprogress">
+                                    <div class="progress dprogress progress_sgp">
                                       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </a>
@@ -1688,7 +1688,7 @@
                                       04
                                     </h4>
                                     <h4 class="tcenter txt31 attitle">Ending Conflict</h4>
-                                    <div class="progress dprogress">
+                                    <div class="progress dprogress progress_sgp">
                                       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </a>
@@ -1704,7 +1704,7 @@
                                       05
                                     </h4>
                                     <h4 class="tcenter txt31 attitle">Transforming Education</h4>
-                                    <div class="progress dprogress">
+                                    <div class="progress dprogress progress_sgp">
                                       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </a>
