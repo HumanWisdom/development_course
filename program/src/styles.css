@@ -16157,6 +16157,7 @@ span.ctag
 .dpaneltitle
 {
   width: 100%;
+  padding: 0 10px 0 10px;
 }
 
 .panel-group
@@ -18772,7 +18773,7 @@ ngx-circular-player svg
 
 .ptb20px 
 {
-  padding: 20px 0;
+  padding: 20px 0 !important;
 }
 
 .img_flash 
@@ -24729,4 +24730,9 @@ a
 .cfc8:focus 
 {
   border-bottom: 1px solid rgba(255,255,255,0.50);
+}
+
+.cmr-20px 
+{
+  margin-right: -20px !important;
 }
