@@ -30,7 +30,9 @@ export class ProfilePage implements OnInit {
     let userId=JSON.parse(localStorage.getItem("userId"))
     this.RoleID=JSON.parse(localStorage.getItem("RoleID"))
      this.Onboardingservice.getpaymentdetail(userId).subscribe((res) => {
-       this.paymentDetail = res[0]
+       if(res) {
+        this.paymentDetail = res[0]
+       }
      })
      this.Onboardingservice.getuser(userId).subscribe((res)=>{
        let userdetail = res[0];
