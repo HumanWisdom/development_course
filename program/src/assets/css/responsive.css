@@ -148,7 +148,8 @@
     .navbar_01 
     {
         /* top: 7%; */
-        margin-top: 16%;
+        /* margin-top: 16%; */
+        margin-top: 15.8%;
     }
 
     ::-webkit-scrollbar 
@@ -159,6 +160,11 @@
     .img_google_playstore 
     {
         max-width: 65%;
+    }
+
+    .cmtop 
+    {
+        margin-top: 32%;
     }
 }
 
@@ -258,6 +264,11 @@
     {
         max-width: 55%;
     }
+
+    .cmr-10px 
+    {
+        margin-right: 0px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px)
@@ -308,6 +319,11 @@
     {
         /* top: 5.5%; */
         margin-top: 7.5%;
+    }
+
+    .cmtop 
+    {
+        margin-top: 15%;
     }
 }
 
@@ -393,6 +409,11 @@
     border-radius: 10px;
     background-clip: content-box;
     }
+
+    .cmtop 
+    {
+        margin-top: 11%;
+    }
 }
 
 @media (min-width: 1025px)
@@ -439,6 +460,11 @@
     {
         /* top: 7.5%; */
         margin-top: 4%;
+    }
+
+    .cmtop 
+    {
+        margin-top: 8%;
     }
 }
 
