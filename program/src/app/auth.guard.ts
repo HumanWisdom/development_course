@@ -26,15 +26,22 @@ export class AuthGuard implements CanActivate,OnInit {
     localStorage.setItem("enablebanner", 'T')
     let m: any = window.location.href;
     let test = m.split('login')
+    let affrefcode = '';
     let aff = m.split('AffrefCode')
     let token = m.split('authtoken')
      if(aff[1] !== undefined && aff[1] !== '') {
       let token = aff[1].split('=')[1]
       localStorage.setItem("Affreftoken", token)
      }
+     if(localStorage.getItem('AffReferralCode') !== null) {
+      affrefcode = localStorage.getItem('AffReferralCode');
+    }
      if(token[1] !== undefined && token[1] !== '') {
        let cookie = localStorage.getItem('acceptcookie')
        localStorage.clear()
+       if(affrefcode !== ''){
+        localStorage.setItem("AffReferralCode", affrefcode)
+      }
       let authtoken = token[1].split('=')[1];
       localStorage.setItem("enablebanner", 'F')
       localStorage.setItem("fromapp", 'T')
