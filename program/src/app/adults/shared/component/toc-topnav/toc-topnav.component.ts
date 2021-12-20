@@ -12,10 +12,15 @@ export class TocTopnavComponent implements OnInit {
   name = ''
   roleid = 0
   url = '';
+  subscriper= false;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem("Subscriber")
+    if(sub === '1') {
+      this.subscriper = true;
+    }
     this.name = localStorage.getItem('name');
     if(userid === 'T') {
       this.isloggedIn = true

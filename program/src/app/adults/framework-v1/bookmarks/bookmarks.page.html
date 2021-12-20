@@ -1,6 +1,7 @@
 <div class="wrapper">
   <!-- header -->
-  <app-toc-topnav></app-toc-topnav>
+  <!-- <app-toc-topnav></app-toc-topnav> -->
+  <app-tn-hwp-project></app-tn-hwp-project>
   <!-- /header -->
 
   <!-- page content -->
@@ -13,9 +14,9 @@
             <div class="x_content p0 bookmark_imgs" *ngIf="bookmarkList.length !== 0">                  
               <div *ngFor="let item of allkeys; let i=index">                                
                 
-                <div class="row pb10px">
+                <div class="row bookmark_module_title">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="txt113">
+                    <h4 class="txt113 mtb0px">
                       {{item}}
                     </h4>
                   </div>
@@ -28,8 +29,6 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="pagebreak"></div>
 
               </div>              
             </div>

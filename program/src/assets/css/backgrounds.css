@@ -133,12 +133,25 @@
 
 .bg_login_signup
 {  
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/flat.svg) no-repeat center center fixed !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/flat.svg) no-repeat center center fixed !important; */
+  background: linear-gradient(180deg, #1092A7 -1.41%, #70C6BD 100%) !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover;
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */ 
+  min-height: 100vh; 
+}
+
+.bg_treesisters
+{  
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/treesisters/treesisters.svg) no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  z-index: 0; 
   min-height: 100vh; 
 }

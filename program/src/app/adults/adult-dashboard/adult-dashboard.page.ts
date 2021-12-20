@@ -123,7 +123,20 @@ export class AdultDashboardPage implements OnInit {
 
   constructor(
     private router: Router, private location:Location,private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef
-     ) { }
+     ) {
+      let authtoken=JSON.parse(localStorage.getItem("token"))
+      let app= localStorage.getItem("fromapp")
+      if(authtoken && app && app !== 'F') {
+        this.service.verifytoken(authtoken).subscribe((res) => {
+          console.log(res)
+          if(res) {
+          }else {
+           this.router.navigate(['/onboarding/login'])
+          }
+       })
+      }
+      
+      }
 
   ngOnInit() {
     localStorage.setItem('cicd', 'T')
@@ -153,8 +166,15 @@ export class AdultDashboardPage implements OnInit {
         localStorage.setItem("email", 'guest@humanwisdom.me');
         localStorage.setItem("pswd", '12345');
       }
-      if(localStorage.getItem('socialLogin') === 'T') return 0;
-      else this.emaillogin()
+      let app= localStorage.getItem("fromapp")
+      if(!app || app === 'F') {
+        if(localStorage.getItem('socialLogin') === 'T') return 0;
+        else this.emaillogin()
+      }else {
+        let authtoken=JSON.parse(localStorage.getItem("token"))
+        this.fromapplogin(authtoken);
+      }
+      
     }
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
@@ -368,6 +388,90 @@ export class AdultDashboardPage implements OnInit {
           {
             sessionStorage.setItem("userId",JSON.stringify(this.userId))
             sessionStorage.setItem("userEmail",JSON.stringify(email))
+            sessionStorage.setItem("userName",JSON.stringify(this.userName))
+
+
+          }
+        }
+         
+       
+      },
+      error=>{console.log(error)},
+      ()=>{
+      }
+
+      
+    )
+  }
+
+
+  fromapplogin(token){
+    this.service.verifytoken(token)
+    .subscribe(
+      res=>
+      {//console.log(res)
+        this.loginResponse=res
+        this.userId = this.loginResponse.UserId
+        console.log(this.loginResponse)
+        this.isSubscribe = this.loginResponse.Subscriber === 0 ? true : false;
+        let guest = localStorage.getItem('guest');
+        if(guest === 'T') localStorage.setItem('guest', 'F')
+        sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+        localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+        localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
+        localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+        localStorage.setItem("userId",JSON.stringify(this.userId))
+        localStorage.setItem("name", this.loginResponse.Name)
+        this.name = this.loginResponse.Name
+        this.getProgress()
+        this.freescreens();
+        localStorage.setItem("text",JSON.stringify(this.text))
+        localStorage.setItem("video",JSON.stringify(this.video))
+        localStorage.setItem("audio",JSON.stringify(this.audio))
+        localStorage.setItem("moduleId",JSON.stringify(this.moduleId))
+        localStorage.setItem("question",JSON.stringify(this.question))
+        localStorage.setItem("reflection",JSON.stringify(this.reflection))
+        localStorage.setItem("feedbackSurvey",JSON.stringify(this.feedbackSurvey))
+        this.userId=JSON.parse(localStorage.getItem("userId"))
+        if(localStorage.getItem('acceptcookie') === 'T') this.enableDailypopup();
+        this.Subscriber = localStorage.getItem('Subscriber')
+    this.cd.detectChanges();
+    localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+    if(localStorage.getItem("token")&&(this.saveUsername==true))
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.userName=JSON.parse(localStorage.getItem("userName"))
+    }
+    else
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.userName=JSON.parse(sessionStorage.getItem("userName"))
+
+    }
+    console.log(this.userId,"userId")
+    this.getBookmarks()
+        if(this.loginResponse.UserId==0)
+        {
+
+        }
+        else{
+          this.userId=this.loginResponse.UserId
+          this.userName=this.loginResponse.Name
+          sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+          localStorage.setItem("userId",JSON.stringify(this.userId))
+          localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
+          console.log(localStorage.getItem("token"),"this is local token")
+          if(this.saveUsername==true)
+          {
+            localStorage.setItem("userId",JSON.stringify(this.userId))
+            localStorage.setItem("userName",JSON.stringify(this.userName))
+
+          }
+            
+          else
+          {
+            sessionStorage.setItem("userId",JSON.stringify(this.userId))
             sessionStorage.setItem("userName",JSON.stringify(this.userName))
 
 
@@ -930,6 +1034,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(28,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         natureR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen

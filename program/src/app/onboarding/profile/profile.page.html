@@ -286,7 +286,7 @@
                       
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt147 mt5b0px">
+                      <h4 class="txt147 mt5b0px" *ngIf="paymentDetail">
                         {{paymentDetail['CCName'] + ' ' + paymentDetail['CCNumber'].slice(0, 2)  + 'xx xxxx xxxx xx' + paymentDetail['CCNumber'].slice(-2, paymentDetail['CCNumber'].length)}}
                       </h4> 
                     </div>
