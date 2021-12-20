@@ -69,27 +69,18 @@
       </a>
       -->
 
-      <a (click)="profileclickevent()" class="footer_index">
-        <div *ngIf="!enableprofile && isloggedIn && !profile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_inactive.svg" alt="" >
-          <p class="mb0px silver_chalice">
-            Profile
-          </p>
-        </div>
-
-        <div *ngIf="enableprofile && profile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg" alt="" >
-          <p class="mb0px">
-            Profile
-          </p>
-        </div>
-
-        <div *ngIf="!isloggedIn"> 
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/login.svg"  alt="">
-          <p class="mb0px davy-s_grey">
-            Login
-          </p>
-        </div>
+      <a class="footer_index" (click)="profileclickevent()"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/login.svg" *ngIf="!isloggedIn" alt="">
+        
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg" alt="" *ngIf="enableprofile && profile">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_inactive.svg" alt="" *ngIf="!enableprofile && isloggedIn && !profile">
+       
+        <p class="mb0px davy-s_grey" *ngIf="!isloggedIn">
+          Login
+        </p>
+        <p class="mb0px" *ngIf="isloggedIn">
+          Profile
+        </p>
       </a>
 
     </div>
