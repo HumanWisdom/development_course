@@ -30,11 +30,16 @@ export class S27001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
 
+  stories: any = []
+
   constructor(
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
+  ) { 
+    this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    this.stories = JSON.parse(this.stories)
+  }
 
   ngOnInit() {
     // continue where you left    

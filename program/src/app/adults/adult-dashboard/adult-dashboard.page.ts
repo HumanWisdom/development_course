@@ -701,6 +701,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(27,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         discoveringWisdomResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2229,6 +2230,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(44,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         stressResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
