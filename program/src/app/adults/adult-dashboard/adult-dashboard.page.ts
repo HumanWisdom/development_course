@@ -124,6 +124,14 @@ export class AdultDashboardPage implements OnInit {
   constructor(
     private router: Router, private location:Location,private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef
      ) {
+      if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
+        let token = localStorage.getItem("Affreftoken");
+        this.service.decrypt(token).subscribe((res: any) => {
+          if(res) {
+            localStorage.setItem("AffReferralCode", res)
+          }
+        })
+      }
       let authtoken=JSON.parse(localStorage.getItem("token"))
       let app= localStorage.getItem("fromapp")
       if(authtoken && app && app !== 'F') {
@@ -141,14 +149,6 @@ export class AdultDashboardPage implements OnInit {
   ngOnInit() {
     localStorage.setItem('cicd', 'T')
     if(localStorage.getItem('enablebanner') === 'F') this.enablebanner = false
-    if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
-      let token = localStorage.getItem("Affreftoken");
-      this.service.decrypt(token).subscribe((res: any) => {
-        if(res) {
-          localStorage.setItem("AffReferralCode", res)
-        }
-      })
-    }
     let userid = localStorage.getItem('isloggedin');
     let rem = localStorage.getItem('remember');
     let guest = localStorage.getItem('guest');
