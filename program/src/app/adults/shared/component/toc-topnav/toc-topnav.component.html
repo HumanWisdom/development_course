@@ -1,4 +1,4 @@
-<div class="row center_flex dheader navbar_01">
+<div class="row center_flex dheader navbar_01 fnavbar onscrollbg">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 flex_ai plr20px">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
       <a class="" href="#">
@@ -378,6 +378,73 @@
                               </h4>
                             </div>
                           </div>
+                </div>
+                </a>
+                </li>
+                        <li>
+                          <a routerLink="/adults/framework-v1/podcast-toc" class="p0 b0px">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/05.svg" alt="" class="img-responsive">
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                                  <h4 class="txt188 mtb0px">
+                                    HumanWisdom Podcast
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                
+                        <li *ngIf="isloggedIn && subscriper">
+                          <a routerLink="/onboarding/myprogram" class="p0 b0px">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt="" class="img-responsive">
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                                  <h4 class="txt188 mtb0px">
+                                    My Subscriptions
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+
+                        <li *ngIf="!isloggedIn || !subscriper">
+                          <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt="" class="img-responsive">
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                                  <h4 class="txt188 mtb0px">
+                                    Subscribe
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                
+                        <li>
+                          <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/07.svg" alt="" class="img-responsive">
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                                  <h4 class="txt188 mtb0px" (click)="giftwisdom()">
+                                    Give the gift of Wisdom
+                                  </h4>
+                                </div>
+                              </div>
                         </div>
                       </a>
                     </li>
@@ -387,7 +454,7 @@
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                             <div class="col-md-2 col-sm-2 col-xs-2">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
                             </div>
                             <div class="col-md-10 col-sm-10 col-xs-10 p0">
                               <h4 class="txt188 mtb0px">
@@ -537,6 +604,7 @@
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
         <a routerLink="/adults/bookmarks">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_dashboard.svg" class="img-responsive" alt="">
+          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_active.svg" class="img-responsive" alt=""> -->
         </a>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
@@ -919,7 +987,7 @@
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                             <div class="col-md-2 col-sm-2 col-xs-2">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
                             </div>
                             <div class="col-md-10 col-sm-10 col-xs-10 p0">
                               <h4 class="txt188 mtb0px">

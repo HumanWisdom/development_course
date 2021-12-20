@@ -76,18 +76,6 @@
                         </button>
                       </div>
                     </a>
-                    <!-- dropdown content -->
-                    <ul class="dropdown-menu dropdown-usermenu pull-right se_me_ul">
-                      <li>
-                        <div *ngIf="socialShare" class="center_flex_li">
-                          <share-buttons 
-                          [include]="['whatsapp','facebook','linkedin']"
-                          [url]="shareUrl">      
-                          </share-buttons>      
-                        </div>
-                      </li>  
-                    </ul>
-                    <!-- /dropdown content -->
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <h1 class="txt22 tcenter pt10px_so">
                         Share with friends
@@ -95,21 +83,19 @@
                     </div>
                   </div>
                 </div>
-  
-                <br>
-  
-                <div class="row plr25px pt30px">
+
+                <div class="row me_continue_msg">
                   <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">
-                    <h6 class="txt51">
+                    <h6 class="txt51 mtb0px mb10px">
                       Congratulations! You have completed this module.
                     </h6>
-                    <h6 class="txt83">
+                    <h6 class="txt83 mtb0px">
                       Continue to the next module
                     </h6>
                   </div>
                 </div>
                 
-                <div class="row p20px center_flex flex_align">
+                <div class="row me_next_module center_flex flex_align">
                   <a (click)="proceed()">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0 prelative">
                       <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/module_end/00.png" alt=""> -->
@@ -131,11 +117,51 @@
                     </div>
                   </a>
                 </div>
+
+                <div class="row me_orm">
+                  <div class="col-md-12 col-sm-12 col-xs-12 tleft">
+                    <h4 class="txt51">
+                      Other related modules
+                    </h4>
+                  </div>
+                </div>
+
+                <!-- other related modules -->
+                <div class="row div_orm">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm">
+                      <a href="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png" alt="" class="img-responsive img_orm">
+                        <h4 class="mtb0px txt158 absolute_index_rwst_title tleft">
+                          Breathing
+                        </h4>
+                      </a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm">
+                      <a href="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png" alt="" class="img-responsive img_orm">
+                        <h4 class="mtb0px txt158 absolute_index_rwst_title tleft">
+                          Noticing Thoughts
+                        </h4>
+                      </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm">
+                      <a href="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/10.png" alt="" class="img-responsive img_orm">
+                        <h4 class="mtb0px txt158 absolute_index_rwst_title tleft">
+                          Guided Audio Meditation
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /other related modules -->
   
-                <div class="row plr25px pt20px">
+                <div class="row me_rtd">
                   <a (click)="goDashboard()">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">                  
-                      <h6 class="txt86 rtd">
+                      <h6 class="txt86 mtb0px">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/module_end_dashboard.svg" alt="">
                         <span class="pl5px">
                             Return to Dashboard
@@ -144,8 +170,6 @@
                     </div>
                   </a>
                 </div>            
-                
-                <br><br><br><br>
                 
               </form>
             </div>
