@@ -257,7 +257,10 @@ const routes: Routes = [
     path: 'faq',
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
-  
+  {
+    path: 'wisdom-shorts',
+    loadChildren: () => import('./wisdom-shorts/wisdom-shorts.module').then( m => m.WisdomShortsModule)
+  },
 ];
 
 @NgModule({
