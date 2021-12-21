@@ -1,12 +1,42 @@
 <!-- top navigation -->
-<app-feature-header title="Wisdom Stories"></app-feature-header>
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding nav_menu_01 h60px onscrollws">
+    <nav class="">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0 lh0pxi" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0">
+          </a>                  
+        </li>        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <!-- <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h6 class="txt88 mtb0px">
+              {{title}}
+            </h6>            
+          </a>                  
+        </li> -->
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav w20p no_bg">       
+        <!-- <li class="mr0px">
+          <a (click)="addToken()" class="cuser-profile dropdown-toggle lh0pxi" data-toggle="dropdown" aria-expanded="false">                                       
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_01.svg" alt="" class="p0">
+          </a>
+        </li>    -->
+      </ul>
+    </nav>
+  </div>
+</div>
 <!-- /top navigation --> 
 
 
 <!-- page content -->
-<div class="right_col bg_white pb5_5rem ip0" role="main">				
+<div class="right_col bg_white pb5_5rem pt_rightcol ip0" role="main">				
   <!-- Class -->
-  <div class="cw100p dabsolute_06">
+  <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
         <div class="x_panel p0 bg_white c_zambezi xpanel_01">
@@ -19,19 +49,19 @@
                 </div>
               </div>
 
-              <div class="row pt30px">
+              <div class="row pt30px pb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <div class="col-md-10 col-sm-10 col-xs-10">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
                     <h6 class="txt74 mtb0px">
                       {{story.Title}}
                     </h6>
                   </div>
-                  <div class="col-md-2 col-sm-2 col-xs-2 tcenter">
-                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_like_active.svg" alt="">
+                  <!-- <div class="col-md-2 col-sm-2 col-xs-2 tcenter">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_like_active.svg" alt="">
                     <h6 class="txt75 mtb0px">
                       102
-                    </h6> -->
-                  </div>
+                    </h6>
+                  </div> -->
                 </div>      
               </div>
           
@@ -53,14 +83,15 @@
           
               <div class="row plr20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h6 class="txt78" style="white-space: pre-line" [innerHTML]="story.Story">
+                  <h6 class="txt78 mt0px" style="white-space: pre-line" [innerHTML]="story.Story">
                   
                   </h6>
                 </div>
               </div>
-              <br>
+
+              <!-- <br> -->
                     
-              <div class="row center_flex plr20px">
+              <div class="row center_flex plr20px pt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="col-md-12 col-sm-12 col-xs-12 bluediv">
                     <div class="row center_flex">
@@ -77,7 +108,7 @@
 
                     <hr class="ws_hr_01">
 
-                    <div class="row pt20px">
+                    <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <h6 class="txt101">
                          {{story.Msg}}
@@ -85,8 +116,7 @@
                 
                         <h6 class="txt101 ws_modules">
                           Now explore the modules on
-                          <span *ngFor="let l of links"><a (click)="loadReflections(l.id)" class="txt102" routerLink="{{l.route}}">{{l.module}},</a></span>
-                          which you may find helpful.
+                          <span *ngFor="let l of links"><a (click)="loadReflections(l.id)" class="txt102" routerLink="{{l.route}}">{{l.module}},</a></span>which you may find helpful.
                         </h6>
                       </div>
                     </div>
