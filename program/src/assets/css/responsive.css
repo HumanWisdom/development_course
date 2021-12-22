@@ -539,4 +539,14 @@
         background: transparent;
         padding: 0 7px;
     }
+
+    .search_01 
+    {
+        margin-top: -6px;
+    }
+
+    .mlr-10px {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
 }

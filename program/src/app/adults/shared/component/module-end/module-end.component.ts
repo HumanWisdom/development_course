@@ -22,6 +22,23 @@ export class ModuleEndComponent implements OnInit {
   shareUrl:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  @Input() moduleList: any = [
+    {
+      name: 'Breathing',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      link: ''
+    },
+    {
+      name: 'Noticing Thoughts',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png',
+      link: ''
+    },
+    {
+      name: 'Guided Audio Meditation',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/10.png',
+      link: ''
+    },
+  ]
 
   constructor(private router:Router,private service: AdultsService) { }
 

@@ -16,7 +16,24 @@ export class S231p2Page implements OnInit {
   moduleLink="/adults/fear-anxiety"
   moduleName="01. Fear & Anxiety "
   sectionName= "Understand Emotions";
-  moduleId=19
+  moduleId=19 
+  moduleList: any = [
+    {
+      name: 'Reactive mind',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/22.png',
+      link: '/reactive-mind'
+    },
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+    },
+    {
+      name: 'Relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      link: '/relationships'
+    },
+  ]
 
   constructor() { }
 

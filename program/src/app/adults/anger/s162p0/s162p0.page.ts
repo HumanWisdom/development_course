@@ -41,7 +41,7 @@ export class S162p0Page implements OnInit,OnDestroy {
     let splitarr = []
     let arraythree = []
     story.forEach((e) => {
-      if(arraythree.length < 3) {
+      if(arraythree.length < 2) {
         arraythree.push(e)
       }else {
        splitarr.push(arraythree)

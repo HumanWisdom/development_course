@@ -129,28 +129,11 @@
                 <!-- other related modules -->
                 <div class="row div_orm">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm">
-                      <a href="">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png" alt="" class="img-responsive img_orm">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm" *ngFor="let item of moduleList">
+                      <a  routerLink="{{item['link']}}">
+                        <img src="{{item['image']}}" alt="{{item['name']}}" class="img-responsive img_orm">
                         <h4 class="mtb0px txt158 absolute_index_rwst_title tleft">
-                          Breathing
-                        </h4>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm">
-                      <a href="">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png" alt="" class="img-responsive img_orm">
-                        <h4 class="mtb0px txt158 absolute_index_rwst_title tleft">
-                          Noticing Thoughts
-                        </h4>
-                      </a>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm">
-                      <a href="">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/10.png" alt="" class="img-responsive img_orm">
-                        <h4 class="mtb0px txt158 absolute_index_rwst_title tleft">
-                          Guided Audio Meditation
+                          {{item['name']}}
                         </h4>
                       </a>
                     </div>
@@ -161,9 +144,9 @@
                 <div class="row me_rtd">
                   <a (click)="goDashboard()">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">                  
-                      <h6 class="txt86 mtb0px">
+                      <h6 class="txt86 mtb0px center_flex">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/module_end_dashboard.svg" alt="">
-                        <span class="pl5px">
+                        <span class="pl5px pt5px">
                             Return to Dashboard
                         </span>
                       </h6>
