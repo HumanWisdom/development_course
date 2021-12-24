@@ -11,9 +11,25 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
   @Input()
   wisdomstories = [];
 
-  constructor(private router: Router) { }
+  wisdomstoriesbottom = [];
 
-  ngOnInit() {}
+  constructor(private router: Router) { 
+    
+  }
+
+  ngOnInit() {
+    if(this.wisdomstories.length >= 2) {
+      let first = []
+      this.wisdomstories.forEach((d, i) => {
+        if(i !== 0 && i !== 1) {
+         this.wisdomstoriesbottom.push(d)
+        }else {
+          first.push(d)
+        }
+      })
+      this.wisdomstories = first
+     }
+  }
 
   viewstory(item){
     this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
