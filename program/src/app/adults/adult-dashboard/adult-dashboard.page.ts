@@ -183,6 +183,11 @@ export class AdultDashboardPage implements OnInit {
     
   }
 
+  carouselclick() {
+    let videoPlayer: HTMLVideoElement = <HTMLVideoElement> document.getElementById('humanwisdomvideo')
+    videoPlayer.pause()
+  }
+
   acceptCookies() {
     localStorage.setItem('acceptcookie', 'T');
     this.closecookiemodal.nativeElement.click();

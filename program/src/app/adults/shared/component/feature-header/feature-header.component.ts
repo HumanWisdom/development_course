@@ -24,7 +24,7 @@ export class FeatureHeaderComponent implements OnInit {
     private service:AdultsService,
     private location:Location,
     private ac:ActivatedRoute) {
-      this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
+      this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
      }
 
   ngOnInit() {
