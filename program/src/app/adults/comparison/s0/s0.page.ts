@@ -34,6 +34,7 @@ export class S0Page implements OnInit,OnDestroy {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/comparison_envy.png"
   tocColor="grey"
   lastvisited = false;
+  stories: any = []
 
   constructor(
     private router: Router,
@@ -41,10 +42,41 @@ export class S0Page implements OnInit,OnDestroy {
     private location:Location,
     private url: ActivatedRoute
   ) { 
-    this.url.queryParams.subscribe(params => {
+      this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
      
+    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    story = JSON.parse(story)
+    let splitarr = []
+    let arraythree = []
+    if(story.length <= 2) 
+    {
+      story.forEach((e) => 
+      {
+        arraythree.push(e)
+      })
+      splitarr.push(arraythree)
+    }
+    else
+    {
+      story.forEach((e) => 
+      {
+        if(arraythree.length < 2) 
+        {
+          arraythree.push(e)
+        }
+        else 
+        {
+          splitarr.push(arraythree)
+          arraythree.push(e)
+          arraythree = []
+        }
+      })
+    }
+    this.stories = splitarr
+    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    // this.stories = JSON.parse(this.stories)
   }
 
   ngOnInit() {
