@@ -810,6 +810,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(27,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         discoveringWisdomResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -862,6 +863,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(32,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         benefitsWisdomResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -898,6 +900,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(33,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         fiveCirclesResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -944,6 +947,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(34,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         keyIdeasResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -989,6 +993,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(35,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         pgResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1089,6 +1094,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(29,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         breathingR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1180,6 +1186,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(51,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         gamR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1227,6 +1234,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(22,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         meditationResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1276,6 +1284,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(26,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         resumeBenefitsEnquiry="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1327,6 +1336,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(36,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         beginResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1372,6 +1382,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(37,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         threeStepsResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1418,6 +1429,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(38,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         insightResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1462,6 +1474,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(39,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         awarenessResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1508,6 +1521,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(40,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         njResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1553,6 +1567,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(41,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         qakResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1601,6 +1616,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(42,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         lwlResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1646,6 +1662,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(43,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         obstaclesResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1695,6 +1712,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(15,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         conditioningResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1741,6 +1759,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(7,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         comparisonR="s"+res.lastVisitedScreen
         // continue where you left
@@ -1786,6 +1805,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(54,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         rmR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1833,6 +1853,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(25,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         siR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1887,6 +1908,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(55,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         sinR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1933,6 +1955,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(21,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         identityResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1979,6 +2002,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(18,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         enR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2024,6 +2048,7 @@ export class AdultDashboardPage implements OnInit {
       this.service.clickModule(56,this.userId)
       .subscribe(res=>
         {console.log(res)
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
           this.qrList=res
           ibR="s"+res.lastVisitedScreen
           this.goToPage=res.lastVisitedScreen
@@ -2070,6 +2095,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(57,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         niR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2111,6 +2137,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(19,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         fearResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2160,6 +2187,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(20,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         pleasureResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2203,6 +2231,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(60,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         sorrowandlossResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2240,6 +2269,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(61,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         lonelinessResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2339,6 +2369,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(44,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         stressResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2384,6 +2415,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(47,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         relationshipResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2429,6 +2461,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(62,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         loveResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2477,6 +2510,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(16,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         criticismResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2523,6 +2557,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(17,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         sR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2571,6 +2606,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(63,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         livingwithpeaceResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2619,6 +2655,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(64,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         dealingwithdeathResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2659,6 +2696,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(23,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         hR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2705,6 +2743,7 @@ export class AdultDashboardPage implements OnInit {
      this.service.clickModule(53,this.userId)
      .subscribe(res=>
        {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
          this.qrList=res
          communicationR="s"+res.lastVisitedScreen
          this.goToPage=res.lastVisitedScreen         
@@ -2754,6 +2793,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(49,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         opinionsandbeliefsResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2791,6 +2831,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(48,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         successandfailureResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2828,6 +2869,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(45,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         addictionResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2865,6 +2907,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(46,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         foodResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2902,6 +2945,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(73,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         moneyResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2939,6 +2983,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(58,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         wR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2977,6 +3022,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(59,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         lR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
