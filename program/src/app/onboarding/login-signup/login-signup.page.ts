@@ -5,6 +5,7 @@ import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from 'src/app/adults/adults.service';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
+
 @Component({
   selector: 'app-login-signup',
   templateUrl: './login-signup.page.html',
@@ -672,5 +673,35 @@ export class LoginSignupPage implements OnInit {
        
       )
   }
+
+ signInWithApple() {
+    const CLIENT_ID = "humanwisdom.web.service"
+    const REDIRECT_API_URL = "https://humanwisdom.info/api/verifyAppleTokenAndLogin"
+    window.open(
+        `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
+        '_blank'
+    );
+
+    window.addEventListener('message', async event => {
+      console.log(event.data.id_token)
+        const decodedToken = event.data.id_token;
+        let requestData = {}
+        if (event.data.user) {
+            const userName = JSON.parse(event.data.user);
+            requestData = {
+                "email": decodedToken.email,
+                "name": `${userName.name.firstName} ${userName.name.lastName}`,
+                "socialId": decodedToken.sub,
+            };
+        } else {
+            requestData = {
+                "email": decodedToken.email,
+                "socialId": decodedToken.sub,
+            };
+        }
+        console.log(`User Data : ${requestData}`);
+        // do your next stuff here
+    });
+};
 
 }
