@@ -17,6 +17,24 @@ export class S49103Page implements OnInit {
   moduleName="04. Success and Failure"
   sectionName= "Living with Wisdom - II";
   moduleId=48
+  moduleList: any = [
+    {
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/20.png',
+      link: '/conditioning'
+    },
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+ 
+    },
+    {
+      name: 'Identity',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/25.png',
+      link: '/identity'
+    },
+  ]
 
   constructor() { }
 

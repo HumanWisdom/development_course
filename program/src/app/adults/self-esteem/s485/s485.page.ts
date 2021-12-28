@@ -17,6 +17,25 @@ export class S485Page implements OnInit {
   moduleName="06. Living with Peace"
   sectionName= "Living with Wisdom - I";
   moduleId=63
+  moduleList: any = [
+    {
+      name: 'Self Image',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/23.png',
+      link: '/self-image'
+    },
+    {
+      name: 'Criticisms',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/37.png',
+      link: '/criticism'
+ 
+    },
+    {
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/20.png',
+      link: '/conditioning'
+  
+    },
+  ]
 
   constructor() { }
 

@@ -17,6 +17,25 @@ export class S54084Page implements OnInit {
   moduleName="04. Self Image"
   sectionName= "How the Mind Works";
   moduleId=25
+  moduleList: any = [
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+    },
+    {
+      name: 'Anger',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/33.png',
+      link: '/anger'
+ 
+    },
+    {
+      name: 'Fear & Anxiety',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/29.png',
+      link: '/fear-anxiety'
+  
+    },
+  ]
 
   constructor() { }
 

@@ -17,6 +17,25 @@ export class S51013Page implements OnInit {
   moduleName="05. Meditation"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=22
+  moduleList: any = [
+    {
+      name: 'Anger',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/33.png',
+      link: '/anger'
+    },
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+ 
+    },
+    {
+      name: 'Breathing',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      link: '/breathing'
+    },
+  ]
+
 
   constructor() { }
 

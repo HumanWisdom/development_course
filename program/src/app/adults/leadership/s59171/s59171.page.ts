@@ -18,6 +18,25 @@ export class S59171Page implements OnInit {
   moduleName="01. Happiness"
   sectionName= "Living with Wisdom - II";
   moduleId=23
+  moduleList: any = [
+    {
+      name: 'Communication',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/42.png',
+      link: '/communication'
+    },
+    {
+      name: 'Relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      link: '/relationships'
+ 
+    },
+    {
+      name: 'Self Interest',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/24.png',
+      link: '/self-interest'
+  
+    },
+  ]
 
   constructor() { }
 

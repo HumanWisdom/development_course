@@ -17,6 +17,23 @@ export class S60112Page implements OnInit {
   moduleName="04. Loneliness"
   sectionName= "Understand Emotions";
   moduleId=61
+  moduleList: any = [
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+    },
+    {
+      name: 'Identity',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/25.png',
+      link: '/identity'
+    },
+    {
+      name: 'Love',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/36.png',
+      link: '/love'
+    },
+  ]
 
   constructor() { }
 

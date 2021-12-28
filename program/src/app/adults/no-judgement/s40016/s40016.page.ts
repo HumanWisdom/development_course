@@ -17,6 +17,28 @@ export class S40016Page implements OnInit {
   moduleName="07. Questions are Key"
   sectionName= "Art of Enquiry";
   moduleId=41
+
+  moduleList: any = [
+    {
+      name: 'Three Steps to Enquiry',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/13.png',
+      link: '/three-steps-enquiry'
+    },
+    {
+      name: 'Insight',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/14.png',
+      link: '/insight'
+  
+ 
+    },
+    {
+      name: 'Key Ideas',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/04.png',
+      link: '/key-ideas'
+  
+    },
+  ]
+
   
   constructor() { }
 
