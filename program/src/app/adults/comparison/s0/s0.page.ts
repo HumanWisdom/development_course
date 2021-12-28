@@ -23,7 +23,6 @@ export class S0Page implements OnInit,OnDestroy {
   path=this.router.url
   
   
-  
  
   token="1234"
   shareUrl=this.path+"?t="+this.token
@@ -43,25 +42,41 @@ export class S0Page implements OnInit,OnDestroy {
     private location:Location,
     private url: ActivatedRoute
   ) { 
-    // this.url.queryParams.subscribe(params => {
-    //   this.t = params['t'];
-
-      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-     story = JSON.parse(story)
+      this.url.queryParams.subscribe(params => {
+      this.t = params['t'];
+    })
+     
+    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
-    story.forEach((e) => {
-      if(arraythree.length < 2) {
+    if(story.length <= 2) 
+    {
+      story.forEach((e) => 
+      {
         arraythree.push(e)
-      }else {
-       splitarr.push(arraythree)
-       arraythree = []
-       arraythree.push(e)
-      }
-    })
+      })
+      splitarr.push(arraythree)
+    }
+    else
+    {
+      story.forEach((e) => 
+      {
+        if(arraythree.length < 2) 
+        {
+          arraythree.push(e)
+        }
+        else 
+        {
+          splitarr.push(arraythree)
+          arraythree = []
+          arraythree.push(e)
+        }
+      })
+    }
     this.stories = splitarr
-   // })
-     
+    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    // this.stories = JSON.parse(this.stories)
   }
 
   ngOnInit() {

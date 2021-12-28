@@ -115,31 +115,34 @@
                     <div class="panel-body">
                       <!-- stories -->
                       <!-- story 1 -->
-                      <div class="row center_flex pb10px">
+                      <div *ngFor="let s of secondstoryList">
+                      <div (click)="toRead(s)" class="row center_flex pb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 dflex">
                           
                           <div class="col-md-2 col-sm-2 col-xs-3 p0">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/timothy-eberly-2JV3dbrFt-Y-unsplash.jpg" alt="" class="w100 c150px">
+                            <img src="{{s.Img}}"  alt="" class="w100 c150px">
                           </div>
                           
-                          <div class="col-md-10 col-sm-10 col-xs-9 center_flex wisdom_stories">
-
+                          <div class="col-md-10 col-sm-10 col-xs-9 center_flex" [ngClass]="{'wisdom_stories_inactive': !readStories.includes(s.ScenarioID),'wisdom_stories': readStories.includes(s.ScenarioID)}">
+      
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h6 class="txt69 mtb0px">
-                                    Ryan Had A Hippo’s Temper 
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                  <h6 class="txt69 mtb0px capitalize">
+                                  {{s.Title}}
                                   </h6>
                                 </div>
+                                <!-- <div class="col-md-4 col-sm-4 col-xs-2 p0 tright">
+                                </div> -->
                               </div>
-
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h6 class="txt70">
-                                  Although a promising young boy, thirteen... 
+      
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h6 class="txt70 ellipsis">
+                                {{s.Story|slice:0:40}}...
                                 </h6>
                               </div>
-
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex pt5px">
+      
+                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt5px">
                                 <div class="col-md-6 col-sm-6 col-xs-6 p0">
                                   <!-- <h6 class="txt71 mtb0px">
                                     Anonymous
@@ -147,16 +150,17 @@
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 p0">
                                   <h6 class="txt72 mtb0px">
-                                    20 Dec | 5 mins
+                                    {{s.PublishedOn|date:'dd MMM yy'}} | 5 mins
                                   </h6>
                                 </div>
                               </div>
                             </div>
                             
                           </div>
-
+      
                         </div>
                       </div>
+                    </div>
                       <!-- /story 1 -->
                       <!-- /stories -->
                     </div>

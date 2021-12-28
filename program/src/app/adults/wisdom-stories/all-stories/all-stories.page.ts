@@ -10,6 +10,7 @@ import {Location } from '@angular/common'
 })
 export class AllStoriesPage implements OnInit {
   storyList=[]
+  secondstoryList=[]
   readStories=[]
   searchedText:any
   sId:any
@@ -28,9 +29,13 @@ export class AllStoriesPage implements OnInit {
   getStories(){
     this.service.getScenarios().subscribe(res=>
       {
-        console.log(res)
-        this.storyList=res
-        localStorage.setItem("storyList",JSON.stringify(this.storyList))
+        if(res) {
+          console.log(res)
+          let dateres = res.sort((a, b) => b['PublishedOn'] - a['PublishedOn'])
+          this.storyList=dateres.slice(0, 10)
+          this.secondstoryList=dateres.slice(10)
+          localStorage.setItem("storyList",JSON.stringify(this.storyList))
+        }
       },
       error=>console.log(error),
       ()=>{
