@@ -17,6 +17,23 @@ export class S39029Page implements OnInit {
   moduleName="06. No Judgement"
   sectionName= "Art of Enquiry";
   moduleId=40
+  moduleList: any = [
+    {
+      name: 'Breathing',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      link: '/breathing'
+    },
+    {
+      name: 'Noticing Thoughts',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png',
+      link: '/noticing-thoughts'
+    },
+    {
+      name: 'Meditation',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/09.png',
+      link: '/meditation'
+    },
+  ]
   
   constructor() { }
 

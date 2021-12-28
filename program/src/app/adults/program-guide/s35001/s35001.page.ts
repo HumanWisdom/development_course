@@ -29,12 +29,29 @@ export class S35001Page implements OnInit,OnDestroy {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/program_guide.jpg"
   tocColor="white"
   lastvisited = false;
+  stories: any = []
+
 
   constructor(
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
+  ) { 
+    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+     story = JSON.parse(story)
+    let splitarr = []
+    let arraythree = []
+    story.forEach((e) => {
+      if(arraythree.length < 2) {
+        arraythree.push(e)
+      }else {
+       splitarr.push(arraythree)
+       arraythree = []
+       arraythree.push(e)
+      }
+    })
+    this.stories = splitarr
+  }
 
   ngOnInit() {
     // continue where you left    

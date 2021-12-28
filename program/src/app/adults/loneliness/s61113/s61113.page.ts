@@ -17,6 +17,25 @@ export class S61113Page implements OnInit {
   moduleName="05. Anger"
   sectionName= "Understand Emotions";
   moduleId=14
+  moduleList: any = [
+    {
+      name: 'Relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      link: '/relationships'
+    },
+    {
+      name: 'The Nature of the ‘I’',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/28.png',
+      link: '/nature-of-i'
+ 
+    },
+    {
+      name: 'Sorrow and Loss',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/31.png',
+      link: '/sorrow'
+  
+    },
+  ]
 
   constructor() { }
 

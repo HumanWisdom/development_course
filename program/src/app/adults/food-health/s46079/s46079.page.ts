@@ -17,6 +17,24 @@ export class S46079Page implements OnInit {
   moduleName="07. Money"
   sectionName= "Living with Wisdom - II";
   moduleId=73
+  moduleList: any = [
+    {
+      name: 'Pleasure',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/30.png',
+      link: '/pleasure'
+    },
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+    },
+    {
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/20.png',
+      link: '/conditioning'
+
+    },
+  ]
 
   constructor() { }
 

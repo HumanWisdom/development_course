@@ -17,6 +17,26 @@ export class S20072Page implements OnInit {
   moduleName="03. Sorrow and Loss"
   sectionName= "Understand Emotions";
 
+  moduleList: any = [
+    {
+      name: 'Happiness',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/41.png',
+      link: '/happiness'
+    },
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+ 
+    },
+    {
+      name: 'Inner Boredom',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/27.png',
+      link: '/inner-boredom'
+  
+    },
+  ]
+
   constructor() { }
 
   ngOnInit() {

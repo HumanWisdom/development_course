@@ -17,6 +17,25 @@ export class S21068Page implements OnInit {
   moduleName="07. Emotional Needs"
   sectionName= "How the Mind Works";
   moduleId=18
+  moduleList: any = [
+    {
+      name: 'Emotional Needs',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/26.png',
+      link: '/emotional-needs'
+    },
+    {
+      name: 'Self Image',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/23.png',
+      link: '/self-image'
+ 
+    },
+    {
+      name: 'The Nature of the ‘I’',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/28.png',
+      link: '/nature-of-i'
+  
+    },
+  ]
 
   constructor() { }
 

@@ -831,6 +831,7 @@ export class AdultDashboardPage implements OnInit {
       console.log(error)
     },
     ()=>{
+      
       if(cont=="1")
       {        
         this.router.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
@@ -858,6 +859,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(32,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         benefitsWisdomResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -894,6 +896,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(33,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         fiveCirclesResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -940,6 +943,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(34,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         keyIdeasResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -985,6 +989,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(35,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         pgResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1737,6 +1742,8 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(7,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+       
         this.qrList=res
         comparisonR="s"+res.lastVisitedScreen
         // continue where you left
@@ -2066,6 +2073,7 @@ export class AdultDashboardPage implements OnInit {
     this.service.clickModule(57,this.userId)
     .subscribe(res=>
       {console.log(res)
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
         niR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen

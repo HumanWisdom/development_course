@@ -37,8 +37,20 @@ export class S27001Page implements OnInit,OnDestroy {
     private service:AdultsService,
     private location:Location
   ) { 
-    this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    this.stories = JSON.parse(this.stories)
+    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+     story = JSON.parse(story)
+    let splitarr = []
+    let arraythree = []
+    story.forEach((e) => {
+      if(arraythree.length < 2) {
+        arraythree.push(e)
+      }else {
+       splitarr.push(arraythree)
+       arraythree = []
+       arraythree.push(e)
+      }
+    })
+    this.stories = splitarr
   }
 
   ngOnInit() {

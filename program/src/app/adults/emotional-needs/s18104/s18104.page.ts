@@ -17,6 +17,26 @@ export class S18104Page implements OnInit {
   moduleName="08. Inner Boredom"
   sectionName= "How the Mind Works";
   moduleId=56
+  moduleList: any = [
+    {
+      name: 'Relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      link: '/relationships'
+    },
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+ 
+    },
+    {
+      name: 'No Judgement',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/16.png',
+      link: '/no-judgement'
+
+  
+    },
+  ]
 
   constructor() { }
 

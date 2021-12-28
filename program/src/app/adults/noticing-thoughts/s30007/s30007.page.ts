@@ -17,6 +17,23 @@ export class S30007Page implements OnInit {
   moduleName="04. Guided Audio Meditation"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=51
+  moduleList: any = [
+    {
+      name: 'Breathing',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      link: '/breathing'
+    },
+    {
+      name: 'Meditation',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/09.png',
+      link: '/meditation'
+    },
+    {
+      name: 'Nature',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/06.png',
+      link: '/nature'
+    },
+  ]
 
   constructor() { }
 

@@ -17,6 +17,26 @@ export class S37018Page implements OnInit {
   moduleName="04. Insight"
   sectionName= "Art of Enquiry";
   moduleId=38
+  moduleList: any = [
+    {
+      name: 'Awareness',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/15.png',
+      link: '/awareness'
+    },
+    {
+      name: 'Questions are Key',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/17.png',
+      link: '/questions-are-key'
+ 
+    },
+    {
+      
+      name: 'Insight',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/14.png',
+      link: '/insight'
+  
+    },
+  ]
   
   constructor() { }
 

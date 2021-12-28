@@ -17,6 +17,25 @@ export class S23183Page implements OnInit {
   moduleName="02. Communication"
   sectionName= "Living with Wisdom - II";
   moduleId=53
+  moduleList: any = [
+    {
+      name: 'Love',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/36.png',
+      link: '/love'
+    },
+    {
+      name: 'Pleasure',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/30.png',
+      link: '/pleasure'
+ 
+    },
+    {
+      name: 'Living with Peace',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/39.png',
+      link: '/living-with-peace'
+  
+    },
+  ]
 
   constructor() { }
 
