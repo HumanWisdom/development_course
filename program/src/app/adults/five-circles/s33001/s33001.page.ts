@@ -60,8 +60,8 @@ export class S33001Page implements OnInit,OnDestroy {
         else 
         {
           splitarr.push(arraythree)
-          arraythree.push(e)
           arraythree = []
+          arraythree.push(e)
         }
       })
     }

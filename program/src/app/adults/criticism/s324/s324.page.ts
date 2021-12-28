@@ -67,8 +67,8 @@ export class S324Page implements OnInit,OnDestroy {
         else 
         {
           splitarr.push(arraythree)
-          arraythree.push(e)
           arraythree = []
+          arraythree.push(e)
         }
       })
     }
