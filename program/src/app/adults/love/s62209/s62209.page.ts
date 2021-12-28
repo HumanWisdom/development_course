@@ -17,6 +17,26 @@ export class S62209Page implements OnInit {
   moduleName="04. Criticism"
   sectionName= "Living with Wisdom - I";
   moduleId=16
+  moduleList: any = [
+    {
+      name: 'Relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      link: '/relationships'
+    },
+    {
+      name: 'Living with Peace',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/39.png',
+      link: '/living-with-peace'
+ 
+ 
+    },
+    {
+      name: 'Self Interest',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/24.png',
+      link: '/self-interest'
+  
+    },
+  ]
 
   constructor() { }
 

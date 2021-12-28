@@ -17,6 +17,26 @@ export class S43035Page implements OnInit {
   moduleName="01. Benefits of Enquiry"
   sectionName= "Art of Enquiry";
   moduleId=26
+  moduleList: any = [
+    {
+      name: 'Fear & Anxiety',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/29.png',
+      link: '/fear-anxiety'
+    },
+    {
+      name: 'No Judgement',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/16.png',
+      link: '/no-judgement'
+ 
+    },
+    {
+      name: 'Key Ideas',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/04.png',
+      link: '/key-ideas'
+  
+    },
+  ]
+
   
   constructor() { }
 

@@ -17,6 +17,24 @@ export class S57074Page implements OnInit {
   moduleName="01. Conditioning"
   sectionName= "How the Mind Works";
   moduleId=15
+  moduleList: any = [
+    {
+      name: 'Identity',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/25.png',
+      link: '/identity'
+    },
+    {
+      name: 'Self Interest',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/24.png',
+      link: '/self-interest'
+    },
+    {
+      name: 'Self Image',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/23.png',
+      link: '/self-image'
+    },
+  ]
+
 
   constructor() { }
 

@@ -17,6 +17,25 @@ export class S161p2Page implements OnInit {
   moduleName="03. Reactive Mind"
   sectionName= "How the Mind Works";
   moduleId=54
+  moduleList: any = [
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+    },
+    {
+      name: 'Self-Esteem',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/38.png',
+      link: '/self-esteem'
+ 
+    },
+    {
+      name: 'Anger',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/33.png',
+      link: '/anger'
+  
+    },
+  ]
 
   constructor() { }
 

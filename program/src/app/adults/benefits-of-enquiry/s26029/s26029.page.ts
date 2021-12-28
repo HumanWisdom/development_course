@@ -17,6 +17,25 @@ export class S26029Page implements OnInit {
   moduleName="02. How to begin?"
   sectionName= "Art of Enquiry";
   moduleId=36
+  moduleList: any = [
+    {
+      name: 'How to begin?',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/12.png',
+      link: '/how-to-begin'
+    },
+    {
+      name: 'Three Steps to Enquiry',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/13.png',
+      link: '/three-steps-enquiry'
+ 
+    },
+    {
+      name: 'Insight',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/14.png',
+      link: '/insight'
+  
+    },
+  ]
   
   constructor() { }
 

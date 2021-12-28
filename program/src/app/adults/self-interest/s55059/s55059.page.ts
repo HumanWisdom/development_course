@@ -17,6 +17,25 @@ export class S55059Page implements OnInit {
   moduleName="06. Identity"
   sectionName= "How the Mind Works";
   moduleId=21
+  moduleList: any = [
+    {
+      name: 'Love',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/36.png',
+      link: '/love'
+    },
+    {
+      name: 'Relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      link: '/relationships'
+ 
+    },
+    {
+      name: 'Emotional Needs',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/26.png',
+      link: '/emotional-needs'
+  
+    },
+  ]
 
   constructor() { }
 

@@ -17,6 +17,25 @@ export class S617Page implements OnInit {
   moduleName="07. Pleasure"
   sectionName= "How the Mind Works";
   moduleId=20
+  moduleList: any = [
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+    },
+    {
+      name: 'Living with Peace',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/39.png',
+      link: '/living-with-peace'
+ 
+    },
+    {
+      name: 'Happiness',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/41.png',
+      link: '/happiness'
+  
+    },
+  ]
 
   constructor() { }
 

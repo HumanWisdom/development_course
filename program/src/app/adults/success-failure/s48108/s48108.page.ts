@@ -17,6 +17,25 @@ export class S48108Page implements OnInit {
   moduleName="05. Addiction"
   sectionName= "Living with Wisdom - II";
   moduleId=45
+  moduleList: any = [
+    {
+      name: 'Stress',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      link: '/stress'
+    },
+    {
+      name: 'Fear & Anxiety',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/29.png',
+      link: '/fear-anxiety'
+ 
+    },
+    {
+      name: 'Money',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/47.png',
+      link: '/money'
+  
+    },
+  ]
 
   constructor() { }
 

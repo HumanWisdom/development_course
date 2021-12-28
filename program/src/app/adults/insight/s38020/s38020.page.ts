@@ -17,7 +17,24 @@ export class S38020Page implements OnInit {
   moduleName="05. Awareness"
   sectionName= "Art of Enquiry";
   moduleId=39
-  
+  moduleList: any = [
+    {
+      name: 'Awareness',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/15.png',
+      link: '/awareness'
+    },
+    {
+      name: 'Look without Language',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/18.png',
+      link: '/without-language'
+ 
+    },
+    {
+      name: 'Meditation',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/09.png',
+      link: '/meditation'
+    },
+  ]
   constructor() { }
 
   ngOnInit() {
