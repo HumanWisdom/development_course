@@ -218,6 +218,10 @@ const routes: Routes = [
     path: 'subscription-s01-v04',
     loadChildren: () => import('./subscription-s01-v04/subscription-s01-v04.module').then( m => m.SubscriptionS01V04PageModule)
   },
+  {
+    path: 'test-screen',
+    loadChildren: () => import('./test-screen/test-screen.module').then( m => m.TestScreenPageModule)
+  },
 
 ];
 
