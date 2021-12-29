@@ -166,6 +166,11 @@
     {
         margin-top: 32%;
     }
+
+    .cmtop_01
+    {
+        margin-top: 16%;
+    }
 }
 
 @media (min-width: 768px)
@@ -325,6 +330,11 @@
     {
         margin-top: 15%;
     }
+
+    .cmtop_01
+    {
+        margin-top: 8%;
+    }
 }
 
 @media (min-width: 1024px)
@@ -414,6 +424,11 @@
     {
         margin-top: 11%;
     }
+
+    .cmtop_01
+    {
+        margin-top: 6%;
+    }
 }
 
 @media (min-width: 1025px)
@@ -465,6 +480,11 @@
     .cmtop 
     {
         margin-top: 8%;
+    }
+
+    .cmtop_01
+    {
+        margin-top: 4%;
     }
 }
 
