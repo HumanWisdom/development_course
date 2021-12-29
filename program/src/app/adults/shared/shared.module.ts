@@ -67,6 +67,7 @@ import { TopnavComponent } from 'src/app/onboarding/shared/component/topnav/topn
 import { TocHeaderComponent } from '../shared/component/toc-header/toc-header.component';
 import { TocTopnavComponent } from '../shared/component/toc-topnav/toc-topnav.component';
 import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project.component';
+import { ModuleEndVideosComponent } from './component/module-end-videos/module-end-videos.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -128,7 +129,8 @@ import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project
     TocHeaderComponent,
     TocTopnavComponent,
     TnHwpProjectComponent,
-    RelatedWisdomStoriesTilesComponent
+    RelatedWisdomStoriesTilesComponent,
+    ModuleEndVideosComponent
   ],
   imports: [
     CommonModule,
@@ -212,7 +214,8 @@ import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project
     TocHeaderComponent,
     TocTopnavComponent,
     TnHwpProjectComponent,
-    RelatedWisdomStoriesTilesComponent
+    RelatedWisdomStoriesTilesComponent,
+    ModuleEndVideosComponent
   ]
 })
 export class SharedModule { }
