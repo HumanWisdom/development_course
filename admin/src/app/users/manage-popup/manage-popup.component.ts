@@ -11,6 +11,7 @@ export class ManagePopupComponent implements OnInit, OnDestroy {
   editor: Editor;
   popupvalue: string = '';
   setting_name: string = ''
+  popupList = []
   constructor(
     public _userService: UsersService
   ) { }
@@ -28,7 +29,7 @@ export class ManagePopupComponent implements OnInit, OnDestroy {
   getPopupContent() {
     this._userService.getPopupContent().subscribe((res: any) => {
       console.log(res)
-      this.popupvalue = res;
+      this.popupList = res;
     }, (err: any) => {
       console.log(err);
     })

@@ -523,6 +523,10 @@ export class AdultDashboardPage implements OnInit {
   getrenew() {
     this.closemodal.nativeElement.click()
   }
+
+  closeplaystore() {
+    this.enablebanner = false;
+  }
   
   submitrefer() {
     let data = {

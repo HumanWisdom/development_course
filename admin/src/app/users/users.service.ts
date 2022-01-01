@@ -306,7 +306,7 @@ path="https://www.humanwisdom.info/api"
   }
 
   getPopupContent(): Observable<any> {
-    return this.http.get(this.path + `/GetAdminSetting/1`)
+    return this.http.get(this.path + `/GetAdminSetting`)
   }
 
   getAffliateCommision(){
