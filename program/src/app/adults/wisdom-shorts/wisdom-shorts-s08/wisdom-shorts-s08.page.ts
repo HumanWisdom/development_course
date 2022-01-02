@@ -4,18 +4,18 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common';
 
 @Component({
-  selector: 'HumanWisdom-wisdom-shorts-s07',
-  templateUrl: './wisdom-shorts-s07.page.html',
-  styleUrls: ['./wisdom-shorts-s07.page.scss'],
+  selector: 'HumanWisdom-wisdom-shorts-s08',
+  templateUrl: './wisdom-shorts-s08.page.html',
+  styleUrls: ['./wisdom-shorts-s08.page.scss'],
 })
-export class WisdomShortsS07Page implements OnInit {
+export class WisdomShortsS08Page implements OnInit {
 
-  bg="red_pink_w7"
+  bg="red_pink_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.7.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/wisdom_shorts/wisdom_shorts_07.jpg"
+  videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.8.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/wisdom_shorts/wisdom_shorts_08.jpg"
 
-  title="Overcoming stress"
+  title="Questions"
   toc="/wisdom-shorts"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -23,7 +23,7 @@ export class WisdomShortsS07Page implements OnInit {
 
   screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber="s07"
+  screenNumber="s08"
   startTime:any
   endTime:any
   totalTime:any
@@ -49,10 +49,10 @@ export class WisdomShortsS07Page implements OnInit {
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmarks07")))
-    if(JSON.parse(sessionStorage.getItem("bookmarks07"))==0)
+    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmarks08")))
+    if(JSON.parse(sessionStorage.getItem("bookmarks08"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmarks07"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmarks08"))==1)
       this.bookmark=1   
   }
 
@@ -63,7 +63,7 @@ export class WisdomShortsS07Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-      sessionStorage.setItem("bookmarks07",JSON.stringify(this.bookmark))
+      sessionStorage.setItem("bookmarks08",JSON.stringify(this.bookmark))
   }
 
   createScreen(){
@@ -100,7 +100,7 @@ export class WisdomShortsS07Page implements OnInit {
       this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
       localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
     })
-    this.router.navigate(['/adults/wisdom-shorts/wisdom-shorts-s08'])
+    this.router.navigate(['/adults/wisdom-shorts'])
   }
 
   prev(){

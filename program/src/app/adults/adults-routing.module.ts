@@ -265,6 +265,10 @@ const routes: Routes = [
     path: 'blog',
     loadChildren: () => import('./blog/blog.module').then( m => m.BlogModule)
   },
+  {
+    path: 'treesisters',
+    loadChildren: () => import('./treesisters/treesisters.module').then( m => m.TreesistersPageModule)
+  },
 ];
 
 @NgModule({
