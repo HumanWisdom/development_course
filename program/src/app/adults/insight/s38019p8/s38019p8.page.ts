@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s38019',
-  templateUrl: './s38019.page.html',
-  styleUrls: ['./s38019.page.scss'],
+  selector: 'HumanWisdom-s38019p8',
+  templateUrl: './s38019p8.page.html',
+  styleUrls: ['./s38019p8.page.scss'],
 })
-export class S38019Page implements OnInit {
+export class S38019p8Page implements OnInit {
 
-  bg="dark_blue_w6"
+  // bg="module1_so_s1"
+  bg="dark_blue_w2"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -32,26 +33,22 @@ export class S38019Page implements OnInit {
 
   sessionPoints(){
     this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"38002,38003,38004,38005,38006,38007,38008,38009,38010,38011,38012,38013,38014,38015,38016,38017,38018"})
+    "ScreenNos":"38019"})
     .subscribe(res=>
       {console.log("points",res)
       this.points=res
     })
-    /*this.service.getPoints(this.userId)
-    .subscribe(res=>{
-      console.log(res)
-      this.points=res.PointsScored
-      this.overallPercentage=res.overallPercentage
-    })*/
+    
 
   }
   submitProgress(){
-    this.router.navigate(['/insight/s38019p1'])
+    this.router.navigate(['/insight/s38020'])
 
   }
   prev(){
-    this.router.navigate(['/insight/s38018'])
+    this.router.navigate(['/insight/s38019p7'])
 
   }
+
 
 }

@@ -18,15 +18,15 @@ export class S41019p6Page implements OnInit {
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=localStorage.getItem("moduleId")
   screenType=localStorage.getItem("reflection")
-  screenNumber="321p2"
+  screenNumber="41019p6"
   startTime:any
   endTime:any
   totalTime:any
   bookmark:any
-  rId=105
+  rId=787
   reflection:any
   reflectionA:any
-  r321p2=(sessionStorage.getItem("r321p2"))
+  r41019p6=(sessionStorage.getItem("r41019p6"))
 
   shared:any
   confirmed:any
@@ -184,11 +184,11 @@ export class S41019p6Page implements OnInit {
     // /multistep wizard
 
     this.createScreen()
-    console.log(this.r321p2)
-    console.log(sessionStorage.getItem("r321p2"))
-    /*if(sessionStorage.getItem("r321p2")==null)
+    console.log(this.r41019p6)
+    console.log(sessionStorage.getItem("r41019p6"))
+    /*if(sessionStorage.getItem("r41019p6")==null)
     {
-      this.r321p2=sessionStorage.getItem("r321p2")
+      this.r41019p6=sessionStorage.getItem("r41019p6")
     }*/
    
     console.log(this.qrList,"Qrlist")
@@ -238,10 +238,10 @@ export class S41019p6Page implements OnInit {
    // console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r321p2",this.r321p2)
-   //this.r321p2=sessionStorage.getItem("r321p2")
-   console.log(this.r321p2)
-   if(this.r321p2!="undefined")
+    sessionStorage.setItem("r41019p6",this.r41019p6)
+   //this.r41019p6=sessionStorage.getItem("r41019p6")
+   console.log(this.r41019p6)
+   if(this.r41019p6!="undefined")
    {
      
       this.service.submitProgressReflection({
@@ -252,7 +252,7 @@ export class S41019p6Page implements OnInit {
         "screenType":this.screenType,
         "timeSpent":this.totalTime,
         "ReflectionId":this.rId,
-        "Resp":this.r321p2
+        "Resp":this.r41019p6
         }).subscribe(res=>
         {
           console.log(res)

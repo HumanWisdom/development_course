@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import * as jQuery from 'jquery';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
 
 @Component({
-  selector: 'HumanWisdom-s41019p7',
-  templateUrl: './s41019p7.page.html',
-  styleUrls: ['./s41019p7.page.scss'],
+  selector: 'HumanWisdom-s38019p5',
+  templateUrl: './s38019p5.page.html',
+  styleUrls: ['./s38019p5.page.scss'],
 })
-export class S41019p7Page implements OnInit {
+export class S38019p5Page implements OnInit {
 
   bg="feedback_survey_footer"
   
@@ -18,15 +18,16 @@ export class S41019p7Page implements OnInit {
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=localStorage.getItem("moduleId")
   screenType=localStorage.getItem("reflection")
-  screenNumber="41019p7"
+  screenNumber="38019p5"
   startTime:any
   endTime:any
   totalTime:any
   bookmark:any
-  rId=788
+  rId=789
   reflection:any
   reflectionA:any
-  r41019p7=sessionStorage.getItem("r41019p7")
+  r38019p5=JSON.parse(sessionStorage.getItem("r38019p5"))
+  //r38019p5:any
 
   shared:any
   confirmed:any
@@ -39,6 +40,15 @@ export class S41019p7Page implements OnInit {
  
 
   ngOnInit() {
+    //console.log("response",JSON.parse(sessionStorage.getItem("r38019p5")))
+   
+    //if(!sessionStorage.getItem("r38019p5"))
+    this.r38019p5=sessionStorage.getItem("r38019p5")
+    console.log(this.r38019p5)
+
+      
+    //this.r38019p5=JSON.parse(sessionStorage.getItem("r38019p5"))
+
 
     // multistep wizard
     $( document ).ready(function() {
@@ -138,46 +148,7 @@ export class S41019p7Page implements OnInit {
         currentSection.nextAll('section').css('transform','translateX(100px)');
         $('section').not(currentSection).hide();
       });
-       // second
-       $("#svg_form_time rect").css("fill", active_color);
-       $("#svg_form_time circle").css("fill", active_color);
-       $("#prev").removeClass("disabled");
-         if (child >= length) {
-           $(this).addClass("disabled");
-           $('#submit').removeClass("disabled");
-         }
-         if (child <= length) {
-           child++;
-         }
-       var circle_child = child + 1;
-       $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-         "fill",
-         base_color
-       );
-       $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-         "fill",
-         base_color
-       );
-        // second
-      $("#svg_form_time rect").css("fill", active_color);
-      $("#svg_form_time circle").css("fill", active_color);
-      $("#prev").removeClass("disabled");
-        if (child >= length) {
-          $(this).addClass("disabled");
-          $('#submit').removeClass("disabled");
-        }
-        if (child <= length) {
-          child++;
-        }
-      var circle_child = child + 1;
-      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-        "fill",
-        base_color
-      );
-      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-        "fill",
-        base_color
-      );
+
        // second
        $("#svg_form_time rect").css("fill", active_color);
        $("#svg_form_time circle").css("fill", active_color);
@@ -203,11 +174,11 @@ export class S41019p7Page implements OnInit {
     // /multistep wizard
 
     this.createScreen()
-    console.log(this.r41019p7)
-    console.log(sessionStorage.getItem("r41019p7"))
-    if(sessionStorage.getItem("r41019p7")==null)
+    console.log(this.r38019p5)
+    console.log(sessionStorage.getItem("r38019p5"))
+    if(sessionStorage.getItem("r38019p5")==null)
     {
-      this.r41019p7=sessionStorage.getItem("r41019p7")
+      this.r38019p5=sessionStorage.getItem("r38019p5")
     }
    
     console.log(this.qrList,"Qrlist")
@@ -257,10 +228,10 @@ export class S41019p7Page implements OnInit {
     //console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r41019p7",this.r41019p7)
-   this.r41019p7=sessionStorage.getItem("r41019p7")
-   console.log(this.r41019p7)
-   if(this.r41019p7!="undefined")
+    sessionStorage.setItem("r38019p5",this.r38019p5)
+    this.r38019p5=sessionStorage.getItem("r38019p5")
+   console.log(this.r38019p5)
+   if(this.r38019p5!="undefined")
    {
      
       this.service.submitProgressReflection({
@@ -271,22 +242,22 @@ export class S41019p7Page implements OnInit {
         "screenType":this.screenType,
         "timeSpent":this.totalTime,
         "ReflectionId":this.rId,
-        "Resp":this.r41019p7
+        "Resp":this.r38019p5
         }).subscribe(res=>
         {
           console.log(res)
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/questions-are-key/s41019p8'])
+          this.router.navigate(['/insight/s38019p6'])
         },
         ()=>{
-          this.router.navigate(['/questions-are-key/s41019p8'])
+          this.router.navigate(['/insight/s38019p6'])
         })
    }
 
    else{
-    this.router.navigate(['/questions-are-key/s41019p6'])
+    this.router.navigate(['/insight/s38019p4'])
 
    }
    
@@ -296,7 +267,7 @@ export class S41019p7Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/questions-are-key/s41019p6'])
+    this.router.navigate(['/insight/s38019p4'])
   }
   
   ngOnDestroy(){

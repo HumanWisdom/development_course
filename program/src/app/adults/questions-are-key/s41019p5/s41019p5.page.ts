@@ -18,16 +18,16 @@ export class S41019p5Page implements OnInit {
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=localStorage.getItem("moduleId")
   screenType=localStorage.getItem("reflection")
-  screenNumber="321p1"
+  screenNumber="41019p5"
   startTime:any
   endTime:any
   totalTime:any
   bookmark:any
-  rId=104
+  rId=786
   reflection:any
   reflectionA:any
-  r321p1=JSON.parse(sessionStorage.getItem("r321p1"))
-  //r321p1:any
+  r41019p5=JSON.parse(sessionStorage.getItem("r41019p5"))
+  //r41019p5:any
 
   shared:any
   confirmed:any
@@ -40,14 +40,14 @@ export class S41019p5Page implements OnInit {
  
 
   ngOnInit() {
-    //console.log("response",JSON.parse(sessionStorage.getItem("r321p1")))
+    //console.log("response",JSON.parse(sessionStorage.getItem("r41019p5")))
    
-    //if(!sessionStorage.getItem("r321p1"))
-    this.r321p1=sessionStorage.getItem("r321p1")
-    console.log(this.r321p1)
+    //if(!sessionStorage.getItem("r41019p5"))
+    this.r41019p5=sessionStorage.getItem("r41019p5")
+    console.log(this.r41019p5)
 
       
-    //this.r321p1=JSON.parse(sessionStorage.getItem("r321p1"))
+    //this.r41019p5=JSON.parse(sessionStorage.getItem("r41019p5"))
 
 
     // multistep wizard
@@ -174,11 +174,11 @@ export class S41019p5Page implements OnInit {
     // /multistep wizard
 
     this.createScreen()
-    console.log(this.r321p1)
-    console.log(sessionStorage.getItem("r321p1"))
-    if(sessionStorage.getItem("r321p1")==null)
+    console.log(this.r41019p5)
+    console.log(sessionStorage.getItem("r41019p5"))
+    if(sessionStorage.getItem("r41019p5")==null)
     {
-      this.r321p1=sessionStorage.getItem("r321p1")
+      this.r41019p5=sessionStorage.getItem("r41019p5")
     }
    
     console.log(this.qrList,"Qrlist")
@@ -228,10 +228,10 @@ export class S41019p5Page implements OnInit {
     //console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r321p1",this.r321p1)
-    this.r321p1=sessionStorage.getItem("r321p1")
-   console.log(this.r321p1)
-   if(this.r321p1!="undefined")
+    sessionStorage.setItem("r41019p5",this.r41019p5)
+    this.r41019p5=sessionStorage.getItem("r41019p5")
+   console.log(this.r41019p5)
+   if(this.r41019p5!="undefined")
    {
      
       this.service.submitProgressReflection({
@@ -242,7 +242,7 @@ export class S41019p5Page implements OnInit {
         "screenType":this.screenType,
         "timeSpent":this.totalTime,
         "ReflectionId":this.rId,
-        "Resp":this.r321p1
+        "Resp":this.r41019p5
         }).subscribe(res=>
         {
           console.log(res)

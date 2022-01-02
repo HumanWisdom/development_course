@@ -8,11 +8,11 @@ import * as noUiSlider from 'node_modules/propellerkit-range-slider/node_modules
 import * as wNumb from 'node_modules/propellerkit-range-slider/node_modules/wnumb/';
 
 @Component({
-  selector: 'HumanWisdom-s41019p4',
-  templateUrl: './s41019p4.page.html',
-  styleUrls: ['./s41019p4.page.scss'],
+  selector: 'HumanWisdom-s38019p4',
+  templateUrl: './s38019p4.page.html',
+  styleUrls: ['./s38019p4.page.scss'],
 })
-export class S41019p4Page implements OnInit {
+export class S38019p4Page implements OnInit {
 
   bg="feedback_survey_footer"
   
@@ -21,17 +21,17 @@ export class S41019p4Page implements OnInit {
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
   screenType=JSON.parse(localStorage.getItem("feedbackSurvey"))
-  screenNumber='41019p4'
+  screenNumber='38019p4'
   startTime:any
   endTime:any
   totalTime:any
   bookmark:any
   x=[]
-  q1=290
-  q2=293
-  q3=294
-  q4=295
-  q5=296
+  q1=297
+  q2=298
+  q3=299
+  q4=300
+  q5=301
   optionList1=[]
   optionList2=[]
   optionList3=[]
@@ -104,7 +104,7 @@ export class S41019p4Page implements OnInit {
 
     // multistep wizard
     $( document ).ready(function() {
-      // var base_color = "rgb(41019p4,41019p4,41019p4)";
+      // var base_color = "rgb(38019p4,38019p4,38019p4)";
       // var active_color = "rgb(237, 40, 70)";
       var base_color = "#C4C4C4";
       var active_color = "#60A757";
@@ -211,16 +211,16 @@ export class S41019p4Page implements OnInit {
     console.log(this.qrList.ListOfQueOpts)
     this.questionA=this.qrList.ListOfQueOpts
    
-    this.q1=this.findQuestion(290).Question
-    this.optionList1=this.findQuestion(290).optionList
-    this.q2=this.findQuestion(293).Question
-    this.optionList2=this.findQuestion(293).optionList
-    this.q3=this.findQuestion(294).Question
-    this.optionList3=this.findQuestion(294).optionList
-    this.q4=this.findQuestion(295).Question
-    this.optionList4=this.findQuestion(295).optionList
-    this.q5=this.findQuestion(296).Question
-    this.optionList5=this.findQuestion(296).optionList
+    this.q1=this.findQuestion(297).Question
+    this.optionList1=this.findQuestion(297).optionList
+    this.q2=this.findQuestion(298).Question
+    this.optionList2=this.findQuestion(298).optionList
+    this.q3=this.findQuestion(299).Question
+    this.optionList3=this.findQuestion(299).optionList
+    this.q4=this.findQuestion(300).Question
+    this.optionList4=this.findQuestion(300).optionList
+    this.q5=this.findQuestion(301).Question
+    this.optionList5=this.findQuestion(301).optionList
     console.log(this.q1,this.optionList1)
     console.log(this.q2,this.optionList2)
     console.log(this.q3,this.optionList3)
@@ -358,14 +358,14 @@ export class S41019p4Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/questions-are-key/s41019p5'])
+        this.router.navigate(['/insight/s38019p5'])
       })
 
 
   }
   
   previous(){
-    this.router.navigate(['/questions-are-key/s41019p3'])
+    this.router.navigate(['/insight/s38019p3'])
 
   }
   ngOnDestroy(){

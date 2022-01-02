@@ -4,16 +4,16 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common';
 
 @Component({
-  selector: 'HumanWisdom-s41019p2',
-  templateUrl: './s41019p2.page.html',
-  styleUrls: ['./s41019p2.page.scss'],
+  selector: 'HumanWisdom-s38019p2',
+  templateUrl: './s38019p2.page.html',
+  styleUrls: ['./s38019p2.page.scss'],
 })
-export class S41019p2Page implements OnInit,OnDestroy {
+export class S38019p2Page implements OnInit,OnDestroy {
 
-  bg="blue_pink_w1"
+  bg="dark_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/art_of_enquiry/videos/7.2.mp4'  
-  title="Questions open the door to freedom"
+  videoLink=this.mediaVideo+'/art_of_enquiry/videos/4.2.mp4'  
+  title="What is insight"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   
   userId:any
@@ -21,13 +21,13 @@ export class S41019p2Page implements OnInit,OnDestroy {
 
  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber='41019p2'
+  screenNumber='38019p2'
   startTime:any
   endTime:any
   totalTime:any  
  
   
-  toc="questions-are-key/s41000"
+  toc="insight/s38000"
   bookmark=0
   path=this.router.url
   avDuration:any
@@ -52,10 +52,10 @@ ngOnInit() {
     this.startTime = Date.now();
   
     this.startTime = Date.now();
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark41019p2")))
-    if(JSON.parse(sessionStorage.getItem("bookmark41019p2"))==0)
+    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark38019p2")))
+    if(JSON.parse(sessionStorage.getItem("bookmark38019p2"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark41019p2"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark38019p2"))==1)
       this.bookmark=1
    
    
@@ -70,7 +70,7 @@ ngOnInit() {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark41019p2",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark38019p2",JSON.stringify(this.bookmark))
   }
   receiveAvDuration(e){
     this.avDuration=e
@@ -111,12 +111,12 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/questions-are-key/s41019p3'])
+    this.router.navigate(['/insight/s38019p3'])
    
 
   }
   prev(){
-    this.router.navigate(['/questions-are-key/s41000'])
+    this.router.navigate(['/insight/s38000'])
 
 
   }
