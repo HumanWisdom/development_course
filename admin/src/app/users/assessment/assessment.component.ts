@@ -33,22 +33,22 @@ export class AssessmentComponent implements OnInit {
   updatedModuleList=[]
   moduleList=JSON.parse(localStorage.getItem("moduleList"))
   appList=JSON.parse(localStorage.getItem("appList"))
-  
 
-  
+
+
 
 
   constructor(private router: Router,private service:UsersService, private location:Location) { }
 
   ngOnInit() {
     console.log("appList",this.appList)
-   
+
     this.getQtypes()
-    
-   
+
+
   }
 
-  
+
 
 
   getQtypes(){
@@ -73,7 +73,7 @@ export class AssessmentComponent implements OnInit {
     this.selectedSection=""
     this.selectedModuleID=""
     this.updatedModuleList=[]
-   
+
     console.log(event)
     this.selectedProgramID=event
     this.programList.find(element=>{
@@ -83,7 +83,7 @@ export class AssessmentComponent implements OnInit {
       }
     })
     console.log("selected Program",this.selectedProgramID,this.selectedProgram)
-  
+
     this.sectionList.filter(a=>{
       if(a.ProgramID==this.selectedProgramID)
       this.updatedSectionList.push(a)
@@ -97,15 +97,15 @@ export class AssessmentComponent implements OnInit {
     this.selectedModuleID=""
     this.updatedModuleList=[]
 
-   
+
 
       this.moduleList.filter(a=>{
-        
+
         if(a.SectionID==this.selectedSectionID)
           this.updatedModuleList.push(a)
       })
         console.log(this.updatedModuleList)
-    
+
   }
 
   selectModule(eventM){
@@ -117,12 +117,12 @@ export class AssessmentComponent implements OnInit {
   selectQtype(event){
     console.log(event)
     this.selectedAtypeID=event
-    
+
   }
   updateQtype(event){
     console.log(event)
     this.updatedAtypeID=event
-    
+
   }
   initUpdate(name,typeId){
    // console.log(this.selectedAtypeID,this.updatedAtypeID)
@@ -136,15 +136,16 @@ export class AssessmentComponent implements OnInit {
         this.assessmentList=res;
 
         //console.log("list",this.list,"assessmentList",this.assessmentList)
-        this.assessmentDisplayList=this.assessmentList.map(assess=>({...assess, ...this.appList.find(element=> element.ModuleID==assess.ModuleId)}))
+        if(this.appList) this.assessmentDisplayList=this.assessmentList.map(assess=>({...assess, ...this.appList.find(element=> element.ModuleID==assess.ModuleId)}))
+        else this.assessmentDisplayList = res
         this.assessmentDisplayList=this.assessmentDisplayList.map(assess=>({...assess, ...this.QTypeList.find(element=> element.AssTypeId==assess.AssTypeId)}))
 
         console.log("assessment Display List",this.assessmentDisplayList)
         localStorage.setItem("assessmentDisplayList",JSON.stringify(this.assessmentDisplayList))
-       
-        
-       
-      
+
+
+
+
       },
       error=>{console.log(error)},
       ()=>{
@@ -183,7 +184,7 @@ export class AssessmentComponent implements OnInit {
   }
 
   updateAssessment(id,name,mId,AtypeId){
-   
+
     this.service.addAssessment({ "AssessmentId":id,
     "ModuleId":mId,
     "AssesTypeID":this.updatedAtypeID,
@@ -250,7 +251,7 @@ export class AssessmentComponent implements OnInit {
       //console.log("in if")
 
     }
-     
+
     else{
      console.log("in else")
       this.assessmentDisplayList=this.assessmentDisplayList.filter(res=>{
@@ -258,9 +259,9 @@ export class AssessmentComponent implements OnInit {
         return res.AssType.toLocaleLowerCase().match(this.searchedType.toLocaleLowerCase())
       })
     }
-  
+
 
   }
 
-  
+
 }

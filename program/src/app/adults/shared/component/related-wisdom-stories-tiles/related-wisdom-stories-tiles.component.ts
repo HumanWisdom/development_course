@@ -32,6 +32,7 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
   }
 
   viewstory(item){
+    localStorage.setItem("story",JSON.stringify(item))
     this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
   }
 
