@@ -16,6 +16,8 @@ export class S47371Page implements OnInit {
   moduleLink="/adults/love"
   moduleName="03. Love"
   sectionName= "Living with Wisdom - I";
+  moduleId=62
+
   moduleList: any = [
     {
       name: 'Communication',

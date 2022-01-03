@@ -31,6 +31,14 @@ import { S41016tPage } from './s41016t/s41016t.page';
 import { S41017Page } from './s41017/s41017.page';
 import { S41018Page } from './s41018/s41018.page';
 import { S41019Page } from './s41019/s41019.page';
+import { S41019p1Page } from './s41019p1/s41019p1.page';
+import { S41019p2Page } from './s41019p2/s41019p2.page';
+import { S41019p3Page } from './s41019p3/s41019p3.page';
+import { S41019p4Page } from './s41019p4/s41019p4.page';
+import { S41019p5Page } from './s41019p5/s41019p5.page';
+import { S41019p6Page } from './s41019p6/s41019p6.page';
+import { S41019p7Page } from './s41019p7/s41019p7.page';
+import { S41019p8Page } from './s41019p8/s41019p8.page';
 import { S41020Page } from './s41020/s41020.page';
 
 @NgModule({
@@ -58,7 +66,15 @@ import { S41020Page } from './s41020/s41020.page';
     S41017Page,
     S41018Page,
     S41019Page,
-    S41020Page,
+    S41019p1Page,
+    S41019p2Page,
+    S41019p3Page,
+    S41019p4Page,
+    S41019p5Page,
+    S41019p6Page,
+    S41019p7Page,
+    S41019p8Page,
+    S41020Page
   ],
   imports: [
     CommonModule,

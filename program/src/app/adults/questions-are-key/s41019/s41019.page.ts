@@ -10,7 +10,7 @@ import {Location } from '@angular/common'
 })
 export class S41019Page implements OnInit {
 
-  bg="blue_pink_flat"
+  bg="blue_pink_w2"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -52,7 +52,7 @@ export class S41019Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/questions-are-key/s41020'])
+    this.router.navigate(['/questions-are-key/s41019p1'])
 
   }
   prev(){
