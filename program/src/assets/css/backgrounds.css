@@ -155,3 +155,15 @@
   z-index: 0; 
   min-height: 100vh; 
 }
+
+.bg_splash
+{  
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/splash.svg) no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  z-index: 0; 
+  min-height: 100vh; 
+}

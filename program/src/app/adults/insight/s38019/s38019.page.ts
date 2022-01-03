@@ -10,7 +10,7 @@ import {Location } from '@angular/common'
 })
 export class S38019Page implements OnInit {
 
-  bg="dark_blue_flat"
+  bg="dark_blue_w6"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -46,7 +46,7 @@ export class S38019Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/insight/s38020'])
+    this.router.navigate(['/insight/s38019p1'])
 
   }
   prev(){

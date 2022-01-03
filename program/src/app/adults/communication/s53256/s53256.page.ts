@@ -16,6 +16,7 @@ export class S53256Page  implements OnInit {
   moduleLink="/adults/opinions-beliefs"
   moduleName="03. Opinions and Beliefs"
   sectionName= "Living with Wisdom - II";
+  moduleId=49 
 
   moduleList: any = [
     {
