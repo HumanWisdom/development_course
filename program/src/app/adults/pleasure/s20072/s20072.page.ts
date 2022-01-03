@@ -16,6 +16,7 @@ export class S20072Page implements OnInit {
   moduleLink="/adults/sorrow"
   moduleName="03. Sorrow and Loss"
   sectionName= "Understand Emotions";
+  moduleId=60
 
   moduleList: any = [
     {
