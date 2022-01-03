@@ -51,7 +51,7 @@
                 <th>SetID</th>
                 <th>SettingName</th>
                 <th>Value</th>
-
+                <th>Commands</th>
               </tr>
             </thead>
             <tbody>
@@ -64,43 +64,43 @@
 
 
                 <td>
-                  <!-- <button type="button" class="btn btn-xs btn-success command-add"><span
+                  <button type="button" class="btn btn-xs btn-success command-add"><span
                             class="glyphicon glyphicon-edit" data-toggle="modal"
-                            [attr.data-target]="'#updateModal'+item.AssessmentId"
-                            (click)=initUpdate(item.Assessment,item.AssTypeId)></span></button> -->
+                            [attr.data-target]="'#updateModal'+item.SetID"
+                            (click)="initUpdate(item)"></span></button>
                   <!-- <button type="button" class="btn btn-xs btn-danger command-edit"><span
                             class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum"
                             (click)="deleteAssessment(item.AssessmentId)"></span></button> -->
                 </td>
 
-                <div class="modal fade" [attr.id]="'updateModal'+item.AssessmentId" tabindex="-1" role="dialog"
+                <div class="modal fade" [attr.id]="'updateModal'+item.SetID" tabindex="-1" role="dialog"
                   aria-labelledby="updateModal" aria-hidden="true">
                   <!--<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">-->
 
                   <div class="modal-dialog vc70" role="document">
                     <div class="modal-content cmodal-content">
                       <div class="modal-header cmodal-header tcenter white">
-                        <h1 class="modal-title cmodal-title">Update Assessment Title</h1>
+                        <h1 class="modal-title cmodal-title">Update Popup Content</h1>
 
                       </div>
-                      <div class="modal-body">
-
-                        <input type="text" name="updatedSection" required="required" class="form-control"
-                          [(ngModel)]="this.updatedAssessmentName">
-
-                      </div>
-                      <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
-                        <label for="patient_name" class="control-label">Update type of assessment<span
-                            class="required">*</span></label>
-                        <select name="qtype" class="select2_group form-control" [(ngModel)]="updatedAtypeID"
-                          (change)="updateQtype($event.target.value)" required>
-                          <option *ngFor="let q of QTypeList" [value]="q.AssTypeId">{{q.AssType}}</option>
-                        </select>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-12 col-sm-6 col-xs-12">
+                            <label class="control-label">Popup name</label>
+                            <input type="text" id="settingname" value="{{updatesetting_name}}" (keyup)="updatekeyupinput($event.target.value)"
+                              class="form-control">
+                          </div>
+                          <div class="col-md-8 col-sm-12 col-xs-12">
+                            <label class="control-label">Popup value</label>
+                            <input type="text" value="{{updatepopupvalue}}" (keyup)="updatevaluekeyupinput($event.target.value)"
+                              class="form-control">
+                          </div>
+                        </div>
                       </div>
                       <div class="modal-footer cmodal-footer tcenter">
                         <!--<button type="button" class="btn btn-xs btn-primary command-add"><span class="glyphicon glyphicon-eye-open"></span></button>-->
                         <button type="button" class="btn fill_now" data-dismiss="modal"
-                          (click)="updateAssessment(item.AssessmentId,item.Assessment,item.ModuleID,item.AssTypeId)">UPDATE</button>
+                          (click)="updatePopupContent(item)">UPDATE</button>
                         <button type="button" class="btn fill_later" data-dismiss="modal">BACK</button>
                       </div>
                     </div>

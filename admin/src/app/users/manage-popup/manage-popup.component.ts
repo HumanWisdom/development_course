@@ -11,6 +11,8 @@ export class ManagePopupComponent implements OnInit, OnDestroy {
   editor: Editor;
   popupvalue: string = '';
   setting_name: string = ''
+  updatesetting_name: string = ''
+  updatepopupvalue: string = ''
   popupList = []
   constructor(
     public _userService: UsersService
@@ -24,6 +26,11 @@ export class ManagePopupComponent implements OnInit, OnDestroy {
   // make sure to destory the editor
   ngOnDestroy(): void {
     this.editor.destroy();
+  }
+
+  initUpdate(data) {
+    this.updatesetting_name = data.SettingName;
+    this.updatepopupvalue = data.Value
   }
 
   getPopupContent() {
@@ -43,6 +50,14 @@ export class ManagePopupComponent implements OnInit, OnDestroy {
     this.popupvalue = value;
   }
 
+  updatekeyupinput(value) {
+    this.updatesetting_name = value;
+  }
+
+  updatevaluekeyupinput(value) {
+    this.updatepopupvalue = value;
+  }
+
   reset() {
     this.setting_name = '';
     this.popupvalue = ''
@@ -56,6 +71,21 @@ export class ManagePopupComponent implements OnInit, OnDestroy {
     }
     this._userService.addPopupContent(data).subscribe((res: any) => {
       alert('Popup content added!')
+      this.getPopupContent()
+    }, (err: any) => {
+      console.log(err);
+    })
+  }
+
+  updatePopupContent(item) {
+    let data = {
+      Value: this.updatepopupvalue,
+      SetID : item.SetID,
+      SettingName: this.updatesetting_name
+    }
+    this._userService.addPopupContent(data).subscribe((res: any) => {
+      alert('Popup content updated!')
+      this.getPopupContent()
     }, (err: any) => {
       console.log(err);
     })
