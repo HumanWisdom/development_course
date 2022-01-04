@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { S71001Page } from './s71001/s71001.page';
+import { S71001p1Page } from './s71001p1/s71001p1.page';
 import { S71002Page } from './s71002/s71002.page';
 import { S71003Page } from './s71003/s71003.page';
 import { S71004Page } from './s71004/s71004.page';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 's71005',
     component: S71005Page,
+  },
+  {
+    path: 's71001p1',
+    component: S71001p1Page,
   },
 ];
 
