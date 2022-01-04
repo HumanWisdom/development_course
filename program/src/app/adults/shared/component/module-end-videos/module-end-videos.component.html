@@ -127,37 +127,11 @@
               <!-- related wisdom stories  -->
               <div class="row center_flex mev_rwst">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
-                    <a href="">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/timothy-eberly-2JV3dbrFt-Y-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px" *ngFor="let item of wisdomstoriesmoduleList">
+                    <a routerLink="{{item['link']}}">
+                      <img src="{{item['image']}}" alt="{{item['name']}}" class="img-responsive img_index_rwst">
                       <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
-                        Ryan Had A Hippo’s Temper
-                      </h4>
-                    </a>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
-                    <a href="">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/luke-southern-gW7QRXDSvec-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
-                      <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
-                        The Well-Being of an Alcoholic
-                      </h4>
-                    </a>
-                  </div>
-              
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
-                    <a href="">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/kelly-sikkema-k0o-cw5Y_9s-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
-                      <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
-                        My Stepmother Humiliated Me
-                      </h4>
-                    </a>
-                  </div>
-              
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
-                    <a href="">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/gregory-pappas-rUc9hVE-L-E-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
-                      <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
-                        An Apple A Day Is An Eating Disorder
+                        {{item['name']}}
                       </h4>
                     </a>
                   </div>
