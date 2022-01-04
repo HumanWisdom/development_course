@@ -24807,3 +24807,17 @@ a
 {
   margin-right: 0 !important;
 }
+
+.pr5pxi 
+{
+  padding-right: 5px !important;
+}
+
+.absolute_05 
+{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}

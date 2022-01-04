@@ -239,7 +239,8 @@ export class LoginSignupPage implements OnInit {
         "FName":this.socialFirstName,
         "LName": this.socialLastName,
         "Email": this.socialEmail,
-         "VCode": ""
+         "VCode": "",
+         "Pwd": ""
       })
       .subscribe(res=>
         {
@@ -363,7 +364,8 @@ export class LoginSignupPage implements OnInit {
           "FName":this.socialFirstName,
           "LName": this.socialLastName,
           "Email": this.socialEmail,
-           "VCode": ""
+           "VCode": "",
+           "Pwd": ""
         })
         .subscribe(res=>
           {

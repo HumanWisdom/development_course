@@ -16,6 +16,8 @@ export class S432Page implements OnInit {
   moduleLink="/adults/self-esteem"
   moduleName="05. Self-Esteem"
   sectionName= "Living with Wisdom - I";
+  moduleId=17
+
   moduleList: any = [
     {
       name: 'Comparison & Envy',

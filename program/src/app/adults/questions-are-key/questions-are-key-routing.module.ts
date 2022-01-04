@@ -25,6 +25,14 @@ import { S41016tPage } from './s41016t/s41016t.page';
 import { S41017Page } from './s41017/s41017.page';
 import { S41018Page } from './s41018/s41018.page';
 import { S41019Page } from './s41019/s41019.page';
+import { S41019p1Page } from './s41019p1/s41019p1.page';
+import { S41019p2Page } from './s41019p2/s41019p2.page';
+import { S41019p3Page } from './s41019p3/s41019p3.page';
+import { S41019p4Page } from './s41019p4/s41019p4.page';
+import { S41019p5Page } from './s41019p5/s41019p5.page';
+import { S41019p6Page } from './s41019p6/s41019p6.page';
+import { S41019p7Page } from './s41019p7/s41019p7.page';
+import { S41019p8Page } from './s41019p8/s41019p8.page';
 import { S41020Page } from './s41020/s41020.page';
 
 const routes: Routes = [
@@ -152,6 +160,46 @@ const routes: Routes = [
     path: 's41020',
     canActivate:[ActiveGuard],  
     component: S41020Page,
+  },
+  {
+    path: 's41019p1',
+    canActivate:[ActiveGuard],  
+    component: S41019p1Page,
+  },
+  {
+    path: 's41019p2',
+    canActivate:[ActiveGuard],  
+    component: S41019p2Page,
+  },
+  {
+    path: 's41019p3',
+    canActivate:[ActiveGuard],  
+    component: S41019p3Page,
+  },
+  {
+    path: 's41019p4',
+    canActivate:[ActiveGuard],  
+    component: S41019p4Page,
+  },
+  {
+    path: 's41019p5',
+    canActivate:[ActiveGuard],  
+    component: S41019p5Page,
+  },
+  {
+    path: 's41019p6',
+    canActivate:[ActiveGuard],  
+    component: S41019p6Page,
+  },
+  {
+    path: 's41019p7',
+    canActivate:[ActiveGuard],  
+    component: S41019p7Page,
+  },
+  {
+    path: 's41019p8',
+    canActivate:[ActiveGuard],  
+    component: S41019p8Page,
   },
   
 ];
