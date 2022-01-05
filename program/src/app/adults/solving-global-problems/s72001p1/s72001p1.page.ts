@@ -19,9 +19,9 @@ export class S72001p1Page implements OnInit {
       link: '/identity'
     },
     {
-      name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
-      link: '/breathing'
+      name: 'Self Interest',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/24.png',
+      link: '/self-interest'
     }
   ]
 
