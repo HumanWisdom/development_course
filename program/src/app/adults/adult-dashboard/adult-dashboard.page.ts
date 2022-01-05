@@ -183,6 +183,22 @@ export class AdultDashboardPage implements OnInit {
     
   }
 
+  getsupport(url, id) {
+    this.service.clickModule(id,this.userId)
+    .subscribe(res=>
+      {console.log(res)
+        localStorage.setItem('activemoduleid', id);
+        this.router.navigate([url])
+        localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+
+    })
+  }
+
   carouselclick() {
     let videoPlayer: HTMLVideoElement = <HTMLVideoElement> document.getElementById('humanwisdomvideo')
     videoPlayer.pause()
