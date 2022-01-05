@@ -60,6 +60,7 @@ export class ModuleEndVideosComponent implements OnInit {
   constructor(private router:Router,private service: AdultsService) {
     let story = JSON.parse(JSON.stringify(localStorage.getItem('supportwisdomstories')));
     story = JSON.parse(story)
+    // console.log(story)
     this.wisdomstoriesmoduleList = story.slice(0, 4) 
    }
 
