@@ -83,6 +83,22 @@
     }
 } */
 
+@media (max-width: 412px)
+{
+    .navbar_01 
+    {
+        margin-top: 14.4%;
+    }
+}
+
+@media (min-width: 413px) and (max-width: 767px)
+{
+    .navbar_01 
+    {
+        margin-top: 15.8%;
+    }
+}
+
 @media (max-width: 767px)
 {
     .nav_menu_01,
@@ -149,7 +165,7 @@
     {
         /* top: 7%; */
         /* margin-top: 16%; */
-        margin-top: 15.8%;
+        /* margin-top: 15.8%; */
     }
 
     ::-webkit-scrollbar 
