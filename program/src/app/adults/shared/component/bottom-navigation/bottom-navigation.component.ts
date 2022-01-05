@@ -41,9 +41,9 @@ export class BottomNavigationComponent implements OnInit {
     if((reg.test(this.router.url))||(this.router.url.indexOf('/adults/note') > -1))
     {
       this.dash=false
-      this.journal=false
+      this.journal=true
       this.profile=false
-      this.fourm = true;
+      this.fourm = false;
     }
     if(this.router.url=="/onboarding/user-profile") {
       this.dash=false
