@@ -144,8 +144,13 @@ setTimeout(() => {
    this.router.navigate(['/onboarding/viewcart'])
  }
 
- already() {
-  this.router.navigate(['/adults/adult-dashboard'])
+ already(value) {
+  this.closemodal.nativeElement.click()
+  if(value === 'home') {
+    this.router.navigate(['/adults/adult-dashboard'])
+  }else {
+    this.router.navigate(['/onboarding/login'])
+  }
 }
 
 uselater() {

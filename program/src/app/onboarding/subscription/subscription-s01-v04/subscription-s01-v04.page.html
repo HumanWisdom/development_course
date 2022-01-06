@@ -350,7 +350,7 @@
 
           <div class="row center_flex as_diff_user_code">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <a routerLink="/onboarding/login">     
+              <a (click)="already('')">     
                 <h4 class="txt241 mtb0px tcenter underline">
                   Login as a different user
                 </h4>
@@ -422,7 +422,7 @@
 
           <div class="row center_flex as_continue_dashboard">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <button type="button" class="btn btn-warning btn_ms_submit" (click)="already()">
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="already('home')">
                 Continue to dashboard
               </button>
             </div>
