@@ -269,6 +269,10 @@ const routes: Routes = [
     path: 'treesisters',
     loadChildren: () => import('./treesisters/treesisters.module').then( m => m.TreesistersPageModule)
   },
+  {
+    path: 'add-to-home-screen-ios',
+    loadChildren: () => import('./add-to-home-screen-ios/add-to-home-screen-ios.module').then( m => m.AddToHomeScreenIosPageModule)
+  },
 ];
 
 @NgModule({
