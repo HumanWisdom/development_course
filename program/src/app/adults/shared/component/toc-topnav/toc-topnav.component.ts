@@ -12,7 +12,7 @@ export class TocTopnavComponent implements OnInit {
   name = ''
   roleid = 0
   url = '';
-  subscriper= false;
+  subscriber= false;
 
   @Input()
   enableplaystore = true
@@ -21,8 +21,8 @@ export class TocTopnavComponent implements OnInit {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem("Subscriber")
-    if(sub === '1') {
-      this.subscriper = true;
+    if(sub === '1' || sub === 1) {
+      this.subscriber = true;
     }
     this.name = localStorage.getItem('name');
     if(userid === 'T') {
