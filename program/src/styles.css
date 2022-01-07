@@ -11957,7 +11957,8 @@ h1.module_title
   display: flex;
   align-items: center;
   color: #FFFFFF;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
+  text-transform: inherit;
 }
 
 .comparison 
@@ -15050,7 +15051,16 @@ input[type="number"] {
 .atsrno
 {
   position: absolute;
-  top: -2px;
+  top: -3px;
+  /* right: 15px; */
+  right: 8px;
+}
+
+.atsrno_sgp
+{
+  position: absolute;
+  top: -5px;
+  /* right: 15px; */
   right: 15px;
 }
 
@@ -24835,4 +24845,9 @@ a
 a
 {
   cursor: pointer !important;
+}
+
+.fp_ml 
+{
+  margin-left: 1px;
 }
