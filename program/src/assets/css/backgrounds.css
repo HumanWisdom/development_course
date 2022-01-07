@@ -167,3 +167,17 @@
   z-index: 0; 
   min-height: 100vh; 
 }
+
+.bg_add_to_home_screen_ios
+{  
+  background: linear-gradient(180deg, #1092A7 -1.41%, #70C6BD 100%) !important;
+  /* mix-blend-mode: multiply; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  z-index: 0; 
+  min-height: 100vh; 
+  overflow: auto;
+}
