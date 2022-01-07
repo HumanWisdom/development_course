@@ -199,6 +199,24 @@ export class AdultDashboardPage implements OnInit {
     })
   }
 
+  // solving global problems
+  solving_global_problems(url, id) {
+    this.service.clickModule(id,this.userId)
+    .subscribe(res=>
+      {console.log(res)
+        localStorage.setItem('activemoduleid', id);
+        this.router.navigate([url])
+        localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+
+    })
+  }
+  // /solving global problems
+
   carouselclick() {
     let videoPlayer: HTMLVideoElement = <HTMLVideoElement> document.getElementById('humanwisdomvideo')
     videoPlayer.pause()

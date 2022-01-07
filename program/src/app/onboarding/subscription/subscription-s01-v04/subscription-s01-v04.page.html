@@ -286,11 +286,118 @@
   <!-- modal-body -->
   <div class="" role="document">       
     <!-- modal content -->          
-    <div class="row center_flex activate_subscription_outer">
+    <div class="row center_flex activate_subscription_outer" *ngIf="!fourthpage">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
-        <div class="mactivate_subscription">
+        <div class="mactivate_subscription_01">
           <div class="row center_flex">
-            <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">              
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              </button>
+            </div>
+          </div>  
+          
+          <div class="row center_flex as_main_title">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt151 mtb0px">
+                Activate Subscription!
+              </h4>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="" class="cfc14" placeholder="{{modaldata['firstname']}}" disabled>
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="" class="cfc14" placeholder="{{modaldata['lastname']}}" disabled>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="" class="cfc14" placeholder="{{modaldata['email']}}" disabled>
+              </div>
+            </div>
+          </div> 
+
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="" class="cfc11" (keyup)="getcode($event.target.value)" placeholder="Enter Activation Code">
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex as_diff_user_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt242 mtb0px tcenter">
+                Not 
+                <span class="txt240">
+                  {{modaldata['email']}}
+                </span>
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_diff_user_code">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <a (click)="already('')">     
+                <h4 class="txt241 mtb0px tcenter underline">
+                  Login as a different user
+                </h4>
+              </a>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_code_desc_logged_in_01" *ngIf="thirdpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt89 mtb0px">
+                  The activation code you have used is invalid. Please check again, or email us at support@humanwisdom.me
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_submit_01" *ngIf="firstpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''" (click)="submitcode()">
+                Submit
+              </button>
+            </div>
+          </div>
+
+          <div class="row center_flex as_code_desc_logged_in" *ngIf="secondpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt89 mtb0px">
+                This code entitles you to 1 month of subscription to the HumanWisdom Program for Adults. Click below to activate this subscription, and enjoy the benefits of the HumanWisdom App.
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_submit_01" *ngIf="secondpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="enablelastpage()">
+                Activate Now
+              </button>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="row center_flex activate_subscription_outer" *ngIf="fourthpage">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
+        <div class="mactivate_subscription_01">
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">              
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
               </button>
@@ -298,65 +405,28 @@
           </div>  
           
           <div class="row center_flex">
-            <div class="col-md-6 col-sm-12 col-xs-12">     
-              <h4 class="txt151">
-                Activate Subscription
-              </h4>
-            </div>
-          </div>   
-          
-          <div class="row center_flex">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="col-md-8 col-sm-8 col-xs-8 p0">     
-                <input type="text" id="" class="cfc9" value="{{activationCode}}" (keyup)="getcode($event.target.value)" placeholder="Enter Subscription Code">
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-4 pr0px">     
-                <button  type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''" (click)="submitcode()">
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div> 
-
-          <!-- <div class="row mt20px" *ngIf="enableActivate">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <div class="row mt20px" *ngIf="enableActivate">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <hr class="hr_style_6">
-            </div>
-          </div>
-
-          <div class="row" *ngIf="enableActivate">
-            <div class="col-md-12 col-sm-12 col-xs-12">     
-              <h4 class="txt193">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt151 mtb0px">
                 Congratulations!
               </h4>
             </div>
-          </div>   
+          </div>  
 
-          <div class="row" *ngIf="enableActivate">
-            <div class="col-md-12 col-sm-12 col-xs-12">     
-              <h4 class="txt89 mt0px">
-                You are entitled to 1 month of subscription to the HumanWisdom Program for Adults. Click below to activate this subscription, and enjoy the benefits of the HumanWisdom App.
+          <div class="row center_flex as_congratulations">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt89 mtb0px">
+                You are now subscribed to 1 month of the HumanWisdom Program for Adults. Continue to the dahboard to enjoy the app.
               </h4>
             </div>
           </div>   
 
-          <div class="row" *ngIf="enableActivate">
-            <div class="col-md-12 col-sm-12 col-xs-12">     
-              <button (click)="already()" data-dismiss="modal"  type="button" class="btn btn-warning btn_ms_submit">
-                Activate Now
+          <div class="row center_flex as_continue_dashboard">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="already('home')">
+                Continue to dashboard
               </button>
             </div>
           </div>  
-          
-          <div class="row mt10px" *ngIf="enableActivate">
-            <div class="col-md-12 col-sm-12 col-xs-12">     
-              <button  type="button" data-dismiss="modal" (click)="uselater()" class="btn btn-warning btn_ms_ul">
-                Use later
-              </button>
-            </div>
-          </div>   -->
         </div>
       </div>
     </div>

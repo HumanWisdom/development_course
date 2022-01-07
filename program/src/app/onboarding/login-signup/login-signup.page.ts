@@ -678,7 +678,7 @@ export class LoginSignupPage implements OnInit {
 
  signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
-    const REDIRECT_API_URL = "https://humanwisdom.info/api/verifyAppleTokenAndLogin"
+    const REDIRECT_API_URL = "https://humanwisdom.info/api/verifyAppleToken"
     window.open(
         `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
         '_blank'

@@ -48,7 +48,11 @@ export class SubscriptionS01V04Page implements OnInit {
   enableGift = false;
   enableData = false;
   cartitemList = [];
-  
+  modaldata = {}
+  firstpage = true;
+  secondpage = false;
+  thirdpage = false;
+  fourthpage = false;
 
   constructor(private router: Router,private service:OnboardingService, private location:Location, private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
@@ -62,6 +66,10 @@ export class SubscriptionS01V04Page implements OnInit {
       this.enableLoginSubscriber = false;
       localStorage.setItem("activeCode", 'F')
     }
+    let namedata = localStorage.getItem('name').split(' ')
+    this.modaldata['email'] = localStorage.getItem('email');
+    this.modaldata['firstname'] = namedata[0];
+    this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
    }
 
   ngOnInit() {
@@ -136,8 +144,13 @@ setTimeout(() => {
    this.router.navigate(['/onboarding/viewcart'])
  }
 
- already() {
-  this.router.navigate(['/adults/adult-dashboard'])
+ already(value) {
+  this.closemodal.nativeElement.click()
+  if(value === 'home') {
+    this.router.navigate(['/adults/adult-dashboard'])
+  }else {
+    this.router.navigate(['/onboarding/login'])
+  }
 }
 
 uselater() {
@@ -151,19 +164,34 @@ getcode(value) {
   this.activationCode = value;
 }
 
+enablelastpage() {
+  this.fourthpage = true;
+}
+
 submitcode(){
   this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
   .subscribe(
     res=>
     {console.log(res)
-      // this.enableActivate = true;
-      this.closemodal.nativeElement.click()
-      let code: any = 1
+      if(res) {
+        let code: any = 1
       localStorage.setItem('Subscriber', code)
-      this.router.navigate(['/adults/adult-dashboard'])
+      this.thirdpage = false
+      this.firstpage = false
+      this.secondpage = true;
+      }else {
+        this.secondpage = false;
+        this.thirdpage = true
+      }
+      // this.enableActivate = true;
+      // this.closemodal.nativeElement.click()
+      
+      // this.router.navigate(['/adults/adult-dashboard'])
     },
     error=>{
-      window.alert(error.error['Message'])
+      this.secondpage = false;
+        this.thirdpage = true
+      // window.alert(error.error['Message'])
     },
    
     ()=>{
