@@ -143,7 +143,7 @@
                 </a>
               </li>
       
-              <li *ngIf="isloggedIn">
+              <li *ngIf="isloggedIn && subscriber">
                 <a routerLink="/onboarding/myprogram" class="p0 b0px">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -398,7 +398,7 @@
                           </a>
                         </li>
                 
-                        <li *ngIf="isloggedIn && subscriper">
+                        <li *ngIf="isloggedIn && subscriber">
                           <a routerLink="/onboarding/myprogram" class="p0 b0px">
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -415,7 +415,7 @@
                           </a>
                         </li>
 
-                        <li *ngIf="!isloggedIn || !subscriper">
+                        <li *ngIf="!subscriber">
                           <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -760,7 +760,7 @@
                 </a>
               </li>
       
-              <li *ngIf="isloggedIn">
+              <li *ngIf="isloggedIn  && subscriber">
                 <a routerLink="/onboarding/myprogram" class="p0 b0px">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -861,7 +861,7 @@
                 </a>
               </li>
 
-              <li>
+              <li *ngIf="!subscriber">
                 <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
