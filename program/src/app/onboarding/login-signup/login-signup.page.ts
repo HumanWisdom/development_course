@@ -235,7 +235,7 @@ export class LoginSignupPage implements OnInit {
       console.log(user)
 
       this.service.verifyGoogle({
-        "TokenID": user.idToken,
+        "TokenID": this.idToken,
         "FName":this.socialFirstName,
         "LName": this.socialLastName,
         "Email": this.socialEmail,
@@ -360,7 +360,7 @@ export class LoginSignupPage implements OnInit {
       this.socialEmail=user.email
       if(user.email !== undefined) {
         this.service.verifyFb({
-          "TokenID": user.idToken,
+          "TokenID": this.idToken,
           "FName":this.socialFirstName,
           "LName": this.socialLastName,
           "Email": this.socialEmail,

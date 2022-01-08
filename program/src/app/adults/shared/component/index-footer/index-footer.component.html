@@ -28,20 +28,51 @@
         </p>
       </a>
     
-      <a class="footer_index"> 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">
-        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum_active.svg" alt=""> -->
-        <p class="mb0px">
-          Forum
-        </p>
+      <a (click)="routeForum()" class="footer_index">
+        <div *ngIf="!fourm">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">
+          <p class="mb0px silver_chalice">
+            Forum
+          </p>
+        </div>
+
+        <div *ngIf="fourm">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum_active.svg" alt="">
+          <p class="mb0px">
+            Forum
+          </p>
+        </div>
       </a>
 
-      <a class="footer_index"> 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt="">
+      <!-- <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt=""> -->
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more_active.svg" alt=""> -->
-        <p class="mb0px">
+        <!-- <p class="mb0px">
           More
         </p>
+      </a> -->
+
+      <a (click)="profileclickevent()" class="footer_index">
+        <div *ngIf="!enableprofile && isloggedIn && !profile">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_inactive.svg" alt="" >
+          <p class="mb0px silver_chalice">
+            Profile
+          </p>
+        </div>
+
+        <div *ngIf="enableprofile && profile">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg" alt="" >
+          <p class="mb0px">
+            Profile
+          </p>
+        </div>
+
+        <div *ngIf="!isloggedIn"> 
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/login.svg"  alt="">
+          <p class="mb0px davy-s_grey">
+            Login
+          </p>
+        </div>
       </a>
 
     </div>
