@@ -19,6 +19,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild('enablemodal') enablemodal:ElementRef;
   @ViewChild('closemodal') closemodal:ElementRef;
   @ViewChild('enabletab') enabletab:ElementRef;
+  @ViewChild('enableotpmodal') enableotpmodal:ElementRef;
 
   user:any
   userId:any
@@ -60,7 +61,7 @@ export class LoginSignupPage implements OnInit {
   t = new Date();
   minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
   message:any
-  
+
   get fullname(){
     return this.registrationForm.get('fullname')
   }
@@ -160,12 +161,8 @@ export class LoginSignupPage implements OnInit {
        {
        console.log(res)
        if(res>0){
-        window.alert('An email has been sent to you. Please click on the link shared with you')
-        // let code = window.prompt('Verify Code', '')
-        // if(code !== null) {
-        //   this.verificationCode = code;
-        //   this.verifyCode()
-        // }
+        window.alert('An email has been sent to you')
+        this.enableotpmodal.nativeElement.click()
         this.showMessage=true
         this.signUser=res
         this.showWarning=false
@@ -205,6 +202,7 @@ export class LoginSignupPage implements OnInit {
       console.log(res)
       if(res>0)
       {
+        this.closemodal.nativeElement.click()
         this.codeVerified=true
         localStorage.setItem("codeVerified",JSON.stringify(this.codeVerified))
         localStorage.setItem("email",JSON.stringify(this.registrationForm.get('email').value))

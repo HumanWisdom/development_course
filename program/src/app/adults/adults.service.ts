@@ -137,4 +137,9 @@ export class AdultsService {
     return this.http.get(this.path+ `/VerifyActKey/${data}`)
    }
 
+   resendotp(data):Observable<any> {
+    return this.http.post(this.path+ `/ResendVerificationMail/${data}`, {})
+    
+   }
+
 }
