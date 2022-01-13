@@ -678,32 +678,17 @@ export class LoginSignupPage implements OnInit {
 
  signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
-    const REDIRECT_API_URL = "https://humanwisdom.info/api/verifyAppleToken"
-    window.open(
-        `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
-        '_blank'
-    );
+    const REDIRECT_API_URL = "https://humanwisdom.me/course"
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+    width=0,height=0,left=-1000,top=-1000`;
 
-    window.addEventListener('message', async event => {
-      console.log(event.data.id_token)
-        const decodedToken = event.data.id_token;
-        let requestData = {}
-        if (event.data.user) {
-            const userName = JSON.parse(event.data.user);
-            requestData = {
-                "email": decodedToken.email,
-                "name": `${userName.name.firstName} ${userName.name.lastName}`,
-                "socialId": decodedToken.sub,
-            };
-        } else {
-            requestData = {
-                "email": decodedToken.email,
-                "socialId": decodedToken.sub,
-            };
-        }
-        console.log(`User Data : ${requestData}`);
-        // do your next stuff here
-    });
+    let newwindow = open(`https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`, 'test', params);
+   setTimeout(() => {
+    newwindow.onload = function() {
+      newwindow.close()
+      console.log(newwindow.closed)
+    };
+   }, 4000)
 };
 
 }
