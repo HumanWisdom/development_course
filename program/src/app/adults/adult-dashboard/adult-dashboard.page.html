@@ -2101,7 +2101,7 @@
           <div class="row center_flex otp_rvc">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <a> 
-                <h4 class="txt89 mtb0px tcenter underline">
+                <h4 class="txt89 mtb0px tcenter underline" (click)="resendotp()">
                   Resend Verification Code
                 </h4>
               </a>    
@@ -2211,7 +2211,7 @@
 
           <div class="row center_flex as_submit_01" *ngIf="subfirstpage">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''" (click)="submitcode()">
+              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''" (click)="verifyactkey()">
                 Submit
               </button>
             </div>
@@ -2220,14 +2220,14 @@
           <div class="row center_flex as_code_desc_logged_in" *ngIf="subsecondpage">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
               <h4 class="txt89 mtb0px">
-                This code entitles you to 1 month of subscription to the HumanWisdom Program for Adults. Click below to activate this subscription, and enjoy the benefits of the HumanWisdom App.
+                This code entitles you to 1 <span>{{yearormonth}}</span> of subscription to the HumanWisdom Program for Adults. Click below to activate this subscription, and enjoy the benefits of the HumanWisdom App.
               </h4>
             </div>
           </div>  
 
           <div class="row center_flex as_submit_01" *ngIf="subsecondpage">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <button type="button" class="btn btn-warning btn_ms_submit" (click)="enablelastpage()">
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="submitcode()">
                 Activate Now
               </button>
             </div>

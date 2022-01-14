@@ -138,6 +138,7 @@ idToken:any
 socialFirstName:any
  socialLastName:any
  socialEmail:any
+ yearormonth = ''
 
  //static progress mapping
   mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
@@ -597,6 +598,7 @@ socialFirstName:any
       {
       console.log(res)
       if(res>0){
+        this.userId = res
         this.email = this.registrationForm.get('email').value
       this.firstpage = false;
        this.secondpage = true;
@@ -634,19 +636,14 @@ socialFirstName:any
   getcode(value) {
     this.activationCode = value;
   }
-  
-  enablelastpage() {
-    this.fourthpage = true;
-  }
 
-  submitcode(){
-    this.services.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
+  verifyactkey() {
+    this.service.verifyactkey(this.activationCode)
     .subscribe(
       res=>
       {console.log(res)
         if(res) {
-          let code: any = 1
-        localStorage.setItem('Subscriber', code)
+         this.yearormonth = res
         this.subthirdpage = false
         this.subfirstpage = false
         this.subsecondpage = true;
@@ -662,6 +659,37 @@ socialFirstName:any
       error=>{
         this.subsecondpage = false;
           this.subthirdpage = true
+        // window.alert(error.error['Message'])
+      },
+     
+      ()=>{
+        
+  
+      }
+    )
+  }
+
+  submitcode(){
+    this.services.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
+    .subscribe(
+      res=>
+      {console.log(res)
+        if(res) {
+          let code: any = 1
+        localStorage.setItem('Subscriber', code)
+        this.subthirdpage = false;
+        this.subsecondpage = false;
+        this.thirdpage = false;
+        this.subfirstpage = true;
+        this.sixthpage = true;
+        }else {
+        }
+        // this.enableActivate = true;
+        // this.closemodal.nativeElement.click()
+        
+        // this.router.navigate(['/adults/adult-dashboard'])
+      },
+      error=>{
         // window.alert(error.error['Message'])
       },
      
@@ -700,8 +728,8 @@ socialFirstName:any
       console.log(res)
       if(res>0)
       {
-        localStorage.setItem("email",JSON.stringify(this.registrationForm.get('email').value))
-        localStorage.setItem("pswd",JSON.stringify(this.registrationForm.get('password').value))
+        localStorage.setItem("email", this.registrationForm.get('email').value)
+        localStorage.setItem("pswd", this.registrationForm.get('password').value)
         this.emaillogin('second')
       }
       
@@ -711,7 +739,19 @@ socialFirstName:any
 
   }
 
+  resendotp() {
+    this.service.resendotp(this.userId)
+      .subscribe(res=>{
+      console.log(res)
+      if(res)
+      {
+      
+      }
 
+      }, (err) => {
+      })
+
+  }
 
 
   opennewTab() {

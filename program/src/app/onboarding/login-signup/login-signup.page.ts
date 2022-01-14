@@ -19,6 +19,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild('enablemodal') enablemodal:ElementRef;
   @ViewChild('closemodal') closemodal:ElementRef;
   @ViewChild('enabletab') enabletab:ElementRef;
+  @ViewChild('enableotpmodal') enableotpmodal:ElementRef;
 
   user:any
   userId:any
@@ -60,7 +61,7 @@ export class LoginSignupPage implements OnInit {
   t = new Date();
   minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
   message:any
-  
+
   get fullname(){
     return this.registrationForm.get('fullname')
   }
@@ -160,12 +161,8 @@ export class LoginSignupPage implements OnInit {
        {
        console.log(res)
        if(res>0){
-        window.alert('An email has been sent to you. Please click on the link shared with you')
-        // let code = window.prompt('Verify Code', '')
-        // if(code !== null) {
-        //   this.verificationCode = code;
-        //   this.verifyCode()
-        // }
+        window.alert('An email has been sent to you')
+        this.enableotpmodal.nativeElement.click()
         this.showMessage=true
         this.signUser=res
         this.showWarning=false
@@ -205,6 +202,7 @@ export class LoginSignupPage implements OnInit {
       console.log(res)
       if(res>0)
       {
+        this.closemodal.nativeElement.click()
         this.codeVerified=true
         localStorage.setItem("codeVerified",JSON.stringify(this.codeVerified))
         localStorage.setItem("email",JSON.stringify(this.registrationForm.get('email').value))
@@ -678,32 +676,17 @@ export class LoginSignupPage implements OnInit {
 
  signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
-    const REDIRECT_API_URL = "https://humanwisdom.info/api/verifyAppleToken"
-    window.open(
-        `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
-        '_blank'
-    );
+    const REDIRECT_API_URL = "https://humanwisdom.me/course"
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+    width=0,height=0,left=-1000,top=-1000`;
 
-    window.addEventListener('message', async event => {
-      console.log(event.data.id_token)
-        const decodedToken = event.data.id_token;
-        let requestData = {}
-        if (event.data.user) {
-            const userName = JSON.parse(event.data.user);
-            requestData = {
-                "email": decodedToken.email,
-                "name": `${userName.name.firstName} ${userName.name.lastName}`,
-                "socialId": decodedToken.sub,
-            };
-        } else {
-            requestData = {
-                "email": decodedToken.email,
-                "socialId": decodedToken.sub,
-            };
-        }
-        console.log(`User Data : ${requestData}`);
-        // do your next stuff here
-    });
+    let newwindow = open(`https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`, 'test', params);
+   setTimeout(() => {
+    newwindow.onload = function() {
+      newwindow.close()
+      console.log(newwindow.closed)
+    };
+   }, 4000)
 };
 
 }
