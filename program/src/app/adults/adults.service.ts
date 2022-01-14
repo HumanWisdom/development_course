@@ -132,4 +132,14 @@ export class AdultsService {
   verifytoken(encrypt){
     return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}`)
   }
+
+  verifyactkey(data):Observable<any> {
+    return this.http.get(this.path+ `/VerifyActKey/${data}`)
+   }
+
+   resendotp(data):Observable<any> {
+    return this.http.post(this.path+ `/ResendVerificationMail/${data}`, {})
+    
+   }
+
 }
