@@ -1,3 +1,4 @@
+import { BlogComponent } from './blog/blog.component';
 import { AffiliateComponent } from './affiliate/affiliate.component';
 import { AffiliateAllUsersComponent } from './affiliate-all-users/affiliate-all-users.component';
 import { MyAffiliateComponent } from './my-affiliate/my-affiliate.component';
@@ -170,8 +171,11 @@ const routes: Routes = [
 {
   path: "allotScreen",
   component: AllotScreensComponent
+},
+{
+  path: "blog",
+  component: BlogComponent
 }
-
 
 ];
 

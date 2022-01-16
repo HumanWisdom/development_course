@@ -137,7 +137,7 @@ export class SideNavComponent implements OnInit {
     this.router.navigate(['users/modules'])
 
   }
-  
+
   /*routeForum(){
     this.router.navigate(['users/forum'])
 
@@ -215,6 +215,10 @@ export class SideNavComponent implements OnInit {
     this.router.navigate(['users/popup'])
   }
 
+  routeBlog(){
+    this.router.navigate(['users/blog'])
+  }
+
   routeAffiliate(){
     this.router.navigate(['users/affiliate'])
   }
@@ -247,7 +251,7 @@ export class SideNavComponent implements OnInit {
     this.router.navigate(['users/allotScreen'])
 
   }
-  
+
 
 
 }
