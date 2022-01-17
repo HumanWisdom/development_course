@@ -38,9 +38,10 @@ import { ViewAffiliateComponent } from './view-affiliate/view-affiliate.componen
 import { ManagePopupComponent } from './manage-popup/manage-popup.component';
 import { NgxEditorModule } from 'ngx-editor';
 import { ForumsComponent } from './forums/forums.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
-  declarations: [HomeComponent, FaqComponent, PricingComponent, SectionComponent, ModulesComponent, ForumComponent, ModeratorComponent, ProgramComponent, ReflectionComponent, SubscriptionComponent, AssessmentComponent, QuestionComponent, CategoryComponent, GroupComponent, CouponsComponent, PointsComponent, TagsComponent, ScenariosComponent, KeysComponent, TestimonialsComponent, ScreensComponent, SitesectionsComponent, DailyquestionComponent, OptionsComponent, ModulePercentComponent, SessionComponent, AllotScreensComponent, AffiliateComponent, AffiliateAllUsersComponent, MyAffiliateComponent, ViewAffiliateComponent, ManagePopupComponent, ForumsComponent],
+  declarations: [HomeComponent, FaqComponent, PricingComponent, SectionComponent, ModulesComponent, ForumComponent, ModeratorComponent, ProgramComponent, ReflectionComponent, SubscriptionComponent, AssessmentComponent, QuestionComponent, CategoryComponent, GroupComponent, CouponsComponent, PointsComponent, TagsComponent, ScenariosComponent, KeysComponent, TestimonialsComponent, ScreensComponent, SitesectionsComponent, DailyquestionComponent, OptionsComponent, ModulePercentComponent, SessionComponent, AllotScreensComponent, AffiliateComponent, AffiliateAllUsersComponent, MyAffiliateComponent, ViewAffiliateComponent, ManagePopupComponent, ForumsComponent, BlogComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,

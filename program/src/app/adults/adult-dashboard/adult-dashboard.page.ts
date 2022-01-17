@@ -598,6 +598,7 @@ socialFirstName:any
       {
       console.log(res)
       if(res>0){
+        this.userId = res
         this.email = this.registrationForm.get('email').value
       this.firstpage = false;
        this.secondpage = true;
@@ -727,8 +728,8 @@ socialFirstName:any
       console.log(res)
       if(res>0)
       {
-        localStorage.setItem("email",JSON.stringify(this.registrationForm.get('email').value))
-        localStorage.setItem("pswd",JSON.stringify(this.registrationForm.get('password').value))
+        localStorage.setItem("email", this.registrationForm.get('email').value)
+        localStorage.setItem("pswd", this.registrationForm.get('password').value)
         this.emaillogin('second')
       }
       
@@ -738,7 +739,19 @@ socialFirstName:any
 
   }
 
+  resendotp() {
+    this.service.resendotp(this.userId)
+      .subscribe(res=>{
+      console.log(res)
+      if(res)
+      {
+      
+      }
 
+      }, (err) => {
+      })
+
+  }
 
 
   opennewTab() {

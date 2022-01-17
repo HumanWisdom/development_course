@@ -329,5 +329,14 @@ path="https://www.humanwisdom.info/api"
   getAffliateReferralReport(Id){
     return this.http.get(this.path + `/GetAffReferral_Report/${Id}`)
   }
+  addBlog(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddBlogs', data)
+  }
+  deleteBlog(n: Number): Observable<any> {
+    return this.http.post(this.path + `/DeleteBlogs/${n.Id}`, null)
+  }
+  getBlog(): Observable<any> {
+    return this.http.get(this.path + `/GetBlogs`)
+  }
 }
 
