@@ -12,8 +12,8 @@ export class S38019p2Page implements OnInit,OnDestroy {
 
   bg="dark_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/art_of_enquiry/videos/4.2.mp4'  
-  title="What is insight"
+  videoLink=this.mediaVideo+'/art_of_enquiry/videos/4.2_01.mp4'  
+  title="What is insight?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   
   userId:any
