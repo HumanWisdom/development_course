@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: "forum",
     loadChildren: () => import("./forum/framework-v1.module").then(m => m.FrameworkV1Module)  
+  },
+  {
+    path: "coach",
+    loadChildren: () => import("./coach/coach.module").then(m => m.CoachModule)  
   }
 ];
 
