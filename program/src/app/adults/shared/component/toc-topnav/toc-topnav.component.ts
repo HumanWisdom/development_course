@@ -1,6 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import {
+  getSupportedInputTypes,
+  Platform,
+  supportsPassiveEventListeners,
+  supportsScrollBehavior,
+} from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-toc-topnav',
@@ -8,16 +14,19 @@ import { OnboardingService } from 'src/app/onboarding/onboarding.service';
   styleUrls: ['./toc-topnav.component.scss'],
 })
 export class TocTopnavComponent implements OnInit {
+  supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
+  supportsPassiveEventListeners = supportsPassiveEventListeners();
+  supportsScrollBehavior = supportsScrollBehavior();
+
   isloggedIn = false;
   name = ''
   roleid = 0
   url = '';
   subscriber= false;
-
   @Input()
   enableplaystore = true
 
-  constructor(private router: Router, private Onboardingservice: OnboardingService) {
+  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem("Subscriber")
@@ -41,6 +50,8 @@ export class TocTopnavComponent implements OnInit {
   routeGuide(value: any) {
 
   }
+
+  
 
   getevent() {
     this.name = localStorage.getItem('name');
