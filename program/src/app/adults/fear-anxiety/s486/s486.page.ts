@@ -171,11 +171,11 @@ export class S486Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")
-    this.submitProgress()
+   // this.submitProgress()
 
 
 
-  }
+  } 
 
   routeJournal(){
     this.router.navigate(['/adults/journal'])
