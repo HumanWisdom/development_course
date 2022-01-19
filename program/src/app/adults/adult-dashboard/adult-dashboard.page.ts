@@ -191,6 +191,17 @@ socialFirstName:any
         },
         ()=>{
         }); 
+
+        let sub: any = localStorage.getItem('Subscriber')
+        let res = localStorage.getItem("isloggedin")
+        if(sub && sub === '0' && res === 'T') {
+            this.firstpage = false
+            this.thirdpage = true;
+            let namedata = localStorage.getItem('name').split(' ')
+            this.modaldata['email'] = localStorage.getItem('email');
+            this.modaldata['firstname'] = namedata[0];
+            this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+        }
       
       }
 
@@ -223,6 +234,11 @@ socialFirstName:any
         this.fromapplogin(authtoken);
       }
       
+    }
+
+    if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.getProgress()
     }
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
