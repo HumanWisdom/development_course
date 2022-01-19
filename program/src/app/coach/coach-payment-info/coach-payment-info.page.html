@@ -1,0 +1,257 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+
+    <nav class="flex_ai">
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt=""
+              class="p0">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <h6 class="txt88">
+              Registration - 3/3
+            </h6>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col ml0 pt_rightcol" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form [formGroup]="paymentinfo">
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt160 mb0px">
+                    You & Human Wisdom Program
+                  </h4>
+
+                  <h6 class="txt120 mtb5px">
+                    All fields are compulsory
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    Prefered Hours for online consultation
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <input type="text" required="required" formControlName="Consult_StrtTime" class="coach_fc_01 tcenter"
+                    placeholder="00:00:00">
+                    <span *ngIf="!paymentinfo.get('Consult_StrtTime')?.valid && paymentinfo.get('Consult_StrtTime')?.touched">
+                      <span *ngIf="paymentinfo.get('Consult_StrtTime')?.errors.required"> Start Time is required</span>  
+                      <span *ngIf="paymentinfo.get('Consult_StrtTime')?.errors.pattern">Value should not be greater than 23:59:59</span>  
+                    </span>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-1 p0 center_flex year_month">
+                  <h4 class="txt145">
+                    to
+                  </h4>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-3 year_month">
+                  <input type="text" required="required" formControlName="Consult_EndTime" class="coach_fc_01 tcenter"
+                    placeholder="00:00:00">
+                    <span *ngIf="!paymentinfo.get('Consult_EndTime')?.valid && paymentinfo.get('Consult_EndTime')?.touched">
+                      <span *ngIf="paymentinfo.get('Consult_EndTime')?.errors.required"> End Time is required</span>  
+                      <span *ngIf="paymentinfo.get('Consult_EndTime')?.errors.pattern">Value should not be greater than 23:59:59</span>  
+                    </span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-5">
+                  <h6 class="txt129 mtb0px tleft">
+                    Indian Standard Time
+                    <br>
+                    (GMT+05:30)
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    Fee per session (1hr)
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <select class="form-control coach_fc_01" formControlName="PerSessionFee_Curr">
+                    <option>INR</option>
+                    <option>USD</option>
+                    <!-- <option>Option two</option>
+                    <option>Option three</option>
+                    <option>Option four</option> -->
+                  </select>
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-9">
+                  <input type="text" required="required" formControlName="PerSessionFee" class="coach_fc_01"
+                    placeholder="Amount">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt120">
+                    A collaboration charge of 25% of the above amount will go to Human Wisdom Program
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    Payment Details
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/paypal.svg" alt=""
+                    class="p0">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" required="required" formControlName="PayPalID" class="coach_fc_01"
+                    placeholder="Paypal ID">
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    National ID
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row flex_ai">
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <button type="submit" class="btn btn-warning btn_upload w100" (click)="clickuploadimage('frontfile')">
+                    Upload Front
+                  </button>
+                  <input type="file" (change)="handleFileInput($event, 0)" id="frontfile" style="visibility: hidden;">
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-7 pl0px">
+                  <h6 class="txt65 mtb0px tleft">
+                    jpg / png / pdf (max size 2MB)
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row flex_ai pt10px">
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <button type="submit" class="btn btn-warning btn_upload w100" (click)="clickuploadimage('backfile')">
+                    Upload Back
+                  </button>
+                  <input type="file" (change)="handleFileInput($event, 1)" id="backfile" style="visibility: hidden;">
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-7 pl0px">
+                  <h6 class="txt65 mtb0px tleft">
+                    jpg / png / pdf (max size 2MB)
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="checkbox">
+                    <label class="pcoach_check mt0px">
+                      <input type="checkbox" name="remember" value=""   [formControl]="isTermsAndConditionChkd"/>
+                      <span class="dinline_flex">
+                        <p class="pl10px_imp">
+                          <span class="txt65 pl0_3rem">
+                            I agree with the
+                          </span>
+                          <a>
+                            <a class="txt115 td_underline" href="https://humanwisdom.me/course/#/adults/framework-v1/terms-conditions" 
+                            target="_blank">Terms & Conditions</a>
+                          </a>
+                          <span class="txt65 pl0_3rem">
+                            of the Human Wisdom Program
+                          </span>
+                        </p>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt120 tcenter">
+                    Page 3 of 3
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit" (click)="submitForm('submit')"
+                    [disabled]="paymentinfo.invalid || natinalIdFront === undefined ||
+                     natinalIdFront=='' || natinalIdback === undefined || natinalIdback==''  || !isTermsAndConditionChkd"
+                    class="btn btn-warning btn_coach_continue w100">
+                    Submit
+                  </button>
+                </div>
+              </div>
+
+              <div class="row pt10px">                  
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit"  (click)="submitForm('saveForLater')"
+                  [disabled]="paymentinfo.invalid || natinalIdFront === undefined ||
+                  natinalIdFront=='' || natinalIdback === undefined || natinalIdback==''"
+                  class="btn btn-warning btn_save_later w100">
+                    Save for Later
+                  </button>  
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->

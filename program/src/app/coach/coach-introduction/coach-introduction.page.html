@@ -38,7 +38,7 @@
 
               <div class="row img_coach">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/coach_landing.jpg" alt="" class="img-responsive w100">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/coach_landing.jpg" alt="" class="img-responsive">
                 </div>
               </div>
 
@@ -62,14 +62,13 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="checkbox">
                     <label class="coach_check mt0px">
-                      <input type="checkbox" name="remember" value=""/> 
+                      <input type="checkbox" name="remember" value="" [formControl]="isTermsAndConditionChkd"/> 
                       <span class="">                         
                         <span class="txt65 pl0_3rem">
-                          I agree to the 
+                          By continuing, you agree to our <a class="txt115 td_underline" href="https://humanwisdom.me/course/#/adults/framework-v1/terms-conditions" target="_blank">Terms of Use</a>
+                          and  
+                          <a class="txt115 td_underline" href="https://humanwisdom.me/course/#/adults/framework-v1/privacy-policy" target="_blank">Privacy Policy</a>
                         </span>
-                        <span class="txt115 td_underline">
-                          Terms & Conditions
-                        </span>    
                       </span>
                     </label>
                   </div>
@@ -78,12 +77,11 @@
 
               <div class="row pt30px">                  
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" (click)="clicknext()" class="btn btn-warning btn_coach_continue w100">                      
+                  <button type="submit" [disabled]="!isTermsAndConditionChkd.value"  (click)="clicknext()" class="btn btn-warning btn_coach_continue w100">                      
                     Continue
                   </button>  
                 </div>
               </div>
-
               <div class="pagebreak"></div>
 
             </form>              

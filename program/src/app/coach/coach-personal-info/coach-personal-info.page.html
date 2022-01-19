@@ -1,0 +1,292 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+
+    <nav class="flex_ai">
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt=""
+              class="p0">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <h6 class="txt88">
+              Registration - 1/3
+            </h6>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col ml0 pt_rightcol" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form [formGroup]="personalInfo">
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt160 mb0px">
+                    Personal Information
+                  </h4>
+
+                  <h6 class="txt120 mtb5px">
+                    All fields are compulsory
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row forum_pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex w50p">
+                  <div class="opaque_border_outer">
+                  <img src="{{profilepic === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_01_a.svg' : profilepic}}"
+                    alt="" class="p0 opaque_border_inner img-responsive"> 
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                  <h6 class="txt163" (click)="clickuploadimage()">
+                    Upload Profile Picture
+                  </h6>
+                  <input type="file" id="file" style="visibility: hidden;" (change)="handleFileInput($event)">
+                </div>
+              </div>
+
+              <div class="row pt30px">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <!-- <input type="text" required="required" formControlName="Title" class="coach_fc_01"
+                    placeholder="Title"> -->
+                    <select  required="required" class="form-control coach_fc_01" formControlName="Title">
+                      <option>Mr.</option>
+                      <option>Mrs.</option>
+                    </select>
+                    <span *ngIf="!personalInfo.get('Title')?.valid && personalInfo.get('Title')?.touched">
+                      Title is required
+                    </span>
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-9">
+                  <input type="text" required="required" formControlName="Name" class="coach_fc_01"
+                    placeholder="Full Name">
+                    <span *ngIf="!personalInfo.get('Name')?.valid && personalInfo.get('Name')?.touched">
+                      Full Name is required
+                    </span>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" required="required" formControlName="Email" class="coach_fc_01"
+                    placeholder="E-mail">
+                    <span *ngIf="!personalInfo.get('Email')?.valid && personalInfo.get('Email')?.touched">
+                      Please Enter Valid Email and It's required
+                    </span>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    Gender
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row coach_radio_btns">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-md-3 col-sm-3 col-xs-3 pl0px">
+                    <div class="txt120 flex_ai">
+                      <input type="radio" value="male" formControlName="Gender"  (click)="getGender('male')" id="male" name="Gender">
+                      Male
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 pl0px">
+                    <div class="ml-5px txt120 flex_ai">
+                      <input type="radio" value="female" formControlName="Gender" (click)="getGender('female')" id="female" name="Gender">
+                      Female
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 pl0px">
+                    <div class="txt120 flex_ai">
+                      <input type="radio" value="any" formControlName="Gender" (click)="getGender('Any')" id="any" name="Gender">
+                      Any
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" formControlName="Address" required="required" class="coach_fc_01"
+                    placeholder="Address">
+                    <span *ngIf="!personalInfo.get('Address')?.valid && personalInfo.get('Address')?.touched">
+                      Address is required
+                    </span>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" required="required" formControlName="City" class="coach_fc_01" placeholder="City">
+                  <span *ngIf="!personalInfo.get('City')?.valid && personalInfo.get('City')?.touched">
+                    City is required
+                  </span>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <select class="form-control select2_group coach_fc_01" aria-placeholder="Select Country" (change)="changeCity($event.target.value)" formControlName="Country">
+                    <option [value]=""> Select Country</option>
+                    <option *ngFor="let c of countries" [value]="c.name" >{{c.name}}</option>
+                  </select>
+                  <span *ngIf="!personalInfo.get('Country')?.valid && personalInfo.get('Country')?.touched">
+                    Country is required
+                  </span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <select class="select2_group form-control coach_fc_01" formControlName="State">
+                    <option>Province / State</option>
+                    <option *ngFor="let c of state" [value]="c.name" >{{c.name}}</option>
+                  </select>
+                  <span *ngIf="!personalInfo.get('State')?.valid && personalInfo.get('State')?.touched">
+                    State is required
+                  </span>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    Contact - Primary
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <input type="text" class="coach_fc_01" [value]="Code" formControlName="Code" >
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-9">
+                  <input type="text" required="required" formControlName="Primary_CTC"
+                    class="coach_fc_01 feedback_left" placeholder="">
+                    <span class="form-control-feedback left coach_fc_fl" [disabled]="true"  [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true">
+              </span>
+                    </div>
+                <span *ngIf="!personalInfo.get('Primary_CTC')?.valid && personalInfo.get('Primary_CTC')?.touched">
+                  <span *ngIf="personalInfo.get('Primary_CTC')?.errors.required">Primary CTC is required</span>  
+                  <span *ngIf="personalInfo.get('Primary_CTC')?.errors.pattern">Please, Enter minimum 10 and maximum 15 digit Mobile Number only.</span>  
+                </span>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    Contact - Secondary
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <input type="text" class="coach_fc_01" placeholder="" formControlName="Code">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-9">
+                  <input type="text" required="required" formControlName="Secondary_CTC"
+                    class="coach_fc_01 feedback_left" placeholder="">
+                  <span class="form-control-feedback left coach_fc_fl" [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true" [disabled]="true">
+                  </span>
+                </div>
+                <span *ngIf="!personalInfo.get('Secondary_CTC')?.valid && personalInfo.get('Secondary_CTC')?.touched">
+                  <span *ngIf="personalInfo.get('Secondary_CTC')?.errors.required"> Secondary CTC is required</span>  
+                  <span *ngIf="personalInfo.get('Secondary_CTC')?.errors.pattern">Please, Enter minimum 10 and maximum 15 digit Mobile Number only.</span>  
+                </span>
+              </div>
+
+              <br>
+
+              <div class="row" *ngIf="languageList.length > 0">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <ng-multiselect-dropdown
+                  [settings]="dropdownSettings"
+                  [placeholder]="'Select Your Languages Known'"
+                   formControlName="Coach_Languages"
+                  [data]="languageList">
+                 </ng-multiselect-dropdown>
+                  <span *ngIf="!personalInfo.get('Coach_Languages')?.valid && personalInfo.get('Coach_Languages')?.touched">
+                    Languages is required
+                  </span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt120">
+                    Select only those languages that you are comfortable conversing in
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row pt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt120 tcenter">
+                    Page 1 of 3
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit" [disabled]="personalInfo.invalid || profilepic === undefined || gender === undefined"
+                    (click)="nextRoute()" class="btn btn-warning btn_coach_continue w100">
+                    Continue
+                  </button>
+                </div>
+              </div>
+
+              <div class="row pt10px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit"(click)="saveForLater()" [disabled]="personalInfo.invalid || profilepic === undefined || gender === undefined" class="btn btn-warning btn_save_later w100">
+                    Save for Later
+                  </button>
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->

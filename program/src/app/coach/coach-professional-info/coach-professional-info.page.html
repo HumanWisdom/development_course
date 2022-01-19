@@ -1,0 +1,357 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+
+    <nav class="flex_ai">
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt=""
+              class="p0">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <h6 class="txt88">
+              Registration - 2/3
+            </h6>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col ml0 pt_rightcol" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form [formGroup]="professionalInfo">
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt160 mb0px">
+                    Personal Information
+                  </h4>
+
+                  <h6 class="txt120 mtb5px">
+                    All fields are compulsory
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" formArrayName="Coach_Qualifications"
+                  *ngFor="let item of professionalInfo.controls['Coach_Qualifications'].controls; let i = index">
+                  <div [formGroupName]="i">
+                    <input type="text" formControlName="name" required="required" class="coach_fc_01"
+                      placeholder="Qualification">
+                      <button *ngIf="i > 0" (click)="RemoveQUalification(i)">X</button>
+                  </div>
+                  <span *ngIf="!professionalInfo.get('Coach_Qualifications').controls[i]?.valid && professionalInfo.get('Coach_Qualifications').controls[i]?.touched">
+                    Qualification is Required
+                  </span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt163" (click)="addNext(0)">
+                    Add More
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <!-- <select class="form-control coach_fc_01" formControlName="Coach_Specializations">
+                    <option>Expertise (check all that apply)</option>
+                    <option>Option one</option>
+                    <option>Option two</option>
+                    <option>Option three</option>
+                    <option>Option four</option>
+                  </select> -->
+                  <input type="text" required="required" formControlName="Coach_Specializations" class="form-control coach_fc_01"
+                  placeholder="Expertise">
+                </div>
+                <span *ngIf="!professionalInfo.get('Coach_Specializations')?.valid && professionalInfo.get('Coach_Specializations')?.touched">
+                  Expertise is Required
+                </span>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px">
+                    Work Experience
+                  </h6>
+                </div>
+              </div>
+              <div formArrayName="Coach_WorkExp" *ngFor="let item of professionalInfo.controls['Coach_WorkExp']?.controls; let i = index">
+                <div [formArrayName]="i">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <input type="text" required="required" formControlName="InstituteName" class="coach_fc_01"
+                        placeholder="Place of Work">
+                    </div>
+                    
+                    <span *ngIf="!professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('InstituteName')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('InstituteName')?.touched">
+                      Institute Name is Required
+                    </span>
+                  </div>
+
+                  <br>
+
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <select class="form-control coach_fc_01" (change)="changeCity($event, i)" formControlName="Country">
+                        <option [value]=""> Select Country</option>
+                        
+                        <option *ngFor="let c of countries" [value]="c.name" >{{c.name}} </option>
+
+                      </select>
+                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.touched">
+                        Country is Required
+                      </span>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <select 
+                        class="select2_group form-control coach_fc_01" 
+                        formControlName="City">
+                        <option>City</option>
+                        <option *ngFor="let c of changeCountry(professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country').value, i)" [value]="c.name" >{{c.name}}</option>
+                        
+                      </select>
+                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('City')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('City')?.touched">
+                        City is Required
+                      </span>
+                    </div>
+                  
+                  
+                  </div>
+
+                  <div class="row pt30px dflex">
+                    <div class="col-md-2 col-sm-2 col-xs-3">
+                      <input type="text" required="required" formControlName="From_Year" class="coach_fc_01 tcenter"
+                        placeholder="Year">
+                        <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.touched">
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.required">From Year is required.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.pattern">Enter only number.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.minlength">Min & Max Length is 4</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.maxlength">Min & Max Length is 4</div>
+                        </span>
+
+                        
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3 year_month">
+                      <input type="text" required="required" formControlName="From_Month" class="coach_fc_01 tcenter"
+                        placeholder="Month">
+                        <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.touched">
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.required">From Month is required.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.pattern">Enter only number.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.min">Min is 1</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.max">Max is 12</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.maxlength">Min & Max Length is 4</div>
+                        </span>
+                    </div>
+                    
+                  
+                    <div class="col-md-2 col-sm-2 col-xs-1 p0 center_flex" *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                      <h4 class="txt145">
+                        to
+                      </h4>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3" *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                      <input type="text" required="required" formControlName="To_Year" class="coach_fc_01 tcenter"
+                        placeholder="Year">
+                        <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.touched">
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.required">To Year is required.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.pattern">Enter only number.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.minlength">Min & Max Length is 4</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.maxlength">Min & Max Length is 4</div>
+                          
+                        </span>
+
+                        <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year').errors?.error">
+                          {{professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year').errors?.error}}
+                    </div>
+
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3 year_month" *ngIf="!professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                      <input type="text" required="required" formControlName="To_Month" class="coach_fc_01 tcenter"
+                        placeholder="Month">
+                        <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.touched">
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.required">From Month is required.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.pattern">Enter only number.</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.min">Min is 1</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.max">Max is 12</div>
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.maxlength">Min & Max Length is 4</div>
+                        </span>
+                    </div>
+                  
+                  </div>
+
+                  <br>
+
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="checkbox">
+                        <label class="coach_check mt0px">
+                          <input type="checkbox" name="remember" formControlName="IsCurrent" (change)="isCurrentWorking($event, i)"/>
+                          <span class="">
+                            <span class="txt65 pl0_3rem">
+                              I currently work here
+                            </span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <br>
+                </div>
+                <button *ngIf="i > 0" (click)="RemoveExp(i)">X</button>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt163" (click)="addNext(1)">
+                    Add more Work Experience
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px mb5px">
+                    Certifications
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt120 mtb0px">
+                    In order to be a coach on this platform, it is mandatory to be certified by the Human Wisdom
+                    Program.
+                    <span class="txt155">
+                      Find out more about Human Wisdom Coach Certification here
+                    </span>
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0" formArrayName="Coach_Certificates" *ngFor="let item of professionalInfo.controls['Coach_Certificates'].controls; let i = index">
+                  <div [formGroupName]="i">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                      <input type="text" id="{{i + 'text'}}" [value]="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value" required="required" class="coach_fc_01" placeholder="Certification"  readonly>
+                      <input type="file" id="{{i + 'file'}}" required="required"
+                       class="coach_fc_01" placeholder="Certification" (change)="handleFileInput($event, i + 'text')" style="visibility: hidden; width: 0px; height: 0px;">
+                      
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <button type="submit" (click)="clickuploadimage(i + 'file')"
+                        class="btn btn-warning btn_upload w100">
+                        Upload
+                      </button>
+                    </div>
+                  </div>
+                  <button *ngIf="i > 0" (click)="RemoveCertificate(i)">X</button>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt163" (click)="addNext(2)">
+                    Add More
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt158 mt0px mb5px">
+                    Links
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div formArrayName="Coach_Websites" *ngFor="let item of professionalInfo.controls['Coach_Websites'].controls; let i = index">
+                  <div class="col-md-12 col-sm-12 col-xs-12" [formGroupName]="i">
+                    <input type="text" formControlName="name" required class="coach_fc_01" placeholder="Website">
+                  </div>
+                  <span *ngIf="!professionalInfo.get('Coach_Websites').controls[i].get('name')?.valid && professionalInfo.get('Coach_Websites').controls[i].get('name')?.touched">
+                    <div *ngIf="professionalInfo.get('Coach_Websites').controls[i].get('name')?.errors.required">Link is required.</div>
+                    <div *ngIf="professionalInfo.get('Coach_Websites').controls[i].get('name')?.errors.pattern">Link is Not valid .</div>
+                  </span>
+                  <button *ngIf="i > 0" (click)="RemoveLinks(i)">X</button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt163 mb5px" (click)="addNext(3)">
+                    Add More
+                  </h6>
+
+                  <h6 class="txt65 mt0px tleft">
+                    (website, social media, etc)
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row pt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt120 tcenter">
+                    Page 2 of 3
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit" (click)="nextRoute()" [disabled]="professionalInfo.invalid" class="btn btn-warning btn_coach_continue w100">
+                    Continue
+                  </button>
+                </div>
+              </div>
+
+              <div class="row pt10px">                  
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit"  (click)="saveForLater()" [disabled]="professionalInfo.invalid" class="btn btn-warning btn_save_later w100">
+                    Save for Later
+                  </button>  
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
