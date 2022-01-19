@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Country, State, City } from 'country-state-city';
-import { ThrowStmt } from '@angular/compiler';
+import { Country, State } from 'country-state-city';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { CoachInfo } from '../coach-model/coach-info';
 import { CoachService } from '../services/coach.service';

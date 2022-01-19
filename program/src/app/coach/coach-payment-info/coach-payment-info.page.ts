@@ -1,9 +1,9 @@
-import { ApiService } from './../services/api.service';
-import { DataService } from './../services/data.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CoachInfo } from '../coach-model/coach-info';
+import { CoachDataService } from '../services/coach-data.service';
+import { CoachService } from '../services/coach.service';
 
 @Component({
   selector: 'app-coach-payment-info',
@@ -18,7 +18,7 @@ export class CoachPaymentInfoPage implements OnInit {
   constructor(
     private router: Router,
      private formbuilder: FormBuilder,
-      private dataservice: DataService, private apiservice: ApiService) {
+      private dataservice: CoachDataService, private apiservice: CoachService) {
     this.paymentinfo = this.formbuilder.group({
       Consult_StrtTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],
       Consult_EndTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],

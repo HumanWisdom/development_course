@@ -1,12 +1,10 @@
-import { DataService } from './../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Country, State, City }  from 'country-state-city';
-import { initialize } from '@ionic/core';
 import { CoachInfo } from '../coach-model/coach-info';
-import { ApiService } from '../services/api.service';
-import { iif } from 'rxjs';
+import { CoachDataService } from '../services/coach-data.service';
+import { CoachService } from '../services/coach.service';
 
 @Component({
   selector: 'app-coach-professional-info',
@@ -23,8 +21,8 @@ export class CoachProfessionalInfoPage implements OnInit {
   callingCountries:string;
   constructor(private router: Router, 
     private formbuilder: FormBuilder,
-     private dataservice: DataService,
-     private apiService:ApiService) {
+     private dataservice: CoachDataService,
+     private apiService:CoachService) {
   }
 
   ngOnInit() {
