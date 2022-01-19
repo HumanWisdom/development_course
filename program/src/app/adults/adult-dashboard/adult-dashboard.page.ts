@@ -1556,7 +1556,7 @@ socialFirstName:any
         }
         // /continue where you left
         sessionStorage.setItem("pgResume",pgResume)
-        pgResume=res.lastVisitedScreen
+        pgResume="s"+res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
     error=>{
@@ -1605,7 +1605,8 @@ socialFirstName:any
           localStorage.setItem("lastvisited", 'T')
         }
         // /continue where you left
-        this.router.navigate([`/adults/nature/${natureR}`])
+        sessionStorage.setItem("natureR",natureR)      
+       
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
     error=>{
@@ -1614,7 +1615,7 @@ socialFirstName:any
     ()=>{
       if(cont=="1")
       {
-        sessionStorage.setItem("natureR",natureR)        
+        this.router.navigate([`/adults/nature/${natureR}`])
       }
       else
       this.router.navigate([`/adults/nature/s28001`])
