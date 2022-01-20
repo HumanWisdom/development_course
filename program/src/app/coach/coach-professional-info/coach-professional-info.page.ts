@@ -25,9 +25,10 @@ export class CoachProfessionalInfoPage implements OnInit {
      private apiService:CoachService) {
   }
 
+
   ngOnInit() {
     
-    this.SetCountriesData();
+    // this.SetCountriesData();
     this.countries=Country.getAllCountries().map(o => new Object({name: o.name, code: o.isoCode,phonecode:o.phonecode}));
     this.professionalInfo = this.formbuilder.group({
       Coach_Qualifications: this.formbuilder.array([]),
@@ -39,9 +40,9 @@ export class CoachProfessionalInfoPage implements OnInit {
     this.InitializeCoachInfo();
   }
 
-  SetCountriesData(){
-    this.callingCountries = require('country-data').callingCountries;
-    }
+  // SetCountriesData(){
+  //   this.callingCountries = require('country-data').callingCountries;
+  //   }
 
   createqualification(value) {
     if (value === 0) {
@@ -160,7 +161,7 @@ export class CoachProfessionalInfoPage implements OnInit {
     this.dataservice.coachInfo = Object.assign(this.dataservice.coachInfo, this.professionalInfo.value);
     // this.dataservice.coachInfo.Coach_Languages = this.personalInfo.get('Coach_Languages').value.map(x => x.item_id);
      localStorage.setItem('coachInfo', JSON.stringify(this.dataservice.coachInfo));
-     this.router.navigate(['frameworks/coach-payment-info'])
+     this.router.navigate(['coach/coach-payment-info'])
     // this.dataservice.coachInfo=Object.assign(this.dataservice.coachInfo,this.professionalInfo.value);
     // this.router.navigate(['frameworks/coach-payment-info'])
   }
@@ -186,7 +187,7 @@ export class CoachProfessionalInfoPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['frameworks/coach-personal-info'])
+    this.router.navigate(['coach/coach-personal-info'])
   }
   InitializeCoachInfo(){
     if(localStorage.getItem('coachInfo')==null){

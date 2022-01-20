@@ -33,7 +33,7 @@ export class CoachPaymentInfoPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['frameworks/coach-professional-info'])
+    this.router.navigate(['coach/coach-professional-info'])
   }
 
   SetInitialCoachInfo() {
@@ -110,7 +110,7 @@ export class CoachPaymentInfoPage implements OnInit {
     this.apiservice.register( this.dataservice.coachInfo).subscribe((res) => {
       if(res=="1"){
         if(eventName=='submit'){
-          this.router.navigate(['frameworks/coach-congratulations'])
+          this.router.navigate(['coach/coach-congratulations'])
         }
       }
     })

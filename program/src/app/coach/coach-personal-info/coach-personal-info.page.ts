@@ -59,7 +59,7 @@ export class CoachPersonalInfoPage implements OnInit {
 
   PerformInitialDataBind() {
     this.dataservice.userId=+localStorage.getItem('userId');
-    this.SetCountriesData();
+    // this.SetCountriesData();
     this.countries = Country.getAllCountries().map(o => new Object({ name: o.name, code: o.isoCode, phonecode: o.phonecode }));
     this.languageList = this.dataservice.getLanguageList().
       map(x => new Object({ item_id: x.name, item_text: x.name }));
@@ -167,12 +167,13 @@ export class CoachPersonalInfoPage implements OnInit {
   getGender(value) {
     this.gender = value;
   }
-  SetCountriesData() {
-    this.currencies = require('country-data').currencies,
-      this.regions = require('country-data').regions,
-      this.languages = require('country-data').languages,
-      this.callingCountries = require('country-data').callingCountries;
-  }
+  // SetCountriesData() {
+  //   this.currencies = require('country-data').currencies,
+  //     this.regions = require('country-data').regions,
+  //     this.languages = require('country-data').languages,
+  //     this.callingCountries = require('country-data').callingCountries;
+  // }
+
 
   changeCity(name: any) {
     let country = this.countries.filter(x => x.name == name)[0];
@@ -198,7 +199,7 @@ export class CoachPersonalInfoPage implements OnInit {
     this.dataservice.coachInfo.Coach_Languages = this.personalInfo.get('Coach_Languages').value.map(x => x.item_id);
     this.dataservice.coachInfo = Object.assign(this.dataservice.coachInfo, this.personalInfo.value);
     localStorage.setItem('coachInfo', JSON.stringify(this.dataservice.coachInfo));
-    this.router.navigate(['frameworks/coach-professional-info'])
+    this.router.navigate(['coach/coach-professional-info'])
   }
 
 

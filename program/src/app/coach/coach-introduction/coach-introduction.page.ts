@@ -25,7 +25,7 @@ export class CoachIntroductionPage implements OnInit {
       
     if(this.isTermsAndConditionChkd.value){
 
-      this.router.navigate(['frameworks/coach-personal-info'])
+      this.router.navigate(['coach/coach-personal-info'])
     }
   }
 

@@ -5,6 +5,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { CoachPersonalInfoPage } from './coach-personal-info.page';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const app: Routes = [
+  {
+      path: '',
+      component: CoachPersonalInfoPage
+  }
+]
 
 @NgModule({
   imports: [
@@ -12,8 +21,10 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    NgMultiSelectDropDownModule
+    NgMultiSelectDropDownModule,
+    RouterModule.forChild(app)
   ],
-  declarations: [CoachPersonalInfoPage]
+  declarations: [CoachPersonalInfoPage],
+  exports: [RouterModule]
 })
 export class CoachPersonalInfoPageModule {}
