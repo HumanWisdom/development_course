@@ -225,7 +225,8 @@ export class CoachDataService {
     State:'',
     Title:'', 
     NationalID_BackImgPath:'',
-    NationalID_FrontImgPath:''
+    NationalID_FrontImgPath:'',
+    RegSubmit: 0
    } as CoachInfo;
   }
 }

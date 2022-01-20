@@ -26,6 +26,7 @@ export interface CoachInfo {
     Coach_Qualifications:  string[];
     NationalID_BackImgPath: string;
     NationalID_FrontImgPath:string;
+    RegSubmit: number;
 }
 
 export interface CoachCertificate {

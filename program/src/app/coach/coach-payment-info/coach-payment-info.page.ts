@@ -23,7 +23,7 @@ export class CoachPaymentInfoPage implements OnInit {
       Consult_StrtTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],
       Consult_EndTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],
       PerSessionFee: ['', [Validators.required]],
-      PerSessionFee_Curr: ['', [Validators.required]],
+      PerSessionFee_Curr: ['INR', [Validators.required]],
       PayPalID: ['', [Validators.required]]
     })
    }
@@ -60,7 +60,7 @@ export class CoachPaymentInfoPage implements OnInit {
       Consult_StrtTime: coachInfo.Consult_StrtTime,
       Consult_EndTime:  coachInfo.Consult_EndTime,
       PerSessionFee: coachInfo.PerSessionFee,
-      PerSessionFee_Curr: coachInfo.PerSessionFee_Curr,
+      PerSessionFee_Curr: coachInfo.PerSessionFee_Curr ? coachInfo.PerSessionFee_Curr : 'INR',
       PayPalID: coachInfo.PayPalID
     });
     this.natinalIdFront=coachInfo.NationalID_FrontImgPath,
@@ -107,8 +107,12 @@ export class CoachPaymentInfoPage implements OnInit {
     this.dataservice.coachInfo.NationalID_Front="";
     this.dataservice.coachInfo.NationalID_FrontImgPath=this.natinalIdFront;
     this.dataservice.coachInfo.NationalID_BackImgPath=this.natinalIdback;
+    if(eventName == 'submit') {
+      this.dataservice.coachInfo.RegSubmit = 1;
+    }
     this.apiservice.register( this.dataservice.coachInfo).subscribe((res) => {
       if(res=="1"){
+        localStorage.setItem('coachInfo', JSON.stringify(this.dataservice.coachInfo));
         if(eventName=='submit'){
           this.router.navigate(['coach/coach-congratulations'])
         }
