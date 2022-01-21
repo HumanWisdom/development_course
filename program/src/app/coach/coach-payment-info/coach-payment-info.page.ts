@@ -47,7 +47,7 @@ export class CoachPaymentInfoPage implements OnInit {
   }
   
   GetCoachDetails() {
-    this.apiservice.getCoachDetails(this.dataservice.userId).subscribe(res => {
+    this.apiservice.getCoachDetails(+localStorage.getItem('userId')).subscribe(res => {
       this.dataservice.coachInfo = res;
       if (res != null) {
        this.SetPaymentInfo(res);

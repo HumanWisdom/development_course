@@ -87,7 +87,7 @@ export class CoachPersonalInfoPage implements OnInit {
   }
 
   GetCoachDetails() {
-    this.apiservice.getCoachDetails(this.dataservice.userId).subscribe(res => {
+    this.apiservice.getCoachDetails(+localStorage.getItem('userId')).subscribe(res => {
       this.dataservice.coachInfo = res;
       if (res != null) {
         this.SetPersonalFormControlValue(res);
@@ -96,6 +96,12 @@ export class CoachPersonalInfoPage implements OnInit {
   }
 
   SetPersonalFormControlValue(res: CoachInfo) {
+    this.selectedItems = [];
+    res?.Coach_Languages?.map(res => {
+      this.selectedItems.push(
+        { item_id: res, item_text: res  }
+      );
+    });
     this.personalInfo.setValue(
       {
         Title: res.Title,
@@ -108,7 +114,7 @@ export class CoachPersonalInfoPage implements OnInit {
         State: res.State,
         Primary_CTC: res.Primary_CTC,
         Secondary_CTC: res.Secondary_CTC,
-        Coach_Languages: res.Coach_Languages,
+        Coach_Languages: this.selectedItems,
         Phonecode: "+91",
         Code: ""
       });
@@ -202,7 +208,6 @@ export class CoachPersonalInfoPage implements OnInit {
    
     this.dataservice.coachInfo = Object.assign(this.dataservice.coachInfo, this.personalInfo.value);
     this.dataservice.coachInfo.Coach_Languages = this.personalInfo.get('Coach_Languages').value.map(x => x.item_id);
-    debugger
     localStorage.setItem('coachInfo', JSON.stringify(this.dataservice.coachInfo));
     this.router.navigate(['coach/coach-professional-info'])
   }
