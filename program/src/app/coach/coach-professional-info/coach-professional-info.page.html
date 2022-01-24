@@ -266,7 +266,7 @@
                     <div class="col-md-8 col-sm-8 col-xs-8">
                       <input type="text" id="{{i + 'text'}}" [value]="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value" required="required" class="coach_fc_01" placeholder="Certification"  readonly>
                       <input type="file" id="{{i + 'file'}}" required="required"
-                       class="coach_fc_01" placeholder="Certification" (change)="handleFileInput($event, i + 'text')" style="visibility: hidden; width: 0px; height: 0px;">
+                       class="coach_fc_01" placeholder="Certification" (change)="handleFileInput($event, i + 'text', i)" style="visibility: hidden; width: 0px; height: 0px;">
                       
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-4">

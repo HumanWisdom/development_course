@@ -139,13 +139,20 @@ export class CoachProfessionalInfoPage implements OnInit {
   return City.getCitiesOfCountry(country?.code ? country?.code : '');
   }
 
-  handleFileInput(files, text) {
+  handleFileInput(files, text, i) {
     let file = files.target.files[0];
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = (e: any) => {
       const res: string = e.target.result.split(',')[1];;
+     if( this.certificate[i] == undefined) {
       this.certificate.push({ "CertificationName": file['name'], "Certificates": res,"CertificationPath":''});
+     } else {
+      this.certificate[i].CertificationName = file['name'];
+      this.certificate[i].Certificates= res
+      this.certificate[i].CertificationPath = "";
+     }
+      
       (<HTMLInputElement>document.getElementById(text)).value = file['name']
     };
   }
