@@ -74,7 +74,7 @@ export class CoachCalendarPluginPage implements OnInit {
   }
 
   ngOnInit() {
-    this.coachNames = localStorage.getItem("userName");
+    this.coachNames = localStorage.getItem("name");
     this.onGetDates();
     this.coachAvailabilityInfo= this.dataservice.InitializeCoachAvailability();
     this.coachAvailabilityInfoDetail=this.dataservice.InitializeCoachAvailabilityInfoDetail();
