@@ -27,7 +27,7 @@ export class CoachHistoryPatientNamePage implements OnInit {
  getAppointmentHistory(){
   this.dataService.appointmentHistory= [this.dataService.IntializeCoachAppointmentHistroy()];
    this.apiService.getAppointmentHistory().subscribe(res=>{
-   this.dataService.appointmentHistory=res;
+    this.appointmentHistoryList=res;
     });
   // this.appointmentHistoryList=JSON.parse(JSON.stringify(this.dataService.getData()));
    this.GetUniqueUserId();

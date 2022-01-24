@@ -19,11 +19,11 @@ export class CoachHistoryDatePage implements OnInit {
 
   ngOnInit() {
     this.getAppointmentHistory();
-  }
+  }                                   
  getAppointmentHistory(){
   this.datService.appointmentHistory= [this.datService.IntializeCoachAppointmentHistroy()];
    this.apiService.getAppointmentHistory().subscribe(res=>{
-   this.datService.appointmentHistory=res;
+    this.appointmentHistoryList=res;
     });
    // this.appointmentHistoryList=JSON.parse(JSON.stringify(this.datService.getData()));
    this.GroupAppointmentByDate();

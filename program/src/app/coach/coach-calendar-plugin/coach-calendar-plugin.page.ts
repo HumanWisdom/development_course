@@ -95,7 +95,7 @@ export class CoachCalendarPluginPage implements OnInit {
         res['BookingDates'] = res.Date.split(' ')[0].split('/')[2] + '-' + res.Date.split(' ')[0].split('/')[1] + '-' + res.Date.split(' ')[0].split('/')[0] + ' ' + moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'hh:mm A').format('HH:mm');
       });
     }
-
+    
     const date = new Date();
     const n = date.toDateString();
     const time = date.toLocaleTimeString();
@@ -137,11 +137,10 @@ export class CoachCalendarPluginPage implements OnInit {
       this.fromDate = date;
       this.coachAvailabilityInfo.StartDate=this.fromDate.year+"/"+this.fromDate.month+"/"+this.fromDate.day;
     }
-   
-    
   }
+  
   ViewAllApp(){
-    this.router.navigate(['frameworks/coach-history-date'])
+    this.router.navigate(['coach/coach-history-date'])
   }
 
   isHovered(date: NgbDate) {
