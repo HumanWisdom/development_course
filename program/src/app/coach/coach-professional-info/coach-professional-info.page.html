@@ -58,7 +58,7 @@
                   *ngFor="let item of professionalInfo.controls['Coach_Qualifications'].controls; let i = index">
                   <div [formGroupName]="i">
                     <input type="text" formControlName="name" required="required" class="coach_fc_01"
-                      placeholder="Qualification">
+                      placeholder="Qualification" maxlength="60">
                       <button *ngIf="i > 0" (click)="RemoveQUalification(i)">X</button>
                   </div>
                   <span *ngIf="!professionalInfo.get('Coach_Qualifications').controls[i]?.valid && professionalInfo.get('Coach_Qualifications').controls[i]?.touched">
@@ -84,7 +84,7 @@
                     <option>Option four</option>
                   </select> -->
                   <input type="text" required="required" formControlName="Coach_Specializations" class="form-control coach_fc_01"
-                  placeholder="Expertise">
+                  placeholder="Expertise"  maxlength="100">
                 </div>
                 <span *ngIf="!professionalInfo.get('Coach_Specializations')?.valid && professionalInfo.get('Coach_Specializations')?.touched">
                   Expertise is Required
@@ -105,7 +105,7 @@
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <input type="text" required="required" formControlName="InstituteName" class="coach_fc_01"
-                        placeholder="Place of Work">
+                        placeholder="Place of Work"  maxlength="100">
                     </div>
                     
                     <span *ngIf="!professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('InstituteName')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('InstituteName')?.touched">
@@ -146,7 +146,7 @@
                   <div class="row pt30px dflex">
                     <div class="col-md-2 col-sm-2 col-xs-3">
                       <input type="text" required="required" formControlName="From_Year" class="coach_fc_01 tcenter"
-                        placeholder="Year">
+                        placeholder="Year" maxlength="4">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.required">From Year is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.pattern">Enter only number.</div>
@@ -158,7 +158,7 @@
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-3 year_month">
                       <input type="text" required="required" formControlName="From_Month" class="coach_fc_01 tcenter"
-                        placeholder="Month">
+                        placeholder="Month" maxlength="2">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.required">From Month is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.pattern">Enter only number.</div>
@@ -176,7 +176,7 @@
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-3" *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
                       <input type="text" required="required" formControlName="To_Year" class="coach_fc_01 tcenter"
-                        placeholder="Year">
+                        placeholder="Year" maxlength="4">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.required">To Year is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.pattern">Enter only number.</div>
@@ -192,7 +192,7 @@
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-3 year_month" *ngIf="!professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
                       <input type="text" required="required" formControlName="To_Month" class="coach_fc_01 tcenter"
-                        placeholder="Month">
+                        placeholder="Month" maxlength="2">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.required">From Month is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.pattern">Enter only number.</div>
@@ -301,7 +301,7 @@
               <div class="row">
                 <div formArrayName="Coach_Websites" *ngFor="let item of professionalInfo.controls['Coach_Websites'].controls; let i = index">
                   <div class="col-md-12 col-sm-12 col-xs-12" [formGroupName]="i">
-                    <input type="text" formControlName="name" required class="coach_fc_01" placeholder="Website">
+                    <input type="text" formControlName="name" required class="coach_fc_01" placeholder="Website" maxlength="100">
                   </div>
                   <span *ngIf="!professionalInfo.get('Coach_Websites').controls[i].get('name')?.valid && professionalInfo.get('Coach_Websites').controls[i].get('name')?.touched">
                     <div *ngIf="professionalInfo.get('Coach_Websites').controls[i].get('name')?.errors.required">Link is required.</div>
