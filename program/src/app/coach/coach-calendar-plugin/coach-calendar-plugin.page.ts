@@ -54,6 +54,7 @@ export class CoachCalendarPluginPage implements OnInit {
   coachAvailabilityInfoDetail:CoachAvailabilityInfoDetail;
   coachAvailabilityInfoDetailList:CoachAvailabilityInfoDetail[]=[];
   nearestDate = null;
+  coachNames = '';
   appointmentDates = '';
   constructor(calendar: NgbCalendar,
       private dataservice: CoachDataService,
@@ -73,6 +74,7 @@ export class CoachCalendarPluginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.coachNames = localStorage.getItem("userName");
     this.onGetDates();
     this.coachAvailabilityInfo= this.dataservice.InitializeCoachAvailability();
     this.coachAvailabilityInfoDetail=this.dataservice.InitializeCoachAvailabilityInfoDetail();
