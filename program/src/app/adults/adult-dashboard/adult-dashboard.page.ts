@@ -171,6 +171,7 @@ socialFirstName:any
         this.service.verifytoken(authtoken).subscribe((res) => {
           console.log(res)
           if(res) {
+            this.socialLogin
           }else {
            this.router.navigate(['/onboarding/login'])
           }

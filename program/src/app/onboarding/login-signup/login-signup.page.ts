@@ -676,17 +676,14 @@ export class LoginSignupPage implements OnInit {
 
  signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
-    const REDIRECT_API_URL = "https://humanwisdom.me/course"
-    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-    width=0,height=0,left=-1000,top=-1000`;
+    const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
+  
 
-    let newwindow = open(`https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`, 'test', params);
-   setTimeout(() => {
-    newwindow.onload = function() {
-      newwindow.close()
-      console.log(newwindow.closed)
-    };
-   }, 4000)
-};
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
+      '_self'
+  );
+
+    }
 
 }
