@@ -32,6 +32,7 @@ export class CoachHistoryPatientNamePage implements OnInit {
   // this.appointmentHistoryList=JSON.parse(JSON.stringify(this.dataService.getData()));
    this.GetUniqueUserId();
  }
+
  GetUniqueUserId(){
    this.appointmentHistoryList.forEach(element => {
     if(this.UserIds.length==0 || !this.UserIds.some(x=>x==element.UserId)){
@@ -67,6 +68,6 @@ export class CoachHistoryPatientNamePage implements OnInit {
     return  this.appointmentHistoryList.filter(x=>x.UserId==userId);
   }
   goBack() {
-    this.router.navigate(['frameworks/coach-history-date'])
+    this.router.navigate(['coach/coach-history-date'])
   }
 }

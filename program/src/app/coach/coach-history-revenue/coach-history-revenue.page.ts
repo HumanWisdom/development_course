@@ -79,6 +79,6 @@ export class CoachHistoryRevenuePage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['frameworks/coach-history-patient-name'])
+    this.router.navigate(['coach/coach-history-patient-name'])
   }
 }
