@@ -84,15 +84,13 @@ export class CoachCalendarPluginPage implements OnInit {
   });
   }
 
-  onGetDates() {
+  onGetDates = async () => {
     let getData = []
-    this.apiService.getAppointmentHistory().subscribe(res=>{
+   await  this.apiService.getAppointmentHistory().subscribe(res=>{
       getData=res;
-       });
-
     if (getData.length > 0) {
       getData.map(res => {
-        res['BookingDates'] = res.Date.split(' ')[0].split('/')[2] + '-' + res.Date.split(' ')[0].split('/')[1] + '-' + res.Date.split(' ')[0].split('/')[0] + ' ' + moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'hh:mm A').format('HH:mm');
+        res['BookingDates'] = res.Date.split(' ')[0].split('/')[2] + '-' + res.Date.split(' ')[0].split('/')[0] + '-' + res.Date.split(' ')[0].split('/')[1] + ' ' + moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'hh:mm A').format('HH:mm');
       });
     }
     
@@ -116,6 +114,7 @@ export class CoachCalendarPluginPage implements OnInit {
     });
 
     this.appointmentDates = moment(this.nearestDate?.BookingDates).format('dddd, D MMMM YYYY, hh A')
+  });
     // + ' - ' +  moment(this.nearestDate?.EndTime.split(' ')[1]+this.nearestDate?.EndTime.split(' ')[2], 'hh:mm A').format('HH:mm A');
   }
   toggleCalender(){
