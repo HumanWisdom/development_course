@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
                   <input type="text" required="required" formControlName="Name" class="coach_fc_01"
-                    placeholder="Full Name">
+                    placeholder="Full Name" maxlength="100">
                     <span *ngIf="!personalInfo.get('Name')?.valid && personalInfo.get('Name')?.touched">
                       Full Name is required
                     </span>
@@ -92,7 +92,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <input type="text" required="required" formControlName="Email" class="coach_fc_01"
-                    placeholder="E-mail">
+                    placeholder="E-mail" maxlength="50">
                     <span *ngIf="!personalInfo.get('Email')?.valid && personalInfo.get('Email')?.touched">
                       Please Enter Valid Email and It's required
                     </span>
@@ -137,7 +137,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <input type="text" formControlName="Address" required="required" class="coach_fc_01"
-                    placeholder="Address">
+                    placeholder="Address" maxlength="150">
                     <span *ngIf="!personalInfo.get('Address')?.valid && personalInfo.get('Address')?.touched">
                       Address is required
                     </span>
@@ -148,7 +148,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" required="required" formControlName="City" class="coach_fc_01" placeholder="City">
+                  <input type="text" required="required" formControlName="City" class="coach_fc_01" placeholder="City" maxlength="100">
                   <span *ngIf="!personalInfo.get('City')?.valid && personalInfo.get('City')?.touched">
                     City is required
                   </span>
@@ -190,7 +190,7 @@
 
               <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-3">
-                  <input type="text" class="coach_fc_01" [value]="Code" formControlName="Code" >
+                  <input type="text" class="coach_fc_01" [value]="Code" formControlName="Code" disabled>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
                   <input type="text" required="required" formControlName="Primary_CTC"
@@ -216,7 +216,7 @@
 
               <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-3">
-                  <input type="text" class="coach_fc_01" placeholder="" formControlName="Code">
+                  <input type="text" class="coach_fc_01" placeholder="" formControlName="Code" disabled>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
                   <input type="text" required="required" formControlName="Secondary_CTC"
