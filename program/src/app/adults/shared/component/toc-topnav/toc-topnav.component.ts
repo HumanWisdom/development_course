@@ -31,6 +31,7 @@ export class TocTopnavComponent implements OnInit {
     let userId=JSON.parse(localStorage.getItem("userId"))
     this.Onboardingservice.getuser(userId).subscribe((res)=>{
       let userdetail = res[0];
+      debugger
       this.url = userdetail['UserImagePath'].split('\\')[1] 
     })
    }

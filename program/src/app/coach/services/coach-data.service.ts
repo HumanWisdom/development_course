@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { CoachAppointmentHistroy } from '../coach-model/coach-appointment-history';
+import { CoachAvailabilityInfo, CoachAvailabilityInfoDetail } from '../coach-model/coach-availability-info';
 import { CoachInfo } from '../coach-model/coach-info';
 
 @Injectable({
@@ -10,6 +12,7 @@ export class CoachDataService {
   public professionalInfo = new BehaviorSubject<any>({});
   public coachInfo:CoachInfo;
   public userId:number=0;
+    public appointmentHistory:CoachAppointmentHistroy[];
   getLanguageList(){
     return  [
           {"code":"ab","name":"Abkhaz","nativeName":"аҧсуа"},
@@ -225,7 +228,139 @@ export class CoachDataService {
     State:'',
     Title:'', 
     NationalID_BackImgPath:'',
-    NationalID_FrontImgPath:''
+    NationalID_FrontImgPath:'',
+    RegSubmit: 0
    } as CoachInfo;
   }
+
+  InitializeCoachAvailability(){
+    return {
+      EndTime:"",
+      StartTime:"",
+      Days:"",
+      TimeZone:"",
+      Id:"",
+      EndDate:"",
+      StartDate:"",
+    } as CoachAvailabilityInfo;
+  }
+
+  InitializeCoachAvailabilityInfoDetail(){
+    return {
+      EndTime:"",
+      StartTime:"",
+      Day:"",
+      Id:"",
+      CoachAvailabilityInfoId:"",
+      EndDate:"",
+      StartDate:"",
+    } as CoachAvailabilityInfoDetail;
+  }
+  getData(){
+    return [
+       {
+           "UserId":"891",
+           "FName": "Human",
+           "LName": "Wisdom",
+           "Date": "1/20/2022 12:00:00 AM",
+           "StartTime": "1/13/2022 10:00:00 AM",
+           "EndTime": "1/13/2022 10:30:00 AM",
+           "BookingID": "1",
+           "PerSessionFee": "240",
+           "PerSessionFee_Curr": "USD",
+           "SumOfSession":0
+       },
+       {
+           "UserId":"891",
+           "FName": "Human",
+           "LName": "Wisdom",
+           "Date": "1/20/2022 12:00:00 AM",
+           "StartTime": "1/13/2022 10:30:00 AM",
+           "EndTime": "1/13/2022 11:00:00 AM",
+           "BookingID": "2",
+           "PerSessionFee": "240",
+           "PerSessionFee_Curr": "USD",
+           "SumOfSession":0
+       },
+       {
+         "UserId":"879",
+         "FName": "Pavish",
+         "LName": "Jain",
+         "Date": "1/22/2022 12:00:00 AM",
+         "StartTime": "1/13/2022 10:30:00 AM",
+         "EndTime": "1/13/2022 11:00:00 AM",
+         "BookingID": "2",
+         "PerSessionFee": "240",
+         "PerSessionFee_Curr": "USD",
+         "SumOfSession":0
+     },
+     {
+       "UserId":"879",
+       "FName": "Pavish",
+       "LName": "Jain",
+       "Date": "1/14/2022 12:00:00 AM",
+       "StartTime": "1/13/2022 10:30:00 AM",
+       "EndTime": "1/13/2022 11:00:00 AM",
+       "BookingID": "7",
+       "PerSessionFee": "240",
+       "PerSessionFee_Curr": "USD",
+       "SumOfSession":0
+   },
+   {
+     "UserId":"880",
+     "FName": "Test",
+     "LName": "User",
+     "Date": "1/14/2022 12:00:00 AM",
+     "StartTime": "1/13/2022 10:30:00 AM",
+     "EndTime": "1/13/2022 11:00:00 AM",
+     "BookingID": "10",
+     "PerSessionFee": "1000",
+     "PerSessionFee_Curr": "USD",
+     "SumOfSession":0
+ },
+   {
+     "UserId":"879",
+     "FName": "Pavish",
+     "LName": "Jain",
+     "Date": "1/1/2022 12:00:00 AM",
+     "StartTime": "1/13/2022 10:30:00 AM",
+     "EndTime": "1/13/2022 11:00:00 AM",
+     "BookingID": "5",
+     "PerSessionFee": "240",
+     "PerSessionFee_Curr": "USD",
+     "SumOfSession":0
+ },
+   ]
+   }
+
+
+
+IntializeCoachAppointmentHistroy(){
+return {
+       BookingID:'',
+       Date:'',
+       EndTime:'',
+       FName:'',
+       LName:'',
+       PerSessionFee:'',
+       PerSessionFee_Curr:'',
+       StartTime:'',
+       ETime:'',
+       STime:'',
+      SumOfSession:0
+} as CoachAppointmentHistroy;
+}
+
+getDays(){
+  return  [
+        {"code":"1","name":"Mon"},
+        {"code":"2","name":"Tue"},
+        {"code":"3","name":"Wed"},
+        {"code":"4","name":"Thur"},
+        {"code":"5","name":"Fri"},
+        {"code":"6","name":"Sat"},
+        {"code":"7","name":"Sun"},
+      ];
+}
+
 }

@@ -60,9 +60,9 @@ export class CoachPersonalInfoPage implements OnInit {
   PerformInitialDataBind() {
     this.dataservice.userId=+localStorage.getItem('userId');
     // this.SetCountriesData();
-    this.countries = Country.getAllCountries().map(o => new Object({ name: o.name, code: o.isoCode, phonecode: o.phonecode }));
+    this.countries = Country.getAllCountries().map(o => new Object({ name: o?.name, code: o?.isoCode, phonecode: o?.phonecode }));
     this.languageList = this.dataservice.getLanguageList().
-      map(x => new Object({ item_id: x.name, item_text: x.name }));
+      map(x => new Object({ item_id: x?.name, item_text: x?.name }));
     this.dropdownSettings = {
       idField: 'item_id',
       textField: 'item_text',
@@ -87,7 +87,7 @@ export class CoachPersonalInfoPage implements OnInit {
   }
 
   GetCoachDetails() {
-    this.apiservice.getCoachDetails(this.dataservice.userId).subscribe(res => {
+    this.apiservice.getCoachDetails(+localStorage.getItem('userId')).subscribe(res => {
       this.dataservice.coachInfo = res;
       if (res != null) {
         this.SetPersonalFormControlValue(res);
@@ -96,6 +96,12 @@ export class CoachPersonalInfoPage implements OnInit {
   }
 
   SetPersonalFormControlValue(res: CoachInfo) {
+    this.selectedItems = [];
+    res?.Coach_Languages?.map(res => {
+      this.selectedItems.push(
+        { item_id: res, item_text: res  }
+      );
+    });
     this.personalInfo.setValue(
       {
         Title: res.Title,
@@ -108,12 +114,12 @@ export class CoachPersonalInfoPage implements OnInit {
         State: res.State,
         Primary_CTC: res.Primary_CTC,
         Secondary_CTC: res.Secondary_CTC,
-        Coach_Languages: res.Coach_Languages,
+        Coach_Languages: this.selectedItems,
         Phonecode: "+91",
         Code: ""
       });
       this.profilepic = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + res.ProfilePic;
-      this.changeCity(res.Country)
+      this.changeCity(res?.Country)
       this.SetPersonalInfoObservableData();
   }
 
@@ -178,10 +184,13 @@ export class CoachPersonalInfoPage implements OnInit {
   changeCity(name: any) {
     let country = this.countries.filter(x => x.name == name)[0];
     this.personalInfo.patchValue({
-      Code: country.code,
-      Phonecode: country.phonecode,
+      Code: country?.code,
+      Phonecode: country?.phonecode,
     });
-    this.state = State.getStatesOfCountry(country.code);
+    if(country?.code){
+      this.state = State.getStatesOfCountry(country?.code);
+    }
+    
   }
 
   //Save for Letter
@@ -196,8 +205,9 @@ export class CoachPersonalInfoPage implements OnInit {
   }
   //Next
   nextRoute() {
-    this.dataservice.coachInfo.Coach_Languages = this.personalInfo.get('Coach_Languages').value.map(x => x.item_id);
+   
     this.dataservice.coachInfo = Object.assign(this.dataservice.coachInfo, this.personalInfo.value);
+    this.dataservice.coachInfo.Coach_Languages = this.personalInfo.get('Coach_Languages').value.map(x => x.item_id);
     localStorage.setItem('coachInfo', JSON.stringify(this.dataservice.coachInfo));
     this.router.navigate(['coach/coach-professional-info'])
   }

@@ -106,8 +106,15 @@ export class CoachProfessionalInfoPage implements OnInit {
   }
 
   isCurrentWorking(e, i) {
+    const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
+
+      orderItemsArray.at(i).patchValue({
+        'To_Year': '',
+        'To_Month': '',
+      })
     if(e.target.checked){
       this.isCurrent = true;
+      
       (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').clearValidators();
       (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').clearValidators();
       (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').updateValueAndValidity();
@@ -199,10 +206,15 @@ export class CoachProfessionalInfoPage implements OnInit {
     }
   
     GetCoachDetails() {
-      this.apiService.getCoachDetails(this.dataservice.userId).subscribe(res => {
+      this.apiService.getCoachDetails(+localStorage.getItem('userId')).subscribe(res => {
         this.dataservice.coachInfo = res;
         if (res != null) {
           this.setProfessionalInfoFormControl(res);
+        } else {
+          this.addNext(0);
+          this.addNext(1);
+          this.addNext(2);
+          this.addNext(3);
         }
       });
     }
@@ -216,7 +228,6 @@ export class CoachProfessionalInfoPage implements OnInit {
         {
           const fromYear=form.get('From_Year');
           const toYear=form.get('To_Year');
-          debugger
           return fromYear?.value && toYear?.value && +toYear.value<+fromYear.value ? {error:'TO Should be graterthan From Year'}:null
         }
       }
@@ -256,7 +267,6 @@ export class CoachProfessionalInfoPage implements OnInit {
 
 
   setProfessionalInfoFormControl(res:CoachInfo){
-    
    const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
    const certificate = this.professionalInfo.get('Coach_Certificates') as FormArray;
    const qualification = this.professionalInfo.get('Coach_Qualifications') as FormArray;

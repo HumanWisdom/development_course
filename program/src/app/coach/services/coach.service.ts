@@ -36,4 +36,7 @@ export class  CoachService {
   uploaderAvatar(data) {
     return this.http.post(this.path+`/UploadAvatar`,data)
   }
+  getAppointmentHistory() : Observable<any>{
+    return this.http.get(this.path+`/AppointmentsHistory`);
+  }
 }

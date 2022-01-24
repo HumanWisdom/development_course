@@ -1,0 +1,231 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_coach_side">
+
+    <nav class="flex_ai">
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt=""
+              class="p0">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <h6 class="txt88">
+              Dr Madyson Banks
+            </h6>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navright w20p no_bg">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/hamburger_white.svg" alt=""
+              class="p0">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col ml0 pt_rightcol" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+
+          <div class="x_content p0">
+            <form>
+              <div class="row img_coach prelative">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter prelative">
+                  <img
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/coach_directory.jpg"
+                    alt="" class="img-responsive w100 coach_dir_img">
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 coach_ab_img_txt">
+                  <h6 class="txt154">
+                    Upcoming Appointment
+                  </h6>
+
+                  <div *ngIf="nearestDate !== null; else noAppointment">
+                    <h6 class="txt55 t5p">
+                      {{nearestDate?.FName}} {{nearestDate?.LName}}
+                    </h6>
+  
+                    <h6 class="txt154">
+                      {{appointmentDates}}
+                      <!-- Friday, 5 Jun 2021, 4.00 PM - 5.00 PM IST -->
+                    </h6>
+  
+                    <button type="submit" (click)="ViewAllApp()"class="btn btn-warning btn_coach_vaa w100">
+                      View All Appointments
+                    </button>
+                  </div>
+                  <ng-template #noAppointment>
+                    <h4> No Appointment Available</h4>
+                  </ng-template>
+                 
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row flex_ai">
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                  <h6 class="txt168 mtb0px">
+                    Total Revenue
+                  </h6>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <h6 class="txt169 mtb0px tright">
+                    USD 5,000
+                  </h6>
+                </div>
+              </div>
+
+              <hr class="hr_style_5">
+
+              <div class="row flex_ai">
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                  <h6 class="txt168 mtb0px">
+                    Time Spent
+                  </h6>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <h6 class="txt169 mtb0px tright">
+                    40 hours
+                  </h6>
+                </div>
+              </div>
+
+              <hr class="hr_style_5">
+
+
+            </form>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6" style="margin-left:35%">
+                <button type="submit" class="btn btn-warning btn_coach_vaa"
+                 (click)="toggleCalender()" type="button"> select
+                  Date Range</button>
+              </div>
+            </div>
+            <div>
+              <div class="row"   [ngStyle]="{'display': (isShowCalender)?'':'none'}">
+                <div class="col-md-6 col-sm-6 col-xs-6" style="margin-top: 30px;margin-left:20%">
+                  <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" 
+                  [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+                  </ngb-datepicker>
+            </div>
+              </div>
+              <!-- <ngb-datepicker #d (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+            </ngb-datepicker> -->
+
+              <ng-template #t let-date let-focused="focused">
+                <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                  [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+                  {{ date.day }}
+                </span>
+              </ng-template>
+              <div class="row" style="margin-top: 5%">
+                <div class="col-md-3 col-sm-6 col-xs-3">
+                  <p>StartTime</p>
+                  <ngb-timepicker [(ngModel)]="startTime" (ngModelChange)="onTimeChange($event,'startTime')" [hourStep]="hourStep" [minuteStep]="minuteStep">
+                  </ngb-timepicker>
+                     <span *ngIf="isTimeRangeInvalid"> Time Range Invalid</span>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-3">
+                  <p>EndTime</p>
+                  <ngb-timepicker (ngModelChange)="onTimeChange($event,'endTime')" [(ngModel)]="endTime" [hourStep]="hourStep" [minuteStep]="minuteStep">
+                  </ngb-timepicker>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6" style="margin-top: 70px;">
+                  <ng-multiselect-dropdown
+                  [(ngModel)]="selectedDays"
+                  [settings]="dropdownSettings" [placeholder]="'Select Days'"
+                    [data]="languageList">
+                  </ng-multiselect-dropdown>
+                  <!-- <span *ngIf="!personalInfo.get('Coach_Languages')?.valid && personalInfo.get('Coach_Languages')?.touched">
+    Languages is required
+  </span> -->
+                </div>
+              </div>
+
+              <!-- <div class="x_content p0">
+       
+            <input class="form-control" type="text" id="time"/>  
+          </div> -->
+            </div>
+            <div class="row" style="margin-left:35%">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <button type="submit" class="btn btn-warning btn_coach_vaa" [disabled]="SetDisabled()" (click)="SetAvailability()" type="button">Add Date
+                  Range</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagebreak"></div>
+      </div>
+    </div>
+    <!--/Class -->
+  </div>
+  <!-- /page content -->
+
+  <!-- footer  -->
+  <div class="sidebar-footer ifooter">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-12 col-xs-12 center_flex">
+
+        <a (click)="routeDash()" class="footer_index">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/coach/home.svg" alt="">
+          <p class="mb0px">
+            Home
+          </p>
+        </a>
+
+        <a class="footer_index">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/coach/calendar.svg"
+            alt="">
+          <p class="mb0px">
+            Calendar
+          </p>
+        </a>
+
+        <a (click)="routeJournal()" class="footer_index">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/coach/history.svg" alt="">
+          <p class="mb0px">
+            History
+          </p>
+        </a>
+
+        <a class="footer_index">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/coach/messages_active.svg"
+            alt="">
+          <p class="mb0px">
+            Messages
+          </p>
+        </a>
+
+        <a class="footer_index">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_01_c.svg" alt=""
+            class="mw34px">
+          <p class="mb0px">
+            Profile
+          </p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+  <!-- /footer -->
