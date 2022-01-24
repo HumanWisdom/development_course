@@ -363,4 +363,22 @@ getDays(){
       ];
 }
 
+public IsNumericOnly(event) {
+  const keyCode = (event.which) ? event.which : event.keyCode;
+  // Allow: backspace, delete, tab, escape, and enter (do not allow dot)
+  if (event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+      // Allow: Ctrl+A
+      (event.keyCode == 65 && event.ctrlKey === true) ||
+      // Allow: home, end, left, right
+      (event.keyCode >= 35 && event.keyCode <= 39)) {
+      // let it happen, don't do anything
+      return;
+  } else {
+      // Ensure that it is a number and stop the keypress
+      if ((event.shiftKey || (keyCode < 48 || keyCode > 57))) {
+          event.preventDefault();
+      }
+  }
+}
+
 }

@@ -85,7 +85,9 @@ export class CoachPersonalInfoPage implements OnInit {
   goBack() {
     this.router.navigate(['frameworks'], { state: { data: { isChecked: true } } })
   }
-
+  IsNumeric(event: any) {
+    this.dataservice.IsNumericOnly(event);
+  }
   GetCoachDetails() {
     this.apiservice.getCoachDetails(+localStorage.getItem('userId')).subscribe(res => {
       this.dataservice.coachInfo = res;

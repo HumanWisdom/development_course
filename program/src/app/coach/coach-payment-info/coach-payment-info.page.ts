@@ -54,7 +54,9 @@ export class CoachPaymentInfoPage implements OnInit {
       }
     });
   }
-
+  IsNumeric(event: any) {
+    this.dataservice.IsNumericOnly(event);
+  }
   SetPaymentInfo(coachInfo:CoachInfo){
     this.paymentinfo.setValue({
       Consult_StrtTime: coachInfo.Consult_StrtTime,

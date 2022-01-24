@@ -113,7 +113,7 @@
                   </select>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
-                  <input type="text" required="required" formControlName="PerSessionFee" class="coach_fc_01"
+                  <input type="text" required="required"  (keypress)="IsNumeric($event);" formControlName="PerSessionFee" class="coach_fc_01"
                     placeholder="Amount">
                 </div>
               </div>

@@ -193,7 +193,7 @@
                   <input type="text" class="coach_fc_01" [value]="Code" formControlName="Code" >
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
-                  <input type="text" required="required" formControlName="Primary_CTC"
+                  <input type="text" required="required" (keypress)="IsNumeric($event);" formControlName="Primary_CTC"
                     class="coach_fc_01 feedback_left" placeholder="">
                     <span class="form-control-feedback left coach_fc_fl" [disabled]="true"  [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true">
               </span>
@@ -219,7 +219,7 @@
                   <input type="text" class="coach_fc_01" placeholder="" formControlName="Code">
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
-                  <input type="text" required="required" formControlName="Secondary_CTC"
+                  <input type="text" required="required" (keypress)="IsNumeric($event);" formControlName="Secondary_CTC"
                     class="coach_fc_01 feedback_left" placeholder="">
                   <span class="form-control-feedback left coach_fc_fl" [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true" [disabled]="true">
                   </span>
