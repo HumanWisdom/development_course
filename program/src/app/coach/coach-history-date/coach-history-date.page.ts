@@ -29,6 +29,9 @@ export class CoachHistoryDatePage implements OnInit {
    this.GroupAppointmentByDate();
  }
 
+ goBack() {
+  this.router.navigate(['coach/coach-calendar-plugin'])
+ }
 
  getAppCount(userId:any){
    return this.appointmentHistoryList.filter(x=>x.UserId==userId).length;

@@ -226,7 +226,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <button type="submit" (click)="submitForm('submit')"
                     [disabled]="paymentinfo.invalid || natinalIdFront === undefined ||
-                     natinalIdFront=='' || natinalIdback === undefined || natinalIdback==''  || !isTermsAndConditionChkd"
+                     natinalIdFront=='' || natinalIdback === undefined || natinalIdback==''  || !isTermsAndConditionChkd.value"
                     class="btn btn-warning btn_coach_continue w100">
                     Submit
                   </button>
@@ -236,8 +236,8 @@
               <div class="row pt10px">                  
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <button type="submit"  (click)="submitForm('saveForLater')"
-                  [disabled]="paymentinfo.invalid || natinalIdFront === undefined ||
-                  natinalIdFront=='' || natinalIdback === undefined || natinalIdback==''"
+                  [disabled]="paymentinfo.invalid || natinalIdFront === undefined || !
+                  natinalIdFront=='' || natinalIdback === undefined || natinalIdback=='' || !isTermsAndConditionChkd.value"
                   class="btn btn-warning btn_save_later w100">
                     Save for Later
                   </button>  
