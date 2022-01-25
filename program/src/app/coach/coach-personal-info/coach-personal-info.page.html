@@ -160,10 +160,10 @@
               <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <select class="form-control select2_group coach_fc_01" aria-placeholder="Select Country" (change)="changeCity($event.target.value)" formControlName="Country">
-                    <option [value]=""> Select Country</option>
+                    <option>Select Country</option>
                     <option *ngFor="let c of countries" [value]="c.name" >{{c.name}}</option>
                   </select>
-                  <span *ngIf="!personalInfo.get('Country')?.valid && personalInfo.get('Country')?.touched">
+                  <span *ngIf="!personalInfo.get('Country')?.valid && personalInfo.get('Country')?.touched && personalInfo.get('Country')?.value=='Select Country'">
                     Country is required
                   </span>
                 </div>
@@ -172,7 +172,7 @@
                     <option>Province / State</option>
                     <option *ngFor="let c of state" [value]="c.name" >{{c.name}}</option>
                   </select>
-                  <span *ngIf="!personalInfo.get('State')?.valid && personalInfo.get('State')?.touched">
+                  <span *ngIf="!personalInfo.get('State')?.valid && personalInfo.get('State')?.touched && personalInfo.get('State')?.value==' State is required'">
                     State is required
                   </span>
                 </div>
