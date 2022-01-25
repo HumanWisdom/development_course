@@ -54,8 +54,8 @@ export class CoachProfessionalInfoPage implements OnInit {
     } else if (value === 1) {
       return this.formbuilder.group({
         InstituteName: ['', [Validators.required]],
-        City: ['', [Validators.required]],
-        Country: ['', [Validators.required]],
+        City: ['Select City', [Validators.required]],
+        Country: ['Select Country', [Validators.required]],
         From_Year: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4)]],
         From_Month: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
         To_Year: ['', 
@@ -156,20 +156,19 @@ export class CoachProfessionalInfoPage implements OnInit {
     reader.onload = (e: any) => {
       debugger
       const res: string = e.target.result.split(',')[1];
-      if(res.length * 2  > 2**21) {
-        if(this.certificate[i] == undefined){
-          alert("Max File Size 2 MB");
-         // this.certificateValid.push(true);
-          return ;
-        } else {
-          this.certificate[i].CertificationName = "";
-      this.certificate[i].Certificates= "";
-      this.certificate[i].CertificationPath = "";
-      // this.certificateValid[i] = false;
-      return ;
-        }
-        
-      }
+     // if(res.length * 2  > 2**21) {
+      //   if(this.certificate[i] == undefined){
+      //    // alert("Max File Size 2 MB");
+      //    // this.certificateValid.push(true);
+      //     return ;
+      //   } else {
+      //     this.certificate[i].CertificationName = "";
+      // this.certificate[i].Certificates= "";
+      // this.certificate[i].CertificationPath = "";
+      // // this.certificateValid[i] = false;
+      // return ;
+      //   }
+     // }
      if( this.certificate[i] == undefined) {
       this.certificate.push({ "CertificationName": file['name'], "Certificates": res,"CertificationPath":''});
       // this.certificateValid.push(true);
@@ -180,7 +179,7 @@ export class CoachProfessionalInfoPage implements OnInit {
       
      }
       
-     // (<HTMLInputElement>document.getElementById(text)).value = file['name']
+     (<HTMLInputElement>document.getElementById(text)).value = file['name']
     };
   }
 
@@ -337,8 +336,8 @@ export class CoachProfessionalInfoPage implements OnInit {
     orderItemsArray.push(
       this.formbuilder.group({
         InstituteName: '',
-        Country: '',
-        City: '',      
+        Country: 'Select Country',
+        City: 'Select City',      
         From_Year: '',
         From_Month: '',
         To_Year: '',
