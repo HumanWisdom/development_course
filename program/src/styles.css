@@ -25611,3 +25611,9 @@ input:checked + .slider:before {
   color: #5d5d5d;
 }
 /* /coach ui */
+
+h1 
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
