@@ -14,6 +14,7 @@ import { CoachService } from '../services/coach.service';
 export class CoachProfessionalInfoPage implements OnInit {
   public professionalInfo: FormGroup
   public certificate = [];
+  public certificateValid = [];
   public isCurrent = false;
   public inCorrectType = false;
   public countries = [];
@@ -65,7 +66,7 @@ export class CoachProfessionalInfoPage implements OnInit {
         name: ['']
       })
     } else if (value === 3) {
-      const reg = "(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?";
+      const reg = "((http|https)://)?(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)";
       return this.formbuilder.group({
         name: ['', [Validators.required, Validators.pattern(reg)]]
       })
@@ -144,16 +145,33 @@ export class CoachProfessionalInfoPage implements OnInit {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = (e: any) => {
-      const res: string = e.target.result.split(',')[1];;
+      debugger
+      const res: string = e.target.result.split(',')[1];
+      if(res.length * 2  > 2**21) {
+        if(this.certificate[i] == undefined){
+          alert("Max File Size 2 MB");
+          this.certificateValid.push(true);
+          return ;
+        } else {
+          this.certificate[i].CertificationName = "";
+      this.certificate[i].Certificates= "";
+      this.certificate[i].CertificationPath = "";
+      this.certificateValid[i] = false;
+      return ;
+        }
+        
+      }
      if( this.certificate[i] == undefined) {
       this.certificate.push({ "CertificationName": file['name'], "Certificates": res,"CertificationPath":''});
+      // this.certificateValid.push(true);
      } else {
       this.certificate[i].CertificationName = file['name'];
       this.certificate[i].Certificates= res
       this.certificate[i].CertificationPath = "";
+      
      }
       
-      (<HTMLInputElement>document.getElementById(text)).value = file['name']
+     // (<HTMLInputElement>document.getElementById(text)).value = file['name']
     };
   }
 
@@ -322,13 +340,16 @@ export class CoachProfessionalInfoPage implements OnInit {
   if(res.Coach_Certificates.length > 0 ) {
     this.certificate=[];
     this.certificate=res.Coach_Certificates;
+    
     res.Coach_Certificates.forEach((item, i) => {
       certificate.push(this.certificatesUpdate(item, i));     
+      this.certificateValid.push(true);
     });
   } else {
     certificate.push(this.formbuilder.group({
       name: ''
     }));
+    this.certificateValid.push(true);
   }
     this.professionalInfo.patchValue(
       {
