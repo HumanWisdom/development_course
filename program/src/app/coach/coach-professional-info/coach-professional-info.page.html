@@ -169,12 +169,12 @@
                     </div>
                     
                   
-                    <div class="col-md-2 col-sm-2 col-xs-1 p0 center_flex" *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                    <div class="col-md-2 col-sm-2 col-xs-1 p0 center_flex" *ngIf="professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value == '1' ? false : true">
                       <h4 class="txt145">
                         to
                       </h4>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-3" *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                    <div class="col-md-2 col-sm-2 col-xs-3" *ngIf="professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value == '1' ? false : true">
                       <input type="text" required="required" formControlName="To_Year" class="coach_fc_01 tcenter"
                         placeholder="Year" maxlength="4">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.touched">
@@ -190,9 +190,10 @@
                     </div>
 
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-3 year_month" *ngIf="!professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                    <div class="col-md-2 col-sm-2 col-xs-3 year_month" *ngIf="professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value == '1' ? false : true">
                       <input type="text" required="required" formControlName="To_Month" class="coach_fc_01 tcenter"
                         placeholder="Month" maxlength="2">
+                        <span *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.touched && (professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year').value == currentYears && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month').value > currentMonth) ">Month should not be grater than {{currentMonth}}</span>
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.required">From Month is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.pattern">Enter only number.</div>
@@ -210,7 +211,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="checkbox">
                         <label class="coach_check mt0px">
-                          <input type="checkbox" name="remember" formControlName="IsCurrent" (change)="isCurrentWorking($event, i)"/>
+                          <input type="checkbox" name="remember" formControlName="IsCurrent" (change)="isCurrentWorking($event.target.checked, i)"/>
                           <span class="">
                             <span class="txt65 pl0_3rem">
                               I currently work here

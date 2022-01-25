@@ -20,6 +20,7 @@ export class CoachProfessionalInfoPage implements OnInit {
   public countries = [];
   public city=[];
   public currentYears = new Date()?.getFullYear();
+  public currentMonth = (new Date()?.getMonth() + 1);
   callingCountries:string;
   constructor(private router: Router, 
     private formbuilder: FormBuilder,
@@ -68,7 +69,7 @@ export class CoachProfessionalInfoPage implements OnInit {
                     ]
                   ],
         To_Month: ['',  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        IsCurrent: [false]
+        IsCurrent: ['0']
       })
     } else if (value === 2) {
       return this.formbuilder.group({
@@ -122,7 +123,7 @@ export class CoachProfessionalInfoPage implements OnInit {
         'To_Year': '',
         'To_Month': '',
       })
-    if(e.target.checked){
+    if(e){
       this.isCurrent = true;
       
       (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').clearValidators();
@@ -154,22 +155,21 @@ export class CoachProfessionalInfoPage implements OnInit {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = (e: any) => {
-      debugger
       const res: string = e.target.result.split(',')[1];
-      if(res.length * 2  > 2**21) {
-        if(this.certificate[i] == undefined){
-          alert("Max File Size 2 MB");
-         // this.certificateValid.push(true);
-          return ;
-        } else {
-          this.certificate[i].CertificationName = "";
-      this.certificate[i].Certificates= "";
-      this.certificate[i].CertificationPath = "";
-      // this.certificateValid[i] = false;
-      return ;
-        }
+      // if(res.length * 2  > 2**21) {
+      //   if(this.certificate[i] == undefined){
+      //     alert("Max File Size 2 MB");
+      //    // this.certificateValid.push(true);
+      //     return ;
+      //   } else {
+      //     this.certificate[i].CertificationName = "";
+      // this.certificate[i].Certificates= "";
+      // this.certificate[i].CertificationPath = "";
+      // // this.certificateValid[i] = false;
+      // return ;
+      //   }
         
-      }
+      // }
      if( this.certificate[i] == undefined) {
       this.certificate.push({ "CertificationName": file['name'], "Certificates": res,"CertificationPath":''});
       // this.certificateValid.push(true);
@@ -267,22 +267,37 @@ export class CoachProfessionalInfoPage implements OnInit {
       }
     }
 
-  
+  setIsCurrent(isCurr) {
+    if(isCurr){
+      this.isCurrent = true;
+    } else {
+      this.isCurrent = false;
+    }
+   
+    
+  }
 
-    buildOrderItemsForm(item): FormGroup {
+    buildOrderItemsForm(item, i): FormGroup {
       console.log('Testt', new Date().getFullYear())
       this.city.push(City.getCitiesOfCountry(item.Country));
+      this.setIsCurrent(item.IsCurrent === '1' ? true : false)
       return this.formbuilder.group({
         InstituteName: [item.InstituteName],
         City: [item.City, [Validators.required]],
         Country: [item.Country, [Validators.required]],
         From_Year: [item.From_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
         From_Month: [item.From_Month, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        To_Year: [item.To_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
+        To_Year: [
+            item.IsCurrent === '1' ? '' : item.To_Year, 
+            item.IsCurrent === '1' ? [] : [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
         Validators.max(new Date().getFullYear())]],
-        To_Month: [item.To_Month,  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        IsCurrent: [item.IsCurrent === '1' ? true : false]
+        To_Month: [
+          item.IsCurrent === '1' ? '' : item.To_Month,  
+          item.IsCurrent === '1' ? [] : [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
+        IsCurrent: [item.IsCurrent]
       })
+
+    
     }
 
     certificatesUpdate(item, i): FormGroup {
@@ -330,8 +345,8 @@ export class CoachProfessionalInfoPage implements OnInit {
     
    }
    if(res.Coach_WorkExp.length > 0){
-    res.Coach_WorkExp.forEach(item => {
-      orderItemsArray.push(this.buildOrderItemsForm(item))
+    res.Coach_WorkExp.forEach((item, i) => {
+      orderItemsArray.push(this.buildOrderItemsForm(item, i))
     });
   } else {
     orderItemsArray.push(
@@ -343,7 +358,7 @@ export class CoachProfessionalInfoPage implements OnInit {
         From_Month: '',
         To_Year: '',
         To_Month: '',
-        IsCurrent: false   
+        IsCurrent: '0'   
       })
     )
   }
