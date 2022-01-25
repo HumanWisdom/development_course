@@ -182,7 +182,7 @@
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.pattern">Enter only number.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.minlength">Min & Max Length is 4</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.maxlength">Min & Max Length is 4</div>
-                          
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.max">Minimum year is {{ currentYears }} </div>
                         </span>
 
                         <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year').errors?.error">
@@ -331,6 +331,7 @@
                 </div>
               </div>
 
+              {{professionalInfo.invalid}}
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <button type="submit" (click)="nextRoute()" [disabled]="professionalInfo.invalid" class="btn btn-warning btn_coach_continue w100">

@@ -19,6 +19,7 @@ export class CoachProfessionalInfoPage implements OnInit {
   public inCorrectType = false;
   public countries = [];
   public city=[];
+  public currentYears = new Date()?.getFullYear();
   callingCountries:string;
   constructor(private router: Router, 
     private formbuilder: FormBuilder,
@@ -48,22 +49,30 @@ export class CoachProfessionalInfoPage implements OnInit {
   createqualification(value) {
     if (value === 0) {
       return this.formbuilder.group({
-        name: [''],
+        name: ['',[Validators.required]],
       })
     } else if (value === 1) {
       return this.formbuilder.group({
-        InstituteName: [''],
+        InstituteName: ['', [Validators.required]],
         City: ['', [Validators.required]],
         Country: ['', [Validators.required]],
         From_Year: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4)]],
         From_Month: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        To_Year: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4)]],
+        To_Year: ['', 
+                    [
+                      Validators.required, 
+                      Validators.pattern("^[0-9]*$"), 
+                      Validators.minLength(4), 
+                      Validators.maxLength(4),
+                      Validators.max(new Date().getFullYear())
+                    ]
+                  ],
         To_Month: ['',  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
         IsCurrent: [false]
       })
     } else if (value === 2) {
       return this.formbuilder.group({
-        name: ['']
+        name: ['', [Validators.required]]
       })
     } else if (value === 3) {
       const reg = "((http|https)://)?(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)";
@@ -150,13 +159,13 @@ export class CoachProfessionalInfoPage implements OnInit {
       if(res.length * 2  > 2**21) {
         if(this.certificate[i] == undefined){
           alert("Max File Size 2 MB");
-          this.certificateValid.push(true);
+         // this.certificateValid.push(true);
           return ;
         } else {
           this.certificate[i].CertificationName = "";
       this.certificate[i].Certificates= "";
       this.certificate[i].CertificationPath = "";
-      this.certificateValid[i] = false;
+      // this.certificateValid[i] = false;
       return ;
         }
         
@@ -261,6 +270,7 @@ export class CoachProfessionalInfoPage implements OnInit {
   
 
     buildOrderItemsForm(item): FormGroup {
+      console.log('Testt', new Date().getFullYear())
       this.city.push(City.getCitiesOfCountry(item.Country));
       return this.formbuilder.group({
         InstituteName: [item.InstituteName],
@@ -268,7 +278,8 @@ export class CoachProfessionalInfoPage implements OnInit {
         Country: [item.Country, [Validators.required]],
         From_Year: [item.From_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
         From_Month: [item.From_Month, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        To_Year: [item.To_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
+        To_Year: [item.To_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
+        Validators.max(new Date().getFullYear())]],
         To_Month: [item.To_Month,  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
         IsCurrent: [item.IsCurrent === '1' ? true : false]
       })
@@ -282,7 +293,7 @@ export class CoachProfessionalInfoPage implements OnInit {
       return this.formbuilder.group({ "name": item })
     }
     linkUpdate(item): FormGroup {
-      const reg = "(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?";
+      const reg = "((http|https)://)?(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)";
       
       return this.formbuilder.group({ 
         // "name": item
@@ -343,13 +354,13 @@ export class CoachProfessionalInfoPage implements OnInit {
     
     res.Coach_Certificates.forEach((item, i) => {
       certificate.push(this.certificatesUpdate(item, i));     
-      this.certificateValid.push(true);
+      // this.certificateValid.push(true);
     });
   } else {
     certificate.push(this.formbuilder.group({
       name: ''
     }));
-    this.certificateValid.push(true);
+    // this.certificateValid.push(true);
   }
     this.professionalInfo.patchValue(
       {
