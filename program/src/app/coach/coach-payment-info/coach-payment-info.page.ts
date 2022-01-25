@@ -15,13 +15,15 @@ export class CoachPaymentInfoPage implements OnInit {
   public natinalIdFront: string;
   public natinalIdback: string;
   isTermsAndConditionChkd =new FormControl(false);
+  isNationalIdFront=true;
+  isNationalIdBack=true;
   constructor(
     private router: Router,
      private formbuilder: FormBuilder,
       private dataservice: CoachDataService, private apiservice: CoachService) {
     this.paymentinfo = this.formbuilder.group({
-      Consult_StrtTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],
-      Consult_EndTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],
+      // Consult_StrtTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],
+      // Consult_EndTime: ['', [Validators.required, Validators.pattern("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]")]],
       PerSessionFee: ['', [Validators.required]],
       PerSessionFee_Curr: ['INR', [Validators.required]],
       PayPalID: ['', [Validators.required]]
@@ -59,8 +61,8 @@ export class CoachPaymentInfoPage implements OnInit {
   }
   SetPaymentInfo(coachInfo:CoachInfo){
     this.paymentinfo.setValue({
-      Consult_StrtTime: coachInfo.Consult_StrtTime,
-      Consult_EndTime:  coachInfo.Consult_EndTime,
+      // Consult_StrtTime: coachInfo.Consult_StrtTime,
+      // Consult_EndTime:  coachInfo.Consult_EndTime,
       PerSessionFee: coachInfo.PerSessionFee,
       PerSessionFee_Curr: coachInfo.PerSessionFee_Curr ? coachInfo.PerSessionFee_Curr : 'INR',
       PayPalID: coachInfo.PayPalID
@@ -76,8 +78,20 @@ export class CoachPaymentInfoPage implements OnInit {
     reader.onload = (e: any) => {
       const res: string = e.target.result.split(',')[1];;
       if(value === 0) {
+      if(res.length * 2  > 2**21) {
+        this.isNationalIdFront=false;
+      }else{
         this.natinalIdFront = res;
+        this.isNationalIdFront=true;
+      }
+   
       }else {
+        if(res.length * 2  > 2**21) {
+          this.isNationalIdBack=false;
+        }else{
+          this.natinalIdback = res;
+          this.isNationalIdBack=true;
+        }
         this.natinalIdback = res
       }
     };

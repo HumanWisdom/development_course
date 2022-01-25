@@ -53,15 +53,15 @@
 
               <br>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h6 class="txt158 mt0px">
                     Prefered Hours for online consultation
                   </h6>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="row flex_ai">
+              <!-- <div class="row flex_ai">
                 <div class="col-md-2 col-sm-2 col-xs-3">
                   <input type="text" required="required" formControlName="Consult_StrtTime" class="coach_fc_01 tcenter"
                     placeholder="00:00:00">
@@ -90,7 +90,7 @@
                     (GMT+05:30)
                   </h6>
                 </div>
-              </div>
+              </div> -->
 
               <br>
 
@@ -166,12 +166,16 @@
                     Upload Front
                   </button>
                   <input type="file" (change)="handleFileInput($event, 0)" id="frontfile" style="visibility: hidden;">
+                  <span *ngIf="!isNationalIdFront">
+                      File Size Exceeds
+                  </span> 
                 </div>
                 <div class="col-md-7 col-sm-7 col-xs-7 pl0px">
                   <h6 class="txt65 mtb0px tleft">
                     jpg / png / pdf (max size 2MB)
                   </h6>
                 </div>
+               
               </div>
 
               <div class="row flex_ai pt10px">
@@ -180,6 +184,9 @@
                     Upload Back
                   </button>
                   <input type="file" (change)="handleFileInput($event, 1)" id="backfile" style="visibility: hidden;">
+                  <span *ngIf="!isNationalIdBack">
+                    File Size Exceeds
+                </span> 
                 </div>
                 <div class="col-md-7 col-sm-7 col-xs-7 pl0px">
                   <h6 class="txt65 mtb0px tleft">
