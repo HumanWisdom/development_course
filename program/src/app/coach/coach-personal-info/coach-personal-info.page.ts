@@ -83,7 +83,7 @@ export class CoachPersonalInfoPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['frameworks'], { state: { data: { isChecked: true } } })
+    this.router.navigate(['coach/coach-introduction'], { state: { data: { isChecked: true } } })
   }
   IsNumeric(event: any) {
     this.dataservice.IsNumericOnly(event);
