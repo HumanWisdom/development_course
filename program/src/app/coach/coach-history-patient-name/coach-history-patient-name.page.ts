@@ -28,15 +28,16 @@ export class CoachHistoryPatientNamePage implements OnInit {
   this.dataService.appointmentHistory= [this.dataService.IntializeCoachAppointmentHistroy()];
    this.apiService.getAppointmentHistory().subscribe(res=>{
     this.appointmentHistoryList=res;
+    this.GetUniqueUserId();
     });
   // this.appointmentHistoryList=JSON.parse(JSON.stringify(this.dataService.getData()));
-   this.GetUniqueUserId();
+  
  }
 
  GetUniqueUserId(){
    this.appointmentHistoryList.forEach(element => {
-    if(this.UserIds.length==0 || !this.UserIds.some(x=>x==element.UserId)){
-         this.UserIds.push(element.UserId);
+    if(this.UserIds.length==0 || !this.UserIds.some(x=>x==element.UserID)){
+         this.UserIds.push(element.UserID);
     }
    });
   }
@@ -51,21 +52,21 @@ export class CoachHistoryPatientNamePage implements OnInit {
   }
 
   GetUserName(userId){
-    let history= this.appointmentHistoryList.filter(x=>x.UserId==userId);
+    let history= this.appointmentHistoryList.filter(x=>x.UserID==userId);
     let count=history.length;
     return history[0].FName+' '+history[0].LName+"("+count+")";
   }
 
   GetRevenueCount(userId){
     let sum=0;
-    var appList=  this.appointmentHistoryList.filter(x=>x.UserId==userId)
+    var appList=  this.appointmentHistoryList.filter(x=>x.UserID==userId)
     appList.map(x=>+x.PerSessionFee).forEach(element => {
     sum+=element;
     });
     return appList[0].PerSessionFee_Curr +' ' + this.currencyPipe.transform(sum,'1.0-0');
   }
   GetFilteredAppointmentList(userId){
-    return  this.appointmentHistoryList.filter(x=>x.UserId==userId);
+    return  this.appointmentHistoryList.filter(x=>x.UserID==userId);
   }
   goBack() {
     this.router.navigate(['coach/coach-history-date'])

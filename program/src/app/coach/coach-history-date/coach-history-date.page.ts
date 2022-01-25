@@ -34,7 +34,7 @@ export class CoachHistoryDatePage implements OnInit {
  }
 
  getAppCount(userId:any){
-   return this.appointmentHistoryList.filter(x=>x.UserId==userId).length;
+   return this.appointmentHistoryList.filter(x=>x.UserID==userId).length;
  }
  ChangeHistory($event){
    if($event.target.value=='Patient'){

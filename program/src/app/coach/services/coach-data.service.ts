@@ -332,7 +332,7 @@ export class CoachDataService {
  },
    ]
    }
-
+  
 
 
 IntializeCoachAppointmentHistroy(){
@@ -347,7 +347,8 @@ return {
        StartTime:'',
        ETime:'',
        STime:'',
-      SumOfSession:0
+      SumOfSession:0,
+      UserID:''
 } as CoachAppointmentHistroy;
 }
 

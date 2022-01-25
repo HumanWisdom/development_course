@@ -495,6 +495,7 @@ export class LoginSignupPage implements OnInit {
         localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
         localStorage.setItem("video",JSON.stringify(this.video))
         localStorage.setItem("audio",JSON.stringify(this.audio))
+        localStorage.setItem("IsCoach",this.loginResponse.IsCoach)
         if(res.UserId==0)
         {
           this.showAlert=true

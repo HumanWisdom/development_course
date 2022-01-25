@@ -813,8 +813,8 @@
                 </a>
               </li>
       
-              <li>
-                <a routerLink="/coach/coach-introduction" class="p0 b0px">
+              <li *ngIf="roleid==9">
+                <a *ngIf="!IsCoach" routerLink="/coach/coach-introduction" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -828,6 +828,21 @@
                   </div>
                 </div>
                 </a>
+                <a *ngIf="IsCoach" routerLink="/coach/coach-calendar-plugin" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/09.svg" alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="txt188 mtb0px">
+                         View Appointment
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  </a>
+
               </li>
       
               <li>

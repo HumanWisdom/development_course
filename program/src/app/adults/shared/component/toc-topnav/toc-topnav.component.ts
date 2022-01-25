@@ -25,7 +25,7 @@ export class TocTopnavComponent implements OnInit {
   subscriber= false;
   @Input()
   enableplaystore = true
-
+   IsCoach:boolean=false;
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
@@ -46,6 +46,7 @@ export class TocTopnavComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.IsCoach=localStorage.getItem('IsCoach').toString()=='true'?true:false
   }
 
   routeGuide(value: any) {
