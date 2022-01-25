@@ -118,12 +118,12 @@
                   <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6">
                       <select class="form-control coach_fc_01" (change)="changeCity($event, i)" formControlName="Country">
-                        <option [value]=""> Select Country</option>
-                        
+                        <option>Select Country</option>
                         <option *ngFor="let c of countries" [value]="c.name" >{{c.name}} </option>
 
                       </select>
-                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.touched">
+                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.touched &&
+                      professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country').value=='Select Country'">
                         Country is Required
                       </span>
                     </div>
@@ -131,7 +131,7 @@
                       <select 
                         class="select2_group form-control coach_fc_01" 
                         formControlName="City">
-                        <option>City</option>
+                        <option>Select City</option>
                         <option *ngFor="let c of changeCountry(professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country').value, i)" [value]="c.name" >{{c.name}}</option>
                         
                       </select>
