@@ -1,82 +1,72 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common';
 
 @Component({
-  selector: 'HumanWisdom-s38019p2',
-  templateUrl: './s38019p2.page.html',
-  styleUrls: ['./s38019p2.page.scss'],
+  selector: 'HumanWisdom-wisdom-shorts-s09',
+  templateUrl: './wisdom-shorts-s09.page.html',
+  styleUrls: ['./wisdom-shorts-s09.page.scss'],
 })
-export class S38019p2Page implements OnInit,OnDestroy {
+export class WisdomShortsS09Page implements OnInit {
 
-  bg="dark_blue_w1"
+  bg="red_pink_w9"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/art_of_enquiry/videos/4.2.mp4'  
-  title="What is insight?"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
-  
+  videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.9.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/wisdom_shorts/wisdom_shorts_09.jpg"
+
+  title="Exploring feelings"
+  toc="/wisdom-shorts"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  path=this.router.url
 
- screenType=localStorage.getItem("video")
+  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber='38019p2'
+  screenNumber="s09"
   startTime:any
   endTime:any
-  totalTime:any  
- 
-  
-  toc="insight/s38000"
+  totalTime:any
   bookmark=0
-  path=this.router.url
   avDuration:any
-
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
-  
- 
+
   constructor(
     private router: Router,
     private service:AdultsService,
     private location:Location
   ) { }
-ngOnInit() {
+  
+  ngOnInit() {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
     
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.startTime = Date.now();
-  
     this.startTime = Date.now();
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark38019p2")))
-    if(JSON.parse(sessionStorage.getItem("bookmark38019p2"))==0)
+    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmarks09")))
+    if(JSON.parse(sessionStorage.getItem("bookmarks09"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark38019p2"))==1)
-      this.bookmark=1
-   
-   
- 
- 
-    
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmarks09"))==1)
+      this.bookmark=1   
   }
+
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark38019p2",JSON.stringify(this.bookmark))
+      sessionStorage.setItem("bookmarks09",JSON.stringify(this.bookmark))
   }
-  receiveAvDuration(e){
-    this.avDuration=e
-    
-  }
-createScreen(){
+
+  createScreen(){
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
@@ -86,13 +76,13 @@ createScreen(){
       {
         console.log(res)
       })
-    
- 
   }
- 
+
+  receiveAvDuration(e){
+    this.avDuration=e
+  }
 
   submitProgress(){
-   
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
@@ -105,24 +95,15 @@ createScreen(){
       "timeSpent":this.totalTime,
       "avDuration":this.avDuration
     }).subscribe(res=>
-      {
-        console.log(res)
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      })
-    
-    this.router.navigate(['/insight/s38019p3'])
-   
-
+    {
+      console.log(res)
+      this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+      localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+    })
+    this.router.navigate(['/adults/wisdom-shorts'])
   }
+
   prev(){
-    this.router.navigate(['/insight/s38000'])
-
-
+    this.router.navigate(['/adults/wisdom-shorts'])
   }
-  ngOnDestroy(){
-
-  }
-
-
 }
