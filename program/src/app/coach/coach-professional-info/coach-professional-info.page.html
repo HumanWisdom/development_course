@@ -265,20 +265,23 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0" formArrayName="Coach_Certificates" *ngFor="let item of professionalInfo.controls['Coach_Certificates'].controls; let i = index">
                   <div [formGroupName]="i">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                      <input type="text" id="{{i + 'text'}}" [value]="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value" required="required" class="coach_fc_01" placeholder="Certification"  readonly>
+                      <input type="text" id="{{i + 'text'}}" 
+                      [value]="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value" 
+                      required="required" class="coach_fc_01" placeholder="Certification"  readonly>
                       <input type="file" id="{{i + 'file'}}" required="required"
                        class="coach_fc_01" placeholder="Certification" (change)="handleFileInput($event, i + 'text', i)" style="visibility: hidden; width: 0px; height: 0px;">
-                      <div *ngFor="let validItem of certificateValid">
-                        <span *ngIf="validItem[i]">File Not valid</span>
-                      </div>
-                       
                     </div>
+                   
                     <div class="col-md-4 col-sm-4 col-xs-4">
                       <button type="submit" (click)="clickuploadimage(i + 'file')"
                         class="btn btn-warning btn_upload w100">
                         Upload
                       </button>
+                     
                     </div>
+                    <span *ngIf="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value==''">
+                      Please Uplaod Certificate
+                    </span>
                   </div>
                   <button *ngIf="i > 0" (click)="RemoveCertificate(i)">X</button>
                 </div>

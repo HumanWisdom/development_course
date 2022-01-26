@@ -69,11 +69,11 @@ export class CoachProfessionalInfoPage implements OnInit {
                     ]
                   ],
         To_Month: ['',  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        IsCurrent: ['0']
+        IsCurrent: [false]
       })
     } else if (value === 2) {
       return this.formbuilder.group({
-        name: ['', [Validators.required]]
+        name: ['']
       })
     } else if (value === 3) {
       const reg = "((http|https)://)?(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)";
@@ -287,14 +287,10 @@ export class CoachProfessionalInfoPage implements OnInit {
         Country: [item.Country, [Validators.required]],
         From_Year: [item.From_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
         From_Month: [item.From_Month, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        To_Year: [
-            item.IsCurrent === '1' ? '' : item.To_Year, 
-            item.IsCurrent === '1' ? [] : [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
+        To_Year: [item.To_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
         Validators.max(new Date().getFullYear())]],
-        To_Month: [
-          item.IsCurrent === '1' ? '' : item.To_Month,  
-          item.IsCurrent === '1' ? [] : [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        IsCurrent: [item.IsCurrent]
+        To_Month: [item.To_Month, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
+        IsCurrent: [item.IsCurrent === '1' ? true : false]
       })
 
     
@@ -316,73 +312,76 @@ export class CoachProfessionalInfoPage implements OnInit {
        })
     }
 
-
-  setProfessionalInfoFormControl(res:CoachInfo){
-   const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
-   const certificate = this.professionalInfo.get('Coach_Certificates') as FormArray;
-   const qualification = this.professionalInfo.get('Coach_Qualifications') as FormArray;
-   const link = this.professionalInfo.get('Coach_Websites') as FormArray;
-   if(res.Coach_Qualifications.length > 0) {
-    res.Coach_Qualifications.forEach(item => {
-      qualification.push(this.qualificationUpdate(item))
-    });
-   } else {
-
-    qualification.push(this.formbuilder.group({
-      name: ''
-    }));
-    
-   }
-   if(res.Coach_Websites.length > 0) {
-    res.Coach_Websites.forEach(item => {
-      link.push(this.linkUpdate(item))
-    });
-   } else {
-
-    link.push(this.formbuilder.group({
-      name: ''
-    }));
-    
-   }
-   if(res.Coach_WorkExp.length > 0){
-    res.Coach_WorkExp.forEach((item, i) => {
-      orderItemsArray.push(this.buildOrderItemsForm(item, i))
-    });
-  } else {
-    orderItemsArray.push(
-      this.formbuilder.group({
-        InstituteName: '',
-        Country: 'Select Country',
-        City: 'Select City',      
-        From_Year: '',
-        From_Month: '',
-        To_Year: '',
-        To_Month: '',
-        IsCurrent: '0'   
-      })
-    )
-  }
+    setProfessionalInfoFormControl(res:CoachInfo){
+      const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
+      const certificate = this.professionalInfo.get('Coach_Certificates') as FormArray;
+      const qualification = this.professionalInfo.get('Coach_Qualifications') as FormArray;
+      const link = this.professionalInfo.get('Coach_Websites') as FormArray;
+      if(res.Coach_Qualifications.length > 0) {
+       res.Coach_Qualifications.forEach(item => {
+         qualification.push(this.qualificationUpdate(item))
+       });
+      } else {
    
-  if(res.Coach_Certificates.length > 0 ) {
-    this.certificate=[];
-    this.certificate=res.Coach_Certificates;
-    
-    res.Coach_Certificates.forEach((item, i) => {
-      certificate.push(this.certificatesUpdate(item, i));     
-      // this.certificateValid.push(true);
-    });
-  } else {
-    certificate.push(this.formbuilder.group({
-      name: ''
-    }));
-    // this.certificateValid.push(true);
-  }
-    this.professionalInfo.patchValue(
-      {
-        Coach_Specializations: res.Coach_Specializations.toString()
-    });
-
-  }
+       qualification.push(this.formbuilder.group({
+         name: ['',[Validators.required]],
+       }));
+       
+      }
+      if(res.Coach_Websites.length > 0) {
+       res.Coach_Websites.forEach(item => {
+         link.push(this.linkUpdate(item))
+       });
+      } else {
+       const reg = "((http|https)://)?(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)";
+       
+       link.push(this.formbuilder.group({
+         name: ['', [Validators.required, Validators.pattern(reg)]]
+       }));
+       
+      }
+      if(res.Coach_WorkExp.length > 0){
+       res.Coach_WorkExp.forEach((item, i) => {
+         orderItemsArray.push(this.buildOrderItemsForm(item, i))
+       });
+     } else {
+       orderItemsArray.push(
+         this.formbuilder.group({
+           InstituteName: [''],
+           City: ['Select City', [Validators.required]],
+           Country: ['Select Country', [Validators.required]],
+           From_Year: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
+           From_Month: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
+           To_Year: [
+              '', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
+           Validators.max(new Date().getFullYear())]],
+           To_Month: [ '',  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
+           IsCurrent: [false]
+         })
+       )
+     }
+      
+     if(res.Coach_Certificates.length > 0 ) {
+       this.certificate=[];
+       this.certificate=res.Coach_Certificates;
+       
+       res.Coach_Certificates.forEach((item, i) => {
+         certificate.push(this.certificatesUpdate(item, i));     
+         // this.certificateValid.push(true);
+       });
+     } else {
+       certificate.push( this.formbuilder.group({
+         name: ['', [Validators.required]]
+       }));
+       // this.certificateValid.push(true);
+     }
+       this.professionalInfo.patchValue(
+         {
+           Coach_Specializations: res.Coach_Specializations.toString()
+       });
+   
+     }
+  
  validURL(myURL) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
     '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
