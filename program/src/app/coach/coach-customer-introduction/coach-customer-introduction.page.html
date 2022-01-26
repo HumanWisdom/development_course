@@ -1,0 +1,140 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+   
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <!-- <li class="">
+          <a class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
+          </a>                  
+        </li>         -->
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h6 class="txt88">
+              Get a Coach
+            </h6>            
+          </a>                  
+        </li>
+      </ul>
+    </nav>    
+    
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<!-- page content -->
+<div class="right_col ml0 pt_rightcol" role="main">				
+  <!-- Class -->
+  <div class="cw100p"> 
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form> 
+
+              <div class="row img_coach">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/coach_landing.jpg" alt="" class="img-responsive">
+                </div>
+              </div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt152">
+                    You’re capable of amazing things!
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row pt10px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt153">
+                    Donec tempor turpis in odio finibus, blandit mollis mi gravida. Mauris in tincidunt metus, non posuere magna. Phasellus eu iaculis nunc. Curabitur tincidunt pulvinar blandit. Praesent pretium tristique gravida. Praesent at arcu et libero aliquet convallis. Suspendisse potenti. Quisque blandit odio eu.
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="checkbox">
+                    <label class="coach_check mt0px">
+                      <input type="checkbox" name="remember" value="" [formControl]="isTermsAndConditionChkd"/> 
+                      <span class="">                         
+                        <span class="txt65 pl0_3rem">
+                          By continuing, you agree to our <a class="txt115 td_underline" href="https://humanwisdom.me/course/#/adults/framework-v1/terms-conditions" target="_blank">Terms of Use</a>
+                          and  
+                          <a class="txt115 td_underline" href="https://humanwisdom.me/course/#/adults/framework-v1/privacy-policy" target="_blank">Privacy Policy</a>
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pt30px">                  
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit" [disabled]="!isTermsAndConditionChkd.value"  (click)="clicknext()" class="btn btn-warning btn_coach_continue w100">                      
+                    Continue
+                  </button>  
+                </div>
+              </div>
+              <div class="pagebreak"></div>
+
+            </form>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="sidebar-footer ifooter">  
+  <div class="row center_flex">
+    <div class="col-md-6 col-sm-12 col-xs-12 center_flex">
+      
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home.svg" alt="">           
+        <p class="mb0px">
+          Home
+        </p>
+      </a>
+    
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt="">          
+        <p class="mb0px">
+          Search
+        </p>
+      </a>
+    
+      <a class="footer_index">        
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">          
+        <p class="mb0px">
+          Journal
+        </p>
+      </a>
+    
+      <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">          
+        <p class="mb0px">
+          Forum
+        </p>
+      </a>
+
+      <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt="">          
+        <p class="mb0px">
+          More
+        </p>
+      </a>
+
+    </div>
+  </div>  
+</div>
+<!-- /footer -->

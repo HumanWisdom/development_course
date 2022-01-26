@@ -1,0 +1,439 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+
+    <nav class="flex_ai">
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a  (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <h6 class="txt88">
+              Get a Coach
+            </h6>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav w20p no_bg">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/calendar.svg" alt="" class="p0">
+          </a>
+          <!-- dropdown content -->
+          <ul class="dropdown-menu dropdown-usermenu pull-right course_ul">
+            <li>
+              <div *ngIf="socialShare" class="center_flex_li">
+                <share-buttons
+                [include]="['whatsapp','facebook','linkedin']"
+                [url]="path">
+                </share-buttons>
+              </div>
+            </li>
+          </ul>
+          <!-- /dropdown content -->
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col ml0 coach_pt" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt143">
+                    Credits left: 2 hours | Coach: Dr Madyson Banks
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row img_coach prelative">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter prelative">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/coach_directory.jpg" alt="" class="img-responsive w100 coach_dir_img">
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 coach_ab_img_txt">
+                  <h6 class="txt154">
+                    Upcoming Appointment
+                  </h6>
+
+                  <div *ngIf="nearestDate !== null; else noAppointment">
+                    <h6 class="txt55 t5p">
+                      {{nearestDate?.FName}} {{nearestDate?.LName}}
+                    </h6>
+  
+                    <h6 class="txt154">
+                      {{appointmentDates}}
+                      <!-- Friday, 5 Jun 2021, 4.00 PM - 5.00 PM IST -->
+                    </h6>
+                    <button type="submit" (click)="ViewAllApp()"class="btn btn-warning btn_coach_vaa w100">
+                      View All Appointments
+                    </button>
+                  </div>
+                  <ng-template #noAppointment>
+                    <h4> No Appointment Available</h4>
+                  </ng-template>
+                </div>
+              </div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" id="search_coach" required="required" class="form-control coach_fc" placeholder="Search Coach">
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row pt10px">
+                <div class="col-md-8 col-sm-8 col-xs-8 flex_ai">
+                  <label class="switch mt0px">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                  <span class="txt61 ml10px">
+                    Available right now
+                  </span>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <h6 class="txt111">
+                    Filter
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+              <span *ngIf="isAPICalling && coachLists.length === 0">
+                Loading Coach list.....
+              </span>
+              <span *ngIf="isAPICalling === false && coachLists.length === 0">
+                No Coach FOund
+              </span>
+              <!-- <ng-template #noCoachs>
+                <h4> No  Available</h4>
+              </ng-template> -->
+              <!-- user 1 -->
+              <div *ngFor="let coachDetail of coachLists; let i=index">
+              <div class="row pt10px flex_ai">
+                <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
+                  <div class="prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_01.svg" alt="" class="p0 w100">
+                  </div>
+                  <!-- <div class="coach_dir_user">
+                    <button type="submit" class="btn btn-warning btn_dir_user">
+                      Online
+                    </button>
+                  </div> -->
+                </div>
+                <div class="col-md-10 col-sm-9 col-xs-8">
+                  <h6 class="txt155 mt0px mb5px" style="color: gray;">
+                    {{setCurrencyDetails(i)}}
+                    <!-- {{coachDetail.PerSessionFee_Curr && coachDetail.PerSessionFee ? coachDetail.PerSessionFee_Curr  coachDetail?.PerSessionFee : ''}} USD 30/session (30 min) -->
+                  </h6>
+
+                  <h4 class="txt73 mb0px mt5px">
+                    {{coachDetail.Title ? coachDetail.Title : ''}}  {{coachDetail.FName ? coachDetail.FName : ''}}  {{coachDetail.LName ? coachDetail.LName : ''}}
+                  </h4>
+
+                  <h6 class="txt61 mt0px mb0px">
+                    {{coachDetail.Qualifications ? coachDetail.Qualifications : ''}}  
+                  </h6>
+
+                  <h6 class="txt61 mt5px mb0px">
+                    {{coachDetail.country ? coachDetail.country + ' |' : ''}}  {{setCoachExp(i)}}
+                  </h6>
+
+                  <div>
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                  </div>
+                </div>
+              </div>
+            </div>
+              <!-- /user 1 -->
+
+              <br>
+
+              <!-- user 2 -->
+              <!-- <div class="row pt10px flex_ai">
+                <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
+                  <div class="prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_02.svg" alt="" class="p0 w100">
+                  </div>
+                  <!-- <div class="coach_dir_user">
+                    <button type="submit" class="btn btn-warning btn_dir_user">
+                      Online
+                    </button>
+                  </div>                   
+                </div>
+                <div class="col-md-10 col-sm-9 col-xs-8">
+                  <h6 class="txt155 mt0px mb5px">
+                    USD 30/session (30 min)
+                  </h6>
+
+                  <h4 class="txt73 mb0px mt5px">
+                    Dr Madyson Banks
+                  </h4>
+
+                  <h6 class="txt61 mt0px mb0px">
+                    MD Psychology
+                  </h6>
+
+                  <h6 class="txt61 mt5px mb0px">
+                    India  |  Experience: 5 years
+                  </h6>
+
+                  <div>
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                  </div>
+                </div>
+              </div> -->
+              <!-- /user 2 -->
+
+              <br>
+
+              <!-- user 3 -->
+              <!-- <div class="row pt10px flex_ai">
+                <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
+                  <div class="prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_03.svg" alt="" class="p0 w100">
+                  </div>
+                  <div class="coach_dir_user">
+                    <button type="submit" class="btn btn-warning btn_dir_user">
+                      Online
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-10 col-sm-9 col-xs-8">
+                  <h6 class="txt155 mt0px mb5px">
+                    USD 30/session (30 min)
+                  </h6>
+
+                  <h4 class="txt73 mb0px mt5px">
+                    Dr Madyson Banks
+                  </h4>
+
+                  <h6 class="txt61 mt0px mb0px">
+                    MD Psychology
+                  </h6>
+
+                  <h6 class="txt61 mt5px mb0px">
+                    India  |  Experience: 5 years
+                  </h6>
+
+                  <div>
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                  </div>
+                </div>
+              </div> -->
+              <!-- /user 3 -->
+
+              <br>
+
+              <!-- user 4 -->
+              <!-- <div class="row pt10px flex_ai">
+                <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
+                  <div class="prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_04.svg" alt="" class="p0 w100">
+                  </div>
+                  <!-- <div class="coach_dir_user">
+                    <button type="submit" class="btn btn-warning btn_dir_user">
+                      Online
+                    </button>
+                  </div>                  
+                </div>
+                <div class="col-md-10 col-sm-9 col-xs-8">
+                  <h6 class="txt155 mt0px mb5px">
+                    USD 30/session (30 min)
+                  </h6>
+
+                  <h4 class="txt73 mb0px mt5px">
+                    Dr Madyson Banks
+                  </h4>
+
+                  <h6 class="txt61 mt0px mb0px">
+                    MD Psychology
+                  </h6>
+
+                  <h6 class="txt61 mt5px mb0px">
+                    India  |  Experience: 5 years
+                  </h6>
+
+                  <div>
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                  </div>
+                </div>
+              </div> -->
+              <!-- /user 4 -->
+
+              <br>
+
+              <!-- user 5 -->
+              <!-- <div class="row pt10px flex_ai">
+                <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
+                  <div class="prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_05.svg" alt="" class="p0 w100">
+                  </div>
+                  <div class="coach_dir_user">
+                    <button type="submit" class="btn btn-warning btn_dir_user">
+                      Online
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-10 col-sm-9 col-xs-8">
+                  <h6 class="txt155 mt0px mb5px">
+                    USD 30/session (30 min)
+                  </h6>
+
+                  <h4 class="txt73 mb0px mt5px">
+                    Dr Madyson Banks
+                  </h4>
+
+                  <h6 class="txt61 mt0px mb0px">
+                    MD Psychology
+                  </h6>
+
+                  <h6 class="txt61 mt5px mb0px">
+                    India  |  Experience: 5 years
+                  </h6>
+
+                  <div>
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                  </div>
+                </div>
+              </div> -->
+              <!-- /user 5 -->
+
+              <br>
+
+              <!-- user 6 -->
+              <!-- <div class="row pt10px flex_ai">
+                <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
+                  <div class="prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_06.svg" alt="" class="p0 w100">
+                  </div>
+                  <div class="coach_dir_user">
+                    <button type="submit" class="btn btn-warning btn_dir_user">
+                      Online
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-10 col-sm-9 col-xs-8">
+                  <h6 class="txt155 mt0px mb5px">
+                    USD 30/session (30 min)
+                  </h6>
+
+                  <h4 class="txt73 mb0px mt5px">
+                    Dr Madyson Banks
+                  </h4>
+
+                  <h6 class="txt61 mt0px mb0px">
+                    MD Psychology
+                  </h6>
+
+                  <h6 class="txt61 mt5px mb0px">
+                    India  |  Experience: 5 years
+                  </h6>
+
+                  <div>
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                  </div>
+                </div>
+              </div> -->
+              <!-- /user 6 -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="sidebar-footer ifooter">  
+  <div class="row center_flex">
+    <div class="col-md-6 col-sm-12 col-xs-12 center_flex">
+      
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home.svg" alt="">           
+        <p class="mb0px">
+          Home
+        </p>
+      </a>
+    
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt="">          
+        <p class="mb0px">
+          Search
+        </p>
+      </a>
+    
+      <a class="footer_index">        
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">          
+        <p class="mb0px">
+          Journal
+        </p>
+      </a>
+    
+      <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">          
+        <p class="mb0px">
+          Forum
+        </p>
+      </a>
+
+      <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt="">          
+        <p class="mb0px">
+          More
+        </p>
+      </a>
+
+    </div>
+  </div>  
+</div>
+<!-- /footer -->

@@ -41,6 +41,14 @@ const routes: Routes = [
   {
     path: 'coach-history-revenue',
     loadChildren: () => import('./coach-history-revenue/coach-history-revenue.module').then( m => m.CoachHistoryRevenuePageModule)
+  } ,
+  {
+    path: 'coach-customer-introduction',
+    loadChildren: () => import('./coach-customer-introduction/coach-customer-introduction.module').then( m => m.CoachCustomerIntroductionPageModule)
+  },
+  {
+    path: 'coach-customer-directory',
+    loadChildren: () => import('./coach-directory/coach-directory.module').then(m=>m.CoachDirectoryPageModule)
   }
 
 

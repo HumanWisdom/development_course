@@ -39,4 +39,12 @@ export class  CoachService {
   getAppointmentHistory() : Observable<any>{
     return this.http.get(this.path+`/AppointmentsHistory`);
   }
+
+  getUpComingAppointment() : Observable<any>{
+    return this.http.get(this.path+`/ViewAppointments`);
+  }
+
+  getAllCoach() : Observable<any>{
+    return this.http.get(this.path+`/GetAllCoaches`);
+  }
 }
