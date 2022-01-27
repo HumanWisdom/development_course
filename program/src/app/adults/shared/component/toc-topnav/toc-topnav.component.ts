@@ -49,8 +49,8 @@ export class TocTopnavComponent implements OnInit {
     }, 5000)
   }
 
-  routeGuide(value: any) {
-
+  routeGuide() {
+    this.router.navigate([`/adults/program-guide/s35001`])
   }
 
   
