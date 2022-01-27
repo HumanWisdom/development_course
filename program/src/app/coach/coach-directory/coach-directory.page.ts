@@ -64,6 +64,9 @@ export class CoachDirectoryPage implements OnInit {
     this.router.navigate(['coach/coach-customer-introduction'],  { state: { data: { isChecked: true } } })
   }
 
+  ratings(i: number) {
+    return new Array(i);
+}
   onGetDates = async () => {
     let getData = []
    await  this.apiService.getUpComingAppointment().subscribe(res=>{

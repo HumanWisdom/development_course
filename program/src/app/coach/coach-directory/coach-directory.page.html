@@ -159,12 +159,14 @@
                     {{coachDetail.country ? coachDetail.country + ' |' : ''}}  {{setCoachExp(i)}}
                   </h6>
 
-                  <div>
+                  <div >
+                   <span *ngFor="let item of ratings(+coachDetail.Rating)"> 
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mr3px">
+                   </span> 
+                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory.svg" class="mlr3px"> -->
                   </div>
                 </div>
               </div>
