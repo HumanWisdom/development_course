@@ -277,6 +277,10 @@ const routes: Routes = [
     path: 'contact-us',
     loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
   },
+  {
+    path: 'support',
+    loadChildren: () => import('./support/support.module').then( m => m.SupportPageModule)
+  },
 ];
 
 @NgModule({
