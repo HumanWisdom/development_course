@@ -25610,6 +25610,11 @@ input:checked + .slider:before {
   line-height: 19px;  
   color: #5d5d5d;
 }
+
+.dcontents 
+{
+  display: contents;
+}
 /* /coach ui */
 
 h1 
