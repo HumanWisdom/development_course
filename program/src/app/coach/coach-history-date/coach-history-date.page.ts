@@ -37,7 +37,7 @@ export class CoachHistoryDatePage implements OnInit {
    return this.appointmentHistoryList.filter(x=>x.UserID==userId).length;
  }
  ChangeHistory($event){
-   if($event.target.value=='Patient'){
+   if($event.target.value=='Client'){
     this.router.navigate(['coach/coach-history-patient-name'])
    }
    if($event.target.value=='Revenue'){

@@ -66,6 +66,7 @@ export class CoachPersonalInfoPage implements OnInit {
     this.dropdownSettings = {
       idField: 'item_id',
       textField: 'item_text',
+      allowSearchFilter: true
     };
     this.SetInitialCoachInfo();
   }

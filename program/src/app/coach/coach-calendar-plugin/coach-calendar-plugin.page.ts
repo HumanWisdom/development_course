@@ -5,6 +5,7 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { CoachAvailabilityInfo, CoachAvailabilityInfoDetail } from '../coach-model/coach-availability-info';
 
 import * as moment from 'moment';
+import * as momentTimeZone from 'moment-timezone';
 import { Router } from '@angular/router';
 import { CoachDataService } from '../services/coach-data.service';
 import { CoachService } from '../services/coach.service';
@@ -91,6 +92,7 @@ export class CoachCalendarPluginPage implements OnInit {
     EndTime: [''],
     SelectedDayes: ['']
   });
+  this.GetTimeZoneCurrent();
   }
 
   onGetDates = async () => {
@@ -135,7 +137,12 @@ export class CoachCalendarPluginPage implements OnInit {
     });
     return this.getHistoryData[0].PerSessionFee_Curr+" "+sum;
   }
-
+  GetTimeZoneCurrent(){
+    var timeZone = momentTimeZone.tz.guess();
+    var time = new Date();
+    var timeZoneOffset = time.getTimezoneOffset();
+    console.log(moment.tz(timeZone).zoneAbbr());
+  }
   GetTotalHourSpent(){
      let total=0;
      this.getHistoryData.forEach(element => {

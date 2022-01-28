@@ -91,7 +91,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" required="required" formControlName="Email" class="coach_fc_01"
+                  <input type="text" required="required" disabled formControlName="Email" class="coach_fc_01"
                     placeholder="E-mail" maxlength="50">
                     <span *ngIf="!personalInfo.get('Email')?.valid && personalInfo.get('Email')?.touched">
                       Please Enter Valid Email and It's required
@@ -194,7 +194,7 @@
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
                   <input type="text" required="required" (keypress)="IsNumeric($event);" formControlName="Primary_CTC"
-                    class="coach_fc_01 feedback_left" placeholder="">
+                    class="coach_fc_01 feedback_left" placeholder="Primary-Contact">
                     <span class="form-control-feedback left coach_fc_fl" [disabled]="true"  [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true">
               </span>
                     </div>
@@ -216,11 +216,11 @@
 
               <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-3">
-                  <input type="text" class="coach_fc_01" placeholder="" formControlName="Code" disabled>
+                  <input type="text"  class="coach_fc_01" placeholder="Code" formControlName="Code" disabled>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
                   <input type="text" required="required" (keypress)="IsNumeric($event);" formControlName="Secondary_CTC"
-                    class="coach_fc_01 feedback_left" placeholder="">
+                    class="coach_fc_01 feedback_left" placeholder="Secondary-Contact">
                   <span class="form-control-feedback left coach_fc_fl" [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true" [disabled]="true">
                   </span>
                 </div>
@@ -232,8 +232,8 @@
 
               <br>
 
-              <div class="row" *ngIf="languageList.length > 0">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+              <div  *ngIf="languageList.length > 0">
+                <!-- <div class="col-md-12 col-sm-12 col-xs-12"> -->
                   <ng-multiselect-dropdown
                   [settings]="dropdownSettings"
                   [placeholder]="'Select Your Languages Known'"
@@ -243,7 +243,7 @@
                   <span *ngIf="!personalInfo.get('Coach_Languages')?.valid && personalInfo.get('Coach_Languages')?.touched">
                     Languages is required
                   </span>
-                </div>
+                <!-- </div> -->
               </div>
 
               <div class="row">

@@ -35,7 +35,7 @@ export class CoachProfessionalInfoPage implements OnInit {
     this.countries=Country.getAllCountries().map(o => new Object({name: o.name, code: o.isoCode,phonecode:o.phonecode}));
     this.professionalInfo = this.formbuilder.group({
       Coach_Qualifications: this.formbuilder.array([]),
-      Coach_WorkExp: this.formbuilder.array([]),
+     // Coach_WorkExp: this.formbuilder.array([]),
       Coach_Certificates: this.formbuilder.array([]),
       Coach_Websites: this.formbuilder.array([]),
       Coach_Specializations: ['', [Validators.required]]
@@ -52,25 +52,6 @@ export class CoachProfessionalInfoPage implements OnInit {
       return this.formbuilder.group({
         name: ['',[Validators.required]],
       })
-    } else if (value === 1) {
-      return this.formbuilder.group({
-        InstituteName: ['', [Validators.required]],
-        City: ['Select City', [Validators.required]],
-        Country: ['Select Country', [Validators.required]],
-        From_Year: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4)]],
-        From_Month: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        To_Year: ['', 
-                    [
-                      Validators.required, 
-                      Validators.pattern("^[0-9]*$"), 
-                      Validators.minLength(4), 
-                      Validators.maxLength(4),
-                      Validators.max(new Date().getFullYear())
-                    ]
-                  ],
-        To_Month: ['',  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        IsCurrent: [false]
-      })
     } else if (value === 2) {
       return this.formbuilder.group({
         name: ['']
@@ -86,24 +67,26 @@ export class CoachProfessionalInfoPage implements OnInit {
   addNext(value) {
     if (value === 0) {
       (this.professionalInfo.controls['Coach_Qualifications'] as FormArray).push(this.createqualification(value))
-    } else if (value === 1) {
-      (this.professionalInfo.controls['Coach_WorkExp'] as FormArray).push(this.createqualification(value))
-    } else if (value === 2) {
+     }
+     // else if (value === 1) {
+    //   (this.professionalInfo.controls['Coach_WorkExp'] as FormArray).push(this.createqualification(value))
+    // }
+     else if (value === 2) {
       (this.professionalInfo.controls['Coach_Certificates'] as FormArray).push(this.createqualification(value))
     } else if (value === 3) {
       (this.professionalInfo.controls['Coach_Websites'] as FormArray).push(this.createqualification(value))
     }
 
-    console.log('QUalificationValues', this.professionalInfo?.controls['Coach_WorkExp'] )
+   /// console.log('QUalificationValues', this.professionalInfo?.controls['Coach_WorkExp'] )
   }
 
   RemoveQUalification(i) {
     (this.professionalInfo.controls['Coach_Qualifications'] as FormArray).removeAt(i);
   }
 
-  RemoveExp(i) {
-    (this.professionalInfo.controls['Coach_WorkExp'] as FormArray).removeAt(i);
-  }
+  // RemoveExp(i) {
+  //   (this.professionalInfo.controls['Coach_WorkExp'] as FormArray).removeAt(i);
+  // }
 
   RemoveLinks(i) {
     (this.professionalInfo.controls['Coach_Websites'] as FormArray).removeAt(i);
@@ -116,30 +99,30 @@ export class CoachProfessionalInfoPage implements OnInit {
    }
   }
 
-  isCurrentWorking(e, i) {
-    const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
+  // isCurrentWorking(e, i) {
+  //   const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
 
-      orderItemsArray.at(i).patchValue({
-        'To_Year': '',
-        'To_Month': '',
-      })
-    if(e){
-      this.isCurrent = true;
+  //     orderItemsArray.at(i).patchValue({
+  //       'To_Year': '',
+  //       'To_Month': '',
+  //     })
+  //   if(e){
+  //     this.isCurrent = true;
       
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').clearValidators();
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').clearValidators();
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').updateValueAndValidity();
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').updateValueAndValidity();
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').clearValidators();
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').clearValidators();
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').updateValueAndValidity();
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').updateValueAndValidity();
 
-    } else {
-      this.isCurrent = false;
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').setValidators([Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]);
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').setValidators([Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4)]);
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').updateValueAndValidity();
-      (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').updateValueAndValidity();
+  //   } else {
+  //     this.isCurrent = false;
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').setValidators([Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]);
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').setValidators([Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4)]);
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Month').updateValueAndValidity();
+  //     (<FormArray>this.professionalInfo.get('Coach_WorkExp'))?.controls[i].get('To_Year').updateValueAndValidity();
 
-    }
-  }
+  //   }
+  // }
 
   changeCity($event:any, i:number){
     let country=this.countries.filter(x=>x.name==$event.target.value)[0];
@@ -280,17 +263,17 @@ export class CoachProfessionalInfoPage implements OnInit {
     buildOrderItemsForm(item, i): FormGroup {
       console.log('Testt', new Date().getFullYear())
       this.city.push(City.getCitiesOfCountry(item.Country));
-      this.setIsCurrent(item.IsCurrent === '1' ? true : false)
+     // this.setIsCurrent(item.IsCurrent == '1' ? true : false)
       return this.formbuilder.group({
         InstituteName: [item.InstituteName],
         City: [item.City, [Validators.required]],
         Country: [item.Country, [Validators.required]],
         From_Year: [item.From_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
         From_Month: [item.From_Month, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        To_Year: [item.To_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
+        To_Year: [item.To_Year=='0'?'':item.To_Year, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
         Validators.max(new Date().getFullYear())]],
         To_Month: [item.To_Month, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-        IsCurrent: [item.IsCurrent === '1' ? true : false]
+        IsCurrent: [item.IsCurrent == '1' ? true : false]
       })
 
     
@@ -313,7 +296,7 @@ export class CoachProfessionalInfoPage implements OnInit {
     }
 
     setProfessionalInfoFormControl(res:CoachInfo){
-      const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
+    //  const orderItemsArray = this.professionalInfo.get('Coach_WorkExp') as FormArray;
       const certificate = this.professionalInfo.get('Coach_Certificates') as FormArray;
       const qualification = this.professionalInfo.get('Coach_Qualifications') as FormArray;
       const link = this.professionalInfo.get('Coach_Websites') as FormArray;
@@ -340,26 +323,26 @@ export class CoachProfessionalInfoPage implements OnInit {
        }));
        
       }
-      if(res.Coach_WorkExp.length > 0){
-       res.Coach_WorkExp.forEach((item, i) => {
-         orderItemsArray.push(this.buildOrderItemsForm(item, i))
-       });
-     } else {
-       orderItemsArray.push(
-         this.formbuilder.group({
-           InstituteName: [''],
-           City: ['Select City', [Validators.required]],
-           Country: ['Select Country', [Validators.required]],
-           From_Year: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
-           From_Month: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-           To_Year: [
-              '', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
-           Validators.max(new Date().getFullYear())]],
-           To_Month: [ '',  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
-           IsCurrent: [false]
-         })
-       )
-     }
+    //   if(res.Coach_WorkExp.length > 0){
+    //    res.Coach_WorkExp.forEach((item, i) => {
+    //      orderItemsArray.push(this.buildOrderItemsForm(item, i))
+    //    });
+    //  } else {
+    //    orderItemsArray.push(
+    //      this.formbuilder.group({
+    //        InstituteName: [''],
+    //        City: ['Select City', [Validators.required]],
+    //        Country: ['Select Country', [Validators.required]],
+    //        From_Year: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator()]],
+    //        From_Month: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
+    //        To_Year: [
+    //           '', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(4), Validators.maxLength(4), this.customValidator(), 
+    //        Validators.max(new Date().getFullYear())]],
+    //        To_Month: [ '',  [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.maxLength(2)]],
+    //        IsCurrent: [false]
+    //      })
+    //    )
+    //  }
       
      if(res.Coach_Certificates.length > 0 ) {
        this.certificate=[];
@@ -381,14 +364,4 @@ export class CoachProfessionalInfoPage implements OnInit {
        });
    
      }
-  
- validURL(myURL) {
-    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ //port
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i');
-    return pattern.test(myURL);
- }
 }
