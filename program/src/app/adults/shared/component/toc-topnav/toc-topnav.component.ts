@@ -29,10 +29,6 @@ export class TocTopnavComponent implements OnInit {
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
-    let sub: any = localStorage.getItem("Subscriber")
-    if(sub === '1' || sub === 1) {
-      this.subscriber = true;
-    }
     this.name = localStorage.getItem('name');
     if(userid === 'T') {
       this.isloggedIn = true
@@ -47,10 +43,16 @@ export class TocTopnavComponent implements OnInit {
 
   ngOnInit() {
     this.IsCoach=localStorage.getItem('IsCoach').toString()=='true'?true:false
+    setTimeout(() => {
+      let sub: any = localStorage.getItem("Subscriber")
+    if(sub === '1' || sub === 1) {
+      this.subscriber = true;
+    }
+    }, 5000)
   }
 
-  routeGuide(value: any) {
-
+  routeGuide() {
+    this.router.navigate([`/adults/program-guide/s35001`])
   }
 
   
