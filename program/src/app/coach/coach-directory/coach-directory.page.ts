@@ -17,36 +17,37 @@ export class CoachDirectoryPage implements OnInit {
   appointmentDates = '';
   coachLists: GetCoachListDetails[] = [];
   isAPICalling = false;
+  timeout: any = null;
 
-  constructor(private router: Router,  private apiService:CoachService) { }
+  constructor(private router: Router, private apiService: CoachService) { }
 
   ngOnInit() {
     this.onGetDates();
-   this.getCoachList();
+    this.getCoachList();
   }
 
   setCurrencyDetails(i) {
     let finalString = '';
-      if(this.coachLists[i]?.PerSessionFee_Curr && this.coachLists[i]?.PerSessionFee) {
-        finalString =  this.coachLists[i]?.PerSessionFee_Curr + ' ' + this.coachLists[i]?.PerSessionFee + '/session (30 min)';
-      } else {
-        finalString = '';
-      }
-      return finalString ;
+    if (this.coachLists[i]?.PerSessionFee_Curr && this.coachLists[i]?.PerSessionFee) {
+      finalString = this.coachLists[i]?.PerSessionFee_Curr + ' ' + this.coachLists[i]?.PerSessionFee + '/session (30 min)';
+    } else {
+      finalString = '';
+    }
+    return finalString;
   }
 
-  setCoachExp(i){
+  setCoachExp(i) {
     let finalString = '';
-      if(this.coachLists[i]?.ExpYears && this.coachLists[i]?.ExpMonths) {
-        finalString = 'Experience: ' + this.coachLists[i]?.ExpYears +'.'+ this.coachLists[i]?.ExpMonths + ' years'
-      }else if(this.coachLists[i]?.ExpYears && this.coachLists[i]?.ExpMonths === '') {
-        finalString = 'Experience: ' + this.coachLists[i]?.ExpYears + ' years'
-      }else if(this.coachLists[i]?.ExpYears === '' && this.coachLists[i]?.ExpMonths) {
-        finalString = 'Experience: ' + this.coachLists[i]?.ExpMonths + ' months'
-      } else {
-        finalString = '';
-      }
-      return finalString;
+    if (this.coachLists[i]?.ExpYears && this.coachLists[i]?.ExpMonths) {
+      finalString = 'Experience: ' + this.coachLists[i]?.ExpYears + '.' + this.coachLists[i]?.ExpMonths + ' years'
+    } else if (this.coachLists[i]?.ExpYears && this.coachLists[i]?.ExpMonths === '') {
+      finalString = 'Experience: ' + this.coachLists[i]?.ExpYears + ' years'
+    } else if (this.coachLists[i]?.ExpYears === '' && this.coachLists[i]?.ExpMonths) {
+      finalString = 'Experience: ' + this.coachLists[i]?.ExpMonths + ' months'
+    } else {
+      finalString = '';
+    }
+    return finalString;
   }
 
   getCoachList() {
@@ -54,53 +55,83 @@ export class CoachDirectoryPage implements OnInit {
     this.apiService.getAllCoach().subscribe(res => {
       this.isAPICalling = false;
       this.coachLists = res;
-      console.log('RES is are', this.coachLists)
     }, error => {
       this.isAPICalling = false;
     })
   }
 
   goBack() {
-    this.router.navigate(['coach/coach-customer-introduction'],  { state: { data: { isChecked: true } } })
+    this.router.navigate(['coach/coach-customer-introduction'], { state: { data: { isChecked: true } } })
+  }
+
+
+
+
+
+  onKeySearch(event: any) {
+    const parentThis = this;
+
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(function () {
+      if (event.keyCode != 13) {
+        parentThis.getUserList(event.target.value);
+      }
+    }, 1000);
+  }
+
+
+  getUserList(e) {
+    this.isAPICalling = true;
+    const searched = e?.toLowerCase();
+    if (e == '') {
+      this.getCoachList();
+    } else {
+      const testDemos = this.coachLists.filter(element => {
+        return element.FName?.toLowerCase().includes(searched) || element.LName?.toLowerCase().includes(searched)
+      })
+      console.log('TTTTTT', testDemos)
+      this.coachLists = testDemos;
+    }
+    this.isAPICalling = false;
   }
 
   ratings(i: number) {
     return new Array(i);
-}
+  }
   onGetDates = async () => {
     let getData = []
-   await  this.apiService.getUpComingAppointment().subscribe(res=>{
-      getData=res;
-    if (getData.length > 0) {
-      getData.map(res => {
-        res['BookingDates'] = res.Date.split(' ')[0].split('/')[2] + '-' + res.Date.split(' ')[0].split('/')[0] + '-' + res.Date.split(' ')[0].split('/')[1] + ' ' + moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'hh:mm A').format('HH:mm');
-      });
-    }
-    
-    const date = new Date();
-    const n = date.toDateString();
-    const time = date.toLocaleTimeString();
+    await this.apiService.getUpComingAppointment().subscribe(res => {
+      getData = res;
+      if (getData.length > 0) {
+        getData.map(res => {
+          res['BookingDates'] = res.Date.split(' ')[0].split('/')[2] + '-' + res.Date.split(' ')[0].split('/')[0] + '-' + res.Date.split(' ')[0].split('/')[1] + ' ' + moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'hh:mm A').format('HH:mm');
+        });
+      }
 
-    const dateToCheckFor = moment(n).format('YYYY-MM-DD') + ' ' + moment(time, 'hh:mm A').format('HH:mm');
+      const date = new Date();
+      const n = date.toDateString();
+      const time = date.toLocaleTimeString();
 
-    getData.forEach(date => {
-      let diff = moment(date['BookingDates']).diff(moment(dateToCheckFor), 'minutes');
-      if (diff > 0) {
-        if (this.nearestDate) {
-          if (moment(date['BookingDates']).diff(moment(this.nearestDate?.BookingDates), 'minutes') < 0) {
+      const dateToCheckFor = moment(n).format('YYYY-MM-DD') + ' ' + moment(time, 'hh:mm A').format('HH:mm');
+
+      getData.forEach(date => {
+        let diff = moment(date['BookingDates']).diff(moment(dateToCheckFor), 'minutes');
+        if (diff > 0) {
+          if (this.nearestDate) {
+            if (moment(date['BookingDates']).diff(moment(this.nearestDate?.BookingDates), 'minutes') < 0) {
+              this.nearestDate = date;
+            }
+          } else {
             this.nearestDate = date;
           }
-        } else {
-          this.nearestDate = date;
         }
+      });
+      if (this.nearestDate !== null) {
+        this.appointmentDates = moment(this.nearestDate?.BookingDates).format('dddd, D MMMM YYYY, hh A')
       }
+
+      console.log('Appointment dates are:', this.appointmentDates);
     });
-    if(this.nearestDate !== null) {
-      this.appointmentDates = moment(this.nearestDate?.BookingDates).format('dddd, D MMMM YYYY, hh A')
-    }
-    
-    console.log('Appointment dates are:', this.appointmentDates);
-  });
     // + ' - ' +  moment(this.nearestDate?.EndTime.split(' ')[1]+this.nearestDate?.EndTime.split(' ')[2], 'hh:mm A').format('HH:mm A');
   }
 

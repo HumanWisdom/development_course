@@ -95,7 +95,14 @@
 
               <div class="row pt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" id="search_coach" required="required" class="form-control coach_fc" placeholder="Search Coach">
+                  <input 
+                      type="text" 
+                      id="search_coach" 
+                      required="required" 
+                      class="form-control coach_fc" 
+                      placeholder="Search Coach"
+                      autocomplete="off"
+                      (keydown)="onKeySearch($event)">
                 </div>
               </div>
 
