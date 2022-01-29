@@ -35,7 +35,7 @@ export class CoachProfessionalInfoPage implements OnInit {
     this.countries=Country.getAllCountries().map(o => new Object({name: o.name, code: o.isoCode,phonecode:o.phonecode}));
     this.professionalInfo = this.formbuilder.group({
       Coach_Qualifications: this.formbuilder.array([]),
-      Coach_WorkExp: ['0', [Validators.required]],
+      WorkExp: ['0', [Validators.required]],
       Coach_Certificates: this.formbuilder.array([]),
       Coach_Websites: this.formbuilder.array([]),
       Coach_Specializations: ['', [Validators.required]]
@@ -181,6 +181,7 @@ export class CoachProfessionalInfoPage implements OnInit {
     obj['Coach_Websites'] = this.professionalInfo.value['Coach_Websites'].map((d) => d['name']);
     obj['Coach_Qualifications'] = this.professionalInfo.value['Coach_Qualifications'].map((d) => d['name']);
     obj['Coach_Specializations'] = [this.professionalInfo.value['Coach_Specializations']];
+    obj['WorkExp'] = +this.professionalInfo.value['WorkExp'];
     // delete obj['link']
     // delete obj['qualification']
    
@@ -199,6 +200,7 @@ export class CoachProfessionalInfoPage implements OnInit {
     this.dataservice.coachInfo = Object.assign(this.dataservice.coachInfo, this.professionalInfo.value);
     this.dataservice.coachInfo.Id = +localStorage.getItem('userId');
     this.dataservice.coachInfo.Coach_Certificates = this.certificate;
+    this.dataservice.coachInfo.WorkExp = +this.professionalInfo.value['WorkExp'];
     this.dataservice.coachInfo.Coach_Specializations = [this.professionalInfo.value['Coach_Specializations']];
     this.dataservice.coachInfo.Coach_Websites =  this.professionalInfo.value['Coach_Websites'].map((d) => d['name']);
     this.dataservice.coachInfo.Coach_Qualifications =  this.professionalInfo.value['Coach_Qualifications'].map((d) => d['name']);
@@ -364,7 +366,7 @@ export class CoachProfessionalInfoPage implements OnInit {
        this.professionalInfo.patchValue(
          {
            Coach_Specializations: res.Coach_Specializations.toString(),
-           Coach_WorkExp:"0"
+           WorkExp:"0"
        });
    
      }

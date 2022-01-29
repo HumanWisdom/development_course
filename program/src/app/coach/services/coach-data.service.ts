@@ -209,7 +209,7 @@ export class CoachDataService {
     Coach_Qualifications:[]=[],
     Coach_Specializations:[]=[],
     Coach_Websites:[]=[],
-    Coach_WorkExp:[]=[],
+    WorkExp:0,
     Consult_EndTime:"",
     Consult_StrtTime:"",
     Country:'',

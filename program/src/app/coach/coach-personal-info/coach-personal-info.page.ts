@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Country, State } from 'country-state-city';
@@ -6,12 +6,13 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { CoachInfo } from '../coach-model/coach-info';
 import { CoachService } from '../services/coach.service';
 import { CoachDataService } from '../services/coach-data.service';
+declare var $: any;
 @Component({
   selector: 'app-coach-personal-info',
   templateUrl: './coach-personal-info.page.html',
   styleUrls: ['./coach-personal-info.page.scss'],
 })
-export class CoachPersonalInfoPage implements OnInit {
+export class CoachPersonalInfoPage implements OnInit, AfterViewInit {
   public personalInfo: FormGroup
   public profilepic: any;
   public gender: string = "male";
@@ -37,6 +38,15 @@ export class CoachPersonalInfoPage implements OnInit {
   ngOnInit() {
     
     this.PerformInitialDataBind();
+  }
+
+  ngAfterViewInit() {
+      var el = $('*[placeholder="Search"]');
+      if(el) {
+          el[0].style.fontSize = '15px';
+          el[0].style.textAlign = 'left';
+          el[0].style.height = '20px';
+      }
   }
 
   initialForms() {

@@ -101,11 +101,9 @@
               </div>
                <div class="col-md-4 col-sm-4 col-xs-4">
                 <select 
-                  class="select2_group form-control coach_fc_01">
+                  class="select2_group form-control coach_fc_01" formControlName="WorkExp">
                   <option *ngFor="let c of  ratings(20);let i=index">{{i}}</option>
                 </select>
-                <span *ngIf="!professionalInfo.get('Coach_WorkExp')?.valid && professionalInfo.get('Coach_WorkExp')?.touched">
-                </span>
               </div>
               <br>
 
@@ -338,7 +336,6 @@
                 </div>
               </div>
 
-              {{professionalInfo.invalid}}
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <button type="submit" (click)="nextRoute()" [disabled]="professionalInfo.invalid" class="btn btn-warning btn_coach_continue w100">
