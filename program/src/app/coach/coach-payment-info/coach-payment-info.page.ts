@@ -102,7 +102,7 @@ export class CoachPaymentInfoPage implements OnInit {
   }
 
   submitForm(eventName:string) {
-    if(this.paymentinfo.invalid || this.natinalIdback==''  || this.natinalIdFront==''){
+    if(this.paymentinfo.invalid || this.natinalIdFront==''|| !this.isNationalIdBack){
       return false;
     }
     if(eventName=='submit' && !this.isTermsAndConditionChkd.value){

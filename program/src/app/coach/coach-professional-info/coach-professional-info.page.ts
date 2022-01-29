@@ -35,10 +35,11 @@ export class CoachProfessionalInfoPage implements OnInit {
     this.countries=Country.getAllCountries().map(o => new Object({name: o.name, code: o.isoCode,phonecode:o.phonecode}));
     this.professionalInfo = this.formbuilder.group({
       Coach_Qualifications: this.formbuilder.array([]),
-     // Coach_WorkExp: this.formbuilder.array([]),
+      Coach_WorkExp: ['0', [Validators.required]],
       Coach_Certificates: this.formbuilder.array([]),
       Coach_Websites: this.formbuilder.array([]),
       Coach_Specializations: ['', [Validators.required]]
+
     });
     this.InitializeCoachInfo();
   }
@@ -132,7 +133,9 @@ export class CoachProfessionalInfoPage implements OnInit {
     let country=this.countries.filter(x=>x.name==$event)[0];
   return City.getCitiesOfCountry(country?.code ? country?.code : '');
   }
-
+  ratings(i: number) {
+    return new Array(i);
+}
   handleFileInput(files, text, i) {
     let file = files.target.files[0];
     let reader = new FileReader();
@@ -360,7 +363,8 @@ export class CoachProfessionalInfoPage implements OnInit {
      }
        this.professionalInfo.patchValue(
          {
-           Coach_Specializations: res.Coach_Specializations.toString()
+           Coach_Specializations: res.Coach_Specializations.toString(),
+           Coach_WorkExp:"0"
        });
    
      }

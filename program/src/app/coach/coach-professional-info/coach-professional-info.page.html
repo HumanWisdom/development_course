@@ -92,6 +92,22 @@
               </div>
 
               <br>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt274 mt0px mb5px">
+                    Work Experience
+                  </h6>
+                </div>
+              </div>
+               <div class="col-md-4 col-sm-4 col-xs-4">
+                <select 
+                  class="select2_group form-control coach_fc_01">
+                  <option *ngFor="let c of  ratings(20);let i=index">{{i}}</option>
+                </select>
+                <span *ngIf="!professionalInfo.get('Coach_WorkExp')?.valid && professionalInfo.get('Coach_WorkExp')?.touched">
+                </span>
+              </div>
+              <br>
 
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -127,18 +143,7 @@
                         Country is Required
                       </span>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <select 
-                        class="select2_group form-control coach_fc_01" 
-                        formControlName="City">
-                        <option>Select City</option>
-                        <option *ngFor="let c of changeCountry(professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country').value, i)" [value]="c.name" >{{c.name}}</option>
-                        
-                      </select>
-                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('City')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('City')?.touched">
-                        City is Required
-                      </span>
-                    </div>
+                 
                   
                   
                   </div>
@@ -240,7 +245,7 @@
               <br>
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt274 mt0px mb5px">
+                  <h6 class="txt274 mt2px mb5px">
                     Certifications
                   </h6>
                 </div>
