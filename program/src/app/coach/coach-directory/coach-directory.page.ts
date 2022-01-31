@@ -50,6 +50,10 @@ export class CoachDirectoryPage implements OnInit {
     return finalString;
   }
 
+  ViewAllApp(){
+    this.router.navigate(['coach/coach-appointments'])
+  }
+
   getCoachList() {
     this.isAPICalling = true;
     this.apiService.getAllCoach().subscribe(res => {

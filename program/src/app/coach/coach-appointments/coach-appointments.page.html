@@ -1,0 +1,335 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+   
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
+          </a>                  
+        </li>        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h6 class="txt88">
+              My Appointments
+            </h6>            
+          </a>                  
+        </li>
+      </ul>
+    </nav>    
+    
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<!-- page content -->
+<div class="right_col ml0 pt_rightcol" role="main">				
+  <!-- Class -->
+  <div class="cw100p"> 
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form> 
+
+              <div class="row ca_header">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter plr20px">
+                  <h6 class="txt154">
+                    Upcoming
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+              <span *ngIf="isAPICalling && upcomingDate.length === 0">
+                Loading Upcoming  Appointment.....
+              </span>
+              <span *ngIf="isAPICalling === false && upcomingDate.length === 0">
+                No Upcoming  Appointment Found
+              </span>
+              <div *ngFor="let item of upcomingDate; let i=index">
+                <div class="row">
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <h4 class="txt69 m0px">
+                      {{item.Title ? item.Title : ''}}  {{item.FName ? item.FName : ''}}  {{item.LName ? item.LName : ''}}
+                      <!-- Dr Madyson Banks -->
+                    </h4>
+  
+                    <h6 class="txt156 ca_day">
+                      {{item?.combineDate}}
+                    </h6>
+  
+                    <!-- <h6 class="txt156 m0px">
+                      4.00 PM - 5.00 PM IST
+                    </h6> -->
+                  </div>
+  
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <button type="submit" class="btn btn-warning btn_join_now w100">
+                      Join Now
+                    </button>
+  
+                    <h6 class="txt61 tcenter">
+                      Starts in 04:23 min
+                    </h6>
+                  </div>
+                </div>
+
+               <span *ngIf="i <= upcomingDate.length - 2"><hr class="hr_style_4"></span> 
+              </div>
+             
+
+              <!-- <div class="row">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <h4 class="txt69 m0px">
+                    Dr Madyson Banks
+                  </h4>
+
+                  <h6 class="txt156 ca_day">
+                    Fri, 12 Jun 2021
+                  </h6>
+
+                  <h6 class="txt156 m0px">
+                    4.00 PM - 5.00 PM IST
+                  </h6>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <button type="submit" class="btn btn-warning btn_modify_cancel w100">
+                    Modify / Cancel
+                  </button>
+
+                  <h6 class="txt61 tcenter">
+                    Starts in 04:23 min
+                  </h6>
+                </div>
+              </div>
+
+              <hr class="hr_style_4">
+
+              <div class="row">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <h4 class="txt69 m0px">
+                    Dr Madyson Banks
+                  </h4>
+
+                  <h6 class="txt156 ca_day">
+                    Fri, 12 Jun 2021
+                  </h6>
+
+                  <h6 class="txt156 m0px">
+                    4.00 PM - 5.00 PM IST
+                  </h6>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <button type="submit" class="btn btn-warning btn_modify_cancel w100">
+                    Modify / Cancel
+                  </button>
+
+                  <h6 class="txt61 tcenter">
+                    Starts in 04:23 min
+                  </h6>
+                </div>
+              </div> -->
+
+              <br>
+
+              <div class="row ca_header">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter plr20px">
+                  <h6 class="txt154">
+                    Available Credits
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <h4 class="txt69 m0px">
+                      Dr Madyson Banks
+                    </h4>
+  
+                    <h6 class="txt156 mtb5px">
+                      Credits Left: 2 hours
+                    </h6>
+                  </div>
+  
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <button type="submit" class="btn btn-warning btn_schedule_now w100">
+                      Schedule Now
+                    </button>
+                  </div>
+                </div>                
+              </div>
+
+              <br>
+
+              <div class="row ca_header">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter plr20px">
+                  <h6 class="txt154">
+                    Past Appointments
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+              <span *ngIf="isAPICalling && previousDate.length === 0">
+                Loading Previous Appointment.....
+              </span>
+              <span *ngIf="isAPICalling === false && previousDate.length === 0">
+                No Previous Appointment Found
+              </span>
+              <div *ngFor="let item of previousDate; let i=index">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                      <h4 class="txt69 m0px">
+                        {{item.Title ? item.Title : ''}}  {{item.FName ? item.FName : ''}}  {{item.LName ? item.LName : ''}}
+                      </h4>
+    
+                      <h6 class="txt156 mtb5px">
+                        {{item?.combineDate}}
+                      </h6>
+                    </div>
+    
+                    <div class="col-md-5 col-sm-5 col-xs-5 tright">
+                      <a class="txt157">
+                        Leave a Review
+                      </a>
+                    </div>
+                  </div>                
+                </div>
+  
+                <span *ngIf="i <= previousDate.length - 2"><hr class="hr_style_4"></span>
+
+                <!-- <div class="row">
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <h4 class="txt69 m0px">
+                      {{item.Title ? item.Title : ''}}  {{item.FName ? item.FName : ''}}  {{item.LName ? item.LName : ''}}
+                      
+                    </h4>
+  
+                    <h6 class="txt156 ca_day">
+                      {{item?.combineDate}}
+                    </h6>
+
+                  </div>
+  
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <button type="submit" class="btn btn-warning btn_join_now w100">
+                      Join Now
+                    </button>
+  
+                    <h6 class="txt61 tcenter">
+                      Starts in 04:23 min
+                    </h6>
+                  </div>
+                </div>
+
+               <span *ngIf="i <= previousDate.length - 2"><hr class="hr_style_4"></span>  -->
+              </div>
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <h4 class="txt69 m0px">
+                      Dr Madyson Banks
+                    </h4>
+  
+                    <h6 class="txt156 mtb5px">
+                      Fri, 5 May 2021
+                    </h6>
+                  </div>
+  
+                  <div class="col-md-5 col-sm-5 col-xs-5 tright">
+                    <a class="txt157">
+                      Leave a Review
+                    </a>
+                  </div>
+                </div>                
+              </div>
+
+              <hr class="hr_style_4">
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <h4 class="txt69 m0px">
+                      Dr Madyson Banks
+                    </h4>
+  
+                    <h6 class="txt156 mtb5px">
+                      Fri, 5 May 2021
+                    </h6>
+                  </div>
+  
+                  <div class="col-md-5 col-sm-5 col-xs-5 tright">
+                    
+                  </div>
+                </div>                
+              </div>
+
+              <hr class="hr_style_4">               -->
+
+              <div class="pagebreak"></div>
+
+            </form>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="sidebar-footer ifooter">  
+  <div class="row center_flex">
+    <div class="col-md-6 col-sm-12 col-xs-12 center_flex">
+      
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home.svg" alt="">           
+        <p class="mb0px">
+          Home
+        </p>
+      </a>
+    
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt="">          
+        <p class="mb0px">
+          Search
+        </p>
+      </a>
+    
+      <a class="footer_index">        
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">          
+        <p class="mb0px">
+          Journal
+        </p>
+      </a>
+    
+      <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">          
+        <p class="mb0px">
+          Forum
+        </p>
+      </a>
+
+      <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt="">          
+        <p class="mb0px">
+          More
+        </p>
+      </a>
+
+    </div>
+  </div>  
+</div>
+<!-- /footer -->
