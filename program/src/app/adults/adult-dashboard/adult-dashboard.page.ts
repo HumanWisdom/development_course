@@ -116,7 +116,7 @@ export class AdultDashboardPage implements OnInit {
  isloggedIn=false
  x=[]
  isSubscribe = false
- enablebanner = true;
+ enablebanner = false;
  modaldata = {}
  firstpage = true;
  secondpage = false;
@@ -172,7 +172,6 @@ socialFirstName:any
         this.service.verifytoken(authtoken).subscribe((res) => {
           console.log(res)
           if(res) {
-            this.enablebanner = false
             localStorage.setItem("email", res['Email'])
             localStorage.setItem("name", res['Name'])
             let namedata = localStorage.getItem('name').split(' ')
@@ -183,6 +182,8 @@ socialFirstName:any
            this.router.navigate(['/onboarding/login'])
           }
        })
+      }else {
+        this.enablebanner = true;
       }
 
       this.services.getCountry().subscribe((res:any)=>{  
