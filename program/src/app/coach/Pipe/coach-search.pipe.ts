@@ -8,7 +8,7 @@ transform(items: any[], searchText: string) {
   
     return items.filter(item => {
       return Object.keys(item).some(key => {
-        return String(item['FName']).toLowerCase().includes(searchText.toLowerCase()) || String(item['LName']).toLowerCase().includes(searchText.toLowerCase());
+        return String(item['Name']).toLowerCase().trim().includes(searchText.toLowerCase().trim());
       });
     });
 }

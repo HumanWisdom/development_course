@@ -57,8 +57,12 @@ const routes: Routes = [
   {
     path: 'coach-appointments-confirmed',
     loadChildren: () => import('./coach-appointment-confirmed/coach-appointment-confirmed.module').then(m=>m.CoachAppointmentConfirmedPageModule)
+  },
+  {
+    path: 'coach-directory-filter',
+    loadChildren: () => import('./coach-directory-filter/coach-directory-filter.module').then(m=>m.CoachDirectoryFilterPageModule)
   }
-
+  
 
 ];
 

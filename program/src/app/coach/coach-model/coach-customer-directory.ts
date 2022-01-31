@@ -9,4 +9,5 @@ export interface GetCoachListDetails {
     Qualifications: string;
     Title: string;
     country: string;
+    Name :string;
 }

@@ -4,17 +4,24 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CoachDirectoryFilterPageRoutingModule } from './coach-directory-filter-routing.module';
 
 import { CoachDirectoryFilterPage } from './coach-directory-filter.page';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: CoachDirectoryFilterPage
+  }
+];
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CoachDirectoryFilterPageRoutingModule
-  ],
-  declarations: [CoachDirectoryFilterPage]
+    RouterModule.forChild(routes)
+  ],                            
+  declarations: [CoachDirectoryFilterPage],
+  exports: [RouterModule],
 })
 export class CoachDirectoryFilterPageModule {}

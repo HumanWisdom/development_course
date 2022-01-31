@@ -83,9 +83,9 @@
                       {{appointmentDates}}
                       <!-- Friday, 5 Jun 2021, 4.00 PM - 5.00 PM IST -->
                     </h6>
-                    <button type="submit" (click)="ViewAllApp()"class="btn btn-warning btn_coach_vaa w100">
+                    <label type="submit" (click)="ViewAllApp()"class="btn btn-warning btn_coach_vaa w100">
                       View All Appointments
-                    </button>
+                    </label>
                   </div>
                   <ng-template #noAppointment>
                     <h4> No Appointment Available</h4>
@@ -122,7 +122,7 @@
                   </span>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4">
-                  <h6 class="txt111">
+                  <h6 class="txt111" (click)="filter()">
                     Filter
                   </h6>
                 </div>
@@ -137,7 +137,7 @@
                 Loading Coach list.....
               </span>
               <span *ngIf="isAPICalling === false && coachLists.length === 0">
-                No Coach FOund
+                No Coach Found
               </span>
               <!-- <ng-template #noCoachs>
                 <h4> No  Available</h4>
@@ -147,7 +147,7 @@
               <div class="row pt10px flex_ai">
                 <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
                   <div class="prelative">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_01.svg" alt="" class="p0 w100">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/{{coachDetail.ProfilePic}}" alt="" class="p0 w100 opaque_border_inner">
                   </div>
                   <!-- <div class="coach_dir_user">
                     <button type="submit" class="btn btn-warning btn_dir_user">
