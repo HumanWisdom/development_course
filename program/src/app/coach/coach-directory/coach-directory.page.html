@@ -98,11 +98,14 @@
                   <input 
                       type="text" 
                       id="search_coach" 
+                      name="searchText"
+                      [(ngModel)]="searchText"
                       required="required" 
                       class="form-control coach_fc" 
                       placeholder="Search Coach"
                       autocomplete="off"
-                      (keydown)="onKeySearch($event)">
+                      
+                      >
                 </div>
               </div>
 
@@ -126,6 +129,10 @@
               </div>
 
               <br>
+
+              <span *ngIf="(coachLists | coachSearch: searchText).length === 0 && coachLists.length > 0">
+                <p>No results found for "{{searchText}}".</p>
+              </span>
               <span *ngIf="isAPICalling && coachLists.length === 0">
                 Loading Coach list.....
               </span>
@@ -136,7 +143,7 @@
                 <h4> No  Available</h4>
               </ng-template> -->
               <!-- user 1 -->
-              <div *ngFor="let coachDetail of coachLists; let i=index">
+              <div *ngFor="let coachDetail of coachLists | coachSearch: searchText ; let i=index">
               <div class="row pt10px flex_ai">
                 <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
                   <div class="prelative">

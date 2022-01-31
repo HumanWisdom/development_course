@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { CoachDirectoryPage } from './coach-directory.page';
 import { RouterModule, Routes } from '@angular/router';
+import { CoachSearchPipe } from '../Pipe/coach-search.pipe';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CoachDirectoryPage],
+  declarations: [CoachDirectoryPage, CoachSearchPipe],
   exports: [RouterModule]
 })
 export class CoachDirectoryPageModule {}

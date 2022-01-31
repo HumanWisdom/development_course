@@ -17,7 +17,7 @@ export class CoachDirectoryPage implements OnInit {
   appointmentDates = '';
   coachLists: GetCoachListDetails[] = [];
   isAPICalling = false;
-  timeout: any = null;
+  searchText: string;
 
   constructor(private router: Router, private apiService: CoachService) { }
 
@@ -67,33 +67,6 @@ export class CoachDirectoryPage implements OnInit {
 
 
 
-
-  onKeySearch(event: any) {
-    const parentThis = this;
-
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(function () {
-      if (event.keyCode != 13) {
-        parentThis.getUserList(event.target.value);
-      }
-    }, 1000);
-  }
-
-
-  getUserList(e) {
-    this.isAPICalling = true;
-    const searched = e?.toLowerCase();
-    if (e == '') {
-      this.getCoachList();
-    } else {
-      const testDemos = this.coachLists.filter(element => {
-        return element.FName?.toLowerCase().includes(searched) || element.LName?.toLowerCase().includes(searched)
-      })
-      console.log('TTTTTT', testDemos)
-      this.coachLists = testDemos;
-    }
-    this.isAPICalling = false;
-  }
 
   ratings(i: number) {
     return new Array(i);
