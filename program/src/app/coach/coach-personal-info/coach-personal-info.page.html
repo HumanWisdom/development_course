@@ -244,11 +244,29 @@
                 <!-- </div> -->
               </div>
 
+              
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h6 class="txt120">
                     Select only those languages that you are comfortable conversing in
                   </h6>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt274 mt0px">
+                    Coach Introduction
+                  </h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <textarea type="text" style="height: 90px;" formControlName="Description" required="required" class="coach_fc_01"
+                    placeholder="Description" minlength="1" maxlength="500"></textarea>
+                    <span *ngIf="!personalInfo.get('Description')?.valid && personalInfo.get('Description')?.touched">
+                      Coach Introduction is Required
+                    </span>
                 </div>
               </div>
 
