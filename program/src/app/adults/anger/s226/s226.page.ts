@@ -91,9 +91,9 @@ receiveAvDuration(e){
       },
       error=>console.log(error),
       ()=>{
-        this.router.navigate(['/anger/s227'])
+        //this.router.navigate(['/anger/s227'])
       })
-    
+      this.router.navigate(['/anger/s227'])
 
   }
   previous(){

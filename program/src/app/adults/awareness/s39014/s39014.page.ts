@@ -91,6 +91,8 @@ export class S39014Page implements OnInit {
    sessionStorage.setItem("r39014",JSON.stringify(e))
    this.r39014=JSON.parse(sessionStorage.getItem("r39014"))
   
+   this.router.navigate(['/awareness/s39015'])
+   
     this.service.submitProgressReflection({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,12 +112,12 @@ export class S39014Page implements OnInit {
     
       },
       ()=>{
-        this.router.navigate(['/awareness/s39015'])
+        //this.router.navigate(['/awareness/s39015'])
       })
     
 
   
-    
+      
 
   }
 

@@ -76,6 +76,7 @@ createScreen(){
  
   }
   submitProgress(){
+    this.router.navigate(['/communication/s53166'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -93,7 +94,7 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/conditioning/s234'])
       })
-      this.router.navigate(['/communication/s53166'])
+     
     
 
   }
