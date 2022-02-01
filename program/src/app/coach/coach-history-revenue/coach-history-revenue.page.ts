@@ -53,7 +53,7 @@ export class CoachHistoryRevenuePage implements OnInit {
   }
 
   ChangeHistory($event){
-    if($event.target.value=='Patient'){
+    if($event.target.value=='Client'){
      this.router.navigate(['coach/coach-history-patient-name'])
     }
     if($event.target.value=='Date'){

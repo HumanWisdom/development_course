@@ -23,9 +23,9 @@ const routes: Routes = [
     IonicModule,
     NgbModule,
     NgMultiSelectDropDownModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes)       
   ],
   exports: [CoachCalendarPluginPage, RouterModule],
-  declarations: [CoachCalendarPluginPage]
+  declarations: [CoachCalendarPluginPage],
 })
 export class CoachCalendarPluginPageModule {}
