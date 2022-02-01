@@ -61,7 +61,12 @@ const routes: Routes = [
   {
     path: 'coach-bio/:id',
     loadChildren: () => import('./coach-bio/coach-bio.module').then(m=>m.CoachBioPageModule)
+  },
+  {
+    path: 'coach-directory-filter',
+    loadChildren: () => import('./coach-directory-filter/coach-directory-filter.module').then(m=>m.CoachDirectoryFilterPageModule)
   }
+  
 
 ];
 

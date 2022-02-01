@@ -16,26 +16,35 @@ export class CoachDirectoryPage implements OnInit {
   coachNames = '';
   appointmentDates = '';
   coachLists: GetCoachListDetails[] = [];
+  coachList: GetCoachListDetails[] = [];
   isAPICalling = false;
   searchText: string;
 
-  constructor(private router: Router, private apiService: CoachService) { }
+  constructor(private router: Router, private apiService: CoachService) { 
+    //this.coachLists=this.coachList.filter(x=>x.CoachID>0);
+  }
+  SearchText(value:any){
+    
 
+  }
   ngOnInit() {
     this.onGetDates();
     this.getCoachList();
   }
-
+         
   setCurrencyDetails(i) {
     let finalString = '';
     if (this.coachLists[i]?.PerSessionFee_Curr && this.coachLists[i]?.PerSessionFee) {
-      finalString = this.coachLists[i]?.PerSessionFee_Curr + ' ' + this.coachLists[i]?.PerSessionFee + '/session (30 min)';
+      finalString = this.coachLists[i]?.PerSessionFee_Curr + ' ' + this.coachLists[i]?.PerSessionFee + '/session (60 min)';
     } else {
       finalString = '';
     }
     return finalString;
   }
+ filter(){
+  this.router.navigate(['coach/coach-directory-filter'])
 
+ }
   setCoachExp(i) {
     let finalString = '';
     if (this.coachLists[i]?.ExpYears && this.coachLists[i]?.ExpMonths) {
@@ -59,11 +68,16 @@ export class CoachDirectoryPage implements OnInit {
     this.apiService.getAllCoach().subscribe(res => {
       this.isAPICalling = false;
       this.coachLists = res;
+      this.SetNameofCoach( this.coachLists)
     }, error => {
       this.isAPICalling = false;
     })
   }
-
+SetNameofCoach(coachLists:GetCoachListDetails[]){
+  for(var i=0; i< coachLists.length;i++){
+        coachLists[i].Name=coachLists[i].FName+" "+coachLists[i].LName
+  }
+}
   goBack() {
     this.router.navigate(['coach/coach-customer-introduction'], { state: { data: { isChecked: true } } })
   }
