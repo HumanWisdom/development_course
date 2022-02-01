@@ -187,6 +187,7 @@
                 No Previous Appointment Found
               </span>
               <div *ngFor="let item of previousDate; let i=index">
+                <a routerLink="/coach/coach-review/{{item.BookingID}}" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-7 col-sm-7 col-xs-7">
@@ -200,13 +201,13 @@
                     </div>
     
                     <div class="col-md-5 col-sm-5 col-xs-5 tright">
-                      <a class="txt157">
+                      <a class="txt157" style="font-size: 21px;">
                         Leave a Review
                       </a>
                     </div>
                   </div>                
                 </div>
-  
+              </a>
                 <span *ngIf="i <= previousDate.length - 2"><hr class="hr_style_4"></span>
 
                 <!-- <div class="row">

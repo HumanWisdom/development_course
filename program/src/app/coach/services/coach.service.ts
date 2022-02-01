@@ -47,4 +47,8 @@ export class  CoachService {
   getAllCoach() : Observable<any>{
     return this.http.get(this.path+`/GetAllCoaches`);
   }
+
+  addReview(data) {
+    return this.http.post(this.path+`/AddAppointmentReview`, data);
+  }
 }
