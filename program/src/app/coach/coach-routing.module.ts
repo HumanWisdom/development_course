@@ -59,8 +59,16 @@ const routes: Routes = [
     loadChildren: () => import('./coach-appointment-confirmed/coach-appointment-confirmed.module').then(m=>m.CoachAppointmentConfirmedPageModule)
   },
   {
+    path: 'coach-bio/:id',
+    loadChildren: () => import('./coach-bio/coach-bio.module').then(m=>m.CoachBioPageModule)
+  },
+  {
     path: 'coach-directory-filter',
     loadChildren: () => import('./coach-directory-filter/coach-directory-filter.module').then(m=>m.CoachDirectoryFilterPageModule)
+  },
+  {
+    path: 'coach-review/:id',
+    loadChildren: () => import('./coach-review/coach-review.module').then(m=>m.CoachReviewPageModule)
   }
   
 

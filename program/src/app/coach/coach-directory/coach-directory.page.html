@@ -144,6 +144,7 @@
               </ng-template> -->
               <!-- user 1 -->
               <div *ngFor="let coachDetail of coachLists | coachSearch: searchText ; let i=index">
+                <a routerLink="/coach/coach-bio/{{coachDetail.CoachID}}" class="p0 b0px">
               <div class="row pt10px flex_ai">
                 <div class="col-md-2 col-sm-3 col-xs-4 prelative p0">
                   <div class="prelative">
@@ -184,6 +185,7 @@
                   </div>
                 </div>
               </div>
+            </a>
             </div>
               <!-- /user 1 -->
 
