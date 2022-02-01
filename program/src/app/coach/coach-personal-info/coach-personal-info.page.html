@@ -41,7 +41,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="txt160 mb0px">
+                  <h4 class="txt279 mb0px">
                     Personal Information
                   </h4>
 
@@ -51,15 +51,13 @@
                 </div>
               </div>
 
-              <div class="row forum_pt20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex w50p">
-                  <div class="opaque_border_outer">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                   <img src="{{profilepic === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_01_a.svg' : profilepic}}"
                     alt="" class="p0 opaque_border_inner img-responsive"> 
-                    </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                  <h6 class="txt163" (click)="clickuploadimage()">
+                  <h6 class="txt265" (click)="clickuploadimage()">
                     Upload Profile Picture
                   </h6>
                   <input type="file" id="file" style="visibility: hidden;" (change)="handleFileInput($event)">
@@ -91,7 +89,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" required="required" formControlName="Email" class="coach_fc_01"
+                  <input type="text" required="required" disabled formControlName="Email" class="coach_fc_01"
                     placeholder="E-mail" maxlength="50">
                     <span *ngIf="!personalInfo.get('Email')?.valid && personalInfo.get('Email')?.touched">
                       Please Enter Valid Email and It's required
@@ -103,7 +101,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt158 mt0px">
+                  <h6 class="txt274 mt0px">
                     Gender
                   </h6>
                 </div>
@@ -182,7 +180,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt158 mt0px">
+                  <h6 class="txt274 mt0px">
                     Contact - Primary
                   </h6>
                 </div>
@@ -190,11 +188,11 @@
 
               <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-3">
-                  <input type="text" class="coach_fc_01" [value]="Code" formControlName="Code" disabled>
+                  <input type="text" class="coach_fc_01" placeholder="Code" [value]="Code" formControlName="Code" disabled>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
                   <input type="text" required="required" (keypress)="IsNumeric($event);" formControlName="Primary_CTC"
-                    class="coach_fc_01 feedback_left" placeholder="">
+                    class="coach_fc_01 feedback_left" placeholder="Primary-Contact">
                     <span class="form-control-feedback left coach_fc_fl" [disabled]="true"  [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true">
               </span>
                     </div>
@@ -208,7 +206,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt158 mt0px">
+                  <h6 class="txt274 mt0px">
                     Contact - Secondary
                   </h6>
                 </div>
@@ -216,11 +214,11 @@
 
               <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-3">
-                  <input type="text" class="coach_fc_01" placeholder="" formControlName="Code" disabled>
+                  <input type="text"  class="coach_fc_01" placeholder="Code" formControlName="Code" disabled>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9">
                   <input type="text" required="required" (keypress)="IsNumeric($event);" formControlName="Secondary_CTC"
-                    class="coach_fc_01 feedback_left" placeholder="">
+                    class="coach_fc_01 feedback_left" placeholder="Secondary-Contact">
                   <span class="form-control-feedback left coach_fc_fl" [innerHTML]="personalInfo.get('Phonecode')?.value ? '+' + personalInfo.get('Phonecode')?.value : ''"  aria-hidden="true" [disabled]="true">
                   </span>
                 </div>
@@ -232,8 +230,8 @@
 
               <br>
 
-              <div class="row" *ngIf="languageList.length > 0">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+              <div  *ngIf="languageList.length > 0">
+                <!-- <div class="col-md-12 col-sm-12 col-xs-12"> -->
                   <ng-multiselect-dropdown
                   [settings]="dropdownSettings"
                   [placeholder]="'Select Your Languages Known'"
@@ -243,7 +241,7 @@
                   <span *ngIf="!personalInfo.get('Coach_Languages')?.valid && personalInfo.get('Coach_Languages')?.touched">
                     Languages is required
                   </span>
-                </div>
+                <!-- </div> -->
               </div>
 
               <div class="row">

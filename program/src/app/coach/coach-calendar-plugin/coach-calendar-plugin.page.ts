@@ -5,15 +5,19 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { CoachAvailabilityInfo, CoachAvailabilityInfoDetail } from '../coach-model/coach-availability-info';
 
 import * as moment from 'moment';
+import * as momentTimeZone from 'moment-timezone';
 import { Router } from '@angular/router';
 import { CoachDataService } from '../services/coach-data.service';
 import { CoachService } from '../services/coach.service';
+import { CoachAppointmentHistroy } from '../coach-model/coach-appointment-history';
+import { DatePipe } from '@angular/common';
 
 declare var $: any;
 @Component({
   selector: 'app-coach-calendar-plugin',
   templateUrl: './coach-calendar-plugin.page.html',
   styleUrls: ['./coach-calendar-plugin.page.scss'],
+  providers:[DatePipe],
   styles: [`
   .custom-day {
     text-align: center;
@@ -55,11 +59,15 @@ export class CoachCalendarPluginPage implements OnInit {
   coachAvailabilityInfoDetailList:CoachAvailabilityInfoDetail[]=[];
   nearestDate = null;
   coachNames = '';
+  getHistoryData:CoachAppointmentHistroy[]=[];
   appointmentDates = '';
+  totalRevenue='';
+  totalHours='';
   constructor(calendar: NgbCalendar,
       private dataservice: CoachDataService,
        private formbuilder: FormBuilder,
        private apiService:CoachService,
+       private datePipe: DatePipe,
        private router :Router){    
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 1);
@@ -84,14 +92,14 @@ export class CoachCalendarPluginPage implements OnInit {
     EndTime: [''],
     SelectedDayes: ['']
   });
+  this.GetTimeZoneCurrent();
   }
 
   onGetDates = async () => {
-    let getData = []
    await  this.apiService.getAppointmentHistory().subscribe(res=>{
-      getData=res;
-    if (getData.length > 0) {
-      getData.map(res => {
+    this.getHistoryData=res;
+    if (this.getHistoryData.length > 0) {
+      this.getHistoryData.map(res => {
         res['BookingDates'] = res.Date.split(' ')[0].split('/')[2] + '-' + res.Date.split(' ')[0].split('/')[0] + '-' + res.Date.split(' ')[0].split('/')[1] + ' ' + moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'hh:mm A').format('HH:mm');
       });
     }
@@ -102,7 +110,7 @@ export class CoachCalendarPluginPage implements OnInit {
 
     const dateToCheckFor = moment(n).format('YYYY-MM-DD') + ' ' + moment(time, 'hh:mm A').format('HH:mm');
 
-    getData.forEach(date => {
+    this.getHistoryData.forEach(date => {
       let diff = moment(date['BookingDates']).diff(moment(dateToCheckFor), 'minutes');
       if (diff > 0) {
         if (this.nearestDate) {
@@ -116,9 +124,52 @@ export class CoachCalendarPluginPage implements OnInit {
     });
 
     this.appointmentDates = moment(this.nearestDate?.BookingDates).format('dddd, D MMMM YYYY, hh A')
+    this.totalRevenue=this.GetRevenueCount()
+    this.totalHours=this.GetTotalHourSpent();
   });
     // + ' - ' +  moment(this.nearestDate?.EndTime.split(' ')[1]+this.nearestDate?.EndTime.split(' ')[2], 'hh:mm A').format('HH:mm A');
   }
+
+  GetRevenueCount(){
+    let sum=0;
+    this.getHistoryData.map(x=>+x.PerSessionFee).forEach(element => {
+    sum+=element;
+    });
+    return this.getHistoryData[0].PerSessionFee_Curr+" "+sum;
+  }
+  GetTimeZoneCurrent(){
+    var timeZone = momentTimeZone.tz.guess();
+    var time = new Date();
+    var timeZoneOffset = time.getTimezoneOffset();
+    console.log(moment.tz(timeZone).zoneAbbr());
+  }
+  GetTotalHourSpent(){
+     let total=0;
+     this.getHistoryData.forEach(element => {
+      let startTime= this.datePipe.transform(element.StartTime,'hh:mm');
+      let endTime= this.datePipe.transform(element.EndTime,'hh:mm')
+      total+= this.diff(startTime,endTime);
+     });
+     return (total/60).toString()
+  }
+
+
+   diff(start, end) {
+    start = start.split(":");
+    end = end.split(":");
+    var startDate = new Date(0, 0, 0, start[0], start[1], 0);
+    var endDate = new Date(0, 0, 0, end[0], end[1], 0);
+    var diff = endDate.getTime() - startDate.getTime();
+    var hours = Math.floor(diff / 1000 / 60 / 60);
+    diff -= hours * 1000 * 60 * 60;
+    var minutes = Math.floor(diff / 1000 / 60);
+    let totalMinutes=hours*60+minutes;
+      if(totalMinutes<0){
+        return -(totalMinutes)
+      }
+    return totalMinutes;
+}
+
   toggleCalender(){
     if(this.isShowCalender){
       this.isShowCalender=false;

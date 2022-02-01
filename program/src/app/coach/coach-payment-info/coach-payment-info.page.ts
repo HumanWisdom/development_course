@@ -102,7 +102,7 @@ export class CoachPaymentInfoPage implements OnInit {
   }
 
   submitForm(eventName:string) {
-    if(this.paymentinfo.invalid || this.natinalIdback==''  || this.natinalIdFront==''){
+    if(this.paymentinfo.invalid || this.natinalIdFront==''|| !this.isNationalIdBack){
       return false;
     }
     if(eventName=='submit' && !this.isTermsAndConditionChkd.value){
@@ -126,10 +126,13 @@ export class CoachPaymentInfoPage implements OnInit {
     if(eventName == 'submit') {
       this.dataservice.coachInfo.RegSubmit = 1;
     }
+    let IsCoach:any;
+    IsCoach=true;
     this.apiservice.register( this.dataservice.coachInfo).subscribe((res) => {
       if(res=="1"){
         localStorage.setItem('coachInfo', JSON.stringify(this.dataservice.coachInfo));
         if(eventName=='submit'){
+          localStorage.setItem("IsCoach",IsCoach)
           this.router.navigate(['coach/coach-congratulations'])
         }
       }
