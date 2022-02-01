@@ -156,6 +156,9 @@ export class OnboardingService {
     return this.http.get(this.path+`/Users/${data}`)
   }
 
+  getCoachApp() :Observable<any>{
+    return this.http.get(this.path+`/ViewAppointments`)
+  }
   updateUser(data:any):Observable<any>{
     return this.http.post(this.path+'/AddUser',data)
   }
