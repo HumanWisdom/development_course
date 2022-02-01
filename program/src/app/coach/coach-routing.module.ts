@@ -57,8 +57,11 @@ const routes: Routes = [
   {
     path: 'coach-appointments-confirmed',
     loadChildren: () => import('./coach-appointment-confirmed/coach-appointment-confirmed.module').then(m=>m.CoachAppointmentConfirmedPageModule)
+  },
+  {
+    path: 'coach-bio/:id',
+    loadChildren: () => import('./coach-bio/coach-bio.module').then(m=>m.CoachBioPageModule)
   }
-
 
 ];
 
