@@ -51,4 +51,12 @@ export class  CoachService {
   addReview(data) {
     return this.http.post(this.path+`/AddAppointmentReview`, data);
   }
+
+  getCoachDetailsById(id: number): Observable<any>{
+    return this.http.get(this.path+`/GetCoach/`+ id);
+  }
+
+  getCoachReviewsById(id: number): Observable<any>{
+    return this.http.get(this.path+`/GetAppointmentReview/`+ id);
+  }
 }

@@ -35,12 +35,15 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-
+              <div *ngIf="isAPICalling && coachDetail == null">
+                Loading Coach Details.....
+              </div>
+              <div *ngIf="coachDetail != null">
               <!-- user 1 -->
               <div class="row pt10px flex_ai">
                 <div class="col-md-3 col-sm-3 col-xs-4 prelative p0">
                   <div class="prelative">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/coach_01.svg" alt="" class="p0 w100">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/{{coachDetail.ProfilePic}}" alt="" class="p0 w100">
                   </div>
                   <div class="coach_dir_user">
                     <button type="submit" class="btn btn-warning btn_dir_user">
@@ -49,8 +52,8 @@
                   </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-8">
-                  <h6 class="txt159 mt0px mb5px">
-                    USD 50/hour
+                  <h6 class="txt261 mt0px mb5px">
+                    {{coachDetail.PerSessionFee ? coachDetail.PerSessionFee : ''}} {{coachDetail.PerSessionFee_Curr? coachDetail.PerSessionFee_Curr : ''}}{{ coachDetail.PerSessionFee && coachDetail.PerSessionFee_Curr ? '/hour' : ''}}
                   </h6>
 
                   <button type="submit" class="btn btn-warning btn_book_here w100">
@@ -81,28 +84,31 @@
               <!-- user 2 -->
               <div class="row pt10px flex_ai">                
                 <div class="col-md-12 col-sm-12 col-xs-12">                  
-                  <h4 class="txt73 mb0px mt5px">
-                    Dr Madyson Banks
+                  <h4 class="txt262 mb0px mt5px">
+                    {{coachDetail.Title ? coachDetail.Title : ''}} {{coachDetail.Name ? coachDetail.Name : ''}}
                   </h4>
 
-                  <h6 class="txt61 mt0px mb0px">
-                    MD Psychology
+                  <h6 class="txt263 mt0px mb0px">
+                    
+                    {{coachDetail.Coach_Qualifications ? coachDetail.Coach_Qualifications.join(', ') : ''}}
                   </h6>
 
                   <h6 class="txt61 mt5px mtb0px pt15px">
-                    Female  |  USA  |  Experience: <span class="">5 years</span>
+                    {{coachDetail.Gender ? coachDetail.Gender : ''}}  |  {{coachDetail.Country ? coachDetail.Country : ''}}  |  Experience: <span class="txt253">{{coachDetail.WorkExp}} years</span>
                   </h6>
 
                   <div class="">
+                    <span *ngFor="let item of ratings(+coachDetail.Rating)"> 
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mr3px">
+                    </span>
+                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px"> -->
                   </div>
 
-                  <h4 class="txt162">
-                    Reviews (13)
+                  <h4 class="txt264">
+                    Reviews ({{reviewLength}})
                   </h4>
 
                   <div>
@@ -117,8 +123,8 @@
                     <h4 class="txt118 m0px">
                       Expertise
                     </h4>
-                    <h6 class="txt70 mtb5px">
-                      Depression, Anxiety, Relationships, Parenting
+                    <h6 class="txt275 mtb5px">
+                      {{coachDetail.Coach_Specializations ? coachDetail.Coach_Specializations.join(', ') : ''}}
                     </h6>
                   </div>
 
@@ -128,8 +134,8 @@
                     <h4 class="txt118 m0px">
                       Languages
                     </h4>
-                    <h6 class="txt70 mtb5px">
-                      English, Spanish
+                    <h6 class="txt275 mtb5px">
+                      {{coachDetail.Coach_Languages ? coachDetail.Coach_Languages.join(', ') : ''}}
                     </h6>
                   </div>
 
@@ -139,15 +145,18 @@
                     <h4 class="txt118 m0px mb15px">
                       Certifications
                     </h4>
-                    <h6 class="txt70">
-                      Certification Number 1
-                    </h6>
-                    <h6 class="txt70">
+                    <span *ngFor="let item of coachDetail.Coach_Certificates">
+                      <h6 class="txt276">
+                        {{item.CertificationName}}
+                      </h6>
+                    </span>
+                    
+                    <!-- <h6 class="txt276">
                       Certification Number 2
                     </h6>
-                    <h6 class="txt70">
+                    <h6 class="txt276">
                       Certification Number 3
-                    </h6>
+                    </h6> -->
                   </div>
 
                   <div>
@@ -155,66 +164,59 @@
                       Links
                     </h4>
 
-                    <h6 class="txt70 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/weblink.svg" alt="" class="p0">
-                      <span class="ml5px">
-                        www.madysonbanks.com
-                      </span>                      
+                    <span *ngFor="let item of coachDetail.Coach_Websites">
+                    <h6 class="txt277 flex_ai">
+                     
+                        <span class="ml5px">
+                          {{item}}
+                        </span>     
                     </h6>
-
-                    <h6 class="txt70 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook.svg" alt="" class="p0">
-                      <span class="ml5px">
-                        madysonbanks
-                      </span>                      
-                    </h6>
-
-                    <h6 class="txt70 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/twitter.svg" alt="" class="p0">
-                      <span class="ml5px">
-                        madysonbanks
-                      </span>                      
-                    </h6>
+                  </span>
+                 
                   </div>
 
                   <br>
 
                   <div>
                     <h4 class="txt118 m0px">
-                      Reviews (13)
+                      Reviews ({{reviewLength}})
                     </h4>                    
                   </div>
-
-                  <div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 pt10pxi">
-                      <div class="col-md-6 col-sm-6 col-xs-6 p0">
-                        <h6 class="txt143 mb0px">
-                          Ray Gunn
-                        </h6>
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 p0">
-                        <h6 class="txt137 mb0px">
-                          10 Mar 2021
-                        </h6>
-                      </div>
-                    </div>
-  
-                    <div class="">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mr3px">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
-                    </div>
-  
+                  <div *ngFor="let item of reviewDetails; let i=index">
                     <div>
-                      <p class="txt145 pt5px">
-                        Etiam est sem, fringilla eu tortor quis, bibendum molestie dolor. Duis suscipit lectus in leo dapibus, eget vehicula arcu vehicula. Nullam in felis eu nulla eleifend auctor eu sit amet
-                      </p>
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 pt10pxi">
+                        <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                          <h6 class="txt143 mb0px">
+                            {{item.ReviewedBy}}
+                          </h6>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                          <h6 class="txt137 mb0px">
+                            {{getDate(item.ReviewedDate)}}
+                          </h6>
+                        </div>
+                      </div>
+    
+                      <div class="">
+                        <span *ngFor="let item of ratings(+item.review_rating)"> 
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mr3px">
+                        </span>
+                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_bio_active.svg" class="mlr3px"> -->
+                      </div>
+    
+                      <div>
+                        <p class="txt145 pt5px">
+                          {{item.review_comment}}
+                        </p>
+                      </div>
                     </div>
                   </div>
+                 
 
-                  <div>
+                  <!-- <div>
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 pt10pxi">
                       <div class="col-md-6 col-sm-6 col-xs-6 p0">
                         <h6 class="txt143 mb0px">
@@ -270,12 +272,12 @@
                         Aenean placerat suscipit justo.
                       </p>
                     </div>
-                  </div>
+                  </div> -->
                   
                   <br>
 
                   <div>
-                    <h6 class="txt163">
+                    <h6 class="txt265">
                       View All Reviews
                     </h6>
                   </div>
@@ -285,7 +287,7 @@
               <!-- /user 2 -->
 
               <div class="pagebreak"></div>
-
+            </div>
             </form>
           </div>
         </div>
