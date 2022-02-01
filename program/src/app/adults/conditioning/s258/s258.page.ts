@@ -12,12 +12,12 @@ export class S258Page implements OnInit {
 
   bg="conditioning_overlay_w3"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/conditioning/videos/2.1.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_03.jpg"
+  videoLink=this.mediaVideo+'/adults/conditioning/videos/2.1.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/adults/conditioning/conditioning_03.jpg"
 
   title="How does conditioning shape our opinions? "
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url
@@ -113,14 +113,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/conditioning/s259'])
+        this.router.navigate(['/adults/conditioning/s259'])
         
       })
     
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s257'])
+    this.router.navigate(['/adults/conditioning/s257'])
   }
 
 }

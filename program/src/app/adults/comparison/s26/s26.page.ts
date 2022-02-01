@@ -315,7 +315,7 @@ export class S26Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
       this.router.navigate(['/comparison/s27'])
   }

@@ -13,7 +13,7 @@ export class S268Page implements OnInit {
 
   bg="conditioning_w1"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+2.3.mp3'
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.3.mp3'
   toc="conditioning/s232"
   transcriptPage="conditioning/s268t"
   title="The power of conditioning on children"
@@ -104,12 +104,12 @@ export class S268Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s269'])
+    this.router.navigate(['/adults/conditioning/s269'])
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s267'])
+    this.router.navigate(['/adults/conditioning/s267'])
  
  
   }

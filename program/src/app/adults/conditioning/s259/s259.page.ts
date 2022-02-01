@@ -14,7 +14,7 @@ export class S259Page implements OnInit {
   bg="conditioning_w4"
   hint="This could be a political opinion, or about which political leader is the best."
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -110,15 +110,15 @@ export class S259Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s260'])
+          this.router.navigate(['/adults/conditioning/s260'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s260'])
+          this.router.navigate(['/adults/conditioning/s260'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s260'])
+    this.router.navigate(['/adults/conditioning/s260'])
 
    }
    
@@ -128,7 +128,7 @@ export class S259Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s258'])
+    this.router.navigate(['/adults/conditioning/s258'])
   }
   
   ngOnDestroy(){

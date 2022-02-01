@@ -13,7 +13,7 @@ export class S271Page implements OnInit {
   bg="conditioning_w4"
   hint="You may, for example, pause and ask if you can just accept the other person as they are?"
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -107,15 +107,15 @@ export class S271Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s272'])
+          this.router.navigate(['/adults/conditioning/s272'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s272'])
+          this.router.navigate(['/adults/conditioning/s272'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s272'])
+    this.router.navigate(['/adults/conditioning/s272'])
 
    }
    
@@ -125,7 +125,7 @@ export class S271Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s270'])
+    this.router.navigate(['/adults/conditioning/s270'])
   }
   
   ngOnDestroy(){

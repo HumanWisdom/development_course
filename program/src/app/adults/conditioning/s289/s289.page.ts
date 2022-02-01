@@ -13,7 +13,7 @@ export class S289Page implements OnInit {
   bg="conditioning_w10"
   hint="Ask yourself why they did what they did. Was the same unconscious process of thinking operating in them, and does it operate in yourself?"
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -107,15 +107,15 @@ export class S289Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s290'])
+          this.router.navigate(['/adults/conditioning/s290'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s290'])
+          this.router.navigate(['/adults/conditioning/s290'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s290'])
+    this.router.navigate(['/adults/conditioning/s290'])
 
    }
    
@@ -125,7 +125,7 @@ export class S289Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s288'])
+    this.router.navigate(['/adults/conditioning/s288'])
   }
   
   ngOnDestroy(){

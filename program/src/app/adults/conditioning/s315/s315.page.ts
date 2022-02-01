@@ -12,7 +12,7 @@ export class S315Page implements OnInit {
 
   bg="conditioning_w10"
   hint=""
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -92,7 +92,7 @@ export class S315Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if(!e){
-      this.router.navigate(['/conditioning/s316'])
+      this.router.navigate(['/adults/conditioning/s316'])
   
      }
     else
@@ -114,10 +114,10 @@ export class S315Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s316'])
+          this.router.navigate(['/adults/conditioning/s316'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s316'])
+          this.router.navigate(['/adults/conditioning/s316'])
         })
      
 
@@ -132,7 +132,7 @@ export class S315Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s314'])
+    this.router.navigate(['/adults/conditioning/s314'])
   }
   
   ngOnDestroy(){

@@ -13,7 +13,7 @@ export class S262Page implements OnInit {
   bg="conditioning_w7"
   hint="Perhaps with more compassion? And an understanding of why they think that way?"
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -107,15 +107,15 @@ export class S262Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s263'])
+          this.router.navigate(['/adults/conditioning/s263'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s263'])
+          this.router.navigate(['/adults/conditioning/s263'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s263'])
+    this.router.navigate(['/adults/conditioning/s263'])
 
    }
    
@@ -125,7 +125,7 @@ export class S262Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s261'])
+    this.router.navigate(['/adults/conditioning/s261'])
   }
   
   ngOnDestroy(){

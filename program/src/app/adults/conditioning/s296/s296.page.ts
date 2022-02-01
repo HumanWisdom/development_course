@@ -13,7 +13,7 @@ export class S296Page implements OnInit {
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
  
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
@@ -137,12 +137,12 @@ export class S296Page implements OnInit {
       "OptionIDs":this.sendOption.join()})
       .subscribe(res=>console.log(res))
 
-      this.router.navigate(['/conditioning/s297'])
+      this.router.navigate(['/adults/conditioning/s297'])
 
 
   }
   prev(){
-    this.router.navigate(['/conditioning/s295'])
+    this.router.navigate(['/adults/conditioning/s295'])
 
 
   }
