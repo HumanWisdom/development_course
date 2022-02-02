@@ -102,7 +102,7 @@ export class S32008Page implements OnInit {
    this.r32008=sessionStorage.getItem("r32008")
    console.log(this.r32008)
    
-     
+   this.router.navigate(['/benefits-of-wisdom/s32009'])
       this.service.submitProgressReflection({
         "ScrNumber":this.screenNumber,
         "UserId":this.userId,
@@ -122,7 +122,7 @@ export class S32008Page implements OnInit {
 
         },
         ()=>{
-          this.router.navigate(['/benefits-of-wisdom/s32009'])
+         
         })
    
 

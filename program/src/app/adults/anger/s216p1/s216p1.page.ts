@@ -163,7 +163,7 @@ createScreen(){
         console.log(res)
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-        this.router.navigate(['/anger/s216p2'])
+       // this.router.navigate(['/anger/s216p2'])
        
      
       },
@@ -172,7 +172,7 @@ createScreen(){
       
        // this.router.navigate(['/anger/s216p1'])
       })
-    
+      this.router.navigate(['/anger/s216p2'])
 
   }
   prev(){
