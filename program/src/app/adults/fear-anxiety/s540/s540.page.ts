@@ -87,6 +87,7 @@ export class S540Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
  
+    this.router.navigate(['/fear-anxiety/s541'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,7 +103,7 @@ export class S540Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/fear-anxiety/s541'])
+    
    
  
   }

@@ -85,6 +85,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/dealing-with-death/s64061'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,7 +103,7 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/conditioning/s26406064060'])
       })
-      this.router.navigate(['/dealing-with-death/s64061'])
+     
     
 
   }

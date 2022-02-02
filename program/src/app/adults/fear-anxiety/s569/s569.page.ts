@@ -97,6 +97,8 @@ export class S569Page implements OnInit {
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/fear-anxiety/s570'])
     sessionStorage.setItem("r569",JSON.stringify(e))
    this.r569=sessionStorage.getItem("r569")
    console.log(this.r569)
@@ -121,7 +123,7 @@ export class S569Page implements OnInit {
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s570'])
+          
         })
 
   }

@@ -112,6 +112,8 @@ export class S11Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/comparison/s13'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -120,7 +122,7 @@ export class S11Page implements OnInit {
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
       .subscribe(res=>console.log(res))
-      this.router.navigate(['/comparison/s13'])
+     
 
 
   }
