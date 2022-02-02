@@ -139,7 +139,7 @@ export class S32010Page implements OnInit {
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
 
-
+this.router.navigate(['/benefits-of-wisdom/s32011'])
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
     "ScrNumber":this.screenNumber,  
@@ -149,7 +149,7 @@ this.totalTime = this.endTime - this.startTime;
     "OptionIDs":this.sendOption.join()})
     .subscribe(res=>console.log(res))
 
-    this.router.navigate(['/benefits-of-wisdom/s32011'])
+    
 
 
 }

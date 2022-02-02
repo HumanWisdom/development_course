@@ -359,9 +359,9 @@ export class S230Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/anger/s230p1'])
+        //this.router.navigate(['/anger/s230p1'])
       })
-
+      this.router.navigate(['/anger/s230p1'])
 
   }
   
