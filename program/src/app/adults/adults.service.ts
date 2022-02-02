@@ -142,4 +142,7 @@ export class AdultsService {
     
    }
 
+   getBlog(): Observable<any> {
+    return this.http.get(this.path + `/GetBlogs`)
+  }
 }
