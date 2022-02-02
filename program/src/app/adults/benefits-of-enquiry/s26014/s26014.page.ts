@@ -91,6 +91,7 @@ export class S26014Page implements OnInit {
    sessionStorage.setItem("r26014",JSON.stringify(e))
    this.r26014=JSON.parse(sessionStorage.getItem("r26014"))
   
+   this.router.navigate(['/benefits-of-enquiry/s26015'])
     this.service.submitProgressReflection({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +111,7 @@ export class S26014Page implements OnInit {
     
       },
       ()=>{
-        this.router.navigate(['/benefits-of-enquiry/s26015'])
+       
       })
     
 

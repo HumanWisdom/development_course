@@ -13,7 +13,7 @@ export class S299Page implements OnInit {
   bg="conditioning_w8"
   hint="This can make us feel comfortable but since we are never challenged, we stop growing as human beings, and our thinking can get distorted."
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -107,15 +107,15 @@ export class S299Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s300'])
+          this.router.navigate(['/adults/conditioning/s300'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s300'])
+          this.router.navigate(['/adults/conditioning/s300'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s300'])
+    this.router.navigate(['/adults/conditioning/s300'])
 
    }
    
@@ -125,7 +125,7 @@ export class S299Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s298'])
+    this.router.navigate(['/adults/conditioning/s298'])
   }
   
   ngOnDestroy(){

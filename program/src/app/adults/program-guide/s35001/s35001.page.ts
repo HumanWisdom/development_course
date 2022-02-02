@@ -29,7 +29,7 @@ export class S35001Page implements OnInit,OnDestroy {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/program_guide.jpg"
   tocColor="white"
   lastvisited = false;
-  stories: any = []
+  stories = []
 
   constructor(
     private router: Router,
@@ -68,6 +68,8 @@ export class S35001Page implements OnInit,OnDestroy {
       }
       this.stories = splitarr
     }
+    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    // this.stories = JSON.parse(this.stories)
   }
 
   ngOnInit() {

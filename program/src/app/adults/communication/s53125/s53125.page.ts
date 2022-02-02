@@ -80,6 +80,7 @@ export class S53125Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
+    this.router.navigate(['/communication/s53126'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -91,7 +92,7 @@ export class S53125Page implements OnInit,OnDestroy {
       {
         console.log(res)
       })
-    this.router.navigate(['/communication/s53126'])
+   
     
 
   }

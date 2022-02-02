@@ -90,6 +90,8 @@ export class S39013Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
    sessionStorage.setItem("r39013",JSON.stringify(e))
    this.r39013=JSON.parse(sessionStorage.getItem("r39013"))
+
+   this.router.navigate(['/awareness/s39014'])
   
     this.service.submitProgressReflection({
       "ScrNumber":this.screenNumber,
@@ -110,10 +112,10 @@ export class S39013Page implements OnInit {
     
       },
       ()=>{
-        this.router.navigate(['/awareness/s39014'])
+        //this.router.navigate(['/awareness/s39014'])
       })
     
-
+      
   
     
 

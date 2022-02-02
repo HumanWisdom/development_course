@@ -12,7 +12,7 @@ export class S281Page implements OnInit {
 
   bg="conditioning_w2"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+3.1.mp3'
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+3.1.mp3'
   title="How can we become aware of our conditioning?"
 
   toc="conditioning/s232"
@@ -105,12 +105,12 @@ export class S281Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s282'])
+    this.router.navigate(['/adults/conditioning/s282'])
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s280'])
+    this.router.navigate(['/adults/conditioning/s280'])
  
  
   }

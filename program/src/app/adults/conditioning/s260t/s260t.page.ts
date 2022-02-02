@@ -13,8 +13,8 @@ export class S260tPage implements OnInit {
   bg="conditioning_w5"
   bookmark=0
   path=this.router.url
-  audioPage="/conditioning/s260"
-  toc="/conditioning/s232"
+  audioPage="/adults/conditioning/s260"
+  toc="/adults/conditioning/s232"
   
   avDuration=localStorage.getItem("avDuration260")
   totalTime=localStorage.getItem("totalTime260")
@@ -68,9 +68,9 @@ export class S260tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/conditioning/s261'])
+    this.router.navigate(['/adults/conditioning/s261'])
   }
   prev(){
-    this.router.navigate(['/conditioning/s259'])
+    this.router.navigate(['/adults/conditioning/s259'])
   }
 }

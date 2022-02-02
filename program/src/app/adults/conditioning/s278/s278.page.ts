@@ -16,7 +16,7 @@ export class S278Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="2/4"
-  link="/adults/conditioning/s279"
+  link="/adults/adults/conditioning/s279"
   name="  #3 Responding to conditioning with wisdom "
   progressImg=""
   toc="conditioning/s232"

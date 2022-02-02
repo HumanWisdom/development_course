@@ -16,7 +16,7 @@ export class S254Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/4"
-  link="/adults/conditioning/s255"
+  link="/adults/adults/conditioning/s255"
   name="#2 The Impact of Conditioning "
   progressImg=""
   toc="conditioning/s232"

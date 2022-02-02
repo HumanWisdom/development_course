@@ -12,7 +12,7 @@ export class S290Page implements OnInit {
 
   bg="conditioning_w11"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+3.3.mp3'
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+3.3.mp3'
   title="Understanding conditioning can bring freedom from past sorrows"
 
   toc="conditioning/s232"
@@ -105,12 +105,12 @@ export class S290Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s291'])
+    this.router.navigate(['/adults/conditioning/s291'])
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s289'])
+    this.router.navigate(['/adults/conditioning/s289'])
  
  
   }

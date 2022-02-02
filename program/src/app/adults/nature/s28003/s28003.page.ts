@@ -108,7 +108,7 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/nature/s28004'])
+    // this.router.navigate(['/nature/s28004'])
    
 
   }
@@ -118,7 +118,7 @@ createScreen(){
 
   }
   ngOnDestroy(){
-
+    this.submitProgress()
   }
 
 

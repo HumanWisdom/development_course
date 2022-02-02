@@ -95,13 +95,13 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/conditioning/s235'])
+        this.router.navigate(['/adults/conditioning/s235'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/conditioning/s233'])
+    this.router.navigate(['/adults/conditioning/s233'])
 
 
   }

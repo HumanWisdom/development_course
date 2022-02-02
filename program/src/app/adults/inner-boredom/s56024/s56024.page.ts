@@ -99,7 +99,7 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s5602434'])
+        //this.router.navigate(['/adults/conditioning/s5602434'])
       })
       this.router.navigate(['/inner-boredom/s56025'])
     

@@ -123,6 +123,6 @@ export class S54003Page implements OnInit,OnDestroy {
   ngOnDestroy(){
     localStorage.setItem("totalTime54003",this.totalTime)
     localStorage.setItem("avDuration54003",this.avDuration)
- 
+    this.submitProgress()
   }
 }

@@ -42,11 +42,11 @@ export class S303Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/conditioning/s304'])
+    this.router.navigate(['/adults/conditioning/s304'])
 
   }
   prev(){
-    this.router.navigate(['/conditioning/s302'])
+    this.router.navigate(['/adults/conditioning/s302'])
 
   }
 }

@@ -50,7 +50,6 @@ export class TocTopnavComponent implements OnInit {
   }
 
   routeGuide() {
-    console.log('hello');
     this.router.navigate([`/adults/program-guide/s35001`])
   }
 

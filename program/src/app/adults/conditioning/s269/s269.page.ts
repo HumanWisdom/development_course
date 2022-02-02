@@ -12,7 +12,7 @@ export class S269Page implements OnInit {
 
   bg="conditioning_w2"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+2.4.mp3'
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.4.mp3'
 
   toc="conditioning/s232"
   transcriptPage="conditioning/s269t"
@@ -105,12 +105,12 @@ export class S269Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s270'])
+    this.router.navigate(['/adults/conditioning/s270'])
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s268'])
+    this.router.navigate(['/adults/conditioning/s268'])
  
  
   }
