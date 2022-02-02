@@ -19,8 +19,10 @@ export class CoachBioPage implements OnInit {
   coachID: number;
   coachDetail: any = null;
   isAPICalling = false;
-  reviewDetails: any = null;
+  reviewDetails: any = [];
+  reviewDetail: any = [];
   reviewLength: number = 0;
+  hideViewAll: boolean = false;
   ngOnInit() {
     this.activeRoutes.params.subscribe((res) => {
       this.coachID = +res['id'];
@@ -56,7 +58,20 @@ export class CoachBioPage implements OnInit {
     this.apiService.getCoachReviewsById(id).subscribe(res => {
       this.reviewLength = res.length;
       this.reviewDetails = res;
+      this.reviewDetail = res.slice(0,3);
+    }, error => {
+      this.reviewLength = 0;
+      this.reviewDetails = [];
+      this.reviewDetail=[];
     })
+  }
+
+  showMore() {
+    // let newLength = this.reviewDetails.length + 3;
+    if (this.reviewDetails.length >0) {
+        this.reviewDetail = this.reviewDetails;
+        this.hideViewAll = true;
+    }
   }
 
 }

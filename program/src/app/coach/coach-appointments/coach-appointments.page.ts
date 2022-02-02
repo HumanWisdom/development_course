@@ -15,16 +15,36 @@ export class CoachAppointmentsPage implements OnInit {
   upcomingDate = [];
   previousDate = [];
   isAPICalling = false;
+  finalHourse = '';
 
   constructor(private router: Router, private apiService: CoachService) { }
 
   ngOnInit() {
     this.onGetDates();
+    
   }
 
   goBack() {
     this.router.navigate(['coach/coach-customer-directory'])
   }
+
+  convertTime(res) {
+    var interval = setInterval(() => {
+     console.log('DATA');
+
+     var startTime = moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'HH:mm:ss a');
+     var endTime = moment(new Date().toLocaleTimeString(), 'HH:mm:ss a');
+     
+     // calculate total duration
+     let duration: any = moment.duration(endTime.diff(startTime));
+
+    //  console.log('TOtal DUration anfd Time are', res['BookingDates']  , duration, hours);
+    this.finalHourse = duration?._data?.hours + ':' + duration?._data?.minutes 
+    console.log('DURATIONS ARE HERES', this.finalHourse)
+    return this.finalHourse;
+    }, 1000);
+  }
+
 
   onGetDates = async () => {
     this.isAPICalling = true;
@@ -48,6 +68,9 @@ export class CoachAppointmentsPage implements OnInit {
             moment(res.StartTime.split(' ')[1] + res.StartTime.split(' ')[2], 'hh:mm A').format('HH.mm A') +
             '-' +
             moment(res.EndTime.split(' ')[1] + res.EndTime.split(' ')[2], 'hh:mm A').format('HH.mm A');
+
+           // res['Timersss'] = this.convertTime(res);
+
         });
       }
       getData.forEach(date => {

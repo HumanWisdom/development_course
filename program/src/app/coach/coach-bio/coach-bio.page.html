@@ -182,8 +182,8 @@
                       Reviews ({{reviewLength}})
                     </h4>                    
                   </div>
-                  <div *ngFor="let item of reviewDetails; let i=index">
-                    <div>
+                  <div *ngFor="let item of reviewDetail; let i=index">
+                    <div >
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 pt10pxi">
                         <div class="col-md-6 col-sm-6 col-xs-6 p0">
                           <h6 class="txt143 mb0px">
@@ -276,8 +276,8 @@
                   
                   <br>
 
-                  <div>
-                    <h6 class="txt265">
+                  <div *ngIf="!hideViewAll && reviewDetails.length >0">
+                    <h6 class="txt265" (click)="showMore()">
                       View All Reviews
                     </h6>
                   </div>

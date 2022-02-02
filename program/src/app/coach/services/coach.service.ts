@@ -59,4 +59,15 @@ export class  CoachService {
   getCoachReviewsById(id: number): Observable<any>{
     return this.http.get(this.path+`/GetAppointmentReview/`+ id);
   }
+
+  getCoachFilterLang() : Observable<any>{
+    return this.http.get(this.path+`/GetCoachFilters`);
+  }
+
+  getCoachFilters(data) {
+  
+    return this.http.post(this.path+`/GetAllCoaches_Filtered`, data);
+  }
+
+  
 }

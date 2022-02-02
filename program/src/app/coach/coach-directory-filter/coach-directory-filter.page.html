@@ -1,40 +1,41 @@
 <!-- top navigation -->
 <div class="top_nav ml0 ctopnav">
   <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
-   
-    <nav class="flex_ai">          
+
+    <nav class="flex_ai">
       <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
         <li class="">
-          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
-          </a>                  
-        </li>        
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
-        <li class="mr0px">
-          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
-            <h6 class="txt88">
-              Filter
-            </h6>            
-          </a>                  
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt=""
+              class="p0">
+          </a>
         </li>
       </ul>
-    </nav>    
-    
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <h6 class="txt88">
+              Filter
+            </h6>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
   </div>
 </div>
-<!-- /top navigation --> 
+<!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col ml0 pt_rightcol" role="main">				
+<div class="right_col ml0 pt_rightcol" role="main">
   <!-- Class -->
-  <div class="cw100p"> 
+  <div class="cw100p">
     <div class="row drow center_flex">
       <div class="col-md-6 col-sm-8 col-xs-12 p0">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form> 
+            <form [formGroup]="filterForms">
 
               <br>
 
@@ -42,13 +43,13 @@
                 <div class="col-md-8 col-sm-8 col-xs-8">
                   <h6 class="txt125 m0px">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reset.svg" alt="">
-                    <span class="ml3px">
+                    <span class="ml3px" (click)="resetForms()">
                       Reset
-                    </span>                    
+                    </span>
                   </h6>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">                  
-                  <button type="submit" class="btn btn-warning btn_apply w100">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <button type="submit" class="btn btn-warning btn_apply w100" [disabled]="filterForms.invalid || selectedValue == 0 || selectedLang.length == 0" (click)="onApplyFilter()">
                     Apply
                   </button>
                 </div>
@@ -56,15 +57,15 @@
 
               <br>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h6 class="txt260">
                     Prefered Hours
                   </h6>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                   <select class="form-control cdf_select">
                     <option>00:00</option>
@@ -97,7 +98,7 @@
                 </div>
               </div>
 
-              <hr class="hr_style_5">
+              <hr class="hr_style_5"> -->
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -108,12 +109,18 @@
               </div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory_filter.svg" class="mr3px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <ul class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block">
+                    <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}"
+                      >
+                      <i class="fa fa-star fa-10x"></i>
+                    </li>
+                  </ul>
+                  <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory_filter.svg" class="mr3px">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory_filter.svg" class="mlr3px">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory_filter.svg" class="mlr3px">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory_filter.svg" class="mlr3px">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory_filter.svg" class="mlr3px">                  
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/rating_coach_directory_filter.svg" class="mlr3px">                   -->
                 </div>
               </div>
 
@@ -131,19 +138,22 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="col-md-3 col-sm-3 col-xs-3 pl0px">
                     <div class="txt120 flex_ai">
-                      <input type="radio" value="male" id="male" name="optionsRadios"> 
+                      <input type="radio" value="male" id="male" formControlName="Gender" (click)="getGender('male')"
+                        name="Gender">
                       Male
                     </div>
-                  </div>                  
+                  </div>
                   <div class="col-md-3 col-sm-3 col-xs-3 pl0px">
                     <div class="ml-5px txt120 flex_ai">
-                      <input type="radio" value="female" id="female" name="optionsRadios"> 
+                      <input type="radio" value="female" id="female" formControlName="Gender"
+                        (click)="getGender('female')" name="Gender">
                       Female
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3 pl0px">
                     <div class="txt120 flex_ai">
-                      <input type="radio" value="any" id="any" name="optionsRadios"> 
+                      <input type="radio" value="any" formControlName="Gender" (click)="getGender('any')" id="any"
+                        name="Gender">
                       Any
                     </div>
                   </div>
@@ -163,13 +173,16 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                   <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                    <select class="form-control cdf_select_cf">
+                    <select class="form-control cdf_select_cf" formControlName="MinFees">
+                      <option *ngFor="let c of  minFees;let i=index">{{c}}</option>
+                    </select>
+                    <!-- <select class="form-control cdf_select_cf">
                       <option>00:00</option>
                       <option>Option one</option>
                       <option>Option two</option>
                       <option>Option three</option>
                       <option>Option four</option>
-                    </select>                    
+                    </select>                     -->
                   </div>
 
                   <div class="col-md-2 col-sm-2 col-xs-2 flex_ai">
@@ -179,14 +192,17 @@
                   </div>
 
                   <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                    <select class="form-control cdf_select_cf">
+                    <select class="form-control cdf_select_cf" formControlName="MaxFees">
+                      <option *ngFor="let c of  maxFees;let i=index">{{c}}</option>
+                    </select>
+                    <!-- <select class="form-control cdf_select_cf">
                       <option>00:00</option>
                       <option>Option one</option>
                       <option>Option two</option>
                       <option>Option three</option>
                       <option>Option four</option>
-                    </select>                               
-                  </div>                  
+                    </select> -->
+                  </div>
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
@@ -196,14 +212,14 @@
                     </h6>
                   </div>
 
-                  <div class="col-md-2 col-sm-2 col-xs-2 flex_ai">                    
+                  <div class="col-md-2 col-sm-2 col-xs-2 flex_ai">
                   </div>
 
                   <div class="col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                     <h6 class="txt120 mb0px">
                       Max (USD)
-                    </h6>                
-                  </div>                  
+                    </h6>
+                  </div>
                 </div>
               </div>
 
@@ -219,11 +235,14 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 dcontents">
-                  <button type="submit" class="btn btn-default btn_cdf">
-                    English
-                  </button>
+                  <span *ngFor="let item of coachLanguage">
+                    <button type="submit" class="btn btn-default btn_cdf" (click)="onLang($event)">
+                      {{item}}
+                    </button>
+                  </span>
 
-                  <button type="submit" class="btn btn-default btn_cdf">
+
+                  <!-- <button type="submit" class="btn btn-default btn_cdf">
                     Mandarin
                   </button>
 
@@ -257,12 +276,12 @@
 
                   <button type="submit" class="btn btn-default btn_cdf">
                     Indonesian
-                  </button>
+                  </button> -->
                 </div>
               </div>
 
-              <hr class="hr_style_5">
-
+              <!-- <hr class="hr_style_5"> -->
+              <!-- 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h6 class="txt274">
@@ -399,61 +418,62 @@
                 </div>
               </div>
 
-              <hr class="hr_style_5">
-
+              <hr class="hr_style_5"> -->
+              
               <div class="pagebreak"></div>
-
-            </form>              
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
 
 <!-- footer  -->
-<div class="sidebar-footer ifooter">  
+<div class="sidebar-footer ifooter">
   <div class="row center_flex">
     <div class="col-md-6 col-sm-12 col-xs-12 center_flex">
-      
+
       <a class="footer_index">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home.svg" alt="">           
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home.svg" alt="">
         <p class="mb0px">
           Home
         </p>
       </a>
-    
+
       <a class="footer_index">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt="">          
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg"
+          alt="">
         <p class="mb0px">
           Search
         </p>
       </a>
-    
-      <a class="footer_index">        
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">          
+
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg"
+          alt="">
         <p class="mb0px">
           Journal
         </p>
       </a>
-    
-      <a class="footer_index"> 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">          
+
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">
         <p class="mb0px">
           Forum
         </p>
       </a>
 
-      <a class="footer_index"> 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt="">          
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt="">
         <p class="mb0px">
           More
         </p>
       </a>
 
     </div>
-  </div>  
+  </div>
 </div>
 <!-- /footer -->

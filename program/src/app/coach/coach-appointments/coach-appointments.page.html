@@ -64,7 +64,7 @@
                     </h6>
   
                     <!-- <h6 class="txt156 m0px">
-                      4.00 PM - 5.00 PM IST
+                      4.00 PM - 5.00 PM IST  04:23
                     </h6> -->
                   </div>
   
@@ -180,6 +180,7 @@
               </div>
 
               <br>
+
               <span *ngIf="isAPICalling && previousDate.length === 0">
                 Loading Previous Appointment.....
               </span>
@@ -236,6 +237,37 @@
 
                <span *ngIf="i <= previousDate.length - 2"><hr class="hr_style_4"></span>  -->
               </div>
+              <br>
+              <div class="row ca_header">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter plr20px">
+                  <h6 class="txt154">
+                    Cancel Appointments
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <h4 class="txt69 m0px">
+                      Dr Madyson Banks
+                    </h4>
+  
+                    <h6 class="txt156 mtb5px">
+                      Credits Left: 2 hours
+                    </h6>
+                  </div>
+  
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <button type="submit" class="btn btn-warning btn_schedule_now w100">
+                      Schedule Now
+                    </button>
+                  </div>
+                </div>                
+              </div>
+              <br>
+
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <div class="col-md-7 col-sm-7 col-xs-7">
