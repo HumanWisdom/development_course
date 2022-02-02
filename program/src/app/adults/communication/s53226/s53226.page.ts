@@ -84,6 +84,8 @@ export class S53226Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/communication/s53227'])
  
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -100,7 +102,7 @@ export class S53226Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/communication/s53227'])
+   
    
  
   }

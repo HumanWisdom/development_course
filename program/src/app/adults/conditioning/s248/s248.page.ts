@@ -13,7 +13,7 @@ export class S248Page implements OnInit {
   bg="conditioning_w3"
   hint="For example, I may feel women should do all the housework, but on looking closely realise it's because my mother used to do that."
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -107,15 +107,15 @@ export class S248Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s249'])
+          this.router.navigate(['/adults/conditioning/s249'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s249'])
+          this.router.navigate(['/adults/conditioning/s249'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s249'])
+    this.router.navigate(['/adults/conditioning/s249'])
 
    }
    
@@ -125,7 +125,7 @@ export class S248Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s247'])
+    this.router.navigate(['/adults/conditioning/s247'])
   }
   
   ngOnDestroy(){

@@ -59,6 +59,7 @@ export class S53099tPage implements OnInit {
     sessionStorage.setItem("bookmark53099",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    this.router.navigate(['/communication/s53100'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -72,7 +73,7 @@ export class S53099tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/communication/s53100'])
+    
   }
   prev(){
     this.router.navigate(['/communication/s53098'])

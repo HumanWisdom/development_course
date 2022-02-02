@@ -16,7 +16,7 @@ export class S304Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="3/4"
-  link="/adults/conditioning/s305"
+  link="/adults/adults/conditioning/s305"
   name="#4 Role Play Scenario "
   progressImg=""
   toc="conditioning/s232"

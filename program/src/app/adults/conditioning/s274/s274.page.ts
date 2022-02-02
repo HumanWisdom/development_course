@@ -14,7 +14,7 @@ export class S274Page implements OnInit {
 
  
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -108,15 +108,15 @@ export class S274Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s275'])
+          this.router.navigate(['/adults/conditioning/s275'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s275'])
+          this.router.navigate(['/adults/conditioning/s275'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s275'])
+    this.router.navigate(['/adults/conditioning/s275'])
 
    }
    
@@ -126,7 +126,7 @@ export class S274Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s273'])
+    this.router.navigate(['/adults/conditioning/s273'])
   }
   
   ngOnDestroy(){

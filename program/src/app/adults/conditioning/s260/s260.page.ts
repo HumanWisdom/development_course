@@ -12,7 +12,7 @@ export class S260Page implements OnInit {
 
   bg="conditioning_w5"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+2.2.mp3'
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.2.mp3'
   toc="conditioning/s232"
   transcriptPage="conditioning/s260t"
   title="Conditioning, belief, and religion"
@@ -74,7 +74,7 @@ export class S260Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/conditioning/s259'])
+    this.router.navigate(['/adults/conditioning/s259'])
 
 
   }
@@ -95,7 +95,7 @@ export class S260Page implements OnInit {
         console.log(res)
       })
 
-    this.router.navigate(['/conditioning/s261'])
+    this.router.navigate(['/adults/conditioning/s261'])
    
 
   }

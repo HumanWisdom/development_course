@@ -14585,7 +14585,7 @@ input[type="number"] {
   line-height: 19px;
   color: #243949;
   transition: none !important;
-  min-width: 28%;
+  min-width: 0%;
   white-space: nowrap;
 }
 

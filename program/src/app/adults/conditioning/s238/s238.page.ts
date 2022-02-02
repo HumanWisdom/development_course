@@ -12,10 +12,10 @@ import {Location } from '@angular/common'
 export class S238Page implements OnInit {
 
   bg="conditioning_w5"
-  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/conditioning/audios/con+1.1.mp3"
+  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+1.2.mp3'
-  transcriptPage="/conditioning/s238t"
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+1.2.mp3'
+  transcriptPage="/adults/conditioning/s238t"
   title="Conditioning; the core of our identity"
   toc="conditioning/s232"
   
@@ -104,12 +104,12 @@ export class S238Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s239'])
+    this.router.navigate(['/adults/conditioning/s239'])
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s237'])
+    this.router.navigate(['/adults/conditioning/s237'])
  
  
   }

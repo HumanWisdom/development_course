@@ -12,7 +12,7 @@ export class S272Page implements OnInit {
   bg="conditioning_w5"
   hint="For example, my dislike of a particular community may be due to the negative press I read about them after some terrorist attacks"
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -106,15 +106,15 @@ export class S272Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s273'])
+          this.router.navigate(['/adults/conditioning/s273'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s273'])
+          this.router.navigate(['/adults/conditioning/s273'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s273'])
+    this.router.navigate(['/adults/conditioning/s273'])
 
    }
    
@@ -124,7 +124,7 @@ export class S272Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s271'])
+    this.router.navigate(['/adults/conditioning/s271'])
   }
   
   ngOnDestroy(){

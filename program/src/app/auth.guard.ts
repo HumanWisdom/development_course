@@ -57,7 +57,9 @@ export class AuthGuard implements CanActivate,OnInit {
       localStorage.setItem("token",JSON.stringify(authtoken))
       return true
      }
-    //  localStorage.setItem("fromapp", 'F')
+     if(!(localStorage.getItem("fromapp")) || localStorage.getItem("fromapp") !== 'T'){
+      localStorage.setItem("fromapp", 'F')
+     }
     let res = localStorage.getItem("isloggedin")
     let rem = localStorage.getItem("remember")
     let first = localStorage.getItem("first")
