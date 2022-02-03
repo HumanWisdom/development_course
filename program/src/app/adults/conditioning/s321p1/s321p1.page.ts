@@ -249,15 +249,15 @@ export class S321p1Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s321p2'])
+          this.router.navigate(['/adults/conditioning/s321p2'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s321p2'])
+          this.router.navigate(['/adults/conditioning/s321p2'])
         })
    }
 
    else{
-    this.router.navigate(['/conditioning/s321p2'])
+    this.router.navigate(['/adults/conditioning/s321p2'])
 
    }
    
@@ -267,7 +267,7 @@ export class S321p1Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/conditioning/s321'])
+    this.router.navigate(['/adults/conditioning/s321'])
   }
   
   ngOnDestroy(){

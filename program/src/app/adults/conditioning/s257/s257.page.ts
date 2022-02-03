@@ -13,9 +13,9 @@ export class S257Page implements OnInit {
 
   bg="conditioning_w2"
   toc="conditioning/s232"
-  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/conditioning/audios/con+1.1.mp3"
+  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+2.1.mp3'
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.1.mp3'
   transcriptPage="conditioning/s257t"
   title="Where do our opinions come from?"
 
@@ -109,7 +109,7 @@ export class S257Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s256'])
+    this.router.navigate(['/adults/conditioning/s256'])
  
  
   }

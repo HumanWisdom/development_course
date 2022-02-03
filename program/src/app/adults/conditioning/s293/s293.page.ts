@@ -13,7 +13,7 @@ export class S293Page implements OnInit {
   bg="conditioning_w2"
   hint="Try staying with it without language, and see what happens. How can you be free of your conditioning?"
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -107,15 +107,15 @@ export class S293Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s294'])
+          this.router.navigate(['/adults/conditioning/s294'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s294'])
+          this.router.navigate(['/adults/conditioning/s294'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s294'])
+    this.router.navigate(['/adults/conditioning/s294'])
 
    }
    
@@ -125,7 +125,7 @@ export class S293Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s292'])
+    this.router.navigate(['/adults/conditioning/s292'])
   }
   
   ngOnDestroy(){

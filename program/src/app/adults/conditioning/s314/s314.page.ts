@@ -12,7 +12,7 @@ export class S314Page implements OnInit {
 
   bg="conditioning_w9"
   hint=""
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   path=this.router.url
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -114,15 +114,15 @@ export class S314Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s315'])
+          this.router.navigate(['/adults/conditioning/s315'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s315'])
+          this.router.navigate(['/adults/conditioning/s315'])
         })
    }
 
    else{
-    this.router.navigate(['/conditioning/s315'])
+    this.router.navigate(['/adults/conditioning/s315'])
 
    }
    
@@ -132,7 +132,7 @@ export class S314Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s313'])
+    this.router.navigate(['/adults/conditioning/s313'])
   }
   
   ngOnDestroy(){

@@ -421,7 +421,7 @@ export class S321Page implements OnInit {
   
     }
     prev(){
-      this.router.navigate(['/conditioning/s320'])
+      this.router.navigate(['/adults/conditioning/s320'])
     }
     
     ngOnDestroy(){

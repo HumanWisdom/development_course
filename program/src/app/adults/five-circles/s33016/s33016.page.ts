@@ -186,7 +186,7 @@ receiveBookmark(e)
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s3301634'])
+        //this.router.navigate(['/adults/conditioning/s3301634'])
       })
       this.router.navigate(['/five-circles/s33017'])
     

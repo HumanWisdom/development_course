@@ -12,7 +12,7 @@ export class S264Page implements OnInit {
 
   bg="conditioning_w9"
   hint="It could determine what you regard as normal, and may want to change the other person to fit with that view."
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -106,15 +106,15 @@ export class S264Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s265'])
+          this.router.navigate(['/adults/conditioning/s265'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s265'])
+          this.router.navigate(['/adults/conditioning/s265'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s265'])
+    this.router.navigate(['/adults/conditioning/s265'])
 
    }
    
@@ -124,7 +124,7 @@ export class S264Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s263'])
+    this.router.navigate(['/adults/conditioning/s263'])
   }
   
   ngOnDestroy(){

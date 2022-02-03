@@ -12,12 +12,12 @@ export class S250Page implements OnInit {
   
   bg="conditioning_overlay_w5"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/conditioning/videos/1.3.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_01.jpg"
+  videoLink=this.mediaVideo+'/adults/conditioning/videos/1.3.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/adults/conditioning/conditioning_01.jpg"
 
    title="Understanding conditioning can dissolve conflict"
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url
@@ -124,7 +124,7 @@ createScreen(){
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s249'])
+    this.router.navigate(['/adults/conditioning/s249'])
   }
 
 }

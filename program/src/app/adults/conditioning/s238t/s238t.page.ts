@@ -12,8 +12,8 @@ export class S238tPage implements OnInit {
 
   bg="conditioning_w5"
   path=this.router.url
-  audioPage="/conditioning/s238"
-  toc="/conditioning/s232"
+  audioPage="/adults/conditioning/s238"
+  toc="/adults/conditioning/s232"
   bookmark=0
 
   avDuration=localStorage.getItem("avDuration238")
@@ -72,6 +72,6 @@ export class S238tPage implements OnInit {
    
   }
   prev(){
-    this.router.navigate(['/conditioning/s237'])
+    this.router.navigate(['/adults/conditioning/s237'])
   }
 }
