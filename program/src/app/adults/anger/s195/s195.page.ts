@@ -90,6 +90,7 @@ export class S195Page implements OnInit,OnDestroy {
   }
 
   submitProgress(e){
+    this.router.navigate(['/anger/s196'])
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -114,10 +115,10 @@ export class S195Page implements OnInit,OnDestroy {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/anger/s196'])
+          // this.router.navigate(['/anger/s196'])
         },
         ()=>{
-          this.router.navigate(['/anger/s196'])
+          // this.router.navigate(['/anger/s196'])
         })
    }
 
