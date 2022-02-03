@@ -11,13 +11,13 @@ export class S285Page implements OnInit {
 
   bg="conditioning_overlay_w6"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/conditioning/videos/3.1.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_03.jpg"
+  videoLink=this.mediaVideo+'/adults/conditioning/videos/3.1.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/adults/conditioning/conditioning_03.jpg"
 
    title="Exploring forgiveness and compassion"
   
 
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url
@@ -119,7 +119,7 @@ createScreen(){
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s284'])
+    this.router.navigate(['/adults/conditioning/s284'])
   }
 
 }

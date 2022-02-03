@@ -15,8 +15,8 @@ export class S235tPage implements OnInit {
 
   bookmark=0
   path=this.router.url
-  audioPage="/conditioning/s235"
-  toc="/conditioning/s232"
+  audioPage="/adults/conditioning/s235"
+  toc="/adults/conditioning/s232"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -80,7 +80,7 @@ export class S235tPage implements OnInit {
   }
   prev(){
    
-    this.router.navigate(['/conditioning/s234'])
+    this.router.navigate(['/adults/conditioning/s234'])
   }
 
 }

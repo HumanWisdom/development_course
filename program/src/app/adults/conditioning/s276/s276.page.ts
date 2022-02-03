@@ -74,19 +74,19 @@ export class S276Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/conditioning/s275'])
+    this.router.navigate(['/adults/conditioning/s275'])
 
 
   }
 
   goNext(){
-    this.router.navigate(['/conditioning/s253'])
+    this.router.navigate(['/adults/conditioning/s253'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

@@ -12,7 +12,7 @@ import {Location } from '@angular/common'
 export class S242Page implements OnInit {
   bg="conditioning_w9"
   hint=""
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
@@ -106,16 +106,16 @@ export class S242Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/conditioning/s243']) 
+        this.router.navigate(['/adults/conditioning/s243']) 
       },
       ()=>{
-        this.router.navigate(['/conditioning/s243'])
+        this.router.navigate(['/adults/conditioning/s243'])
       })
     
 
    }
    else{
-    this.router.navigate(['/conditioning/s243'])
+    this.router.navigate(['/adults/conditioning/s243'])
 
    }
     
@@ -123,7 +123,7 @@ export class S242Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s241'])
+    this.router.navigate(['/adults/conditioning/s241'])
   }
   
   ngOnDestroy(){

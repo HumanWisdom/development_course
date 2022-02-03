@@ -13,9 +13,9 @@ export class S249Page implements OnInit {
   bg="conditioning_w4"
   toc="conditioning/s232"
   transcriptPage="conditioning/s249t"
-  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/conditioning/audios/con+1.1.mp3"
+  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/con+1.4.mp3'
+  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+1.4.mp3'
   title="The benefits of conditioning"
 
   userId:any
@@ -108,7 +108,7 @@ export class S249Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s248'])
+    this.router.navigate(['/adults/conditioning/s248'])
  
  
   }

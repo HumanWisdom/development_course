@@ -11,11 +11,11 @@ export class S239Page implements OnInit {
 
   bg="conditioning_overlay_w6"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/conditioning/videos/1.1.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_01.jpg"
+  videoLink=this.mediaVideo+'/adults/conditioning/videos/1.1.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/adults/conditioning/conditioning_01.jpg"
 
   title="What is conditioning"
-  toc="/conditioning/s232"
+  toc="/adults/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url
@@ -117,7 +117,7 @@ createScreen(){
  
  
   prev(){
-    this.router.navigate(['/conditioning/s238'])
+    this.router.navigate(['/adults/conditioning/s238'])
   }
 
 }

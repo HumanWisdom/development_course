@@ -128,7 +128,7 @@ receiveBookmark(e)
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s3300634'])
+        //this.router.navigate(['/adults/conditioning/s3300634'])
       })
      
     
