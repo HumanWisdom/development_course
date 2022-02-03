@@ -22,7 +22,6 @@ export class CoachDirectoryFilterPage implements OnInit {
 
   ngOnInit() {
     this.getCoachFilterLang();
-    debugger
     const filterValues = window.history.state?.data?window.history.state.data.filterDatas: '';
     this.selectedValue = filterValues.Rating ? +filterValues.Rating : 0;
     this.selectedLang = filterValues.Language ? filterValues.Language : [];
