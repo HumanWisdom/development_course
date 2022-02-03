@@ -19,6 +19,7 @@ export class CoachDirectoryPage implements OnInit {
   coachList: GetCoachListDetails[] = [];
   isAPICalling = false;
   searchText: string;
+  filtData:any = [];
 
   constructor(private router: Router, private apiService: CoachService) { 
     //this.coachLists=this.coachList.filter(x=>x.CoachID>0);
@@ -29,7 +30,27 @@ export class CoachDirectoryPage implements OnInit {
   }
   ngOnInit() {
     this.onGetDates();
-    this.getCoachList();
+     if(window.history.state.data?.isFromDemos) {
+    if(window.history.state.data?.isChecked.length == 0 || window.history.state.data?.isChecked == undefined) {
+      this.coachLists = [];
+      this.filtData = window.history.state?.data?.filterDatas;
+    } else {
+      this.isAPICalling = true;
+      // this.apiService.getAllCoach().subscribe(res => {
+        
+        this.coachLists = window.history.state?.data?.isChecked;
+        this.filtData = window.history.state?.data?.filterDatas;
+        this.SetNameofCoach( this.coachLists)
+        this.isAPICalling = false;
+      // }, error => {
+      //   this.isAPICalling = false;
+      // })   
+    }
+   } else {
+      this.getCoachList();
+    }
+  
+    console.log('DDDDDDDDDDDDDDDDDDDDD', window.history.state?.data?window.history.state.data.isChecked: false);
   }
          
   setCurrencyDetails(i) {
@@ -42,7 +63,10 @@ export class CoachDirectoryPage implements OnInit {
     return finalString;
   }
  filter(){
-  this.router.navigate(['coach/coach-directory-filter'])
+   debugger
+  //  if(this.filtData.length > 0)
+   this.router.navigate(['coach/coach-directory-filter'], { state: { data: { filterDatas: this.filtData } } })
+  
 
  }
   setCoachExp(i) {
@@ -74,7 +98,7 @@ export class CoachDirectoryPage implements OnInit {
     })
   }
 SetNameofCoach(coachLists:GetCoachListDetails[]){
-  for(var i=0; i< coachLists.length;i++){
+  for(var i=0; i< coachLists?.length;i++){
         coachLists[i].Name=coachLists[i].FName+" "+coachLists[i].LName
   }
 }

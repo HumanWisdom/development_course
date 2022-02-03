@@ -18,7 +18,7 @@ export class CoachIntroductionPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.
-    subscribe(() => this.isTermsAndConditionChkd.setValue(window.history.state?.data?window.history.state.data.isChecked:false));
+    subscribe(() => this.isTermsAndConditionChkd.setValue(+window.history.state?.data?window.history.state.data.isChecked:false));
   }
 
   clicknext() {

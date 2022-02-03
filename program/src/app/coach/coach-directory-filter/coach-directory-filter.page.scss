@@ -9,8 +9,29 @@
   .rating-list li:hover ~ li, .rating-list li.selected {
     color: #ffd700;
   }
+
+  .btnBg{
+    background-color: #ffd700;
+  }
   
   .rating-list {
     display: inline-block;
     list-style: none;
   }
+
+  .btn_cdf_1 
+{
+  height: 30px;
+  margin: 0;
+  border: 1px solid #DADADA;
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;   
+  text-align: center;  
+
+  margin: 0 10px 10px 0;
+}

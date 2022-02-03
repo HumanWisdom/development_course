@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoachService } from '../services/coach.service';
 
 @Component({
@@ -15,19 +16,27 @@ export class CoachDirectoryFilterPage implements OnInit {
   maxFees: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   selectedValue: number = 0;
   public gender: string = "male";
-  selectedLang = [];
+  selectedLang: any = [];
 
-  constructor(private apiService: CoachService, private fb: FormBuilder) { }
+  constructor(private apiService: CoachService, private fb: FormBuilder, private router: Router, private activa: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCoachFilterLang();
+    debugger
+    const filterValues = window.history.state?.data?window.history.state.data.filterDatas: '';
+    this.selectedValue = filterValues.Rating ? +filterValues.Rating : 0;
+    this.selectedLang = filterValues.Language ? filterValues.Language : [];
     this.filterForms = this.fb.group({
-      Gender: ['', Validators.required],
-      MinFees: ['', Validators.required],
-      MaxFees: ['', Validators.required]
+      Gender: [filterValues.Gender ? filterValues.Gender : '', Validators.required],
+      MinFees: [filterValues.Pref_FromHrs ? +filterValues.Pref_FromHrs : '', Validators.required],
+      MaxFees: [filterValues.Pref_ToHrs ? +filterValues.Pref_ToHrs : '', Validators.required]
     })
   }
 
+  callI(item: string) {
+    debugger
+    return this.selectedLang.indexOf(item) != -1;
+  }
   getGender(value) {
     this.gender = value;
   }
@@ -38,14 +47,15 @@ export class CoachDirectoryFilterPage implements OnInit {
 
   onApplyFilter(){
     const data = {
-      "Pref_FromHrs":"10:00",
-      "Pref_ToHrs":"10:30",
+      "Pref_FromHrs":this.filterForms.value.MinFees,
+      "Pref_ToHrs":this.filterForms.value.MaxFees,
       "Rating":this.selectedValue.toString(),
       "Gender":this.filterForms.value.Gender,
       "Language": this.selectedLang
     }
-    this.apiService.getCoachFilters(data).subscribe((res) => {
+    this.apiService.getCoachFilters(data).subscribe((res: any) => {
         console.log('RESSSSSSSSSSSS', res)
+        this.router.navigate(['coach/coach-customer-directory'], { state: { data: { isChecked: res, filterDatas:data, isFromDemos: true } } })
     })
   }
 

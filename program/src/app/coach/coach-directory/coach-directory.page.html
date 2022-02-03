@@ -130,13 +130,13 @@
 
               <br>
 
-              <span *ngIf="(coachLists | coachSearch: searchText).length === 0 && coachLists.length > 0">
+              <span *ngIf="(coachLists | coachSearch: searchText).length === 0 && coachLists?.length > 0">
                 <p>No results found for "{{searchText}}".</p>
               </span>
-              <span *ngIf="isAPICalling && coachLists.length === 0">
+              <span *ngIf="isAPICalling && coachLists?.length === 0">
                 Loading Coach list.....
               </span>
-              <span *ngIf="isAPICalling === false && coachLists.length === 0">
+              <span *ngIf="isAPICalling === false && (coachLists?.length === 0 ||  coachLists == undefined)">
                 No Coach Found
               </span>
               <!-- <ng-template #noCoachs>
