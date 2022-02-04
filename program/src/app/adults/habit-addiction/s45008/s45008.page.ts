@@ -98,6 +98,7 @@ export class S45008Page implements OnInit {
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/habit-addiction/s45009'])
     sessionStorage.setItem("r45008",JSON.stringify(e))
    this.r45008=sessionStorage.getItem("r45008")
    console.log(this.r45008)
@@ -118,7 +119,7 @@ export class S45008Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/habit-addiction/s45009'])
+         
 
         },
         ()=>{

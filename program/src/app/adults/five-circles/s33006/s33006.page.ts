@@ -112,6 +112,7 @@ receiveBookmark(e)
 }
 
   submitProgress(){
+    this.router.navigate(['/five-circles/s33007'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -129,7 +130,7 @@ receiveBookmark(e)
       ()=>{
         //this.router.navigate(['/adults/conditioning/s3300634'])
       })
-      this.router.navigate(['/five-circles/s33007'])
+     
     
 
   }

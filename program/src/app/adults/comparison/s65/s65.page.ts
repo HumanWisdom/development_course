@@ -120,6 +120,8 @@ export class S65Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
+
+  this.router.navigate(['/comparison/s67'])
   //if(this.sendOption!=null)
   {
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -135,7 +137,7 @@ export class S65Page implements OnInit {
   }
     
  
-    this.router.navigate(['/comparison/s67'])
+  
 
 }
 prev(){
