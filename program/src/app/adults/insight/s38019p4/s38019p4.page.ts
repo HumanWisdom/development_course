@@ -341,6 +341,7 @@ export class S38019p4Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
+  this.router.navigate(['/insight/s38019p5'])
   //console.log(this.totalTime,"total time")
  
 
@@ -358,7 +359,7 @@ export class S38019p4Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/insight/s38019p5'])
+       
       })
 
 
