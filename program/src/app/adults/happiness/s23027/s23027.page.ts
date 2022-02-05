@@ -138,7 +138,7 @@ export class S23027Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-
+this.router.navigate(['/happiness/s23028'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -149,7 +149,7 @@ this.totalTime = this.endTime - this.startTime;
     "OptionIDs":this.sendOption.join()})
     .subscribe(res=>console.log(res))
 
-    this.router.navigate(['/happiness/s23028'])
+   
 
 
 }
