@@ -139,6 +139,7 @@ export class S63072Page implements OnInit {
   submitProgress(){
     //if(this.sendOption!=null)
     {
+      this.router.navigate(['/living-with-peace/s63073'])
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -152,7 +153,7 @@ export class S63072Page implements OnInit {
     }
       
    
-      this.router.navigate(['/living-with-peace/s63073'])
+     
 
   }
   prev(){
