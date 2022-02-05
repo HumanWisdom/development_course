@@ -169,7 +169,7 @@ export class S45015Page implements OnInit {
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
   //console.log(this.totalTime,"total time")
- 
+  this.router.navigate(['/habit-addiction/s45016'])
 
     var optionT=[this.s1]
     this.option=optionT.join()
@@ -185,7 +185,7 @@ export class S45015Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/habit-addiction/s45016'])
+        
       })
 
 

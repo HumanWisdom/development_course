@@ -84,7 +84,7 @@ export class S51006p1Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/guided-meditation/s51006p2'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -100,7 +100,7 @@ export class S51006p1Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/guided-meditation/s51006p2'])
+   
    
  
   }

@@ -23,7 +23,7 @@
 
 <div class="row center_flex">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group has-feedback p0 zi0 div_search">
-    <input type="search" class="form-control has-feedback-left h60px searchtxt_02" id="searchtxt_02" placeholder="Search Blog">
+    <input type="search" class="form-control has-feedback-left h60px searchtxt_02" [(ngModel)]="this.searchedTitle" (ngModelChange)="searchTitle()"  id="searchtxt_02" placeholder="Search Blog">
     <span class="form-control-feedback left sfeedback" aria-hidden="true">
       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/magnifying_glass_01.svg" alt="" class="">
     </span>
@@ -34,17 +34,17 @@
 <!-- content  -->
 <div class="plr10px">
   <!-- article 01 -->
-  <a routerLink="/adults/blog/blog-article">
+  <a *ngFor="let item of blogList" (click)="viewblog(item)">
     <div class="row mt40px mb15px center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_01.svg" alt="" class="img-responsive w100p br5px">
+        <img src="{{item['ImagePath']}}" alt="" class="img-responsive w100p br5px">
       </div>
     </div>
 
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
         <h4 class="mtb0px txt218">
-          Can an understanding of the nature of belief and conditioning help prevent terrorism?
+         {{item['Title']}}
         </h4>
       </div>
     </div>
@@ -52,7 +52,7 @@
     <div class="row mt10px center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
         <h4 class="mtb0px txt219 limit_characters">
-          Hi – My name is Manoj Krishna and in this blog I want to explore a new way of tackling the problem of terrorism, through self-enquiry and an
+          {{item['Story']}}
         </h4>
       </div>
     </div>
@@ -60,80 +60,12 @@
     <div class="row mt20px center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
         <h4 class="mtb0px txt220">
-          Just now
+          {{timeSince(item['CreatedDate'])}}
         </h4>
       </div>
     </div>
   </a>
   <!-- /article 01 -->
-
-  <!-- article 02 -->
-  <a>
-    <div class="row mt40px mb15px center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_02.svg" alt="" class="img-responsive w100p br5px">
-      </div>
-    </div>
-
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <h4 class="mtb0px txt218">
-          Can self-awareness help you get a job?
-        </h4>
-      </div>
-    </div>
-
-    <div class="row mt10px center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <h4 class="mtb0px txt219 limit_characters">
-          Vestibulum feugiat tellus ut velit sagittis, et commodo velit tempor. Donec ex mauris, facilisis in est ut, semper sollicitudin magna.Vestibulum feugiat
-        </h4>
-      </div>
-    </div>
-
-    <div class="row mt20px center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <h4 class="mtb0px txt220">
-          1 hour ago
-        </h4>
-      </div>
-    </div>
-  </a>
-  <!-- /article 02 -->
-
-  <!-- article 03 -->
-  <a>
-    <div class="row mt40px mb15px center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_03.svg" alt="" class="img-responsive w100p br5px">
-      </div>
-    </div>
-
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <h4 class="mtb0px txt218">
-          Climate Change
-        </h4>
-      </div>
-    </div>
-
-    <div class="row mt10px center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <h4 class="mtb0px txt219 limit_characters">
-          Vestibulum feugiat tellus ut velit sagittis, et commodo velit tempor. Donec ex mauris, facilisis in est ut, semper sollicitudin magna.Vestibulum feugiat
-        </h4>
-      </div>
-    </div>
-
-    <div class="row mt20px center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-        <h4 class="mtb0px txt220">
-          Yesterday
-        </h4>
-      </div>
-    </div>
-  </a>
-  <!-- /article 03 -->
 
   <div class="pagebreak"></div>
 </div>

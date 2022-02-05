@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-article.page.scss'],
 })
 export class BlogArticlePage implements OnInit {
+  blogList:any;
 
-  constructor() { }
+  constructor() {
+    this.blogList=JSON.parse(localStorage.getItem("blogdata"))
+   }
 
   ngOnInit() {
   }

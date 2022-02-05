@@ -300,6 +300,8 @@ export class S26Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/comparison/s27'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -317,7 +319,7 @@ export class S26Page implements OnInit {
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-      this.router.navigate(['/comparison/s27'])
+     
   }
   prev(){
     this.router.navigate(['/comparison/s25'])
