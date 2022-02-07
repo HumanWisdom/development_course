@@ -137,6 +137,7 @@ export class S57035Page implements OnInit {
  
 
   submitProgress(){
+    this.router.navigate(['/nature-of-i/s57036'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -152,7 +153,7 @@ export class S57035Page implements OnInit {
     }
       
    
-      this.router.navigate(['/nature-of-i/s57036'])
+     
 
   }
   prev(){

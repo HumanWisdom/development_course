@@ -8,9 +8,10 @@
         </a>
       </div>
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flexjc_end">
-        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright">
+        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright" (click)="likebtn()">
           <a class="">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt="" class="img-responsive">
+            <img *ngIf="this.likecount !== 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt="" class="img-responsive">
+            <img *ngIf="this.likecount === 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt="" class="img-responsive">
           </a>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright">
@@ -32,7 +33,7 @@
 <!-- content  -->
 <div class="row img_mt_01 center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
-    <img src="{{blogList['ImagePath']}}" alt="" class="img-responsive w100p br_blr_20px">
+    <img src="{{blogList['ImgPath']}}" alt="" class="img-responsive w100p br_blr_20px">
   </div>
 </div>
 
@@ -54,7 +55,8 @@
         </h4>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter p0">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt="" class="img-responsive">
+        <img *ngIf="this.likecount === 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt="" class="img-responsive">
+        <img *ngIf="this.likecount !== 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt="" class="img-responsive">
         <h4 class="mtb0px txt220 like_count">
           {{blogList['LikeCnt']}}
         </h4>
@@ -65,7 +67,7 @@
   <div class="row center_flex blog_desc">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
       <h4 class="mtb0px txt78">
-        {{blogList['Story']}}
+        {{blogList['Blog']}}
       </h4>
     </div>
   </div>
@@ -107,12 +109,12 @@
   <div class="row center_flex blog_comment">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
       <h4 class="mtb0px txt212">
-        Comments (50)
+        {{'Comments' + '(' + BlogCommentsLen + ')'}}
       </h4>
     </div>
   </div>
 
-  <div class="row center_flex blog_comment_desc">
+  <div class="row center_flex blog_comment_desc" *ngFor="let item of BlogCommentsList">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/blog_01.svg" alt="" class="img-responsive w100p">
@@ -120,56 +122,18 @@
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
         <h4 class="mtb0px txt65 tleft">
           <span class="txt143">
-            Ray Gunn
+           {{item['UpdatedBy']}}
           </span> 
-          Etiam est sem, fringilla eu tortor quis, bibendum molestie dolor. Duis suscipit lectus in leo dapibus, eget vehicula arcu vehicula. Nullam in felis eu nulla eleifend auctor eu sit amet
+          {{item['Comments']}}
           <span class="txt222">
-            6h
+            {{timeSince(item['UpdatedOn'])}}
           </span>
         </h4>
       </div>
     </div>
   </div>
 
-  <div class="row center_flex blog_comment_desc">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai">
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/blog_02.svg" alt="" class="img-responsive w100p">
-      </div>
-      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h4 class="mtb0px txt65 tleft">
-          <span class="txt143">
-            Marwin Kloet
-          </span> 
-          Donec vestibulum finibus lacinia. Praesent vel maximus arcu. Sed vestibulum
-          <span class="txt222">
-            6h
-          </span> 
-        </h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="row center_flex blog_comment_desc">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai">
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/blog_03.svg" alt="" class="img-responsive w100p">
-      </div>
-      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h4 class="mtb0px txt65 tleft">
-          <span class="txt143">
-            Trey Ott
-          </span> 
-          Aenean placerat suscipit justo
-          <span class="txt222">
-            6h
-          </span> 
-        </h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="row center_flex blog_vac">
+  <div class="row center_flex blog_vac" *ngIf="BlogCommentsListabove.length !== 0">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
       <!-- <h4 class="mtb0px txt223">
         View all comments (47)
@@ -181,12 +145,12 @@
             <h4 class="panel-title">
               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                 <h4 class="mtb0px txt223">
-                  View all comments (47)
+                  {{'View all comments' + '(' + BlogCommentsListabove.length  + ')'}}
                 </h4>
               </a>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse">
+          <div id="collapseOne" class="panel-collapse collapse" *ngFor="let item of BlogCommentsListabove">
             <div class="panel-body">
               <div class="row center_flex blog_comment_desc_01">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai p0">
@@ -196,11 +160,11 @@
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                     <h4 class="mtb0px txt65 tleft">
                       <span class="txt143">
-                        Trey Ott
+                        {{item['UpdatedBy']}}
                       </span> 
-                      Aenean placerat suscipit justo
+                      {{item['Comments']}}
                       <span class="txt222">
-                        6h
+                        {{timeSince(item['UpdatedOn'])}}
                       </span> 
                     </h4>
                   </div>
@@ -218,7 +182,8 @@
 
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-      <input type="text" class="form-control cfc4" placeholder="Leave a comment">
+      <input type="text" class="form-control cfc4" [(ngModel)]="comment" placeholder="Leave a comment">
+      <i class="fa fa-send-o" style="font-size:24px" (click)="postcomment()"></i>
     </div>
   </div>
 

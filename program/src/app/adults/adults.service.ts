@@ -145,4 +145,16 @@ export class AdultsService {
    getBlog(): Observable<any> {
     return this.http.get(this.path + `/GetBlogs`)
   }
+
+  getBlogId(BlogID): Observable<any> {
+    return this.http.get(this.path + `/GetBlogs/${BlogID}`)
+  }
+
+  likeblog(BlogID): Observable<any> {
+    return this.http.post(this.path + `/AddBlogLikes/${BlogID}`, {})
+  }
+
+  commentblog(data): Observable<any> {
+    return this.http.post(this.path + '/AddBlogComments', data)
+  }
 }

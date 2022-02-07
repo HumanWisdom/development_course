@@ -77,6 +77,7 @@ receiveAvDuration(e){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/anger/s193'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -92,7 +93,7 @@ receiveAvDuration(e){
       },
       error=>console.log(error),
       ()=>{
-        this.router.navigate(['/anger/s193'])
+        // this.router.navigate(['/anger/s193'])
       })
     
 

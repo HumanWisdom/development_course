@@ -59,6 +59,7 @@ export class S54047tPage implements OnInit {
     sessionStorage.setItem("bookmark54047",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    this.router.navigate(['/reactive-mind/s54048'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -72,7 +73,7 @@ export class S54047tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/reactive-mind/s54048'])
+   
   }
   prev(){
     this.router.navigate(['/reactive-mind/s54046'])

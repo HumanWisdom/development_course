@@ -54,6 +54,7 @@ avDuration:any
       this.bookmark=0
   }
   submitProgress(){
+    this.router.navigate(['/anger/s207'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -67,7 +68,7 @@ avDuration:any
         console.log(res)
       })
 
-    this.router.navigate(['/anger/s207'])
+    // this.router.navigate(['/anger/s207'])
   }
   previous(){
     this.router.navigate(['/anger/s205'])
