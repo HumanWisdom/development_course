@@ -96,6 +96,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/obstacles-enquiry/s43027'])
 
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,7 +113,7 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/obstacles-enquiry/s43027'])
+    
    
 
   }

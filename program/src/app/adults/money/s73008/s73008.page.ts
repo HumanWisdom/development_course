@@ -196,6 +196,7 @@ export class S73008Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
+  this.router.navigate(['/money/s73009'])
   //console.log(this.totalTime,"total time")
  
 
@@ -213,7 +214,7 @@ export class S73008Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/money/s73009'])
+        
       })
 
 
