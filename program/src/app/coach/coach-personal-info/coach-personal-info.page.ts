@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Country, State } from 'country-state-city';
@@ -6,12 +6,13 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { CoachInfo } from '../coach-model/coach-info';
 import { CoachService } from '../services/coach.service';
 import { CoachDataService } from '../services/coach-data.service';
+declare var $: any;
 @Component({
   selector: 'app-coach-personal-info',
   templateUrl: './coach-personal-info.page.html',
   styleUrls: ['./coach-personal-info.page.scss'],
 })
-export class CoachPersonalInfoPage implements OnInit {
+export class CoachPersonalInfoPage implements OnInit, AfterViewInit {
   public personalInfo: FormGroup
   public profilepic: any;
   public gender: string = "male";
@@ -39,6 +40,15 @@ export class CoachPersonalInfoPage implements OnInit {
     this.PerformInitialDataBind();
   }
 
+  ngAfterViewInit() {
+      var el = $('*[placeholder="Search"]');
+      if(el) {
+          el[0].style.fontSize = '15px';
+          el[0].style.textAlign = 'left';
+          el[0].style.height = '20px';
+      }
+  }
+
   initialForms() {
     this.personalInfo = this.formbuilder.group({
       Title: ['Mr.', [Validators.required]],
@@ -60,12 +70,13 @@ export class CoachPersonalInfoPage implements OnInit {
   PerformInitialDataBind() {
     this.dataservice.userId=+localStorage.getItem('userId');
     // this.SetCountriesData();
-    this.countries = Country.getAllCountries().map(o => new Object({ name: o.name, code: o.isoCode, phonecode: o.phonecode }));
+    this.countries = Country.getAllCountries().map(o => new Object({ name: o?.name, code: o?.isoCode, phonecode: o?.phonecode }));
     this.languageList = this.dataservice.getLanguageList().
-      map(x => new Object({ item_id: x.name, item_text: x.name }));
+      map(x => new Object({ item_id: x?.name, item_text: x?.name }));
     this.dropdownSettings = {
       idField: 'item_id',
       textField: 'item_text',
+      allowSearchFilter: true
     };
     this.SetInitialCoachInfo();
   }
@@ -83,11 +94,13 @@ export class CoachPersonalInfoPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['frameworks'], { state: { data: { isChecked: true } } })
+    this.router.navigate(['coach/coach-introduction'], { state: { data: { isChecked: true } } })
   }
-
+  IsNumeric(event: any) {
+    this.dataservice.IsNumericOnly(event);
+  }
   GetCoachDetails() {
-    this.apiservice.getCoachDetails(this.dataservice.userId).subscribe(res => {
+    this.apiservice.getCoachDetails(+localStorage.getItem('userId')).subscribe(res => {
       this.dataservice.coachInfo = res;
       if (res != null) {
         this.SetPersonalFormControlValue(res);
@@ -96,6 +109,12 @@ export class CoachPersonalInfoPage implements OnInit {
   }
 
   SetPersonalFormControlValue(res: CoachInfo) {
+    this.selectedItems = [];
+    res?.Coach_Languages?.map(res => {
+      this.selectedItems.push(
+        { item_id: res, item_text: res  }
+      );
+    });
     this.personalInfo.setValue(
       {
         Title: res.Title,
@@ -104,16 +123,16 @@ export class CoachPersonalInfoPage implements OnInit {
         Email: res.Email,
         Address: res.Address,
         City: res.City,
-        Country: res.Country,
-        State: res.State,
+        Country:res.Country==""?'Select Country':res.Country,
+        State: res.State==""?'Province / State':res.State,
         Primary_CTC: res.Primary_CTC,
         Secondary_CTC: res.Secondary_CTC,
-        Coach_Languages: res.Coach_Languages,
+        Coach_Languages: this.selectedItems,
         Phonecode: "+91",
         Code: ""
       });
       this.profilepic = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + res.ProfilePic;
-      this.changeCity(res.Country)
+      this.changeCity(res?.Country)
       this.SetPersonalInfoObservableData();
   }
 
@@ -178,10 +197,13 @@ export class CoachPersonalInfoPage implements OnInit {
   changeCity(name: any) {
     let country = this.countries.filter(x => x.name == name)[0];
     this.personalInfo.patchValue({
-      Code: country.code,
-      Phonecode: country.phonecode,
+      Code: country?.code,
+      Phonecode: country?.phonecode,
     });
-    this.state = State.getStatesOfCountry(country.code);
+    if(country?.code){
+      this.state = State.getStatesOfCountry(country?.code);
+    }
+    
   }
 
   //Save for Letter
@@ -196,8 +218,9 @@ export class CoachPersonalInfoPage implements OnInit {
   }
   //Next
   nextRoute() {
-    this.dataservice.coachInfo.Coach_Languages = this.personalInfo.get('Coach_Languages').value.map(x => x.item_id);
+   
     this.dataservice.coachInfo = Object.assign(this.dataservice.coachInfo, this.personalInfo.value);
+    this.dataservice.coachInfo.Coach_Languages = this.personalInfo.get('Coach_Languages').value.map(x => x.item_id);
     localStorage.setItem('coachInfo', JSON.stringify(this.dataservice.coachInfo));
     this.router.navigate(['coach/coach-professional-info'])
   }

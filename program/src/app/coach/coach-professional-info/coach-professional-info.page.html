@@ -41,8 +41,8 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="txt160 mb0px">
-                    Personal Information
+                  <h4 class="txt279 mb0px">
+                    Professional Information
                   </h4>
 
                   <h6 class="txt120 mtb5px">
@@ -58,7 +58,7 @@
                   *ngFor="let item of professionalInfo.controls['Coach_Qualifications'].controls; let i = index">
                   <div [formGroupName]="i">
                     <input type="text" formControlName="name" required="required" class="coach_fc_01"
-                      placeholder="Qualification">
+                      placeholder="Qualification" maxlength="60">
                       <button *ngIf="i > 0" (click)="RemoveQUalification(i)">X</button>
                   </div>
                   <span *ngIf="!professionalInfo.get('Coach_Qualifications').controls[i]?.valid && professionalInfo.get('Coach_Qualifications').controls[i]?.touched">
@@ -66,7 +66,7 @@
                   </span>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt163" (click)="addNext(0)">
+                  <h6 class="txt265" (click)="addNext(0)">
                     Add More
                   </h6>
                 </div>
@@ -84,7 +84,7 @@
                     <option>Option four</option>
                   </select> -->
                   <input type="text" required="required" formControlName="Coach_Specializations" class="form-control coach_fc_01"
-                  placeholder="Expertise">
+                  placeholder="Expertise"  maxlength="100">
                 </div>
                 <span *ngIf="!professionalInfo.get('Coach_Specializations')?.valid && professionalInfo.get('Coach_Specializations')?.touched">
                   Expertise is Required
@@ -92,8 +92,22 @@
               </div>
 
               <br>
-
               <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt274 mt0px mb5px">
+                    Work Experience
+                  </h6>
+                </div>
+              </div>
+               <div class="col-md-4 col-sm-4 col-xs-4">
+                <select 
+                  class="select2_group form-control coach_fc_01" formControlName="WorkExp">
+                  <option *ngFor="let c of  ratings(20);let i=index">{{i}}</option>
+                </select>
+              </div>
+              <br>
+
+              <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h6 class="txt158 mt0px">
                     Work Experience
@@ -105,7 +119,7 @@
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <input type="text" required="required" formControlName="InstituteName" class="coach_fc_01"
-                        placeholder="Place of Work">
+                        placeholder="Place of Work"  maxlength="100">
                     </div>
                     
                     <span *ngIf="!professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('InstituteName')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('InstituteName')?.touched">
@@ -118,27 +132,16 @@
                   <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6">
                       <select class="form-control coach_fc_01" (change)="changeCity($event, i)" formControlName="Country">
-                        <option [value]=""> Select Country</option>
-                        
+                        <option>Select Country</option>
                         <option *ngFor="let c of countries" [value]="c.name" >{{c.name}} </option>
 
                       </select>
-                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.touched">
+                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country')?.touched &&
+                      professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country').value=='Select Country'">
                         Country is Required
                       </span>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <select 
-                        class="select2_group form-control coach_fc_01" 
-                        formControlName="City">
-                        <option>City</option>
-                        <option *ngFor="let c of changeCountry(professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('Country').value, i)" [value]="c.name" >{{c.name}}</option>
-                        
-                      </select>
-                      <span *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('City')?.valid && professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('City')?.touched">
-                        City is Required
-                      </span>
-                    </div>
+                 
                   
                   
                   </div>
@@ -146,7 +149,7 @@
                   <div class="row pt30px dflex">
                     <div class="col-md-2 col-sm-2 col-xs-3">
                       <input type="text" required="required" formControlName="From_Year" class="coach_fc_01 tcenter"
-                        placeholder="Year">
+                        placeholder="Year" maxlength="4">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.required">From Year is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Year')?.errors.pattern">Enter only number.</div>
@@ -158,7 +161,7 @@
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-3 year_month">
                       <input type="text" required="required" formControlName="From_Month" class="coach_fc_01 tcenter"
-                        placeholder="Month">
+                        placeholder="Month" maxlength="2">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.required">From Month is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('From_Month')?.errors.pattern">Enter only number.</div>
@@ -169,20 +172,20 @@
                     </div>
                     
                   
-                    <div class="col-md-2 col-sm-2 col-xs-1 p0 center_flex" *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                    <div class="col-md-2 col-sm-2 col-xs-1 p0 center_flex" *ngIf="professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value == '1' ? false : true">
                       <h4 class="txt145">
                         to
                       </h4>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-3" *ngIf="!professionalInfo?.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                    <div class="col-md-2 col-sm-2 col-xs-3" *ngIf="professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value == '1' ? false : true">
                       <input type="text" required="required" formControlName="To_Year" class="coach_fc_01 tcenter"
-                        placeholder="Year">
+                        placeholder="Year" maxlength="4">
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.required">To Year is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.pattern">Enter only number.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.minlength">Min & Max Length is 4</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.maxlength">Min & Max Length is 4</div>
-                          
+                          <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year')?.errors.max">Minimum year is {{ currentYears }} </div>
                         </span>
 
                         <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year').errors?.error">
@@ -190,9 +193,10 @@
                     </div>
 
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-3 year_month" *ngIf="!professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value">
+                    <div class="col-md-2 col-sm-2 col-xs-3 year_month" *ngIf="professionalInfo.get('Coach_WorkExp')?.controls[i]?.get('IsCurrent')?.value == '1' ? false : true">
                       <input type="text" required="required" formControlName="To_Month" class="coach_fc_01 tcenter"
-                        placeholder="Month">
+                        placeholder="Month" maxlength="2">
+                        <span *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.touched && (professionalInfo.get('Coach_WorkExp').controls[i].get('To_Year').value == currentYears && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month').value > currentMonth) ">Month should not be grater than {{currentMonth}}</span>
                         <span *ngIf="!professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.valid && professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.touched">
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.required">From Month is required.</div>
                           <div *ngIf="professionalInfo.get('Coach_WorkExp').controls[i].get('To_Month')?.errors.pattern">Enter only number.</div>
@@ -210,7 +214,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="checkbox">
                         <label class="coach_check mt0px">
-                          <input type="checkbox" name="remember" formControlName="IsCurrent" (change)="isCurrentWorking($event, i)"/>
+                          <input type="checkbox" name="remember" formControlName="IsCurrent" (change)="isCurrentWorking($event.target.checked, i)"/>
                           <span class="">
                             <span class="txt65 pl0_3rem">
                               I currently work here
@@ -234,25 +238,23 @@
                     Add more Work Experience
                   </h6>
                 </div>
-              </div>
+              </div> -->
 
               <br>
-
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt158 mt0px mb5px">
+                  <h6 class="txt274 mt2px mb5px">
                     Certifications
                   </h6>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h6 class="txt120 mtb0px">
-                    In order to be a coach on this platform, it is mandatory to be certified by the Human Wisdom
-                    Program.
-                    <span class="txt155">
-                      Find out more about Human Wisdom Coach Certification here
+                    In order to be a coach on this platform, it is mandatory to be certified by the HumanWisdom
+                    Project.
+                    <span class="txt280">
+                      Find out more about HumanWisdom Coach Certification here
                     </span>
                   </h6>
                 </div>
@@ -264,23 +266,29 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0" formArrayName="Coach_Certificates" *ngFor="let item of professionalInfo.controls['Coach_Certificates'].controls; let i = index">
                   <div [formGroupName]="i">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                      <input type="text" id="{{i + 'text'}}" [value]="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value" required="required" class="coach_fc_01" placeholder="Certification"  readonly>
+                      <input type="text" id="{{i + 'text'}}" 
+                      [value]="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value" 
+                      required="required" class="coach_fc_01" placeholder="Certification"  readonly>
                       <input type="file" id="{{i + 'file'}}" required="required"
-                       class="coach_fc_01" placeholder="Certification" (change)="handleFileInput($event, i + 'text')" style="visibility: hidden; width: 0px; height: 0px;">
-                      
+                       class="coach_fc_01" placeholder="Certification" (change)="handleFileInput($event, i + 'text', i)" style="visibility: hidden; width: 0px; height: 0px;">
                     </div>
+                   
                     <div class="col-md-4 col-sm-4 col-xs-4">
                       <button type="submit" (click)="clickuploadimage(i + 'file')"
                         class="btn btn-warning btn_upload w100">
                         Upload
                       </button>
+                     
                     </div>
+                    <span *ngIf="professionalInfo.get('Coach_Certificates').controls[i].get('CertificationName')?.value==''">
+                      Please Uplaod Certificate
+                    </span>
                   </div>
                   <button *ngIf="i > 0" (click)="RemoveCertificate(i)">X</button>
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt163" (click)="addNext(2)">
+                  <h6 class="txt265" (click)="addNext(2)">
                     Add More
                   </h6>
                 </div>
@@ -290,7 +298,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt158 mt0px mb5px">
+                  <h6 class="txt274 mt0px mb5px">
                     Links
                   </h6>
                 </div>
@@ -301,7 +309,7 @@
               <div class="row">
                 <div formArrayName="Coach_Websites" *ngFor="let item of professionalInfo.controls['Coach_Websites'].controls; let i = index">
                   <div class="col-md-12 col-sm-12 col-xs-12" [formGroupName]="i">
-                    <input type="text" formControlName="name" required class="coach_fc_01" placeholder="Website">
+                    <input type="text" formControlName="name" required class="coach_fc_01" placeholder="Website" maxlength="100">
                   </div>
                   <span *ngIf="!professionalInfo.get('Coach_Websites').controls[i].get('name')?.valid && professionalInfo.get('Coach_Websites').controls[i].get('name')?.touched">
                     <div *ngIf="professionalInfo.get('Coach_Websites').controls[i].get('name')?.errors.required">Link is required.</div>
@@ -310,7 +318,7 @@
                   <button *ngIf="i > 0" (click)="RemoveLinks(i)">X</button>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt163 mb5px" (click)="addNext(3)">
+                  <h6 class="txt265 mb5px" (click)="addNext(3)">
                     Add More
                   </h6>
 

@@ -13,12 +13,15 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
 
   wisdomstoriesbottom = [];
 
+  enablewisdomstory = false
+
   constructor(private router: Router) { 
     
   }
 
   ngOnInit() {
     if(this.wisdomstories.length >= 2) {
+      this.enablewisdomstory = true
       let first = []
       this.wisdomstories.forEach((d, i) => {
         if(i !== 0 && i !== 1) {

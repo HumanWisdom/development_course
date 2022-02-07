@@ -600,4 +600,9 @@
     {
         max-width: 25% !important;
     }
+
+    .cpr2rem 
+    {
+        padding-right: 2rem;
+    }
 }

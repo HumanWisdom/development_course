@@ -1,6 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import {
+  getSupportedInputTypes,
+  Platform,
+  supportsPassiveEventListeners,
+  supportsScrollBehavior,
+} from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-toc-topnav',
@@ -8,22 +14,21 @@ import { OnboardingService } from 'src/app/onboarding/onboarding.service';
   styleUrls: ['./toc-topnav.component.scss'],
 })
 export class TocTopnavComponent implements OnInit {
+  supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
+  supportsPassiveEventListeners = supportsPassiveEventListeners();
+  supportsScrollBehavior = supportsScrollBehavior();
+
   isloggedIn = false;
   name = ''
   roleid = 0
   url = '';
   subscriber= false;
-
   @Input()
   enableplaystore = true
-
-  constructor(private router: Router, private Onboardingservice: OnboardingService) {
+   IsCoach:boolean=false;
+  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
-    let sub: any = localStorage.getItem("Subscriber")
-    if(sub === '1' || sub === 1) {
-      this.subscriber = true;
-    }
     this.name = localStorage.getItem('name');
     if(userid === 'T') {
       this.isloggedIn = true
@@ -31,16 +36,26 @@ export class TocTopnavComponent implements OnInit {
     let userId=JSON.parse(localStorage.getItem("userId"))
     this.Onboardingservice.getuser(userId).subscribe((res)=>{
       let userdetail = res[0];
+      debugger
       this.url = userdetail['UserImagePath'].split('\\')[1] 
     })
    }
 
   ngOnInit() {
+    this.IsCoach=localStorage.getItem('IsCoach').toString()=='true'?true:false
+    setTimeout(() => {
+      let sub: any = localStorage.getItem("Subscriber")
+    if(sub === '1' || sub === 1) {
+      this.subscriber = true;
+    }
+    }, 5000)
   }
 
-  routeGuide(value: any) {
-
+  routeGuide() {
+    this.router.navigate([`/adults/program-guide/s35001`])
   }
+
+  
 
   getevent() {
     this.name = localStorage.getItem('name');

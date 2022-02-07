@@ -10,7 +10,7 @@ import {Location } from '@angular/common';
 })
 export class WisdomShortsS08Page implements OnInit {
 
-  bg="red_pink_w1"
+  bg="red_pink_w8"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.8.mp4'
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/wisdom_shorts/wisdom_shorts_08.jpg"
@@ -100,7 +100,7 @@ export class WisdomShortsS08Page implements OnInit {
       this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
       localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
     })
-    this.router.navigate(['/adults/wisdom-shorts'])
+    this.router.navigate(['/adults/wisdom-shorts/wisdom-shorts-s09'])
   }
 
   prev(){

@@ -18,7 +18,7 @@ export interface CoachInfo {
     PayPalID:              string;
     NationalID_Front:      string;
     NationalID_Back:       string;
-    Coach_WorkExp:         CoachWorkExp[];
+    WorkExp:               number;
     Coach_Certificates:    CoachCertificate[];
     Coach_Specializations: string[];
     Coach_Languages:       string[];
@@ -26,20 +26,10 @@ export interface CoachInfo {
     Coach_Qualifications:  string[];
     NationalID_BackImgPath: string;
     NationalID_FrontImgPath:string;
+    RegSubmit: number;
 }
 
 export interface CoachCertificate {
     CertificationName: string;
     Certificates:      string;
-}
-
-export interface CoachWorkExp {
-    InstituteName: string;
-    City:          string;
-    Country:       string;
-    From_Year:     string;
-    From_Month:    string;
-    To_Year:       string;
-    To_Month:      string;
-    IsCurrent:     string;
 }

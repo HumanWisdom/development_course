@@ -68,6 +68,7 @@ import { TocHeaderComponent } from '../shared/component/toc-header/toc-header.co
 import { TocTopnavComponent } from '../shared/component/toc-topnav/toc-topnav.component';
 import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project.component';
 import { ModuleEndVideosComponent } from './component/module-end-videos/module-end-videos.component';
+import { PlatformModule } from '@angular/cdk/platform';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -138,6 +139,7 @@ import { ModuleEndVideosComponent } from './component/module-end-videos/module-e
     NgxCircularPlayerModule,
     NgxSliderModule,
     RouterModule,
+    PlatformModule,
     ShareButtonsModule.withConfig({
       debug:true
      }),

@@ -26,6 +26,22 @@ const routes: Routes = [
     path: 'coach-congratulations',
     loadChildren: () => import('./coach-congratulations/coach-congratulations.module').then( m => m.CoachCongratulationsPageModule)
   },
+  {
+    path: 'coach-calendar-plugin',
+    loadChildren: () => import('./coach-calendar-plugin/coach-calendar-plugin.module').then( m => m.CoachCalendarPluginPageModule)
+  },
+  {
+    path: 'coach-history-date',
+    loadChildren: () => import('./coach-history-date/coach-history-date.module').then( m => m.CoachHistoryDatePageModule)
+  },
+  {
+    path: 'coach-history-patient-name',
+    loadChildren: () => import('./coach-history-patient-name/coach-history-patient-name.module').then( m => m.CoachHistoryPatientNamePageModule)
+  },
+  {
+    path: 'coach-history-revenue',
+    loadChildren: () => import('./coach-history-revenue/coach-history-revenue.module').then( m => m.CoachHistoryRevenuePageModule)
+  }
 
 
 ];

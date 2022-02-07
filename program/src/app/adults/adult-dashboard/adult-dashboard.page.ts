@@ -168,9 +168,17 @@ socialFirstName:any
       let authtoken=JSON.parse(localStorage.getItem("token"))
       let app= localStorage.getItem("fromapp")
       if(authtoken && app && app !== 'F') {
+        localStorage.setItem('socialLogin', 'T');
         this.service.verifytoken(authtoken).subscribe((res) => {
           console.log(res)
           if(res) {
+            this.enablebanner = false
+            localStorage.setItem("email", res['Email'])
+            localStorage.setItem("name", res['Name'])
+            let namedata = localStorage.getItem('name').split(' ')
+            localStorage.setItem("FnName", namedata[0])
+            localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+            this.socialLogin()
           }else {
            this.router.navigate(['/onboarding/login'])
           }
@@ -191,12 +199,22 @@ socialFirstName:any
         },
         ()=>{
         }); 
+
+        let sub: any = localStorage.getItem('Subscriber')
+        let res = localStorage.getItem("isloggedin")
+        if(sub && sub === '0' && res === 'T') {
+            this.firstpage = false
+            this.thirdpage = true;
+            let namedata = localStorage.getItem('name').split(' ')
+            this.modaldata['email'] = localStorage.getItem('email');
+            this.modaldata['firstname'] = namedata[0];
+            this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+        }
       
       }
 
   ngOnInit() {
     localStorage.setItem('cicd', 'T')
-    if(localStorage.getItem('enablebanner') === 'F') this.enablebanner = false
     let userid = localStorage.getItem('isloggedin');
     let rem = localStorage.getItem('remember');
     let guest = localStorage.getItem('guest');
@@ -223,6 +241,11 @@ socialFirstName:any
         this.fromapplogin(authtoken);
       }
       
+    }
+
+    if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.getProgress()
     }
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
@@ -771,17 +794,29 @@ socialFirstName:any
         this.loginResponse=res
         this.userId = res.UserId
         console.log(this.loginResponse)
+              localStorage.setItem('guest', 'F');
+              localStorage.setItem("remember", 'T')
+              localStorage.setItem('socialLogin', 'T');
+              localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+              localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+              localStorage.setItem("video",JSON.stringify(this.video))
+              localStorage.setItem("audio",JSON.stringify(this.audio))
+              localStorage.setItem('btnclick', 'F')
+              localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+              localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+              localStorage.setItem("userId",JSON.stringify(this.userId))
+              localStorage.setItem("email", this.socialEmail)
+              localStorage.setItem("FnName", this.socialFirstName)
+              localStorage.setItem("RoleID",JSON.stringify(res.RoleID))
+              localStorage.setItem("LName", this.socialLastName)
+              localStorage.setItem("pswd", '')
+              localStorage.setItem("name", this.loginResponse.Name)
+              localStorage.setItem("first", 'T')
         this.isSubscribe = res.Subscriber === 0 ? true : false;
-        let guest = localStorage.getItem('guest');
-        if(guest === 'T') localStorage.setItem('guest', 'F')
-        sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
         localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-        localStorage.setItem("token",JSON.stringify(res.access_token))
-        localStorage.setItem("Subscriber", res.Subscriber)
-        localStorage.setItem("userId",JSON.stringify(this.userId))
         localStorage.setItem("email", socialEmail)
         localStorage.setItem("pswd", '')
-        localStorage.setItem("name", res.Name)
         this.name = res.Name
         this.getProgress()
         this.freescreens();
@@ -1556,7 +1591,7 @@ socialFirstName:any
         }
         // /continue where you left
         sessionStorage.setItem("pgResume",pgResume)
-        pgResume=res.lastVisitedScreen
+        pgResume="s"+res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
     error=>{
@@ -1605,7 +1640,8 @@ socialFirstName:any
           localStorage.setItem("lastvisited", 'T')
         }
         // /continue where you left
-        this.router.navigate([`/adults/nature/${natureR}`])
+        sessionStorage.setItem("natureR",natureR)      
+       
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
     error=>{
@@ -1614,7 +1650,7 @@ socialFirstName:any
     ()=>{
       if(cont=="1")
       {
-        sessionStorage.setItem("natureR",natureR)        
+        this.router.navigate([`/adults/nature/${natureR}`])
       }
       else
       this.router.navigate([`/adults/nature/s28001`])

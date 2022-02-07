@@ -134,10 +134,6 @@ export class S42000Page implements OnInit,OnDestroy {
 
   }
   ngOnDestroy(){
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
-    this.submitProgress()
 
 
 
