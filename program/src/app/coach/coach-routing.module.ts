@@ -41,8 +41,36 @@ const routes: Routes = [
   {
     path: 'coach-history-revenue',
     loadChildren: () => import('./coach-history-revenue/coach-history-revenue.module').then( m => m.CoachHistoryRevenuePageModule)
+  } ,
+  {
+    path: 'coach-customer-introduction',
+    loadChildren: () => import('./coach-customer-introduction/coach-customer-introduction.module').then( m => m.CoachCustomerIntroductionPageModule)
+  },
+  {
+    path: 'coach-customer-directory',
+    loadChildren: () => import('./coach-directory/coach-directory.module').then(m=>m.CoachDirectoryPageModule)
+  },
+  {
+    path: 'coach-appointments',
+    loadChildren: () => import('./coach-appointments/coach-appointments.module').then(m=>m.CoachAppointmentsPageModule)
+  },
+  {
+    path: 'coach-appointments-confirmed',
+    loadChildren: () => import('./coach-appointment-confirmed/coach-appointment-confirmed.module').then(m=>m.CoachAppointmentConfirmedPageModule)
+  },
+  {
+    path: 'coach-bio/:id',
+    loadChildren: () => import('./coach-bio/coach-bio.module').then(m=>m.CoachBioPageModule)
+  },
+  {
+    path: 'coach-directory-filter',
+    loadChildren: () => import('./coach-directory-filter/coach-directory-filter.module').then(m=>m.CoachDirectoryFilterPageModule)
+  },
+  {
+    path: 'coach-review/:id',
+    loadChildren: () => import('./coach-review/coach-review.module').then(m=>m.CoachReviewPageModule)
   }
-
+  
 
 ];
 

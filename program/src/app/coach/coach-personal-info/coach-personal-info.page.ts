@@ -63,7 +63,8 @@ export class CoachPersonalInfoPage implements OnInit, AfterViewInit {
       Secondary_CTC: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10,15}$")]],
       Coach_Languages: ['', [Validators.required]],
       Code: ['', [Validators.required]],
-      Phonecode: ['', [Validators.required]]
+      Phonecode: ['', [Validators.required]],
+      Description:['', [Validators.required]]
     })
   }
 
@@ -129,7 +130,8 @@ export class CoachPersonalInfoPage implements OnInit, AfterViewInit {
         Secondary_CTC: res.Secondary_CTC,
         Coach_Languages: this.selectedItems,
         Phonecode: "+91",
-        Code: ""
+        Code: "",
+        Description:res.Description
       });
       this.profilepic = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + res.ProfilePic;
       this.changeCity(res?.Country)

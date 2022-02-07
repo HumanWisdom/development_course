@@ -39,4 +39,35 @@ export class  CoachService {
   getAppointmentHistory() : Observable<any>{
     return this.http.get(this.path+`/AppointmentsHistory`);
   }
+
+  getUpComingAppointment() : Observable<any>{
+    return this.http.get(this.path+`/ViewAppointments`);
+  }
+
+  getAllCoach() : Observable<any>{
+    return this.http.get(this.path+`/GetAllCoaches`);
+  }
+
+  addReview(data) {
+    return this.http.post(this.path+`/AddAppointmentReview`, data);
+  }
+
+  getCoachDetailsById(id: number): Observable<any>{
+    return this.http.get(this.path+`/GetCoach/`+ id);
+  }
+
+  getCoachReviewsById(id: number): Observable<any>{
+    return this.http.get(this.path+`/GetAppointmentReview/`+ id);
+  }
+
+  getCoachFilterLang() : Observable<any>{
+    return this.http.get(this.path+`/GetCoachFilters`);
+  }
+
+  getCoachFilters(data) {
+  
+    return this.http.post(this.path+`/GetAllCoaches_Filtered`, data);
+  }
+
+  
 }

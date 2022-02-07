@@ -36,7 +36,6 @@ export class TocTopnavComponent implements OnInit {
     let userId=JSON.parse(localStorage.getItem("userId"))
     this.Onboardingservice.getuser(userId).subscribe((res)=>{
       let userdetail = res[0];
-      debugger
       this.url = userdetail['UserImagePath'].split('\\')[1] 
     })
    }
@@ -50,7 +49,16 @@ export class TocTopnavComponent implements OnInit {
     }
     }, 5000)
   }
-
+  GetCoach(){
+    this.Onboardingservice.getCoachApp().subscribe((res)=>{
+     let data=res;
+     if(data.length==0){
+      this.router.navigate([`/coach/coach-customer-introduction`])
+     }else{
+      this.router.navigate(['coach/coach-customer-directory'])
+     }
+    })
+  }
   routeGuide() {
     this.router.navigate([`/adults/program-guide/s35001`])
   }

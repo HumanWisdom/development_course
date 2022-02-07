@@ -1,0 +1,159 @@
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit">
+
+    <nav class="flex_ai">
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt=""
+              class="p0">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">
+        <li class="mr0px">
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <h6 class="txt88">
+              Review
+            </h6>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col ml0 coach_pt" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row drow center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <br>
+
+              <div class="row mrate_apps">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt253 mtb0px">
+                    How would you rate your appointment with this coach?
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <ul class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block">
+                    <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}">
+                      <i class="fa fa-star fa-10x"></i>
+                    </li>
+                  </ul>
+                  <!-- <i class="fa fa-star"></i>
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_white.svg" alt="" class="pr10px">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_white.svg" alt="" class="pr10px">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_white.svg" alt="" class="pr10px">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_white.svg" alt="" class="pr10px">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_white.svg" alt="" class="pr10px"> -->
+                </div>
+              </div>
+
+              <div class="row lar">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt253 mtb0px tleft">
+                    Leave a review
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 prelative">
+                  <!-- <div class="placeholder_odiv_coach_review">
+                    <h4 class="txt236">
+                      Type here...
+                    </h4>
+                  </div> -->
+                  <textarea  id="comment" rows="4" cols="50" required="required" class="txt236" style="min-width: 100%"
+                    placeholder="Type here..." maxlength="256" name="userReview" [(ngModel)]="userReview" #ctrl="ngModel"></textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="pt40px">
+                    <button type="submit" class="btn btn-warning btn_vaas w100" (click)="onSave()" [disabled]="(userReview == '') || (selectedValue == undefined || selectedValue == '')">
+                      Submit
+                    </button>
+                  </div>
+
+                  <a>
+                    <h6 class="txt125 td_underline pt30px tcenter">
+                      Skip
+                    </h6>
+                  </a>
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="sidebar-footer ifooter">
+  <div class="row center_flex">
+    <div class="col-md-6 col-sm-12 col-xs-12 center_flex">
+
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home.svg" alt="">
+        <p class="mb0px">
+          Home
+        </p>
+      </a>
+
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg"
+          alt="">
+        <p class="mb0px">
+          Search
+        </p>
+      </a>
+
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg"
+          alt="">
+        <p class="mb0px">
+          Journal
+        </p>
+      </a>
+
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg" alt="">
+        <p class="mb0px">
+          Forum
+        </p>
+      </a>
+
+      <a class="footer_index">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt="">
+        <p class="mb0px">
+          More
+        </p>
+      </a>
+
+    </div>
+  </div>
+</div>
+<!-- /footer -->
