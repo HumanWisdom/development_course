@@ -84,7 +84,7 @@ export class S55049Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/self-interest/s55050'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -100,7 +100,7 @@ export class S55049Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/self-interest/s55050'])
+   
    
  
   }

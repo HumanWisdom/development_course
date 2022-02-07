@@ -341,6 +341,7 @@ export class S483p1Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
+  this.router.navigate(['/self-esteem/s483p2'])
   //console.log(this.totalTime,"total time")
  
 
@@ -358,7 +359,7 @@ export class S483p1Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/self-esteem/s483p2'])
+       
       })
 
 
