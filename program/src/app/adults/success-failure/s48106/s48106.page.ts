@@ -234,16 +234,16 @@ export class S48106Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/success-failure/s48107'])
+          this.router.navigate(['/adults/success-failure/s48107'])
         },
         ()=>{
-          this.router.navigate(['/success-failure/s48107'])
+          this.router.navigate(['/adults/success-failure/s48107'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/success-failure/s48105'])
+    this.router.navigate(['/adults/success-failure/s48105'])
 
   }
   ngOnDestroy(){

@@ -105,10 +105,10 @@ export class S415Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/criticism/s416'])
+        this.router.navigate(['/adults/criticism/s416'])
       },
       ()=>{
-        this.router.navigate(['/criticism/s416'])
+        this.router.navigate(['/adults/criticism/s416'])
       })
     
 
@@ -118,7 +118,7 @@ export class S415Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/criticism/s414'])
+    this.router.navigate(['/adults/criticism/s414'])
   }
   
   ngOnDestroy(){

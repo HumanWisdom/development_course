@@ -97,13 +97,13 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/criticism/s376'])
+        this.router.navigate(['/adults/criticism/s376'])
       })
     
  
   }
   prev(){
-    this.router.navigate(['/criticism/s374'])
+    this.router.navigate(['/adults/criticism/s374'])
  
  
   }

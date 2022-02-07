@@ -92,7 +92,7 @@ submitProgress(){
  
   this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  this.router.navigate(['/criticism/s379'])
+  this.router.navigate(['/adults/criticism/s379'])
   this.service.submitProgressAv({
     "ScrNumber":this.screenNumber,
     "UserId":this.userId,
@@ -113,7 +113,7 @@ submitProgress(){
 
 }
 prev(){
-  this.router.navigate(['/criticism/s377'])
+  this.router.navigate(['/adults/criticism/s377'])
 
 }
 ngOnDestroy(){

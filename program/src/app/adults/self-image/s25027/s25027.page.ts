@@ -100,12 +100,12 @@ export class S25027Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/self-image/s25028'])
+    this.router.navigate(['/adults/self-image/s25028'])
    
  
   }
   prev(){
-    this.router.navigate(['/self-image/s25026'])
+    this.router.navigate(['/adults/self-image/s25026'])
  
  
   }

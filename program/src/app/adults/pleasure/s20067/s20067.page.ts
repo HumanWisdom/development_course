@@ -87,7 +87,7 @@ export class S20067Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/pleasure/s20068'])
+    this.router.navigate(['/adults/pleasure/s20068'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +108,7 @@ export class S20067Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/pleasure/s20066'])
+    this.router.navigate(['/adults/pleasure/s20066'])
  
  
   }

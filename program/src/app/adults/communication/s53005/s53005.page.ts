@@ -91,7 +91,7 @@ export class S53005Page implements OnInit {
    sessionStorage.setItem("r53005",JSON.stringify(e))
    this.r53005=JSON.parse(sessionStorage.getItem("r53005"))
   
-   this.router.navigate(['/communication/s53006'])
+   this.router.navigate(['/adults/communication/s53006'])
     this.service.submitProgressReflection({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,7 +107,7 @@ export class S53005Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/communication/s53006'])
+        this.router.navigate(['/adults/communication/s53006'])
     
       },
       ()=>{
@@ -121,7 +121,7 @@ export class S53005Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/communication/s53004'])
+    this.router.navigate(['/adults/communication/s53004'])
   }
   
   ngOnDestroy(){

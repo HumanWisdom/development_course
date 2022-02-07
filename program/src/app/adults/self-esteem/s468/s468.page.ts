@@ -63,7 +63,7 @@ export class S468Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/self-esteem/s469'])
+    this.router.navigate(['/adults/self-esteem/s469'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -84,7 +84,7 @@ export class S468Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/self-esteem/s467'])
+    this.router.navigate(['/adults/self-esteem/s467'])
   }
 
   ngOnDestroy(){

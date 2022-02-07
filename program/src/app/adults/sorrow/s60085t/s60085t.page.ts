@@ -73,10 +73,10 @@ export class S60085tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/sorrow/s60086'])
+    this.router.navigate(['/adults/sorrow/s60086'])
   }
   prev(){
-    this.router.navigate(['/sorrow/s60084'])
+    this.router.navigate(['/adults/sorrow/s60084'])
   }
 
 

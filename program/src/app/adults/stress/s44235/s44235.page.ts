@@ -359,14 +359,14 @@ export class S44235Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/stress/s44236'])
+        this.router.navigate(['/adults/stress/s44236'])
       })
 
 
   }
   
   prev(){
-    this.router.navigate(['/stress/s44234'])
+    this.router.navigate(['/adults/stress/s44234'])
 
   }
   ngOnDestroy(){

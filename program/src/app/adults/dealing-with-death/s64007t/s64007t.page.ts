@@ -60,7 +60,7 @@ export class S64007tPage implements OnInit {
     sessionStorage.setItem("bookmark64007",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/dealing-with-death/s64008'])
+    this.router.navigate(['/adults/dealing-with-death/s64008'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -77,7 +77,7 @@ export class S64007tPage implements OnInit {
    
   }
   prev(){
-    this.router.navigate(['/dealing-with-death/s64006'])
+    this.router.navigate(['/adults/dealing-with-death/s64006'])
   }
 
 

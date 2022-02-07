@@ -118,18 +118,18 @@ export class S57036Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/nature-of-i/s57037'])
+          this.router.navigate(['/adults/nature-of-i/s57037'])
 
         },
         ()=>{
-          this.router.navigate(['/nature-of-i/s57037'])
+          this.router.navigate(['/adults/nature-of-i/s57037'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/nature-of-i/s57035'])
+    this.router.navigate(['/adults/nature-of-i/s57035'])
   }
   
   ngOnDestroy(){

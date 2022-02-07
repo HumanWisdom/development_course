@@ -97,7 +97,7 @@ export class S46049Page implements OnInit {
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/food-health/s46050'])
+    this.router.navigate(['/adults/food-health/s46050'])
     sessionStorage.setItem("r46049",JSON.stringify(e))
    this.r46049=sessionStorage.getItem("r46049")
    console.log(this.r46049)
@@ -122,14 +122,14 @@ export class S46049Page implements OnInit {
 
         },
         ()=>{
-          this.router.navigate(['/food-health/s46050'])
+          this.router.navigate(['/adults/food-health/s46050'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/food-health/s46048'])
+    this.router.navigate(['/adults/food-health/s46048'])
   }
   
   ngOnDestroy(){

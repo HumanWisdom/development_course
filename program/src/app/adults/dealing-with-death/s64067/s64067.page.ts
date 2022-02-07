@@ -367,7 +367,7 @@ export class S64067Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/dealing-with-death/s64066'])
+    this.router.navigate(['/adults/dealing-with-death/s64066'])
 
   }
   

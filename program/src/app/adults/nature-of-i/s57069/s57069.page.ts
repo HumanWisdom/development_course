@@ -370,7 +370,7 @@ export class S57069Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/nature-of-i/s57068'])
+    this.router.navigate(['/adults/nature-of-i/s57068'])
 
   }
   

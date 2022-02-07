@@ -117,17 +117,17 @@ bg="purple_red_w10"
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s545'])
+          this.router.navigate(['/adults/fear-anxiety/s545'])
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s545'])
+          this.router.navigate(['/adults/fear-anxiety/s545'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s543'])
+    this.router.navigate(['/adults/fear-anxiety/s543'])
   }
   
   ngOnDestroy(){

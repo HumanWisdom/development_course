@@ -151,7 +151,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/food-health/s46040'])
+    this.router.navigate(['/adults/food-health/s46040'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -171,13 +171,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/food-health/s46039'])
+       // this.router.navigate(['/adults/food-health/s46039'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/food-health/s46038'])
+    this.router.navigate(['/adults/food-health/s46038'])
 
 
   }

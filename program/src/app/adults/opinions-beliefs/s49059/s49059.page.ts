@@ -118,18 +118,18 @@ export class S49059Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/opinions-beliefs/s49060'])
+          this.router.navigate(['/adults/opinions-beliefs/s49060'])
 
         },
         ()=>{
-          this.router.navigate(['/opinions-beliefs/s49060'])
+          this.router.navigate(['/adults/opinions-beliefs/s49060'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/opinions-beliefs/s49058'])
+    this.router.navigate(['/adults/opinions-beliefs/s49058'])
   }
   
   ngOnDestroy(){

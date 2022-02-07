@@ -73,10 +73,10 @@ export class S44213tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/stress/s44214'])
+    this.router.navigate(['/adults/stress/s44214'])
   }
   prev(){
-    this.router.navigate(['/stress/s44212'])
+    this.router.navigate(['/adults/stress/s44212'])
   }
 
 

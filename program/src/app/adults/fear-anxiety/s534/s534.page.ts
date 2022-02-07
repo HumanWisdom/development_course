@@ -76,14 +76,14 @@ export class S534Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/fear-anxiety/s433'])
+        //this.router.navigate(['/adults/fear-anxiety/s433'])
       })
     
 
   }
 
   goNext(){
-    this.router.navigate(['/fear-anxiety/s535'])
+    this.router.navigate(['/adults/fear-anxiety/s535'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

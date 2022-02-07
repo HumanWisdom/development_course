@@ -107,12 +107,12 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/work/s58066'])
+    this.router.navigate(['/adults/work/s58066'])
    
 
   }
   prev(){
-    this.router.navigate(['/work/s58064'])
+    this.router.navigate(['/adults/work/s58064'])
 
 
   }

@@ -117,17 +117,17 @@ bg="red_pink_w7"
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/happiness/s23027'])
+          this.router.navigate(['/adults/happiness/s23027'])
 
         },
         ()=>{
-          this.router.navigate(['/happiness/s23027'])
+          this.router.navigate(['/adults/happiness/s23027'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/happiness/s23025'])
+    this.router.navigate(['/adults/happiness/s23025'])
   }
   
   ngOnDestroy(){

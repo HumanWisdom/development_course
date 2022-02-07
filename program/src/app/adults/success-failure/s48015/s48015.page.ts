@@ -118,18 +118,18 @@ export class S48015Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/success-failure/s48016'])
+          this.router.navigate(['/adults/success-failure/s48016'])
 
         },
         ()=>{
-          this.router.navigate(['/success-failure/s48016'])
+          this.router.navigate(['/adults/success-failure/s48016'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/success-failure/s48014'])
+    this.router.navigate(['/adults/success-failure/s48014'])
   }
   
   ngOnDestroy(){

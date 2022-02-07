@@ -118,18 +118,18 @@ export class S59120Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/leadership/s59121'])
+          this.router.navigate(['/adults/leadership/s59121'])
 
         },
         ()=>{
-          this.router.navigate(['/leadership/s59121'])
+          this.router.navigate(['/adults/leadership/s59121'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/leadership/s59119'])
+    this.router.navigate(['/adults/leadership/s59119'])
   }
   
   ngOnDestroy(){

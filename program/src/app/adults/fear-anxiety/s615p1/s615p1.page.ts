@@ -369,7 +369,7 @@ export class S615p1Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s615'])
+    this.router.navigate(['/adults/fear-anxiety/s615'])
 
   }
   

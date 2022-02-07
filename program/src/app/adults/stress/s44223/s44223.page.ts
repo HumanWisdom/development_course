@@ -102,18 +102,18 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-      this.router.navigate(['/stress/s44224'])
+      this.router.navigate(['/adults/stress/s44224'])
     
 
   }
   prev(){
-    this.router.navigate(['/stress/s44222'])
+    this.router.navigate(['/adults/stress/s44222'])
 
   }
   
 
   goNext(){
-   // this.router.navigate(['/stress/s2'])
+   // this.router.navigate(['/adults/stress/s2'])
     
     //console.log(this.totalTime,"total time")
     this.submitProgress()

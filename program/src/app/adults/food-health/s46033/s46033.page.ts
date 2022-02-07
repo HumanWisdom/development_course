@@ -83,7 +83,7 @@ createScreen(){
  
   }
   submitProgress(){
-    this.router.navigate(['/food-health/s46034'])
+    this.router.navigate(['/adults/food-health/s46034'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -106,13 +106,13 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/food-health/s46032'])
+    this.router.navigate(['/adults/food-health/s46032'])
 
   }
   
 
   goNext(){
-   // this.router.navigate(['/food-health/s46033'])
+   // this.router.navigate(['/adults/food-health/s46033'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")
