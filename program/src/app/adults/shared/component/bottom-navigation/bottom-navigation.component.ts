@@ -38,12 +38,12 @@ export class BottomNavigationComponent implements OnInit {
       this.journal=true
     }
     let reg = new RegExp('forum')
-    if((reg.test(this.router.url))||(this.router.url.indexOf('/adults/note') > -1))
+    if((reg.test(this.router.url)))
     {
       this.dash=false
-      this.journal=true
+      this.journal=false
       this.profile=false
-      this.fourm = false;
+      this.fourm = true;
     }
     if(this.router.url=="/onboarding/user-profile") {
       this.dash=false
