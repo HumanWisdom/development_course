@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
     "@angular/service-worker": "~11.2.14",
+    "@cometchat-pro/chat": "^3.0.3",
     "@fireflysemantics/angular-stripe-service": "^1.0.0",
     "@fortawesome/angular-fontawesome": "^0.8.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
