@@ -67,15 +67,16 @@ export class CoachBioPage implements OnInit {
       this.reviewDetail=[];
     })
   }
+
   ChatStart(){
-    let  user = new CometChat.User('testing');
-    user.setName(localStorage.getItem('userName').toString());
-    CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
-      user => {
-        CometChat.login('', COMETCHAT_CONSTANTS.AUTH_KEY).then(
+   /// let  user = new CometChat.User('testing');
+   ///// user.setName(localStorage.getItem('userName').toString());
+    // CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+    //   user => {
+        CometChat.login('testing', COMETCHAT_CONSTANTS.AUTH_KEY).then(
           (user) => {
             console.log("Login Successful:", { user });
-           // this.router.navigate(["/Home"]);
+            this.router.navigate(["coach/coach-chat"]);
           },
           (error) => {
             console.log("Login failed with exception:", { error });
@@ -83,11 +84,11 @@ export class CoachBioPage implements OnInit {
             // this.errorMsg = error.message;
           }
         );
-          console.log("user created", user);
-      },error => {
-          console.log("error", error);
-      }
-    )
+        //  console.log("user created", user);
+     // },error => {
+     //     console.log("error", error);
+     // }
+   // )
 
 
 

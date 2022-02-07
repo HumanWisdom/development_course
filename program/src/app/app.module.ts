@@ -28,13 +28,16 @@ import { NgxCaptureModule } from 'ngx-capture';
 import { ActiveGuard } from './active.guard';
 import { authLoginGuard } from './auth-login.guard';
 import { LoginSignupSplashPageModule } from './adults/framework-v1/login-signup-splash/login-signup-splash.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, 
+    BrowserAnimationsModule,
+    IonicModule.forRoot(), AppRoutingModule,
     AdultsModule,
      OnboardingModule,
      FormsModule,
