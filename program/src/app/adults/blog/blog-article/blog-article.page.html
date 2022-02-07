@@ -117,7 +117,7 @@
   <div class="row center_flex blog_comment_desc" *ngFor="let item of BlogCommentsList">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/blog_01.svg" alt="" class="img-responsive w100p">
+        <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
       </div>
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
         <h4 class="mtb0px txt65 tleft">
@@ -155,7 +155,7 @@
               <div class="row center_flex blog_comment_desc_01">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai p0">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/blog_03.svg" alt="" class="img-responsive w100p">
+                    <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                     <h4 class="mtb0px txt65 tleft">
@@ -187,7 +187,7 @@
     </div>
   </div>
 
-  <div class="row center_flex mlr-10px">
+  <!-- <div class="row center_flex mlr-10px">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
       <hr class="hr_style_12">
     </div>
@@ -236,11 +236,11 @@
             Article Name
           </h4>
         </a>
-      </div>
-    </div>
-  </div>
+      </div> -->
+    <!-- </div>
+  </div> -->
 
-  <div class="pagebreak"></div>
+  <!-- <div class="pagebreak"></div> -->
 
 </div>
 <!-- /content -->

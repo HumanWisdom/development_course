@@ -26,7 +26,9 @@ export class CourseFooterComponent implements OnInit {
     //private captureService:NgxCaptureService
 
   ) { 
-    this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
+    if(this.router.getCurrentNavigation()) {
+      this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
+    }
   }
 
   ngOnInit() {
