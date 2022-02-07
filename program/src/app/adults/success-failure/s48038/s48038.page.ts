@@ -206,20 +206,20 @@ createScreen(){
         console.log(res)
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-        this.router.navigate(['/success-failure/s48039'])
+        this.router.navigate(['/adults/success-failure/s48039'])
        
      
       },
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/success-failure/s48038'])
+       // this.router.navigate(['/adults/success-failure/s48038'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/success-failure/s48037'])
+    this.router.navigate(['/adults/success-failure/s48037'])
 
 
   }

@@ -369,7 +369,7 @@ export class S23181p1Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/happiness/s23181'])
+    this.router.navigate(['/adults/happiness/s23181'])
 
   }
   

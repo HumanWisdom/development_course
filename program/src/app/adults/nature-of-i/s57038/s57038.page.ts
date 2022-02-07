@@ -42,10 +42,10 @@ export class S57038Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/nature-of-i/s57039'])
+    this.router.navigate(['/adults/nature-of-i/s57039'])
   }
   prev(){
-    this.router.navigate(['/nature-of-i/s57037'])
+    this.router.navigate(['/adults/nature-of-i/s57037'])
 
   }
 

@@ -98,13 +98,13 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/work/s58013'])
+        this.router.navigate(['/adults/work/s58013'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/work/s58011'])
+    this.router.navigate(['/adults/work/s58011'])
 
   }
   

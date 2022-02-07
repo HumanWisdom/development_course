@@ -117,18 +117,18 @@ export class S73087Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/money/s73088'])
+          this.router.navigate(['/adults/money/s73088'])
 
         },
         ()=>{
-          this.router.navigate(['/money/s73088'])
+          this.router.navigate(['/adults/money/s73088'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/money/s73086'])
+    this.router.navigate(['/adults/money/s73086'])
   }
   
   ngOnDestroy(){

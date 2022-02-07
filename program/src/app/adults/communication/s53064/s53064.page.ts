@@ -105,11 +105,11 @@ export class S53064Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/communication/s53065'])
+        this.router.navigate(['/adults/communication/s53065'])
     
       },
       ()=>{
-        this.router.navigate(['/communication/s53065'])
+        this.router.navigate(['/adults/communication/s53065'])
       })
     
 
@@ -119,7 +119,7 @@ export class S53064Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/communication/s53063'])
+    this.router.navigate(['/adults/communication/s53063'])
   }
   
   ngOnDestroy(){

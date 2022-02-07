@@ -101,12 +101,12 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-      this.router.navigate(['/work/s58081p1'])
+      this.router.navigate(['/adults/work/s58081p1'])
     
 
   }
   prev(){
-    this.router.navigate(['/work/s58080'])
+    this.router.navigate(['/adults/work/s58080'])
 
   }
   

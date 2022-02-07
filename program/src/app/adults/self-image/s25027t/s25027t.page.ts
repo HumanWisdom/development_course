@@ -72,10 +72,10 @@ export class S25027tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/self-image/s25028'])
+    this.router.navigate(['/adults/self-image/s25028'])
   }
   prev(){
-    this.router.navigate(['/self-image/s25026'])
+    this.router.navigate(['/adults/self-image/s25026'])
   }
 
 }

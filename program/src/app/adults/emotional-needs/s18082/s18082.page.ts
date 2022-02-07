@@ -227,7 +227,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/emotional-needs/s18083'])
+    this.router.navigate(['/adults/emotional-needs/s18083'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -240,20 +240,20 @@ createScreen(){
         console.log(res)
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-        this.router.navigate(['/emotional-needs/s18083'])
+        this.router.navigate(['/adults/emotional-needs/s18083'])
        
      
       },
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/emotional-needs/s18082'])
+       // this.router.navigate(['/adults/emotional-needs/s18082'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/emotional-needs/s18081'])
+    this.router.navigate(['/adults/emotional-needs/s18081'])
 
 
   }

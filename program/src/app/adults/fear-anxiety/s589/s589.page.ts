@@ -118,17 +118,17 @@ export class S589Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s590'])
+          this.router.navigate(['/adults/fear-anxiety/s590'])
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s590'])
+          this.router.navigate(['/adults/fear-anxiety/s590'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s588'])
+    this.router.navigate(['/adults/fear-anxiety/s588'])
   }
   
   ngOnDestroy(){

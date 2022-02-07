@@ -72,7 +72,7 @@ export class S456Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/self-esteem/s457'])
+    this.router.navigate(['/adults/self-esteem/s457'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -88,7 +88,7 @@ export class S456Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        // this.router.navigate(['/self-esteem/s457'])
+        // this.router.navigate(['/adults/self-esteem/s457'])
       })
      
 

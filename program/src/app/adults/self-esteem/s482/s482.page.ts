@@ -104,17 +104,17 @@ export class S482Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/self-esteem/s483'])
+        this.router.navigate(['/adults/self-esteem/s483'])
       },
       ()=>{
-        this.router.navigate(['/self-esteem/s483'])
+        this.router.navigate(['/adults/self-esteem/s483'])
       })
     
 
    }
 
    previous(){
-    this.router.navigate(['/self-esteem/s481'])
+    this.router.navigate(['/adults/self-esteem/s481'])
   }
   
   

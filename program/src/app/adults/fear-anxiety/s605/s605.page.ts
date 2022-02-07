@@ -88,7 +88,7 @@ export class S605Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
  
-    this.router.navigate(['/fear-anxiety/s606'])
+    this.router.navigate(['/adults/fear-anxiety/s606'])
    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -109,7 +109,7 @@ export class S605Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s604'])
+    this.router.navigate(['/adults/fear-anxiety/s604'])
  
  
   }

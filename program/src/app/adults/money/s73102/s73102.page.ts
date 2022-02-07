@@ -367,7 +367,7 @@ export class S73102Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/money/s73101'])
+    this.router.navigate(['/adults/money/s73101'])
 
   }
   

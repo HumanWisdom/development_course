@@ -89,7 +89,7 @@ export class S167Page implements OnInit,OnDestroy {
   }
 
   submitProgress(e){
-    this.router.navigate(['/anger/s168'])
+    this.router.navigate(['/adults/anger/s168'])
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -114,16 +114,16 @@ export class S167Page implements OnInit,OnDestroy {
         },
         error=>{
           console.log(error)
-          // this.router.navigate(['/anger/s168'])
+          // this.router.navigate(['/adults/anger/s168'])
 
         },
         ()=>{
-          // this.router.navigate(['/anger/s168'])
+          // this.router.navigate(['/adults/anger/s168'])
         })
    }
 
    else{
-    this.router.navigate(['/anger/s168'])
+    this.router.navigate(['/adults/anger/s168'])
 
    }
    
@@ -133,7 +133,7 @@ export class S167Page implements OnInit,OnDestroy {
   }
 
   previous(){
-    this.router.navigate(['/anger/s166'])
+    this.router.navigate(['/adults/anger/s166'])
   }
   
   ngOnDestroy(){

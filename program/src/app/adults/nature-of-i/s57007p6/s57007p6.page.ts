@@ -118,18 +118,18 @@ export class S57007p6Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/nature-of-i/s57008'])
+          this.router.navigate(['/adults/nature-of-i/s57008'])
 
         },
         ()=>{
-          this.router.navigate(['/nature-of-i/s57008'])
+          this.router.navigate(['/adults/nature-of-i/s57008'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/nature-of-i/s57007p5'])
+    this.router.navigate(['/adults/nature-of-i/s57007p5'])
   }
   
   ngOnDestroy(){

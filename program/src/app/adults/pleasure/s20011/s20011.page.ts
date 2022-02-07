@@ -118,17 +118,17 @@ export class S20011Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/pleasure/s20012'])
+          this.router.navigate(['/adults/pleasure/s20012'])
 
         },
         ()=>{
-          this.router.navigate(['/pleasure/s20012'])
+          this.router.navigate(['/adults/pleasure/s20012'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/pleasure/s20010'])
+    this.router.navigate(['/adults/pleasure/s20010'])
   }
   
   ngOnDestroy(){
