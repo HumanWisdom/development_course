@@ -61,7 +61,7 @@ export class S26003tPage implements OnInit {
   }
   submitProgress(){
 
-    this.router.navigate(['/benefits-of-enquiry/s26005'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26005'])
     
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -79,7 +79,7 @@ export class S26003tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s26002'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26002'])
   }
 
 

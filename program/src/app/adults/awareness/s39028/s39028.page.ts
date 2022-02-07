@@ -47,11 +47,11 @@ export class S39028Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/awareness/s39029'])
+    this.router.navigate(['/adults/awareness/s39029'])
 
   }
   prev(){
-    this.router.navigate(['/awareness/s39027'])
+    this.router.navigate(['/adults/awareness/s39027'])
 
 
 

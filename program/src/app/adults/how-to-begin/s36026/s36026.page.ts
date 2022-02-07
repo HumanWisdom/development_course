@@ -46,11 +46,11 @@ export class S36026Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/how-to-begin/s36027'])
+    this.router.navigate(['/adults/how-to-begin/s36027'])
 
   }
   prev(){
-    this.router.navigate(['/how-to-begin/s36025'])
+    this.router.navigate(['/adults/how-to-begin/s36025'])
 
   }
 

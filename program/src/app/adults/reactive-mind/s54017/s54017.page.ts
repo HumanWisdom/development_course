@@ -42,10 +42,10 @@ export class S54017Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/reactive-mind/s54018'])
+    this.router.navigate(['/adults/reactive-mind/s54018'])
   }
   prev(){
-    this.router.navigate(['/reactive-mind/s54016'])
+    this.router.navigate(['/adults/reactive-mind/s54016'])
 
   }
 

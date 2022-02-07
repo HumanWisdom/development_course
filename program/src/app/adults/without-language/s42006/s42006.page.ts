@@ -108,11 +108,11 @@ bg="purple_blue_w5"
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/without-language/s42007'])
+        this.router.navigate(['/adults/without-language/s42007'])
     
       },
       ()=>{
-        this.router.navigate(['/without-language/s42007'])
+        this.router.navigate(['/adults/without-language/s42007'])
       })
     
 
@@ -122,7 +122,7 @@ bg="purple_blue_w5"
   }
 
   previous(){
-    this.router.navigate(['/without-language/s42005'])
+    this.router.navigate(['/adults/without-language/s42005'])
   }
   
   ngOnDestroy(){

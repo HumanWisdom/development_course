@@ -249,15 +249,15 @@ export class S41019p5Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/questions-are-key/s41019p6'])
+          this.router.navigate(['/adults/questions-are-key/s41019p6'])
         },
         ()=>{
-          this.router.navigate(['/questions-are-key/s41019p6'])
+          this.router.navigate(['/adults/questions-are-key/s41019p6'])
         })
    }
 
    else{
-    this.router.navigate(['/questions-are-key/s41019p4'])
+    this.router.navigate(['/adults/questions-are-key/s41019p4'])
 
    }
    
@@ -267,7 +267,7 @@ export class S41019p5Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/questions-are-key/s41019p4'])
+    this.router.navigate(['/adults/questions-are-key/s41019p4'])
   }
   
   ngOnDestroy(){

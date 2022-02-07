@@ -92,19 +92,19 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/program-guide/s234'])
+        //this.router.navigate(['/adults/program-guide/s234'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/program-guide/s35011'])
+    this.router.navigate(['/adults/program-guide/s35011'])
 
 
   }
 
   goNext(){
-    this.router.navigate(['/program-guide/s35017'])
+    this.router.navigate(['/adults/program-guide/s35017'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

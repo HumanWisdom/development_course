@@ -179,13 +179,13 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/meditation/s22038p3'])
+        this.router.navigate(['/adults/meditation/s22038p3'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/meditation/s22038p1'])
+    this.router.navigate(['/adults/meditation/s22038p1'])
 
 
   }

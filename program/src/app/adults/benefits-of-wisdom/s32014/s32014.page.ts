@@ -52,11 +52,11 @@ export class S32014Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/benefits-of-wisdom/s32015'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32015'])
 
   }
   prev(){
-    this.router.navigate(['/benefits-of-wisdom/s32013'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32013'])
 
   }
 

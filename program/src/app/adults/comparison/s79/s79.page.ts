@@ -119,15 +119,15 @@ export class S79Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s80'])
+          this.router.navigate(['/adults/comparison/s80'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s80'])
+          this.router.navigate(['/adults/comparison/s80'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s80'])
+    this.router.navigate(['/adults/comparison/s80'])
 
    }
    
@@ -137,7 +137,7 @@ export class S79Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/comparison/s78'])
+    this.router.navigate(['/adults/comparison/s78'])
   }
   
   ngOnDestroy(){

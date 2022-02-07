@@ -100,18 +100,18 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s3701534'])
       })
-      this.router.navigate(['/three-steps-enquiry/s37016'])
+      this.router.navigate(['/adults/three-steps-enquiry/s37016'])
     
 
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s37014'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37014'])
 
   }
   
 
   goNext(){
-   // this.router.navigate(['/three-steps-enquiry/s37015'])
+   // this.router.navigate(['/adults/three-steps-enquiry/s37015'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")
