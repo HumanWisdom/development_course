@@ -91,6 +91,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/dealing-with-death/s64036'])
 
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -107,7 +108,7 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/dealing-with-death/s64036'])
+   
    
 
   }

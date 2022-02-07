@@ -343,7 +343,7 @@ export class S41019p4Page implements OnInit {
   this.totalTime = this.endTime - this.startTime;
   //console.log(this.totalTime,"total time")
  
-
+  this.router.navigate(['/questions-are-key/s41019p5'])
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5]
     this.option=optionT.join()
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -358,7 +358,7 @@ export class S41019p4Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/questions-are-key/s41019p5'])
+        
       })
 
 

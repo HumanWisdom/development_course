@@ -85,7 +85,7 @@ export class S18071Page implements OnInit {
      
       this.endTime = Date.now();
       this.totalTime = this.endTime - this.startTime;
-   
+      this.router.navigate(['/emotional-needs/s18072'])
       this.service.submitProgressAv({
         "ScrNumber":this.screenNumber,
         "UserId":this.userId,
@@ -101,7 +101,7 @@ export class S18071Page implements OnInit {
           localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
         })
       
-      this.router.navigate(['/emotional-needs/s18072'])
+      
      
    
     }

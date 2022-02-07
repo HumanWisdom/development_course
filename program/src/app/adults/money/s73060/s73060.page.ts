@@ -89,7 +89,8 @@ export class S73060Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+   
+    this.router.navigate(['/money/s73061'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,8 +105,7 @@ export class S73060Page implements OnInit,OnDestroy {
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    
-    this.router.navigate(['/money/s73061'])
+  
    
  
   }

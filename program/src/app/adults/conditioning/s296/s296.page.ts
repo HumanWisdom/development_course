@@ -127,7 +127,7 @@ export class S296Page implements OnInit {
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
   
-  
+  this.router.navigate(['/conditioning/s297'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -137,7 +137,7 @@ export class S296Page implements OnInit {
       "OptionIDs":this.sendOption.join()})
       .subscribe(res=>console.log(res))
 
-      this.router.navigate(['/adults/conditioning/s297'])
+     
 
 
   }

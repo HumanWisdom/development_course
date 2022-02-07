@@ -137,6 +137,7 @@ export class S49045Page implements OnInit {
  
 
   submitProgress(){
+    this.router.navigate(['/opinions-beliefs/s49045p1'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -152,7 +153,7 @@ export class S49045Page implements OnInit {
     }
       
    
-      this.router.navigate(['/opinions-beliefs/s49045p1'])
+     
 
   }
   prev(){

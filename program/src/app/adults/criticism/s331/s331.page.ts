@@ -95,7 +95,7 @@ submitProgress(){
  
   this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-
+  this.router.navigate(['/criticism/s332'])
   this.service.submitProgressAv({
     "ScrNumber":this.screenNumber,
     "UserId":this.userId,
@@ -109,7 +109,7 @@ submitProgress(){
       console.log(res)
     })
   
-  this.router.navigate(['/criticism/s332'])
+ 
  
 
 }

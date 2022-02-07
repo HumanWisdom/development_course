@@ -355,6 +355,8 @@ export class S160Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
    this.totalTime = this.endTime - this.startTime;
+
+   this.router.navigate(['/adults/comparison/s160p1'])
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5,this.s6]
     this.option=optionT.join()
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -365,7 +367,7 @@ export class S160Page implements OnInit {
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
       .subscribe(res=>console.log(res))
-      this.router.navigate(['/adults/comparison/s160p1'])
+     
 
 
   }

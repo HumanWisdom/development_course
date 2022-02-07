@@ -81,6 +81,7 @@ export class S220Page implements OnInit,OnDestroy {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/anger/s221'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -94,7 +95,7 @@ export class S220Page implements OnInit,OnDestroy {
       }
       )
    
-      this.router.navigate(['/anger/s221'])
+      // this.router.navigate(['/anger/s221'])
     
 
   }

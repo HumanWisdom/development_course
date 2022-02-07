@@ -86,7 +86,7 @@ export class S189Page implements OnInit,AfterViewInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    this.router.navigate(['/anger/s189p0'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -100,7 +100,7 @@ export class S189Page implements OnInit,AfterViewInit {
         console.log(res)
       })
     
-    this.router.navigate(['/anger/s189p0'])
+    // this.router.navigate(['/anger/s189p0'])
    
 
   }
