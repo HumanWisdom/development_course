@@ -75,14 +75,14 @@ export class S36001Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/how-to-begin/s433'])
+        //this.router.navigate(['/adults/how-to-begin/s433'])
       })
     
 
   }
 
   goNext(){
-    this.router.navigate(['/how-to-begin/s36002'])
+    this.router.navigate(['/adults/how-to-begin/s36002'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

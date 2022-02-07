@@ -214,16 +214,16 @@ export class S22057Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/meditation/s22058'])
+          this.router.navigate(['/adults/meditation/s22058'])
         },
         ()=>{
-          this.router.navigate(['/meditation/s22058'])
+          this.router.navigate(['/adults/meditation/s22058'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/meditation/s22056'])
+    this.router.navigate(['/adults/meditation/s22056'])
 
   }
   ngOnDestroy(){

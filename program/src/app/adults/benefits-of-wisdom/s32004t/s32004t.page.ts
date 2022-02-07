@@ -61,7 +61,7 @@ export class S32004tPage implements OnInit {
   }
   submitProgress(){
 
-    this.router.navigate(['/benefits-of-wisdom/s32005'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32005'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -78,7 +78,7 @@ export class S32004tPage implements OnInit {
    
   }
   prev(){
-    this.router.navigate(['/benefits-of-wisdom/s32003'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32003'])
   }
 
 

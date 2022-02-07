@@ -81,7 +81,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/reactive-mind/s54020'])
+    this.router.navigate(['/adults/reactive-mind/s54020'])
 
     this.service.submitProgressText({
      
@@ -101,7 +101,7 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        // this.router.navigate(['/reactive-mind/s54020'])        
+        // this.router.navigate(['/adults/reactive-mind/s54020'])        
       })
      
   }

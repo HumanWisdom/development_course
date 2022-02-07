@@ -370,7 +370,7 @@ export class S54079Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/reactive-mind/s54078'])
+    this.router.navigate(['/adults/reactive-mind/s54078'])
 
   }
   

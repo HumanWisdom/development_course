@@ -118,20 +118,20 @@ export class S151Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s152p1'])
+          this.router.navigate(['/adults/comparison/s152p1'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s152p1'])
+          this.router.navigate(['/adults/comparison/s152p1'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s152p1'])
+    this.router.navigate(['/adults/comparison/s152p1'])
    }
   }
 
   previous(){
-    this.router.navigate(['/comparison/s150'])
+    this.router.navigate(['/adults/comparison/s150'])
   }
   
   ngOnDestroy(){

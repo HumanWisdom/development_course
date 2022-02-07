@@ -93,7 +93,7 @@ createScreen(){
 
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    this.router.navigate(['/adults/nature/s28004'])
     this.service.submitProgressAv({
       
       "ScrNumber":this.screenNumber,
@@ -110,11 +110,15 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
+<<<<<<< HEAD
+=======
+    // this.router.navigate(['/adults/nature/s28004'])
+>>>>>>> 7f5bcb441dd8de3de0d978aba5a4bc956df52807
    
 
   }
   prev(){
-    this.router.navigate(['/nature/s28001'])
+    this.router.navigate(['/adults/nature/s28001'])
 
 
   }

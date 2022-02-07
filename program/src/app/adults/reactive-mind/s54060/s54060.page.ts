@@ -285,7 +285,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/reactive-mind/s54061'])
+    this.router.navigate(['/adults/reactive-mind/s54061'])
        
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -305,13 +305,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/reactive-mind/s54060'])
+       // this.router.navigate(['/adults/reactive-mind/s54060'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/reactive-mind/s54059'])
+    this.router.navigate(['/adults/reactive-mind/s54059'])
 
 
   }

@@ -108,11 +108,11 @@ export class S40009Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/no-judgement/s40010'])
+        this.router.navigate(['/adults/no-judgement/s40010'])
     
       },
       ()=>{
-        this.router.navigate(['/no-judgement/s40010'])
+        this.router.navigate(['/adults/no-judgement/s40010'])
       })
     
 
@@ -122,7 +122,7 @@ export class S40009Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/no-judgement/s40008'])
+    this.router.navigate(['/adults/no-judgement/s40008'])
   }
   
   ngOnDestroy(){

@@ -46,10 +46,10 @@ export class S139p1Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/comparison/s139p2'])
+    this.router.navigate(['/adults/comparison/s139p2'])
   }
   prev(){
-    this.router.navigate(['/comparison/s138'])
+    this.router.navigate(['/adults/comparison/s138'])
 
   }
 

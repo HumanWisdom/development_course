@@ -153,7 +153,7 @@
           <div id="collapseOne" class="panel-collapse collapse" *ngFor="let item of BlogCommentsListabove">
             <div class="panel-body">
               <div class="row center_flex blog_comment_desc_01">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr_01 flex_ai p0">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
                     <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
                   </div>
@@ -183,11 +183,21 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
       <input type="text" class="form-control cfc4" [(ngModel)]="comment" placeholder="Leave a comment">
-      <i class="fa fa-send-o" style="font-size:24px" (click)="postcomment()"></i>
+      <!-- <i class="fa fa-send-o" style="font-size:24px" (click)="postcomment()"></i> -->
     </div>
   </div>
 
-  <!-- <div class="row center_flex mlr-10px">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tright mt5px">
+      <button type="submit" class="btn btn-warning btn_post" (click)="postcomment()">
+        <i class="fa fa-send-o fa_post_01" (click)="postcomment()"></i>
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class=""> -->
+        Post
+      </button>             
+    </div>     
+  </div>
+
+  <div class="row center_flex mlr-10px">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
       <hr class="hr_style_12">
     </div>

@@ -103,12 +103,12 @@ export class S37003Page implements OnInit,OnDestroy {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/three-steps-enquiry/s37004'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37004'])
    
  
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s37002'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37002'])
  
  
   }

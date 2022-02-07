@@ -102,12 +102,12 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s2337006'])
       })
-      this.router.navigate(['/three-steps-enquiry/s37007'])
+      this.router.navigate(['/adults/three-steps-enquiry/s37007'])
     
 
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s37005'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37005'])
 
   }
   

@@ -73,10 +73,10 @@ export class S42015tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/without-language/s42016'])
+    this.router.navigate(['/adults/without-language/s42016'])
   }
   prev(){
-    this.router.navigate(['/without-language/s42014'])
+    this.router.navigate(['/adults/without-language/s42014'])
   }
 
 

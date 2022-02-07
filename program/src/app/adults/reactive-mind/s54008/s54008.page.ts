@@ -106,11 +106,11 @@ export class S54008Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/reactive-mind/s54009'])
+        this.router.navigate(['/adults/reactive-mind/s54009'])
     
       },
       ()=>{
-        this.router.navigate(['/reactive-mind/s54009'])
+        this.router.navigate(['/adults/reactive-mind/s54009'])
       })
     
 
@@ -120,7 +120,7 @@ export class S54008Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/reactive-mind/s54007'])
+    this.router.navigate(['/adults/reactive-mind/s54007'])
   }
   
   ngOnDestroy(){

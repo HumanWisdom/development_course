@@ -118,15 +118,15 @@ export class S149Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s150'])
+          this.router.navigate(['/adults/comparison/s150'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s150'])
+          this.router.navigate(['/adults/comparison/s150'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s150'])
+    this.router.navigate(['/adults/comparison/s150'])
 
    }
    
@@ -136,7 +136,7 @@ export class S149Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/comparison/s148'])
+    this.router.navigate(['/adults/comparison/s148'])
   }
   
   ngOnDestroy(){

@@ -128,7 +128,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/program-guide/s35004'])
+    this.router.navigate(['/adults/program-guide/s35004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -149,7 +149,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/program-guide/s35003'])
+    this.router.navigate(['/adults/program-guide/s35003'])
 
 
   }
