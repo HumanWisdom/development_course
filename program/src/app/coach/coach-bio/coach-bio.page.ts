@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoachService } from '../services/coach.service';
 import * as moment from 'moment';
+import { CometChat } from '@cometchat-pro/chat';
+import { COMETCHAT_CONSTANTS } from '../CONSTS';
 
 @Component({
   selector: 'app-coach-bio',
@@ -65,7 +67,31 @@ export class CoachBioPage implements OnInit {
       this.reviewDetail=[];
     })
   }
+  ChatStart(){
+    let  user = new CometChat.User('testing');
+    user.setName(localStorage.getItem('userName').toString());
+    CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+      user => {
+        CometChat.login('', COMETCHAT_CONSTANTS.AUTH_KEY).then(
+          (user) => {
+            console.log("Login Successful:", { user });
+           // this.router.navigate(["/Home"]);
+          },
+          (error) => {
+            console.log("Login failed with exception:", { error });
+            // this.onLoginError = true;
+            // this.errorMsg = error.message;
+          }
+        );
+          console.log("user created", user);
+      },error => {
+          console.log("error", error);
+      }
+    )
 
+
+
+  }
   showMore() {
     // let newLength = this.reviewDetails.length + 3;
     if (this.reviewDetails.length >0) {

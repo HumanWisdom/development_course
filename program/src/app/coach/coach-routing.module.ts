@@ -69,6 +69,10 @@ const routes: Routes = [
   {
     path: 'coach-review/:id',
     loadChildren: () => import('./coach-review/coach-review.module').then(m=>m.CoachReviewPageModule)
+  },
+  {
+    path: 'coach-chat',
+    loadChildren: () => import('./coach-chat/coach-chat.module').then(m=>m.CoachChatPageModule)
   }
   
 

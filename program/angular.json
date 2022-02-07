@@ -38,6 +38,8 @@
                 "input": "node_modules/font-awesome/css/font-awesome.css",
                 "inject": true
               },
+           
+
               {
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "inject": true
@@ -60,6 +62,10 @@
               },
               {
                 "input": "src/styles.css",
+                "inject": true
+              },
+              {
+                "input": "src/app/coach/cometchat-pro-angular-ui-kit/CometChatWorkspace/src/css/styles.scss",
                 "inject": true
               },
               {
