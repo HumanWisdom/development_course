@@ -118,17 +118,17 @@ export class S23180Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/happiness/s23181'])
+          this.router.navigate(['/adults/happiness/s23181'])
 
         },
         ()=>{
-          this.router.navigate(['/happiness/s23181'])
+          this.router.navigate(['/adults/happiness/s23181'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/happiness/s23179'])
+    this.router.navigate(['/adults/happiness/s23179'])
   }
   
   ngOnDestroy(){

@@ -117,18 +117,18 @@ export class S46012Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/food-health/s46013'])
+          this.router.navigate(['/adults/food-health/s46013'])
 
         },
         ()=>{
-          this.router.navigate(['/food-health/s46013'])
+          this.router.navigate(['/adults/food-health/s46013'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/food-health/s46011'])
+    this.router.navigate(['/adults/food-health/s46011'])
   }
   
   ngOnDestroy(){

@@ -231,16 +231,16 @@ export class S53254Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/communication/s53255'])
+          this.router.navigate(['/adults/communication/s53255'])
         },
         ()=>{
-          this.router.navigate(['/communication/s53255'])
+          this.router.navigate(['/adults/communication/s53255'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/communication/s53253'])
+    this.router.navigate(['/adults/communication/s53253'])
 
   }
   ngOnDestroy(){

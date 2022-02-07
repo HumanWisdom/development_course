@@ -112,12 +112,12 @@ export class S48003Page implements OnInit,OnDestroy {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/success-failure/s48004'])
+    this.router.navigate(['/adults/success-failure/s48004'])
    
  
   }
   prev(){
-    this.router.navigate(['/success-failure/s48002'])
+    this.router.navigate(['/adults/success-failure/s48002'])
  
  
   }

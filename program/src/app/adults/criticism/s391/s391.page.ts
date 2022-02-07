@@ -51,11 +51,11 @@ export class S391Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/criticism/s392'])
+    this.router.navigate(['/adults/criticism/s392'])
 
   }
   prev(){
-    this.router.navigate(['/criticism/s390'])
+    this.router.navigate(['/adults/criticism/s390'])
   }
 
 

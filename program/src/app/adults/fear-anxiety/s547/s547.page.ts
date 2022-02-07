@@ -117,17 +117,17 @@ export class S547Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s548'])
+          this.router.navigate(['/adults/fear-anxiety/s548'])
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s548'])
+          this.router.navigate(['/adults/fear-anxiety/s548'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s546'])
+    this.router.navigate(['/adults/fear-anxiety/s546'])
   }
   
   ngOnDestroy(){

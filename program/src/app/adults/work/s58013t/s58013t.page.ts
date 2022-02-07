@@ -72,10 +72,10 @@ export class S58013tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/work/s58014'])
+    this.router.navigate(['/adults/work/s58014'])
   }
   prev(){
-    this.router.navigate(['/work/s58012'])
+    this.router.navigate(['/adults/work/s58012'])
   }
 
 }

@@ -75,14 +75,14 @@ export class S487Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/fear-anxiety/s433'])
+        //this.router.navigate(['/adults/fear-anxiety/s433'])
       })
     
 
   }
 
   goNext(){
-    this.router.navigate(['/fear-anxiety/s488'])
+    this.router.navigate(['/adults/fear-anxiety/s488'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

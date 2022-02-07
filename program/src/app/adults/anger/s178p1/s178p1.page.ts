@@ -46,11 +46,11 @@ export class S178p1Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/anger/s178p2'])
+    this.router.navigate(['/adults/anger/s178p2'])
 
   }
   previous(){
-    this.router.navigate(['/anger/s177'])
+    this.router.navigate(['/adults/anger/s177'])
 
   }
 

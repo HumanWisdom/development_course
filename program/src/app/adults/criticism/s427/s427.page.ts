@@ -401,7 +401,7 @@ export class S427Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")
    
-    this.router.navigate(['/criticism/s428'])
+    this.router.navigate(['/adults/criticism/s428'])
       var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5,this.s6]
       this.option=optionT.join()
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -429,7 +429,7 @@ export class S427Page implements OnInit {
     }
    
     prev(){
-      this.router.navigate(['/criticism/s426'])
+      this.router.navigate(['/adults/criticism/s426'])
     }
 
 }

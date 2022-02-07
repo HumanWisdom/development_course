@@ -80,13 +80,13 @@ export class S439Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/self-esteem/s438']) 
+    this.router.navigate(['/adults/self-esteem/s438']) 
  
  
   }
  
   goNext(){
-    this.router.navigate(['/self-esteem/s440'])
+    this.router.navigate(['/adults/self-esteem/s440'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

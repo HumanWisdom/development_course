@@ -60,7 +60,7 @@ export class S511tPage implements OnInit {
   }
   submitProgress(){
 
-    this.router.navigate(['/fear-anxiety/s512'])
+    this.router.navigate(['/adults/fear-anxiety/s512'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -77,7 +77,7 @@ export class S511tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s510'])
+    this.router.navigate(['/adults/fear-anxiety/s510'])
   }
   
 

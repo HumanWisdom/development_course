@@ -94,12 +94,12 @@ export class S44234Page implements OnInit,OnDestroy {
       }
       )
    
-      this.router.navigate(['/stress/s44235'])
+      this.router.navigate(['/adults/stress/s44235'])
     
 
   }
   prev(){
-    this.router.navigate(['/stress/s44233'])
+    this.router.navigate(['/adults/stress/s44233'])
     
   }
   ngOnDestroy(){

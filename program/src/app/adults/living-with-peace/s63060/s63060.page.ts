@@ -193,7 +193,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/living-with-peace/s63061'])
+    this.router.navigate(['/adults/living-with-peace/s63061'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -213,13 +213,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/living-with-peace/s63060'])
+       // this.router.navigate(['/adults/living-with-peace/s63060'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/living-with-peace/s63059'])
+    this.router.navigate(['/adults/living-with-peace/s63059'])
 
 
   }

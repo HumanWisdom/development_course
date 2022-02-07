@@ -103,12 +103,12 @@ export class S58057Page implements OnInit,OnDestroy {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/work/s58058'])
+    this.router.navigate(['/adults/work/s58058'])
    
  
   }
   prev(){
-    this.router.navigate(['/work/s58056'])
+    this.router.navigate(['/adults/work/s58056'])
  
  
   }

@@ -73,10 +73,10 @@ export class S48091tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/success-failure/s48092'])
+    this.router.navigate(['/adults/success-failure/s48092'])
   }
   prev(){
-    this.router.navigate(['/success-failure/s48090'])
+    this.router.navigate(['/adults/success-failure/s48090'])
   }
 
 

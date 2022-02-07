@@ -42,10 +42,10 @@ export class S45086Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/habit-addiction/s45087'])
+    this.router.navigate(['/adults/habit-addiction/s45087'])
   }
   prev(){
-    this.router.navigate(['/habit-addiction/s45085'])
+    this.router.navigate(['/adults/habit-addiction/s45085'])
 
   }
 

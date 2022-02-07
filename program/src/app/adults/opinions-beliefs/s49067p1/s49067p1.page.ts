@@ -82,7 +82,7 @@ createScreen(){
  
   }
   submitProgress(){
-    this.router.navigate(['/opinions-beliefs/s49068'])
+    this.router.navigate(['/adults/opinions-beliefs/s49068'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -105,13 +105,13 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/opinions-beliefs/s49067'])
+    this.router.navigate(['/adults/opinions-beliefs/s49067'])
 
   }
   
 
   goNext(){
-   // this.router.navigate(['/opinions-beliefs/s49067p1'])
+   // this.router.navigate(['/adults/opinions-beliefs/s49067p1'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

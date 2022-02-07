@@ -118,18 +118,18 @@ export class S64064Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/dealing-with-death/s64065'])
+          this.router.navigate(['/adults/dealing-with-death/s64065'])
 
         },
         ()=>{
-          this.router.navigate(['/dealing-with-death/s64065'])
+          this.router.navigate(['/adults/dealing-with-death/s64065'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/dealing-with-death/s64063'])
+    this.router.navigate(['/adults/dealing-with-death/s64063'])
   }
   
   ngOnDestroy(){

@@ -81,7 +81,7 @@ export class S44046Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
-    this.router.navigate(['/stress/s44047'])
+    this.router.navigate(['/adults/stress/s44047'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -98,7 +98,7 @@ export class S44046Page implements OnInit,OnDestroy {
 
   }
   prev(){
-    this.router.navigate(['/stress/s44045'])
+    this.router.navigate(['/adults/stress/s44045'])
     
   }
 

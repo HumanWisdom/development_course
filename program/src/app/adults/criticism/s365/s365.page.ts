@@ -137,7 +137,7 @@ export class S365Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-this.router.navigate(['/criticism/s366'])
+this.router.navigate(['/adults/criticism/s366'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -153,7 +153,7 @@ this.router.navigate(['/criticism/s366'])
 
 }
 prev(){
-  this.router.navigate(['/criticism/s364'])
+  this.router.navigate(['/adults/criticism/s364'])
 
 
 }

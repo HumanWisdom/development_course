@@ -96,15 +96,15 @@ export class S47051Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/relationships/s47052'])
+        this.router.navigate(['/adults/relationships/s47052'])
     
       },
       ()=>{
-        this.router.navigate(['/relationships/s47052'])
+        this.router.navigate(['/adults/relationships/s47052'])
       })
   }
   previous(){
-    this.router.navigate(['/relationships/s47050'])
+    this.router.navigate(['/adults/relationships/s47050'])
   }    
   ngOnDestroy(){
   }

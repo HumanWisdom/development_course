@@ -193,16 +193,16 @@ export class S46075Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/food-health/s46076'])
+          this.router.navigate(['/adults/food-health/s46076'])
         },
         ()=>{
-          this.router.navigate(['/food-health/s46076'])
+          this.router.navigate(['/adults/food-health/s46076'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/food-health/s46074'])
+    this.router.navigate(['/adults/food-health/s46074'])
 
   }
   ngOnDestroy(){
