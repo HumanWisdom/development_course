@@ -171,6 +171,7 @@ receiveBookmark(e)
 
 
   submitProgress(){
+    this.router.navigate(['/program-guide/s35011'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -188,7 +189,7 @@ receiveBookmark(e)
       ()=>{
         //this.router.navigate(['/adults/conditioning/s3500934'])
       })
-      this.router.navigate(['/program-guide/s35011'])
+     
     
 
   }
