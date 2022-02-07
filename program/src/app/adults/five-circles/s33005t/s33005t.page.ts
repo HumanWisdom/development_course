@@ -53,7 +53,7 @@ export class S33005tPage implements OnInit {
       this.bookmark=0
   }
   submitProgress(){
-    this.router.navigate(['/five-circles/s33006'])
+    this.router.navigate(['/adults/five-circles/s33006'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -70,7 +70,7 @@ export class S33005tPage implements OnInit {
    
   }
   previous(){
-    this.router.navigate(['/five-circles/s33004'])
+    this.router.navigate(['/adults/five-circles/s33004'])
   }
 
 }

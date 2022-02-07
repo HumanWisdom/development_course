@@ -151,7 +151,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/discovering-wisdom/s27009'])
+    this.router.navigate(['/adults/discovering-wisdom/s27009'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -171,13 +171,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/meditation/s27008p1'])
+       // this.router.navigate(['/adults/meditation/s27008p1'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/discovering-wisdom/s27007'])
+    this.router.navigate(['/adults/discovering-wisdom/s27007'])
 
 
   }

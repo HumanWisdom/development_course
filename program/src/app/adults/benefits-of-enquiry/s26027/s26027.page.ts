@@ -106,11 +106,11 @@ export class S26027Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/benefits-of-enquiry/s26028'])
+        this.router.navigate(['/adults/benefits-of-enquiry/s26028'])
     
       },
       ()=>{
-        this.router.navigate(['/benefits-of-enquiry/s26028'])
+        this.router.navigate(['/adults/benefits-of-enquiry/s26028'])
       })
     
 
@@ -120,7 +120,7 @@ export class S26027Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/benefits-of-enquiry/s26026'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26026'])
   }
   
   ngOnDestroy(){

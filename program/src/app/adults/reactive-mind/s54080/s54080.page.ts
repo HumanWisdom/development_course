@@ -194,16 +194,16 @@ export class S54080Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/reactive-mind/s54081'])
+          this.router.navigate(['/adults/reactive-mind/s54081'])
         },
         ()=>{
-          this.router.navigate(['/reactive-mind/s54081'])
+          this.router.navigate(['/adults/reactive-mind/s54081'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/reactive-mind/s54079'])
+    this.router.navigate(['/adults/reactive-mind/s54079'])
 
   }
   ngOnDestroy(){

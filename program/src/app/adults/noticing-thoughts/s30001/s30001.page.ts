@@ -93,13 +93,13 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-      this.router.navigate(['/noticing-thoughts/s30002'])
+      this.router.navigate(['/adults/noticing-thoughts/s30002'])
     
 
   }
 
   goNext(){
-   // this.router.navigate(['/noticing-thoughts/s2'])
+   // this.router.navigate(['/adults/noticing-thoughts/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

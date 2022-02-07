@@ -118,18 +118,18 @@ export class S13Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s14'])
+          this.router.navigate(['/adults/comparison/s14'])
 
         },
         ()=>{
-          this.router.navigate(['/comparison/s14'])
+          this.router.navigate(['/adults/comparison/s14'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/comparison/s11'])
+    this.router.navigate(['/adults/comparison/s11'])
   }
   
   ngOnDestroy(){

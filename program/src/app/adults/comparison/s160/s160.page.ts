@@ -372,7 +372,7 @@ export class S160Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/comparison/s159'])
+    this.router.navigate(['/adults/comparison/s159'])
 
   }
   routeNext(){

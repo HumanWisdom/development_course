@@ -151,11 +151,11 @@ submitProgress(){
   }
     
  
-    this.router.navigate(['/comparison/s102'])
+    this.router.navigate(['/adults/comparison/s102'])
 
 }
 prev(){
-  this.router.navigate(['/comparison/s99'])
+  this.router.navigate(['/adults/comparison/s99'])
 
 
 }

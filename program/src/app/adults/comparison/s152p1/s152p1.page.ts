@@ -47,10 +47,10 @@ export class S152p1Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/comparison/s152p2'])
+    this.router.navigate(['/adults/comparison/s152p2'])
   }
   prev(){
-    this.router.navigate(['/comparison/s151'])
+    this.router.navigate(['/adults/comparison/s151'])
 
   }
 

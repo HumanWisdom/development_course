@@ -92,12 +92,12 @@ export class S42003Page implements OnInit,OnDestroy {
       {
         console.log(res)
       })
-    this.router.navigate(['/without-language/s42004'])
+    this.router.navigate(['/adults/without-language/s42004'])
     
 
   }
   prev(){
-    this.router.navigate(['/without-language/s42002'])
+    this.router.navigate(['/adults/without-language/s42002'])
     
   }
 

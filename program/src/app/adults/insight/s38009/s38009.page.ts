@@ -105,11 +105,11 @@ export class S38009Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/insight/s38010'])
+        this.router.navigate(['/adults/insight/s38010'])
     
       },
       ()=>{
-        this.router.navigate(['/insight/s38010'])
+        this.router.navigate(['/adults/insight/s38010'])
       })
     
 
@@ -119,7 +119,7 @@ export class S38009Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/insight/s38008'])
+    this.router.navigate(['/adults/insight/s38008'])
   }
   
   ngOnDestroy(){

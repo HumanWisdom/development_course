@@ -193,16 +193,16 @@ export class S35014Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/program-guide/s35015'])
+          this.router.navigate(['/adults/program-guide/s35015'])
         },
         ()=>{
-          this.router.navigate(['/program-guide/s35015'])
+          this.router.navigate(['/adults/program-guide/s35015'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/program-guide/s35013'])
+    this.router.navigate(['/adults/program-guide/s35013'])
 
   }
   ngOnDestroy(){

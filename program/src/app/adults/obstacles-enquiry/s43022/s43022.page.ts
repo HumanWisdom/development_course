@@ -105,11 +105,11 @@ export class S43022Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/obstacles-enquiry/s43023'])
+        this.router.navigate(['/adults/obstacles-enquiry/s43023'])
     
       },
       ()=>{
-        this.router.navigate(['/obstacles-enquiry/s43023'])
+        this.router.navigate(['/adults/obstacles-enquiry/s43023'])
       })
     
 
@@ -119,7 +119,7 @@ export class S43022Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/obstacles-enquiry/s43021'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43021'])
   }
   
   ngOnDestroy(){

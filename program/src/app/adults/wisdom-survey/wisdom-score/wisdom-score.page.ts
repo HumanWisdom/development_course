@@ -46,11 +46,11 @@ export class WisdomScorePage implements OnInit {
   
   submitProgress(){
     
-    this.router.navigate(['/discovering-wisdom/s27032'])
+    this.router.navigate(['/adults/discovering-wisdom/s27032'])
 
   }
   prev(){
-    this.router.navigate(['/discovering-wisdom/s27020'])
+    this.router.navigate(['/adults/discovering-wisdom/s27020'])
 
   }
 

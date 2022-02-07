@@ -138,7 +138,7 @@ export class S34031Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-this.router.navigate(['/key-ideas/s34032'])
+this.router.navigate(['/adults/key-ideas/s34032'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -154,7 +154,7 @@ this.router.navigate(['/key-ideas/s34032'])
 
 }
 prev(){
-  this.router.navigate(['/key-ideas/s34030'])
+  this.router.navigate(['/adults/key-ideas/s34030'])
 
 
 }

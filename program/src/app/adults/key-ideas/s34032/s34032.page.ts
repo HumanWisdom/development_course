@@ -52,11 +52,11 @@ export class S34032Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/key-ideas/s34033'])
+    this.router.navigate(['/adults/key-ideas/s34033'])
 
   }
   prev(){
-    this.router.navigate(['/key-ideas/s34031'])
+    this.router.navigate(['/adults/key-ideas/s34031'])
 
   }
 

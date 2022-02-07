@@ -88,7 +88,7 @@ export class S32012Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
  
-    this.router.navigate(['/benefits-of-wisdom/s32013'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32013'])
    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -109,7 +109,7 @@ export class S32012Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/benefits-of-wisdom/s32011'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32011'])
  
  
   }

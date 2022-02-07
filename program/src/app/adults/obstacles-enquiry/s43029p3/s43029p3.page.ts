@@ -259,10 +259,10 @@ export class S43029p3Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/obstacles-enquiry/s43029p4'])
+          this.router.navigate(['/adults/obstacles-enquiry/s43029p4'])
         },
         ()=>{
-          this.router.navigate(['/obstacles-enquiry/s43029p4'])
+          this.router.navigate(['/adults/obstacles-enquiry/s43029p4'])
         })
    }
 
@@ -273,7 +273,7 @@ export class S43029p3Page implements OnInit {
 
   
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s43029p2'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43029p2'])
 
   }
 

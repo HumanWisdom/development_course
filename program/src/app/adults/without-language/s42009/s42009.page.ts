@@ -151,12 +151,12 @@ this.totalTime = this.endTime - this.startTime;
     "OptionIDs":this.sendOption.join()})
     .subscribe(res=>console.log(res))
 
-    this.router.navigate(['/without-language/s42010'])
+    this.router.navigate(['/adults/without-language/s42010'])
 
 
 }
 prev(){
-  this.router.navigate(['/without-language/s42008'])
+  this.router.navigate(['/adults/without-language/s42008'])
 
 
 }

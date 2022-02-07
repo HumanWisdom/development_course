@@ -84,7 +84,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/key-ideas/s34015'])
+    this.router.navigate(['/adults/key-ideas/s34015'])
 
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -108,7 +108,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/key-ideas/s34013'])
+    this.router.navigate(['/adults/key-ideas/s34013'])
 
   }
   
