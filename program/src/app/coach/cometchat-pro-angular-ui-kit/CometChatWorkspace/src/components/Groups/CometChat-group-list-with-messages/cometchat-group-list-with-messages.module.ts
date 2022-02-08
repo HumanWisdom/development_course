@@ -23,8 +23,8 @@ import { CometChatOutgoingCall } from "../../Calls/CometChat-outgoing-call/comet
     CometChatImageViewer,
     CometChatIncomingCall,
     CometChatOutgoingCall,
-    BrowserModule,
-    BrowserAnimationsModule,
+   // BrowserModule,
+   // BrowserAnimationsModule,
   ],
   exports: [CometChatGroupListWithMessagesComponent],
 })

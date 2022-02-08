@@ -22,8 +22,8 @@ import { CometChatOutgoingCall } from "../../Calls/CometChat-outgoing-call/comet
     CometChatUserDetails,
     CometChatIncomingCall,
     CometChatOutgoingCall,
-    BrowserModule,
-    BrowserAnimationsModule,
+  //  BrowserModule,
+  //  BrowserAnimationsModule,
   ],
   exports: [CometChatUserListWithMessagesComponent],
 })

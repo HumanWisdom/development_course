@@ -7,7 +7,9 @@ import { CometChatLiveReactionsComponent } from "./cometchat-live-reactions/come
 
 @NgModule({
   declarations: [CometChatLiveReactionsComponent],
-  imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
+  imports: [CommonModule, 
+    //BrowserModule, BrowserAnimationsModule
+  ],
   exports: [CometChatLiveReactionsComponent],
 })
 export class CometChatLiveReactions {}
