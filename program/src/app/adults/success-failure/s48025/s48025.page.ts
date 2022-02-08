@@ -137,6 +137,7 @@ export class S48025Page implements OnInit {
  
 
   submitProgress(){
+    this.router.navigate(['/success-failure/s48026'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -152,7 +153,7 @@ export class S48025Page implements OnInit {
     }
       
    
-      this.router.navigate(['/success-failure/s48026'])
+     
 
   }
   prev(){
