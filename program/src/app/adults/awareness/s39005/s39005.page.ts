@@ -105,12 +105,12 @@ export class S39005Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-      this.router.navigate(['/awareness/s39006'])
+      this.router.navigate(['/adults/awareness/s39006'])
    
  
   }
   prev(){
-    this.router.navigate(['/awareness/s39004'])
+    this.router.navigate(['/adults/awareness/s39004'])
  
  
   }

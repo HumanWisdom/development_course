@@ -106,11 +106,11 @@ export class S37010Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/three-steps-enquiry/s37011'])
+        this.router.navigate(['/adults/three-steps-enquiry/s37011'])
     
       },
       ()=>{
-        this.router.navigate(['/three-steps-enquiry/s37011'])
+        this.router.navigate(['/adults/three-steps-enquiry/s37011'])
       })
     
 
@@ -120,7 +120,7 @@ export class S37010Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/three-steps-enquiry/s37009'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37009'])
   }
   
   ngOnDestroy(){

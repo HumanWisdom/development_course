@@ -107,16 +107,16 @@ export class S373Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/criticism/s374'])
+        this.router.navigate(['/adults/criticism/s374'])
       },
       ()=>{
-        this.router.navigate(['/criticism/s374'])
+        this.router.navigate(['/adults/criticism/s374'])
       })
     
 
    }
    else{
-    this.router.navigate(['/criticism/s374'])
+    this.router.navigate(['/adults/criticism/s374'])
 
    }
     
@@ -124,7 +124,7 @@ export class S373Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/criticism/s372'])
+    this.router.navigate(['/adults/criticism/s372'])
   }
   
   ngOnDestroy(){

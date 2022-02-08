@@ -193,16 +193,16 @@ export class S63075Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/living-with-peace/s63076'])
+          this.router.navigate(['/adults/living-with-peace/s63076'])
         },
         ()=>{
-          this.router.navigate(['/living-with-peace/s63076'])
+          this.router.navigate(['/adults/living-with-peace/s63076'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/living-with-peace/s63074'])
+    this.router.navigate(['/adults/living-with-peace/s63074'])
 
   }
   ngOnDestroy(){

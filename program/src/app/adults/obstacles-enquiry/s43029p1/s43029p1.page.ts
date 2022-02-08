@@ -342,7 +342,7 @@ export class S43029p1Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  this.router.navigate(['/obstacles-enquiry/s43029p2'])
+  this.router.navigate(['/adults/obstacles-enquiry/s43029p2'])
   //console.log(this.totalTime,"total time")
  
 
@@ -367,7 +367,7 @@ export class S43029p1Page implements OnInit {
   }
   
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s43029'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43029'])
 
   }
   ngOnDestroy(){

@@ -105,10 +105,10 @@ export class S390Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/criticism/s391'])
+        this.router.navigate(['/adults/criticism/s391'])
       },
       ()=>{
-        this.router.navigate(['/criticism/s391'])
+        this.router.navigate(['/adults/criticism/s391'])
       })
     
 
@@ -118,7 +118,7 @@ export class S390Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/criticism/s389'])
+    this.router.navigate(['/adults/criticism/s389'])
   }
   
   ngOnDestroy(){

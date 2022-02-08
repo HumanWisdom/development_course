@@ -44,10 +44,10 @@ export class S28014Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/nature/s28015'])
+    this.router.navigate(['/adults/nature/s28015'])
   }
   prev(){
-    this.router.navigate(['/nature/s28013'])
+    this.router.navigate(['/adults/nature/s28013'])
 
 
   }

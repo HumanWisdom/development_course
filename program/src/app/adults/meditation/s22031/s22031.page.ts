@@ -89,7 +89,7 @@ export class S22031Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/meditation/s22032'])
+    this.router.navigate(['/adults/meditation/s22032'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S22031Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/meditation/s22030'])
+    this.router.navigate(['/adults/meditation/s22030'])
  
  
   }

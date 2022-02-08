@@ -118,18 +118,18 @@ export class S58080Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/work/s58081'])
+          this.router.navigate(['/adults/work/s58081'])
 
         },
         ()=>{
-          this.router.navigate(['/work/s58081'])
+          this.router.navigate(['/adults/work/s58081'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/work/s58079'])
+    this.router.navigate(['/adults/work/s58079'])
   }
   
   ngOnDestroy(){

@@ -152,11 +152,11 @@ export class S48025Page implements OnInit {
     }
       
    
-      this.router.navigate(['/success-failure/s48026'])
+      this.router.navigate(['/adults/success-failure/s48026'])
 
   }
   prev(){
-    this.router.navigate(['/success-failure/s48024'])
+    this.router.navigate(['/adults/success-failure/s48024'])
 
 
   }

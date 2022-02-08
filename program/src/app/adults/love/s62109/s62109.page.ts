@@ -137,7 +137,7 @@ export class S62109Page implements OnInit {
  
 
   submitProgress(){
-    this.router.navigate(['/love/s62110'])
+    this.router.navigate(['/adults/love/s62110'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -156,7 +156,7 @@ export class S62109Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/love/s62108'])
+    this.router.navigate(['/adults/love/s62108'])
 
 
   }

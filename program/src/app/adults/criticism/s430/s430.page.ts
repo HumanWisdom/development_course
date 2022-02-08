@@ -278,15 +278,15 @@ export class S430Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/criticism/s431'])
+          this.router.navigate(['/adults/criticism/s431'])
         },
         ()=>{
-          this.router.navigate(['/criticism/s431'])
+          this.router.navigate(['/adults/criticism/s431'])
         })
    }
 
    else{
-    this.router.navigate(['/criticism/s431'])
+    this.router.navigate(['/adults/criticism/s431'])
 
    }
    
@@ -296,7 +296,7 @@ export class S430Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/criticism/s429'])
+    this.router.navigate(['/adults/criticism/s429'])
   }
   
   ngOnDestroy(){

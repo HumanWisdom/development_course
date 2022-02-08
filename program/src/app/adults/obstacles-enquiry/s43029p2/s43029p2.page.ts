@@ -238,15 +238,15 @@ export class S43029p2Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/obstacles-enquiry/s43029p3'])
+          this.router.navigate(['/adults/obstacles-enquiry/s43029p3'])
         },
         ()=>{
-          this.router.navigate(['/obstacles-enquiry/s43029p3'])
+          this.router.navigate(['/adults/obstacles-enquiry/s43029p3'])
         })
    }
 
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s43029p1'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43029p1'])
 
   }
 

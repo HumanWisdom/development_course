@@ -86,6 +86,7 @@ export class S44032Page implements OnInit {
     console.log(e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/stress/s44033'])
    sessionStorage.setItem("r44032",JSON.stringify(e))
    this.r44032=JSON.parse(sessionStorage.getItem("r44032"))
   
@@ -104,11 +105,11 @@ export class S44032Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/stress/s44033'])
+       
     
       },
       ()=>{
-        this.router.navigate(['/stress/s44033'])
+        this.router.navigate(['/adults/stress/s44033'])
       })
     
 
@@ -118,7 +119,7 @@ export class S44032Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/stress/s44031'])
+    this.router.navigate(['/adults/stress/s44031'])
   }
   
   ngOnDestroy(){

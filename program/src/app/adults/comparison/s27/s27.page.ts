@@ -152,11 +152,11 @@ export class S27Page implements OnInit {
     }
       
    
-      this.router.navigate(['/comparison/s29'])
+      this.router.navigate(['/adults/comparison/s29'])
 
   }
   prev(){
-    this.router.navigate(['/comparison/s26'])
+    this.router.navigate(['/adults/comparison/s26'])
 
 
   }

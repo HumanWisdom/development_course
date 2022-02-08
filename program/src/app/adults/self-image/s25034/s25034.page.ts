@@ -118,17 +118,17 @@ export class S25034Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/self-image/s25040'])
+          this.router.navigate(['/adults/self-image/s25040'])
 
         },
         ()=>{
-          this.router.navigate(['/self-image/s25040'])
+          this.router.navigate(['/adults/self-image/s25040'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/self-image/s25033'])
+    this.router.navigate(['/adults/self-image/s25033'])
   }
   
   ngOnDestroy(){

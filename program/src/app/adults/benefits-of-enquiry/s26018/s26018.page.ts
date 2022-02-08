@@ -122,7 +122,7 @@ export class S26018Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/benefits-of-enquiry/s26020'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26020'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -136,7 +136,7 @@ export class S26018Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s26016'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26016'])
   }
   
   ngOnDestroy(){

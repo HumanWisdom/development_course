@@ -84,7 +84,7 @@ export class S47031Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/adults/relationships/s47032'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -100,12 +100,12 @@ export class S47031Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/relationships/s47032'])
+   
    
  
   }
   prev(){
-    this.router.navigate(['/relationships/s47030'])
+    this.router.navigate(['/adults/relationships/s47030'])
  
  
   }

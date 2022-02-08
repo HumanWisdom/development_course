@@ -87,7 +87,7 @@ export class S218Page implements OnInit,AfterViewInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/anger/s219'])
+    this.router.navigate(['/adults/anger/s219'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -101,12 +101,12 @@ export class S218Page implements OnInit,AfterViewInit {
         console.log(res)
       })
     
-    // this.router.navigate(['/anger/s219'])
+    // this.router.navigate(['/adults/anger/s219'])
    
 
   }
   previous(){
-    this.router.navigate(['/anger/s217'])
+    this.router.navigate(['/adults/anger/s217'])
 
 
   }

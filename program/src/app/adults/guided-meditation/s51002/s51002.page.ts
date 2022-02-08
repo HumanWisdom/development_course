@@ -84,7 +84,7 @@ export class S51002Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/guided-meditation/s51003'])
+    this.router.navigate(['/adults/guided-meditation/s51003'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -105,7 +105,7 @@ export class S51002Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/guided-meditation/s51000'])
+    this.router.navigate(['/adults/guided-meditation/s51000'])
  
  
   }

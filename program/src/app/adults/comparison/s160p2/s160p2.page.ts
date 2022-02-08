@@ -254,15 +254,15 @@ export class S160p2Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s160p3'])
+          this.router.navigate(['/adults/comparison/s160p3'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s160p3'])
+          this.router.navigate(['/adults/comparison/s160p3'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s160p3'])
+    this.router.navigate(['/adults/comparison/s160p3'])
 
    }
    
@@ -271,7 +271,7 @@ export class S160p2Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/comparison/s160p1'])
+    this.router.navigate(['/adults/comparison/s160p1'])
 
   }
 

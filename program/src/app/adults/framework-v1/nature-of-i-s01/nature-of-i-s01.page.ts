@@ -102,12 +102,12 @@ export class NatureOfIS01Page implements OnInit {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/nature-of-i/s57012'])
+    this.router.navigate(['/adults/nature-of-i/s57012'])
    
  
   }
   prev(){
-    this.router.navigate(['/nature-of-i/s57010'])
+    this.router.navigate(['/adults/nature-of-i/s57010'])
  
  
   }

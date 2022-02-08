@@ -100,18 +100,18 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s4810034'])
       })
-      this.router.navigate(['/success-failure/s48101'])
+      this.router.navigate(['/adults/success-failure/s48101'])
     
 
   }
   prev(){
-    this.router.navigate(['/success-failure/s48099'])
+    this.router.navigate(['/adults/success-failure/s48099'])
 
   }
   
 
   goNext(){
-   // this.router.navigate(['/success-failure/s48100'])
+   // this.router.navigate(['/adults/success-failure/s48100'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

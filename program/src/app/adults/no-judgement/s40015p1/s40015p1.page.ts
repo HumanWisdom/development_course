@@ -52,11 +52,11 @@ export class S40015p1Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/no-judgement/s40016'])
+    this.router.navigate(['/adults/no-judgement/s40016'])
 
   }
   prev(){
-    this.router.navigate(['/no-judgement/s40015'])
+    this.router.navigate(['/adults/no-judgement/s40015'])
 
   }
 

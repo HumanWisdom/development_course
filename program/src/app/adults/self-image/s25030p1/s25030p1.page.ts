@@ -96,14 +96,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/self-image/s25031'])
+        this.router.navigate(['/adults/self-image/s25031'])
       })
     
  
   }
  
   prev(){
-    this.router.navigate(['/self-image/s25030'])
+    this.router.navigate(['/adults/self-image/s25030'])
   }
  
   ngOnDestroy(){

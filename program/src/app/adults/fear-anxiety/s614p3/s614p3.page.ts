@@ -42,10 +42,10 @@ export class S614p3Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/fear-anxiety/s614p4'])
+    this.router.navigate(['/adults/fear-anxiety/s614p4'])
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s614p1'])
+    this.router.navigate(['/adults/fear-anxiety/s614p1'])
 
   }
 

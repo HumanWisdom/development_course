@@ -117,17 +117,17 @@ export class S18089Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/emotional-needs/s18090'])
+          this.router.navigate(['/adults/emotional-needs/s18090'])
 
         },
         ()=>{
-          this.router.navigate(['/emotional-needs/s18090'])
+          this.router.navigate(['/adults/emotional-needs/s18090'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/emotional-needs/s18088'])
+    this.router.navigate(['/adults/emotional-needs/s18088'])
   }
   
   ngOnDestroy(){

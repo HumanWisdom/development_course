@@ -116,17 +116,17 @@ export class S614p1Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s614p3'])
+          this.router.navigate(['/adults/fear-anxiety/s614p3'])
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s614p3'])
+          this.router.navigate(['/adults/fear-anxiety/s614p3'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s614p01'])
+    this.router.navigate(['/adults/fear-anxiety/s614p01'])
   }
   
   ngOnDestroy(){

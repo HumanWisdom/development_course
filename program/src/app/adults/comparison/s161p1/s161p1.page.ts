@@ -45,10 +45,10 @@ export class S161p1Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/comparison/s161p2'])
+    this.router.navigate(['/adults/comparison/s161p2'])
   }
   prev(){
-    this.router.navigate(['/comparison/s160p3'])
+    this.router.navigate(['/adults/comparison/s160p3'])
 
   }
 

@@ -118,18 +118,18 @@ export class S61087Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/loneliness/s61088'])
+          this.router.navigate(['/adults/loneliness/s61088'])
 
         },
         ()=>{
-          this.router.navigate(['/loneliness/s61088'])
+          this.router.navigate(['/adults/loneliness/s61088'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/loneliness/s61086'])
+    this.router.navigate(['/adults/loneliness/s61086'])
   }
   
   ngOnDestroy(){

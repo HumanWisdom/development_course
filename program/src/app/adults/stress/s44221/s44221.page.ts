@@ -104,11 +104,11 @@ export class S44221Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/stress/s44222'])
+        this.router.navigate(['/adults/stress/s44222'])
     
       },
       ()=>{
-        this.router.navigate(['/stress/s44222'])
+        this.router.navigate(['/adults/stress/s44222'])
       })
     
 
@@ -118,7 +118,7 @@ export class S44221Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/stress/s44220'])
+    this.router.navigate(['/adults/stress/s44220'])
   }
   
   ngOnDestroy(){

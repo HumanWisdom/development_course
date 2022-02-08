@@ -83,7 +83,7 @@ createScreen(){
     console.log("h")
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/pleasure/s20035'])
+    this.router.navigate(['/adults/pleasure/s20035'])
     this.service.submitProgressText({
      
       "ScrNumber":this.screenNumber,

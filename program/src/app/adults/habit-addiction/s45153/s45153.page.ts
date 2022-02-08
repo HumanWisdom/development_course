@@ -367,7 +367,7 @@ export class S45153Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/habit-addiction/s45152'])
+    this.router.navigate(['/adults/habit-addiction/s45152'])
 
   }
   

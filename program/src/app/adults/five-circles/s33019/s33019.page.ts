@@ -118,11 +118,11 @@ export class S33019Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/five-circles/s33020'])
+          this.router.navigate(['/adults/five-circles/s33020'])
 
         },
         ()=>{
-          this.router.navigate(['/five-circles/s33020'])
+          this.router.navigate(['/adults/five-circles/s33020'])
         })
    
 
@@ -134,7 +134,7 @@ export class S33019Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/five-circles/s33018'])
+    this.router.navigate(['/adults/five-circles/s33018'])
   }
   
   ngOnDestroy(){

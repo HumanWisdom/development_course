@@ -370,7 +370,7 @@ export class S20070p1Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/pleasure/s20070'])
+    this.router.navigate(['/adults/pleasure/s20070'])
 
   }
   

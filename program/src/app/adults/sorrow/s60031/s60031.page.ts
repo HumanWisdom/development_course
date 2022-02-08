@@ -137,6 +137,7 @@ export class S60031Page implements OnInit {
  
 
   submitProgress(){
+    this.router.navigate(['/adults/sorrow/s60032'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -152,11 +153,11 @@ export class S60031Page implements OnInit {
     }
       
    
-      this.router.navigate(['/sorrow/s60032'])
+    
 
   }
   prev(){
-    this.router.navigate(['/sorrow/s60030'])
+    this.router.navigate(['/adults/sorrow/s60030'])
 
 
   }

@@ -107,16 +107,16 @@ submitProgress(e){
     },
     error=>{
       console.log(error)
-      this.router.navigate(['/criticism/s344'])
+      this.router.navigate(['/adults/criticism/s344'])
     },
     ()=>{
-      this.router.navigate(['/criticism/s344'])
+      this.router.navigate(['/adults/criticism/s344'])
     })
   
 
  }
  else{
-  this.router.navigate(['/criticism/s344'])
+  this.router.navigate(['/adults/criticism/s344'])
 
  }
   
@@ -124,7 +124,7 @@ submitProgress(e){
 }
 
 previous(){
-  this.router.navigate(['/criticism/s342'])
+  this.router.navigate(['/adults/criticism/s342'])
 }
 
 ngOnDestroy(){

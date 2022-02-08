@@ -92,7 +92,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/nature/s28011'])
+    this.router.navigate(['/adults/nature/s28011'])
 
 
     this.service.submitProgressAv({
@@ -113,7 +113,7 @@ createScreen(){
    
   }
   prev(){
-    this.router.navigate(['/nature/s28009'])
+    this.router.navigate(['/adults/nature/s28009'])
 
 
   }

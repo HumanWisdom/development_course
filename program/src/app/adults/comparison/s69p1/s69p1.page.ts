@@ -47,10 +47,10 @@ export class S69p1Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/comparison/s69p2'])
+    this.router.navigate(['/adults/comparison/s69p2'])
   }
   prev(){
-    this.router.navigate(['/comparison/s68'])
+    this.router.navigate(['/adults/comparison/s68'])
 
   }
 

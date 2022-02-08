@@ -106,11 +106,11 @@ export class S56005Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/inner-boredom/s56006'])
+        this.router.navigate(['/adults/inner-boredom/s56006'])
     
       },
       ()=>{
-        this.router.navigate(['/inner-boredom/s56006'])
+        this.router.navigate(['/adults/inner-boredom/s56006'])
       })
     
 
@@ -120,7 +120,7 @@ export class S56005Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/inner-boredom/s56004'])
+    this.router.navigate(['/adults/inner-boredom/s56004'])
   }
   
   ngOnDestroy(){

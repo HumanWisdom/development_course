@@ -73,4 +73,8 @@ export class BlogArticlePage implements OnInit {
     })
   }
 
+  getimg(data){
+   return data.split('UsersAvatar\\')[1]
+  }
+
 }

@@ -278,15 +278,15 @@ export class S38019p7Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/insight/s38019p8'])
+          this.router.navigate(['/adults/insight/s38019p8'])
         },
         ()=>{
-          this.router.navigate(['/insight/s38019p8'])
+          this.router.navigate(['/adults/insight/s38019p8'])
         })
    }
 
    else{
-    this.router.navigate(['/insight/s38019p6'])
+    this.router.navigate(['/adults/insight/s38019p6'])
 
    }
    
@@ -296,7 +296,7 @@ export class S38019p7Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/insight/s38019p6'])
+    this.router.navigate(['/adults/insight/s38019p6'])
   }
   
   ngOnDestroy(){
