@@ -86,6 +86,7 @@ export class CometChatMessageListComponent
   }
 
   ngOnChanges(change: SimpleChanges) {
+    debugger
     try {
       if (change[enums.ITEM]) {
         //Removing Previous Conversation Listeners

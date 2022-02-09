@@ -73,10 +73,13 @@ export class CoachBioPage implements OnInit {
    ///// user.setName(localStorage.getItem('userName').toString());
     // CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
     //   user => {
-        CometChat.login('testing', COMETCHAT_CONSTANTS.AUTH_KEY).then(
+      // if(localStorage.getItem('COMETCHATUID')) {
+      //   this.router.navigate(["coach/coach-chat"]);
+      // }
+        CometChat.login(localStorage.getItem('COMETCHATUID').toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
           (user) => {
             console.log("Login Successful:", { user });
-            this.router.navigate(["coach/coach-chat"]);
+            this.router.navigate(["coach/coach-chat"], { state: { data: { coachID: this.coachID, isChatList: false } } });
           },
           (error) => {
             console.log("Login failed with exception:", { error });

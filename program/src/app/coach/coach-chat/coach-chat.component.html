@@ -1,4 +1,11 @@
-
 <div class="responsive">
-  <CometChatUI></CometChatUI>
+  <span *ngIf="isChatList">
+    <CometChatUI></CometChatUI>
+  </span>
+  <span *ngIf="!isChatList">
+    <cometchat-messages [item]="item" [type]="type" [callMessage]="callMessage"
+      [composedThreadMessage]="composedThreadMessage" [groupMessage]="groupMessage"
+      (actionGenerated)="actionHandler($event)"></cometchat-messages>
+  </span>
+  <!-- <CometChatUI></CometChatUI> -->
 </div>

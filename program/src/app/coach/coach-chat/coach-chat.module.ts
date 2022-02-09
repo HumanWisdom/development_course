@@ -12,7 +12,8 @@ import { CometChatConversationList } from '../cometchat-pro-angular-ui-kit/Comet
 import { CometChatGroupList } from '../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/Groups/CometChat-group-list/cometchat-group-list.module';
 import { CometChatUserList } from '../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/Users/CometChat-user-list/cometchat-user-list.module';
 import { CometChatAvatar } from '../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/Shared/CometChat-avatar/cometchat-avatar.module';
-
+import { CometChatMessages} from '../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/Messages/CometChat-messages/cometchat-messages.module'
+import { CommonModule } from '@angular/common';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-   // CommonModule,
+    CommonModule,
     FormsModule,
     IonicModule,
     CometChatUI,
@@ -35,6 +36,7 @@ const routes: Routes = [
     CometChatGroupList,
     CometChatUserList,
     CometChatAvatar,
+    CometChatMessages,
     RouterModule.forChild(routes)
   ],
   declarations: [CoachChatComponent],

@@ -85,4 +85,8 @@ export class BottomNavigationComponent implements OnInit {
    
   }
 
+  onChat() {
+    this.router.navigate(["coach/coach-chat"], { state: { data: { isChatList: true } } });
+  }
+
 }

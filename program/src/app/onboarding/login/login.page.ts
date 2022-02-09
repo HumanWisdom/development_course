@@ -7,6 +7,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {AdultsService} from '../../adults/adults.service'
 
 import { NgxCaptureService } from 'ngx-capture';
+import { COMETCHAT_CONSTANTS } from 'src/app/coach/CONSTS';
+import { CometChat } from '@cometchat-pro/chat';
 
 
 
@@ -252,6 +254,7 @@ export class LoginPage implements OnInit,OnDestroy {
           {
             this.service.verifyUser(this.urlEmail)
             .subscribe(res=>{
+              debugger
               console.log(res)
             })
           }
@@ -259,8 +262,19 @@ export class LoginPage implements OnInit,OnDestroy {
     .subscribe(
       res=>
       {//console.log(res)
+        debugger
         this.loginResponse=res
         this.userId=res.UserId
+         let  user = new CometChat.User(res.UserId);
+   user.setName(res.Name.toString());
+    CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+      user => {
+        debugger
+           console.log("user created", user);
+     },error => {
+         console.log("error", error);
+     }
+   )
         console.log(this.loginResponse)
         localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
         sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))

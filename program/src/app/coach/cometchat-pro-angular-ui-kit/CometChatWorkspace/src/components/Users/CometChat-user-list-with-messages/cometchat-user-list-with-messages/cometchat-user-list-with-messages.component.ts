@@ -109,6 +109,7 @@ export class CometChatUserListWithMessagesComponent implements OnInit {
    * @param Event user
    */
   userClicked(user: any) {
+    debugger
     try {
       if (this.checkAnimatedState !== null) {
         this.checkAnimatedState == "normal"

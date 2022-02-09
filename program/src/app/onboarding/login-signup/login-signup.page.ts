@@ -1,8 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CometChat } from '@cometchat-pro/chat';
 import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
+import { COMETCHAT_CONSTANTS } from 'src/app/coach/CONSTS';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
 
@@ -13,65 +15,65 @@ import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 })
 export class LoginSignupPage implements OnInit {
   //static progress mapping
-  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-  mediaVideo="https://humanwisdoms3.s3.eu-west-2.amazonaws.com" 
-  
-  @ViewChild('enablemodal') enablemodal:ElementRef;
-  @ViewChild('closemodal') closemodal:ElementRef;
-  @ViewChild('enabletab') enabletab:ElementRef;
-  @ViewChild('enableotpmodal') enableotpmodal:ElementRef;
+  mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
 
-  user:any
-  userId:any
-  idToken:any
-  email:any;
-  password:any
-  showAlert=false
-  successPassword=JSON.parse(sessionStorage.getItem("successPassword"))
-  showSuccessPassword:any
- saveUsername=false
- urlEmail:any
- urlPassword:any
- urlKey:any
- loginResponse:any
- socialFirstName:any
- socialLastName:any
- socialEmail:any
- userName:any
- deferredPrompt: any;
- showButton = true;
- enableLogin = false;
-  scrId:any
-  x=[]
+  @ViewChild('enablemodal') enablemodal: ElementRef;
+  @ViewChild('closemodal') closemodal: ElementRef;
+  @ViewChild('enabletab') enabletab: ElementRef;
+  @ViewChild('enableotpmodal') enableotpmodal: ElementRef;
+
+  user: any
+  userId: any
+  idToken: any
+  email: any;
+  password: any
+  showAlert = false
+  successPassword = JSON.parse(sessionStorage.getItem("successPassword"))
+  showSuccessPassword: any
+  saveUsername = false
+  urlEmail: any
+  urlPassword: any
+  urlKey: any
+  loginResponse: any
+  socialFirstName: any
+  socialLastName: any
+  socialEmail: any
+  userName: any
+  deferredPrompt: any;
+  showButton = true;
+  enableLogin = false;
+  scrId: any
+  x = []
 
 
 
 
   value: number = 100;
-  showWarning=false
-  showMessage=false
-  agree=false
-  showVerify=false
-  verificationCode:any
-  codeVerified=false
-  signUser:any
-  video=3
-  audio=4
- 
-  t = new Date();
-  minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
-  message:any
+  showWarning = false
+  showMessage = false
+  agree = false
+  showVerify = false
+  verificationCode: any
+  codeVerified = false
+  signUser: any
+  video = 3
+  audio = 4
 
-  get fullname(){
+  t = new Date();
+  minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
+  message: any
+
+  get fullname() {
     return this.registrationForm.get('fullname')
   }
-  get emailvalid(){
+  get emailvalid() {
     return this.registrationForm.get('email')
   }
-  get passwordvalid(){
+  get passwordvalid() {
     return this.registrationForm.get('password')
   }
-  get confirmpasswordvalid(){
+  get confirmpasswordvalid() {
     return this.registrationForm.get('confirmPassword')
   }
   // registrationForm=new FormGroup({
@@ -81,65 +83,63 @@ export class LoginSignupPage implements OnInit {
   //   password:new FormControl(''),
   //   confirmPassword:new FormControl('')
   // })
-  registrationForm=this.fb.group({
-    fullname:['',[Validators.required,Validators.minLength(3)]],
-    email:['',[Validators.required, Validators.email]],
-    password:['',[Validators.required, Validators.minLength(3)]],
-    confirmPassword:['', [Validators.required, Validators.minLength(3)]],
-  },{validator: this.PasswordValidator})
+  registrationForm = this.fb.group({
+    fullname: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(3)]],
+    confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
+  }, { validator: this.PasswordValidator })
 
-  
+
 
   constructor(private fb: FormBuilder,
     private router: Router,
-    private activate:ActivatedRoute,
+    private activate: ActivatedRoute,
     private authService: SocialAuthService,
-    private aservice:AdultsService,
-    private service:OnboardingService) { 
-      // let acceptCookie = localStorage.getItem('acceptcookie');
-      // if(acceptCookie === null)
-      //   this.router.navigate(['/adults/framework-v1/cookie-policy'])
-      this.activate.queryParams.subscribe(params => {
-        this.urlEmail= params['email'];
-        this.urlPassword=params['pwd'];
-        let res = localStorage.getItem("isloggedin")
-        if(res === 'T') {
-          this.router.navigate(['/adults/adult-dashboard'])
-        }else {
-          this.enableLogin = true
-        }
-        this.urlKey=params['key']
-        console.log(this.urlEmail,this.urlKey)
-         // Print the parameter to the console. 
+    private aservice: AdultsService,
+    private service: OnboardingService) {
+    // let acceptCookie = localStorage.getItem('acceptcookie');
+    // if(acceptCookie === null)
+    //   this.router.navigate(['/adults/framework-v1/cookie-policy'])
+    this.activate.queryParams.subscribe(params => {
+      this.urlEmail = params['email'];
+      this.urlPassword = params['pwd'];
+      let res = localStorage.getItem("isloggedin")
+      if (res === 'T') {
+        this.router.navigate(['/adults/adult-dashboard'])
+      } else {
+        this.enableLogin = true
+      }
+      this.urlKey = params['key']
+      console.log(this.urlEmail, this.urlKey)
+      // Print the parameter to the console. 
     });
-    }
+  }
 
   ngOnInit() {
     setTimeout(() => {
-      if(localStorage.getItem("emailCode") === 'T') {
+      if (localStorage.getItem("emailCode") === 'T') {
         let userid = localStorage.getItem("userIdCode")
         this.service.verifyUser(userid)
-        .subscribe(res=>{
-          console.log(res)
-        })
+          .subscribe(res => {
+            console.log(res)
+          })
       }
     }, 4000)
   }
-  forbiddenNameValidator(control: AbstractControl):{[key: string]:any} | null
-   {
-     const forbidden= /admin/.test(control.value)
-     return forbidden ?{'forbiddenName': {value: control.value}}:null
+  forbiddenNameValidator(control: AbstractControl): { [key: string]: any } | null {
+    const forbidden = /admin/.test(control.value)
+    return forbidden ? { 'forbiddenName': { value: control.value } } : null
 
   }
 
-  PasswordValidator(control: AbstractControl):{[key: string]:boolean} | null
-   {
-     const password= control.get('password')
-     const confirmPassword=control.get('confirmPassword')
-     if(password.pristine || confirmPassword.pristine)
+  PasswordValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.get('password')
+    const confirmPassword = control.get('confirmPassword')
+    if (password.pristine || confirmPassword.pristine)
       return null
-     return password && confirmPassword && password.value != confirmPassword.value ?
-     {'misMatch': true}:null
+    return password && confirmPassword && password.value != confirmPassword.value ?
+      { 'misMatch': true } : null
 
   }
 
@@ -149,70 +149,70 @@ export class LoginSignupPage implements OnInit {
     }
     return i;
   }
-  
-  signup(){
-     this.service.addUser({ 
-     "FName":this.registrationForm.get('fullname').value.split(' ')[0],
-     "Lname":this.registrationForm.get('fullname').value.split(' ')[1] === undefined ? '' :  this.registrationForm.get('fullname').value.split(' ')[1],
-     "Email":this.registrationForm.get('email').value,
-     "Pwd":this.registrationForm.get('password').value,
-     })
-     .subscribe(res=>
-       {
-       console.log(res)
-       if(res>0){
-        window.alert('An email has been sent to you')
-        this.enableotpmodal.nativeElement.click()
-        this.showMessage=true
-        this.signUser=res
-        this.showWarning=false
-        localStorage.setItem("signUser",JSON.stringify(this.signUser))
-        
 
-       }
-        
+  signup() {
+    this.service.addUser({
+      "FName": this.registrationForm.get('fullname').value.split(' ')[0],
+      "Lname": this.registrationForm.get('fullname').value.split(' ')[1] === undefined ? '' : this.registrationForm.get('fullname').value.split(' ')[1],
+      "Email": this.registrationForm.get('email').value,
+      "Pwd": this.registrationForm.get('password').value,
+    })
+      .subscribe(res => {
+        console.log(res)
+        if (res > 0) {
+          window.alert('An email has been sent to you')
+          this.enableotpmodal.nativeElement.click()
+          this.showMessage = true
+          this.signUser = res
+          this.showWarning = false
+          localStorage.setItem("signUser", JSON.stringify(this.signUser))
 
-       },
-       error=>{
-         console.log(error.error.Message)
-         this.message=error.error.Message
-         window.alert(this.message)
-         this.showWarning=true
-        
+
+        }
+
 
       },
-      ()=>{
-        /*if(this.showWarning=false)
-        {
-          this.showMessage=true
-        }*/
-         
-       
-      
-       }
-     )
-    
+        error => {
+          console.log(error.error.Message)
+          this.message = error.error.Message
+          window.alert(this.message)
+          this.showWarning = true
+
+
+        },
+        () => {
+          /*if(this.showWarning=false)
+          {
+            this.showMessage=true
+          }*/
+
+
+
+        }
+      )
+
 
   }
 
-  verifyCode(){
-    this.service.verifyCode({"Email":this.registrationForm.get('email').value,
-                              "VCode":this.verificationCode})
-    .subscribe(res=>{
-      console.log(res)
-      if(res>0)
-      {
-        this.closemodal.nativeElement.click()
-        this.codeVerified=true
-        localStorage.setItem("codeVerified",JSON.stringify(this.codeVerified))
-        localStorage.setItem("email",JSON.stringify(this.registrationForm.get('email').value))
-        localStorage.setItem("password",JSON.stringify(this.registrationForm.get('password').value))
-        window.location.reload()
-      }
-      
-    }, (err) => {
-      window.alert(err.error['Message'])
+  verifyCode() {
+    this.service.verifyCode({
+      "Email": this.registrationForm.get('email').value,
+      "VCode": this.verificationCode
     })
+      .subscribe(res => {
+        console.log(res)
+        if (res > 0) {
+          this.closemodal.nativeElement.click()
+          this.codeVerified = true
+          localStorage.setItem("codeVerified", JSON.stringify(this.codeVerified))
+          localStorage.setItem("email", JSON.stringify(this.registrationForm.get('email').value))
+          localStorage.setItem("password", JSON.stringify(this.registrationForm.get('password').value))
+          window.location.reload()
+        }
+
+      }, (err) => {
+        window.alert(err.error['Message'])
+      })
 
   }
 
@@ -222,317 +222,85 @@ export class LoginSignupPage implements OnInit {
 
 
 
-  googleLogin(){
+  googleLogin() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      this.idToken=user.idToken
-      this.socialFirstName=user.firstName
-      this.socialLastName=user.lastName
-      this.socialEmail=user.email
+      this.idToken = user.idToken
+      this.socialFirstName = user.firstName
+      this.socialLastName = user.lastName
+      this.socialEmail = user.email
       console.log(user)
 
       this.service.verifyGoogle({
         "TokenID": this.idToken,
-        "FName":this.socialFirstName,
+        "FName": this.socialFirstName,
         "LName": this.socialLastName,
         "Email": this.socialEmail,
-         "VCode": "",
-         "Pwd": ""
+        "VCode": "",
+        "Pwd": ""
       })
-      .subscribe(res=>
-        {
+        .subscribe(res => {
           console.log(res)
-          if(res){
-            
-          
-              this.loginResponse=res
-              console.log(this.loginResponse)
-              localStorage.setItem('guest', 'F');
-              localStorage.setItem("remember", 'T')
-              localStorage.setItem('socialLogin', 'T');
-              localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
-              localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
-              localStorage.setItem("video",JSON.stringify(this.video))
-              localStorage.setItem("audio",JSON.stringify(this.audio))
-              localStorage.setItem('btnclick', 'F')
-              localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-              sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-              localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-              localStorage.setItem("userId",JSON.stringify(this.userId))
-              localStorage.setItem("email", this.socialEmail)
-              localStorage.setItem("FnName", this.socialFirstName)
-              localStorage.setItem("RoleID",JSON.stringify(res.RoleID))
-              localStorage.setItem("LName", this.socialLastName)
-              localStorage.setItem("pswd", '')
-              localStorage.setItem("name", this.loginResponse.Name)
-              localStorage.setItem("first", 'T')
-              if(parseInt(this.loginResponse.UserId)==0)
-              {
-                this.showAlert=true
-                window.alert('You have enetered wrong credentials. Please try again.')
-                this.email=""
-                this.password=""
-
-              }
-              else{
-                this.showAlert=false
-                this.userId=this.loginResponse.UserId
-                this.userName=this.loginResponse.Name
-                localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-                sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-                localStorage.setItem("userId",JSON.stringify(this.userId))
-                localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
-                console.log(localStorage.getItem("token"),"this is local token")
-                if(this.saveUsername==true)
-                {
-                  localStorage.setItem("userId",JSON.stringify(this.userId))
-                  localStorage.setItem("userEmail",JSON.stringify(this.socialEmail))
-                  localStorage.setItem("userName",JSON.stringify(this.userName))
-
-                }
-                  
-                else
-                {
-                  sessionStorage.setItem("userId",JSON.stringify(this.userId))
-                  sessionStorage.setItem("userEmail",JSON.stringify(this.socialEmail))
-                  sessionStorage.setItem("userName",JSON.stringify(this.userName))
+          if (res) {
 
 
-                }
-
-
-               
-                  let acceptCookie = localStorage.getItem('activeCode');
-                  let subscribePage = localStorage.getItem('subscribepage');
-                  if(acceptCookie === 'T' || subscribePage === 'T'){
-                    localStorage.setItem("isloggedin", 'T')
-                    if(acceptCookie === 'T') {
-                      localStorage.setItem("activeCode", 'F')
-                    }
-                    if(subscribePage === 'T') {
-                      localStorage.setItem("subscribepage", 'F')
-                    }
-                    this.router.navigate(['/onboarding/add-to-cart'])
-                  }else {
-                    localStorage.setItem("isloggedin", 'T')
-                    this.router.navigate(['/adults/adult-dashboard'])
-                  }
-                
-            
-                /* if(this.urlEmail)
-                  {
-                    this.service.verifyUser(this.userId)
-                    .subscribe(res=>{
-                      console.log(res)
-                    })
-                  }*/
-
-                }
+            this.loginResponse = res
+            this.checkUserExistInCometChat(res);
+            console.log(this.loginResponse)
+            localStorage.setItem('guest', 'F');
+            localStorage.setItem("remember", 'T')
+            localStorage.setItem('socialLogin', 'T');
+            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+            localStorage.setItem("video", JSON.stringify(this.video))
+            localStorage.setItem("audio", JSON.stringify(this.audio))
+            localStorage.setItem('btnclick', 'F')
+            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("email", this.socialEmail)
+            localStorage.setItem("FnName", this.socialFirstName)
+            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+            localStorage.setItem("LName", this.socialLastName)
+            localStorage.setItem("pswd", '')
+            localStorage.setItem("name", this.loginResponse.Name)
+            localStorage.setItem("first", 'T')
+            if (parseInt(this.loginResponse.UserId) == 0) {
+              this.showAlert = true
+              window.alert('You have enetered wrong credentials. Please try again.')
+              this.email = ""
+              this.password = ""
 
             }
-          
-        })
-    },
-    error=>console.log(error),
-    ()=>{
-      //this.router.navigate[('/onboarding/addcart')]
-     // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
-    });
+            else {
+              this.showAlert = false
+              this.userId = this.loginResponse.UserId
+              this.userName = this.loginResponse.Name
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              console.log(localStorage.getItem("token"), "this is local token")
+              if (this.saveUsername == true) {
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                localStorage.setItem("userName", JSON.stringify(this.userName))
 
-   
-
-
-  }
-
-  fbLogin(){
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-     // this.user = user;
-      console.log(user)
-      this.user = user;
-      this.idToken=user.authToken
-      this.socialFirstName=user.firstName
-      this.socialLastName=user.lastName
-      this.socialEmail=user.email
-      if(user.email !== undefined) {
-        this.service.verifyFb({
-          "TokenID": this.idToken,
-          "FName":this.socialFirstName,
-          "LName": this.socialLastName,
-          "Email": this.socialEmail,
-           "VCode": "",
-           "Pwd": ""
-        })
-        .subscribe(res=>
-          {
-            console.log(res)
-            if(res){
-             
-                this.loginResponse=res
-                console.log(this.loginResponse)
-                localStorage.setItem('socialLogin', 'T');
-                localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
-                localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
-                localStorage.setItem("video",JSON.stringify(this.video))
-                localStorage.setItem("audio",JSON.stringify(this.audio))
-                localStorage.setItem("remember", 'T')
-                localStorage.setItem('guest', 'F');
-                localStorage.setItem('btnclick', 'F')
-                localStorage.setItem("FnName", this.socialFirstName)
-                localStorage.setItem("LName", this.socialLastName)
-                localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-                sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-                localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
-                localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
-                localStorage.setItem("userId",JSON.stringify(this.userId))
-                localStorage.setItem("RoleID",JSON.stringify(res.RoleID))
-                localStorage.setItem("email", this.socialEmail)
-                localStorage.setItem("pswd", '')
-                localStorage.setItem("name", this.loginResponse.Name)
-                localStorage.setItem("first", 'T')
-                if(parseInt(this.loginResponse.UserId)==0)
-                {
-                  this.showAlert=true
-                  window.alert('You have enetered wrong credentials. Please try again.')
-                  this.email=""
-                  this.password=""
-  
-                }
-                else{
-                  this.showAlert=false
-                  this.userId=this.loginResponse.UserId
-                  this.userName=this.loginResponse.Name
-                  localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-                  sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-                  localStorage.setItem("userId",JSON.stringify(this.userId))
-                  localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
-                  console.log(localStorage.getItem("token"),"this is local token")
-                  if(this.saveUsername==true)
-                  {
-                    localStorage.setItem("userId",JSON.stringify(this.userId))
-                    localStorage.setItem("userEmail",JSON.stringify(this.socialEmail))
-                    localStorage.setItem("userName",JSON.stringify(this.userName))
-  
-                  }
-                    
-                  else
-                  {
-                    sessionStorage.setItem("userId",JSON.stringify(this.userId))
-                    sessionStorage.setItem("userEmail",JSON.stringify(this.socialEmail))
-                    sessionStorage.setItem("userName",JSON.stringify(this.userName))
-  
-  
-                  }
-  
-                  
-                    let acceptCookie = localStorage.getItem('activeCode');
-                    let subscribePage = localStorage.getItem('subscribepage');
-                    if(acceptCookie === 'T' || subscribePage === 'T'){
-                      localStorage.setItem("isloggedin", 'T')
-                      if(acceptCookie === 'T') {
-                        localStorage.setItem("activeCode", 'F')
-                      }
-                      if(subscribePage === 'T') {
-                        localStorage.setItem("subscribepage", 'F')
-                      }
-                      this.router.navigate(['/onboarding/add-to-cart'])
-                    }else {
-                      localStorage.setItem("isloggedin", 'T')
-                      this.router.navigate(['/adults/adult-dashboard'])
-                    }
-                  
-              
-                  /* if(this.urlEmail)
-                    {
-                      this.service.verifyUser(this.userId)
-                      .subscribe(res=>{
-                        console.log(res)
-                      })
-                    }*/
-  
-                  }
               }
-            
-          })
-      }else {
-        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
-      }
-    });
 
-  }
-
-  emailLogin(){
-    localStorage.removeItem("token")
-    if(this.urlEmail)
-          {
-            this.service.verifyUser(this.urlEmail)
-            .subscribe(res=>{
-              console.log(res)
-            })
-          }
-    this.service.emailLogin(this.email,this.password)
-    .subscribe(
-      res=>
-      {//console.log(res)
-        this.loginResponse=res
-        console.log(this.loginResponse)
-        localStorage.setItem('socialLogin', 'F');
-        localStorage.setItem('guest', 'F');
-        localStorage.setItem('btnclick', 'F')
-        localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-        sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-        localStorage.setItem("token",JSON.stringify(res.access_token))
-        localStorage.setItem("Subscriber", res.Subscriber)
-        localStorage.setItem("userId",JSON.stringify(this.userId))
-        localStorage.setItem("RoleID",JSON.stringify(res.RoleID))
-        localStorage.setItem("email", this.email)
-        localStorage.setItem("pswd", this.password)
-        localStorage.setItem("name", res.Name)
-        localStorage.setItem("first", 'T')
-        localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
-        localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
-        localStorage.setItem("video",JSON.stringify(this.video))
-        localStorage.setItem("audio",JSON.stringify(this.audio))
-        localStorage.setItem("IsCoach",this.loginResponse.IsCoach)
-        if(res.UserId==0)
-        {
-          this.showAlert=true
-          window.alert('You have enetered wrong credentials. Please try again.')
-          this.email=""
-          this.password=""
-
-        }
-        else{
-          this.showAlert=false
-          this.userId=res.UserId
-          this.userName=res.Name
-          localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-          sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
-          localStorage.setItem("userId",JSON.stringify(this.userId))
-          localStorage.setItem("token",JSON.stringify(res.access_token))
-          console.log(localStorage.getItem("token"),"this is local token")
-          if(this.saveUsername==true)
-          {
-            localStorage.setItem("userId",JSON.stringify(this.userId))
-            localStorage.setItem("userEmail",JSON.stringify(this.email))
-            localStorage.setItem("userName",JSON.stringify(this.userName))
-
-          }
-            
-          else
-          {
-            sessionStorage.setItem("userId",JSON.stringify(this.userId))
-            sessionStorage.setItem("userEmail",JSON.stringify(this.email))
-            sessionStorage.setItem("userName",JSON.stringify(this.userName))
+              else {
+                sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                sessionStorage.setItem("userName", JSON.stringify(this.userName))
 
 
-          }
-          this.freescreens()
-          let roleid = JSON.parse(localStorage.getItem('RoleID'));
-                  let emailcode = localStorage.getItem("emailCode");
-            
+              }
+
+
+
               let acceptCookie = localStorage.getItem('activeCode');
               let subscribePage = localStorage.getItem('subscribepage');
               if (acceptCookie === 'T' || subscribePage === 'T') {
@@ -543,89 +311,366 @@ export class LoginSignupPage implements OnInit {
                 if (subscribePage === 'T') {
                   localStorage.setItem("subscribepage", 'F')
                 }
-                if (roleid === 8 && emailcode === 'T') {
+                this.router.navigate(['/onboarding/add-to-cart'])
+              } else {
+                localStorage.setItem("isloggedin", 'T')
+                this.router.navigate(['/adults/adult-dashboard'])
+              }
+
+
+              /* if(this.urlEmail)
+                {
+                  this.service.verifyUser(this.userId)
+                  .subscribe(res=>{
+                    console.log(res)
+                  })
+                }*/
+
+            }
+
+          }
+
+        })
+    },
+      error => console.log(error),
+      () => {
+        //this.router.navigate[('/onboarding/addcart')]
+        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+      });
+
+
+
+
+  }
+
+  fbLogin() {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.authService.authState.subscribe((user) => {
+      // this.user = user;
+      console.log(user)
+      this.user = user;
+      this.idToken = user.authToken
+      this.socialFirstName = user.firstName
+      this.socialLastName = user.lastName
+      this.socialEmail = user.email
+      if (user.email !== undefined) {
+        this.service.verifyFb({
+          "TokenID": this.idToken,
+          "FName": this.socialFirstName,
+          "LName": this.socialLastName,
+          "Email": this.socialEmail,
+          "VCode": "",
+          "Pwd": ""
+        })
+          .subscribe(res => {
+            console.log(res)
+            if (res) {
+
+              this.loginResponse = res
+              this.checkUserExistInCometChat(res);
+              console.log(this.loginResponse)
+              localStorage.setItem('socialLogin', 'T');
+              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+              localStorage.setItem("video", JSON.stringify(this.video))
+              localStorage.setItem("audio", JSON.stringify(this.audio))
+              localStorage.setItem("remember", 'T')
+              localStorage.setItem('guest', 'F');
+              localStorage.setItem('btnclick', 'F')
+              localStorage.setItem("FnName", this.socialFirstName)
+              localStorage.setItem("LName", this.socialLastName)
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+              localStorage.setItem("email", this.socialEmail)
+              localStorage.setItem("pswd", '')
+              localStorage.setItem("name", this.loginResponse.Name)
+              localStorage.setItem("first", 'T')
+              if (parseInt(this.loginResponse.UserId) == 0) {
+                this.showAlert = true
+                window.alert('You have enetered wrong credentials. Please try again.')
+                this.email = ""
+                this.password = ""
+
+              }
+              else {
+                this.showAlert = false
+                this.userId = this.loginResponse.UserId
+                this.userName = this.loginResponse.Name
+                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+                console.log(localStorage.getItem("token"), "this is local token")
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId))
+                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  localStorage.setItem("userName", JSON.stringify(this.userName))
+
+                }
+
+                else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
+
+
+                }
+
+
+                let acceptCookie = localStorage.getItem('activeCode');
+                let subscribePage = localStorage.getItem('subscribepage');
+                if (acceptCookie === 'T' || subscribePage === 'T') {
                   localStorage.setItem("isloggedin", 'T')
-                  this.router.navigate(['/onboarding/change-password'])
-                }else {
-                  if(localStorage.getItem("emailCode") === 'T') {
-                    localStorage.setItem("emailCode", 'F');
+                  if (acceptCookie === 'T') {
+                    localStorage.setItem("activeCode", 'F')
+                  }
+                  if (subscribePage === 'T') {
+                    localStorage.setItem("subscribepage", 'F')
                   }
                   this.router.navigate(['/onboarding/add-to-cart'])
+                } else {
+                  localStorage.setItem("isloggedin", 'T')
+                  this.router.navigate(['/adults/adult-dashboard'])
                 }
-              } else {
-                if (roleid === 8 && emailcode === 'T') {
-                  localStorage.setItem("isloggedin", 'T')
-                  this.router.navigate(['/onboarding/change-password'])
-                }else {
-                  if(localStorage.getItem("emailCode") === 'T') {
-                    localStorage.setItem("emailCode", 'F');
-                  }
-                  localStorage.setItem("isloggedin", 'T')
-                  if(roleid === 8) {
-                    let userId = JSON.parse(localStorage.getItem("userId"))
-                    window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
-                  }else {
-                    this.router.navigate(['/adults/adult-dashboard'])
-                  }
-                
+
+
+                /* if(this.urlEmail)
+                  {
+                    this.service.verifyUser(this.userId)
+                    .subscribe(res=>{
+                      console.log(res)
+                    })
+                  }*/
+
               }
             }
-              
-            
-         /* if(this.urlEmail)
-          {
-            this.service.verifyUser(this.userId)
-            .subscribe(res=>{
-              console.log(res)
-            })
-          }*/
+
+          })
+      } else {
+        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+      }
+    });
+
+  }
+
+  checkUserExistInCometChat(res) {
+
+    const appSetting = new CometChat.AppSettingsBuilder().setRegion(COMETCHAT_CONSTANTS.REGION).subscribePresenceForAllUsers().build();
+CometChat.init(COMETCHAT_CONSTANTS.APP_ID, appSetting).then(() => {
+  debugger
+  CometChat.login(res?.UserId.toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
+    (user) => {
+      debugger
+      console.log("Login Successful:", { user });
+    },
+    (error) => {
+      debugger
+      console.log("Login failed with exception:", { error });
+      let user = new CometChat.User(res?.UserId.toString());
+      user.setName(res?.Name.toString());
+      CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+        (user: any) => {
+          debugger
+          console.log("user created", user);
+          // CometChat.login( user?.uid.toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
+          //   (user) => {
+          //     debugger
+          //     console.log("Login Successful:", { user });
+          //   }, error => {
+          //     console.log("Login failed with exception:", { error });
+          //   })
+          localStorage.setItem('COMETCHATUID', user?.uid)
+
+        }, error => {
+          console.log("error", error);
 
         }
-         
-       
-      },
-      error=>{console.log(error)},
-      ()=>{
-        // this.freeScreens()
-        // localStorage.setItem("userId",JSON.stringify(this.userId))
-        // console.log("urlKey",this.urlKey)
-        // if(this.showAlert==false)
-        // {
-        //   console.log("showAlert is false",this.loginResponse.Subscriber,"subscriber")
-        //   if((this.loginResponse.Subscriber==0) && this.urlKey)
-        //   {
-        //     console.log("key and not subscriber")
-        //     sessionStorage.setItem("urlKey",JSON.stringify(this.urlKey))
-        //     this.router.navigate(['/onboarding/activationkey'])
+      );
+    }
+  );
+  console.log('app is ready to work');
+}, (error) => {
+  console.log('Error In Init', error);
+});
 
-        //   }
-         
-        //  else if((this.loginResponse.Subscriber==0) && !this.urlKey)
-        //  {
+
+
+  }
+
+  emailLogin() {
+    localStorage.removeItem("token")
+    if (this.urlEmail) {
+      this.service.verifyUser(this.urlEmail)
+        .subscribe(res => {
+          console.log(res)
+        })
+    }
+    this.service.emailLogin(this.email, this.password)
+      .subscribe(
+        res => {//console.log(res)
+          this.loginResponse = res
+
+          this.checkUserExistInCometChat(res);
+          // CometChat.getUser(res.UserId.toString()).then(
+          //   user => {
+          //     debugger
+          //     console.log("User details fetched for user:", user);
+          //   }, error => {
+          //     debugger
+          //     console.log("User details fetching failed with error:", error);
+          //   }
+          // );
+
+          console.log(this.loginResponse)
+          localStorage.setItem('socialLogin', 'F');
+          localStorage.setItem('guest', 'F');
+          localStorage.setItem('btnclick', 'F')
+          localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("token", JSON.stringify(res.access_token))
+          localStorage.setItem("Subscriber", res.Subscriber)
+          localStorage.setItem("userId", JSON.stringify(this.userId))
+          localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+          localStorage.setItem("email", this.email)
+          localStorage.setItem("pswd", this.password)
+          localStorage.setItem("name", res.Name)
+          localStorage.setItem("first", 'T')
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+          localStorage.setItem("video", JSON.stringify(this.video))
+          localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem("IsCoach", this.loginResponse.IsCoach)
+          if (res.UserId == 0) {
+            this.showAlert = true
+            window.alert('You have enetered wrong credentials. Please try again.')
+            this.email = ""
+            this.password = ""
+
+          }
+          else {
+            this.showAlert = false
+            this.userId = res.UserId
+            this.userName = res.Name
+            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("token", JSON.stringify(res.access_token))
+            console.log(localStorage.getItem("token"), "this is local token")
+            if (this.saveUsername == true) {
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("userEmail", JSON.stringify(this.email))
+              localStorage.setItem("userName", JSON.stringify(this.userName))
+
+            }
+
+            else {
+              sessionStorage.setItem("userId", JSON.stringify(this.userId))
+              sessionStorage.setItem("userEmail", JSON.stringify(this.email))
+              sessionStorage.setItem("userName", JSON.stringify(this.userName))
+
+
+            }
+            this.freescreens()
+            let roleid = JSON.parse(localStorage.getItem('RoleID'));
+            let emailcode = localStorage.getItem("emailCode");
+
+            let acceptCookie = localStorage.getItem('activeCode');
+            let subscribePage = localStorage.getItem('subscribepage');
+            if (acceptCookie === 'T' || subscribePage === 'T') {
+              localStorage.setItem("isloggedin", 'T')
+              if (acceptCookie === 'T') {
+                localStorage.setItem("activeCode", 'F')
+              }
+              if (subscribePage === 'T') {
+                localStorage.setItem("subscribepage", 'F')
+              }
+              if (roleid === 8 && emailcode === 'T') {
+                localStorage.setItem("isloggedin", 'T')
+                this.router.navigate(['/onboarding/change-password'])
+              } else {
+                if (localStorage.getItem("emailCode") === 'T') {
+                  localStorage.setItem("emailCode", 'F');
+                }
+                this.router.navigate(['/onboarding/add-to-cart'])
+              }
+            } else {
+              if (roleid === 8 && emailcode === 'T') {
+                localStorage.setItem("isloggedin", 'T')
+                this.router.navigate(['/onboarding/change-password'])
+              } else {
+                if (localStorage.getItem("emailCode") === 'T') {
+                  localStorage.setItem("emailCode", 'F');
+                }
+                localStorage.setItem("isloggedin", 'T')
+                if (roleid === 8) {
+                  let userId = JSON.parse(localStorage.getItem("userId"))
+                  window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
+                } else {
+                  this.router.navigate(['/adults/adult-dashboard'])
+                }
+
+              }
+            }
+
+
+            /* if(this.urlEmail)
+             {
+               this.service.verifyUser(this.userId)
+               .subscribe(res=>{
+                 console.log(res)
+               })
+             }*/
+
+          }
+
+
+        },
+        error => { console.log(error) },
+        () => {
+          // this.freeScreens()
+          // localStorage.setItem("userId",JSON.stringify(this.userId))
+          // console.log("urlKey",this.urlKey)
+          // if(this.showAlert==false)
+          // {
+          //   console.log("showAlert is false",this.loginResponse.Subscriber,"subscriber")
+          //   if((this.loginResponse.Subscriber==0) && this.urlKey)
+          //   {
+          //     console.log("key and not subscriber")
+          //     sessionStorage.setItem("urlKey",JSON.stringify(this.urlKey))
+          //     this.router.navigate(['/onboarding/activationkey'])
+
+          //   }
+
+          //  else if((this.loginResponse.Subscriber==0) && !this.urlKey)
+          //  {
           //  console.log("no key no subscriber")
           // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
-        //    this.router.navigate(['/adults/adult-dashboard'])
-        //   }
-          
-         
-        //  else if(this.loginResponse.Subscriber==1)
-        //  {
-        //    console.log("subscriber")
-        //    this.router.navigate(['/adults/adult-dashboard'])
-        //  }
-           
+          //    this.router.navigate(['/adults/adult-dashboard'])
+          //   }
 
-        // }
-         
-      }
 
-      
-    )
+          //  else if(this.loginResponse.Subscriber==1)
+          //  {
+          //    console.log("subscriber")
+          //    this.router.navigate(['/adults/adult-dashboard'])
+          //  }
+
+
+          // }
+
+        }
+
+
+      )
   }
 
   getfreeuser() {
     this.freescreens()
-  } 
+  }
 
   getrenew() {
     this.closemodal.nativeElement.click()
@@ -633,58 +678,57 @@ export class LoginSignupPage implements OnInit {
     this.router.navigate(['/onboarding/add-to-cart'])
   }
 
-  getsignuptab(){
+  getsignuptab() {
     this.showAlert = false;
   }
 
-  rememberUsername(event){
-    this.saveUsername=!this.saveUsername
+  rememberUsername(event) {
+    this.saveUsername = !this.saveUsername
     console.log(this.saveUsername)
-    localStorage.setItem("saveUsername",JSON.stringify(this.saveUsername))
-    if(event) {
+    localStorage.setItem("saveUsername", JSON.stringify(this.saveUsername))
+    if (event) {
       localStorage.setItem("remember", 'T')
-    }else {
+    } else {
       localStorage.setItem("remember", 'F')
     }
-    console.log( JSON.parse(localStorage.getItem("saveUsername")))
+    console.log(JSON.parse(localStorage.getItem("saveUsername")))
   }
 
-  freescreens(){
+  freescreens() {
     console.log("freeScreens")
-    this.aservice.freeScreens().subscribe(res=>
-      {
-          this.x = []
-          let result = res.map(a => a.FreeScrs);
-          let arr;
-          result=result.forEach(element => {
-            if(element && element.length !== 0) {
-              this.x.push(element.map(a=>parseInt(a.ScrNo)))
-              arr = Array.prototype.concat.apply([], this.x);
-            }
-          })
-          // this.closemodal.nativeElement.click()
-          localStorage.setItem("freeScreens",JSON.stringify(arr))
-          // localStorage.setItem("isloggedin", 'T')
-          // this.router.navigate(['/adults/adult-dashboard'])
-         console.log('homescreen')
-        
+    this.aservice.freeScreens().subscribe(res => {
+      this.x = []
+      let result = res.map(a => a.FreeScrs);
+      let arr;
+      result = result.forEach(element => {
+        if (element && element.length !== 0) {
+          this.x.push(element.map(a => parseInt(a.ScrNo)))
+          arr = Array.prototype.concat.apply([], this.x);
         }
-        
-       
-       
-      )
+      })
+      // this.closemodal.nativeElement.click()
+      localStorage.setItem("freeScreens", JSON.stringify(arr))
+      // localStorage.setItem("isloggedin", 'T')
+      // this.router.navigate(['/adults/adult-dashboard'])
+      console.log('homescreen')
+
+    }
+
+
+
+    )
   }
 
- signInWithApple() {
+  signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
     const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
-  
+
 
     window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
       '_self'
-  );
+    );
 
-    }
+  }
 
 }
