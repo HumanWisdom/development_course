@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
 
 
@@ -12,8 +13,9 @@ import { AdultsService } from '../../adults.service';
 export class BlogIndexPage implements OnInit {
   blogList:any;
   searchedTitle:any;
+  path=this.router.url
 
-  constructor(private service: AdultsService, private router: Router) { }
+  constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
     this.getBlogs()
@@ -52,6 +54,19 @@ export class BlogIndexPage implements OnInit {
     })
   }
 
+  }
+
+  share(){
+    this.ngNavigatorShareService.share({
+      title: 'Human Wisdom Program',
+      text: 'Hey, check out the Human Wisdom Program',
+      url: this.path
+    }).then( (response) => {
+      console.log(response);
+    })
+    .catch( (error) => {
+      console.log(error);
+    });
   }
 
 }
