@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { AdultsService } from '../../adults.service';
-
+import { NgNavigatorShareService } from 'ng-navigator-share';
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -16,8 +16,9 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsLen = 0;
   BlogCommentsList = 0;
   BlogCommentsListabove = []
+  path=this.router.url
 
-  constructor(private service: AdultsService, private router: Router) {
+  constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,) {
    this.blogid=JSON.parse(localStorage.getItem("blogId"))
     this.getblog()
    }
@@ -71,6 +72,27 @@ export class BlogArticlePage implements OnInit {
         this.getblog()
       }
     })
+  }
+
+  getimg(data){
+   return data.split('UsersAvatar\\')[1]
+  }
+
+  share(){
+    this.ngNavigatorShareService.share({
+      title: 'Human Wisdom Program',
+      text: 'Hey, check out the Human Wisdom Program',
+      url: this.path
+    }).then( (response) => {
+      console.log(response);
+    })
+    .catch( (error) => {
+      console.log(error);
+    });
+  }
+
+  commentbottom() {
+    window.scrollTo(0,document.body.scrollHeight);
   }
 
 }

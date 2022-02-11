@@ -39,7 +39,9 @@ export class CourseHeaderComponent implements OnInit {
     private ac:ActivatedRoute,
     private ngNavigatorShareService: NgNavigatorShareService  
     ) {
-      this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
+      if(this.router.getCurrentNavigation()) {
+        this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
+      }
       this.ngNavigatorShareService = ngNavigatorShareService;
      }
 
