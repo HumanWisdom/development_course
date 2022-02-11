@@ -89,7 +89,7 @@ export class S46064Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/food-health/s46065'])
+    this.router.navigate(['/adults/food-health/s46065'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -110,7 +110,7 @@ export class S46064Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/food-health/s46063'])
+    this.router.navigate(['/adults/food-health/s46063'])
  
  
   }

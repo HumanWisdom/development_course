@@ -118,18 +118,18 @@ export class S45038Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/habit-addiction/s45039'])
+          this.router.navigate(['/adults/habit-addiction/s45039'])
 
         },
         ()=>{
-          this.router.navigate(['/habit-addiction/s45039'])
+          this.router.navigate(['/adults/habit-addiction/s45039'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/habit-addiction/s45037'])
+    this.router.navigate(['/adults/habit-addiction/s45037'])
   }
   
   ngOnDestroy(){

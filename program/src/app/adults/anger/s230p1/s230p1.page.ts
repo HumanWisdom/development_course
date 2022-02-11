@@ -215,6 +215,7 @@ export class S230p1Page implements OnInit {
   }
 
   submitProgress(){
+    this.router.navigate(['/adults/anger/s230p2'])
     //console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -239,15 +240,15 @@ export class S230p1Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/anger/s230p2'])
+          // this.router.navigate(['/adults/anger/s230p2'])
         },
         ()=>{
-          this.router.navigate(['/anger/s230p2'])
+          // this.router.navigate(['/adults/anger/s230p2'])
         })
    }
 
    else{
-    this.router.navigate(['/anger/s230p2'])
+    this.router.navigate(['/adults/anger/s230p2'])
 
    }
    
@@ -256,7 +257,7 @@ export class S230p1Page implements OnInit {
 
   }
   previous(){
-    this.router.navigate(['/anger/s230'])
+    this.router.navigate(['/adults/anger/s230'])
 
   }
 

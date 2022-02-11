@@ -138,7 +138,7 @@ export class S37004Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-this.router.navigate(['/three-steps-enquiry/s37005'])
+
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -149,11 +149,12 @@ this.router.navigate(['/three-steps-enquiry/s37005'])
     "OptionIDs":this.sendOption.join()})
     .subscribe(res=>console.log(res))
 
-   
+    this.router.navigate(['/adults/three-steps-enquiry/s37005'])
+
 
 }
 prev(){
-  this.router.navigate(['/three-steps-enquiry/s37003'])
+  this.router.navigate(['/adults/three-steps-enquiry/s37003'])
 
 
 }

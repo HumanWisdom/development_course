@@ -42,10 +42,10 @@ export class S62044Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/love/s62045'])
+    this.router.navigate(['/adults/love/s62045'])
   }
   prev(){
-    this.router.navigate(['/love/s62043'])
+    this.router.navigate(['/adults/love/s62043'])
 
   }
 

@@ -91,7 +91,7 @@ export class S39015Page implements OnInit {
    sessionStorage.setItem("r39015",JSON.stringify(e))
    this.r39015=JSON.parse(sessionStorage.getItem("r39015"))
   
-   this.router.navigate(['/awareness/s39016'])
+   this.router.navigate(['/adults/awareness/s39016'])
    
     this.service.submitProgressReflection({
       "ScrNumber":this.screenNumber,
@@ -108,11 +108,11 @@ export class S39015Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/awareness/s39016'])
+        this.router.navigate(['/adults/awareness/s39016'])
     
       },
       ()=>{
-        //this.router.navigate(['/awareness/s39016'])
+        //this.router.navigate(['/adults/awareness/s39016'])
       })
     
 
@@ -122,7 +122,7 @@ export class S39015Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/awareness/s39014'])
+    this.router.navigate(['/adults/awareness/s39014'])
   }
   
   ngOnDestroy(){

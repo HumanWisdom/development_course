@@ -347,6 +347,7 @@ export class S230Page implements OnInit {
 
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5]
     this.option=optionT.join()
+    this.router.navigate(['/adults/anger/s230p1'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -359,14 +360,14 @@ export class S230Page implements OnInit {
         console.log(error)
       },
       ()=>{
-        //this.router.navigate(['/anger/s230p1'])
+        //this.router.navigate(['/adults/anger/s230p1'])
       })
-      this.router.navigate(['/anger/s230p1'])
+      // this.router.navigate(['/adults/anger/s230p1'])
 
   }
   
   previous(){
-    this.router.navigate(['/anger/s229'])
+    this.router.navigate(['/adults/anger/s229'])
 
   }
   ngOnDestroy(){

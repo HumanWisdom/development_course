@@ -229,7 +229,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/awareness/s39024'])
+    this.router.navigate(['/adults/awareness/s39024'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -249,13 +249,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/awareness/s39023'])
+       // this.router.navigate(['/adults/awareness/s39023'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/awareness/s39022'])
+    this.router.navigate(['/adults/awareness/s39022'])
 
 
   }

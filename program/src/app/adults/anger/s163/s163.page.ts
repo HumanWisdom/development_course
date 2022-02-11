@@ -88,6 +88,7 @@ export class S163Page implements OnInit,OnDestroy {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/anger/s164'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -101,12 +102,12 @@ export class S163Page implements OnInit,OnDestroy {
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    this.router.navigate(['/anger/s164'])
+    // this.router.navigate(['/adults/anger/s164'])
     
 
   }
   previous(){
-    this.router.navigate(['/anger/s162'])
+    this.router.navigate(['/adults/anger/s162'])
     
   }
 

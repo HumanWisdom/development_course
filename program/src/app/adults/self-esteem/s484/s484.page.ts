@@ -42,10 +42,10 @@ export class S484Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/self-esteem/s485'])
+    this.router.navigate(['/adults/self-esteem/s485'])
   }
   prev(){
-    this.router.navigate(['/self-esteem/s483p4'])
+    this.router.navigate(['/adults/self-esteem/s483p4'])
 
   }
 

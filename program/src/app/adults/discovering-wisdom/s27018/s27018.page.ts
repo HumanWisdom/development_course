@@ -119,16 +119,16 @@ export class S27018Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/discovering-wisdom/s27019'])
+          this.router.navigate(['/adults/discovering-wisdom/s27019'])
 
         },
         ()=>{
-          this.router.navigate(['/discovering-wisdom/s27019'])
+          this.router.navigate(['/adults/discovering-wisdom/s27019'])
         })
    }
 
    else{
-    this.router.navigate(['/discovering-wisdom/s27019'])
+    this.router.navigate(['/adults/discovering-wisdom/s27019'])
 
    }
    
@@ -138,7 +138,7 @@ export class S27018Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/discovering-wisdom/s27017'])
+    this.router.navigate(['/adults/discovering-wisdom/s27017'])
   }
   
   ngOnDestroy(){

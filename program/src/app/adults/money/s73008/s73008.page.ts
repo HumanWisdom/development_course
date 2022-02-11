@@ -196,7 +196,7 @@ export class S73008Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  this.router.navigate(['/money/s73009'])
+  this.router.navigate(['/adults/money/s73009'])
   //console.log(this.totalTime,"total time")
  
 
@@ -221,7 +221,7 @@ export class S73008Page implements OnInit {
   }
   
   prev(){
-    this.router.navigate(['/money/s73007'])
+    this.router.navigate(['/adults/money/s73007'])
 
   }
   ngOnDestroy(){

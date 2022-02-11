@@ -91,7 +91,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/work/s58015'])
+
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,12 +107,12 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-   
+    this.router.navigate(['/adults/work/s58015'])
    
 
   }
   prev(){
-    this.router.navigate(['/work/s58013'])
+    this.router.navigate(['/adults/work/s58013'])
 
 
   }

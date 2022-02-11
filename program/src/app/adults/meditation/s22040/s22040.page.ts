@@ -97,7 +97,7 @@ receiveAvDuration(e){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/meditation/s22041'])
+    this.router.navigate(['/adults/meditation/s22041'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -118,7 +118,7 @@ receiveAvDuration(e){
 
   }
   prev(){
-    this.router.navigate(['/meditation/s22039'])
+    this.router.navigate(['/adults/meditation/s22039'])
 
 
   }

@@ -234,15 +234,15 @@ export class S160p1Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s160p2'])
+          this.router.navigate(['/adults/comparison/s160p2'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s160p2'])
+          this.router.navigate(['/adults/comparison/s160p2'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s160p2'])
+    this.router.navigate(['/adults/comparison/s160p2'])
 
    }
    
@@ -252,7 +252,7 @@ export class S160p1Page implements OnInit {
   }
 
 prev(){
-    this.router.navigate(['/comparison/s160'])
+    this.router.navigate(['/adults/comparison/s160'])
 
   }
   ngOnDestroy(){

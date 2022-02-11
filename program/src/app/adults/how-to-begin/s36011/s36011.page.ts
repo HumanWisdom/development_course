@@ -105,11 +105,11 @@ export class S36011Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/how-to-begin/s36012'])
+        this.router.navigate(['/adults/how-to-begin/s36012'])
     
       },
       ()=>{
-        this.router.navigate(['/how-to-begin/s36012'])
+        this.router.navigate(['/adults/how-to-begin/s36012'])
       })
     
 
@@ -119,7 +119,7 @@ export class S36011Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/how-to-begin/s36010'])
+    this.router.navigate(['/adults/how-to-begin/s36010'])
   }
   
   ngOnDestroy(){

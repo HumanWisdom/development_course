@@ -259,10 +259,10 @@ export class S44237Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/stress/s44238'])
+          this.router.navigate(['/adults/stress/s44238'])
         },
         ()=>{
-          this.router.navigate(['/stress/s44238'])
+          this.router.navigate(['/adults/stress/s44238'])
         })
    }
 
@@ -273,7 +273,7 @@ export class S44237Page implements OnInit {
 
   
   prev(){
-    this.router.navigate(['/stress/s44236'])
+    this.router.navigate(['/adults/stress/s44236'])
 
   }
 

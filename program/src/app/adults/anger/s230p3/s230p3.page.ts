@@ -255,7 +255,7 @@ export class S230p3Page implements OnInit {
   }
 
   submitProgress(){
-   
+    this.router.navigate(['/adults/anger/s231p1'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r230p3",JSON.stringify(this.r230p3))
@@ -279,20 +279,20 @@ export class S230p3Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/anger/s231p1'])
+          // this.router.navigate(['/adults/anger/s231p1'])
         },
         ()=>{
-          this.router.navigate(['/anger/s231p1'])
+          // this.router.navigate(['/adults/anger/s231p1'])
         })
    }
 
    else{
-    this.router.navigate(['/anger/s231p1'])
+    this.router.navigate(['/adults/anger/s231p1'])
 
    }
   }
   previous(){
-    this.router.navigate(['/anger/s230p2'])
+    this.router.navigate(['/adults/anger/s230p2'])
 
   }
 }

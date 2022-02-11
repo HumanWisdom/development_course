@@ -138,7 +138,7 @@ export class S47024Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-this.router.navigate(['/relationships/s47025'])
+this.router.navigate(['/adults/relationships/s47025'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -154,7 +154,7 @@ this.router.navigate(['/relationships/s47025'])
 
 }
 prev(){
-  this.router.navigate(['/relationships/s47023'])
+  this.router.navigate(['/adults/relationships/s47023'])
 
 
 }

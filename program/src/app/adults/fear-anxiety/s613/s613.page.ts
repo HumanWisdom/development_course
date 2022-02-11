@@ -139,7 +139,7 @@ export class S613Page implements OnInit {
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
 
-this.router.navigate(['/fear-anxiety/s614'])
+this.router.navigate(['/adults/fear-anxiety/s614'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -154,7 +154,7 @@ this.router.navigate(['/fear-anxiety/s614'])
 
 }
 prev(){
-  this.router.navigate(['/fear-anxiety/s612'])
+  this.router.navigate(['/adults/fear-anxiety/s612'])
 
 
 }

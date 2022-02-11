@@ -106,11 +106,11 @@ export class S41006Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/questions-are-key/s41007'])
+        this.router.navigate(['/adults/questions-are-key/s41007'])
     
       },
       ()=>{
-        this.router.navigate(['/questions-are-key/s41007'])
+        this.router.navigate(['/adults/questions-are-key/s41007'])
       })
     
 
@@ -120,7 +120,7 @@ export class S41006Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/questions-are-key/s41005'])
+    this.router.navigate(['/adults/questions-are-key/s41005'])
   }
   
   ngOnDestroy(){

@@ -119,16 +119,16 @@ export class S34016Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/key-ideas/s34017'])
+          this.router.navigate(['/adults/key-ideas/s34017'])
 
         },
         ()=>{
-          this.router.navigate(['/key-ideas/s34017'])
+          this.router.navigate(['/adults/key-ideas/s34017'])
         })
    }
 
    else{
-    this.router.navigate(['/key-ideas/s34017'])
+    this.router.navigate(['/adults/key-ideas/s34017'])
 
    }
    
@@ -138,7 +138,7 @@ export class S34016Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/key-ideas/s34015'])
+    this.router.navigate(['/adults/key-ideas/s34015'])
   }
   
   ngOnDestroy(){

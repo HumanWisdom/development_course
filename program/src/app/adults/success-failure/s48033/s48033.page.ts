@@ -89,7 +89,7 @@ export class S48033Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/success-failure/s48034'])
+ 
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -105,12 +105,12 @@ export class S48033Page implements OnInit,OnDestroy {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-   
+    this.router.navigate(['/adults/success-failure/s48034'])
    
  
   }
   prev(){
-    this.router.navigate(['/success-failure/s48032'])
+    this.router.navigate(['/adults/success-failure/s48032'])
  
  
   }

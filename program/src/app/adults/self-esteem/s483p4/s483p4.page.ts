@@ -239,16 +239,16 @@ export class S483p4Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/self-esteem/s484'])
+          this.router.navigate(['/adults/self-esteem/s484'])
         },
         ()=>{
-          this.router.navigate(['/self-esteem/s484'])
+          this.router.navigate(['/adults/self-esteem/s484'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/self-esteem/s483p3'])
+    this.router.navigate(['/adults/self-esteem/s483p3'])
 
   }
   ngOnDestroy(){

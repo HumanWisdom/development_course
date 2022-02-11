@@ -99,9 +99,9 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        // this.router.navigate(['/emotional-needs/s18039'])        
+        // this.router.navigate(['/adults/emotional-needs/s18039'])        
       })
-      this.router.navigate(['/emotional-needs/s18039'])
+      this.router.navigate(['/adults/emotional-needs/s18039'])
 
   }
 

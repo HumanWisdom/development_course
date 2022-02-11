@@ -141,7 +141,7 @@ export class S42009Page implements OnInit {
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
 
-this.router.navigate(['/without-language/s42010'])
+
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
     "ScrNumber":this.screenNumber,  
@@ -151,12 +151,12 @@ this.router.navigate(['/without-language/s42010'])
     "OptionIDs":this.sendOption.join()})
     .subscribe(res=>console.log(res))
 
-   
+    this.router.navigate(['/adults/without-language/s42010'])
 
 
 }
 prev(){
-  this.router.navigate(['/without-language/s42008'])
+  this.router.navigate(['/adults/without-language/s42008'])
 
 
 }

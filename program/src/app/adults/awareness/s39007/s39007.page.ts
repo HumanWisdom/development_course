@@ -106,12 +106,12 @@ export class S39007Page implements OnInit,OnDestroy {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/awareness/s39008'])
+    this.router.navigate(['/adults/awareness/s39008'])
    
  
   }
   prev(){
-    this.router.navigate(['/awareness/s39006'])
+    this.router.navigate(['/adults/awareness/s39006'])
  
  
   }

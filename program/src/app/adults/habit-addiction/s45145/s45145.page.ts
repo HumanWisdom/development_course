@@ -117,18 +117,18 @@ export class S45145Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/habit-addiction/s45146'])
+          this.router.navigate(['/adults/habit-addiction/s45146'])
 
         },
         ()=>{
-          this.router.navigate(['/habit-addiction/s45146'])
+          this.router.navigate(['/adults/habit-addiction/s45146'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/habit-addiction/s45144'])
+    this.router.navigate(['/adults/habit-addiction/s45144'])
   }
   
   ngOnDestroy(){

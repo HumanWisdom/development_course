@@ -33,11 +33,12 @@ export class BlogIndexPage implements OnInit {
   }
 
   timeSince(date) {
-    return moment().fromNow(date);
+    return moment.utc(date).fromNow();
   }
 
   viewblog(item){
     localStorage.setItem("blogdata",JSON.stringify(item))
+    localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
     this.router.navigate(['/blog/blog-article'],{ queryParams: {sId: `${item['BlogID']}`}})
   }
 

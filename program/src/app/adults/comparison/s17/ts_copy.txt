@@ -101,14 +101,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/comparison/s18'])
+        this.router.navigate(['/adults/comparison/s18'])
       })
-      //this.router.navigate(['/comparison/s18'])
+      //this.router.navigate(['/adults/comparison/s18'])
     
 
   }
   prev(){
-    this.router.navigate(['/comparison/s16'])
+    this.router.navigate(['/adults/comparison/s16'])
 
   }
   

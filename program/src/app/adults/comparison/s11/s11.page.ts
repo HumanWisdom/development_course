@@ -113,7 +113,7 @@ export class S11Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/comparison/s13'])
+    this.router.navigate(['/adults/comparison/s13'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -136,7 +136,7 @@ export class S11Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/comparison/s10'])
+    this.router.navigate(['/adults/comparison/s10'])
   }
   
   ngOnDestroy(){

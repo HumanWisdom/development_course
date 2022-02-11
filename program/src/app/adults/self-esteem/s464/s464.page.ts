@@ -105,10 +105,10 @@ export class S464Page implements OnInit {
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/self-esteem/s465'])
+        this.router.navigate(['/adults/self-esteem/s465'])
       },
       ()=>{
-        this.router.navigate(['/self-esteem/s465'])
+        this.router.navigate(['/adults/self-esteem/s465'])
       })
     
 
@@ -119,7 +119,7 @@ export class S464Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/self-esteem/s463'])
+    this.router.navigate(['/adults/self-esteem/s463'])
   }
   
   ngOnDestroy(){

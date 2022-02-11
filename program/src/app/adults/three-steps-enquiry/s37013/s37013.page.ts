@@ -96,7 +96,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/three-steps-enquiry/s37014'])
+
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,12 +112,12 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-   
+    this.router.navigate(['/adults/three-steps-enquiry/s37014'])
    
 
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s37012'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37012'])
 
 
   }

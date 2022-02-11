@@ -118,18 +118,18 @@ hint=" You could plant a tree, or walk instead of drive, or learn a new plant ba
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/love/s62197'])
+          this.router.navigate(['/adults/love/s62197'])
 
         },
         ()=>{
-          this.router.navigate(['/love/s62197'])
+          this.router.navigate(['/adults/love/s62197'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/love/s62195'])
+    this.router.navigate(['/adults/love/s62195'])
   }
   
   ngOnDestroy(){

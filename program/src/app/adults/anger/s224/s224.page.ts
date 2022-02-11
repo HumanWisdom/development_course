@@ -90,6 +90,7 @@ export class S224Page implements OnInit,OnDestroy {
   }
 
   submitProgress(e){
+    this.router.navigate(['/adults/anger/s225'])
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -114,15 +115,15 @@ export class S224Page implements OnInit,OnDestroy {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/anger/s225'])
+          // this.router.navigate(['/adults/anger/s225'])
         },
         ()=>{
-          this.router.navigate(['/anger/s225'])
+          // this.router.navigate(['/adults/anger/s225'])
         })
    }
 
    else{
-    this.router.navigate(['/anger/s225'])
+    this.router.navigate(['/adults/anger/s225'])
 
    }
    
@@ -132,7 +133,7 @@ export class S224Page implements OnInit,OnDestroy {
   }
 
   previous(){
-    this.router.navigate(['/anger/s223'])
+    this.router.navigate(['/adults/anger/s223'])
   }
   ngOnDestroy(){
    

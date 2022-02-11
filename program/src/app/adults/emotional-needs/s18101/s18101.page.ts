@@ -215,16 +215,16 @@ export class S18101Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/emotional-needs/s18102'])
+          this.router.navigate(['/adults/emotional-needs/s18102'])
         },
         ()=>{
-          this.router.navigate(['/emotional-needs/s18102'])
+          this.router.navigate(['/adults/emotional-needs/s18102'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/emotional-needs/s18100'])
+    this.router.navigate(['/adults/emotional-needs/s18100'])
 
   }
   ngOnDestroy(){

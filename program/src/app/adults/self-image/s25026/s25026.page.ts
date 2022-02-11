@@ -95,13 +95,13 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/self-image/s25027'])
+        this.router.navigate(['/adults/self-image/s25027'])
       })
     
  
   }
   prev(){
-    this.router.navigate(['/self-image/s25025p1'])
+    this.router.navigate(['/adults/self-image/s25025p1'])
  
  
   }

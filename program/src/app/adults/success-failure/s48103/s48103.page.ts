@@ -367,7 +367,7 @@ export class S48103Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/success-failure/s48102'])
+    this.router.navigate(['/adults/success-failure/s48102'])
 
   }
   

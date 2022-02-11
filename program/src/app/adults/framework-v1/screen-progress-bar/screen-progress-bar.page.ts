@@ -97,14 +97,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/pleasure/s20004'])
+        this.router.navigate(['/adults/pleasure/s20004'])
       })
     
  
   }
  
   prev(){
-    this.router.navigate(['/pleasure/s20002'])
+    this.router.navigate(['/adults/pleasure/s20002'])
   }
  
   ngOnDestroy(){

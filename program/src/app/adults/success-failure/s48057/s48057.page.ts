@@ -77,7 +77,6 @@ createScreen(){
  
   }
   submitProgress(){
-    this.router.navigate(['/success-failure/s48058'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -95,13 +94,13 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-     
+      this.router.navigate(['/adults/success-failure/s48058'])
     
 
   }
 
   goNext(){
-   // this.router.navigate(['/success-failure/s2'])
+   // this.router.navigate(['/adults/success-failure/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     //console.log(this.totalTime,"total time")

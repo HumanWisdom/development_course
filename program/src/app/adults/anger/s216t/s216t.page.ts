@@ -32,9 +32,9 @@ export class S216tPage implements OnInit {
       this.bookmark=0
   }
   submitProgress(){
-    this.router.navigate(['/anger/s217'])
+    this.router.navigate(['/adults/anger/s217'])
   }
   previous(){
-    this.router.navigate(['/anger/s215'])
+    this.router.navigate(['/adults/anger/s215'])
   }
 }

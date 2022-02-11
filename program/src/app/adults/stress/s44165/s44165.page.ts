@@ -192,7 +192,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/stress/s44166'])
+    this.router.navigate(['/adults/stress/s44166'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -212,13 +212,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/stress/s44165'])
+       // this.router.navigate(['/adults/stress/s44165'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/stress/s44164'])
+    this.router.navigate(['/adults/stress/s44164'])
 
 
   }

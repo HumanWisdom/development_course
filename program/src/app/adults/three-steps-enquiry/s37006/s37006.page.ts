@@ -85,7 +85,6 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/three-steps-enquiry/s37007'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -103,11 +102,12 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s2337006'])
       })
-      
+      this.router.navigate(['/adults/three-steps-enquiry/s37007'])
+    
 
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s37005'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37005'])
 
   }
   

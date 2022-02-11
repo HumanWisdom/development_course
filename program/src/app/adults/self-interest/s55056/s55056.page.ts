@@ -215,16 +215,16 @@ export class S55056Page implements OnInit {
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/self-interest/s55057'])
+          this.router.navigate(['/adults/self-interest/s55057'])
         },
         ()=>{
-          this.router.navigate(['/self-interest/s55057'])
+          this.router.navigate(['/adults/self-interest/s55057'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/self-interest/s55055'])
+    this.router.navigate(['/adults/self-interest/s55055'])
 
   }
   ngOnDestroy(){

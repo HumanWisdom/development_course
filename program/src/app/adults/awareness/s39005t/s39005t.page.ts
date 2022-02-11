@@ -68,9 +68,9 @@ export class S39005tPage implements OnInit {
         console.log(res)
       })
  
-    this.router.navigate(['/awareness/s39006'])
+    this.router.navigate(['/adults/awareness/s39006'])
   }
   prev(){
-    this.router.navigate(['/awareness/s39004'])
+    this.router.navigate(['/adults/awareness/s39004'])
   }
 }
