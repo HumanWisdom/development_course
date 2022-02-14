@@ -69,6 +69,7 @@ export class BlogArticlePage implements OnInit {
     }
     this.service.commentblog(obj).subscribe((res) => {
       if(res) {
+        this.comment = '';
         this.getblog()
       }
     })
