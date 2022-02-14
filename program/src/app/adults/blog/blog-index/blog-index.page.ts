@@ -13,7 +13,7 @@ import { AdultsService } from '../../adults.service';
 export class BlogIndexPage implements OnInit {
   blogList:any;
   searchedTitle:any;
-  path=this.router.url
+  path='#' + this.router.url
 
   constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService) { }
 
