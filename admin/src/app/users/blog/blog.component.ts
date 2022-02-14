@@ -202,12 +202,16 @@ export class BlogComponent implements OnInit {
     "BlogID": id})
     .subscribe(res=>
       {
+        if(res) {
+          window.alert('Blog updated successfully')
+        }
       },
       error=>{
         console.log(error.error.Message)
         window.alert(error.error.Message)
       },
       ()=>{
+        window.alert('Blog updated successfully')
         this.getScenarios()
       }
     )
@@ -215,16 +219,18 @@ export class BlogComponent implements OnInit {
   }
 
   deleteScenario(id){
-    console.log(id)
     this.service.deleteBlog({ "Id":parseInt(id)}).
     subscribe(res=>
       {
-      console.log(res)
+        if(res) {
+          window.alert('Blog deleted successfully')
+        }
       },
       error=>{
         console.log(error)
       },
       ()=>{
+        window.alert('Blog deleted successfully')
         this.getScenarios()
       }
     )
