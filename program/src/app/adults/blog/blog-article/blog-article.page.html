@@ -150,9 +150,9 @@
               </a>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse" *ngFor="let item of BlogCommentsListabove">
+          <div id="collapseOne" class="panel-collapse collapse">
             <div class="panel-body">
-              <div class="row center_flex blog_comment_desc_01">
+              <div class="row center_flex blog_comment_desc_01"  *ngFor="let item of BlogCommentsListabove">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr_01 flex_ai p0">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
                     <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
