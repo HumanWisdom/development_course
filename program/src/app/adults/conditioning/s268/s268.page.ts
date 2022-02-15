@@ -13,7 +13,7 @@ export class S268Page implements OnInit {
 
   bg="conditioning_w1"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.3.mp3'
+  audioLink=this.mediaAudio+'/conditioning/audios/con+2.3.mp3'
   toc="conditioning/s232"
   transcriptPage="conditioning/s268t"
   title="The power of conditioning on children"

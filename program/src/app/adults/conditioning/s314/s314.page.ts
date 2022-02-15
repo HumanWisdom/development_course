@@ -12,7 +12,7 @@ export class S314Page implements OnInit {
 
   bg="conditioning_w9"
   hint=""
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   path=this.router.url
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

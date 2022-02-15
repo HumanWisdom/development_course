@@ -13,7 +13,7 @@ export class S262Page implements OnInit {
   bg="conditioning_w7"
   hint="Perhaps with more compassion? And an understanding of why they think that way?"
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

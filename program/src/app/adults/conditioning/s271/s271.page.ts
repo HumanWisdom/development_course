@@ -13,7 +13,7 @@ export class S271Page implements OnInit {
   bg="conditioning_w4"
   hint="You may, for example, pause and ask if you can just accept the other person as they are?"
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

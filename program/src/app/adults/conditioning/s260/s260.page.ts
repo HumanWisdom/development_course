@@ -12,7 +12,7 @@ export class S260Page implements OnInit {
 
   bg="conditioning_w5"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.2.mp3'
+  audioLink=this.mediaAudio+'/conditioning/audios/con+2.2.mp3'
   toc="conditioning/s232"
   transcriptPage="conditioning/s260t"
   title="Conditioning, belief, and religion"
