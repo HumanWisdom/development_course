@@ -16,7 +16,7 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsLen = 0;
   BlogCommentsList = 0;
   BlogCommentsListabove = []
-  path=this.router.url
+  path='#' + this.router.url
 
   constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,) {
    this.blogid=JSON.parse(localStorage.getItem("blogId"))
@@ -69,6 +69,7 @@ export class BlogArticlePage implements OnInit {
     }
     this.service.commentblog(obj).subscribe((res) => {
       if(res) {
+        this.comment = '';
         this.getblog()
       }
     })

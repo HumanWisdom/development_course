@@ -35,6 +35,7 @@ export class BlogComponent implements OnInit {
   updatedModules=[]
   updatedImagePath:any
   updatedMessage:any
+  blogID:any
 
   constructor(private router: Router,private service:UsersService) { }
 
@@ -188,7 +189,7 @@ export class BlogComponent implements OnInit {
   initUpdate(id,title,story,img){
     this.updatedTitle=title
     this.updatedStory=story
-
+    this.blogID = id
     this.updatedImagePath=img
 
     //console.log("updated",this.updatedTitle,this.updatedStory, this.updatedView,this.updatedTakeaway,this.updatedExclusion)
@@ -199,7 +200,7 @@ export class BlogComponent implements OnInit {
     "Title":this.updatedTitle,
     "Blog":this.updatedStory,
     "ImgPath":this.updatedImagePath,
-    "BlogID": id})
+    "BlogID": this.blogID})
     .subscribe(res=>
       {
       },
@@ -208,6 +209,7 @@ export class BlogComponent implements OnInit {
         window.alert(error.error.Message)
       },
       ()=>{
+        window.alert('Blog updated successfully')
         this.getScenarios()
       }
     )
@@ -215,16 +217,15 @@ export class BlogComponent implements OnInit {
   }
 
   deleteScenario(id){
-    console.log(id)
     this.service.deleteBlog({ "Id":parseInt(id)}).
     subscribe(res=>
       {
-      console.log(res)
       },
       error=>{
         console.log(error)
       },
       ()=>{
+        window.alert('Blog deleted successfully')
         this.getScenarios()
       }
     )
