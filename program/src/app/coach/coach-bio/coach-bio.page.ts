@@ -76,7 +76,7 @@ export class CoachBioPage implements OnInit {
       // if(localStorage.getItem('COMETCHATUID')) {
       //   this.router.navigate(["coach/coach-chat"]);
       // }
-        CometChat.login(localStorage.getItem('COMETCHATUID').toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
+        CometChat.login(localStorage.getItem('userId').toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
           (user) => {
             console.log("Login Successful:", { user });
             this.router.navigate(["coach/coach-chat"], { state: { data: { coachID: this.coachID, isChatList: false } } });

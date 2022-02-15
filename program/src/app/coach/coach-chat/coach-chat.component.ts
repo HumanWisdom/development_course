@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CometChat } from '@cometchat-pro/chat';
+import { COMETCHAT_CONSTANTS } from '../CONSTS';
 
 @Component({
   selector: 'HumanWisdom-coach-chat',
@@ -18,14 +19,29 @@ export class CoachChatComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
     this.coachUID = window.history.state?.data ? window.history.state.data.coachID : '';
     this.isChatList = window.history.state?.data ? window.history.state.data.isChatList : false;
-    if(this.coachUID){
-    this.getUserByUID();
-  }
+    this.logginCometChat();
+    
 
   }
-
+  logginCometChat(){
+    CometChat.login(localStorage.getItem('userId').toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
+      (user) => {
+        console.log("Login Successful:", { user });
+        localStorage.setItem('Comechat',JSON.stringify(user))
+        if(this.coachUID){
+          this.getUserByUID();
+        }
+      },
+      (error) => {
+        console.log("Login failed with exception:", { error });
+        // this.onLoginError = true;
+        // this.errorMsg = error.message;
+      }
+    );
+  }
   actionHandler(event) {
     console.log(event)
   }
