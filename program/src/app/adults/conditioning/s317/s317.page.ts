@@ -12,7 +12,7 @@ export class S317Page implements OnInit {
 
   bg="conditioning_w12"
   hint=""
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

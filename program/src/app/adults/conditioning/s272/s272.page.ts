@@ -12,7 +12,7 @@ export class S272Page implements OnInit {
   bg="conditioning_w5"
   hint="For example, my dislike of a particular community may be due to the negative press I read about them after some terrorist attacks"
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

@@ -15,7 +15,7 @@ export class S243Page implements OnInit {
   transcriptPage="conditioning/s243t"
   //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+1.3.mp3'
+  audioLink=this.mediaAudio+'/conditioning/audios/con+1.3.mp3'
   title="We are not aware we are conditioned, and yet become attached to our conditioning."
 
   userId:any

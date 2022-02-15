@@ -13,7 +13,7 @@ export class S248Page implements OnInit {
   bg="conditioning_w3"
   hint="For example, I may feel women should do all the housework, but on looking closely realise it's because my mother used to do that."
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
