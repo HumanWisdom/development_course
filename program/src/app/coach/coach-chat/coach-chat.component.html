@@ -2,10 +2,10 @@
   <span *ngIf="isChatList">
     <CometChatUI></CometChatUI>
   </span>
-  <span *ngIf="!isChatList">
+  <span *ngIf="isChatMessages">
     <cometchat-messages [item]="item" [type]="type" [callMessage]="callMessage"
       [composedThreadMessage]="composedThreadMessage" [groupMessage]="groupMessage"
       (actionGenerated)="actionHandler($event)"></cometchat-messages>
-  </span>
-  <!-- <CometChatUI></CometChatUI> -->
+  </span> 
+  <!-- <CometChatUI></CometChatUI>-->
 </div>

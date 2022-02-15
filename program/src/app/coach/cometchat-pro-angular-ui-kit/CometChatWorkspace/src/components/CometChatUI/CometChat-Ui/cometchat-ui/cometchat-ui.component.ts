@@ -70,6 +70,7 @@ export class CometChatUIComponent implements OnInit {
   constructor(private CometChatService: CometChatService) {}
 
   ngOnInit() {
+    debugger;
     try {
       this.onResize();
       CometChat.getLoggedinUser()

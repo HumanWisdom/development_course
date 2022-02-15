@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CometChat } from '@cometchat-pro/chat';
-import { COMETCHAT_CONSTANTS } from '../CONSTS';
+import { COMETCHATCONSTANTS } from '../CONSTS';
 
 @Component({
   selector: 'HumanWisdom-coach-chat',
@@ -10,30 +10,39 @@ import { COMETCHAT_CONSTANTS } from '../CONSTS';
 export class CoachChatComponent implements OnInit {
   item: any;
   coachUID: string = "";
-  isChatList: boolean;
+  isChatList: boolean=false;
   composedThreadMessage = [];
   groupMessage = [];
   type: any = 'user';
   parentMessageId: number = 0;
   callMessage = [];
+  isChatMessages:boolean=false
   constructor() { }
 
   ngOnInit() {
     
     this.coachUID = window.history.state?.data ? window.history.state.data.coachID : '';
-    this.isChatList = window.history.state?.data ? window.history.state.data.isChatList : false;
+  
     this.logginCometChat();
     
 
-  }
+  };
   logginCometChat(){
-    CometChat.login(localStorage.getItem('userId').toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
+   
+    CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
       (user) => {
+        this.item = user;
+        this.isChatList=(localStorage.getItem('isChatList')!=null) ? (localStorage.getItem('isChatList') =='true'?true:false):false
+        if(!this.isChatList){
+          this.isChatList = window.history.state?.data ? window.history.state.data.isChatList : false;
+          this.isChatMessages =  !this.isChatList;
+        }
+        localStorage.setItem('isChatList',this.isChatList.toString());
         console.log("Login Successful:", { user });
         localStorage.setItem('Comechat',JSON.stringify(user))
-        if(this.coachUID){
-          this.getUserByUID();
-        }
+        // if(this.coachUID){
+        //   this.getUserByUID();
+        // }
       },
       (error) => {
         console.log("Login failed with exception:", { error });

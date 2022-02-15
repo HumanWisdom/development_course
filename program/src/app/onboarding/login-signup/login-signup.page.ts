@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CometChat } from '@cometchat-pro/chat';
 import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
-import { COMETCHAT_CONSTANTS } from 'src/app/coach/CONSTS';
+import { COMETCHATCONSTANTS } from 'src/app/coach/CONSTS';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
 
@@ -459,10 +459,10 @@ export class LoginSignupPage implements OnInit {
 
   checkUserExistInCometChat(res) {
 
-    const appSetting = new CometChat.AppSettingsBuilder().setRegion(COMETCHAT_CONSTANTS.REGION).subscribePresenceForAllUsers().build();
-CometChat.init(COMETCHAT_CONSTANTS.APP_ID, appSetting).then(() => {
+    const appSetting = new CometChat.AppSettingsBuilder().setRegion(COMETCHATCONSTANTS.REGION).subscribePresenceForAllUsers().build();
+CometChat.init(COMETCHATCONSTANTS.APP_ID, appSetting).then(() => {
   debugger
-  CometChat.login(res?.UserId.toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
+  CometChat.login(res?.UserId.toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
     (user) => {
       debugger
       console.log("Login Successful:", { user });
@@ -472,7 +472,7 @@ CometChat.init(COMETCHAT_CONSTANTS.APP_ID, appSetting).then(() => {
       console.log("Login failed with exception:", { error });
       let user = new CometChat.User(res?.UserId.toString());
       user.setName(res?.Name.toString());
-      CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+      CometChat.createUser(user, COMETCHATCONSTANTS.AUTH_KEY).then(
         (user: any) => {
           debugger
           console.log("user created", user);

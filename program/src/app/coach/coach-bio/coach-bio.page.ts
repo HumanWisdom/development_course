@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CoachService } from '../services/coach.service';
 import * as moment from 'moment';
 import { CometChat } from '@cometchat-pro/chat';
-import { COMETCHAT_CONSTANTS } from '../CONSTS';
+import { COMETCHATCONSTANTS } from '../CONSTS';
 
 @Component({
   selector: 'app-coach-bio',
@@ -75,8 +75,8 @@ export class CoachBioPage implements OnInit {
     //   user => {
       // if(localStorage.getItem('COMETCHATUID')) {
       //   this.router.navigate(["coach/coach-chat"]);
-      // }
-        CometChat.login(localStorage.getItem('userId').toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
+      // }            
+        CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
           (user) => {
             console.log("Login Successful:", { user });
             this.router.navigate(["coach/coach-chat"], { state: { data: { coachID: this.coachID, isChatList: false } } });

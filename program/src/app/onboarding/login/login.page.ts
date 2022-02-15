@@ -7,11 +7,9 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {AdultsService} from '../../adults/adults.service'
 
 import { NgxCaptureService } from 'ngx-capture';
-import { COMETCHAT_CONSTANTS } from 'src/app/coach/CONSTS';
+
 import { CometChat } from '@cometchat-pro/chat';
-
-
-
+import { COMETCHATCONSTANTS } from 'src/app/coach/CONSTS';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -99,11 +97,7 @@ export class LoginPage implements OnInit,OnDestroy {
       sessionStorage.setItem("successPassword",this.successPassword)
      // this.showSuccessPassword=false
 
-     
-
     }
-     
-   
   }
 
   ngOnDestroy(){
@@ -267,10 +261,9 @@ export class LoginPage implements OnInit,OnDestroy {
         this.userId=res.UserId
          let  user = new CometChat.User(res.UserId);
    user.setName(res.Name.toString());
-    CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+    CometChat.createUser(user, COMETCHATCONSTANTS.AUTH_KEY).then(
       user => {
-        debugger
-           console.log("user created", user);
+           console.log("user created successfully", user);
      },error => {
          console.log("error", error);
      }

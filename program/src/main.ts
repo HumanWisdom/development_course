@@ -3,15 +3,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { CometChat } from '@cometchat-pro/chat';
 
 import { AppModule } from './app/app.module';
-import { COMETCHAT_CONSTANTS } from './app/coach/CONSTS';
+import { COMETCHATCONSTANTS } from './app/coach/CONSTS';
 import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
 }
 
-const appSetting = new CometChat.AppSettingsBuilder().setRegion(COMETCHAT_CONSTANTS.REGION).subscribePresenceForAllUsers().build();
-CometChat.init(COMETCHAT_CONSTANTS.APP_ID, appSetting).then(() => {
+const appSetting = new CometChat.AppSettingsBuilder().setRegion(COMETCHATCONSTANTS.REGION).subscribePresenceForAllUsers().build();
+CometChat.init(COMETCHATCONSTANTS.APP_ID, appSetting).then(() => {
 
   console.log('app is ready to work');
 

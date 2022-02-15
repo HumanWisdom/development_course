@@ -14,6 +14,7 @@ import * as enums from "../../../../utils/enums";
 import { DatePipe } from "@angular/common";
 import { COMETCHAT_CONSTANTS } from "../../../../utils/messageConstants";
 import { logger } from "../../../../utils/common";
+import { COMETCHATCONSTANTS } from "src/app/coach/CONSTS";
 
 @Component({
   selector: "cometchat-message-list",
@@ -379,12 +380,14 @@ export class CometChatMessageListComponent
     try {
       this.decoratorMessage = COMETCHAT_CONSTANTS.LOADING_MESSSAGE;
       const actionMessages = [];
-     let user= JSON.parse(localStorage.getItem('Comechat'));
-     this.loggedInUser=user;
-      // let user =  CometChat.getLoggedinUser().then(
-      //   (user: any) => {
+      CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
+        (info) => {
+    //  let user= JSON.parse(localStorage.getItem('Comechat'));
+    //  this.loggedInUser=user;
+      let user =  CometChat.getLoggedinUser().then(
+        (user: any) => {
         debugger
-          // this.loggedInUser = user;
+           this.loggedInUser = user;
 
           this.messagesRequest.fetchPrevious().then(
             (messageList: any) => {
@@ -410,7 +413,7 @@ export class CometChatMessageListComponent
       
                 
                   if (
-                    message.getSender().getUid() !== user.getUid() &&
+                    message.getSender().getUid() !== user.uid &&
                     !message.getReadAt()
                   ) {
                     if (
@@ -468,11 +471,13 @@ export class CometChatMessageListComponent
               // logger("Message fetching failed with error:", error);
             }
           );
-       // },
-        // (error) => {
-        //   logger("No Logged In User Found", { error });
-        // }
-    //  );
+       },
+        (error) => {
+          logger("No Logged In User Found", { error });
+        }
+      );
+      console.log("comet-mesage-list-login");
+    });
     } catch (error) {
       logger(error);
     }
