@@ -14,7 +14,7 @@ export class S259Page implements OnInit {
   bg="conditioning_w4"
   hint="This could be a political opinion, or about which political leader is the best."
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

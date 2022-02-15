@@ -13,7 +13,7 @@ export class S300Page implements OnInit {
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
  
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
