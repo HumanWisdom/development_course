@@ -14,7 +14,7 @@ export class S273Page implements OnInit {
 
   bg="conditioning_w6"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.5.mp3'
+  audioLink=this.mediaAudio+'/conditioning/audios/con+2.5.mp3'
 
   toc="conditioning/s232"
   transcriptPage="conditioning/s273t"

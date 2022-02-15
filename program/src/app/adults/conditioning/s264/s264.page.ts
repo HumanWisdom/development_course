@@ -12,7 +12,7 @@ export class S264Page implements OnInit {
 
   bg="conditioning_w9"
   hint="It could determine what you regard as normal, and may want to change the other person to fit with that view."
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

@@ -13,7 +13,7 @@ export class S289Page implements OnInit {
   bg="conditioning_w10"
   hint="Ask yourself why they did what they did. Was the same unconscious process of thinking operating in them, and does it operate in yourself?"
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

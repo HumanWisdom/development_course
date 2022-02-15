@@ -13,7 +13,7 @@ export class S299Page implements OnInit {
   bg="conditioning_w8"
   hint="This can make us feel comfortable but since we are never challenged, we stop growing as human beings, and our thinking can get distorted."
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
