@@ -11,12 +11,12 @@ export class S287Page implements OnInit {
 
   bg="conditioning_overlay_w8"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/adults/conditioning/videos/3.2.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/adults/conditioning/conditioning_01.jpg"
+  videoLink=this.mediaVideo+'/conditioning/videos/3.2.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_01.jpg"
 
   title="Forgiveness is a gift we give ourselves"
   
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url

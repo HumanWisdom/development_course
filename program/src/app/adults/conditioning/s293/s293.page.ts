@@ -13,7 +13,7 @@ export class S293Page implements OnInit {
   bg="conditioning_w2"
   hint="Try staying with it without language, and see what happens. How can you be free of your conditioning?"
 
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   qrList=JSON.parse(localStorage.getItem("qrList"))

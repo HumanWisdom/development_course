@@ -12,7 +12,7 @@ export class S275Page implements OnInit {
 
   bg="conditioning_w8"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+2.6.mp3'
+  audioLink=this.mediaAudio+'/conditioning/audios/con+2.6.mp3'
   title="Identity and conditioning"
 
   toc="conditioning/s232"

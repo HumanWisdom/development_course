@@ -11,12 +11,12 @@ export class S313Page implements OnInit {
 
   bg="conditioning_overlay_w8"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/adults/conditioning/videos/4.2.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/adults/conditioning/conditioning_03.jpg"
+  videoLink=this.mediaVideo+'/conditioning/videos/4.2.mp4'
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_03.jpg"
 
   title="Now watch this video, where Sophie and Charlotte are joined by Jackie, to talk about what happened."
   
-  toc="/adults/conditioning/s232"
+  toc="/conditioning/s232"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   path=this.router.url

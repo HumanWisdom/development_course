@@ -12,7 +12,7 @@ export class S297Page implements OnInit {
 
   bg="conditioning_w6"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/adults/conditioning/audios/con+3.4.mp3'
+  audioLink=this.mediaAudio+'/conditioning/audios/con+3.4.mp3'
   toc="conditioning/s232"
   transcriptPage="conditioning/s297t"
   title="Understanding awakens wisdom.Wisdom brings change"
