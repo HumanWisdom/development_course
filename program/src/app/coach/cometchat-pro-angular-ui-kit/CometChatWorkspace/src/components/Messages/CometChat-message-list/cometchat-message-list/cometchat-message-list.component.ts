@@ -380,15 +380,12 @@ export class CometChatMessageListComponent
     try {
       this.decoratorMessage = COMETCHAT_CONSTANTS.LOADING_MESSSAGE;
       const actionMessages = [];
-      CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
-        (info) => {
+      // CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
+      //   (info) => {
     //  let user= JSON.parse(localStorage.getItem('Comechat'));
     //  this.loggedInUser=user;
-      let user =  CometChat.getLoggedinUser().then(
-        (user: any) => {
-        debugger
+           this.GetLoginData().then((user:any)=>{
            this.loggedInUser = user;
-
           this.messagesRequest.fetchPrevious().then(
             (messageList: any) => {
               // No Messages Found
@@ -471,18 +468,29 @@ export class CometChatMessageListComponent
               // logger("Message fetching failed with error:", error);
             }
           );
-       },
+   //    },
         (error) => {
           logger("No Logged In User Found", { error });
         }
-      );
-      console.log("comet-mesage-list-login");
-    });
+       });
+      //console.log("comet-mesage-list-login");
+  //  });
     } catch (error) {
       logger(error);
     }
   }
-
+GetLoginData() {
+return CometChat.getLoggedinUser().then(
+    (user: any) => {
+    if(user== null){
+      return CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
+    (info:CometChat.User) => { return info; });
+    }
+  else{
+    return user;
+  }
+  });
+}
   /**
    * Updates messageList on basis of user activity or group activity or calling activity
    * @param

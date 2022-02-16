@@ -31,11 +31,15 @@ export class CoachChatComponent implements OnInit {
    
     CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
       (user) => {
-        this.item = user;
         this.isChatList=(localStorage.getItem('isChatList')!=null) ? (localStorage.getItem('isChatList') =='true'?true:false):false
         if(!this.isChatList){
           this.isChatList = window.history.state?.data ? window.history.state.data.isChatList : false;
           this.isChatMessages =  !this.isChatList;
+        }
+        if(this.isChatMessages){
+          CometChat.getUser(this.coachUID.toString()).then(info=>{
+            this.item = info;
+          })
         }
         localStorage.setItem('isChatList',this.isChatList.toString());
         console.log("Login Successful:", { user });

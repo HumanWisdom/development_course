@@ -1,7 +1,7 @@
 .chatWrapperStyle {
   display: flex;
   flex-direction: column;
-  height: 670px;
+  height: calc( 100vh - 150px);
   box-sizing: border-box;
 }
 .chatWrapperStyle * {
