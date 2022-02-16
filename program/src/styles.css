@@ -11959,6 +11959,11 @@ h1.module_title
   color: #FFFFFF;
   /* text-transform: capitalize; */
   text-transform: inherit;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .comparison
