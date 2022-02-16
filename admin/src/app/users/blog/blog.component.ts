@@ -217,19 +217,23 @@ export class BlogComponent implements OnInit {
   }
 
   deleteScenario(id){
-    this.service.deleteBlog({ "Id":parseInt(id)}).
-    subscribe(res=>
-      {
-      },
-      error=>{
-        console.log(error)
-      },
-      ()=>{
-        window.alert('Blog deleted successfully')
-        this.getScenarios()
-      }
-    )
-
+    var retVal = confirm("Are you sure you want to delete?");
+    if( retVal == true ) {
+      this.service.deleteBlog({ "Id":parseInt(id)}).
+      subscribe(res=>
+        {
+        },
+        error=>{
+          console.log(error)
+        },
+        ()=>{
+          window.alert('Blog deleted successfully')
+          this.getScenarios()
+        }
+      )
+    } else {
+      return false;
+    }
 
   }
 
