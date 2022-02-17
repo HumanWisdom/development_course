@@ -260,6 +260,7 @@ socialFirstName:any
     .subscribe(res=>
       {console.log(res)
         localStorage.setItem('activemoduleid', id);
+        localStorage.setItem('moduleId', id);
         this.router.navigate([url])
         localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
     },
@@ -277,6 +278,7 @@ socialFirstName:any
     .subscribe(res=>
       {console.log(res)
         localStorage.setItem('activemoduleid', id);
+        localStorage.setItem('moduleId', id);
         this.router.navigate([url])
         localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
     },
@@ -1164,16 +1166,18 @@ socialFirstName:any
       //resume section
       res.ModUserScrPc.filter(x=>{
         if(parseFloat(x.Percentage)<100){
-          if(x.ModuleId<10)
+          if(x.ModuleId != 71 && x.ModuleId !=72)
           {
-            x.ModuleId="0"+x.ModuleId
-            
+            if(x.ModuleId<10)
+            {
+              x.ModuleId="0"+x.ModuleId
+              
+            }
+
+            x.imgPath=`https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
+            this.resume.push(x)
+            this.resume.sort((val1, val2)=> {return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn)})
           }
-
-          x.imgPath=`https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
-          this.resume.push(x)
-          this.resume.sort((val1, val2)=> {return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn)})
-
         }
       })
       console.log("resume section",this.resume)
