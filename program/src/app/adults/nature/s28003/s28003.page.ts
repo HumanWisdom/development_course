@@ -114,7 +114,7 @@ createScreen(){
 
   }
   ngOnDestroy(){
-    this.submitProgress()
+    //this.submitProgress()
   }
 
 
