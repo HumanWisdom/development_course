@@ -251,8 +251,14 @@ socialFirstName:any
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
         this.enablecookiemodal.nativeElement.click();
+
+    let sub: any = localStorage.getItem('Subscriber');
+    if(sub === '0') {
+      this.isSubscribe = true;
+    }else {
+      this.isSubscribe = false;
+    }
     }, 3000)
-    
   }
 
   getsupport(url, id) {
@@ -816,7 +822,10 @@ socialFirstName:any
               localStorage.setItem("pswd", '')
               localStorage.setItem("name", this.loginResponse.Name)
               localStorage.setItem("first", 'T')
-        this.isSubscribe = res.Subscriber === 0 ? true : false;
+              if(res.Subscriber === 0) {
+                this.isSubscribe =  true;
+              }
+        
         localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
         localStorage.setItem("email", socialEmail)
         localStorage.setItem("pswd", '')
@@ -908,7 +917,9 @@ socialFirstName:any
         this.loginResponse=res
         this.userId = res.UserId
         console.log(this.loginResponse)
-        this.isSubscribe = res.Subscriber === 0 ? true : false;
+        if(res.Subscriber === 0) {
+          this.isSubscribe =  true;
+        }
         let guest = localStorage.getItem('guest');
         if(guest === 'T') localStorage.setItem('guest', 'F')
         sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
@@ -1000,7 +1011,9 @@ socialFirstName:any
         this.loginResponse=res
         this.userId = this.loginResponse.UserId
         console.log(this.loginResponse)
-        this.isSubscribe = this.loginResponse.Subscriber === 0 ? true : false;
+        if(this.loginResponse.Subscriber === 0) {
+          this.isSubscribe =  true;
+        }
         let guest = localStorage.getItem('guest');
         if(guest === 'T') localStorage.setItem('guest', 'F')
         sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
