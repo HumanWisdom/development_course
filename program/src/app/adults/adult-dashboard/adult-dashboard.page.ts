@@ -251,11 +251,14 @@ socialFirstName:any
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
         this.enablecookiemodal.nativeElement.click();
-    }, 3000)
+
     let sub: any = localStorage.getItem('Subscriber');
     if(sub === '0') {
       this.isSubscribe = true;
+    }else {
+      this.isSubscribe = false;
     }
+    }, 3000)
   }
 
   getsupport(url, id) {
