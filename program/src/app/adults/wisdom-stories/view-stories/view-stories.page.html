@@ -1,6 +1,39 @@
 <!-- top navigation -->
 <div class="top_nav ml0 ctopnav">
-  <div class="nav_menu cnav_menu p20px mb0px tn_padding nav_menu_01 h60px onscrollws">
+  <!-- unscrolled header -->
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit nav_menu_01 h60px onscrollbs ws_unscrolled">
+    <nav class="">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0 lh0pxi" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="p0">
+          </a>                  
+        </li>        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h1 class="txt88 mtb0px">
+              Wisdom Stories
+            </h1>            
+          </a>                  
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav w20p no_bg">       
+        <li class="mr0px">
+          <a (click)="addToken()" class="cuser-profile dropdown-toggle lh0pxi" data-toggle="dropdown" aria-expanded="false">                                       
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_01.svg" alt="" class="p0">
+          </a>
+        </li>   
+      </ul>
+    </nav>
+  </div>
+  <!-- /unscrolled header -->
+
+  <!-- onscrolled header -->
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding nav_menu_01 h60px onscrollws ws_dnone">
     <nav class="">          
       <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
         <li class="">
@@ -11,24 +44,25 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
-        <!-- <li class="mr0px">
+        <li class="mr0px">
           <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
-            <h6 class="txt88 mtb0px">
-              {{title}}
+            <h6 class="txt110 mtb0px">
+              title
             </h6>            
           </a>                  
-        </li> -->
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right cnav w20p no_bg">       
-        <!-- <li class="mr0px">
+        <li class="mr0px">
           <a (click)="addToken()" class="cuser-profile dropdown-toggle lh0pxi" data-toggle="dropdown" aria-expanded="false">                                       
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_01.svg" alt="" class="p0">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_01.svg" alt="" class="p0">
           </a>
-        </li>    -->
+        </li>   
       </ul>
     </nav>
   </div>
+  <!-- /onscrolled header -->
 </div>
 <!-- /top navigation --> 
 
