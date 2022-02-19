@@ -251,8 +251,14 @@ socialFirstName:any
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
         this.enablecookiemodal.nativeElement.click();
+
+    let sub: any = localStorage.getItem('Subscriber');
+    if(sub === '0') {
+      this.isSubscribe = true;
+    }else {
+      this.isSubscribe = false;
+    }
     }, 3000)
-    
   }
 
   getsupport(url, id) {
@@ -260,6 +266,7 @@ socialFirstName:any
     .subscribe(res=>
       {console.log(res)
         localStorage.setItem('activemoduleid', id);
+        localStorage.setItem('moduleId', id);
         this.router.navigate([url])
         localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
     },
@@ -277,6 +284,7 @@ socialFirstName:any
     .subscribe(res=>
       {console.log(res)
         localStorage.setItem('activemoduleid', id);
+        localStorage.setItem('moduleId', id);
         this.router.navigate([url])
         localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
     },
@@ -814,7 +822,10 @@ socialFirstName:any
               localStorage.setItem("pswd", '')
               localStorage.setItem("name", this.loginResponse.Name)
               localStorage.setItem("first", 'T')
-        this.isSubscribe = res.Subscriber === 0 ? true : false;
+              if(res.Subscriber === 0) {
+                this.isSubscribe =  true;
+              }
+        
         localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
         localStorage.setItem("email", socialEmail)
         localStorage.setItem("pswd", '')
@@ -906,7 +917,9 @@ socialFirstName:any
         this.loginResponse=res
         this.userId = res.UserId
         console.log(this.loginResponse)
-        this.isSubscribe = res.Subscriber === 0 ? true : false;
+        if(res.Subscriber === 0) {
+          this.isSubscribe =  true;
+        }
         let guest = localStorage.getItem('guest');
         if(guest === 'T') localStorage.setItem('guest', 'F')
         sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
@@ -998,7 +1011,9 @@ socialFirstName:any
         this.loginResponse=res
         this.userId = this.loginResponse.UserId
         console.log(this.loginResponse)
-        this.isSubscribe = this.loginResponse.Subscriber === 0 ? true : false;
+        if(this.loginResponse.Subscriber === 0) {
+          this.isSubscribe =  true;
+        }
         let guest = localStorage.getItem('guest');
         if(guest === 'T') localStorage.setItem('guest', 'F')
         sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
@@ -1164,16 +1179,18 @@ socialFirstName:any
       //resume section
       res.ModUserScrPc.filter(x=>{
         if(parseFloat(x.Percentage)<100){
-          if(x.ModuleId<10)
+          if(x.ModuleId != 71 && x.ModuleId !=72)
           {
-            x.ModuleId="0"+x.ModuleId
-            
+            if(x.ModuleId<10)
+            {
+              x.ModuleId="0"+x.ModuleId
+              
+            }
+
+            x.imgPath=`https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
+            this.resume.push(x)
+            this.resume.sort((val1, val2)=> {return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn)})
           }
-
-          x.imgPath=`https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
-          this.resume.push(x)
-          this.resume.sort((val1, val2)=> {return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn)})
-
         }
       })
       console.log("resume section",this.resume)
@@ -1319,30 +1336,39 @@ socialFirstName:any
       case "37":{this.routeThreeSteps(1)
                 break
                 }
-        case "38":{this.routeInsights(1)
-                break
-                }
-        case "39":{this.routeAwareness(1)
-                break
-                }
-        case "40":{this.routeNoJudgement(1)
-                break
-                }
-        case "41":{this.routeQuestionsAreKey(1)
-                break
-                }
-        case "42":{this.routeLookWithoutLanguage(1)
-                break
-                }
-        case "43":{this.routeObstacles(1)
-                break
-                }
-        case "44":{this.routeStress(1)
-                break
-                }
+      case "38":{this.routeInsights(1)
+              break
+              }
+      case "39":{this.routeAwareness(1)
+              break
+              }
+      case "40":{this.routeNoJudgement(1)
+              break
+              }
+      case "41":{this.routeQuestionsAreKey(1)
+              break
+              }
+      case "42":{this.routeLookWithoutLanguage(1)
+              break
+              }
+      case "43":{this.routeObstacles(1)
+              break
+              }
+      case "44":{this.routeStress(1)
+              break
+              }
+      case "45":{this.routeAddiction(1)
+        break
+        }
+      case "46":{this.routeFood(1)
+          break
+          }
       case "47":{this.routeRelationships(1)
                 break
                 }
+      case "48":{this.routeSuccessAndFailure(1)
+        break
+        }
       case "49":{this.routeOpinionsAndBeliefs(1)
                 break
                 } 
@@ -1370,6 +1396,9 @@ socialFirstName:any
       case "59":{this.routeLeadership(1)
                 break
                 }
+      case "60":{this.routeSorrowandLoss(1)
+                break
+                }
       case "61":{this.routeLoneliness(1)
                 break
                 }
@@ -1382,6 +1411,9 @@ socialFirstName:any
       case "64":{this.routeDealingWithDeath(1)
                 break
                 }
+      case "73":{this.routeMoney(1)
+        break
+        }
     }
   }
 
@@ -2179,8 +2211,7 @@ socialFirstName:any
         this.router.navigate([`/adults/questions-are-key/${qakResume}`])
       }
       else
-      console.log(qakResume,"qafResume")
-      this.router.navigate([`/adults/questions-are-key/s41000`])
+         this.router.navigate([`/adults/questions-are-key/s41000`])
       /*if(!qakResume)
       {
         console.log("null go to page")
@@ -2563,7 +2594,7 @@ socialFirstName:any
     ()=>{
       if(cont=="1")
       {        
-        this.router.navigate([`/adults/comparison/${identityResume}`])
+        this.router.navigate([`/adults/identity/${identityResume}`])
       }
       else
       this.router.navigate([`/adults/identity/s21001`])
@@ -2992,6 +3023,9 @@ socialFirstName:any
     })
    
   }
+
+  
+
 
   routeRelationships(cont: any = 1){
     var relationshipResume
