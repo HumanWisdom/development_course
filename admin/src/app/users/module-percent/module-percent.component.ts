@@ -15,13 +15,13 @@ export class ModulePercentComponent implements OnInit {
   sectionList=JSON.parse(localStorage.getItem("sectionList"))
   list=JSON.parse(localStorage.getItem("list"))
   percentList=[]
-  
+
   updatedSectionList=[]
   selectedProgramID:any
   selectedProgram:any
   selectedSectionID:any
   selectedSection:any
-  
+
   searchedProgram:any
   searchedSection:any
   searchedModule:any
@@ -31,7 +31,11 @@ export class ModulePercentComponent implements OnInit {
   appList=JSON.parse(localStorage.getItem("appList"))
   modulePercent:any
   mediaPercent:any
-  
+
+  updatedModuleName = '';
+  updatedModuleId = '';
+  updatedmodulePercent = ''
+  updatedmediaPercent = ''
 
   constructor(private router: Router,private service:UsersService, private location:Location) { }
 
@@ -43,7 +47,7 @@ export class ModulePercentComponent implements OnInit {
     this.selectedSection=""
     this.selectedModuleID=""
     this.updatedModuleList=[]
-   
+
     console.log(event)
     this.selectedProgramID=event
     this.programList.find(element=>{
@@ -53,7 +57,7 @@ export class ModulePercentComponent implements OnInit {
       }
     })
     console.log("selected Program",this.selectedProgramID,this.selectedProgram)
-  
+
     this.sectionList.filter(a=>{
       if(a.ProgramID==this.selectedProgramID)
       this.updatedSectionList.push(a)
@@ -67,15 +71,15 @@ export class ModulePercentComponent implements OnInit {
     this.selectedModuleID=""
     this.updatedModuleList=[]
 
-   
+
 
       this.moduleList.filter(a=>{
-        
+
         if(a.SectionID==this.selectedSectionID)
           this.updatedModuleList.push(a)
       })
         console.log(this.updatedModuleList)
-    
+
   }
 
   selectModule(eventM){
@@ -89,10 +93,10 @@ export class ModulePercentComponent implements OnInit {
       {
         console.log(res)
         this.percentList=res;
-       
-        
-       
-      
+
+
+
+
       }
     )
 
@@ -114,11 +118,15 @@ export class ModulePercentComponent implements OnInit {
 
   }
 
-  /*updateModule(moduleId,sectionId){
-    this.service.addModule({ "ModuleID":moduleId,
-    "SectionID":sectionId,
-    "ModuleNumber":0,
-    "ModuleName":this.updatedModuleName})
+  initUpdate(name, id, mp, sp) {
+    this.updatedModuleId = id
+    this.updatedModuleName = name
+    this.updatedmediaPercent = mp
+    this.updatedmodulePercent = sp
+  }
+
+  updateModule(){
+    this.service.addModulePercent(this.updatedModuleId,this.updatedmodulePercent,this.updatedmediaPercent)
     .subscribe(res=>
       {
       console.log(res)
@@ -127,13 +135,17 @@ export class ModulePercentComponent implements OnInit {
         console.log(error)
       },
       ()=>{
+        this.updatedModuleId = ''
+        this.updatedModuleName = ''
+        this.updatedmediaPercent = ''
+        this.updatedmodulePercent = ''
         this.getModules()
       }
     )
 
   }
 
-  deleteModule(id){
+  /*deleteModule(id){
     console.log(id)
     this.service.deleteModule({ "Id":parseInt(id)}).
     subscribe(res=>
@@ -157,7 +169,7 @@ export class ModulePercentComponent implements OnInit {
       return res.Program.toLocaleLowerCase().match(this.searchedProgram.toLocaleLowerCase())
     })
   }
-    
+
   }
 
   searchSection(){
@@ -183,7 +195,7 @@ export class ModulePercentComponent implements OnInit {
   }*/
 
   reset(){
-    
+
   }
 
 }

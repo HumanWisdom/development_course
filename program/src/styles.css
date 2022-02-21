@@ -19133,7 +19133,8 @@ share-buttons button
 
 .pt_rightcol
 {
-  padding-top: 6.5rem !important;
+  /* padding-top: 6.5rem !important; */
+  padding-top: 6rem !important;
 }
 
 .w60p
@@ -25631,4 +25632,14 @@ h1
 .fa_post 
 {
   font-size: 14px;
+}
+
+.ws_dnone 
+{
+  display: none;
+}
+
+.ws_dblock
+{
+  display: block;
 }
