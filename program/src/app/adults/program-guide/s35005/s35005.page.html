@@ -1,47 +1,50 @@
-<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
-<app-oneline-text [bg]="bg">
-  <form>
-    <h1 class="txt8 fw_500 oneliner_txt_title">
-      How to use the program?
-    </h1>
-    <div class="clearfix"></div>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
 
-    <!-- <h3 class="txt8">
-      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
-    </h3> -->
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      01. Do a daily exercise to nurture a quiet mind
-    </h3>
+<!-- page content -->
+<div class="right_col ml0 purple_blue_w6" role="main">				
+  <!-- Class -->  
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">        
+        <div class="x_panel cxpanel center_flex dflexblock">
+          <div class="x_content c_white fwunset tcenter">
+            <form>              
+              <h5 class="txt1">
+                How to use the program?
+              </h5>
+              <div class="clearfix"></div>
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      02. Learn something about yourself every day
-    </h3>
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>              
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      03. Write in your journal regularly
-    </h3>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+             
+              <!-- /multistep wizard -->  
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      04. Share your thoughts in the forum
-    </h3>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      05. Speak to a coach (coming)
-    </h3>
-
-    <h3 class="txt8 oneliner_txt_pointer">
-      06. Complete the wisdom survey once a month
-    </h3>
-
-    <h3 class="txt8 oneliner_txt_pointer">
-      07. Listen to a podcast
-    </h3>
-
-    <h3 class="txt8 oneliner_txt_pointer">
-      08. Read/Contribute a wisdom story
-    </h3>
-
-  </form>          
-</app-oneline-text>
 <app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

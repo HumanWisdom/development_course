@@ -112,7 +112,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/adults/program-guide/s35005'])
+    this.router.navigate(['/adults/program-guide/s35005p10'])
 
 
   }

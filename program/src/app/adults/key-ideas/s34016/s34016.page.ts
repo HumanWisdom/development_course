@@ -11,7 +11,7 @@ import {Location } from '@angular/common'
 export class S34016Page implements OnInit {
 
  bg="purple_blue_w1"  
-  hint="This could be a feel of irritation at someone, or jealousy, or anger. This could allow you to observe it more closely."
+  hint="This could be a feeling of irritation at someone, or jealousy, or anger. This could allow you to observe it more closely."
   toc="key-ideas/s34001"
   path=this.router.url
 
