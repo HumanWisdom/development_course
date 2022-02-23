@@ -28,7 +28,6 @@ export class CoachChatComponent implements OnInit {
 
   };
   logginCometChat(){
-   
     CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
       (user) => {
         this.isChatList=(localStorage.getItem('isChatList')!=null) ? (localStorage.getItem('isChatList') =='true'?true:false):false
@@ -37,6 +36,7 @@ export class CoachChatComponent implements OnInit {
           this.isChatMessages =  !this.isChatList;
         }
         if(this.isChatMessages){
+          localStorage.setItem('coachUID',this.coachUID);
           CometChat.getUser(this.coachUID.toString()).then(info=>{
             this.item = info;
           })

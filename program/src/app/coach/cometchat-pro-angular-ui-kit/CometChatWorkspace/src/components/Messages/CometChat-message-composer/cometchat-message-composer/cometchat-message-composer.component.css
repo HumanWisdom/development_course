@@ -223,3 +223,32 @@
     z-index: 1;
   }
 }
+
+.messageWrapperStyle {
+  width: auto;
+  flex: 1 1;
+  align-self: flex-end;
+  display: flex;
+}
+
+.messageTxtWrapperStyle {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #fff;
+  color: #39f;
+  padding: 8px 12px;
+  align-self: flex-end;
+  width: auto;
+  margin: 0px 5px 5px 0px;
+  font-weight: bold;
+  border: 1px solid  #39f;
+}
+
+.messageTxtStyle {
+  margin: 0;
+  font-size: 14px;
+  white-space: pre-wrap;
+ /* // word-break: break-word; */
+  text-align: left;
+  width: auto;
+}

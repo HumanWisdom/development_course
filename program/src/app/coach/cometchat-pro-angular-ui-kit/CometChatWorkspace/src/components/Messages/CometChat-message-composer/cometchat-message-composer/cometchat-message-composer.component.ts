@@ -61,7 +61,7 @@ export class CometChatMessageComposerComponent implements OnInit, OnChanges {
   @Input() messageToBeEdited: any = null;
   @Input() replyPreview = null;
   @Input() messageToReact: any = null;
-
+  isCoach=false;
   @Output() actionGenerated: EventEmitter<any> = new EventEmitter();
 
   @ViewChild("imagePicker", { static: false }) imagePicker!: ElementRef;
@@ -84,6 +84,8 @@ export class CometChatMessageComposerComponent implements OnInit, OnChanges {
   emojiToggled: boolean = false;
   isTyping: any;
   userBlocked: boolean = false;
+
+  customMessageArray = ["I'm good","Thank you!","Ok.", "Welcome","I will get back to you soon!"];
 
   PICK_YOUR_EMOJI: string = COMETCHAT_CONSTANTS.PICK_YOUR_EMOJI;
   ATTACH_FILE: string = COMETCHAT_CONSTANTS.ATTACH_FILE;
@@ -124,8 +126,10 @@ export class CometChatMessageComposerComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.isCoach= localStorage.getItem('RoleID')=='9'?true:false;
+    this.customMessageArray.unshift('Hello, I am '+ localStorage.getItem('name').toString() +' how may I help you?')
+  }
   /**
    * Handles all the actions emitted by the child components that make the current component
    * @param Event action

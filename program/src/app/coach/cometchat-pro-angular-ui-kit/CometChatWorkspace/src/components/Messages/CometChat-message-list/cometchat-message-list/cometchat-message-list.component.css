@@ -5,6 +5,9 @@
   order: 2;
   position: relative;
   height: 100%;
+
+}
+.listWrapperStyle {
   background: linear-gradient(180deg, #1092A7 -1.41%, #70C6BD 100%) !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -13,8 +16,7 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */ 
   min-height: 100vh; 
-}
-.listWrapperStyle {
+
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

@@ -15,6 +15,7 @@ import { DatePipe } from "@angular/common";
 import { COMETCHAT_CONSTANTS } from "../../../../utils/messageConstants";
 import { logger } from "../../../../utils/common";
 import { COMETCHATCONSTANTS } from "src/app/coach/CONSTS";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "cometchat-message-list",
@@ -87,7 +88,6 @@ export class CometChatMessageListComponent
   }
 
   ngOnChanges(change: SimpleChanges) {
-    debugger
     try {
       if (change[enums.ITEM]) {
         //Removing Previous Conversation Listeners
@@ -135,9 +135,11 @@ export class CometChatMessageListComponent
   ngOnInit() {
     try {
       this.createMessageRequestObjectAndGetMessages();
-
       // Attach MessageListeners Here
       this.addMessageEventListeners();
+
+
+
     } catch (error) {
       logger(error);
     }
@@ -389,11 +391,19 @@ export class CometChatMessageListComponent
           this.messagesRequest.fetchPrevious().then(
             (messageList: any) => {
               // No Messages Found
+
               if (messageList.length === 0 && this.messages.length === 0) {
+
                 this.decoratorMessage = COMETCHAT_CONSTANTS.NO_MESSAGES_FOUND;
+
+                if(messageList.length != 0){
+                  this.decoratorMessage = ""
+                }
               } else {
                 this.decoratorMessage = "";
               }
+
+
 
               messageList.forEach((message: any) => {
                 if (
@@ -407,8 +417,8 @@ export class CometChatMessageListComponent
                 if (message.getSender().getUid() !== this.loggedInUser.uid) {
                   //mark the message as delivered
                   this.markMessageAsDelivered(message);
-      
-                
+
+
                   if (
                     message.getSender().getUid() !== user.uid &&
                     !message.getReadAt()
@@ -463,21 +473,22 @@ export class CometChatMessageListComponent
                   payLoad: messageList,
                 });
               }
-            },
-            (error: any) => {
-              // logger("Message fetching failed with error:", error);
+
             }
+
           );
-   //    },
+
+          //    },
         (error) => {
           logger("No Logged In User Found", { error });
         }
-       });
-      //console.log("comet-mesage-list-login");
+
+      });
   //  });
     } catch (error) {
       logger(error);
     }
+
   }
 GetLoginData() {
 return CometChat.getLoggedinUser().then(
@@ -810,12 +821,12 @@ return CometChat.getLoggedinUser().then(
       } else if (
         this.type === CometChat.RECEIVER_TYPE.USER &&
         message.getReceiverType() === CometChat.RECEIVER_TYPE.USER &&
-        ((message.getSender().uid === this.item.uid && 
+        ((message.getSender().uid === this.item.uid &&
           message.getReceiverId() === this.loggedInUser.uid)
            || (
           this.loggedInUser.uid === message.getSender().uid &&
 			    message.getReceiverId() === this.item.uid
-        )) 
+        ))
       ) {
         if (!message.getReadAt()) {
           CometChat.markAsRead(message);
@@ -903,4 +914,51 @@ return CometChat.getLoggedinUser().then(
       }
       return true;
   }
+
+// SendCustomTextMessage(){
+//   debugger;
+//   CometChat.logout().then(x=>{
+//     if(x){
+//      CometChat.login(localStorage.getItem('coachUID').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
+//        (user) => {
+//          console.log("Login Successful:", { user
+//          });
+//           let receiverID = localStorage.getItem('userId').toString();
+//           let messageText = "Hello world!";
+//           let receiverType = CometChat.RECEIVER_TYPE.USER;
+//           let textMessage = new CometChat.TextMessage(receiverID, messageText, receiverType);
+//           CometChat.sendMessage(textMessage).then(
+//             message => {
+//               CometChat.logout().then(x=>{
+//                 console.log("Message sent successfully:", message);
+
+//               })
+//          });
+//       });
+//               }
+//             });
+//           }}
+
+
+// SendCustomTextMessage(){
+//   debugger;
+//   CometChat.logout().then(x=>{
+//      CometChat.login(localStorage.getItem('coachUID').toString()).then(
+//        (user) => {
+//          console.log("Login Successful:", { user
+//          });
+//           let receiverID = localStorage.getItem('userId').toString();
+//           let messageText = "Hello world!";
+//           let receiverType = CometChat.RECEIVER_TYPE.USER;
+//           let textMessage = new CometChat.TextMessage(receiverID, messageText ,receiverType);
+//             textMessage.setSender(user);
+//             console.log(textMessage.getSender());
+//                   CometChat.sendDirectMessage(textMessage).then(
+//             message => {
+//              console.log(message);
+//          });
+//       });
+//     })
+//     }
+
 }

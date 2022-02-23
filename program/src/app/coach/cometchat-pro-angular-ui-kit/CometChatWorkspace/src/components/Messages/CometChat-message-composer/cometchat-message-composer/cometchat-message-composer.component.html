@@ -27,6 +27,13 @@
       >
     </p>
   </div>
+  <div class="messageWrapperStyle" *ngIf="isCoach" style="flex-wrap: wrap">
+    <div class="messageTxtWrapperStyle" *ngFor="let item of customMessageArray" (click)="sendTextMessage(item)">
+      <p class="messageTxtStyle message__txt">
+        {{item}}
+      </p>
+    </div>
+  </div>
   <div class="composerInputStyle">
     <div class="inputInnerStyle" tabindex="-1">
       <input
