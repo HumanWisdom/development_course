@@ -14,6 +14,8 @@ import { CometChatUserList } from '../cometchat-pro-angular-ui-kit/CometChatWork
 import { CometChatAvatar } from '../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/Shared/CometChat-avatar/cometchat-avatar.module';
 import { CometChatMessages} from '../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/Messages/CometChat-messages/cometchat-messages.module'
 import { CommonModule } from '@angular/common';
+import { BottomNavigationComponent } from 'src/app/adults/shared/component/bottom-navigation/bottom-navigation.component';
+import { SharedModule } from 'src/app/adults/shared/shared.module';
 
 
 const routes: Routes = [
@@ -37,9 +39,10 @@ const routes: Routes = [
     CometChatUserList,
     CometChatAvatar,
     CometChatMessages,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CoachChatComponent],
+  declarations: [CoachChatComponent,BottomNavigationComponent],
   //  UserListPageComponent,
   exports: [RouterModule]
 })

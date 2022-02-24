@@ -3,6 +3,7 @@ import { CometChat } from "@cometchat-pro/chat";
 import * as enums from "../../../../utils/enums";
 import { REACTION_ICON } from "./resources/reaction";
 import { logger } from "../../../../utils/common";
+import { COMETCHATCONSTANTS } from "src/app/coach/CONSTS";
 @Component({
   selector: "cometchat-message-actions",
   templateUrl: "./cometchat-message-actions.component.html",
@@ -39,12 +40,23 @@ export class CometChatMessageActionsComponent implements OnInit {
 
       let user = CometChat.getLoggedinUser().then((user) => {
         this.loggedInUser = user;
-
-        //for the message that is received , only show the reply button in tooltip
+        if(this.loggedInUser==null){
+          return CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
+            (info:CometChat.User) => { 
+              this.loggedInUser=info;
+              if (this.messageDetails.sender.uid !== this.loggedInUser.uid) {
+                this.showOnlyReplyButton = true;
+                this.receivedMessage = true;
+              }
+        });
+      }else{
         if (this.messageDetails.sender.uid !== this.loggedInUser.uid) {
           this.showOnlyReplyButton = true;
           this.receivedMessage = true;
-        }
+        }  
+      }
+        //for the message that is received , only show the reply button in tooltip
+      
       });
     } catch (error) {
       logger(error);
