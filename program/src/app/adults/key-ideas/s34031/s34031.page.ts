@@ -154,7 +154,7 @@ this.router.navigate(['/adults/key-ideas/s34032'])
 
 }
 prev(){
-  this.router.navigate(['/adults/key-ideas/s34030'])
+  this.router.navigate(['/adults/key-ideas/s34030p6'])
 
 
 }

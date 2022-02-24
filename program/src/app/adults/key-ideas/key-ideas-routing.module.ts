@@ -38,6 +38,12 @@ import { S34028Page } from './s34028/s34028.page';
 import { S34028tPage } from './s34028t/s34028t.page';
 import { S34029Page } from './s34029/s34029.page';
 import { S34030Page } from './s34030/s34030.page';
+import { S34030p1Page } from './s34030p1/s34030p1.page';
+import { S34030p2Page } from './s34030p2/s34030p2.page';
+import { S34030p3Page } from './s34030p3/s34030p3.page';
+import { S34030p4Page } from './s34030p4/s34030p4.page';
+import { S34030p5Page } from './s34030p5/s34030p5.page';
+import { S34030p6Page } from './s34030p6/s34030p6.page';
 import { S34031Page } from './s34031/s34031.page';
 import { S34032Page } from './s34032/s34032.page';
 import { S34033Page } from './s34033/s34033.page';
@@ -194,6 +200,30 @@ const routes: Routes = [
   {
     path: 's34030',
     component: S34030Page,
+  },
+  {
+    path: 's34030p1',
+    component: S34030p1Page,
+  },
+  {
+    path: 's34030p2',
+    component: S34030p2Page,
+  },
+  {
+    path: 's34030p3',
+    component: S34030p3Page,
+  },
+  {
+    path: 's34030p4',
+    component: S34030p4Page,
+  },
+  {
+    path: 's34030p5',
+    component: S34030p5Page,
+  },
+  {
+    path: 's34030p6',
+    component: S34030p6Page,
   },
   {
     path: 's34031',
