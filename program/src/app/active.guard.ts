@@ -23,6 +23,8 @@ export class ActiveGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
+      let m: any = window.location.href;
+      m = m.split('?')
     let str = next.routeConfig.path;
     this.scrId = str.substring(1, str.length + 1);
     if(this.scrId !== '29000') {
@@ -32,7 +34,8 @@ export class ActiveGuard implements CanActivate, OnInit {
       }
     }
     let sub: any = localStorage.getItem("Subscriber")
-    if (sub === '1') {
+
+    if (sub === '1' || m[1].slice(0, 2) === 't=') {
       return true;
     } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
       return true;

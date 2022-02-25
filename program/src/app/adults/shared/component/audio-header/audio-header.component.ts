@@ -35,7 +35,7 @@ export class AudioHeaderComponent implements OnInit {
   constructor(private router: Router,
     private service:AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService  ) { 
-      this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
+      this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
       this.ngNavigatorShareService = ngNavigatorShareService;
     }
 
