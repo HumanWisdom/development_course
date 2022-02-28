@@ -54,7 +54,7 @@ export class S249tPage implements OnInit {
     sessionStorage.setItem("bookmark249",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/conditioning/s250'])
+   this.router.navigate(['/adults/conditioning/s250'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
