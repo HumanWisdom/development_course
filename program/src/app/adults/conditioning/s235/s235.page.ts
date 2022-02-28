@@ -14,13 +14,13 @@ export class S235Page implements OnInit,OnDestroy {
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/conditioning/audios/con+1.1.mp3'
-  colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 "]
+  colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
         "Nurture a quiet mind",
         "Art of enquiry",
-        " How the mind works",
+        "Conditioning",
         "Understand emotions",
-        "conditioning"
+        "Living with wisdom"
       ]
 
   transcriptPage="conditioning/s235t"
