@@ -137,7 +137,7 @@ export class S300Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  this.router.navigate(['/conditioning/s301'])
+ this.router.navigate(['/adults/conditioning/s301'])
   
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
