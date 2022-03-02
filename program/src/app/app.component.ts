@@ -22,7 +22,6 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router
   ) {
-    console.log(window.location.href)
     this.initializeApp();
   }
 

@@ -24,7 +24,6 @@ export class BottomNavigationComponent implements OnInit {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
     }
-    console.log("url",this.router.url)
     if(this.router.url=="/adults/adult-dashboard")
     {
       this.dash=true

@@ -1,5 +1,5 @@
-import { Injectable,Injector } from '@angular/core';
-import {HttpInterceptor,HttpRequest, HttpHandler, HttpEvent} from '@angular/common/http'
+import { Injectable, Injector } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { OnboardingService } from './onboarding/onboarding.service';
 import { retry } from 'rxjs/operators';
@@ -8,19 +8,20 @@ import { retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor {
-  token=JSON.parse(localStorage.getItem("token"))
+  token = JSON.parse(localStorage.getItem("token"))
 
 
-  constructor() { 
+  constructor() {
   }
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
-    this.token=JSON.parse(localStorage.getItem("token"))
-    let tokenizedReq=req.clone({
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    this.token = JSON.parse(localStorage.getItem("token"))
+    let tokenizedReq = req.clone({
       setHeaders: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         Authorization: `Bearer ` + this.token
       }
     })
     return next.handle(tokenizedReq)
-   }
+  }
 }
