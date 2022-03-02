@@ -106,9 +106,9 @@ import { S34033Page } from './s34033/s34033.page';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     IonicModule,
-    SharedModule,
     KeyIdeasRoutingModule
   ],
   providers:[
