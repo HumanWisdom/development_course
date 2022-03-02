@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../../adults.service"
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 import { AssignKeyPage } from 'src/app/onboarding/assign-key/assign-key.page';
@@ -27,37 +27,18 @@ export class ViewStoriesPage implements OnInit {
 
   constructor(private router: Router,
     private service:AdultsService,
-    private location:Location) {
-      this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
-      this.sId=this.router.getCurrentNavigation().extractedUrl.queryParams.sId
+    private location:Location, private route: ActivatedRoute) {
+      this.route.queryParams.subscribe(params => {
+        this.sId=params?.sId
+    });
+      this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
      
 
      }
 
   ngOnInit() {
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    
-    if(this.urlT)
-    {
-      console.log("going to fetch")
-     this.getStories()
- 
-    }
-    else{
-      this.story=JSON.parse(localStorage.getItem("story"))
-      console.log(this.story)
-      var id=this.story.ScenarioID
-      this.modules=this.story.ModIds.split`,`.map(x=>+x)
-      //this.modules.forEach(e=>parseInt(e))
-      console.log(this.modules)
-      this.assignLinks()
-    
-    }
-     
-    
+    this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.getStories(this.sId)
   }
   assignLinks(){
 
@@ -310,14 +291,6 @@ export class ViewStoriesPage implements OnInit {
         break
        }
       
-      
-     
-    
-     
-      
-      
-      
-      
     }
   }
  
@@ -331,8 +304,8 @@ export class ViewStoriesPage implements OnInit {
     this.location.back()
   }
 
-  getStories(){
-    this.service.getScenarios().subscribe(res=>
+  getStories(id){
+    this.service.getScenarioswithId(id).subscribe(res=>
       {
         console.log(res)
         this.storyList=res
@@ -340,12 +313,17 @@ export class ViewStoriesPage implements OnInit {
       },
       error=>console.log(error),
       ()=>{
-        this.story=this.storyList.find(s=>s.ScenarioID==this.sId)
-        console.log("found story",this.story)
-        var id=this.story.ScenarioID
-        this.modules=this.story.ModIds.split`,`.map(x=>+x)
-        console.log(this.modules)
-        this.assignLinks()
+        if(this.storyList.length !==0) {
+          this.story=this.storyList.find(s=>s.ScenarioID==this.sId)
+          console.log("found story",this.story)
+          var id=this.story.ScenarioID
+          if(this.story.hasOwnProperty('ModIds')) {
+            this.modules=this.story.ModIds.split`,`.map(x=>+x)
+            console.log(this.modules)
+            this.assignLinks()
+          }
+        }
+      
         
       }
     )
