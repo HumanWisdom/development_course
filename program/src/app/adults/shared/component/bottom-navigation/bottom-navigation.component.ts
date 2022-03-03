@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {AdultsService} from "../../../../adults/adults.service"
 
 @Component({
   selector: 'app-bottom-navigation',
@@ -15,8 +14,7 @@ export class BottomNavigationComponent implements OnInit {
   isloggedIn=false
   enableprofile=false
   Subscriber: any;
-  constructor(private router: Router,
-    private service:AdultsService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
@@ -24,7 +22,6 @@ export class BottomNavigationComponent implements OnInit {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
     }
-    console.log("url",this.router.url)
     if(this.router.url=="/adults/adult-dashboard")
     {
       this.dash=true
