@@ -39,12 +39,15 @@ export class AllStoriesPage implements OnInit {
       },
       error=>console.log(error),
       ()=>{
-        this.service.readStories().subscribe(r=>{
-          console.log(r)
-          this.readStories= r.map(a => a.ScenarioID)
-          console.log(this.readStories)
-          //this.readStories=r.ScenarioID
-        })
+        let res = localStorage.getItem("isloggedin");
+        if(res && res === 'T') { 
+          this.service.readStories().subscribe(r=>{
+            console.log(r)
+            this.readStories= r.map(a => a.ScenarioID)
+            console.log(this.readStories)
+            //this.readStories=r.ScenarioID
+          })
+        }
       }
     )
   }
@@ -52,11 +55,16 @@ export class AllStoriesPage implements OnInit {
   toRead(obj){
     console.log(obj)
     localStorage.setItem("story",JSON.stringify(obj))
-    this.service.clickStory(obj.ScenarioID).subscribe(res=>{
-      this.sId=obj.ScenarioID
-      console.log(res)
+    let res = localStorage.getItem("isloggedin");
+    if(res && res === 'T') {
+      this.service.clickStory(obj.ScenarioID).subscribe(res=>{
+        this.sId=obj.ScenarioID
+        console.log(res)
+        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+      })
+    }  else {
       this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
-    })
+    }
     
   }
 
