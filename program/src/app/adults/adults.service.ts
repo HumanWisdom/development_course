@@ -79,6 +79,9 @@ export class AdultsService {
   getScenarios():Observable<any>{
     return this.http.get(this.path+`/Scenarios`)
   }
+  getScenarioswithId(data: any):Observable<any>{
+    return this.http.get(this.path+`/Scenarios/${data}`)
+  }
   readStories():Observable<any>{
     return this.http.get(this.path+`/wisdomStories`)
   }
