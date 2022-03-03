@@ -1,10 +1,9 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import {Location } from '@angular/common'
-import { AdultsService } from '../adults.service';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { Router } from '@angular/router';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { AdultsService } from '../adults.service';
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -680,6 +679,7 @@ socialFirstName:any
         // this.router.navigate(['/adults/adult-dashboard'])
       },
       error=>{
+        console.log(error);
         this.subsecondpage = false;
           this.subthirdpage = true
         // window.alert(error.error['Message'])
@@ -713,6 +713,7 @@ socialFirstName:any
         // this.router.navigate(['/adults/adult-dashboard'])
       },
       error=>{
+        console.log(error);
         // window.alert(error.error['Message'])
       },
      
@@ -772,6 +773,7 @@ socialFirstName:any
       }
 
       }, (err) => {
+        console.log(err);
       })
 
   }
