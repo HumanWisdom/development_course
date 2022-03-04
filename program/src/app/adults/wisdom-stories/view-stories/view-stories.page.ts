@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 import { AssignKeyPage } from 'src/app/onboarding/assign-key/assign-key.page';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-view-stories',
@@ -15,7 +16,7 @@ export class ViewStoriesPage implements OnInit {
   links: Array<{id: number, module: string,route: string}> = []
   modules=[]
   socialShare=false
-  path="https://humanwisdom.me/course/#/adults/wisdom-stories"
+  path="https://humanwisdom.me/course/#/wisdom-stories/view-stories"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -26,7 +27,7 @@ export class ViewStoriesPage implements OnInit {
   storyList=[]
 
   constructor(private router: Router,
-    private service:AdultsService,
+    private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
     private location:Location, private route: ActivatedRoute) {
       this.route.queryParams.subscribe(params => {
         this.sId=params?.sId
@@ -297,6 +298,16 @@ export class ViewStoriesPage implements OnInit {
   }
 
   addToken(){
+    this.ngNavigatorShareService.share({
+      title: 'Human Wisdom Program',
+      text: 'Hey, check out the Human Wisdom Program',
+      url: this.path+'?sId='+this.sId
+    }).then( (response) => {
+      console.log(response);
+    })
+    .catch( (error) => {
+      console.log(error);
+    });
     this.socialShare=true
   }
   

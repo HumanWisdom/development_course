@@ -40,9 +40,15 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
 
   viewstory(item){
     localStorage.setItem("story",JSON.stringify(item))
-    this.service.clickStory(item.ScenarioID).subscribe(res=>{
+    let res = localStorage.getItem("isloggedin");
+    if(res && res === 'T') { 
+      this.service.clickStory(item.ScenarioID).subscribe(res=>{
+        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+      })
+    }else {
       this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
-    })
+    }
+    
   }
 
 }
