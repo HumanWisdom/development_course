@@ -16,7 +16,7 @@ export class TokenInterceptorService implements HttpInterceptor {
     let wisdom = false;
     this.route.queryParams.subscribe(params => {
       if(params?.sId) {
-wisdom =true;
+        wisdom =true;
       }
   });
     this.token = JSON.parse(localStorage.getItem("token"))
