@@ -22,6 +22,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router
   ) {
+    console.log('app started');
     this.initializeApp();
   }
 
