@@ -59,7 +59,7 @@ export class BottomNavigationComponent implements OnInit {
    
   }
   routeJournal(){
-    if(localStorage.getItem('isloggedin') === 'T')
+    // if(localStorage.getItem('isloggedin') === 'T')
       this.router.navigate(['/adults/journal'])
    
   }
@@ -77,7 +77,7 @@ export class BottomNavigationComponent implements OnInit {
   }
 
   routeForum(){
-    if(localStorage.getItem('isloggedin') === 'T')
+    // if(localStorage.getItem('isloggedin') === 'T')
        this.router.navigate(['/forum'])
    
   }
