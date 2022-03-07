@@ -68,7 +68,6 @@ import { S56054Page } from './s56054/s56054.page'; 
 const routes: Routes = [
   {
     path: '',   
-    canActivate:[ActiveGuard],  
     component: S56001Page,
   },
   {
