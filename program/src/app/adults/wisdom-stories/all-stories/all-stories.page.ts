@@ -56,9 +56,9 @@ export class AllStoriesPage implements OnInit {
     console.log(obj)
     localStorage.setItem("story",JSON.stringify(obj))
     let res = localStorage.getItem("isloggedin");
+    this.sId=obj.ScenarioID
     if(res && res === 'T') {
       this.service.clickStory(obj.ScenarioID).subscribe(res=>{
-        this.sId=obj.ScenarioID
         console.log(res)
         this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
       })
