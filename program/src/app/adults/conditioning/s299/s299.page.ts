@@ -61,7 +61,7 @@ export class S299Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -103,7 +103,7 @@ export class S299Page implements OnInit {
         "Resp":JSON.parse(sessionStorage.getItem("r299"))
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

@@ -111,7 +111,7 @@ export class S35tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
    

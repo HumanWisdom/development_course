@@ -70,7 +70,7 @@ export class S55003Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,7 +114,7 @@ export class S55003Page implements OnInit {
         "Resp":this.r55003
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

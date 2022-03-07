@@ -318,7 +318,7 @@ export class ViewStoriesPage implements OnInit {
   getStories(id){
     this.service.getScenarioswithId(id).subscribe(res=>
       {
-        console.log(res)
+        
         this.storyList=res
         //localStorage.setItem("storyList",JSON.stringify(this.storyList))
       },
@@ -345,7 +345,7 @@ export class ViewStoriesPage implements OnInit {
     
     this.service.clickModule(id,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     })

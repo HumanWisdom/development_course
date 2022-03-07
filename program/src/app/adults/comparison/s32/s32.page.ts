@@ -75,7 +75,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
@@ -98,7 +98,7 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{

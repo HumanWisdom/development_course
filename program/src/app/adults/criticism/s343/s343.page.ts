@@ -61,7 +61,7 @@ createScreen(){
     "ScreenNo":this.screenNumber
   }).subscribe(res=>
     {
-      console.log(res)
+      
     })
   
 
@@ -103,7 +103,7 @@ submitProgress(e){
     "Resp":JSON.parse(sessionStorage.getItem("r343"))
   }).subscribe(res=>
     {
-      console.log(res)
+      
     },
     error=>{
       console.log(error)

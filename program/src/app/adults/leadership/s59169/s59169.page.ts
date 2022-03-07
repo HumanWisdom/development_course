@@ -189,7 +189,7 @@ export class S59169Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -231,7 +231,7 @@ export class S59169Page implements OnInit {
         "Resp":this.r59169
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

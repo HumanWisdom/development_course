@@ -118,7 +118,7 @@ export class AudioHeaderComponent implements OnInit {
       "Notes":this.note,
       "UserId":this.userId
 
-    }).subscribe(res=>console.log(res),
+    }).subscribe((res) => {},
     error=>{
       console.log(error)
     },

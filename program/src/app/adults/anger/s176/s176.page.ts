@@ -68,7 +68,7 @@ export class S176Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -111,7 +111,7 @@ export class S176Page implements OnInit,OnDestroy {
       "Resp":this.r176
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
