@@ -40,7 +40,7 @@ export class S73001Page implements OnInit,OnDestroy {
     let arraythree = []
     if(story.length <= 2) 
     {
-      story.forEach((e) => 
+      story?.forEach((e) => 
       {
         arraythree.push(e)
       })
@@ -48,7 +48,7 @@ export class S73001Page implements OnInit,OnDestroy {
     }
     else
     {
-      story.forEach((e) => 
+      story?.forEach((e) => 
       {
         if(arraythree.length < 2) 
         {

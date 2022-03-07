@@ -63,7 +63,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 33:{
      
-        this.links.push({'id':33,'module':"5 Circles of Wisdom",'route':'/adults/5-circles-of-wisdom'})
+        this.links.push({'id':33,'module':"5 Circles of Wisdom",'route':'/adults/five-circles'})
         break
        }
        case 34:{
@@ -103,7 +103,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 26:{
      
-        this.links.push({'id':26,'module':"Benefits of Enquiry",'route':'/adults/enefits-of-enquiry'})
+        this.links.push({'id':26,'module':"Benefits of Enquiry",'route':'/adults/benefits-of-enquiry'})
         break
        }
        case 36:{
@@ -138,7 +138,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 42:{
      
-        this.links.push({'id':42,'module':"Look without Language",'route':'/adults/look-without-language'})
+        this.links.push({'id':42,'module':"Look without Language",'route':'/adults/without-language'})
         break
        }
        case 43:{
@@ -183,7 +183,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 57:{
      
-        this.links.push({'id':57,'module':" The Nature of  The I",'route':'/adults/ nature-of-i'})
+        this.links.push({'id':57,'module':" The Nature of  The I",'route':'/adults/nature-of-i'})
         break
        }
        case 19:{
@@ -253,7 +253,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 53:{
      
-        this.links.push({'id':53,'module':"Communication",'route':'/adults/communicationon'})
+        this.links.push({'id':53,'module':"Communication",'route':'/adults/communication'})
         break
        }
        case 49:{
@@ -268,12 +268,12 @@ export class ViewStoriesPage implements OnInit {
        }
        case 45:{
      
-        this.links.push({'id':45,'module':"Addiction",'route':'/adults/addiction'})
+        this.links.push({'id':45,'module':"Addiction",'route':'/adults/habit-addiction'})
         break
        }
        case 46:{
      
-        this.links.push({'id':46,'module':"Food and Health",'route':'/adults/food-fealth'})
+        this.links.push({'id':46,'module':"Food and Health",'route':'/adults/food-health'})
         break
        }
        case 73:{
@@ -283,12 +283,12 @@ export class ViewStoriesPage implements OnInit {
        }
        case 58:{
      
-        this.links.push({'id':58,'module':" Work",'route':'/adults/ work'})
+        this.links.push({'id':58,'module':" Work",'route':'/adults/work'})
         break
        }
        case 59:{
      
-        this.links.push({'id':59,'module':"Leadership",'route':'/adults/ leadership'})
+        this.links.push({'id':59,'module':"Leadership",'route':'/adults/leadership'})
         break
        }
       

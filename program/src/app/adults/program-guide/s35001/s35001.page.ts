@@ -43,7 +43,7 @@ export class S35001Page implements OnInit,OnDestroy {
     let splitarr = []
     let arraythree = []
     if(story) {
-      if(story.length <= 2) 
+      if(story?.length <= 2) 
       {
         story.forEach((e) => 
         {
@@ -53,7 +53,7 @@ export class S35001Page implements OnInit,OnDestroy {
       }
       else
       {
-        story.forEach((e) => 
+        story?.forEach((e) => 
         {
           if(arraythree.length < 2) 
           {
