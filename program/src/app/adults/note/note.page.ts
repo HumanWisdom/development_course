@@ -73,7 +73,7 @@ export class NotePage implements OnInit {
       "Notes":this.notes,
       "UserId":this.userId
 
-    }).subscribe(res=>console.log(res),
+    }).subscribe((res) => {},
     error=>{
       console.log(error)
     },
@@ -94,7 +94,7 @@ export class NotePage implements OnInit {
       "Notes":this.notes,
       "UserId":this.userId
 
-    }).subscribe(res=>console.log(res),
+    }).subscribe((res) => {},
     error=>{
       console.log(error)
     },
@@ -116,7 +116,7 @@ export class NotePage implements OnInit {
    })//check
     .subscribe(res=>
       {
-      console.log(res)
+      
       },
       error=>{
         console.log(error)
@@ -139,7 +139,7 @@ export class NotePage implements OnInit {
     "ReflectionId":this.urlId,
     "Resp":this.notes})
     .subscribe(res=>{
-      console.log(res)},
+      },
       error=>{
         console.log(error)
       },

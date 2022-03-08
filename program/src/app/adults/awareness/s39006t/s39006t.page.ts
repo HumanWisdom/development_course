@@ -65,7 +65,7 @@ export class S39006tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
  
     this.router.navigate(['/adults/awareness/s39007'])

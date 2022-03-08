@@ -90,7 +90,7 @@ export class SignupPage implements OnInit {
      })
      .subscribe(res=>
        {
-       console.log(res)
+       
        if(res>0){
         this.showMessage=true
         this.signUser=res
@@ -126,7 +126,7 @@ export class SignupPage implements OnInit {
     this.service.verifyCode({"Email":this.registrationForm.get('email').value,
                               "VCode":this.verificationCode})
     .subscribe(res=>{
-      console.log(res)
+      
       if(res>0)
       {
         this.codeVerified=true

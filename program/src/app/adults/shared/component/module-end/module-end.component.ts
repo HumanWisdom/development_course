@@ -60,7 +60,7 @@ else
     localStorage.setItem("moduleId",JSON.stringify(this.moduleId))
     this.service.clickModule(this.moduleId,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     })

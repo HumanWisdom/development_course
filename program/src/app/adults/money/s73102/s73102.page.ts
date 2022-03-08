@@ -310,7 +310,7 @@ export class S73102Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -361,7 +361,7 @@ export class S73102Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
      
 
 

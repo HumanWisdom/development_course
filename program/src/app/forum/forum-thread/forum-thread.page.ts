@@ -45,11 +45,11 @@ posttext='';
   reploadpage(){
     this.sub = this.service.postdatavalue.subscribe(res=>{
       if(res){
-        console.log(res);
+        ;
         this.posttread=res;
         this.service.getPostDetail(res.PostID).subscribe(res=>{
           if(res){
-            console.log(res);            
+            ;            
             this.list =res;      
            
           }
@@ -84,7 +84,7 @@ posttext='';
     console.log(item);
     this.service.reportPost({PostID: item.ReplyPostID,UserID: this.userID,Comment: this.commenttext}).subscribe(res=>{
       if(res){
-        console.log(res);
+        ;
         this.commentflag=!this.commentflag;        
       }
     });

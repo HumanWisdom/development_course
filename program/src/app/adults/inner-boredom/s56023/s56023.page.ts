@@ -72,7 +72,7 @@ export class S56023Page implements OnInit {
        "ScreenNo":this.screenNumber
      }).subscribe(res=>
        {
-         console.log(res)
+         
        })
      
   
@@ -93,7 +93,7 @@ export class S56023Page implements OnInit {
        "timeSpent":this.totalTime
      }).subscribe(res=>
        {
-         console.log(res)
+         
          this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
          localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
        },

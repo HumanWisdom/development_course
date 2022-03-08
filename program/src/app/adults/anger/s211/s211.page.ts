@@ -57,7 +57,7 @@ export class S211Page implements OnInit,AfterViewInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -94,7 +94,7 @@ export class S211Page implements OnInit,AfterViewInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
     // this.router.navigate(['/adults/anger/s212'])
