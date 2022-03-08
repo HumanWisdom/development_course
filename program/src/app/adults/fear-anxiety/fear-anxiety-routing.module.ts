@@ -193,7 +193,6 @@ import { S614p2Page } from './s614p2/s614p2.page';   
 const routes: Routes = [
   {
     path: '',   
-    canActivate:[ActiveGuard],  
     component: S486Page,
   },
   {
