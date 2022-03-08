@@ -24,14 +24,12 @@ export class TokenInterceptorService implements HttpInterceptor {
     if(wisdom) {
       tokenizedReq  = req.clone({
         setHeaders: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        }
+          }
       })
     }else {
     tokenizedReq = req.clone({
         setHeaders: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          Authorization: `Bearer ` + this.token
+               Authorization: `Bearer ` + this.token
         }
       })
     }
