@@ -93,7 +93,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -114,7 +114,7 @@ createScreen(){
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
     

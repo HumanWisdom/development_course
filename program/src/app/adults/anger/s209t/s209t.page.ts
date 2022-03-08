@@ -64,7 +64,7 @@ avDuration:any
        "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
 
     // this.router.navigate(['/adults/anger/s210'])

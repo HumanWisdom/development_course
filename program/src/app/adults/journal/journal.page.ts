@@ -37,7 +37,7 @@ export class JournalPage implements OnInit {
   viewJournalAndReflections(){
     this.service.viewJournal(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.jrList=res
       this.jrList.sort((val1, val2)=> {return <any>new Date(val2.Date) - <any>new  Date(val1.Date)})
       this.jrListC=this.jrList
@@ -90,7 +90,7 @@ export class JournalPage implements OnInit {
     "ReflectionId":id,
     "Resp":this.dailyResponse})
     .subscribe(res=>{
-      console.log(res)
+      
       
       
     },

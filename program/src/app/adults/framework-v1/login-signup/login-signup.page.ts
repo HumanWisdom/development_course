@@ -107,7 +107,7 @@ export class LoginSignupPage implements OnInit {
       this.service.verifyUser(userid)
       .subscribe(res=>{
         localStorage.setItem("emailCode", 'F');
-        console.log(res)
+        
       })
       }, 2000)
     }
@@ -146,7 +146,7 @@ export class LoginSignupPage implements OnInit {
      })
      .subscribe(res=>
        {
-       console.log(res)
+       
        if(res>0){
         window.alert('An email has been sent to you. Please click on the link shared with you or enter the verification code to verify your account')
         let code = window.prompt('Verify Code', '')
@@ -190,7 +190,7 @@ export class LoginSignupPage implements OnInit {
     this.service.verifyCode({"Email":this.registrationForm.get('email').value,
                               "VCode":this.verificationCode})
     .subscribe(res=>{
-      console.log(res)
+      
       if(res>0)
       {
         this.codeVerified=true
@@ -225,7 +225,7 @@ export class LoginSignupPage implements OnInit {
       this.service.verifyGoogle(this.idToken)
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -295,7 +295,7 @@ export class LoginSignupPage implements OnInit {
       this.service.verifyFb(this.idToken)
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -348,13 +348,13 @@ export class LoginSignupPage implements OnInit {
           {
             this.service.verifyUser(this.urlEmail)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }
     this.service.emailLogin(this.email,this.password)
     .subscribe(
       res=>
-      {//console.log(res)
+      {//
         this.loginResponse=res
         console.log(this.loginResponse)
         localStorage.setItem('guest', 'F');
@@ -428,7 +428,7 @@ export class LoginSignupPage implements OnInit {
           {
             this.service.verifyUser(this.userId)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }*/
 

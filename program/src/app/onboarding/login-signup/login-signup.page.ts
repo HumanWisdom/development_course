@@ -120,7 +120,7 @@ export class LoginSignupPage implements OnInit {
         let userid = localStorage.getItem("userIdCode")
         this.service.verifyUser(userid)
         .subscribe(res=>{
-          console.log(res)
+          
         })
       }
     }, 4000)
@@ -159,7 +159,7 @@ export class LoginSignupPage implements OnInit {
      })
      .subscribe(res=>
        {
-       console.log(res)
+       
        if(res>0){
         window.alert('An email has been sent to you')
         this.enableotpmodal.nativeElement.click()
@@ -199,7 +199,7 @@ export class LoginSignupPage implements OnInit {
     this.service.verifyCode({"Email":this.registrationForm.get('email').value,
                               "VCode":this.verificationCode})
     .subscribe(res=>{
-      console.log(res)
+      
       if(res>0)
       {
         this.closemodal.nativeElement.click()
@@ -242,7 +242,7 @@ export class LoginSignupPage implements OnInit {
       })
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             
           
@@ -325,7 +325,7 @@ export class LoginSignupPage implements OnInit {
                   {
                     this.service.verifyUser(this.userId)
                     .subscribe(res=>{
-                      console.log(res)
+                      
                     })
                   }*/
 
@@ -367,7 +367,7 @@ export class LoginSignupPage implements OnInit {
         })
         .subscribe(res=>
           {
-            console.log(res)
+            
             if(res){
              
                 this.loginResponse=res
@@ -448,7 +448,7 @@ export class LoginSignupPage implements OnInit {
                     {
                       this.service.verifyUser(this.userId)
                       .subscribe(res=>{
-                        console.log(res)
+                        
                       })
                     }*/
   
@@ -469,13 +469,13 @@ export class LoginSignupPage implements OnInit {
           {
             this.service.verifyUser(this.urlEmail)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }
     this.service.emailLogin(this.email,this.password)
     .subscribe(
       res=>
-      {//console.log(res)
+      {//
         this.loginResponse=res
         console.log(this.loginResponse)
         localStorage.setItem('socialLogin', 'F');
@@ -575,7 +575,7 @@ export class LoginSignupPage implements OnInit {
           {
             this.service.verifyUser(this.userId)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }*/
 

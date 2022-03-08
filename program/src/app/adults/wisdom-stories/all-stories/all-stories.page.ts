@@ -30,7 +30,7 @@ export class AllStoriesPage implements OnInit {
     this.service.getScenarios().subscribe(res=>
       {
         if(res) {
-          console.log(res)
+          
           let dateres = res.sort((a, b) => b['PublishedOn'] - a['PublishedOn'])
           this.storyList=dateres.slice(0, 10)
           this.secondstoryList=dateres.slice(10)
@@ -59,7 +59,7 @@ export class AllStoriesPage implements OnInit {
     this.sId=obj.ScenarioID
     if(res && res === 'T') {
       this.service.clickStory(obj.ScenarioID).subscribe(res=>{
-        console.log(res)
+        
         this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
       })
     }  else {

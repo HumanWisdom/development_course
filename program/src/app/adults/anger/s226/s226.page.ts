@@ -53,7 +53,7 @@ avDuration:any
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -88,7 +88,7 @@ receiveAvDuration(e){
 
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>console.log(error),
       ()=>{
