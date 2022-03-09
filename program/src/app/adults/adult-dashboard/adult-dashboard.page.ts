@@ -138,8 +138,8 @@ socialFirstName:any
  yearormonth = ''
 
  //static progress mapping
-  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-  mediaVideo="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"  
+  mediaAudio="https://d1tenzemoxuh75.cloudfront.net"
+  mediaVideo="https://d1tenzemoxuh75.cloudfront.net"  
   mediaPercent:any
   freeScreens=[]
 
