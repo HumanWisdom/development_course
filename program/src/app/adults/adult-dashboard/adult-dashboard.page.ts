@@ -1235,7 +1235,7 @@ socialFirstName:any
   getBookmarks(){
     this.service.getBookmarks(this.userId)
     .subscribe(res=>{
-      //console.log("bookmarks",res)
+      //
       
       this.bookmarks=res
       this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
@@ -1436,10 +1436,10 @@ socialFirstName:any
       }
       else
       this.router.navigate([`/adults/discovering-wisdom/s27001`])
-      /*console.log("goToPage",this.goToPage)
+      /*
       if(!discoveringWisdomResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/discovering-wisdom`])
       }
       else
@@ -1521,7 +1521,7 @@ socialFirstName:any
       this.router.navigate([`/adults/five-circles/s33001`])
       /*if(!fiveCirclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/five-circles`])
       }
       else
@@ -1567,7 +1567,7 @@ socialFirstName:any
       this.router.navigate([`/adults/key-ideas/s34001`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/key-ideas`])
       }
       else
@@ -1613,7 +1613,7 @@ socialFirstName:any
       this.router.navigate([`/adults/program-guide/s35001`])
      /* if(!pgResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/program-guide/s35002`])
       }
       else
@@ -1663,7 +1663,7 @@ socialFirstName:any
      
      /*if(!natureR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/nature`])
       }
       else
@@ -1713,7 +1713,7 @@ socialFirstName:any
     
      /* if(!breathingR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/breathing`])
        
       }
@@ -1759,7 +1759,7 @@ socialFirstName:any
       this.router.navigate([`/adults/noticing-thoughts/s30001`])
       /*if(!ntR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/noticing-thoughts`])
       }
       else
@@ -1805,7 +1805,7 @@ socialFirstName:any
       
      /* if(!gamR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/guided-meditation`])
         
       }
@@ -1851,7 +1851,7 @@ socialFirstName:any
       this.router.navigate([`/adults/meditation/s22001`])
       /*if(!meditationResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/meditation`])
       }
       else
@@ -1901,10 +1901,10 @@ socialFirstName:any
       }
       else
         this.router.navigate([`/adults/benefits-of-enquiry/s26001`])
-     /* console.log("goToPage",resumeBenefitsEnquiry)
+     /* 
       if(!resumeBenefitsEnquiry)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/benefits-of-enquiry`])
       }
       else
@@ -1949,7 +1949,7 @@ socialFirstName:any
       this.router.navigate([`/adults/how-to-begin/s36000`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/how-to-begin`])
       }
       else
@@ -1994,7 +1994,7 @@ socialFirstName:any
       this.router.navigate([`/adults/three-steps-enquiry/s37000`])
       /*if(!threeStepsResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/three-steps-enquiry`])
       }
       else
@@ -2040,7 +2040,7 @@ socialFirstName:any
       this.router.navigate([`/adults/insight/s38000`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/insight`])
       }
       else
@@ -2084,7 +2084,7 @@ socialFirstName:any
       this.router.navigate([`/adults/awareness/s39000`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/awareness`])
       }
       else
@@ -2130,7 +2130,7 @@ socialFirstName:any
       this.router.navigate([`/adults/no-judgement/s40000`])
       /*if(!njResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/no-judgement/`])
       }
       else
@@ -2175,7 +2175,7 @@ socialFirstName:any
          this.router.navigate([`/adults/questions-are-key/s41000`])
       /*if(!qakResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/questions-are-key`])
       }
       else
@@ -2221,7 +2221,7 @@ socialFirstName:any
         this.router.navigate([`/adults/without-language/s42000`])
      /* if(!lwlResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/without-language`])
       }
       else
@@ -2266,7 +2266,7 @@ socialFirstName:any
         this.router.navigate([`/adults/obstacles-enquiry/s43000`])
       /*if(! obstaclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/obstacles-enquiry`])
       }
       else
@@ -2315,7 +2315,7 @@ socialFirstName:any
       this.router.navigate([`/adults/conditioning/s232`])
       /*if(!conditioningResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning`])
       }
       else
@@ -2402,7 +2402,7 @@ socialFirstName:any
       this.router.navigate([`/adults/reactive-mind/s54001`])
      /* if(!rmR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/reactive-mind`])
       }
       else
@@ -2450,10 +2450,10 @@ socialFirstName:any
       }
       else
       this.router.navigate([`/adults/self-image/s25001`])
-      /*console.log("goToPage",siR)
+      /*
       if(!siR)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/self-image`])
       }
       else
@@ -2502,7 +2502,7 @@ socialFirstName:any
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -2547,7 +2547,7 @@ socialFirstName:any
       this.router.navigate([`/adults/identity/s21001`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -2594,7 +2594,7 @@ socialFirstName:any
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -2639,7 +2639,7 @@ socialFirstName:any
         
         /*if(!sinR)
         {
-          console.log("null go to page")
+          
           this.router.navigate([`/adults/self-interest`])
         }
         else
@@ -2726,7 +2726,7 @@ socialFirstName:any
       this.router.navigate([`/adults/fear-anxiety/s486`])
      /* if(!fearResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/fear-anxiety`])
       }
       else
@@ -2852,7 +2852,7 @@ socialFirstName:any
         this.router.navigate([`/adults/loneliness/s61001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -2900,7 +2900,7 @@ socialFirstName:any
         this.router.navigate([`/adults/anger/s162p0`])
     /* if(!angerResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/anger/s162p0`])
       }
       else
@@ -2950,7 +2950,7 @@ socialFirstName:any
         this.router.navigate([`/adults/stress/s44001`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/stress`])
       }
       else
@@ -2999,7 +2999,7 @@ socialFirstName:any
      
     /*if(!relationshipResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/relationships`])
       }
       else
@@ -3043,7 +3043,7 @@ socialFirstName:any
         this.router.navigate([`/adults/love/s62001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -3091,7 +3091,7 @@ socialFirstName:any
       this.router.navigate([`/adults/criticism/s324`])
      /*if(!criticismResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/criticism/s324`])
       }
       else
@@ -3138,7 +3138,7 @@ socialFirstName:any
       this.router.navigate([`/adults/self-esteem/s433`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning/s232`])
       }
       else
@@ -3186,7 +3186,7 @@ socialFirstName:any
         this.router.navigate([`/adults/living-with-peace/s63001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -3274,7 +3274,7 @@ socialFirstName:any
       this.router.navigate([`/adults/happiness/s23001`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -3322,7 +3322,7 @@ socialFirstName:any
       
       /* if(!communicationR)
        {
-         console.log("null go to page")
+         
          this.router.navigate([`/adults/communication`])
        }
        else

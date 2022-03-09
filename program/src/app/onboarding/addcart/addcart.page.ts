@@ -284,7 +284,7 @@ export class AddcartPage implements OnInit,OnDestroy {
     this.showCart=true
     this.totalItemCount+=1
     console.log(pid)
-    //console.log(pid);
+    
     for(var i=0;i<this.cartProductionList.length;i++){
 
      

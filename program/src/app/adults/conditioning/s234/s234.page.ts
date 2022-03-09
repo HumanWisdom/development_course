@@ -110,7 +110,7 @@ createScreen(){
   goNext(){
    
    
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

@@ -161,7 +161,7 @@ export class S437Page implements OnInit {
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
   this.router.navigate(['/adults/self-esteem/s438'])
-  //console.log(this.totalTime,"total time")
+  
  
 
     var optionT=[this.s1]

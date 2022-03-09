@@ -40,7 +40,7 @@ export class S321p1Page implements OnInit {
  
 
   ngOnInit() {
-    //console.log("response",JSON.parse(sessionStorage.getItem("r321p1")))
+    
    
     //if(!sessionStorage.getItem("r321p1"))
     this.r321p1=sessionStorage.getItem("r321p1")
@@ -225,7 +225,7 @@ export class S321p1Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r321p1",this.r321p1)
@@ -272,7 +272,7 @@ export class S321p1Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

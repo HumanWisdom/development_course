@@ -116,7 +116,7 @@ createScreen(){
   goNext(){
    // this.router.navigate(['/adults/communication/s2'])
     
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

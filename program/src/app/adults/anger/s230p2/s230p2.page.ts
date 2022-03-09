@@ -238,7 +238,7 @@ export class S230p2Page implements OnInit {
 
   submitProgress(){
     this.router.navigate(['/adults/anger/s230p3'])
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r230p2",JSON.stringify(this.r230p2))

@@ -54,7 +54,7 @@ export class S26Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     this.q0=this.findQuestion(34).Question
     this.optionList0=this.findQuestion(34).optionList
@@ -338,7 +338,7 @@ export class S26Page implements OnInit {
     
   //this.endTime = Date.now();
   //this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  
   //this.submitProgress()
   }
 

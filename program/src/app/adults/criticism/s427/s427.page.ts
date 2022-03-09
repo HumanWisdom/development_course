@@ -399,7 +399,7 @@ export class S427Page implements OnInit {
     submitProgress(){
       this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
    
     this.router.navigate(['/adults/criticism/s428'])
       var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5,this.s6]

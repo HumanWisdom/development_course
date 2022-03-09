@@ -27,7 +27,7 @@ export class LengthyTextComponent implements OnInit,AfterViewInit {
     let str = this.next.routeConfig.path;
     this.scrId = str.substring(1, str.length + 1);
     this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
-      //console.log(img);
+      
       img = img.substring(img.indexOf(",") + 1);
      // img.replace('data:image/png;base64,',' ')
       console.log(img)

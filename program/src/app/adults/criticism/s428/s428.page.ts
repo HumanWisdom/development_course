@@ -40,7 +40,7 @@ export class S428Page implements OnInit {
  
 
   ngOnInit() {
-    //console.log("response",JSON.parse(sessionStorage.getItem("r428")))
+    
    
     //if(!sessionStorage.getItem("r428"))
     this.r428=sessionStorage.getItem("r428")
@@ -225,7 +225,7 @@ export class S428Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r428",this.r428)
@@ -272,7 +272,7 @@ export class S428Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

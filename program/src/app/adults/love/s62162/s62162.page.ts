@@ -111,7 +111,7 @@ createScreen(){
    // this.router.navigate(['/adults/love/s62162'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

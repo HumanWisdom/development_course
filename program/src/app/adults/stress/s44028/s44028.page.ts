@@ -57,7 +57,7 @@ export class S44028Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(152).Question
@@ -131,7 +131,7 @@ export class S44028Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption44028",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption44028"))
+  
 
  }
 
