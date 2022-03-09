@@ -83,7 +83,7 @@ export class OnboardingService {
   }
 
   couponValidation(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.post(this.path+`/couponValidation`,data)
   }
 
@@ -98,26 +98,26 @@ export class OnboardingService {
     return this.http.get(this.path+`/PasswordLink`,{params:param1})
   }
   assignKey(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.post(this.path+`/AssignKey`,data)
   }
 
   verifyUser(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.post(this.path+`/VerifyUserByEmail/${data}`,null)
   }
 
   learnerKeys(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.post(this.path+`/learnerKeys/${data}`,null)
   }
   verifyCode(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.post(this.path+`/verificationCode`,data)
   }
 
   socialLearner(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.post(this.path+`/LearnerSocial`,data)
   }
 

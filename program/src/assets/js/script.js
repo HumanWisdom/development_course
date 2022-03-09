@@ -20,7 +20,6 @@ $('.audio__slider').on('drag, change', function (e) {
 });
 
 function updateAudio(e, $elem) {
-  console.log(e.handle.value);
   let value = e.handle.value;
   // var thisPlayer = el.find('.js-audio'),
   var play = $elem.find('.play-pause'),

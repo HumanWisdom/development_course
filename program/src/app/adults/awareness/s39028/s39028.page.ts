@@ -40,7 +40,7 @@ export class S39028Page implements OnInit {
     })
     /*this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=res.PointsScored
       this.overallPercentage=res.overallPercentage
     })*/

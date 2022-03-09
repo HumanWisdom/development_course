@@ -41,7 +41,7 @@ export class SubscriptionPaymentPage implements OnInit {
     }
     this.service.stripe(obj)
       .subscribe(res => {
-        console.log(res)
+        
         this.stripeId = res;
         this.enable = true;
         // this.keyList=res

@@ -51,7 +51,7 @@ ngOnInit() {
 
    //call api to geta percent
    this.service.mediaPercent(this.scrId).subscribe(res=>{
-     console.log(res)
+     
      this.mediaPercent=res[0].MediaPrcnt
      console.log("media duration",this.mediaPercent)
    })

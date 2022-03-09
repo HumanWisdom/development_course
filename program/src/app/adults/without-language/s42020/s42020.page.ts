@@ -63,7 +63,7 @@ bg="purple_blue_w5"
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -104,7 +104,7 @@ bg="purple_blue_w5"
       "Resp":JSON.parse(sessionStorage.getItem("r42020"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)

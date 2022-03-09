@@ -76,7 +76,7 @@ export class ViewcartPage implements OnInit {
     this.service.viewCart({ "Id":this.userId})
     .subscribe(res=>
       {
-        console.log(res)
+        
         this.cartList=res
         this.symbol=this.cartList[0].Symbol
         
@@ -158,7 +158,7 @@ export class ViewcartPage implements OnInit {
           )
           .subscribe(res=>
             {
-              console.log(res)
+              
         })
       }
     }
@@ -180,7 +180,7 @@ export class ViewcartPage implements OnInit {
           //call service to delete
           this.service.deleteItem({"Id":parseFloat(cartId)})
           .subscribe(res=> {
-            console.log(res)
+            
           })
         }
         else{
@@ -195,7 +195,7 @@ export class ViewcartPage implements OnInit {
             )
             .subscribe(res=>
               {
-                console.log(res)
+                
           })
 
         }
@@ -228,7 +228,7 @@ export class ViewcartPage implements OnInit {
       "CartAmt":this.totalCartValue
     }).subscribe(
       res=>
-      {console.log(res)
+      {
         if(res.length !== 0)
         {
           this.msg = 'Coupon applied successfully'
@@ -343,7 +343,7 @@ export class ViewcartPage implements OnInit {
               )
               .subscribe(res=>
                 {
-                  console.log(res)
+                  
             })
           }*/
         

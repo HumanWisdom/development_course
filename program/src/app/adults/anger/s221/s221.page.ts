@@ -81,7 +81,7 @@ export class S221Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -146,7 +146,7 @@ this.router.navigate(['/adults/anger/s222'])
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
     // this.router.navigate(['/adults/anger/s222'])
 
