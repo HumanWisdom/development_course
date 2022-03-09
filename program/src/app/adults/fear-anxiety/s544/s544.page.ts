@@ -69,7 +69,7 @@ bg="purple_red_w10"
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,7 +113,7 @@ bg="purple_red_w10"
         "Resp":this.r544
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

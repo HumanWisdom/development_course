@@ -59,7 +59,7 @@ export class S190Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -111,7 +111,7 @@ export class S190Page implements OnInit,OnDestroy {
         "Resp":this.r190
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

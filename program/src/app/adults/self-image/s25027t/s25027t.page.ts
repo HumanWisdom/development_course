@@ -69,7 +69,7 @@ export class S25027tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
  
     this.router.navigate(['/adults/self-image/s25028'])

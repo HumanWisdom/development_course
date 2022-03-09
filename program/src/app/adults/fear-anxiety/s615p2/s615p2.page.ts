@@ -147,7 +147,7 @@ export class S615p2Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -189,7 +189,7 @@ export class S615p2Page implements OnInit {
         "Resp":this.r615p2
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

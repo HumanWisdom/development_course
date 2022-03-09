@@ -68,7 +68,7 @@ export class S164tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
 
     // this.router.navigate(['/adults/anger/s165'])

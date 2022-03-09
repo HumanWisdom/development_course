@@ -140,7 +140,7 @@ export class S433Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -160,7 +160,7 @@ export class S433Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         
       })

@@ -66,7 +66,7 @@ export class AssignKeyPage implements OnInit {
     "Msg":message,
     "Myself":myself})
     .subscribe(res=>{
-      console.log(res)
+      
 
       if(!res)
         this.disableInvite=false

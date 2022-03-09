@@ -71,7 +71,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -91,7 +91,7 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{

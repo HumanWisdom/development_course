@@ -70,7 +70,7 @@ hint=" You could plant a tree, or walk instead of drive, or learn a new plant ba
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,7 +114,7 @@ hint=" You could plant a tree, or walk instead of drive, or learn a new plant ba
         "Resp":this.r62196
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

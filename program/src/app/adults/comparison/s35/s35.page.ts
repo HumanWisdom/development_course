@@ -81,7 +81,7 @@ export class S35Page implements OnInit,AfterViewInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -133,7 +133,7 @@ export class S35Page implements OnInit,AfterViewInit,OnDestroy {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
    

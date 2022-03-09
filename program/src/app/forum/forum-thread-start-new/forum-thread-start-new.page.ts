@@ -35,7 +35,7 @@ userinfo={
       getuserDetails(){
         this.service.getUserDetail(this.userID).subscribe(res=>{
           if(res){
-            console.log(res);
+            ;
             this.userinfo.username= res[0].FName+' '+res[0].LName;
             this.userinfo.userimage= res[0].UserImage;
           }

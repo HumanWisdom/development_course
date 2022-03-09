@@ -70,7 +70,7 @@ export class S60085tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
  
     this.router.navigate(['/adults/sorrow/s60086'])

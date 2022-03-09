@@ -120,7 +120,7 @@ export class ResumePage implements OnInit {
   getProgress(){
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=parseInt(res.PointsScored)
       this.goToPage=res.LastScrNo
       this.daysVisited=res.noOfDaysVisited
@@ -193,7 +193,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(7,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         this.goToPage=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -229,7 +229,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(20,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         pleasureResume=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -264,7 +264,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(14))
     this.service.clickModule(14,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         angerResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -295,7 +295,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(47))
     this.service.clickModule(47,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         relationshipResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -323,7 +323,7 @@ export class ResumePage implements OnInit {
    localStorage.setItem("moduleId",JSON.stringify(16))
     this.service.clickModule(16,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         criticismResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -353,7 +353,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(23))
     this.service.clickModule(23,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         hR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -382,7 +382,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(21))
     this.service.clickModule(21,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         identityResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -410,7 +410,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(34))
     this.service.clickModule(34,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         keyIdeasResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -437,7 +437,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(15))
     this.service.clickModule(15,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         conditioningResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -464,7 +464,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(22))
     this.service.clickModule(22,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         meditationResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -490,7 +490,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(17))
     this.service.clickModule(17,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         this.goToPage=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -520,7 +520,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(19))
     this.service.clickModule(19,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         fearResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -553,7 +553,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(25,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         siR=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -591,7 +591,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(26,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         resumeBenefitsEnquiry=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -626,7 +626,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(27,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         discoveringWisdomResume=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -661,7 +661,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(32))
     this.service.clickModule(32,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         benefitsWisdomResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -690,7 +690,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(33))
     this.service.clickModule(33,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         fiveCirclesResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -719,7 +719,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(35))
     this.service.clickModule(35,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         pgResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -747,7 +747,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(36))
     this.service.clickModule(36,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         beginResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -774,7 +774,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(37))
     this.service.clickModule(37,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         threeStepsResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -802,7 +802,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(38))
     this.service.clickModule(38,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         insightResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -828,7 +828,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(39))
     this.service.clickModule(39,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         awarenessResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -856,7 +856,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(40))
     this.service.clickModule(40,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         njResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -883,7 +883,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(41))
     this.service.clickModule(41,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         qakResume=res.lastVisitedScreen
         console.log(qakResume,"qafResume")
@@ -913,7 +913,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(42))
     this.service.clickModule(42,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         lwlResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -940,7 +940,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(43))
     this.service.clickModule(43,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         obstaclesResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -968,7 +968,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(28))
     this.service.clickModule(28,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         natureR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -998,7 +998,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(30))
     this.service.clickModule(30,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         ntR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1028,7 +1028,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(29))
     this.service.clickModule(29,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
        breathingR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1056,7 +1056,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(51))
     this.service.clickModule(51,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         gamR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1085,7 +1085,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(44))
     this.service.clickModule(44,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         stressResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1112,7 +1112,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(53))
     this.service.clickModule(53,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         communicationR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1144,7 +1144,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(54))
     this.service.clickModule(54,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         rmR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1172,7 +1172,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(55))
     this.service.clickModule(55,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         sinR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1200,7 +1200,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(18))
     this.service.clickModule(18,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         enR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1228,7 +1228,7 @@ export class ResumePage implements OnInit {
       localStorage.setItem("moduleId",JSON.stringify(56))
       this.service.clickModule(56,this.userId)
       .subscribe(res=>
-        {console.log(res)
+        {
           this.qrList=res
           ibR=res.lastVisitedScreen
           localStorage.setItem("qrList",JSON.stringify(this.qrList))

@@ -79,7 +79,7 @@ export class S65Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,7 +131,7 @@ export class S65Page implements OnInit {
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
 
   }
