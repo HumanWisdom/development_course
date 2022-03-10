@@ -174,7 +174,7 @@ createScreen(){
     this.router.navigate(['/adults/conditioning/s240p1'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

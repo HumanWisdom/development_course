@@ -114,7 +114,7 @@ createScreen(){
    // this.router.navigate(['/adults/without-language/s42017'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

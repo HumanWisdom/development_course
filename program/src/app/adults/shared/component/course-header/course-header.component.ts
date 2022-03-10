@@ -49,7 +49,7 @@ export class CourseHeaderComponent implements OnInit {
    this.showheaderbar = false;
   // console.log(this.ac)
    // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
-    //console.log(module)
+    
    // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
 

@@ -228,7 +228,7 @@ export class HamburgerPage implements OnInit {
   getBookmarks(){
     this.service.getBookmarks(this.userId)
     .subscribe(res=>{
-      //console.log("bookmarks",res)
+      
       
       this.bookmarks=res
       this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
@@ -411,7 +411,7 @@ export class HamburgerPage implements OnInit {
       /*console.log("goToPage",this.goToPage)
       if(!discoveringWisdomResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/discovering-wisdom`])
       }
       else
@@ -473,7 +473,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/five-circles/s33001`])
       /*if(!fiveCirclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/five-circles`])
       }
       else
@@ -509,7 +509,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/key-ideas/s34001`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/key-ideas`])
       }
       else
@@ -545,7 +545,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/program-guide/s35001`])
      /* if(!pgResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/program-guide/s35002`])
       }
       else
@@ -584,7 +584,7 @@ export class HamburgerPage implements OnInit {
      
      /*if(!natureR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/nature`])
       }
       else
@@ -624,7 +624,7 @@ export class HamburgerPage implements OnInit {
     
      /* if(!breathingR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/breathing`])
        
       }
@@ -660,7 +660,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/noticing-thoughts/s30001`])
       /*if(!ntR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/noticing-thoughts`])
       }
       else
@@ -695,7 +695,7 @@ export class HamburgerPage implements OnInit {
       
      /* if(!gamR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/guided-meditation`])
         
       }
@@ -731,7 +731,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/meditation/s22001`])
       /*if(!meditationResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/meditation`])
       }
       else
@@ -776,7 +776,7 @@ export class HamburgerPage implements OnInit {
      /* console.log("goToPage",resumeBenefitsEnquiry)
       if(!resumeBenefitsEnquiry)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/benefits-of-enquiry`])
       }
       else
@@ -811,7 +811,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/how-to-begin/s36000`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/how-to-begin`])
       }
       else
@@ -846,7 +846,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/three-steps-enquiry/s37000`])
       /*if(!threeStepsResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/three-steps-enquiry`])
       }
       else
@@ -882,7 +882,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/insight/s38000`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/insight`])
       }
       else
@@ -916,7 +916,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/awareness/s39000`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/awareness`])
       }
       else
@@ -952,7 +952,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/no-judgement/s40000`])
       /*if(!njResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/no-judgement/`])
       }
       else
@@ -989,7 +989,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/questions-are-key/s41000`])
       /*if(!qakResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/questions-are-key`])
       }
       else
@@ -1025,7 +1025,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/without-language/s42000`])
      /* if(!lwlResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/without-language`])
       }
       else
@@ -1060,7 +1060,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/obstacles-enquiry/s43000`])
       /*if(! obstaclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/obstacles-enquiry`])
       }
       else
@@ -1099,7 +1099,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/conditioning/s232`])
       /*if(!conditioningResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning`])
       }
       else
@@ -1170,7 +1170,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/reactive-mind/s54001`])
      /* if(!rmR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/reactive-mind`])
       }
       else
@@ -1213,7 +1213,7 @@ export class HamburgerPage implements OnInit {
       /*console.log("goToPage",siR)
       if(!siR)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/self-image`])
       }
       else
@@ -1252,7 +1252,7 @@ export class HamburgerPage implements OnInit {
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -1287,7 +1287,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/identity/s21001`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -1324,7 +1324,7 @@ export class HamburgerPage implements OnInit {
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -1359,7 +1359,7 @@ export class HamburgerPage implements OnInit {
         
         /*if(!sinR)
         {
-          console.log("null go to page")
+          
           this.router.navigate([`/adults/self-interest`])
         }
         else
@@ -1425,7 +1425,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/fear-anxiety/s486`])
      /* if(!fearResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/fear-anxiety`])
       }
       else
@@ -1524,7 +1524,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/loneliness/s61001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -1562,7 +1562,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/anger/s162p0`])
     /* if(!angerResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/anger/s162p0`])
       }
       else
@@ -1602,7 +1602,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/stress/s44001`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/stress`])
       }
       else
@@ -1638,7 +1638,7 @@ export class HamburgerPage implements OnInit {
      
     /*if(!relationshipResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/relationships`])
       }
       else
@@ -1672,7 +1672,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/love/s62001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -1710,7 +1710,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/criticism/s324`])
      /*if(!criticismResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/criticism/s324`])
       }
       else
@@ -1746,7 +1746,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/self-esteem/s433`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning/s232`])
       }
       else
@@ -1784,7 +1784,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/living-with-peace/s63001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -1852,7 +1852,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/happiness/s23001`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -1889,7 +1889,7 @@ export class HamburgerPage implements OnInit {
       
       /* if(!communicationR)
        {
-         console.log("null go to page")
+         
          this.router.navigate([`/adults/communication`])
        }
        else

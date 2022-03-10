@@ -89,7 +89,7 @@ export class S302Page implements OnInit {
     this.router.navigate(['/adults/conditioning/s303'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

@@ -115,7 +115,7 @@ createScreen(){
    // this.router.navigate(['/adults/discovering-wisdom/s27004p1'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

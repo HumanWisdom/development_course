@@ -115,7 +115,7 @@ createScreen(){
    // this.router.navigate(['/adults/dealing-with-death/s64063'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

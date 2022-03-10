@@ -168,7 +168,7 @@ export class S45015Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  
   this.router.navigate(['/adults/habit-addiction/s45016'])
 
     var optionT=[this.s1]

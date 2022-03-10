@@ -13,26 +13,12 @@ export class TokenInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let wisdom = false;
-    this.route.queryParams.subscribe(params => {
-      if(params?.sId) {
-        wisdom =true;
-      }
-  });
-    this.token = JSON.parse(localStorage.getItem("token"))
-    let tokenizedReq;
-    if(wisdom) {
-      tokenizedReq  = req.clone({
-        setHeaders: {
-          }
-      })
-    }else {
-    tokenizedReq = req.clone({
+ 
+    let tokenizedReq = req.clone({
         setHeaders: {
                Authorization: `Bearer ` + this.token
         }
       })
-    }
     return next.handle(tokenizedReq)
   }
 }
