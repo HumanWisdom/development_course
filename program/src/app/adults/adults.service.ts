@@ -43,7 +43,7 @@ export class AdultsService {
     return this.http.get(this.path+`/UserScore/${data}`)
   }
   viewJournal(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.get(this.path+`/viewJournalAndReflections/${data}`)
   }
   submitJournal(data:any):Observable<any>{
@@ -63,7 +63,7 @@ export class AdultsService {
   }
 
   sessionPoints(data:any):Observable<any>{
-    console.log(data)
+    
     return this.http.post(this.path+`/sessionPoints`,data)
   }
   addReflection(data:any):Observable<any>{
@@ -79,6 +79,9 @@ export class AdultsService {
   getScenarios():Observable<any>{
     return this.http.get(this.path+`/Scenarios`)
   }
+  getScenarioswithId(data: any):Observable<any>{
+    return this.http.get(this.path+`/Scenarios/${data}`)
+  }
   readStories():Observable<any>{
     return this.http.get(this.path+`/wisdomStories`)
   }
@@ -86,7 +89,7 @@ export class AdultsService {
     return this.http.post(this.path+`/clickStory/${data}`,null)
   }
   userQuestion(data:any,edit:any):Observable<any>{
-   console.log(data)
+   
    // let params = new HttpParams();
     //params = params.append('BeforeEdit', edit);
     return this.http.post(this.path+`/UserQuestions/?BeforeEdit=${edit}`,data)
@@ -96,20 +99,20 @@ export class AdultsService {
     return this.http.get(this.path+`/getSessionProgress/${data}`)
   }
   UploadThumbnail(data:any):Observable<any>{
-    console.log(data)
+    
      return this.http.post(this.path+`/UploadThumbnail`,data)
    }
    wisdomScore(data:any):Observable<any>{
-    console.log(data)
+    
      return this.http.post(this.path+`/UserWisdomSurveyScore/${data}`,null)
    }
    wisdomSurveyinsights(data:any):Observable<any>{
-    console.log(data)
+    
      return this.http.get(this.path+`/GetYearlyWisdomScore/${data}`)
    }
 
    wisdomSurveyinsightsummary(data:any):Observable<any>{
-    console.log(data)
+    
      return this.http.get(this.path+`/GetYearlyWisdomScoreSummary/${data}`)
    }
 

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdultsService } from 'src/app/adults/adults.service';
 
 @Component({
   selector: 'app-related-wisdom-stories-tiles',
@@ -15,7 +16,7 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
 
   enablewisdomstory = false
 
-  constructor(private router: Router) { 
+  constructor(private router: Router,private service:AdultsService) { 
     
   }
 
@@ -31,12 +32,23 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
         }
       })
       this.wisdomstories = first
+     }else if(this.wisdomstories.length === 1) {
+      this.enablewisdomstory = true
      }
+     console.log(this.wisdomstories)
   }
 
   viewstory(item){
     localStorage.setItem("story",JSON.stringify(item))
-    this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+    let res = localStorage.getItem("isloggedin");
+    if(res && res === 'T') { 
+      this.service.clickStory(item.ScenarioID).subscribe(res=>{
+        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+      })
+    }else {
+      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
+    }
+    
   }
 
 }

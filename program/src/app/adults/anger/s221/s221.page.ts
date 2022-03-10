@@ -56,7 +56,7 @@ export class S221Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(49).Question
@@ -81,7 +81,7 @@ export class S221Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -130,7 +130,7 @@ export class S221Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption221",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption221"))
+  
 
  }
 
@@ -146,7 +146,7 @@ this.router.navigate(['/adults/anger/s222'])
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
     // this.router.navigate(['/adults/anger/s222'])
 

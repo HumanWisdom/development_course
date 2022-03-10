@@ -109,7 +109,7 @@ export class WisdomScalePage implements OnInit {
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.service.clickModule(50,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
        // localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
@@ -249,7 +249,7 @@ export class WisdomScalePage implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -290,7 +290,7 @@ export class WisdomScalePage implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  
  
 
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5,this.s6,this.s7,this.s8,this.s9,this.s10]
@@ -305,7 +305,7 @@ export class WisdomScalePage implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res),
+      .subscribe((res) => {},
       error=>{
         console.log(error)
       },

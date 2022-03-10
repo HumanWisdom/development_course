@@ -54,7 +54,7 @@ export class S26Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     this.q0=this.findQuestion(34).Question
     this.optionList0=this.findQuestion(34).optionList
@@ -93,7 +93,7 @@ export class S26Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -294,7 +294,7 @@ export class S26Page implements OnInit {
   //     "UserId":this.userId, 
   //     "timeSpent":this.totalTime,
   //     "OptionIDs":this.sendOptions.join()})
-  //     .subscribe(res=>console.log(res))
+  //     .subscribe((res) => {},
   // }
 
   submitProgress(){
@@ -311,7 +311,7 @@ export class S26Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
@@ -338,7 +338,7 @@ export class S26Page implements OnInit {
     
   //this.endTime = Date.now();
   //this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  
   //this.submitProgress()
   }
 

@@ -61,7 +61,7 @@ export class TocResumePage implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -78,7 +78,7 @@ export class TocResumePage implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
@@ -88,7 +88,7 @@ export class TocResumePage implements OnInit,OnDestroy {
   ngOnDestroy(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
 

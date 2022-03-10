@@ -120,7 +120,7 @@ export class ResumePage implements OnInit {
   getProgress(){
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=parseInt(res.PointsScored)
       this.goToPage=res.LastScrNo
       this.daysVisited=res.noOfDaysVisited
@@ -175,7 +175,7 @@ export class ResumePage implements OnInit {
   getBookmarks(){
     this.service.getBookmarks(this.userId)
     .subscribe(res=>{
-      //console.log("bookmarks",res)
+      
       
       this.bookmarks=res
       this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
@@ -193,7 +193,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(7,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         this.goToPage=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -211,7 +211,7 @@ export class ResumePage implements OnInit {
      /* console.log("goToPage",this.goToPage)
       if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/comparison/s0`])
       }
       else
@@ -229,7 +229,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(20,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         pleasureResume=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -247,7 +247,7 @@ export class ResumePage implements OnInit {
       
      /* if(!pleasureResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/pleasure`])
       }
       else
@@ -264,7 +264,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(14))
     this.service.clickModule(14,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         angerResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -276,7 +276,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/anger/s162p0`])
     /* if(!angerResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/anger/s162p0`])
       }
       else
@@ -295,7 +295,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(47))
     this.service.clickModule(47,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         relationshipResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -308,7 +308,7 @@ export class ResumePage implements OnInit {
      
     /*if(!relationshipResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/relationships`])
       }
       else
@@ -323,7 +323,7 @@ export class ResumePage implements OnInit {
    localStorage.setItem("moduleId",JSON.stringify(16))
     this.service.clickModule(16,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         criticismResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -335,7 +335,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/criticism/s324`])
      /*if(!criticismResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/criticism/s324`])
       }
       else
@@ -353,7 +353,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(23))
     this.service.clickModule(23,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         hR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -365,7 +365,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/happiness`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -382,7 +382,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(21))
     this.service.clickModule(21,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         identityResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -394,7 +394,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/identity/s21001`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -410,7 +410,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(34))
     this.service.clickModule(34,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         keyIdeasResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -422,7 +422,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/key-ideas/s34002`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/key-ideas`])
       }
       else
@@ -437,7 +437,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(15))
     this.service.clickModule(15,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         conditioningResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -449,7 +449,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/conditioning/s232`])
       /*if(!conditioningResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning`])
       }
       else
@@ -464,7 +464,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(22))
     this.service.clickModule(22,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         meditationResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -476,7 +476,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/meditation/s22001`])
       /*if(!meditationResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/meditation`])
       }
       else
@@ -490,7 +490,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(17))
     this.service.clickModule(17,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         this.goToPage=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -502,7 +502,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/self-esteem/s433`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning/s232`])
       }
       else
@@ -520,7 +520,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(19))
     this.service.clickModule(19,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         fearResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -532,7 +532,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/fear-anxiety/s486`])
      /* if(!fearResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/fear-anxiety`])
       }
       else
@@ -553,7 +553,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(25,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         siR=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -571,7 +571,7 @@ export class ResumePage implements OnInit {
       /*console.log("goToPage",siR)
       if(!siR)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/self-image`])
       }
       else
@@ -591,7 +591,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(26,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         resumeBenefitsEnquiry=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -609,7 +609,7 @@ export class ResumePage implements OnInit {
      /* console.log("goToPage",resumeBenefitsEnquiry)
       if(!resumeBenefitsEnquiry)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/benefits-of-enquiry`])
       }
       else
@@ -626,7 +626,7 @@ export class ResumePage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(27,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         discoveringWisdomResume=res.lastVisitedScreen
         this.mediaPercent=parseInt(res.MediaPercent)
@@ -644,7 +644,7 @@ export class ResumePage implements OnInit {
       /*console.log("goToPage",this.goToPage)
       if(!discoveringWisdomResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/discovering-wisdom`])
       }
       else
@@ -661,7 +661,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(32))
     this.service.clickModule(32,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         benefitsWisdomResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -673,7 +673,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/benefits-of-wisdom/s32002`])
       /*if(!benefitsWisdomResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/benefits-of-wisdom`])
       }
       else
@@ -690,7 +690,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(33))
     this.service.clickModule(33,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         fiveCirclesResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -702,7 +702,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/five-circles/s33002`])
       /*if(!fiveCirclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/five-circles`])
       }
       else
@@ -719,7 +719,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(35))
     this.service.clickModule(35,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         pgResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -731,7 +731,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/program-guide/s35002`])
      /* if(!pgResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/program-guide/s35002`])
       }
       else
@@ -747,7 +747,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(36))
     this.service.clickModule(36,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         beginResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -759,7 +759,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/how-to-begin/s36001`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/how-to-begin`])
       }
       else
@@ -774,7 +774,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(37))
     this.service.clickModule(37,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         threeStepsResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -786,7 +786,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/three-steps-enquiry/s37001`])
       /*if(!threeStepsResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/three-steps-enquiry`])
       }
       else
@@ -802,7 +802,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(38))
     this.service.clickModule(38,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         insightResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -814,7 +814,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/insight/s38001`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/insight`])
       }
       else
@@ -828,7 +828,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(39))
     this.service.clickModule(39,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         awarenessResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -840,7 +840,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/awareness/s39001`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/awareness`])
       }
       else
@@ -856,7 +856,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(40))
     this.service.clickModule(40,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         njResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -868,7 +868,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/no-judgement/s40001`])
       /*if(!njResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/no-judgement/`])
       }
       else
@@ -883,7 +883,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(41))
     this.service.clickModule(41,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         qakResume=res.lastVisitedScreen
         console.log(qakResume,"qafResume")
@@ -897,7 +897,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/questions-are-key/s41001`])
       /*if(!qakResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/questions-are-key`])
       }
       else
@@ -913,7 +913,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(42))
     this.service.clickModule(42,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         lwlResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -925,7 +925,7 @@ export class ResumePage implements OnInit {
      this.router.navigate([`/adults/without-language/s42001`])
      /* if(!lwlResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/without-language`])
       }
       else
@@ -940,7 +940,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(43))
     this.service.clickModule(43,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         obstaclesResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -952,7 +952,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/obstacles-enquiry/s43001`])
       /*if(! obstaclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/obstacles-enquiry`])
       }
       else
@@ -968,7 +968,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(28))
     this.service.clickModule(28,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         natureR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -981,7 +981,7 @@ export class ResumePage implements OnInit {
      
      /*if(!natureR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/nature`])
       }
       else
@@ -998,7 +998,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(30))
     this.service.clickModule(30,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         ntR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1010,7 +1010,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/noticing-thoughts`])
       /*if(!ntR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/noticing-thoughts`])
       }
       else
@@ -1028,7 +1028,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(29))
     this.service.clickModule(29,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
        breathingR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1041,7 +1041,7 @@ export class ResumePage implements OnInit {
     
      /* if(!breathingR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/breathing`])
        
       }
@@ -1056,7 +1056,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(51))
     this.service.clickModule(51,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         gamR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1069,7 +1069,7 @@ export class ResumePage implements OnInit {
       
      /* if(!gamR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/guided-meditation`])
         
       }
@@ -1085,7 +1085,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(44))
     this.service.clickModule(44,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         stressResume=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1097,7 +1097,7 @@ export class ResumePage implements OnInit {
      this.router.navigate([`/adults/stress`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/stress`])
       }
       else
@@ -1112,7 +1112,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(53))
     this.service.clickModule(53,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         communicationR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1125,7 +1125,7 @@ export class ResumePage implements OnInit {
      
      /* if(!communicationR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/communication`])
       }
       else
@@ -1144,7 +1144,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(54))
     this.service.clickModule(54,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         rmR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1156,7 +1156,7 @@ export class ResumePage implements OnInit {
       this.router.navigate([`/adults/reactive-mind`])
      /* if(!rmR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/reactive-mind`])
       }
       else
@@ -1172,7 +1172,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(55))
     this.service.clickModule(55,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         sinR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1185,7 +1185,7 @@ export class ResumePage implements OnInit {
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -1200,7 +1200,7 @@ export class ResumePage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(18))
     this.service.clickModule(18,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         enR=res.lastVisitedScreen
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1213,7 +1213,7 @@ export class ResumePage implements OnInit {
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -1228,7 +1228,7 @@ export class ResumePage implements OnInit {
       localStorage.setItem("moduleId",JSON.stringify(56))
       this.service.clickModule(56,this.userId)
       .subscribe(res=>
-        {console.log(res)
+        {
           this.qrList=res
           ibR=res.lastVisitedScreen
           localStorage.setItem("qrList",JSON.stringify(this.qrList))
@@ -1241,7 +1241,7 @@ export class ResumePage implements OnInit {
         
         /*if(!sinR)
         {
-          console.log("null go to page")
+          
           this.router.navigate([`/adults/self-interest`])
         }
         else

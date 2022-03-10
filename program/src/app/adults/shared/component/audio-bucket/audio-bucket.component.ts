@@ -107,7 +107,7 @@ ngOnDestroy(){
 ngAfterViewInit(){
   console.log("test bookmarks")
   this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
-    //console.log(img);
+    
     img = img.substring(img.indexOf(",") + 1);
    // img.replace('data:image/png;base64,',' ')
     console.log(img)

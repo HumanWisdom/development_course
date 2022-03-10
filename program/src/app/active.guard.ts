@@ -35,7 +35,7 @@ export class ActiveGuard implements CanActivate, OnInit {
     }
     let sub: any = localStorage.getItem("Subscriber")
 
-    if (sub === '1' || m[1].slice(0, 2) === 't=') {
+    if (sub === '1' || m[1]?.slice(0, 2) === 't=') {
       return true;
     } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
       return true;

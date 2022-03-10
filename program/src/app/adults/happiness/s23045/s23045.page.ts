@@ -69,7 +69,7 @@ bg="red_pink_w3"
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,7 +113,7 @@ bg="red_pink_w3"
         "Resp":this.r23045
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
@@ -132,7 +132,7 @@ bg="red_pink_w3"
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

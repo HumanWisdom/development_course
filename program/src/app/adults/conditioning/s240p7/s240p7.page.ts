@@ -28,7 +28,7 @@ export class S240p7Page implements OnInit {
     private location:Location) { }
 
   ngOnInit() {
-    //console.log(this.path)
+    
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
@@ -222,7 +222,7 @@ export class S240p7Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -247,7 +247,7 @@ export class S240p7Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{
@@ -266,7 +266,7 @@ export class S240p7Page implements OnInit {
     this.router.navigate(['/adults/conditioning/s240p8'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

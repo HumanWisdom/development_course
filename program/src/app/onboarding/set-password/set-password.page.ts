@@ -85,7 +85,7 @@ export class SetPasswordPage implements OnInit {
       this.service.verifyGoogle(this.idToken)
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -153,7 +153,7 @@ export class SetPasswordPage implements OnInit {
       this.service.verifyFb(this.idToken)
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,

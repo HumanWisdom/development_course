@@ -57,7 +57,7 @@ export class S62109Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(245).Question
@@ -82,7 +82,7 @@ export class S62109Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,7 +131,7 @@ export class S62109Page implements OnInit {
     }
     console.log(this.sendOption)
     sessionStorage.setItem("sessionOption62109",JSON.stringify(this.sendOption))
-   //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+   
  
   }
  
@@ -147,7 +147,7 @@ export class S62109Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
 
 
     }

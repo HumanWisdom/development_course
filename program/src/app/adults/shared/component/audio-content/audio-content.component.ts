@@ -51,7 +51,7 @@ ngOnInit() {
 
    //call api to geta percent
    this.service.mediaPercent(this.scrId).subscribe(res=>{
-     console.log(res)
+     
      this.mediaPercent=res[0].MediaPrcnt
      console.log("media duration",this.mediaPercent)
    })
@@ -109,7 +109,7 @@ ngOnDestroy(){
 ngAfterViewInit(){
   console.log("test bookmarks")
   this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
-    //console.log(img);
+    
     img = img.substring(img.indexOf(",") + 1);
    // img.replace('data:image/png;base64,',' ')
     console.log(img)

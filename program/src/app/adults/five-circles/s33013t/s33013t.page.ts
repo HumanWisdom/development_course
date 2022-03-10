@@ -64,7 +64,7 @@ export class S33013tPage implements OnInit {
       "avDuration":0
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
 
    

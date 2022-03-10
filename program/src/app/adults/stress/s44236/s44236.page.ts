@@ -184,7 +184,7 @@ export class S44236Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -215,7 +215,7 @@ export class S44236Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r44236",this.r44236)
@@ -234,7 +234,7 @@ export class S44236Page implements OnInit {
         "Resp":this.r44236
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)

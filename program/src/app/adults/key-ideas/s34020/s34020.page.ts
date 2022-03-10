@@ -70,7 +70,7 @@ export class S34020Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -115,7 +115,7 @@ export class S34020Page implements OnInit {
         "Resp":this.r34020
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
@@ -143,7 +143,7 @@ export class S34020Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

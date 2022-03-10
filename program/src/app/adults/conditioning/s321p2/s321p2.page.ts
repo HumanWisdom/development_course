@@ -211,7 +211,7 @@ export class S321p2Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -255,7 +255,7 @@ export class S321p2Page implements OnInit {
         "Resp":this.r321p2
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
@@ -282,7 +282,7 @@ export class S321p2Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

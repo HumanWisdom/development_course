@@ -48,7 +48,7 @@ export class S36Page implements OnInit,OnDestroy {
   getBookmarks(){
     this.service.getBookmarks(this.userId)
     .subscribe(res=>{
-      //console.log("bookmarks",res)
+      
       
       this.bookmarkList=res
       this.bookmarkList = this.bookmarkList.map(a => parseInt(a.ScrNo));
@@ -78,7 +78,7 @@ export class S36Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -121,7 +121,7 @@ export class S36Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{

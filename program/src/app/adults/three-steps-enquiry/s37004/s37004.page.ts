@@ -57,7 +57,7 @@ export class S37004Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(140).Question
@@ -82,7 +82,7 @@ export class S37004Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,7 +131,7 @@ export class S37004Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption37004",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption37004"))
+  
 
  }
 
@@ -147,7 +147,7 @@ this.router.navigate(['/adults/three-steps-enquiry/s37005'])
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
    
 

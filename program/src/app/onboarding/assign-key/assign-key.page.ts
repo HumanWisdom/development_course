@@ -66,7 +66,7 @@ export class AssignKeyPage implements OnInit {
     "Msg":message,
     "Myself":myself})
     .subscribe(res=>{
-      console.log(res)
+      
 
       if(!res)
         this.disableInvite=false
@@ -81,7 +81,7 @@ export class AssignKeyPage implements OnInit {
       name=boughtBy
       this.router.navigate(['/adults/adult-dashboard'])
     }
-    //console.log(key,email,name,message)
+    
    
     
   }

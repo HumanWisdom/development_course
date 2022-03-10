@@ -57,7 +57,7 @@ export class S32010Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(120).Question
@@ -82,7 +82,7 @@ export class S32010Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,7 +131,7 @@ export class S32010Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption32010",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption32010"))
+  
 
  }
 
@@ -147,7 +147,7 @@ this.router.navigate(['/adults/benefits-of-wisdom/s32011'])
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
     
 

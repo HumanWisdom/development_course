@@ -56,7 +56,7 @@ export class S365Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(80).Question
@@ -81,7 +81,7 @@ export class S365Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -130,7 +130,7 @@ export class S365Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption365",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption365"))
+  
 
  }
 
@@ -146,7 +146,7 @@ this.router.navigate(['/adults/criticism/s366'])
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
     
 

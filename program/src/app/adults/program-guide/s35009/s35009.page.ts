@@ -154,7 +154,7 @@ createScreen(){
     "ScreenNo":this.screenNumber
   }).subscribe(res=>
     {
-      console.log(res)
+      
     })
   
 
@@ -171,7 +171,7 @@ receiveBookmark(e)
 
 
   submitProgress(){
-    this.router.navigate(['/adults/program-guide/s35011'])
+    this.router.navigate(['/adults/program-guide/s35009p1'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -181,7 +181,7 @@ receiveBookmark(e)
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },

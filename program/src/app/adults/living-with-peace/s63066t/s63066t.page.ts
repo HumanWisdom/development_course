@@ -67,7 +67,7 @@ export class S63066tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
   }

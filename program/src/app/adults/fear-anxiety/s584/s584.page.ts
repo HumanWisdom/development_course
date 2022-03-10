@@ -46,7 +46,7 @@ export class S584Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -71,7 +71,7 @@ export class S584Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{
@@ -85,7 +85,7 @@ export class S584Page implements OnInit {
     this.router.navigate(['/adults/fear-anxiety/s585'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

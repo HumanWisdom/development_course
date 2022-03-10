@@ -64,7 +64,7 @@ export class S315Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -110,7 +110,7 @@ export class S315Page implements OnInit {
         "Resp":JSON.parse(sessionStorage.getItem("r315"))
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
@@ -137,7 +137,7 @@ export class S315Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

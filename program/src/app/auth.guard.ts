@@ -1,7 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
-import { CanActivate,Router,ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
-import {AdultsService} from './adults/adults.service'
+import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { AdultsService } from './adults/adults.service';
 
 @Injectable({
   providedIn: 'root'
@@ -85,25 +84,25 @@ export class AuthGuard implements CanActivate,OnInit {
       return true
     }
 //  this.x=[]
-// console.log(this.t,"urlToken")
-// console.log(this.freeScreens,"freeScreens")
-//  console.log(next.routeConfig.path);
+// 
+// 
+//  
 //let v=this.router.navigate(["/adults/"])
 
 //  if(!this.loginResponse)
 //  {
 //    this.loginResponse=JSON.parse(sessionStorage.getItem("loginResponse"))
-//    console.log(this.loginResponse,"taking session login")
+//    
 //  }
     
 // if(localStorage.getItem("token")){
-//   console.log("there is token",this.loginResponse)
+//   
  //sessionStorage.setItem("loginResponse",this.loginResponse)
   
   
   // if(this.loginResponse !== null && this.loginResponse.Subscriber==1)
   // {
-    //console.log("in subs =1")
+    //
     //localStorage.setItem("userId",this.loginResponse.UserId)
   //   return true
   // }
@@ -113,7 +112,7 @@ export class AuthGuard implements CanActivate,OnInit {
    
   //   let str = next.routeConfig.path.replace(/\D/g,'');
   //   this.scrId = str;
-  //  console.log("str","id",this.scrId)
+  //  
   //  if(this.freeScreens !== null && this.freeScreens.includes((this.scrId).toString()))
   //   return true
   // else{
@@ -128,7 +127,7 @@ export class AuthGuard implements CanActivate,OnInit {
 // }
 // else 
 // {
-//   console.log("not logged in",this.t)
+//   
 //   if(this.t)    
 //     return true 
 //   else 

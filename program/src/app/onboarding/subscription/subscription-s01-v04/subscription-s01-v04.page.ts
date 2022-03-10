@@ -108,7 +108,7 @@ setTimeout(() => {
     this.service.viewCart({ "Id":this.userId})
     .subscribe(res=>
       {
-        console.log(res)
+        
         if(res && res.length !== 0) {
           this.cartitemList = res;
           if(res[0]['Plan'] === 'Annual') this.typeList.splice(1, 1);
@@ -172,7 +172,7 @@ submitcode(){
   this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
   .subscribe(
     res=>
-    {console.log(res)
+    {
       if(res) {
         let code: any = 1
       localStorage.setItem('Subscriber', code)
@@ -235,7 +235,7 @@ submitcode(){
 
   getCountry(){
     this.service.getCountry().subscribe((res:any)=>{  
-      console.log(res)
+      
       if(res['in_eu']) {
         this.countryCode = 'EUR'
       }else {
@@ -257,7 +257,7 @@ submitcode(){
     console.log("my country", this.defaultCountry)
     this.service.getCurrencies().subscribe(res=>
       {
-        console.log(res)
+        
         this.countryList=res.filter((item, i, arr) => arr.findIndex((t) => t.CountryId=== item.CountryId) === i);
         console.log(this.countryList)
        let found=this.countryList.find(o=>o.Country==this.defaultCountry)
@@ -451,7 +451,7 @@ submitcode(){
               )
               .subscribe(res=>
                 {
-                  console.log(res)
+                  
             })
           }*/
         
@@ -498,7 +498,7 @@ submitcode(){
         if(this.cartList[i].qty==1)
          { console.log("delete from d/b and add DeleteCart service")
           this.service.deleteItem({"Id":parseInt(this.cartList[i].cartId)})
-          .subscribe(res=>console.log(res))
+          .subscribe((res) => {});
         }
         
         if(this.cartList[i].qty==0)
@@ -531,7 +531,7 @@ submitcode(){
 
             })
             .subscribe(res=>{
-              console.log(res)
+              
             })*/
 
            
@@ -541,7 +541,7 @@ submitcode(){
               )
               .subscribe(res=>
                 {
-                  console.log(res)
+                  
             })
 
         }

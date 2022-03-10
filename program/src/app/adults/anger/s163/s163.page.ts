@@ -44,7 +44,7 @@ export class S163Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
   
     this.startTime = Date.now();
-    console.log(this.bookmarkList)
+    
     if(JSON.parse(sessionStorage.getItem("bookmark163"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark163"))==1)
@@ -78,7 +78,7 @@ export class S163Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -98,7 +98,7 @@ export class S163Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })

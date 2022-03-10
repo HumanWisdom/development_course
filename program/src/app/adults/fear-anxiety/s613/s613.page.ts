@@ -57,7 +57,7 @@ export class S613Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(118).Question
@@ -82,7 +82,7 @@ export class S613Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,7 +131,7 @@ export class S613Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption613",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption613"))
+  
 
  }
 
@@ -148,7 +148,7 @@ this.router.navigate(['/adults/fear-anxiety/s614'])
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
     
 

@@ -72,7 +72,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -81,7 +81,7 @@ createScreen(){
  
 
   submitProgress(){
-    //console.log("entered pleasure")
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/pleasure/s20003'])
@@ -96,7 +96,7 @@ createScreen(){
     }).subscribe(res=>
       {
 
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
 

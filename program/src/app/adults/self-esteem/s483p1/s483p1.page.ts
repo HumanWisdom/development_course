@@ -254,7 +254,7 @@ export class S483p1Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -342,7 +342,7 @@ export class S483p1Page implements OnInit {
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
   this.router.navigate(['/adults/self-esteem/s483p2'])
-  //console.log(this.totalTime,"total time")
+  
  
 
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5]
@@ -354,7 +354,7 @@ export class S483p1Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res),
+      .subscribe((res) => {},
       error=>{
         console.log(error)
       },

@@ -109,7 +109,6 @@ export class LoginSignupPage implements OnInit {
           this.enableLogin = true
         }
         this.urlKey=params['key']
-        console.log(this.urlEmail,this.urlKey)
          // Print the parameter to the console. 
     });
     }
@@ -120,7 +119,7 @@ export class LoginSignupPage implements OnInit {
         let userid = localStorage.getItem("userIdCode")
         this.service.verifyUser(userid)
         .subscribe(res=>{
-          console.log(res)
+          
         })
       }
     }, 4000)
@@ -159,7 +158,7 @@ export class LoginSignupPage implements OnInit {
      })
      .subscribe(res=>
        {
-       console.log(res)
+       
        if(res>0){
         window.alert('An email has been sent to you')
         this.enableotpmodal.nativeElement.click()
@@ -199,7 +198,7 @@ export class LoginSignupPage implements OnInit {
     this.service.verifyCode({"Email":this.registrationForm.get('email').value,
                               "VCode":this.verificationCode})
     .subscribe(res=>{
-      console.log(res)
+      
       if(res>0)
       {
         this.closemodal.nativeElement.click()
@@ -230,7 +229,6 @@ export class LoginSignupPage implements OnInit {
       this.socialFirstName=user.firstName
       this.socialLastName=user.lastName
       this.socialEmail=user.email
-      console.log(user)
 
       this.service.verifyGoogle({
         "TokenID": this.idToken,
@@ -242,12 +240,11 @@ export class LoginSignupPage implements OnInit {
       })
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             
           
               this.loginResponse=res
-              console.log(this.loginResponse)
               localStorage.setItem('guest', 'F');
               localStorage.setItem("remember", 'T')
               localStorage.setItem('socialLogin', 'T');
@@ -284,7 +281,6 @@ export class LoginSignupPage implements OnInit {
                 sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
                 localStorage.setItem("userId",JSON.stringify(this.userId))
                 localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
-                console.log(localStorage.getItem("token"),"this is local token")
                 if(this.saveUsername==true)
                 {
                   localStorage.setItem("userId",JSON.stringify(this.userId))
@@ -325,7 +321,7 @@ export class LoginSignupPage implements OnInit {
                   {
                     this.service.verifyUser(this.userId)
                     .subscribe(res=>{
-                      console.log(res)
+                      
                     })
                   }*/
 
@@ -350,7 +346,6 @@ export class LoginSignupPage implements OnInit {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
      // this.user = user;
-      console.log(user)
       this.user = user;
       this.idToken=user.authToken
       this.socialFirstName=user.firstName
@@ -367,11 +362,10 @@ export class LoginSignupPage implements OnInit {
         })
         .subscribe(res=>
           {
-            console.log(res)
+            
             if(res){
              
                 this.loginResponse=res
-                console.log(this.loginResponse)
                 localStorage.setItem('socialLogin', 'T');
                 localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
                 localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
@@ -408,7 +402,6 @@ export class LoginSignupPage implements OnInit {
                   sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
                   localStorage.setItem("userId",JSON.stringify(this.userId))
                   localStorage.setItem("token",JSON.stringify(this.loginResponse.access_token))
-                  console.log(localStorage.getItem("token"),"this is local token")
                   if(this.saveUsername==true)
                   {
                     localStorage.setItem("userId",JSON.stringify(this.userId))
@@ -448,7 +441,7 @@ export class LoginSignupPage implements OnInit {
                     {
                       this.service.verifyUser(this.userId)
                       .subscribe(res=>{
-                        console.log(res)
+                        
                       })
                     }*/
   
@@ -469,15 +462,14 @@ export class LoginSignupPage implements OnInit {
           {
             this.service.verifyUser(this.urlEmail)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }
     this.service.emailLogin(this.email,this.password)
     .subscribe(
       res=>
-      {//console.log(res)
+      {//
         this.loginResponse=res
-        console.log(this.loginResponse)
         localStorage.setItem('socialLogin', 'F');
         localStorage.setItem('guest', 'F');
         localStorage.setItem('btnclick', 'F')
@@ -511,7 +503,6 @@ export class LoginSignupPage implements OnInit {
           sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
           localStorage.setItem("userId",JSON.stringify(this.userId))
           localStorage.setItem("token",JSON.stringify(res.access_token))
-          console.log(localStorage.getItem("token"),"this is local token")
           if(this.saveUsername==true)
           {
             localStorage.setItem("userId",JSON.stringify(this.userId))
@@ -575,7 +566,7 @@ export class LoginSignupPage implements OnInit {
           {
             this.service.verifyUser(this.userId)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }*/
 
@@ -638,18 +629,15 @@ export class LoginSignupPage implements OnInit {
 
   rememberUsername(event){
     this.saveUsername=!this.saveUsername
-    console.log(this.saveUsername)
     localStorage.setItem("saveUsername",JSON.stringify(this.saveUsername))
     if(event) {
       localStorage.setItem("remember", 'T')
     }else {
       localStorage.setItem("remember", 'F')
     }
-    console.log( JSON.parse(localStorage.getItem("saveUsername")))
   }
 
   freescreens(){
-    console.log("freeScreens")
     this.aservice.freeScreens().subscribe(res=>
       {
           this.x = []
@@ -665,7 +653,6 @@ export class LoginSignupPage implements OnInit {
           localStorage.setItem("freeScreens",JSON.stringify(arr))
           // localStorage.setItem("isloggedin", 'T')
           // this.router.navigate(['/adults/adult-dashboard'])
-         console.log('homescreen')
         
         }
         
