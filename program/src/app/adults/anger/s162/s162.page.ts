@@ -46,7 +46,7 @@ export class S162Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
   
     this.startTime = Date.now();
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark162")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark162"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark162"))==1)
@@ -91,7 +91,7 @@ export class S162Page implements OnInit,OnDestroy {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    //
     this.router.navigate(['/adults/anger/s163'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,

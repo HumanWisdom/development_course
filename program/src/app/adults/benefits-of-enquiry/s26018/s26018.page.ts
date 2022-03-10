@@ -113,7 +113,7 @@ export class S26018Page implements OnInit {
     sessionStorage.setItem("sessionOption",JSON.stringify(this.option))
   
     //this.option.push(optId)
-    //console.log(this.option)
+    
     //this.sendOption.push(this.option[this.option.length-1])
   }
  

@@ -115,7 +115,7 @@ createScreen(){
   goNext(){
    // this.router.navigate(['/adults/living-with-peace/s2'])
     
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

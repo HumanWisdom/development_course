@@ -40,7 +40,7 @@ export class S38019p5Page implements OnInit {
  
 
   ngOnInit() {
-    //console.log("response",JSON.parse(sessionStorage.getItem("r38019p5")))
+    
    
     //if(!sessionStorage.getItem("r38019p5"))
     this.r38019p5=sessionStorage.getItem("r38019p5")
@@ -225,7 +225,7 @@ export class S38019p5Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r38019p5",this.r38019p5)
@@ -272,7 +272,7 @@ export class S38019p5Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

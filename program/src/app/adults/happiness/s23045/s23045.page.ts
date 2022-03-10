@@ -132,7 +132,7 @@ bg="red_pink_w3"
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

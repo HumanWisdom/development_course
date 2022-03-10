@@ -52,7 +52,7 @@ export class ViewcartPage implements OnInit {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     this.viewCart()
      
-    //console.log(this.cartList)
+    
   }
  /* getMax(){
     this.cartList.forEach(obj => {
@@ -113,7 +113,7 @@ export class ViewcartPage implements OnInit {
         console.log(error)
       },
       ()=>this.totalPrice())
-    //console.log(this.cartList)
+    
   }
 
   editCard(card) {

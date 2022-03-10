@@ -115,7 +115,7 @@ createScreen(){
   goNext(){
    // this.router.navigate(['/adults/reactive-mind/s2'])
     
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

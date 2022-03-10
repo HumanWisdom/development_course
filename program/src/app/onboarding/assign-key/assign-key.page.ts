@@ -81,7 +81,7 @@ export class AssignKeyPage implements OnInit {
       name=boughtBy
       this.router.navigate(['/adults/adult-dashboard'])
     }
-    //console.log(key,email,name,message)
+    
    
     
   }

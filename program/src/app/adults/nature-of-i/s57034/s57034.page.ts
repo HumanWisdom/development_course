@@ -115,7 +115,7 @@ createScreen(){
   goNext(){
    // this.router.navigate(['/adults/nature-of-i/s2'])
     
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

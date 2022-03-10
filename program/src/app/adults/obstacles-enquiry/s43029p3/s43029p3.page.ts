@@ -236,7 +236,7 @@ export class S43029p3Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r43029p3",this.r43029p3)
