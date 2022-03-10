@@ -48,7 +48,7 @@ export class S36Page implements OnInit,OnDestroy {
   getBookmarks(){
     this.service.getBookmarks(this.userId)
     .subscribe(res=>{
-      //console.log("bookmarks",res)
+      
       
       this.bookmarkList=res
       this.bookmarkList = this.bookmarkList.map(a => parseInt(a.ScrNo));

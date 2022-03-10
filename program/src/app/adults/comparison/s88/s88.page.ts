@@ -140,7 +140,7 @@ export class S88Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

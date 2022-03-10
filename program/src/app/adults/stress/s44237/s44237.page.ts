@@ -236,7 +236,7 @@ export class S44237Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r44237",this.r44237)

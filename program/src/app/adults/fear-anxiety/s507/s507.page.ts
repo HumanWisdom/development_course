@@ -85,7 +85,7 @@ export class S507Page implements OnInit {
     this.router.navigate(['/adults/fear-anxiety/s508'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

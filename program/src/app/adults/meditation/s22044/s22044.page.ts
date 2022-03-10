@@ -133,7 +133,7 @@ export class S22044Page implements OnInit {
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

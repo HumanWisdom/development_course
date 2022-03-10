@@ -213,7 +213,7 @@ export class S59169Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r59169",this.r59169)
@@ -249,7 +249,7 @@ prev(){
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

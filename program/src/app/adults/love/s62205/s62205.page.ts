@@ -171,7 +171,7 @@ export class S62205Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r62205",this.r62205)
@@ -207,7 +207,7 @@ prev(){
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

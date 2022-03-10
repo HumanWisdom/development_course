@@ -197,7 +197,7 @@ export class S73008Page implements OnInit {
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
   this.router.navigate(['/adults/money/s73009'])
-  //console.log(this.totalTime,"total time")
+  
  
 
     var optionT=[this.s1]

@@ -102,7 +102,7 @@ createScreen(){
    // this.router.navigate(['/adults/noticing-thoughts/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

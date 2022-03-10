@@ -189,7 +189,7 @@ export class S240p3Page implements OnInit {
     this.router.navigate(['/adults/conditioning/s240p4'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

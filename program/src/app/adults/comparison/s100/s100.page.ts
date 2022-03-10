@@ -54,7 +54,7 @@ export class S100Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(42).Question

@@ -103,7 +103,7 @@ createScreen(){
     this.router.navigate(['/adults/key-ideas/s34003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }
