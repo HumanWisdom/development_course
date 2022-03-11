@@ -13,7 +13,7 @@ export class TokenInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
- 
+    this.token = JSON.parse(localStorage.getItem("token"))
     let tokenizedReq = req.clone({
         setHeaders: {
                Authorization: `Bearer ` + this.token
