@@ -25763,3 +25763,135 @@ h1
 {
   margin: 40px 0 75px 0;
 }
+
+.mdp_header 
+{
+  background: #70C6BD;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.bg_mdp 
+{
+  background: #F5F5F5 !important;
+  height: 100vh;
+}
+
+.mdp_icon
+{
+  margin: 36px 0 19px 0;
+}
+
+.mdp_audio 
+{
+  margin: 0 0 45px 0;
+}
+
+#mdp_carousel .carousel-inner>.item
+{
+  height: auto;
+}
+
+#mdp_carousel .carousel-indicators 
+{
+  /* position: absolute;
+  bottom: -24px; */
+  position: fixed;
+  bottom: 12%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mdp_carousel .carousel-indicators .active 
+{
+  width: 24px;
+  height: 8px;
+  margin: 0 2.5px;
+  background-color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  border: 0;
+}
+
+#mdp_carousel .carousel-indicators li
+{
+  width: 8px;
+  height: 8px;
+  margin: 0 2.5px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border: 0;
+}
+
+#mdp_carousel .carousel-control.left, 
+#mdp_carousel .carousel-control.right
+{
+  display: none;
+}
+
+.mdp_add_to_journal 
+{
+  margin: 0;
+  border: 0;
+  height: 50px;
+  background: #40ACB2;
+  border-radius: 10px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
+
+  margin: 20px 0 14px 0;
+}
+
+.mdp_answer_here 
+{
+  height: 163px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ADADAD;
+  padding: 20px;
+  outline: none;
+  margin: 41px 0 0 0;
+}
+
+.flex_jc_center
+{
+  display: flex;
+  justify-content: center;
+}
+
+.mdp_quotation 
+{
+  margin: 20px 0 30px 0;
+}
+
+.mdp_author
+{
+  margin: 24px 0 0 0;
+}
+
+.mdp_hr 
+{
+  border: 1px solid #000000;
+  margin: 0px;
+}

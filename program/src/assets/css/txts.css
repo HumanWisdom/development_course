@@ -2523,3 +2523,37 @@
     /* or 19px */
     color: #FFFFFF;
 }
+
+.txt287 
+{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 130%;
+    color: #000000;
+    word-wrap: break-word;
+}
+
+.txt288 
+{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 140%;
+    /* or 34px */
+    color: #000000;
+}
+
+.txt289
+{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 140%;
+    /* or 25px */
+    letter-spacing: 0.1em;
+    color: #000000;
+}
