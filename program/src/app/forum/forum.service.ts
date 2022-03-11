@@ -14,7 +14,7 @@ export class ForumService {
   //path="http://18.132.47.231/api";
   path="https://www.humanwisdom.info/api"
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
-  //path="https://staging.humanwisdom.info/api"
+ // path="https://staging.humanwisdom.info/api"
   
 postdata: any;
 
