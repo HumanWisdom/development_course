@@ -104,7 +104,7 @@ createScreen(){
   }
 
   goNext(){
-    this.router.navigate(['/adults/program-guide/s35017'])
+    this.router.navigate(['/adults/program-guide/s35012'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     
