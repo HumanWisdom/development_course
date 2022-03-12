@@ -37,7 +37,9 @@ export class AuthGuard implements CanActivate,OnInit {
     }
      if(token[1] !== undefined && token[1] !== '') {
        let cookie = localStorage.getItem('acceptcookie')
-       let personalised = localStorage.getItem('personalised');
+       let persub = localStorage.getItem('personalised subscription');
+      let pers = localStorage.getItem('personalised');
+      let persdata = localStorage.getItem('personalisedlist');
        localStorage.clear()
        if(affrefcode !== ''){
         localStorage.setItem("AffReferralCode", affrefcode)
@@ -48,8 +50,10 @@ export class AuthGuard implements CanActivate,OnInit {
       if(cookie){
         localStorage.setItem('acceptcookie', 'T')
       }
-      if(personalised){
-        localStorage.setItem('personalised', 'T');
+      if(persub && pers === "T") {
+        localStorage.setItem('personalised subscription', persub);
+        localStorage.setItem('personalised', pers);
+        localStorage.setItem('personalisedlist', persdata);
       }
       localStorage.setItem('guest', 'F');
         localStorage.setItem('btnclick', 'F')
@@ -58,6 +62,10 @@ export class AuthGuard implements CanActivate,OnInit {
         localStorage.setItem("isloggedin", 'T')
 
       localStorage.setItem("token",JSON.stringify(authtoken))
+      if(!cookie) {
+        this.router.navigate(['/intro/personalised-for-you'])
+        return false;
+      }
       return true
      }
      if(!(localStorage.getItem("fromapp")) || localStorage.getItem("fromapp") !== 'T'){
