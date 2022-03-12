@@ -40,7 +40,7 @@
                     <div class="panel-body p0">
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <button type="submit" class="btn btn_subscription_options">
+                          <button type="submit" class="btn btn_subscription_options" (click)="getclick('Yearly')">
                             <h4 class="txt151 mtb0px mb5px">
                               Yearly - 14 day free trial
                             </h4>
@@ -57,7 +57,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_subscription_options">
+                  <button type="submit" class="btn btn_subscription_options" (click)="getclick('Monthly')">
                     <h4 class="txt151 mtb0px mb5px">
                       Monthly - 14 day free trial
                     </h4>
@@ -78,7 +78,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_subscription_options">
+                  <button type="submit" class="btn btn_subscription_options" (click)="getclick('free user')">
                     <h4 class="txt151 mtb0px mb5px">
                       Limited access 
                     </h4>
@@ -94,7 +94,7 @@
                   <h4 class="txt285 mtb0px mb5px">
                     If you have a Subscription Code,
                   </h4>
-                  <a class="txt286 mtb0px underline">
+                  <a class="txt286 mtb0px underline" data-toggle="modal" data-target="#activate_subscription_click_here">
                     click here
                   </a>
                 </div>
@@ -111,3 +111,452 @@
   <!--/class -->
 </div>
 <!-- /page content -->
+
+<!-- activate subscription modal -->
+<div class="modal fade" id="activate_subscription_click_here" data-keyboard="false" data-backdrop="true">
+  <!-- modal-body -->
+  <div class="" role="document">       
+    <!-- modal content -->  
+    <div class="row center_flex activate_subscription_outer" *ngIf="firstpage">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">  
+        <form [formGroup]="registrationForm">        
+        <div class="mactivate_subscription_01">
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')" data-dismiss="modal" aria-label="Close">              
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              </button>
+            </div>
+          </div>  
+          
+          <div class="row center_flex as_main_title">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt151 mtb0px">
+                Activate Subscription!
+              </h4>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text"  class="form-control cfc14" formControlName="fname" placeholder="First Name*" required>
+                <div *ngIf="fname.invalid && fname.touched">
+                  <small *ngIf="fname.errors?.required" class="text danger">First Name is required</small>
+                  <small *ngIf="fname.errors?.minlength" class="text danger">First Name must be at least 3 characters</small>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text"  class="form-control cfc14" placeholder="Last Name*" formControlName="lname" required>
+                <div *ngIf="lname.invalid && lname.touched">
+                  <small *ngIf="lname.errors?.required" class="text danger">Last Name is required</small>
+                  <small *ngIf="lname.errors?.minlength" class="text danger">Last Name must be at least 3 characters</small>
+              </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text"  class="form-control cfc14" placeholder="E-mail*" formControlName="email" required>
+                <div *ngIf="emailvalid.invalid && emailvalid.touched">
+                  <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email address</small>
+                  <small *ngIf="emailvalid.errors?.email" class="text danger">Please enter a valid email</small>
+              </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="password"  class="form-control cfc14" placeholder="Password*" (keydown.space)="$event.preventDefault();" formControlName="password" required>
+                <label class="txt189">
+                  Password must be Minimum 6 Characters. No Spaces allowed
+                </label>
+              </div>
+              <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
+                <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
+                <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 3 characters</small>
+            </div>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="password"  class="form-control cfc14" placeholder="Repeat Password*" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
+                <label class="txt189">
+                  Password must be Minimum 6 Characters. No Spaces allowed
+                </label>
+              </div>
+              <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
+                <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat password</small>
+                <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must be at least 3 characters</small>
+            </div>
+            </div>
+          </div>
+
+          <div class="row center_flex as_orw_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+              <h4 class="txt89 mtb0px tcenter underline">
+                Or connect with
+              </h4>
+            </div>  
+          </div>
+
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 center_flex"> 
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg" (click)="fbLogin()" class="img-responsive">
+                </button>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg" (click)="googleLogin()" class="img-responsive">
+                </button>
+              </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                </button>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="row center_flex as_aru_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <a (click)="already('login')">     
+                <h4 class="txt241 mtb0px tcenter underline">
+                  Already a registered user?
+                </h4>
+              </a>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_submit_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="!registrationForm.valid" (click)="signup()">
+                Submit
+              </button>
+            </div>
+          </div>  
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <div class="row center_flex activate_subscription_outer" *ngIf="secondpage">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
+        <div class="mactivate_subscription_01">
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')" data-dismiss="modal" aria-label="Close">              
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              </button>
+            </div>
+          </div>  
+          
+          <div class="row center_flex as_main_title">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt151 mtb0px">
+                Activate Subscription!
+              </h4>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text"  class="cfc13" placeholder="{{email}}" disabled>
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex otp_desc">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt89 mtb0px">
+                A one-time password has been sent to your email address (Check your spam folder too). Please enter it below.
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text"  class="cfc14" [(ngModel)]="verificationCode" placeholder="Enter OTP">
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex otp_rvc">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <a> 
+                <h4 class="txt89 mtb0px tcenter underline" (click)="resendotp()">
+                  Resend Verification Code
+                </h4>
+              </a>    
+            </div>  
+          </div>  
+
+          <div class="row center_flex as_register_login">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+              <a (click)="already('register')">     
+                <h4 class="txt89 mtb0px tcenter underline">
+                  Change E-mail address
+                </h4>
+              </a>
+            </div>  
+          </div>   
+
+          <div class="row center_flex as_submit_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="verifyCode()" [disabled]="!verificationCode">
+                Confirm
+              </button>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="row center_flex activate_subscription_outer" *ngIf="thirdpage">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
+        <div class="mactivate_subscription_01">
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')" #closemodal data-dismiss="modal" aria-label="Close">              
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              </button>
+            </div>
+          </div>  
+          
+          <div class="row center_flex as_main_title">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt151 mtb0px">
+                Activate Subscription!
+              </h4>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="fn" class="cfc14" placeholder="{{modaldata['firstname']}}" disabled>
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="ln" class="cfc14" placeholder="{{modaldata['lastname']}}" disabled>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="emai" class="cfc14" placeholder="{{modaldata['email']}}" disabled>
+              </div>
+            </div>
+          </div> 
+
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text" id="activatecode" class="cfc11" (keyup)="getcode($event.target.value)" placeholder="Enter Activation Code">
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex as_diff_user_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt242 mtb0px tcenter">
+                Not 
+                <span class="txt240">
+                  {{modaldata['email']}}
+                </span>
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_diff_user_code">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <a (click)="already('login')">     
+                <h4 class="txt241 mtb0px tcenter underline">
+                  Login as a different user
+                </h4>
+              </a>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_code_desc_logged_in_01" *ngIf="subthirdpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt89 mtb0px">
+                  The activation code you have used is invalid. Please check again, or email us at support@humanwisdom.me
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_submit_01" *ngIf="subfirstpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''" (click)="verifyactkey()">
+                Submit
+              </button>
+            </div>
+          </div>
+
+          <div class="row center_flex as_code_desc_logged_in" *ngIf="subsecondpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt89 mtb0px">
+                This code entitles you to 1 <span>{{yearormonth}}</span> of subscription to the HumanWisdom Program for Adults. Click below to activate this subscription, and enjoy the benefits of the HumanWisdom App.
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_submit_01" *ngIf="subsecondpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="submitcode()">
+                Activate Now
+              </button>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="row center_flex activate_subscription_outer" *ngIf="fifthpage">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
+        <div class="mactivate_subscription_01">
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')" data-dismiss="modal" aria-label="Close">              
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              </button>
+            </div>
+          </div>  
+          
+          <div class="row center_flex as_main_title">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt151 mtb0px">
+                Activate Subscription!
+              </h4>
+            </div>
+          </div>
+         
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text"  class="cfc14" [(ngModel)]="this.loginemail" placeholder="E-mail*">
+              </div>
+            </div>
+          </div> 
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="password"  class="cfc14" [(ngModel)]="this.loginpassword" placeholder="Password*">
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex as_orw_02">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+              <h4 class="txt89 mtb0px tcenter underline">
+                Or connect with
+              </h4>
+            </div>  
+          </div>
+
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg" (click)="fbLogin()" class="img-responsive">
+                </button>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg" (click)="googleLogin()" class="img-responsive">
+                </button>
+              </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                </button>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="row center_flex as_aru_02">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <a (click)="already('register')">     
+                <h4 class="txt241 mtb0px tcenter underline">
+                  Not a registered user?
+                </h4>
+              </a>
+            </div>
+          </div>
+
+          <div class="row center_flex as_submit_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="!this.loginemail||!this.loginpassword" (click)="emaillogin('act')">
+                Submit
+              </button>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="row center_flex activate_subscription_outer" *ngIf="sixthpage">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
+        <div class="mactivate_subscription_01">
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn_popup_close m0px" #actclosemodal (click)="already('home')" data-dismiss="modal" aria-label="Close">              
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              </button>
+            </div>
+          </div>  
+          
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt151 mtb0px">
+                Congratulations!
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_congratulations">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="txt89 mtb0px">
+                You are now subscribed to 1 month of the HumanWisdom Program for Adults. Continue to the dahboard to enjoy the app.
+              </h4>
+            </div>
+          </div>   
+
+          <div class="row center_flex as_continue_dashboard">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="already('home')">
+                Continue to dashboard
+              </button>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <!-- /modal content -->      
+  </div>  
+  <!-- /modal-body -->
+</div>
+<!-- /activate subscription modal -->
