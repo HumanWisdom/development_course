@@ -315,7 +315,7 @@ export class LoginSignupPage implements OnInit {
                   }else {
                     localStorage.setItem("isloggedin", 'T')
                     if(pers && persub && pers === 'T') {
-                      this.router.navigate(['/onboarding/payment'], { state: { quan:  '1', plan: persub}})
+                      this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
                     }else {
                       this.router.navigate(['/adults/adult-dashboard'])
                     }
@@ -440,7 +440,7 @@ export class LoginSignupPage implements OnInit {
                     }else {
                       localStorage.setItem("isloggedin", 'T')
                       if(pers && persub && pers === 'T') {
-                        this.router.navigate(['/onboarding/payment'], { state: { quan:  '1', plan: persub}})
+                        this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
                       }else {
                         this.router.navigate(['/adults/adult-dashboard'])
                       }
@@ -573,7 +573,7 @@ export class LoginSignupPage implements OnInit {
                   }else {
                     if(pers && persub && pers === 'T') {
                       localStorage.setItem("isloggedin", 'T')
-                      this.router.navigate(['/onboarding/payment'], { state: { quan:  '1', plan: persub}})
+                      this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
                     }else {
                       this.router.navigate(['/adults/adult-dashboard'])
                     }

@@ -50,8 +50,12 @@ export class ViewcartPage implements OnInit {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
     else
       this.userId=JSON.parse(localStorage.getItem("userId"))
-    this.viewCart()
-     
+    if(localStorage.getItem('personalised') === 'T') {
+      this.personalisedaddcart()
+    }else{
+      this.viewCart()
+    }
+
     
   }
  /* getMax(){
@@ -134,6 +138,30 @@ export class ViewcartPage implements OnInit {
 
   msginput(event) {
     this.learnermsg = event.target.value;
+  }
+// monthly 1
+// yearly 2
+  personalisedaddcart() {
+    let m = JSON.parse(localStorage.getItem('cartlist'));
+    let ym = localStorage.getItem('personalised subscription');
+    this.service.addItem({
+      "UserId":this.userId,
+      "RateId": m['RateID'],
+      "Qty":1,
+      "PlanId": ym === 'Monthly' ? 1 : 2,
+      "MySelf": 1,
+      "LearnerEmail": '',
+      "LearnerMsg": '',
+      })
+      .subscribe(res=>{
+        this.viewCart()
+      },
+      error=>{
+        console.log(error)
+      },
+      ()=>{
+        this.totalPrice()  
+      })
   }
 
   addToCart(){

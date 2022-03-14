@@ -24,7 +24,8 @@ export class authLoginGuard implements CanActivate, OnInit {
       let affrefcode = '';
       let persub = localStorage.getItem('personalised subscription');
       let pers = localStorage.getItem('personalised');
-      let persdata = localStorage.getItem('personalisedlist');;
+      let persdata = localStorage.getItem('personalisedlist');
+      let cartdata = localStorage.getItem('cartlist');
       if(localStorage.getItem('acceptcookie') === 'T') {
         cookie = true;
       }
@@ -48,8 +49,9 @@ export class authLoginGuard implements CanActivate, OnInit {
       localStorage.setItem('personalised subscription', persub);
       localStorage.setItem('personalised', pers);
       localStorage.setItem('personalisedlist', persdata);
+      localStorage.setItem('cartlist', cartdata);
     }
-    if(!cookie) {
+    if(!cookie && pers !== 'T') {
       this.router.navigate(['/intro/personalised-for-you'])
       return false;
     }
