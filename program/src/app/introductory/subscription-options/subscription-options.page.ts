@@ -125,7 +125,7 @@ socialFirstName:any
   mediaVideo="https://d1tenzemoxuh75.cloudfront.net"  
   mediaPercent:any
   freeScreens=[]
-
+  cardlist=[]
 
  registrationForm=this.fb.group({
   fname:['',[Validators.required,Validators.minLength(3)]],
@@ -139,11 +139,44 @@ socialFirstName:any
   constructor(public router: Router, private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef, private fb: FormBuilder,private authService: SocialAuthService) { }
 
   ngOnInit() {
+    this.getCountry()
   }
+  
+  getCountry(){
+    this.services.getCountry().subscribe((res:any)=>{  
+      
+      if(res['in_eu']) {
+        this.countryCode = 'EUR'
+      }else {
+        this.countryCode = res['country_code_iso3']
+      }
+      this.getPricing()
+    },
+
+      error=>{
+        console.log(error)
+      },
+      ()=>{
+      });  
+
+  }
+
+  getPricing(){
+    this.services.getPricing(this.countryCode).subscribe(res=>
+      {
+        console.log(res,"product list from api")
+        this.cardlist = res[0]; 
+      }, (err) => {
+        window.alert(err.error['Message'])
+      }
+    )
+  }  
+
 
   getclick(val) {
     if(val === 'click here') {
     }else if(val === 'Yearly' || val === 'Monthly') {
+      localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
       localStorage.setItem('personalised subscription', val);
       this.router.navigate(['/onboarding/login'])
     }else {
