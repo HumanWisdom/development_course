@@ -211,6 +211,10 @@ export class SideNavComponent implements OnInit {
     this.router.navigate(['users/screens'])
   }
 
+  routeDailyPractise(){
+    this.router.navigate(['users/dailypractises'])
+  }
+
   routePopup(){
     this.router.navigate(['users/popup'])
   }
