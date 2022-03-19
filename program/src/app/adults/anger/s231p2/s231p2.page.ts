@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S231p2Page implements OnInit {
   
   toc="anger/s162p0"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/fear_anxiety.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/fear_anxiety.jpg"
   bg=""
   moduleLink="/adults/fear-anxiety"
   moduleName="01. Fear & Anxiety "
@@ -20,17 +20,17 @@ export class S231p2Page implements OnInit {
   moduleList: any = [
     {
       name: 'Reactive mind',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/22.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/the_full_program/22.png',
       link: '/reactive-mind'
     },
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/the_full_program/34.png',
       link: '/stress'
     },
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/the_full_program/35.png',
       link: '/relationships'
     },
   ]

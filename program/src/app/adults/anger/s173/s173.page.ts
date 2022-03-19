@@ -13,7 +13,7 @@ export class S173Page implements OnInit {
   bg="anger_overlay_w11"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/anger/videos/1.1.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/anger/anger_01.jpg"
+  poster="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/video_posters/anger/anger_01.jpg"
   title="What is the root cause of anger?"
   
   userId:any
