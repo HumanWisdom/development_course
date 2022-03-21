@@ -21,7 +21,6 @@ import { logger } from "../../../../utils/common";
 })
 export class CometChatMessagesComponent implements OnInit, OnChanges {
   @ViewChild("messageWindow", { static: false }) chatWindow!: ElementRef;
-
   @Input() item = null;
   @Input() type: string = '';
   @Input() composedThreadMessage = null;
@@ -158,8 +157,11 @@ export class CometChatMessagesComponent implements OnInit, OnChanges {
           this.prependMessages(messages);
 
           setTimeout(() => {
-            this.chatWindow.nativeElement.scrollTop =
-              this.chatWindow.nativeElement.scrollHeight - prevScrollHeight;
+            // this.chatWindow.nativeElement.scrollTop =
+            //   this.chatWindow.nativeElement.scrollHeight - prevScrollHeight;
+            debugger;
+              let index=    document.getElementsByClassName('messageContainerStyle').length;
+              this.chatWindow.nativeElement.scrollTop= document.getElementsByClassName('messageContainerStyle')[index-1].scrollHeight;
           });
 
           break;
@@ -541,9 +543,8 @@ export class CometChatMessagesComponent implements OnInit, OnChanges {
     try {
       setTimeout(() => {
         this.chatWindow.nativeElement.scrollTop =
-          this.chatWindow.nativeElement.scrollHeight -
-          this.chatWindow.nativeElement.clientHeight;
-      });
+        this.chatWindow.nativeElement.scrollHeight -
+        this.chatWindow.nativeElement.clientHeight;      });
     } catch (error) {
       logger(error);
     }

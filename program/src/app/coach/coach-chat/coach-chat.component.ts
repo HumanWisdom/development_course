@@ -27,31 +27,31 @@ export class CoachChatComponent implements OnInit {
     
 
   };
+  
   logginCometChat(){
+    let isChatMessages=false;
     CometChat.login(localStorage.getItem('userId').toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
       (user) => {
-        this.isChatList=(localStorage.getItem('isChatList')!=null) ? (localStorage.getItem('isChatList') =='true'?true:false):false
-        if(!this.isChatList){
-          this.isChatList = window.history.state?.data ? window.history.state.data.isChatList : false;
-          this.isChatMessages =  !this.isChatList;
+       let  isChatList=(localStorage.getItem('isChatList')!=null) ? (localStorage.getItem('isChatList') =='true'?true:false):false;
+       if(!isChatList){
+        isChatList = window.history.state?.data ? window.history.state.data.isChatList : false;
+           isChatMessages =  !isChatList;
+           this.isChatList=isChatList;
+           localStorage.setItem('coachUID',this.coachUID);
+           localStorage.setItem('Comechat',JSON.stringify(user))
         }
-        if(this.isChatMessages){
-          localStorage.setItem('coachUID',this.coachUID);
+        if(isChatMessages){
+         
           CometChat.getUser(this.coachUID.toString()).then(info=>{
+            localStorage.setItem('isChatList',this.isChatList.toString());
+            console.log("Login Successful:", { user });
             this.item = info;
-          })
+            this.isChatMessages=isChatMessages;
+          });
         }
-        localStorage.setItem('isChatList',this.isChatList.toString());
-        console.log("Login Successful:", { user });
-        localStorage.setItem('Comechat',JSON.stringify(user))
-        // if(this.coachUID){
-        //   this.getUserByUID();
-        // }
       },
       (error) => {
         console.log("Login failed with exception:", { error });
-        // this.onLoginError = true;
-        // this.errorMsg = error.message;
       }
     );
   }
@@ -62,11 +62,9 @@ export class CoachChatComponent implements OnInit {
   getUserByUID() {
     CometChat.getUser(this.coachUID.toString()).then(
       user => {
-        debugger
         this.item = user;
         console.log("User details fetched for user:", user);
       }, error => {
-        debugger
         console.log("User details fetching failed with error:", error);
       }
     );

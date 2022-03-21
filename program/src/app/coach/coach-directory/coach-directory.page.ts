@@ -63,7 +63,6 @@ export class CoachDirectoryPage implements OnInit {
     return finalString;
   }
  filter(){
-   debugger
   //  if(this.filtData.length > 0)
    this.router.navigate(['coach/coach-directory-filter'], { state: { data: { filterDatas: this.filtData } } })
   

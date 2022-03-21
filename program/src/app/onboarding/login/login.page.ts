@@ -248,7 +248,6 @@ export class LoginPage implements OnInit,OnDestroy {
           {
             this.service.verifyUser(this.urlEmail)
             .subscribe(res=>{
-              debugger
               console.log(res)
             })
           }
@@ -256,7 +255,6 @@ export class LoginPage implements OnInit,OnDestroy {
     .subscribe(
       res=>
       {//console.log(res)
-        debugger
         this.loginResponse=res
         this.userId=res.UserId
          let  user = new CometChat.User(res.UserId);

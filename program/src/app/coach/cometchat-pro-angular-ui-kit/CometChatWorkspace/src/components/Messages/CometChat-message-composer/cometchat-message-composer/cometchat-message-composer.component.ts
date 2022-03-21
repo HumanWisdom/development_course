@@ -300,12 +300,12 @@ export class CometChatMessageComposerComponent implements OnInit, OnChanges {
         return false;
       }
 
-      // wait for the previous message to be sent before sending the current message
-      if (this.messageSending) {
-        return false;
-      }
+      // // wait for the previous message to be sent before sending the current message
+      // if (this.messageSending) {
+      //   return false;
+      // }
 
-      this.messageSending = true;
+      // this.messageSending = true;
 
       // If its an Edit and Send Message Operation , use Edit Message Function
       if (this.messageToBeEdited) {
@@ -334,13 +334,14 @@ export class CometChatMessageComposerComponent implements OnInit, OnChanges {
       }
 
       // End Typing Indicator Function
-      this.endTyping();
-
+      // this.endTyping();
+      this.messageInput = "";
+      console.log(textMessage);
       CometChat.sendMessage(textMessage)
-        .then((message) => {
+        .then( (message) => {
           this.messageInput = "";
           this.messageSending = false;
-
+         
           // this Message Emitted will Be Appended to the existing Message List
           this.actionGenerated.emit({
             type: enums.MESSAGE_COMPOSED,
@@ -363,6 +364,7 @@ export class CometChatMessageComposerComponent implements OnInit, OnChanges {
     } catch (error) {
       logger(error);
     }
+   
     return true;
   }
 

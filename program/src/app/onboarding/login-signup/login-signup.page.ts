@@ -461,24 +461,19 @@ export class LoginSignupPage implements OnInit {
 
     const appSetting = new CometChat.AppSettingsBuilder().setRegion(COMETCHATCONSTANTS.REGION).subscribePresenceForAllUsers().build();
 CometChat.init(COMETCHATCONSTANTS.APP_ID, appSetting).then(() => {
-  debugger
   CometChat.login(res?.UserId.toString(), COMETCHATCONSTANTS.AUTH_KEY).then(
     (user) => {
-      debugger
       console.log("Login Successful:", { user });
     },
     (error) => {
-      debugger
       console.log("Login failed with exception:", { error });
       let user = new CometChat.User(res?.UserId.toString());
       user.setName(res?.Name.toString());
       CometChat.createUser(user, COMETCHATCONSTANTS.AUTH_KEY).then(
         (user: any) => {
-          debugger
           console.log("user created", user);
           // CometChat.login( user?.uid.toString(), COMETCHAT_CONSTANTS.AUTH_KEY).then(
           //   (user) => {
-          //     debugger
           //     console.log("Login Successful:", { user });
           //   }, error => {
           //     console.log("Login failed with exception:", { error });

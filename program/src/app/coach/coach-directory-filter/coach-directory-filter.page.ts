@@ -33,7 +33,6 @@ export class CoachDirectoryFilterPage implements OnInit {
   }
 
   callI(item: string) {
-    debugger
     return this.selectedLang.indexOf(item) != -1;
   }
   getGender(value) {
