@@ -140,11 +140,11 @@
 
 
 									<td>
-										<button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" (click)="initUpdate(s.RowID,s.dailyPractTypeID,s.DailyPractise, s.Text_URL)" data-toggle="modal"  [attr.data-target]="'#updateModal'+s.RowID"></span></button>
+										<button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" (click)="initUpdate(s.RowID,s.dailyPractTypeID,s.DailyPractise, s.Text_URL)" data-toggle="modal"  data-target="#updateModal"></span></button>
 										<button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="deletedaily(s.RowID)"></span></button>
                                     </td>
 
-                                    <div class="modal fade" [attr.id]="'updateModal'+s.RowID" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+                                    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" data-backdrop="false" aria-hidden="true">
                                         <div class="modal-dialog vc70" role="document">
                                           <div class="modal-content cmodal-content">
                                             <div class="modal-header cmodal-header tcenter white">
@@ -184,7 +184,7 @@
                                                       <div class="col-md-8 col-sm-6 col-xs-12 col-centered">
                                                         <label for="patient_name" class="control-label">Text_URL<span class="required">*</span></label>
                                                         <!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea>  -->
-                                                                            <textarea id="message" required="required" class="form-control" name="message" rows="3" [(ngModel)]="updatetextURL"></textarea>
+                                                                            <textarea id="message" required="required" class="form-control" (keyup)="val($event.target.value)" name="message" rows="3" [(ngModel)]="updatetextURL"></textarea>
                                                       </div>
                                                     </div>
                                                   </div>
@@ -192,8 +192,8 @@
 
                                             </div>
                                             <div class="modal-footer cmodal-footer tcenter">
-                                              <button type="button" class="btn fill_now" data-dismiss="modal" (click)="updatedaily(s.RowID)" >UPDATE</button>
-                                              <button type="button" class="btn fill_later" data-dismiss="modal" >BACK</button>
+                                              <button type="button" class="btn fill_now" (click)="updatedaily(s.RowID)" >UPDATE</button>
+                                              <button type="button" class="btn fill_later" data-dismiss="modal">BACK</button>
                                             </div>
                                           </div>
                                         </div>
