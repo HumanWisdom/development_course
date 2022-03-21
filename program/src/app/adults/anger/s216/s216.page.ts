@@ -307,7 +307,7 @@ export class S216Page implements OnInit,AfterViewInit {
     
     // now init one as an example
     var cap = new CircleAudioPlayer({
-      audio: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/anger/audios/anger+3.6.mp3',
+      audio: 'https://d1tenzemoxuh75.cloudfront.net/anger/audios/anger+3.6.mp3',
       //audio: 'assets/audios/vincent.mp3',
       size: 120,
       borderWidth: 8
