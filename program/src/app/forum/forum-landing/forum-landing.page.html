@@ -175,7 +175,7 @@
                   </div>
                 </div> 
 
-                <div class="row" *ngFor="let i of item.child">
+                <div class="row" *ngFor="let i of getOrderbyLatestPost(item.child)">
                   <div class="col-md-2 col-sm-2 col-xs-2"></div>
 
                   <div class="col-md-10 col-sm-10 col-xs-10">
@@ -184,7 +184,7 @@
                         <h4 class="txt127 commenter mtb0px">
                           {{i.UserName}}
                           <span class="txt130">
-                            {{i.PostDate}}
+                            {{getLocalPostDate(i.PostDate) | date: 'MM/dd/yyyy  hh:mm:ss a' }}
                           </span>
                         </h4>
                         <h4 class="txt120 mtb0px">
