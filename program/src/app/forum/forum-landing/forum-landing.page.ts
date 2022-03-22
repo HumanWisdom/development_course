@@ -66,6 +66,9 @@ list(data){
       }
       
     });
+    temp.sort(function (a, b) {
+      return b.PostID - a.PostID;
+     });
     this.posts=temp;    
   }
 }
@@ -98,9 +101,7 @@ postnavigate(item){
 getAllposts(index){
   this.serivce.getposts(this.selectthread,null).subscribe((res)=>{
     if(res){
-      
       this.list(res);
-      
     }
   });
 }
@@ -171,5 +172,16 @@ onChange(e){
       console.log(error);
     });
   }
+  getLocalPostDate(date:string){
+    var dateLocal = new Date(date);
+    var newDate = new Date(dateLocal.getTime() - dateLocal.getTimezoneOffset()*60*1000);
+    return newDate;
+  }
 
+  getOrderbyLatestPost(childs){
+    childs.sort(function (a, b) {
+        return b.PostID - a.PostID;
+       });
+return childs;
+  }
 }
