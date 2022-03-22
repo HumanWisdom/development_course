@@ -83,7 +83,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -92,7 +92,7 @@ submitProgress(){
  
   this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-
+  this.router.navigate(['/adults/criticism/s379'])
   this.service.submitProgressAv({
     "ScrNumber":this.screenNumber,
     "UserId":this.userId,
@@ -103,17 +103,17 @@ submitProgress(){
     "avDuration":this.avDuration
   }).subscribe(res=>
     {
-      console.log(res)
+      
       this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
     })
   
-  this.router.navigate(['/criticism/s379'])
+ 
  
 
 }
 prev(){
-  this.router.navigate(['/criticism/s377'])
+  this.router.navigate(['/adults/criticism/s377'])
 
 }
 ngOnDestroy(){

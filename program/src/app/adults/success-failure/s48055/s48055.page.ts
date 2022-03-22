@@ -42,10 +42,10 @@ export class S48055Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/success-failure/s48056'])
+    this.router.navigate(['/adults/success-failure/s48056'])
   }
   prev(){
-    this.router.navigate(['/success-failure/s48054'])
+    this.router.navigate(['/adults/success-failure/s48054'])
 
   }
 

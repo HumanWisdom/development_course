@@ -40,7 +40,7 @@ export class S321p1Page implements OnInit {
  
 
   ngOnInit() {
-    //console.log("response",JSON.parse(sessionStorage.getItem("r321p1")))
+    
    
     //if(!sessionStorage.getItem("r321p1"))
     this.r321p1=sessionStorage.getItem("r321p1")
@@ -201,7 +201,7 @@ export class S321p1Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -225,7 +225,7 @@ export class S321p1Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r321p1",this.r321p1)
@@ -245,19 +245,19 @@ export class S321p1Page implements OnInit {
         "Resp":this.r321p1
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s321p2'])
+          this.router.navigate(['/adults/conditioning/s321p2'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s321p2'])
+          this.router.navigate(['/adults/conditioning/s321p2'])
         })
    }
 
    else{
-    this.router.navigate(['/conditioning/s321p2'])
+    this.router.navigate(['/adults/conditioning/s321p2'])
 
    }
    
@@ -267,12 +267,12 @@ export class S321p1Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/conditioning/s321'])
+    this.router.navigate(['/adults/conditioning/s321'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

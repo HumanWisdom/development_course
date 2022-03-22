@@ -40,7 +40,7 @@ export class CoursenotePage implements OnInit {
       "Notes":this.content,
       "UserId":this.userId
 
-    }).subscribe(res=>console.log(res),
+    }).subscribe((res) => {},
     error=>{
       console.log(error)
     },

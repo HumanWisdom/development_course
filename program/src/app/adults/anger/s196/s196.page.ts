@@ -60,7 +60,7 @@ export class S196Page implements OnInit,AfterViewInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -86,7 +86,7 @@ export class S196Page implements OnInit,AfterViewInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    this.router.navigate(['/adults/anger/s197'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -97,15 +97,15 @@ export class S196Page implements OnInit,AfterViewInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
-    this.router.navigate(['/anger/s197'])
+    // this.router.navigate(['/adults/anger/s197'])
    
 
   }
   previous(){
-    this.router.navigate(['/anger/s195'])
+    this.router.navigate(['/adults/anger/s195'])
 
 
   }

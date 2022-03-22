@@ -72,7 +72,7 @@ export class S53125Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -80,6 +80,7 @@ export class S53125Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
+    this.router.navigate(['/adults/communication/s53126'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -89,14 +90,14 @@ export class S53125Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
-    this.router.navigate(['/communication/s53126'])
+   
     
 
   }
   prev(){
-    this.router.navigate(['/communication/s53124'])
+    this.router.navigate(['/adults/communication/s53124'])
     
   }
 

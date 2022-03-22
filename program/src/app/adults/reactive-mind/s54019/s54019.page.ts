@@ -69,7 +69,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -81,6 +81,8 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/reactive-mind/s54020'])
+
     this.service.submitProgressText({
      
       "ScrNumber":this.screenNumber,
@@ -92,17 +94,16 @@ createScreen(){
     }).subscribe(res=>
       {
 
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
 
       },
       error=>{console.log(error)},
       ()=>{
-        // this.router.navigate(['/reactive-mind/s54020'])        
+        // this.router.navigate(['/adults/reactive-mind/s54020'])        
       })
-      this.router.navigate(['/reactive-mind/s54020'])
-
+     
   }
 
  

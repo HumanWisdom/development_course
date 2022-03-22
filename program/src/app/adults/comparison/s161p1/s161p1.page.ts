@@ -38,17 +38,17 @@ export class S161p1Page implements OnInit {
     })
    /* this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=res.PointsScored
       this.overallPercentage=res.overallPercentage
     })*/
 
   }
   submitProgress(){
-    this.router.navigate(['/comparison/s161p2'])
+    this.router.navigate(['/adults/comparison/s161p2'])
   }
   prev(){
-    this.router.navigate(['/comparison/s160p3'])
+    this.router.navigate(['/adults/comparison/s160p3'])
 
   }
 

@@ -49,10 +49,10 @@ export class S366Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/criticism/s366p0'])
+    this.router.navigate(['/adults/criticism/s366p0'])
   }
   prev(){
-    this.router.navigate(['/criticism/s365'])
+    this.router.navigate(['/adults/criticism/s365'])
   }
 
 

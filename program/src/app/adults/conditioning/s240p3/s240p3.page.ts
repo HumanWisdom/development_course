@@ -145,7 +145,7 @@ export class S240p3Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -170,26 +170,26 @@ export class S240p3Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/conditioning/s240p2'])
+    this.router.navigate(['/adults/conditioning/s240p2'])
 
 
   }
 
   goNext(){
-    this.router.navigate(['/conditioning/s240p4'])
+    this.router.navigate(['/adults/conditioning/s240p4'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

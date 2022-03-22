@@ -48,7 +48,7 @@ export class S33016Page implements OnInit {
   "module-id":""},
   {"no":7,
   "heading":"Stress",
-  "text":"80% of people remport being stressed. We explore the origins of stress in our thinking, and how we can respond to the challenges of life with calm.",
+  "text":"80% of people report being stressed. We explore the origins of stress in our thinking, and how we can respond to the challenges of life with calm.",
   "link":"/adults/stress",
   "linkText":"",
   "module-id":""},
@@ -98,6 +98,12 @@ export class S33016Page implements OnInit {
   "heading":"Leadership",
   "text":"Enlightened leaders, who lead with wisdom, get the best out of their employees, create a great working culture, and contribute to the success of all organisations. We explore the many ways wisdom can help you do this, whatever your role may be.",
   "link":"/adults/leadership",
+  "linkText":"",
+  "module-id":""},
+  {"no":16,
+  "heading":"Work",
+  "text":"We spend so much of our time at work. We explore how we can use our wisdom to be happy at work, manage the challenges we face, have great relationships, and the difference a positive attitude can make.",
+  "link":"/adults/work",
   "linkText":"",
   "module-id":""},
 
@@ -155,7 +161,7 @@ createScreen(){
     "ScreenNo":this.screenNumber
   }).subscribe(res=>
     {
-      console.log(res)
+      
     })
   
 
@@ -171,6 +177,7 @@ receiveBookmark(e)
 }
 
   submitProgress(){
+    this.router.navigate(['/adults/five-circles/s33017'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -180,20 +187,20 @@ receiveBookmark(e)
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s3301634'])
+        //this.router.navigate(['/adults/conditioning/s3301634'])
       })
-      this.router.navigate(['/five-circles/s33017'])
+     
     
 
   }
   prev(){
-    this.router.navigate(['/five-circles/s33015'])
+    this.router.navigate(['/adults/five-circles/s33015'])
 
   }
 

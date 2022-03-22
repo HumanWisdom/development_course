@@ -50,7 +50,7 @@ export class ReflectionComponent implements OnInit {
     else{
       this.sendResponse.emit(null)
     }
-    //console.log(this.reflectionResponse)
+    
     
 
   }

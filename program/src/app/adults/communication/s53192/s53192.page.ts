@@ -42,10 +42,10 @@ export class S53192Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/communication/s53193'])
+    this.router.navigate(['/adults/communication/s53193'])
   }
   prev(){
-    this.router.navigate(['/communication/s53191'])
+    this.router.navigate(['/adults/communication/s53191'])
 
   }
 

@@ -1,38 +1,46 @@
-<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
-<app-oneline-text [bg]="bg">
-  <form>
-    <h1 class="txt8 fw_500 oneliner_txt_title">
-        Key steps to change:
-    </h1>
-    <div class="clearfix"></div>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
 
-    <!-- <h3 class="txt8">
-      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
-    </h3> -->
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      01. Observe the fact (e.g. anxiety)
-    </h3>
+<!-- page content -->
+<div class="right_col ml0 purple_blue_w6" role="main">				
+  <!-- Class -->  
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">        
+        <div class="x_panel cxpanel center_flex dflexblock">
+          <div class="x_content c_white fwunset tcenter">
+            <form>              
+              <h5 class="txt1">
+                Key steps to change:
+              </h5>
+              <div class="clearfix"></div>
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      02. Accept it without judgement (It's not a bad feeling, you are not a bad person)
-    </h3>
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>              
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      03. Question what lies behind that feeling (e.g fear)
-    </h3>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+             
+              <!-- /multistep wizard -->  
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      04. Explore the deeper layers of your thinking
-    </h3>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
 
-    <h3 class="txt8 oneliner_txt_pointer">        
-      05. Keep noticing and learning
-    </h3>
+<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
 
-    <h3 class="txt8 oneliner_txt_pointer">
-      06. You find something has shifted, and you are no longer anxious
-      </h3>
-  </form>          
-</app-oneline-text>
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

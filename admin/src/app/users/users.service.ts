@@ -338,5 +338,20 @@ path="https://www.humanwisdom.info/api"
   getBlog(): Observable<any> {
     return this.http.get(this.path + `/GetBlogs`)
   }
+  getdailypracticetype(): Observable<any> {
+    return this.http.get(this.path + `/GetPractiseType`)
+  }
+  getdailypractice(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise`)
+  }
+  adddailypractice(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddDailyPractise', data)
+  }
+  deletedailypractice(n: Number): Observable<any> {
+    return this.http.post(this.path + `/DelDailyPractise?PractiseID=${n}`, null)
+  }
+  updatedailypractice(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddDailyPractise', data)
+  }
 }
 

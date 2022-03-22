@@ -63,7 +63,7 @@ export class S18019Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -89,7 +89,7 @@ export class S18019Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/adults/emotional-needs/s18020'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -100,17 +100,17 @@ export class S18019Page implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-      this.router.navigate(['/emotional-needs/s18020'])
+     
    
  
   }
   prev(){
-    this.router.navigate(['/emotional-needs/s18018'])
+    this.router.navigate(['/adults/emotional-needs/s18018'])
  
  
   }

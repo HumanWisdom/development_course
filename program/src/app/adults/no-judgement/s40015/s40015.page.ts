@@ -62,7 +62,7 @@ export class S40015Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -103,15 +103,15 @@ export class S40015Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r40015"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/no-judgement/s40015p1'])
+        this.router.navigate(['/adults/no-judgement/s40015p1'])
     
       },
       ()=>{
-        this.router.navigate(['/no-judgement/s40015p1'])
+        this.router.navigate(['/adults/no-judgement/s40015p1'])
       })
     
 
@@ -121,7 +121,7 @@ export class S40015Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/no-judgement/s40014'])
+    this.router.navigate(['/adults/no-judgement/s40014'])
   }
   
   ngOnDestroy(){

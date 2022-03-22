@@ -34,14 +34,14 @@ export class SubscriptionPaymentPage implements OnInit {
     let obj = {
       UserID: userId,
       ProgramID: '9',
-      PlanId: plan === 'Annual' ? '2' : '1',
+      PlanId: plan === 'Annual' || 'Yearly' ? '2' : '1',
       DiscountCode: parseInt(couponid) ?? 0,
       Quantity: quan,
       AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : ''
     }
     this.service.stripe(obj)
       .subscribe(res => {
-        console.log(res)
+        
         this.stripeId = res;
         this.enable = true;
         // this.keyList=res
@@ -90,6 +90,7 @@ export class SubscriptionPaymentPage implements OnInit {
             if (result.error) {
               alert(result.error.message);
             } else {
+              localStorage.setItem('personalised', 'F');
               alert('Your Payment Is Successfully Submitted');
               this.router.navigate(['/onboarding/myprogram'])
             }

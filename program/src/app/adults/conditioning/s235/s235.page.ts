@@ -14,13 +14,13 @@ export class S235Page implements OnInit,OnDestroy {
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/conditioning/audios/con+1.1.mp3'
-  colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 "]
+  colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
         "Nurture a quiet mind",
         "Art of enquiry",
-        " How the mind works",
+        "Conditioning",
         "Understand emotions",
-        "conditioning"
+        "Living with wisdom"
       ]
 
   transcriptPage="conditioning/s235t"
@@ -70,7 +70,7 @@ export class S235Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -96,7 +96,7 @@ export class S235Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+   this.router.navigate(['/adults/conditioning/s236'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,17 +107,17 @@ export class S235Page implements OnInit,OnDestroy {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s236'])
+    
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s234'])
+    this.router.navigate(['/adults/conditioning/s234'])
  
  
   }

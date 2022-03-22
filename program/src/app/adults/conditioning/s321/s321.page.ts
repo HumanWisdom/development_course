@@ -357,7 +357,7 @@ export class S321Page implements OnInit {
         "ScreenNo":this.screenNumber
       }).subscribe(res=>
         {
-          console.log(res)
+          
         })
       
   
@@ -398,8 +398,8 @@ export class S321Page implements OnInit {
     submitProgress(){
       this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
-   
+    
+   this.router.navigate(['/adults/conditioning/s321p1'])
 
       var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5,this.s6]
       this.option=optionT.join()
@@ -410,18 +410,18 @@ export class S321Page implements OnInit {
         "UserId":this.userId, 
         "timeSpent":this.totalTime,
         "OptionIDs":this.option})
-        .subscribe(res=>console.log(res),
+        .subscribe((res) => {},
         error=>{
           console.log(error)
         },
         ()=>{
-          this.router.navigate(['/conditioning/s321p1'])
+          
         })
   
   
     }
     prev(){
-      this.router.navigate(['/conditioning/s320'])
+      this.router.navigate(['/adults/conditioning/s320'])
     }
     
     ngOnDestroy(){

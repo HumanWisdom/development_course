@@ -26,7 +26,7 @@ export class SubscriptionS09V02Page implements OnInit {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.service.myprogram(userId)
       .subscribe(res => {
-        console.log(res)
+        
         this.myprograms = res.filter((d) => d['Active'] === 1)
         this.notmyprograms = res.filter((d) => d['Active'] === 0)
         this.dc.detectChanges()
@@ -50,7 +50,7 @@ export class SubscriptionS09V02Page implements OnInit {
 
     this.service.sendinvite(obj)
       .subscribe(res => {
-        console.log(res)
+        
         alert('Successfully Invited');
       },
         (error: HttpErrorResponse) => {
@@ -80,7 +80,7 @@ export class SubscriptionS09V02Page implements OnInit {
       "Myself": this.myself
     })
       .subscribe(res => {
-        console.log(res)
+        
 
       })
   }

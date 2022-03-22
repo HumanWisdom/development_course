@@ -61,7 +61,7 @@ createScreen(){
     "ScreenNo":this.screenNumber
   }).subscribe(res=>
     {
-      console.log(res)
+      
     })
   
 
@@ -103,20 +103,20 @@ submitProgress(e){
     "Resp":JSON.parse(sessionStorage.getItem("r343"))
   }).subscribe(res=>
     {
-      console.log(res)
+      
     },
     error=>{
       console.log(error)
-      this.router.navigate(['/criticism/s344'])
+      this.router.navigate(['/adults/criticism/s344'])
     },
     ()=>{
-      this.router.navigate(['/criticism/s344'])
+      this.router.navigate(['/adults/criticism/s344'])
     })
   
 
  }
  else{
-  this.router.navigate(['/criticism/s344'])
+  this.router.navigate(['/adults/criticism/s344'])
 
  }
   
@@ -124,7 +124,7 @@ submitProgress(e){
 }
 
 previous(){
-  this.router.navigate(['/criticism/s342'])
+  this.router.navigate(['/adults/criticism/s342'])
 }
 
 ngOnDestroy(){

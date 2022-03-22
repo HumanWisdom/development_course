@@ -42,11 +42,11 @@ export class S41019p8Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/questions-are-key/s41020'])
+    this.router.navigate(['/adults/questions-are-key/s41020'])
 
   }
   prev(){
-    this.router.navigate(['/questions-are-key/s41019p7'])
+    this.router.navigate(['/adults/questions-are-key/s41019p7'])
 
   }
 

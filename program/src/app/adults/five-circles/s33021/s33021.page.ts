@@ -52,11 +52,11 @@ export class S33021Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/five-circles/s33022'])
+    this.router.navigate(['/adults/five-circles/s33022'])
 
   }
   prev(){
-    this.router.navigate(['/five-circles/s33020'])
+    this.router.navigate(['/adults/five-circles/s33020'])
 
   }
 

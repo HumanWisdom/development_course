@@ -147,7 +147,7 @@ export class S61109Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -171,7 +171,7 @@ export class S61109Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r61109",this.r61109)
@@ -189,25 +189,25 @@ export class S61109Page implements OnInit {
         "Resp":this.r61109
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/loneliness/s61110'])
+          this.router.navigate(['/adults/loneliness/s61110'])
         },
         ()=>{
-          this.router.navigate(['/loneliness/s61110'])
+          this.router.navigate(['/adults/loneliness/s61110'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/loneliness/s61108'])
+    this.router.navigate(['/adults/loneliness/s61108'])
 
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

@@ -72,7 +72,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -81,9 +81,10 @@ createScreen(){
  
 
   submitProgress(){
-    //console.log("entered pleasure")
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/pleasure/s20003'])
     this.service.submitProgressText({
      
       "ScrNumber":this.screenNumber,
@@ -95,16 +96,16 @@ createScreen(){
     }).subscribe(res=>
       {
 
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
 
       },
       error=>{console.log(error)},
       ()=>{
-        // this.router.navigate(['/pleasure/s20003'])        
+        // this.router.navigate(['/adults/pleasure/s20003'])        
       })
-      this.router.navigate(['/pleasure/s20003'])
+      
   }
 
   goNext(){

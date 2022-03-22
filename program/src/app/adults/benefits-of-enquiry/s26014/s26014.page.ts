@@ -61,7 +61,7 @@ export class S26014Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -91,6 +91,7 @@ export class S26014Page implements OnInit {
    sessionStorage.setItem("r26014",JSON.stringify(e))
    this.r26014=JSON.parse(sessionStorage.getItem("r26014"))
   
+   this.router.navigate(['/adults/benefits-of-enquiry/s26015'])
     this.service.submitProgressReflection({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,15 +103,15 @@ export class S26014Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r26014"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/benefits-of-enquiry/s26015'])
+        this.router.navigate(['/adults/benefits-of-enquiry/s26015'])
     
       },
       ()=>{
-        this.router.navigate(['/benefits-of-enquiry/s26015'])
+       
       })
     
 
@@ -120,7 +121,7 @@ export class S26014Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/benefits-of-enquiry/s26012'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26012'])
   }
   
   ngOnDestroy(){

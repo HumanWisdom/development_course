@@ -71,7 +71,7 @@ export class S203Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -81,6 +81,7 @@ export class S203Page implements OnInit,OnDestroy {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/anger/s204'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -90,16 +91,16 @@ export class S203Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       }
       )
    
-      this.router.navigate(['/anger/s204'])
+      // this.router.navigate(['/adults/anger/s204'])
     
 
   }
   previous(){
-    this.router.navigate(['/anger/s202'])
+    this.router.navigate(['/adults/anger/s202'])
     
   }
   ngOnDestroy(){

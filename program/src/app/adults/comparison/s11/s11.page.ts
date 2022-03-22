@@ -69,7 +69,7 @@ export class S11Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -104,7 +104,7 @@ export class S11Page implements OnInit {
     sessionStorage.setItem("sessionOption",JSON.stringify(this.option))
   
     //this.option.push(optId)
-    //console.log(this.option)
+    
     //this.sendOption.push(this.option[this.option.length-1])
   }
  
@@ -112,6 +112,8 @@ export class S11Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/adults/comparison/s13'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -119,8 +121,8 @@ export class S11Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res))
-      this.router.navigate(['/comparison/s13'])
+      .subscribe((res) => {});
+     
 
 
   }
@@ -134,7 +136,7 @@ export class S11Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/comparison/s10'])
+    this.router.navigate(['/adults/comparison/s10'])
   }
   
   ngOnDestroy(){

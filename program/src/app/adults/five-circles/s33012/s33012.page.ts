@@ -119,7 +119,7 @@ createScreen(){
     "ScreenNo":this.screenNumber
   }).subscribe(res=>
     {
-      console.log(res)
+      
     })
   
 
@@ -136,6 +136,7 @@ receiveBookmark(e)
 }
 
   submitProgress(){
+    this.router.navigate(['/adults/five-circles/s33013'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -145,20 +146,20 @@ receiveBookmark(e)
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s3301234'])
+        //this.router.navigate(['/adults/conditioning/s3301234'])
       })
-      this.router.navigate(['/five-circles/s33013'])
+     
     
 
   }
   prev(){
-    this.router.navigate(['/five-circles/s33011'])
+    this.router.navigate(['/adults/five-circles/s33011'])
 
   }
 

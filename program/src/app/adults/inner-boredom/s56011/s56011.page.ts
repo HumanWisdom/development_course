@@ -74,7 +74,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -94,20 +94,20 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
-      this.router.navigate(['/inner-boredom/s56012'])
+      this.router.navigate(['/adults/inner-boredom/s56012'])
     
 
   }
   prev(){
-    this.router.navigate(['/inner-boredom/s56010'])
+    this.router.navigate(['/adults/inner-boredom/s56010'])
 
   }
   

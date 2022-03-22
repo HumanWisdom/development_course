@@ -50,11 +50,11 @@ export class S416Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/criticism/s417'])
+    this.router.navigate(['/adults/criticism/s417'])
 
   }
   prev(){
-    this.router.navigate(['/criticism/s415'])
+    this.router.navigate(['/adults/criticism/s415'])
   }
 
 

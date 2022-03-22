@@ -57,7 +57,7 @@ export class S57035Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(41).Question
@@ -82,7 +82,7 @@ export class S57035Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,12 +131,13 @@ export class S57035Page implements OnInit {
     }
     console.log(this.sendOption)
     sessionStorage.setItem("sessionOption57035",JSON.stringify(this.sendOption))
-   //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+   
  
   }
  
 
   submitProgress(){
+    this.router.navigate(['/adults/nature-of-i/s57036'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -146,17 +147,17 @@ export class S57035Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
 
 
     }
       
    
-      this.router.navigate(['/nature-of-i/s57036'])
+     
 
   }
   prev(){
-    this.router.navigate(['/nature-of-i/s57034'])
+    this.router.navigate(['/adults/nature-of-i/s57034'])
 
 
   }

@@ -188,7 +188,7 @@ export class S48106Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -212,7 +212,7 @@ export class S48106Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r48106",this.r48106)
@@ -230,25 +230,25 @@ export class S48106Page implements OnInit {
         "Resp":this.r48106
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/success-failure/s48107'])
+          this.router.navigate(['/adults/success-failure/s48107'])
         },
         ()=>{
-          this.router.navigate(['/success-failure/s48107'])
+          this.router.navigate(['/adults/success-failure/s48107'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/success-failure/s48105'])
+    this.router.navigate(['/adults/success-failure/s48105'])
 
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

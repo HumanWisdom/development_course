@@ -70,7 +70,7 @@ export class S33019Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,15 +114,15 @@ export class S33019Page implements OnInit {
         "Resp":this.r33019
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/five-circles/s33020'])
+          this.router.navigate(['/adults/five-circles/s33020'])
 
         },
         ()=>{
-          this.router.navigate(['/five-circles/s33020'])
+          this.router.navigate(['/adults/five-circles/s33020'])
         })
    
 
@@ -134,12 +134,12 @@ export class S33019Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/five-circles/s33018'])
+    this.router.navigate(['/adults/five-circles/s33018'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

@@ -69,7 +69,7 @@ export class S48070Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,22 +113,22 @@ export class S48070Page implements OnInit {
         "Resp":this.r48070
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/success-failure/s48071'])
+          this.router.navigate(['/adults/success-failure/s48071'])
 
         },
         ()=>{
-          this.router.navigate(['/success-failure/s48071'])
+          this.router.navigate(['/adults/success-failure/s48071'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/success-failure/s48069'])
+    this.router.navigate(['/adults/success-failure/s48069'])
   }
   
   ngOnDestroy(){

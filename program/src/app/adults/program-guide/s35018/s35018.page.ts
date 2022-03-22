@@ -52,11 +52,11 @@ export class S35018Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/program-guide/s35019'])
+    this.router.navigate(['/adults/program-guide/s35019'])
 
   }
   prev(){
-    this.router.navigate(['/program-guide/s35017'])
+    this.router.navigate(['/adults/program-guide/s35017'])
 
   }
 

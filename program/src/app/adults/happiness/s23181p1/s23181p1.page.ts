@@ -313,7 +313,7 @@ export class S23181p1Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -363,13 +363,13 @@ export class S23181p1Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
       this.router.navigate(['/adults/happiness/s23181p2'])
 
 
   }
   prev(){
-    this.router.navigate(['/happiness/s23181'])
+    this.router.navigate(['/adults/happiness/s23181'])
 
   }
   

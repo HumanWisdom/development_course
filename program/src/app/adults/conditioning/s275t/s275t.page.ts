@@ -17,7 +17,7 @@ export class S275tPage implements OnInit {
   bg="conditioning_w8"
   bookmark=0
   path=this.router.url
-  audioPage="/conditioning/s275"
+  audioPage="/adults/conditioning/s275"
   toc="/conditioning/s232"
 
   avDuration=localStorage.getItem("avDuration275")
@@ -59,6 +59,7 @@ export class S275tPage implements OnInit {
     sessionStorage.setItem("bookmark275",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+   this.router.navigate(['/adults/conditioning/s276'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -69,12 +70,12 @@ export class S275tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
  
-    this.router.navigate(['/conditioning/s276'])
+    
   }
   prev(){
-    this.router.navigate(['/conditioning/s274'])
+    this.router.navigate(['/adults/conditioning/s274'])
   }
 }

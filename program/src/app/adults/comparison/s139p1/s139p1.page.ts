@@ -39,17 +39,17 @@ export class S139p1Page implements OnInit {
     })
     /*this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=res.PointsScored
       this.overallPercentage=res.overallPercentage
     })*/
 
   }
   submitProgress(){
-    this.router.navigate(['/comparison/s139p2'])
+    this.router.navigate(['/adults/comparison/s139p2'])
   }
   prev(){
-    this.router.navigate(['/comparison/s138'])
+    this.router.navigate(['/adults/comparison/s138'])
 
   }
 

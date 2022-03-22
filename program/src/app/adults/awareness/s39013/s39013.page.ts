@@ -61,7 +61,7 @@ export class S39013Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -90,6 +90,8 @@ export class S39013Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
    sessionStorage.setItem("r39013",JSON.stringify(e))
    this.r39013=JSON.parse(sessionStorage.getItem("r39013"))
+
+   this.router.navigate(['/adults/awareness/s39014'])
   
     this.service.submitProgressReflection({
       "ScrNumber":this.screenNumber,
@@ -102,25 +104,25 @@ export class S39013Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r39013"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/awareness/s39014'])
+        this.router.navigate(['/adults/awareness/s39014'])
     
       },
       ()=>{
-        this.router.navigate(['/awareness/s39014'])
+        //this.router.navigate(['/adults/awareness/s39014'])
       })
     
-
+      
   
     
 
   }
 
   previous(){
-    this.router.navigate(['/awareness/s39012'])
+    this.router.navigate(['/adults/awareness/s39012'])
   }
   
   ngOnDestroy(){

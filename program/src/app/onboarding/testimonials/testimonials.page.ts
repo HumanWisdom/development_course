@@ -25,7 +25,7 @@ export class TestimonialsPage implements OnInit {
     
   this.service.getTestimonials().subscribe(res=>
     {
-      console.log(res)
+      
       this.testimonialList=res
      
       

@@ -57,7 +57,7 @@ export class S27Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(41).Question
@@ -82,7 +82,7 @@ export class S27Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,7 +131,7 @@ export class S27Page implements OnInit {
     }
     console.log(this.sendOption)
     sessionStorage.setItem("sessionOption27",JSON.stringify(this.sendOption))
-   //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+   
  
   }
  
@@ -146,17 +146,17 @@ export class S27Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
 
 
     }
       
    
-      this.router.navigate(['/comparison/s29'])
+      this.router.navigate(['/adults/comparison/s29'])
 
   }
   prev(){
-    this.router.navigate(['/comparison/s26'])
+    this.router.navigate(['/adults/comparison/s26'])
 
 
   }

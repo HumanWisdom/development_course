@@ -59,6 +59,7 @@ export class S56037tPage implements OnInit {
     sessionStorage.setItem("bookmark56037",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    this.router.navigate(['/adults/inner-boredom/s56038'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -69,13 +70,13 @@ export class S56037tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
  
-    this.router.navigate(['/inner-boredom/s56038'])
+   
   }
   prev(){
-    this.router.navigate(['/inner-boredom/s56036'])
+    this.router.navigate(['/adults/inner-boredom/s56036'])
   }
 
 }

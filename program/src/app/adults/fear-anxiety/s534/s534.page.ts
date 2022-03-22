@@ -47,7 +47,7 @@ export class S534Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -72,21 +72,21 @@ export class S534Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/fear-anxiety/s433'])
+        //this.router.navigate(['/adults/fear-anxiety/s433'])
       })
     
 
   }
 
   goNext(){
-    this.router.navigate(['/fear-anxiety/s535'])
+    this.router.navigate(['/adults/fear-anxiety/s535'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

@@ -52,11 +52,11 @@ export class S42021Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/without-language/s42022'])
+    this.router.navigate(['/adults/without-language/s42022'])
 
   }
   prev(){
-    this.router.navigate(['/without-language/s42020'])
+    this.router.navigate(['/adults/without-language/s42020'])
 
   }
 

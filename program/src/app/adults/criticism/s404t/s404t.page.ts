@@ -62,6 +62,7 @@ export class S404tPage implements OnInit {
     sessionStorage.setItem("bookmark404",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    this.router.navigate(['/adults/criticism/s405'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -72,13 +73,13 @@ export class S404tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
  
-    this.router.navigate(['/criticism/s405'])
+    
   }
   prev(){
-    this.router.navigate(['/criticism/s403'])
+    this.router.navigate(['/adults/criticism/s403'])
   }
   
 

@@ -12,7 +12,7 @@ export class S35009Page implements OnInit {
   title="Program Features "
   content=[{"no":1,
   "heading":"Online Journal",
-  "text":"A record of your reflections as you go through the program, either within a module, or just a thought you had. We also prompt you with questions for the day e.g. What are you grateful for?",
+  "text":"A record of your reflections as you go through the program, either within a module, or just a thought you had. There are also guided questions on a topic, and a question of the day.",
   "link":"/adults/journal",
   "linkText":"",
   "module-id":""},
@@ -25,20 +25,20 @@ export class S35009Page implements OnInit {
   "module-id":""},
   */
   {"no":2,
-  "heading":"Forum",  
+  "heading":"Wisdom Community",  
   "text":"Connect with others on our online forum. Share your insights with others. Make new friends.",
-  "link":"/forum",
+  "link":"/wisdom-community",
   "linkText":"",
   "module-id":""},
   {"no":3,
   "heading":"Wisdom Survey",
-  "text":"Keep track of your progress(wisdom score) as you do the program.",
+  "text":"A series of 10 questions to Keep track of your progress (wisdom score) as you do the program.",
   "link":"/adults/wisdom-survey",
   "linkText":"",
   "module-id":""},
   {"no":4,
   "heading":"Bookmarks",
-  "text":"Bookmark individual slides and see them in your dashboard.",
+  "text":"Bookmark individual screens and see them in your dashboard.",
   "link":"/adults/bookmarks",
   "linkText":"",
   "module-id":""},
@@ -58,7 +58,7 @@ export class S35009Page implements OnInit {
   */
   {"no":6,
   "heading":"Wisdom Stories",
-  "text":"Specially curated stories from around the world where wisdom was applied to address common life challenges. You can also contribute your own stories.",
+  "text":"Specially curated stories from around the world where wisdom was applied to address common life challenges. Contribute your own stories.",
   "link":"/adults/wisdom-stories",
   "linkText":"",
   "module-id":""},
@@ -81,21 +81,21 @@ export class S35009Page implements OnInit {
   "linkText":"",
   "module-id":""},
   {"no":10,
-  "heading":"Wisdom Cafe (Coming)",
-  "text":"These are small moderated group discussions which we will curate where you can discuss a particular topic on the program",
-  "link":"/adults/wisdom-cafe",
-  "linkText":"",
-  "module-id":""},
-  {"no":11,
   "heading":"Podcasts",
   "text":"These are a mix of commentaries and conversations on popular subjects for you to explore.",
   "link":"/adults/framework-v1/podcast-toc",
   "linkText":"",
   "module-id":""},
-  {"no":12,
-  "heading":"Wisdom Shorts (Coming)",
-  "text":"Short videos, 1 minute long, which explore 1 nugget of wisdom.",
+  {"no":11,
+  "heading":"Wisdom Shorts",
+  "text":"Short videos - which explore a nugget of wisdom.",
   "link":"/adults/framework-v1/wisdom-shorts",
+  "linkText":"",
+  "module-id":""},
+  {"no":12,
+  "heading":"Blog",
+  "text":"Read and comment on our regular blog articles",
+  "link":"/adults/blog",
   "linkText":"",
   "module-id":""},
 
@@ -154,7 +154,7 @@ createScreen(){
     "ScreenNo":this.screenNumber
   }).subscribe(res=>
     {
-      console.log(res)
+      
     })
   
 
@@ -171,6 +171,7 @@ receiveBookmark(e)
 
 
   submitProgress(){
+    this.router.navigate(['/adults/program-guide/s35009p1'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -180,20 +181,20 @@ receiveBookmark(e)
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s3500934'])
+        //this.router.navigate(['/adults/conditioning/s3500934'])
       })
-      this.router.navigate(['/program-guide/s35011'])
+     
     
 
   }
   prev(){
-    this.router.navigate(['/program-guide/s35008'])
+    this.router.navigate(['/adults/program-guide/s35008'])
 
   }
 

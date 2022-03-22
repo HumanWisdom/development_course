@@ -70,7 +70,7 @@ export class S22029Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,26 +114,26 @@ export class S22029Page implements OnInit {
         "Resp":this.r22029
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/meditation/s22030'])
+          this.router.navigate(['/adults/meditation/s22030'])
 
         },
         ()=>{
-          this.router.navigate(['/meditation/s22030'])
+          this.router.navigate(['/adults/meditation/s22030'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/meditation/s22028'])
+    this.router.navigate(['/adults/meditation/s22028'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

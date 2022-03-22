@@ -254,7 +254,7 @@ export class S230Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -342,11 +342,12 @@ export class S230Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  
  
 
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5]
     this.option=optionT.join()
+    this.router.navigate(['/adults/anger/s230p1'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -354,19 +355,19 @@ export class S230Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res),
+      .subscribe((res) => {},
       error=>{
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/anger/s230p1'])
+        //this.router.navigate(['/adults/anger/s230p1'])
       })
-
+      // this.router.navigate(['/adults/anger/s230p1'])
 
   }
   
   previous(){
-    this.router.navigate(['/anger/s229'])
+    this.router.navigate(['/adults/anger/s229'])
 
   }
   ngOnDestroy(){

@@ -42,10 +42,10 @@ export class S63078Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/living-with-peace/s63079'])
+    this.router.navigate(['/adults/living-with-peace/s63079'])
   }
   prev(){
-    this.router.navigate(['/living-with-peace/s63077'])
+    this.router.navigate(['/adults/living-with-peace/s63077'])
 
   }
 

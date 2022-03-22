@@ -82,7 +82,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -97,7 +97,7 @@ receiveAvDuration(e){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    this.router.navigate(['/adults/meditation/s22046'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,17 +108,17 @@ receiveAvDuration(e){
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/meditation/s22046'])
+    
    
 
   }
   prev(){
-    this.router.navigate(['/meditation/s22044'])
+    this.router.navigate(['/adults/meditation/s22044'])
 
 
   }

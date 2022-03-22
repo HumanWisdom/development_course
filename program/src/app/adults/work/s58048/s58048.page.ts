@@ -15,7 +15,7 @@ export class S58048Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="1/2"
+  progressText="1/4"
   link="/adults/work/s58049"
   name="#2  Wisdom at Work - Part 2"
   progressImg=""
@@ -42,7 +42,7 @@ export class S58048Page implements OnInit {
   getProgress(){
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
      this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Work").Percentage)
      console.log(this.progressPercent)
     

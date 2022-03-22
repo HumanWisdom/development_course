@@ -69,7 +69,7 @@ bg="red_pink_w7"
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,26 +113,26 @@ bg="red_pink_w7"
         "Resp":this.r23026
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/happiness/s23027'])
+          this.router.navigate(['/adults/happiness/s23027'])
 
         },
         ()=>{
-          this.router.navigate(['/happiness/s23027'])
+          this.router.navigate(['/adults/happiness/s23027'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/happiness/s23025'])
+    this.router.navigate(['/adults/happiness/s23025'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

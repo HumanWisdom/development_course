@@ -57,7 +57,7 @@ export class S48013Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(260).Question
@@ -82,7 +82,7 @@ export class S48013Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,12 +131,13 @@ export class S48013Page implements OnInit {
     }
     console.log(this.sendOption)
     sessionStorage.setItem("sessionOption48013",JSON.stringify(this.sendOption))
-   //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+   
  
   }
  
 
   submitProgress(){
+    this.router.navigate(['/adults/success-failure/s48014'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -146,17 +147,19 @@ export class S48013Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {
+        
+      })
 
 
     }
       
    
-      this.router.navigate(['/success-failure/s48014'])
+     
 
   }
   prev(){
-    this.router.navigate(['/success-failure/s48012'])
+    this.router.navigate(['/adults/success-failure/s48012'])
 
 
   }

@@ -48,7 +48,7 @@ export class S324Page implements OnInit,OnDestroy {
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
-    if(story.length <= 2) 
+    if(story?.length <= 2) 
     {
       story.forEach((e) => 
       {
@@ -58,7 +58,7 @@ export class S324Page implements OnInit,OnDestroy {
     }
     else
     {
-      story.forEach((e) => 
+      story?.forEach((e) => 
       {
         if(arraythree.length < 2) 
         {
@@ -140,7 +140,7 @@ export class S324Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -160,7 +160,7 @@ export class S324Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         
       })

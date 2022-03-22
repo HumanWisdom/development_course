@@ -61,7 +61,7 @@ export class S39025Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -102,15 +102,15 @@ export class S39025Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r39025"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/awareness/s39026'])
+        this.router.navigate(['/adults/awareness/s39026'])
     
       },
       ()=>{
-        this.router.navigate(['/awareness/s39026'])
+        this.router.navigate(['/adults/awareness/s39026'])
       })
     
 
@@ -120,7 +120,7 @@ export class S39025Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/awareness/s39024'])
+    this.router.navigate(['/adults/awareness/s39024'])
   }
   
   ngOnDestroy(){

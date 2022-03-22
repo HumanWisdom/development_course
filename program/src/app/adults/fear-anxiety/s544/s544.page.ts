@@ -69,7 +69,7 @@ bg="purple_red_w10"
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,21 +113,21 @@ bg="purple_red_w10"
         "Resp":this.r544
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s545'])
+          this.router.navigate(['/adults/fear-anxiety/s545'])
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s545'])
+          this.router.navigate(['/adults/fear-anxiety/s545'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s543'])
+    this.router.navigate(['/adults/fear-anxiety/s543'])
   }
   
   ngOnDestroy(){

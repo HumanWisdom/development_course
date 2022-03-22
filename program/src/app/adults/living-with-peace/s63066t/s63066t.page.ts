@@ -55,6 +55,8 @@ export class S63066tPage implements OnInit {
     sessionStorage.setItem("bookmark63066",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+ 
+    this.router.navigate(['/adults/living-with-peace/s63067'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -65,12 +67,11 @@ export class S63066tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
- 
-    this.router.navigate(['/living-with-peace/s63067'])
+    
   }
   prev(){
-    this.router.navigate(['/living-with-peace/s63065'])
+    this.router.navigate(['/adults/living-with-peace/s63065'])
   }
 }

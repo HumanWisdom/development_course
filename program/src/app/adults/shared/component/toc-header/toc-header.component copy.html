@@ -1,0 +1,69 @@
+<!-- grey back & share -->
+<!-- top navigation -->
+<div *ngIf="tocColor === 'grey'" class="top_nav ml0 tcenter inav">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <img [src]="tocImage" alt="" class="img-responsive w100">
+    </div>
+  </div>
+  
+  <div class="nav_menu p20px nav_menu_02">
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w50p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <h4 class="btn_back_grey">
+              Back
+            </h4> 
+          </a>                  
+        </li>        
+      </ul>
+  
+      <ul class="nav navbar-nav navbar-right cnav w50p no_bg">       
+        <li class="mr0px frighti">
+          <a (click)="share()" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey.svg" alt="" class="p0">
+          </a>
+        </li>   
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- /grey back & share -->
+
+<!-- white back & share -->
+<!-- top navigation -->
+<div *ngIf="tocColor === 'white'" class="top_nav ml0 tcenter inav">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+        <img [src]="tocImage" alt="" class="img-responsive w100">
+      </div>
+    </div>
+  </div>
+  <div class="nav_menu p20px nav_menu_02">
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w50p no_bg">
+        <li class="">
+          <a (click)="goBack()" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <h4 class="btn_back_white">
+              Back
+            </h4> 
+          </a>                  
+        </li>        
+      </ul>
+  
+      <ul class="nav navbar-nav navbar-right cnav w50p no_bg">       
+        <li class="mr0px frighti">
+          <a (click)="share()" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
+          </a>
+        </li>   
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- /top navigation -->
+<!-- /white back & share -->

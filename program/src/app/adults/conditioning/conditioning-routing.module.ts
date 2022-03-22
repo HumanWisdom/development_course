@@ -128,7 +128,6 @@ import { S323Page } from './s323/s323.page';
 const routes: Routes = [
   {
     path: '',   
-    canActivate:[ActiveGuard],  
     component:S232Page,
   },
   {

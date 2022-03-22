@@ -70,7 +70,7 @@ export class S33010Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -98,6 +98,8 @@ export class S33010Page implements OnInit {
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/adults/five-circles/s33011'])
     sessionStorage.setItem("r33010",JSON.stringify(e))
    this.r33010=sessionStorage.getItem("r33010")
    console.log(this.r33010)
@@ -114,15 +116,15 @@ export class S33010Page implements OnInit {
         "Resp":this.r33010
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/five-circles/s33011'])
+         
 
         },
         ()=>{
-          this.router.navigate(['/five-circles/s33011'])
+          this.router.navigate(['/adults/five-circles/s33011'])
         })
    
 
@@ -134,12 +136,12 @@ export class S33010Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/five-circles/s33009'])
+    this.router.navigate(['/adults/five-circles/s33009'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

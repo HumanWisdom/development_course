@@ -61,7 +61,7 @@ export class S54008Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -102,15 +102,15 @@ export class S54008Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r54008"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/reactive-mind/s54009'])
+        this.router.navigate(['/adults/reactive-mind/s54009'])
     
       },
       ()=>{
-        this.router.navigate(['/reactive-mind/s54009'])
+        this.router.navigate(['/adults/reactive-mind/s54009'])
       })
     
 
@@ -120,7 +120,7 @@ export class S54008Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/reactive-mind/s54007'])
+    this.router.navigate(['/adults/reactive-mind/s54007'])
   }
   
   ngOnDestroy(){

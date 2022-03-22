@@ -12,10 +12,10 @@ import {Location } from '@angular/common'
 export class S238Page implements OnInit {
 
   bg="conditioning_w5"
-  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/conditioning/audios/con+1.1.mp3"
+  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/conditioning/audios/con+1.2.mp3'
-  transcriptPage="/conditioning/s238t"
+  transcriptPage="/adults/conditioning/s238t"
   title="Conditioning; the core of our identity"
   toc="conditioning/s232"
   
@@ -62,7 +62,7 @@ export class S238Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -88,7 +88,7 @@ export class S238Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+   this.router.navigate(['/adults/conditioning/s239'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -99,17 +99,17 @@ export class S238Page implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s239'])
+   
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s237'])
+    this.router.navigate(['/adults/conditioning/s237'])
  
  
   }

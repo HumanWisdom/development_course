@@ -9,6 +9,16 @@ import { S35004Page } from './s35004/s35004.page';
 import { S35004tPage } from './s35004t/s35004t.page';
 import { S35005Page } from './s35005/s35005.page';
 import { S35005p0Page } from './s35005p0/s35005p0.page';
+import { S35005p1Page } from './s35005p1/s35005p1.page';
+import { S35005p2Page } from './s35005p2/s35005p2.page';
+import { S35005p3Page } from './s35005p3/s35005p3.page';
+import { S35005p4Page } from './s35005p4/s35005p4.page';
+import { S35005p5Page } from './s35005p5/s35005p5.page';
+import { S35005p6Page } from './s35005p6/s35005p6.page';
+import { S35005p7Page } from './s35005p7/s35005p7.page';
+import { S35005p8Page } from './s35005p8/s35005p8.page';
+import { S35005p9Page } from './s35005p9/s35005p9.page';
+import { S35005p10Page } from './s35005p10/s35005p10.page';
 import { S35006Page } from './s35006/s35006.page';
 import { S35007Page } from './s35007/s35007.page';
 import { S35008Page } from './s35008/s35008.page';
@@ -73,6 +83,46 @@ const routes: Routes = [
   {
     path: 's35005p0',
     component: S35005p0Page,
+  },
+  {
+    path: 's35005p1',
+    component: S35005p1Page,
+  },
+  {
+    path: 's35005p2',
+    component: S35005p2Page,
+  },
+  {
+    path: 's35005p3',
+    component: S35005p3Page,
+  },
+  {
+    path: 's35005p4',
+    component: S35005p4Page,
+  },
+  {
+    path: 's35005p5',
+    component: S35005p5Page,
+  },
+  {
+    path: 's35005p6',
+    component: S35005p6Page,
+  },
+  {
+    path: 's35005p7',
+    component: S35005p7Page,
+  },
+  {
+    path: 's35005p8',
+    component: S35005p8Page,
+  },
+  {
+    path: 's35005p9',
+    component: S35005p9Page,
+  },
+  {
+    path: 's35005p10',
+    component: S35005p10Page,
   },
   {
     path: 's35006',
@@ -182,7 +232,6 @@ const routes: Routes = [
     path: 's35019',
     component: S35019Page,
   },
-
 ];
 
 @NgModule({

@@ -52,11 +52,11 @@ export class S27035Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/discovering-wisdom/s27036'])
+    this.router.navigate(['/adults/discovering-wisdom/s27036'])
 
   }
   prev(){
-    this.router.navigate(['/discovering-wisdom/s27034'])
+    this.router.navigate(['/adults/discovering-wisdom/s27034'])
 
   }
 

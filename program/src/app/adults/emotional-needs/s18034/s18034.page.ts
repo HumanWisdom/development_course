@@ -57,7 +57,7 @@ export class S18034Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(180).Question
@@ -82,7 +82,7 @@ export class S18034Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,14 +131,14 @@ export class S18034Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption18034",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption18034"))
+  
 
  }
 
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-
+this.router.navigate(['/adults/emotional-needs/s18035'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -147,14 +147,14 @@ this.totalTime = this.endTime - this.startTime;
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
-    this.router.navigate(['/emotional-needs/s18035'])
+   
 
 
 }
 prev(){
-  this.router.navigate(['/emotional-needs/s18033'])
+  this.router.navigate(['/adults/emotional-needs/s18033'])
 
 
 }

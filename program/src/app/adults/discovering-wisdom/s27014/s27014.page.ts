@@ -25,7 +25,7 @@ export class S27014Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark:any
-  rId=251
+  rId=792
   reflection:any
   reflectionA:any
   r27014=JSON.parse(sessionStorage.getItem("r27014"))
@@ -70,7 +70,7 @@ export class S27014Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -115,20 +115,20 @@ export class S27014Page implements OnInit {
         "Resp":this.r27014
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/discovering-wisdom/s27015'])
+          this.router.navigate(['/adults/discovering-wisdom/s27015'])
 
         },
         ()=>{
-          this.router.navigate(['/discovering-wisdom/s27015'])
+          this.router.navigate(['/adults/discovering-wisdom/s27015'])
         })
    }
 
    else{
-    this.router.navigate(['/discovering-wisdom/s27015'])
+    this.router.navigate(['/adults/discovering-wisdom/s27015'])
 
    }
    
@@ -138,12 +138,12 @@ export class S27014Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/discovering-wisdom/s27013'])
+    this.router.navigate(['/adults/discovering-wisdom/s27013'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

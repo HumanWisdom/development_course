@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../../adults.service"
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 import { AssignKeyPage } from 'src/app/onboarding/assign-key/assign-key.page';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-view-stories',
@@ -15,7 +16,7 @@ export class ViewStoriesPage implements OnInit {
   links: Array<{id: number, module: string,route: string}> = []
   modules=[]
   socialShare=false
-  path="https://humanwisdom.me/course/#/adults/wisdom-stories"
+  path="https://humanwisdom.me/course/#/wisdom-stories/view-stories"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -26,38 +27,19 @@ export class ViewStoriesPage implements OnInit {
   storyList=[]
 
   constructor(private router: Router,
-    private service:AdultsService,
-    private location:Location) {
-      this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
-      this.sId=this.router.getCurrentNavigation().extractedUrl.queryParams.sId
+    private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
+    private location:Location, private route: ActivatedRoute) {
+      this.route.queryParams.subscribe(params => {
+        this.sId=params?.sId
+    });
+      this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
      
 
      }
 
   ngOnInit() {
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    
-    if(this.urlT)
-    {
-      console.log("going to fetch")
-     this.getStories()
- 
-    }
-    else{
-      this.story=JSON.parse(localStorage.getItem("story"))
-      console.log(this.story)
-      var id=this.story.ScenarioID
-      this.modules=this.story.ModIds.split`,`.map(x=>+x)
-      //this.modules.forEach(e=>parseInt(e))
-      console.log(this.modules)
-      this.assignLinks()
-    
-    }
-     
-    
+    this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.getStories(this.sId)
   }
   assignLinks(){
 
@@ -81,7 +63,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 33:{
      
-        this.links.push({'id':33,'module':"5 Circles of Wisdom",'route':'/adults/5-circles-of-wisdom'})
+        this.links.push({'id':33,'module':"5 Circles of Wisdom",'route':'/adults/five-circles'})
         break
        }
        case 34:{
@@ -121,7 +103,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 26:{
      
-        this.links.push({'id':26,'module':"Benefits of Enquiry",'route':'/adults/enefits-of-enquiry'})
+        this.links.push({'id':26,'module':"Benefits of Enquiry",'route':'/adults/benefits-of-enquiry'})
         break
        }
        case 36:{
@@ -156,7 +138,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 42:{
      
-        this.links.push({'id':42,'module':"Look without Language",'route':'/adults/look-without-language'})
+        this.links.push({'id':42,'module':"Look without Language",'route':'/adults/without-language'})
         break
        }
        case 43:{
@@ -201,7 +183,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 57:{
      
-        this.links.push({'id':57,'module':" The Nature of  The I",'route':'/adults/ nature-of-i'})
+        this.links.push({'id':57,'module':" The Nature of  The I",'route':'/adults/nature-of-i'})
         break
        }
        case 19:{
@@ -271,7 +253,7 @@ export class ViewStoriesPage implements OnInit {
        }
        case 53:{
      
-        this.links.push({'id':53,'module':"Communication",'route':'/adults/communicationon'})
+        this.links.push({'id':53,'module':"Communication",'route':'/adults/communication'})
         break
        }
        case 49:{
@@ -286,12 +268,12 @@ export class ViewStoriesPage implements OnInit {
        }
        case 45:{
      
-        this.links.push({'id':45,'module':"Addiction",'route':'/adults/addiction'})
+        this.links.push({'id':45,'module':"Addiction",'route':'/adults/habit-addiction'})
         break
        }
        case 46:{
      
-        this.links.push({'id':46,'module':"Food and Health",'route':'/adults/food-fealth'})
+        this.links.push({'id':46,'module':"Food and Health",'route':'/adults/food-health'})
         break
        }
        case 73:{
@@ -301,22 +283,14 @@ export class ViewStoriesPage implements OnInit {
        }
        case 58:{
      
-        this.links.push({'id':58,'module':" Work",'route':'/adults/ work'})
+        this.links.push({'id':58,'module':" Work",'route':'/adults/work'})
         break
        }
        case 59:{
      
-        this.links.push({'id':59,'module':"Leadership",'route':'/adults/ leadership'})
+        this.links.push({'id':59,'module':"Leadership",'route':'/adults/leadership'})
         break
        }
-      
-      
-     
-    
-     
-      
-      
-      
       
     }
   }
@@ -324,6 +298,16 @@ export class ViewStoriesPage implements OnInit {
   }
 
   addToken(){
+    this.ngNavigatorShareService.share({
+      title: 'Human Wisdom Program',
+      text: 'Hey, check out the Human Wisdom Program',
+      url: this.path+'?sId='+this.sId
+    }).then( (response) => {
+      console.log(response);
+    })
+    .catch( (error) => {
+      console.log(error);
+    });
     this.socialShare=true
   }
   
@@ -331,21 +315,26 @@ export class ViewStoriesPage implements OnInit {
     this.location.back()
   }
 
-  getStories(){
-    this.service.getScenarios().subscribe(res=>
+  getStories(id){
+    this.service.getScenarioswithId(id).subscribe(res=>
       {
-        console.log(res)
+        
         this.storyList=res
         //localStorage.setItem("storyList",JSON.stringify(this.storyList))
       },
       error=>console.log(error),
       ()=>{
-        this.story=this.storyList.find(s=>s.ScenarioID==this.sId)
-        console.log("found story",this.story)
-        var id=this.story.ScenarioID
-        this.modules=this.story.ModIds.split`,`.map(x=>+x)
-        console.log(this.modules)
-        this.assignLinks()
+        if(this.storyList.length !==0) {
+          this.story=this.storyList.find(s=>s.ScenarioID==this.sId)
+          console.log("found story",this.story)
+          var id=this.story.ScenarioID
+          if(this.story.hasOwnProperty('ModIds')) {
+            this.modules=this.story.ModIds.split`,`.map(x=>+x)
+            console.log(this.modules)
+            this.assignLinks()
+          }
+        }
+      
         
       }
     )
@@ -356,7 +345,7 @@ export class ViewStoriesPage implements OnInit {
     
     this.service.clickModule(id,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     })

@@ -71,7 +71,7 @@ export class S43029Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -81,6 +81,7 @@ export class S43029Page implements OnInit,OnDestroy {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/obstacles-enquiry/s43029p1'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -90,16 +91,16 @@ export class S43029Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       }
       )
    
-      this.router.navigate(['/obstacles-enquiry/s43029p1'])
+     
     
 
   }
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s43028'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43028'])
     
   }
   ngOnDestroy(){

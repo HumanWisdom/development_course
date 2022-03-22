@@ -44,6 +44,10 @@ const routes: Routes = [
   {
     path: "coach",
     loadChildren: () => import("./coach/coach.module").then(m => m.CoachModule)  
+  },
+  {
+    path: "intro",
+    loadChildren: () => import("./introductory/introductory.module").then(m => m.IntroductoryModule)  
   }
 ];
 

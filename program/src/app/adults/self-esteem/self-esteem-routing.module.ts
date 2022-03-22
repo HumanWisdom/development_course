@@ -72,8 +72,7 @@ import { S485Page } from './s485/s485.page';
 const routes: Routes = [
   {
     path: '',
-    canActivate:[ActiveGuard],  
-    component: S433Page,
+     component: S433Page,
   },  
   {
     path: 's433',

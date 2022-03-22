@@ -69,7 +69,7 @@ export class S26018Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,7 +113,7 @@ export class S26018Page implements OnInit {
     sessionStorage.setItem("sessionOption",JSON.stringify(this.option))
   
     //this.option.push(optId)
-    //console.log(this.option)
+    
     //this.sendOption.push(this.option[this.option.length-1])
   }
  
@@ -121,6 +121,8 @@ export class S26018Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/adults/benefits-of-enquiry/s26020'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -128,13 +130,13 @@ export class S26018Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res))
-      this.router.navigate(['/benefits-of-enquiry/s26020'])
+      .subscribe((res) => {});
+      
 
 
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s26016'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26016'])
   }
   
   ngOnDestroy(){

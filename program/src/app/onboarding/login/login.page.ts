@@ -129,7 +129,7 @@ export class LoginPage implements OnInit,OnDestroy {
       this.service.verifyGoogle(this.idToken)
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -197,7 +197,7 @@ export class LoginPage implements OnInit,OnDestroy {
       this.service.verifyFb(this.idToken)
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -248,13 +248,13 @@ export class LoginPage implements OnInit,OnDestroy {
           {
             this.service.verifyUser(this.urlEmail)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }
     this.service.emailLogin(this.email,this.password)
     .subscribe(
       res=>
-      {//console.log(res)
+      {//
         this.loginResponse=res
         this.userId=res.UserId
          let  user = new CometChat.User(res.UserId);
@@ -322,7 +322,7 @@ export class LoginPage implements OnInit,OnDestroy {
           {
             this.service.verifyUser(this.userId)
             .subscribe(res=>{
-              console.log(res)
+              
             })
           }*/
 

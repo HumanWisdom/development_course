@@ -54,7 +54,7 @@ export class S26Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     this.q0=this.findQuestion(34).Question
     this.optionList0=this.findQuestion(34).optionList
@@ -93,7 +93,7 @@ export class S26Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -294,12 +294,14 @@ export class S26Page implements OnInit {
   //     "UserId":this.userId, 
   //     "timeSpent":this.totalTime,
   //     "OptionIDs":this.sendOptions.join()})
-  //     .subscribe(res=>console.log(res))
+  //     .subscribe((res) => {},
   // }
 
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/adults/comparison/s27'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -309,18 +311,18 @@ export class S26Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
-      this.router.navigate(['/comparison/s27'])
+     
   }
   prev(){
-    this.router.navigate(['/comparison/s25'])
+    this.router.navigate(['/adults/comparison/s25'])
   }
 
   receiveBookmark(e)
@@ -336,7 +338,7 @@ export class S26Page implements OnInit {
     
   //this.endTime = Date.now();
   //this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  
   //this.submitProgress()
   }
 

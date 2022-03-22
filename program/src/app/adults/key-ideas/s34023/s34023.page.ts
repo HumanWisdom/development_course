@@ -77,12 +77,13 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
   }
   submitProgress(){
+    this.router.navigate(['/adults/key-ideas/s34024'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -92,29 +93,29 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s3402334'])
+        //this.router.navigate(['/adults/conditioning/s3402334'])
       })
-      this.router.navigate(['/key-ideas/s34024'])
+      
     
 
   }
   prev(){
-    this.router.navigate(['/key-ideas/s34022'])
+    this.router.navigate(['/adults/key-ideas/s34022'])
 
   }
   
 
   goNext(){
-   // this.router.navigate(['/key-ideas/s34023'])
+   // this.router.navigate(['/adults/key-ideas/s34023'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
 
   }

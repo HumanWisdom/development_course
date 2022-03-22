@@ -61,7 +61,7 @@ export class S358Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -103,20 +103,20 @@ export class S358Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r358"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/criticism/s359'])
+        this.router.navigate(['/adults/criticism/s359'])
       },
       ()=>{
-        this.router.navigate(['/criticism/s359'])
+        this.router.navigate(['/adults/criticism/s359'])
       })
     
 
    }
    else{
-    this.router.navigate(['/criticism/s359'])
+    this.router.navigate(['/adults/criticism/s359'])
 
    }
     
@@ -124,7 +124,7 @@ export class S358Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/criticism/s357'])
+    this.router.navigate(['/adults/criticism/s357'])
   }
   
   ngOnDestroy(){

@@ -172,7 +172,7 @@ export class S615p3Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -196,7 +196,7 @@ export class S615p3Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r615p3",this.r615p3)
@@ -214,25 +214,25 @@ export class S615p3Page implements OnInit {
         "Resp":this.r615p3
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s615p4'])
+          this.router.navigate(['/adults/fear-anxiety/s615p4'])
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s615p4'])
+          this.router.navigate(['/adults/fear-anxiety/s615p4'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/fear-anxiety/s615p2'])
+    this.router.navigate(['/adults/fear-anxiety/s615p2'])
 
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

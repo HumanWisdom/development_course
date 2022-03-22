@@ -11,7 +11,7 @@ import {Location } from '@angular/common'
 export class S34016Page implements OnInit {
 
  bg="purple_blue_w1"  
-  hint="This could be a feel of irritation at someone, or jealousy, or anger. This could allow you to observe it more closely."
+  hint="This could be a feeling of irritation at someone, or jealousy, or anger. This could allow you to observe it more closely."
   toc="key-ideas/s34001"
   path=this.router.url
 
@@ -70,7 +70,7 @@ export class S34016Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -115,20 +115,20 @@ export class S34016Page implements OnInit {
         "Resp":this.r34016
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/key-ideas/s34017'])
+          this.router.navigate(['/adults/key-ideas/s34017'])
 
         },
         ()=>{
-          this.router.navigate(['/key-ideas/s34017'])
+          this.router.navigate(['/adults/key-ideas/s34017'])
         })
    }
 
    else{
-    this.router.navigate(['/key-ideas/s34017'])
+    this.router.navigate(['/adults/key-ideas/s34017'])
 
    }
    
@@ -138,12 +138,12 @@ export class S34016Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/key-ideas/s34015'])
+    this.router.navigate(['/adults/key-ideas/s34015'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

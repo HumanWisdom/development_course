@@ -40,17 +40,17 @@ export class S92p1Page implements OnInit {
 
     /*this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=res.PointsScored
       this.overallPercentage=res.overallPercentage
     })*/
 
   }
   submitProgress(){
-    this.router.navigate(['/comparison/s92p2'])
+    this.router.navigate(['/adults/comparison/s92p2'])
   }
   prev(){
-    this.router.navigate(['/comparison/s91'])
+    this.router.navigate(['/adults/comparison/s91'])
 
   }
 

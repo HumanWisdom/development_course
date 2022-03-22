@@ -70,7 +70,7 @@ export class S32009Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -102,7 +102,7 @@ export class S32009Page implements OnInit {
    this.r32009=sessionStorage.getItem("r32009")
    console.log(this.r32009)
   
-     
+   this.router.navigate(['/adults/benefits-of-wisdom/s32010'])
       this.service.submitProgressReflection({
         "ScrNumber":this.screenNumber,
         "UserId":this.userId,
@@ -114,15 +114,15 @@ export class S32009Page implements OnInit {
         "Resp":this.r32009
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/benefits-of-wisdom/s32010'])
+          this.router.navigate(['/adults/benefits-of-wisdom/s32010'])
 
         },
         ()=>{
-          this.router.navigate(['/benefits-of-wisdom/s32010'])
+          
         })
    
    
@@ -132,7 +132,7 @@ export class S32009Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/benefits-of-wisdom/s32008'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32008'])
   }
   
   ngOnDestroy(){

@@ -253,7 +253,7 @@ export class S38019p4Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -341,7 +341,8 @@ export class S38019p4Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  this.router.navigate(['/adults/insight/s38019p5'])
+  
  
 
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5]
@@ -353,19 +354,19 @@ export class S38019p4Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res),
+      .subscribe((res) => {},
       error=>{
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/insight/s38019p5'])
+       
       })
 
 
   }
   
   previous(){
-    this.router.navigate(['/insight/s38019p3'])
+    this.router.navigate(['/adults/insight/s38019p3'])
 
   }
   ngOnDestroy(){

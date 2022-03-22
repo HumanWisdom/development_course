@@ -71,7 +71,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -82,6 +82,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/emotional-needs/s18021'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -91,17 +92,17 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/emotional-needs/s18021'])
+        
       })
     
  
   }
   prev(){
-    this.router.navigate(['/emotional-needs/s18019'])
+    this.router.navigate(['/adults/emotional-needs/s18019'])
  
  
   }

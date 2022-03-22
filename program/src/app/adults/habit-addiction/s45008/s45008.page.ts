@@ -70,7 +70,7 @@ export class S45008Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -98,6 +98,7 @@ export class S45008Page implements OnInit {
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/habit-addiction/s45009'])
     sessionStorage.setItem("r45008",JSON.stringify(e))
    this.r45008=sessionStorage.getItem("r45008")
    console.log(this.r45008)
@@ -114,22 +115,22 @@ export class S45008Page implements OnInit {
         "Resp":this.r45008
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/habit-addiction/s45009'])
+         
 
         },
         ()=>{
-          this.router.navigate(['/habit-addiction/s45009'])
+          this.router.navigate(['/adults/habit-addiction/s45009'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/habit-addiction/s45007'])
+    this.router.navigate(['/adults/habit-addiction/s45007'])
   }
   
   ngOnDestroy(){

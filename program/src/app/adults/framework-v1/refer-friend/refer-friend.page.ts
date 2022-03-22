@@ -32,7 +32,7 @@ export class ReferFriendPage implements OnInit {
       "ConvertedDate": '',
     }
     this.service.referfrd(data).subscribe((res) => {
-     console.log(res)
+     
      if(res) {
        this.email = '';
        this.name = '';

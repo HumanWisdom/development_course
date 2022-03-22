@@ -53,7 +53,7 @@ export class ActivationkeyPage implements OnInit {
     this.service.verifyActivationKey(this.activationCode,this.userId, 'IND')
     .subscribe(
       res=>
-      {console.log(res)
+      {
         if(res!=0)
           {this.showWarning=false}
           let code: any = 1

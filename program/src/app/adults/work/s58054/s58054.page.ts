@@ -80,7 +80,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -102,17 +102,17 @@ createScreen(){
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/work/s58055'])
+    this.router.navigate(['/adults/work/s58055'])
    
 
   }
   prev(){
-    this.router.navigate(['/work/s58053'])
+    this.router.navigate(['/adults/work/s58053'])
 
 
   }

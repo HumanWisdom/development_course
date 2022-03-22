@@ -42,10 +42,10 @@ export class S18036Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/emotional-needs/s18037'])
+    this.router.navigate(['/adults/emotional-needs/s18037'])
   }
   prev(){
-    this.router.navigate(['/emotional-needs/s18035'])
+    this.router.navigate(['/adults/emotional-needs/s18035'])
 
   }
 

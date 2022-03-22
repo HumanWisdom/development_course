@@ -119,7 +119,7 @@ export class S73008Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -196,7 +196,8 @@ export class S73008Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  this.router.navigate(['/adults/money/s73009'])
+  
  
 
     var optionT=[this.s1]
@@ -208,19 +209,19 @@ export class S73008Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res),
+      .subscribe((res) => {},
       error=>{
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/money/s73009'])
+        
       })
 
 
   }
   
   prev(){
-    this.router.navigate(['/money/s73007'])
+    this.router.navigate(['/adults/money/s73007'])
 
   }
   ngOnDestroy(){

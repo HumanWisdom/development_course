@@ -230,7 +230,7 @@ export class S321p3Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -254,7 +254,7 @@ export class S321p3Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r321p3",this.r321p3)
@@ -274,19 +274,19 @@ export class S321p3Page implements OnInit {
         "Resp":this.r321p3
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s322'])
+          this.router.navigate(['/adults/conditioning/s322'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s322'])
+          this.router.navigate(['/adults/conditioning/s322'])
         })
    }
 
    else{
-    this.router.navigate(['/conditioning/s322'])
+    this.router.navigate(['/adults/conditioning/s322'])
 
    }
    
@@ -296,12 +296,12 @@ export class S321p3Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/conditioning/s321p2'])
+    this.router.navigate(['/adults/conditioning/s321p2'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

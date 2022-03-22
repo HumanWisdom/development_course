@@ -188,7 +188,7 @@ export class S46077Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -212,7 +212,7 @@ export class S46077Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r46077",this.r46077)
@@ -230,25 +230,25 @@ export class S46077Page implements OnInit {
         "Resp":this.r46077
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/food-health/s46078'])
+          this.router.navigate(['/adults/food-health/s46078'])
         },
         ()=>{
-          this.router.navigate(['/food-health/s46078'])
+          this.router.navigate(['/adults/food-health/s46078'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/food-health/s46076'])
+    this.router.navigate(['/adults/food-health/s46076'])
 
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

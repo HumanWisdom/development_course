@@ -226,7 +226,7 @@ export class S160p3Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -250,7 +250,7 @@ export class S160p3Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r160p3",this.r160p3)
@@ -270,19 +270,19 @@ export class S160p3Page implements OnInit {
         "Resp":this.r160p3
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s161p1'])
+          this.router.navigate(['/adults/comparison/s161p1'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s161p1'])
+          this.router.navigate(['/adults/comparison/s161p1'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s161p1'])
+    this.router.navigate(['/adults/comparison/s161p1'])
 
    }
 
@@ -292,7 +292,7 @@ export class S160p3Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/comparison/s160p2'])
+    this.router.navigate(['/adults/comparison/s160p2'])
 
   }
 

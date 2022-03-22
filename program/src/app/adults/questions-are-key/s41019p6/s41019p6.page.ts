@@ -211,7 +211,7 @@ export class S41019p6Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -255,19 +255,19 @@ export class S41019p6Page implements OnInit {
         "Resp":this.r41019p6
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/questions-are-key/s41019p7'])
+          this.router.navigate(['/adults/questions-are-key/s41019p7'])
         },
         ()=>{
-          this.router.navigate(['/questions-are-key/s41019p7'])
+          this.router.navigate(['/adults/questions-are-key/s41019p7'])
         })
    }
 
    else{
-    this.router.navigate(['/questions-are-key/s41019p5'])
+    this.router.navigate(['/adults/questions-are-key/s41019p5'])
 
    }
    
@@ -277,12 +277,12 @@ export class S41019p6Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/questions-are-key/s41019p5'])
+    this.router.navigate(['/adults/questions-are-key/s41019p5'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

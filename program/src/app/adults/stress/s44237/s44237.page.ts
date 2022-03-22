@@ -205,7 +205,7 @@ export class S44237Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -236,7 +236,7 @@ export class S44237Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r44237",this.r44237)
@@ -255,14 +255,14 @@ export class S44237Page implements OnInit {
         "Resp":this.r44237
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/stress/s44238'])
+          this.router.navigate(['/adults/stress/s44238'])
         },
         ()=>{
-          this.router.navigate(['/stress/s44238'])
+          this.router.navigate(['/adults/stress/s44238'])
         })
    }
 
@@ -273,7 +273,7 @@ export class S44237Page implements OnInit {
 
   
   prev(){
-    this.router.navigate(['/stress/s44236'])
+    this.router.navigate(['/adults/stress/s44236'])
 
   }
 

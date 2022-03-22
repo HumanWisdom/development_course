@@ -100,7 +100,7 @@ export class ChangePasswordPage implements OnInit {
       this.service.verifyGoogle(this.idToken)
       .subscribe(res=>
         {
-          console.log(res)
+          
           if(res){
             this.service.socialLearner({"FnName":this.socialFirstName,
           "LName":this.socialLastName,
@@ -184,7 +184,7 @@ export class ChangePasswordPage implements OnInit {
                   {
                     this.service.verifyUser(this.userId)
                     .subscribe(res=>{
-                      console.log(res)
+                      
                     })
                   }*/
 
@@ -222,7 +222,7 @@ export class ChangePasswordPage implements OnInit {
         this.service.verifyFb(this.idToken)
         .subscribe(res=>
           {
-            console.log(res)
+            
             if(res){
               this.service.socialLearner({"FName":this.socialFirstName,
             "LName":this.socialLastName,
@@ -317,7 +317,7 @@ export class ChangePasswordPage implements OnInit {
                     {
                       this.service.verifyUser(this.userId)
                       .subscribe(res=>{
-                        console.log(res)
+                        
                       })
                     }*/
   

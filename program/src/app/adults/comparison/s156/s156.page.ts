@@ -70,7 +70,7 @@ export class S156Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,19 +114,19 @@ export class S156Page implements OnInit {
         "Resp":this.r156
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s157'])
+          this.router.navigate(['/adults/comparison/s157'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s157'])
+          this.router.navigate(['/adults/comparison/s157'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s157'])
+    this.router.navigate(['/adults/comparison/s157'])
 
    }
    
@@ -136,12 +136,12 @@ export class S156Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/comparison/s155'])
+    this.router.navigate(['/adults/comparison/s155'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

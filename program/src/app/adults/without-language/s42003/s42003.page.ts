@@ -73,7 +73,7 @@ export class S42003Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -81,6 +81,7 @@ export class S42003Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
+    this.router.navigate(['/adults/without-language/s42004'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -90,14 +91,14 @@ export class S42003Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
-    this.router.navigate(['/without-language/s42004'])
+  
     
 
   }
   prev(){
-    this.router.navigate(['/without-language/s42002'])
+    this.router.navigate(['/adults/without-language/s42002'])
     
   }
 

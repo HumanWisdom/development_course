@@ -69,7 +69,7 @@ export class S569Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -97,6 +97,8 @@ export class S569Page implements OnInit {
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/adults/fear-anxiety/s570'])
     sessionStorage.setItem("r569",JSON.stringify(e))
    this.r569=sessionStorage.getItem("r569")
    console.log(this.r569)
@@ -113,21 +115,21 @@ export class S569Page implements OnInit {
         "Resp":this.r569
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s570'])
+          this.router.navigate(['/adults/fear-anxiety/s570'])
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s570'])
+          
         })
 
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s568'])
+    this.router.navigate(['/adults/fear-anxiety/s568'])
   }
   
   ngOnDestroy(){

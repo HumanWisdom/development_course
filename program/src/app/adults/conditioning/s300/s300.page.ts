@@ -56,7 +56,7 @@ export class S300Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(63).Question
@@ -81,7 +81,7 @@ export class S300Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -130,14 +130,14 @@ export class S300Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption300",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+  
 
  }
 
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  
+ this.router.navigate(['/adults/conditioning/s301'])
   
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
@@ -146,14 +146,14 @@ export class S300Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
 
-      this.router.navigate(['/conditioning/s301'])
+     
 
 
   }
   prev(){
-    this.router.navigate(['/conditioning/s299'])
+    this.router.navigate(['/adults/conditioning/s299'])
 
 
   }

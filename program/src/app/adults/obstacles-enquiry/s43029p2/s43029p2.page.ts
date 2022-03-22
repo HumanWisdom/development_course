@@ -184,7 +184,7 @@ export class S43029p2Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -215,7 +215,7 @@ export class S43029p2Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r43029p2",this.r43029p2)
@@ -234,19 +234,19 @@ export class S43029p2Page implements OnInit {
         "Resp":this.r43029p2
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/obstacles-enquiry/s43029p3'])
+          this.router.navigate(['/adults/obstacles-enquiry/s43029p3'])
         },
         ()=>{
-          this.router.navigate(['/obstacles-enquiry/s43029p3'])
+          this.router.navigate(['/adults/obstacles-enquiry/s43029p3'])
         })
    }
 
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s43029p1'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43029p1'])
 
   }
 

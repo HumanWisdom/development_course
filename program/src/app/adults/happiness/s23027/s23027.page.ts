@@ -57,7 +57,7 @@ export class S23027Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(103).Question
@@ -82,7 +82,7 @@ export class S23027Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,14 +131,14 @@ export class S23027Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption23027",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption23027"))
+  
 
  }
 
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-
+this.router.navigate(['/adults/happiness/s23028'])
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -147,14 +147,14 @@ this.totalTime = this.endTime - this.startTime;
     "UserId":this.userId, 
     "timeSpent":this.totalTime,
     "OptionIDs":this.sendOption.join()})
-    .subscribe(res=>console.log(res))
+    .subscribe((res) => {});
 
-    this.router.navigate(['/happiness/s23028'])
+   
 
 
 }
 prev(){
-  this.router.navigate(['/happiness/s23026'])
+  this.router.navigate(['/adults/happiness/s23026'])
 
 
 }

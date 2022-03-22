@@ -39,7 +39,9 @@ export class CourseHeaderComponent implements OnInit {
     private ac:ActivatedRoute,
     private ngNavigatorShareService: NgNavigatorShareService  
     ) {
-      this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
+      if(this.router.getCurrentNavigation()) {
+        this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
+      }
       this.ngNavigatorShareService = ngNavigatorShareService;
      }
 
@@ -47,7 +49,7 @@ export class CourseHeaderComponent implements OnInit {
    this.showheaderbar = false;
   // console.log(this.ac)
    // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
-    //console.log(module)
+    
    // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
 
@@ -123,7 +125,7 @@ export class CourseHeaderComponent implements OnInit {
       "Notes":this.note,
       "UserId":this.userId
 
-    }).subscribe(res=>console.log(res),
+    }).subscribe((res) => {},
     error=>{
       console.log(error)
     },

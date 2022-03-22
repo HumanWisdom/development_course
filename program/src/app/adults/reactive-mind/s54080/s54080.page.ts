@@ -148,7 +148,7 @@ export class S54080Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -172,7 +172,7 @@ export class S54080Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r54080",this.r54080)
@@ -190,25 +190,25 @@ export class S54080Page implements OnInit {
         "Resp":this.r54080
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/reactive-mind/s54081'])
+          this.router.navigate(['/adults/reactive-mind/s54081'])
         },
         ()=>{
-          this.router.navigate(['/reactive-mind/s54081'])
+          this.router.navigate(['/adults/reactive-mind/s54081'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/reactive-mind/s54079'])
+    this.router.navigate(['/adults/reactive-mind/s54079'])
 
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

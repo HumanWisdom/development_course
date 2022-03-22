@@ -39,18 +39,18 @@ export class S26028Page implements OnInit {
     })
     /*this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=res.PointsScored
       this.overallPercentage=res.overallPercentage
     })*/
 
   }
   submitProgress(){
-    this.router.navigate(['/benefits-of-enquiry/s26029'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26029'])
 
   }
   prev(){
-    this.router.navigate(['/benefits-of-enquiry/s26027'])
+    this.router.navigate(['/adults/benefits-of-enquiry/s26027'])
 
   }
 

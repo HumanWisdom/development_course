@@ -70,7 +70,7 @@ export class S49007Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,22 +114,22 @@ export class S49007Page implements OnInit {
         "Resp":this.r49007
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/opinions-beliefs/s49008'])
+          this.router.navigate(['/adults/opinions-beliefs/s49008'])
 
         },
         ()=>{
-          this.router.navigate(['/opinions-beliefs/s49008'])
+          this.router.navigate(['/adults/opinions-beliefs/s49008'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/opinions-beliefs/s49006'])
+    this.router.navigate(['/adults/opinions-beliefs/s49006'])
   }
   
   ngOnDestroy(){

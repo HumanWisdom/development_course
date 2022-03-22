@@ -47,7 +47,7 @@ export class AddcartPage implements OnInit,OnDestroy {
   getCurrencies(){
     this.service.getCurrencies().subscribe(res=>
       {
-        console.log(res)
+        
         this.countryList=res.filter((item, i, arr) => arr.findIndex((t) => t.CountryId=== item.CountryId) === i);
         console.log(this.countryList)
       }
@@ -189,7 +189,7 @@ export class AddcartPage implements OnInit,OnDestroy {
               )
               .subscribe(res=>
                 {
-                  console.log(res)
+                  
             })
           }
         }
@@ -226,7 +226,7 @@ export class AddcartPage implements OnInit,OnDestroy {
         if(this.cartList[i].qty==1)
          { console.log("delete from d/b and add DeleteCart service")
           this.service.deleteItem({"Id":parseInt(this.cartList[i].cartId)})
-          .subscribe(res=>console.log(res))
+          .subscribe((res) => {});
         }
         
         if(this.cartList[i].qty==0)
@@ -259,7 +259,7 @@ export class AddcartPage implements OnInit,OnDestroy {
 
             })
             .subscribe(res=>{
-              console.log(res)
+              
             })*/
 
            
@@ -269,7 +269,7 @@ export class AddcartPage implements OnInit,OnDestroy {
               )
               .subscribe(res=>
                 {
-                  console.log(res)
+                  
             })
 
         }
@@ -284,7 +284,7 @@ export class AddcartPage implements OnInit,OnDestroy {
     this.showCart=true
     this.totalItemCount+=1
     console.log(pid)
-    //console.log(pid);
+    
     for(var i=0;i<this.cartProductionList.length;i++){
 
      

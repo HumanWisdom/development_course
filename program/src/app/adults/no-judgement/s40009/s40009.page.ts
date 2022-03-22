@@ -63,7 +63,7 @@ export class S40009Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -104,15 +104,15 @@ export class S40009Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r40009"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/no-judgement/s40010'])
+        this.router.navigate(['/adults/no-judgement/s40010'])
     
       },
       ()=>{
-        this.router.navigate(['/no-judgement/s40010'])
+        this.router.navigate(['/adults/no-judgement/s40010'])
       })
     
 
@@ -122,7 +122,7 @@ export class S40009Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/no-judgement/s40008'])
+    this.router.navigate(['/adults/no-judgement/s40008'])
   }
   
   ngOnDestroy(){

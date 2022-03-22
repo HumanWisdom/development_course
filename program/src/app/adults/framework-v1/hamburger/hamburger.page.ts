@@ -139,7 +139,7 @@ export class HamburgerPage implements OnInit {
   getProgress(){
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=parseInt(res.PointsScored)
       this.goToPage=res.LastScrNo
       this.daysVisited=res.noOfDaysVisited
@@ -228,7 +228,7 @@ export class HamburgerPage implements OnInit {
   getBookmarks(){
     this.service.getBookmarks(this.userId)
     .subscribe(res=>{
-      //console.log("bookmarks",res)
+      
       
       this.bookmarks=res
       this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
@@ -386,7 +386,7 @@ export class HamburgerPage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(27,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         discoveringWisdomResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -411,7 +411,7 @@ export class HamburgerPage implements OnInit {
       /*console.log("goToPage",this.goToPage)
       if(!discoveringWisdomResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/discovering-wisdom`])
       }
       else
@@ -428,7 +428,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(32))
     this.service.clickModule(32,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         benefitsWisdomResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -454,7 +454,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(33))
     this.service.clickModule(33,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         fiveCirclesResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -473,7 +473,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/five-circles/s33001`])
       /*if(!fiveCirclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/five-circles`])
       }
       else
@@ -490,7 +490,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(34))
     this.service.clickModule(34,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         keyIdeasResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -509,7 +509,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/key-ideas/s34001`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/key-ideas`])
       }
       else
@@ -525,7 +525,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(35))
     this.service.clickModule(35,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         pgResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -545,7 +545,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/program-guide/s35001`])
      /* if(!pgResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/program-guide/s35002`])
       }
       else
@@ -564,7 +564,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(28))
     this.service.clickModule(28,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         natureR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -584,7 +584,7 @@ export class HamburgerPage implements OnInit {
      
      /*if(!natureR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/nature`])
       }
       else
@@ -604,7 +604,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(29))
     this.service.clickModule(29,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         breathingR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -624,7 +624,7 @@ export class HamburgerPage implements OnInit {
     
      /* if(!breathingR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/breathing`])
        
       }
@@ -641,7 +641,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(30))
     this.service.clickModule(30,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         ntR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -660,7 +660,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/noticing-thoughts/s30001`])
       /*if(!ntR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/noticing-thoughts`])
       }
       else
@@ -675,7 +675,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(51))
     this.service.clickModule(51,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         gamR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -695,7 +695,7 @@ export class HamburgerPage implements OnInit {
       
      /* if(!gamR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/guided-meditation`])
         
       }
@@ -712,7 +712,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(22))
     this.service.clickModule(22,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         meditationResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -731,7 +731,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/meditation/s22001`])
       /*if(!meditationResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/meditation`])
       }
       else
@@ -751,7 +751,7 @@ export class HamburgerPage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(26,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         resumeBenefitsEnquiry="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -776,7 +776,7 @@ export class HamburgerPage implements OnInit {
      /* console.log("goToPage",resumeBenefitsEnquiry)
       if(!resumeBenefitsEnquiry)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/benefits-of-enquiry`])
       }
       else
@@ -792,7 +792,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(36))
     this.service.clickModule(36,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         beginResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -811,7 +811,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/how-to-begin/s36000`])
       /*if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/how-to-begin`])
       }
       else
@@ -827,7 +827,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(37))
     this.service.clickModule(37,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         threeStepsResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -846,7 +846,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/three-steps-enquiry/s37000`])
       /*if(!threeStepsResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/three-steps-enquiry`])
       }
       else
@@ -863,7 +863,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(38))
     this.service.clickModule(38,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         insightResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -882,7 +882,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/insight/s38000`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/insight`])
       }
       else
@@ -897,7 +897,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(39))
     this.service.clickModule(39,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         awarenessResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -916,7 +916,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/awareness/s39000`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/awareness`])
       }
       else
@@ -933,7 +933,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(40))
     this.service.clickModule(40,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         njResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -952,7 +952,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/no-judgement/s40000`])
       /*if(!njResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/no-judgement/`])
       }
       else
@@ -968,7 +968,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(41))
     this.service.clickModule(41,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         qakResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -989,7 +989,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/questions-are-key/s41000`])
       /*if(!qakResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/questions-are-key`])
       }
       else
@@ -1006,7 +1006,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(42))
     this.service.clickModule(42,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         lwlResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1025,7 +1025,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/without-language/s42000`])
      /* if(!lwlResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/without-language`])
       }
       else
@@ -1041,7 +1041,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(43))
     this.service.clickModule(43,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         obstaclesResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1060,7 +1060,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/obstacles-enquiry/s43000`])
       /*if(! obstaclesResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/obstacles-enquiry`])
       }
       else
@@ -1080,7 +1080,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(15))
     this.service.clickModule(15,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         conditioningResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1099,7 +1099,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/conditioning/s232`])
       /*if(!conditioningResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning`])
       }
       else
@@ -1116,7 +1116,7 @@ export class HamburgerPage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(7,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         comparisonR="s"+res.lastVisitedScreen
         console.log("comparisonR",comparisonR)
@@ -1151,7 +1151,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(54))
     this.service.clickModule(54,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         rmR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1170,7 +1170,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/reactive-mind/s54001`])
      /* if(!rmR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/reactive-mind`])
       }
       else
@@ -1188,7 +1188,7 @@ export class HamburgerPage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(25,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         siR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1213,7 +1213,7 @@ export class HamburgerPage implements OnInit {
       /*console.log("goToPage",siR)
       if(!siR)
       {
-        console.log("null go to page")
+        
        this.router.navigate([`/adults/self-image`])
       }
       else
@@ -1232,7 +1232,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(55))
     this.service.clickModule(55,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         sinR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1252,7 +1252,7 @@ export class HamburgerPage implements OnInit {
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -1268,7 +1268,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(21))
     this.service.clickModule(21,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         identityResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1287,7 +1287,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/identity/s21001`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -1304,7 +1304,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(18))
     this.service.clickModule(18,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         enR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1324,7 +1324,7 @@ export class HamburgerPage implements OnInit {
       
       /*if(!sinR)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/self-interest`])
       }
       else
@@ -1339,7 +1339,7 @@ export class HamburgerPage implements OnInit {
       localStorage.setItem("moduleId",JSON.stringify(56))
       this.service.clickModule(56,this.userId)
       .subscribe(res=>
-        {console.log(res)
+        {
           this.qrList=res
           ibR="s"+res.lastVisitedScreen
           this.goToPage=res.lastVisitedScreen
@@ -1359,7 +1359,7 @@ export class HamburgerPage implements OnInit {
         
         /*if(!sinR)
         {
-          console.log("null go to page")
+          
           this.router.navigate([`/adults/self-interest`])
         }
         else
@@ -1375,7 +1375,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(57))
     this.service.clickModule(57,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         niR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1406,7 +1406,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(19))
     this.service.clickModule(19,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         fearResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1425,7 +1425,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/fear-anxiety/s486`])
      /* if(!fearResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/fear-anxiety`])
       }
       else
@@ -1445,7 +1445,7 @@ export class HamburgerPage implements OnInit {
     console.log(this.userId)
     this.service.clickModule(20,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         pleasureResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1478,7 +1478,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(60))
     this.service.clickModule(60,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         sorrowandlossResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1505,7 +1505,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(61))
     this.service.clickModule(61,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         lonelinessResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1524,7 +1524,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/loneliness/s61001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -1543,7 +1543,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(14))
     this.service.clickModule(14,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         angerResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1562,7 +1562,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/anger/s162p0`])
     /* if(!angerResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/anger/s162p0`])
       }
       else
@@ -1583,7 +1583,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(44))
     this.service.clickModule(44,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         stressResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1602,7 +1602,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/stress/s44001`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/stress`])
       }
       else
@@ -1618,7 +1618,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(47))
     this.service.clickModule(47,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         relationshipResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1638,7 +1638,7 @@ export class HamburgerPage implements OnInit {
      
     /*if(!relationshipResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/relationships`])
       }
       else
@@ -1653,7 +1653,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(62))
     this.service.clickModule(62,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         loveResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1672,7 +1672,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/love/s62001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -1691,7 +1691,7 @@ export class HamburgerPage implements OnInit {
    localStorage.setItem("moduleId",JSON.stringify(16))
     this.service.clickModule(16,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         criticismResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1710,7 +1710,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/criticism/s324`])
      /*if(!criticismResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/criticism/s324`])
       }
       else
@@ -1727,7 +1727,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(17))
     this.service.clickModule(17,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         sR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1746,7 +1746,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/self-esteem/s433`])
      /* if(!this.goToPage)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/conditioning/s232`])
       }
       else
@@ -1765,7 +1765,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(63))
     this.service.clickModule(63,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         livingwithpeaceResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1784,7 +1784,7 @@ export class HamburgerPage implements OnInit {
         this.router.navigate([`/adults/living-with-peace/s63001`])
     /* if(!lonelinessResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/loneliness/s162p0`])
       }
       else
@@ -1803,7 +1803,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(64))
     this.service.clickModule(64,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         dealingwithdeathResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1833,7 +1833,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(23))
     this.service.clickModule(23,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         hR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1852,7 +1852,7 @@ export class HamburgerPage implements OnInit {
       this.router.navigate([`/adults/happiness/s23001`])
      /* if(!identityResume)
       {
-        console.log("null go to page")
+        
         this.router.navigate([`/adults/identity`])
       }
       else
@@ -1869,7 +1869,7 @@ export class HamburgerPage implements OnInit {
      localStorage.setItem("moduleId",JSON.stringify(53))
      this.service.clickModule(53,this.userId)
      .subscribe(res=>
-       {console.log(res)
+       {
          this.qrList=res
          communicationR="s"+res.lastVisitedScreen
          this.goToPage=res.lastVisitedScreen
@@ -1889,7 +1889,7 @@ export class HamburgerPage implements OnInit {
       
       /* if(!communicationR)
        {
-         console.log("null go to page")
+         
          this.router.navigate([`/adults/communication`])
        }
        else
@@ -1908,7 +1908,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(49))
     this.service.clickModule(49,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         opinionsandbeliefsResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1935,7 +1935,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(48))
     this.service.clickModule(48,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         successandfailureResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1962,7 +1962,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(45))
     this.service.clickModule(45,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         addictionResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -1989,7 +1989,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(46))
     this.service.clickModule(46,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         foodResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2016,7 +2016,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(73))
     this.service.clickModule(73,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         moneyResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2043,7 +2043,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(58))
     this.service.clickModule(58,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         wR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
@@ -2071,7 +2071,7 @@ export class HamburgerPage implements OnInit {
     localStorage.setItem("moduleId",JSON.stringify(59))
     this.service.clickModule(59,this.userId)
     .subscribe(res=>
-      {console.log(res)
+      {
         this.qrList=res
         lR="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen

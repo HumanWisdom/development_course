@@ -43,10 +43,10 @@ export class S30006Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/noticing-thoughts/s30007'])
+    this.router.navigate(['/adults/noticing-thoughts/s30007'])
   }
   prev(){
-    this.router.navigate(['/noticing-thoughts/s30005'])
+    this.router.navigate(['/adults/noticing-thoughts/s30005'])
 
   }
 

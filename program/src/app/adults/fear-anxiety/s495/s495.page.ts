@@ -61,7 +61,7 @@ export class S495Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -102,15 +102,15 @@ export class S495Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r495"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/fear-anxiety/s496'])
+        this.router.navigate(['/adults/fear-anxiety/s496'])
     
       },
       ()=>{
-        this.router.navigate(['/fear-anxiety/s496'])
+        this.router.navigate(['/adults/fear-anxiety/s496'])
       })
     
 
@@ -120,7 +120,7 @@ export class S495Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s494p5'])
+    this.router.navigate(['/adults/fear-anxiety/s494p5'])
   }
   
   ngOnDestroy(){

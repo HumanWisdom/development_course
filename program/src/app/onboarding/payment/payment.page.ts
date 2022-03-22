@@ -74,7 +74,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
     }
     this.service.stripe(obj)
     .subscribe(res=>{
-      console.log(res)      
+            
       this.stripeId = res;
       this.enable = true;
       // this.keyList=res

@@ -61,7 +61,7 @@ export class S40003Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -87,7 +87,7 @@ export class S40003Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/adults/no-judgement/s40004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -98,17 +98,17 @@ export class S40003Page implements OnInit,OnDestroy {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/no-judgement/s40004'])
+    
    
  
   }
   prev(){
-    this.router.navigate(['/no-judgement/s40002'])
+    this.router.navigate(['/adults/no-judgement/s40002'])
  
  
   }

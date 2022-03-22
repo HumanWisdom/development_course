@@ -58,7 +58,7 @@ export class S51004Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -84,7 +84,7 @@ export class S51004Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/adults/guided-meditation/s51005'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -95,17 +95,17 @@ export class S51004Page implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/guided-meditation/s51005'])
+    
    
  
   }
   prev(){
-    this.router.navigate(['/guided-meditation/s51003'])
+    this.router.navigate(['/adults/guided-meditation/s51003'])
  
  
   }

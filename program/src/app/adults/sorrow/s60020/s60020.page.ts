@@ -70,7 +70,7 @@ export class S60020Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,22 +114,22 @@ export class S60020Page implements OnInit {
         "Resp":this.r60020
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/sorrow/s60021'])
+          this.router.navigate(['/adults/sorrow/s60021'])
 
         },
         ()=>{
-          this.router.navigate(['/sorrow/s60021'])
+          this.router.navigate(['/adults/sorrow/s60021'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/sorrow/s60019'])
+    this.router.navigate(['/adults/sorrow/s60019'])
   }
   
   ngOnDestroy(){

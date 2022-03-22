@@ -71,7 +71,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -90,20 +90,20 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/self-image/s25031'])
+        this.router.navigate(['/adults/self-image/s25031'])
       })
     
  
   }
  
   prev(){
-    this.router.navigate(['/self-image/s25030'])
+    this.router.navigate(['/adults/self-image/s25030'])
   }
  
   ngOnDestroy(){

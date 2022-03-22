@@ -59,7 +59,7 @@ export class S190Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -90,6 +90,7 @@ export class S190Page implements OnInit,OnDestroy {
   }
 
   submitProgress(e){
+    this.router.navigate(['/adults/anger/s191'])
     console.log("returned response",e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -110,19 +111,19 @@ export class S190Page implements OnInit,OnDestroy {
         "Resp":this.r190
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/anger/s191'])
+          // this.router.navigate(['/adults/anger/s191'])
         },
         ()=>{
-          this.router.navigate(['/anger/s191'])
+          // this.router.navigate(['/adults/anger/s191'])
         })
    }
 
    else{
-    this.router.navigate(['/anger/s191'])
+    this.router.navigate(['/adults/anger/s191'])
 
    }
    
@@ -132,7 +133,7 @@ export class S190Page implements OnInit,OnDestroy {
   }
 
   previous(){
-    this.router.navigate(['/anger/s189p6'])
+    this.router.navigate(['/adults/anger/s189p6'])
   }
   ngOnDestroy(){
    

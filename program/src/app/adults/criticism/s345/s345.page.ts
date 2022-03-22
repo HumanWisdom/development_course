@@ -50,11 +50,11 @@ export class S345Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/criticism/s346'])
+    this.router.navigate(['/adults/criticism/s346'])
 
   }
   prev(){
-    this.router.navigate(['/criticism/s344'])
+    this.router.navigate(['/adults/criticism/s344'])
   }
 
 

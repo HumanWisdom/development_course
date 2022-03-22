@@ -42,10 +42,10 @@ export class S46035Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/food-health/s46036'])
+    this.router.navigate(['/adults/food-health/s46036'])
   }
   prev(){
-    this.router.navigate(['/food-health/s46034'])
+    this.router.navigate(['/adults/food-health/s46034'])
 
   }
 

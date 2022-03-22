@@ -15,7 +15,7 @@ export class S194Page implements OnInit,OnDestroy {
   bg="anger_overlay_w2"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/anger/videos/2.3.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/anger/anger_03.jpg"
+  poster="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/video_posters/anger/anger_03.jpg"
   title="How do we respond when others are angry with us?"
 
   userId:any
@@ -52,7 +52,7 @@ avDuration:any
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -75,6 +75,7 @@ receiveAvDuration(e){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/anger/s195'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -86,17 +87,17 @@ receiveAvDuration(e){
 
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>console.log(error),
       ()=>{
-        this.router.navigate(['/anger/s195'])
+        // this.router.navigate(['/adults/anger/s195'])
       })
     
 
   }
   previous(){
-    this.router.navigate(['/anger/s193'])
+    this.router.navigate(['/adults/anger/s193'])
   }
   ngOnDestroy(){
     

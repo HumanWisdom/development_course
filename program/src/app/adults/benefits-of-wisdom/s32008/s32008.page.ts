@@ -70,7 +70,7 @@ export class S32008Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -102,7 +102,7 @@ export class S32008Page implements OnInit {
    this.r32008=sessionStorage.getItem("r32008")
    console.log(this.r32008)
    
-     
+   this.router.navigate(['/adults/benefits-of-wisdom/s32009'])
       this.service.submitProgressReflection({
         "ScrNumber":this.screenNumber,
         "UserId":this.userId,
@@ -114,15 +114,15 @@ export class S32008Page implements OnInit {
         "Resp":this.r32008
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/benefits-of-wisdom/s32009'])
+          this.router.navigate(['/adults/benefits-of-wisdom/s32009'])
 
         },
         ()=>{
-          this.router.navigate(['/benefits-of-wisdom/s32009'])
+         
         })
    
 
@@ -134,12 +134,12 @@ export class S32008Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/benefits-of-wisdom/s32007'])
+    this.router.navigate(['/adults/benefits-of-wisdom/s32007'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

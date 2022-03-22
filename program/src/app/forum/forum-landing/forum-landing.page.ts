@@ -41,7 +41,7 @@ export class ForumLandingPage implements OnInit {
   like(item){
     this.serivce.likePost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
       if(res){
-        console.log(res);
+        ;
         this.getAllposts(0);
       }
     });
@@ -78,7 +78,7 @@ postreport(item){
   console.log(item);
   this.serivce.reportPost({PostID: item.PostID,UserID: this.UserID,Comment: this.commenttext}).subscribe(res=>{
     if(res){
-      console.log(res);
+      ;
       this.replyflag=!this.replyflag;
       this.getAllposts(0);
     }
@@ -87,7 +87,7 @@ postreport(item){
 follow(item){
   this.serivce.followPost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
     if(res){
-      console.log(res);
+      ;
     }
   });
 }

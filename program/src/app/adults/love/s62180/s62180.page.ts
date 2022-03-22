@@ -70,7 +70,7 @@ hint="I don't mean just an intellectual idea, but a real feeling of care. "
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -114,22 +114,22 @@ hint="I don't mean just an intellectual idea, but a real feeling of care. "
         "Resp":this.r62180
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/love/s62181'])
+          this.router.navigate(['/adults/love/s62181'])
 
         },
         ()=>{
-          this.router.navigate(['/love/s62181'])
+          this.router.navigate(['/adults/love/s62181'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/love/s62179'])
+    this.router.navigate(['/adults/love/s62179'])
   }
   
   ngOnDestroy(){

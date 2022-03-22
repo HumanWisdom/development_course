@@ -63,7 +63,7 @@ export class S39006Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -100,17 +100,17 @@ export class S39006Page implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-      this.router.navigate(['/awareness/s39007'])
+      this.router.navigate(['/adults/awareness/s39007'])
    
  
   }
   prev(){
-    this.router.navigate(['/awareness/s39005'])
+    this.router.navigate(['/adults/awareness/s39005'])
  
  
   }

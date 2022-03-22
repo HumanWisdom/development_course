@@ -57,7 +57,7 @@ export class S63072Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(232).Question
@@ -82,7 +82,7 @@ export class S63072Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,7 +131,7 @@ export class S63072Page implements OnInit {
     }
     console.log(this.sendOption)
     sessionStorage.setItem("sessionOption63072",JSON.stringify(this.sendOption))
-   //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+   
  
   }
  
@@ -139,6 +139,7 @@ export class S63072Page implements OnInit {
   submitProgress(){
     //if(this.sendOption!=null)
     {
+      this.router.navigate(['/adults/living-with-peace/s63073'])
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -146,17 +147,17 @@ export class S63072Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
 
 
     }
       
    
-      this.router.navigate(['/living-with-peace/s63073'])
+     
 
   }
   prev(){
-    this.router.navigate(['/living-with-peace/s63071'])
+    this.router.navigate(['/adults/living-with-peace/s63071'])
 
 
   }

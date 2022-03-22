@@ -40,7 +40,7 @@ export class S73001Page implements OnInit,OnDestroy {
     let arraythree = []
     if(story.length <= 2) 
     {
-      story.forEach((e) => 
+      story?.forEach((e) => 
       {
         arraythree.push(e)
       })
@@ -48,7 +48,7 @@ export class S73001Page implements OnInit,OnDestroy {
     }
     else
     {
-      story.forEach((e) => 
+      story?.forEach((e) => 
       {
         if(arraythree.length < 2) 
         {
@@ -79,7 +79,7 @@ export class S73001Page implements OnInit,OnDestroy {
       this.lastvisited = false;
     }    
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(14))
+    localStorage.setItem("moduleId",JSON.stringify(73))
     this.moduleId=localStorage.getItem("moduleId")
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
@@ -108,7 +108,7 @@ export class S73001Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -125,7 +125,7 @@ export class S73001Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })

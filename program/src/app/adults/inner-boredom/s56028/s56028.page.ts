@@ -42,10 +42,10 @@ export class S56028Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/inner-boredom/s56029'])
+    this.router.navigate(['/adults/inner-boredom/s56029'])
   }
   prev(){
-    this.router.navigate(['/inner-boredom/s56027'])
+    this.router.navigate(['/adults/inner-boredom/s56027'])
 
   }
 

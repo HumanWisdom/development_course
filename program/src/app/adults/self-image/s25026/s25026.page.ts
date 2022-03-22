@@ -71,7 +71,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -91,17 +91,17 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{
-        this.router.navigate(['/self-image/s25027'])
+        this.router.navigate(['/adults/self-image/s25027'])
       })
     
  
   }
   prev(){
-    this.router.navigate(['/self-image/s25025p1'])
+    this.router.navigate(['/adults/self-image/s25025p1'])
  
  
   }

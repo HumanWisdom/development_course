@@ -58,7 +58,7 @@ export class S47049Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -84,7 +84,7 @@ export class S47049Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/adults/relationships/s47050'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -95,17 +95,17 @@ export class S47049Page implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/relationships/s47050'])
+   
    
  
   }
   prev(){
-    this.router.navigate(['/relationships/s47048'])
+    this.router.navigate(['/adults/relationships/s47048'])
  
  
   }

@@ -98,7 +98,7 @@ export class S437Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -160,7 +160,8 @@ export class S437Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  this.router.navigate(['/adults/self-esteem/s438'])
+  
  
 
     var optionT=[this.s1]
@@ -172,19 +173,19 @@ export class S437Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res),
+      .subscribe((res) => {},
       error=>{
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/self-esteem/s438'])
+       
       })
 
 
   }
   
   prev(){
-    this.router.navigate(['/self-esteem/s436'])
+    this.router.navigate(['/adults/self-esteem/s436'])
 
   }
   ngOnDestroy(){

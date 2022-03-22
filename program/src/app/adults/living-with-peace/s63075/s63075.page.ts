@@ -147,7 +147,7 @@ export class S63075Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -171,7 +171,7 @@ export class S63075Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r63075",this.r63075)
@@ -189,25 +189,25 @@ export class S63075Page implements OnInit {
         "Resp":this.r63075
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/living-with-peace/s63076'])
+          this.router.navigate(['/adults/living-with-peace/s63076'])
         },
         ()=>{
-          this.router.navigate(['/living-with-peace/s63076'])
+          this.router.navigate(['/adults/living-with-peace/s63076'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/living-with-peace/s63074'])
+    this.router.navigate(['/adults/living-with-peace/s63074'])
 
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

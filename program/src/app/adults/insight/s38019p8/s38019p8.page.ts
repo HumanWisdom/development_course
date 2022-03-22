@@ -42,11 +42,11 @@ export class S38019p8Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/insight/s38020'])
+    this.router.navigate(['/adults/insight/s38020'])
 
   }
   prev(){
-    this.router.navigate(['/insight/s38019p7'])
+    this.router.navigate(['/adults/insight/s38019p7'])
 
   }
 

@@ -13,7 +13,7 @@ export class S173Page implements OnInit {
   bg="anger_overlay_w11"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/anger/videos/1.1.mp4'
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/anger/anger_01.jpg"
+  poster="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/video_posters/anger/anger_01.jpg"
   title="What is the root cause of anger?"
   
   userId:any
@@ -52,7 +52,7 @@ avDuration:any
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -75,6 +75,7 @@ receiveAvDuration(e){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/anger/s174'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -86,17 +87,17 @@ receiveAvDuration(e){
 
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>console.log(error),
       ()=>{
-        this.router.navigate(['/anger/s174'])
+        // this.router.navigate(['/adults/anger/s174'])
       })
     
 
   }
   previous(){
-    this.router.navigate(['/anger/s172'])
+    this.router.navigate(['/adults/anger/s172'])
   }
 
 

@@ -313,7 +313,7 @@ export class S60107Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -354,6 +354,7 @@ export class S60107Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
    this.totalTime = this.endTime - this.startTime;
+   this.router.navigate(['/adults/sorrow/s60108'])
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5,this.s6]
     this.option=optionT.join()
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -363,13 +364,13 @@ export class S60107Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res))
-      this.router.navigate(['/adults/sorrow/s60108'])
+      .subscribe((res) => {});
+     
 
 
   }
   prev(){
-    this.router.navigate(['/sorrow/s60106'])
+    this.router.navigate(['/adults/sorrow/s60106'])
 
   }
  

@@ -70,7 +70,7 @@ export class S27019Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -115,20 +115,20 @@ export class S27019Page implements OnInit {
         "Resp":this.r27019
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/discovering-wisdom/s27020'])
+          this.router.navigate(['/adults/discovering-wisdom/s27020'])
 
         },
         ()=>{
-          this.router.navigate(['/discovering-wisdom/s27020'])
+          this.router.navigate(['/adults/discovering-wisdom/s27020'])
         })
    }
 
    else{
-    this.router.navigate(['/discovering-wisdom/s27020'])
+    this.router.navigate(['/adults/discovering-wisdom/s27020'])
 
    }
    
@@ -138,12 +138,12 @@ export class S27019Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/discovering-wisdom/s27018'])
+    this.router.navigate(['/adults/discovering-wisdom/s27018'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

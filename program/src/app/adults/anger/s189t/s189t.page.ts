@@ -54,6 +54,7 @@ avDuration:any
       this.bookmark=0
   }
   submitProgress(){
+    this.router.navigate(['/adults/anger/s189p0'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -64,13 +65,13 @@ avDuration:any
        "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
 
-    this.router.navigate(['/anger/s189p0'])
+    // this.router.navigate(['/adults/anger/s189p0'])
   }
   previous(){
-    this.router.navigate(['/anger/s188'])
+    this.router.navigate(['/adults/anger/s188'])
   }
 
 }

@@ -132,8 +132,7 @@ import { S231p2Page } from './s231p2/s231p2.page'; 
 const routes: Routes = [
   {
     path: '',    
-    canActivate:[ActiveGuard],
-    component: S162Page,
+    component: S162p0Page,
   },
   {
     path: 's162',   

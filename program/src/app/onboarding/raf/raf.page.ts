@@ -31,7 +31,7 @@ export class RafPage implements OnInit {
       "FriendName":this.friendName,
       "FriendEmail":this.friendEmail
     }).subscribe(res=>{
-      console.log(res)
+      
     })
 
   }

@@ -69,7 +69,7 @@ export class S46032Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,22 +113,22 @@ export class S46032Page implements OnInit {
         "Resp":this.r46032
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/food-health/s46033'])
+          this.router.navigate(['/adults/food-health/s46033'])
 
         },
         ()=>{
-          this.router.navigate(['/food-health/s46033'])
+          this.router.navigate(['/adults/food-health/s46033'])
         })
  
 
   }
 
   previous(){
-    this.router.navigate(['/food-health/s46031'])
+    this.router.navigate(['/adults/food-health/s46031'])
   }
   
   ngOnDestroy(){

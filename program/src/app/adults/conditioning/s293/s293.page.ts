@@ -61,7 +61,7 @@ export class S293Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -103,19 +103,19 @@ export class S293Page implements OnInit {
         "Resp":JSON.parse(sessionStorage.getItem("r293"))
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/conditioning/s294'])
+          this.router.navigate(['/adults/conditioning/s294'])
         },
         ()=>{
-          this.router.navigate(['/conditioning/s294'])
+          this.router.navigate(['/adults/conditioning/s294'])
         })
 
    }
    else{
-    this.router.navigate(['/conditioning/s294'])
+    this.router.navigate(['/adults/conditioning/s294'])
 
    }
    
@@ -125,12 +125,12 @@ export class S293Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/conditioning/s292'])
+    this.router.navigate(['/adults/conditioning/s292'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

@@ -254,7 +254,7 @@ export class S43029p1Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -342,7 +342,8 @@ export class S43029p1Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
-  //console.log(this.totalTime,"total time")
+  this.router.navigate(['/adults/obstacles-enquiry/s43029p2'])
+  
  
 
     var optionT=[this.s1,this.s2,this.s3,this.s4,this.s5]
@@ -354,19 +355,19 @@ export class S43029p1Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res),
+      .subscribe((res) => {},
       error=>{
         console.log(error)
       },
       ()=>{
-        this.router.navigate(['/obstacles-enquiry/s43029p2'])
+        
       })
 
 
   }
   
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s43029'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43029'])
 
   }
   ngOnDestroy(){

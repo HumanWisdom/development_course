@@ -218,7 +218,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -227,6 +227,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/adults/reactive-mind/s54070'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -236,23 +237,23 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-        this.router.navigate(['/reactive-mind/s54070'])
+       
        
      
       },
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/reactive-mind/s54069'])
+       // this.router.navigate(['/adults/reactive-mind/s54069'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/reactive-mind/s54068'])
+    this.router.navigate(['/adults/reactive-mind/s54068'])
 
 
   }

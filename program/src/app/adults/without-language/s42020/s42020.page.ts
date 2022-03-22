@@ -63,7 +63,7 @@ bg="purple_blue_w5"
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -104,15 +104,15 @@ bg="purple_blue_w5"
       "Resp":JSON.parse(sessionStorage.getItem("r42020"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/without-language/s42021'])
+        this.router.navigate(['/adults/without-language/s42021'])
     
       },
       ()=>{
-        this.router.navigate(['/without-language/s42021'])
+        this.router.navigate(['/adults/without-language/s42021'])
       })
     
 
@@ -122,7 +122,7 @@ bg="purple_blue_w5"
   }
 
   previous(){
-    this.router.navigate(['/without-language/s42019'])
+    this.router.navigate(['/adults/without-language/s42019'])
   }
   
   ngOnDestroy(){

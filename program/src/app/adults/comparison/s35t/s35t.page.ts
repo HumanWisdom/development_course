@@ -100,7 +100,7 @@ export class S35tPage implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/adults/comparison/s36'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -111,15 +111,15 @@ export class S35tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
-    this.router.navigate(['/comparison/s36'])
+   
    
     
   }
   prev(){
-    this.router.navigate(['/comparison/s34'])
+    this.router.navigate(['/adults/comparison/s34'])
   }
 
 

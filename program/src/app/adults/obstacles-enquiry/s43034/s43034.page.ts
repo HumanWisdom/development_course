@@ -52,11 +52,11 @@ export class S43034Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/obstacles-enquiry/s43035'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43035'])
 
   }
   prev(){
-    this.router.navigate(['/obstacles-enquiry/s43029p4'])
+    this.router.navigate(['/adults/obstacles-enquiry/s43029p4'])
 
   }
 

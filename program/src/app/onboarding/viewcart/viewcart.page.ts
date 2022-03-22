@@ -50,9 +50,13 @@ export class ViewcartPage implements OnInit {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
     else
       this.userId=JSON.parse(localStorage.getItem("userId"))
-    this.viewCart()
-     
-    //console.log(this.cartList)
+    if(localStorage.getItem('personalised') === 'T') {
+      this.personalisedaddcart()
+    }else{
+      this.viewCart()
+    }
+
+    
   }
  /* getMax(){
     this.cartList.forEach(obj => {
@@ -76,7 +80,7 @@ export class ViewcartPage implements OnInit {
     this.service.viewCart({ "Id":this.userId})
     .subscribe(res=>
       {
-        console.log(res)
+        
         this.cartList=res
         this.symbol=this.cartList[0].Symbol
         
@@ -113,7 +117,7 @@ export class ViewcartPage implements OnInit {
         console.log(error)
       },
       ()=>this.totalPrice())
-    //console.log(this.cartList)
+    
   }
 
   editCard(card) {
@@ -134,6 +138,30 @@ export class ViewcartPage implements OnInit {
 
   msginput(event) {
     this.learnermsg = event.target.value;
+  }
+// monthly 1
+// yearly 2
+  personalisedaddcart() {
+    let m = JSON.parse(localStorage.getItem('cartlist'));
+    let ym = localStorage.getItem('personalised subscription');
+    this.service.addItem({
+      "UserId":this.userId,
+      "RateId": m['RateID'],
+      "Qty":1,
+      "PlanId": ym === 'Monthly' ? 1 : 2,
+      "MySelf": 1,
+      "LearnerEmail": '',
+      "LearnerMsg": '',
+      })
+      .subscribe(res=>{
+        this.viewCart()
+      },
+      error=>{
+        console.log(error)
+      },
+      ()=>{
+        this.totalPrice()  
+      })
   }
 
   addToCart(){
@@ -158,7 +186,7 @@ export class ViewcartPage implements OnInit {
           )
           .subscribe(res=>
             {
-              console.log(res)
+              
         })
       }
     }
@@ -180,7 +208,7 @@ export class ViewcartPage implements OnInit {
           //call service to delete
           this.service.deleteItem({"Id":parseFloat(cartId)})
           .subscribe(res=> {
-            console.log(res)
+            
           })
         }
         else{
@@ -195,7 +223,7 @@ export class ViewcartPage implements OnInit {
             )
             .subscribe(res=>
               {
-                console.log(res)
+                
           })
 
         }
@@ -228,7 +256,7 @@ export class ViewcartPage implements OnInit {
       "CartAmt":this.totalCartValue
     }).subscribe(
       res=>
-      {console.log(res)
+      {
         if(res.length !== 0)
         {
           this.msg = 'Coupon applied successfully'
@@ -343,7 +371,7 @@ export class ViewcartPage implements OnInit {
               )
               .subscribe(res=>
                 {
-                  console.log(res)
+                  
             })
           }*/
         

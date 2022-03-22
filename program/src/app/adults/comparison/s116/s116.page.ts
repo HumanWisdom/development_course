@@ -80,7 +80,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -91,7 +91,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    this.router.navigate(['/adults/comparison/s117'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,15 +102,15 @@ createScreen(){
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
-    this.router.navigate(['/comparison/s117'])
+   
    
 
   }
   prev(){
-    this.router.navigate(['/comparison/s115'])
+    this.router.navigate(['/adults/comparison/s115'])
 
 
   }

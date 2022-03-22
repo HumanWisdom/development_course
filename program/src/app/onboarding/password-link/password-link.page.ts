@@ -24,7 +24,7 @@ export class PasswordLinkPage implements OnInit {
     this.service.sendPasswordLink(this.email)
     .subscribe(
       res=>{
-        console.log(res)
+        
         
       },
       error=>{

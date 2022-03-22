@@ -45,7 +45,7 @@ export class S439Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -70,26 +70,26 @@ export class S439Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/adults/conditioning/s234'])
       })
     
  
   }
   prev(){
-    this.router.navigate(['/self-esteem/s438']) 
+    this.router.navigate(['/adults/self-esteem/s438']) 
  
  
   }
  
   goNext(){
-    this.router.navigate(['/self-esteem/s440'])
+    this.router.navigate(['/adults/self-esteem/s440'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
  
   }

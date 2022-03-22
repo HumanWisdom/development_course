@@ -58,7 +58,7 @@ export class S47006Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -116,7 +116,7 @@ export class S47006Page implements OnInit {
   submitProgress(){
     this.endTime = Date.now();
    this.totalTime = this.endTime - this.startTime;
-    
+   this.router.navigate(['/adults/relationships/s47007'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -124,13 +124,13 @@ export class S47006Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.option})
-      .subscribe(res=>console.log(res))
-      this.router.navigate(['/adults/relationships/s47007'])
+      .subscribe((res) => {});
+     
 
 
   }
   prev(){
-    this.router.navigate(['/relationships/s47005'])
+    this.router.navigate(['/adults/relationships/s47005'])
 
   }
  

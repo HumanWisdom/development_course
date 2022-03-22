@@ -67,7 +67,7 @@ export class S57009Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -97,7 +97,7 @@ export class S57009Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    this.router.navigate(['/adults/nature-of-i/s57010'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,17 +108,17 @@ export class S57009Page implements OnInit,OnDestroy {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/nature-of-i/s57010'])
+   
    
  
   }
   prev(){
-    this.router.navigate(['/nature-of-i/s57008'])
+    this.router.navigate(['/adults/nature-of-i/s57008'])
  
  
   }

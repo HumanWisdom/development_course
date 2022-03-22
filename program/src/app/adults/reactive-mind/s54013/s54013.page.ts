@@ -61,7 +61,7 @@ export class S54013Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -102,15 +102,15 @@ export class S54013Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r54013"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/reactive-mind/s54014'])
+        this.router.navigate(['/adults/reactive-mind/s54014'])
     
       },
       ()=>{
-        this.router.navigate(['/reactive-mind/s54014'])
+        this.router.navigate(['/adults/reactive-mind/s54014'])
       })
     
 
@@ -120,7 +120,7 @@ export class S54013Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/reactive-mind/s54012'])
+    this.router.navigate(['/adults/reactive-mind/s54012'])
   }
   
   ngOnDestroy(){

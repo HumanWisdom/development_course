@@ -42,10 +42,10 @@ export class S49048Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/opinions-beliefs/s49049'])
+    this.router.navigate(['/adults/opinions-beliefs/s49049'])
   }
   prev(){
-    this.router.navigate(['/opinions-beliefs/s49047'])
+    this.router.navigate(['/adults/opinions-beliefs/s49047'])
 
   }
 

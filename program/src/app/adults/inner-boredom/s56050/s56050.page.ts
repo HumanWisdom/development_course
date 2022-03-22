@@ -148,7 +148,7 @@ export class S56050Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -172,7 +172,7 @@ export class S56050Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r56050",this.r56050)
@@ -190,25 +190,25 @@ export class S56050Page implements OnInit {
         "Resp":this.r56050
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/inner-boredom/s56051'])
+          this.router.navigate(['/adults/inner-boredom/s56051'])
         },
         ()=>{
-          this.router.navigate(['/inner-boredom/s56051'])
+          this.router.navigate(['/adults/inner-boredom/s56051'])
         })
    }
 
 
 prev(){
-    this.router.navigate(['/inner-boredom/s56049'])
+    this.router.navigate(['/adults/inner-boredom/s56049'])
 
   }
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
   
   }
 

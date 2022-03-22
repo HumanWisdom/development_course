@@ -70,7 +70,7 @@ export class S34006Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -115,20 +115,20 @@ export class S34006Page implements OnInit {
         "Resp":this.r34006
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/key-ideas/s34007'])
+          this.router.navigate(['/adults/key-ideas/s34007'])
 
         },
         ()=>{
-          this.router.navigate(['/key-ideas/s34007'])
+          this.router.navigate(['/adults/key-ideas/s34007'])
         })
    }
 
    else{
-    this.router.navigate(['/key-ideas/s34007'])
+    this.router.navigate(['/adults/key-ideas/s34007'])
 
    }
    
@@ -138,12 +138,12 @@ export class S34006Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/key-ideas/s34005'])
+    this.router.navigate(['/adults/key-ideas/s34005'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

@@ -11,6 +11,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class TocHeaderComponent implements OnInit {
   @Input() tocImage: string;
   @Input() tocColor: string;
+  @Input() tocAlt: string;
   path=this.router.url
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService,

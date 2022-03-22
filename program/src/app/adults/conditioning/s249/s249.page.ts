@@ -13,7 +13,7 @@ export class S249Page implements OnInit {
   bg="conditioning_w4"
   toc="conditioning/s232"
   transcriptPage="conditioning/s249t"
-  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/conditioning/audios/con+1.1.mp3"
+  //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/conditioning/audios/con+1.4.mp3'
   title="The benefits of conditioning"
@@ -61,7 +61,7 @@ export class S249Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -87,7 +87,7 @@ export class S249Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+   this.router.navigate(['/adults/conditioning/s250'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -98,17 +98,17 @@ export class S249Page implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/conditioning/s250'])
+   
    
  
   }
   prev(){
-    this.router.navigate(['/conditioning/s248'])
+    this.router.navigate(['/adults/conditioning/s248'])
  
  
   }

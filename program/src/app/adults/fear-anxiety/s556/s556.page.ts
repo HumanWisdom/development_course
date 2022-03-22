@@ -81,7 +81,7 @@ createScreen(){
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
  
@@ -96,6 +96,8 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+
+    this.router.navigate(['/adults/fear-anxiety/s557'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,19 +109,19 @@ createScreen(){
 
     }).subscribe(res=>
       {
-        console.log(res)
+        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>console.log(error),
       ()=>{
-        this.router.navigate(['/fear-anxiety/s557'])
+        
       })
     
 
   }
   prev(){
-    this.router.navigate(['/fear-anxiety/s555'])
+    this.router.navigate(['/adults/fear-anxiety/s555'])
   }
 
 

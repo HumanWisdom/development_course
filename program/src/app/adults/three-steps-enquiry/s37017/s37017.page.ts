@@ -39,18 +39,18 @@ export class S37017Page implements OnInit {
     })
     /*this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=res.PointsScored
       this.overallPercentage=res.overallPercentage
     })*/
 
   }
   submitProgress(){
-    this.router.navigate(['/three-steps-enquiry/s37018'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37018'])
 
   }
   prev(){
-    this.router.navigate(['/three-steps-enquiry/s37016'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37016'])
 
   }
 

@@ -68,7 +68,7 @@ export class S176Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -111,7 +111,7 @@ export class S176Page implements OnInit,OnDestroy {
       "Resp":this.r176
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -120,7 +120,7 @@ export class S176Page implements OnInit,OnDestroy {
   ngOnDestroy(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    //console.log(this.totalTime,"total time")
+    
     this.submitProgress()
   }
 

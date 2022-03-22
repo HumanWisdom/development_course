@@ -58,7 +58,7 @@ export class S47054Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
   }
 
@@ -92,19 +92,19 @@ export class S47054Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r47054"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/relationships/s47055'])
+        this.router.navigate(['/adults/relationships/s47055'])
     
       },
       ()=>{
-        this.router.navigate(['/relationships/s47055'])
+        this.router.navigate(['/adults/relationships/s47055'])
       })
   }
   previous(){
-    this.router.navigate(['/relationships/s47053'])
+    this.router.navigate(['/adults/relationships/s47053'])
   }    
   ngOnDestroy(){
   }

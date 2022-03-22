@@ -187,6 +187,11 @@
     {
         margin-top: 16%;
     }
+
+    .mw35p 
+    {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 768px)
@@ -289,6 +294,11 @@
     .cmr-10px 
     {
         margin-right: 0px;
+    }
+
+    .mw35p 
+    {
+        max-width: 35% !important;
     }
 }
 
@@ -584,5 +594,15 @@
     .mlr-10px {
         margin-left: -4px;
         margin-right: -4px;
+    }
+
+    .mw35p 
+    {
+        max-width: 25% !important;
+    }
+
+    .cpr2rem 
+    {
+        padding-right: 2rem;
     }
 }

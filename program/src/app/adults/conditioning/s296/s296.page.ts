@@ -54,7 +54,7 @@ export class S296Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(62).Question
@@ -79,7 +79,7 @@ export class S296Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -119,7 +119,7 @@ export class S296Page implements OnInit {
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption296",JSON.stringify(this.sendOption))
-  //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+  
 
  }
 
@@ -127,7 +127,7 @@ export class S296Page implements OnInit {
     this.endTime = Date.now();
   this.totalTime = this.endTime - this.startTime;
   
-  
+ this.router.navigate(['/adults/conditioning/s297'])
     this.service.submitProgressQuestion({"ModuleId":this.moduleId,
       "screenType":this.screenType, 
       "ScrNumber":this.screenNumber,  
@@ -135,14 +135,14 @@ export class S296Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
 
-      this.router.navigate(['/conditioning/s297'])
+     
 
 
   }
   prev(){
-    this.router.navigate(['/conditioning/s295'])
+    this.router.navigate(['/adults/conditioning/s295'])
 
 
   }

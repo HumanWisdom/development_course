@@ -61,6 +61,7 @@ export class S18003tPage implements OnInit {
     sessionStorage.setItem("bookmark18003",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    this.router.navigate(['/adults/emotional-needs/s18004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -71,14 +72,14 @@ export class S18003tPage implements OnInit {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
  
-    this.router.navigate(['/emotional-needs/s18004'])
+    
   }
   prev(){
    
-    this.router.navigate(['/emotional-needs/s18002'])
+    this.router.navigate(['/adults/emotional-needs/s18002'])
   }
 
 }

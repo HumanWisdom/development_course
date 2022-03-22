@@ -61,7 +61,7 @@ export class S438Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -102,14 +102,14 @@ export class S438Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r438"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/self-esteem/s439'])
+        this.router.navigate(['/adults/self-esteem/s439'])
       },
       ()=>{
-        this.router.navigate(['/self-esteem/s439'])
+        this.router.navigate(['/adults/self-esteem/s439'])
       })
     
 
@@ -120,7 +120,7 @@ export class S438Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/self-esteem/s437'])
+    this.router.navigate(['/adults/self-esteem/s437'])
   }
   
   ngOnDestroy(){

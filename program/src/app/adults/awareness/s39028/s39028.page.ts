@@ -40,18 +40,18 @@ export class S39028Page implements OnInit {
     })
     /*this.service.getPoints(this.userId)
     .subscribe(res=>{
-      console.log(res)
+      
       this.points=res.PointsScored
       this.overallPercentage=res.overallPercentage
     })*/
 
   }
   submitProgress(){
-    this.router.navigate(['/awareness/s39029'])
+    this.router.navigate(['/adults/awareness/s39029'])
 
   }
   prev(){
-    this.router.navigate(['/awareness/s39027'])
+    this.router.navigate(['/adults/awareness/s39027'])
 
 
 

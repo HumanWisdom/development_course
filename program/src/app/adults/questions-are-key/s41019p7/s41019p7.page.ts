@@ -230,7 +230,7 @@ export class S41019p7Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -254,7 +254,7 @@ export class S41019p7Page implements OnInit {
   }
 
   submitProgress(){
-    //console.log("returned response",e)
+    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r41019p7",this.r41019p7)
@@ -274,19 +274,19 @@ export class S41019p7Page implements OnInit {
         "Resp":this.r41019p7
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/questions-are-key/s41019p8'])
+          this.router.navigate(['/adults/questions-are-key/s41019p8'])
         },
         ()=>{
-          this.router.navigate(['/questions-are-key/s41019p8'])
+          this.router.navigate(['/adults/questions-are-key/s41019p8'])
         })
    }
 
    else{
-    this.router.navigate(['/questions-are-key/s41019p6'])
+    this.router.navigate(['/adults/questions-are-key/s41019p6'])
 
    }
    
@@ -296,12 +296,12 @@ export class S41019p7Page implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/questions-are-key/s41019p6'])
+    this.router.navigate(['/adults/questions-are-key/s41019p6'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 

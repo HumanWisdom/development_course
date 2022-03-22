@@ -57,7 +57,7 @@ export class S60031Page implements OnInit {
 
     }
       
-   //console.log(this.qrList.ListOfQueOpts)
+   
     this.questionA=this.qrList.ListOfQueOpts
     
     this.question=this.findQuestion(214).Question
@@ -82,7 +82,7 @@ export class S60031Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -131,12 +131,13 @@ export class S60031Page implements OnInit {
     }
     console.log(this.sendOption)
     sessionStorage.setItem("sessionOption60031",JSON.stringify(this.sendOption))
-   //console.log("local Storage sess",sessionStorage.getItem("sessionOption"))
+   
  
   }
  
 
   submitProgress(){
+    this.router.navigate(['/adults/sorrow/s60032'])
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -146,17 +147,17 @@ export class S60031Page implements OnInit {
       "UserId":this.userId, 
       "timeSpent":this.totalTime,
       "OptionIDs":this.sendOption.join()})
-      .subscribe(res=>console.log(res))
+      .subscribe((res) => {});
 
 
     }
       
    
-      this.router.navigate(['/sorrow/s60032'])
+    
 
   }
   prev(){
-    this.router.navigate(['/sorrow/s60030'])
+    this.router.navigate(['/adults/sorrow/s60030'])
 
 
   }

@@ -59,7 +59,7 @@ export class S63071Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -100,15 +100,15 @@ export class S63071Page implements OnInit {
       "Resp":JSON.parse(sessionStorage.getItem("r63071"))
     }).subscribe(res=>
       {
-        console.log(res)
+        
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/living-with-peace/s63072'])
+        this.router.navigate(['/adults/living-with-peace/s63072'])
     
       },
       ()=>{
-        this.router.navigate(['/living-with-peace/s63072'])
+        this.router.navigate(['/adults/living-with-peace/s63072'])
       })
     
 
@@ -118,7 +118,7 @@ export class S63071Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/living-with-peace/s63070'])
+    this.router.navigate(['/adults/living-with-peace/s63070'])
   }
   
   ngOnDestroy(){

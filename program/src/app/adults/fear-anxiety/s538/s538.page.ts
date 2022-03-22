@@ -69,7 +69,7 @@ export class S538Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -113,21 +113,21 @@ export class S538Page implements OnInit {
         "Resp":this.r538
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/fear-anxiety/s539'])
+          this.router.navigate(['/adults/fear-anxiety/s539'])
 
         },
         ()=>{
-          this.router.navigate(['/fear-anxiety/s539'])
+          this.router.navigate(['/adults/fear-anxiety/s539'])
         })
 
   }
 
   previous(){
-    this.router.navigate(['/fear-anxiety/s537'])
+    this.router.navigate(['/adults/fear-anxiety/s537'])
   }
   
   ngOnDestroy(){

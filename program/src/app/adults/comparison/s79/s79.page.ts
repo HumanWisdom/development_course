@@ -71,7 +71,7 @@ export class S79Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        console.log(res)
+        
       })
     
 
@@ -115,19 +115,19 @@ export class S79Page implements OnInit {
         "Resp":this.r79
         }).subscribe(res=>
         {
-          console.log(res)
+          
         },
         error=>{
           console.log(error)
-          this.router.navigate(['/comparison/s80'])
+          this.router.navigate(['/adults/comparison/s80'])
         },
         ()=>{
-          this.router.navigate(['/comparison/s80'])
+          this.router.navigate(['/adults/comparison/s80'])
         })
    }
 
    else{
-    this.router.navigate(['/comparison/s80'])
+    this.router.navigate(['/adults/comparison/s80'])
 
    }
    
@@ -137,12 +137,12 @@ export class S79Page implements OnInit {
   }
 
   previous(){
-    this.router.navigate(['/comparison/s78'])
+    this.router.navigate(['/adults/comparison/s78'])
   }
   
   ngOnDestroy(){
    
-    //console.log(this.totalTime,"total time")
+    
     //this.submitProgress()
   }
 }
