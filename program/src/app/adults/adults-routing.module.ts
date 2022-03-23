@@ -281,6 +281,10 @@ const routes: Routes = [
     path: 'support',
     loadChildren: () => import('./support/support.module').then( m => m.SupportPageModule)
   },
+  {
+    path: 'daily-practise/:id',
+    loadChildren: () => import('./daily-practice/daily-practice.module').then( m => m.DailyPracticePageModule)
+  }
 ];
 
 @NgModule({
