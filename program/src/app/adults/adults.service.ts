@@ -160,4 +160,12 @@ export class AdultsService {
   commentblog(data): Observable<any> {
     return this.http.post(this.path + '/AddBlogComments', data)
   }
+
+  getDailypractiseQuestion(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Question`)
+  }
+
+  submitDailypractiseQuestion(data): Observable<any> {
+    return this.http.post(this.path + '/AddDailyQuestion_Response', data)
+  }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../users.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dailypractise',
@@ -19,7 +20,7 @@ export class DailypractiseComponent implements OnInit {
   updateTexttype;
   searcheddaily;
 
-  constructor(private service:UsersService) { }
+  constructor(private service:UsersService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getdaily()
@@ -49,21 +50,26 @@ export class DailypractiseComponent implements OnInit {
   }
 
   addDaily() {
-    this.service.adddailypractice({
-      "PractiseTypeID":this.parctiseType,
-      "Text_URL":this.textURL,
-        })
-      .subscribe(res=>
-        {
-        this.reset()
-        },
-        error=>{
-        },
-        ()=>{
-          window.alert('Daily Practise added successfully')
-          this.getdaily()
-        }
-      )
+    if(!(this.validate(this.textURLtype, this.textURL))) {
+      window.alert('URL type is invalid')
+    }else {
+      this.service.adddailypractice({
+        "PractiseTypeID":this.parctiseType,
+        "Text_URL":this.textURL,
+          })
+        .subscribe(res=>
+          {
+          this.reset()
+          },
+          error=>{
+          },
+          ()=>{
+            window.alert('Daily Practise added successfully')
+            this.getdaily()
+          }
+        )
+
+    }
 
   }
 
@@ -116,10 +122,15 @@ export class DailypractiseComponent implements OnInit {
     this.PractiseID=id
     this.updateparctiseType=daily
     this.updatetextURL = texturl
+    let filter = this.dailypractisetypeList.filter((res) => res['DailyPractise'] === daily)
+    this.updateTexttype = filter[0]['Type']
   }
 
   updatedaily(id) {
-    let filter = this.dailypractisetypeList.filter((res) => res['DailyPractise'] === this.updateparctiseType)
+    if(!(this.validate(this.updateTexttype, this.updatetextURL))) {
+      window.alert('URL type is invalid')
+    }else {
+      let filter = this.dailypractisetypeList.filter((res) => res['DailyPractise'] === this.updateparctiseType)
     this.PractiseTypeID = filter[0]['RowID']
     this.service.updatedailypractice({
       "PractiseID": this.PractiseID,
@@ -132,10 +143,23 @@ export class DailypractiseComponent implements OnInit {
         error=>{
         },
         ()=>{
+          this.modalService.dismissAll();
           window.alert('Daily Practise updated successfully')
           this.getdaily()
         }
       )
+    }
+
+  }
+
+  validate(type, text: string) {
+    if(type === 'Text') {
+      return true;
+    }else if(type === 'Video URL'){
+      return text.includes('mp4')
+    }else {
+      return text.includes('mp3')
+    }
   }
 
 }
