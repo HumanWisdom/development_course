@@ -1,0 +1,265 @@
+<div class="row mdp_header center_flex">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 flex_ai">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <a routerLink="/adults/adult-dashboard">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="img-responsive">
+      </a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <a>
+        <h1 class="txt210 mtb0px">
+          My daily practice
+        </h1>
+      </a>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+    </div>
+  </div>
+</div>
+
+<!-- page content -->
+<div class="right_col ml0 bg_mdp" role="main">
+  <!-- class -->
+  <div class="cw100p dabsolute_01">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
+        <div class="x_panel p0">
+          <div class="x_content p0 tcenter">
+            <form>
+
+              <!-- carousel -->
+              <div class="container">
+                <div id="mdp_carousel" class="carousel slide" data-ride="carousel" data-interval="3000000">
+                 
+                  <ol class="carousel-indicators">
+                    <li data-target="#mdp_carousel" data-slide-to="0" [ngClass]="[dailyid === '0' ? 'active' : '']"></li>
+                    <li data-target="#mdp_carousel" data-slide-to="1" [ngClass]="[dailyid === '1' ? 'active' : '']"></li>
+                    <li data-target="#mdp_carousel" data-slide-to="2" [ngClass]="[dailyid === '2' ? 'active' : '']"></li>
+                    <li data-target="#mdp_carousel" data-slide-to="3" [ngClass]="[dailyid === '3' ? 'active' : '']"></li>
+                    <li data-target="#mdp_carousel" data-slide-to="4" [ngClass]="[dailyid === '4' ? 'active' : '']"></li>
+                  </ol>
+                  
+                  <div class="carousel-inner">
+                    <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
+                      <!-- video -->
+                      <div class="row center_flex mdp_icon">
+                        <div class="col-md-12 col-sm-12 col-xs-8">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video.svg" alt="" class="img-responsive">
+                        </div>
+                      </div>
+        
+                      <div class="row mdp_audio">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt268 mtb0px">
+                            Breathing Exercise
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="row mb10px">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <h1 class="txt287 tcenter mtb0px">
+                                Introducing the Human Wisdom Program
+                              </h1>
+                            </div>
+                          </div>
+                          
+                          <div class="row tcenter">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
+                                <source [src]="videoLink" type="video/mp4">                                              
+                              </video> 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /video -->
+                    </div>
+              
+                    <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
+                      <!-- journal -->
+                      <div class="row center_flex mdp_icon">
+                        <div class="col-md-12 col-sm-12 col-xs-8">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal.svg" alt="" class="img-responsive">
+                        </div>
+                      </div>
+        
+                      <div class="row mdp_audio">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt268 mtb0px">
+                            Question of the day
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row center_flex">
+                        <div class="col-md-12 col-sm-12 col-xs-8">
+                          <h4 class="txt288 mtb0px">
+                            {{dailyqus}}
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <textarea type="text" id="comment" name="thread" [(ngModel)]="questext" required="required" class="mdp_answer_here" placeholder="Answer here" maxlength="256"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="row center_flex">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <button type="submit" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
+                            Add to journal
+                          </button> 
+                        </div>
+                      </div>
+
+                      <div class="row center_flex">
+                        <div class="col-md-12 col-sm-12 col-xs-7">
+                          <h4 class="txt237 mtb0px">
+                            Your online HumanWisdom journal is secure and private to you.
+                          </h4>
+                        </div>
+                      </div>
+                      <!-- /journal -->
+                    </div>
+                  
+                    <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
+                      <!-- quotation -->
+                      <div class="row center_flex mdp_icon">
+                        <div class="col-md-12 col-sm-12 col-xs-8">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation.svg" alt="" class="img-responsive">
+                        </div>
+                      </div>
+        
+                      <div class="row mdp_audio">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt268 mtb0px">
+                            Daily inspiration
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row center_flex">
+                        <div class="col-md-12 col-sm-12 col-xs-8">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg" alt="" class="img-responsive">
+                        </div>
+                      </div>
+
+                      <div class="row center_flex mdp_quotation">
+                        <div class="col-md-12 col-sm-12 col-xs-10">
+                          <h4 class="txt288 mtb0px italic">
+                            Three things in human life are important: the first is to be kind; the second is to be kind; and the third is to be kind.
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row center_flex">
+                        <div class="col-md-12 col-sm-12 col-xs-10">
+                          <hr class="mdp_hr">
+                        </div>
+                      </div>
+                      
+                      <div class="row center_flex mdp_author">
+                        <div class="col-md-12 col-sm-12 col-xs-7">
+                          <h4 class="txt289 mtb0px">
+                            HENRY JAMES
+                          </h4>
+                        </div>
+                      </div>
+                      <!-- /quotation -->
+                    </div>
+
+                    <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
+                      <!-- audio -->
+                      <div class="row center_flex mdp_icon">
+                        <div class="col-md-12 col-sm-12 col-xs-8">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio.svg" alt="" class="img-responsive">
+                        </div>
+                      </div>
+
+                      <div class="row mdp_audio">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt268 mtb0px">
+                            Audio meditation
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <h1 class="txt287 tcenter mtb0px">
+                                Exploring anger
+                              </h1>
+                            </div>
+                          </div>
+                          
+                          <div class="row tcenter">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /audio -->
+                    </div>
+
+                    <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
+                      <!-- exercise -->
+                      <div class="row center_flex mdp_icon">
+                        <div class="col-md-12 col-sm-12 col-xs-8">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise.svg" alt="" class="img-responsive">
+                        </div>
+                      </div>
+        
+                      <div class="row mdp_audio">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt268 mtb0px">
+                            Try this today
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row center_flex">
+                        <div class="col-md-12 col-sm-12 col-xs-10">
+                          <h4 class="txt288 mtb0px">
+                            Take two minutes today to pause, look around, and notice things you often overlook.
+                          </h4>
+                        </div>
+                      </div>
+                      <!-- /exercise -->
+                    </div>
+                  </div>
+              
+                  <a class="left carousel-control" href="#mdp_carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#mdp_carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+              <!-- /carousel -->
+
+              <!-- <div class="pagebreak"></div> -->
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
