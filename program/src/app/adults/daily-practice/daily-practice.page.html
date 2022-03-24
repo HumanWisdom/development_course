@@ -98,20 +98,20 @@
                       <div class="row center_flex">
                         <div class="col-md-12 col-sm-12 col-xs-8">
                           <h4 class="txt288 mtb0px">
-                            What 3 things are you grateful for today?
+                            {{dailyqus}}
                           </h4>
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <textarea type="text" id="comment" name="thread" required="required" class="mdp_answer_here" placeholder="Answer here" maxlength="256"></textarea>
+                          <textarea type="text" id="comment" name="thread" [(ngModel)]="questext" required="required" class="mdp_answer_here" placeholder="Answer here" maxlength="256"></textarea>
                         </div>
                       </div>
 
                       <div class="row center_flex">
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <button type="submit" class="btn btn-default mdp_add_to_journal">
+                          <button type="submit" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
                             Add to journal
                           </button> 
                         </div>
