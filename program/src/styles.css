@@ -27605,3 +27605,58 @@ body
 {
   display: flex;
 }
+
+.btn_ficons 
+{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  color: #1092A7;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+}
+
+.btn_ficons:focus
+{
+  background: transparent;
+  box-shadow: unset;  
+}
+
+.btn_ficons i 
+{
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.txtarea_fl_comment
+{
+  width: 100%;
+  background: #EBEBEB;
+  box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: #5D5D5D;
+  border: 0;
+}
+
+.txtarea_fl_comment:focus,
+.txtarea_fl_comment:hover
+{
+  outline: none !important;
+  /* border: 1px solid #DADADA;
+  box-shadow: unset; */
+}
