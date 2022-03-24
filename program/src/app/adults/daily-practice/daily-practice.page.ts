@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AdultsService } from '../adults.service';
 
 @Component({
   selector: 'app-daily-practice',
@@ -16,13 +17,42 @@ export class DailyPracticePage implements OnInit {
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/introduction_01.jpg"
   videoLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/discovering-wisdom/videos/1.1.mp4"  
   dailyid = '0'
+  dailyqus = ''
+  dailyqusrefid = ''
+  userId = ''
+  questext = ''
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service: AdultsService
   ) { }
 
   ngOnInit() {
     this.dailyid = this.route.snapshot.paramMap.get('id')
+    this.getdailyques();
+    this.userId=JSON.parse(localStorage.getItem("userId"))
+  }
+
+  getdailyques() {
+    this.service.getDailypractiseQuestion().subscribe((res) => {
+      if(res) {
+        this.dailyqus = res.split(':')[1]
+        this.dailyqusrefid = res.split(':')[0]
+      }
+    })
+  }
+
+  subdailyques() {
+    let obj = {
+      ReflectionId: this.dailyqusrefid,
+      SubscriberId: this.userId,
+      Resp: this.questext
+    }
+    this.service.submitDailypractiseQuestion(obj).subscribe((res) => {
+      if(res) {
+        window.alert('Successfully added daily question')
+      }
+    })
   }
   
   getTime() {
