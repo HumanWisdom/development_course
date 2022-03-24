@@ -104,11 +104,11 @@
                 <div class="row pt20px pb10px">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <textarea type="text" required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
+                        <textarea type="text"name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required" class="form-control fc_comment" placeholder="Comment here"></textarea>           
                       </div> 
                 
                       <div class="col-md-12 col-sm-12 col-xs-12 tright mt5px p0">
-                        <button type="submit" class="btn btn-warning btn_post">
+                        <button type="submit"(click)="submitComment()" class="btn btn-warning btn_post">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
                           Comment
                         </button>             
@@ -118,7 +118,7 @@
                 <!-- /comment -->
 
                 <hr class="hr_style_3">
-                <div *ngFor="let item of list">
+                <div *ngFor="let item of list.ReplyPost">
                   <!-- section 1 -->
                   <div class="row pt30px">
                     <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" (click)="reloadthread(item)">
@@ -140,6 +140,9 @@
                         </h4>                      
                       </div>                    
                     </div>
+                  
+    
+
                   </div>
 
                   <div class="row">
@@ -151,10 +154,10 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
                           <span class="txt128 lcs">{{item.ReplyPostLikeCount}}</span>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai"  (click)="toggle(item)">
+                        <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai"  (click)="toggle(item)">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
                           <span class="txt128 lcs">{{item.ReplyPostReplyCount}}</span>
-                        </div>           
+                        </div>            -->
                         <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai"  (click)="reportpost(item)">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
                           <span class="txt128 lcs ws_nowrap">Report Post</span>

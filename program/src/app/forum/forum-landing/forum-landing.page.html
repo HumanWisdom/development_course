@@ -131,11 +131,11 @@
                         <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn? 'not-allowed' : 'pointer'}">
                           <img  [disabled]="!isLoggedIn" *ngIf="item.Liked=='1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_active.svg" alt="" (click)="like(item,index)" >
                           <img [disabled]="!isLoggedIn" *ngIf="item.Liked=='0'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="" (click)="like(item,index)" >
-                          <span class="txt128 lcs">{{item.PostLikeCount}}</span>
+                          <span class="txt128 lcs" [innerText]="item.PostLikeCount"></span>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn ? 'not-allowed' : 'cursor'}" >
                           <img (click)="reportpost(item,'comment')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
-                          <span class="txt128 lcs">{{item.ReplyCount}}</span>
+                          <span class="txt128 lcs"  [innerText]="item.ReplyCount"></span>
                         </div>
                         <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
@@ -162,7 +162,7 @@
                 </div>
                 
                 <!-- report post -->
-                <div class="row forum_pt20px" *ngIf="replyflag && activereply.PostID === item.PostID">
+                <div class="row forum_pt20px"  *ngIf="isLoggedIn && replyflag && activereply.PostID === item.PostID">
                   <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
                     <div class="col-md-2 col-sm-2 col-xs-2 p0"></div>
                 
@@ -170,8 +170,8 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="actionType=='report'">                      
                         <input type="text"name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Report here">                    
                       </div> 
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="actionType=='comment'">                      
-                        <textarea type="text"name="commenttext" id="PostComment" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Comment here"></textarea>           
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isLoggedIn && actionType=='comment'">                      
+                        <textarea type="text"name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required" class="form-control fc_comment" placeholder="Comment here"></textarea>           
                       </div> 
 
 

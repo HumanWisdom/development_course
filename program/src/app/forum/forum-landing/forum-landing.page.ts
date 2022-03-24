@@ -45,12 +45,13 @@ export class ForumLandingPage implements OnInit {
     this.isLoggedIn=localStorage.getItem('isloggedin') == 'T'?true:false;
   }
   like(item,index){
-    this.serivce.likePost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
-      if(res=="1"){
-        this.getAllposts(0);
-
-      }
-    });
+    if(this.isLoggedIn){
+      this.serivce.likePost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
+        if(res=="1"){
+          this.getAllposts(0);
+        }
+      });
+    }
   }
 list(data){
   if(data){
@@ -114,6 +115,7 @@ postreport(item,actionType){
     if(res){
       this.getAllposts(0);
       this.actionType='';
+      this.PostComment='';
     }
   })
  }
