@@ -25,9 +25,9 @@
 
       <ul class="nav navbar-nav navbar-right cnav w20p no_bg">       
         <li class="mr0px">
-          <!-- <a (click)="share()" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
+          <a (click)="share()" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
-          </a> -->
+          </a>
           <!-- dropdown content -->
           <!-- <ul class="dropdown-menu dropdown-usermenu pull-right course_ul">
             <li>
@@ -58,26 +58,24 @@
           <div class="x_content p0px_b">
             <form>                                
               <div class="row mlr-10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                    <div class="form-group">                      
-                      <div class="all_threads">
-                        <select (change)="onChange($event)" type="text" name="threadlist"  class="form-control h60px all_threads_select" [(ngModel)]="selectthread" >
-                          <option *ngFor="let titl of threadlist" [ngValue]="titl.value">{{titl.label}}</option>
-                        </select>
-                        <!-- <select class="form-control h60px all_threads_select">
-                          <option>All threads</option>
-                          <option>Threads I’m following</option>
-                          <option>My threads</option>
-                          <option>Reflections</option>                         
-                        </select> -->
-                      </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                  <div class="form-group">                      
+                    <div class="all_threads">
+                      <select (change)="onChange($event)" type="text" name="threadlist"  class="form-control h60px all_threads_select" [(ngModel)]="selectthread" >
+                        <option *ngFor="let titl of threadlist" [ngValue]="titl.value">{{titl.label}}</option>
+                      </select>
+                      <!-- <select class="form-control h60px all_threads_select">
+                        <option>All threads</option>
+                        <option>Threads I’m following</option>
+                        <option>My threads</option>
+                        <option>Reflections</option>                         
+                      </select> -->
                     </div>
                   </div>
-                  <div class="col-md-8 col-sm-8 col-xs-8 form-group has-feedback p0 zi0">
-                    <input type="search" class="form-control has-feedback-left h60px searchtxt1 tleft" #threadsearch id="inputSuccess2" name="searchEn" placeholder="Search All threads">
-                    <span class="fa fa-search form-control-feedback left sfeedback" aria-hidden="true"></span>
-                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 form-group has-feedback p0 zi0">
+                  <input type="search" class="form-control has-feedback-left h60px searchtxt1 tleft" #threadsearch id="inputSuccess2" name="searchEn" placeholder="Search All threads">
+                  <span class="fa fa-search form-control-feedback left sfeedback" aria-hidden="true"></span>
                 </div>
               </div>
 
@@ -104,15 +102,17 @@
               <!-- section 1 -->
               <div *ngFor="let item of posts">
                 <div class="row center_flex">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10px_01 flex_ai" (click)="postnavigate(item)">
-                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" >
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10px_01 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" (click)="postnavigate(item)">
                       <img src="{{'data:image/jpg;base64,' + item.UserImage}}" *ngIf="item.UserImage" alt="" class="w100 fimg_02">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!item.UserImage" alt="" class="w100 fimg_01">
-                    </div> -->
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px">
+                            <!-- <span class="txt127">{{item.UserName}}</span> -->
+                            
                             <span class="txt127">{{item.POST}} </span>
                             <span class="txt126">by {{item.UserName}}</span>
                           </h4>
@@ -124,81 +124,61 @@
                 
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
-                    <!-- <div class="col-md-2 col-sm-2 col-xs-2"></div> -->
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
 
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex lcs_div">
-                      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
-                        <div class="col-md-2 col-sm-3 col-xs-4 pl0px flex_ai" (click)="like(item)">
-                          <button type="submit" class="btn btn_ficons jc_flexstart">
-                            <i class="fa fa-heart-o"></i>
-                            {{item.PostLikeCount}}
-                          </button>  
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+                      <div class="col-lg-7 col-md-8 col-sm-7 col-xs-7 lcs_div">
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai" (click)="like(item)">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
+                          <span class="txt128 lcs">{{item.PostLikeCount}}</span>
                         </div>
-                        <div class="col-md-2 col-sm-3 col-xs-4 pl0px flex_ai">
-                          <button type="submit" class="btn btn_ficons jc_flexstart">
-                            <i class="fa fa-comment-o"></i>
-                            Comment
-                          </button>  
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
+                          <span class="txt128 lcs">{{item.ReplyCount}}</span>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
+                          <span class="txt128 lcs">Share</span>
                         </div>
                       </div>
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai" (click)="reportpost(item)">
-                        <button type="submit" class="btn btn_ficons jc_flexend">
-                          <i class="fa fa-triangle-exclamation"></i>
-                          Report
-                        </button>  
+                      <div class="col-lg-3 col-md-2 col-sm-3 col-xs-2 tleft pr0" (click)="reportpost(item)">
+                        <span class="txt129 ws_nowrap">
+                          Report post
+                        </span>
                       </div>
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai">
-                        <button type="submit" class="btn btn_ficons jc_flexend">
-                          <i class="fa fa-user-plus"></i>
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 tright pl0" (click)="follow(item)">
+                        <span class="txt129">
                           Following
-                        </button>  
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <!-- report post -->
+                <!-- subsection 1A -->
                 <div class="row forum_pt20px" *ngIf="replyflag && activereply.PostID === item.PostID">
-                  <div class="col-md-12 col-sm-12 col-xs-12 plr10px_01">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                    <div class="col-md-2 col-sm-2 col-xs-2 p0"></div>
+                
+                    <div class="col-md-10 col-sm-10 col-xs-10">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
-                        <input type="text"name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Report Post">                    
+                        <input type="text"name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Comment here">                    
                       </div> 
                 
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px pl0 tright mt5px p0">
                         <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item)">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
-                          Report
-                        </button>             
-                      </div>                   
-                    </div>
-                  </div>
-                </div> 
-                <!-- /report post -->
-
-                <!-- comment -->
-                <div class="row forum_pt20px">
-                  <div class="col-md-12 col-sm-12 col-xs-12 plr10px_01">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <textarea type="text" required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
-                      </div> 
-                
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px">
-                        <button type="submit" class="btn btn-warning btn_post">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" >
                           Comment
                         </button>             
                       </div>                   
                     </div>
                   </div>
                 </div> 
-                <!-- /comment -->
 
                 <div class="row" *ngFor="let i of getOrderbyLatestPost(item.child)">
-                  <div class="col-md-1 col-sm-1 col-xs-1"></div>
+                  <div class="col-md-2 col-sm-2 col-xs-2"></div>
 
-                  <div class="col-md-11 col-sm-11 col-xs-11">
+                  <div class="col-md-10 col-sm-10 col-xs-10">
                     <div class="col-md-12 col-sm-12 col-xs-12 div_bl">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="txt127 commenter mtb0px">
