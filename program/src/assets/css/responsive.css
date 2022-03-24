@@ -192,6 +192,12 @@
     {
         width: 30%;
     }
+
+    .dm_title 
+    {
+        margin: 0 -10px;
+        padding: 40px 10px 40px 10px;
+    }
 }
 
 @media (min-width: 768px)
@@ -637,5 +643,30 @@
     .activity_title
     {
         width: 20%;
+    }
+
+    #bubble_wrap 
+    {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    @keyframes animateBubble 
+    {
+        0% {
+            margin-top: 1000px;
+        }
+        
+        100% {
+            margin-top: -500%;
+          }
+          
+    }
+
+    .dm .panel-default>.panel-heading,
+    .dm .panel-default>.panel-heading+.panel-collapse>.panel-body
+    {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
     }
 }
