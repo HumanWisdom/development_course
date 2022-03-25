@@ -22838,13 +22838,14 @@ ul.dh_ul li
 /* wisdom stories */
 .dabsolute_05
 {
-  overflow: auto;
+  /* overflow: auto; */
+  overflow: inherit;
   position: absolute;
   top: 5%;
   left: 0;
   right: 0;
   bottom: 5%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .dabsolute_06
