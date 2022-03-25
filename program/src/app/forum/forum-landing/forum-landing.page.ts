@@ -15,6 +15,7 @@ export class ForumLandingPage implements OnInit {
   UserID="107";
   activereply;
   commenttext='';
+  PostComment=''
   replyflag=false;
   selectthread;
   searchText='';
@@ -24,6 +25,9 @@ export class ForumLandingPage implements OnInit {
   token='';
   urlT:any
   address=this.router.url;
+  isLoggedIn:boolean=false;
+  activeCommentPost;
+  actionType:string='';
   threadlist=[{
     value:0,label:'All threads'
   },{
@@ -37,14 +41,17 @@ export class ForumLandingPage implements OnInit {
      this.UserID= localStorage.getItem('userId');
      console.log(this.UserID);
     this.token=JSON.parse(localStorage.getItem("token"));
+
+    this.isLoggedIn=localStorage.getItem('isloggedin') == 'T'?true:false;
   }
-  like(item){
-    this.serivce.likePost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
-      if(res){
-        ;
-        this.getAllposts(0);
-      }
-    });
+  like(item,index){
+    if(this.isLoggedIn){
+      this.serivce.likePost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
+        if(res=="1"){
+          this.getAllposts(0);
+        }
+      });
+    }
   }
 list(data){
   if(data){
@@ -72,25 +79,51 @@ list(data){
     this.posts=temp;    
   }
 }
-reportpost(item){
-  this.replyflag= !this.replyflag;
+reportpost(item,actionType){
+  if(this.actionType==''|| this.actionType==actionType){
+    this.replyflag= !this.replyflag ;
+  }
+    this.actionType=actionType;
   this.activereply=item;
   console.log(item);
 }
-postreport(item){
-  console.log(item);
-  this.serivce.reportPost({PostID: item.PostID,UserID: this.UserID,Comment: this.commenttext}).subscribe(res=>{
-    if(res){
-      ;
-      this.replyflag=!this.replyflag;
-      this.getAllposts(0);
-    }
-  });
+
+
+commentPost(item){
+this.replyflag= !this.replyflag;
+this.activeCommentPost=item;
 }
-follow(item){
-  this.serivce.followPost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
+commentPostSave(item){
+
+}
+
+postreport(item,actionType){
+  console.log(item);
+  this.replyflag=!this.replyflag;
+  if(this.actionType=='report'){
+    this.serivce.reportPost({PostID: item.PostID,UserID: this.UserID,Comment: this.commenttext}).subscribe(res=>{
+      if(res){
+        ;
+        this.replyflag=!this.replyflag;
+        this.getAllposts(0);
+        this.actionType='';
+      }
+    });
+  }
+ else{ 
+  this.serivce.submitPost({POST:this.PostComment,UserId: this.UserID, ParentPostID:item.PostID}).subscribe(res=>{
     if(res){
-      ;
+      this.getAllposts(0);
+      this.actionType='';
+      this.PostComment='';
+    }
+  })
+ }
+}
+follow(item,index){
+  this.serivce.followPost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
+    if(res=="1"){
+      this.posts[index].Followed=item.Followed=='1'?'0':'1';
     }
   });
 }
