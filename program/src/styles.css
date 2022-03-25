@@ -22888,13 +22888,14 @@ ul.dh_ul li
 /* forum */
 .dabsolute_09
 {
-  overflow: auto;
+  /* overflow: auto; */
+  overflow: inherit;
   position: absolute;
   top: 0%;
   left: 0;
   right: 0;
   bottom: 30%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 /* /forum */
 

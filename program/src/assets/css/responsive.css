@@ -669,4 +669,9 @@
         padding-right: 0 !important;
         padding-left: 0 !important;
     }
+
+    .hr_style_2
+    {
+        margin: 10px 20px;
+    }
 }
