@@ -25959,7 +25959,8 @@ h1
 
 .mdpd_pfy
 {
-  margin: 37px 0 0 0;
+  /* margin: 37px 0 0 0; */
+  margin: 37px -10px 0 -10px;
 }
 
 .btn_mdpd_tray
@@ -27662,4 +27663,74 @@ body
   outline: none !important;
   /* border: 1px solid #DADADA;
   box-shadow: unset; */
+}
+
+.btn_mdpd_pfy_01
+{
+  margin: 0;
+  border: 0;
+  height: 80px;
+  background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
+  border-radius: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 16px 21px;
+  white-space: inherit;
+}
+
+.btn_mdpd_pfy_br 
+{
+  border-right: 1px solid white;
+}
+
+.btn_mdpd_pfy_bl 
+{
+  border-left: 1px solid white;
+}
+
+.mdpfy_col
+{
+  padding: 0px;
+}
+
+.bpfys_01:hover,
+.bpfys_01:focus
+{
+  background: #70C6BD;
+}
+
+.bpfys_02:hover,
+.bpfys_02:focus
+{
+  background: #40ACB2;
+}
+
+.bpfys_03:hover,
+.bpfys_03:focus
+{
+  background: #1092A7;
+}
+
+.bpfys_04:hover,
+.bpfys_05:focus
+{
+  background: #096675;
+}
+
+.bpfys_06:hover,
+.bpfys_06:focus
+{
+  background: #70C6BD;
+}
+
+.bpfys_07:hover,
+.bpfys_07:focus
+{
+  background: #40ACB2;
 }
