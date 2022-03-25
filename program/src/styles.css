@@ -21493,16 +21493,17 @@ input[type="search"]:focus::-webkit-search-cancel-button
 
 #jdqcarousel .carousel-indicators
 {
-  margin-bottom: 5px;
+  /* margin-bottom: 5px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  display: none;
 }
 
 #jdqcarousel .carousel-control.left,
 #jdqcarousel .carousel-control.right
 {
-  /* display: none; */
+  display: none;
 }
 
 #jdqcarousel .carousel-control .fa-chevron-right,
