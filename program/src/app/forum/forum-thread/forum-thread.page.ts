@@ -12,6 +12,7 @@ import { ForumService } from '../forum.service';
 export class ForumThreadPage implements OnInit {
 list:any;
 activereply;
+PostComment='';
 replyflag=false;
 commentflag=false;
 commenttext='';
@@ -92,6 +93,15 @@ posttext='';
   post(item){
     this.service.submitPost({POST: this.posttext,UserId:item.userID, ParentPostID:item.ReplyPostID }).subscribe(res=>{
       if(res){
+        this.reploadpage();
+      }
+    })
+  }
+
+  submitComment(){
+    this.service.submitPost({POST:this.PostComment,UserId: this.userID, ParentPostID:this.list.ParentPost[0].ParentPostID}).subscribe(res=>{
+      if(res){
+        this.PostComment='';
         this.reploadpage();
       }
     })

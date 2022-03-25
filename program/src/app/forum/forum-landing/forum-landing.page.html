@@ -102,7 +102,7 @@
               </div>
 
               <!-- section 1 -->
-              <div *ngFor="let item of posts">
+              <div *ngFor="let item of posts;let index=index;">
                 <div class="row center_flex">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10px_01 flex_ai" (click)="postnavigate(item)">
                     <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" >
@@ -126,67 +126,58 @@
                   <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
                     <!-- <div class="col-md-2 col-sm-2 col-xs-2"></div> -->
 
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex lcs_div">
-                      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
-                        <div class="col-md-2 col-sm-3 col-xs-4 pl0px flex_ai" (click)="like(item)">
-                          <button type="submit" class="btn btn_ficons jc_flexstart">
-                            <i class="fa fa-heart-o"></i>
-                            {{item.PostLikeCount}}
-                          </button>  
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0 center_flex">
+                      <div class="col-lg-7 col-md-8 col-sm-7 col-xs-7 lcs_div">
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn? 'not-allowed' : 'pointer'}">
+                          <img  [disabled]="!isLoggedIn" *ngIf="item.Liked=='1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_active.svg" alt="" (click)="like(item,index)" >
+                          <img [disabled]="!isLoggedIn" *ngIf="item.Liked=='0'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="" (click)="like(item,index)" >
+                          <span class="txt128 lcs" [innerText]="item.PostLikeCount"></span>
                         </div>
-                        <div class="col-md-2 col-sm-3 col-xs-4 pl0px flex_ai">
-                          <button type="submit" class="btn btn_ficons jc_flexstart">
-                            <i class="fa fa-comment-o"></i>
-                            Comment
-                          </button>  
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn ? 'not-allowed' : 'cursor'}" >
+                          <img (click)="reportpost(item,'comment')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
+                          <span class="txt128 lcs"  [innerText]="item.ReplyCount"></span>
+                        </div>
+                        <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
+                          <span class="txt128 lcs">Share</span>
+                        </div> -->
+
+                        <div *ngIf="isLoggedIn" class="col-lg-3 col-md-2 col-sm-3 col-xs-2 tleft pr0" (click)="reportpost(item,'report')">
+                          <span class="txt129 ws_nowrap">
+                            Report post
+                          </span>
                         </div>
                       </div>
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai" (click)="reportpost(item)">
-                        <button type="submit" class="btn btn_ficons jc_flexend">
-                          <i class="fa fa-triangle-exclamation"></i>
-                          Report
-                        </button>  
-                      </div>
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai">
-                        <button type="submit" class="btn btn_ficons jc_flexend">
-                          <i class="fa fa-user-plus"></i>
+                     
+                      <div *ngIf="isLoggedIn" class="col-lg-2 col-md-2 col-sm-2 col-xs-3 tright pl0" (click)="follow(item,index)">
+                        <span *ngIf="item.Followed=='1'" class="txt129">
                           Following
-                        </button>  
+                        </span>
+                        <span *ngIf="item.Followed=='0'" class="txt129">
+                          Follow
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
                 
                 <!-- report post -->
-                <div class="row forum_pt20px" *ngIf="replyflag && activereply.PostID === item.PostID">
-                  <div class="col-md-12 col-sm-12 col-xs-12 plr10px_01">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
-                        <input type="text"name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Report Post">                    
-                      </div> 
+                <div class="row forum_pt20px"  *ngIf="isLoggedIn && replyflag && activereply.PostID === item.PostID">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                    <div class="col-md-2 col-sm-2 col-xs-2 p0"></div>
                 
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px">
-                        <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item)">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
-                          Report
-                        </button>             
-                      </div>                   
-                    </div>
-                  </div>
-                </div> 
-                <!-- /report post -->
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="actionType=='report'">                      
+                        <input type="text"name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Report here">                    
+                      </div> 
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isLoggedIn && actionType=='comment'">                      
+                        <textarea type="text"name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required" class="form-control fc_comment" placeholder="Comment here"></textarea>           
+                      </div> 
 
-                <!-- comment -->
-                <div class="row forum_pt20px">
-                  <div class="col-md-12 col-sm-12 col-xs-12 plr10px_01">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <textarea type="text" required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
-                      </div> 
-                
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px">
-                        <button type="submit" class="btn btn-warning btn_post">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
+
+                      <div *ngIf="isLoggedIn" class="col-md-12 col-sm-12 col-xs-12 forum_pt10px pl0 tright mt5px p0">
+                        <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" >
                           Comment
                         </button>             
                       </div>                   
@@ -204,7 +195,7 @@
                         <h4 class="txt127 commenter mtb0px">
                           {{i.UserName}}
                           <span class="txt130">
-                            {{getLocalPostDate(i.PostDate) | date: 'MM/dd/yyyy  hh:mm:ss a' }}
+                            {{getLocalPostDate(i.PostDate) | date: 'medium' }}
                           </span>
                         </h4>
                         <h4 class="txt120 mtb0px">
