@@ -25,6 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/034bb2cff8.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -180,126 +181,125 @@
 
     <!--
     <script>
-      $(document).ready(function () {
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) 
-          { 
-            $('#div_google_playstore').fadeOut(500);
-            $(".navbar-static-top").attr("style", "top: 0");
-          } 
-          else 
-          {
-            $('#div_google_playstore').fadeIn(500);
-            $(".navbar-static-top").addClass("navbar_01");
-          }
-        });
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) 
+        { 
+          $('#div_google_playstore').fadeOut(500);
+          $(".navbar-static-top").attr("style", "top: 0");
+        } 
+        else 
+        {
+          $('#div_google_playstore').fadeIn(500);
+          $(".navbar-static-top").addClass("navbar_01");
+        }
       });
-      </script>
-      -->
+    });
+    </script>
+    -->
 
-      <script type="text/javascript">
-      $(document).ready(function() {
-        $(document).on('click', '.rm_01', function()
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $(document).on('click', '.rm_01', function()
+      {
+        var elem = $(".rm_01").text();
+        if (elem == "read more") 
         {
-          var elem = $(".rm_01").text();
-          if (elem == "read more") 
-          {
-            //Stuff to do when btn is in the read more state
-            $(".rm_01").text("read less");
-            $(".rm_txt_01").slideDown();
-          } 
-          else 
-          {
-            //Stuff to do when btn is in the read less state
-            $(".rm_01").text("read more");
-            $(".rm_txt_01").slideUp();
-          }
-        });
-
-        $(document).on('click', '.rmd_01', function()
+          //Stuff to do when btn is in the read more state
+          $(".rm_01").text("read less");
+          $(".rm_txt_01").slideDown();
+        } 
+        else 
         {
-          var elem = $(".rmd_01").text();
-          if (elem == "read more") 
-          {
-            //Stuff to do when btn is in the read more state
-            $(".rmd_01").text("read less");
-            $(".rmd_txt_01").slideDown();
-          } 
-          else 
-          {
-            //Stuff to do when btn is in the read less state
-            $(".rmd_01").text("read more");
-            $(".rmd_txt_01").slideUp();
-          }
-        });
-
-        $(document).on('click', '.rm_02', function()
-        {
-          var elem = $(".rm_02").text();
-          if (elem == "read more") 
-          {
-            //Stuff to do when btn is in the read more state
-            $(".rm_02").text("read less");
-            $(".rm_txt_02").slideDown();
-          } 
-          else 
-          {
-            //Stuff to do when btn is in the read less state
-            $(".rm_02").text("read more");
-            $(".rm_txt_02").slideUp();
-          }
-        });
-
-        $(document).on('click', '.rmd_02', function()
-        {
-          var elem = $(".rmd_02").text();
-          if (elem == "read more") 
-          {
-            //Stuff to do when btn is in the read more state
-            $(".rmd_02").text("read less");
-            $(".rmd_txt_02").slideDown();
-          } 
-          else 
-          {
-            //Stuff to do when btn is in the read less state
-            $(".rmd_02").text("read more");
-            $(".rmd_txt_02").slideUp();
-          }
-        });
-
-        $(document).on('click', '.rm_03', function()
-        {
-          var elem = $(".rm_03").text();
-          if (elem == "read more") 
-          {
-            //Stuff to do when btn is in the read more state
-            $(".rm_03").text("read less");
-            $(".rm_txt_03").slideDown();
-          } 
-          else 
-          {
-            //Stuff to do when btn is in the read less state
-            $(".rm_03").text("read more");
-            $(".rm_txt_03").slideUp();
-          }
-        });
+          //Stuff to do when btn is in the read less state
+          $(".rm_01").text("read more");
+          $(".rm_txt_01").slideUp();
+        }
       });
 
-      // $(document).on('click', '#rm_01', function(){
-      //   $('#rm_txt_01').slideToggle();
-      //   if ($('#rm_01').text() == "read more") {
-      //     $(this).text("read less")
-      //   } else {
-      //     $(this).text("read more")
-      //   }
-      // });
-      </script>
+      $(document).on('click', '.rmd_01', function()
+      {
+        var elem = $(".rmd_01").text();
+        if (elem == "read more") 
+        {
+          //Stuff to do when btn is in the read more state
+          $(".rmd_01").text("read less");
+          $(".rmd_txt_01").slideDown();
+        } 
+        else 
+        {
+          //Stuff to do when btn is in the read less state
+          $(".rmd_01").text("read more");
+          $(".rmd_txt_01").slideUp();
+        }
+      });
+
+      $(document).on('click', '.rm_02', function()
+      {
+        var elem = $(".rm_02").text();
+        if (elem == "read more") 
+        {
+          //Stuff to do when btn is in the read more state
+          $(".rm_02").text("read less");
+          $(".rm_txt_02").slideDown();
+        } 
+        else 
+        {
+          //Stuff to do when btn is in the read less state
+          $(".rm_02").text("read more");
+          $(".rm_txt_02").slideUp();
+        }
+      });
+
+      $(document).on('click', '.rmd_02', function()
+      {
+        var elem = $(".rmd_02").text();
+        if (elem == "read more") 
+        {
+          //Stuff to do when btn is in the read more state
+          $(".rmd_02").text("read less");
+          $(".rmd_txt_02").slideDown();
+        } 
+        else 
+        {
+          //Stuff to do when btn is in the read less state
+          $(".rmd_02").text("read more");
+          $(".rmd_txt_02").slideUp();
+        }
+      });
+
+      $(document).on('click', '.rm_03', function()
+      {
+        var elem = $(".rm_03").text();
+        if (elem == "read more") 
+        {
+          //Stuff to do when btn is in the read more state
+          $(".rm_03").text("read less");
+          $(".rm_txt_03").slideDown();
+        } 
+        else 
+        {
+          //Stuff to do when btn is in the read less state
+          $(".rm_03").text("read more");
+          $(".rm_txt_03").slideUp();
+        }
+      });
+    });
+
+    // $(document).on('click', '#rm_01', function(){
+    //   $('#rm_txt_01').slideToggle();
+    //   if ($('#rm_01').text() == "read more") {
+    //     $(this).text("read less")
+    //   } else {
+    //     $(this).text("read more")
+    //   }
+    // });
+    </script>
     
     <noscript>Please enable JavaScript to continue using this application.</noscript>
 
     <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61d6c6e90372b25e"></script> -->
 
     <!-- <script type="text/javascript" src="//s7.addthis.com/icons/official-addthis-angularjs/current/dist/official-addthis-angularjs.min.js"></script> -->
-
   </body>
 </html>
