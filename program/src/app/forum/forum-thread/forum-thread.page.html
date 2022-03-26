@@ -70,12 +70,20 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                   <div class="col-md-9 col-sm-9 col-xs-9 p0">
                     <div class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
-                      <button type="submit" class="btn btn_ficons">
-                        <i class="fa fa-heart-o"></i>
+                      <button type="submit" [disabled]="!isLoggedIn"  (click)="like(posttread.PostID)" class="btn btn_ficons">
+                        <i  
+                        *ngIf="posttread.Liked=='0'"
+                        class="fa fa-heart-o">
+                    </i>
+
+                    <i 
+                        *ngIf="posttread.Liked=='1'"
+                        class="fa fa-heart">
+                    </i>                  
                         {{posttread.PostLikeCount}}
                       </button>  
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
+                    <div *ngIf="isLoggedIn" class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
                       <button type="submit" class="btn btn_ficons">
                         <i class="fa fa-comment-o"></i>
                         {{posttread.ReplyCount}}
@@ -86,10 +94,15 @@
                       <span class="txt128 lcs">Share</span>
                     </div> -->
                   </div>
-                  <div class="col-md-3 col-sm-3 col-xs-3 pr0 flex_ai">
-                    <button type="submit" class="btn btn_ficons jc_flexend">
+                  <div *ngIf="isLoggedIn" class="col-md-3 col-sm-3 col-xs-3 pr0 flex_ai">
+                    <button type="submit" class="btn btn_ficons jc_flexend" (click)="follow(posttread)">
                       <i class="fa fa-user-plus"></i>
-                      Follow
+                      <span *ngIf="posttread.Followed=='1'">
+                        Following
+                      </span>
+                      <span *ngIf="posttread.Followed=='0'">
+                        Follow
+                      </span>
                     </button>  
                   </div>
                 </div>
@@ -102,13 +115,13 @@
                 </div>
               </div> -->
 
-              <div class="row pt20px pb10px">
+              <div class="row pt20px pb10px" *ngIf="isLoggedIn">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                       <textarea type="text"name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>           
                     </div> 
               
-                    <div class="col-md-12 col-sm-12 col-xs-12 tright mt5px p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tright mt5px p0" *ngIf="isLoggedIn">
                       <button type="submit"(click)="submitComment()" class="btn btn-warning btn_post">
                         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
                         Comment
@@ -119,6 +132,8 @@
               <!-- /comment -->
 
               <hr class="hr_style_3">
+     <ng-container *ngIf="list && list.ReplyPost">
+
 
               <div *ngFor="let item of list.ReplyPost">
                 <!-- section 1 -->
@@ -150,8 +165,16 @@
                       <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai">
                         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
                         <span class="txt128 lcs">{{item.ReplyPostLikeCount}}</span> -->
-                        <button type="submit" class="btn btn_ficons jc_flexstart">
-                          <i class="fa fa-heart-o"></i>
+                          <button  [disabled]="!isLoggedIn"  type="submit"  (click)="like(item.ReplyPostID,posttread.PostID)" class="btn btn_ficons jc_flexstart">
+                          <i 
+                          *ngIf="item.Liked=='0'"
+                          class="fa fa-heart-o">
+                      </i>
+  
+                      <i  
+                          *ngIf="item.Liked=='1'"
+                          class="fa fa-heart">
+                      </i> 
                           {{item.ReplyPostLikeCount}}
                         </button> 
                       </div>
@@ -162,7 +185,7 @@
                       <span class="txt128 lcs">{{item.ReplyPostReplyCount}}</span>
                     </div>            
                     -->
-                    <div class="col-md-6 col-sm-6 col-xs-6 flex_ai jc_flexend">
+                    <div class="col-md-6 col-sm-6 col-xs-6 flex_ai jc_flexend" *ngIf="isLoggedIn">
                       <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai"  (click)="reportpost(item)">
                         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
                         <span class="txt128 lcs ws_nowrap">Report Post</span> -->
@@ -181,7 +204,7 @@
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_08.svg" alt="" class="w100">
                   </div> -->
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn" >                      
                       <input type="text" name="posttext" id="comment" [(ngModel)]="posttext" required="required" class="form-control fc_comment" placeholder="Report Post">                    
                     </div> 
 
@@ -196,7 +219,7 @@
                 <!-- /subsection 1A -->
                 
                 <!-- subsection 1A -->
-                <div class="row forum_pt20px" *ngIf="commentflag && activecomment.ReplyPostID === activecomment.ReplyPostID">
+                <div class="row forum_pt20px" *ngIf="commentflag && activecomment.ReplyPostID === item.ReplyPostID">
                   <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0"></div> -->
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
@@ -213,7 +236,7 @@
                 </div> 
                 <!-- /section 1 -->
               </div>
-              
+            </ng-container>   
               <div class="pagebreak"></div>
             </form>              
           </div>

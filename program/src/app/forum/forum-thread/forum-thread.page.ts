@@ -15,6 +15,7 @@ activereply;
 PostComment='';
 replyflag=false;
 commentflag=false;
+isLoggedIn=false;
 commenttext='';
 activecomment;
 sub: Subscription;
@@ -28,11 +29,13 @@ posttread={
   ReplyCount:'',
   UserImage:null,
   UserName:'',
-
+  Followed:'0',
+  Liked:'0'
 }
 posttext='';
   constructor(private service: ForumService,private router: Router) {
     this.userID =localStorage.getItem('userId');
+    this.isLoggedIn=localStorage.getItem('isloggedin') == 'T'?true:false;
    }
   toggle(item){
     this.replyflag=!this.replyflag;
@@ -43,6 +46,22 @@ posttext='';
     this.router.navigateByUrl('/forum/forum-thread-start-new');
     
   }
+
+  like(PostID,ParentPOstID?){
+    if(this.isLoggedIn){
+      this.service.likePost({PostID: PostID,UserID: this.userID}).subscribe(res=>{
+        if(res=="1"){
+          if(ParentPOstID){
+           this.refreshPage(ParentPOstID);
+          }else{
+            this.refreshPage(PostID);
+
+          }
+        }
+      });
+    }
+  }
+
   reploadpage(){
     this.sub = this.service.postdatavalue.subscribe(res=>{
       if(res){
@@ -57,6 +76,18 @@ posttext='';
         })
       }
     })
+  }
+
+  
+  refreshPage(PostID){
+        this.service.getPostDetail(PostID).subscribe(res=>{
+          if(res){
+            ;            
+            this.posttread.Liked =res.ParentPost[0].Liked; 
+            this.posttread.PostLikeCount=res.ParentPost[0].PostLikeCount; 
+            this.list=res;
+          }
+        })
   }
   reloadthread(item){
    
@@ -96,6 +127,14 @@ posttext='';
         this.reploadpage();
       }
     })
+  }
+
+  follow(item,index){
+    this.service.followPost({PostID: item.PostID,UserID: this.userID}).subscribe(res=>{
+      if(res=="1"){
+        this.posttread.Followed=this.posttread.Followed=='1'?'0':'1';
+      }
+    });
   }
 
   submitComment(){
