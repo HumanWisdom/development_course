@@ -144,7 +144,7 @@
                                 (click)="like(item,index)"
                                 class="fa fa-heart">
                             </i>
-                            {{item.PostLikeCount}}
+                            <span [innerText]="item.PostLikeCount" ></span>
                           </button>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-4 pl0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn ? 'not-allowed' : 'cursor'}" >
