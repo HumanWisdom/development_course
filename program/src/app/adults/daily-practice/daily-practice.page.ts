@@ -21,6 +21,7 @@ export class DailyPracticePage implements OnInit {
   dailyqusrefid = ''
   userId = ''
   questext = ''
+  isloggedIn = false
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +32,9 @@ export class DailyPracticePage implements OnInit {
     this.dailyid = this.route.snapshot.paramMap.get('id')
     this.getdailyques();
     this.userId=JSON.parse(localStorage.getItem("userId"))
+    if(this.userId === 'T') {
+      this.isloggedIn = true
+    }
   }
 
   getdailyques() {
