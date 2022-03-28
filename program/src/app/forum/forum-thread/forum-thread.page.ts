@@ -67,7 +67,6 @@ posttext='';
   reploadpage(){
     this.sub = this.service.postdatavalue.subscribe(res=>{
       if(res){
-        debugger;
         this.posttread=res;
         this.service.getPostDetail(res.PostID).subscribe(res=>{
           if(res){
