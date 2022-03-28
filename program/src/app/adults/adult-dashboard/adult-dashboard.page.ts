@@ -154,14 +154,6 @@ socialFirstName:any
   constructor(
     private router: Router,private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef, private fb: FormBuilder,private authService: SocialAuthService,
      ) {
-      if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
-        let token = localStorage.getItem("Affreftoken");
-        this.service.decrypt(token).subscribe((res: any) => {
-          if(res) {
-            localStorage.setItem("AffReferralCode", res)
-          }
-        })
-      }
       let authtoken=JSON.parse(localStorage.getItem("token"))
       let app= localStorage.getItem("fromapp")
       if(authtoken && app && app !== 'F') {
@@ -245,6 +237,16 @@ socialFirstName:any
       this.userId=JSON.parse(localStorage.getItem("userId"))
       this.getProgress()
     }
+
+    if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
+      let token = localStorage.getItem("Affreftoken");
+      this.service.decrypt(token).subscribe((res: any) => {
+        if(res) {
+          localStorage.setItem("AffReferralCode", res)
+        }
+      })
+    }
+    
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
         this.enablecookiemodal.nativeElement.click();
