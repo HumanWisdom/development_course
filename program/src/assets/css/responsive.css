@@ -311,6 +311,11 @@
     {
         width: 35%;
     }
+
+    .ctxtalignment
+    {
+        text-align: center;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px)
