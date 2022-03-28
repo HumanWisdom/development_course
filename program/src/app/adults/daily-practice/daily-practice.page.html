@@ -109,7 +109,7 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex">
+                      <div class="row center_flex" *ngIf="isloggedIn">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                           <button type="submit" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
                             Add to journal
