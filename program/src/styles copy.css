@@ -15277,7 +15277,6 @@ and (orientation : portrait)
 
 .jc_flexend
 {
-  display: flex;
   justify-content: flex-end;
 }
 
@@ -26609,7 +26608,6 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 
 .jc_flexstart 
 {
-  display: flex;
   justify-content: flex-start;
 }
 
@@ -27735,40 +27733,4 @@ body
 .bpfys_07:focus
 {
   background: #40ACB2;
-}
-
-.btn_pn
-{
-  margin: 0;
-  border: 0;
-  background: transparent;
-  color: #FFFFFF;
-  padding: 0;
-}
-
-.btn_pn:hover,
-.btn_pn:focus
-{
-  background: transparent;
-  border: 0;
-  box-shadow: unset;
-  color: #000000 !important;
-}
-
-.mica,
-.micb
-{
-  margin: 104px 0 0 0;
-}
-
-.hr_03
-{
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  margin: 18px 0;
-  width: 221px;
-}
-
-.bmt
-{
-  margin: 24px 0 0 0;
 }

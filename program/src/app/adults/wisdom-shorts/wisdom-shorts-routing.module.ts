@@ -46,6 +46,26 @@ const routes: Routes = [
     path: 'wisdom-shorts-s09',
     loadChildren: () => import('./wisdom-shorts-s09/wisdom-shorts-s09.module').then( m => m.WisdomShortsS09PageModule)
   },
+  {
+    path: 'wisdom-shorts-s10',
+    loadChildren: () => import('./wisdom-shorts-s10/wisdom-shorts-s10.module').then( m => m.WisdomShortsS10PageModule)
+  },
+  {
+    path: 'wisdom-shorts-s11',
+    loadChildren: () => import('./wisdom-shorts-s11/wisdom-shorts-s11.module').then( m => m.WisdomShortsS11PageModule)
+  },
+  {
+    path: 'wisdom-shorts-s12',
+    loadChildren: () => import('./wisdom-shorts-s12/wisdom-shorts-s12.module').then( m => m.WisdomShortsS12PageModule)
+  },
+  {
+    path: 'wisdom-shorts-s13',
+    loadChildren: () => import('./wisdom-shorts-s13/wisdom-shorts-s13.module').then( m => m.WisdomShortsS13PageModule)
+  },
+  {
+    path: 'wisdom-shorts-s14',
+    loadChildren: () => import('./wisdom-shorts-s14/wisdom-shorts-s14.module').then( m => m.WisdomShortsS14PageModule)
+  },
    
 ];
 
