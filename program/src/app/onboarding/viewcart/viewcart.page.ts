@@ -55,7 +55,7 @@ export class ViewcartPage implements OnInit {
     }else{
       this.viewCart()
     }
-
+    localStorage.setItem('personalised', 'F');
     
   }
  /* getMax(){
