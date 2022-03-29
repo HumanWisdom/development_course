@@ -47,8 +47,9 @@ export class ForumLandingPage implements OnInit {
   like(item,index){
     if(this.isLoggedIn){
       this.serivce.likePost({PostID: item.PostID,UserID: this.UserID}).subscribe(res=>{
-        if(res=="1"){
-          this.getAllposts(0);
+        if(res){
+          this.posts[index].PostLikeCount=res;
+          this.posts[index].Liked=this.posts[index].Liked=="1"?"0":"1";
         }
       });
     }
