@@ -14,6 +14,10 @@ const routes: Routes = [
     path: "subscription-options",
     loadChildren: () => import("./subscription-options/subscription-options.module").then(m => m.SubscriptionOptionsPageModule)  
   },
+  {
+    path: 'intro-carousel',
+    loadChildren: () => import('./intro-carousel/intro-carousel.module').then( m => m.IntroCarouselPageModule)
+  },
 ];
 
 @NgModule({
