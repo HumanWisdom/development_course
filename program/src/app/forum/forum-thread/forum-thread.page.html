@@ -80,13 +80,13 @@
                           *ngIf="posttread.Liked=='1'"
                           class="fa fa-heart">
                         </i>                  
-                        {{posttread.PostLikeCount}}
+                        <span [innerText]="posttread.PostLikeCount"></span>
                       </button>  
                     </div>
                     <div *ngIf="isLoggedIn" class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
                       <button type="submit" class="btn btn_ficons">
                         <i class="fa fa-comment-o"></i>
-                        {{posttread.ReplyCount}}
+                        <span [innerText]="GetReplyCount()" ></span>
                       </button>  
                     </div>
                     <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
@@ -134,9 +134,9 @@
               <hr class="hr_style_3">
 
               <ng-container *ngIf="list && list.ReplyPost">
-                <div *ngFor="let item of list.ReplyPost">
+                <div *ngFor="let item of replyPost();let index=index">
                   <!-- section 1 -->
-                  <div class="row pt30px" (click)="reloadthread(item)">
+                  <div class="row pt30px" >
                     <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" (click)="reloadthread(item)">
                       <img src="{{'data:image/jpg;base64,' + item.ReplyPostUserImage}}" *ngIf="item.ReplyPostUserImage" alt="" class="w100 fimg_02">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!item.ReplyPostUserImage" alt="" class="w100 fimg_01">
@@ -164,7 +164,7 @@
                         <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
                           <span class="txt128 lcs">{{item.ReplyPostLikeCount}}</span> -->
-                          <button  [disabled]="!isLoggedIn"  type="submit"  (click)="like(item.ReplyPostID,posttread.PostID)" class="btn btn_ficons jc_flexstart">
+                          <button  [disabled]="!isLoggedIn"  type="submit"  (click)="like(item.ReplyPostID,posttread.PostID,index)" class="btn btn_ficons jc_flexstart">
                             <i 
                               *ngIf="item.Liked=='0'"
                               class="fa fa-heart-o">
@@ -174,7 +174,7 @@
                               *ngIf="item.Liked=='1'"
                               class="fa fa-heart">
                             </i> 
-                            {{item.ReplyPostLikeCount}}
+                            <span [innerText]="item.ReplyPostLikeCount"></span>
                           </button> 
                         </div>
                       </div>
