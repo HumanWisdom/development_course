@@ -69,6 +69,8 @@ import { TocTopnavComponent } from '../shared/component/toc-topnav/toc-topnav.co
 import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project.component';
 import { ModuleEndVideosComponent } from './component/module-end-videos/module-end-videos.component';
 import { PlatformModule } from '@angular/cdk/platform';
+import { TnDashboardV03Component } from './component/tn-dashboard-v03/tn-dashboard-v03.component';
+import { HamburgerComponent } from './component/hamburger/hamburger.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -131,7 +133,9 @@ import { PlatformModule } from '@angular/cdk/platform';
     TocTopnavComponent,
     TnHwpProjectComponent,
     RelatedWisdomStoriesTilesComponent,
-    ModuleEndVideosComponent
+    ModuleEndVideosComponent,
+    TnDashboardV03Component,
+    HamburgerComponent
   ],
   imports: [
     CommonModule,
@@ -217,7 +221,9 @@ import { PlatformModule } from '@angular/cdk/platform';
     TocTopnavComponent,
     TnHwpProjectComponent,
     RelatedWisdomStoriesTilesComponent,
-    ModuleEndVideosComponent
+    ModuleEndVideosComponent,
+    TnDashboardV03Component,
+    HamburgerComponent
   ]
 })
 export class SharedModule { }
