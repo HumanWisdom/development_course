@@ -168,4 +168,24 @@ export class AdultsService {
   submitDailypractiseQuestion(data): Observable<any> {
     return this.http.post(this.path + '/AddDailyQuestion_Response', data)
   }
+
+  getDailypractiseQuestionbreath(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractiseBreath`)
+  }
+
+  getDailypractiseQuestionmeditation(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Med`)
+  }
+
+  getDailypractiseQuestionins(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Ins`)
+  }
+
+  getDailypractiseQuestiontoday(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Try`)
+  }
+
+  getDailypractiseQuestionoftheday(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Question`)
+  }
 }
