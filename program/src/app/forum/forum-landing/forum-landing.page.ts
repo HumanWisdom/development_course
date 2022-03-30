@@ -104,7 +104,6 @@ postreport(item,actionType){
   if(this.actionType=='report'){
     this.serivce.reportPost({PostID: item.PostID,UserID: this.UserID,Comment: this.commenttext}).subscribe(res=>{
       if(res){
-        ;
         this.replyflag=!this.replyflag;
         this.getAllposts(0);
         this.actionType='';
@@ -142,6 +141,7 @@ getAllposts(index){
 onChange(e){
  
   this.selectIndex=this.selectthread;  
+  if(this.selectIndex)
   this.getAllposts(e);
 }
   ngOnInit() {

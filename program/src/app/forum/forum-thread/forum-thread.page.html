@@ -25,7 +25,7 @@
                       {{posttread.UserName}}
                     </h4>
                     <h4 class="txt133 mtb0px">
-                      {{posttread.PostDate}}
+                      {{getLocalPostDate(posttread.PostDate)| date: 'medium' }}
                     </h4>
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
@@ -149,7 +149,7 @@
                         <h4 class="txt127 commenter mtb0px">
                           {{item.ReplyPostUserName}}
                           <span class="txt130">
-                            {{item.ReplyPostDate}}
+                            {{getLocalPostDate(item.ReplyPostDate)| date: 'medium' }}
                           </span>
                         </h4>
                         <h4 class="txt120 mtb0px">
