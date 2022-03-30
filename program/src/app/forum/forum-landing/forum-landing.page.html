@@ -132,14 +132,14 @@
                           <img [disabled]="!isLoggedIn" *ngIf="item.Liked=='0'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="" (click)="like(item,index)" >
                           <span class="txt128 lcs" [innerText]="item.PostLikeCount"></span> -->
 
-                          <button type="submit" class="btn btn_ficons jc_flexstart">
-                            <i  [disabled]="!isLoggedIn" 
+                          <button [disabled]="!isLoggedIn" type="submit" class="btn btn_ficons jc_flexstart">
+                            <i 
                                 *ngIf="item.Liked=='0'"
                                 (click)="like(item,index)"
                                 class="fa fa-heart-o">
                             </i>
 
-                            <i  [disabled]="!isLoggedIn"
+                            <i  
                                 *ngIf="item.Liked=='1'"
                                 (click)="like(item,index)"
                                 class="fa fa-heart">

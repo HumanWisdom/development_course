@@ -70,7 +70,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                   <div class="col-md-9 col-sm-9 col-xs-9 p0">
                     <div class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
-                      <button type="submit" [disabled]="!isLoggedIn"  (click)="like(posttread.PostID)" class="btn btn_ficons">
+                      <button type="submit" [disabled]="!isLoggedIn" (click)="like(posttread.PostID,null,0)" class="btn btn_ficons">
                         <i  
                           *ngIf="posttread.Liked=='0'"
                           class="fa fa-heart-o">
