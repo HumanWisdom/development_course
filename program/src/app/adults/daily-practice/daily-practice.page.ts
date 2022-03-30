@@ -20,13 +20,16 @@ export class DailyPracticePage implements OnInit {
   dailyqus = ''
   dailyqusrefid = ''
   userId = ''
+  trythistoday = ''
   questext = ''
   isloggedIn = false
 
   constructor(
     private route: ActivatedRoute,
     private service: AdultsService
-  ) { }
+  ) {
+    this.getdailyquestion();
+   }
 
   ngOnInit() {
     this.dailyid = this.route.snapshot.paramMap.get('id')
@@ -35,6 +38,29 @@ export class DailyPracticePage implements OnInit {
     if(this.userId === 'T') {
       this.isloggedIn = true
     }
+  }
+
+  getdailyquestion() {
+      this.service.getDailypractiseQuestionbreath().subscribe((res) => {
+        if(res) {
+          this.videoLink = res;
+        }
+      })
+      this.service.getDailypractiseQuestionins().subscribe((res) => {
+        if(res) {
+          
+        }
+      })
+      this.service.getDailypractiseQuestionmeditation().subscribe((res) => {
+        if(res) {
+         this.audioLink = res;
+        }
+      })
+      this.service.getDailypractiseQuestiontoday().subscribe((res) => {
+        if(res) {
+          this.trythistoday = res;
+        }
+      })
   }
 
   getdailyques() {

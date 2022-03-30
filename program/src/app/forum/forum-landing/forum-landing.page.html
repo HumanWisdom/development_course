@@ -133,10 +133,18 @@
                           <span class="txt128 lcs" [innerText]="item.PostLikeCount"></span> -->
 
                           <button type="submit" class="btn btn_ficons jc_flexstart">
-                            <i  [disabled]="!isLoggedIn" *ngIf="item.Liked=='0'" (click)="like(item,index)" class="fa fa-heart-o"></i>
+                            <i  [disabled]="!isLoggedIn" 
+                                *ngIf="item.Liked=='0'"
+                                (click)="like(item,index)"
+                                class="fa fa-heart-o">
+                            </i>
 
-                            <i  [disabled]="!isLoggedIn" *ngIf="item.Liked=='1'" (click)="like(item,index)" class="fa fa-heart"></i>
-                            {{item.PostLikeCount}}
+                            <i  [disabled]="!isLoggedIn"
+                                *ngIf="item.Liked=='1'"
+                                (click)="like(item,index)"
+                                class="fa fa-heart">
+                            </i>
+                            <span [innerText]="item.PostLikeCount" ></span>
                           </button>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-4 pl0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn ? 'not-allowed' : 'cursor'}" >

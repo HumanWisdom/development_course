@@ -47,15 +47,17 @@ posttext='';
     
   }
 
-  like(PostID,ParentPOstID?){
+  like(PostID,ParentPOstID=null,index:number){
     if(this.isLoggedIn){
       this.service.likePost({PostID: PostID,UserID: this.userID}).subscribe(res=>{
-        if(res=="1"){
-          if(ParentPOstID){
-           this.refreshPage(ParentPOstID);
+        if(res){
+          if(ParentPOstID!=null){
+            this.list.ReplyPost[index].ReplyPostLikeCount=res;
+            this.list.ReplyPost[index].Liked= this.list.ReplyPost[index].Liked=="1"?"0":"1";
+          // this.refreshPage(ParentPOstID);
           }else{
-            this.refreshPage(PostID);
-
+            this.posttread.PostLikeCount=res;
+            this.posttread.Liked=this.posttread.Liked=="1"?"0":"1";
           }
         }
       });
@@ -65,7 +67,6 @@ posttext='';
   reploadpage(){
     this.sub = this.service.postdatavalue.subscribe(res=>{
       if(res){
-        ;
         this.posttread=res;
         this.service.getPostDetail(res.PostID).subscribe(res=>{
           if(res){
@@ -77,7 +78,12 @@ posttext='';
       }
     })
   }
-
+replyPost(){
+  this.list.ReplyPost.sort(function (a, b) {
+    return b.ReplyPostID - a.ReplyPostID;
+   });
+ return this.list.ReplyPost
+}
   
   refreshPage(PostID){
         this.service.getPostDetail(PostID).subscribe(res=>{
@@ -138,12 +144,20 @@ posttext='';
   }
 
   submitComment(){
-    this.service.submitPost({POST:this.PostComment,UserId: this.userID, ParentPostID:this.list.ParentPost[0].ParentPostID}).subscribe(res=>{
+    let parentPostId=0;
+    if(this.list.ParentPost[0] && this.list.ParentPost[0].ParentPostID){
+       parentPostId=+this.list.ParentPost[0].ParentPostID;
+    }else{
+      parentPostId=+this.posttread.PostID;
+    }
+    this.service.submitPost({POST:this.PostComment,UserId: this.userID, ParentPostID:parentPostId}).subscribe(res=>{
       if(res){
         this.PostComment='';
         this.reploadpage();
       }
     })
   }
-
+  GetReplyCount(){
+     return this.list.ReplyPost.length;
+  }
 }
