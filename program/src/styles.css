@@ -24391,6 +24391,7 @@ a
 .img_orm
 {
   border-radius: 5px;
+  width: 100%;
 }
 
 .div_orm
@@ -27776,4 +27777,9 @@ body
 .ctxtalignment
 {
   text-align: right;
+}
+
+video::-webkit-media-controls-panel 
+{
+  background-image: linear-gradient(transparent, transparent) !important;
 }
