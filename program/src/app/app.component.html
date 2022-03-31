@@ -1,7 +1,11 @@
 <!--<ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>-->
-<app-login-signup-splash *ngIf="!pageLoaded"></app-login-signup-splash>
+
+<!-- <app-login-signup-splash *ngIf="!pageLoaded"></app-login-signup-splash> -->
+
 <!-- <div id="page-loader" class="fade" [ngClass]="[pageLoaded ? '' : 'show']"><span class="spinner"></span></div> -->
+
+<app-splash *ngIf="!pageLoaded"></app-splash>
 
 <router-outlet *ngIf="pageLoaded"></router-outlet>

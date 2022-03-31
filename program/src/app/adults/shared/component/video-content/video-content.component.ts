@@ -13,6 +13,8 @@ export class VideoContentComponent implements OnInit,AfterViewInit {
   @Input() bg: string;
   @Input() title: string;
   @Input() poster: any;
+  @Input() videoclass = '';
+  
   @Output() sendAvDuration = new EventEmitter<string>();
   url: SafeResourceUrl; 
   currentTime:any
