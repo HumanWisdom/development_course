@@ -22,6 +22,7 @@ export class DailyPracticePage implements OnInit {
   userId = ''
   trythistoday = ''
   questext = ''
+  dailyinstext = ''
   isloggedIn = false
 
   constructor(
@@ -48,7 +49,7 @@ export class DailyPracticePage implements OnInit {
       })
       this.service.getDailypractiseQuestionins().subscribe((res) => {
         if(res) {
-          
+          this.dailyinstext = res;
         }
       })
       this.service.getDailypractiseQuestionmeditation().subscribe((res) => {
