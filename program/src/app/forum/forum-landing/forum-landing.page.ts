@@ -132,16 +132,14 @@ postnavigate(item){
   this.router.navigateByUrl('/forum/forum-thread');
 }
 getAllposts(index){
-  this.serivce.getposts(this.selectthread,null).subscribe((res)=>{
+  this.serivce.getposts(this.selectthread,null,this.UserID).subscribe((res)=>{
     if(res){
       this.list(res);
     }
-  });
+  });  
 }
 onChange(e){
- 
   this.selectIndex=this.selectthread;  
-  if(this.selectIndex)
   this.getAllposts(e);
 }
   ngOnInit() {
@@ -166,7 +164,7 @@ onChange(e){
     ).subscribe((text: string) => {
 
       console.log(text);
-      this.serivce.getposts(this.selectIndex,text).subscribe((res)=>{
+      this.serivce.getposts(this.selectIndex,text,this.UserID).subscribe((res)=>{
         if(res){
           
           this.list(res);
