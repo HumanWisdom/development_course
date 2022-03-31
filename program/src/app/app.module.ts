@@ -27,7 +27,7 @@ import { StripeModule } from "stripe-angular"
 import { NgxCaptureModule } from 'ngx-capture';
 import { ActiveGuard } from './active.guard';
 import { authLoginGuard } from './auth-login.guard';
-import { LoginSignupSplashPageModule } from './adults/framework-v1/login-signup-splash/login-signup-splash.module';
+import { SplashPageModule } from './adults/splash/splash.module';
 
 
 
@@ -40,7 +40,7 @@ import { LoginSignupSplashPageModule } from './adults/framework-v1/login-signup-
      FormsModule,
     HttpClientModule,
     SocialLoginModule,
-    LoginSignupSplashPageModule,
+    SplashPageModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
    StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
    NgxCaptureModule 

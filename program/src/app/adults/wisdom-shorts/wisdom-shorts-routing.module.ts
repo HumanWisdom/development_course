@@ -66,6 +66,10 @@ const routes: Routes = [
     path: 'wisdom-shorts-s14',
     loadChildren: () => import('./wisdom-shorts-s14/wisdom-shorts-s14.module').then( m => m.WisdomShortsS14PageModule)
   },
+  {
+    path: 'wisdom-shorts-s15',
+    loadChildren: () => import('./wisdom-shorts-s15/wisdom-shorts-s15.module').then( m => m.WisdomShortsS15PageModule)
+  },
    
 ];
 

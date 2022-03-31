@@ -100,7 +100,7 @@ export class WisdomShortsS14Page implements OnInit {
       this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
       localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
     })
-    this.router.navigate(['/adults/wisdom-shorts'])
+    this.router.navigate(['/adults/wisdom-shorts/wisdom-shorts-s15'])
   }
 
   prev(){

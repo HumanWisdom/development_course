@@ -135,7 +135,7 @@ replyPost(){
     })
   }
 
-  follow(item,index){
+  follow(item){
     this.service.followPost({PostID: item.PostID,UserID: this.userID}).subscribe(res=>{
       if(res=="1"){
         this.posttread.Followed=this.posttread.Followed=='1'?'0':'1';
