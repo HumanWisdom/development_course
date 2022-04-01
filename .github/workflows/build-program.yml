@@ -51,7 +51,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: program-artifact
-        path: builds/compressed/program.tgz
+        path: program/builds/compressed/program.tgz
   
   deploy:
     runs-on: ubuntu-latest
