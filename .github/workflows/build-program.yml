@@ -45,7 +45,21 @@ jobs:
         export NODE_OPTIONS=--max_old_space_size=8096
         ionic build -- -c=staging --base-href /course
         mkdir -p builds/compressed
-        tar -czf builds/compressed/build-program-${{ github.run_id }}.tgz www/
+        tar -czf builds/compressed/program.tgz www/
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: program-artifact
+        path: builds/compressed/program.tgz
+  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: program-artifact
 
     - name: Copy the artifact to remote server
       uses: appleboy/scp-action@master
@@ -53,9 +67,8 @@ jobs:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        source: "program/builds/compressed/"
-        target: "builds"
-        strip_components: 2
+        source: "program.tgz"
+        target: "builds/compressed/program-${{ github.run_id }}.tgz"
         
     - name: Setup the build on remote server
       uses: appleboy/ssh-action@master
