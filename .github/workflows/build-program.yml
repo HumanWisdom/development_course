@@ -1,0 +1,65 @@
+name: build-program-staging
+on:
+  push:
+    branches: [deployment-setup]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Setup nodejs
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Cache node modules
+      id: cache-nodemodules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: program/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+        
+    - name: Install global dependencies
+      run: |
+        npm install -g @ionic/cli
+        npm install -g @angular/cli
+
+    - name: Install project dependencies
+      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+      run: |
+        cd program
+        npm ci
+    - name: Build the project
+      run: |
+        cd program
+        export NODE_OPTIONS=--max_old_space_size=8096
+        ionic build -- -c=staging --base-href /course
+        mkdir -p builds/compressed
+        tar -czf builds/compressed/build-program-${{ github.run_id }}.tgz www/
+    - name: Copy the artifact to remote server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        source: "program/builds/compressed/"
+        target: "builds"
+        strip_components: 2
+    - name: Setup the build on remote server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.STAGING_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/build-program-${{ github.run_id }}.tgz -C builds/uncompressed/${{ github.run_id }}
+          
