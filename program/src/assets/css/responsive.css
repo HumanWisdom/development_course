@@ -322,6 +322,30 @@
     {
         text-align: center;
     }
+
+    /* .odiv,
+    .ghn
+    {
+        margin: 0 10px;
+        padding: 0;
+    } */
+
+    .tray_btns
+    {
+        margin: 0 0 0 10px;
+        /* padding: 0; */
+    }
+
+    .mdpd_tray 
+    {
+        overflow: hidden;
+    }
+
+    .odiv::-webkit-scrollbar-track,
+    .ghn::-webkit-scrollbar-track
+    {
+        margin: 0 0 0 1rem;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px)

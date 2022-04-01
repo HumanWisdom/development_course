@@ -25993,7 +25993,8 @@ h1
 
 .btn_mdpd_tray
 {
-  margin: 0;
+  /* margin: 0; */
+  margin: 0 0 10px 0;
   border: 0;
   
   height: 40px;
@@ -26016,7 +26017,7 @@ h1
 
 .mdpd_tray 
 {
-  margin: 40px 0 0 0;
+  margin: 40px -10px 0 0;
 }
 
 .dmdpd_tray 
@@ -26032,7 +26033,8 @@ h1
   overflow-x: scroll;
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
+  /* grid-gap: 10px; */
+  grid-gap: 0 10px;
 }
 
 .ghn
@@ -27832,4 +27834,46 @@ video::-webkit-media-controls-panel
   font-size: 2rem;
   color: #FFFFFF;
   padding: 5px 10px;
+}
+
+.btn_pfy_01 
+{
+  margin: 0;
+  border: 0;
+  box-shadow: unset;
+
+  height: 50px;
+  width: 100%;
+  background: #70C6BD;
+  border-radius: 25px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.btn_pfy_02
+{
+  margin: 0;
+  border: 0;
+  box-shadow: unset;
+
+  height: 50px;
+  width: 100%;
+  background: #40ACB2;
+  border-radius: 25px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
 }
