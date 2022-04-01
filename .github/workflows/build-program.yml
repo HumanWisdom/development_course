@@ -9,10 +9,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
     - name: Setup nodejs
       uses: actions/setup-node@v2
       with:
         node-version: '14'
+
     - name: Cache node modules
       id: cache-nodemodules
       uses: actions/cache@v2
@@ -36,6 +38,7 @@ jobs:
       run: |
         cd program
         npm ci
+
     - name: Build the project
       run: |
         cd program
@@ -43,6 +46,7 @@ jobs:
         ionic build -- -c=staging --base-href /course
         mkdir -p builds/compressed
         tar -czf builds/compressed/build-program-${{ github.run_id }}.tgz www/
+
     - name: Copy the artifact to remote server
       uses: appleboy/scp-action@master
       with:
@@ -52,6 +56,7 @@ jobs:
         source: "program/builds/compressed/"
         target: "builds"
         strip_components: 2
+        
     - name: Setup the build on remote server
       uses: appleboy/ssh-action@master
       with:
