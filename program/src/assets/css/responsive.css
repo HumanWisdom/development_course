@@ -198,6 +198,12 @@
         margin: 0 -10px;
         padding: 40px 10px 40px 10px;
     }
+
+    .modal.fade.in .lab-modal-body,
+    .lab-modal-body
+    {
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px)
