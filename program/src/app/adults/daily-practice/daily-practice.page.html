@@ -68,7 +68,7 @@
                           </div>
                           
                           <div class="row tcenter">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12" *ngIf="videoLink !== ''">
                               <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video> 
@@ -152,12 +152,12 @@
                       <div class="row center_flex mdp_quotation">
                         <div class="col-md-12 col-sm-12 col-xs-10">
                           <h4 class="txt288 mtb0px italic">
-                            Three things in human life are important: the first is to be kind; the second is to be kind; and the third is to be kind.
+                            {{dailyinstext}}
                           </h4>
                         </div>
                       </div>
 
-                      <div class="row center_flex">
+                      <!-- <div class="row center_flex">
                         <div class="col-md-12 col-sm-12 col-xs-10">
                           <hr class="mdp_hr">
                         </div>
@@ -169,7 +169,7 @@
                             HENRY JAMES
                           </h4>
                         </div>
-                      </div>
+                      </div> -->
                       <!-- /quotation -->
                     </div>
 
@@ -200,7 +200,7 @@
                           </div>
                           
                           <div class="row tcenter">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem" *ngIf="audioLink !== ''">
                               <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>
                             </div>
                           </div>

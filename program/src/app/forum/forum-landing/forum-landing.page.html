@@ -151,10 +151,8 @@
                           <!-- <img (click)="reportpost(item,'comment')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
                           <span class="txt128 lcs"  [innerText]="item.ReplyCount"></span> -->
 
-                          <button type="submit" class="btn btn_ficons jc_flexstart">
-                            <i 
-                              (click)="reportpost(item,'comment')"
-                              class="fa fa-reply">
+                          <button  (click)="reportpost(item,'comment')" type="submit" class="btn btn_ficons jc_flexstart">
+                            <i class="fa fa-reply">
                             </i>
                             Comment
                             <!-- {{item.ReplyCount}} -->
