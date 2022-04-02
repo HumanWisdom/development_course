@@ -22,9 +22,8 @@ public postdataSource = new BehaviorSubject<any>([]);
   postdatavalue = this.postdataSource.asObservable();
 
   constructor( private http: HttpClient,handler: HttpBackend) { }
-  getposts(index:Number,searchText):Observable<any>{
+  getposts(index:Number,searchText,uID):Observable<any>{
     let url='';
-    let uID=154;
     console.log(index);
     console.log(searchText);
     switch (index) {

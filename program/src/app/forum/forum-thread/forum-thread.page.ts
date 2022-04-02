@@ -142,7 +142,11 @@ replyPost(){
       }
     });
   }
-
+  getLocalPostDate(date:string){
+    var dateLocal = new Date(date);
+    var newDate = new Date(dateLocal.getTime() - dateLocal.getTimezoneOffset()*60*1000);
+    return newDate;
+  }
   submitComment(){
     let parentPostId=0;
     if(this.list.ParentPost[0] && this.list.ParentPost[0].ParentPostID){
