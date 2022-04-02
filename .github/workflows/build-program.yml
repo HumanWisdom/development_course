@@ -46,6 +46,7 @@ jobs:
         ionic build -- -c=staging --base-href /course
     
     - name: Compress the build artifacts
+      run: |
         mkdir -p builds/compressed
         tar -czf builds/compressed/program.tgz www/
 
