@@ -98,7 +98,7 @@ export class LoginSignupPage implements OnInit {
     private service:OnboardingService) { 
       // let acceptCookie = localStorage.getItem('acceptcookie');
       // if(acceptCookie === null)
-      //   this.router.navigate(['/adults/framework-v1/cookie-policy'])
+      //   this.router.navigate(['/adults/help-support/cookie-policy'])
       this.activate.queryParams.subscribe(params => {
         this.urlEmail= params['email'];
         this.urlPassword=params['pwd'];

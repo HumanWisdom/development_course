@@ -9,10 +9,6 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
-    path: 'framework-v1',
-    loadChildren: () => import('./framework-v1/framework-v1.module').then( m => m.FrameworkV1Module)
-  },    
-  {
     path: 'adult-dashboard',
     loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then( m => m.AdultDashboardPageModule),
     canActivate:[AuthGuard]
@@ -243,20 +239,8 @@ const routes: Routes = [
   }, 
   {
     path: 'bookmarks',
-    loadChildren: () => import('./framework-v1/bookmarks/bookmarks.module').then( m => m.BookmarksPageModule)
+    loadChildren: () => import('./bookmarks/bookmarks.module').then( m => m.BookmarksPageModule)
   }, 
-  {
-    path: 'cookie-policy',
-    loadChildren: () => import('./framework-v1/cookie-policy/cookie-policy.module').then( m => m.CookiePolicyPageModule)
-  },
-  {
-    path: 'tree-planting-program',
-    loadChildren: () => import('./framework-v1/tree-planting-program/tree-planting-program.module').then( m => m.TreePlantingProgramPageModule)
-  },
-  {
-    path: 'faq',
-    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
-  },
   {
     path: 'wisdom-shorts',
     loadChildren: () => import('./wisdom-shorts/wisdom-shorts.module').then( m => m.WisdomShortsModule)
@@ -274,21 +258,45 @@ const routes: Routes = [
     loadChildren: () => import('./add-to-home-screen-ios/add-to-home-screen-ios.module').then( m => m.AddToHomeScreenIosPageModule)
   },
   {
-    path: 'contact-us',
-    loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
-  },
-  {
-    path: 'support',
-    loadChildren: () => import('./support/support.module').then( m => m.SupportPageModule)
-  },
-  {
     path: 'daily-practise/:id',
     loadChildren: () => import('./daily-practice/daily-practice.module').then( m => m.DailyPracticePageModule)
   },
   {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
     path: 'search',
     loadChildren: () => import('./personalised-for-you-search/personalised-for-you-search.module').then( m => m.PersonalisedForYouSearchPageModule)
-  }
+  },
+  {
+    path: 'help-support',
+    loadChildren: () => import('./help-support/help-support.module').then( m => m.HelpSupportModule)
+  },
+  {
+    path: 'hwp-project',
+    loadChildren: () => import('./hwp-project/hwp-project.module').then( m => m.HwpProjectPageModule)
+  },
+  {
+    path: 'podcast',
+    loadChildren: () => import('./podcast/podcast.module').then( m => m.PodcastModule)
+  },
+  {
+    path: 'refer-friend',
+    loadChildren: () => import('./refer-friend/refer-friend.module').then( m => m.ReferFriendPageModule)
+  },
+  {
+    path: 'testimonials',
+    loadChildren: () => import('./testimonials/testimonials.module').then( m => m.TestimonialsPageModule)
+  },
+  {
+    path: 'tree-planting-program',
+    loadChildren: () => import('./tree-planting-program/tree-planting-program.module').then( m => m.TreePlantingProgramPageModule)
+  },
+  {
+    path: 'test-screen',
+    loadChildren: () => import('./test-screen/test-screen.module').then( m => m.TestScreenPageModule)
+  },
 ];
 
 @NgModule({

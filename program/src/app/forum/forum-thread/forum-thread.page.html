@@ -25,7 +25,7 @@
                       {{posttread.UserName}}
                     </h4>
                     <h4 class="txt133 mtb0px">
-                      {{posttread.PostDate}}
+                      {{getLocalPostDate(posttread.PostDate)| date: 'medium' }}
                     </h4>
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
@@ -70,7 +70,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                   <div class="col-md-9 col-sm-9 col-xs-9 p0">
                     <div class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
-                      <button type="submit" [disabled]="!isLoggedIn"  (click)="like(posttread.PostID)" class="btn btn_ficons">
+                      <button type="submit" [disabled]="!isLoggedIn" (click)="like(posttread.PostID,null,0)" class="btn btn_ficons">
                         <i  
                           *ngIf="posttread.Liked=='0'"
                           class="fa fa-heart-o">
@@ -85,8 +85,9 @@
                     </div>
                     <div *ngIf="isLoggedIn" class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
                       <button type="submit" class="btn btn_ficons">
-                        <i class="fa fa-comment-o"></i>
-                        <span [innerText]="GetReplyCount()" ></span>
+                        <i class="fa fa-reply"></i>
+                        <!-- <span [innerText]="GetReplyCount()" ></span> -->
+                        Comment
                       </button>  
                     </div>
                     <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
@@ -148,7 +149,7 @@
                         <h4 class="txt127 commenter mtb0px">
                           {{item.ReplyPostUserName}}
                           <span class="txt130">
-                            {{item.ReplyPostDate}}
+                            {{getLocalPostDate(item.ReplyPostDate)| date: 'medium' }}
                           </span>
                         </h4>
                         <h4 class="txt120 mtb0px">

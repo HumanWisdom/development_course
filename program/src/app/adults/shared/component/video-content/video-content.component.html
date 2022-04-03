@@ -45,7 +45,7 @@
                         <source src="http://techslides.com/demos/sample-videos/small.mp4"  type="video/mp4">                                                
                       </video> -->
 
-                      <video controls playinline (timeupdate)="getCurrentTime($event)" class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
+                      <video controls playinline (timeupdate)="getCurrentTime($event)" [ngClass]="[videoclass, 'cvideo']" #video [poster]="poster" controlsList="nodownload">                                                
                         <source [src]="videoLink" type="video/mp4">                                              
                       </video>                      
 

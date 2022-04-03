@@ -135,14 +135,18 @@ replyPost(){
     })
   }
 
-  follow(item,index){
+  follow(item){
     this.service.followPost({PostID: item.PostID,UserID: this.userID}).subscribe(res=>{
       if(res=="1"){
         this.posttread.Followed=this.posttread.Followed=='1'?'0':'1';
       }
     });
   }
-
+  getLocalPostDate(date:string){
+    var dateLocal = new Date(date);
+    var newDate = new Date(dateLocal.getTime() - dateLocal.getTimezoneOffset()*60*1000);
+    return newDate;
+  }
   submitComment(){
     let parentPostId=0;
     if(this.list.ParentPost[0] && this.list.ParentPost[0].ParentPostID){
