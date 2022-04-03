@@ -73,7 +73,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         source: "program.tgz"
-        target: "builds/compressed/program-${{ github.run_id }}.tgz"
+        target: "builds/compressed/${{ github.run_id }}"
         
     - name: Setup the build on remote server
       uses: appleboy/ssh-action@master
@@ -84,5 +84,5 @@ jobs:
         script: |
           rm -rf builds/uncompressed/${{ github.run_id }}
           mkdir -p builds/uncompressed/${{ github.run_id }}
-          tar -zxf builds/compressed/build-program-${{ github.run_id }}.tgz -C builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           
