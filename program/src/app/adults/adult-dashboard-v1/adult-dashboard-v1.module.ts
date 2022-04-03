@@ -1,11 +1,10 @@
+import { AdultDashboardV1Component } from './adult-dashboard-v1.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdultDashboardV1RoutingModule } from './adult-dashboard-v1-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { AdultDashboardPageRoutingModule } from '../adult-dashboard/adult-dashboard-routing.module';
-import { AdultDashboardPage } from '../adult-dashboard/adult-dashboard.page';
 import { SharedModule } from '../shared/shared.module';
 
 
@@ -15,10 +14,10 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     IonicModule,
-    AdultDashboardPageRoutingModule,
+    AdultDashboardV1RoutingModule,
     SharedModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [AdultDashboardPage]
+  declarations: [AdultDashboardV1Component]
 })
 export class AdultDashboardV1Module { }
