@@ -47,6 +47,7 @@ jobs:
     
     - name: Compress the build artifacts
       run: |
+        cd program
         mkdir -p builds/compressed
         tar -czf builds/compressed/program.tgz www/
 
@@ -58,6 +59,7 @@ jobs:
   
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v2
