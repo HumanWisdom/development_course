@@ -284,6 +284,10 @@ const routes: Routes = [
   {
     path: 'daily-practise/:id',
     loadChildren: () => import('./daily-practice/daily-practice.module').then( m => m.DailyPracticePageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./personalised-for-you-search/personalised-for-you-search.module').then( m => m.PersonalisedForYouSearchPageModule)
   }
 ];
 
