@@ -5,12 +5,12 @@ import { AuthGuard } from 'src/app/auth.guard';
 const routes: Routes = [   
   {
     path: '',
-    loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then( m => m.AdultDashboardPageModule),
+    loadChildren: () => import('./adult-dashboard-v1/adult-dashboard-v1.module').then( m => m.AdultDashboardV1Module),
     canActivate:[AuthGuard]
   },
   {
     path: 'adult-dashboard',
-    loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then( m => m.AdultDashboardPageModule),
+    loadChildren: () => import('./adult-dashboard-v1/adult-dashboard-v1.module').then( m => m.AdultDashboardV1Module),
     canActivate:[AuthGuard]
   },  
   {
