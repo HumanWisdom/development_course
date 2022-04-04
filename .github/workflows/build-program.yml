@@ -43,7 +43,7 @@ jobs:
       run: |
         cd program
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build -- -c=staging --base-href /course
+        ionic build -- -c=staging --base-href /course/
     
     - name: Compress the build artifacts
       run: |
@@ -85,4 +85,6 @@ jobs:
           rm -rf builds/uncompressed/${{ github.run_id }}
           mkdir -p builds/uncompressed/${{ github.run_id }}
           tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
+          rm -rf /var/www/html/course
+          mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
           
