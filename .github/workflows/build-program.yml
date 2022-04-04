@@ -1,7 +1,7 @@
 name: build-program-staging
 on:
   push:
-    branches: [deployment-setup]
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
