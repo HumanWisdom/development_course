@@ -293,6 +293,10 @@ const routes: Routes = [
     path: 'test-screen',
     loadChildren: () => import('./test-screen/test-screen.module').then( m => m.TestScreenPageModule)
   },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchModule)
+  },
 ];
 
 @NgModule({

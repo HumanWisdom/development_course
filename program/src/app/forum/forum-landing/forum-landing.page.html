@@ -91,7 +91,7 @@
                     </a>                                          
                   </div>             
                   
-                  <div class="col-md-3 col-sm-3 col-xs-3 tright">
+                  <div class="col-md-3 col-sm-3 col-xs-3 tright"  *ngIf="isLoggedIn" >
                     <button type="button" class="btn btn-default btn_plus_1">
                       <div class="center_flex">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/plus.svg" [routerLink]="['/forum/forum-thread-start-new']" routerLinkActive="router-link-active"  alt="" class="img-responsive">
