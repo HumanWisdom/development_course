@@ -13,6 +13,7 @@ export class BottomNavigationComponent implements OnInit {
   profile = false
   isloggedIn=false
   enableprofile=false
+  search=false
   Subscriber: any;
   constructor(private router: Router) { }
 
@@ -21,6 +22,13 @@ export class BottomNavigationComponent implements OnInit {
     if(userid === 'T') {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
+    }
+    if(this.router.url=="/adults/search") {
+      this.dash=false
+      this.journal=false
+      this.profile=false
+      this.fourm = false;
+      this.search = true;
     }
     if(this.router.url=="/adults/adult-dashboard")
     {
@@ -62,6 +70,10 @@ export class BottomNavigationComponent implements OnInit {
     // if(localStorage.getItem('isloggedin') === 'T')
       this.router.navigate(['/adults/journal'])
    
+  }
+
+  routeSearch() {
+    this.router.navigate(['/adults/search'])
   }
 
   profileclickevent() {
