@@ -293,6 +293,10 @@ const routes: Routes = [
     path: 'test-screen',
     loadChildren: () => import('./test-screen/test-screen.module').then( m => m.TestScreenPageModule)
   },
+  {
+    path: 'dashboard-main-v1',
+    loadChildren: () => import('./dashboard-main-v1/dashboard-main-v1.module').then( m => m.DashboardMainV1PageModule)
+  },
 ];
 
 @NgModule({
