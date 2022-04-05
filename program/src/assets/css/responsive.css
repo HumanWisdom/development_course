@@ -198,6 +198,12 @@
         margin: 0 -10px;
         padding: 40px 10px 40px 10px;
     }
+
+    .modal.fade.in .lab-modal-body,
+    .lab-modal-body
+    {
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px)
@@ -315,6 +321,30 @@
     .ctxtalignment
     {
         text-align: center;
+    }
+
+    /* .odiv,
+    .ghn
+    {
+        margin: 0 10px;
+        padding: 0;
+    } */
+
+    .tray_btns
+    {
+        margin: 0 0 0 10px;
+        /* padding: 0; */
+    }
+
+    .mdpd_tray 
+    {
+        overflow: hidden;
+    }
+
+    .odiv::-webkit-scrollbar-track,
+    .ghn::-webkit-scrollbar-track
+    {
+        margin: 0 0 0 1rem;
     }
 }
 

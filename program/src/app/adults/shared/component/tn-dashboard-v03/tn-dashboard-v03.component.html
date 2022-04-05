@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<div class="row center_flex header_pfy fnavbar onscrollbg">
+<div class="row center_flex header_pfy fnavbar onscrollbg" [ngClass]="[enableplaystore ? 'navbar_01' : 'mt0px']">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 flex_ai plr20px">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
       <a class="" href="#">
@@ -10,7 +10,7 @@
     <!-- unlogged -->
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 jc_flexend">
-        <a>
+        <a *ngIf="!isloggedIn" routerLink="/onboarding/login">
           <button type="button" class="btn_login">
             Login
           </button>
