@@ -266,6 +266,10 @@ const routes: Routes = [
     loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
   },
   {
+    path: 'search',
+    loadChildren: () => import('./personalised-for-you-search/personalised-for-you-search.module').then( m => m.PersonalisedForYouSearchPageModule)
+  },
+  {
     path: 'help-support',
     loadChildren: () => import('./help-support/help-support.module').then( m => m.HelpSupportModule)
   },
@@ -292,11 +296,7 @@ const routes: Routes = [
   {
     path: 'test-screen',
     loadChildren: () => import('./test-screen/test-screen.module').then( m => m.TestScreenPageModule)
-  },
-  {
-    path: 'dashboard-main-v1',
-    loadChildren: () => import('./dashboard-main-v1/dashboard-main-v1.module').then( m => m.DashboardMainV1PageModule)
-  },
+  }
 ];
 
 @NgModule({
