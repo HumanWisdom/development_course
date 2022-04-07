@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { IntroCarouselPage } from './intro-carousel.page';
+import { PersonalisedForYouSearchPage } from './personalised-for-you-search.page';
 
-describe('IntroCarouselPage', () => {
-  let component: IntroCarouselPage;
-  let fixture: ComponentFixture<IntroCarouselPage>;
+describe('PersonalisedForYouSearchPage', () => {
+  let component: PersonalisedForYouSearchPage;
+  let fixture: ComponentFixture<PersonalisedForYouSearchPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntroCarouselPage ],
+      declarations: [ PersonalisedForYouSearchPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(IntroCarouselPage);
+    fixture = TestBed.createComponent(PersonalisedForYouSearchPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
