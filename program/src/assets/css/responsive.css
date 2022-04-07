@@ -573,6 +573,17 @@
     }
 }
 
+@media (max-width: 1199px)
+{
+    .as_submit_01,
+    .as_continue_dashboard
+    {
+        padding: 0 20px 21px 20px;
+        right: 0;
+        left: 0;
+    }
+}
+
 @media (min-width: 1200px)
 {
 
@@ -724,5 +735,16 @@
     .mdpd_pfy
     {
         margin: 37px 0 0 0;
+    }
+
+    .as_diff_user_code
+    {
+        margin: 5px 0 25px 0;
+    }
+
+    .modal_inner
+    {
+        bottom: unset;
+        top: unset;
     }
 }

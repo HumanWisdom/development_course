@@ -22675,10 +22675,12 @@ ul.dh_ul li
   padding-left: 20%;
 }
 
-.activate_subscription_outer
+.activate_subscription_outer,
+.modal_outer
 {
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .activate_subscription_inner
@@ -24586,9 +24588,22 @@ a
   margin: 27px 0 199px 0;
 }
 
-.as_submit_01
+.as_submit_01,
+.as_continue_dashboard
 {
-  padding: 0 0 21px 0;
+  /* padding: 0 0 21px 0; */
+  /* position: fixed;
+  bottom: 21px;
+  right: 0;
+  left: 0;
+  margin: 0 auto; */
+  padding: 0 0px 21px 0px;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  left: 20px;
+  margin: 0 auto;
+  background: #1092A7;
 }
 
 /* activate subscription modal */
@@ -24615,22 +24630,26 @@ a
   box-shadow: 0px -1px 4px rgb(0 0 0 / 25%);
   border: 0;
   border-radius: 0;
-  padding: 20px 20px 0 20px;
-  min-height: 500px;
+  padding: 20px 20px 70px 20px;
+  /* min-height: 500px; */
+
+  height: 70rem;
+  overflow-y: overlay;
 }
 
 @media (min-width: 1200px)
 {
   .mactivate_subscription_01
   {
-    min-height: 250px;
+    /* min-height: 250px; */
   }
 }
 /* /activate subscription modal */
 
 .as_diff_user_code
 {
-  margin: 5px 0 160px 0;
+  /* margin: 5px 0 160px 0; */
+  margin: 5px 0 32px 0;
 }
 
 .as_code_desc_logged_in_01
@@ -27772,8 +27791,16 @@ body
   margin: 0;
   border: 0;
   background: transparent;
-  color: #FFFFFF;
   padding: 0;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .btn_pn:hover,
@@ -27882,4 +27909,92 @@ video::-webkit-media-controls-panel
 .right_col 
 {
   transition: all 1s ease;
+}
+
+.as_ocw_01
+{
+  margin: 39px 0 16px 0;
+}
+
+.as_lw_01
+{
+  margin: 37px 0 20px 0;
+}
+
+.as_nru_01 
+{
+  margin: 30px 0 138px 0;
+}
+
+.btn_pfys_login_signup
+{
+  margin: 0;
+  border: 0;
+  box-shadow: unset;
+  height: 60px;
+  width: 100%;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #1092A7;
+}
+
+.dpfym_login_signup
+{
+  margin: 40px 0 20px 0;
+}
+
+.pfy_sl_modal
+{
+  position: relative;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+  background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
+  border: 0;
+  border-radius: 0;
+  padding: 20px 20px 70px 20px;
+  /* min-height: 500px; */
+  height: auto;
+  overflow-y: overlay;
+}
+
+.modal.fade.in .pfy_sl_modal
+{
+  /* bottom: 0; */
+  opacity: 1;
+}
+
+.dpfys_login_signup
+{
+  margin: 50px 0 10px 0;
+}
+
+.pfy_ocw
+{
+  margin: 44px 0 27px 0;
+}
+
+.modal_inner
+{
+  position: absolute;
+  bottom: 0;
+  /* top: 0; */
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.h100p 
+{
+  height: 100%;
 }

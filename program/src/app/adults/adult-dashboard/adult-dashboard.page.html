@@ -156,7 +156,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
             
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a routerLink="">
+                                <a [routerLink]="['/adults/daily-practise', '0']">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_01.svg" alt="Wisdom Stories" class="crimg">
                                   <h4 class="tcenter txt291 mdpd_title">
                                     Breathing exercise
@@ -165,7 +165,7 @@
                               </div>
             
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a routerLink="">
+                                <a [routerLink]="['/adults/daily-practise', '1']">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_01.svg" alt="Journal" class="crimg">
                                   <h4 class="tcenter txt291 mdpd_title">
                                     Question of the day
@@ -174,7 +174,7 @@
                               </div>
             
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a routerLink="">
+                                <a [routerLink]="['/adults/daily-practise', '2']">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_01.svg" alt="Testimonials" class="crimg">
                                   <h4 class="tcenter txt291 mdpd_title">
                                     Daily inspiration
@@ -183,7 +183,7 @@
                               </div>
             
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a routerLink="" >
+                                <a [routerLink]="['/adults/daily-practise', '3']">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_01.svg" alt="Forum" class="crimg">
                                   <h4 class="tcenter txt291 mdpd_title">
                                     Audio meditation
@@ -192,7 +192,7 @@
                               </div>
             
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a routerLink="" >
+                                <a [routerLink]="['/adults/daily-practise', '4']">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise_01.svg" alt="Forum" class="crimg">
                                   <h4 class="tcenter txt291 mdpd_title">
                                     Try this today
@@ -230,7 +230,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a >
+                                  <a [routerLink]="['/adults/search']">
                                     <h2 class="txt292 underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1693,6 +1693,42 @@
             </div>
           </div>
 
+          <div class="row center_flex as_ocw_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+              <h4 class="txt89 mtb0px tcenter">
+                Connect with
+              </h4>
+            </div>  
+          </div>
+
+          <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 center_flex"> 
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg" (click)="fbLogin()" class="img-responsive">
+                </button>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg" (click)="googleLogin()" class="img-responsive">
+                </button>
+              </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
+                <button type="button" class="btn btn-default btn_as_sl">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                </button>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="row center_flex as_lw_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+              <h4 class="txt89 mtb0px tcenter">
+                or sign up here
+              </h4>
+            </div>  
+          </div>
+
           <div class="row center_flex mb10px">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">     
@@ -1734,7 +1770,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">     
                 <input type="password"  class="form-control cfc14" placeholder="Password*" (keydown.space)="$event.preventDefault();" formControlName="password" required>
                 <label class="txt189">
-                  Password must be Minimum 6 Characters. No Spaces allowed
+                  Password must be Minimum 5 Characters. No Spaces allowed
                 </label>
               </div>
               <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
@@ -1749,41 +1785,13 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">     
                 <input type="password"  class="form-control cfc14" placeholder="Repeat Password*" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
                 <label class="txt189">
-                  Password must be Minimum 6 Characters. No Spaces allowed
+                  Password must be Minimum 5 Characters. No Spaces allowed
                 </label>
               </div>
               <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
                 <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat password</small>
                 <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must be at least 3 characters</small>
             </div>
-            </div>
-          </div>
-
-          <div class="row center_flex as_orw_01">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
-              <h4 class="txt89 mtb0px tcenter underline">
-                Or connect with
-              </h4>
-            </div>  
-          </div>
-
-          <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 center_flex"> 
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter"> 
-                <button type="button" class="btn btn-default btn_as_sl">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg" (click)="fbLogin()" class="img-responsive">
-                </button>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter"> 
-                <button type="button" class="btn btn-default btn_as_sl">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg" (click)="googleLogin()" class="img-responsive">
-                </button>
-              </div>
-              <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
-                <button type="button" class="btn btn-default btn_as_sl">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
-                </button>
-              </div> -->
             </div>
           </div>
 
@@ -2008,33 +2016,17 @@
               </h4>
             </div>
           </div>
-         
-          <div class="row center_flex mb10px">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
-                <input type="text"  class="cfc14" [(ngModel)]="this.loginemail" placeholder="E-mail*">
-              </div>
-            </div>
-          </div> 
 
-          <div class="row center_flex mb10px">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
-                <input type="password"  class="cfc14" [(ngModel)]="this.loginpassword" placeholder="Password*">
-              </div>
-            </div>
-          </div>
-
-          <div class="row center_flex as_orw_02">
+          <div class="row center_flex as_ocw_01">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
-              <h4 class="txt89 mtb0px tcenter underline">
-                Or connect with
+              <h4 class="txt89 mtb0px tcenter">
+                Connect with
               </h4>
             </div>  
           </div>
 
           <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 center_flex"> 
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter"> 
                 <button type="button" class="btn btn-default btn_as_sl">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg" (click)="fbLogin()" class="img-responsive">
@@ -2053,7 +2045,31 @@
             </div>
           </div>
 
-          <div class="row center_flex as_aru_02">
+          <div class="row center_flex as_lw_01">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+              <h4 class="txt89 mtb0px tcenter">
+                or login here
+              </h4>
+            </div>  
+          </div>
+         
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="text"  class="cfc14" [(ngModel)]="this.loginemail" placeholder="E-mail*">
+              </div>
+            </div>
+          </div> 
+
+          <div class="row center_flex mb10px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+                <input type="password"  class="cfc14" [(ngModel)]="this.loginpassword" placeholder="Password*">
+              </div>
+            </div>
+          </div>
+
+          <div class="row center_flex as_nru_01">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <a (click)="already('register')">     
                 <h4 class="txt241 mtb0px tcenter underline">

@@ -52,7 +52,7 @@ export class authLoginGuard implements CanActivate, OnInit {
       localStorage.setItem('cartlist', cartdata);
     }
     if(!cookie && pers !== 'T') {
-      this.router.navigate(['/intro/personalised-for-you'])
+      this.router.navigate(['/intro/intro-carousel'])
       return false;
     }
     if (res === null || res === 'F' || rem === 'F') {
