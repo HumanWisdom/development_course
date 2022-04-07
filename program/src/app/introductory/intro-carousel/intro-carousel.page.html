@@ -19,13 +19,13 @@
                     <li data-target="#ic_carousel" data-slide-to="3"></li>
                     <li data-target="#ic_carousel" data-slide-to="4"></li>
 
-                    <a class="left carousel-control jc_flexstart" href="#ic_carousel" data-slide="prev">
-                      <h4 class="txt295 mtb0px">
+                    <a class="left carousel-control jc_flexstart">
+                      <h4 class="txt295 mtb0px" (click)="skip()">
                         Skip
                       </h4>
                       <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control jc_flexend" href="#ic_carousel" data-slide="next">
+                    <a class="right carousel-control jc_flexend" routerLink="/intro/personalised-for-you">
                       <h4 class="txt295 mtb0px">
                         Next
                       </h4>
