@@ -741,4 +741,10 @@
     {
         margin: 5px 0 25px 0;
     }
+
+    .modal_inner
+    {
+        bottom: unset;
+        top: unset;
+    }
 }
