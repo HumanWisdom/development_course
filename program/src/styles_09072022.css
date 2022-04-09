@@ -18118,7 +18118,7 @@ ngx-circular-player svg
 
 .bg_black
 {
-  background: #000000 !important;
+  background: #000000;
 }
 
 .dflexblock_pyramid .x_content
@@ -24750,10 +24750,6 @@ a
   background: #FFFFFF;
   width: 100%;
   z-index: 99;
-  top: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
 }
 
 .ch_activation_code
@@ -27629,7 +27625,7 @@ body
 .dm .panel-default>.panel-heading
 {
   background: transparent;
-  padding: 40px 10px 15px 10px!important;
+  padding: 0 0 15px 0!important;
 }
 
 .dm_title 
@@ -28001,107 +27997,4 @@ video::-webkit-media-controls-panel
 .h100p 
 {
   height: 100%;
-}
-
-.guidedqtns_row 
-{
-  height: 70px;
-  border-radius: 0;
-  color: #fff;
-  padding: 15px;
-  border: 0;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-flow: wrap;
-  text-align: left;
-  margin: 0 -10px 2px -10px;
-}
-
-.guidedqtns_row .session_time 
-{
-  text-align: end;
-}
-
-/* ngx audio plugin-custom */
-ngx-circular-player svg 
-{
-  width: 60px !important;
-}
-
-#aud3 .play, 
-#aud3 .pause
-{
-  background: #FFFFFF !important;
-  width: 50px !important;
-  height: 50px !important;
-  left: 50% !important;
-}
-
-#aud3 .pause .before,
-#aud3 .pause .after
-{
-  background-color: #DADADA !important;
-}
-
-#aud3 .arrow
-{
-  left: 45%;
-  margin: 0 !important;
-}
-
-#aud3 .arrow, 
-.arrow:before, 
-.arrow:after
-{
-  width: 1.2em!important;
-  height: 1.2em!important;
-  border-top-right-radius: 30%;
-}
-
-#aud3 .pause .before
-{
-  width: 8px !important;
-  height: 25.2857px !important;
-  /* left: calc(50% - 10px); */
-  left: 36% !important;
-}
-
-#aud3 .pause .after
-{
-  width: 8px !important;
-  height: 25.2857px !important;
-  left: calc(45% + 10px) !important;
-}
-/* /ngx audio plugin-custom */
-
-.header_dmodule_transcript 
-{
-  background: #1092A7;
-  box-shadow: 0px 1px 2px rgb(0 0 0 / 25%);
-  height: 90px;
-}
-
-.flex_jc_right
-{
-  display: flex;
-  align-items: center;
-  justify-content: right;
-}
-
-.content_top_01
-{
-  margin-top: calc(90px - 0px);
-}
-
-.bg_close_01
-{
-  background: transparent;
-  height: 60px;
-}
-
-.cp0_01
-{
-  padding: 0 10px;
 }

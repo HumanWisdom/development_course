@@ -95,11 +95,6 @@
   background: #4A59B6;
 }
 
-.bg_gray
-{
-  background: #5D5D5D;
-}
-
 .bg_user_profile 
 {
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/profile/user_profile_landing.svg) no-repeat center center fixed !important;
@@ -198,19 +193,4 @@
   z-index: 0; 
   min-height: 100vh; 
   overflow: hidden;
-}
-
-.bg_dmodule_transcript
-{
-  background: #1092A7 !important;
-  /* mix-blend-mode: multiply; */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover !important;
-  -o-background-size: cover;
-  font-family: 'Roboto', sans-serif;
-  z-index: 0; 
-  min-height: 100vh; 
-  overflow: hidden;
-  /* padding-top: 12rem !important; */
 }
