@@ -2694,36 +2694,3 @@
     /* identical to box height */
     color: #1092A7;
 }
-
-.txt303 
-{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    /* or 122% */
-    color: #5D5D5D;
-}
-
-.txt304 
-{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 22px;
-    /* or 147% */
-    color: #5D5D5D;
-}
-
-.txt305 
-{
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 130%;
-    /* or 31px */
-    color: #FFFFFF;
-}
