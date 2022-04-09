@@ -346,11 +346,6 @@
     {
         margin: 0 0 0 1rem;
     }
-
-    .cp0_01
-    {
-        padding: 0;
-    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px)
@@ -751,10 +746,5 @@
     {
         bottom: unset;
         top: unset;
-    }
-
-    .guidedqtns_row 
-    {
-        margin: 0 10px 2px 10px;
     }
 }
