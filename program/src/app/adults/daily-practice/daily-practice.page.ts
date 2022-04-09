@@ -36,7 +36,8 @@ export class DailyPracticePage implements OnInit {
     this.dailyid = this.route.snapshot.paramMap.get('id')
     this.getdailyques();
     this.userId=JSON.parse(localStorage.getItem("userId"))
-    if(this.userId === 'T') {
+    let islogin=localStorage.getItem("isloggedin");
+    if(islogin === 'T') {
       this.isloggedIn = true
     }
   }
