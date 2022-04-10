@@ -136,6 +136,7 @@ socialFirstName:any
  socialLastName:any
  socialEmail:any
  yearormonth = ''
+ personalisedList = []
 
  //static progress mapping
   mediaAudio="https://d1tenzemoxuh75.cloudfront.net"
@@ -200,6 +201,7 @@ socialFirstName:any
             this.modaldata['firstname'] = namedata[0];
             this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
         }
+        this.getUserPreference()
       
       }
 
@@ -341,6 +343,23 @@ socialFirstName:any
       this.isSubscribe = false;
     }
     }, 3000)
+  }
+
+  getUserPreference() {
+    this.service.getUserpreference().subscribe((res) => {
+       let perd = this.service.getperList();
+       if(res) {
+         let arr = res.split('').filter((d) => d !== ',');
+         arr.forEach((d) => {
+           perd.forEach((r) => {
+             if(d === r['id']){
+               this.personalisedList.push(r);
+             }
+           })
+         })
+         localStorage.setItem('perapidata', JSON.stringify(this.personalisedList));
+       }
+    })
   }
 
   getsupport(url, id) {

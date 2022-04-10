@@ -214,7 +214,7 @@
 
               <!-- pfy button -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row mdpd_pfy">
+              <div class="row mlr-10px_01 accordion_row mdpd_pfy" *ngIf="personalisedList.length !== 0">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
@@ -247,24 +247,16 @@
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <!-- button 1 -->
-                              <div class="row center_flex mb10px">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                  <button type="submit" class="btn btn-default btn_pfy_01">
-                                    Wisdom for the workplace
-                                  </button> 
+                              <ng-container *ngFor="let item of personalisedList; let i=index">
+                                <div class="row center_flex mb10px" *ngIf="i === 0 || i === 1">
+                                  <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="submit" class="btn btn-default btn_pfy_01">
+                                      {{item['name']}}
+                                    </button> 
+                                  </div>
                                 </div>
-                              </div>
+                              </ng-container>
                               <!-- /button 1 -->
-
-                              <!-- button 2 -->
-                              <div class="row center_flex">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                  <button type="submit" class="btn btn-default btn_pfy_02">
-                                    Overcome stress and anxiety
-                                  </button> 
-                                </div>
-                              </div>
-                              <!-- /button 2 -->
                             </div>
                           </div>
 

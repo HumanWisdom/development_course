@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personalised-for-you-search.page.scss'],
 })
 export class PersonalisedForYouSearchPage implements OnInit {
+  personalisedforyou = []
 
-  constructor() { }
+  constructor() {
+    if(localStorage.getItem('perapidata')) {
+      let pers = JSON.parse(localStorage.getItem('perapidata'));
+      this.personalisedforyou = pers;
+    }
+   }
 
   ngOnInit() {
+    
   }
 
 }

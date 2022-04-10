@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<app-tn-dashboard-v03></app-tn-dashboard-v03>
+<app-tn-dashboard-v03 [enableplaystore]="false"></app-tn-dashboard-v03>
 <!-- /top navigation -->
 
 <!-- page content -->
@@ -35,150 +35,25 @@
                 </div>
               </div>
 
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_01">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Wisdom for the workplace
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
-                        </div>
-                      </div>
-                    </div>
-                  </button> 
-                </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_02">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Overcome stress and anxiety
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
+              <ng-container *ngIf="personalisedforyou.length !== 0">
+                <div class="row mb15px" *ngFor="let item of personalisedforyou">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button type="submit" class="btn btn_pfy_search bpfys_01">
+                      <div class="row flex_ai">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="col-md-10 col-sm-10 col-xs-10 tleft">
+                            {{item['name']}}
+                          </div>
+                          <div class="col-md-2 col-sm-2 col-xs-2 tright">
+                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button> 
+                    </button> 
+                  </div>
                 </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_03">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Have fulfilling relationships
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
-                        </div>
-                      </div>
-                    </div>
-                  </button> 
-                </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_04">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Be happier
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
-                        </div>
-                      </div>
-                    </div>
-                  </button> 
-                </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_05">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Change unhelpful habits
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
-                        </div>
-                      </div>
-                    </div>
-                  </button> 
-                </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_06">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Mindfulness
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
-                        </div>
-                      </div>
-                    </div>
-                  </button> 
-                </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_01">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Deal with sorrow and loss
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
-                        </div>
-                      </div>
-                    </div>
-                  </button> 
-                </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_search bpfys_02">
-                    <div class="row flex_ai">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                          Manage your emotions
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
-                        </div>
-                      </div>
-                    </div>
-                  </button> 
-                </div>
-              </div>
-
+              </ng-container>
               <!-- <div class="pagebreak"></div> -->
 
             </form>
