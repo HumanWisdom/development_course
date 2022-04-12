@@ -38,7 +38,7 @@
               <ng-container *ngIf="personalisedforyou.length !== 0">
                 <div class="row mb15px" *ngFor="let item of personalisedforyou">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <button type="submit" class="btn btn_pfy_search bpfys_01">
+                    <button type="submit" class="btn btn_pfy_search bpfys_01" (click)="clickbtn(item['name'])">
                       <div class="row flex_ai">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="col-md-10 col-sm-10 col-xs-10 tleft">

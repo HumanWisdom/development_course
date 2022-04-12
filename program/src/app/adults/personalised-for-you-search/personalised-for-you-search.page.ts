@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PersonalisedForYouSearchPage implements OnInit {
   personalisedforyou = []
 
-  constructor() {
+  constructor(private route: Router) {
     if(localStorage.getItem('perapidata')) {
       let pers = JSON.parse(localStorage.getItem('perapidata'));
       this.personalisedforyou = pers;
@@ -17,6 +18,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  clickbtn(name) {
+    this.route.navigate(['/adults/overcome-stress'])
   }
 
 }
