@@ -38,15 +38,15 @@
               <ng-container *ngIf="personalisedforyou.length !== 0">
                 <div class="row mb15px" *ngFor="let item of personalisedforyou">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <button type="submit" class="btn btn_pfy_search bpfys_01" (click)="clickbtn(item['name'])">
+                    <button type="submit" class="btn btn_pfy_search bpfys_01" [ngClass]="[item['active'] ? 'activebtn' : '']" (click)="clickbtn(item['name'])">
                       <div class="row flex_ai">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="col-md-10 col-sm-10 col-xs-10 tleft">
                             {{item['name']}}
                           </div>
                           <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                            <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" class="img-responsive"> -->
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" class="img-responsive">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" *ngIf="item['active']" class="img-responsive">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" *ngIf="!item['active']" class="img-responsive">
                           </div>
                         </div>
                       </div>

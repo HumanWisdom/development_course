@@ -227,4 +227,12 @@ export class AdultsService {
   getperList() {
     return this.personalisedforyoulist;
   }
+
+  getdashshorts() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardShorts`)
+  }
+
+  getdashstories() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardStories`)
+  }
 }

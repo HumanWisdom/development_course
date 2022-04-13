@@ -137,6 +137,8 @@ socialFirstName:any
  socialEmail:any
  yearormonth = ''
  personalisedList = []
+ lifestoriesList = []
+ shortsList = []
 
  //static progress mapping
   mediaAudio="https://d1tenzemoxuh75.cloudfront.net"
@@ -202,6 +204,8 @@ socialFirstName:any
             this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
         }
         this.getUserPreference()
+        this.getUsershorts()
+        this.getUserstories()
       
       }
 
@@ -353,16 +357,42 @@ socialFirstName:any
          arr.forEach((d) => {
            perd.forEach((r) => {
              if(d === r['id']){
+               r['active'] = true;
                this.personalisedList.push(r);
              }
            })
          })
+         perd.forEach((r) => {
+           let find = this.personalisedList.some((d) => d['name'] === r['name']);
+           if(!find) {
+            r['active'] = false;
+            this.personalisedList.push(r);
+           }
+        })
          localStorage.setItem('perapidata', JSON.stringify(this.personalisedList));
        }
     })
   }
 
-  getsupport(url, id) {
+  getUsershorts() {
+    this.service.getdashshorts().subscribe((res) => {
+       if(res) {
+         this.shortsList = res;
+       }
+    })
+  }
+
+  getUserstories() {
+    this.service.getdashstories().subscribe((res) => {
+       if(res) {
+         this.lifestoriesList = res
+       }
+    })
+  }
+
+  getsupport(url, id, ind = 0) {
+    let index = ind + 1
+    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
     this.service.clickModule(id,this.userId)
     .subscribe(res=>
       {
