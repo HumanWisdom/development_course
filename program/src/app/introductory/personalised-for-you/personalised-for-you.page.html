@@ -1,3 +1,4 @@
+
 <!-- page content -->
 <div class="right_col ml0 bg_personalised_for_you center_flex" role="main">
   <!-- class -->
@@ -26,7 +27,15 @@
 
               <div class="row mb15px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy" id="Overcome stress and anxiety" (click)="getselect('Overcome stress and anxiety')">
+                  <button type="submit" class="btn btn_pfy" id="Wisdom for the workplace" (click)="getselect('Wisdom for the workplace', 1)">
+                    Wisdom for the workplace
+                  </button> 
+                </div>
+              </div>
+
+              <div class="row mb15px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit" class="btn btn_pfy" id="Overcome stress and anxiety" (click)="getselect('Overcome stress and anxiety', 2)">
                     Overcome stress and anxiety
                   </button> 
                 </div>
@@ -34,7 +43,7 @@
 
               <div class="row mb15px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy" id="Have fulfilling relationships" (click)="getselect('Have fulfilling relationships')">
+                  <button type="submit" class="btn btn_pfy" id="Have fulfilling relationships" (click)="getselect('Have fulfilling relationships', 3)">
                     Have fulfilling relationships
                   </button> 
                 </div>
@@ -42,7 +51,7 @@
 
               <div class="row mb15px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy" id="Be happier" (click)="getselect('Be happier')">
+                  <button type="submit" class="btn btn_pfy" id="Be happier" (click)="getselect('Be happier', 4)">
                     Be happier
                   </button> 
                 </div>
@@ -50,51 +59,96 @@
 
               <div class="row mb15px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy" id="Change unhelpful habits" (click)="getselect('Change unhelpful habits')">
+                  <button type="submit" class="btn btn_pfy" id="Change unhelpful habits" (click)="getselect('Change unhelpful habits', 5)">
                     Change unhelpful habits
-                  </button> 
-                </div>
-              </div>
-
-              <div class="row mb15px">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy" id="Develop your inner leader" (click)="getselect('Develop your inner leader')">
-                    Develop your inner leader
                   </button> 
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy" id="Deal with sorrow and loss" (click)="getselect('Deal with sorrow and loss')">
+                  <button type="submit" class="btn btn_pfy" id="Deal with sorrow and loss" (click)="getselect('Deal with sorrow and loss', 6)">
                     Deal with sorrow and loss
                   </button> 
                 </div>
               </div>
 
-              <div class="row mpfy_next">
+              <!-- <div class="row mb15px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button type="submit" class="btn btn_pfy_next" id="next" (click)="getselect('next')">
+                  <button type="submit" class="btn btn_pfy">
+                    Develop your inner leader
+                  </button> 
+                </div>
+              </div> -->
+
+              <!-- <div class="row mpfy_next">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit" class="btn btn_pfy_next">
                     <i class="fa fa-arrow-right"></i>
                   </button> 
                 </div>
-              </div> 
+              </div>  -->
 
-              <div class="row mpfy_next">
-                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                  <div class="col-md-6 col-sm-6 col-xs-6 p0 jc_flexstart" routerLink="/intro/intro-carousel">
-                    <button class="btn flex_ai btn_pn">
+              <!-- <div class="row center_flex">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <a class="txt151 txt_underline">
+                    Continue as Guest
+                  </a>
+                </div>
+              </div> -->
+
+              <!-- unlogged in -->
+              <div>
+                <div class="row center_flex dpfym_login_signup" *ngIf="!isloggedIn">
+                  <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+                    <button type="submit" #enablepopup class="btn btn_pfys_login_signup bpfys_01" data-toggle="modal" data-target="#signuplogin" >
+                      Login / Sign up
+                    </button> 
+                  </div>
+                </div>
+  
+                <div class="row" *ngIf="!isloggedIn">
+                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                    <div class="col-md-3 col-sm-3 col-xs-3 p0 jc_flexstart">
+                      <button class="btn flex_ai btn_pn" (click)="getselect('prev', 34)">
+                        Previous
+                      </button>
+                    </div>
+  
+                    <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                      <a class="txt151 txt_underline" routerLink="/adults/adult-dashboard">
+                        Continue as Guest
+                      </a>
+                    </div>
+  
+                    <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <!-- /unlogged in -->
+
+              <!-- logged in -->
+              <div class="row mpfy_next" *ngIf="isloggedIn">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <div class="col-md-3 col-sm-3 col-xs-3 p0 jc_flexstart">
+                    <button class="btn flex_ai btn_pn" (click)="getselect('prev', 34)">
                       Previous
                     </button>
                   </div>
 
-                  <div class="col-md-6 col-sm-6 col-xs-6 p0 jc_flexend">
-                    <button class="btn flex_ai btn_pn">
-                      Next
+                  <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                    <button type="submit" class="btn btn_pfy_next" id="next" [disabled]="indList.length === 0" (click)="getselect('next', 34)">
+                      <i class="fa fa-arrow-right"></i>
                     </button>
+                  </div>
+
+                  <div class="col-md-3 col-sm-3 col-xs-3 p0">
                   </div>
                 </div>
               </div> 
+              <!-- /logged in -->
+              
 
               <!-- <div class="pagebreak"></div> -->
 
@@ -107,3 +161,70 @@
   <!--/class -->
 </div>
 <!-- /page content -->
+
+<!-- signup_login modal -->
+<div class="modal fade" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- modal-body -->
+  <div class="h100p" role="document">       
+    <!-- modal content -->  
+    <div class="row center_flex h100p">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 modal_inner">  
+        <form>        
+          <div class="pfy_sl_modal">
+            
+            <div class="row dpfys_login_signup">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button type="submit" class="btn btn_pfys_login_signup bpfys_01" data-dismiss="modal" (click)="loginpage()">
+                  Sign up to unlock this feature
+                </button> 
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="txt244 tcenter mtb0px">
+                  Already a user?
+                  <a class="txt245 underline" (click)="loginpage()">
+                    Login here
+                  </a>
+                </h4>
+              </div>
+            </div>
+
+            <div class="row pfy_ocw">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="txt243 mtb0px">
+                  OR CONNECT WITH
+                </h4>
+              </div>
+            </div>
+
+            <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter"> 
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg" (click)="fbLogin()" class="img-responsive">
+                  </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter"> 
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg" (click)="googleLogin()" class="img-responsive">
+                  </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /modal content -->      
+  </div>  
+  <!-- /modal-body -->
+</div>
+<!-- /signup_login modal -->

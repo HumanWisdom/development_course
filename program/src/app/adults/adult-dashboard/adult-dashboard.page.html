@@ -214,7 +214,7 @@
 
               <!-- pfy button -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row mdpd_pfy">
+              <div class="row mlr-10px_01 accordion_row mdpd_pfy" *ngIf="personalisedList.length !== 0">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
@@ -247,24 +247,16 @@
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <!-- button 1 -->
-                              <div class="row center_flex mb10px">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                  <button type="submit" class="btn btn-default btn_pfy_01">
-                                    Wisdom for the workplace
-                                  </button> 
+                              <ng-container *ngFor="let item of personalisedList; let i=index">
+                                <div class="row center_flex mb10px" *ngIf="i === 0 || i === 1">
+                                  <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="submit" class="btn btn-default btn_pfy_01">
+                                      {{item['name']}}
+                                    </button> 
+                                  </div>
                                 </div>
-                              </div>
+                              </ng-container>
                               <!-- /button 1 -->
-
-                              <!-- button 2 -->
-                              <div class="row center_flex">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                  <button type="submit" class="btn btn-default btn_pfy_02">
-                                    Overcome stress and anxiety
-                                  </button> 
-                                </div>
-                              </div>
-                              <!-- /button 2 -->
                             </div>
                           </div>
 
@@ -557,9 +549,9 @@
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv dinline_box">
                               <!-- story 1 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
+                              <div *ngFor="let item of lifestoriesList" class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
                                 <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/luke-southern-gW7QRXDSvec-unsplash.jpg"  alt="" class="w100 c150px">
+                                  <img src="{{item['Img']}}"  alt="" class="w100 c150px">
                                 </div>
                                 
                                 <div class="col-md-9 col-sm-10 col-xs-9">
@@ -567,72 +559,20 @@
                                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                       <div class="col-md-12 col-sm-12 col-xs-12">
                                         <h6 class="txt69 mtb0px capitalize">
-                                          The well-being of an alcoholic
+                                          {{item['Title']}}
                                         </h6>
                                       </div>
                                     </div>
 
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                       <h6 class="txt70 ellipsis">
-                                        When I was just 3 years old my parents, Elliot and Josephine split. They did ...
+                                        {{item['Story']}}
                                       </h6>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                               <!-- /story 1 -->
-
-                              <!-- story 2 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
-                                <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/kelly-sikkema-k0o-cw5Y_9s-unsplash.jpg"  alt="" class="w100 c150px">
-                                </div>
-                                
-                                <div class="col-md-9 col-sm-10 col-xs-9">
-                                  <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="txt69 mtb0px capitalize">
-                                          My stepmother humiliated me
-                                        </h6>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                      <h6 class="txt70 ellipsis">
-                                        Jeff does not know the full story behind what happened when he was just 11 ...
-                                      </h6>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!-- /story 2 -->
-
-                              <!-- story 3 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
-                                <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/gregory-pappas-rUc9hVE-L-E-unsplash.jpg"  alt="" class="w100 c150px">
-                                </div>
-                                
-                                <div class="col-md-9 col-sm-10 col-xs-9">
-                                  <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="txt69 mtb0px capitalize">
-                                          An apple a day is an eating disorder
-                                        </h6>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                      <h6 class="txt70 ellipsis">
-                                        I’m sure there were losses before, but one of the earliest ones I can recall ...
-                                      </h6>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!-- /story 3 -->
                             </div>
                           </div>
 
@@ -672,31 +612,14 @@
 
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box">
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a (click)="getsupport('/adults/get-support-now/s71001', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/default_video.svg" alt="Stress Management" class="crimg">
+                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi" *ngFor="let item of shortsList; let i =index">
+                                <a (click)="getsupport('/adults/get-support-now/s7100', 71, i)">
+                                  <img src="{{item['ImgUrl']}}" alt="Stress Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
-                                    Overcoming stress
+                                    {{item['Title']}}
                                   </h4>
                                 </a>
-                              </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a (click)="getsupport('/adults/get-support-now/s71002', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/default_video.svg" alt="Solution for Anxiety" class="crimg">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Emotional intelligence and stress
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a (click)="getsupport('/adults/get-support-now/s71003', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/default_video.svg" alt="Anger Management" class="crimg">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Guided meditation
-                                  </h4>
-                                </a>
-                              </div>                              
+                              </div>                            
                             </div>
                           </div>
                           
