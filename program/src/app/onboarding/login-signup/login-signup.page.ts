@@ -303,23 +303,30 @@ export class LoginSignupPage implements OnInit {
                 let persub = localStorage.getItem('personalised subscription');
                   let acceptCookie = localStorage.getItem('activeCode');
                   let subscribePage = localStorage.getItem('subscribepage');
-                  if(acceptCookie === 'T' || subscribePage === 'T'){
+                  let option = localStorage.getItem('introoption');
+                  if(option === 'T') {
                     localStorage.setItem("isloggedin", 'T')
-                    if(acceptCookie === 'T') {
-                      localStorage.setItem("activeCode", 'F')
-                    }
-                    if(subscribePage === 'T') {
-                      localStorage.setItem("subscribepage", 'F')
-                    }
-                    this.router.navigate(['/onboarding/add-to-cart'])
+                    this.router.navigate(['/intro/personalised-for-you']);
                   }else {
-                    localStorage.setItem("isloggedin", 'T')
-                    if(pers && persub && pers === 'T') {
-                      this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                    if(acceptCookie === 'T' || subscribePage === 'T'){
+                      localStorage.setItem("isloggedin", 'T')
+                      if(acceptCookie === 'T') {
+                        localStorage.setItem("activeCode", 'F')
+                      }
+                      if(subscribePage === 'T') {
+                        localStorage.setItem("subscribepage", 'F')
+                      }
+                      this.router.navigate(['/onboarding/add-to-cart'])
                     }else {
-                      this.router.navigate(['/adults/adult-dashboard'])
+                      localStorage.setItem("isloggedin", 'T')
+                      if(pers && persub && pers === 'T') {
+                        this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                      }else {
+                        this.router.navigate(['/adults/adult-dashboard'])
+                      }
                     }
                   }
+                  
                 
             
                 /* if(this.urlEmail)
@@ -428,6 +435,11 @@ export class LoginSignupPage implements OnInit {
                    let persub = localStorage.getItem('personalised subscription');
                     let acceptCookie = localStorage.getItem('activeCode');
                     let subscribePage = localStorage.getItem('subscribepage');
+                    let option = localStorage.getItem('introoption');
+                  if(option === 'T') {
+                    localStorage.setItem("isloggedin", 'T')
+                    this.router.navigate(['/intro/personalised-for-you']);
+                  }else {
                     if(acceptCookie === 'T' || subscribePage === 'T'){
                       localStorage.setItem("isloggedin", 'T')
                       if(acceptCookie === 'T') {
@@ -445,6 +457,7 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(['/adults/adult-dashboard'])
                       }
                     }
+                  }
                   
               
                   /* if(this.urlEmail)
@@ -537,6 +550,7 @@ export class LoginSignupPage implements OnInit {
               let subscribePage = localStorage.getItem('subscribepage');
               let pers = localStorage.getItem('personalised');
               let persub = localStorage.getItem('personalised subscription');
+              let option = localStorage.getItem('introoption');
               if(pers && persub && pers === 'T') {
                 localStorage.setItem("isloggedin", 'T')
                 this.router.navigate(['/onboarding/payment'], { state: { quan:  '1', plan: persub}})
@@ -571,11 +585,16 @@ export class LoginSignupPage implements OnInit {
                     let userId = JSON.parse(localStorage.getItem("userId"))
                     window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
                   }else {
-                    if(pers && persub && pers === 'T') {
+                    if(option === 'T') {
                       localStorage.setItem("isloggedin", 'T')
-                      this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                      this.router.navigate(['/intro/personalised-for-you']);
                     }else {
-                      this.router.navigate(['/adults/adult-dashboard'])
+                      if(pers && persub && pers === 'T') {
+                        localStorage.setItem("isloggedin", 'T')
+                        this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                      }else {
+                        this.router.navigate(['/adults/adult-dashboard'])
+                      }
                     }
                   }
                 

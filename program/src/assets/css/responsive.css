@@ -313,6 +313,12 @@
         width: 50%
     }
 
+    #cgqtns .carousel-indicators
+    {
+        width: 30%;
+        bottom: 25%;
+    }
+
     .activity_title
     {
         width: 35%;
@@ -350,6 +356,21 @@
     .cp0_01
     {
         padding: 0;
+    }
+
+    #cgqtns .carousel-indicators .left
+    {
+        margin-left: 0rem;
+    }
+
+    #cgqtns .carousel-indicators .right
+    {
+        margin-right: 0rem;
+    }
+
+    .gqtns 
+    {
+        margin: 0;
     }
 }
 
@@ -686,6 +707,11 @@
         width: 25%
     }
 
+    #cgqtns .carousel-indicators
+    {
+        width: 20%
+    }
+
     #ic_carousel .carousel-indicators
     {
         bottom: 8%;
@@ -753,8 +779,17 @@
         top: unset;
     }
 
-    .guidedqtns_row 
+    .guidedqtns_row,
+    .guidedqtns_row_01
     {
         margin: 0 10px 2px 10px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px)
+{
+    .textarea_02 
+    {
+        height: 155px;
     }
 }
