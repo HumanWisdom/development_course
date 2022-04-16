@@ -19,7 +19,6 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         let arr = data['relatedTarget']['classList'];
         let istrue = false;
         arr.forEach((d, ind) => {
-          console.log(d)
            if(d === '4') {
             istrue = true;
            } else if(!istrue){
