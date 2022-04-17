@@ -26779,14 +26779,14 @@ input[type="search"].pfy_search.dark::-webkit-search-cancel-button {
   color: #5D5D5D;
 }
 
-.btn_pfy_search:hover,
+/* .btn_pfy_search:hover,
 .btn_pfy_search:active,
 .btn_pfy_search:focus
 {
   background: #70C6BD;
   border: 0;
   color: #FFFFFF;
-}
+} */
 
 .pfys_title
 {
