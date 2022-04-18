@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { IntroCarouselPage } from './intro-carousel.page';
+import { DashboardModulePage } from './dashboard-module.page';
 
-describe('IntroCarouselPage', () => {
-  let component: IntroCarouselPage;
-  let fixture: ComponentFixture<IntroCarouselPage>;
+describe('DashboardModulePage', () => {
+  let component: DashboardModulePage;
+  let fixture: ComponentFixture<DashboardModulePage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntroCarouselPage ],
+      declarations: [ DashboardModulePage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(IntroCarouselPage);
+    fixture = TestBed.createComponent(DashboardModulePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

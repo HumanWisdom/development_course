@@ -296,11 +296,15 @@ const routes: Routes = [
   {
     path: 'test-screen',
     loadChildren: () => import('./test-screen/test-screen.module').then( m => m.TestScreenPageModule)
+  }, 
+  {
+     path: 'site-search',
+     loadChildren: () => import('./search/search.module').then( m => m.SearchModule)
   },
-  // {
-  //   path: 'search',
-  //   loadChildren: () => import('./search/search.module').then( m => m.SearchModule)
-  // },
+  {
+    path: 'overcome-stress',
+    loadChildren: () => import('./dashboard-module/dashboard-module.module').then( m => m.DashboardModulePageModule)
+  },
 ];
 
 @NgModule({
