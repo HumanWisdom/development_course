@@ -36,15 +36,15 @@
               </div>
 
               <ng-container *ngIf="personalisedforyou.length !== 0">
-                <div class="row mb15px" *ngFor="let item of personalisedforyou">
+                <div class="row mb15px" *ngFor="let item of personalisedforyou; let i = index">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <button type="submit" class="btn btn_pfy_search bpfys_01" [ngClass]="[item['active'] ? 'activebtn' : '']" (click)="clickbtn(item['name'])">
+                    <button type="submit" class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']" (click)="clickbtn(item['name'], '', $event, i, item['id'])">
                       <div class="row flex_ai">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="col-md-10 col-sm-10 col-xs-10 tleft">
                             {{item['name']}}
                           </div>
-                          <div class="col-md-2 col-sm-2 col-xs-2 tright">
+                          <div class="col-md-2 col-sm-2 col-xs-2 tright" (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" *ngIf="item['active']" class="img-responsive">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" *ngIf="!item['active']" class="img-responsive">
                           </div>

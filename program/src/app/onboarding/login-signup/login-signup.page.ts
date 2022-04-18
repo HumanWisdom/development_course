@@ -305,6 +305,7 @@ export class LoginSignupPage implements OnInit {
                   let subscribePage = localStorage.getItem('subscribepage');
                   let option = localStorage.getItem('introoption');
                   if(option === 'T') {
+                    localStorage.setItem('introoption', 'F')
                     localStorage.setItem("isloggedin", 'T')
                     this.router.navigate(['/intro/personalised-for-you']);
                   }else {
@@ -437,6 +438,7 @@ export class LoginSignupPage implements OnInit {
                     let subscribePage = localStorage.getItem('subscribepage');
                     let option = localStorage.getItem('introoption');
                   if(option === 'T') {
+                    localStorage.setItem('introoption', 'F')
                     localStorage.setItem("isloggedin", 'T')
                     this.router.navigate(['/intro/personalised-for-you']);
                   }else {
@@ -587,6 +589,7 @@ export class LoginSignupPage implements OnInit {
                   }else {
                     if(option === 'T') {
                       localStorage.setItem("isloggedin", 'T')
+                      localStorage.setItem('introoption', 'F')
                       this.router.navigate(['/intro/personalised-for-you']);
                     }else {
                       if(pers && persub && pers === 'T') {
