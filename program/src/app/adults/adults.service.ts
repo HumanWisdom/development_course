@@ -189,4 +189,12 @@ export class AdultsService {
   getDailypractiseQuestionoftheday(): Observable<any> {
     return this.http.get(this.path + `/GetDailyPractise_Question`)
   }
+
+
+  getSearchDataForSearchSite(data): Observable<any> {
+    return this.http.post(this.path + `/SiteSearch/${data}`,{})
+  }
+  getForumSearchDataSite(data): Observable<any> {
+    return this.http.get(this.path + `/GetAllPosts/${data}`);
+  }
 }
