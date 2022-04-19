@@ -344,6 +344,18 @@ export class PersonalisedForYouPage implements OnInit {
 
   }
 
+  signInWithApple() {
+    const CLIENT_ID = "humanwisdom.web.service"
+    const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
+  
+
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
+      '_self'
+  );
+
+    }
+
 }
 function viewchild(arg0: string) {
   throw new Error('Function not implemented.');

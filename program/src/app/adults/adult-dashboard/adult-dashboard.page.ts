@@ -139,6 +139,7 @@ socialFirstName:any
  personalisedList = []
  lifestoriesList = []
  shortsList = []
+ sId:any
 
  //static progress mapping
   mediaAudio="https://d1tenzemoxuh75.cloudfront.net"
@@ -352,6 +353,7 @@ socialFirstName:any
   getUserPreference() {
     this.service.getUserpreference().subscribe((res) => {
        let perd = this.service.getperList();
+       this.personalisedList = []
        if(res) {
          let arr = res.split('').filter((d) => d !== ',');
          arr.forEach((d) => {
@@ -369,9 +371,23 @@ socialFirstName:any
             this.personalisedList.push(r);
            }
         })
-         localStorage.setItem('perapidata', JSON.stringify(this.personalisedList));
        }
     })
+  }
+
+  toRead(obj){
+    localStorage.setItem("story",JSON.stringify(obj))
+    let res = localStorage.getItem("isloggedin");
+    this.sId=obj.ScenarioID
+    if(res && res === 'T') {
+      this.service.clickStory(obj.ScenarioID).subscribe(res=>{
+        
+        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+      })
+    }  else {
+      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+    }
+    
   }
 
   getUsershorts() {
@@ -388,6 +404,10 @@ socialFirstName:any
          this.lifestoriesList = res
        }
     })
+  }
+
+  wisdomshortsclick(url) {
+    this.router.navigate([url])
   }
 
   getsupport(url, id, ind = 0) {
