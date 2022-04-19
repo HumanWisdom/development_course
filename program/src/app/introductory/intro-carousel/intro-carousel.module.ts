@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { IntroCarouselPageRoutingModule } from './intro-carousel-routing.module';
 
 import { IntroCarouselPage } from './intro-carousel.page';
+import { SharedModule } from 'src/app/adults/shared/shared.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IntroCarouselPageRoutingModule
+    IntroCarouselPageRoutingModule,
+    SharedModule,
   ],
   declarations: [IntroCarouselPage]
 })

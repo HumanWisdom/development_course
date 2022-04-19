@@ -15,7 +15,33 @@ export class AdultsService {
   //path="http://18.132.47.231/api";
   path=environment.apiURL;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
-  //path="https://staging.humanwisdom.info/api"
+
+  personalisedforyoulist = [
+    {
+      id: "1",
+      name: 'Wisdom for the workplace'
+    },
+    {
+      id: "2",
+      name: 'Overcome stress and anxiety'
+    },
+    {
+      id: "3",
+      name: 'Have fulfilling relationships'
+    },
+    {
+      id: "4",
+      name: 'Be happier'
+    },
+    {
+      id: "5",
+      name: 'Change unhelpful habits'
+    },
+    {
+      id: "6",
+      name: 'Deal with sorrow and loss'
+    }
+  ]
 
 
   constructor( private http: HttpClient,handler: HttpBackend) { }
@@ -196,5 +222,24 @@ export class AdultsService {
   }
   getForumSearchDataSite(data): Observable<any> {
     return this.http.get(this.path + `/GetAllPosts/${data}`);
+  }
+  postUserpreference(data): Observable<any> {
+    return this.http.post(this.path + `/AddUserPreference/${data}`, {})
+  }
+
+  getUserpreference(): Observable<any> {
+    return this.http.get(this.path + `/GetUserPreference`)
+  }
+
+  getperList() {
+    return this.personalisedforyoulist;
+  }
+
+  getdashshorts() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardShorts`)
+  }
+
+  getdashstories() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardStories`)
   }
 }
