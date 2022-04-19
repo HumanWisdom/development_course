@@ -12,20 +12,44 @@ export class PersonalisedForYouSearchPage implements OnInit {
   indList = []
 
   constructor(private route: Router, private aservice:AdultsService,) {
-    if(localStorage.getItem('perapidata')) {
-      let pers = JSON.parse(localStorage.getItem('perapidata'));
-      this.personalisedforyou = pers;
-      this.personalisedforyou.forEach((d) => {
-        if(d['active']){
-          this.indList.push(d['id'])
-        }
-      })
-    }
+    this.getUserPreference()
    }
 
   ngOnInit() {
     
   }
+
+  getUserPreference() {
+    this.aservice.getUserpreference().subscribe((res) => {
+       let perd = this.aservice.getperList();
+       this.personalisedforyou = []
+       this.indList = []
+       if(res) {
+         let arr = res.split('').filter((d) => d !== ',');
+         arr.forEach((d) => {
+           perd.forEach((r) => {
+             if(d === r['id']){
+               r['active'] = true;
+               this.personalisedforyou.push(r);
+             }
+           })
+         })
+         perd.forEach((r) => {
+           let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
+           if(!find) {
+            r['active'] = false;
+            this.personalisedforyou.push(r);
+           }
+        })
+        this.personalisedforyou.forEach((d) => {
+          if(d['active']){
+            this.indList.push(d['id'])
+          }
+        })
+       }
+    })
+  }
+
 
   clickbtn(name, val = '', event, ind, id) {
     if(val === '') {
