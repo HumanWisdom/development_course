@@ -71,11 +71,9 @@ export class BottomNavigationComponent implements OnInit {
       this.router.navigate(['/adults/journal'])
    
   }
-
-  routeSearch() {
-    this.router.navigate(['/adults/search'])
-  }
-
+  routeSearch(){
+    this.router.navigate(['/adults/search']);
+  } 
   profileclickevent() {
     if(localStorage.getItem('isloggedin') === 'T') {
       this.router.navigate(['/onboarding/user-profile'])
