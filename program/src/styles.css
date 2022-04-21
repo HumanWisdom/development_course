@@ -18759,6 +18759,15 @@ ngx-circular-player svg
   margin: 0 !important;
 }
 
+#aud1 .arrow, 
+#aud1 .arrow:before, 
+#aud1 .arrow:after 
+{
+  width: 2em!important;
+  height: 2em!important;
+  border-top-right-radius: 30%;
+}
+
 #aud2 .play,
 #aud2 .pause
 {
@@ -28026,7 +28035,22 @@ video::-webkit-media-controls-panel
 }
 
 /* ngx audio plugin-custom */
-ngx-circular-player svg 
+/* ngx-circular-player svg 
+{
+  width: 60px !important;
+} */
+
+#aud1 svg 
+{
+  width: 120px !important;
+}
+
+#aud2 svg 
+{
+  width: 90px !important;
+}
+
+#aud3 svg 
 {
   width: 60px !important;
 }
@@ -28053,8 +28077,8 @@ ngx-circular-player svg
 }
 
 #aud3 .arrow, 
-.arrow:before, 
-.arrow:after
+#aud3 .arrow:before, 
+#aud3 .arrow:after
 {
   width: 1.2em!important;
   height: 1.2em!important;
@@ -28588,3 +28612,53 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   display: flex;
   align-items: center;
 }
+
+/* black background customisation */
+.dtn
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 99;
+  background: #000000;
+}
+
+.dtn_playstore_banner
+{
+  height: 60px;
+  background: #EBEBEB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.dtn_default 
+{
+  height: 60px;
+  border: 0;
+  box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
+  background: #FFFFFF;
+}
+
+.dmain_container 
+{
+  background: #000000 !important;
+  padding: 6rem 0 0 0 !important;
+  overflow: hidden;
+}
+
+.imain_container 
+{
+  background: #000000 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.imain_container form 
+{
+  padding-bottom: 8rem !important;
+}
+/* /black background customisation */

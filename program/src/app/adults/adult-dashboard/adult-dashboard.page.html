@@ -7,7 +7,7 @@
 <!-- /header -->
 
 <!-- google playstore -->
-<div class="row h60px center_flex mlr-10px_01 bg_01" [ngClass]="[enablebanner ? '' : 'mt0px']" id="div_google_playstore">
+<!-- <div class="row h60px center_flex mlr-10px_01 bg_01" [ngClass]="[enablebanner ? '' : 'mt0px']" id="div_google_playstore">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
       <div class="col-md-11 col-sm-11 col-xs-11 p0 flex_ai">
@@ -15,7 +15,6 @@
           Also available on 
         </h4>
         <a>
-          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_playstore.png" alt="" class=""> -->
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/google_playstore.png" alt="" class="img-responsive img_google_playstore">
         </a>
       </div>
@@ -24,16 +23,16 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- /google playstore -->
 
 <!-- page content -->
-<div class="right_col bg_white safari pb5_5rem pt0px" role="main" [ngClass]="[enablebanner ? 'pt_rightcol' : '']">
+<div class="right_col dmain_container" role="main" [ngClass]="[enablebanner ? 'pt_rightcol' : '']">
   <!-- Class -->
   <div class="cw100p">
 
     <div class="row center_flex safari_dflex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_white">
         <div class="x_panel p0">
           <div class="x_content p0 mt0px">
             <form>
@@ -248,7 +247,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <!-- button 1 -->
                               <ng-container *ngFor="let item of personalisedList; let i=index">
-                                <div class="row center_flex mb10px" *ngIf="i === 0 || i === 1">
+                                <div class="row center_flex mb10px" *ngIf="i === 0 && item['active'] || i === 1 && item['active']">
                                   <div class="col-md-12 col-sm-12 col-xs-12">
                                     <button type="submit" class="btn btn-default btn_pfy_01">
                                       {{item['name']}}
@@ -557,7 +556,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a >
+                                  <a routerLink="/adults/wisdom-stories">
                                     <h2 class="txt292 underline mtb0px tright">
                                       View all
                                     </h2>
@@ -573,31 +572,35 @@
 
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv dinline_box">
-                              <!-- story 1 -->
-                              <div *ngFor="let item of lifestoriesList" class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
-                                <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                  <img src="{{item['Img']}}"  alt="" class="w100 c150px">
-                                </div>
-                                
-                                <div class="col-md-9 col-sm-10 col-xs-9">
-                                  <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="txt69 mtb0px capitalize">
-                                          {{item['Title']}}
-                                        </h6>
+         
+                                <!-- story 1 -->
+                                <div *ngFor="let item of lifestoriesList" (click)="toRead(item)" class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
+                                  <a class="center_flex">
+                                    <div class="col-md-3 col-sm-2 col-xs-3 p0">
+                                      <img src="{{item['Img']}}"  alt="" class="w100 c150px">
+                                    </div>
+                                    
+                                    <div class="col-md-9 col-sm-10 col-xs-9">
+                                      <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                          <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <h6 class="txt69 mtb0px capitalize">
+                                              {{item['Title']}}
+                                            </h6>
+                                          </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <h6 class="txt70 ellipsis">
+                                            {{item['Story']}}
+                                          </h6>
+                                        </div>
                                       </div>
                                     </div>
-
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                      <h6 class="txt70 ellipsis">
-                                        {{item['Story']}}
-                                      </h6>
-                                    </div>
-                                  </div>
+                                  </a>
                                 </div>
-                              </div>
-                              <!-- /story 1 -->
+                                <!-- /story 1 -->
+                              
                             </div>
                           </div>
 
@@ -639,7 +642,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box">
 
                               <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi" *ngFor="let item of shortsList; let i =index">
-                                <a (click)="getsupport('/adults/get-support-now/s7100', 71, i)">
+                                <a (click)="wisdomshortsclick(item['VideoUrl'])">
                                   <img src="{{item['ImgUrl']}}" alt="Stress Management" class="crimg">
 
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -647,154 +650,6 @@
                                   </h4>
                                 </a>
                               </div>                            
-
-                              <!--
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a (click)="getsupport('/adults/get-support-now/s71003', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/default_video.svg" alt="Anger Management" class="crimg">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Guided meditation
-                                  </h4>
-                                </a>
-                              </div> -->
-                              
-                              <!-- all -->
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s01">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/access_your_own_wisdom.svg" alt="Access your own wisdom" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Access your own wisdom 
-                                  </h4>
-                                </a>
-                              </div>
-                              
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s02">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/being_grateful.svg" alt="Being grateful" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Being grateful 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s03">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/being_kind.svg" alt="Being kind" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Being kind 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s04">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/being_successful.svg" alt="Being successful" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Being successful 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s05">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/introduction_to_humanwisdom.svg" alt="Introduction to HumanWisdom" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Introduction to HumanWisdom 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s06">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/overcome_anxiety.svg" alt="Overcoming anxiety" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Overcoming anxiety 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s07">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/overcoming_stress.svg" alt="Overcoming stress" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Overcoming stress
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s08">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/questions.svg" alt="Questions" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Questions 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s09">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/exploring_feelings.svg" alt="Exploring feelings" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Exploring feelings  
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s10">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/how_to_be_happier_at_work.svg" alt="How to be happier at work" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    How to be happier at work 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s11">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/overcome_unhelpful_habits.svg" alt="Overcome unhelpful habits" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Overcome unhelpful habits 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s12">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/be_free_of_prejudice.svg" alt="Be free of Prejudice" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Be free of Prejudice 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s13">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/cultivate_openness.svg" alt="Cultivate openness" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Cultivate openness 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s14">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/5_benefits_of_wisdom.svg" alt="5 Benefits of Wisdom" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    5 Benefits of Wisdom 
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s15">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/wisdom_shorts/todays_purpose_be_kind.svg" alt="Today's purpose - Be kind" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    Today's purpose - Be kind 
-                                  </h4>
-                                </a>
-                              </div>
-                              <!-- /all -->
-                              
                             </div>
                           </div>
                           
