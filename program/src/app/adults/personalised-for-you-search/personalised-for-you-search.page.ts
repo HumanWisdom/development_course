@@ -9,14 +9,31 @@ import { AdultsService } from '../adults.service';
 })
 export class PersonalisedForYouSearchPage implements OnInit {
   personalisedforyou = []
-  indList = []
+  personalisedforyoulist = [
+    {
+      id: "7",
+      name: 'Mindfulness',
+      active: false
+    },
+    {
+      id: "8",
+      name: 'Manage your emotions',
+      active: false
+    }
+  ]
 
+  indList = []
+  isloggedIn = false;
+  
   constructor(private route: Router, private aservice:AdultsService,) {
     this.getUserPreference()
    }
 
   ngOnInit() {
-    
+    let userid = localStorage.getItem('isloggedin');
+    if(userid === 'T') {
+      this.isloggedIn = true
+    }
   }
 
   getUserPreference() {
@@ -24,7 +41,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
        let perd = this.aservice.getperList();
        this.personalisedforyou = []
        this.indList = []
-       if(res) {
+       if(res && res !== "") {
          let arr = res.split('').filter((d) => d !== ',');
          arr.forEach((d) => {
            perd.forEach((r) => {
@@ -46,6 +63,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
             this.indList.push(d['id'])
           }
         })
+       }else {
+        perd.forEach((r) => {
+           r['active'] = false;
+           this.personalisedforyou.push(r);
+       })
+       this.personalisedforyou = [...this.personalisedforyou, ...this.personalisedforyoulist];
        }
     })
   }
@@ -55,35 +78,38 @@ export class PersonalisedForYouSearchPage implements OnInit {
     if(val === '') {
       this.route.navigate(['/adults/overcome-stress'])
     }else {
-     let fill =  this.personalisedforyou.filter((d) => d['name'] === name);
-     const index = this.indList.indexOf(id);
-     if(fill[0]['active']) {
-      if (index > -1) {
-        this.indList.splice(index, 1);
+     if(this.isloggedIn) {
+      let fill =  this.personalisedforyou.filter((d) => d['name'] === name);
+      const index = this.indList.indexOf(id);
+      if(fill[0]['active']) {
+       if (index > -1) {
+         this.indList.splice(index, 1);
+       }
+      }else {
+        this.indList.push(id)
       }
+      let reqpay = this.indList.join();
+     this.aservice.postUserpreference(reqpay).subscribe((res) => {
+         if(res) {
+           fill[0]['active'] = fill[0]['active'] ? false : true;
+           this.personalisedforyou.splice(ind, 1)
+           if(fill[0]['active']) {
+             this.personalisedforyou.unshift(fill[0])
+           }else {
+             this.personalisedforyou.push(fill[0])
+           }
+           this.indList = []
+           this.personalisedforyou.forEach((d) => {
+             if(d['active']){
+               this.indList.push(d['id'])
+             }
+           })
+           localStorage.setItem('perapidata', JSON.stringify(this.personalisedforyou));
+         }
+     })
      }else {
-       this.indList.push(id)
+        window.alert('Please Login to use  this feature.')
      }
-     let reqpay = this.indList.join();
-    this.aservice.postUserpreference(reqpay).subscribe((res) => {
-        if(res) {
-          fill[0]['active'] = fill[0]['active'] ? false : true;
-          this.personalisedforyou.splice(ind, 1)
-          if(fill[0]['active']) {
-            this.personalisedforyou.unshift(fill[0])
-          }else {
-            this.personalisedforyou.push(fill[0])
-          }
-          this.indList = []
-          this.personalisedforyou.forEach((d) => {
-            if(d['active']){
-              this.indList.push(d['id'])
-            }
-          })
-          localStorage.setItem('perapidata', JSON.stringify(this.personalisedforyou));
-        }
-    })
-      // event.preventDefault();
     }
   }
 
