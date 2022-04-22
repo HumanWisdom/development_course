@@ -21,7 +21,7 @@
 
 <div class="row center_flex">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group has-feedback p0 zi0 div_search">
-    <input type="search" [(ngModel)]="search" (focusout)="searchEvent()" class="form-control has-feedback-left h60px searchtxt_01" id="searchtxt_01" placeholder="Search HumanWisdom">
+    <input type="search" [(ngModel)]="search"  (keyup.enter)="searchEvent()" class="form-control has-feedback-left h60px searchtxt_01" id="searchtxt_01" placeholder="Search HumanWisdom">
     <span class="form-control-feedback left sfeedback" aria-hidden="true">
       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/magnifying_glass_01.svg" alt="" class="">
     </span>
@@ -93,8 +93,8 @@
 
         <!-- row 01 -->
         <ng-container *ngFor="let item of searchData.SessionRes;let i=index">
-
-        <div class="row">
+         <a [routerLink]="item.ModuleUrl">
+          <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h4 class="txt216 mt0px mb5px capitalize">
@@ -115,6 +115,7 @@
             </div>
           </div>
         </div>
+      </a>
       </ng-container>
       
       <div class="row">
@@ -379,7 +380,7 @@
                 </button>
               </div>
               <div class="col-md-3 col-sm-3 col-xs-4 pl0 flex_ai" >
-                <button  (click)="reportpost(item,'comment')" type="submit" class="btn btn_ficons jc_flexstart">
+                <button  (click)="reportpost(item)" type="submit" class="btn btn_ficons jc_flexstart">
                   <i class="fa fa-reply"> </i>
                   Comment
                 </button> 
@@ -406,7 +407,7 @@
               </div> 
 
               <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px" >
-                <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item)">
+                <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,'comment')">
                   Comment
                 </button>             
               </div>
