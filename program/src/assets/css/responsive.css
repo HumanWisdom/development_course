@@ -784,6 +784,16 @@
     {
         margin: 0 10px 2px 10px;
     }
+
+    .mdp_icon 
+    {
+        margin: 10px 0 19px 0;
+    }
+
+    .mdp_audio 
+    {
+        margin: 0 0 15px 0;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)
