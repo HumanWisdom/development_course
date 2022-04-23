@@ -99,7 +99,12 @@ export class PersonalisedForYouPage implements OnInit {
           this.aservice.postUserpreference(reqpay).subscribe((res) => {
               if(res) {
                 localStorage.setItem('personalisedlist', JSON.stringify(this.selectList));
-                        this.router.navigate(['/intro/subscription-options'])
+                let sub: any = localStorage.getItem('Subscriber');
+                if(sub && sub === '0'){
+                  this.router.navigate(['/intro/subscription-options'])
+                }else {
+                  this.router.navigate(['/adults/adult-dashboard'])
+                }
               }
           })
         }
