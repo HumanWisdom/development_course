@@ -1,16 +1,19 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
+declare var $:any;
+
+
 @Component({
   selector: 'app-subscription-options',
   templateUrl: './subscription-options.page.html',
   styleUrls: ['./subscription-options.page.scss'],
 })
-export class SubscriptionOptionsPage implements OnInit {
+export class SubscriptionOptionsPage implements OnInit, OnDestroy {
   @ViewChild('actclosemodal') actclosemodal:ElementRef;
 
   //get global settings here
@@ -98,9 +101,9 @@ export class SubscriptionOptionsPage implements OnInit {
  isSubscribe = false
  enablebanner = false;
  modaldata = {}
- firstpage = true;
+ firstpage = false;
  secondpage = false;
- thirdpage = false;
+ thirdpage = true;
  fourthpage = false;
  fifthpage = false;
  sixthpage = false;
@@ -140,6 +143,14 @@ socialFirstName:any
 
   ngOnInit() {
     this.getCountry()
+    $("#activate_subscription_click_here").modal("hide");
+    this.modaldata['email'] = localStorage.getItem('email');
+    this.modaldata['firstname'] = localStorage.getItem('name').split(' ')[0];
+    this.modaldata['lastname'] = localStorage.getItem('name').split(' ')[1] ? localStorage.getItem('name').split(' ')[1] : '';
+  }
+
+  ngOnDestroy(): void {
+    $("#activate_subscription_click_here").modal("hide");
   }
   
   getCountry(){
@@ -178,9 +189,8 @@ socialFirstName:any
     }else if(val === 'Yearly' || val === 'Monthly') {
       localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
       localStorage.setItem('personalised subscription', val);
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: val}})
     }else {
-      this.router.navigate(['/adults/adult-dashboard'])
     }
   }
 
