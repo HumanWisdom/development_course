@@ -9,18 +9,6 @@ import { AdultsService } from '../adults.service';
 })
 export class PersonalisedForYouSearchPage implements OnInit {
   personalisedforyou = []
-  personalisedforyoulist = [
-    {
-      id: "7",
-      name: 'Mindfulness',
-      active: false
-    },
-    {
-      id: "8",
-      name: 'Manage your emotions',
-      active: false
-    }
-  ]
 
   indList = []
   isloggedIn = false;
@@ -68,7 +56,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
            r['active'] = false;
            this.personalisedforyou.push(r);
        })
-       this.personalisedforyou = [...this.personalisedforyou, ...this.personalisedforyoulist];
        }
     })
   }
