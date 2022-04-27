@@ -1,7 +1,7 @@
 <!-- footer  -->
-<div  *ngIf="!shared"  class="mfooter">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex fctray">      
+<div  *ngIf="!shared"  class="sidebar-footer hidden-small" [ngClass]="bg">
+  <div class="row lh5rem center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex p0">      
       <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">
         <a (click)="previous()">
           <button type="button" class="btn w100 mb0 btn_prev">Previous</button>          

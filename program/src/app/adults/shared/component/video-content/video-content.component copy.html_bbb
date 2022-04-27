@@ -1,9 +1,9 @@
 <!-- page content -->
-<div class="right_col mc_03" #screen role="main">
+<div class="right_col" #screen [ngClass]="bg" role="main">
   <!-- Class -->
-  <div class="cw100p">
+  <div class="cw100p dabsolute_01">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex" [ngClass]="bg">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p center_flex">
         <div class="x_panel xpanel_01 p0">
           <div class="x_content tcenter p0">
             <form>

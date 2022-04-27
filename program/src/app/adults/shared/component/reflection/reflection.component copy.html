@@ -1,50 +1,98 @@
 <!-- top navigation -->
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01">
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-        <a class="" href="#">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg" class="img-responsive" alt="HumanWisdom">
-        </a>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-        <a class="" href="#">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive" alt="HumanWisdom">
-        </a>
-      </div>
-    </div>
+<div *ngIf="hint" class="top_nav ml0 ex_top_nav prelative">
+  <div class="nav_menu cnav_menu p0 nav_menu_01">
+      <nav class="rnav"> 
+        <ul class="nav navbar-nav navbar-right cnav navleft w40p pl20px no_bg">
+          <li class="">
+            <a href="javascript:;" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false" (click)="goToDash()">                        
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg" alt="" class="p0">
+            </a>                  
+          </li>
+          <li class="">
+            <a *ngIf="toc" href="javascript:;" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false" (click)="goToToc()">                        
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" alt="" class="p0">
+            </a>                 
+          </li>
+        </ul>
+        
+        <ul  class="nav navbar-nav navbar-right cnav w80p qnav_ul"> 
+          <h6 class="txt156 tcenter">
+            Reflection   
+          </h6>       
+        </ul>
+        
+        <ul  class="nav navbar-nav navbar-right cnav w40p qnav_ul">
+            <li class="li_exclamation"> 
+                <a href="javascript:;" class="cuser-profile dropdown-toggle p0" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">  
+                    <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reflection_hint.svg" alt="" class="p0">
+                </a>                  
+            </li>              
+        </ul>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 flex_ai">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-        <h6 class="txt156 tcenter">
-          Reflection   
-        </h6>
-      </div>
-    </div>
-
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai jc_flexend">
-      <a>
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reflection_hint.svg" class="img-responsive" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
-      <div class="progress progress-sm hprogress">
-        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-    </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+          <div class="progress progress-sm hprogress">
+            <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div> 
+      </nav>
   </div>
 </div>
-<!-- /top navigation -->
+<!-- /top navigation -->  
+
+
+<!-- top navigation -->
+<div *ngIf="!hint" class="top_nav ml0 ex_top_nav prelative">
+  <div class="nav_menu cnav_menu without_hint_padding nav_menu_01">
+      <nav class="rnav"> 
+        <ul class="nav navbar-nav navbar-right cnav navleft w40p pl20px no_bg">
+          <li class="">
+            <a href="javascript:;" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false" (click)="goToDash()">                        
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg" alt="" class="p0">
+            </a>                  
+          </li>
+          <li class="">
+            <a *ngIf="toc" href="javascript:;" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false" (click)="goToToc()">                        
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" alt="" class="p0">
+            </a>                  
+          </li>
+        </ul> 
+
+        <ul  class="nav navbar-nav navbar-right cnav w80p qnav_ul"> 
+          <h6 class="txt156 tcenter">
+            Reflection   
+          </h6>       
+        </ul>
+
+        <ul  class="nav navbar-nav navbar-right cnav w40p qnav_ul">
+          
+        </ul>
+
+        <!-- <ul  class="nav navbar-nav navbar-right cnav w40p qnav_ul">              
+            <li class="li_exclamation"> 
+                <a href="javascript:;" class="cuser-profile dropdown-toggle p0" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">  
+                    <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/header/rquestion_mark.png" alt="" class="p0">
+                </a>                  
+            </li>              
+        </ul> -->
+
+         <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+          <div class="progress progress-sm hprogress">
+            <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div> 
+      </nav>
+  </div>
+</div>
+<!-- /top navigation -->  
 
 <!-- page content -->
-<div class="right_col mc_01" role="main">				
+<div class="right_col" [ngClass]="bg" role="main">				
   <!-- Class -->  
-  <div class="cw100p">
+  <div class="cw100p dabsolute_04">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_orange" [ngClass]="bg">
-        <div class="x_panel p0">
-          <div class="x_content p0">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
+        <div class="x_panel xpanel_01">
+          <div class="x_content">
             <form>
               <!-- <h5 class="txt4 justified_center"> -->
               <h5 class="txt4">
@@ -187,9 +235,9 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<div class="mfooter">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex fctray">      
+<div class="sidebar-footer hidden-small">
+  <div class="row lh5rem center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex p0">      
       <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">        
         <button type="button" class="btn w100 mb0 btn_prev" (click)="previous()">Previous</button>                  
       </div>

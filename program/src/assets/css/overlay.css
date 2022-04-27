@@ -96,7 +96,7 @@
 
 }
 
-.anger_base1,
+/* .anger_base1,
 .anger_overlay1,
 .anger_base2,
 .anger_overlay2,
@@ -150,7 +150,7 @@
   top: 0;
   width: 100%;
   min-height: 100vh; 
-}
+} */
 
 .anger_base1 
 {  
@@ -780,7 +780,7 @@
 
 .stress_overlay1_mobile
 {  
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_01.jpg') no-repeat center center fixed;  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_01.jpg') no-repeat center center fixed;  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
@@ -788,7 +788,11 @@
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   z-index: 2;
-  mix-blend-mode: multiply;
+  mix-blend-mode: multiply; */
+
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_01.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .stress_overlay1_desktop
@@ -820,7 +824,7 @@
 
 .stress_overlay2_mobile
 {  
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_02.jpg') no-repeat center center fixed;  
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_02.jpg') no-repeat center center fixed;  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
@@ -828,7 +832,11 @@
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   z-index: 2;
-  mix-blend-mode: multiply;
+  mix-blend-mode: multiply; */
+
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_mobile_02.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .stress_overlay2_desktop
