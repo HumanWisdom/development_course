@@ -25,6 +25,8 @@ export class TnDashboardV03Component implements OnInit {
   subscriber= false;
   @Input()
   enableplaystore = true
+  @Input()
+  routeid = ''
 
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
@@ -76,5 +78,9 @@ export class TnDashboardV03Component implements OnInit {
 
   giftwisdom() {
     localStorage.setItem('giftwisdom', 'T')
+  }
+
+  closeplaystore() {
+    this.enableplaystore = false;
   }
 }
