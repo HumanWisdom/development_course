@@ -13,9 +13,14 @@ const routes: Routes = [
     loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then( m => m.AdultDashboardPageModule),
     canActivate:[AuthGuard]
   },  
-  {
+  // {
+  //   path: 'journal',
+  //   loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
+  // },
+
+    {
     path: 'journal',
-    loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
+    loadChildren: () => import('./guided-questions/guided-questions.module').then( m=>m.GuidedQuestionsModule)
   },
   {
     path: 'note',
