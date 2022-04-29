@@ -301,6 +301,10 @@ const routes: Routes = [
     path: 'site-search/:word',
     loadChildren: () => import('./search/search.module').then( m => m.SearchModule)
   },
+  {
+    path: 'newsletter-subscribe',
+    loadChildren: () => import('./newsletter-subscribe/newsletter-subscribe.module').then( m => m.NewsletterSubscribePageModule)
+  },
 ];
 
 @NgModule({
