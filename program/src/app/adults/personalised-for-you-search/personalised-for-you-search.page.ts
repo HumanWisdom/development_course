@@ -12,6 +12,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   indList = []
   isloggedIn = false;
+  searchinp = '';
   
   constructor(private route: Router, private aservice:AdultsService,) {
     this.getUserPreference()
@@ -22,6 +23,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     if(userid === 'T') {
       this.isloggedIn = true
     }
+  }
+
+  getentervalue(value) {
+    this.searchinp = value
   }
 
   getUserPreference() {
@@ -58,6 +63,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
        })
        }
     })
+  }
+
+  getinp() {
+    let url = `/adults/site-search/${this.searchinp}`
+    this.route.navigate([url])
   }
 
 
