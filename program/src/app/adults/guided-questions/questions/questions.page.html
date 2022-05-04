@@ -47,7 +47,7 @@
                 </ol>
                 
                 <div class="carousel-inner">
-                  <div *ngFor="let item of data;let i=index" class="item" [ngClass]=" i+1 == counter ? 'active' : ''">
+                  <div *ngFor="let item of data;let i=index" class="item" [ngClass]=" i == counter ? 'active' : ''">
                     <!-- slide 1 -->
                     <div class="row cgqtns_qtn">
                       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -59,7 +59,7 @@
         
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <textarea type="text" id="comment" name="thread" required="required" class="textarea_02" [(ngModel)]="item.Response" placeholder="Tap to answer" maxlength="256">{{item.Response }}</textarea>
+                        <textarea type="text" id="comment" name="thread" required="required" class="textarea_02" [(ngModel)]="item.Response" placeholder="Tap to answer" (blur)="SaveAnswers($event,item)" maxlength="256">{{item.Response }}</textarea>
                       </div>
                     </div>
         

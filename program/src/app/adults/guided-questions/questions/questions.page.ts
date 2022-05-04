@@ -10,41 +10,88 @@ import { AdultsService } from '../../adults.service';
 })
 export class QuestionsPage implements OnInit {
 data:any;
-counter=1;
-maintitile = new BehaviorSubject(1);
+counter=0;
+maintitile = new BehaviorSubject(0);
 title='';
+currentSlide:number=0;
+numSlides:number=0;
   constructor(private adultService:AdultsService,private router:ActivatedRoute
     ,private route: Router) { 
    
   }
   ngOnInit() {
+    debugger;
     var id=  +this.router.snapshot.queryParamMap.get("Qid");
     this.adultService.GetGuidedQs_Response(id).subscribe(x=>{ 
       if(x){
      this.data=x;
+     this.numSlides=this.data.length;
      this.maintitile.subscribe(title => {
-      this.title = (title)+"/"+this.data.length;
+      this.title = (title+1)+"/"+this.data.length;
     });
       }
     })
   }
+
+  SaveAnswers(res:any){
+   let data={
+    ResponseID:res.ResponseID,
+    TopicID:res.TopicId,
+    AttemptNo:res.AttemptNo,
+    QuestionID: res.QuestionId,
+    UserID: 107,
+    Response:res.Response,
+    savetoJournal:"0"
+    };
+this.adultService.AddGuidedQs_Response(data).subscribe(res=>{
+
+});
+  }
+
   Backward(){
     this.route.navigate(['/adults/journal'])
   }
+
 ;
 
-  forward(){
-    this.counter=(this.counter+1);
-    if(this.counter>=this.data.length ){
-      this.counter=1;
+  // forward(){
+  //   this.counter=(this.counter+1);
+  //   if(this.counter>=this.data.length ){
+  //     this.counter=1;
+  //   }
+  //   this.maintitile.next(this.counter);
+  // }
+  // back(){
+  //   this.counter=(this.counter-1);
+  //   if(this.counter<1){
+  //     this.counter=this.data.length-1;
+  //     }
+  //   this.maintitile.next(this.counter);
+  // }
+
+  modulo(number, mod) {
+    let result = number % mod;
+    if (result < 0) {
+      result += mod;
     }
-    this.maintitile.next(this.counter);
+    return result;
   }
-  back(){
-    this.counter=(this.counter-1);
-    if(this.counter<1){
-      this.counter=this.data.length-1;
-      }
-    this.maintitile.next(this.counter);
+  
+   forward() {
+    this.currentSlide = this.modulo(this.currentSlide + 1, this.numSlides);
+    this.changeSlide(this.currentSlide);
+    this.counter=this.currentSlide;
   }
+
+   back() {
+    this.currentSlide = this.modulo(this.currentSlide - 1, this.numSlides);
+    this.changeSlide(this.currentSlide);
+    this.counter=this.currentSlide;
+  }
+
+   changeSlide(slideNumber) {
+    this.maintitile.next(slideNumber);
+   // carousel.style.setProperty('--current-slide', slideNumber);
+  }
+
 }

@@ -20,6 +20,7 @@ data:any
     this.router.navigate(['/adults/journal'])
   }
   NavigateToQuestions(){
+    debugger;
     this.router.navigate(['/journal/questions'],{queryParams:{"Qid":JSON.stringify(this.data.RowID)}})
   }
 
