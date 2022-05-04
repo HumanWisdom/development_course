@@ -23,6 +23,8 @@ export class DailyPracticePage implements OnInit {
   trythistoday = ''
   questext = ''
   dailyinstext = ''
+  audioTitle = ''
+  dailybreathTitle = ''
   isloggedIn = false
 
   constructor(
@@ -45,7 +47,8 @@ export class DailyPracticePage implements OnInit {
   getdailyquestion() {
       this.service.getDailypractiseQuestionbreath().subscribe((res) => {
         if(res) {
-          this.videoLink = res;
+          this.dailybreathTitle = res.split(';')[0]
+          this.videoLink = res.split(';')[1];
         }
       })
       this.service.getDailypractiseQuestionins().subscribe((res) => {
@@ -55,7 +58,8 @@ export class DailyPracticePage implements OnInit {
       })
       this.service.getDailypractiseQuestionmeditation().subscribe((res) => {
         if(res) {
-         this.audioLink = res;
+          this.audioTitle = res.split(';')[0]
+          this.audioLink = res.split(';')[1];
         }
       })
       this.service.getDailypractiseQuestiontoday().subscribe((res) => {
