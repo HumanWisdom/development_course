@@ -20,7 +20,6 @@ numSlides:number=0;
    
   }
   ngOnInit() {
-    debugger;
     var id=  +this.router.snapshot.queryParamMap.get("Qid");
     this.adultService.GetGuidedQs_Response(id).subscribe(x=>{ 
       if(x){
