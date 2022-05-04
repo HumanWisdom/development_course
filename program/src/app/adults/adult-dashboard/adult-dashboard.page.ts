@@ -170,7 +170,7 @@ socialFirstName:any
             let namedata = localStorage.getItem('name').split(' ')
             localStorage.setItem("FnName", namedata[0])
             localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-            this.socialLogin()
+            this.loginadult(res)
           }else {
            this.router.navigate(['/onboarding/login'])
           }
@@ -1037,6 +1037,83 @@ socialFirstName:any
       ()=>{
       }
     )
+  }
+
+  loginadult(res) {
+    this.loginResponse=res
+        this.userId = res.UserId
+        if(res.Subscriber === 0) {
+          this.isSubscribe =  true;
+        }
+        let guest = localStorage.getItem('guest');
+        if(guest === 'T') localStorage.setItem('guest', 'F')
+        sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+        localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+        localStorage.setItem("token",JSON.stringify(res.access_token))
+        localStorage.setItem("Subscriber", res.Subscriber)
+        localStorage.setItem("userId",JSON.stringify(this.userId))
+        localStorage.setItem("email", res.email)
+        localStorage.setItem("name", res.Name)
+        this.name = res.Name
+        let namedata = localStorage.getItem('name').split(' ')
+        this.modaldata['email'] = localStorage.getItem('email');
+        this.modaldata['firstname'] = namedata[0];
+        this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+        this.getProgress()
+        this.freescreens();
+        localStorage.setItem("text",JSON.stringify(this.text))
+        localStorage.setItem("video",JSON.stringify(this.video))
+        localStorage.setItem("audio",JSON.stringify(this.audio))
+        localStorage.setItem("moduleId",JSON.stringify(this.moduleId))
+        localStorage.setItem("question",JSON.stringify(this.question))
+        localStorage.setItem("reflection",JSON.stringify(this.reflection))
+        localStorage.setItem("feedbackSurvey",JSON.stringify(this.feedbackSurvey))
+        this.userId=JSON.parse(localStorage.getItem("userId"))
+        if(localStorage.getItem('acceptcookie') === 'T') this.enableDailypopup();
+        this.Subscriber = localStorage.getItem('Subscriber')
+    this.cd.detectChanges();
+    localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+    if(localStorage.getItem("token")&&(this.saveUsername==true))
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.userName=JSON.parse(localStorage.getItem("userName"))
+    }
+    else
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.userName=JSON.parse(sessionStorage.getItem("userName"))
+
+    }
+
+    this.getBookmarks()
+        if(res.UserId==0)
+        {
+
+        }
+        else{
+          this.userId=res.UserId
+          this.userName=res.Name
+          sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+          localStorage.setItem("userId",JSON.stringify(this.userId))
+          localStorage.setItem("token",JSON.stringify(res.access_token))
+          if(this.saveUsername==true)
+          {
+            localStorage.setItem("userId",JSON.stringify(this.userId))
+            localStorage.setItem("userEmail",JSON.stringify(res.Email))
+            localStorage.setItem("userName",JSON.stringify(this.userName))
+
+          }
+            
+          else
+          {
+            sessionStorage.setItem("userId",JSON.stringify(this.userId))
+            sessionStorage.setItem("userEmail",JSON.stringify(res.Email))
+            sessionStorage.setItem("userName",JSON.stringify(this.userName))
+
+
+          }
+        }
   }
 
 
