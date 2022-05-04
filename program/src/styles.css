@@ -28777,3 +28777,30 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   margin: 0 0 10px 0;
   padding: 0;
 }
+
+.modal-open 
+{
+  padding: 0 !important;
+  overflow: hidden;
+  /* overflow-y: overlay !important; */
+}
+
+.mfree_limit 
+{
+  width: unset;
+  margin: 0;
+  backdrop-filter: blur(5px);
+}
+
+.fl_back
+{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  /* padding: 0 20px !important; */
+}
