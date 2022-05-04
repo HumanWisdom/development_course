@@ -512,13 +512,18 @@ export class LoginSignupPage implements OnInit {
         localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
         localStorage.setItem("video",JSON.stringify(this.video))
         localStorage.setItem("audio",JSON.stringify(this.audio))
-        if(res.UserId==0)
+        if(res.UserId===0)
         {
           this.showAlert=true
           window.alert('You have enetered wrong credentials. Please try again.')
           this.email=""
           this.password=""
 
+        }else if(res.UserId=== -1) {
+          this.showAlert=true
+          window.alert('Email was Not Verified. Please signup again with the same Email ID to verify it.')
+          this.email=""
+          this.password=""
         }
         else{
           this.showAlert=false

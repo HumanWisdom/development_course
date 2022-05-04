@@ -213,7 +213,7 @@
 
               <!-- pfy button -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row mdpd_pfy" *ngIf="personalisedList.length !== 0">
+              <div class="row mlr-10px_01 accordion_row" *ngIf="personalisedList.length !== 0">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
@@ -247,7 +247,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <!-- button 1 -->
                               <ng-container *ngFor="let item of personalisedList; let i=index">
-                                <div class="row center_flex mb10px" *ngIf="i === 0 && item['active'] || i === 1 && item['active']">
+                                <div class="row center_flex" *ngIf="i === 0 && item['active'] || i === 1 && item['active']">
                                   <div class="col-md-12 col-sm-12 col-xs-12">
                                     <button type="submit" class="btn btn-default btn_pfy_01">
                                       {{item['name']}}
@@ -643,7 +643,7 @@
 
                               <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi" *ngFor="let item of shortsList; let i =index">
                                 <a (click)="wisdomshortsclick(item['VideoUrl'])">
-                                  <img src="{{item['ImgUrl']}}" alt="Stress Management" class="crimg">
+                                  <img src="{{item['ImgUrl']}}" alt="Stress Management" class="crimg br10px">
 
                                   <h4 class="txt202 tile_title whitespace_preline">
                                     {{item['Title']}}

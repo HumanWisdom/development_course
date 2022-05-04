@@ -9,21 +9,10 @@ import { AdultsService } from '../adults.service';
 })
 export class PersonalisedForYouSearchPage implements OnInit {
   personalisedforyou = []
-  personalisedforyoulist = [
-    {
-      id: "7",
-      name: 'Mindfulness',
-      active: false
-    },
-    {
-      id: "8",
-      name: 'Manage your emotions',
-      active: false
-    }
-  ]
 
   indList = []
   isloggedIn = false;
+  searchinp = '';
   
   constructor(private route: Router, private aservice:AdultsService,) {
     this.getUserPreference()
@@ -34,6 +23,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     if(userid === 'T') {
       this.isloggedIn = true
     }
+  }
+
+  getentervalue(value) {
+    this.searchinp = value
   }
 
   getUserPreference() {
@@ -68,9 +61,13 @@ export class PersonalisedForYouSearchPage implements OnInit {
            r['active'] = false;
            this.personalisedforyou.push(r);
        })
-       this.personalisedforyou = [...this.personalisedforyou, ...this.personalisedforyoulist];
        }
     })
+  }
+
+  getinp() {
+    let url = `/adults/site-search/${this.searchinp}`
+    this.route.navigate([url])
   }
 
 

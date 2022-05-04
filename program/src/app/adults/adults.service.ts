@@ -40,6 +40,14 @@ export class AdultsService {
     {
       id: "6",
       name: 'Deal with sorrow and loss'
+    },
+    {
+      id: "7",
+      name: 'Mindfulness',
+    },
+    {
+      id: "8",
+      name: 'Manage you emotions',
     }
   ]
 
