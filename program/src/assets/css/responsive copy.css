@@ -374,14 +374,6 @@
     }
 }
 
-@media (max-width: 768px)
-{
-    .fl_back
-    {
-        padding: 0 20px !important;
-    }
-}
-
 @media (min-width: 768px) and (max-width: 1023px)
 {
     .dabsolute_02 
