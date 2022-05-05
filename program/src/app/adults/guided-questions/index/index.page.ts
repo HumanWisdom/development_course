@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -24,7 +24,9 @@ export class IndexPage implements OnInit {
   topic=[];
   searchedText:any
 
-  constructor(private router: Router,private service: AdultsService) { }
+  constructor(private router: Router,
+    private rout:ActivatedRoute
+    ,private service: AdultsService) { }
 
   ngOnInit() {
     if(this.saveUsername==false)
@@ -33,6 +35,12 @@ export class IndexPage implements OnInit {
     this.userId=JSON.parse(localStorage.getItem("userId"))
     this.viewJournalAndReflections();
     this.getDailyQuestion();
+   }
+   var isGuid=  this.rout.snapshot.queryParamMap.get("isGuided");
+   debugger;
+   if(isGuid && isGuid=='true'){
+     this.GetGuidedQs_Topics();
+     this.isGuidedQueestionsTab=true;
    }
   }
 

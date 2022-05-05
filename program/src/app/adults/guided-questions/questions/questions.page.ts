@@ -48,7 +48,7 @@ this.adultService.AddGuidedQs_Response(data).subscribe(res=>{
   }
 
   Backward(){
-    this.route.navigate(['/adults/journal'])
+    this.route.navigate(['/adults/journal'],{queryParams:{"isGuided":true}})
   }
 
 ;
