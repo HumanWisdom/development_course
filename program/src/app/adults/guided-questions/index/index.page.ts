@@ -37,7 +37,6 @@ export class IndexPage implements OnInit {
     this.getDailyQuestion();
    }
    var isGuid=  this.rout.snapshot.queryParamMap.get("isGuided");
-   debugger;
    if(isGuid && isGuid=='true'){
      this.GetGuidedQs_Topics();
      this.isGuidedQueestionsTab=true;
