@@ -28,7 +28,6 @@ export class SearchPopularItemsPage implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    debugger;
    this.search= this.route.snapshot.paramMap.get('word')
     this.UserID= localStorage.getItem('userId');
     this.initializeSearchObject();

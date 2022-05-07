@@ -250,4 +250,13 @@ export class AdultsService {
   getdashstories() : Observable<any>{
     return this.http.get(this.path + `/GetDashboardStories`)
   }
+  GetGuidedQs_Topics(): Observable<any>{
+    return this.http.get(this.path + `/GetGuidedQs_Topics`)
+  }
+  GetGuidedQs_Response(id:any): Observable<any>{
+    return this.http.get(this.path + `/GetGuidedQs_Response/`+id+'/'+0)
+  }
+  AddGuidedQs_Response(data:any){
+    return this.http.post(this.path + `/AddGuidedQs_Response/`,data);
+  }
 }
