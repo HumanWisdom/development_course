@@ -1,0 +1,94 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 gqtns_introduction_tn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a (click)="Backward()" class="">                          
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0">
+      </a>  
+    </div>
+    
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a  class="">                       
+        <h1 class="txt312 mtb0px tcenter">
+          Being happier
+        </h1>            
+      </a>  
+    </div>
+    
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col main_container" role="main">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p0 sub_container bg_guided_questions">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+            <!-- carousel -->
+            <div class="container" *ngIf="data">
+              <div id="cgqtns" class="carousel slide" data-ride="carousel" data-interval="false">
+               
+                <ol class="carousel-indicators">
+                  <button type="submit" (click)="back()" class="left carousel-control jc_flexstart btn_gqtns" href="#cgqtns" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                  </button>
+                  <h4 class="txt315 mtb0px tcenter">
+                   {{title}}
+                  </h4>
+                  <button  (click)="forward()" class="right carousel-control jc_flexend btn_gqtns" href="#cgqtns" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                  </button> 
+                </ol>
+                
+                <div class="carousel-inner">
+                  <div *ngFor="let item of data;let i=index" class="item" [ngClass]=" i == counter ? 'active' : ''">
+                    <!-- slide 1 -->
+                    <div class="row cgqtns_qtn">
+                      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                        <h4 class="txt294 mtb0px tleft">
+                          {{i+1}} . {{item.Question}}
+                        </h4>
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <textarea type="text" id="comment" name="thread" required="required" class="textarea_02" [(ngModel)]="item.Response" placeholder="Tap to answer" (blur)="SaveAnswers(item)" maxlength="256">{{item.Response }}</textarea>
+                      </div>
+                    </div>
+        
+                    <div class="row cgqtns_autosavemsg">
+                      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                        <h4 class="txt314 mtb0px tcenter">
+                          Your answers are automatically saved.
+                        </h4>
+                      </div>
+                    </div>
+                    <!-- /slide 1 -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- /carousel -->
+
+            <div class="pagebreak"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
