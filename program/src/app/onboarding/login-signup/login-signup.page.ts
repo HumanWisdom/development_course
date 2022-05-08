@@ -206,7 +206,8 @@ export class LoginSignupPage implements OnInit {
         localStorage.setItem("codeVerified",JSON.stringify(this.codeVerified))
         localStorage.setItem("email",JSON.stringify(this.registrationForm.get('email').value))
         localStorage.setItem("password",JSON.stringify(this.registrationForm.get('password').value))
-        window.location.reload()
+        // window.location.reload()
+        this.router.navigate(['/onboarding/login'])
       }
       
     }, (err) => {
