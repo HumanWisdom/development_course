@@ -15,6 +15,7 @@ export class CourseFooterComponent implements OnInit {
   @Output() nextEmitter = new EventEmitter<string>();
   @Output() previousEmitter = new EventEmitter<string>();
   @Input() bg: string;
+  @Input() bg_cft: string;
   urlT:any
   shared=false
   //@ViewChild('screen', { static: true }) screen: any;

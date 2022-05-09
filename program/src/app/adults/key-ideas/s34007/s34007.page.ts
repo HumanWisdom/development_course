@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S34007Page implements OnInit {
 
- bg="purple_blue_w1"  
+ bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w1"  
   hint="They come from our many past influences."
   toc="key-ideas/s34001"
   path=this.router.url

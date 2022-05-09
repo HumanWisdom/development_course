@@ -12,6 +12,8 @@ export class S34033Page implements OnInit {
   
   toc="key-ideas/s34001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/program_guide.jpg"
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg=""
   moduleLink="/adults/program-guide/"
   moduleName="01. User Guide"
