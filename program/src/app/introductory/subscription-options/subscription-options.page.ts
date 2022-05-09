@@ -192,6 +192,7 @@ socialFirstName:any
       localStorage.setItem('personalised subscription', val);
       this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: val}})
     }else {
+      this.router.navigate(['/adults/adult-dashboard'])
     }
   }
 
