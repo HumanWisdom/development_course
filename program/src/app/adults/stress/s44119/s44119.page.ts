@@ -12,6 +12,7 @@ import * as jQuery from 'jquery';
 })
 export class S44119Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w1"
   title="#11 Our opinions & beliefs are challenged"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

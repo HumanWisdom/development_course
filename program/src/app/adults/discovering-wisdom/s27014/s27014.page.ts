@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S27014Page implements OnInit {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w1"  
   hint="Some people think it comes with age or experience, but what we are referring to is to live with this wisdom even when you are young."
   toc="discovering-wisdom/s27001"

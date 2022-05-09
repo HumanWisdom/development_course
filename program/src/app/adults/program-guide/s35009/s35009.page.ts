@@ -9,6 +9,10 @@ import {Location } from '@angular/common'
   styleUrls: ['./s35009.page.scss'],
 })
 export class S35009Page implements OnInit {
+  
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w9"
   title="Program Features "
   content=[{"no":1,
   "heading":"Online Journal",

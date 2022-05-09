@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44102Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint=" For example you may not feel loved enough, or understood, or important enough"  
 
   toc="stress/s44001"
