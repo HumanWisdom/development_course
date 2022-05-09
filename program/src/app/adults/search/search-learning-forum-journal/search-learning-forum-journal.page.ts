@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchLearningForumJournalPage implements OnInit {
 
+  searchData:SearchDataModel;
+
   constructor() { }
 
   ngOnInit() {
+
   }
+
+    initializeSearchObject(){
+      this.searchData={
+        ModuleRes:[],
+        BlogRes:[],
+        JournalRes:[],
+        PodCastRes:[],
+        SessionRes:[],
+        WisdomShortsRes:[],
+        WisdomStoriesRes:[]
+      } as SearchDataModel;
+    }
+
 
 }

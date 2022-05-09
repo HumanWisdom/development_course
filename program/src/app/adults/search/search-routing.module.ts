@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import("./search-popular-items/search-popular-items.module").then( m => m.SearchPopularItemsPageModule)
   },
   {
-    path: "search-popular-items",
+    path: "site-search/:word",
     loadChildren: () => import("./search-popular-items/search-popular-items.module").then( m => m.SearchPopularItemsPageModule)
   },
   {

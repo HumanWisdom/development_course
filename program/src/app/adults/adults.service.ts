@@ -40,6 +40,14 @@ export class AdultsService {
     {
       id: "6",
       name: 'Deal with sorrow and loss'
+    },
+    {
+      id: "7",
+      name: 'Mindfulness',
+    },
+    {
+      id: "8",
+      name: 'Manage you emotions',
     }
   ]
 
@@ -216,6 +224,13 @@ export class AdultsService {
     return this.http.get(this.path + `/GetDailyPractise_Question`)
   }
 
+
+  getSearchDataForSearchSite(data): Observable<any> {
+    return this.http.post(this.path + `/SiteSearch/${data}`,{})
+  }
+  getForumSearchDataSite(data): Observable<any> {
+    return this.http.get(this.path + `/GetAllPosts/${data}`);
+  }
   postUserpreference(data): Observable<any> {
     return this.http.post(this.path + `/AddUserPreference/${data}`, {})
   }
@@ -234,5 +249,14 @@ export class AdultsService {
 
   getdashstories() : Observable<any>{
     return this.http.get(this.path + `/GetDashboardStories`)
+  }
+  GetGuidedQs_Topics(): Observable<any>{
+    return this.http.get(this.path + `/GetGuidedQs_Topics`)
+  }
+  GetGuidedQs_Response(id:any): Observable<any>{
+    return this.http.get(this.path + `/GetGuidedQs_Response/`+id+'/'+0)
+  }
+  AddGuidedQs_Response(data:any){
+    return this.http.post(this.path + `/AddGuidedQs_Response/`,data);
   }
 }

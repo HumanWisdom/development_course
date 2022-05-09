@@ -13,9 +13,14 @@ const routes: Routes = [
     loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then( m => m.AdultDashboardPageModule),
     canActivate:[AuthGuard]
   },  
-  {
+  // {
+  //   path: 'journal',
+  //   loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
+  // },
+
+    {
     path: 'journal',
-    loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
+    loadChildren: () => import('./guided-questions/guided-questions.module').then( m=>m.GuidedQuestionsModule)
   },
   {
     path: 'note',
@@ -296,14 +301,14 @@ const routes: Routes = [
   {
     path: 'test-screen',
     loadChildren: () => import('./test-screen/test-screen.module').then( m => m.TestScreenPageModule)
-  }, 
-  {
-     path: 'site-search',
-     loadChildren: () => import('./search/search.module').then( m => m.SearchModule)
   },
   {
-    path: 'overcome-stress',
-    loadChildren: () => import('./dashboard-module/dashboard-module.module').then( m => m.DashboardModulePageModule)
+    path: 'site-search/:word',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchModule)
+  },
+  {
+    path: 'newsletter-subscribe',
+    loadChildren: () => import('./newsletter-subscribe/newsletter-subscribe.module').then( m => m.NewsletterSubscribePageModule)
   },
 ];
 
