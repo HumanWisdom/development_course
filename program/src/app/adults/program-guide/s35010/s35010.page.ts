@@ -12,6 +12,8 @@ import {Location } from '@angular/common'
 })
 export class S35010Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w10"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/benefits_of_wisdom/videos/1.1.mp4'  
@@ -114,7 +116,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/adults/program-guide/s35009'])
+    this.router.navigate(['/adults/program-guide/s35009p11'])
 
 
   }

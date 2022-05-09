@@ -12,6 +12,7 @@ import * as jQuery from 'jquery';
 })
 export class S44091Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w9"
   title="#2 Comparison"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
