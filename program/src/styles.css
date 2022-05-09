@@ -28694,7 +28694,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 
 .sc_01 
 {
-  background: #1D3D7A;
+  /* background: #1D3D7A; */
   min-height: 100vh;
   padding: 20px 10px;
 }
@@ -28719,7 +28719,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 .tn_module
 {
   height: 60px;
-  background: #1D3D7A;
+  /* background: #1D3D7A; */
   position: fixed;
   top: 0;
   right: 0;

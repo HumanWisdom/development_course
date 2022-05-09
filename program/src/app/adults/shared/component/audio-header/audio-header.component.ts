@@ -11,6 +11,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 })
 export class AudioHeaderComponent implements OnInit {
   @Input() bookmark: boolean;
+  @Input() bg_tn: string;
   @Input() bg: string;
   @Input() path: string; //to go back to the course page from note 
   @Input() toc: string;//path of table of contents

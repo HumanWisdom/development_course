@@ -10,6 +10,7 @@ import {Location } from '@angular/common'
 })
 export class S27002Page implements OnInit {
 
+  bg_tts = "bg_purple_blue"
   bg="purple_blue_w1"
   toc="discovering-wisdom/s27001"
   userId:any

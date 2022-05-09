@@ -1,6 +1,6 @@
 <app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
 
-<app-tap-start [bg]="bg" (nextEmitter)="goNext()">  
+<app-tap-start [bg]="bg" (nextEmitter)="goNext()" [bg_tts]="bg_tts">  
   <form>
     <h4 class="mtb0px comparison">
       Discovering Wisdom
