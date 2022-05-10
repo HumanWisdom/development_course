@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S34028Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
   title="#6 Just observe and understand. Change follows without effort."
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

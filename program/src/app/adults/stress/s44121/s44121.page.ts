@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44121Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="Our opinions become part of our identity, of ‘who we think we are’ and that results in attachment and stress when they are challenged. "  
 
   toc="stress/s44001"

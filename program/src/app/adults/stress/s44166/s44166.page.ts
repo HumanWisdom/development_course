@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44166Page implements OnInit {
 
- bg="dark_blue_w5"
+ bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="You may decide to cut down on screen time, or take time to eat consciously, or walk to the shops instead of driving there."  
 
   toc="stress/s44001"

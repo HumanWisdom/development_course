@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S34024Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
   title="What does water taste like?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
