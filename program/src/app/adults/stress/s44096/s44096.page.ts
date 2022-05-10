@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44096Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="  For example you could not buy something you wanted, or did not get the promotion you wanted."  
 
   toc="stress/s44001"

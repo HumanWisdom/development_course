@@ -9,6 +9,10 @@ import {Location } from '@angular/common'
   styleUrls: ['./s33006.page.scss'],
 })
 export class S33006Page implements OnInit {
+  
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w9"
   title="Nurture a quiet mind - 5 modules  "
   content=[{"no":1,
   "heading":"Nature",

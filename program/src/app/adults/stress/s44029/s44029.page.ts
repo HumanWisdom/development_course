@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class S44029Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w5"
   hint=" Look at all the symptoms of stress, and see how many of them apply to you."  
 

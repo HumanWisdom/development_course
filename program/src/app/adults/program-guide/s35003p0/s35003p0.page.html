@@ -1,17 +1,17 @@
 <title>Video Tour | Behavioral Health App| HumanWisdom</title>
 
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <!-- <app-video-content [title]="title" [poster]="poster" [bg]="bg" [videoLink]="videoLink"></app-video-content> -->
 
 <!-- page content -->
-<div class="right_col" #screen [ngClass]="bg" role="main">
+<div class="right_col mc_02" #screen>
     <!-- Class -->
-    <div class="cw100p dabsolute_01">
+    <div class="cw100p">
       <div class="row center_flex">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p center_flex">
-          <div class="x_panel xpanel_01 p0">
-            <div class="x_content tcenter p0">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02 center_flex" [ngClass]="bg">
+          <div class="x_panel p0">
+            <div class="x_content p0">
               <form>
   
                 <h1 class="txt1 tcenter">
@@ -42,4 +42,4 @@
 </div>
 <!-- /page content -->
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
