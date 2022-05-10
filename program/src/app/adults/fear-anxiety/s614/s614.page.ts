@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S614Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="bg_green" 
   toc="fear-anxiety/s486"
   

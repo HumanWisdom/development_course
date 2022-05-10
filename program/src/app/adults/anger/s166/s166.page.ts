@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S166Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_overlay_footer"
 
   userId:any

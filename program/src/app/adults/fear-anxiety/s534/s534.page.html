@@ -1,6 +1,6 @@
-<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-tap-start [bg]="bg" (nextEmitter)="goNext()">  
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">  
    <form>
     <h4 class="mtb0px comparison">
       Fear-Anxiety
