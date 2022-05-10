@@ -12,6 +12,7 @@ import * as jQuery from 'jquery';
 })
 export class S44140Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w4"
   title="#2 We get angry with ourselves or others"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

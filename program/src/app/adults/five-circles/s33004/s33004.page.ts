@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S33004Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w2"
   title="Once you start walking, the way opens."
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S27005Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
   title="Welcome to human wisdom"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

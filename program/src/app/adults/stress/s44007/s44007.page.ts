@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class S44007Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w5"
   title="Understanding desire & stress"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
