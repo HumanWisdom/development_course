@@ -8,12 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./free-limit.page.scss'],
 })
 export class FreeLimitPage implements OnInit, AfterViewInit {
-  @ViewChild('free_limt') enableotpmodal:ElementRef;
+  @ViewChild('enablebtn') enableotpmodal:ElementRef;
   @ViewChild('closemodal') closemodal:ElementRef;
+
+  isloggedIn = false;
 
   constructor( private location:Location, private router: Router ) { }
 
   ngOnInit() {
+    let userid = localStorage.getItem('isloggedin');
+    if(userid === 'T') {
+      this.isloggedIn = true
+    }
   }
 
   ngAfterViewInit(): void {

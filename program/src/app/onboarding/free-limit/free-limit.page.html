@@ -39,7 +39,7 @@
             </a>
           </div>
 
-          <div class="col-md-6 col-sm-6 col-xs-6">
+          <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="!isloggedIn">
             <a (click)="loginpage()">
               <button type="button" class="btn btn-success btn_fl_sn_l w100">Login</button>
             </a>
@@ -55,9 +55,9 @@
 <!-- /modal -->
 
 <!-- page content -->
-<!-- <div class="right_col ml0 cright_col mh100vh green_yellow_w1" role="main">				 -->
+<div class="right_col ml0 cright_col mh100vh green_yellow_w1" role="main">				
   <!-- Class --> 
-  <!-- <div class="cw100p cabsolute">
+  <div class="cw100p cabsolute">
     <div class="row center_flex">
       <div class="col-md-6 col-sm-8 col-xs-12 p0">
         <div class="x_panel cxpanel center_flex">            
@@ -68,7 +68,7 @@
               </h1>
               <div class="clearfix"></div>
 
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#free_limt">
+              <button type="button" #enablebtn class="btn btn-primary" data-toggle="modal" data-target="#free_limt">
                 Free Limit Modal
               </button>
             </form>
@@ -76,8 +76,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
   <!--/Class --> 
-<!-- </div> -->
+</div>
 <!-- /page content -->
-<span #free_limt data-toggle="modal" data-target="#free_limt"></span>

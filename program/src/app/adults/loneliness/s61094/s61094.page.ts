@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S61094Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w1"  
   hint="  If we don’t ask this question, they can fade away, leaving us feeling alone.  "
   toc="/loneliness/s61001"

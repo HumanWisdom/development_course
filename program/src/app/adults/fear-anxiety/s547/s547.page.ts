@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s547.page.scss'],
 })
 export class S547Page implements OnInit {
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w1"
   hint=" This could be to double check you had locked the house when you were pretty sure you had the first time.  "
   toc="/fear-anxiety/s486"

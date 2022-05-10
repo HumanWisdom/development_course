@@ -12,6 +12,8 @@ export class S61113Page implements OnInit {
   
   toc="loneliness/s61001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/anger.png"
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg=""
   moduleLink="/adults/anger"
   moduleName="05. Anger"

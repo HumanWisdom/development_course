@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S60048Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w5"
   title=" #1 Our emotional needs are no longer met  "
   
