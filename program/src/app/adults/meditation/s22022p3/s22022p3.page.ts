@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S22022p3Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w5"
   toc="meditation/s22001"
   userId:any

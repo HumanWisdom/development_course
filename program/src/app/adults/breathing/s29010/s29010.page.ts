@@ -14,6 +14,8 @@ export class S29010Page implements OnInit {
   
   toc="breathing/s29000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/noticing_thoughts.jpg"
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg=""
   moduleLink="/adults/noticing-thoughts"
   moduleName="03. Noticing Thoughts"
