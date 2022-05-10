@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S228p3Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w1"
   title="Releasing Anger - a meditation"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

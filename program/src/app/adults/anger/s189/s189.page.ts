@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 
 export class S189Page implements OnInit,AfterViewInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w10"
   title="How do we respond when we get angry?"   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

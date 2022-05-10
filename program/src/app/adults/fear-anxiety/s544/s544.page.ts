@@ -9,7 +9,9 @@ import {Location } from '@angular/common'
   styleUrls: ['./s544.page.scss'],
 })
 export class S544Page implements OnInit {
-bg="purple_red_w10"
+bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
+  bg="purple_red_w10"
   hint="It could be aliens, or that foreigners are going to take over the country, for example.  "
   toc="/fear-anxiety/s486"
   path=this.router.url
