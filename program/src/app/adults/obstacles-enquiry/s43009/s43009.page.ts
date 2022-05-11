@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S43009Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint="This anxiety is real, but the problem we are anxious about is not. Understanding yourself can bring freedom. You just have to take the first step."  
 
