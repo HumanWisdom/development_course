@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S57007Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w5"
   title="How is the ‘I’ formed?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

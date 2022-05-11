@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class S18086Page implements OnInit {
 
-    bg="blue_pink_w9"
+    bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
+  bg="blue_pink_w9"
     title="How can we be more lovable?"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+3.5.mp3'

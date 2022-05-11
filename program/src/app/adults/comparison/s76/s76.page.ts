@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S76Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w5"    
   hint="When my friend has a stressful day at work, he likes to spend time watching tv or on his phone and I feel neglected. I constantly try to change his ways through criticism."
 

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S21012Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w11"  
   hint="Your religion may be the same as your parents, for example  "
   toc="/identity/s21001"

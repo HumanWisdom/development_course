@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S21052Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"  
   hint="It may make you feel less divided from others who have a different identity, for example."
   toc="/identity/s21001"

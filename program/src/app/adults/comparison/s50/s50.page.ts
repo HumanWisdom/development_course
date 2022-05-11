@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S50Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w8"
   hint="It could be because it brings you pleasure, or be able to recognise people you know"
 

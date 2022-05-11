@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S143Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w3" 
   hint="Annie was already frustrated with money being tight and being busy. If I am already frustrated, I am quicker to get angry and irritated."
   toc="/comparison/s0"
