@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 
 export class S209Page implements OnInit,AfterViewInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w10"
   title="Accept it’s a reaction from our thinking"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

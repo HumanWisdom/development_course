@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S186Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w7"
   hint="Usually we are not aware of them."
   toc="/anger/s162p0"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S216p5Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="light_blue_w6"
   toc="anger/s162p0"
   userId:any

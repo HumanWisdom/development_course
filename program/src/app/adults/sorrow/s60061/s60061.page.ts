@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S60061Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w5"  
   hint=" When a loved one dies, we may be afraid of the future. Or if we lose our looks, our sense of identity as someone beautiful is gone and we feel that as pain."
   toc="/sorrow/s60001"
