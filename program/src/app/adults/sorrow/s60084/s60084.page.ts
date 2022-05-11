@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S60084Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w5"  
   hint="  It could be your stress went away when you accepted your taxi was caught in a traffic jam,  and you were going to miss your train  "
   toc="/sorrow/s60001"

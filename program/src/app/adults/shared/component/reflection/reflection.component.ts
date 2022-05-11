@@ -12,6 +12,7 @@ export class ReflectionComponent implements OnInit {
   @Input() hint: string;
   @Input() bg: string;
   @Input() bg_tn: string;
+  @Input() bg_cft: string;
   @Input() reflectionResponse: string;
   @Input() toc: string;
   @Output() sendResponse = new EventEmitter<string>();

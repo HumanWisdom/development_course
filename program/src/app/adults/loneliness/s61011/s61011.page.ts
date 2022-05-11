@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S61011Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w9"  
   hint="  It could be because they do not feel understood  "
   toc="/loneliness/s61001"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S214Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w2"  
   hint="The art of enquiry section covers this more fully"
 

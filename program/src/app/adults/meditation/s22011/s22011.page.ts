@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S22011Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w9"
   title="Meditation is understanding oneself"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

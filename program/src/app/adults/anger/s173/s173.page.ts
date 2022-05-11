@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S173Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_overlay_w11"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/anger/videos/1.1.mp4'

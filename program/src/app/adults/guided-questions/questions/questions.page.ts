@@ -15,9 +15,11 @@ maintitile = new BehaviorSubject(0);
 title='';
 currentSlide:number=0;
 numSlides:number=0;
+length:number=0;
+userId:number=0;
   constructor(private adultService:AdultsService,private router:ActivatedRoute
     ,private route: Router) { 
-   
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
   }
   ngOnInit() {
     var id=  +this.router.snapshot.queryParamMap.get("Qid");
@@ -86,11 +88,28 @@ this.adultService.AddGuidedQs_Response(data).subscribe(res=>{
     this.currentSlide = this.modulo(this.currentSlide - 1, this.numSlides);
     this.changeSlide(this.currentSlide);
     this.counter=this.currentSlide;
+
   }
 
    changeSlide(slideNumber) {
     this.maintitile.next(slideNumber);
    // carousel.style.setProperty('--current-slide', slideNumber);
+  }
+
+  SubmitButton(){
+    let res=this.data[this.numSlides-1];
+    let data={
+      ResponseID:res.ResponseID,
+      TopicID:res.TopicId,
+      AttemptNo:res.AttemptNo,
+      QuestionID: res.QuestionId,
+      UserID: this.userId,
+      Response:res.Response,
+      savetoJournal:"1"
+      };
+  this.adultService.AddGuidedQs_Response(data).subscribe(res=>{
+    this.route.navigate(['/adults/journal'],{queryParams:{"isGuided":true}})
+  });
   }
 
 }

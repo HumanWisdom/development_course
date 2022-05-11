@@ -12,6 +12,8 @@ export class S617Page implements OnInit {
   
   toc="fear-anxiety/s486"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/pleasure.jpg"
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg=""
   moduleLink="/adults/pleasure"
   moduleName="07. Pleasure"

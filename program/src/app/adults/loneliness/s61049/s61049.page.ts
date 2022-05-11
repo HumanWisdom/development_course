@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S61049Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w7"  
   hint="   Loneliness is not wrong - a fact for us all. It acts from behind the scenes to shape the course of our lives  "
   toc="/loneliness/s61001"

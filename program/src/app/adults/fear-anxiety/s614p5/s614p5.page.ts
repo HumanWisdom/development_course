@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S614p5Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w1"
   title="Releasing Fear - a meditation"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

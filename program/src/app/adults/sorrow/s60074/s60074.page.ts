@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S60074Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w7"
   title="#1 Breathe  "
   
