@@ -20,11 +20,12 @@ export class QuestionsPage implements OnInit {
   userId: number = 0;
   constructor(private adultService: AdultsService, private router: ActivatedRoute
     , private route: Router) {
-    this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    this.userId = JSON.parse(localStorage.getItem("userId"))
   }
   ngOnInit() {
     var id = +this.router.snapshot.queryParamMap.get("Qid");
-    this.adultService.GetGuidedQs_Response(id).subscribe(x => {
+    var attempt=+this.router.snapshot.queryParamMap.get("Attempt");
+    this.adultService.GetGuidedQs_Response(id,attempt).subscribe(x => {
       if (x) {
         this.data = x;
         this.numSlides = this.data.length;
@@ -45,7 +46,7 @@ export class QuestionsPage implements OnInit {
         QuestionID: res.QuestionId,
         UserID: this.userId,
         Response: res.Response,
-        savetoJournal: "1"
+        savetoJournal: "0"
       };
     } else {
       data = {
@@ -54,7 +55,7 @@ export class QuestionsPage implements OnInit {
         QuestionID: res.QuestionId,
         UserID: this.userId,
         Response: res.Response,
-        savetoJournal: "1"
+        savetoJournal: "0"
       };
     }
     this.adultService.AddGuidedQs_Response(data).subscribe(res => {
@@ -78,7 +79,7 @@ export class QuestionsPage implements OnInit {
   forward() {
     this.isChanged = false;
     this.counter = (this.counter + 1);
-    if (this.counter >= this.data.length) {
+    if (this.counter > this.data.length) {
       this.counter = 1;
     }
     this.maintitile.next(this.counter);

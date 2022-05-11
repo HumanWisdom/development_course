@@ -253,8 +253,8 @@ export class AdultsService {
   GetGuidedQs_Topics(): Observable<any>{
     return this.http.get(this.path + `/GetGuidedQs_Topics`)
   }
-  GetGuidedQs_Response(id:any): Observable<any>{
-    return this.http.get(this.path + `/GetGuidedQs_Response/`+id+'/'+0)
+  GetGuidedQs_Response(id:any,attempt:any): Observable<any>{
+    return this.http.get(this.path + `/GetGuidedQs_Response/`+id+'/'+attempt)
   }
   AddGuidedQs_Response(data:any){
     return this.http.post(this.path + `/AddGuidedQs_Response/`,data);
