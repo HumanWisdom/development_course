@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S56035Page implements OnInit {
 
-    bg="purple_blue_w5"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w5"
     title="How can we face our emptiness?"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+2.2.mp3'

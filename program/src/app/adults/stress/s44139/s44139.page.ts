@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44139Page implements OnInit {
 
- bg="dark_blue_w5"
+ bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="For example, I can change my own thoughts and actions, or go to the dentist for my toothache, but I cannot solve global warming, or the wars in the world, so I stop stressing about them - and do whatever little I can."  
 
   toc="stress/s44001"

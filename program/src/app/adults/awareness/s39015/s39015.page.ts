@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S39015Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w7"
   hint="Why are other people really happy with the election result? Why the different reactions? You may realise that you’ve just been conditioned by a particular set of influences and become attached to your conditioning. There are many ways to see the same situation."  
 

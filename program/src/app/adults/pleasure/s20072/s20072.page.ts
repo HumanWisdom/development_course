@@ -12,6 +12,8 @@ export class S20072Page implements OnInit {
   
   toc="pleasure/s20001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sorrow_loss.jpg"
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg=""
   moduleLink="/adults/sorrow"
   moduleName="03. Sorrow and Loss"

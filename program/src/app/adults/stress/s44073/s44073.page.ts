@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44073Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="It could be if you see a particular politician on TV that you do not like, and you have the same stressful reaction each time."  
 
   toc="stress/s44001"

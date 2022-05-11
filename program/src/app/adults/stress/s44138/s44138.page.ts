@@ -12,6 +12,7 @@ import * as jQuery from 'jquery';
 })
 export class S44138Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w2"
   title="#1 We try to fix the problem"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

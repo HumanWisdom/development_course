@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S41005Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w1"
   hint="This is a normal human need, so it's not wrong, but why do we have it? What does it bring us, and why do we need that thing?  "  
 

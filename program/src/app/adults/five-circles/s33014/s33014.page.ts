@@ -9,6 +9,10 @@ import {Location } from '@angular/common'
   styleUrls: ['./s33014.page.scss'],
 })
 export class S33014Page implements OnInit {
+  
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w9"
   title="Understand emotions - 5 modules"
   content=[{"no":1,
   "heading":"Fear and anxiety",

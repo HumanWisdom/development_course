@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S60082Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w3"
   title="#5 Acceptance is the key  "
   

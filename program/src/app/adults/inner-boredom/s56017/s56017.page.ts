@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S56017Page implements OnInit {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w3"
   title="Our emotional needs arise from this inner emptiness"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

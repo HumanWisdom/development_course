@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S20040Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="pink_orange_w6"
   title="The hidden need for pleasure can contribute to addiction"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

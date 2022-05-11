@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S21053Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   title="What are the benefits of letting go of our attachment?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

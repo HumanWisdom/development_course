@@ -12,6 +12,8 @@ export class S56054Page implements OnInit {
   
   toc="inner-boredom/s56001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/nature_of_i.jpg"
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg=""
   moduleLink="/adults/nature-of-i"
   moduleName="09. The Nature of the ‘I’"

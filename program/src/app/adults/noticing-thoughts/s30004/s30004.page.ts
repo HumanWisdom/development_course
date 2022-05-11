@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S30004Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w2"
   hint=""  
 

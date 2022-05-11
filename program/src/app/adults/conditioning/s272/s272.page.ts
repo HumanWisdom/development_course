@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S272Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w5"
   hint="For example, my dislike of a particular community may be due to the negative press I read about them after some terrorist attacks"
 

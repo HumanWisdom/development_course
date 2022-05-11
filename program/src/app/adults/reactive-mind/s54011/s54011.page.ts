@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S54011Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w9" 
   
   toc="reactive-mind/s54001"

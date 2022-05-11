@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Observable } from "rxjs";
 import {
   HttpClient,
@@ -12,9 +13,43 @@ import {
 })
 export class AdultsService {
   //path="http://18.132.47.231/api";
-  path="https://www.humanwisdom.info/api"
+  path=environment.apiURL;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
-  //path="https://staging.humanwisdom.info/api"
+
+  personalisedforyoulist = [
+    {
+      id: "1",
+      name: 'Wisdom for the workplace'
+    },
+    {
+      id: "2",
+      name: 'Overcome stress and anxiety'
+    },
+    {
+      id: "3",
+      name: 'Have fulfilling relationships'
+    },
+    {
+      id: "4",
+      name: 'Be happier'
+    },
+    {
+      id: "5",
+      name: 'Change unhelpful habits'
+    },
+    {
+      id: "6",
+      name: 'Deal with sorrow and loss'
+    },
+    {
+      id: "7",
+      name: 'Mindfulness',
+    },
+    {
+      id: "8",
+      name: 'Manage you emotions',
+    }
+  ]
 
 
   constructor( private http: HttpClient,handler: HttpBackend) { }
@@ -159,5 +194,69 @@ export class AdultsService {
 
   commentblog(data): Observable<any> {
     return this.http.post(this.path + '/AddBlogComments', data)
+  }
+
+  getDailypractiseQuestion(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Question`)
+  }
+
+  submitDailypractiseQuestion(data): Observable<any> {
+    return this.http.post(this.path + '/AddDailyQuestion_Response', data)
+  }
+
+  getDailypractiseQuestionbreath(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractiseBreath`)
+  }
+
+  getDailypractiseQuestionmeditation(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Med`)
+  }
+
+  getDailypractiseQuestionins(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Ins`)
+  }
+
+  getDailypractiseQuestiontoday(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Try`)
+  }
+
+  getDailypractiseQuestionoftheday(): Observable<any> {
+    return this.http.get(this.path + `/GetDailyPractise_Question`)
+  }
+
+
+  getSearchDataForSearchSite(data): Observable<any> {
+    return this.http.post(this.path + `/SiteSearch/${data}`,{})
+  }
+  getForumSearchDataSite(data): Observable<any> {
+    return this.http.get(this.path + `/GetAllPosts/${data}`);
+  }
+  postUserpreference(data): Observable<any> {
+    return this.http.post(this.path + `/AddUserPreference/${data}`, {})
+  }
+
+  getUserpreference(): Observable<any> {
+    return this.http.get(this.path + `/GetUserPreference`)
+  }
+
+  getperList() {
+    return this.personalisedforyoulist;
+  }
+
+  getdashshorts() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardShorts`)
+  }
+
+  getdashstories() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardStories`)
+  }
+  GetGuidedQs_Topics(): Observable<any>{
+    return this.http.get(this.path + `/GetGuidedQs_Topics`)
+  }
+  GetGuidedQs_Response(id:any): Observable<any>{
+    return this.http.get(this.path + `/GetGuidedQs_Response/`+id+'/'+0)
+  }
+  AddGuidedQs_Response(data:any){
+    return this.http.post(this.path + `/AddGuidedQs_Response/`,data);
   }
 }

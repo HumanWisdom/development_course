@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S18071tPage implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w2"
 
   bookmark=0

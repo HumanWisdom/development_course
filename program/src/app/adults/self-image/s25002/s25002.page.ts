@@ -10,6 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S25002Page implements OnInit,OnDestroy {
 
+  bg_tts = "bg_blue"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_flat"
 
   userId:any

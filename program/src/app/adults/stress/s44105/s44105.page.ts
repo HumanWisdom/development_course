@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44105Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="Most people who have an alcohol or drug abuse habit, would not recognize thay have an addiction, even if they did."  
 
   toc="stress/s44001"

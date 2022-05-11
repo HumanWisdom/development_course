@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S522Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w3"
   toc="fear-anxiety/s486"
   title="#7 Parents pass their fears on to children"

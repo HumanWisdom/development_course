@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44118Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint=" For example I may have suffered abuse as a child, or someone I loved left me for another. By exploring the nature of conditioning and identity, and discovering forgiveness, I could be free."  
 
   toc="stress/s44001"

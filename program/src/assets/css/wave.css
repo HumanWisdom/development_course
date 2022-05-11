@@ -1480,6 +1480,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w2,
@@ -1493,6 +1496,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w3,
@@ -1506,6 +1512,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w4,
@@ -1519,6 +1528,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w5,
@@ -1533,6 +1545,9 @@
   /* z-index: 9; */
   /* height: 100vh; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w6,
@@ -1546,6 +1561,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w7,
@@ -1559,6 +1577,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 
@@ -1573,6 +1594,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w9,
@@ -1586,6 +1610,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */
   min-height: 100vh;
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w10,
@@ -1599,6 +1626,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */ 
   min-height: 100vh; 
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w11,
@@ -1612,6 +1642,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */ 
   min-height: 100vh; 
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 
 .dark_blue_w12,
@@ -1625,6 +1658,9 @@
   font-family: 'Roboto', sans-serif;
   /* z-index: 9; */ 
   min-height: 100vh; 
+
+  background-position-y: bottom !important;
+  background-attachment: unset !important;
 }
 /* /dark_blue */
 

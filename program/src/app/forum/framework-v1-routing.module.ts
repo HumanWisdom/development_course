@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'forum-thread-start-new',
     loadChildren: () => import('./forum-thread-start-new/forum-thread-start-new.module').then( m => m.ForumThreadStartNewPageModule)
   },
- 
+
 ];
 
 @NgModule({

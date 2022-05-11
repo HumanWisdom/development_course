@@ -12,6 +12,8 @@ export class S231p2Page implements OnInit {
   
   toc="anger/s162p0"
   moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/fear_anxiety.jpg"
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg=""
   moduleLink="/adults/fear-anxiety"
   moduleName="01. Fear & Anxiety "

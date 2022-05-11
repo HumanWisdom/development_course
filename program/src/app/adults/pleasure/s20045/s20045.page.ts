@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S20045Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="pink_orange_w11"
   title="Indulging in pleasure dulls the mind. Suppressing it tortures the mind."
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

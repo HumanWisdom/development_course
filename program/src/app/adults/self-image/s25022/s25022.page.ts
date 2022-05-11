@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S25022Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w4"  
   hint=" It feels like an automatic process and we can’t help it. We want to protect our image."
   toc="/self-image/s25001"

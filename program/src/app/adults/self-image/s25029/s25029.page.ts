@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S25029Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w9"
   title="How can I be free of my images, and be the authentic ‘me’?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

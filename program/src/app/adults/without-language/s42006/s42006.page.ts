@@ -11,7 +11,9 @@ import {Location } from '@angular/common'
 export class S42006Page implements OnInit {
 
 
-bg="purple_blue_w5"
+bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w5"
 
   hint="You can notice so much more when you do not call it a rose. You notice the play of light and shadow and can soak in the beauty of this flower."  
 

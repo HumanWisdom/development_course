@@ -98,7 +98,7 @@ export class LoginSignupPage implements OnInit {
     private service:OnboardingService) { 
       // let acceptCookie = localStorage.getItem('acceptcookie');
       // if(acceptCookie === null)
-      //   this.router.navigate(['/adults/framework-v1/cookie-policy'])
+      //   this.router.navigate(['/adults/help-support/cookie-policy'])
       this.activate.queryParams.subscribe(params => {
         this.urlEmail= params['email'];
         this.urlPassword=params['pwd'];
@@ -206,7 +206,8 @@ export class LoginSignupPage implements OnInit {
         localStorage.setItem("codeVerified",JSON.stringify(this.codeVerified))
         localStorage.setItem("email",JSON.stringify(this.registrationForm.get('email').value))
         localStorage.setItem("password",JSON.stringify(this.registrationForm.get('password').value))
-        window.location.reload()
+        // window.location.reload()
+        this.router.navigate(['/onboarding/login'])
       }
       
     }, (err) => {
@@ -303,23 +304,31 @@ export class LoginSignupPage implements OnInit {
                 let persub = localStorage.getItem('personalised subscription');
                   let acceptCookie = localStorage.getItem('activeCode');
                   let subscribePage = localStorage.getItem('subscribepage');
-                  if(acceptCookie === 'T' || subscribePage === 'T'){
+                  let option = localStorage.getItem('introoption');
+                  if(option === 'T') {
+                    localStorage.setItem('introoption', 'F')
                     localStorage.setItem("isloggedin", 'T')
-                    if(acceptCookie === 'T') {
-                      localStorage.setItem("activeCode", 'F')
-                    }
-                    if(subscribePage === 'T') {
-                      localStorage.setItem("subscribepage", 'F')
-                    }
-                    this.router.navigate(['/onboarding/add-to-cart'])
+                    this.router.navigate(['/intro/personalised-for-you']);
                   }else {
-                    localStorage.setItem("isloggedin", 'T')
-                    if(pers && persub && pers === 'T') {
-                      this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                    if(acceptCookie === 'T' || subscribePage === 'T'){
+                      localStorage.setItem("isloggedin", 'T')
+                      if(acceptCookie === 'T') {
+                        localStorage.setItem("activeCode", 'F')
+                      }
+                      if(subscribePage === 'T') {
+                        localStorage.setItem("subscribepage", 'F')
+                      }
+                      this.router.navigate(['/onboarding/add-to-cart'])
                     }else {
-                      this.router.navigate(['/adults/adult-dashboard'])
+                      localStorage.setItem("isloggedin", 'T')
+                      if(pers && persub && pers === 'T') {
+                        this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                      }else {
+                        this.router.navigate(['/adults/adult-dashboard'])
+                      }
                     }
                   }
+                  
                 
             
                 /* if(this.urlEmail)
@@ -428,6 +437,12 @@ export class LoginSignupPage implements OnInit {
                    let persub = localStorage.getItem('personalised subscription');
                     let acceptCookie = localStorage.getItem('activeCode');
                     let subscribePage = localStorage.getItem('subscribepage');
+                    let option = localStorage.getItem('introoption');
+                  if(option === 'T') {
+                    localStorage.setItem('introoption', 'F')
+                    localStorage.setItem("isloggedin", 'T')
+                    this.router.navigate(['/intro/personalised-for-you']);
+                  }else {
                     if(acceptCookie === 'T' || subscribePage === 'T'){
                       localStorage.setItem("isloggedin", 'T')
                       if(acceptCookie === 'T') {
@@ -445,6 +460,7 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(['/adults/adult-dashboard'])
                       }
                     }
+                  }
                   
               
                   /* if(this.urlEmail)
@@ -497,13 +513,18 @@ export class LoginSignupPage implements OnInit {
         localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
         localStorage.setItem("video",JSON.stringify(this.video))
         localStorage.setItem("audio",JSON.stringify(this.audio))
-        if(res.UserId==0)
+        if(res.UserId===0)
         {
           this.showAlert=true
           window.alert('You have enetered wrong credentials. Please try again.')
           this.email=""
           this.password=""
 
+        }else if(res.UserId=== -1) {
+          this.showAlert=true
+          window.alert('Email was Not Verified. Please signup again with the same Email ID to verify it.')
+          this.email=""
+          this.password=""
         }
         else{
           this.showAlert=false
@@ -537,6 +558,7 @@ export class LoginSignupPage implements OnInit {
               let subscribePage = localStorage.getItem('subscribepage');
               let pers = localStorage.getItem('personalised');
               let persub = localStorage.getItem('personalised subscription');
+              let option = localStorage.getItem('introoption');
               if(pers && persub && pers === 'T') {
                 localStorage.setItem("isloggedin", 'T')
                 this.router.navigate(['/onboarding/payment'], { state: { quan:  '1', plan: persub}})
@@ -571,11 +593,17 @@ export class LoginSignupPage implements OnInit {
                     let userId = JSON.parse(localStorage.getItem("userId"))
                     window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
                   }else {
-                    if(pers && persub && pers === 'T') {
+                    if(option === 'T') {
                       localStorage.setItem("isloggedin", 'T')
-                      this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                      localStorage.setItem('introoption', 'F')
+                      this.router.navigate(['/intro/personalised-for-you']);
                     }else {
-                      this.router.navigate(['/adults/adult-dashboard'])
+                      if(pers && persub && pers === 'T') {
+                        localStorage.setItem("isloggedin", 'T')
+                        this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: persub}})
+                      }else {
+                        this.router.navigate(['/adults/adult-dashboard'])
+                      }
                     }
                   }
                 

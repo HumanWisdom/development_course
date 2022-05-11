@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S22044Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w8"  
   hint="It could be from your childhood, or experience, or social media or TV etc.  "
   toc="/meditation/s22001"

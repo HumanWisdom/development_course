@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S512Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w5"
   hint="It could be a fear of being poor, that makes us chase money for example, or a fear of being alone that makes us keep busy from morning to night "  
 

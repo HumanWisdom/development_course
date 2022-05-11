@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S157Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w3"
   hint="I’m more conscious of how my mind works, my understanding of envy, judgement, and stress has expanded. I hope understanding my feelings will transform my life. "
   toc="/comparison/s0"

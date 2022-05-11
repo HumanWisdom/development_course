@@ -12,6 +12,8 @@ export class S22060Page implements OnInit {
 
   toc="meditation/s22001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/nature.jpg"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/nature"
   moduleName="01. Nature"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S514Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w7"
   hint="It could make you distrust others, or not get close to them "
 

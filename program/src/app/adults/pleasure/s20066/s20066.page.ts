@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S20066Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="pink_orange_w4" 
   
   toc="pleasure/s20001"

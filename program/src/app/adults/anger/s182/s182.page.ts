@@ -12,6 +12,8 @@ import {Location } from '@angular/common'
 })
 export class S182Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_overlay_w3"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/anger/videos/2.1.mp4'

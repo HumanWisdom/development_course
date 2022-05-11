@@ -136,6 +136,10 @@ socialFirstName:any
  socialLastName:any
  socialEmail:any
  yearormonth = ''
+ personalisedList = []
+ lifestoriesList = []
+ shortsList = []
+ sId:any
 
  //static progress mapping
   mediaAudio="https://d1tenzemoxuh75.cloudfront.net"
@@ -154,14 +158,6 @@ socialFirstName:any
   constructor(
     private router: Router,private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef, private fb: FormBuilder,private authService: SocialAuthService,
      ) {
-      if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
-        let token = localStorage.getItem("Affreftoken");
-        this.service.decrypt(token).subscribe((res: any) => {
-          if(res) {
-            localStorage.setItem("AffReferralCode", res)
-          }
-        })
-      }
       let authtoken=JSON.parse(localStorage.getItem("token"))
       let app= localStorage.getItem("fromapp")
       if(authtoken && app && app !== 'F') {
@@ -174,7 +170,7 @@ socialFirstName:any
             let namedata = localStorage.getItem('name').split(' ')
             localStorage.setItem("FnName", namedata[0])
             localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-            this.socialLogin()
+            this.loginadult(res)
           }else {
            this.router.navigate(['/onboarding/login'])
           }
@@ -208,10 +204,96 @@ socialFirstName:any
             this.modaldata['firstname'] = namedata[0];
             this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
         }
+        this.getUserPreference()
+        this.getUsershorts()
+        this.getUserstories()
       
       }
 
   ngOnInit() {
+         // carousel multiple items increment by 1 - c1_w33
+    // Add minus icon for collapse element which is open by default
+    $('.c1_w33 .item').each(function () {
+      let itemToClone = $(this);
+
+      for (let i = 1; i < 3; i++) {
+        itemToClone = itemToClone.next();
+
+        // wrap around if at end of item collection
+        if (!itemToClone.length) {
+          itemToClone = $(this).siblings(':first');
+        }
+
+        // grab item, clone, add marker class, add to collection
+        itemToClone.children(':first-child').clone()
+          .addClass(`cloneditem-${i}`)
+          .appendTo($(this));
+      }
+    });
+    // /carousel multiple items increment by 1 - c1_w33
+
+    // carousel multiple items increment by 1 - c2_w50
+    // Add minus icon for collapse element which is open by default
+    $('.c2_w50 .item').each(function () {
+      let itemToClone = $(this);
+
+      for (let i = 1; i < 2; i++) {
+        itemToClone = itemToClone.next();
+
+        // wrap around if at end of item collection
+        if (!itemToClone.length) {
+          itemToClone = $(this).siblings(':first');
+        }
+
+        // grab item, clone, add marker class, add to collection
+        itemToClone.children(':first-child').clone()
+          .addClass(`cloneditem-${i}`)
+          .appendTo($(this));
+      }
+    });
+    // /carousel multiple items increment by 1 - c2_w50
+
+    // carousel multiple items increment by 1 - c3_w100
+    // Add minus icon for collapse element which is open by default
+    $('.c3_w100 .item').each(function () {
+      let itemToClone = $(this);
+
+      for (let i = 1; i < 1; i++) {
+        itemToClone = itemToClone.next();
+
+        // wrap around if at end of item collection
+        if (!itemToClone.length) {
+          itemToClone = $(this).siblings(':first');
+        }
+
+        // grab item, clone, add marker class, add to collection
+        itemToClone.children(':first-child').clone()
+          .addClass(`cloneditem-${i}`)
+          .appendTo($(this));
+      }
+    });
+    // /carousel multiple items increment by 1 - c3_w100
+
+    // carousel multiple items increment by 1 - c1_w33_01
+    // Add minus icon for collapse element which is open by default
+    $('.c1_w33_01 .item').each(function () {
+      let itemToClone = $(this);
+
+      for (let i = 1; i < 6; i++) {
+        itemToClone = itemToClone.next();
+
+        // wrap around if at end of item collection
+        if (!itemToClone.length) {
+          itemToClone = $(this).siblings(':first');
+        }
+
+        // grab item, clone, add marker class, add to collection
+        itemToClone.children(':first-child').clone()
+          .addClass(`cloneditem-${i}`)
+          .appendTo($(this));
+      }
+    });
+    // /carousel multiple items increment by 1 - c1_w33_01
     localStorage.setItem('cicd', 'T')
     let userid = localStorage.getItem('isloggedin');
     let rem = localStorage.getItem('remember');
@@ -245,6 +327,16 @@ socialFirstName:any
       this.userId=JSON.parse(localStorage.getItem("userId"))
       this.getProgress()
     }
+
+    if(localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
+      let token = localStorage.getItem("Affreftoken");
+      this.service.decrypt(token).subscribe((res: any) => {
+        if(res) {
+          localStorage.setItem("AffReferralCode", res)
+        }
+      })
+    }
+    
     setTimeout(() => {
       if(localStorage.getItem('acceptcookie') === null)
         this.enablecookiemodal.nativeElement.click();
@@ -258,7 +350,69 @@ socialFirstName:any
     }, 3000)
   }
 
-  getsupport(url, id) {
+  getUserPreference() {
+    this.service.getUserpreference().subscribe((res) => {
+       let perd = this.service.getperList();
+       this.personalisedList = []
+       if(res) {
+         let arr = res.split('').filter((d) => d !== ',');
+         arr.forEach((d) => {
+           perd.forEach((r) => {
+             if(d === r['id']){
+               r['active'] = true;
+               this.personalisedList.push(r);
+             }
+           })
+         })
+         perd.forEach((r) => {
+           let find = this.personalisedList.some((d) => d['name'] === r['name']);
+           if(!find) {
+            r['active'] = false;
+            this.personalisedList.push(r);
+           }
+        })
+       }
+    })
+  }
+
+  toRead(obj){
+    localStorage.setItem("story",JSON.stringify(obj))
+    let res = localStorage.getItem("isloggedin");
+    this.sId=obj.ScenarioID
+    if(res && res === 'T') {
+      this.service.clickStory(obj.ScenarioID).subscribe(res=>{
+        
+        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+      })
+    }  else {
+      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+    }
+    
+  }
+
+  getUsershorts() {
+    this.service.getdashshorts().subscribe((res) => {
+       if(res) {
+         this.shortsList = res;
+       }
+    })
+  }
+
+  getUserstories() {
+    this.service.getdashstories().subscribe((res) => {
+       if(res) {
+         this.lifestoriesList = res
+       }
+    })
+  }
+
+  wisdomshortsclick(url) {
+    this.router.navigate([url])
+  }
+
+  getsupport(url, id, ind = 0) {
+    let index = ind + 1
+    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
     this.service.clickModule(id,this.userId)
     .subscribe(res=>
       {
@@ -883,6 +1037,83 @@ socialFirstName:any
       ()=>{
       }
     )
+  }
+
+  loginadult(res) {
+    this.loginResponse=res
+        this.userId = res.UserId
+        if(res.Subscriber === 0) {
+          this.isSubscribe =  true;
+        }
+        let guest = localStorage.getItem('guest');
+        if(guest === 'T') localStorage.setItem('guest', 'F')
+        sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+        localStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+        localStorage.setItem("token",JSON.stringify(res.access_token))
+        localStorage.setItem("Subscriber", res.Subscriber)
+        localStorage.setItem("userId",JSON.stringify(this.userId))
+        localStorage.setItem("email", res.email)
+        localStorage.setItem("name", res.Name)
+        this.name = res.Name
+        let namedata = localStorage.getItem('name').split(' ')
+        this.modaldata['email'] = localStorage.getItem('email');
+        this.modaldata['firstname'] = namedata[0];
+        this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+        this.getProgress()
+        this.freescreens();
+        localStorage.setItem("text",JSON.stringify(this.text))
+        localStorage.setItem("video",JSON.stringify(this.video))
+        localStorage.setItem("audio",JSON.stringify(this.audio))
+        localStorage.setItem("moduleId",JSON.stringify(this.moduleId))
+        localStorage.setItem("question",JSON.stringify(this.question))
+        localStorage.setItem("reflection",JSON.stringify(this.reflection))
+        localStorage.setItem("feedbackSurvey",JSON.stringify(this.feedbackSurvey))
+        this.userId=JSON.parse(localStorage.getItem("userId"))
+        if(localStorage.getItem('acceptcookie') === 'T') this.enableDailypopup();
+        this.Subscriber = localStorage.getItem('Subscriber')
+    this.cd.detectChanges();
+    localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+    if(localStorage.getItem("token")&&(this.saveUsername==true))
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.userName=JSON.parse(localStorage.getItem("userName"))
+    }
+    else
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.userName=JSON.parse(sessionStorage.getItem("userName"))
+
+    }
+
+    this.getBookmarks()
+        if(res.UserId==0)
+        {
+
+        }
+        else{
+          this.userId=res.UserId
+          this.userName=res.Name
+          sessionStorage.setItem("loginResponse",JSON.stringify(this.loginResponse))
+          localStorage.setItem("userId",JSON.stringify(this.userId))
+          localStorage.setItem("token",JSON.stringify(res.access_token))
+          if(this.saveUsername==true)
+          {
+            localStorage.setItem("userId",JSON.stringify(this.userId))
+            localStorage.setItem("userEmail",JSON.stringify(res.Email))
+            localStorage.setItem("userName",JSON.stringify(this.userName))
+
+          }
+            
+          else
+          {
+            sessionStorage.setItem("userId",JSON.stringify(this.userId))
+            sessionStorage.setItem("userEmail",JSON.stringify(res.Email))
+            sessionStorage.setItem("userName",JSON.stringify(this.userName))
+
+
+          }
+        }
   }
 
 

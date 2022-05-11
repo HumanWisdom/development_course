@@ -7,6 +7,7 @@ import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 export class KtaFooterComponent implements OnInit {
   @Output() previousEmitter = new EventEmitter<string>();
   @Input() fbg: string;
+  @Input() bg_cft: string;
 
 
   constructor() { }

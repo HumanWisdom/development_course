@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S106Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w10"  
   hint="Its not easy to see the process of comparison operating the background, but if you look carefully, its there."
   toc="/comparison/s0"

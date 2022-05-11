@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S40003Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w2"
   title="Why are we critical of ourselves?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class S44051Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w3"
   title="Stress is an opportunity for learning"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

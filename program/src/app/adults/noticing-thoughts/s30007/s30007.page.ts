@@ -12,6 +12,8 @@ export class S30007Page implements OnInit {
   
   toc=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation.jpg"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/guided-meditation"
   moduleName="04. Guided Audio Meditation"

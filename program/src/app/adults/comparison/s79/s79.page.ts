@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S79Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w8"    
   hint="Or you have to work harder, or any other way you compare yourself with him/her. Does it really matter?"
 

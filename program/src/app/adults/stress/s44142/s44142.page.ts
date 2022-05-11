@@ -12,6 +12,7 @@ import * as jQuery from 'jquery';
 })
 export class S44142Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w6"
   title="#3 We try to escape"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

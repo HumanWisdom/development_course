@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S22043Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w7"  
   hint=" You typically go through a phase where you are aware of your breathing, and another where you are not and are thinking something, and then become aware of breathing again.  "
   toc="/meditation/s22001"

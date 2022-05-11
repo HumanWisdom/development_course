@@ -17,7 +17,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import {TokenInterceptorService} from './token-interceptor.service'
@@ -27,8 +27,8 @@ import { StripeModule } from "stripe-angular"
 import { NgxCaptureModule } from 'ngx-capture';
 import { ActiveGuard } from './active.guard';
 import { authLoginGuard } from './auth-login.guard';
-import { LoginSignupSplashPageModule } from './adults/framework-v1/login-signup-splash/login-signup-splash.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SplashPageModule } from './adults/splash/splash.module';
 
 
 
@@ -43,7 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
      FormsModule,
     HttpClientModule,
     SocialLoginModule,
-    LoginSignupSplashPageModule,
+    SplashPageModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
    StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
    NgxCaptureModule ,
@@ -64,8 +64,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     },
     //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
    {
-      provide: LocationStrategy,
-       useClass: HashLocationStrategy,
+    provide: LocationStrategy, useClass: PathLocationStrategy
     },
     {
       provide: 'SocialAuthServiceConfig',

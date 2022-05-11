@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S150Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w10" 
   hint="That one needs to judge how something is going to be received before speaking."
   toc="/comparison/s0"

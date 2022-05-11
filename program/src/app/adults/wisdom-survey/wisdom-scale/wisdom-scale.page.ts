@@ -17,7 +17,7 @@ import { Label } from 'ng2-charts';
 })
 export class WisdomScalePage implements OnInit {
   
-  bg="feedback_survey_footer"
+  bg="bg_01"
 
   startTime:any
   skipToPage="/adults/comparison/s159"

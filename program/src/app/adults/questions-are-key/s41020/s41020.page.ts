@@ -12,6 +12,8 @@ export class S41020Page implements OnInit {
   
   toc="questions-are-key/s41000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/look_without_language.jpg"
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg=""
   moduleLink="/adults/without-language/s42001"
   moduleName="08. Look without Language"

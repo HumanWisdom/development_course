@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S84Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w1"
   title="Understanding how to respond with intelligence"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

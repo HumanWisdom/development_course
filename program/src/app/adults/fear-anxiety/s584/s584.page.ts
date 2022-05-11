@@ -10,6 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S584Page implements OnInit {
 
+  bg_tts = "bg_purple_red"
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="fear_anxiety_flat"  
   toc="fear-anxiety/s486"
   userId:any

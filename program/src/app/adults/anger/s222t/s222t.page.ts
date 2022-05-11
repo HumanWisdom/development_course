@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S222tPage implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w8"     
 
   bookmark=0

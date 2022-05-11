@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S151Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w11" 
   hint="Understanding comparison allows me to not compare myself with others - and in this situation be happy for Sharon."
   toc="/comparison/s0"

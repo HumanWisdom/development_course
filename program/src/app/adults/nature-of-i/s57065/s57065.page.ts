@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S57065Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w6"
   title=" Enquiry begins where you are, and can lead to the sacred  "
   

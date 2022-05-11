@@ -12,6 +12,7 @@ import * as jQuery from 'jquery';
 })
 export class S44210Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w12"
   title="#8 Take ownership of your feelings"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

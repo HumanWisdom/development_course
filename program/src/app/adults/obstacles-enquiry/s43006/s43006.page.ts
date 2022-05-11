@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S43006Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w6"
   title="The mountain in our mind is imaginary"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

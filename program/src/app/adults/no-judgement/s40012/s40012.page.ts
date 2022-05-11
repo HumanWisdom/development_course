@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S40012Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w11"
   title="Exercise – looking at a feeling without judgement"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S526Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w7"
   title="#10 Fear of being unoccupied"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S36021Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w8"
   title="Listening - what did you notice?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

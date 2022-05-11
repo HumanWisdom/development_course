@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S54013Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w3"
   hint="It could be a situation at home or at work"  
 

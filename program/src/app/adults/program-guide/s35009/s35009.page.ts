@@ -9,6 +9,10 @@ import {Location } from '@angular/common'
   styleUrls: ['./s35009.page.scss'],
 })
 export class S35009Page implements OnInit {
+  
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w9"
   title="Program Features "
   content=[{"no":1,
   "heading":"Online Journal",
@@ -83,13 +87,13 @@ export class S35009Page implements OnInit {
   {"no":10,
   "heading":"Podcasts",
   "text":"These are a mix of commentaries and conversations on popular subjects for you to explore.",
-  "link":"/adults/framework-v1/podcast-toc",
+  "link":"/adults/podcast/podcast-toc",
   "linkText":"",
   "module-id":""},
   {"no":11,
   "heading":"Wisdom Shorts",
   "text":"Short videos - which explore a nugget of wisdom.",
-  "link":"/adults/framework-v1/wisdom-shorts",
+  "link":"/adults/wisdom-shorts",
   "linkText":"",
   "module-id":""},
   {"no":12,

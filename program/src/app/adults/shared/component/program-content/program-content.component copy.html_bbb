@@ -1,0 +1,84 @@
+
+
+<!-- page content -->
+<div class="right_col purple_blue_w9" #screen role="main">				
+  <!-- Class -->  
+  <div class="cw100p dabsolute_01">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
+        <div class="x_panel xpanel_01 p0">            
+          <div class="x_content tcenter p0">
+
+            <form>             
+              <div class="row program_content_title center_flex">
+                <div class="col-md-8 col-sm-8 col-xs-12 p0">
+                  <h6 class="txt55">
+                  {{title}}
+                  </h6>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row center_flex flex_align">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+
+                  <!-- 1 -->
+                  <div *ngFor="let c of content" class="panel-group" id="accordion">                  
+                    <div class="panel panel-default pc_panel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title dpaneltitle">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#{{c.no}}" aria-expanded="false">
+                            
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="">
+                                  <h4 class="txt56 mtb0px tleft">
+                                    {{c.no}}. {{c.heading}}
+                                  </h4>                                  
+                                </div>                              
+                              </div>
+                            </div>
+                          </a>
+                        </h4>
+                      </div>
+
+                      <hr class="pc_hr"> 
+
+                      <div id="{{c.no}}" class="panel-collapse collapse">
+                        <div class="panel-body">
+  
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <p class="tleft txt57">
+                                {{c.text}}
+                              </p> 
+                              <!-- <a *ngIf="c.link" routerLink="{{c.link}}">
+                                <h6 class="tleft txt58">
+                                  Explore this module
+                                </h6> 
+                              </a> -->
+                            </div>
+                          </div>
+  
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  <!-- /1 -->
+
+                         
+
+                </div>
+              </div>              
+            </form> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+

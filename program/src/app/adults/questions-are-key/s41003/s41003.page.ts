@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S41003Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w2"
   title="Why are questions important?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

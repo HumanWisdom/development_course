@@ -11,6 +11,7 @@ import { AdultsService } from 'src/app/adults/adults.service';
 export class ProgramContentComponent implements OnInit,AfterViewInit {
   @Input() title: string;
   @Input() content: string;
+  @Input() bg: string;
 
   scrId:any
   @ViewChild('screen', { static: true }) screen: any;

@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S37016Page implements OnInit {
 
- bg="pink_orange_w3"
+ bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w3"
   hint=""  
 
   toc="three-steps-enquiry/s37000"

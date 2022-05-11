@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44130Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="You may notice an anxiety to be liked, or notice that it has become a habit. How often are you correct anyway?"  
 
   toc="stress/s44001"

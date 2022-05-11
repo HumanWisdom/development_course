@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44076Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="When some expectation we have is not met, the stress we feel is automatic and can be huge. Has this happened to you?"  
 
   toc="stress/s44001"

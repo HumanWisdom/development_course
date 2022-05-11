@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S26016Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w10"
   title="When a car breaks down, we study the engine"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

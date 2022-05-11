@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S37012Page implements OnInit {
 
- bg="pink_orange_w11"
+ bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w11"
   hint="Step 3 - You may discover it's your thinking that is imagining the worst possible scenario and getting stressed. You can then ask ‘What is the nature of fear?’"  
 
   toc="three-steps-enquiry/s37000"

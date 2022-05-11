@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S168Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w6"
   hint="I always think my anger is justified. I get angry usually when I feel hurt."
   toc="/anger/s162p0"

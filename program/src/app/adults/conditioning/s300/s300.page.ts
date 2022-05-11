@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s300.page.scss'],
 })
 export class S300Page implements OnInit {
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w9"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

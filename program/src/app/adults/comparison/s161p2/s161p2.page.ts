@@ -12,6 +12,8 @@ export class S161p2Page implements OnInit {
   
   toc="comparison/s0"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/reactive_mind.jpg"
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg=""
   moduleLink="/adults/reactive-mind"
   moduleName="03. Reactive Mind"

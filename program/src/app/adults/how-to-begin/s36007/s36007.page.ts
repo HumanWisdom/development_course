@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S36007Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint="Think of a feeling like fear. What lies behind it? Is it the object that is making you afraid, or your own thinking process?  "  
 

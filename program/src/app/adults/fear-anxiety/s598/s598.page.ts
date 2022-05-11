@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S598Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w7" 
   title="#4 Is there another way to see this?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

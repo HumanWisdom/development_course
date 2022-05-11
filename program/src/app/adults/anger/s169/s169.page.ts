@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 
 export class S169Page implements OnInit,AfterViewInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w7" 
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/anger/audios/anger+1.2.mp3'

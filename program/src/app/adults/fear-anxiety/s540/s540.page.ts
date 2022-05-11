@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class S540Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w7" 
   title="Our mind magnifies threats"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S56032Page implements OnInit {
 
- bg="purple_blue_w2"
+ bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w2"
   
   toc="inner-boredom/s56001"
   userId:any

@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44143Page implements OnInit {
 
- bg="dark_blue_w5"
+ bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="Escaping from our stress is a normal coping mechanism, but sometimes it causes more harm than the original problem. Waking up to this allows us to respond with intelligence."  
 
   toc="stress/s44001"

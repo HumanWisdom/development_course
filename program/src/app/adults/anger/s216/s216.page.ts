@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S216Page implements OnInit,AfterViewInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w4"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/anger/audios/anger+3.6.mp3'

@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S33019Page implements OnInit {
 
- bg="purple_blue_w1"  
+ bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w1"  
   hint="It could be subjects like stress, anxiety, or your relationships."
   toc="five-circles/s33001"
   path=this.router.url

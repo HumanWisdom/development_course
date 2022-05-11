@@ -12,6 +12,8 @@ export class S21022Page implements OnInit {
 
 
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="bg_green"
   toc="identity/s21001"
   userId:any

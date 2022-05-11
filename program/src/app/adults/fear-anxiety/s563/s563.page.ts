@@ -10,6 +10,9 @@ import {AdultsService} from '../../adults.service'
 })
 export class S563Page implements OnInit {
 
+  bg_tts = "bg_purple_red"
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w7" 
   title="Imaginary fears"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

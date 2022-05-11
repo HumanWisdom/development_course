@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S43024Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w1"
   title="#6 You memorised the book, and did not change."
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

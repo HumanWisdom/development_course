@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S60010Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w8"  
   hint="It could be sadness, or guilt, or fear..   "
   toc="/sorrow/s60001"

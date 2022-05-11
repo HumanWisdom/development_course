@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S56040Page implements OnInit {
 
-    bg="purple_blue_w10"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w10"
     title="Pain demands our attention"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+2.4.mp3'

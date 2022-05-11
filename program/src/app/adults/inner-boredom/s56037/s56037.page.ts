@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S56037Page implements OnInit {
 
-    bg="purple_blue_w7"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w7"
     title="'If I stay with it, it goes away'"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+2.3.mp3'

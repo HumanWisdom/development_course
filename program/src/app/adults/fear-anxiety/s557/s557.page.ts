@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s557.page.scss'],
 })
 export class S557Page implements OnInit {
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w11"
   hint=" A fear of not feeling important may make you go after positions of authority in your organisation, for example.  "
    toc="/fear-anxiety/s486"

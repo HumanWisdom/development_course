@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S497Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w10"
   title="Causes of fear"
   toc="fear-anxiety/s486"

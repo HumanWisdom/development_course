@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S26018Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w5"  
   toc="benefits-of-enquiry/s26001"
   path=this.router.url

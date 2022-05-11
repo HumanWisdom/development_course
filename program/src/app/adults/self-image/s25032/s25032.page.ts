@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S25032Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w11"
   title="Projecting our thoughts and feelings onto others"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S56033Page implements OnInit {
 
-    bg="purple_blue_w3"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w3"
     title="This emptiness is not to be feared"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+2.1.mp3'

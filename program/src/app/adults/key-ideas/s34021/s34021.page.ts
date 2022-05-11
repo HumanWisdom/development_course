@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S34021Page implements OnInit {
 
- bg="purple_blue_w1"  
+ bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w1"  
   hint="If you see that fear makes us all behave irrationally, you may have more compassion for someone else reacting to fear."
   toc="key-ideas/s34001"
   path=this.router.url

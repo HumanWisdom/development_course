@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S32009Page implements OnInit {
 
- bg="purple_blue_w1"  
+ bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w1"  
   hint="It may help your relationships, or reduce your stress, or anxiety, for example."
   toc="benefits-of-wisdom/s32001"
   path=this.router.url

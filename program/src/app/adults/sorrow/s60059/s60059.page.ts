@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S60059Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w4"
   title=" #3 Loss of Identity  "
   

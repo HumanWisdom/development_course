@@ -12,6 +12,8 @@ export class S54084Page implements OnInit {
   
   toc="reactive-mind/s54001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_image.jpg"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg=""
   moduleLink="/adults/self-image"
   moduleName="04. Self Image"

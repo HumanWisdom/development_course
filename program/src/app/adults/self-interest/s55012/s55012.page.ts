@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S55012Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w1"  
   hint="It could be preferring to speak rather than listen, or turning the conversation to talk about ourselves  "
   toc="/self-interest/s55001"

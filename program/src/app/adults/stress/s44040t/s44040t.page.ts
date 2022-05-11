@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class S44040tPage implements OnInit {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w5"
 
   bookmark=0

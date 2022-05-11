@@ -1,0 +1,136 @@
+<!-- page content -->
+<div class="right_col p0_important" [ngClass]="bg" role="main">				
+  <!-- Class -->  
+  <div class="cw100p dabsolute_03">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
+        <div class="x_panel xpanel_01 p0">
+          <div class="x_content p0 tcenter">
+            <form>                
+              
+              <div class="row se_box">
+                <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <a>
+                      <button (click)="routeJournal()" type="button" class="btn btn-default mb0 btn_so" data-dismiss="modal">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_journal_02.svg" alt="">
+                      </button>
+                    </a>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h1 class="txt22 tcenter pt10px_so">
+                      Fill your journal
+                    </h1>           
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <a>
+                      <button type="button" class="btn btn-default mb0 btn_so" data-dismiss="modal">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_join_discussion.svg" alt="">
+                      </button>
+                    </a>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h1 class="txt22 tcenter pt10px_so">
+                      Join a discussion
+                    </h1>           
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <a>
+                      <button type="button" class="btn btn-default mb0 btn_so" data-dismiss="modal">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_consult_coach.svg" alt="">
+                      </button>
+                    </a>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h1 class="txt22 tcenter pt10px_so">
+                      Consult a coach
+                    </h1>           
+                  </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-3 col-xs-3 p0">
+                  <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <button (click)="shareIndex()" type="button" class="btn btn-default mb0 btn_so">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_share.svg" alt="">
+                      </button>
+                    </div>
+                  </a>
+                  <!-- dropdown content -->
+                  <!-- <ul class="dropdown-menu dropdown-usermenu pull-right se_me_ul">
+                    <li>
+                      <div *ngIf="socialShare" class="center_flex_li">
+                        <share-buttons 
+                        [include]="['whatsapp','facebook','linkedin']"
+                        [url]="shareUrl">      
+                        </share-buttons>      
+                      </div>
+                    </li>  
+                  </ul> -->
+                  <!-- /dropdown content -->
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h1 class="txt22 tcenter pt10px_so">
+                      Share with friends
+                    </h1>   
+                  </div>
+                </div>
+              </div>
+            
+              <br>
+
+              <!-- radial progress bar  -->                
+              <div class="row tcenter pt60px">
+                <div class="col-md-12 col-sm-12 col-xs-12 prelative">  
+                  <a routerLink="/adults/adult-dashboard">
+                    <circle-progress
+                      [percent]="progressPercent"
+                      [radius]="56"
+                      [space]="-10"
+                      [outerStrokeWidth]="10"
+                      [innerStrokeWidth]="10"
+                      [outerStrokeColor]="'#FFC455'"
+                      [innerStrokeColor]="'rgba(255,255,255,0.2)'"
+                      [animation]="true"
+                      [animationDuration]="300"                      
+                      [imageSrc]="progressImg"               
+                    >
+                    </circle-progress> 
+                    <h4 class="txt82 absolute_flex_center">
+                     {{progressText}}
+                    </h4>   
+                  </a>                                                            
+                </div>
+              </div>
+              <!-- /radial progress bar --> 
+
+              <div class="row plr25px pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                  <button (click)="proceed()" type="button" class="btn btn-success mb0 btn_se" data-dismiss="modal">Continue to the next session</button>
+                </div>
+              </div>
+
+              <div class="row plr25px pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                  <h4 class="txt81">
+                    {{name}}
+                  </h4>    
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-bottom-navigation></app-bottom-navigation>

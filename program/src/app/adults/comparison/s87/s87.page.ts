@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S87Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w3"
   hint="When my friend tells me he did 50 pushups, I quietly tell myself I’ll do 51. Do you do the same? When was the last time you compared yourself to another?"
   toc="/comparison/s0"

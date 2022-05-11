@@ -1,0 +1,41 @@
+<!-- page content -->
+<div class="right_col" [ngClass]="bg" role="main">				
+  <!-- Class -->  
+  <div class="cw100p dabsolute_01">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p center_flex">
+        <div class="x_panel center_flex">
+          <div class="x_content">
+            <form>             
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_owl.svg" alt="" class="img-responsive animate_rotate_scale se_owl ">                  
+                  <div class="prelative center_flex">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_02.svg" alt="" class="prelative">
+                    <h6 class="txt79 se_wpts_count">
+                      {{points}}
+                    </h6>
+                  </div>   
+                </div>
+              </div>             
+
+              <h1 class="txt80 tcenter wp_txt">
+                Well done!
+              </h1>           
+
+              <h1 class="txt210 tcenter">
+                You’ve earned {{points}} wisdom points
+              </h1>    
+                            
+              <ng-content></ng-content>   
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->

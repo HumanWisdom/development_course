@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S56025Page implements OnInit {
 
-    bg="purple_blue_w11"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w11"
     title="I have everything. So why do I feel sad?"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+1.4.mp3'

@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S57009Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w7"
   title="Why is it important to explore the I?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -11,14 +11,18 @@ export class DailypractiseComponent implements OnInit {
   dailypractiseList;
   dailypractisetypeList;
   textURL;
+  Title = '';
   updateparctiseType;
   updatetextURL;
+  updatetextTitle = '';
   parctiseType;
   textURLtype;
   PractiseTypeID;
   PractiseID;
   updateTexttype;
   searcheddaily;
+  enabletitle = false;
+  updateenabletitle = false;
 
   constructor(private service:UsersService, private modalService: NgbModal) { }
 
@@ -39,6 +43,7 @@ export class DailypractiseComponent implements OnInit {
     this.textURL = '';
     this.parctiseType = '';
     this.textURLtype = '';
+    this.Title = '';
   }
 
   getdaily() {
@@ -56,6 +61,7 @@ export class DailypractiseComponent implements OnInit {
       this.service.adddailypractice({
         "PractiseTypeID":this.parctiseType,
         "Text_URL":this.textURL,
+        "Title":this.Title,
           })
         .subscribe(res=>
           {
@@ -76,6 +82,12 @@ export class DailypractiseComponent implements OnInit {
   selecttype(value) {
     let filter = this.dailypractisetypeList.filter((res) => res['RowID'].toString() === value);
     this.textURLtype = filter[0]['Type']
+    let typeobj = this.dailypractisetypeList.filter((res) => res['RowID'].toString() === value);
+    if(typeobj[0]['DailyPractise'] === 'Breathing Exercise' || typeobj[0]['DailyPractise'] === 'Audio Meditation') {
+      this.enabletitle = true;
+    }else {
+      this.enabletitle = false;
+    }
   }
 
 
@@ -118,11 +130,17 @@ export class DailypractiseComponent implements OnInit {
 
   }
 
-  initUpdate(id,type, daily, texturl){
+  initUpdate(id,type, daily, texturl, title){
+    let filter = this.dailypractisetypeList.filter((res) => res['DailyPractise'] === daily)
+    if(filter[0]['DailyPractise'] === 'Breathing Exercise' || filter[0]['DailyPractise'] === 'Audio Meditation') {
+      this.updateenabletitle = true;
+    }else {
+      this.updateenabletitle = false;
+    }
     this.PractiseID=id
     this.updateparctiseType=daily
     this.updatetextURL = texturl
-    let filter = this.dailypractisetypeList.filter((res) => res['DailyPractise'] === daily)
+    this.updatetextTitle = title
     this.updateTexttype = filter[0]['Type']
   }
 
@@ -135,7 +153,8 @@ export class DailypractiseComponent implements OnInit {
     this.service.updatedailypractice({
       "PractiseID": this.PractiseID,
     "PractiseTypeID": this.PractiseTypeID,
-    "Text_URL":this.updatetextURL
+    "Text_URL":this.updatetextURL,
+    "Title": this.updatetextTitle
   })
       .subscribe(res=>
         {

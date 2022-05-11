@@ -13,9 +13,13 @@ import * as jQuery from 'jquery';
 export class S184Page implements OnInit,AfterViewInit {
 
 
-  //bg="anger_w4"
+  //bg_tn="bg_red_pink"
+  // bg_cft="bg_red_pink"
+  // bg="anger_w4"
   title="Anger comes from conditioning"
   yellow="#FFC455"
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_overlay_footer"
 
 

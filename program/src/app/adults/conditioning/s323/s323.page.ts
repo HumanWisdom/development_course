@@ -12,6 +12,8 @@ export class S323Page implements OnInit {
   
   toc=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/comparison_envy.png"
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg=""
   moduleLink="/adults/comparison/s0"
   moduleName="02. Comparison"

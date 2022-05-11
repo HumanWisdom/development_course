@@ -1,4 +1,4 @@
-<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [transcriptPage]="transcriptPage"></app-audio-header>
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
 
 <app-pyramid-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)="receiveAvDuration($event)" >  
 
@@ -8,7 +8,7 @@
 
   <div class="row p0">
     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_1.png" alt="" class="img-responsive">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_1.png" alt="" class="img-responsive w100">
       <h6 class="icenter_t1 mtb0px pno pno1">
         01
       </h6>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="col-md-12 col-sm-12 col-xs-12 p0">                  
-      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_2.png" alt="" class="img-responsive">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_2.png" alt="" class="img-responsive w100">
       <h6 class="icenter_tn mtb0px pno pnotn">
         02
       </h6>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_3.png" alt="" class="img-responsive">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_3.png" alt="" class="img-responsive w100">
       <h6 class="icenter_tn mtb0px pno pnotn">
         03
       </h6>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_4.png" alt="" class="img-responsive">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/pyramid/4l_4.png" alt="" class="img-responsive w100">
       <h6 class="icenter_tn mtb0px pno pnotn">
         04
       </h6>
@@ -50,4 +50,4 @@
   
 </app-pyramid-content>
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

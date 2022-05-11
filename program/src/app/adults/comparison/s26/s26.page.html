@@ -1,13 +1,13 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <!-- page content -->
-<div class="right_col comparison_envy_w9" role="main">				
+<div class="right_col mc_01">				
   <!-- Class -->  
-  <div class="cw100p dabsolute_01">
+  <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
-        <div class="x_panel xpanel_01">                                                
-          <div class="x_content tcenter">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 comparison_envy_w9">
+        <div class="x_panel p0">                                                
+          <div class="x_content p0 tcenter">
             <form>
               <h5 class="txt11">
                 {{q0}}
@@ -145,6 +145,8 @@
                 </div>
               </div>
 
+              <div class="pagebreak"></div>
+
             </form>
           </div>
         </div>
@@ -177,5 +179,5 @@
 <!-- /footer -->
 
 <!-- bottom navigation -->
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
 <!-- /bottom navigation -->

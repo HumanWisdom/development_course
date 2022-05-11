@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S603Page implements OnInit {
   yellow="#FFC455"
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w7" 
   title="Put your fears into one of 3 buckets  1.	Really rare  2.	Inevitable  3.	Possible  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

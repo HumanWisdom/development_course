@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S55015Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w1"  
   hint="It may make you think of your own interests and needs above others"
   toc="/self-interest/s55001"

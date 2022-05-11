@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S21032Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w7"
   title="Challenges caused by multiple identities"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

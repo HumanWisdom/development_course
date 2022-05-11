@@ -12,6 +12,8 @@ import {Location } from '@angular/common'
 })
 export class S86Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_overlay_w2"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/comparison/videos/5.1.mp4'

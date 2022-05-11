@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S57019Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w4"
   title="#2 The ‘I’ feels restless, empty, bored  "
   

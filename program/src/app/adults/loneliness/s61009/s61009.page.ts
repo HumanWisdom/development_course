@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S61009Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w7"  
   hint=" It could be because you were alone, or didn’t feel comfortable with yourself.  "
   toc="/loneliness/s61001"

@@ -11,6 +11,9 @@ import {Location } from '@angular/common'
 })
 export class S18002Page implements OnInit {
 
+  bg_tts = "bg_blue_pink"
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_flat"  
   toc="emotional-needs/s18001"
   userId:any

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S527Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w6"
   hint=" It could make you worry about retirement, or make you spend a lot of time on your phone, for example."
 

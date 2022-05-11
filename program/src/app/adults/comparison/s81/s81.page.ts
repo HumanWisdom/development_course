@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S81Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w9"    
   hint="First- notice the different ways it works in your relationship, and then ask what is the intelligent way to respond"
 

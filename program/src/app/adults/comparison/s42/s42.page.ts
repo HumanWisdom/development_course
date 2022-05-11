@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S42Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w12"  
   hint="I think I am too short and not attractive enough and this causes me a lot of stress."
 

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S145Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w5" 
   hint="No - because it comes from the automatic, unconscious process of comparison."
   toc="/comparison/s0"

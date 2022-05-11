@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S37Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w7"  
   hint="For example, my wife got annoyed with me because I was hanging the clothes to dry in the ‘wrong’ way, and we ended up having an argument. I told her to do it herself and walked out. "
 

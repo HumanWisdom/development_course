@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S41017Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w1"
   hint=" You may not like someone for something they did. Is there another way to look at what happened? "  
 

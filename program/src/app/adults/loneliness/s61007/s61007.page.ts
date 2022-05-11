@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S61007Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w5"  
   hint="Are you aware of it? Are you afraid of it? How does it influence your life?"
   toc="/loneliness/s61001"

@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S57026Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w11"
   title="#4 The ‘I’ has emotional needs and gets attached  "
   

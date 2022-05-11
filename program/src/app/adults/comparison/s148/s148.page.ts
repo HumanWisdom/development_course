@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S148Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w8" 
   hint="That Sharon is just telling her about her holiday and not showing off, and she could be happy for her."
   toc="/comparison/s0"

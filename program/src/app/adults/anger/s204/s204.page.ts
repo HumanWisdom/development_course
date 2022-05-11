@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 
 export class S204Page implements OnInit,AfterViewInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w5"
   title="Identifying danger"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

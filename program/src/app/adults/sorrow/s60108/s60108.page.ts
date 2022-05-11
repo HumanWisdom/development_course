@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S60108Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="feedback_survey_footer"
   
   userId:any

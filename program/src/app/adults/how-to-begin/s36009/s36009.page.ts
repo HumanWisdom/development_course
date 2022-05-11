@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S36009Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w8"
   title="#2 A spirit of learning"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

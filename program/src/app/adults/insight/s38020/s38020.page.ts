@@ -12,6 +12,8 @@ export class S38020Page implements OnInit {
   
   toc="insight/s38000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/awareness.jpg"
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/awareness/s39001"
   moduleName="05. Awareness"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S614p2Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="bg_green" 
   toc="fear-anxiety/s486"
   

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S27019Page implements OnInit {
 
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
   bg="purple_blue_w1"  
   hint="It may help improve your relationships. The more you understand yourself, the easier it is to understand others. Wisdom enables you to listen deeply, reflect on what you are going to say, and consider how it is going to be received. It allows you to be more compassionate"
   toc="discovering-wisdom/s27001"

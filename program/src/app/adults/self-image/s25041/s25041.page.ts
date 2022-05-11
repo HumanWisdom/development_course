@@ -12,6 +12,8 @@ export class S25041Page implements OnInit {
   
   toc="self-image/s25001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_interest.jpg"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/self-interest"
   moduleName="05. Self Interest"

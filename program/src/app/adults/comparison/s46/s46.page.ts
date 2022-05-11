@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S46Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w4"
   hint="For example parents sometimes say ‘ Why cant you be like your brother or sister or cousin or friend who is…’, or something similar."
 

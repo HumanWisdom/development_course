@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S30003Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w2"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/noticing_thoughts/videos/1.1.mp4'  

@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44133Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="It could be any one of the ideas we have explored in this session."  
 
   toc="stress/s44001"

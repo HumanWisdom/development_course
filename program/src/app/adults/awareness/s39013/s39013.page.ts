@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S39013Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w5"
   hint="This could be all the media stories about the election, your social media feed saying he should have won and the new party in power is going to be terrible."  
 

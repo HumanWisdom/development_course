@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S60091Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w12"
   title="#9 Realise life is a gift, grieve fully, and move on.  "
   

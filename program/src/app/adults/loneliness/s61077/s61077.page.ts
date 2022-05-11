@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S61077Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w9"  
   hint=" Maybe realise that despite our mind that pushes us to be unique, we need to stay closely connected with others  "
   toc="/loneliness/s61001"

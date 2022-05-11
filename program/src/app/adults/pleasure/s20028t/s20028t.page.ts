@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S20028tPage implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="pink_orange_w11"
   bookmark=0
   path=this.router.url

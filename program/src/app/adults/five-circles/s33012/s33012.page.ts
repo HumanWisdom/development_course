@@ -9,6 +9,10 @@ import {Location } from '@angular/common'
   styleUrls: ['./s33012.page.scss'],
 })
 export class S33012Page implements OnInit {
+  
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w9"
   title="How the mind works? - 9 modules"
   content=[{"no":1,
   "heading":"Conditioning",

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S517Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w10"
   hint=" It may stop you doing something you always wanted, for example, like taking a year out to travel around the world, or learning to dance, but you feel scared to do so. "
 

@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s61083.page.scss'],
 })
 export class S61083Page implements OnInit {
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w2"    
   toc="/loneliness/s61001"
   path=this.router.url

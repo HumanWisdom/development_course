@@ -55,7 +55,7 @@
               <div class="row-centered">
                 <div class="col-md-8 col-sm-6 col-xs-12 col-centered">
                   <!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea>  -->
-                                      <input id="messageurl" required="required" class="form-control" name="messageurl" readonly [(ngModel)]="textURLtype">
+                <input id="messageurl" required="required" class="form-control" name="messageurl" readonly [(ngModel)]="textURLtype">
                 </div>
               </div>
             </div>
@@ -70,6 +70,15 @@
 									</div>
 								</div>
 							</div>
+
+              <div class="form-group" *ngIf="enabletitle">
+                <div class="row-centered">
+                  <div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+                    <!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea>  -->
+                  <input id="messageurltitle" required="required" name="messagetitle" class="form-control" [(ngModel)]="Title">
+                  </div>
+                </div>
+              </div>
 
 							<div class="ln_solid"></div>
               <div class="form-group">
@@ -131,16 +140,20 @@
                                     <th>Daily Practise</th>
 
 									<th>Text_URL</th>
+									<th>Title</th>
+									<th>DisplayDate</th>
 								</tr>
 								</thead>
 								<tbody>
 								<tr *ngFor="let s of dailypractiseList;let i=index">
 									<td>{{s.DailyPractise}}</td>
 									<td>{{s.Text_URL}}</td>
+									<td>{{s.Title}}</td>
+									<td>{{s.displayDate}}</td>
 
 
 									<td>
-										<button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" (click)="initUpdate(s.RowID,s.dailyPractTypeID,s.DailyPractise, s.Text_URL)" data-toggle="modal"  data-target="#updateModal"></span></button>
+										<button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" (click)="initUpdate(s.RowID,s.dailyPractTypeID,s.DailyPractise, s.Text_URL, s.Title)" data-toggle="modal"  data-target="#updateModal"></span></button>
 										<button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="deletedaily(s.RowID)"></span></button>
                                     </td>
 
@@ -185,6 +198,15 @@
                                                         <label for="patient_name" class="control-label">Text_URL<span class="required">*</span></label>
                                                         <!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea>  -->
                                                                             <textarea id="message" required="required" class="form-control" (keyup)="val($event.target.value)" name="message" rows="3" [(ngModel)]="updatetextURL"></textarea>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+                                                  <div class="form-group" *ngIf="updateenabletitle">
+                                                    <div class="row-centered">
+                                                      <div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+                                                        <!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea>  -->
+                                                      <input id="messageurltitle" required="required" name="messagetitle" class="form-control" [(ngModel)]="updatetextTitle">
                                                       </div>
                                                     </div>
                                                   </div>

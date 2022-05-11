@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S496Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w9"
   hint="The feeling of anxiety is an automatic reaction from our thinking, and we can neither help it, or stop it if we want to "  
 

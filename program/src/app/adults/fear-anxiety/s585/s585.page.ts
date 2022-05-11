@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s585.page.scss'],
 })
 export class S585Page implements OnInit {
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w9"
   hint=" For example, you may accept whatever it is you are afraid of"
    toc="/fear-anxiety/s486"

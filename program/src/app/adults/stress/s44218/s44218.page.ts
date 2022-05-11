@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44218Page implements OnInit {
 
- bg="dark_blue_w5"
+ bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint="I may have thought I would never get over the death of my father, but I did. Or I thought changing careers would be stressful, but it wasn't."  
 
   toc="stress/s44001"

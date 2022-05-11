@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S54040Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w9"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/reactive-mind/videos/2.3.mp4'  

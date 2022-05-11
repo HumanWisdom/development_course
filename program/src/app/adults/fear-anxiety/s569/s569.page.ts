@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s569.page.scss'],
 })
 export class S569Page implements OnInit {
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w9"
   hint=" This could be a fear of meeting people, or of spiders, or of aliens  "
    toc="/fear-anxiety/s486"

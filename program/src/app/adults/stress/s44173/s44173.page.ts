@@ -12,6 +12,7 @@ import * as jQuery from 'jquery';
 })
 export class S44173Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
   bg="dark_blue_w4"
   title="#6 Develop a connection with nature"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

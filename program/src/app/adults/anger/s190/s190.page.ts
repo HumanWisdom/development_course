@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S190Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w11"   
   hint="You could become quiet, or shout, or become violent even."
   toc="/anger/s162p0"

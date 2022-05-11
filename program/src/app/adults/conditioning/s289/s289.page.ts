@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S289Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w10"
   hint="Ask yourself why they did what they did. Was the same unconscious process of thinking operating in them, and does it operate in yourself?"
 

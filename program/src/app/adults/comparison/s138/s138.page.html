@@ -1,4 +1,4 @@
-<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-kta-done>
   <form class="">
@@ -33,4 +33,4 @@
   </form>        
 </app-kta-done>
 
-<app-kta-footer [fbg]="bg" (previousEmitter)="prev()"></app-kta-footer>
+<app-kta-footer [bg_cft]="bg_cft" (previousEmitter)="prev()"></app-kta-footer>

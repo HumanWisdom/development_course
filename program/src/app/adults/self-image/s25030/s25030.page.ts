@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S25030Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w10"
   title="Letting go of my images brings freedom, and allows me to grow"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

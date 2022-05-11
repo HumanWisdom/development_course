@@ -11,6 +11,7 @@ import { AdultsService } from 'src/app/adults/adults.service';
 export class TapStartComponent implements OnInit,AfterViewInit {
  
   @Input() bg: string
+  @Input() bg_tts: string;
   @Output() nextEmitter = new EventEmitter<string>();
 
   scrId:any

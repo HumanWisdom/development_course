@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 
 export class S218Page implements OnInit,AfterViewInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="anger_w6"  
   title="Acceptance dissolves anger" 
   

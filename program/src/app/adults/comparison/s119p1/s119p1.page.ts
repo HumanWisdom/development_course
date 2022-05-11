@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S119p1Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w11"
 
   userId:any

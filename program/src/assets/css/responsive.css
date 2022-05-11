@@ -192,6 +192,18 @@
     {
         width: 30%;
     }
+
+    .dm_title 
+    {
+        margin: 0 -10px;
+        padding: 40px 10px 40px 10px;
+    }
+
+    .modal.fade.in .lab-modal-body,
+    .lab-modal-body
+    {
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px)
@@ -299,6 +311,74 @@
     #ic_carousel .carousel-indicators
     {
         width: 50%
+    }
+
+    #cgqtns .carousel-indicators
+    {
+        width: 30%;
+        bottom: 25%;
+    }
+
+    .activity_title
+    {
+        width: 35%;
+    }
+
+    .ctxtalignment
+    {
+        text-align: center;
+    }
+
+    /* .odiv,
+    .ghn
+    {
+        margin: 0 10px;
+        padding: 0;
+    } */
+
+    .tray_btns
+    {
+        margin: 0 0 0 10px;
+        /* padding: 0; */
+    }
+
+    .mdpd_tray 
+    {
+        overflow: hidden;
+    }
+
+    .odiv::-webkit-scrollbar-track,
+    .ghn::-webkit-scrollbar-track
+    {
+        margin: 0 0 0 1rem;
+    }
+
+    .cp0_01
+    {
+        padding: 0;
+    }
+
+    #cgqtns .carousel-indicators .left
+    {
+        margin-left: 0rem;
+    }
+
+    #cgqtns .carousel-indicators .right
+    {
+        margin-right: 0rem;
+    }
+
+    .gqtns 
+    {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .fl_back
+    {
+        padding: 0 20px !important;
     }
 }
 
@@ -527,6 +607,17 @@
     }
 }
 
+@media (max-width: 1199px)
+{
+    .as_submit_01,
+    .as_continue_dashboard
+    {
+        padding: 0 20px 21px 20px;
+        right: 0;
+        left: 0;
+    }
+}
+
 @media (min-width: 1200px)
 {
 
@@ -624,6 +715,11 @@
         width: 25%
     }
 
+    #cgqtns .carousel-indicators
+    {
+        width: 20%
+    }
+
     #ic_carousel .carousel-indicators
     {
         bottom: 8%;
@@ -634,8 +730,84 @@
         margin: 50px 0 18px 0;
     }
 
-    .activity_title
+    .mica,
+    .micb
     {
-        width: 20%;
+        margin: 50px 0 0 0;
+    }
+
+    #bubble_wrap 
+    {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    @keyframes animateBubble 
+    {
+        0% {
+            margin-top: 1000px;
+        }
+        
+        100% {
+            margin-top: -500%;
+          }
+          
+    }
+
+    .dm .panel-default>.panel-heading,
+    .dm .panel-default>.panel-heading+.panel-collapse>.panel-body
+    {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .hr_style_2
+    {
+        margin: 10px 20px;
+    }
+
+    .mdpfy_col
+    {
+        padding: 0 20px;
+    }
+
+    .mdpd_pfy
+    {
+        margin: 37px 0 0 0;
+    }
+
+    .as_diff_user_code
+    {
+        margin: 5px 0 25px 0;
+    }
+
+    .modal_inner
+    {
+        bottom: unset;
+        top: unset;
+    }
+
+    .guidedqtns_row,
+    .guidedqtns_row_01
+    {
+        margin: 0 10px 2px 10px;
+    }
+
+    .mdp_icon 
+    {
+        margin: 10px 0 19px 0;
+    }
+
+    .mdp_audio 
+    {
+        margin: 0 0 15px 0;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px)
+{
+    .textarea_02 
+    {
+        height: 155px;
     }
 }

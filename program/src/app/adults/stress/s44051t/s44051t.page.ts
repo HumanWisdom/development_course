@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S44051tPage implements OnInit {
 
-   bg="dark_blue_w3"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w3"
 
   bookmark=0
   path=this.router.url

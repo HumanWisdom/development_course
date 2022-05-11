@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S54038Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="bg_green"
   toc="reactive-mind/s54001"
   userId:any

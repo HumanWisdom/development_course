@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class S44114Page implements OnInit {
 
-   bg="dark_blue_w5"
+   bg_tn="bg_dark_blue"
+  bg="dark_blue_w5"
   hint=" For example, if my expectations are not met I can either get angry or stressed, or understand what is happening within me and respond with intelligence."  
 
   toc="stress/s44001"
