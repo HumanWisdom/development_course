@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S26020Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="green_yellow_w12"
   title="Treat the problem, not just the symptom"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

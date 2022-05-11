@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S56043Page implements OnInit,OnDestroy {
 
-    bg="purple_blue_w1"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w1"
     mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
     videoLink=this.mediaVideo+'/inner-boredom/videos/2.1.mp4'  
     title="Responding with wisdom"

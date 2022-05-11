@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S43020Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w9"
   title="#5 Taking ownership of our thoughts & feelings"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

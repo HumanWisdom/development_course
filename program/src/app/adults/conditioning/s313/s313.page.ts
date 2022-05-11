@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S313Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_overlay_w8"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/conditioning/videos/4.2.mp4'

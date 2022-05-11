@@ -1,4 +1,4 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <!-- page content -->
 <div class="right_col ml0 conditioning_w7" role="main">				
@@ -46,4 +46,4 @@
 </div>
 <!-- /page content -->
 
-<app-course-footer (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

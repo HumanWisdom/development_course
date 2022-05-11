@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S25005Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w4"  
   hint="I may think I’m a good surgeon, and that may have come from patients who said the surgery I did went well, or I may think I’m a selfish person, if I’ve been criticized for that."
   toc="/self-image/s25001"

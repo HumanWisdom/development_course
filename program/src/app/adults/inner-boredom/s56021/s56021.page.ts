@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S56021Page implements OnInit,OnDestroy {
 
-    bg="purple_blue_w7"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w7"
     mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
     videoLink=this.mediaVideo+'/inner-boredom/videos/1.3.mp4'  
     title="How can this feeling of emptiness be harmful to us?"

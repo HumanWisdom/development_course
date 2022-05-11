@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class S18073Page implements OnInit {
 
-    bg="blue_pink_w4"
+    bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
+  bg="blue_pink_w4"
     title="#2 Take responsibility for our own needs"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+3.3.mp3'

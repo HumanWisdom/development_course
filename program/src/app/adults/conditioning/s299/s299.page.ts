@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S299Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w8"
   hint="This can make us feel comfortable but since we are never challenged, we stop growing as human beings, and our thinking can get distorted."
 

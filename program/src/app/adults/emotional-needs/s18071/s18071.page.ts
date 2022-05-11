@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class S18071Page implements OnInit {
 
-    bg="blue_pink_w2"
+    bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
+  bg="blue_pink_w2"
     title="How can we respond with wisdom?"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+3.1.mp3'
