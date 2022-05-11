@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S29005Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/breathing/videos/1.4.mp4'  
