@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class S18050Page implements OnInit {
 
-    bg="blue_pink_w12"
+    bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
+  bg="blue_pink_w12"
     title="Pleasure in relationships"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+2.2.mp3'

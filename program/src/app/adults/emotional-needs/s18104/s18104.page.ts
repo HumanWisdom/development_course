@@ -12,6 +12,8 @@ export class S18104Page implements OnInit {
   
   toc="emotional-needs/s18001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/inner_boredom.jpg"
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg=""
   moduleLink="/adults/inner-boredom"
   moduleName="08. Inner Boredom"

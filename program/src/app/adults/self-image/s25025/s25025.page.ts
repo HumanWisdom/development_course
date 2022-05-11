@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S25025Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w4"  
   hint=" You may spend a lot of money on cosmetics or clothes, or just be anxious that you are not attractive, and that may make you less self-confident."
   toc="/self-image/s25001"

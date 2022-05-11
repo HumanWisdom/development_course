@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S57007p2Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w7"  
   hint=" It may be because you now have a new set of memories you identify with as ‘you’. "
   toc="/nature-of-i/s57001"

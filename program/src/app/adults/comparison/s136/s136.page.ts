@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S136Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w3" 
   hint="I am feeling jealous as my sister tells me about her amazing holiday which I cannot afford to go on. An alternative way is to feel happy for her, ask to see her photos and share her joy. My wisdom allows me to do this."
   toc="/comparison/s0"

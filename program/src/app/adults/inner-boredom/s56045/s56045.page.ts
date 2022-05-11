@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S56045Page implements OnInit,OnDestroy {
 
-    bg="purple_blue_w3"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w3"
     mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
     videoLink=this.mediaVideo+'/inner-boredom/videos/2.2.mp4'  
     title="How would our lives change if we could make peace with our emptiness?"

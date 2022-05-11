@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S57013Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w10"
   title=" #1 Our emotions are linked to the ‘I’ "
   

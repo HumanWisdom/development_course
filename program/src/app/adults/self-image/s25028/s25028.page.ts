@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S25028Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w4"  
   hint=" You may pretend you are successful when you are not, or that you farewell read, when you are not. "
   toc="/self-image/s25001"

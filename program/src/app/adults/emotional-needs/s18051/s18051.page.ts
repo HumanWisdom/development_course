@@ -9,7 +9,9 @@ import {Location } from '@angular/common'
 })
 export class S18051Page implements OnInit {
 
-    bg="blue_pink_w3"  
+    bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
+  bg="blue_pink_w3"  
   hint="It may make us love shopping, or make us seek new relationships to get the same thrill of falling in love again.  "
   toc="/emotional-needs/s18001"
   path=this.router.url
