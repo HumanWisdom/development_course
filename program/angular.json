@@ -65,10 +65,6 @@
                 "inject": true
               },
               {
-                "input": "src/app/coach/cometchat-pro-angular-ui-kit/CometChatWorkspace/src/css/styles.scss",
-                "inject": true
-              },
-              {
                 "input": "src/assets/css/backgrounds.css",
                 "inject": true
               },
