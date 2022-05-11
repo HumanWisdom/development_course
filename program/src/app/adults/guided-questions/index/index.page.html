@@ -120,12 +120,11 @@
                       </div>
                     </div>
 
-                   <ng-container *ngIf="jrList.length>0" >
                     <div *ngFor="let j of jrList" class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div *ngIf="j.ProgName" (click)="goToNote(j.RowId,j.TitleQue,j.Response,'reflection')"  class="panel panel-default pdefault_01 prelative">
+                        <div *ngIf="j.ProgName" (click)="goToNote(j.RowId,j.TitleQue,j.Response,j.JrType)"  class="panel panel-default pdefault_01 prelative">
                           <div class="panel-heading absolute_ptitle">
-                            <h4 class="panel-title">{{j.ModuleName}}</h4>
+                            <h4 class="panel-title">{{j.JrType}}</h4>
                           </div>
                           <div class="panel-body">
                             <h4 class="txt309">{{j.Date| date}}</h4>
@@ -135,37 +134,6 @@
                         </div>
                       </div>
                     </div>
-                   </ng-container>
-                   
-
-                    <!-- <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel panel-default pdefault_01 prelative">
-                          <div class="panel-heading absolute_ptitle cyan_light">
-                            <h4 class="panel-title">Guided Questions</h4>
-                          </div>
-                          <div class="panel-body">
-                            <h4 class="txt309">Today</h4>
-                            <h4 class="txt62 txt_transform_uc">BE HAPPIER</h4>
-                            <h4 class="txt73">01. Why do you want to be happy?</h4>
-                            <h4 class="txt310">I compare myself with others when text of about fifteen words...</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel panel-default pdefault_01 prelative">                      
-                          <div class="panel-body">
-                            <h4 class="txt309">1 week ago</h4>
-                            <h4 class="txt73">Think of an example when you compare yourself with others</h4>
-                            <h4 class="txt310">I compare myself with others when text of about fifteen words...</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>   -->
-                    
                   </form>
                 </div>
 

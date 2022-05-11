@@ -9,8 +9,8 @@
     
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a  class="">                       
-        <h1 class="txt312 mtb0px tcenter">
-          Being happier
+        <h1 class="txt312 mtb0px tcenter" *ngIf="data">
+        {{data[0].Topic}}
         </h1>            
       </a>  
     </div>
@@ -35,31 +35,37 @@
               <div id="cgqtns" class="carousel slide" data-ride="carousel" data-interval="false">
                
                 <ol class="carousel-indicators">
-                  <button type="submit" (click)="back()" class="left carousel-control jc_flexstart btn_gqtns" href="#cgqtns" data-slide="prev">
+                  <button type="submit" (click)="back()" class="left carousel-control jc_flexstart btn_gqtns" data-slide="prev">
                     <i class="fa fa-arrow-left"></i>
                   </button>
-                  <h4 class="txt315 mtb0px tcenter">
+                  <h4  class="txt315 mtb0px tcenter">
                    {{title}}
                   </h4>
-                  <button  (click)="forward()" class="right carousel-control jc_flexend btn_gqtns" href="#cgqtns" data-slide="next">
+                  <button  (click)="forward()" class="right carousel-control jc_flexend btn_gqtns" data-slide="next">
                     <i class="fa fa-arrow-right"></i>
                   </button> 
                 </ol>
                 
-                <div class="carousel-inner">
-                  <div *ngFor="let item of data;let i=index" class="item" [ngClass]=" i == counter ? 'active' : ''">
+                <div class="carousel-inner" >
+                  <ng-container *ngFor="let item of data;let i=index" >
+                  <div class="item" [ngClass]="getClass(item.QuestionNo)">
                     <!-- slide 1 -->
                     <div class="row cgqtns_qtn">
                       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                         <h4 class="txt294 mtb0px tleft">
-                          {{i+1}} . {{item.Question}}
+                          {{item.QuestionNo}} . {{item.Question}}
                         </h4>
                       </div>
                     </div>
         
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <textarea type="text" id="comment" name="thread" required="required" class="textarea_02" [(ngModel)]="item.Response" placeholder="Tap to answer" (blur)="SaveAnswers(item)" maxlength="256">{{item.Response }}</textarea>
+                        <textarea type="text" id="comment"
+                         name="thread" required="required" 
+                         class="textarea_02" [(ngModel)]="item.Response"
+                          placeholder="Tap to answer" 
+                          (blur)="SaveAnswers(item)" 
+                          maxlength="256">{{item.Response }}</textarea>
                       </div>
                     </div>
         
@@ -70,16 +76,23 @@
                         </h4>
                       </div>
                     </div>
+                  
                     <!-- /slide 1 -->
                   </div>
+                </ng-container>
                 </div>
 
               </div>
+             
             </div>
             <!-- /carousel -->
 
             <div class="pagebreak"></div>
-
+            <div class="row saveButtonGuide" *ngIf="counter==numSlides">
+              <div class="col-md-12">
+               <button type="button" (click)="SubmitButton()" class="btn btn-default mb0 w100  btn_skip txt5 tcenter" >Save</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
