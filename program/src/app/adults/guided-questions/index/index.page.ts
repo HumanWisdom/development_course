@@ -108,6 +108,12 @@ export class IndexPage implements OnInit {
 
 
   }
+  NavigateToQuestions(data){
+    this.router.navigate(['/journal/questions'],{queryParams:{"Qid":data.ProgId,"Attempt":data.UserReflectionID}})
+  }
+  GoToQuestions(data){
+    this.NavigateToQuestions(data);
+  }
   YourDiary(){
     this.isDiary=true;
     this.isGuidedQueestionsTab=false;
