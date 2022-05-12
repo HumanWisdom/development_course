@@ -12,6 +12,8 @@ export class S37018Page implements OnInit {
   
   toc="three-steps-enquiry/s37000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/insight.jpg"
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg=""
   moduleLink="/adults/insight/s38001"
   moduleName="04. Insight"

@@ -12,6 +12,8 @@ import {Location } from '@angular/common'
 })
 export class S114Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_overlay_w6"  
   title="Accepting a feeling is a reaction from our own thinking "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"

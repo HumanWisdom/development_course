@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S37007Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="pink_orange_w6"
   title="Step #3 - Question. Why do I think or feel this?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S24Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w7"
   hint="It is okay to feel envious. It’s only human. How did it affect you and how did you respond?"
 

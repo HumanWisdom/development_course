@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S103Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w8"    
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/comparison/audios/comparison+6.4.mp3'

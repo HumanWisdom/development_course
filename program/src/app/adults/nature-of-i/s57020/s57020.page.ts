@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S57020Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w5"  
   hint=""
   toc="/nature-of-i/s57001"

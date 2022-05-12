@@ -12,6 +12,8 @@ export class S43035Page implements OnInit {
   
   toc="obstacles-enquiry/s43000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_enquiry.jpg"
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg=""
   moduleLink="/adults/benefits-of-enquiry/s26002"
   moduleName="01. Benefits of Enquiry"

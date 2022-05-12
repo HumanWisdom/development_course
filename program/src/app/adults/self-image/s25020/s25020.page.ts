@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S25020Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w4"  
   hint="It could be you you think of yourself as a good cook, and someone criticized your cooking"
   toc="/self-image/s25001"

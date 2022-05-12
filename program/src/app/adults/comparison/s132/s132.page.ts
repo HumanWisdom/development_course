@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S132Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w11"  
   hint="Just as I can look at a tree without naming it, I can look at a feeling in the same way. For example, I notice the feeling of envy and then all my thoughts that arise until they quieten down, and I am just left with that feeling. I stay with it and find it goes away."
   toc="/comparison/s0"

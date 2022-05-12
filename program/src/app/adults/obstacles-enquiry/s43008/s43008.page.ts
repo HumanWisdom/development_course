@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S43008Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint="Examples of this could be that I’m not good enough, or going over a painful memory I want to forget, or confronting a fear I may have."  
 

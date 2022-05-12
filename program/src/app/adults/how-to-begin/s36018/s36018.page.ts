@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S36018Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint="We are often interrupted aren’t we? Noticing that is awareness. "  
 

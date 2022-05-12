@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class IntroductionPage implements OnInit {
 data:any
   constructor(public route:ActivatedRoute,private router: Router) { 
-    this.data = JSON.parse(window.history.state.data);
+    this.data = JSON.parse(window.history.state.data); 
   }
 
   ngOnInit() {
@@ -20,7 +20,7 @@ data:any
     this.router.navigate(['/adults/journal'])
   }
   NavigateToQuestions(){
-    this.router.navigate(['/journal/questions'],{queryParams:{"Qid":JSON.stringify(this.data.RowID)}})
+    this.router.navigate(['/journal/questions'],{queryParams:{"Qid":JSON.stringify(this.data.RowID),"Attempt":"0"}})
   }
 
 }

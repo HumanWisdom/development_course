@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S36016Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint="See where your curiosity takes you. We seem to lose this as we get older. We had it in abundance as children and need to discover it again.  "  
 

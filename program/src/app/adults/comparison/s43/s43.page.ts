@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S43Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w1"  
 
   userId:any

@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S57011Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w9"
   title="The psychological body"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S41006Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w1"
   hint="Where do your political opinions come from, for example? And why are you so attached to your view, and others to theirs?"  
 

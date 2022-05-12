@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S43004Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w3"
   title="#1 Looking inwards feels uncomfortable"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
