@@ -69,7 +69,9 @@ export class IndexPage implements OnInit {
   }
   
   RouteToToQuestions(item){
-    this.router.navigate(['/journal/introduction'],{state:{"data":JSON.stringify(item)}})
+    let url = `/journal/introduction${item.Landing_URL}`
+    this.router.navigate([url])
+   // this.router.navigate(['/journal/introduction'],{state:{"data":JSON.stringify(item)}})
   }
 
 
@@ -112,7 +114,11 @@ export class IndexPage implements OnInit {
     this.router.navigate(['/journal/questions'],{queryParams:{"Qid":data.ProgId,"Attempt":data.UserReflectionID}})
   }
   GoToQuestions(data){
-    this.NavigateToQuestions(data);
+    if(data.JrType=="Guided Questions"){
+      this.NavigateToQuestions(data);
+    }else{
+      this.goToNote(data.RowId,data.TitleQue,data.Response,data.JrType);
+    }
   }
   YourDiary(){
     this.isDiary=true;

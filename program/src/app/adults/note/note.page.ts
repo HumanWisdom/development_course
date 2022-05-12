@@ -158,11 +158,11 @@ export class NotePage implements OnInit {
           
          this.editDq()
         }
-      else if(this.urlType=='journal')
+      else if(this.urlType=='journal'|| this.urlType=='Journal')
       {
        this.editJournal()
       }
-      else if(this.urlType=='reflection')
+      else if(this.urlType=='reflection'|| this.urlType=='Reflections')
       {
         console.log("in url reflection")
         this.editReflection()
@@ -170,7 +170,6 @@ export class NotePage implements OnInit {
       else if(this.urlId==0){
           this.addNote()
         }
-
   }
   
 
