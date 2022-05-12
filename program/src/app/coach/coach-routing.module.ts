@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./coach-introduction/coach-introduction.module').then( m => m.CoachIntroductionPageModule)
   },
   {
+    path: 'caoch-login',
+    loadChildren: () => import('./coach-login/coach-login.module').then( m => m.CoachLoginPageModule)
+  },
+  {
     path: 'coach-personal-info',
     loadChildren: () => import('./coach-personal-info/coach-personal-info.module').then( m => m.CoachPersonalInfoPageModule)
   },
