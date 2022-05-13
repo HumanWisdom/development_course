@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AdultsService } from '../../adults.service';
 
 @Component({
   selector: 'app-introduction',
@@ -7,20 +8,30 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./introduction.page.scss'],
 })
 export class IntroductionPage implements OnInit {
-data:any
-  constructor(public route:ActivatedRoute,private router: Router) { 
-    this.data = JSON.parse(window.history.state.data); 
+  data: any
+  constructor(public route: ActivatedRoute, private router: Router,
+    private service: AdultsService) {
+      let url = this.route.snapshot.paramMap.get('TopicName');
+      this.GetGuidedQs_Topics(url);
   }
 
   ngOnInit() {
-    // debugger;
-    // var data=  this.router.snapshot.queryParamMap.get('data');
-  }
-  goBack(){
-    this.router.navigate(['/adults/journal'])
-  }
-  NavigateToQuestions(){
-    this.router.navigate(['/journal/questions'],{queryParams:{"Qid":JSON.stringify(this.data.RowID),"Attempt":"0"}})
+  
   }
 
+  goBack() {
+    this.router.navigate(['/adults/journal'])
+  }
+
+  NavigateToQuestions() {
+    this.router.navigate(['/journal/questions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+  }
+
+  GetGuidedQs_Topics(url) {
+    this.service.GetGuidedQs_Topics().subscribe(res => {
+      if (res) {
+        this.data = res.filter(x => (x.Landing_URL) == '/' + url)[0];
+      }
+    });
+  }
 }
