@@ -12,6 +12,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class TranscriptHeaderComponent implements OnInit {
   @Input() bookmark: boolean;
   @Input() bg: string;
+  @Input() bg_tn: string;
   @Input() path: string; //to go back to the course page from note 
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
