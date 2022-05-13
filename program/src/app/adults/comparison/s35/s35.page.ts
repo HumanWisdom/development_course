@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S35Page implements OnInit,AfterViewInit,OnDestroy {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w5"
   title="Understanding stress"  
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

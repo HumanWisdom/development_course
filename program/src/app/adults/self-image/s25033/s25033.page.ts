@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S25033Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w4"  
   hint="It could be that you assume someone doesn't like you and that is why they ignored you, but they could just be dealing with a different issue and be thinking about that."
   toc="/self-image/s25001"

@@ -12,6 +12,8 @@ export class S21068Page implements OnInit {
   
   toc="identity/s21001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/emotional_needs.jpg"
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/emotional-needs"
   moduleName="07. Emotional Needs"

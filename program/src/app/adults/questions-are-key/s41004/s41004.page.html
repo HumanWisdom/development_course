@@ -1,4 +1,4 @@
-<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [transcriptPage]="transcriptPage"></app-audio-header>
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
 
 <app-pyramid-content [title]="title" [bg]="bg" [audioLink]="audioLink" > 
 
@@ -46,4 +46,4 @@
   
 </app-pyramid-content>
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

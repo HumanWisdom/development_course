@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S88Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w4"
   hint="Constantly trying to fill someone else’s shoes instead of being myself makes me unhappy. It then leads to conflict within myself. Can you think of an instance when you’ve experienced conflict caused by comparison?"
   toc="/comparison/s0"

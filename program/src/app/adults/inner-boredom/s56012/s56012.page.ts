@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S56012Page implements OnInit,OnDestroy {
 
-    bg="purple_blue_w10"
+    bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w10"
     mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
     videoLink=this.mediaVideo+'/inner-boredom/videos/1.2.mp4'  
     title="How do we respond to this inner emptiness or boredom?"

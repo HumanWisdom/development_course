@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S43022Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint="You may want to be free of stress, or feel happier about yourself, or be more successful - whatever it is - it just needs to be understood."  
 

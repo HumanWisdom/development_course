@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S37011Page implements OnInit {
 
- bg="pink_orange_w10"
+ bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w10"
   hint="Step 2 – Accept, be curious, and explore the feeling you experience. Accept the feeling of anxiety without judgement."  
 
   toc="three-steps-enquiry/s37000"

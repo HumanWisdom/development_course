@@ -10,7 +10,11 @@ import {Location } from '@angular/common';
 })
 export class S38019p8Page implements OnInit {
 
+  // bg_tn="bg_dark_blue"
+  // bg_cft="bg_dark_blue"
   // bg="module1_so_s1"
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w2"
 
   userId:any

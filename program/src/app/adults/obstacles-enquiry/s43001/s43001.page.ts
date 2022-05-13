@@ -10,6 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S43001Page implements OnInit {
 
+  bg_tts = "bg_teal"
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_flat"
   toc="obstacles-enquiry/s43000"
   userId:any

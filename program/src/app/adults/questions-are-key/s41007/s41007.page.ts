@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S41007Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w1"
   hint="42% of marriages end in divorce, so this is such an important question. What do you think?  "  
 

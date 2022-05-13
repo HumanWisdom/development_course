@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S55004Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w2"
   title="Introduction"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

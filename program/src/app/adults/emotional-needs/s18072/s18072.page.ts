@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class S18072Page implements OnInit {
 
-    bg="blue_pink_w3"
+    bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
+  bg="blue_pink_w3"
     title="#1 Begin by becoming aware of our emotional needs"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+3.2.mp3'

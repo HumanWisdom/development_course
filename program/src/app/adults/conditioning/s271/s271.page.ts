@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S271Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w4"
   hint="You may, for example, pause and ask if you can just accept the other person as they are?"
 

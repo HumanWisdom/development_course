@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S41011Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w1"
   hint="Here is mine: Is it possible to live without expectations so I never get hurt and angry? "  
 

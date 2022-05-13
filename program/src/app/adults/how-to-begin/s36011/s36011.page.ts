@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S36011Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint="We can begin by noticing that when we come across an idea that is different to what we know, we have this feeling of resistance and are critical of it.  "  
 

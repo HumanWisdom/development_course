@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S54072Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w3"
   hint="Our mind is most reactive in conversations. This allows you to slow your reactions down."  
 
