@@ -15,6 +15,10 @@ export class AppComponent {
     localStorage.setItem('adult', 'F')
   }
 
+   //static progress mapping
+   mediaAudio="https://d1tenzemoxuh75.cloudfront.net"
+   mediaVideo="https://d1tenzemoxuh75.cloudfront.net"
+
   public pageLoaded = false;
 
   constructor(
@@ -22,7 +26,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router
   ) {
-    
+    localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
     this.initializeApp();
   }
 
