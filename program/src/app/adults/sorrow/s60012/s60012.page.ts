@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S60012Page implements OnInit {
 
- 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
+  bg="purple_w9"
   toc="sorrow/s60001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
