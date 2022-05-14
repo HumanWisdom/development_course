@@ -11,6 +11,8 @@ import {Location } from '@angular/common';
 })
 export class S38019p7Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="feedback_survey_footer"
   
   userId:any

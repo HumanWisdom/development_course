@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S18005Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w3"  
   hint="For example, a need to be loved, or be listened to"
   toc="/emotional-needs/s18001"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S54012Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w10"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/reactive-mind/audios/reactive-mind+1.3.mp3'

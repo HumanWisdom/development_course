@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S64Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w10"  
   hint="I became a doctor because my parents were doctors without questioning why."
 

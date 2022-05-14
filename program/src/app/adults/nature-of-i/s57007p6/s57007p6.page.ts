@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S57007p6Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w10"  
   hint="We may be able to meet people who are different with affection. We may be able to move on from all our hurts."
   toc="/nature-of-i/s57001"

@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S238Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w5"
   //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

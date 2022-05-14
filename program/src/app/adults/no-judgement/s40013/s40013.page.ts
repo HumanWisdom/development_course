@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S40013Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

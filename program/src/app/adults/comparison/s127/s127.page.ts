@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S127Page implements OnInit {
 
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
   bg="comparison_envy_w7"
   hint="When I get angry, I feel bad and blame myself for not having enough self-control"
   toc="/comparison/s0"

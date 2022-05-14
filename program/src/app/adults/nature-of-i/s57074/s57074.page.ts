@@ -12,6 +12,8 @@ export class S57074Page implements OnInit {
   
   toc="nature-of-i/s57001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg=""
   moduleLink="/adults/conditioning"
   moduleName="01. Conditioning"

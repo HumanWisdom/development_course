@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S316Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w11"
   hint=""
   toc="/conditioning/s232"

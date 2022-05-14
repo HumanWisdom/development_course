@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S235Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w2"
   title="Conditioning – an introduction  "
   

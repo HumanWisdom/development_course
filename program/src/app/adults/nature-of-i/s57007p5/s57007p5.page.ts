@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S57007p5Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w10"  
   hint=" Perhaps the process is unconscious. We are conditioned by our past and not aware of it.  "
   toc="/nature-of-i/s57001"

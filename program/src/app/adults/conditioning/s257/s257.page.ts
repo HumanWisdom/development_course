@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S257Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w2"
   toc="conditioning/s232"
   //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"

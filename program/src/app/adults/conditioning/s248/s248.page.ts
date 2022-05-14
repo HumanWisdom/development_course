@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S248Page implements OnInit {
 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
   bg="conditioning_w3"
   hint="For example, I may feel women should do all the housework, but on looking closely realise it's because my mother used to do that."
 

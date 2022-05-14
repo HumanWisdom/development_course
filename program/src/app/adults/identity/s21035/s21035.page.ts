@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S21035Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w10"  
   hint="I can think of Scottish devolution, for example, but there are others. "
   toc="/identity/s21001"
