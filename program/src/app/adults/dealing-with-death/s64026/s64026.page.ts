@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S64026Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w4"
   title="How does the fear of death shape our lives?  "
   

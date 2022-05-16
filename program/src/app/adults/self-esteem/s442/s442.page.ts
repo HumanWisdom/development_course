@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S442Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w8" 
   toc="self-esteem/s433"
   userId:any

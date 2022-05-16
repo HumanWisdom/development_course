@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S58076Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w3"  
   hint=" It’s not always up to management. Each person in an organisation has a responsibility, and can play a role.  "
   toc="/work/s58001"

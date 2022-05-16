@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S481Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w1"
   hint="It could be a quality you have, like kindness, or the clouds moving across the sky, or the extraordinary beauty of a tree. "    
   

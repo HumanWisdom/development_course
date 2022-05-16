@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53175Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint=" It could be you were too nervous to say anything"  
 

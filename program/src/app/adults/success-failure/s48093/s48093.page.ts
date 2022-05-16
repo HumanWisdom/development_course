@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S48093Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w10" 
   hint=" It could keep you in a job you don’t like, for example.  " 
   toc="/success-failure/s48001"

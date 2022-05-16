@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S73025Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w2"  
   hint=" It may make you break the law, or act in corrupt ways, for example.  "
   toc="/money/s73001"

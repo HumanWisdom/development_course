@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S53168Page implements OnInit {
   yellow="#FFC455"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w2"
   title="#1 Impact of our conditioning"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

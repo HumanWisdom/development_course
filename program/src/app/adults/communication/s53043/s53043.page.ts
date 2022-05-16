@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53043Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint="Maybe someone used an inappropriate word to refer to a person from a particular ethnic background, but did not mean any disrespect or harm, for example."  
 

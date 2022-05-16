@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53183Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint=" It may make you scan the conversation for something interesting, and stop listening if there isn’t anything stimulating there."  
 

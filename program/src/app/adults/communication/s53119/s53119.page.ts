@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S53119Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w9"
   title="Speaking the truth in the face of injustice"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

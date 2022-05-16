@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S48006Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w4"
   title="When you look back, what will you regard as a successful life?  "
   

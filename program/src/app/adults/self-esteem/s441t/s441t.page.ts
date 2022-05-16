@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S441tPage implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w7" 
 
   screenType=localStorage.getItem("audio")

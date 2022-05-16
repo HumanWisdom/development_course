@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44062Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint=" I may feel a bit down, or have a headache, or feel upset, or not be sleeping well."  
 

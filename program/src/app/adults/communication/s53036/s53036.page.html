@@ -1,4 +1,4 @@
-<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"></app-course-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 <app-lengthy-text [bg]="bg">
   <form>
     <h1 class="txt2 fw_500 lengthy_txt_title">
@@ -36,4 +36,4 @@
 
   </form>
 </app-lengthy-text>
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

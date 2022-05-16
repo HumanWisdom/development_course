@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S59104Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w5"
   title="#4 Having a difficult conversation "
   

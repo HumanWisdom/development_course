@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S59152Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w7"
   title="Develop an enlightened self-interest  "
   

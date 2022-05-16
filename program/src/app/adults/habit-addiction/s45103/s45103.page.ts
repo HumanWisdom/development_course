@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S45103Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w8"
   title="#4 Meet the feeling fully, without resistance  "
  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

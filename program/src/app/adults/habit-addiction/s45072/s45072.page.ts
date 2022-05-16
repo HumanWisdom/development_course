@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45072Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w3"  
  hint=" It could be watching a movie, or being on your phone, or eating tasty food. "
   toc="/habit-addiction/s45001"

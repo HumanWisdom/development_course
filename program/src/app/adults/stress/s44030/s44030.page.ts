@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44030Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   hint="I’ve learned for example that I’m not always aware of stress, and I didn’t know about some of the ways it impacts our health."  
 

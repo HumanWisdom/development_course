@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S473Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   hint=" For example, success for me could have meant being wealthy. Now success could mean having really happy relationships."    
   toc="/self-esteem/s433"

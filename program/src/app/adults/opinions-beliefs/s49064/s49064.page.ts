@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S49064Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w1"  
  hint="Perhaps because they become part of our identity"
   toc="/opinions-beliefs/s49001"

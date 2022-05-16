@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44042Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="It always feels like it's the event or the other person that is causing our stress doesn’t it? That’s okay - it's the way the mind works. Think a little longer and see what you feel."  
 

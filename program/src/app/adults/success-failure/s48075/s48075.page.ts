@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S48075Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w6"
   title="#7 Understanding yourself is the key to being a successful human being "
   

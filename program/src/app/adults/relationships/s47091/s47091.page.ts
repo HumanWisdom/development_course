@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47091Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w3"
   hint="It could be to meet and have fun with friends, or seek physical intimacy"  
 

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S23150Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w8"  
   hint="It may be ringing someone, or writing them a note for no reason, or saying what you like about them."
   toc="/happiness/s23001"

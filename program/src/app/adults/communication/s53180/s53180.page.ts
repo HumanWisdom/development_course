@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53180Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint="The person you are meeting may have changed. Or you see that the relationship is more important than your differences"  
 

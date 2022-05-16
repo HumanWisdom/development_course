@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S421Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w4" 
   hint=" Because Jess did not have an image of herself as a good dancer  "
 

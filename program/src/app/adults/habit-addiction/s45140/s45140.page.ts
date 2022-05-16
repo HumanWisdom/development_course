@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45140Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w10"  
  toc="/habit-addiction/s45001"
  hint="For me, its my health, the love of friends, and my love for poetry. "

@@ -12,6 +12,8 @@ export class S63079Page implements OnInit {
   
   toc="living-with-peace/s63001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/dealing_with_death.jpg"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/dealing-with-death"
   moduleName="07. Dealing with Death"

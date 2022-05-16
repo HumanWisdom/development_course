@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S378Page implements OnInit {
 
-bg="criticism_w11" 
+bg_tn="bg_green"
+  bg_cft="bg_green"
+  bg="criticism_w11" 
 title="Step #1  Don’t react to the hurt you feel"
 mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 audioLink=this.mediaAudio+'/Criticism/audios/criticism+3.2.mp3'  

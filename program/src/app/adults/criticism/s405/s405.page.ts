@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S405Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w12" 
   title="Step #2 What is going on in my thinking to make me feel this way?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

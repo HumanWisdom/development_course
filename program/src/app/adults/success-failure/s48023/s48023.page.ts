@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S48023Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w9"  
   hint="  What are your ideas of what it's like to be successful on the inside?  "
   toc="/success-failure/s48001"
