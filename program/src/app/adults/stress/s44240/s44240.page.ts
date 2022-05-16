@@ -13,6 +13,7 @@ export class S44240Page implements OnInit {
   toc="stress/s44001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/relationships.jpg"
   bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/relationships"
   moduleName="02. Relationships"

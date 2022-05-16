@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S49015Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w12"
   title="Why do we get attached to our opinions?  "
   

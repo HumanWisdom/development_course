@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S409Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w4" 
   title="Step #6 Realise that deep down you are the same human being as everyone else"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

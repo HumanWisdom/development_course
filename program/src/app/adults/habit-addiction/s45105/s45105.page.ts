@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S45105Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w10"
   title="#6 Understand the deeper layers of your thinking  "
  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

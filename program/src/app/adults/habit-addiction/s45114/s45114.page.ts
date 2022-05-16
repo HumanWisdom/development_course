@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45114Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w2"  
  toc="/habit-addiction/s45001"
  hint="These could be simple ones, like reducing the amount of TV you watch"

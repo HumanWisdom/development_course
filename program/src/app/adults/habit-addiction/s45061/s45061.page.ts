@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45061Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w5"  
  hint=" Escaping usually does not take the pain away. It just distracts us for a while. "
   toc="/habit-addiction/s45001"

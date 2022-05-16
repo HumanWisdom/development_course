@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47078Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w10"
   title="How does self-interest affect relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

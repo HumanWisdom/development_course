@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S46010Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w8"  
  toc="/food-health/s46001"
   path=this.router.url

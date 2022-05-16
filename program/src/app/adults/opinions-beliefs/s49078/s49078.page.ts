@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S49078Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w9"  
  hint=" It may make you feel hurt or angry if that belief is challenged. "
   toc="/opinions-beliefs/s49001"

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44127Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="If we stop, turn around and face up to being alone, and just be with the feelings that rise, they can transform into solitude."  
 

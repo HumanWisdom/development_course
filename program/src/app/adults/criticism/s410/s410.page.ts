@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S410Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w5" 
   title="Step #7 Develop your own meditation practice"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

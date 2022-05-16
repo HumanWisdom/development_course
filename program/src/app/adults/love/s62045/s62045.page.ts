@@ -9,6 +9,8 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ['./s62045.page.scss'],
 })
 export class S62045Page implements OnInit {
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w2"
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   userId:any

@@ -11,6 +11,8 @@ import {Options} from '@angular-slider/ngx-slider'
 })
 export class S73008Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w5"
   toc="/money/s73001"
   path=this.router.url

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S404Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w11" 
   title="Step #1 Become aware of your inner critic"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

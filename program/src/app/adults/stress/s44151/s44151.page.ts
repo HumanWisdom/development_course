@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44151Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint=" It could be one of the ideas we have discussed in this session."  
 

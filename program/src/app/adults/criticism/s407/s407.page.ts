@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S407Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w2" 
   title="Step #4 Realise these ideas of who you should be, Are not originally yours anyway "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

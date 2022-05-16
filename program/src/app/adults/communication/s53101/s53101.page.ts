@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53101Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint="You may be more aware of the tone of your own voice as you speak, and observe how people respond each time."  
 

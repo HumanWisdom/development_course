@@ -9,6 +9,10 @@ import {Options} from '@angular-slider/ngx-slider'
   styleUrls: ['./s47005.page.scss'],
 })
 export class S47005Page implements OnInit { 
+
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
+
   userId:any
   toc="relationships/s47000"
   path=this.router.url

@@ -12,6 +12,8 @@ export class S485Page implements OnInit {
   
   toc="self-esteem/s433"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/living_with_peace.jpg"
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg=""
   moduleLink="/adults/living-with-peace"
   moduleName="06. Living with Peace"

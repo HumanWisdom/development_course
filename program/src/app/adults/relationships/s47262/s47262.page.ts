@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47262Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w5"
   hint="This is not easy to answer because we often think of ourselves as ‘self-less’, but seeing the fact awakens our own intelligence"  
 

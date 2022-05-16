@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S46066Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w8"
   title="Question your narratives or internal beliefs around food  "
   

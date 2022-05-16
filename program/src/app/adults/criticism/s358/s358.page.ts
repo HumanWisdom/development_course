@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S358Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w11"
   hint="Offering constructive criticism takes great intelligence." 
 

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class S44013Page implements OnInit {
 
   bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w11"
   title="Stress damages our health  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

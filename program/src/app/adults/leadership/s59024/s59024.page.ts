@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S59024Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w9"  
   hint=""
   toc="/leadership/s59001"

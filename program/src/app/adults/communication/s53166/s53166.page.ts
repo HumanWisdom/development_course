@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S53166Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w1"
   title="How do our hidden thought patterns impact communication?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

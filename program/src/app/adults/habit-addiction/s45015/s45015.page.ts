@@ -11,6 +11,8 @@ import {Options} from '@angular-slider/ngx-slider'
 })
 export class S45015Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w5"
   toc="/habit-addiction/s45001"
   path=this.router.url

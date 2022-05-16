@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S441Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w7"
   title="What is behind self-esteem?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

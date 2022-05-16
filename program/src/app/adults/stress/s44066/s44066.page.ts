@@ -13,6 +13,7 @@ import * as jQuery from 'jquery';
 export class S44066Page implements OnInit,OnDestroy {
 
   bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w9"
   title="#3 We become self-absorbed"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

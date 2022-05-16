@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S73072Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w4"
   title="Money as a measure of success  "
   

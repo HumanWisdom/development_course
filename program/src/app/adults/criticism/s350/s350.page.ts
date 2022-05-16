@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 export class S350Page implements OnInit {
  
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_overlay_w3"
   
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))

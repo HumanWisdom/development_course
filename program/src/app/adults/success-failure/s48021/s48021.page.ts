@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S48021Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w7"  
   hint=" It could be a fear of being poor, for example "
   toc="/success-failure/s48001"
