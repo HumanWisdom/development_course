@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S335Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w9" 
   hint="It can help us grow as human beings, but also cause resentment and damage our relationships"  
   

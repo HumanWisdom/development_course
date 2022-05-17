@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S382Page implements OnInit {
 
-bg="criticism_w3" 
+bg_tn="bg_green"
+  bg_cft="bg_green"
+  bg="criticism_w3" 
 title="Step #5  What can I learn?"
 mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 audioLink=this.mediaAudio+'/Criticism/audios/criticism+3.6.mp3'  

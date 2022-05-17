@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47248Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w5"
   hint="I could accept someone is a vegan, even if I am a meat eater, for example and this could leave me with less stress, and make them feel more accepted and loved"  
 

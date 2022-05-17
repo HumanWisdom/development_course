@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S64061Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w11"  
   hint=" It may be you value your close relationships, but do not put enough energy into them  "
   toc="/dealing-with-death/s64001"

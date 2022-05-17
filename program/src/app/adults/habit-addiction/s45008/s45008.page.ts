@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45008Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w6"  
   hint=" It could be a habit like using your phone too much, or an addiction to alcohol.  "
   toc="/habit-addiction/s45001"

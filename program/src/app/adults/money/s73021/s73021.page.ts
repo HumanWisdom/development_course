@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S73021Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w10"  
   hint="  You may have been brought up thinking that we have to accumulate money for the future, and that what you ended up doing"
   toc="/money/s73001"

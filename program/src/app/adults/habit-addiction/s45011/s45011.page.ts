@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45011Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w9"  
   hint="You could overeat, or be quick to get angry, or browse your phone in the middle of the night.  "
   toc="/habit-addiction/s45001"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S58050Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w1"  
   hint="Do you welcome it as an opportunity for growth, or does it feel hurtful and make you resentful? "
   toc="/work/s58001"

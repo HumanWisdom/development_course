@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45080Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w11"  
  hint="   It could make you work all day, or want to be on your phone, or be with people. It is not wrong, but operates in the background. "
   toc="/habit-addiction/s45001"

@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S46003Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w1"
   title="Introduction  "
   

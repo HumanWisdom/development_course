@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S370Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w3" 
   hint="Afterall, it’s just words." 
 

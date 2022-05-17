@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S59054Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w5"  
   hint=" Embody what you want others to do. If you want them to be punctual, be punctual yourself. "
   toc="/leadership/s59001"

@@ -12,6 +12,8 @@ export class S23075Page implements OnInit {
 
 
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="bg_green"
   toc="happiness/s23001"
   userId:any

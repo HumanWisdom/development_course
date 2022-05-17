@@ -12,6 +12,8 @@ export class S23183Page implements OnInit {
   
   toc="happiness/s23001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg=""
   moduleLink="/adults/communication"
   moduleName="02. Communication"

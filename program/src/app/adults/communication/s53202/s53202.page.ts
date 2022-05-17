@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53202Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint=" It could be you don’t like something about a person, but you are afraid you may lose your friendship, so you say nothing, but you grow apart."  
 

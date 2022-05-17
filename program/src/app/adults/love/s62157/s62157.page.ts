@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S62157Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w5"  
  hint=" Most people are, and do not live with a sense of inner peace. "
   toc="/love/s62001"

@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S420Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w3" 
   hint=" Because Beth was critical of her role as a chef "
   toc="/criticism/s324"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S62130Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w3"  
  hint="  It may make your love conditional on them being met, or you may get angry if they are not met "
   toc="/love/s62001"

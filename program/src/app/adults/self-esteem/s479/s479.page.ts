@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S479Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w11"
   hint="If we are not important, it affects our self-esteem. Important people are no happier than others. The more important you are, the more envy you attract. "    
  

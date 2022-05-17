@@ -9,7 +9,9 @@ import {Location } from '@angular/common'
 })
 export class S343Page implements OnInit {
 
-bg="criticism_w5" 
+bg_tn="bg_green"
+  bg_cft="bg_green"
+  bg="criticism_w5" 
 
 hint="It may make you avoid some people, and want to be with those who praise you, for example. Are you aware of this? "
 

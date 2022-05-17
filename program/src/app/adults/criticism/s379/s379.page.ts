@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S379Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w12" 
   title="Step #2  Ask a follow-up question"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

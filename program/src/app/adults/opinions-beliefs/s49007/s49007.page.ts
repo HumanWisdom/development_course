@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S49007Page implements OnInit {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w5"  
   hint="What are the factors that influenced you to have this opinion?  "
   toc="/opinions-beliefs/s49001"

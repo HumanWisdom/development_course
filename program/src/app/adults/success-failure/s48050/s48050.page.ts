@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S48050Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w10"
   title="What if I don’t know what I love doing?  "
   

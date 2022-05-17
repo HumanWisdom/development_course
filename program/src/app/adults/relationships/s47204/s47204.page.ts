@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47204Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w3"
   title="Why are we critical of ourselves?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

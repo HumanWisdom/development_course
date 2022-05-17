@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S46070Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="green_w12"
   title="Explore eating a mainly plant based diet  "
   

@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S59073Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w10"
   title="#8 Be resilient  "
   

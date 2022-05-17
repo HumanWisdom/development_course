@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44145Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="This is a normal response from our thinking. Waking up to it may allow us to move on more quickly from our stress."  
 
