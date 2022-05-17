@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44111Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint=" Anger is neither good or bad - just something to be understood so it does not harm us and others."  
 

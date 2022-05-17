@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S64007Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w5"
   title="Let’s talk about death  "
   

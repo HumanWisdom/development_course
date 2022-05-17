@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S53104Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w12"
   title="Do we speak from our unconscious conditioning, or our intelligence?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

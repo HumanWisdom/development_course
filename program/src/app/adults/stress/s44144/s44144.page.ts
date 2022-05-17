@@ -13,6 +13,7 @@ import * as jQuery from 'jquery';
 export class S44144Page implements OnInit,OnDestroy {
 
   bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w8"
   title="#4 We keep thinking about what happened"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

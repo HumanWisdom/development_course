@@ -14,6 +14,8 @@ import * as wNumb from 'node_modules/propellerkit-range-slider/node_modules/wnum
 })
 export class S46074Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="feedback_survey_footer"
 
   userId:any

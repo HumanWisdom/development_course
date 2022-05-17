@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45125Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w2"  
  toc="/habit-addiction/s45001"
  hint="For example, I noticed for example that when I sit at my desk, I tend to slouch. "

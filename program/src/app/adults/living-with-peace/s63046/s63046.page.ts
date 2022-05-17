@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S63046Page implements OnInit {
 
-    bg="blue_w1"
+    bg_tn="bg_blue"
+  bg_cft="bg_blue"
+  bg="blue_w1"
     title="#3 Acceptance brings peace"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/living-with-peace/audios/living-with-peace+2.4.mp3'

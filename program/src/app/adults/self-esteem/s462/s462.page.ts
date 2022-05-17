@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S462Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w6"
   hint="Think of an example where comparing yourself with others made you think you were not good enough. Were you aware of the process of comparison in the background? We are usually not aware of this process. If we can shine a light on it, it changes of its own accord. "  
  

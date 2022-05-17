@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S73069Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w1"
   title="Money and relationships  "
   

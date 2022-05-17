@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44221Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="For example, I may have failed an exam. A positive attitude could be to say I can sit it again and failure does not matter in the long term."  
 

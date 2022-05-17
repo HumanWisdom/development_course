@@ -11,7 +11,9 @@ import {Location } from '@angular/common'
 })
 export class S340Page implements OnInit {
 
-bg="criticism_w2" 
+bg_tn="bg_green"
+  bg_cft="bg_green"
+  bg="criticism_w2" 
 title="Can criticism have a positive impact?"
 mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 audioLink=this.mediaAudio+'/Criticism/audios/criticism+1.3.mp3'  

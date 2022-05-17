@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s23020.page.scss'],
 })
 export class S23020Page implements OnInit {
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w1"  
   hint=""
   toc="/happiness/s23001"

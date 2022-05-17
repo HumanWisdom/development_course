@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S470Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w2"
   hint=" It may mean not taking it personally, or seeing if there is something to learn from that."
   toc="/self-esteem/s433"

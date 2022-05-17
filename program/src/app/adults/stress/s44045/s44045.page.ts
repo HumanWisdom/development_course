@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44045Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="Are you ever critical of yourself? I may be critical about some aspect of my personality and that is a recurring thought in my head. What’s yours?"  
 

@@ -13,6 +13,8 @@ export class S59171Page implements OnInit {
   
   toc="leadership/s59001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/happiness"
   moduleName="01. Happiness"

@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47047Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w1"
   hint="It could be one of attachment because they are part of your identity and bring pleasure."  
 

@@ -13,6 +13,8 @@ export class S73107Page implements OnInit {
   
   toc="money/s73001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/work.jpg"
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg=""
   moduleLink="/adults/work/s58001"
   moduleName="08. Work"

@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S23164Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w10"
   title="The benefits of living simply"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

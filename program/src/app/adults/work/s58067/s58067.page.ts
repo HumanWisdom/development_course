@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S58067Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w6"  
   hint="You may be afraid of failure, of your boss, or what others think of you, for example.  "
   toc="/work/s58001"

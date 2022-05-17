@@ -13,6 +13,7 @@ export class S44002Page implements OnInit,OnDestroy {
 
   bg_tn="bg_dark_blue"
   bg_tts = "bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_flat"
 
   userId:any

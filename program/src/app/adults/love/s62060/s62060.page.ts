@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S62060Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w7"
   title="We are not aware of our emotional needs.  "
   

@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S405tPage implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w12" 
   
   bookmark=0

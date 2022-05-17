@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S23122Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w7"
   title="Learning to appreciate what we already have"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

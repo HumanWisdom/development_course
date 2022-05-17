@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44147Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="Anxiety can make us avoid people or situations, or even leave a profession if we feel we cannot cope with the stress we feel."  
 

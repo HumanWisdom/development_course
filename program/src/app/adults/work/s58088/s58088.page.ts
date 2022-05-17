@@ -12,6 +12,8 @@ export class S58088Page implements OnInit {
   
   toc="work/s58001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/leadership"
   moduleName="09. Leadership"

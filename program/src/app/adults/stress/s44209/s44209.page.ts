@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44209Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint=" If you can do something about it, just do it. If you can’t, and it's not in your zone of control, what is the point of stressing about it?"  
 

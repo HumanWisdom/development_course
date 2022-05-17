@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44227Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="Forgiveness does not come easily to us, because we carry the pain with us for a long time, but through self-enquiry it is much easier. Try it and see. You’ll find a burden lifted from your heart."  
 

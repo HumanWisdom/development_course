@@ -1,4 +1,4 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-image-text base="happiness_base2" overlay="happiness_overlay2_mobile" class="mshowhide">
   <form>
@@ -9,13 +9,13 @@
   </form>
 </app-image-text>
 
-<app-image-text base="happiness_base2" overlay="happiness_overlay2_desktop" class="dshowhide">
+<!-- <app-image-text base="happiness_base2" overlay="happiness_overlay2_desktop" class="dshowhide">
   <form>
     <h1 class="txt1">
       How can we let go of our images of who we want to be?
     </h1>
     <div class="clearfix"></div>
   </form>
-</app-image-text>
+</app-image-text> -->
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

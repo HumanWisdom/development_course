@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47032Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w3"
   hint="Our parents are our most powerful conditioning influences. It's good to understand how that relationship shaped our life."  
 

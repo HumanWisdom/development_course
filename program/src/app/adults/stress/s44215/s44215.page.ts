@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44215Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="For example, you could learn that your unmet expectations made you stressed, or a feeling that you were not listened to."  
 

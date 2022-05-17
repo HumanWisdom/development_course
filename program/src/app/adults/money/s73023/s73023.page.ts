@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S73023Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w12"  
   hint="  This can make us feel smug, or inferior in some way. Is it possible not to compare at all?  "
   toc="/money/s73001"

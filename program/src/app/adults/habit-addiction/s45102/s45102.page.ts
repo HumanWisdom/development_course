@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S45102Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w7"
   title="#3 Realise that emotional pain is a reaction from our thinking (see Stress Module)  "
  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

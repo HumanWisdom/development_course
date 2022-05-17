@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S48065Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w8"
   title="#3 Be fearless  "
   

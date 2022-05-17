@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47106Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w2"
   hint="This could be a need to be loved and listened to, for example"  
 

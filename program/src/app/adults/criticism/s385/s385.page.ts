@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S385Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w7" 
   title="Why do people react differently to criticism?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

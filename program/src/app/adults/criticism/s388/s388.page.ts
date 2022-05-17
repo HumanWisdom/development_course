@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S388Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w9" 
   title="Empower others to be critical of us"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

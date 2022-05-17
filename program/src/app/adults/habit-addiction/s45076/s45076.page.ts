@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S45076Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w7"  
  hint="  It could be drinking with the ‘gang’, or smoking, or taking drugs, or bullying others. "
   toc="/habit-addiction/s45001"

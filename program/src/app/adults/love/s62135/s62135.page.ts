@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S62135Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w8"  
  hint="  It could be you want others to agree with you, and when they don’t, you get angry with them "
   toc="/love/s62001"

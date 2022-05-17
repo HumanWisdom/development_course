@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S47059Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w1"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/relationships/audios/relationships+3.1.mp3'

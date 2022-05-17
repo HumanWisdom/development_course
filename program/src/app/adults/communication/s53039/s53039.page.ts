@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53039Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint="It could be when you meet a person for the first time, you get a sense of whether they are calm or agitated."  
 

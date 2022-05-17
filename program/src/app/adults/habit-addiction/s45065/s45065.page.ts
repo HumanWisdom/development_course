@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S45065Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w8"
   title="#1 Escaping emotional pain  "
  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

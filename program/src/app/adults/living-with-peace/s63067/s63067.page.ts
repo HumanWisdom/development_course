@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S63067Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w4"
   title="#6 What can my emotional  pain teach me about myself?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

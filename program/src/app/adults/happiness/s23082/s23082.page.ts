@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S23082Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w3"  
   hint="First observe that it does, and then ask yourself why it does that.  "
   toc="/happiness/s23001"
