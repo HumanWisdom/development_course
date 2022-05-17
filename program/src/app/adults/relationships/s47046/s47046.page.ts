@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47046Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w12"
   hint="You may be attached to some of them and they may bring you pleasure, or be associated with happy memories"  
 

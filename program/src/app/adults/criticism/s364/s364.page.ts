@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S364Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w4" 
   //hint="When it comes to criticizing children, what is the best way of doing that."  
   hint=""

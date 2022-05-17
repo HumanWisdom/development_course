@@ -12,6 +12,8 @@ export class S62209Page implements OnInit {
   
   toc="love/s62001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/criticism.png"
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg=""
   moduleLink="/adults/criticism"
   moduleName="04. Criticism"

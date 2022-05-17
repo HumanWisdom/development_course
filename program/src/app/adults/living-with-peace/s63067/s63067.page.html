@@ -1,13 +1,13 @@
-<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [transcriptPage]="transcriptPage"></app-audio-header>
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
 
 <!-- page content -->
-<div class="right_col ml0 cright_col" [ngClass]="bg" role="main">				
+<div class="right_col mc_01">				
   <!-- Class -->  
-  <div class="cw100p cabsolute_pyramid">
+  <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-md-6 col-sm-8 col-xs-12">
-        <div class="x_panel dflexblock_pyramid">
-          <div class="x_content c_white fwunset tcenter pt0px mt0px">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  sc_01" [ngClass]="bg">
+        <div class="x_panel p0">
+          <div class="x_content p0">
             <form class="">
               <h1 class="txt1 tcenter pb0px mb0px">
                 #6 What can my emotional  pain teach me about myself?
@@ -23,7 +23,7 @@
 
               <div class="prelative">
                 <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/inward_arrow_short.svg" class="img-responsive inward_arrow">
                   </div>
                 </div>
@@ -32,16 +32,16 @@
                   <div class="ia_below_content">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6 center_flex">
                           <div class="noi_body">
-                            <h4 class="txt118">
+                            <h4 class="txt118 tcenter">
                               THE BODY
                             </h4>
                           </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 noi_right">
+                        <div class="col-md-6 col-sm-6 col-xs-6 noi_right center_flex">
                           <div class="noi_i">
-                            <h4 class="txt118">
+                            <h4 class="txt118 tcenter">
                               THE ‘I’
                             </h4>
                           </div>
@@ -71,14 +71,15 @@
                     </div> 
                     
                     <div class="row pt15px">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/inward_arrow_long.svg" class="img-responsive">
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </form>            
+            </form>    
+            <div class="pagebreak"></div>        
           </div>
         </div>
       </div>
@@ -88,4 +89,4 @@
 </div>
 <!-- /page content -->
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

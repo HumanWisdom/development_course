@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S23025Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w6"
   title="Is happiness the absence of unhappiness?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

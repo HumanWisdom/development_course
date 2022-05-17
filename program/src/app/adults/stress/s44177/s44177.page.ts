@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44177Page implements OnInit {
 
  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="This could make someone go and buy something, or chase something, or go on holiday and it's also there when you return from a holiday, or when a relationship ends."  
 

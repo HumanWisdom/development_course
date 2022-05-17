@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S338Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w12" 
   hint="It may make you dislike them, or withdraw from them, or get angry with them"
 

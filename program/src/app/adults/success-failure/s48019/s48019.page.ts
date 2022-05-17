@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S48019Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w5"
   title="The role of fear  "
   

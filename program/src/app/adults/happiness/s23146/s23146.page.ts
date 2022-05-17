@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S23146Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w4"
   title="#1 Be grateful"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S23120Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w5"  
   hint="First be aware of them in the background. Ask where they came from. Then explore letting them go. Share what happens."
   toc="/happiness/s23001"

@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S73028Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w5"
   title="Why is money so important in our lives?"
   

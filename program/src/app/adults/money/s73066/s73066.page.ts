@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S73066Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w10"
   title="Money as a symbol of love  "
   

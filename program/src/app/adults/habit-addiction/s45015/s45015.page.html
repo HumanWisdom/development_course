@@ -1,13 +1,13 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <!-- page content -->
-<div class="right_col ml0 purple_w5" role="main">
+<div class="right_col mc_01">
   <!-- Class -->
-  <div class="cw100p cabsolute">
+  <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-md-6 col-sm-8 col-xs-12 p0">      
-        <div class="x_panel dflexblock_assessment_start">
-          <div class="x_content c_white fwunset tleft mt0px">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 purple_w5">      
+        <div class="x_panel p0">
+          <div class="x_content p0">
 
             <form>              
               <br>
@@ -15,7 +15,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
-                    <div class="box textarea_box p0_important">   
+                    <div class="">   
                       
                       <app-progress-slider [q]="q1" r="1" pFilter="Very Easy" nFilter="Very Difficult"  (sendRatinVeryg)="receiveRating($event)"></app-progress-slider>
                      
@@ -28,6 +28,8 @@
               <br>
             </form>
 
+            <div class="pagebreak"></div>
+
           </div>
         </div>
       </div>
@@ -37,4 +39,4 @@
 </div>
 <!-- /page content -->
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer> 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer> 

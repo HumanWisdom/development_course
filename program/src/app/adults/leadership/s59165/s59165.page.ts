@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./s59165.page.scss'],
 })
 export class S59165Page implements OnInit {
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_flat"
 
   constructor() { }

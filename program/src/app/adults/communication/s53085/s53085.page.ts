@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S53085Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w12"
   title="An example of deep listening"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

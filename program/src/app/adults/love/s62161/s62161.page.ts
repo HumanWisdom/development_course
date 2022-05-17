@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S62161Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w9"  
  hint=" Our minds do this automatically, and it's not unique to you. Waking up to this process allows you to respond with wisdom "
   toc="/love/s62001"

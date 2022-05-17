@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S49041Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg="purple_red_w4"
   title="Why have an opinion?  "
   

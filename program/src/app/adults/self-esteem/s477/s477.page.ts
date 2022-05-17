@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S477Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w9" 
   hint="You may feel you are not attractive. Why do you think that? Where does that thought come from? Who decided the rules of what ‘attractive’ is?"
 

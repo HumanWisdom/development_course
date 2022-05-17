@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53170Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint=" For example, if you are conditioned to prefer right wing politics, you will struggle to listen to someone with a left wing point of view."  
 

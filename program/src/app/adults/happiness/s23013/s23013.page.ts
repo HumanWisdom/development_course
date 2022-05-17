@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s23013.page.scss'],
 })
 export class S23013Page implements OnInit {
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w6"  
   hint=""
   toc="/happiness/s23001"

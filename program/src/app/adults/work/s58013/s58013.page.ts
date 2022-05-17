@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S58013Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w11"
   title="Dealing with workplace hierarchies  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

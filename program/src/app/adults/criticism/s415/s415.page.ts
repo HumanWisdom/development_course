@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S415Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w8" 
   hint="What will change as a result of what you have explored"
 

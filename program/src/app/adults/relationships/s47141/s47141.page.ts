@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47141Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w9"
   hint="This may include checking the tone of your voice, or asking permission to say something critical, or saying something positive first"  
 

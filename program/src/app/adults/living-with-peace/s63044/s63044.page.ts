@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S63044Page implements OnInit {
 
-    bg="blue_w11"
+    bg_tn="bg_blue"
+  bg_cft="bg_blue"
+  bg="blue_w11"
     title="#2 Accept yourself for who you are"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/living-with-peace/audios/living-with-peace+2.3.mp3'

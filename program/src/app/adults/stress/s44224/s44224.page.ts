@@ -11,6 +11,7 @@ import {Location } from '@angular/common'
 export class S44224Page implements OnInit,OnDestroy {
 
   bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w2"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/stress/videos/7.3.mp4'  

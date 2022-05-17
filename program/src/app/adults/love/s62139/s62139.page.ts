@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S62139Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w12"  
  hint=" It could just be leaving a note for someone saying you appreciate something about them "
   toc="/love/s62001"

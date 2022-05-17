@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53105Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint="Do you pause and reflect before speaking? Do you consider what may be the right thing to say?"  
 

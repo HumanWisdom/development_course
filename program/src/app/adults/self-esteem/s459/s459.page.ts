@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S459Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w3"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/self-esteem/videos/2.1.mp4'  

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44108Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint=" For example, I may not like myself for who I am as a person. The root of that could be an ideal I have of who I should be, and that comes from my unconscious conditioning."  
 

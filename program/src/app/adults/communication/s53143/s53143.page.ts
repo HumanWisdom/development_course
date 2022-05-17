@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S53143Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w5"
   title="Conditioning is a barrier to understanding"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

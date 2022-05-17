@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class S63055Page implements OnInit {
 
-    bg="blue_w10"
+    bg_tn="bg_blue"
+  bg_cft="bg_blue"
+  bg="blue_w10"
     title="#5 Manage your expectations"
     mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     audioLink=this.mediaAudio+'/living-with-peace/audios/living-with-peace+2.6.mp3'

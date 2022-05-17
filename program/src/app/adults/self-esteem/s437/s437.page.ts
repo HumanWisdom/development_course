@@ -11,6 +11,8 @@ import {Options} from '@angular-slider/ngx-slider'
 })
 export class S437Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w3"
   toc="/self-esteem/s433"
   path=this.router.url

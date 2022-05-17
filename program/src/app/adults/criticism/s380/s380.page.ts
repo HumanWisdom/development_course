@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S380Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w1" 
   title="Step #3  Remember, it's a reflection of the other person’s conditioning"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
