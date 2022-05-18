@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S62136Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w9"
   title="#5 Surprise others with small acts of kindness  "
   

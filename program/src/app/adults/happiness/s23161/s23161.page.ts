@@ -11,6 +11,8 @@ import * as jQuery from 'jquery';
 })
 export class S23161Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w7"
   title="How can we cultivate compassion?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S45058Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w2"
   title="The Hidden Causes of Addiction "
  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S53118Page implements OnInit {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w3"
   hint=" It could be in a relationship, or at work, or something you had to admit to yourself. Perhaps it was something you could not accept?"  
 

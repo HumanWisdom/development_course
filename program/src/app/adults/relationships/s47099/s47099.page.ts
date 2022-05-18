@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47099Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w6"
   title="How does fear impact relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

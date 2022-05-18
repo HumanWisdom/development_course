@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44124Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint=" It is normal to feel overwhelmed sometimes. We can respond with wisdom, with a positive attitude and face those challenges and look actively for solutions."  
 

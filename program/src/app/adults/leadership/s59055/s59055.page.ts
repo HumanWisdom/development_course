@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S59055Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
   bg="blue_w6"
   title="#4 Inspire and influence others  "
   

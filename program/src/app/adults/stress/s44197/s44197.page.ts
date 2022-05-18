@@ -13,6 +13,7 @@ import * as jQuery from 'jquery';
 export class S44197Page implements OnInit,OnDestroy {
 
   bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w11"
   title="#4 Is there another way to respond?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

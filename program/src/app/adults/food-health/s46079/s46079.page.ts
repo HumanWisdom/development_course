@@ -12,6 +12,8 @@ export class S46079Page implements OnInit {
   
   toc="food-health/s46001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/money.jpg"
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg=""
   moduleLink="/adults/money"
   moduleName="07. Money"

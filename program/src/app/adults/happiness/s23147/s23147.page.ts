@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S23147Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w5"  
   hint="It's a simple way to appreciate the life you already have, and be happy."
   toc="/happiness/s23001"

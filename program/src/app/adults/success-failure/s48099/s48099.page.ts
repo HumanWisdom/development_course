@@ -11,6 +11,8 @@ import {Location } from '@angular/common'
 })
 export class S48099Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w4"
 
   userId:any

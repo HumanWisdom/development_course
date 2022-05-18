@@ -1,13 +1,13 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <!-- page content -->
-<div class="right_col ml0 blue_w5" role="main">
+<div class="right_col mc_01">
   <!-- Class -->  
-  <div class="cw100p cabsolute">
+  <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-md-6 col-sm-8 col-xs-12 p0">
-        <div class="x_panel cxpanel center_flex dflexblock">                        
-          <div class="x_content c_white fwunset tcenter">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 blue_w5">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
             <form>
               <!-- <h5 class="txt4 justified_center"> -->
               <h5 class="txt1">
@@ -59,6 +59,6 @@
 </div>
 <!-- /page content -->
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
 
 

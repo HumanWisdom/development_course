@@ -1,4 +1,4 @@
-<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
  
 <app-kta-prevnext>
 
@@ -32,7 +32,7 @@
     
 </app-kta-prevnext>
  
-<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
-<app-course-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
 
       

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S62027Page implements OnInit {
 
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
   bg="blue_pink_w1"  
   hint=" It could be a child, a friend or a partner. The real test of love is acceptance.  "
   toc="/love/s62001"

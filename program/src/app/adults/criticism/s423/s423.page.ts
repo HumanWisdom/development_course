@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S423Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w6" 
   hint=" When she felt criticised, she could have not got upset, and asked what she could learn from the criticism "
 

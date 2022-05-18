@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S354Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w7"
   hint="It's the nature of the conditioned mind to always think its right"
 

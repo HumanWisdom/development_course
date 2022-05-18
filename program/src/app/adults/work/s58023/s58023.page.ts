@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S58023Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w3"  
   hint="You may want the boss to appreciate your work, and if that does not happen, you can feel unhappy.  "
   toc="/work/s58001"

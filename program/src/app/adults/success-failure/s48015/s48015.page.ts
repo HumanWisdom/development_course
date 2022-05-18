@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S48015Page implements OnInit {
 
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg="light_blue_w1"  
   hint=" It could be your family, or the society you grew up in  "
   toc="/success-failure/s48001"

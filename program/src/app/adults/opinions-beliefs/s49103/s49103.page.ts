@@ -12,6 +12,8 @@ export class S49103Page implements OnInit {
   
   toc="opinions-beliefs/s49001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/success_&_failure.jpg"
+  bg_tn="bg_purple_red"
+  bg_cft="bg_purple_red"
   bg=""
   moduleLink="/adults/success-failure"
   moduleName="04. Success and Failure"

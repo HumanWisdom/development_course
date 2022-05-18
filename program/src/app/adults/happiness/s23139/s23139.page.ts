@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S23139Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w8"  
   hint="Be sensitive. Notice the beauty in small things. A tree, the smell of a tomato, the extraordinary sky. What will you notice?  "
   toc="/happiness/s23001"

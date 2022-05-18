@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S45107Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w12"
   title="#8 Live with compassion. Let it go.   "
  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

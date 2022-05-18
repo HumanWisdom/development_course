@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S464Page implements OnInit {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w8"
   hint="You may want to be more attractive, or popular, or funny. All these come from our conditioning influences"   
   toc="/self-esteem/s433"

@@ -9,6 +9,8 @@ import {Location } from '@angular/common'
 })
 export class S422Page implements OnInit {
 
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_w5" 
   hint=" These may be linked to your profession or your role as a parent, or a hobby "
 

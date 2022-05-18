@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class S47179Page implements OnInit {
 
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
   bg="purple_w6"
   title="How do you respond to someone who is having a reaction?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))

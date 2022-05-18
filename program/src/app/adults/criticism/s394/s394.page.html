@@ -1,4 +1,4 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
  
 <app-quotation [bg]="bg">
   <form>
@@ -12,7 +12,7 @@
     <hr class="quotation_hr mt30px">
  
     <h1 class="quotation_txt">
-      ‘The real difficulty is to overcome what you think about yourself’
+      The real difficulty is to overcome what you think about yourself
     </h1>
  
     <hr class="quotation_hr">
@@ -24,7 +24,7 @@
   </form>
 </app-quotation>
  
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
       
 
     

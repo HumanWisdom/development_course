@@ -10,6 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S393Page implements OnInit {
 
+  bg_tts = "bg_green"
+  bg_tn="bg_green"
+  bg_cft="bg_green"
   bg="criticism_flat" 
   toc="criticism/s324"
   userId:any

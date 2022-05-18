@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class S44065Page implements OnInit {
 
    bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   hint="When I lose my job, for example, I may feel I will never get another one."  
 

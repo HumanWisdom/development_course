@@ -12,6 +12,8 @@ import * as jQuery from 'jquery';
 })
 export class S64058Page implements OnInit,OnDestroy {
 
+  bg_tn="bg_teal"
+  bg_cft="bg_teal"
   bg="teal_w8"
   title="Living with the awareness that our time is limited  "
   

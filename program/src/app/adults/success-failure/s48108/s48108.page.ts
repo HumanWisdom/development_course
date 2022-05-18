@@ -12,6 +12,8 @@ export class S48108Page implements OnInit {
   
   toc="success-failure/s48001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/addiction.jpg"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
   bg=""
   moduleLink="/adults/habit-addiction"
   moduleName="05. Addiction"

@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S58056Page implements OnInit {
 
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   bg="dark_blue_w7"  
   hint=" You may compare yourself with others and become envious, or lose your self-confidence, for example. "
   toc="/work/s58001"

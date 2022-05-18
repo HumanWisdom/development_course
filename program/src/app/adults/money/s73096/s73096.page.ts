@@ -10,6 +10,8 @@ import {Location } from '@angular/common'
 })
 export class S73096Page implements OnInit {
 
+  bg_tn="bg_red_pink"
+  bg_cft="bg_red_pink"
   bg="red_pink_w7" 
   hint="Your need to go shopping for entertainment may drop away, for example  "
   toc="/money/s73001"
