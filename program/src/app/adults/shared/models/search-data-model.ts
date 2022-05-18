@@ -1,4 +1,4 @@
-interface SearchDataModel {
+export interface SearchDataModel {
   ModuleRes: ModuleRe[];
   SessionRes: SessionRe[];
   WisdomStoriesRes: WisdomStoriesRe[];
