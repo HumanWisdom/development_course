@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ForumService } from 'src/app/forum/forum.service';
 import { AdultsService } from '../../adults.service';
+import { SearchDataModel } from '../../shared/models/search-data-model';
 
 @Component({
   selector: 'app-search-popular-items',
