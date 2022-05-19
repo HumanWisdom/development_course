@@ -10,7 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S53228Page implements OnInit {
 
- toc="communication/s53001"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
+  toc="communication/s53001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -111,7 +113,7 @@ export class S53228Page implements OnInit {
   
     this.startTime = Date.now();
 
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark53228")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark53228"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark53228"))==1)

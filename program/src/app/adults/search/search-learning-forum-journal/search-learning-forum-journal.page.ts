@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchDataModel } from '../../shared/models/search-data-model';
 
 @Component({
   selector: 'app-search-learning-forum-journal',
