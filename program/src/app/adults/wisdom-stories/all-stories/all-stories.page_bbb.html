@@ -1,0 +1,190 @@
+<title>Wisdom Stories|Wisdom for Personal Growth|HumanWisdom</title>
+<meta name="description" content="Real-life stories submitted by users across the world. You can also submit your own story. All the stories are subject to approval.">
+
+<!-- top navigation -->
+<app-feature-header title="Wisdom Stories"></app-feature-header>
+<!-- /top navigation --> 
+
+<!-- page content -->
+<div class="right_col bg_wisdom_stories pt_rightcol" role="main">				
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
+        <div class="x_panel xpanel_01 p0">
+          <div class="x_content p0">
+            <form>                                
+              <div class="row mlr-10px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback p0 zi0 search_01">
+                  <input type="search" class="form-control has-feedback-left h60px searchtxt" id="inputSuccess2" name="textSearch"[(ngModel)]="searchedText" (ngModelChange)="searchStory()" placeholder="Search Wisdom Stories">
+                  <span class="fa fa-search form-control-feedback left sfeedback" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt89">
+                    These are all real-life stories submitted by users from across the world. All names have been changed. They offer illumination, hope, and nuggets of wisdom, and we hope they inspire you to submit your own story.
+                  </h6>
+                </div>
+              </div>
+
+              <div class="row center_flex pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                       
+                  <a routerLink="/adults/wisdom-stories/submit-story">
+                    <button type="button" class="btn btn-success mb0 btn_submit_story w100" data-dismiss="modal">
+                      Submit your own story
+                    </button>
+                  </a>
+                </div>
+              </div>   
+              
+              <div class="row plr20px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="txt90">
+                    All stories are subject to approval
+                  </h6>
+                </div>
+              </div>
+
+              <div *ngFor="let s of storyList">
+                
+                <!-- story 1 -->
+                <div (click)="toRead(s)" class="row center_flex pb10px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 dflex">
+                    
+                    <div class="col-md-2 col-sm-2 col-xs-3 p0">
+                      <img src="{{s.Img}}"  alt="" class="w100 c150px">
+                    </div>
+                    
+                    <div class="col-md-10 col-sm-10 col-xs-9 center_flex" [ngClass]="{'wisdom_stories_inactive': !readStories.includes(s.ScenarioID),'wisdom_stories': readStories.includes(s.ScenarioID)}">
+
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h6 class="txt69 mtb0px capitalize">
+                            {{s.Title}}
+                            </h6>
+                          </div>
+                          <!-- <div class="col-md-4 col-sm-4 col-xs-2 p0 tright">
+                          </div> -->
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h6 class="txt70 ellipsis">
+                          {{s.Story|slice:0:40}}...
+                          </h6>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt5px">
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                            <!-- <h6 class="txt71 mtb0px">
+                              Anonymous
+                            </h6> -->
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                            <h6 class="txt72 mtb0px">
+                              {{s.PublishedOn|date:'dd MMM yy'}} | 5 mins
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+                  </div>
+                </div>
+                <!-- /story 1 -->
+
+              </div>
+
+              <!-- view more  -->
+              <div class="panel-group ws_view_more" id="accordion_ws">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#ws_01">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt111 mtb0px tcenter mb20px twhite">
+                            View more
+                          </h4>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div id="ws_01" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- stories -->
+                      <!-- story 1 -->
+                      <div *ngFor="let s of secondstoryList">
+                      <div (click)="toRead(s)" class="row center_flex pb10px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 dflex">
+                          
+                          <div class="col-md-2 col-sm-2 col-xs-3 p0">
+                            <img src="{{s.Img}}"  alt="" class="w100 c150px">
+                          </div>
+                          
+                          <div class="col-md-10 col-sm-10 col-xs-9 center_flex" [ngClass]="{'wisdom_stories_inactive': !readStories.includes(s.ScenarioID),'wisdom_stories': readStories.includes(s.ScenarioID)}">
+      
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                  <h6 class="txt69 mtb0px capitalize">
+                                  {{s.Title}}
+                                  </h6>
+                                </div>
+                                <!-- <div class="col-md-4 col-sm-4 col-xs-2 p0 tright">
+                                </div> -->
+                              </div>
+      
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h6 class="txt70 ellipsis">
+                                {{s.Story|slice:0:40}}...
+                                </h6>
+                              </div>
+      
+                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt5px">
+                                <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                                  <!-- <h6 class="txt71 mtb0px">
+                                    Anonymous
+                                  </h6> -->
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                                  <h6 class="txt72 mtb0px">
+                                    {{s.PublishedOn|date:'dd MMM yy'}} | 5 mins
+                                  </h6>
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
+      
+                        </div>
+                      </div>
+                    </div>
+                      <!-- /story 1 -->
+                      <!-- /stories -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /view more -->
+                         
+            </form>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
+
+
+
