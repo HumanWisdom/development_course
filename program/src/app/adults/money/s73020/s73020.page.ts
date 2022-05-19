@@ -276,7 +276,7 @@ export class S73020Page implements OnInit {
   
    
 
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark73020")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark73020"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark73020"))==1)

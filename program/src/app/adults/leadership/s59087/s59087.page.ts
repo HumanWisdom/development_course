@@ -44,7 +44,7 @@ ngOnInit() {
   else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark59087")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark59087"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark59087"))==1)

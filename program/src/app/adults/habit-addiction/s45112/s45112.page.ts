@@ -50,7 +50,7 @@ export class S45112Page implements OnInit,OnDestroy {
   
   
     this.startTime = Date.now();
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark45112")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark45112"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark45112"))==45112)

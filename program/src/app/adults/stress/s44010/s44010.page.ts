@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./s44010.page.scss'],
 })
 export class S44010Page implements OnInit {
+
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   cause1:any
   cause2:any
   cause3:any

@@ -11,6 +11,7 @@ import {Location } from '@angular/common'
 export class S44026Page implements OnInit {
 
   bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
   toc="stress/s44001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -216,7 +217,7 @@ $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
   
     this.startTime = Date.now();
 
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark44026")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark44026"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark44026"))==1)
