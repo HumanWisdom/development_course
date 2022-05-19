@@ -287,7 +287,7 @@ $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
   
     this.startTime = Date.now();
 
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark53216")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark53216"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark53216"))==1)

@@ -133,7 +133,7 @@ export class S53146Page implements OnInit {
   
     this.startTime = Date.now();
 
-    console.log("session bookmark",JSON.parse(sessionStorage.getItem("bookmark53146")))
+    
     if(JSON.parse(sessionStorage.getItem("bookmark53146"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark53146"))==1)
