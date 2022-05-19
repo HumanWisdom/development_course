@@ -59,7 +59,7 @@ export class S35tPage implements OnInit {
       
       this.bookmarkList=res
       this.bookmarkList = this.bookmarkList.map(a => parseInt(a.ScrNo));
-      console.log("bookmarked screens",this.bookmarkList)
+      marked screens",this.bookmarkList)
       localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
    
      
