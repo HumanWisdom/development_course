@@ -56,7 +56,6 @@ export class S35Page implements OnInit,AfterViewInit,OnDestroy {
       
       this.bookmarkList=res
       this.bookmarkList = this.bookmarkList.map(a => parseInt(a.ScrNo));
-      marked screens",this.bookmarkList)
       localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
    
      
