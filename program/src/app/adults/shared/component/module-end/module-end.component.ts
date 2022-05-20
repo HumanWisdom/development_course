@@ -56,13 +56,26 @@ else
   }
 
   proceed(){
-    this.router.navigate([this.moduleLink])
     localStorage.setItem("moduleId",JSON.stringify(this.moduleId))
     this.service.clickModule(this.moduleId,this.userId)
     .subscribe(res=>
       {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
+        let addictionResume="s"+res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("addictionResume",addictionResume)
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
+        this.router.navigate([this.moduleLink])
     })
 
   }
