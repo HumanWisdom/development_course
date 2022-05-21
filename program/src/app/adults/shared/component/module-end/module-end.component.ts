@@ -244,11 +244,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/discovering-wisdom/s27001`])
       /*
       if(!discoveringWisdomResume)
@@ -291,11 +291,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/benefits-of-wisdom/s32001`])
     })
   }    
@@ -327,11 +327,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/five-circles/${fiveCirclesResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/five-circles/${fiveCirclesResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/five-circles/s33001`])
       /*if(!fiveCirclesResume)
       {
@@ -373,11 +373,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/key-ideas/${keyIdeasResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/key-ideas/${keyIdeasResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/key-ideas/s34001`])
       /*if(!this.goToPage)
       {
@@ -419,11 +419,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/program-guide/${pgResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/program-guide/${pgResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/program-guide/s35001`])
      /* if(!pgResume)
       {
@@ -468,11 +468,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {
-        this.router.navigate([`/adults/nature/${natureR}`])
-      }
-      else
+      // if(cont=="1")
+      // {
+      //   this.router.navigate([`/adults/nature/${natureR}`])
+      // }
+      // else
       this.router.navigate([`/adults/nature/s28001`])
      
      /*if(!natureR)
@@ -518,11 +518,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/breathing/${breathingR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/breathing/${breathingR}`])
+      // }
+      // else
       this.router.navigate([`/adults/breathing/s29000`])
     
      /* if(!breathingR)
@@ -565,11 +565,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/noticing-thoughts/${ntR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/noticing-thoughts/${ntR}`])
+      // }
+      // else
       this.router.navigate([`/adults/noticing-thoughts/s30001`])
       /*if(!ntR)
       {
@@ -610,11 +610,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/guided-meditation/${gamR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/guided-meditation/${gamR}`])
+      // }
+      // else
       this.router.navigate([`/adults/guided-meditation/s51000`])
       
      /* if(!gamR)
@@ -657,11 +657,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/meditation/${meditationResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/meditation/${meditationResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/meditation/s22001`])
       /*if(!meditationResume)
       {
@@ -709,11 +709,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/benefits-of-enquiry/${resumeBenefitsEnquiry}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/benefits-of-enquiry/${resumeBenefitsEnquiry}`])
+      // }
+      // else
         this.router.navigate([`/adults/benefits-of-enquiry/s26001`])
      /* 
       if(!resumeBenefitsEnquiry)
@@ -755,11 +755,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/how-to-begin/${beginResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/how-to-begin/${beginResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/how-to-begin/s36000`])
       /*if(!this.goToPage)
       {
@@ -800,11 +800,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/three-steps-enquiry/${threeStepsResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/three-steps-enquiry/${threeStepsResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/three-steps-enquiry/s37000`])
       /*if(!threeStepsResume)
       {
@@ -846,11 +846,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/insight/${insightResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/insight/${insightResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/insight/s38000`])
      /* if(!this.goToPage)
       {
@@ -890,11 +890,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/awareness/${awarenessResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/awareness/${awarenessResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/awareness/s39000`])
      /* if(!this.goToPage)
       {
@@ -936,11 +936,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/no-judgement/${njResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/no-judgement/${njResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/no-judgement/s40000`])
       /*if(!njResume)
       {
@@ -981,11 +981,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/questions-are-key/${qakResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/questions-are-key/${qakResume}`])
+      // }
+      // else
          this.router.navigate([`/adults/questions-are-key/s41000`])
       /*if(!qakResume)
       {
@@ -1027,11 +1027,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {       
-        this.router.navigate([`/adults/without-language/${lwlResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {       
+      //   this.router.navigate([`/adults/without-language/${lwlResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/without-language/s42000`])
      /* if(!lwlResume)
       {
@@ -1072,11 +1072,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/obstacles-enquiry/${obstaclesResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/obstacles-enquiry/${obstaclesResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/obstacles-enquiry/s43000`])
       /*if(! obstaclesResume)
       {
@@ -1121,11 +1121,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/conditioning/${conditioningResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/conditioning/${conditioningResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/conditioning/s232`])
       /*if(!conditioningResume)
       {
@@ -1169,11 +1169,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {       
-        this.router.navigate([`/adults/comparison/${comparisonR}`])
-      }
-      else
+      // if(cont=="1")
+      // {       
+      //   this.router.navigate([`/adults/comparison/${comparisonR}`])
+      // }
+      // else
         this.router.navigate([`/adults/comparison/s0`])
 
     })
@@ -1208,11 +1208,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/reactive-mind/${rmR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/reactive-mind/${rmR}`])
+      // }
+      // else
       this.router.navigate([`/adults/reactive-mind/s54001`])
      /* if(!rmR)
       {
@@ -1258,11 +1258,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {       
-        this.router.navigate([`/adults/self-image/${siR}`])
-      }
-      else
+      // if(cont=="1")
+      // {       
+      //   this.router.navigate([`/adults/self-image/${siR}`])
+      // }
+      // else
       this.router.navigate([`/adults/self-image/s25001`])
       /*
       if(!siR)
@@ -1307,11 +1307,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/self-interest/${sinR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/self-interest/${sinR}`])
+      // }
+      // else
       this.router.navigate([`/adults/self-interest/s55001`])
       
       /*if(!sinR)
@@ -1353,11 +1353,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/identity/${identityResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/identity/${identityResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/identity/s21001`])
      /* if(!identityResume)
       {
@@ -1399,11 +1399,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/emotional-needs/${enR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/emotional-needs/${enR}`])
+      // }
+      // else
       this.router.navigate([`/adults/emotional-needs/s18001`])
       
       /*if(!sinR)
@@ -1444,11 +1444,11 @@ else
         console.log(error)
       },
       ()=>{
-        if(cont=="1")
-        {          
-          this.router.navigate([`/adults/inner-boredom/${ibR}`])
-        }
-        else
+        // if(cont=="1")
+        // {          
+        //   this.router.navigate([`/adults/inner-boredom/${ibR}`])
+        // }
+        // else
           this.router.navigate([`/adults/inner-boredom/s56001`])
         
         /*if(!sinR)
@@ -1492,11 +1492,11 @@ else
     ()=>{
     
       
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/nature-of-i/${niR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/nature-of-i/${niR}`])
+      // }
+      // else
         this.router.navigate([`/adults/nature-of-i/s57001`])
 
     })
@@ -1532,11 +1532,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/fear-anxiety/${fearResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/fear-anxiety/${fearResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/fear-anxiety/s486`])
      /* if(!fearResume)
       {
@@ -1584,11 +1584,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {      
-        this.router.navigate([`/adults/pleasure/${pleasureResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {      
+      //   this.router.navigate([`/adults/pleasure/${pleasureResume}`])
+      // }
+      // else
        this.router.navigate([`/adults/pleasure/s20001`])
     })   
 
@@ -1621,11 +1621,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/sorrow/${sorrowandlossResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/sorrow/${sorrowandlossResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/sorrow/s60001`])
   
     })
@@ -1658,11 +1658,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/loneliness/${lonelinessResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/loneliness/${lonelinessResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/loneliness/s61001`])
     /* if(!lonelinessResume)
       {
@@ -1706,11 +1706,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/anger/${angerResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/anger/${angerResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/anger/s162p0`])
     /* if(!angerResume)
       {
@@ -1756,11 +1756,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/stress/${stressResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/stress/${stressResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/stress/s44001`])
      /* if(!this.goToPage)
       {
@@ -1804,11 +1804,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/relationships/${relationshipResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/relationships/${relationshipResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/relationships/s47000`])
      
     /*if(!relationshipResume)
@@ -1849,11 +1849,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/love/${loveResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/love/${loveResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/love/s62001`])
     /* if(!lonelinessResume)
       {
@@ -1897,11 +1897,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/criticism/${criticismResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/criticism/${criticismResume}`])
+      // }
+      // else
       this.router.navigate([`/adults/criticism/s324`])
      /*if(!criticismResume)
       {
@@ -1944,11 +1944,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/self-esteem/${sR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/self-esteem/${sR}`])
+      // }
+      // else
       this.router.navigate([`/adults/self-esteem/s433`])
      /* if(!this.goToPage)
       {
@@ -1992,11 +1992,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {       
-        this.router.navigate([`/adults/living-with-peace/${livingwithpeaceResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {       
+      //   this.router.navigate([`/adults/living-with-peace/${livingwithpeaceResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/living-with-peace/s63001`])
     /* if(!lonelinessResume)
       {
@@ -2040,11 +2040,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {       
-        this.router.navigate([`/adults/dealing-with-death/${dealingwithdeathResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {       
+      //   this.router.navigate([`/adults/dealing-with-death/${dealingwithdeathResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/dealing-with-death/s64001`])
   
     })
@@ -2080,11 +2080,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/happiness/${hR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/happiness/${hR}`])
+      // }
+      // else
       this.router.navigate([`/adults/happiness/s23001`])
      /* if(!identityResume)
       {
@@ -2127,11 +2127,11 @@ else
        console.log(error)
      },
      ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/communication/${communicationR}`])
-      }
-       else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/communication/${communicationR}`])
+      // }
+      //  else
        this.router.navigate([`/adults/communication/s53001`])
       
       /* if(!communicationR)
@@ -2176,11 +2176,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {       
-        this.router.navigate([`/adults/opinions-beliefs/${opinionsandbeliefsResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {       
+      //   this.router.navigate([`/adults/opinions-beliefs/${opinionsandbeliefsResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/opinions-beliefs/s49001`])
   
     })
@@ -2213,11 +2213,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/success-failure/${successandfailureResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/success-failure/${successandfailureResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/success-failure/s48001`])
   
     })
@@ -2250,11 +2250,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {       
-        this.router.navigate([`/adults/habit-addiction/${addictionResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {       
+      //   this.router.navigate([`/adults/habit-addiction/${addictionResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/habit-addiction/s45001`])
   
     })
@@ -2287,11 +2287,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/food-health/${foodResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/food-health/${foodResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/food-health/s46001`])
   
     })
@@ -2324,11 +2324,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/money/${moneyResume}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/money/${moneyResume}`])
+      // }
+      // else
         this.router.navigate([`/adults/money/s73001`])
   
     })
@@ -2361,11 +2361,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/work/${wR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/work/${wR}`])
+      // }
+      // else
         this.router.navigate([`/adults/work/s58001`])
   
     })
@@ -2399,11 +2399,11 @@ else
       console.log(error)
     },
     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/leadership/${lR}`])
-      }
-      else
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/leadership/${lR}`])
+      // }
+      // else
         this.router.navigate([`/adults/leadership/s59001`])
       
      
