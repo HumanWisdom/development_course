@@ -1,0 +1,71 @@
+<!-- top navigation -->
+<app-tn-dashboard-v03 [enableplaystore]="false" [routeid]="'search'"></app-tn-dashboard-v03>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col ml0" role="main">
+  <!-- class -->
+  <div class="cw100p dabsolute_01">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
+                  <input type="search" class="form-control has-feedback-left h60px pfy_search" (keyup)="getentervalue($event.target.value)" (keyup.enter)="getinp()" placeholder="Search">
+                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="row pfys_title">
+                <div class="col-md-12 col-sm-12 col-xs-8">
+                  <h4 class="txt296 mtb0px">
+                    Personalised for you!
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row pfys_desc">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt297 mtb0px">
+                    Select a topic to explore. Find all related content in one place
+                  </h4>
+                </div>
+              </div>
+
+              <ng-container *ngIf="personalisedforyou.length !== 0">
+                <div class="row mb15px" *ngFor="let item of personalisedforyou; let i = index">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button type="submit" class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']" (click)="clickbtn(item['name'], '', $event, i, item['id'])">
+                      <div class="row flex_ai">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="col-md-10 col-sm-10 col-xs-10 tleft">
+                            {{item['name']}}
+                          </div>
+                          <div class="col-md-2 col-sm-2 col-xs-2 tright" (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" *ngIf="item['active']" class="img-responsive">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" *ngIf="!item['active']" class="img-responsive">
+                          </div>
+                        </div>
+                      </div>
+                    </button> 
+                  </div>
+                </div>
+              </ng-container>
+              <!-- <div class="pagebreak"></div> -->
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

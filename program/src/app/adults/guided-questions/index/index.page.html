@@ -22,11 +22,11 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col main_container" role="main">				
+<div class="right_col mc_01">				
   <!-- Class -->  
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sub_container bg_guided_questions">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_guided_questions sc_01">
         <div class="x_panel p0">  
           <div class="x_content p0">
             <div class="container">
@@ -122,16 +122,18 @@
 
                     <div *ngFor="let j of jrList" class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div *ngIf="j.ProgName" (click)="GoToQuestions(j)"  class="panel panel-default pdefault_01 prelative">
-                          <div class="panel-heading absolute_ptitle">
-                            <h4 class="panel-title">{{j.JrType}}</h4>
+                        <a>
+                          <div *ngIf="j.ProgName" (click)="GoToQuestions(j)"  class="panel panel-default pdefault_01 prelative">
+                            <div class="panel-heading absolute_ptitle">
+                              <h4 class="panel-title">{{j.JrType}}</h4>
+                            </div>
+                            <div class="panel-body">
+                              <h4 class="txt309">{{j.Date| date}}</h4>
+                              <h4 class="txt73">{{j.TitleQue}}</h4>
+                              <h4 class="txt310">{{j.Response|slice:0:40}}...</h4>
+                            </div>
                           </div>
-                          <div class="panel-body">
-                            <h4 class="txt309">{{j.Date| date}}</h4>
-                            <h4 class="txt73">{{j.TitleQue}}</h4>
-                            <h4 class="txt310">{{j.Response|slice:0:40}}...</h4>
-                          </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </form>

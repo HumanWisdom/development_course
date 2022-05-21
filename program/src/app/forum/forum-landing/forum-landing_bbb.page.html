@@ -1,0 +1,265 @@
+<title>Forum | HumanWisdom</title>
+
+<!-- top navigation -->
+<div class="top_nav ml0 ctopnav">
+  <div class="nav_menu cnav_menu p20px mb0px tn_padding tn_story_submit nav_menu_01">
+   
+    <nav class="flex_ai">          
+      <ul class="nav navbar-nav navbar-right cnav navleft w20p no_bg">
+        <li class="">
+          <a routerLink="/adults/adult-dashboard" class="cuser-profile dropdown-toggle p0" data-toggle="dropdown" aria-expanded="false">                          
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="p0">
+          </a>                  
+        </li>        
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav navcenter w60p nbg_white">          
+        <li class="mr0px">
+          <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
+            <h1 class="txt88">
+              Forum
+            </h1>            
+          </a>                  
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right cnav w20p no_bg">       
+        <li class="mr0px">
+          <!-- <a (click)="share()" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
+          </a> -->
+          <!-- dropdown content -->
+          <!-- <ul class="dropdown-menu dropdown-usermenu pull-right course_ul">
+            <li>
+              <div *ngIf="socialShare" class="center_flex_li">
+                <share-buttons 
+                [include]="['whatsapp','facebook','linkedin']"
+                [url]="path">      
+                </share-buttons>      
+              </div>
+            </li>  
+          </ul> -->
+          <!-- /dropdown content -->
+        </li>   
+      </ul>
+    </nav>    
+    
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<!-- page content -->
+<div class="right_col pt_rightcol" role="main">				
+  <!-- Class -->
+  <div class="cw100p dabsolute_09">   
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p ">
+        <div class="x_panel xpanel_01 p0">
+          <div class="x_content p0px_b">
+            <form>                                
+              <div class="row mlr-10px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                    <div class="form-group">                      
+                      <div class="all_threads">
+                        <select (change)="onChange($event)" type="text" name="threadlist"  class="form-control h60px all_threads_select" [(ngModel)]="selectthread" >
+                          <option *ngFor="let titl of threadlist" [ngValue]="titl.value">{{titl.label}}</option>
+                        </select>
+                        <!-- <select class="form-control h60px all_threads_select">
+                          <option>All threads</option>
+                          <option>Threads I’m following</option>
+                          <option>My threads</option>
+                          <option>Reflections</option>                         
+                        </select> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-sm-8 col-xs-8 form-group has-feedback p0 zi0">
+                    <input type="search" class="form-control has-feedback-left h60px searchtxt1 tleft" #threadsearch id="inputSuccess2" name="searchEn" placeholder="Search All threads">
+                    <span class="fa fa-search form-control-feedback left sfeedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pb2rem">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 plr10px_01">
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                    <a (click)="getAllposts(0)" class="">
+                      <h4 class="txt124">
+                        All Threads
+                      </h4>
+                    </a>                                          
+                  </div>             
+                  
+                  <div class="col-md-3 col-sm-3 col-xs-3 tright"  *ngIf="isLoggedIn" >
+                    <button type="button" class="btn btn-default btn_plus_1">
+                      <div class="center_flex">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/plus.svg" [routerLink]="['/forum/forum-thread-start-new']" routerLinkActive="router-link-active"  alt="" class="img-responsive">
+                      </div>                        
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- section 1 -->
+              <div *ngFor="let item of posts;let index=index;">
+                <div class="row center_flex">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10px_01 flex_ai" (click)="postnavigate(item)">
+                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" >
+                      <img src="{{'data:image/jpg;base64,' + item.UserImage}}" *ngIf="item.UserImage" alt="" class="w100 fimg_02">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!item.UserImage" alt="" class="w100 fimg_01">
+                    </div> -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px">
+                            <span class="txt127">{{item.POST}} </span>
+                            <span class="txt126">by {{item.UserName}}</span>
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+                
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex lcs_div">
+
+                      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-4 p0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn? 'not-allowed' : 'pointer'}">
+                          <!-- <img  [disabled]="!isLoggedIn" *ngIf="item.Liked=='1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_active.svg" alt="" (click)="like(item,index)" >
+                          <img [disabled]="!isLoggedIn" *ngIf="item.Liked=='0'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="" (click)="like(item,index)" >
+                          <span class="txt128 lcs" [innerText]="item.PostLikeCount"></span> -->
+
+                          <button [disabled]="!isLoggedIn" type="submit" class="btn btn_ficons jc_flexstart">
+                            <i 
+                                *ngIf="item.Liked=='0'"
+                                (click)="like(item,index)"
+                                class="fa fa-heart-o">
+                            </i>
+
+                            <i  
+                                *ngIf="item.Liked=='1'"
+                                (click)="like(item,index)"
+                                class="fa fa-heart">
+                            </i>
+                            <span [innerText]="item.PostLikeCount" ></span>
+                          </button>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4 pl0 flex_ai" [ngStyle]="{'cursor': !isLoggedIn ? 'not-allowed' : 'cursor'}" >
+                          <!-- <img (click)="reportpost(item,'comment')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
+                          <span class="txt128 lcs"  [innerText]="item.ReplyCount"></span> -->
+
+                          <button  (click)="reportpost(item,'comment')" type="submit" class="btn btn_ficons jc_flexstart">
+                            <i class="fa fa-reply">
+                            </i>
+                            Comment
+                            <!-- {{item.ReplyCount}} -->
+                          </button> 
+                        </div>
+                        <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
+                          <span class="txt128 lcs">Share</span>
+                        </div> -->
+                      </div>
+
+                      <div *ngIf="isLoggedIn" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai" (click)="reportpost(item,'report')">
+                        <!-- <span class="txt129 ws_nowrap">
+                          Report post
+                        </span> -->
+
+                        <button type="submit" class="btn btn_ficons jc_flexend">
+                          <i class="fa fa-triangle-exclamation"></i>
+                          Report
+                        </button>  
+                      </div>
+
+                      <div *ngIf="isLoggedIn" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai" (click)="follow(item,index)">
+                        <!-- <span *ngIf="item.Followed=='1'" class="txt129">
+                          Following
+                        </span>
+                        <span *ngIf="item.Followed=='0'" class="txt129">
+                          Follow
+                        </span> -->
+
+                        <button type="submit" class="btn btn_ficons jc_flexend">
+                          <i class="fa fa-user-plus"></i>
+                          <span *ngIf="item.Followed=='1'">
+                            Following
+                          </span>
+                          <span *ngIf="item.Followed=='0'">
+                            Follow
+                          </span>
+                        </button> 
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- report post + comment -->
+                <div class="row forum_pt20px"  *ngIf="isLoggedIn && replyflag && activereply.PostID === item.PostID">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="actionType=='report'">                      
+                        <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Report Post">                    
+                      </div> 
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isLoggedIn && actionType=='comment'">                      
+                        <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
+                      </div> 
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px" *ngIf="isLoggedIn && actionType=='comment'" >
+                        <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                          Comment
+                        </button>             
+                      </div>
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px" *ngIf="isLoggedIn && actionType=='report'" >
+                        <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                          Report
+                        </button>             
+                      </div>
+
+                    </div>
+                  </div>
+                </div> 
+                <!-- /report post + comment -->
+
+                <div class="row" *ngFor="let i of getOrderbyLatestPost(item.child)">
+                  <div class="col-md-1 col-sm-1 col-xs-1"></div>
+                  <div class="col-md-11 col-sm-11 col-xs-11">
+                    <div class="col-md-12 col-sm-12 col-xs-12 div_bl">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="txt127 commenter mtb0px">
+                          {{i.UserName}}
+                          <span class="txt130">
+                            {{getLocalPostDate(i.PostDate) | date: 'medium' }}
+                          </span>
+                        </h4>
+                        <h4 class="txt120 mtb0px">
+                          {{i.POST}}
+                        </h4>
+                      </div>                      
+                    </div>                    
+                  </div>
+                </div>
+
+                <hr class="hr_style_2">
+              </div>               
+              <!-- /section 1 -->           
+              
+              <div class="pagebreak"></div>
+            </form>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
