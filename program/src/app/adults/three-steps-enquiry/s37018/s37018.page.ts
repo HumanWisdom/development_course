@@ -15,7 +15,7 @@ export class S37018Page implements OnInit {
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
   bg=""
-  moduleLink="/adults/insight/s38001"
+  moduleLink="/adults/insight/s38000"
   moduleName="04. Insight"
   sectionName= "Art of Enquiry";
   moduleId=38
