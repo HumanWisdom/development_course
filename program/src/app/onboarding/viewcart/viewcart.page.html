@@ -50,17 +50,17 @@
 <!-- /header -->
 
 <!-- page content -->
-<div class="right_col pt_rightcol bg_grey" role="main" >				
+<div class="right_col mc_01">				
   <!-- Class -->  
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_grey">
         <div class="x_panel p0">                        
           <div class="x_content p0">
             <form>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <a routerLink="/onboarding/add-to-cart" class="">
                     <h4 class="txt211">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/arrow_left.svg" class="img-responsive" alt="">
@@ -86,7 +86,7 @@
                     Cart
                   </h4>  
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 tright p0">
+                <div class="col-md-6 col-sm-6 col-xs-6 tright">
                   <a href="#" class="acurrency">
                     Currency
                   </a>
@@ -111,8 +111,8 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 tright">
                   <!-- quantity btn -->
-                  <div class="input-group mb0px ig1">
-                    <span class="quantity-field orange">{{this.cartList.length}}</span>
+                  <div class="input-group mb0px ig1 flex_ai">
+                    <span class="quantity-field orange lh0pxi">{{this.cartList.length}}</span>
                     <input type="button" value="+" (click)="getAddCartEvent()" data-toggle="modal" data-target="#modal_recipient" class="button-plus grey" data-field="quantity">
                   </div>                    
                   <!-- /quantity btn -->
@@ -127,10 +127,10 @@
               <ng-container *ngIf="cartList.length !== 0">
                 <div *ngFor="let c of cartList" class="row cpt10px">
                   <div class="row center_flex">
-                    <div class="col-md-5 col-sm-5 col-xs-4 pl0">
+                    <div class="col-md-5 col-sm-5 col-xs-4">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/programs/subscription/adults.png" class="w100">
                     </div>
-                    <div class="col-md-7 col-sm-7 col-xs-8 p0"> 
+                    <div class="col-md-7 col-sm-7 col-xs-8"> 
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <h6 class="txt107">
@@ -227,7 +227,7 @@
               </div>
 
               <div class="row cpt10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px">
+                <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
                   <div class="col-md-8 col-sm-8 col-xs-7 p0">
                     <input name="coupon"type="text" class="form-control fcinput2 mt0px" placeholder="Enter Coupon Code"[(ngModel)]="this.couponCode">
                   </div>
@@ -250,7 +250,7 @@
                 </div>
               </div>
 
-              <div class="row cpt10px">
+              <div class="row mlr10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px wdiv">
                   <div class="col-md-8 col-sm-8 col-xs-8">
                     <h4 class="ob_txt4">
@@ -272,7 +272,7 @@
                 </div>                
               </div>
 
-              <div class="row">
+              <div class="row mlr10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px wdiv">
                   <div class="col-md-8 col-sm-8 col-xs-8">
                     <h4 class="ob_txt8">
@@ -295,7 +295,7 @@
                 </div>                
               </div>
 
-              <div class="row pt5px">
+              <div class="row pt5px mlr10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px wdiv">
                   <div class="col-md-8 col-sm-8 col-xs-8">
                     <h4 class="ob_txt4 fw_bold">
@@ -323,7 +323,7 @@
               <br><br><br><br><br>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px">
+                <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
                   <button class="btn btn-default btn_ptp" type="button" (click)="getKey()">
                     Proceed to  pay
                   </button>
