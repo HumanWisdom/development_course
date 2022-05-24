@@ -26679,7 +26679,7 @@ all and (min-width: 992px) and (-webkit-transform-3d)
   padding: 0 66px;
   margin: 0;
   justify-content: center; */
-  display: flex !important;
+  display: flex;
   align-items: center;
   
 }
