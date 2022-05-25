@@ -67,8 +67,7 @@ export class HamburgerComponent implements OnInit {
  
   logout() {
     // localStorage.clear();
-    Android.logout();
-    localStorage.setItem('isloggedin', 'F')
+      localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
     this.router.navigate(['/onboarding/login'])
   }
