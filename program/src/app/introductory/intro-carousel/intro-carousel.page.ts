@@ -27,9 +27,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         })
         if(istrue) {
           document.getElementById('activenext').style.display = 'none';
-          document.getElementById('inactivenext').style.display = 'block';
+          document.getElementById('inactivenext').style.display = 'flex';
         }else {
-          document.getElementById('activenext').style.display = 'block';
+          document.getElementById('activenext').style.display = 'flex';
           document.getElementById('inactivenext').style.display = 'none';
         }
       })
