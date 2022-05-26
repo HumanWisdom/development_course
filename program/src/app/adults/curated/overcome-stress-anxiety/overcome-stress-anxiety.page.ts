@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'HumanWisdom-overcome-stress-anxiety',
