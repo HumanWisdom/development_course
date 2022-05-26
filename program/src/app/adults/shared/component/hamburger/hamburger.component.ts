@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import {
@@ -26,7 +26,12 @@ export class HamburgerComponent implements OnInit {
   @Input()
   enableplaystore = true
 
-  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
+  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform, private zone: NgZone) {
+    window['componentRef'] = {
+      zone: this.zone,
+      componentFn: (value) => this.applogout(value),
+      component: this
+  };
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     this.name = localStorage.getItem('name');
@@ -39,6 +44,10 @@ export class HamburgerComponent implements OnInit {
       this.url = userdetail['UserImagePath'].split('\\')[1] 
     })
    }
+
+   applogout(data) {
+    console.log( JSON.stringify(data));
+  }
 
   ngOnInit() {
     setTimeout(() => {
