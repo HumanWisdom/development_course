@@ -51,6 +51,11 @@ export class ViewStoriesPage implements OnInit {
       var id=this.modules[i]
       switch(this.modules[i])
     {
+      case 7:{
+     
+        this.links.push({'id':7,'module':"Comparison & Envy",'route':'/adults/comparison'})
+        break
+       }
       case 27:{
      
         this.links.push({'id':27,'module':"Discovering Wisdom",'route':'/adults/discovering-wisdom'})

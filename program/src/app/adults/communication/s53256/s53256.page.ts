@@ -11,14 +11,14 @@ import { AdultsService } from '../../adults.service';
 export class S53256Page  implements OnInit {
   
   toc="communication/s53001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/success_&_failure.jpg"
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg=""
-  moduleLink="/adults/opinions-beliefs"
-  moduleName="03. Opinions and Beliefs"
+  moduleLink="/adults/success-failure"
+  moduleName="04. Success and Failure"
   sectionName= "Living with Wisdom - II";
-  moduleId=49 
+  moduleId=48
 
   moduleList: any = [
     {

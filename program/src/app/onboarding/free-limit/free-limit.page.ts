@@ -30,9 +30,13 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
    this.location.back()
   }
 
-  loginpage() {
+  loginpage(issub = false) {
     this.closemodal.nativeElement.click()
-    this.router.navigate(['/onboarding/login'])
+    if(issub && this.isloggedIn) {
+      this.router.navigate(['/onboarding/add-to-cart'])
+    }else {
+      this.router.navigate(['/onboarding/login'])
+    }
   }
 
 }
