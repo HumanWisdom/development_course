@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-introduction',
@@ -10,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class IntroductionPage implements OnInit {
   data: any
   constructor(public route: ActivatedRoute, private router: Router,
-    private service: AdultsService) {
+    private service: AdultsService, private location:Location) {
       let url = this.route.snapshot.paramMap.get('TopicName');
       this.GetGuidedQs_Topics(url);
   }
@@ -20,7 +21,8 @@ export class IntroductionPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/adults/journal'])
+    // this.router.navigate(['/adults/journal'])
+    this.location.back()
   }
 
   NavigateToQuestions() {
