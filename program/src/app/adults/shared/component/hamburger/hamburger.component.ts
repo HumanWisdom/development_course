@@ -8,7 +8,6 @@ import {
   supportsScrollBehavior,
 } from '@angular/cdk/platform';
 
-declare const Android;
 
 @Component({
   selector: 'app-hamburger',
@@ -70,11 +69,10 @@ export class HamburgerComponent implements OnInit {
  
   logout() {
     
-    Android.logout();
     
-    //localStorage.setItem('isloggedin', 'F')
-    //localStorage.setItem('guest', 'T')
-   // this.router.navigate(['/onboarding/login'])
+    localStorage.setItem('isloggedin', 'F')
+    localStorage.setItem('guest', 'T')
+    this.router.navigate(['/onboarding/login'])
   }
 
   loginroute() {
