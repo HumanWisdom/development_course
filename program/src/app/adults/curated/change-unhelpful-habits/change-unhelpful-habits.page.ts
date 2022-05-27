@@ -2,22 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
-@Component({
-  selector: 'HumanWisdom-wisdom-for-workplace',
-  templateUrl: './wisdom-for-workplace.page.html',
-  styleUrls: ['./wisdom-for-workplace.page.scss'],
-})
 
-export class WisdomForWorkplacePage implements OnInit {
+@Component({
+  selector: 'HumanWisdom-change-unhelpful-habits',
+  templateUrl: './change-unhelpful-habits.page.html',
+  styleUrls: ['./change-unhelpful-habits.page.scss'],
+})
+export class ChangeUnhelpfulHabitsPage implements OnInit {
 
   userId=100
   qrList:any
   goToPage:any
-  wP:any
-  lP:any
-  communicationP:any
-  successandfailureP:any
-  relationshipsP:any
+  addictionP:any
+  pleasureP:any
+  conditioningP:any
+  stressP:any
+  foodP:any
 
   constructor(private service: AdultsService, private router: Router,private location:Location) { }
 
@@ -51,15 +51,15 @@ export class WisdomForWorkplacePage implements OnInit {
     })
   }
 
-  routeWork(cont: any = 1){
-    var wR
-    localStorage.setItem("moduleId",JSON.stringify(58))
-    this.service.clickModule(58,this.userId)
+  routeAddiction(cont: any = 1){
+    var addictionResume
+    localStorage.setItem("moduleId",JSON.stringify(45))
+    this.service.clickModule(45,this.userId)
     .subscribe(res=>
       {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
-        wR="s"+res.lastVisitedScreen
+        addictionResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
         // continue where you left
         if(res.lastVisitedScreen ==='') 
@@ -71,7 +71,7 @@ export class WisdomForWorkplacePage implements OnInit {
           localStorage.setItem("lastvisited", 'T')
         }
         // /continue where you left
-        sessionStorage.setItem("wR",wR)
+        sessionStorage.setItem("addictionResume",addictionResume)
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
     error=>{
@@ -79,24 +79,23 @@ export class WisdomForWorkplacePage implements OnInit {
     },
     ()=>{
       if(cont=="1")
-      {        
-        this.router.navigate([`/adults/work/${wR}`])
+      {       
+        this.router.navigate([`/adults/habit-addiction/${addictionResume}`])
       }
       else
-        this.router.navigate([`/adults/work/s58001`])
-  
+        this.router.navigate([`/adults/habit-addiction/s45001`])
     })
   }
 
-  routeLeadership(cont: any = 1){
-    var lR
-    localStorage.setItem("moduleId",JSON.stringify(59))
-    this.service.clickModule(59,this.userId)
+  routePleasure(cont: any = 1){
+    var pleasureResume
+    localStorage.setItem("moduleId",JSON.stringify(20))
+    this.service.clickModule(20,this.userId)
     .subscribe(res=>
       {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
-        lR="s"+res.lastVisitedScreen
+        pleasureResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
         // continue where you left
         if(res.lastVisitedScreen ==='') 
@@ -108,7 +107,11 @@ export class WisdomForWorkplacePage implements OnInit {
           localStorage.setItem("lastvisited", 'T')
         }
         // /continue where you left
-        sessionStorage.setItem("lR",lR)
+        sessionStorage.setItem("pleasureResume",pleasureResume)
+        // this.mediaPercent=parseInt(res.MediaPercent)
+        // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        // localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
     error=>{
@@ -116,67 +119,23 @@ export class WisdomForWorkplacePage implements OnInit {
     },
     ()=>{
       if(cont=="1")
-      {        
-        this.router.navigate([`/adults/leadership/${lR}`])
+      {      
+        this.router.navigate([`/adults/pleasure/${pleasureResume}`])
       }
       else
-        this.router.navigate([`/adults/leadership/s59001`])
-    })
+       this.router.navigate([`/adults/pleasure/s20001`])
+    })   
   }
 
-  routeCommunication(cont: any = 1){
-    var communicationR
-     localStorage.setItem("moduleId",JSON.stringify(53))
-     this.service.clickModule(53,this.userId)
-     .subscribe(res=>
-       {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-         this.qrList=res
-         communicationR="s"+res.lastVisitedScreen
-         this.goToPage=res.lastVisitedScreen         
-          // continue where you left
-          if(res.lastVisitedScreen ==='') 
-          {
-            localStorage.setItem("lastvisited", 'F')
-          }
-          else 
-          {
-            localStorage.setItem("lastvisited", 'T')
-          }
-          // /continue where you left
-         sessionStorage.setItem("communicationR",communicationR)
-         localStorage.setItem("qrList",JSON.stringify(this.qrList))
-     },
-     error=>{
-       console.log(error)
-     },
-     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/communication/${communicationR}`])
-      }
-       else
-       this.router.navigate([`/adults/communication/s53001`])
-      
-      /* if(!communicationR)
-       {
-         
-         this.router.navigate([`/adults/communication`])
-       }
-       else
-         this.router.navigate([`/adults/communication/s${communicationR}`])*/
-     })
-  }
-
-  routeSuccessAndFailure(cont: any = 1){
-    var successandfailureResume
-    localStorage.setItem("moduleId",JSON.stringify(48))
-    this.service.clickModule(48,this.userId)
+  routeConditioning(cont: any = 1){
+    var conditioningResume
+    localStorage.setItem("moduleId",JSON.stringify(15))
+    this.service.clickModule(15,this.userId)
     .subscribe(res=>
       {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList=res
-        successandfailureResume="s"+res.lastVisitedScreen
+        conditioningResume="s"+res.lastVisitedScreen
         this.goToPage=res.lastVisitedScreen
         // continue where you left
         if(res.lastVisitedScreen ==='') 
@@ -188,7 +147,7 @@ export class WisdomForWorkplacePage implements OnInit {
           localStorage.setItem("lastvisited", 'T')
         }
         // /continue where you left
-        sessionStorage.setItem("successandfailureResume",successandfailureResume)
+        sessionStorage.setItem("conditioningResume",conditioningResume)
         localStorage.setItem("qrList",JSON.stringify(this.qrList))
     },
     error=>{
@@ -197,54 +156,96 @@ export class WisdomForWorkplacePage implements OnInit {
     ()=>{
       if(cont=="1")
       {        
-        this.router.navigate([`/adults/success-failure/${successandfailureResume}`])
+        this.router.navigate([`/adults/conditioning/${conditioningResume}`])
       }
       else
-        this.router.navigate([`/adults/success-failure/s48001`])
-    })
-  }
-
-  routeRelationships(cont: any = 1){
-    var relationshipResume
-    localStorage.setItem("moduleId",JSON.stringify(47))
-    this.service.clickModule(47,this.userId)
-    .subscribe(res=>
-      {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList=res
-        relationshipResume="s"+res.lastVisitedScreen
-        this.goToPage=res.lastVisitedScreen
-        // continue where you left
-        if(res.lastVisitedScreen ==='') 
-        {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else 
-        {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("relationshipResume",relationshipResume)
-        localStorage.setItem("qrList",JSON.stringify(this.qrList))
-    },
-    error=>{
-      console.log(error)
-    },
-    ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/relationships/${relationshipResume}`])
-      }
-      else
-      this.router.navigate([`/adults/relationships/s47000`])
-     
-    /*if(!relationshipResume)
+      this.router.navigate([`/adults/conditioning/s232`])
+      /*if(!conditioningResume)
       {
         
-        this.router.navigate([`/adults/relationships`])
+        this.router.navigate([`/adults/conditioning`])
       }
       else
-        this.router.navigate([`/adults/relationships/s${relationshipResume}`])*/
+        this.router.navigate([`/adults/conditioning/s${conditioningResume}`])*/
+    })
+  }
+
+  routeStress(cont: any = 1){
+    var stressResume
+    localStorage.setItem("moduleId",JSON.stringify(44))
+    this.service.clickModule(44,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        stressResume="s"+res.lastVisitedScreen
+        this.goToPage=res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("stressResume",stressResume)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      if(cont=="1")
+      {        
+        this.router.navigate([`/adults/stress/${stressResume}`])
+      }
+      else
+        this.router.navigate([`/adults/stress/s44001`])
+     /* if(!this.goToPage)
+      {
+        
+        this.router.navigate([`/adults/stress`])
+      }
+      else
+        this.router.navigate([`/adults/stress/s${stressResume}`])*/
+    })
+  }
+
+  routeFood(cont: any = 1){
+    var foodResume
+    localStorage.setItem("moduleId",JSON.stringify(46))
+    this.service.clickModule(46,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        foodResume="s"+res.lastVisitedScreen
+        this.goToPage=res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("foodResume",foodResume)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      if(cont=="1")
+      {        
+        this.router.navigate([`/adults/food-health/${foodResume}`])
+      }
+      else
+        this.router.navigate([`/adults/food-health/s46001`])
     })
   }
 
@@ -269,11 +270,12 @@ export class WisdomForWorkplacePage implements OnInit {
       })
     
      //static progress
-     this.wP=res.ModUserScrPc.find(e=>e.Module=="Work")?.Percentage
-     this.lP=res.ModUserScrPc.find(e=>e.Module=="Leadership")?.Percentage 
-     this.communicationP=res.ModUserScrPc.find(e=>e.Module=="Communication")?.Percentage
-     this.successandfailureP=res.ModUserScrPc.find(e=>e.Module=="Success And Failure")?.Percentage
-     this.relationshipsP=res.ModUserScrPc.find(e=>e.Module=="Relationships")?.Percentage
+     this.addictionP=res.ModUserScrPc.find(e=>e.Module=="Addiction")?.Percentage
+     this.pleasureP=res.ModUserScrPc.find(e=>e.Module=="Pleasure")?.Percentage
+     this.conditioningP=res.ModUserScrPc.find(e=>e.Module=="Conditioning")?.Percentage  
+     this.stressP=res.ModUserScrPc.find(e=>e.Module=="Stress")?.Percentage
+     this.foodP=res.ModUserScrPc.find(e=>e.Module=="Food")?.Percentage
     })
   }
+  
 }
