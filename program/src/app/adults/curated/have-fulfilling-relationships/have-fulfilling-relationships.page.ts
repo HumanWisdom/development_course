@@ -2,22 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
-@Component({
-  selector: 'HumanWisdom-wisdom-for-workplace',
-  templateUrl: './wisdom-for-workplace.page.html',
-  styleUrls: ['./wisdom-for-workplace.page.scss'],
-})
 
-export class WisdomForWorkplacePage implements OnInit {
+@Component({
+  selector: 'HumanWisdom-have-fulfilling-relationships',
+  templateUrl: './have-fulfilling-relationships.page.html',
+  styleUrls: ['./have-fulfilling-relationships.page.scss'],
+})
+export class HaveFulfillingRelationshipsPage implements OnInit {
 
   userId=100
   qrList:any
   goToPage:any
-  wP:any
-  lP:any
-  communicationP:any
-  successandfailureP:any
   relationshipsP:any
+  enP:any
+  rmP:any
+  communicationP:any
+  loveP:any
+  opinionsandbeliefsP:any
 
   constructor(private service: AdultsService, private router: Router,private location:Location) { }
 
@@ -48,159 +49,6 @@ export class WisdomForWorkplacePage implements OnInit {
     },
     ()=>{
 
-    })
-  }
-
-  routeWork(cont: any = 1){
-    var wR
-    localStorage.setItem("moduleId",JSON.stringify(58))
-    this.service.clickModule(58,this.userId)
-    .subscribe(res=>
-      {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList=res
-        wR="s"+res.lastVisitedScreen
-        this.goToPage=res.lastVisitedScreen
-        // continue where you left
-        if(res.lastVisitedScreen ==='') 
-        {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else 
-        {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("wR",wR)
-        localStorage.setItem("qrList",JSON.stringify(this.qrList))
-    },
-    error=>{
-      console.log(error)
-    },
-    ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/work/${wR}`])
-      }
-      else
-        this.router.navigate([`/adults/work/s58001`])
-  
-    })
-  }
-
-  routeLeadership(cont: any = 1){
-    var lR
-    localStorage.setItem("moduleId",JSON.stringify(59))
-    this.service.clickModule(59,this.userId)
-    .subscribe(res=>
-      {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList=res
-        lR="s"+res.lastVisitedScreen
-        this.goToPage=res.lastVisitedScreen
-        // continue where you left
-        if(res.lastVisitedScreen ==='') 
-        {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else 
-        {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("lR",lR)
-        localStorage.setItem("qrList",JSON.stringify(this.qrList))
-    },
-    error=>{
-      console.log(error)
-    },
-    ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/leadership/${lR}`])
-      }
-      else
-        this.router.navigate([`/adults/leadership/s59001`])
-    })
-  }
-
-  routeCommunication(cont: any = 1){
-    var communicationR
-     localStorage.setItem("moduleId",JSON.stringify(53))
-     this.service.clickModule(53,this.userId)
-     .subscribe(res=>
-       {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-         this.qrList=res
-         communicationR="s"+res.lastVisitedScreen
-         this.goToPage=res.lastVisitedScreen         
-          // continue where you left
-          if(res.lastVisitedScreen ==='') 
-          {
-            localStorage.setItem("lastvisited", 'F')
-          }
-          else 
-          {
-            localStorage.setItem("lastvisited", 'T')
-          }
-          // /continue where you left
-         sessionStorage.setItem("communicationR",communicationR)
-         localStorage.setItem("qrList",JSON.stringify(this.qrList))
-     },
-     error=>{
-       console.log(error)
-     },
-     ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/communication/${communicationR}`])
-      }
-       else
-       this.router.navigate([`/adults/communication/s53001`])
-      
-      /* if(!communicationR)
-       {
-         
-         this.router.navigate([`/adults/communication`])
-       }
-       else
-         this.router.navigate([`/adults/communication/s${communicationR}`])*/
-     })
-  }
-
-  routeSuccessAndFailure(cont: any = 1){
-    var successandfailureResume
-    localStorage.setItem("moduleId",JSON.stringify(48))
-    this.service.clickModule(48,this.userId)
-    .subscribe(res=>
-      {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList=res
-        successandfailureResume="s"+res.lastVisitedScreen
-        this.goToPage=res.lastVisitedScreen
-        // continue where you left
-        if(res.lastVisitedScreen ==='') 
-        {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else 
-        {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("successandfailureResume",successandfailureResume)
-        localStorage.setItem("qrList",JSON.stringify(this.qrList))
-    },
-    error=>{
-      console.log(error)
-    },
-    ()=>{
-      if(cont=="1")
-      {        
-        this.router.navigate([`/adults/success-failure/${successandfailureResume}`])
-      }
-      else
-        this.router.navigate([`/adults/success-failure/s48001`])
     })
   }
 
@@ -245,6 +93,221 @@ export class WisdomForWorkplacePage implements OnInit {
       }
       else
         this.router.navigate([`/adults/relationships/s${relationshipResume}`])*/
+
+    })
+  }
+
+  routeEmotionalNeeds(cont: any = 1){
+    var enR
+    localStorage.setItem("moduleId",JSON.stringify(18))
+    this.service.clickModule(18,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        enR="s"+res.lastVisitedScreen
+        this.goToPage=res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("enR",enR)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      if(cont=="1")
+      {        
+        this.router.navigate([`/adults/emotional-needs/${enR}`])
+      }
+      else
+      this.router.navigate([`/adults/emotional-needs/s18001`])
+      
+      /*if(!sinR)
+      {
+        
+        this.router.navigate([`/adults/self-interest`])
+      }
+      else
+        this.router.navigate([`/adults/self-interest/s${sinR}`])*/
+
+    })
+  }
+
+  routeReactiveMind(cont: any = 1){
+    var rmR
+    localStorage.setItem("moduleId",JSON.stringify(54))
+    this.service.clickModule(54,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        rmR="s"+res.lastVisitedScreen
+        this.goToPage=res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("rmR",rmR)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      if(cont=="1")
+      {        
+        this.router.navigate([`/adults/reactive-mind/${rmR}`])
+      }
+      else
+      this.router.navigate([`/adults/reactive-mind/s54001`])
+     /* if(!rmR)
+      {
+        
+        this.router.navigate([`/adults/reactive-mind`])
+      }
+      else
+        this.router.navigate([`/adults/reactive-mind/s${rmR}`])*/
+
+    })
+  }
+
+  routeCommunication(cont: any = 1){
+    var communicationR
+     localStorage.setItem("moduleId",JSON.stringify(53))
+     this.service.clickModule(53,this.userId)
+     .subscribe(res=>
+       {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+         this.qrList=res
+         communicationR="s"+res.lastVisitedScreen
+         this.goToPage=res.lastVisitedScreen         
+          // continue where you left
+          if(res.lastVisitedScreen ==='') 
+          {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else 
+          {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+         sessionStorage.setItem("communicationR",communicationR)
+         localStorage.setItem("qrList",JSON.stringify(this.qrList))
+     },
+     error=>{
+       console.log(error)
+     },
+     ()=>{
+      if(cont=="1")
+      {        
+        this.router.navigate([`/adults/communication/${communicationR}`])
+      }
+       else
+       this.router.navigate([`/adults/communication/s53001`])
+      
+      /* if(!communicationR)
+       {
+         
+         this.router.navigate([`/adults/communication`])
+       }
+       else
+         this.router.navigate([`/adults/communication/s${communicationR}`])*/
+ 
+     })
+  }
+
+  routeLove(cont: any = 1){
+    var loveResume
+    localStorage.setItem("moduleId",JSON.stringify(62))
+    this.service.clickModule(62,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        loveResume="s"+res.lastVisitedScreen
+        this.goToPage=res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("loveResume",loveResume)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      if(cont=="1")
+      {        
+        this.router.navigate([`/adults/love/${loveResume}`])
+      }
+      else
+        this.router.navigate([`/adults/love/s62001`])
+    /* if(!lonelinessResume)
+      {
+        
+        this.router.navigate([`/adults/loneliness/s162p0`])
+      }
+      else
+        this.router.navigate([`/adults/loneliness/s${lonelinessResume}`])*/
+
+    })
+  }
+
+  routeOpinionsAndBeliefs(cont: any = 1){
+    var opinionsandbeliefsResume
+    localStorage.setItem("moduleId",JSON.stringify(49))
+    this.service.clickModule(49,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        opinionsandbeliefsResume="s"+res.lastVisitedScreen
+        this.goToPage=res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("opinionsandbeliefsResume",opinionsandbeliefsResume)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      if(cont=="1")
+      {       
+        this.router.navigate([`/adults/opinions-beliefs/${opinionsandbeliefsResume}`])
+      }
+      else
+        this.router.navigate([`/adults/opinions-beliefs/s49001`])
     })
   }
 
@@ -269,11 +332,12 @@ export class WisdomForWorkplacePage implements OnInit {
       })
     
      //static progress
-     this.wP=res.ModUserScrPc.find(e=>e.Module=="Work")?.Percentage
-     this.lP=res.ModUserScrPc.find(e=>e.Module=="Leadership")?.Percentage 
-     this.communicationP=res.ModUserScrPc.find(e=>e.Module=="Communication")?.Percentage
-     this.successandfailureP=res.ModUserScrPc.find(e=>e.Module=="Success And Failure")?.Percentage
      this.relationshipsP=res.ModUserScrPc.find(e=>e.Module=="Relationships")?.Percentage
+     this.enP=res.ModUserScrPc.find(e=>e.Module=="Emotional Needs")?.Percentage
+     this.rmP=res.ModUserScrPc.find(e=>e.Module=="Reactive Mind")?.Percentage
+     this.communicationP=res.ModUserScrPc.find(e=>e.Module=="Communication")?.Percentage
+     this.loveP=res.ModUserScrPc.find(e=>e.Module=="Love")?.Percentage
+     this.opinionsandbeliefsP=res.ModUserScrPc.find(e=>e.Module=="Opinions And Beliefs")?.Percentage
     })
   }
 }

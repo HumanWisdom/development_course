@@ -34,7 +34,7 @@
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
       <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
         <h1 class="txt301 mtb0px tcenter">
-          Wisdom for the workplace
+          Change unhelpful habits
         </h1>            
       </a>  
     </div>
@@ -61,7 +61,7 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <h4 class="txt298 mtb0px">
-                      Wisdom for the workplace
+                      Change unhelpful habits
                     </h4>
                   </div>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="row dm_desc">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <h4 class="txt299 mtb0px">
-                      We spend our best years at work. Wisdom can help you thrive at work, enjoy what you do, have great relationships, be successful, deal with feedback, and be your best self. It can also help you develop the essential soft skills you need. Our work can then be a place of fulfillment, rather than just a place to earn a living. 
+                      Habits make our life efficient and are part of being human, but sometimes they affect our well-being. Do you have an unhelpful habit you want to change, or an addiction to overcome? Or you may want to understand how addictions develop so you can avoid them. Whatever the reason, there is a wealth of content here for you.
                     </h4>
                   </div>
                 </div>
@@ -81,7 +81,7 @@
 
                       <ngx-circular-player id="aud3"  
                         strokeColor="#FFC455" 
-                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/wisdom_for_workplace.mp3" 
+                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/change_unhelpful_habits.mp3" 
                         progressStrokeColor=rgba(173,173,173,0.25)
                       >
                       </ngx-circular-player>
@@ -94,12 +94,12 @@
                       </div>
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="txt304 mtb0px">
-                          01:11
+                          01:05
                         </h4>
                       </div>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-3 tright">
-                      <a routerLink="/adults/curated/wisdom-for-workplace-transcript">
+                      <a routerLink="/adults/curated/change-unhelpful-habits-transcript">
                         <button class="btn flex_ai btn_pn">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dm_transcript.svg" alt="" class="crimg">
                         </button>
@@ -145,10 +145,10 @@
                                 </a>
                               </div>
                               <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a (click)="getsupport('/adults/get-support-now/s71002', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/02.svg" alt="Solution for Anxiety" class="crimg">
+                                <a (click)="getsupport('/adults/get-support-now/s71004', 71)">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/04.svg" alt="Solution for Anxiety" class="crimg">
                                   <h4 class="txt301 tile_title whitespace_preline">
-                                    Anxiety
+                                    Dealing with Loss 
                                   </h4>
                                 </a>
                               </div>
@@ -193,61 +193,61 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeWork(0)">
+                                <a (click)="routeAddiction(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/48.png" alt="Work" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/45.png" alt="Addiction" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Work</h4>
+                                  <h4 class="tcenter txt31 attitle">Addiction</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="wP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="addictionP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeLeadership(0)">
+                                <a (click)="routePleasure(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/49.png" alt="Leadership" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png" alt="Pleasure" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Leadership</h4>
+                                  <h4 class="tcenter txt31 attitle">Pleasure</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="lP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="pleasureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeCommunication(0)">
+                                <a (click)="routeConditioning(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/43.png" alt="Communication" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png" alt="Nature" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Communication</h4>
+                                  <h4 class="tcenter txt31 attitle">Past Influences</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="communicationP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="natureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeSuccessAndFailure(0)">
+                                <a (click)="routeStress(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/44.png" alt="Success and Failure" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png" alt="Stress" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Success and Failure</h4>
+                                  <h4 class="tcenter txt31 attitle">Stress</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="successandfailureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="stressP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeRelationships(0)">
+                                <a (click)="routeFood(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png" alt="Relationships" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/46.png" alt="Food" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Relationships</h4>
+                                  <h4 class="tcenter txt31 attitle">Food and Health</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="relationshipsP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="foodP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -299,9 +299,9 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv dinline_box">
                               <!-- story 1 -->
                               <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
-                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=98">
+                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=35">
                                   <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/jeshoots-com--2vD8lIhdnw-unsplash.jpg"  alt="" class="w100 c150px">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/julia-engel-B9UZSOU0pVQ-unsplash.jpg"  alt="" class="w100 c150px">
                                   </div>
                                   
                                   <div class="col-md-9 col-sm-10 col-xs-9">
@@ -309,14 +309,14 @@
                                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                           <h6 class="txt69 mtb0px capitalize">
-                                            Burnt Out 
+                                            I Didn’t Smoke or Drink 
                                           </h6>
                                         </div>
                                       </div>
   
                                       <div class="col-md-12 col-sm-12 col-xs-12">
                                         <h6 class="txt70 ellipsis">
-                                          Tess yawned, walking over to her table a... 
+                                          It was in my final year of high school t... 
                                         </h6>
                                       </div>
                                     </div>
@@ -327,9 +327,9 @@
 
                               <!-- story 2 -->
                               <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
-                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=99">
+                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=14">
                                   <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/tim-gouw-1K9T5YiZ2WU-unsplash.jpg"  alt="" class="w100 c150px">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/luke-southern-gW7QRXDSvec-unsplash.jpg"  alt="" class="w100 c150px">
                                   </div>
                                   
                                   <div class="col-md-9 col-sm-10 col-xs-9">
@@ -337,14 +337,14 @@
                                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                           <h6 class="txt69 mtb0px capitalize">
-                                            I Failed at Work! 
+                                            The Well-Being of an Alcoholic 
                                           </h6>
                                         </div>
                                       </div>
   
                                       <div class="col-md-12 col-sm-12 col-xs-12">
                                         <h6 class="txt70 ellipsis">
-                                          Jonathan stormed out of his office build... 
+                                          When I was just 3 years old my parents, ... 
                                         </h6>
                                       </div>
                                     </div>
@@ -355,9 +355,9 @@
 
                               <!-- story 3 -->
                               <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
-                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=100">
+                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=38">
                                   <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/headway-5QgIuuBxKwM-unsplash.jpg"  alt="" class="w100 c150px">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/kous9-fCrTx02eLBY-unsplash.jpg"  alt="" class="w100 c150px">
                                   </div>
                                   
                                   <div class="col-md-9 col-sm-10 col-xs-9">
@@ -365,14 +365,14 @@
                                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                           <h6 class="txt69 mtb0px capitalize">
-                                            Conflict in the Workplace 
+                                            The Craving Demanded Satisfaction. 
                                           </h6>
                                         </div>
                                       </div>
   
                                       <div class="col-md-12 col-sm-12 col-xs-12">
                                         <h6 class="txt70 ellipsis">
-                                          Tom knocked on the glass door of the con... 
+                                          I stared at the fridge in the back of th... 
                                         </h6>
                                       </div>
                                     </div>
@@ -380,6 +380,62 @@
                                 </a>
                               </div>
                               <!-- /story 3 -->
+
+                              <!-- story 4 -->
+                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
+                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=41">
+                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/eva-hartnagel-e-TFz3HkYgY-unsplash.jpg"  alt="" class="w100 c150px">
+                                  </div>
+                                  
+                                  <div class="col-md-9 col-sm-10 col-xs-9">
+                                    <div class="row">
+                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <h6 class="txt69 mtb0px capitalize">
+                                            I Needed To Quit the Smoke Sticks. 
+                                          </h6>
+                                        </div>
+                                      </div>
+  
+                                      <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h6 class="txt70 ellipsis">
+                                          There’s not much feeling when you actual... 
+                                        </h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <!-- /story 4 -->
+
+                              <!-- story 5 -->
+                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
+                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=76">
+                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/zoriana-stakhniv-PUVgHyBgZn8-unsplash.jpg"  alt="" class="w100 c150px">
+                                  </div>
+                                  
+                                  <div class="col-md-9 col-sm-10 col-xs-9">
+                                    <div class="row">
+                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <h6 class="txt69 mtb0px capitalize">
+                                            The Cruel Last Words my Husband Heard. 
+                                          </h6>
+                                        </div>
+                                      </div>
+  
+                                      <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h6 class="txt70 ellipsis">
+                                          13th December 2014 was a day like no oth... 
+                                        </h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <!-- /story 5 -->
                             </div>
                           </div>
 
@@ -424,12 +480,12 @@
                       <div id="ca_guidedqtns" class="panel-collapse collapse in">
                         <div class="panel-body">
 
-                          <a routerLink="/journal/introduction/positive-mindset">
+                          <a routerLink="/journal/introduction/changing-habits">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Develop a positive attitude
+                                    Changing habits
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -439,12 +495,12 @@
                             </div>
                           </a> 
                           
-                          <a routerLink="/journal/introduction/leadership">
+                          <a routerLink="/journal/introduction/pleasure">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Leadership
+                                    Exploring pleasure
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -454,12 +510,12 @@
                             </div>
                           </a> 
 
-                          <a routerLink="/journal/introduction/relationship">
+                          <a routerLink="/journal/introduction/stress">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Relationships
+                                    Stress
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -506,21 +562,13 @@
                           <div class="row cmr-10px">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl0pxi">
                               <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s04">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_07.svg" alt="Stress Management" class="crimg br10px">
+                                <a routerLink="/wisdom-shorts/wisdom-shorts-s11">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_11.svg" alt="Stress Management" class="crimg br10px">
                                   <h4 class="txt202 tile_title whitespace_preline">
-                                    How can we be successful
+                                    Overcome unhelpful habits 
                                   </h4>
                                 </a>
-                              </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s07">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_06.svg" alt="Solution for Anxiety" class="crimg br10px">
-                                  <h4 class="txt202 tile_title whitespace_preline">
-                                    A simple way to get over stress
-                                  </h4>
-                                </a>
-                              </div>                    
+                              </div>         
                             </div>
                           </div>
                           
@@ -568,7 +616,7 @@
                           <!-- podcast widget -->
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <iframe title="The Human Wisdom Project Podcast" allowtransparency="true" height="330" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=5&filter=tags&tag=16089033&ss=636785b72d50e4c7af113ecbc2324ff8&btn-skin=60a0c8&size=330" allowfullscreen=""></iframe>
+                              <iframe title="The Human Wisdom Project Podcast" allowtransparency="true" height="220" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=5&filter=tags&tag=16106791&ss=ffc1a1bde90782950a6277bb260f7b46&btn-skin=60a0c8&size=220" allowfullscreen=""></iframe>
                             </div>
                           </div>
                           <!-- /podcast widget -->

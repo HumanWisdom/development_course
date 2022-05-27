@@ -34,7 +34,7 @@
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
       <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
         <h1 class="txt301 mtb0px tcenter">
-          Wisdom for the workplace
+          Have fulfilling relationships
         </h1>            
       </a>  
     </div>
@@ -61,7 +61,7 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <h4 class="txt298 mtb0px">
-                      Wisdom for the workplace
+                      Have fulfilling relationships
                     </h4>
                   </div>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="row dm_desc">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <h4 class="txt299 mtb0px">
-                      We spend our best years at work. Wisdom can help you thrive at work, enjoy what you do, have great relationships, be successful, deal with feedback, and be your best self. It can also help you develop the essential soft skills you need. Our work can then be a place of fulfillment, rather than just a place to earn a living. 
+                      We all struggle to have relationships without conflict. If our relationships are unhappy, we can’t be happy. Here you will find all our content on how to have happy, enduring and fulfilling relationships. 
                     </h4>
                   </div>
                 </div>
@@ -81,7 +81,7 @@
 
                       <ngx-circular-player id="aud3"  
                         strokeColor="#FFC455" 
-                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/wisdom_for_workplace.mp3" 
+                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/have_fulfilling_relationships.mp3" 
                         progressStrokeColor=rgba(173,173,173,0.25)
                       >
                       </ngx-circular-player>
@@ -94,12 +94,12 @@
                       </div>
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="txt304 mtb0px">
-                          01:11
+                          01:21
                         </h4>
                       </div>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-3 tright">
-                      <a routerLink="/adults/curated/wisdom-for-workplace-transcript">
+                      <a routerLink="/adults/curated/have-fulfilling-relationships-transcript">
                         <button class="btn flex_ai btn_pn">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dm_transcript.svg" alt="" class="crimg">
                         </button>
@@ -137,18 +137,10 @@
                           <div class="row cmr-10px">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl0pxi">
                               <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a (click)="getsupport('/adults/get-support-now/s71001', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/01.svg" alt="Stress Management" class="crimg">
-                                  <h4 class="txt301 tile_title whitespace_preline">
-                                    Stress
-                                  </h4>
-                                </a>
-                              </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a (click)="getsupport('/adults/get-support-now/s71002', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/02.svg" alt="Solution for Anxiety" class="crimg">
-                                  <h4 class="txt301 tile_title whitespace_preline">
-                                    Anxiety
+                                <a (click)="getsupport('/adults/get-support-now/s71005', 71)">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/05.svg" alt="Anger Management" class="crimg">
+                                  <h4 class="txt202 tile_title whitespace_preline">
+                                    Conflict in Relationships
                                   </h4>
                                 </a>
                               </div>
@@ -193,25 +185,37 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeWork(0)">
+                                <a (click)="routeRelationships(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/48.png" alt="Work" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png" alt="Relationships" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Work</h4>
+                                  <h4 class="tcenter txt31 attitle">Relationships</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="wP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="relationshipsP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeLeadership(0)">
+                                <a (click)="routeEmotionalNeeds(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/49.png" alt="Leadership" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/26.png" alt="Emotional Needs" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Leadership</h4>
+                                  <h4 class="tcenter txt31 attitle">Emotional Needs</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="lP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="enP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeReactiveMind(0)">
+                                  <div class="img-gradient">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/22.png" alt="Reactive Mind" class="ctimg">
+                                  </div>
+                                  <h4 class="tcenter txt31 attitle">Reactive Mind</h4>
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="rmP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -229,25 +233,25 @@
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeSuccessAndFailure(0)">
+                                <a (click)="routeLove(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/44.png" alt="Success and Failure" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/36.png" alt="Love" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Success and Failure</h4>
+                                  <h4 class="tcenter txt31 attitle">Love</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="successandfailureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="loveP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeRelationships(0)">
+                                <a (click)="routeOpinionsAndBeliefs(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png" alt="Relationships" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/38.png" alt="Opinions and Beliefs" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Relationships</h4>
+                                  <h4 class="tcenter txt31 attitle">Opinions and Beliefs</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="relationshipsP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="opinionsandbeliefsP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -424,12 +428,12 @@
                       <div id="ca_guidedqtns" class="panel-collapse collapse in">
                         <div class="panel-body">
 
-                          <a routerLink="/journal/introduction/positive-mindset">
+                          <a routerLink="/journal/introduction/emotional-needs">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Develop a positive attitude
+                                    Emotional needs 
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -439,12 +443,12 @@
                             </div>
                           </a> 
                           
-                          <a routerLink="/journal/introduction/leadership">
+                          <a routerLink="/journal/introduction/relationship">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Leadership
+                                    Relationship
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -454,12 +458,27 @@
                             </div>
                           </a> 
 
-                          <a routerLink="/journal/introduction/relationship">
+                          <a routerLink="/journal/introduction/listening">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Relationships
+                                    Listening
+                                  </h4>    
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2 tright">   
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_questions_right_arrow.svg" alt="" class="img-responsive">
+                                </div>
+                              </div>                    
+                            </div>
+                          </a> 
+
+                          <a routerLink="/journal/introduction/speaking">
+                            <div class="row guidedqtns_row bg_gray">
+                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                                <div class="col-md-10 col-sm-10 col-xs-10">                    
+                                  <h4 class="session_name mtb0px">
+                                    Speaking with Care 
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -506,21 +525,29 @@
                           <div class="row cmr-10px">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl0pxi">
                               <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s04">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_07.svg" alt="Stress Management" class="crimg br10px">
+                                <a routerLink="/wisdom-shorts/wisdom-shorts-s03">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_03.svg" alt="Stress Management" class="crimg br10px">
                                   <h4 class="txt202 tile_title whitespace_preline">
-                                    How can we be successful
+                                    How can we be kind
                                   </h4>
                                 </a>
                               </div>
                               <div class="col-md-6 col-sm-7 col-xs-7">
-                                <a routerLink="/wisdom-shorts/wisdom-shorts-s07">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_06.svg" alt="Solution for Anxiety" class="crimg br10px">
+                                <a routerLink="/wisdom-shorts/wisdom-shorts-s09">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_09.svg" alt="Solution for Anxiety" class="crimg br10px">
                                   <h4 class="txt202 tile_title whitespace_preline">
-                                    A simple way to get over stress
+                                    Exploring feelings
                                   </h4>
                                 </a>
-                              </div>                    
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a routerLink="/wisdom-shorts/wisdom-shorts-s13">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_13.svg" alt="Solution for Anxiety" class="crimg br10px">
+                                  <h4 class="txt202 tile_title whitespace_preline">
+                                    Cultivate openness 
+                                  </h4>
+                                </a>
+                              </div>           
                             </div>
                           </div>
                           
@@ -568,7 +595,7 @@
                           <!-- podcast widget -->
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <iframe title="The Human Wisdom Project Podcast" allowtransparency="true" height="330" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=5&filter=tags&tag=16089033&ss=636785b72d50e4c7af113ecbc2324ff8&btn-skin=60a0c8&size=330" allowfullscreen=""></iframe>
+                              <iframe title="The Human Wisdom Project Podcast" allowtransparency="true" height="220" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=5&filter=tags&tag=16106795&ss=61ed182bd1db885845a6c23635092c20&btn-skin=60a0c8&size=220" allowfullscreen=""></iframe>
                             </div>
                           </div>
                           <!-- /podcast widget -->
