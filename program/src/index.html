@@ -84,6 +84,14 @@
     <script  src="assets/js/script.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
 
+    <script type="text/javascript">
+      // data send from webview java app...call from java app
+     function logout(data) {
+         window['componentRef'].zone.run(() => {
+             window['componentRef'].component.applogout(data);
+         });
+     }
+      </script>
 
     <script>
     $(document).on('click', '.video26', function()
@@ -160,6 +168,8 @@
         $(".onscrollws").addClass("onscrollws_active");
         $(".ws_dnone").addClass("ws_dblock");
         $(".ws_unsrolled").addClass("ws_dnone");
+        $(".unscroll").addClass("display_none");
+        $(".scroll").addClass("display_flex");
       }
       else
       {
@@ -168,6 +178,8 @@
         $(".onscrollws").removeClass("onscrollws_active");
         $(".ws_dnone").removeClass("ws_dblock");
         $(".ws_unsrolled").removeClass("ws_dnone");
+        $(".unscroll").removeClass("display_none");
+        $(".scroll").removeClass("display_flex");
       }
     });
     </script>

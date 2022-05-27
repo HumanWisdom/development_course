@@ -310,6 +310,10 @@ const routes: Routes = [
     path: 'newsletter-subscribe',
     loadChildren: () => import('./newsletter-subscribe/newsletter-subscribe.module').then( m => m.NewsletterSubscribePageModule)
   },
+  {
+    path: 'curated',
+    loadChildren: () => import('./curated/curated.module').then( m => m.CuratedModule)
+  },
 ];
 
 @NgModule({
