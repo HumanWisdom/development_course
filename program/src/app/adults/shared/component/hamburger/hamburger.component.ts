@@ -67,8 +67,11 @@ export class HamburgerComponent implements OnInit {
       return false;
   }
  
-  logout() {
+  androidLogout(){
+
     
+  }
+  logout() {    
     
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
