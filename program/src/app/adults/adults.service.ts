@@ -259,7 +259,10 @@ export class AdultsService {
   AddGuidedQs_Response(data:any){
     return this.http.post(this.path + `/AddGuidedQs_Response/`,data);
   }
-  getcurateddashstories() : Observable<any>{
+  getcuratedstressdashstories() : Observable<any>{
     return this.http.get(this.path + `/GetDashboardStories/2`)
+  }
+  getcuratedemotionsdashstories() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardStories/4`)
   }
 }

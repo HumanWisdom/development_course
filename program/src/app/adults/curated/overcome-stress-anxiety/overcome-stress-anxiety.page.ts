@@ -28,7 +28,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
 
-    this.service.getcurateddashstories().subscribe((res) => {
+    this.service.getcuratedstressdashstories().subscribe((res) => {
       if(res) {
         this.lifestoriesList = res
       }
