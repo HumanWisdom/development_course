@@ -28,6 +28,10 @@ export class WisdomForWorkplacePage implements OnInit {
     }
   }
 
+  goBack(){
+    this.location.back()
+  }
+
   getsupport(url, id, ind = 0) {
     let index = ind + 1
     url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
@@ -45,10 +49,6 @@ export class WisdomForWorkplacePage implements OnInit {
     ()=>{
 
     })
-  }
-
-  goBack(){
-    this.location.back()
   }
 
   routeWork(cont: any = 1){

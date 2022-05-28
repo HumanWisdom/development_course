@@ -8,6 +8,7 @@ import {
   supportsScrollBehavior,
 } from '@angular/cdk/platform';
 
+
 @Component({
   selector: 'app-hamburger',
   templateUrl: './hamburger.component.html',
@@ -18,6 +19,7 @@ export class HamburgerComponent implements OnInit {
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
 
+ 
   isloggedIn = false;
   name = ''
   roleid = 0
@@ -65,9 +67,13 @@ export class HamburgerComponent implements OnInit {
       return false;
   }
  
-  logout() {
-    // localStorage.clear();
-      localStorage.setItem('isloggedin', 'F')
+  androidLogout(){
+
+    
+  }
+  logout() {    
+    
+    localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
     this.router.navigate(['/onboarding/login'])
   }
