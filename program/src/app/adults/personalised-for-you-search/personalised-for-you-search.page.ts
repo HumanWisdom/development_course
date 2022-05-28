@@ -73,7 +73,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   clickbtn(name, val = '', event, ind, id) {
     if(val === '') {
-      this.route.navigate(['/adults/overcome-stress'])
+      if(name === 'Manage you emotions') {
+        this.route.navigate(['/adults/curated/manage-your-emotions'])
+      }else if(name === 'Overcome stress and anxiety') {
+        this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
+      }
     }else {
      if(this.isloggedIn) {
       let fill =  this.personalisedforyou.filter((d) => d['name'] === name);

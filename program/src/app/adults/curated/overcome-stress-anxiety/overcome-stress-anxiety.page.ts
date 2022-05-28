@@ -17,6 +17,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
   fearP:any
   natureP:any
   rmP:any
+  lifestoriesList = []
+  sId:any
 
   constructor(private service: AdultsService, private router: Router,private location:Location) { }
 
@@ -25,6 +27,27 @@ export class OvercomeStressAnxietyPage implements OnInit {
     if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
+
+    this.service.getcuratedstressdashstories().subscribe((res) => {
+      if(res) {
+        this.lifestoriesList = res
+      }
+   })
+  }
+
+  toRead(obj){
+    localStorage.setItem("story",JSON.stringify(obj))
+    let res = localStorage.getItem("isloggedin");
+    this.sId=obj.ScenarioID
+    if(res && res === 'T') {
+      this.service.clickStory(obj.ScenarioID).subscribe(res=>{
+        
+        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+      })
+    }  else {
+      this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+    }
+    
   }
 
   getsupport(url, id, ind = 0) {

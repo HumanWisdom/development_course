@@ -350,6 +350,14 @@ socialFirstName:any
     }, 3000)
   }
 
+  curatedDash(name: any) {
+    if(name === 'Manage you emotions') {
+      this.router.navigate(['/adults/curated/manage-your-emotions'])
+    }else if(name === 'Overcome stress and anxiety') {
+      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+    }
+  }
+
   getUserPreference() {
     this.service.getUserpreference().subscribe((res) => {
        let perd = this.service.getperList();
