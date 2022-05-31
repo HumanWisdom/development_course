@@ -77,6 +77,18 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.route.navigate(['/adults/curated/manage-your-emotions'])
       }else if(name === 'Overcome stress and anxiety') {
         this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
+      }else if(name === 'Wisdom for the workplace') {
+        this.route.navigate(['/adults/curated/wisdom-for-workplace'])
+      }else if(name === 'Have fulfilling relationships') {
+        this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
+      }else if(name === 'Be happier') {
+        this.route.navigate(['/adults/curated/be-happier'])
+      }else if(name === 'Change unhelpful habits') {
+        this.route.navigate(['/adults/curated/change-unhelpful-habits'])
+      }else if(name === 'Deal with sorrow and loss') {
+        this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
+      }else if(name === 'Mindfulness') {
+        this.route.navigate(['/adults/curated/have-calm-mind'])
       }
     }else {
      if(this.isloggedIn) {

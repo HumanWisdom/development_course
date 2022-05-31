@@ -32,7 +32,6 @@ export class ManageYourEmotionsPage implements OnInit {
 
     this.service.getcuratedemotionsdashstories().subscribe((res) => {
       if(res) {
-        console.log(res)
         this.lifestoriesList = res
       }
    })

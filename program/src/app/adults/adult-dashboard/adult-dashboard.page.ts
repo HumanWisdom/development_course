@@ -355,6 +355,18 @@ socialFirstName:any
       this.router.navigate(['/adults/curated/manage-your-emotions'])
     }else if(name === 'Overcome stress and anxiety') {
       this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+    }else if(name === 'Wisdom for the workplace') {
+      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
+    }else if(name === 'Have fulfilling relationships') {
+      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
+    }else if(name === 'Be happier') {
+      this.router.navigate(['/adults/curated/be-happier'])
+    }else if(name === 'Change unhelpful habits') {
+      this.router.navigate(['/adults/curated/change-unhelpful-habits'])
+    }else if(name === 'Deal with sorrow and loss') {
+      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
+    }else if(name === 'Mindfulness') {
+      this.router.navigate(['/adults/curated/have-calm-mind'])
     }
   }
 
