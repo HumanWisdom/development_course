@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tn-close',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TnCloseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location:Location) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  goBack(){
+    this.location.back()
+  }
 
 }
