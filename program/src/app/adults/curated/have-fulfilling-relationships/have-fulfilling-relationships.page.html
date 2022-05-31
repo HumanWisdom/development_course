@@ -302,10 +302,10 @@
                           <div class="row cmr-10px">
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv dinline_box">
                               <!-- story 1 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
-                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=98">
+                              <div *ngFor="let item of lifestoriesList" (click)="toRead(item)" class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
+                                <a class="center_flex">
                                   <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/jeshoots-com--2vD8lIhdnw-unsplash.jpg"  alt="" class="w100 c150px">
+                                    <img src="{{item['Img']}}"  alt="" class="w100 c150px">
                                   </div>
                                   
                                   <div class="col-md-9 col-sm-10 col-xs-9">
@@ -313,14 +313,14 @@
                                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                           <h6 class="txt69 mtb0px capitalize">
-                                            Burnt Out 
+                                            {{item['Title']}}
                                           </h6>
                                         </div>
                                       </div>
-  
+
                                       <div class="col-md-12 col-sm-12 col-xs-12">
                                         <h6 class="txt70 ellipsis">
-                                          Tess yawned, walking over to her table a... 
+                                          {{item['Story']}}
                                         </h6>
                                       </div>
                                     </div>
@@ -329,61 +329,6 @@
                               </div>
                               <!-- /story 1 -->
 
-                              <!-- story 2 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
-                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=99">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/tim-gouw-1K9T5YiZ2WU-unsplash.jpg"  alt="" class="w100 c150px">
-                                  </div>
-                                  
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="txt69 mtb0px capitalize">
-                                            I Failed at Work! 
-                                          </h6>
-                                        </div>
-                                      </div>
-  
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="txt70 ellipsis">
-                                          Jonathan stormed out of his office build... 
-                                        </h6>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <!-- /story 2 -->
-
-                              <!-- story 3 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0">
-                                <a class="center_flex life_stories" routerLink="/wisdom-stories/view-stories?sId=100">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/headway-5QgIuuBxKwM-unsplash.jpg"  alt="" class="w100 c150px">
-                                  </div>
-                                  
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="txt69 mtb0px capitalize">
-                                            Conflict in the Workplace 
-                                          </h6>
-                                        </div>
-                                      </div>
-  
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="txt70 ellipsis">
-                                          Tom knocked on the glass door of the con... 
-                                        </h6>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <!-- /story 3 -->
                             </div>
                           </div>
 
