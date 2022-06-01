@@ -32,6 +32,11 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     this.location.back()
   }
 
+  toRead(obj){
+    let sId= obj;
+    this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${sId}`}})
+  }
+
   getsupport(url, id, ind = 0) {
     let index = ind + 1
     url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
