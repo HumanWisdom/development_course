@@ -308,7 +308,6 @@ export class ViewStoriesPage implements OnInit {
       text: 'Hey, check out the Human Wisdom Program',
       url: this.path+'?sId='+this.sId
     }).then( (response) => {
-      console.log(response);
     })
     .catch( (error) => {
       console.log(error);
@@ -331,11 +330,9 @@ export class ViewStoriesPage implements OnInit {
       ()=>{
         if(this.storyList.length !==0) {
           this.story=this.storyList.find(s=>s.ScenarioID==this.sId)
-          console.log("found story",this.story)
           var id=this.story.ScenarioID
           if(this.story.hasOwnProperty('ModIds')) {
             this.modules=this.story.ModIds.split`,`.map(x=>+x)
-            console.log(this.modules)
             this.assignLinks()
           }
         }
@@ -346,7 +343,6 @@ export class ViewStoriesPage implements OnInit {
   }
 
   loadReflections(id){
-    console.log(id)
     
     this.service.clickModule(id,this.userId)
     .subscribe(res=>

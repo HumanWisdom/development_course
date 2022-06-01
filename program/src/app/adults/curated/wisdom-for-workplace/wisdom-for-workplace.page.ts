@@ -88,6 +88,11 @@ export class WisdomForWorkplacePage implements OnInit {
     })
   }
 
+  toRead(obj){
+    let sId= obj;
+    this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${sId}`}})
+  }
+
   routeLeadership(cont: any = 1){
     var lR
     localStorage.setItem("moduleId",JSON.stringify(59))

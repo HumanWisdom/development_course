@@ -265,4 +265,7 @@ export class AdultsService {
   getcuratedemotionsdashstories() : Observable<any>{
     return this.http.get(this.path + `/GetDashboardStories/4`)
   }
+  getcuratedrelationshipdashstories() : Observable<any>{
+    return this.http.get(this.path + `/GetDashboardStories/3`)
+  }
 }
