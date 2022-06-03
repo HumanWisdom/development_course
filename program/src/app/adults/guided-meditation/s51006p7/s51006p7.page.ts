@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { AdultsService } from "../../adults.service";
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-s51006p2',
-  templateUrl: './s51006p2.page.html',
-  styleUrls: ['./s51006p2.page.scss'],
+  selector: 'HumanWisdom-s51006p7',
+  templateUrl: './s51006p7.page.html',
+  styleUrls: ['./s51006p7.page.scss'],
 })
-export class S51006p2Page implements OnInit {
+export class S51006p7Page implements OnInit {
 
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
-  bg="dark_blue_w7"
-  title="Releasing Fear - a meditation"
+  bg="dark_blue_w12"
+  title="Seeing people freshly"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/guided-meditation/audios/guided-meditation+1.7.mp3'
+  audioLink=this.mediaAudio+'/guided-meditation/audios/guided-meditation+1.12.mp3'
 
   transcriptPage=""
   toc="guided-meditation/s51000"
@@ -25,7 +25,7 @@ export class S51006p2Page implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber="51006p2"
+  screenNumber="51006p7"
   startTime:any
   endTime:any
   totalTime:any
@@ -45,9 +45,9 @@ export class S51006p2Page implements OnInit {
  
     this.startTime = Date.now();
     this.createScreen()
-    if(JSON.parse(sessionStorage.getItem("bookmark51006p2"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark51006p7"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark51006p2"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark51006p7"))==1)
       this.bookmark=1
  
   }
@@ -73,7 +73,7 @@ export class S51006p2Page implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark51006p2",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark51006p7",JSON.stringify(this.bookmark))
   }
  
   receiveAvDuration(e){
@@ -86,7 +86,7 @@ export class S51006p2Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/guided-meditation/s51006p3'])
+    this.router.navigate(['/adults/guided-meditation/s51012'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,13 +107,13 @@ export class S51006p2Page implements OnInit {
  
   }
   prev(){
-    this.router.navigate(['/adults/guided-meditation/s51006p1'])
+    this.router.navigate(['/adults/guided-meditation/s51006p6'])
  
  
   }
   ngOnDestroy(){
-    localStorage.setItem("totalTime51006p2",this.totalTime)
-    localStorage.setItem("avDuration51006p2",this.avDuration)
+    localStorage.setItem("totalTime51006p7",this.totalTime)
+    localStorage.setItem("avDuration51006p7",this.avDuration)
  
   }
 }
