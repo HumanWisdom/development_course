@@ -30,18 +30,16 @@
         </div>
       </a>
     
-      <a class="footer_index" (click)="routeSearch()">
+      <a (click)="routeSearch()" class="footer_index" >
         <div *ngIf="!search">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt="">
-          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search_active.svg" alt=""> -->
-           <p class="mb0px">
+           <p class="mb0px silver_chalice">
             Search
           </p>
         </div>
         
 
         <div *ngIf="search">
-          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt=""> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search_active.svg" alt="">
          <p class="mb0px">
           Search
