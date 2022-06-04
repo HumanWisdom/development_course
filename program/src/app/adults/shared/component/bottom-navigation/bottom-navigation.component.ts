@@ -35,6 +35,7 @@ export class BottomNavigationComponent implements OnInit {
       this.dash=true
       this.journal=false
       this.profile=false
+      this.search = false;
     }
     if((this.router.url=="/adults/journal")||(this.router.url.indexOf('/adults/note') > -1))
     {
