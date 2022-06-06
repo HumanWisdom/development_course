@@ -158,6 +158,7 @@ socialFirstName:any
   constructor(
     private router: Router,private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef, private fb: FormBuilder,private authService: SocialAuthService,
      ) {
+      localStorage.setItem('curated', 'F');
       let authtoken=JSON.parse(localStorage.getItem("token"))
       let app= localStorage.getItem("fromapp")
       if(authtoken && app && app !== 'F') {
@@ -368,6 +369,10 @@ socialFirstName:any
     }else if(name === 'Mindfulness') {
       this.router.navigate(['/adults/curated/have-calm-mind'])
     }
+  }
+
+  getplaystore(event) {
+    this.enablebanner = false
   }
 
   getUserPreference() {
