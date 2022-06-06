@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ForumService } from 'src/app/forum/forum.service';
 import { AdultsService } from '../../adults.service';
 import { SearchDataModel } from '../../shared/models/search-data-model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -26,7 +27,8 @@ export class SearchPopularItemsPage implements OnInit {
   constructor(private adultService:AdultsService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private location:Location,) { }
 
   ngOnInit() {
    this.search= this.route.snapshot.paramMap.get('word')
@@ -181,4 +183,9 @@ journalSearchRecords(){
   }
   return 0;
 }
+
+goBack(){
+  this.location.back()
+}
+
 }
