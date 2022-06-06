@@ -18177,21 +18177,24 @@ ngx-circular-player svg
 
 .circle-container {
   position: relative;
-  width: 24em;
+  /* width: 24em; */
   height: 24em;
   padding: 2.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
   /* border: dashed 1px; */
   border-radius: 50%;
-  margin: 1.75em auto 0;
+  /* margin: 1.75em auto 0; */
+  margin: 0 auto;
 }
 .circle-container a {
   display: block;
   overflow: hidden;
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%; 
+  /* left: 50%; */
+  left: 40%;
   /* width: 4em; height: 4em; */
   /* margin: -2em;  */
-  margin: -2.2em;
+  /* margin: -2.2em; */
   /* 2em = 4em/2 */ /* half the width */
 }
 .circle-container img { display: block; width: 100%; }
@@ -18305,27 +18308,32 @@ ngx-circular-player svg
 
 .deg78
 {
-  transform: rotate(78deg) translate(-12em) rotate(-78deg);
+  /* transform: rotate(78deg) translate(-12em) rotate(-78deg); */
+  transform: rotate(80deg) translate(-12em) rotate(-80deg);
 }
 
 .deg55
 {
-  transform: rotate(55deg) translate(4em) rotate(-55deg);
+  /* transform: rotate(55deg) translate(4em) rotate(-55deg); */
+  transform: rotate(63deg) translate(10em,0em) rotate(-63deg);
 }
 
 .deg157
 {
-  transform: rotate(157deg) translate(8em) rotate(-157deg);
+  /* transform: rotate(157deg) translate(8em) rotate(-157deg); */
+  transform: rotate(91deg) translate(9em, 8em) rotate(-91deg);
 }
 
 .deg210
 {
-  transform: rotate(210deg) translate(12em) rotate(-210deg);
+  /* transform: rotate(210deg) translate(12em) rotate(-210deg); */
+  transform: rotate(196deg) translate(12em) rotate(-196deg);
 }
 
 .deg312
 {
-  transform: rotate(312deg) translate(8em) rotate(-312deg);
+  /* transform: rotate(312deg) translate(8em) rotate(-312deg); */
+  transform: rotate(335deg) translate(8em) rotate(-335deg);
 }
 /* /5circles */
 
@@ -28667,7 +28675,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 .dmain_container 
 {
   background: #000000 !important;
-  padding: 6rem 0 0 0 !important;
+  /* padding: 6rem 0 0 0 !important; */
   overflow: hidden;
 }
 
@@ -28909,4 +28917,14 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 .carousel-inner>.item
 {
   transition: auto;
+}
+
+.pt6rem 
+{
+  padding-top: 6rem !important;
+}
+
+.pt12rem 
+{
+  padding: 12rem 0 0 0 !important;
 }

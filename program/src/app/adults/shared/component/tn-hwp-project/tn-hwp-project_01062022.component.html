@@ -1,27 +1,7 @@
 <div class="dtn">
 
-  <!-- google playstore -->
-  <div class="row center_flex" *ngIf="routeid === ''" [ngClass]="[enableplaystore ? '' : 'mt0px']">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_playstore_banner">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
-        <div class="col-md-11 col-sm-11 col-xs-11 p0 flex_ai">
-          <h4 class="txt83 mtb0px tleft mr10px ws_nowrap">
-            Also available on 
-          </h4>
-          <a>
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/google_playstore.png" alt="" class="img-responsive img_google_playstore">
-          </a>
-        </div>
-        <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" id="google_playstore_hide" (click)="closeplaystore()">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_grey.svg" alt="" class="">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /google playstore -->
-
   <!-- top navigation -->
-  <div class="row center_flex" [ngClass]="[enableplaystore ? '' : 'mt0px']">
+  <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px onscrollbg">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
         <a class="" href="#">
@@ -30,9 +10,9 @@
       </div>
 
       <!-- unlogged -->
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="!isloggedIn">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 jc_flexend">
-          <a routerLink="/onboarding/login">
+          <a *ngIf="!isloggedIn" routerLink="/onboarding/login">
             <button type="button" class="btn_login">
               Login
             </button>
@@ -45,23 +25,23 @@
       <!-- /unlogged -->
 
       <!-- logged in  -->
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="isloggedIn" >
+      <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 jc_flexend">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
             <a routerLink="/adults/bookmarks">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_grey.svg" class="img-responsive" alt="">
             </a>
           </div>
-          <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
             <a>
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/notifications_grey.svg" class="img-responsive" alt="">
             </a>
-          </div> -->
+          </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
           <app-hamburger></app-hamburger>
         </div>
-      </div>
+      </div> -->
       <!-- logged in -->
     </div>
   </div>

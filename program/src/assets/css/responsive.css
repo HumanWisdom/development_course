@@ -373,6 +373,11 @@
     {
         margin: 0;
     }
+
+    .dpanel_01 .panel-body
+    {
+        margin-right: -10px;
+    }
 }
 
 @media (max-width: 768px)
