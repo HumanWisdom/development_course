@@ -378,6 +378,11 @@
     {
         margin-right: -10px;
     }
+
+    .cp20px
+    {
+        padding: 0 20px 0 20px;
+    }
 }
 
 @media (max-width: 768px)
@@ -773,10 +778,10 @@
         padding-left: 0 !important;
     }
 
-    .hr_style_2
+    /* .hr_style_2
     {
         margin: 10px 20px;
-    }
+    } */
 
     .mdpfy_col
     {
