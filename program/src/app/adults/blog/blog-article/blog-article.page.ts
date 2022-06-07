@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { AdultsService } from '../../adults.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import {Location } from '@angular/common'
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -18,12 +19,16 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsListabove = []
   path='#' + this.router.url
 
-  constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,) {
-   this.blogid=JSON.parse(localStorage.getItem("blogId"))
+  constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,  private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.blogid=params?.sId
+  });
+  // this.blogid=JSON.parse(localStorage.getItem("blogId"))
     this.getblog()
    }
 
   ngOnInit() {
+   
   }
 
   getblog() {
