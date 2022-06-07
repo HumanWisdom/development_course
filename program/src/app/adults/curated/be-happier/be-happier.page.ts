@@ -22,6 +22,7 @@ export class BeHappierPage implements OnInit {
   constructor(private service: AdultsService, private router: Router,private location:Location) { }
 
   ngOnInit() {
+    localStorage.setItem('curated', 'T');
     let rem = localStorage.getItem('remember');
     if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId=JSON.parse(localStorage.getItem("userId"))
