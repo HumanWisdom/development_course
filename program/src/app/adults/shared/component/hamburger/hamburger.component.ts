@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+
 import {
   getSupportedInputTypes,
   Platform,
@@ -67,10 +68,7 @@ export class HamburgerComponent implements OnInit {
       return false;
   }
  
-  androidLogout(){
 
-    
-  }
   logout() {    
     
     localStorage.setItem('isloggedin', 'F')
