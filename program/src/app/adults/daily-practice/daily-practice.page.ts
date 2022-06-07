@@ -22,6 +22,7 @@ export class DailyPracticePage implements OnInit {
   userId = ''
   trythistoday = ''
   questext = ''
+  dailyinsAuthor=''
   dailyinstext = ''
   audioTitle = ''
   dailybreathTitle = ''
@@ -53,7 +54,9 @@ export class DailyPracticePage implements OnInit {
       })
       this.service.getDailypractiseQuestionins().subscribe((res) => {
         if(res) {
-          this.dailyinstext = res;
+          //this.dailyinstext = res;
+          this.dailyinsAuthor = res.split(';')[0]
+          this.dailyinstext = res.split(';')[1];
         }
       })
       this.service.getDailypractiseQuestionmeditation().subscribe((res) => {
