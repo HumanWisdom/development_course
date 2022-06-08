@@ -60,20 +60,20 @@
                       </div>
 
                       <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="row mb10px">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <h1 class="txt287 tcenter mtb0px">
+                                {{dailybreathTitle}}
+                              </h1>
+                            </div>
+                          </div>
+                          
                           <div class="row tcenter">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
+                            <div class="col-md-12 col-sm-12 col-xs-12" *ngIf="videoLink !== ''">
                               <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video> 
-                            </div>
-                          </div>
-
-                          <div class="row mt15px">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                              <h1 class="txt297 tcenter mtb0px">
-                                {{dailybreathTitle}}
-                              </h1>
                             </div>
                           </div>
                         </div>
@@ -195,7 +195,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <h1 class="txt307 tcenter mtb0px">
+                              <h1 class="txt287 tcenter mtb0px">
                                {{audioTitle}}
                               </h1>
                             </div>
