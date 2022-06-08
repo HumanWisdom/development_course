@@ -74,6 +74,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
     this.location.back()
   }
 
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
+  }
+
   routeBreathing(cont: any = 1){
 
     var breathingR

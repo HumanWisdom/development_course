@@ -1,3 +1,4 @@
+import { YoutubeContentComponent } from './../shared/component/youtube-content/youtube-content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -70,7 +71,10 @@ const routes: Routes = [
     path: 'manage-your-emotions-transcript',
     loadChildren: () => import('./manage-your-emotions-transcript/manage-your-emotions-transcript.module').then( m => m.ManageYourEmotionsTranscriptPageModule)
   },
- 
+ {
+   path: 'youtubelink/:videolink',
+   component: YoutubeContentComponent
+ },
 
 ];
 

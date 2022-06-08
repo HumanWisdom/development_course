@@ -14,7 +14,7 @@ export class DailyPracticePage implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=""
 
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/introduction_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/dpv_01.png"
   videoLink=""  
   dailyid = '0'
   dailyqus = ''
