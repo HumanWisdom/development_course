@@ -10,28 +10,29 @@
     <!-- Class -->
     <div class="cw100p"> 
       <div class="row center_flex safari_dblock">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr10pxi pt0px sc_01 bg_white">
           <div class="x_panel p0">
             <div class="x_content p0 bookmark_imgs" *ngIf="bookmarkList.length !== 0">                  
               <div *ngFor="let item of allkeys; let i=index">                                
                 
                 <div class="row bookmark_module_title">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="txt113 mtb0px">
+                    <h4 class="txt73 mtb0px">
                       {{item}}
                     </h4>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <div class="col-md-4 col-sm-4 col-xs-4"  *ngFor="let data of bookmarkList[i][item]">
-                        <img src="{{urlPath + data['TPath']}}" (click)="imgClick(data)" alt="" class="img-responsive">
+                  <div class="col-md-12 col-sm-12 col-xs-12 plr5pxi">
+                    <div class="col-md-4 col-sm-4 col-xs-4 plr5pxi"  *ngFor="let data of bookmarkList[i][item]">
+                        <img src="{{urlPath + data['TPath']}}" (click)="imgClick(data)" alt="" class="img-responsive w100p">
                     </div>
                   </div>
                 </div>
 
-              </div>              
+              </div>     
+              <div class="pagebreak"></div>         
             </div>
           </div>
         </div>
