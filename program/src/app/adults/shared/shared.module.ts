@@ -72,6 +72,7 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { TnDashboardV03Component } from './component/tn-dashboard-v03/tn-dashboard-v03.component';
 import { HamburgerComponent } from './component/hamburger/hamburger.component';
 import { TnCloseComponent } from './component/tn-close/tn-close.component';
+import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -137,6 +138,8 @@ import { TnCloseComponent } from './component/tn-close/tn-close.component';
     ModuleEndVideosComponent,
     TnDashboardV03Component,
     HamburgerComponent,
+    TnCloseComponent,
+    YoutubeContentComponent,
     TnCloseComponent
   ],
   imports: [
@@ -226,7 +229,8 @@ import { TnCloseComponent } from './component/tn-close/tn-close.component';
     ModuleEndVideosComponent,
     TnDashboardV03Component,
     HamburgerComponent,
-    TnCloseComponent
+    TnCloseComponent,
+    YoutubeContentComponent,
   ]
 })
 export class SharedModule { }
