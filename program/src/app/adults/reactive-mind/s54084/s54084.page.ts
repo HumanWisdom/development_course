@@ -16,7 +16,7 @@ export class S54084Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = ""
   moduleLink = "/adults/self-image"
-  moduleName = "04. Self Image"
+  moduleName = "Self Image"
   sectionName = "How the Mind Works";
   moduleId = 25
   moduleList: any = [
@@ -47,27 +47,10 @@ export class S54084Page implements OnInit {
       this.bg_cft = "bg_purple_red"
       this.bg = ""
       this.moduleLink = "/adults/pleasure"
-      this.moduleName = "03. Pleasure"
+      this.moduleName = "Pleasure"
       this.sectionName = "Manage your emotions";
       this.moduleId = 20
-      this.moduleList = [
-        {
-          name: 'Addiction',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/45.png',
-          link: '/adults/habit-addiction'
-        },
-        {
-          name: 'Comparison & Envy',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/21.png',
-          link: '/adults/comparison'
-        },
-        {
-          name: 'Anger',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/33.png',
-          link: '/adults/anger'
-
-        },
-      ]
+    
     }
    else if (cur && cur === 'stress') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
@@ -75,28 +58,10 @@ export class S54084Page implements OnInit {
       this.bg_cft = "bg_purple_red"
       this.bg = ""
       this.moduleLink = "/adults/breathing"
-      this.moduleName = "01. Breathing"
+      this.moduleName = "Breathing"
       this.sectionName = "Develop a calm mind";
       this.moduleId = 29
-      this.moduleList = [
-        {
-          name: 'Stress',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-          link: '/adults/stress'
-        },
-        {
-          name: 'Fear & Anxiety',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
-          link: '/adults/fear-anxiety'
-    
-        },
-        {
-          name: 'Past Influences',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
-          link: '/adults/conditioning'
-
-        },
-      ]
+     
     }
     else if (cur && cur === 'relationships') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
@@ -104,28 +69,10 @@ export class S54084Page implements OnInit {
       this.bg_cft = "bg_purple_red"
       this.bg = ""
       this.moduleLink = "/adults/communication"
-      this.moduleName = "04. Communication"
+      this.moduleName = "Communication"
       this.sectionName = "Live with wisdom";
       this.moduleId = 53
-      this.moduleList = [
-        {
-          name: 'Love',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/36.png',
-          link: '/adults/love'
-        },
-        {
-          name: 'Opinions and Beliefs',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/38.png',
-          link: '/adults/opinions-beliefs'
     
-        },
-        {
-          name: 'Relationships',
-          image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
-          link: '/adults/relationships'
-
-        },
-      ]
     }
   }
 

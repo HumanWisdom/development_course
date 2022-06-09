@@ -16,7 +16,7 @@ export class S32015Page implements OnInit {
   bg_cft="bg_purple_blue"
   bg=""
   moduleLink="/adults/five-circles/"
-  moduleName="04. 5 Circles of Wisdom"
+  moduleName="5 Circles of Wisdom"
   sectionName= "Introduction";
   moduleId=33
 
