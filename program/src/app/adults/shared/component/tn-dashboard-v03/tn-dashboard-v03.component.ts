@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import {
@@ -17,6 +17,7 @@ export class TnDashboardV03Component implements OnInit {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
+  @Output() playstoreenable = new EventEmitter<boolean>();
 
   isloggedIn = false;
   name = ''
@@ -82,5 +83,6 @@ export class TnDashboardV03Component implements OnInit {
 
   closeplaystore() {
     this.enableplaystore = false;
+    this.playstoreenable.emit(false);
   }
 }
