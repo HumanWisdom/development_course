@@ -16,7 +16,7 @@ export class S61113Page implements OnInit {
   bg_cft="bg_green_yellow"
   bg=""
   moduleLink="/adults/anger"
-  moduleName="05. Anger"
+  moduleName=" Anger"
   sectionName= "Understand Emotions";
   moduleId=14
   moduleList: any = [

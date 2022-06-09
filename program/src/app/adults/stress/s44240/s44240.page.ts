@@ -16,7 +16,7 @@ export class S44240Page implements OnInit {
   bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/relationships"
-  moduleName="02. Relationships"
+  moduleName=" Relationships"
   sectionName= "Living with Wisdom - I";
   moduleId=47
   moduleList: any = [

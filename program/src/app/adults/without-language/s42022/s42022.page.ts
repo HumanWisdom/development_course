@@ -16,7 +16,7 @@ export class S42022Page implements OnInit {
   bg_cft="bg_purple_blue"
   bg=""
   moduleLink="/adults/obstacles-enquiry/s43001"
-  moduleName="09. Obstacles to Enquiry"
+  moduleName=" Obstacles to Enquiry"
   sectionName= "Art of Enquiry";
   moduleId=43
   moduleList: any = [

@@ -16,7 +16,7 @@ export class S62209Page implements OnInit {
   bg_cft="bg_blue_pink"
   bg=""
   moduleLink="/adults/criticism"
-  moduleName="04. Criticism"
+  moduleName=" Criticism"
   sectionName= "Living with Wisdom - I";
   moduleId=16
   moduleList: any = [
