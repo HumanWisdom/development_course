@@ -16,7 +16,7 @@ export class S33022Page implements OnInit {
   bg_cft="bg_purple_blue"
   bg=""
   moduleLink="/adults/key-ideas/"
-  moduleName="05. Key Ideas"
+  moduleName=" Key Ideas"
   sectionName= "Introduction";
   moduleId=34
 

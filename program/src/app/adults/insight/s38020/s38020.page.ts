@@ -16,7 +16,7 @@ export class S38020Page implements OnInit {
   bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/awareness/s39001"
-  moduleName="05. Awareness"
+  moduleName=" Awareness"
   sectionName= "Art of Enquiry";
   moduleId=39
   moduleList: any = [

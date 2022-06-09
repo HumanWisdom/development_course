@@ -16,7 +16,7 @@ export class S36027Page implements OnInit {
   bg_cft="bg_teal"
   bg=""
   moduleLink="/adults/three-steps-enquiry/s37001"
-  moduleName="03. Three Steps to Enquiry"
+  moduleName=" Three Steps to Enquiry"
   sectionName= "Art of Enquiry";
   moduleId=37
   

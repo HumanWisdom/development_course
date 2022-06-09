@@ -16,7 +16,7 @@ export class S18104Page implements OnInit {
   bg_cft="bg_blue_pink"
   bg=""
   moduleLink="/adults/inner-boredom"
-  moduleName="08. Inner Boredom"
+  moduleName=" Inner Boredom"
   sectionName= "How the Mind Works";
   moduleId=56
   moduleList: any = [

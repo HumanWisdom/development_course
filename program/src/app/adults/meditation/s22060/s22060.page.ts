@@ -16,7 +16,7 @@ export class S22060Page implements OnInit {
   bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/nature"
-  moduleName="01. Nature"
+  moduleName=" Nature"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=28
 

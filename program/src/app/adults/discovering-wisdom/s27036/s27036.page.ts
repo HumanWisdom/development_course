@@ -16,7 +16,7 @@ export class S27036Page implements OnInit {
   bg_cft="bg_purple_blue"
   bg=""
   moduleLink="/adults/benefits-of-wisdom/"
-  moduleName="03. Benefits of Wisdom"
+  moduleName=" Benefits of Wisdom"
   sectionName= "Introduction";
   moduleId=32
   

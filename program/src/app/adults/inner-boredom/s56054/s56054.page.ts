@@ -16,7 +16,7 @@ export class S56054Page implements OnInit {
   bg_cft="bg_purple_blue"
   bg=""
   moduleLink="/adults/nature-of-i"
-  moduleName="09. The Nature of the ‘I’"
+  moduleName=" The Nature of the ‘I’"
   sectionName= "How the Mind Works";
   moduleId=56
   moduleList: any = [

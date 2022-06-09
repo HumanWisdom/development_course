@@ -16,7 +16,7 @@ export class S45158Page implements OnInit {
   bg_cft="bg_purple"
   bg=""
   moduleLink="/adults/food-health"
-  moduleName="06. Food"
+  moduleName=" Food and Health"
   sectionName= "Living with Wisdom - II";
   moduleId=46
   moduleList: any = [

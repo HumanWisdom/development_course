@@ -16,7 +16,7 @@ export class S323Page implements OnInit {
   bg_cft="bg_pink_orange"
   bg=""
   moduleLink="/adults/comparison/s0"
-  moduleName="02. Comparison"
+  moduleName=" Comparison"
   sectionName= "How the Mind Works";
   moduleId=7
   moduleList: any = [
