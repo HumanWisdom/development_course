@@ -12,9 +12,6 @@ export class S231p2Page implements OnInit {
   
   toc="anger/s162p0"
   moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/fear_anxiety.jpg"
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg=""
   moduleLink="/adults/fear-anxiety"
   moduleName="Fear & Anxiety "
   sectionName= "Understand Emotions";
@@ -42,9 +39,6 @@ export class S231p2Page implements OnInit {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/reactive_mind.jpg"
-      this.bg_tn = "bg_purple_red"
-      this.bg_cft = "bg_purple_red"
-      this.bg = ""
       this.moduleLink = "/adults/reactive-mind"
       this.moduleName = "Reactive Mind"
       this.sectionName = "Explore how your mind works";

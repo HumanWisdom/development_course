@@ -14,9 +14,6 @@ export class S29010Page implements OnInit {
   
   toc="breathing/s29000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/noticing_thoughts.jpg"
-  bg_tn="bg_teal"
-  bg_cft="bg_teal"
-  bg=""
   moduleLink="/adults/noticing-thoughts"
   moduleName="Noticing Thoughts"
   sectionName= "Develop a calm mind";
@@ -46,9 +43,6 @@ export class S29010Page implements OnInit {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
-      this.bg_tn = "bg_purple_red"
-      this.bg_cft = "bg_purple_red"
-      this.bg = ""
       this.moduleLink = "/adults/stress"
       this.moduleName = "stress"
       this.sectionName = "Live with wisdom";
@@ -58,9 +52,6 @@ export class S29010Page implements OnInit {
   
     else if (cur && cur === 'sorrow') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sorrow.jpg"
-      this.bg_tn = "bg_purple_red"
-      this.bg_cft = "bg_purple_red"
-      this.bg = ""
       this.moduleLink = "/adults/sorrow"
       this.moduleName = "Sorrow"
       this.sectionName = "Manage your emotions";
