@@ -11046,8 +11046,9 @@ body,
   margin: auto 0;
   padding: 40px;
   /* max-width: 100%; */
-  min-width: 100%;
-  height: 18rem;
+  /* min-width: 100%; */
+  /* height: 18rem; */
+  height: auto;
   background-color: #FFC455;
   color: #fff;
   border: 0;
@@ -11057,6 +11058,7 @@ body,
   -o-transition: opacity 0.3s ease-out, top 0.3s ease-out;
   transition: opacity 0.3s ease-out, top 0.3s ease-out;
   overflow: auto;
+  overflow-x: hidden;
   border-radius: 0;
   z-index: 999;
 }
@@ -20782,7 +20784,8 @@ and (orientation : portrait)
 
 .bookmark_imgs img
 {
-  max-height: 227px;
+  /* max-height: 227px; */
+  max-height: 300px;
   margin-bottom: 10px;
   border-radius: 5px;
 }
@@ -28940,3 +28943,24 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 {
   padding: 0 0 0 0;
 }
+
+/* .bookmark_imgs .col-xs-4:nth-child(-n+2)
+{
+  padding-right: 0 !important;
+} */
+
+/* #aor 
+{
+  background: red;
+  opacity: 1;
+} */
+
+/* svg path:nth-child(1)
+{
+  opacity: 1 !important;
+}
+
+svg path
+{
+  opacity: 1 !important;
+} */
