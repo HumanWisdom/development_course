@@ -371,9 +371,9 @@ socialFirstName:any
     }
   }
 
-  // getplaystore(event) {
-  //   this.enablebanner = false
-  // }
+  getplaystore(event) {
+    this.enablebanner = false
+  }
 
   getUserPreference() {
     this.service.getUserpreference().subscribe((res) => {
