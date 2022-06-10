@@ -11,10 +11,8 @@ import { AdultsService } from '../../adults.service';
 export class S26029Page implements OnInit {
   
   toc="benefits-of-enquiry/s26001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_to_begin.jpg"
-  bg_tn="bg_green_yellow"
-  bg_cft="bg_green_yellow"
   bg=""
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_to_begin.jpg"
   moduleLink="/adults/how-to-begin/s36001"
   moduleName="How to begin?"
   sectionName= "Understand yourself";

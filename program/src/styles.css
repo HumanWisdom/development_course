@@ -28964,3 +28964,8 @@ svg path
 {
   opacity: 1 !important;
 } */
+
+.cb_box_active
+{
+  background: #FFC455 !important;
+}

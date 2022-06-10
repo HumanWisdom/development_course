@@ -12,13 +12,22 @@
         </p>
       </a>
     
-      <!-- <a class="footer_index">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt=""> -->
-        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search_active.svg" alt=""> -->
-        <!-- <p class="mb0px">
+      <a (click)="routeSearch()" class="footer_index" >
+        <div *ngIf="!search">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg" alt="">
+           <p class="mb0px silver_chalice">
+            Search
+          </p>
+        </div>
+        
+
+        <div *ngIf="search">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search_active.svg" alt="">
+         <p class="mb0px">
           Search
         </p>
-      </a> -->
+        </div>
+      </a>
     
       <a (click)="routeJournal()" class="footer_index">        
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">

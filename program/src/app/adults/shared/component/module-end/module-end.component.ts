@@ -62,7 +62,7 @@ else
   routeResume(r){
   
     switch(r.toString()){
-      case "07":{this.routeComparison(1)
+      case "7":{this.routeComparison(1)
                 break
                 }
       case "14":{this.routeAnger(1)
