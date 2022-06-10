@@ -15,6 +15,7 @@ export class S231p2Page implements OnInit {
   moduleLink="/adults/fear-anxiety"
   moduleName="Fear & Anxiety "
   sectionName= "Understand Emotions";
+  bg="";
   moduleId=19 
   moduleList: any = [
     {

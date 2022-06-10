@@ -11,6 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S26029Page implements OnInit {
   
   toc="benefits-of-enquiry/s26001"
+  bg=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_to_begin.jpg"
   moduleLink="/adults/how-to-begin/s36001"
   moduleName="How to begin?"

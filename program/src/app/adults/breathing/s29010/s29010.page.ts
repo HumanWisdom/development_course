@@ -13,6 +13,7 @@ import { AdultsService } from '../../adults.service';
 export class S29010Page implements OnInit {
   
   toc="breathing/s29000"
+  bg=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/noticing_thoughts.jpg"
   moduleLink="/adults/noticing-thoughts"
   moduleName="Noticing Thoughts"

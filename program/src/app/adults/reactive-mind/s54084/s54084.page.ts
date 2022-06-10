@@ -11,6 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S54084Page implements OnInit {
 
   toc = "reactive-mind/s54001"
+  bg="";
   moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_image.jpg"
   moduleLink = "/adults/self-image"
   moduleName = "Self Image"
