@@ -16,7 +16,7 @@ export class S28015Page implements OnInit {
   bg_cft="bg_green_yellow"
   bg=""
   moduleLink="/adults/breathing"
-  moduleName="02. Breathing"
+  moduleName=" Breathing"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=29
   moduleList: any = [

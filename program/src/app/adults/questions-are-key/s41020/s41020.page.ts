@@ -16,7 +16,7 @@ export class S41020Page implements OnInit {
   bg_cft="bg_blue_pink"
   bg=""
   moduleLink="/adults/without-language/s42001"
-  moduleName="08. Look without Language"
+  moduleName=" Look without Language"
   sectionName= "Art of Enquiry";
   moduleId=42
   moduleList: any = [

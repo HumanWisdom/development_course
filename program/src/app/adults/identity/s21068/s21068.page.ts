@@ -16,7 +16,7 @@ export class S21068Page implements OnInit {
   bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/emotional-needs"
-  moduleName="07. Emotional Needs"
+  moduleName=" Emotional Needs"
   sectionName= "How the Mind Works";
   moduleId=18
   moduleList: any = [

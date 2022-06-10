@@ -16,7 +16,7 @@ export class S485Page implements OnInit {
   bg_cft="bg_teal"
   bg=""
   moduleLink="/adults/living-with-peace"
-  moduleName="06. Living with Peace"
+  moduleName=" Living with Peace"
   sectionName= "Living with Wisdom - I";
   moduleId=63
   moduleList: any = [

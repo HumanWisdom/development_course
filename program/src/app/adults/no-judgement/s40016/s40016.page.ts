@@ -16,7 +16,7 @@ export class S40016Page implements OnInit {
   bg_cft="bg_dark_blue"
   bg=""
   moduleLink="/adults/questions-are-key/s41001"
-  moduleName="07. Questions are Key"
+  moduleName=" Questions are Key"
   sectionName= "Art of Enquiry";
   moduleId=41
 

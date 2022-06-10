@@ -16,7 +16,7 @@ export class S161p2Page implements OnInit {
   bg_cft="bg_green_yellow"
   bg=""
   moduleLink="/adults/reactive-mind"
-  moduleName="03. Reactive Mind"
+  moduleName=" Reactive Mind"
   sectionName= "How the Mind Works";
   moduleId=54
   moduleList: any = [

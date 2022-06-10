@@ -11,14 +11,14 @@ import { AdultsService } from '../../adults.service';
 export class S49103Page implements OnInit {
   
   toc="opinions-beliefs/s49001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/success_&_failure.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_esteem.jpg"
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg=""
-  moduleLink="/adults/success-failure"
-  moduleName="04. Success and Failure"
+  moduleLink="/adults/self-esteem"
+  moduleName=" Self Esteem"
   sectionName= "Living with Wisdom - II";
-  moduleId=48
+  moduleId=17
   moduleList: any = [
     {
       name: 'Conditioning',

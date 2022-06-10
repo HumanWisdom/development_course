@@ -16,7 +16,7 @@ export class S617Page implements OnInit {
   bg_cft="bg_purple_red"
   bg=""
   moduleLink="/adults/pleasure"
-  moduleName="07. Pleasure"
+  moduleName=" Pleasure"
   sectionName= "How the Mind Works";
   moduleId=20
   moduleList: any = [

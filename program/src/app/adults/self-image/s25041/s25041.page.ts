@@ -16,7 +16,7 @@ export class S25041Page implements OnInit {
   bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/self-interest"
-  moduleName="05. Self Interest"
+  moduleName=" Self Interest"
   sectionName= "How the Mind Works";
   moduleId=55
   moduleList: any = [
