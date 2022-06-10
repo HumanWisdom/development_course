@@ -40,7 +40,28 @@ export class S18104Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'relationships') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/reactive_mind.jpg"
+     
+      this.moduleLink = "/adults/reactive-mind"
+      this.moduleName = "Reactive Mind"
+      this.sectionName = "Explore How Your Mind Works";
+      this.moduleId = 54
+    
+    }
+    else if (cur && cur === 'sorrow') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/look_without_language.jpg"
+     
+      this.moduleLink = "/adults/without-language"
+      this.moduleName = "Look Without Language"
+      this.sectionName = "Understand Yourself";
+      this.moduleId = 42
+    
+    }
+    
+  }
 
   ngOnInit() {
   }

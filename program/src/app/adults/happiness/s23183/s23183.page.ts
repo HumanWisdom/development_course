@@ -39,8 +39,23 @@ export class S23183Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'happier') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/living_with_peace.jpg"
+    
+      this.moduleLink = "/adults/living-with-peace"
+      this.moduleName = "Living with Peace"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 23
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+
+

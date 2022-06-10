@@ -39,7 +39,28 @@ export class S53256Page  implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+   
+      let cur = localStorage.getItem('curated');
+      if (cur && cur === 'workplace') {
+        this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/success_&_failure.jpg"
+       
+        this.moduleLink = "/adults/success-failure"
+        this.moduleName = "Success and Failure"
+        this.sectionName = "Live with wisdom";
+        this.moduleId = 48
+      
+      }
+     else if (cur && cur === 'relationships') {
+        this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/love.jpg"
+       
+        this.moduleLink = "/adults/love"
+        this.moduleName = "Love"
+        this.sectionName = "Live with wisdom";
+        this.moduleId = 62
+       
+      }
+   }
 
   ngOnInit() {
   }

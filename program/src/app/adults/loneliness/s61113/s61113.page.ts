@@ -39,8 +39,21 @@ export class S61113Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'emotions') {
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/anger.png"
+     
+      this.moduleLink = "/adults/anger"
+      this.moduleName = "Anger"
+      this.sectionName = "Manage your emotions";
+      this.moduleId = 14
+    
+    }
+   }
 
   ngOnInit() {
   }
 }
+

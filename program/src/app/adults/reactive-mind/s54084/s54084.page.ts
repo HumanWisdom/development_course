@@ -65,9 +65,7 @@ export class S54084Page implements OnInit {
     }
     else if (cur && cur === 'relationships') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
-      this.bg_tn = "bg_purple_red"
-      this.bg_cft = "bg_purple_red"
-      this.bg = ""
+    
       this.moduleLink = "/adults/communication"
       this.moduleName = "Communication"
       this.sectionName = "Live with wisdom";

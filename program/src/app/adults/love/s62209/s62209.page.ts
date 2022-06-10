@@ -40,8 +40,21 @@ export class S62209Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'relationships') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+      
+      this.moduleLink = "/adults/opinions-beliefs"
+      this.moduleName = "Opinions and Beliefs"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 49
+    
+    }
+   }
 
   ngOnInit() {
   }
 }
+

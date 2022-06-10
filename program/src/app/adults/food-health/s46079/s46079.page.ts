@@ -38,8 +38,23 @@ export class S46079Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'habits') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/addiction.jpg"
+    
+      this.moduleLink = "/adults/habit-addiction"
+      this.moduleName = " Habit Addiction"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 45
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+
+
