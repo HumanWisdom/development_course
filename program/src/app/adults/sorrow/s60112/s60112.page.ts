@@ -37,8 +37,22 @@ export class S60112Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'sorrow') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/dealing_with_death.jpg"
+    
+      this.moduleLink = "/adults/dealing-with-deathe"
+      this.moduleName = " Dealing with Death"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 64
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+

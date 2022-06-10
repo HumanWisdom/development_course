@@ -38,7 +38,19 @@ export class S49103Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'relationships') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/relationships.jpg"
+      
+      this.moduleLink = "/adults/relationships"
+      this.moduleName = "Relationships"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 47
+    
+    }
+   }
 
   ngOnInit() {
   }

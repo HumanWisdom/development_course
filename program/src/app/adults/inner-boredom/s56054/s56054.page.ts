@@ -39,8 +39,24 @@ export class S56054Page implements OnInit {
   ]
 
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'happier') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/comparison_envy.png"
+    
+      this.moduleLink = "/adults/comparison"
+      this.moduleName = "Comparison"
+      this.sectionName = "Explore How Your Mind Works";
+      this.moduleId = 7
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+
+
+

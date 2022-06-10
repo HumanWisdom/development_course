@@ -40,7 +40,19 @@ export class S28015Page implements OnInit {
   ]
 
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'mind') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
+      
+      this.moduleLink = "/adults/breathing"
+      this.moduleName = "Breathing"
+      this.sectionName = "Develop a Calm Mind";
+      this.moduleId = 29
+    
+    }
+   }
 
   ngOnInit() {
   }

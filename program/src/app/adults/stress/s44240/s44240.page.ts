@@ -39,7 +39,28 @@ export class S44240Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'stress') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/fear_anxiety.jpg"
+     
+      this.moduleLink = "/adults/fear-anxiety"
+      this.moduleName = "Fear-Anxiety"
+      this.sectionName = "Manage Your Emotions";
+      this.moduleId = 19
+    
+    }
+    else if (cur && cur === 'habits') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/food.jpg"
+     
+      this.moduleLink = "/adults/food-health"
+      this.moduleName = "Food and Health"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 46
+    
+    }
+    
+  }
 
   ngOnInit() {
   }

@@ -40,8 +40,22 @@ export class S59171Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'workplace') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
+     
+      this.moduleLink = "/adults/communication"
+      this.moduleName = "Communication"
+      this.sectionName = "Live with wisdom";
+      this.moduleId = 53
+    
+    }
+   }
 
   ngOnInit() {
   }
 }
+
+

@@ -40,8 +40,30 @@ export class S47371Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+   
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'workplace') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/work.jpg"
+     
+      this.moduleLink = "/adults/work"
+      this.moduleName = "Work"
+      this.sectionName = "Live with wisdom";
+      this.moduleId = 58
+    
+    }
+   else if (cur && cur === 'relationships') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/emotional_needs.jpg"
+     
+      this.moduleLink = "/adults/emotional-needs"
+      this.moduleName = "Emotional Needs"
+      this.sectionName = "Explore How Your Mind Works";
+      this.moduleId = 18
+     
+    }
+ }
 
-  ngOnInit() {
-  }
+ngOnInit() {
 }
+}
+

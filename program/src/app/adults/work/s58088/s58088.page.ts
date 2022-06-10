@@ -38,8 +38,22 @@ export class S58088Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'workplace') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
+     
+      this.moduleLink = "/adults/leadership"
+      this.moduleName = "Leadership"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 59
+    
+    }
+   }
 
   ngOnInit() {
   }
 }
+
+

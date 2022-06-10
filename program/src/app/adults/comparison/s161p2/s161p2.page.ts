@@ -39,7 +39,28 @@ export class S161p2Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'emotions') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/loneliness.jpg"
+     
+      this.moduleLink = "/adults/loneliness"
+      this.moduleName = "Loneliness"
+      this.sectionName = "Manage Your Emotions";
+      this.moduleId = 61
+    
+    }
+    else if (cur && cur === 'happier') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+     
+      this.moduleLink = "/adults/happiness"
+      this.moduleName = "Happiness"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 23
+    
+    }
+    
+  }
 
   ngOnInit() {
   }

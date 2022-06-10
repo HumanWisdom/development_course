@@ -37,7 +37,19 @@ export class S30007Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'mind') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation.jpg"
+      
+      this.moduleLink = "/adults/guided-meditation"
+      this.moduleName = "Guided Meditation"
+      this.sectionName = "Develop a Calm Mind";
+      this.moduleId = 51
+    
+    }
+   }
 
   ngOnInit() {
   }
