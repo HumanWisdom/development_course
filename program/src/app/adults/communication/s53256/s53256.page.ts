@@ -16,7 +16,7 @@ export class S53256Page  implements OnInit {
   bg_cft="bg_blue"
   bg=""
   moduleLink="/adults/success-failure"
-  moduleName="04. Success and Failure"
+  moduleName=" Success and Failure"
   sectionName= "Living with Wisdom - II";
   moduleId=48
 

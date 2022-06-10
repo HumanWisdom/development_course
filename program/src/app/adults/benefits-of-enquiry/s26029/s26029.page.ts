@@ -11,29 +11,27 @@ import { AdultsService } from '../../adults.service';
 export class S26029Page implements OnInit {
   
   toc="benefits-of-enquiry/s26001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_to_begin.jpg"
-  bg_tn="bg_green_yellow"
-  bg_cft="bg_green_yellow"
   bg=""
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_to_begin.jpg"
   moduleLink="/adults/how-to-begin/s36001"
-  moduleName="02. How to begin?"
-  sectionName= "Art of Enquiry";
+  moduleName="How to begin?"
+  sectionName= "Understand yourself";
   moduleId=36
   moduleList: any = [
     {
       name: 'How to begin?',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/12.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/12.png',
       link: '/how-to-begin'
     },
     {
       name: 'Three Steps to Enquiry',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/13.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/13.png',
       link: '/three-steps-enquiry'
  
     },
     {
       name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/14.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/14.png',
       link: '/insight'
   
     },

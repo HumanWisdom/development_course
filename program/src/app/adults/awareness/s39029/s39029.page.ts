@@ -12,27 +12,25 @@ export class S39029Page implements OnInit {
   
   toc="awareness/s39000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/no_judgement.jpg"
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
   bg=""
   moduleLink="/adults/no-judgement/s40001"
-  moduleName="06. No Judgement"
-  sectionName= "Art of Enquiry";
+  moduleName="No Judgement"
+  sectionName= "Understand yourself";
   moduleId=40
   moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/07.png',
       link: '/breathing'
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/08.png',
       link: '/noticing-thoughts'
     },
     {
       name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/09.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/09.png',
       link: '/meditation'
     },
   ]

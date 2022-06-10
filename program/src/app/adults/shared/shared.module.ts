@@ -1,3 +1,4 @@
+import { SingleAudioContentComponent } from './component/single-audio-content/single-audio-content.component';
 import { RelatedWisdomStoriesTilesComponent } from './component/related-wisdom-stories-tiles/related-wisdom-stories-tiles.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -140,7 +141,7 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     HamburgerComponent,
     TnCloseComponent,
     YoutubeContentComponent,
-    TnCloseComponent
+    SingleAudioContentComponent
   ],
   imports: [
     CommonModule,
@@ -231,6 +232,7 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     HamburgerComponent,
     TnCloseComponent,
     YoutubeContentComponent,
+    SingleAudioContentComponent
   ]
 })
 export class SharedModule { }

@@ -62,7 +62,7 @@ else
   routeResume(r){
   
     switch(r.toString()){
-      case "07":{this.routeComparison(1)
+      case "7":{this.routeComparison(1)
                 break
                 }
       case "14":{this.routeAnger(1)
@@ -2414,9 +2414,41 @@ else
   // /living with wisdom 2 
 
   goDashboard(){
-    this.router.navigate(['/adults/adult-dashboard'])
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'emotions') {
+    this.router.navigate(['/adults/curated/manage-your-emotions'])
+    }
+    else if (cur && cur === 'stress') {
+      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+    }
+    else if (cur && cur === 'happier') {
+        this.router.navigate(['/adults/curated/be-happier'])
+    }
+    else if (cur && cur === 'habits') {
+          this.router.navigate(['/adults/curated/change-unhelpful-habits'])
+    }
+    else if (cur && cur === 'workplace') {
+      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
+    }
+    else if (cur && cur === 'relationships') {
+      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
+    }
+    else if (cur && cur === 'sorrow') {
+      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
+    }
+    else if (cur && cur === 'mind') {
+      this.router.navigate(['/adults/curated/have-calm-mind'])
+    }
+    else{
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+      
+   
   }
   routeJournal(){
     this.router.navigate(['/adults/journal'])
+  }
+  routeForum(){
+    this.router.navigate(['/adults/forum'])
   }
 }

@@ -15,8 +15,8 @@ export class S47371Page implements OnInit {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg=""
-  moduleLink="/adults/love"
-  moduleName="03. Love"
+  moduleLink="/adults/love/"
+  moduleName=" Love"
   sectionName= "Living with Wisdom - I";
   moduleId=62
 

@@ -16,7 +16,7 @@ export class S20072Page implements OnInit {
   bg_cft="bg_pink_orange"
   bg=""
   moduleLink="/adults/sorrow"
-  moduleName="03. Sorrow and Loss"
+  moduleName=" Sorrow and Loss"
   sectionName= "Understand Emotions";
   moduleId=60
 
@@ -40,7 +40,36 @@ export class S20072Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'emotions') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/addiction.jpg"
+     
+      this.moduleLink = "/adults/habit-addiction"
+      this.moduleName = "Addiction"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 45
+    
+    }
+   else if (cur && cur === 'habits') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
+      
+      this.moduleLink = "/adults/conditioning"
+      this.moduleName = "Past Influences"
+      this.sectionName = "Explore How Your Mind Works";
+      this.moduleId = 15
+     
+    }
+    else if (cur && cur === 'happier') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/inner_boredom.jpg"
+     
+      this.moduleLink = "/adults/inner-boredom"
+      this.moduleName = "Inner Boredom & Emptiness"
+      this.sectionName = "Explore How Your Mind Works";
+      this.moduleId = 56
+    
+    }
+  }
 
   ngOnInit() {
   }

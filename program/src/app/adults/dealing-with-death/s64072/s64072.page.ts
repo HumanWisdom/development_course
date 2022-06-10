@@ -16,7 +16,7 @@ export class S64072Page implements OnInit {
   bg_cft="bg_teal"
   bg=""
   moduleLink="/adults/stress"
-  moduleName="01. Stress"
+  moduleName=" Stress"
   sectionName= "Living with Wisdom - I";
   moduleId=44
   moduleList: any = [

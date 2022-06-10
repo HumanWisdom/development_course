@@ -1,3 +1,4 @@
+import { SingleAudioContentComponent } from './../shared/component/single-audio-content/single-audio-content.component';
 import { YoutubeContentComponent } from './../shared/component/youtube-content/youtube-content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -75,6 +76,10 @@ const routes: Routes = [
    path: 'youtubelink/:videolink',
    component: YoutubeContentComponent
  },
+ {
+  path: 'audiopage/:audiolink/:title',
+  component: SingleAudioContentComponent
+}
 
 ];
 

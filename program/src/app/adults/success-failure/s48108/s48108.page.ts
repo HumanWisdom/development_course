@@ -16,7 +16,7 @@ export class S48108Page implements OnInit {
   bg_cft="bg_light_blue"
   bg=""
   moduleLink="/adults/habit-addiction"
-  moduleName="05. Addiction"
+  moduleName=" Addiction"
   sectionName= "Living with Wisdom - II";
   moduleId=45
   moduleList: any = [
