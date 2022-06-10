@@ -39,8 +39,24 @@ export class S63079Page implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'happier') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/pleasure.jpg"
+    
+      this.moduleLink = "/adults/pleasure"
+      this.moduleName = "Pleasure"
+      this.sectionName = "Manage Your Emotions";
+      this.moduleId = 20
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+
+
+
