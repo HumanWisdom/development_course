@@ -12,9 +12,6 @@ export class S54084Page implements OnInit {
 
   toc = "reactive-mind/s54001"
   moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_image.jpg"
-  bg_tn = "bg_light_blue"
-  bg_cft = "bg_light_blue"
-  bg = ""
   moduleLink = "/adults/self-image"
   moduleName = "Self Image"
   sectionName = "How the Mind Works";
@@ -43,9 +40,6 @@ export class S54084Page implements OnInit {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/pleasure.jpg"
-      this.bg_tn = "bg_purple_red"
-      this.bg_cft = "bg_purple_red"
-      this.bg = ""
       this.moduleLink = "/adults/pleasure"
       this.moduleName = "Pleasure"
       this.sectionName = "Manage your emotions";
@@ -54,9 +48,6 @@ export class S54084Page implements OnInit {
     }
    else if (cur && cur === 'stress') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
-      this.bg_tn = "bg_purple_red"
-      this.bg_cft = "bg_purple_red"
-      this.bg = ""
       this.moduleLink = "/adults/breathing"
       this.moduleName = "Breathing"
       this.sectionName = "Develop a calm mind";
@@ -65,9 +56,6 @@ export class S54084Page implements OnInit {
     }
     else if (cur && cur === 'relationships') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
-      this.bg_tn = "bg_purple_red"
-      this.bg_cft = "bg_purple_red"
-      this.bg = ""
       this.moduleLink = "/adults/communication"
       this.moduleName = "Communication"
       this.sectionName = "Live with wisdom";
