@@ -55,7 +55,7 @@ export class S35009Page implements OnInit {
   /*
   {"no":6,
   "heading":"Certificate",
-  "text":"Get a certificate of completion of the Human Wisdom Program.",
+  "text":"Get a certificate of completion of the HumanWisdom Program.",
   "link":"/adults/certificate",
   "linkText":"",
   "module-id":""},
