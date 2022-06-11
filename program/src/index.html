@@ -309,7 +309,13 @@
           $(".rm_txt_03").slideUp();
         }
       });
-      $(document).on('click', '#btnShare', function(){ window.AndroidShareHandler.share('https://stackoverflow.com'); });
+      $(document).on('click', '#btnShare', function(){
+        
+        if(window.AndroidShareHandler)
+        { 
+          window.AndroidShareHandler.share('https://stackoverflow.com');
+        } 
+       });
 
     });
 
