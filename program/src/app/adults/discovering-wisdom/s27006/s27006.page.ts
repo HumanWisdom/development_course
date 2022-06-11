@@ -17,7 +17,7 @@ export class S27006Page implements OnInit,OnDestroy {
   bg="purple_blue_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/discovering-wisdom/videos/1.1.mp4'  
-  title="Introducing the Human Wisdom Program and how it can bring transformation"
+  title="Introducing the HumanWisdom Program and how it can bring transformation"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/introduction_01.jpg"
   
   userId:any
