@@ -12,8 +12,7 @@ export class S45158Page implements OnInit {
   
   toc="habit-addiction/s45001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/food.jpg"
-  bg_tn="bg_purple"
-  bg_cft="bg_purple"
+  
   bg=""
   moduleLink="/adults/food-health"
   moduleName=" Food and Health"
@@ -22,19 +21,19 @@ export class S45158Page implements OnInit {
   moduleList: any = [
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/20.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
       link: '/conditioning'
 
     },
     {
       name: 'Comparison & Envy',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/21.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/21.png',
       link: '/comparison'
 
     },
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
       link: '/stress'
     
     },

@@ -12,8 +12,7 @@ export class S161p2Page implements OnInit {
   
   toc="comparison/s0"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/reactive_mind.jpg"
-  bg_tn="bg_green_yellow"
-  bg_cft="bg_green_yellow"
+ 
   bg=""
   moduleLink="/adults/reactive-mind"
   moduleName=" Reactive Mind"
@@ -22,18 +21,18 @@ export class S161p2Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
       link: '/stress'
     },
     {
       name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/38.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/38.png',
       link: '/self-esteem'
  
     },
     {
       name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/33.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/33.png',
       link: '/anger'
   
     },
