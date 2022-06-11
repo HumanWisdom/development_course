@@ -118,7 +118,7 @@ export class S615p1Page implements OnInit {
     $( document ).ready(function() {
       // var base_color = "rgb(615p1,615p1,615p1)";
       // var active_color = "rgb(237, 40, 70)";
-      var base_color = "#C4C4C4";
+      var base_color = "rgba(255,255,255,0.2)";
       var active_color = "#60A757";
 
       var i;
@@ -147,7 +147,7 @@ export class S615p1Page implements OnInit {
       
       for (i = 0; i < length; i++) {
         var positionX = 12 + i * 200;
-        var rect = makeSVG("rect", { x: positionX, y: 9, width: 200, height: 6 });
+       var rect = makeSVG("rect", { x: positionX+12, y: 9, width: 176, height: 6 });
         document.getElementById("svg_form_time").appendChild(rect);
         // <g><rect x="12" y="9" width="200" height="6"></rect></g>'
         var circle = makeSVG("circle", {
