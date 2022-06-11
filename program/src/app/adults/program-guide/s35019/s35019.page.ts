@@ -12,8 +12,7 @@ export class S35019Page implements OnInit {
   
   toc="program-guide/s35001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/discovering_wisdom.jpg"
-  bg_tn="bg_purple_blue"
-  bg_cft="bg_purple_blue"
+  
   bg=""
   moduleLink="/adults/discovering-wisdom/"
   moduleName="02. Discovering Wisdom"

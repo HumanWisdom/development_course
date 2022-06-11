@@ -12,8 +12,7 @@ export class S20072Page implements OnInit {
   
   toc="pleasure/s20001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sorrow_loss.jpg"
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
+ 
   bg=""
   moduleLink="/adults/sorrow"
   moduleName=" Sorrow and Loss"
@@ -23,18 +22,18 @@ export class S20072Page implements OnInit {
   moduleList: any = [
     {
       name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/41.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/41.png',
       link: '/happiness'
     },
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
       link: '/stress'
  
     },
     {
       name: 'Inner Boredom',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/27.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/27.png',
       link: '/inner-boredom'
   
     },
