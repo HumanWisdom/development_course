@@ -46,7 +46,7 @@ export class S23183Page implements OnInit {
       this.moduleLink = "/adults/living-with-peace"
       this.moduleName = "Living with Peace"
       this.sectionName = "Live with Wisdom";
-      this.moduleId = 23
+      this.moduleId = 63
     
     }
    
