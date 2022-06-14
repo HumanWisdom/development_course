@@ -73,7 +73,7 @@ export class HamburgerComponent implements OnInit {
     
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    //this.router.navigate(['/onboarding/login'])
   }
 
   loginroute() {
