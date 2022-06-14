@@ -310,10 +310,16 @@
         }
       });
       $(document).on('click', '#btnShare', function(){
-        
-        if(window.AndroidShareHandler)
+        console.log(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")))
+        if(window.AndroidHandler)
         { 
-          window.AndroidShareHandler.share('https://stackoverflow.com');
+          window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+        } 
+       });
+       $(document).on('click', '#liLogout', function(){
+        if(window.AndroidHandler)
+        { 
+          window.AndroidHandler.logout();
         } 
        });
 

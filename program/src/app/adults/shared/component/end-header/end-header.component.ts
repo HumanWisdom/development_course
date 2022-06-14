@@ -24,4 +24,7 @@ export class EndHeaderComponent implements OnInit {
   routeJournal(){
     this.router.navigate(['/adults/journal'])
   }
+  routeForum(){
+    this.router.navigate(['/forum'])
+  }
 }
