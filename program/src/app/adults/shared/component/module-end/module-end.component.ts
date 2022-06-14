@@ -2449,6 +2449,6 @@ else
     this.router.navigate(['/adults/journal'])
   }
   routeForum(){
-    this.router.navigate(['/adults/forum'])
+    this.router.navigate(['/forum'])
   }
 }
