@@ -11308,7 +11308,7 @@ body,
 .btn_skip
 {
   border-radius: 10px;
-  height: 60px;
+  /* height: 60px; */
   background: transparent;
   color: #fff;
 }
@@ -17225,7 +17225,7 @@ textarea:focus
 
 .modal.in .modal_note_journal
 {
-  transform: translate(0,15%);
+  /* transform: translate(0,15%); */
 }
 
 /* audio player */
@@ -24392,6 +24392,7 @@ a
 .modal
 {
   padding: 0 !important;
+  overflow: overlay !important;
 }
 
 .index_rwst_title
@@ -28968,4 +28969,17 @@ svg path
 .cb_box_active
 {
   background: #FFC455 !important;
+}
+
+.modal-backdrop.in
+{
+  z-index: 99;
+  background: #000000;
+  opacity: 0.6 !important;
+  box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%);
+}
+
+.bg_border_box 
+{
+  background: border-box;
 }

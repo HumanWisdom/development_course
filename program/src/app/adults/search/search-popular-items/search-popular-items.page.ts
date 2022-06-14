@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ForumService } from 'src/app/forum/forum.service';
 import { AdultsService } from '../../adults.service';
 import { SearchDataModel } from '../../shared/models/search-data-model';
@@ -27,6 +27,7 @@ export class SearchPopularItemsPage implements OnInit {
   constructor(private adultService:AdultsService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
+    private router: Router,
     private route: ActivatedRoute,
     private location:Location,) { }
 
@@ -185,7 +186,8 @@ journalSearchRecords(){
 }
 
 goBack(){
-  this.location.back()
+  this.router.navigate(['/adults/search']);
+
 }
 
 }

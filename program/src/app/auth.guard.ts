@@ -22,7 +22,10 @@ export class AuthGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    localStorage.setItem("enablebanner", 'T')
+    let ban = localStorage.getItem('enablebanner');
+    if(!ban) {
+      localStorage.setItem("enablebanner", 'T')
+    }
     let m: any = window.location.href;
     let test = m.split('login')
     let affrefcode = '';

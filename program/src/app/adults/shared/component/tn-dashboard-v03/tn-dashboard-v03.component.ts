@@ -83,6 +83,7 @@ export class TnDashboardV03Component implements OnInit {
 
   closeplaystore() {
     this.enableplaystore = false;
+    localStorage.setItem('enablebanner', 'F')
     this.playstoreenable.emit(false);
   }
 }

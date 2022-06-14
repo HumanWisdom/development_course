@@ -12,8 +12,7 @@ export class S43035Page implements OnInit {
   
   toc="obstacles-enquiry/s43000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_enquiry.jpg"
-  bg_tn="bg_teal"
-  bg_cft="bg_teal"
+  
   bg=""
   moduleLink="/adults/benefits-of-enquiry/s26002"
   moduleName="01. Benefits of Enquiry"
@@ -22,12 +21,12 @@ export class S43035Page implements OnInit {
   moduleList: any = [
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
       link: '/fear-anxiety'
     },
     {
       name: 'No Judgement',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/16.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/16.png',
       link: '/no-judgement'
  
     },

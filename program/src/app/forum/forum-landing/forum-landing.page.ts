@@ -194,8 +194,8 @@ onChange(e){
    }
  
     this.ngNavigatorShareService.share({
-      title: 'Human Wisdom Program',
-      text: 'Hey, check out the Human Wisdom Program',
+      title: 'HumanWisdom Program',
+      text: 'Hey, check out the HumanWisdom Program',
       url: this.path
     }).then( (response) => {
       console.log(response);

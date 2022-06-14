@@ -12,8 +12,7 @@ export class S38020Page implements OnInit {
   
   toc="insight/s38000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/awareness.jpg"
-  bg_tn="bg_dark_blue"
-  bg_cft="bg_dark_blue"
+  
   bg=""
   moduleLink="/adults/awareness/s39001"
   moduleName=" Awareness"
@@ -22,18 +21,18 @@ export class S38020Page implements OnInit {
   moduleList: any = [
     {
       name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
       link: '/awareness'
     },
     {
       name: 'Look without Language',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/18.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/18.png',
       link: '/without-language'
  
     },
     {
       name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/09.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/09.png',
       link: '/meditation'
     },
   ]

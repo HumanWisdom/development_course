@@ -12,8 +12,7 @@ export class S485Page implements OnInit {
   
   toc="self-esteem/s433"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/living_with_peace.jpg"
-  bg_tn="bg_teal"
-  bg_cft="bg_teal"
+ 
   bg=""
   moduleLink="/adults/living-with-peace"
   moduleName=" Living with Peace"
@@ -22,18 +21,18 @@ export class S485Page implements OnInit {
   moduleList: any = [
     {
       name: 'Self Image',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/23.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/23.png',
       link: '/self-image'
     },
     {
       name: 'Criticisms',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/37.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/37.png',
       link: '/criticism'
  
     },
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/20.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
       link: '/conditioning'
   
     },

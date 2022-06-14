@@ -13,9 +13,9 @@ export class IndexFooterComponent implements OnInit {
   profile = false
   isloggedIn=false
   enableprofile=false
+  search=false
   Subscriber: any;
-
-  constructor(private router: Router, private service:AdultsService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
@@ -23,12 +23,19 @@ export class IndexFooterComponent implements OnInit {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
     }
-    console.log("url",this.router.url)
+    if(this.router.url=="/adults/search") {
+      this.dash=false
+      this.journal=false
+      this.profile=false
+      this.fourm = false;
+      this.search = true;
+    }
     if(this.router.url=="/adults/adult-dashboard")
     {
       this.dash=true
       this.journal=false
       this.profile=false
+      this.search = false;
     }
     if((this.router.url=="/adults/journal")||(this.router.url.indexOf('/adults/note') > -1))
     {
@@ -37,12 +44,12 @@ export class IndexFooterComponent implements OnInit {
       this.journal=true
     }
     let reg = new RegExp('forum')
-    if((reg.test(this.router.url))||(this.router.url.indexOf('/adults/note') > -1))
+    if((reg.test(this.router.url)))
     {
       this.dash=false
-      this.journal=true
+      this.journal=false
       this.profile=false
-      this.fourm = false;
+      this.fourm = true;
     }
     if(this.router.url=="/onboarding/user-profile") {
       this.dash=false
@@ -53,34 +60,37 @@ export class IndexFooterComponent implements OnInit {
         this.enableprofile = true;
       }
     }
+     
+    
   }
-
   routeDash(){
     this.router.navigate(['/adults/adult-dashboard'])
+   
   }
-
   routeJournal(){
-    this.router.navigate(['/adults/journal'])
+    // if(localStorage.getItem('isloggedin') === 'T')
+      this.router.navigate(['/adults/journal'])
+   
   }
-
   routeSearch(){
     this.router.navigate(['/adults/search']);
   } 
-
   profileclickevent() {
     if(localStorage.getItem('isloggedin') === 'T') {
       this.router.navigate(['/onboarding/user-profile'])
-    } 
-    else {
+    } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
         localStorage.setItem('btnclick', 'T')
         this.router.navigate(['/onboarding/login'])
       // }
+      
     }
   }
 
   routeForum(){
-    if(localStorage.getItem('isloggedin') === 'T')
-      this.router.navigate(['/forum'])
+    // if(localStorage.getItem('isloggedin') === 'T')
+       this.router.navigate(['/forum'])
+   
   }
+
 }
