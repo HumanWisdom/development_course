@@ -177,7 +177,12 @@ socialFirstName:any
           }
        })
       }else {
-        this.enablebanner = true;
+        let ban = localStorage.getItem('enablebanner');
+        if(ban === null || ban === 'T') {
+          this.enablebanner = true;
+        }else {
+          this.enablebanner = false;
+        }
       }
 
       this.services.getCountry().subscribe((res:any)=>{  
