@@ -15,9 +15,9 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
           <a class="">
-            <div class="box cb_box tleft flex_left cb1_box">                        
+            <div class="box cb_box tleft flex_left cb1_box" [id]="o.OptStr">                        
               <!-- svg checkbox -->
-              <input class="inp-cbx" [id]="o.OptId" type="checkbox" [checked]="sessionFetch(o.OptId)" (click)="selectOption(o.OptId,$event.target.checked)"/>
+              <input class="inp-cbx" [id]="o.OptId" type="checkbox" [checked]="sessionFetch(o.OptId, o.OptStr)" (click)="selectOption(o.OptId,$event.target.checked, o.OptStr)"/>
               <label class="cbx mt0px" [for]="o.OptId">
                 <span>
                   <svg width="12px" height="10px">

@@ -50,14 +50,16 @@ export class S65Page implements OnInit {
     }
     this.createScreen()
     this.startTime = Date.now();
-    for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
-    {
-      this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
+    if(this.qrList.ListOfQueOpts) {
+      for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
+      {
+        this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
 
+      }
     }
-      
-   
-    this.questionA=this.qrList.ListOfQueOpts
+
+
+    this.questionA=this.qrList?.ListOfQueOpts
     
     this.question=this.findQuestion(44).Question
     this.optionList=this.findQuestion(44).optionList
@@ -71,6 +73,17 @@ export class S65Page implements OnInit {
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
+  }
+
+  ngAfterViewInit(): void {
+    if(this.optionList && this.sessionOption65) {
+      this.optionList.forEach((d) => {
+        if(this.sessionOption65.includes(d['OptId'])) {
+          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+        }
+      }) 
+    }   
+
   }
 
   createScreen(){
@@ -107,16 +120,23 @@ export class S65Page implements OnInit {
     return({"Question":question,"optionList":this.optionList})
   }
 
- selectOption(id,e){
+ selectOption(id,e, divid){
    console.log(id,e)
    if(e==true)
    {
+    document.getElementById(divid).style.backgroundColor = '#FFC455';
      this.sendOption.push(id)
+   }
+   else if(e==false)
+   {
+    document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+    this.sendOption.forEach((element,index)=>{
+      if(element==id) this.sendOption.splice(index,1);
+   });
    }
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption65",JSON.stringify(this.sendOption))
   
-
  }
 
  submitProgress(){
@@ -155,21 +175,17 @@ receiveBookmark(e)
   else
     this.bookmark=0
 }
-  sessionFetch(id){
-    if(this.sessionOption65.length!=0)
+  sessionFetch(id, divid){
+    if(this.sessionOption65.includes(id))
     {
-      if(this.sessionOption65.includes(id))
-      {
-  
-        return true
-      }
-        
-      else
-        return false
-
+      // document.getElementById(divid).style.backgroundColor = '#FFC455';
+      return true
     }
-   
-   
+
+    else {
+      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+      return false
+    }
   }
   
   ngOnDestroy(){
