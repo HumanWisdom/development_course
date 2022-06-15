@@ -12,33 +12,53 @@ export class S323Page implements OnInit {
   
   toc=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/comparison_envy.png"
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
+ 
   bg=""
   moduleLink="/adults/comparison/s0"
   moduleName=" Comparison"
-  sectionName= "How the Mind Works";
+  sectionName= " Explore How Your Mind Works";
   moduleId=7
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
       link: '/stress'
     },
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
       link: '/relationships'
  
     },
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
       link: '/fear-anxiety'
     },
   ]
   
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'stress') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/reactive_mind.jpg"
+     
+      this.moduleLink = "/adults/reactive-mind"
+      this.moduleName = "Reactive Mind"
+      this.sectionName = "Explore How Your Mind Works";
+      this.moduleId = 54
+    
+    }
+    else if (cur && cur === 'habits') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+     
+      this.moduleLink = "/adults/stress"
+      this.moduleName = "Stress"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 44
+    
+    }
+    
+  }
 
   ngOnInit() {
   }

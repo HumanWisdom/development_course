@@ -12,8 +12,7 @@ export class S37018Page implements OnInit {
   
   toc="three-steps-enquiry/s37000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/insight.jpg"
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
+  
   bg=""
   moduleLink="/adults/insight/s38000"
   moduleName="04. Insight"
@@ -22,19 +21,19 @@ export class S37018Page implements OnInit {
   moduleList: any = [
     {
       name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
       link: '/awareness'
     },
     {
       name: 'Questions are Key',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/17.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/17.png',
       link: '/questions-are-key'
  
     },
     {
       
       name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/14.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/14.png',
       link: '/insight'
   
     },

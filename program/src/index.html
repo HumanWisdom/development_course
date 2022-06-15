@@ -309,6 +309,24 @@
           $(".rm_txt_03").slideUp();
         }
       });
+      $(document).on('click', '#btnShare', function(){
+        console.log(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")))
+        if(window.AndroidHandler)
+        { 
+          window.AndroidHandler.share(window.location.href + "?t=" + JSON.parse(localStorage.getItem("token")));
+        } 
+       });
+       $(document).on('click', '#liLogout', function(){
+        if(window.AndroidHandler)
+        { 
+          window.AndroidHandler.logout();
+        } 
+        else
+        {
+          window.location.href="/onboarding/login"
+        }
+       });
+
     });
 
     // $(document).on('click', '#rm_01', function(){

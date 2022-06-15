@@ -12,8 +12,7 @@ export class S58088Page implements OnInit {
   
   toc="work/s58001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
-  bg_tn="bg_dark_blue"
-  bg_cft="bg_dark_blue"
+ 
   bg=""
   moduleLink="/adults/leadership"
   moduleName="09. Leadership"
@@ -22,24 +21,38 @@ export class S58088Page implements OnInit {
   moduleList: any = [
     {
       name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/41.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/41.png',
       link: '/happiness'
     },
     {
       name: 'Emotional Needs',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/26.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/26.png',
       link: '/emotional-needs'
     },
     {
       name: 'Communication',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/42.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
       link: '/communication'
   
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'workplace') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
+     
+      this.moduleLink = "/adults/leadership"
+      this.moduleName = "Leadership"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 59
+    
+    }
+   }
 
   ngOnInit() {
   }
 }
+
+

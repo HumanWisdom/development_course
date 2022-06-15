@@ -25,10 +25,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
   }
 
-  getentervalue(value) {
-    this.searchinp = value
-  }
-
   getUserPreference() {
     this.aservice.getUserpreference().subscribe((res) => {
        let perd = this.aservice.getperList();
@@ -65,7 +61,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     })
   }
 
-  getinp() {
+  getinp(event) {
     let url = `/adults/site-search/${this.searchinp}`
     this.route.navigate([url])
   }

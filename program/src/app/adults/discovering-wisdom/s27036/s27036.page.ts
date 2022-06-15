@@ -12,8 +12,7 @@ export class S27036Page implements OnInit {
   
   toc="discovering-wisdom/s27001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_wisdom.jpg"
-  bg_tn="bg_purple_blue"
-  bg_cft="bg_purple_blue"
+ 
   bg=""
   moduleLink="/adults/benefits-of-wisdom/"
   moduleName=" Benefits of Wisdom"

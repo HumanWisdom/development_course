@@ -12,8 +12,7 @@ export class S60112Page implements OnInit {
   
   toc="sorrow/s60001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/loneliness.jpg"
-  bg_tn="bg_purple"
-  bg_cft="bg_purple"
+  
   bg=""
   moduleLink="/adults/loneliness"
   moduleName=" Loneliness"
@@ -22,23 +21,37 @@ export class S60112Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
       link: '/stress'
     },
     {
       name: 'Identity',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/25.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/25.png',
       link: '/identity'
     },
     {
       name: 'Love',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/36.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/36.png',
       link: '/love'
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'sorrow') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/dealing_with_death.jpg"
+    
+      this.moduleLink = "/adults/dealing-with-deathe"
+      this.moduleName = " Dealing with Death"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 64
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+

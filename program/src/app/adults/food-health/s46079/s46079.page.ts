@@ -12,8 +12,7 @@ export class S46079Page implements OnInit {
   
   toc="food-health/s46001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/money.jpg"
-  bg_tn="bg_green"
-  bg_cft="bg_green"
+ 
   bg=""
   moduleLink="/adults/money"
   moduleName=" Money"
@@ -22,24 +21,39 @@ export class S46079Page implements OnInit {
   moduleList: any = [
     {
       name: 'Pleasure',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/30.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png',
       link: '/pleasure'
     },
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
       link: '/stress'
     },
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/20.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
       link: '/conditioning'
 
     },
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'habits') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/addiction.jpg"
+    
+      this.moduleLink = "/adults/habit-addiction"
+      this.moduleName = " Habit Addiction"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 45
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+
+

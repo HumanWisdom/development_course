@@ -12,8 +12,7 @@ export class S57074Page implements OnInit {
   
   toc="nature-of-i/s57001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
-  bg_tn="bg_green"
-  bg_cft="bg_green"
+ 
   bg=""
   moduleLink="/adults/conditioning"
   moduleName=" Conditioning"
@@ -22,17 +21,17 @@ export class S57074Page implements OnInit {
   moduleList: any = [
     {
       name: 'Identity',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/25.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/25.png',
       link: '/identity'
     },
     {
       name: 'Self Interest',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/24.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/24.png',
       link: '/self-interest'
     },
     {
       name: 'Self Image',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/23.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/23.png',
       link: '/self-image'
     },
   ]

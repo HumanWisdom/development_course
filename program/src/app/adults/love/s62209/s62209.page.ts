@@ -12,8 +12,7 @@ export class S62209Page implements OnInit {
   
   toc="love/s62001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/criticism.png"
-  bg_tn="bg_blue_pink"
-  bg_cft="bg_blue_pink"
+  
   bg=""
   moduleLink="/adults/criticism"
   moduleName=" Criticism"
@@ -22,26 +21,39 @@ export class S62209Page implements OnInit {
   moduleList: any = [
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
       link: '/relationships'
     },
     {
       name: 'Living with Peace',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/39.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/39.png',
       link: '/living-with-peace'
  
  
     },
     {
       name: 'Self Interest',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/24.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/24.png',
       link: '/self-interest'
   
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'relationships') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+      
+      this.moduleLink = "/adults/opinions-beliefs"
+      this.moduleName = "Opinions and Beliefs"
+      this.sectionName = "Live with Wisdom";
+      this.moduleId = 49
+    
+    }
+   }
 
   ngOnInit() {
   }
 }
+

@@ -12,8 +12,7 @@ export class S28015Page implements OnInit {
 
   toc="nature/s28001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
-  bg_tn="bg_green_yellow"
-  bg_cft="bg_green_yellow"
+ 
   bg=""
   moduleLink="/adults/breathing"
   moduleName=" Breathing"
@@ -22,25 +21,37 @@ export class S28015Page implements OnInit {
   moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/07.png',
       link: '/breathing'
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/08.png',
       link: '/noticing-thoughts'
  
     },
     {
       name: 'Guided Audio Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/10.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/10.png',
       link: '/guided-meditation'
   
     },
   ]
 
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'mind') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
+      
+      this.moduleLink = "/adults/breathing"
+      this.moduleName = "Breathing"
+      this.sectionName = "Develop a Calm Mind";
+      this.moduleId = 29
+    
+    }
+   }
 
   ngOnInit() {
   }

@@ -12,8 +12,7 @@ export class S61113Page implements OnInit {
   
   toc="loneliness/s61001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/anger.png"
-  bg_tn="bg_green_yellow"
-  bg_cft="bg_green_yellow"
+ 
   bg=""
   moduleLink="/adults/anger"
   moduleName=" Anger"
@@ -22,25 +21,38 @@ export class S61113Page implements OnInit {
   moduleList: any = [
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/35.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
       link: '/relationships'
     },
     {
       name: 'The Nature of the ‘I’',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/28.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/28.png',
       link: '/nature-of-i'
  
     },
     {
       name: 'Sorrow and Loss',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/31.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/31.png',
       link: '/sorrow'
   
     },
   ]
 
-  constructor() { }
+  constructor() {
+
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'emotions') {
+      this.moduleImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/anger.png"
+     
+      this.moduleLink = "/adults/anger"
+      this.moduleName = "Anger"
+      this.sectionName = "Manage your emotions";
+      this.moduleId = 14
+    
+    }
+   }
 
   ngOnInit() {
   }
 }
+

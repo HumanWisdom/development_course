@@ -12,16 +12,29 @@ export class S22060Page implements OnInit {
 
   toc="meditation/s22001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/nature.jpg"
-  bg_tn="bg_blue"
-  bg_cft="bg_blue"
+  
   bg=""
   moduleLink="/adults/nature"
   moduleName=" Nature"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=28
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'mind') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/look_without_language.jpg"
+    
+      this.moduleLink = "/adults/without-language"
+      this.moduleName = " Look Without Language"
+      this.sectionName = "Develop a Calm Mind";
+      this.moduleId = 42
+    
+    }
+   
+    
+  }
 
   ngOnInit() {
   }
 }
+
