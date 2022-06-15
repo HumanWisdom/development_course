@@ -12079,6 +12079,7 @@ h1.module_title
   background: transparent;
   margin-right: 0;
   padding: 0 !important;
+  box-shadow: unset !important;
 }
 
 .quotation_txt
@@ -28982,4 +28983,12 @@ svg path
 .bg_border_box 
 {
   background: border-box;
+}
+
+.col_btn_prev 
+{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 1rem 20px;
 }

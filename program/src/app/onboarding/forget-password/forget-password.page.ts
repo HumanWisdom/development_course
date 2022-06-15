@@ -184,4 +184,8 @@ export class ForgetPasswordPage implements OnInit {
 
   }
 
+  loginpage() {
+    this.router.navigate(['/onboarding/login'])
+  }
+
 }
