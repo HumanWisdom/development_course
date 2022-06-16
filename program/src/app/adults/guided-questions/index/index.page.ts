@@ -155,7 +155,7 @@ export class IndexPage implements OnInit {
     this.jrList=this.jrListC.filter(p=>p.JrType=="Reflections");
   }
   showNotes(){
-    this.jrList=this.jrListC.filter(p=>p.JrType=="Notes");
+    this.jrList=this.jrListC.filter(p=>p.JrType=="Diary");
   }
 
   GetGuidedQs_Topics(){
