@@ -17,7 +17,7 @@ export class S56054Page implements OnInit {
   moduleLink="/adults/nature-of-i"
   moduleName=" The Nature of the ‘I’"
   sectionName= "How the Mind Works";
-  moduleId=56
+  moduleId=57
   moduleList: any = [
     {
       name: 'Happiness',
