@@ -158,7 +158,7 @@ export class NotePage implements OnInit {
           
          this.editDq()
         }
-      else if(this.urlType=='journal'|| this.urlType=='Journal')
+      else if(this.urlType=='Diary'|| this.urlType=='Diary')
       {
        this.editJournal()
       }
