@@ -53,14 +53,16 @@ export class S55048Page implements OnInit {
     this.sessionOption55048=[]
     this.createScreen()
     this.startTime = Date.now();
-    for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
-    {
-      this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
+    if(this.qrList.ListOfQueOpts) {
+      for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
+      {
+        this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
 
+      }
     }
-      
-   
-    this.questionA=this.qrList.ListOfQueOpts
+
+
+    this.questionA=this.qrList?.ListOfQueOpts
     
     this.question=this.findQuestion(179).Question
     this.optionList=this.findQuestion(179).optionList
@@ -74,6 +76,17 @@ export class S55048Page implements OnInit {
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
+  }
+
+  ngAfterViewInit(): void {
+    if(this.optionList && this.sessionOption55048) {
+      this.optionList.forEach((d) => {
+        if(this.sessionOption55048.includes(d['OptId'])) {
+          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+        }
+      }) 
+    }   
+
   }
 
   createScreen(){
@@ -119,14 +132,16 @@ export class S55048Page implements OnInit {
     return({"Question":question,"optionList":this.optionList})
   }
 
- selectOption(id,e){
+ selectOption(id,e, divid){
    console.log(id,e)
    if(e==true)
    {
+    document.getElementById(divid).style.backgroundColor = '#FFC455';
      this.sendOption.push(id)
    }
    else if(e==false)
    {
+    document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
     this.sendOption.forEach((element,index)=>{
       if(element==id) this.sendOption.splice(index,1);
    });
@@ -134,7 +149,6 @@ export class S55048Page implements OnInit {
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption55048",JSON.stringify(this.sendOption))
   
-
  }
 
  submitProgress(){
@@ -159,20 +173,17 @@ prev(){
 
 
 }
-  sessionFetch(id){
+  sessionFetch(id, divid){
     if(this.sessionOption55048.includes(id))
     {
-
+      // document.getElementById(divid).style.backgroundColor = '#FFC455';
       return true
     }
-      
-    else
+
+    else {
+      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
       return false
-  }
-  
-  ngOnDestroy(){
-    
-  
+    }
   }
 
  
