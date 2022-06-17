@@ -158,6 +158,7 @@ socialFirstName:any
   constructor(
     private router: Router,private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef, private fb: FormBuilder,private authService: SocialAuthService,
      ) {
+      localStorage.setItem('acceptcookie','T')
       localStorage.setItem('curated', 'F');
       let authtoken=JSON.parse(localStorage.getItem("token"))
       let app= localStorage.getItem("fromapp")
