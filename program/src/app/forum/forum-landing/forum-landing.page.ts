@@ -4,6 +4,9 @@ import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ForumService } from '../forum.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { ThrowStmt } from '@angular/compiler';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-forum-landing',
@@ -37,7 +40,7 @@ export class ForumLandingPage implements OnInit {
   },{
     value:3,label:'Reflections'
   }];
-  constructor(private serivce: ForumService,private router: Router, private ngNavigatorShareService: NgNavigatorShareService  ) { 
+  constructor(private serivce: ForumService,private router: Router, private ngNavigatorShareService: NgNavigatorShareService , private location:Location ) { 
      this.UserID= localStorage.getItem('userId');
      console.log(this.UserID);
     this.token=JSON.parse(localStorage.getItem("token"));
@@ -215,5 +218,9 @@ onChange(e){
         return b.PostID - a.PostID;
        });
 return childs;
+  }
+
+  goBack(){
+this.location.back();
   }
 }

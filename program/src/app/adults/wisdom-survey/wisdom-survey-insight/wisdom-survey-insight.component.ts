@@ -56,7 +56,7 @@ export class WisdomSurveyInsightComponent implements OnInit {
             let day = dd.getDay();
             result.push(
                 {
-                  name: name + ' ' + day,
+                  name: name + ' '+ dd.getDate() ,
                   value: parseInt(d['Score'])
           })
           }
@@ -79,60 +79,82 @@ export class WisdomSurveyInsightComponent implements OnInit {
         r.forEach((d, i) => {
           // if(!(result.some((t) => t['wsDate'] === d['wsDate']))) {
             // let dd = new Date(d['wsDate'])
-            let name = monthNames[d['month']];
+            let name = monthNames[d['month']-1];
             // let day = dd.getDay();
               if(d['QuestionID'] === 122) this.anxiety.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
+             
               if(d['QuestionID'] === 123) this.Stress.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 124) this.Emotion.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 125) this.Calmness.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 126) this.confidence.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 127) this.relationships.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 128) this.addictions.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 129) this.criticism.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 130) this.Campassion.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 131) this.Happiness.push( {
-                date: name,
+                year: d['year'] + d['month'],
+                date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
           // }
         })
+      this.anxiety.sort((a,b)=>a.year-b.year )
+      this.Stress.sort((a,b)=>a.year-b.year )
+      this.Emotion.sort((a,b)=>a.year-b.year )
+      this.Calmness.sort((a,b)=>a.year-b.year )
+      this.confidence.sort((a,b)=>a.year-b.year )
+      this.relationships.sort((a,b)=>a.year-b.year )
+      this.addictions.sort((a,b)=>a.year-b.year )
+      this.criticism.sort((a,b)=>a.year-b.year )
+      this.Campassion.sort((a,b)=>a.year-b.year )
+      this.Happiness.sort((a,b)=>a.year-b.year )
+
         this.chartdata = result
       });
   }

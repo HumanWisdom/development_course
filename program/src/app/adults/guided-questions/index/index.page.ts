@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-index',
@@ -24,9 +25,8 @@ export class IndexPage implements OnInit {
   topic=[];
   searchedText:any
 
-  constructor(private router: Router,
-    private rout:ActivatedRoute
-    ,private service: AdultsService) { }
+  constructor(private router: Router, 
+    private rout:ActivatedRoute,private service: AdultsService, private location:Location) { }
 
   ngOnInit() {
     if(this.saveUsername==false)
@@ -155,7 +155,7 @@ export class IndexPage implements OnInit {
     this.jrList=this.jrListC.filter(p=>p.JrType=="Reflections");
   }
   showNotes(){
-    this.jrList=this.jrListC.filter(p=>p.JrType=="Notes");
+    this.jrList=this.jrListC.filter(p=>p.JrType=="Diary");
   }
 
   GetGuidedQs_Topics(){
@@ -163,7 +163,7 @@ export class IndexPage implements OnInit {
     this.topic=res;
     });
   }
-  // goBack(){
-  //   this.location.back()
-  // }
+  goBack(){
+    this.location.back();
+  }
 }

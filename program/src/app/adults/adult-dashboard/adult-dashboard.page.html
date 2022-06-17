@@ -63,7 +63,7 @@
                         <div class="panel-body p0">
 
                           <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeDiscoveringWisdom(0)">
@@ -384,7 +384,7 @@
 
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box">
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
+                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi pr5px">
                                 <a (click)="getsupport('/adults/get-support-now/s71001', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/01.svg" alt="Stress Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -392,7 +392,7 @@
                                   </h4>
                                 </a>
                               </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/get-support-now/s71002', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/02.svg" alt="Solution for Anxiety" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -401,7 +401,7 @@
                                 </a>
                               </div>
 
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/get-support-now/s71003', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/03.svg" alt="Anger Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -410,7 +410,7 @@
                                 </a>
                               </div> 
                               
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/get-support-now/s71004', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/04.svg" alt="Anger Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -419,7 +419,7 @@
                                 </a>
                               </div> 
 
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/get-support-now/s71005', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/05.svg" alt="Anger Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -462,6 +462,64 @@
                         </h4>
                       </div>
                       <div id="ca_cwyl" class="panel-collapse collapse in">
+                                                 
+                        <div class="panel-body p0 m-1px">
+
+                          <div class="row cmr-10px ">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
+
+                              <div *ngFor="let r of resume;; let i = index"  class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeResume(r)">
+                                <img [src]="r.imgPath" alt="r.Module" class="ctimg">
+                                <!--<h4 class="tcenter txt30 atsrno">
+                                  {{i+1}}
+                                </h4>-->
+                            
+                                <h4 class="tcenter txt31 attitle">{{r.Module}}</h4>
+                              
+                                <div class="progress dprogress">
+                                  <div class="progress-bar" role="progressbar" [style.width]="r.Percentage + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                </a>
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+     <!--     <div class="row mlr-10px_01 accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group dpanelgroup" id="accordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading p0">
+                        <h4 class="panel-title dpaneltitle">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_cwyl" aria-expanded="true">
+
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="">
+                                  <h2 class="txt290 mtb0px">
+                                    Continue where you left
+                                  </h2>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </h4>
+                      </div>
+
+                      
+
+
+                     <div id="ca_cwyl" class="panel-collapse collapse in">
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
@@ -534,7 +592,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>  -->
               <!-- /accordion -->
               <!-- /continue where you left -->
 
@@ -688,7 +746,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv lww">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv lww pl5px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeStress(0)">
@@ -921,7 +979,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeFearAnxiety(0)" >
@@ -1021,7 +1079,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeNature(0)">
@@ -1121,7 +1179,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeConditioning(0)">
@@ -1269,7 +1327,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeBenefitsEnquiry(0)">
@@ -1418,7 +1476,7 @@
 
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box">
-                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi">
+                              <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi pr5px">
                                 <a (click)="getsupport('/adults/solving-global-problems/s72001', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/01.svg" alt="Stress Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -1426,7 +1484,7 @@
                                   </h4>
                                 </a>
                               </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/solving-global-problems/s72002', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/02.svg" alt="Solution for Anxiety" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -1435,7 +1493,7 @@
                                 </a>
                               </div>
 
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/solving-global-problems/s72003', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/03.svg" alt="Anger Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -1444,7 +1502,7 @@
                                 </a>
                               </div> 
                               
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/solving-global-problems/s72004', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/04.svg" alt="Anger Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -1453,7 +1511,7 @@
                                 </a>
                               </div> 
 
-                              <div class="col-md-6 col-sm-7 col-xs-7">
+                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                                 <a (click)="getsupport('/adults/solving-global-problems/s72005', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/05.svg" alt="Anger Management" class="crimg">
                                   <h4 class="txt202 tile_title whitespace_preline">
@@ -1583,38 +1641,42 @@
 <span #enablecookiemodal data-toggle="modal" data-target="#modal_cookie"></span>
 
 <!-- cookie modal  -->
-<div class="modal fade" id="modal_cookie" tabindex="-1" data-keyboard="false" role="dialog" aria-labelledby="modal_cookie_title" aria-hidden="true" data-backdrop="false">
-  <div class="modal-dialog modal-dialog-centered  modal_cookie" role="document">
-    <div class="">
-      <div class="modal-header b0">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal" aria-label="Close" (click)="closeEvent()">
-              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright"> -->
-            </button>
+<div class="modal fade" id="modal_cookie" tabindex="-1" data-keyboard="false" role="dialog" aria-labelledby="modal_cookie_title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered w100" role="document">
+    <div class="row center_flex">
+      <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12 modal_cookie">
+        
+        <div class="modal-header b0">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal" aria-label="Close" (click)="closeEvent()">
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright"> -->
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="modal-body pt0px">
-        <!-- modal content -->
-        <div class="row center_flex">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <h4 class="txt59 boldi italici">
-              This website uses cookies
-            </h4>
-            <h4 class="txt59 italici">
-              By continuing to browse you are agreeing to our use of cookies as explained in our &nbsp;<a class="italic txt_white underline" (click)="opennewTab()">Cookie Policy.</a>
-            </h4>
+        <div class="modal-body pt0px">
+          <!-- modal content -->
+          <div class="row center_flex">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <h4 class="txt59 boldi italici">
+                This website uses cookies
+              </h4>
+              <h4 class="txt59 italici">
+                By continuing to browse you are agreeing to our use of cookies as explained in our &nbsp;<a class="italic underline" (click)="opennewTab()">Cookie Policy</a>
+              </h4>
+            </div>
           </div>
+          <!-- /modal content -->
         </div>
-        <!-- /modal content -->
-      </div>
-      <div class="modal-footer b0">
-        <!-- <button type="button" class="btn btn-secondary cblack" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="acceptCookies()">Accept all cookies</button> -->
+        <div class="modal-footer b0">
+          <!-- <button type="button" class="btn btn-secondary cblack" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="acceptCookies()">Accept all cookies</button> -->
+  
+          <button type="button" class="btn btn-warning mb0 btn_cookies_close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning mb0pxi mr0px ml10pxi btn_accept_cookies" (click)="acceptCookies()">Accept all cookies</button>
+        </div>
 
-        <button type="button" class="btn btn-warning mb0 btn_cookies_close" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning mb0pxi mr0px ml10pxi btn_accept_cookies" (click)="acceptCookies()">Accept all cookies</button>
       </div>
     </div>
   </div>

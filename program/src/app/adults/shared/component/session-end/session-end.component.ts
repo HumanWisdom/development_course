@@ -61,4 +61,7 @@ export class SessionEndComponent implements OnInit {
     this.router.navigate(['/adults/journal'])
   }
 
+  routeForum(){
+  this.router.navigate(['/forum'])
+  }
 }

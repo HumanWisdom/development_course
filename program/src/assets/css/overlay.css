@@ -562,7 +562,7 @@
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   z-index: 2;
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
 }
 
 .happiness_base1 

@@ -206,21 +206,21 @@ export class WisdomScalePage implements OnInit {
       }
       case "7":{
         this.rating7=e.Rating
-        this.s7=this.optionList6.find(x=>x.Points==e.Rating).OptId
+        this.s7=this.optionList7.find(x=>x.Points==e.Rating).OptId
         console.log("selected rating",this.s7)
         break;
 
       }
       case "8":{
         this.rating8=e.Rating
-        this.s8=this.optionList6.find(x=>x.Points==e.Rating).OptId
+        this.s8=this.optionList8.find(x=>x.Points==e.Rating).OptId
         console.log("selected rating",this.s8)
         break;
 
       }
       case "9":{
         this.rating9=e.Rating
-        this.s9=this.optionList6.find(x=>x.Points==e.Rating).OptId
+        this.s9=this.optionList9.find(x=>x.Points==e.Rating).OptId
         console.log("selected rating",this.s9)
         break;
 
@@ -228,7 +228,7 @@ export class WisdomScalePage implements OnInit {
       case "10":{
         this.rating10=e.Rating
         this.s10=this.optionList10.find(x=>x.Points==e.Rating).OptId
-        console.log("selected rating",this.rating10)
+        console.log("selected rating", this.s10)
         break;
 
       }

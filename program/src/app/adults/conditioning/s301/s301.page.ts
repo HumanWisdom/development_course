@@ -53,14 +53,16 @@ export class S301Page implements OnInit {
    
     this.createScreen()
     this.startTime = Date.now();
-    for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
-    {
-      this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
+    if(this.qrList.ListOfQueOpts) {
+      for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
+      {
+        this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
 
+      }
     }
-      
-   
-    this.questionA=this.qrList.ListOfQueOpts
+
+
+    this.questionA=this.qrList?.ListOfQueOpts
     
     this.question=this.findQuestion(63).Question
     this.optionList=this.findQuestion(63).optionList
@@ -88,6 +90,18 @@ export class S301Page implements OnInit {
       this.bookmark=0
     sessionStorage.setItem("bookmark301",JSON.stringify(this.bookmark))
   }
+
+  ngAfterViewInit(): void {
+    if(this.optionList && this.sessionOption301) {
+      this.optionList.forEach((d) => {
+        if(this.sessionOption301.includes(d['OptId'])) {
+          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+        }
+      }) 
+    }   
+
+  }
+
   createScreen(){
     this.service.createScreen({
       "ScrId":0,
@@ -122,14 +136,16 @@ export class S301Page implements OnInit {
     return({"Question":question,"optionList":this.optionList})
   }
 
- selectOption(id,e){
+ selectOption(id,e, divid){
    console.log(id,e)
    if(e==true)
    {
+    document.getElementById(divid).style.backgroundColor = '#FFC455';
      this.sendOption.push(id)
    }
-   if(e==false)
+   else if(e==false)
    {
+    document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
     this.sendOption.forEach((element,index)=>{
       if(element==id) this.sendOption.splice(index,1);
    });
@@ -137,7 +153,6 @@ export class S301Page implements OnInit {
    console.log(this.sendOption)
    sessionStorage.setItem("sessionOption301",JSON.stringify(this.sendOption))
   
-
  }
 
   submitProgress(){
@@ -163,15 +178,17 @@ export class S301Page implements OnInit {
 
 
   }
-  sessionFetch(id){
+  sessionFetch(id, divid){
     if(this.sessionOption301.includes(id))
     {
-
+      // document.getElementById(divid).style.backgroundColor = '#FFC455';
       return true
     }
-      
-    else
+
+    else {
+      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
       return false
+    }
   }
   
   ngOnDestroy(){

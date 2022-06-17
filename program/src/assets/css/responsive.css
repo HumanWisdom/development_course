@@ -175,7 +175,8 @@
 
     .img_google_playstore 
     {
-        max-width: 65%;
+        /* max-width: 65%; */
+        max-width: 50%;
     }
 
     .cmtop 
@@ -300,7 +301,8 @@
 
     .img_google_playstore 
     {
-        max-width: 55%;
+        /* max-width: 55%; */
+        max-width: 40%;
     }
 
     .cmr-10px 
