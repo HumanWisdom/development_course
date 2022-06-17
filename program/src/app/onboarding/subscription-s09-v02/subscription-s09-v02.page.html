@@ -86,21 +86,36 @@
                             </div>
                             <ng-container *ngFor="let item of myprograms">
                                 <div class="row center_flex pt20px">
-                                    <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                                        <h6 class="txt110 tleft mtb0px">
-                                            <img src="assets/svgs/icons/user/subscription_01.svg" alt="" class="">
-                                            {{item['BoughtName']}}
+                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                                        <h6 class="txt106">
+                                            {{item['Prog']}}
+                                        </h6>
+                                        <h6 class="txt119">
+                                            Program Code: {{item['ActKey']}}
                                         </h6>
                                     </div>
-
-                                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                  
+                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
                                         <h6 class="txt120">
                                             Auto-renew: {{item['ExpDate']}}
                                         </h6>
                                     </div>
                                 </div>
 
-                                <hr class="shr3">
+                                <div class="row center_flex">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                                        <h6 class="txt121 tleft mtb0px">
+                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" alt="" class="">
+                                            <span>{{item['BoughtName']}}</span>
+                                        </h6>                        
+                                    </div>
+                  
+                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                        <button class="btn btn-default dn_autorenew" type="button" (click)="donotautorenew(item['ActKey'])">                            
+                                            Do not Auto-renew
+                                        </button>
+                                    </div>
+                                </div>
 
                                 <!-- <div class="row spt10px">
                   <div class="col-md-6 col-sm-6 col-xs-8 p0 center_flex">
