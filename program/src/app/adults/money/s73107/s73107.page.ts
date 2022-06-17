@@ -18,7 +18,7 @@ export class S73107Page implements OnInit {
   moduleLink="/adults/work/s58001"
   moduleName=" Work"
   sectionName= "Living with Wisdom - II";
-  moduleId=25
+  moduleId=58
   moduleList: any = [
     {
       name: 'Stress',
