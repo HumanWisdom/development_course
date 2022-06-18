@@ -67,6 +67,12 @@ export class SubscriptionS09V02Page implements OnInit {
     this.activeName = name
   }
 
+  donotautorenew(key) {
+     this.service.donotautorenew(key).subscribe((res) => {
+
+     })
+  }
+
   cancelAsign() {
     this.openAssign = false;
   }
