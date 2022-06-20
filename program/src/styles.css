@@ -26071,7 +26071,8 @@ h1
 .btn_mdpd_tray
 {
   /* margin: 0; */
-  margin: 0 0 10px 0;
+  /* margin: 0 0 10px 0; */
+  margin: 0 10px 10px 0;
   border: 0;
   
   height: 40px;
@@ -26094,7 +26095,8 @@ h1
 
 .mdpd_tray 
 {
-  margin: 40px -10px 0 0;
+  /* margin: 40px -10px 0 0; */
+  margin: 40px 0px 0 10px;
 }
 
 .dmdpd_tray 
@@ -26108,10 +26110,10 @@ h1
   width: 100%;
   overflow: hidden;
   overflow-x: scroll;
-  display: grid;
-  grid-template-columns: repeat(5, auto);
+  /* display: grid; */
+  /* grid-template-columns: repeat(5, auto); */
   /* grid-gap: 10px; */
-  grid-gap: 0 10px;
+  /* grid-gap: 0 10px; */
 }
 
 .ghn
@@ -29002,4 +29004,17 @@ svg path
 .fs16px
 {
   font-size: 16px;
+}
+
+/* .tray_btns a::after
+{
+  content: "\a";
+  white-space: pre;
+} */
+
+.traydiv
+{
+  display: flex;
+  /* grid-gap: 10px; */
+  padding: 0;
 }

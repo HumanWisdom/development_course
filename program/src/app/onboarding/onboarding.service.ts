@@ -165,4 +165,7 @@ export class OnboardingService {
     return this.http.get(this.path+`/GetPaymentDetails/${data}`)
   }
   
+  donotautorenew(ActCode: any):Observable<any>{
+    return this.http.post(this.path+`/PauseSubscription/${ActCode}`, {})
+  }
 }
