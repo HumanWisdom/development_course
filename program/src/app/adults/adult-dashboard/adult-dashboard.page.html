@@ -704,9 +704,20 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box">
 
                               <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi" *ngFor="let item of shortsList; let i =index">
-                                <a (click)="wisdomshortsclick(item['VideoUrl'])">
+                                <!-- <a (click)="wisdomshortsclick(item['VideoUrl'])">
                                   <img src="{{item['ImgUrl']}}" alt="Stress Management" class="crimg br10px">
 
+                                  <h4 class="txt202 tile_title whitespace_preline">
+                                    {{item['Title']}}
+                                  </h4>
+                                </a> -->
+                                <a (click)="wisdomshortsclick(item['VideoUrl'])">
+                                  <div class="prelative">
+                                    <img src="{{item['ImgUrl']}}" alt="Stress Management" class="crimg br10px">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
                                   <h4 class="txt202 tile_title whitespace_preline">
                                     {{item['Title']}}
                                   </h4>
