@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import {Location } from '@angular/common'
+import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 
 @Component({
   selector: 'app-wisdom-survey-insight',
@@ -82,62 +83,62 @@ export class WisdomSurveyInsightComponent implements OnInit {
             let name = monthNames[d['month']-1];
             // let day = dd.getDay();
               if(d['QuestionID'] === 122) this.anxiety.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
              
               if(d['QuestionID'] === 123) this.Stress.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 124) this.Emotion.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 125) this.Calmness.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 126) this.confidence.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 127) this.relationships.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 128) this.addictions.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 129) this.criticism.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 130) this.Campassion.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
               })
               if(d['QuestionID'] === 131) this.Happiness.push( {
-                year: d['year'] + d['month'],
+                year:  Number(d['year'].toString() + String( d['month']).padStart(2,'0')),
                 date: name + ' ' +  d['year'],
                 last: r.length === i + 1,
                 r: parseInt(d['Score']) * 10
