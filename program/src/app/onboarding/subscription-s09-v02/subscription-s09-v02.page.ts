@@ -67,10 +67,14 @@ export class SubscriptionS09V02Page implements OnInit {
     this.activeName = name
   }
 
-  donotautorenew(key) {
-     this.service.donotautorenew(key).subscribe((res) => {
+  donotautorenew(key, val='') {
+    if(val === '') {
+      this.service.donotautorenew(key).subscribe((res) => {
 
-     })
+      })
+    }else {
+     return new Date(key['ExpDate']).getTime() > new Date().getTime()
+    }
   }
 
   cancelAsign() {
