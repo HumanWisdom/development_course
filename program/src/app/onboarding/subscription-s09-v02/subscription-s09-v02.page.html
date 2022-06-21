@@ -125,7 +125,7 @@
                                                     </div>
                                   
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <button class="btn btn-default dn_autorenew" type="button" (click)="donotautorenew(item['ActKey'])">                            
+                                                        <button class="btn btn-default dn_autorenew" *ngIf="donotautorenew(item, 'compare')" type="button" (click)="donotautorenew(item['ActKey'])">                            
                                                             Do not Auto-renew
                                                         </button>
                                                     </div>
