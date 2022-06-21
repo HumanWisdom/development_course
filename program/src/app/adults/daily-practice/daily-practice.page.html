@@ -63,7 +63,10 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <div class="row tcenter">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
-                              <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
+                              <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
+                                <source [src]="videoLink" type="video/mp4">                                              
+                              </video>  -->
+                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata"> 
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video> 
                             </div>
