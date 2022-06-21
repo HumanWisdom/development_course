@@ -71,152 +71,193 @@
 
                             <hr class="shr1">
 
-                            <div class="row active_programs mt30px cmlr-10px">
-                                <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                                    <h6 class="txt59">
-                                        Active Programs
-                                    </h6>
-                                </div>
+                            <!-- accordion - active programs-->
+                            <div class="panel-group spanelgroup">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading p0">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#ap">
+                                                
+                                                <div class="row active_programs mt30px cmlr-10px">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 tleft">
+                                                        <h6 class="txt59">
+                                                            Active Programs
+                                                        </h6>
+                                                    </div>
+                    
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                                                        <h6 class="txt59">
+                                                            {{myprograms.length}}
+                                                        </h6>
+                                                    </div>
+                                                </div>
 
-                                <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                    <h6 class="txt59">
-                                        {{myprograms.length}}
-                                    </h6>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="ap" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <ng-container *ngFor="let item of myprograms" id="demo" class="collapse">
+                                                <div class="row center_flex pt20px">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                                                        <h6 class="txt106">
+                                                            {{item['Prog']}}
+                                                        </h6>
+                                                        <h6 class="txt119">
+                                                            Program Code: {{item['ActKey']}}
+                                                        </h6>
+                                                    </div>
+                                  
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                                        <h6 class="txt120">
+                                                            Auto-renew: {{item['ExpDate']}}
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="row center_flex">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                                                        <h6 class="txt121 tleft mtb0px">
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" alt="" class="">
+                                                            <span class="ml5px">{{item['BoughtName']}}</span>
+                                                        </h6>                        
+                                                    </div>
+                                  
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                                        <button class="btn btn-default dn_autorenew" type="button" (click)="donotautorenew(item['ActKey'])">                            
+                                                            Do not Auto-renew
+                                                        </button>
+                                                    </div>
+                                                </div>
+                
+                                                <!-- <div class="row spt10px">
+                                                    <div class="col-md-6 col-sm-6 col-xs-8 p0 center_flex">
+                                                        <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
+                                                        </div>
+                                                        <div class="col-md-10 col-sm-10 col-xs-10 p0">                            
+                                                            <h6 class="stxt69 tleft mtb0px">                            
+                                                                agata.corcrain@gmail.com
+                                                            </h6>  
+                                                        </div>                                           
+                                                    </div>
+                                    
+                                                    <div class="col-md-6 col-sm-6 col-xs-4 p0 tright">
+                                                        <h6 class="txt120">
+                                                            Expiry: 10 Apr 21
+                                                        </h6>
+                                                    </div>
+                                                </div> -->
+                                            </ng-container>
+
+                                        </div>
+                                        <!-- <div class="panel-footer">Panel Footer</div> -->
+                                    </div>
                                 </div>
                             </div>
-                            <ng-container *ngFor="let item of myprograms">
-                                <div class="row center_flex pt20px">
-                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                                        <h6 class="txt106">
-                                            {{item['Prog']}}
-                                        </h6>
-                                        <h6 class="txt119">
-                                            Program Code: {{item['ActKey']}}
-                                        </h6>
+                            <!-- /accordion - active programs -->
+
+                            <!-- accordion - not yet started -->
+                            <div class="panel-group spanelgroup">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading p0">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#nys">
+                                                
+                                                <div class="row active_programs mt30px cmlr-10px">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 tleft">
+                                                        <h6 class="txt59">
+                                                            Not Yet Started
+                                                        </h6>
+                                                    </div>
+                    
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                                                        <h6 class="txt59">
+                                                            {{notmyprograms.length}}
+                                                        </h6>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </h4>
                                     </div>
-                  
-                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                        <h6 class="txt120">
-                                            Auto-renew: {{item['ExpDate']}}
-                                        </h6>
+                                    <div id="nys" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <ng-container *ngFor="let item of notmyprograms">
+                                                <div class="row spt10px center_flex" *ngIf="item['Email'] !== ''">
+                                                    <div class="col-md-6 col-sm-6 col-xs-8 center_flex pl0px">
+                                                        <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
+                                                        </div>
+                                                        <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                                                            <h6 class="stxt69 tleft mtb0px">
+                                                                {{item['Email']}}
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="col-md-6 col-sm-6 col-xs-4 tright pr0px" (click)="sendInvite(item)">
+                                                        <h6 class="txt123 mtb0px fright">
+                                                            Invite Sent
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <hr class="shr3">
+                                                <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
+                                                        <h6 class="txt110 mtb0px">
+                                                            Adults
+                                                        </h6>
+                                                    </div>
+                
+                                                    <div class="col-md-8 col-sm-8 col-xs-8 tright flexalign_center">
+                                                        <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                                            <h6 class="txt119 mtb0px">
+                                                                {{item['ActKey']}}
+                                                            </h6>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                                                            <button class="btn btn-warning btn_assign w100" type="button"
+                                                                data-toggle="collapse" (click)="getAssignClick(item['ActKey'], item['ConsumedName'])" data-parent="#accordion" href="#a4"
+                                                                aria-expanded="false">
+                                                                Assign
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+
+                                        </div>
+                                        <!-- <div class="panel-footer">Panel Footer</div> -->
                                     </div>
-                                </div>
-
-                                <div class="row center_flex">
-                                    <div class="col-md-6 col-sm-6 col-xs-6 p0">
-                                        <h6 class="txt121 tleft mtb0px">
-                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" alt="" class="">
-                                            <span>{{item['BoughtName']}}</span>
-                                        </h6>                        
-                                    </div>
-                  
-                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                        <button class="btn btn-default dn_autorenew" type="button" (click)="donotautorenew(item['ActKey'])">                            
-                                            Do not Auto-renew
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- <div class="row spt10px">
-                  <div class="col-md-6 col-sm-6 col-xs-8 p0 center_flex">
-                      <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
-                      </div>
-                      <div class="col-md-10 col-sm-10 col-xs-10 p0">                            
-                          <h6 class="stxt69 tleft mtb0px">                            
-                              agata.corcrain@gmail.com
-                          </h6>  
-                      </div>                                           
-                  </div>
-
-                  <div class="col-md-6 col-sm-6 col-xs-4 p0 tright">
-                      <h6 class="txt120">
-                          Expiry: 10 Apr 21
-                      </h6>
-                  </div>
-              </div> -->
-                            </ng-container>
-
-                            <div class="row active_programs mt30px cmlr-10px">
-                                <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                                    <h6 class="txt59">
-                                        Not Yet Started
-                                    </h6>
-                                </div>
-
-                                <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                    <h6 class="txt59">
-                                        {{notmyprograms.length}}
-                                    </h6>
                                 </div>
                             </div>
-
-                            <ng-container *ngFor="let item of notmyprograms">
-                                <div class="row spt10px center_flex" *ngIf="item['Email'] !== ''">
-                                    <div class="col-md-6 col-sm-6 col-xs-8 center_flex">
-                                        <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
-                                        </div>
-                                        <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                                            <h6 class="stxt69 tleft mtb0px">
-                                                {{item['Email']}}
-                                            </h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 col-sm-6 col-xs-4 tright" (click)="sendInvite(item)">
-                                        <h6 class="txt123 mtb0px fright">
-                                            Invite Sent
-                                        </h6>
-                                    </div>
-                                </div>
-                                <hr class="shr3">
-                                <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
-                                    <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                                        <h6 class="txt110 mtb0px">
-                                            Adults
-                                        </h6>
-                                    </div>
-
-                                    <div class="col-md-8 col-sm-8 col-xs-8 tright flexalign_center">
-                                        <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                            <h6 class="txt119 mtb0px">
-                                                {{item['ActKey']}}
-                                            </h6>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                            <button class="btn btn-warning btn_assign w100" type="button"
-                                                data-toggle="collapse" (click)="getAssignClick(item['ActKey'], item['ConsumedName'])" data-parent="#accordion" href="#a4"
-                                                aria-expanded="false">
-                                                Assign
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ng-container>
+                            <!-- /accordion - not yet started -->
 
                             <!-- <hr class="shr3"> -->
 
                             <!-- <div class="row pt0px center_flex">
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                      <h6 class="txt110 mtb0px">
-                          Adults
-                      </h6>
-                  </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
+                                    <h6 class="txt110 mtb0px">
+                                        Adults
+                                    </h6>
+                                </div>
 
-                  <div class="col-md-8 col-sm-8 col-xs-8 p0 tright flexalign_center">
-                      <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <h6 class="txt119 mtb0px">
-                              A580IUBG
-                          </h6>
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 pr0 tright">
-                          <button class="btn btn-warning btn_assign w100" type="button">                            
-                              Assign
-                          </button>
-                      </div>                        
-                  </div>                    
-              </div>     -->
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0 tright flexalign_center">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                        <h6 class="txt119 mtb0px">
+                                            A580IUBG
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 pr0 tright">
+                                        <button class="btn btn-warning btn_assign w100" type="button">                            
+                                            Assign
+                                        </button>
+                                    </div>                        
+                                </div>                    
+                            </div>     -->
 
                             <hr class="shr3" *ngIf="openAssign">
 
