@@ -98,7 +98,7 @@
                                     <div id="ap" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             
-                                            <ng-container *ngFor="let item of myprograms">
+                                            <ng-container *ngFor="let item of myprograms" id="demo" class="collapse">
                                                 <div class="row center_flex pt20px">
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
                                                         <h6 class="txt106">
@@ -111,7 +111,7 @@
                                   
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
                                                         <h6 class="txt120">
-                                                            {{donotautorenew(item, 'compareauto') ? 'Auto-renew: ' + item['ExpDate'] : 'Expired ' + item['ExpDate']}}
+                                                            Auto-renew: {{item['ExpDate']}}
                                                         </h6>
                                                     </div>
                                                 </div>
@@ -119,9 +119,8 @@
                                                 <div class="row center_flex">
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0">
                                                         <h6 class="txt121 tleft mtb0px">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" *ngIf="item['MySelf'] === '0'" alt="" class="">
-                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" *ngIf="item['MySelf'] === '1'" alt="" class="">
-                                            <span>{{item['MySelf'] === '0' ? item['ConsumedName'] : item['BoughtName']}}</span>
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" alt="" class="">
+                                                            <span class="ml5px">{{item['BoughtName']}}</span>
                                                         </h6>                        
                                                     </div>
                                   
@@ -133,23 +132,23 @@
                                                 </div>
                 
                                                 <!-- <div class="row spt10px">
-                                  <div class="col-md-6 col-sm-6 col-xs-8 p0 center_flex">
-                                      <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
-                                      </div>
-                                      <div class="col-md-10 col-sm-10 col-xs-10 p0">                            
-                                          <h6 class="stxt69 tleft mtb0px">                            
-                                              agata.corcrain@gmail.com
-                                          </h6>  
-                                      </div>                                           
-                                  </div>
-                
-                                  <div class="col-md-6 col-sm-6 col-xs-4 p0 tright">
-                                      <h6 class="txt120">
-                                          Expiry: 10 Apr 21
-                                      </h6>
-                                  </div>
-                              </div> -->
+                                                    <div class="col-md-6 col-sm-6 col-xs-8 p0 center_flex">
+                                                        <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
+                                                        </div>
+                                                        <div class="col-md-10 col-sm-10 col-xs-10 p0">                            
+                                                            <h6 class="stxt69 tleft mtb0px">                            
+                                                                agata.corcrain@gmail.com
+                                                            </h6>  
+                                                        </div>                                           
+                                                    </div>
+                                    
+                                                    <div class="col-md-6 col-sm-6 col-xs-4 p0 tright">
+                                                        <h6 class="txt120">
+                                                            Expiry: 10 Apr 21
+                                                        </h6>
+                                                    </div>
+                                                </div> -->
                                             </ng-container>
 
                                         </div>
@@ -158,7 +157,7 @@
                                 </div>
                             </div>
                             <!-- /accordion - active programs -->
-                            
+
                             <!-- accordion - not yet started -->
                             <div class="panel-group spanelgroup">
                                 <div class="panel panel-default">
@@ -188,7 +187,7 @@
                                             
                                             <ng-container *ngFor="let item of notmyprograms">
                                                 <div class="row spt10px center_flex" *ngIf="item['Email'] !== ''">
-                                                    <div class="col-md-6 col-sm-6 col-xs-8 center_flex">
+                                                    <div class="col-md-6 col-sm-6 col-xs-8 center_flex pl0px">
                                                         <div class="col-md-2 col-sm-2 col-xs-2 p0">
                                                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
                                                         </div>
@@ -199,7 +198,7 @@
                                                         </div>
                                                     </div>
                 
-                                                    <div class="col-md-6 col-sm-6 col-xs-4 tright" (click)="sendInvite(item)">
+                                                    <div class="col-md-6 col-sm-6 col-xs-4 tright pr0px" (click)="sendInvite(item)">
                                                         <h6 class="txt123 mtb0px fright">
                                                             Invite Sent
                                                         </h6>

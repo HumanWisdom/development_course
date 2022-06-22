@@ -29018,3 +29018,22 @@ svg path
   /* grid-gap: 10px; */
   padding: 0;
 }
+
+/* accordion panel */
+.spanelgroup .panel-title > a:after
+{
+  display: none;
+}
+
+.spanelgroup .panel
+{
+  background: #FFF;
+  border: 0;
+  box-shadow: unset;
+}
+
+.spanelgroup .panel-heading 
+{
+  background: #FFF;
+}
+/* /accordion panel */
