@@ -171,9 +171,10 @@ export class WisdomScalePage implements OnInit {
       }
       case "2":{
         this.rating2=e.Rating
-        this.optionList2.forEach((x)=>{ x.OptId=parseInt(x.OptId) });
-        this.optionList2.sort((a, b) => a.OptId - b.OptId);
-        this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
+        // this.optionList2.forEach((x)=>{ x.OptId=parseInt(x.OptId) });
+        // this.optionList2.sort((a, b) => a.OptId - b.OptId);
+        // this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
+        this.s2=this.optionList2.find(x=>x.Points==e.Rating).OptId
         console.log(this.s2)
         break;
 
