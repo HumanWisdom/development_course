@@ -37,6 +37,20 @@ export class SubscriptionS09V02Page implements OnInit {
         () => {
           // this.router.navigate(["/onboarding/assign-key"])
         })
+        if(this.myprograms.length !== 0) {
+          this.myprograms.forEach((r) => {
+            if(r['AutoRenew'] === 1) {
+              this.autorenew(r['ActKey'])
+            }
+          })
+        }
+  }
+
+  autorenew(key) {
+    this.service.donotautorenew(key).subscribe((res) => {
+       if(res) return true;
+       else return false
+    })
   }
 
   sendInvite(data) {
@@ -72,8 +86,10 @@ export class SubscriptionS09V02Page implements OnInit {
       this.service.donotautorenew(key).subscribe((res) => {
 
       })
-    }else {
+    }else if(val === 'compare') {
      return new Date(key['ExpDate']).getTime() > new Date().getTime()
+    }else {
+      return new Date(key['ExpDate']).getTime() > new Date().getTime()
     }
   }
 
