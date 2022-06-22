@@ -385,6 +385,11 @@
     {
         padding: 0 20px 0 20px;
     }
+
+    .cp0_02
+    {
+        padding: 0px;
+    }
 }
 
 @media (max-width: 768px)
@@ -392,6 +397,11 @@
     .fl_back
     {
         padding: 0 20px !important;
+    }
+
+    .cp0_02
+    {
+        padding: 0px 10px !important;
     }
 }
 
@@ -823,6 +833,11 @@
     .mdp_audio 
     {
         margin: 0 0 15px 0;
+    }
+
+    .mdp_answer_here
+    {
+        margin: 10px 0 0 0;
     }
 }
 
