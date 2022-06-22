@@ -168,4 +168,7 @@ export class OnboardingService {
   donotautorenew(ActCode: any):Observable<any>{
     return this.http.post(this.path+`/PauseSubscription/${ActCode}`, {})
   }
+  autorenew(ActCode: any):Observable<any>{
+    return this.http.post(this.path+`/ResumeSubscription/${ActCode}`, {})
+  }
 }

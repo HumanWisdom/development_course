@@ -28,7 +28,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="isloggedIn">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 jc_flexend">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-            <a routerLink="/adults/bookmarks">
+            <a routerLink="/adults/bookmarks" *ngIf="enablebookmark">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_active.svg" class="img-responsive" alt="">
             </a>
           </div>
