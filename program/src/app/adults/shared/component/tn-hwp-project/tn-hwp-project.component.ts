@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 @Component({
@@ -12,6 +12,9 @@ export class TnHwpProjectComponent implements OnInit {
   roleid = 0
   url = '';
   subscriper= false;
+
+  @Input()
+  enablebookmark = false
 
   constructor(private router: Router, private Onboardingservice: OnboardingService) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
