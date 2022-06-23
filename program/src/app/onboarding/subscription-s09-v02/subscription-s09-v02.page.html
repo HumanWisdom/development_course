@@ -110,8 +110,11 @@
                                                     </div>
                                   
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <h6 class="txt120">
-                                                            {{donotautorenew(item, 'compareauto') ? 'Auto-renew: ' + item['ExpDate'] : 'Expired ' + item['ExpDate']}}
+                                                        <h6 class="txt120" *ngIf="donotautorenew(item, 'compareauto')">
+                                                            Auto-renew:  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                                        </h6>
+                                                        <h6 class="txt120" *ngIf="!donotautorenew(item, 'compareauto')">
+                                                            Expired: {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                                         </h6>
                                                     </div>
                                                 </div>
@@ -126,8 +129,12 @@
                                                     </div>
                                   
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <button class="btn btn-default dn_autorenew" *ngIf="donotautorenew(item, 'compare')" type="button" (click)="donotautorenew(item['ActKey'])">                            
+                                                        <button class="btn btn-default dn_autorenew"  *ngIf="item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare')" type="button" (click)="donotautorenew(item['ActKey'])">                            
                                                             Do not Auto-renew
+                                                        </button>
+                                        
+                                                        <button class="btn btn-warning btn_apply_coupon w100" *ngIf="item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') || enableautorenew" type="button" (click)="autorenew(item['ActKey'])">                            
+                                                            Activate Auto-Renew
                                                         </button>
                                                     </div>
                                                 </div>
