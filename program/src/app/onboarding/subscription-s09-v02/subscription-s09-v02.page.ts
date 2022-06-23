@@ -17,6 +17,7 @@ export class SubscriptionS09V02Page implements OnInit {
   public email = '';
   public message = '';
   public myself = 0;
+  public enableautorenew = false
 
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
@@ -37,19 +38,11 @@ export class SubscriptionS09V02Page implements OnInit {
         () => {
           // this.router.navigate(["/onboarding/assign-key"])
         })
-        if(this.myprograms.length !== 0) {
-          this.myprograms.forEach((r) => {
-            if(r['AutoRenew'] === 1) {
-              this.autorenew(r['ActKey'])
-            }
-          })
-        }
   }
 
   autorenew(key) {
-    this.service.donotautorenew(key).subscribe((res) => {
-       if(res) return true;
-       else return false
+    this.service.autorenew(key).subscribe((res) => {
+
     })
   }
 
@@ -84,7 +77,9 @@ export class SubscriptionS09V02Page implements OnInit {
   donotautorenew(key, val='') {
     if(val === '') {
       this.service.donotautorenew(key).subscribe((res) => {
-
+        if(res) {
+          this.enableautorenew = true;
+        }
       })
     }else if(val === 'compare') {
      return new Date(key['ExpDate']).getTime() > new Date().getTime()
