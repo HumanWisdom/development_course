@@ -28,6 +28,7 @@ import { NgxCaptureModule } from 'ngx-capture';
 import { ActiveGuard } from './active.guard';
 import { authLoginGuard } from './auth-login.guard';
 import { SplashPageModule } from './adults/splash/splash.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -43,7 +44,8 @@ import { SplashPageModule } from './adults/splash/splash.module';
     SplashPageModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
    StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
-   NgxCaptureModule 
+   NgxCaptureModule,
+   BrowserAnimationsModule
     
     ],
   providers: [
