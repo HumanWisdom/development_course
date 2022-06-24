@@ -17,7 +17,6 @@ export class SubscriptionS09V02Page implements OnInit {
   public email = '';
   public message = '';
   public myself = 0;
-  public enableautorenew = false
 
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
@@ -40,9 +39,12 @@ export class SubscriptionS09V02Page implements OnInit {
         })
   }
 
-  autorenew(key) {
+  autorenew(key, val='', id='') {
     this.service.autorenew(key).subscribe((res) => {
-
+if(res) {
+  document.getElementById(val).style.display = 'block'
+  document.getElementById('autorenew' + id).style.display = 'none'
+}
     })
   }
 
@@ -74,11 +76,12 @@ export class SubscriptionS09V02Page implements OnInit {
     this.activeName = name
   }
 
-  donotautorenew(key, val='') {
-    if(val === '') {
+  donotautorenew(key, val='', id='', donot='') {
+    if(donot === 'donot') {
       this.service.donotautorenew(key).subscribe((res) => {
         if(res) {
-          this.enableautorenew = true;
+          document.getElementById(val).style.display = 'block'
+          document.getElementById('donotautorenew' + id).style.display = 'none'
         }
       })
     }else if(val === 'compare') {
