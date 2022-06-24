@@ -69,7 +69,7 @@ export class IndexPage implements OnInit {
   }
   
   RouteToToQuestions(item){
-    let url = `/journal/introduction${item.Landing_URL}`
+    let url = `/journal${item.Landing_URL}`
     this.router.navigate([url])
    // this.router.navigate(['/journal/introduction'],{state:{"data":JSON.stringify(item)}})
   }

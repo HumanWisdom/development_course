@@ -17,7 +17,11 @@ const routes: Routes = [
   //   path: 'journal',
   //   loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
   // },
-
+  {
+    path: "journal/:TopicName",
+    loadChildren: () => import('./guided-questions/introduction/introduction.module').then( m => m.IntroductionPageModule),
+    pathMatch:"full"
+  },
     {
     path: 'journal',
     loadChildren: () => import('./guided-questions/guided-questions.module').then( m=>m.GuidedQuestionsModule)

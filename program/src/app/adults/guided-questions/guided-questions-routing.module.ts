@@ -11,13 +11,10 @@ const routes: Routes = [
     loadChildren: () => import("./index/index.module").then( m => m.IndexPageModule)
   },
   {
-    path: "introduction/:TopicName",
-    loadChildren: () => import('./introduction/introduction.module').then( m => m.IntroductionPageModule)
-  },
-  {
     path: 'questions',
     loadChildren: () => import('./questions/questions.module').then( m => m.QuestionsPageModule)
   },
+
 ];
 
 @NgModule({
