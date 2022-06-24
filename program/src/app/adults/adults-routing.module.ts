@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./guided-questions/guided-questions.module').then( m=>m.GuidedQuestionsModule)
   },
   {
+    path: 'guidedquestions',
+    loadChildren: () => import('./guided-questions/questions/questions.module').then( m => m.QuestionsPageModule)
+  },
+  {
     path: 'note',
     loadChildren: () => import('./note/note.module').then( m => m.NotePageModule)
   }, 

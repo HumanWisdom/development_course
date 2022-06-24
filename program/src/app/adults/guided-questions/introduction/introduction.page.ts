@@ -26,7 +26,7 @@ export class IntroductionPage implements OnInit {
   }
 
   NavigateToQuestions() {
-    this.router.navigate(['/journal/questions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+    this.router.navigate(['/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
   }
 
   GetGuidedQs_Topics(url) {

@@ -9,11 +9,7 @@ const routes: Routes = [
   {
     path: "journal",
     loadChildren: () => import("./index/index.module").then( m => m.IndexPageModule)
-  },
-  {
-    path: 'questions',
-    loadChildren: () => import('./questions/questions.module').then( m => m.QuestionsPageModule)
-  },
+  }
 
 ];
 
