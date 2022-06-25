@@ -124,7 +124,7 @@
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <a>
                           <div  (click)="GoToQuestions(j)"  class="panel panel-default pdefault_01 prelative">
-                            <div class="panel-heading absolute_ptitle" [ngClass]="{'guidedQuestion_ptitle': j.JrType=='Guided Questions'}" >
+                            <div class="panel-heading absolute_ptitle" [ngClass]="{'cyan_light': j.JrType=='Guided Questions','gray_light':j.JrType=='Diary'}" >
                               <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
                             <div class="panel-body">
