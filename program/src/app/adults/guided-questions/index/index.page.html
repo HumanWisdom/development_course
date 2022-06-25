@@ -124,11 +124,12 @@
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <a>
                           <div  (click)="GoToQuestions(j)"  class="panel panel-default pdefault_01 prelative">
-                            <div class="panel-heading absolute_ptitle">
+                            <div class="panel-heading absolute_ptitle" [ngClass]="{'guidedQuestion_ptitle': j.JrType=='Guided Questions'}" >
                               <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
                             <div class="panel-body">
                               <h4 class="txt309">{{j.Date| date}}</h4>
+                              <h4  class="txt310" *ngIf="j.JrType=='Reflections' || j.JrType=='Guided Questions'">{{j.ModuleName}}</h4>
                               <h4 class="txt73">{{j.TitleQue}}</h4>
                               <h4 class="txt310">{{j.Response|slice:0:40}}...</h4>
                             </div>

@@ -110,8 +110,14 @@
                                                     </div>
                                   
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <h6 class="txt120">
-                                                            Auto-renew: {{item['ExpDate']}}
+                                                        <h6 class="txt120" *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1'">
+                                                            Auto-renew:  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                                        </h6>
+                                                        <h6 class="txt120" *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
+                                                            Expiry:  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                                        </h6>
+                                                        <h6 class="txt120" *ngIf="!donotautorenew(item, 'compareauto')">
+                                                            Expired: {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                                         </h6>
                                                     </div>
                                                 </div>
@@ -119,14 +125,22 @@
                                                 <div class="row center_flex">
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0">
                                                         <h6 class="txt121 tleft mtb0px">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" alt="" class="">
-                                                            <span class="ml5px">{{item['BoughtName']}}</span>
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" *ngIf="item['MySelf'] === '0'" alt="" class="">
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" *ngIf="item['MySelf'] === '1'" alt="" class="">
+                                                            <span class="ml5px">{{item['MySelf'] === '0' ? item['ConsumedName'] : item['BoughtName']}}</span>
                                                         </h6>                        
                                                     </div>
                                   
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <button class="btn btn-default dn_autorenew" *ngIf="donotautorenew(item, 'compare')" type="button" (click)="donotautorenew(item['ActKey'])">                            
+                                                        <button class="btn btn-default dn_autorenew" id="{{'donotautorenew' + item['ActKey']}}"
+                                                         [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                                            type="button" (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">                            
                                                             Do not Auto-renew
+                                                        </button>
+                                        
+                                                        <button id="{{'autorenew' + item['ActKey']}}" [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                                         class="btn btn-warning btn_apply_coupon w100" type="button" (click)="autorenew(item['ActKey'], 'donotautorenew' + item['ActKey'], item['ActKey'])">                            
+                                                            Activate Auto-Renew
                                                         </button>
                                                     </div>
                                                 </div>
