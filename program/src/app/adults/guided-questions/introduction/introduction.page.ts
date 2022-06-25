@@ -22,7 +22,7 @@ export class IntroductionPage implements OnInit {
 
   goBack() {
     // this.router.navigate(['/adults/journal'])
-    this.location.back()
+    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }
 
   NavigateToQuestions() {
