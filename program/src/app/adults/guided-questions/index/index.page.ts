@@ -69,7 +69,7 @@ export class IndexPage implements OnInit {
   }
   
   RouteToToQuestions(item){
-    let url = `/journal/introduction${item.Landing_URL}`
+    let url = `/journal${item.Landing_URL}`
     this.router.navigate([url])
    // this.router.navigate(['/journal/introduction'],{state:{"data":JSON.stringify(item)}})
   }
@@ -111,7 +111,7 @@ export class IndexPage implements OnInit {
 
   }
   NavigateToQuestions(data){
-    this.router.navigate(['/journal/questions'],{queryParams:{"Qid":data.ProgId,"Attempt":data.UserReflectionID}})
+    this.router.navigate(['/guidedquestions'],{queryParams:{"Qid":data.ProgId,"Attempt":data.UserReflectionID}})
   }
   GoToQuestions(data){
     if(data.JrType=="Guided Questions"){
