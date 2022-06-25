@@ -312,7 +312,8 @@
 
     #ic_carousel .carousel-indicators
     {
-        width: 50%
+        /* width: 50% */
+        width: 30%
     }
 
     #cgqtns .carousel-indicators
