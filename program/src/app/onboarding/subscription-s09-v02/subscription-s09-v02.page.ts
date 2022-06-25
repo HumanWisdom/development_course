@@ -39,6 +39,15 @@ export class SubscriptionS09V02Page implements OnInit {
         })
   }
 
+  autorenew(key, val='', id='') {
+    this.service.autorenew(key).subscribe((res) => {
+if(res) {
+  document.getElementById(val).style.display = 'block'
+  document.getElementById('autorenew' + id).style.display = 'none'
+}
+    })
+  }
+
   sendInvite(data) {
     let obj = {
       ActKey: data['ActKey'],
@@ -67,13 +76,18 @@ export class SubscriptionS09V02Page implements OnInit {
     this.activeName = name
   }
 
-  donotautorenew(key, val='') {
-    if(val === '') {
+  donotautorenew(key, val='', id='', donot='') {
+    if(donot === 'donot') {
       this.service.donotautorenew(key).subscribe((res) => {
-
+        if(res) {
+          document.getElementById(val).style.display = 'block'
+          document.getElementById('donotautorenew' + id).style.display = 'none'
+        }
       })
-    }else {
+    }else if(val === 'compare') {
      return new Date(key['ExpDate']).getTime() > new Date().getTime()
+    }else {
+      return new Date(key['ExpDate']).getTime() > new Date().getTime()
     }
   }
 
