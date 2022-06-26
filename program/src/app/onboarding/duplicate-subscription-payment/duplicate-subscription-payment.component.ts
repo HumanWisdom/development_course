@@ -4,13 +4,13 @@ import { Router } from '@angular/router';
 import { OnboardingService } from '../onboarding.service';
 
 @Component({
-  selector: 'app-subscription-payment',
-  templateUrl: './subscription-payment.page.html',
-  styleUrls: ['./subscription-payment.page.scss'],
+  selector: 'app-duplicate-subscription-payment',
+  templateUrl: './duplicate-subscription-payment.component.html',
+  styleUrls: ['./duplicate-subscription-payment.component.scss'],
 })
-export class SubscriptionPaymentPage implements OnInit {
-  stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
-  // stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
+export class DuplicateSubscriptionPaymentComponent implements OnInit {
+  // stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
+  stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
   cardCaptureReady = false
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
 
@@ -22,6 +22,7 @@ export class SubscriptionPaymentPage implements OnInit {
   error: string;
   stripeId: string;
   amount: any;
+  uID: any;
 
 
   constructor(private service: OnboardingService,
@@ -30,6 +31,7 @@ export class SubscriptionPaymentPage implements OnInit {
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let userId = JSON.parse(localStorage.getItem("userId"))
+    this.uID = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
     let obj = {
       UserID: userId,
@@ -90,6 +92,11 @@ export class SubscriptionPaymentPage implements OnInit {
             if (result.error) {
               alert(result.error.message);
             } else {
+              console.log(result)
+              this.service.attachPaymentMethod(this.uID, this.stripeId)
+                    .subscribe(res => {
+
+                    })
               localStorage.setItem('personalised', 'F');
               alert('Your Payment Is Successfully Submitted');
               this.router.navigate(['/onboarding/myprogram'])

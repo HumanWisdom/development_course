@@ -81,6 +81,10 @@ const routes: Routes = [
     path: 'free-limit',
     loadChildren: () => import('./free-limit/free-limit.module').then( m => m.FreeLimitPageModule)
   },
+  {
+    path: 'duplicate-payment',
+    loadChildren: () => import('./duplicate-subscription-payment/duplicate-subscription-payment.module').then( m => m.DuplicateSubscriptionPaymentModule)
+  }
 ];
 
 @NgModule({
