@@ -40,6 +40,7 @@ export class IndexPage implements OnInit {
    if(isGuid && isGuid=='true'){
      this.GetGuidedQs_Topics();
      this.isGuidedQueestionsTab=true;
+     this.isDiary=false;
    }
   }
 

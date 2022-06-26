@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,6 +15,8 @@ export class BottomNavigationComponent implements OnInit {
   enableprofile=false
   search=false
   Subscriber: any;
+  @Input() isGuidedQuestion? : boolean=false;
+  @Output() saveQuestion=new EventEmitter<boolean>();
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -93,4 +95,7 @@ export class BottomNavigationComponent implements OnInit {
    
   }
 
+  saveQuestionButton(){
+    this.saveQuestion.emit(true);
+  }
 }
