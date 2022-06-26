@@ -205,6 +205,11 @@
     {
         width: 100%;
     }
+
+    .cp0_02
+    {
+        padding: 0px 10px !important;
+    }
 }
 
 @media (min-width: 768px)
@@ -348,6 +353,7 @@
     .mdpd_tray 
     {
         overflow: hidden;
+        margin: 40px 0px 0 10px;
     }
 
     .odiv::-webkit-scrollbar-track,
@@ -400,10 +406,10 @@
         padding: 0 20px !important;
     }
 
-    .cp0_02
+    /* .cp0_02
     {
         padding: 0px 10px !important;
-    }
+    } */
 }
 
 @media (min-width: 768px) and (max-width: 1023px)
@@ -817,8 +823,7 @@
         top: unset;
     }
 
-    .guidedqtns_row,
-    .guidedqtns_row_01
+    .guidedqtns_row
     {
         /* margin: 0 10px 2px 10px; */
         /* margin: 0 0px 2px 0px; */
@@ -860,8 +865,7 @@
 
 @media (max-width: 1200px)
 {
-    .guidedqtns_row,
-    .guidedqtns_row_01
+    .guidedqtns_row
     {
         /* margin: 0 10px 2px 10px; */
         /* margin: 0 0px 2px 0px; */

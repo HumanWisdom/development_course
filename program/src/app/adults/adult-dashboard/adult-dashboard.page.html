@@ -62,8 +62,8 @@
                       <div id="ca_i" class="panel-collapse collapse in">
                         <div class="panel-body p0">
 
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
+                          <div class="row cmr-10px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeDiscoveringWisdom(0)">
@@ -243,7 +243,7 @@
                       <div id="ca_pfy" class="panel-collapse collapse in">
                         <div class="panel-body p0 m0px">
 
-                          <div class="row cmr-10px ">
+                          <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <!-- button 1 -->
                               <ng-container *ngFor="let item of personalisedList; let i=index">
@@ -387,7 +387,7 @@
                         <div class="panel-body p0">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pr15px">
                               <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi pr5px">
                                 <a (click)="getsupport('/adults/get-support-now/s71001', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/01.svg" alt="Stress Management" class="crimg">
@@ -470,7 +470,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
 
                               <div *ngFor="let r of resume;; let i = index"  class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeResume(r)">
@@ -496,107 +496,6 @@
                   </div>
                 </div>
               </div>
-
-
-
-     <!--     <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_cwyl" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="txt290 mtb0px">
-                                    Continue where you left
-                                  </h2>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-
-                      
-
-
-                     <div id="ca_cwyl" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
-
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeNature(0)">
-                                <div class="img-gradient">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/06.png" alt="Nature" class="ctimg">
-                                </div>
-                                <h4 class="tcenter txt31 attitle">Nature</h4>
-                                <div class="progress dprogress">
-                                  <div class="progress-bar" role="progressbar" [style.width]="natureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeBreathing(0)">
-                                <div class="img-gradient">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png" alt="Breathing" class="ctimg">
-                                </div>
-                                <h4 class="tcenter txt31 attitle">Breathing</h4>
-                                <div class="progress dprogress">
-                                  <div class="progress-bar" role="progressbar" [style.width]="breathingP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeNoticingThoughts(0)">
-                                <div class="img-gradient">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png" alt="Noticing Thoughts" class="ctimg">
-                                </div>
-                                <h4 class="tcenter txt31 attitle">Noticing Thoughts</h4>
-                                <div class="progress dprogress">
-                                  <div class="progress-bar" role="progressbar" [style.width]="ntP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeGuidedMeditation(0)">
-                                <div class="img-gradient">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/10.png" alt="Guided Audio Meditation" class="ctimg">
-                                </div>
-                                <h4 class="tcenter txt31 attitle">Guided Audio Meditation</h4>
-                                <div class="progress dprogress">
-                                  <div class="progress-bar" role="progressbar" [style.width]="gamP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeMeditation(0)">
-                                <div class="img-gradient">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/09.png" alt="Meditation" class="ctimg">
-                                </div>
-                                <h4 class="tcenter txt31 attitle">Meditation</h4>
-                                <div class="progress dprogress">
-                                  <div class="progress-bar" role="progressbar" [style.width]="meditationP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>  -->
               <!-- /accordion -->
               <!-- /continue where you left -->
 
@@ -761,7 +660,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv lww pl5px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv lww pl5px pr15px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeStress(0)">
@@ -994,7 +893,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeFearAnxiety(0)" >
@@ -1094,7 +993,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeNature(0)">
@@ -1194,7 +1093,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeConditioning(0)">
@@ -1342,7 +1241,7 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeBenefitsEnquiry(0)">
@@ -1490,7 +1389,7 @@
                         <div class="panel-body p0">
 
                           <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pr15px">
                               <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi pr5px">
                                 <a (click)="getsupport('/adults/solving-global-problems/s72001', 71)">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/01.svg" alt="Stress Management" class="crimg">
@@ -1611,7 +1510,7 @@
 
 <!-- daily modal -->
 <!-- Modal -->
-<div class="modal fade" id="modal_popup" tabindex="-1" data-backdrop="false" data-keyboard="false" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modal_popup" tabindex="-1" data-keyboard="false" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered center_flex" role="document">
     <div class="modal-content popup_01">
       <div class="modal-header b0">
