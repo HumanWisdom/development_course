@@ -1,6 +1,6 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mdp_header">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
       <a routerLink="/adults/adult-dashboard">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_back_white.svg" alt="" class="img-responsive">
@@ -25,7 +25,7 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 bg_mdp sc_01">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_mdp sc_01">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
@@ -45,8 +45,8 @@
                   <div class="carousel-inner">
                     <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
                       <!-- video -->
-                      <div class="row center_flex mdp_icon">
-                        <div class="col-md-12 col-sm-12 col-xs-8">
+                      <div class="row center_flex mdp_icon safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video.svg" alt="" class="img-responsive">
                         </div>
                       </div>
@@ -86,8 +86,8 @@
               
                     <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
                       <!-- journal -->
-                      <div class="row center_flex mdp_icon">
-                        <div class="col-md-12 col-sm-12 col-xs-8">
+                      <div class="row center_flex mdp_icon safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal.svg" alt="" class="img-responsive">
                         </div>
                       </div>
@@ -100,8 +100,8 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex">
-                        <div class="col-md-12 col-sm-12 col-xs-8">
+                      <div class="row center_flex safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <h4 class="txt288 mtb0px">
                             {{dailyqus}}
                           </h4>
@@ -114,28 +114,30 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
+                      <div class="row center_flex safari_dblock">
+                        <div class="col-md-6 col-sm-6 col-xs-6 float_none">
                           <button type="submit" [disabled]="!isloggedIn" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
                             Add to journal
                           </button> 
                         </div>
                       </div>
 
-                      <div class="row center_flex">
-                        <div class="col-md-12 col-sm-12 col-xs-7">
+                      <div class="row center_flex safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-7 float_none">
                           <h4 class="txt237 mtb0px">
                             Your online HumanWisdom journal is secure and private to you.
                           </h4>
                         </div>
                       </div>
+
+                      <div class="pagebreak"></div>
                       <!-- /journal -->
                     </div>
                   
                     <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
                       <!-- quotation -->
-                      <div class="row center_flex mdp_icon">
-                        <div class="col-md-12 col-sm-12 col-xs-8">
+                      <div class="row center_flex mdp_icon safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation.svg" alt="" class="img-responsive">
                         </div>
                       </div>
@@ -148,28 +150,28 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex">
-                        <div class="col-md-12 col-sm-12 col-xs-8">
+                      <div class="row center_flex safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg" alt="" class="img-responsive">
                         </div>
                       </div>
 
-                      <div class="row center_flex mdp_quotation">
-                        <div class="col-md-12 col-sm-12 col-xs-10">
+                      <div class="row center_flex mdp_quotation safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <h4 class="txt288 mtb0px italic">
                             {{dailyinstext}}
                           </h4>
                         </div>
                       </div>
 
-                     <div class="row center_flex">
-                        <div class="col-md-12 col-sm-12 col-xs-10">
+                     <div class="row center_flex safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <hr class="mdp_hr">
                         </div>
                       </div>
                       
-                      <div class="row center_flex mdp_author">
-                        <div class="col-md-12 col-sm-12 col-xs-7">
+                      <div class="row center_flex mdp_author safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-7 float_none">
                           <h4 class="txt289 mtb0px">
                            {{dailyinsAuthor}} 
                           </h4>
@@ -180,8 +182,8 @@
 
                     <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
                       <!-- audio -->
-                      <div class="row center_flex mdp_icon">
-                        <div class="col-md-12 col-sm-12 col-xs-8">
+                      <div class="row center_flex mdp_icon safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio.svg" alt="" class="img-responsive">
                         </div>
                       </div>
@@ -216,8 +218,8 @@
 
                     <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
                       <!-- exercise -->
-                      <div class="row center_flex mdp_icon">
-                        <div class="col-md-12 col-sm-12 col-xs-8">
+                      <div class="row center_flex mdp_icon safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise.svg" alt="" class="img-responsive">
                         </div>
                       </div>
@@ -230,8 +232,8 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex">
-                        <div class="col-md-12 col-sm-12 col-xs-10">
+                      <div class="row center_flex safari_dblock">
+                        <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <h4 class="txt288 mtb0px">
                             {{trythistoday}}
                           </h4>
