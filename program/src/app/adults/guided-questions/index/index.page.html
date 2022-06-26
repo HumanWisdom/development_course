@@ -1,7 +1,7 @@
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_index_tn">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a (click)="goBack()" class="">                          
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="p0">
       </a>  
@@ -15,7 +15,7 @@
       </a>  
     </div>
     
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
     </div>
   </div>
 </div>
@@ -31,13 +31,13 @@
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs gqtns flex_ai mt30px">
-                <li class="active">
-                  <a data-toggle="tab" (click)="YourDiary()" href="#tab1">
+                <li [ngClass]="{'active':isDiary}">
+                  <a data-toggle="tab" (click)="YourDiary()" >
                     Your Diary
                   </a>
                 </li>
-                <li>
-                  <a data-toggle="tab" (click)="GuidedQuestionTab()" href="#tab2">
+                <li [ngClass]="{'active':isGuidedQueestionsTab}">
+                  <a data-toggle="tab" (click)="GuidedQuestionTab()" >
                     Guided Questions
                   </a>
                 </li>                  
@@ -124,11 +124,12 @@
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <a>
                           <div  (click)="GoToQuestions(j)"  class="panel panel-default pdefault_01 prelative">
-                            <div class="panel-heading absolute_ptitle">
+                            <div class="panel-heading absolute_ptitle" [ngClass]="{'cyan_light': j.JrType=='Guided Questions','gray_light':j.JrType=='Diary'}" >
                               <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
                             <div class="panel-body">
                               <h4 class="txt309">{{j.Date| date}}</h4>
+                              <h4  class="txt310" *ngIf="j.JrType=='Reflections' || j.JrType=='Guided Questions'">{{j.ModuleName}}</h4>
                               <h4 class="txt73">{{j.TitleQue}}</h4>
                               <h4 class="txt310">{{j.Response|slice:0:40}}...</h4>
                             </div>
@@ -139,7 +140,7 @@
                   </form>
                 </div>
 
-                <div *ngIf="isGuidedQueestionsTab" id="tab2" class="tab-pane fade">
+                <div *ngIf="isGuidedQueestionsTab" id="tab2" class="tab-pane fade in active">
                   <div class="row center_flex mb30px">
                     <div class="col-md-12 col-sm-12 col-xs-10 tcenter">
                       <h4 class="txt311 mtb0px">

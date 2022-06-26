@@ -22,11 +22,11 @@ export class IntroductionPage implements OnInit {
 
   goBack() {
     // this.router.navigate(['/adults/journal'])
-    this.location.back()
+    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
   }
 
   NavigateToQuestions() {
-    this.router.navigate(['/journal/questions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
+    this.router.navigate(['/guidedquestions'], { queryParams: { "Qid": JSON.stringify(this.data.RowID), "Attempt": "0" } })
   }
 
   GetGuidedQs_Topics(url) {
