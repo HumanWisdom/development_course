@@ -16,7 +16,7 @@ export class BottomNavigationComponent implements OnInit {
   search=false
   Subscriber: any;
   @Input() isGuidedQuestion? : boolean=false;
-  @Output() saveQuestion=new EventEmitter<boolean>();
+  @Output() saveQuestion=new EventEmitter();
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -96,6 +96,6 @@ export class BottomNavigationComponent implements OnInit {
   }
 
   saveQuestionButton(){
-    this.saveQuestion.emit(true);
+    this.saveQuestion.emit();
   }
 }

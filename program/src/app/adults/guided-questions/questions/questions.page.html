@@ -99,7 +99,7 @@
 
 <!-- footer  -->
 <app-bottom-navigation *ngIf="counter==numSlides;else withoutSaveButton" 
-[isGuidedQuestion]="true" (saveQuestion)="SubmitButton($event)"></app-bottom-navigation>
+[isGuidedQuestion]="true" (saveQuestion)="SubmitButton()"></app-bottom-navigation>
 
 <ng-template #withoutSaveButton>
   <app-bottom-navigation></app-bottom-navigation>
