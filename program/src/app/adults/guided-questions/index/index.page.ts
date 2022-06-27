@@ -147,7 +147,6 @@ export class IndexPage implements OnInit {
             || it?.JrType?.toLowerCase().includes($event.target.value.toLowerCase());
     });
     }
-   console.log(this.jrList);
   }
 }
 
