@@ -29187,3 +29187,21 @@ svg path
   height: 300px;
   border: 0;
 }
+
+.eindex_img
+{
+  /* background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/01.svg); */
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+.eindex_img_playicon
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
