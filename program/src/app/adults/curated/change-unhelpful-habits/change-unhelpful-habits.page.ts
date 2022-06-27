@@ -33,6 +33,10 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
     this.location.back()
   }
 
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
+  }
+
   toRead(obj){
     let sId= obj;
     this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${sId}`}})
