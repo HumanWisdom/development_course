@@ -35,6 +35,10 @@ export class HaveCalmMindPage implements OnInit {
     this.location.back()
   }
 
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
+  }
+
   getsupport(url, id, ind = 0) {
     let index = ind + 1
     url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url

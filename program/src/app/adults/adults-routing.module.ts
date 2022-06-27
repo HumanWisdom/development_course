@@ -322,6 +322,10 @@ const routes: Routes = [
     path: 'curated',
     loadChildren: () => import('./curated/curated.module').then( m => m.CuratedModule)
   },
+  {
+    path: 'events',
+    loadChildren: () => import('./events/events.module').then( m => m.EventsModule)
+  },
 ];
 
 @NgModule({
