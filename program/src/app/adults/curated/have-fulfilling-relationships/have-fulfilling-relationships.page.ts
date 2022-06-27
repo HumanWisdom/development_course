@@ -42,6 +42,10 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     this.location.back()
   }
 
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
+  }
+
   toRead(obj){
     localStorage.setItem("story",JSON.stringify(obj))
     let res = localStorage.getItem("isloggedin");
