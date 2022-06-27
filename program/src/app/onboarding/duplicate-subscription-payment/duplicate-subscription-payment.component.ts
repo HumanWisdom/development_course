@@ -28,40 +28,11 @@ export class DuplicateSubscriptionPaymentComponent implements OnInit {
   constructor(private service: OnboardingService,
     private router: Router) {
       this.amount = localStorage.getItem('totalAmount')
-    let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
-    let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
-    let userId = JSON.parse(localStorage.getItem("userId"))
     this.uID = JSON.parse(localStorage.getItem("userId"))
-    let couponid = localStorage.getItem("couponid")
-    let obj = {
-      UserID: userId,
-      ProgramID: '9',
-      PlanId: plan === 'Annual' || 'Yearly' ? '2' : '1',
-      DiscountCode: parseInt(couponid) ?? 0,
-      Quantity: quan,
-      AffReferralCode: localStorage.getItem("AffReferralCode") !== null ? localStorage.getItem("AffReferralCode") : ''
-    }
-    this.service.stripe(obj)
-      .subscribe(res => {
-        
-        this.stripeId = res;
-        this.enable = true;
-        // this.keyList=res
-        // localStorage.setItem("keyList",JSON.stringify(this.keyList))
-
-      },
-        (error: HttpErrorResponse) => {
-          this.enable = true
-          this.stripeId = error.error['Message']
-        },
-        () => {
-          // this.router.navigate(["/onboarding/assign-key"])
-        })
   }
 
   ngAfterViewInit() {
     setTimeout(() => {
-      if (this.stripeId !== undefined) {
         let stripe = Stripe(this.stripeKey);
         let elements = stripe.elements();
         var cardNumberElement = elements.create('cardNumber',{placeholder:'Card Number'});
@@ -75,36 +46,30 @@ export class DuplicateSubscriptionPaymentComponent implements OnInit {
         const btn = document.querySelector('#btnsubmit');
         btn.addEventListener('click', async (e) => {
           e.preventDefault();
-          const nameInput = document.getElementById('name');
-          const postalcode = document.getElementById('postal-code');
           // Create payment method and confirm payment intent.
-          stripe.confirmCardPayment(this.stripeId, {
-            payment_method: {
-              card: cardNumberElement,
-              billing_details: {
-                name: (<HTMLInputElement>document.getElementById('name')).value,
-                address: {
-                  postal_code: (<HTMLInputElement>document.getElementById('postal-code')).value,
-                }
-              }
-            }
+          stripe.createPaymentMethod({
+            type: 'card',
+            card: cardNumberElement,
+            billing_details: {
+              name:  (<HTMLInputElement>document.getElementById('name')).value,
+            },
           }).then((result) => {
-            if (result.error) {
+            if(result.error) 
+            {
               alert(result.error.message);
-            } else {
-              console.log(result)
-              this.service.attachPaymentMethod(this.uID, this.stripeId)
+            } 
+            else 
+            {
+              this.service.attachPaymentMethod(this.uID, result.paymentMethod.id)
                     .subscribe(res => {
-
+                      localStorage.setItem('personalised', 'F');
+                      alert('Your Card Details Have Been Updated');
+                      this.router.navigate(['/onboarding/user-profile'])
                     })
-              localStorage.setItem('personalised', 'F');
-              alert('Your Payment Is Successfully Submitted');
-              this.router.navigate(['/onboarding/myprogram'])
             }
           });
         });
 
-      }
     }, 9000)
 
   }
