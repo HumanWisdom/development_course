@@ -88,11 +88,6 @@
             <!-- /carousel -->
 
             <div class="pagebreak"></div>
-            <div class="row saveButtonGuide" *ngIf="counter==numSlides">
-              <div class="col-md-12">
-               <button type="button" (click)="SubmitButton()" class="btn btn-default mb0 w100  btn_skip txt5 tcenter" >Save</button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -103,5 +98,10 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<app-bottom-navigation *ngIf="counter==numSlides;else withoutSaveButton" 
+[isGuidedQuestion]="true" (saveQuestion)="SubmitButton()"></app-bottom-navigation>
+
+<ng-template #withoutSaveButton>
+  <app-bottom-navigation></app-bottom-navigation>
+</ng-template>
 <!-- /footer -->

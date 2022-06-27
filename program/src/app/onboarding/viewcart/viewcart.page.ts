@@ -201,8 +201,9 @@ export class ViewcartPage implements OnInit {
      
       if(this.cartList[i].CartId==cartId)
       {
-        if(this.cartList[i].Qty==1)
-        {
+        // if()
+        // {
+          this.cartList[i].Qty==1
           this.cartList.splice(i,1)
           if(this.cartList.length === 0) this.router.navigate(['/onboarding/add-to-cart'])
           //call service to delete
@@ -210,30 +211,31 @@ export class ViewcartPage implements OnInit {
           .subscribe(res=> {
             
           })
-        }
-        else{
-         // var oneItem=this.cartList[i].Amt/this.cartList[i].Qty
-          this.cartList[i].Qty-=1
+       // }
+        // else{
+        //  // var oneItem=this.cartList[i].Amt/this.cartList[i].Qty
+        //   this.cartList[i].Qty-=1
       
-          this.cartList[i].Amt-=(this.cartList[i].Amt)
-          //call service
-          this.service.editCart(
-            {"Id":parseFloat(cartId)},
-            {"Id":parseFloat(this.cartList[i].Qty)}
-            )
-            .subscribe(res=>
-              {
+        //   this.cartList[i].Amt-=(this.cartList[i].Amt)
+        //   this.cartList.splice(i,1)
+        //   //call service
+        //   this.service.editCart(
+        //     {"Id":parseFloat(cartId)},
+        //     {"Id":parseFloat(this.cartList[i].Qty)}
+        //     )
+        //     .subscribe(res=>
+        //       {
+       
                 
-          })
+        //   })
 
-        }
+        // }
        
         
       }
     }
-    console.log(this.cartList)
     this.totalPrice()
-
+    console.log(this.cartList)
   }
 
  
