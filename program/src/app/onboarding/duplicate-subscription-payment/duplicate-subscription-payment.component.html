@@ -1,0 +1,221 @@
+<!-- header -->
+<app-tn-hwp-project></app-tn-hwp-project>
+<!-- /header -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->
+  <div class="">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+        <div class="x_panel p0">
+          <div class="x_content plr10px">
+            <form>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt201">
+                    Payment
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <hr class="hr_style_7">
+                </div>
+              </div>              
+
+              <!--
+              <div class="row mt40px">
+                <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
+                  <div class="radio">
+                    <label class="mt0px">
+                      <input type="radio" checked="false" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                      <span class="">
+                        <span class="">
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/paypal_01.svg" alt="" class="ml5px"> 
+                        </span>
+                      </span>
+                    </label>
+                  </div>                  
+                </div>    
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <hr class="hr_style_8">
+                </div>
+              </div>  
+              -->
+
+              <div class="row mt40px">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                  <div class="radio">
+                    <label class="mt0px">
+                      <input type="radio" checked="false" value="option1" id="optionsRadios1" name="optionsRadios">
+                      <span class="">
+                        <span class="txt202 ml5px">
+                          Credit or Debit Card
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/visa_active.svg" alt=""
+                      class="">
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mastercard_active.svg"
+                      alt="" class="">
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/maestro_active.svg"
+                      alt="" class="">
+                  </div>
+                </div>
+              </div>
+
+              <form id="payment-form">
+                <div id="card-element" width="100%">
+                  <div class="row mt26px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <input type="text" id="name" class="form-control cfc3 tleft" placeholder="Cardholder’s Name">
+                    </div>
+                  </div>
+
+                  <div class="row mt26px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <input type="text" id="postal-code" class="form-control cfc3 tleft" placeholder="Postal Code">
+                    </div>
+                  </div>
+
+                  <div class="row mt26px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div id="card-number"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mt26px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div id="card-expiry"></div>
+                    </div>
+                  </div>
+
+                  <div class="row mt26px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div id="card-cvc"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- We'll put the error messages in this element -->
+                <div id="card-element-errors" role="alert"></div>
+
+                <!-- <button id="btnsubmit" type="submit">Subscribe</button> -->
+                <div class="row mt30px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                    <div class="checkbox mtb0px">
+                      <label class="subscribe_check mt0px">
+                        <input type="checkbox" name="remember" value="" />
+                        <span class="">
+                          <span class="pl0_3rem chk_rm txt50">
+                            Save card details for faster payments (secure)
+                          </span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <hr class="hr_style_9">
+                  </div>
+                </div>
+
+                <div class="row mt21px">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <a>
+                      <button type="button" id="btnsubmit" class="btn btn-warning mb0 btn_confirm_payment w100"
+                        data-dismiss="modal">Update</button>
+                    </a>
+                  </div>
+                </div>
+              </form>
+
+              <!-- <div class="row mt30px">                    
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" id="name"  class="form-control cfc3 tleft" placeholder="Cardholder’s Name">
+                </div>
+              </div> -->
+
+              <!-- <div class="row mt10px">                    
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" class="form-control cfc3 tleft" placeholder="Card Number">
+                </div>
+              </div> -->
+
+              <!-- <div class="row mt10px">                    
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control cfc3 tleft" placeholder="MM/YY">
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control cfc3 tleft" placeholder="CVV">
+                </div>
+              </div> -->
+
+              <!-- <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                  <div class="checkbox">
+                    <label class="subscribe_check mt0px">
+                      <input type="checkbox" name="remember" value="" />
+                      <span class="">
+                        <span class="pl0_3rem chk_rm txt50">
+                          Save card details for faster payments (secure)
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <hr class="hr_style_9">
+                </div>
+              </div>
+
+              <div class="row mt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="txt203">
+                    Total Payable
+                    <span class="txt118">&ensp;INR 6,800</span>
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <a>
+                    <button type="button" id="btnsubmit" class="btn btn-warning mb0 btn_confirm_payment w100"
+                      data-dismiss="modal">Confirm Payment</button>
+                  </a>
+                </div>
+              </div> -->
+
+              <div class="pagebreak"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
