@@ -716,7 +716,8 @@
 
     .attitle.txt31 
     {
-        font-size: 14px;
+        /* font-size: 14px; */
+        font-size: 13px;
     }
 
     .dbg_black 
