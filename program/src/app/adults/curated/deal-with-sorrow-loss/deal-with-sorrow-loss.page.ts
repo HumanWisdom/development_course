@@ -38,6 +38,12 @@ export class DealWithSorrowLossPage implements OnInit {
     this.router.navigate(['/adults/curated/youtubelink', link])
   }
 
+  audiopage(audiofile, title) {
+    let mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+    let audioLink= mediaAudio+audiofile
+    this.router.navigate(['/adults/curated/audiopage', audioLink, title])
+  }
+
   toRead(obj){
     let sId= obj;
     this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${sId}`}})
