@@ -15112,6 +15112,7 @@ input[type="number"] {
   bottom: 5px;
   left: 15px;
   white-space: pre-wrap;
+  /* word-break: break-word; */
   /* width: 50%; */
   /* width: 75%; */
   width: 70%;
@@ -21263,7 +21264,7 @@ and (orientation : portrait)
 
 #wsi_bg_white
 {
-  margin: 0 -22px !important;
+  /* margin: 0 -22px !important; */
   background: #ffffff;
 }
 
@@ -29204,4 +29205,9 @@ svg path
   right: 0;
   left: 0;
   margin: auto;
+}
+
+.modal-open .mwrong.modal
+{
+  backdrop-filter: unset !important;
 }
