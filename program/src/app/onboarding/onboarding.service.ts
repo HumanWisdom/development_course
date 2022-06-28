@@ -171,4 +171,7 @@ export class OnboardingService {
   autorenew(ActCode: any):Observable<any>{
     return this.http.post(this.path+`/ResumeSubscription/${ActCode}`, {})
   }
+  attachPaymentMethod(UserID: any, StripePayMethodID):Observable<any>{
+    return this.http.post(this.path+`/AttachPaymentMethod/${StripePayMethodID}/${UserID}`, {})
+  }
 }

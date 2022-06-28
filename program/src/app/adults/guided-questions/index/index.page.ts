@@ -133,18 +133,20 @@ export class IndexPage implements OnInit {
   this.GetGuidedQs_Topics();
   }
   searchText($event){
-    if($event.target.value=="")
+    if($event.target.value==""){
       this.viewJournalAndReflections()
+    }
     else if($event.target.value!="")
     {
      let data=this.jrList.filter(x=>x.Response!=null);
      if(data.length>0){
       this.jrList=data.filter(it => {
         return it?.Response?.toLowerCase().includes($event.target.value.toLowerCase())
-            || it?.TitleQue?.toLowerCase().includes($event.target.value.toLowerCase());
+            || it?.TitleQue?.toLowerCase().includes($event.target.value.toLowerCase())
+            ||  it?.ModuleName?.toLowerCase().includes($event.target.value.toLowerCase())
+            || it?.JrType?.toLowerCase().includes($event.target.value.toLowerCase());
     });
     }
-
   }
 }
 
