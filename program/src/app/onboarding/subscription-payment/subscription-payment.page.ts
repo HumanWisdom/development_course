@@ -27,8 +27,8 @@ export class SubscriptionPaymentPage implements OnInit {
   constructor(private service: OnboardingService,
     private router: Router) {
       this.amount = localStorage.getItem('totalAmount')
-    let quan = this.router.getCurrentNavigation().extras.state.quan;
-    let plan = this.router.getCurrentNavigation().extras.state.plan;
+    let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
+    let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let userId = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
     let obj = {

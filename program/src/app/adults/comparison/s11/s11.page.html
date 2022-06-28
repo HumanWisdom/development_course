@@ -23,7 +23,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12  p0">
           <div *ngIf="!o.CorrectAns"> 
             <!-- <a class="sb_anchor" data-toggle="modal" [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" > -->
-            <a class="sb_anchor" data-toggle="modal"  [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" >
+            <a class="sb_anchor" data-toggle="modal"  data-target="#lab-slide-bottom-popup" >
               <div [ngClass]="{'single_select_active': o.OptId==this.sessionOption}" class="box select_box fleft">
                 
                 <div  >
@@ -58,7 +58,7 @@
       <!-- [attr.id]="'lab-slide-bottom-popup'+o.OptId"
       [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" -->
     
-      <div class="modal fade" [attr.id]="'lab-slide-bottom-popup'+o.OptId" data-keyboard="false" data-backdrop="false">
+      <!-- <div class="modal fade" [attr.id]="'lab-slide-bottom-popup'+o.OptId" data-keyboard="false" data-backdrop="false">
         <div class="row center_flex">
           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ss_col">
             <div class="lab-modal-body">    
@@ -73,21 +73,15 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h3 class="txt10">
-                    <!--{{o.OptStr}}-->
                     You have selected the wrong answer. Please try again.
                   </h3>    
                 </div>
               </div>                    
-    
-              <!-- <div class="row center_flex pt20px">
-                <div class="col-md-8 col-sm-8 col-xs-8 tcenter">
-                  <button type="button" class="btn btn-default btn_try_again" data-dismiss="modal">Try Again</button>
-                </div>
-              </div> -->
+  
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     
     
