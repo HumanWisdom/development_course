@@ -78,10 +78,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
     this.router.navigate(['/adults/curated/youtubelink', link])
   }
 
-  audiopage(audiofile) {
+  audiopage(audiofile, title) {
     let mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink= mediaAudio+audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, 'Releasing Anger - a meditation'])
+    this.router.navigate(['/adults/curated/audiopage', audioLink, title])
   }
 
   routeBreathing(cont: any = 1){
