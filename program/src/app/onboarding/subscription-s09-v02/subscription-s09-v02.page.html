@@ -77,14 +77,14 @@
                                     <div class="panel-heading p0">
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" href="#ap">
-                                                
+
                                                 <div class="row active_programs mt30px cmlr-10px">
                                                     <div class="col-md-6 col-sm-6 col-xs-6 tleft">
                                                         <h6 class="txt59">
                                                             Active Programs
                                                         </h6>
                                                     </div>
-                    
+
                                                     <div class="col-md-6 col-sm-6 col-xs-6 tright">
                                                         <h6 class="txt59">
                                                             {{myprograms.length}}
@@ -97,7 +97,7 @@
                                     </div>
                                     <div id="ap" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            
+
                                             <ng-container *ngFor="let item of myprograms">
                                                 <div class="row center_flex pt20px">
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
@@ -108,43 +108,52 @@
                                                             Program Code: {{item['ActKey']}}
                                                         </h6>
                                                     </div>
-                                  
+
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <h6 class="txt120" *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1'">
-                                                            Auto-renew:  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                                        <h6 class="txt120"
+                                                            *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1'">
+                                                            Auto-renew: {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                                         </h6>
-                                                        <h6 class="txt120" *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
-                                                            Expiry:  {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                                        <h6 class="txt120"
+                                                            *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
+                                                            Expiry: {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                                         </h6>
                                                         <h6 class="txt120" *ngIf="!donotautorenew(item, 'compareauto')">
                                                             Expired: {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                                         </h6>
                                                     </div>
                                                 </div>
-                
+
                                                 <div class="row center_flex">
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0">
                                                         <h6 class="txt121 tleft mtb0px">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" *ngIf="item['MySelf'] === '0'" alt="" class="">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" *ngIf="item['MySelf'] === '1'" alt="" class="">
-                                                            <span class="ml5px">{{item['MySelf'] === '0' ? item['ConsumedName'] : item['BoughtName']}}</span>
-                                                        </h6>                        
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg"
+                                                                *ngIf="item['MySelf'] === '0'" alt="" class="">
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg"
+                                                                *ngIf="item['MySelf'] === '1'" alt="" class="">
+                                                            <span class="ml5px">{{item['MySelf'] === '0' ?
+                                                                item['ConsumedName'] : item['BoughtName']}}</span>
+                                                        </h6>
                                                     </div>
-                                  
+
                                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                                        <button class="btn btn-default dn_autorenew" id="{{'donotautorenew' + item['ActKey']}}"
-                                                         [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                                            type="button" (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">                            
+                                                        <button class="btn btn-default dn_autorenew"
+                                                            id="{{'donotautorenew' + item['ActKey']}}"
+                                                            [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 1 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                                            type="button"
+                                                            (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
                                                             Do not Auto-renew
                                                         </button>
-                                        
-                                                        <button id="{{'autorenew' + item['ActKey']}}" [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
-                                                         class="btn btn-warning btn_apply_coupon w100" type="button" (click)="autorenew(item['ActKey'], 'donotautorenew' + item['ActKey'], item['ActKey'])">                            
+
+                                                        <button id="{{'autorenew' + item['ActKey']}}"
+                                                            [ngStyle]="{'display': item['MySelf'] === '1' && item['AutoRenew'] === 0 && donotautorenew(item, 'compare') ? 'block' : 'none'}"
+                                                            class="btn btn-warning btn_apply_coupon w100" type="button"
+                                                            (click)="autorenew(item['ActKey'], 'donotautorenew' + item['ActKey'], item['ActKey'])">
                                                             Activate Auto-Renew
                                                         </button>
                                                     </div>
                                                 </div>
-                
+
                                                 <!-- <div class="row spt10px">
                                   <div class="col-md-6 col-sm-6 col-xs-8 p0 center_flex">
                                       <div class="col-md-2 col-sm-2 col-xs-2 p0">
@@ -171,21 +180,21 @@
                                 </div>
                             </div>
                             <!-- /accordion - active programs -->
-                            
+
                             <!-- accordion - not yet started -->
                             <div class="panel-group spanelgroup">
                                 <div class="panel panel-default">
                                     <div class="panel-heading p0">
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" href="#nys">
-                                                
+
                                                 <div class="row active_programs mt30px cmlr-10px">
                                                     <div class="col-md-6 col-sm-6 col-xs-6 tleft">
                                                         <h6 class="txt59">
                                                             Not Yet Started
                                                         </h6>
                                                     </div>
-                    
+
                                                     <div class="col-md-6 col-sm-6 col-xs-6 tright">
                                                         <h6 class="txt59">
                                                             {{notmyprograms.length}}
@@ -197,13 +206,14 @@
                                         </h4>
                                     </div>
                                     <div id="nys" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            
+                                        <div class="panel-body" style="margin-bottom: 100px">
+
                                             <ng-container *ngFor="let item of notmyprograms">
                                                 <div class="row spt10px center_flex" *ngIf="item['Email'] !== ''">
                                                     <div class="col-md-6 col-sm-6 col-xs-8 center_flex">
                                                         <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
+                                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg"
+                                                                alt="" class="">
                                                         </div>
                                                         <div class="col-md-10 col-sm-10 col-xs-10 p0">
                                                             <h6 class="stxt69 tleft mtb0px">
@@ -211,8 +221,9 @@
                                                             </h6>
                                                         </div>
                                                     </div>
-                
-                                                    <div class="col-md-6 col-sm-6 col-xs-4 tright" (click)="sendInvite(item)">
+
+                                                    <div class="col-md-6 col-sm-6 col-xs-4 tright"
+                                                        >
                                                         <h6 class="txt123 mtb0px fright">
                                                             Invite Sent
                                                         </h6>
@@ -225,7 +236,7 @@
                                                             Adults
                                                         </h6>
                                                     </div>
-                
+
                                                     <div class="col-md-8 col-sm-8 col-xs-8 tright flexalign_center">
                                                         <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
                                                             <h6 class="txt119 mtb0px">
@@ -233,14 +244,90 @@
                                                             </h6>
                                                         </div>
                                                         <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                                            <button class="btn btn-warning btn_assign w100" type="button"
-                                                                data-toggle="collapse" (click)="getAssignClick(item['ActKey'], item['ConsumedName'])" data-parent="#accordion" href="#a4"
-                                                                aria-expanded="false">
+                                                            <button class="btn btn-warning btn_assign w100"
+                                                                type="button" (click)="getAssignClick(item)">
                                                                 Assign
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <hr class="shr3" *ngIf="item['Email'] === ''">
+                                                <div id="{{item['ActKey']}}" style="display: none;">
+                                                    <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
+                                                        <div
+                                                            class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
+                                                            <h6 class="txt53 mtb0px">
+                                                                Parents
+                                                            </h6>
+                                                        </div>
+
+                                                        <div class="col-md-8 col-sm-8 col-xs-8 p0 tright">
+                                                            <h6 class="mtb0px inline_box">
+                                                                <span class="txt120">
+                                                                    Subscription Code:
+                                                                </span>
+                                                                <span class="txt107">
+                                                                    {{activeKey}}
+                                                                </span>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                                            <div class="checkbox">
+                                                                <label class="subscribe_check mt0px">
+                                                                    <input type="checkbox" id="{{item['ActKey'] + 'checkbox'}}"
+                                                                        (change)="myselfEvent($event.target)"
+                                                                        name="remember" value="" />
+                                                                    <span class="">
+                                                                        <span class="pl0_3rem chk_rm txt120">
+                                                                            This program is for me
+                                                                        </span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row pt10px"
+                                                        *ngIf="item['Email'] === '' && myself === 0">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                                            <input type="text" class="form-control cfc4"
+                                                                (keyup)="emailKeyup($event)"
+                                                                placeholder="Learner’s Email*">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row spt10px"
+                                                        *ngIf="item['Email'] === '' && myself === 0">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                                            <textarea class="form-control cfc5" rows="3"
+                                                                (keyup)="messageKeyup($event)"
+                                                                placeholder="Message for Learner (optional)"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row pt0px center_flex mt30px"
+                                                        *ngIf="item['Email'] === ''">
+                                                        <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                                            <button class="btn btn-warning btn_send_invite w100"
+                                                                (click)="submitAssignKey(item)"
+                                                                [disabled]="email === '' && myself === 0" type="button">
+                                                                {{startinvite}}
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 pr0">
+                                                            <button class="btn btn-warning btn_cancel w100"
+                                                                (click)="cancelAsign()" type="button">
+                                                                Cancel
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </ng-container>
 
                                         </div>
@@ -273,70 +360,6 @@
                                 </div>                    
                             </div>     -->
 
-                            <hr class="shr3" *ngIf="openAssign">
-
-                            <div class="row pt0px center_flex" *ngIf="openAssign">
-                                <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                                    <h6 class="txt53 mtb0px">
-                                        Parents
-                                    </h6>
-                                </div>
-
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0 tright">
-                                    <h6 class="mtb0px inline_box">
-                                        <span class="txt120">
-                                            Subscription Code:
-                                        </span>
-                                        <span class="txt107">
-                                           {{activeKey}}
-                                        </span>
-                                    </h6>
-                                </div>
-                            </div>
-
-                            <div class="row pt0px center_flex" *ngIf="openAssign">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <div class="checkbox">
-                                        <label class="subscribe_check mt0px">
-                                            <input type="checkbox" (change)="myselfEvent($event.target)" name="remember" value="" />
-                                            <span class="">
-                                                <span class="pl0_3rem chk_rm txt120">
-                                                    This program is for me
-                                                </span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row pt10px" *ngIf="openAssign">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <input type="text" class="form-control cfc4" (keyup)="emailKeyup($event)" placeholder="Learner’s Email*">
-                                </div>
-                            </div>
-
-                            <div class="row spt10px" *ngIf="openAssign">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <textarea class="form-control cfc5" rows="3" (keyup)="messageKeyup($event)"
-                                        placeholder="Message for Learner (optional)"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row pt0px center_flex mt30px" *ngIf="openAssign">
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                    <button class="btn btn-warning btn_send_invite w100" (click)="submitAssignKey()" [disabled]="email === ''"  type="button">
-                                        Start Program
-                                    </button>
-                                </div>
-
-                                <div class="col-md-4 col-sm-4 col-xs-4 pr0">
-                                    <button class="btn btn-warning btn_cancel w100" (click)="cancelAsign()" type="button">
-                                        Cancel
-                                    </button>
-                                </div>
-                            </div>
-
-                            <hr class="shr3" *ngIf="openAssign">
                         </form>
                     </div>
                 </div>
