@@ -1,14 +1,16 @@
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
-
+import * as $ from 'jquery';
+import { BehaviorSubject, Subject } from "rxjs";
+import { addEventListener } from "@ionic/core/dist/types/utils/helpers";
 @Component({
   selector: "app-index",
   templateUrl: "./index.page.html",
   styleUrls: ["./index.page.scss"],
 })
-export class IndexPage implements OnInit {
+export class IndexPage implements OnInit,AfterViewInit {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
   userId: any;
   journalList = [];
@@ -23,17 +25,21 @@ export class IndexPage implements OnInit {
   jrList = [];
   jrListC = [];
   topic = [];
-  searchedText: any;
+  searchedText :string;
+  isReloadList=true;
 
   constructor(
     private router: Router,
     private rout: ActivatedRoute,
-    private service: AdultsService,
+    public service: AdultsService,
     private location: Location,
-    private cd: ChangeDetectorRef
-  ) {}
+    private elementRef:ElementRef
+  ) {
+   
+  }
 
   ngOnInit() {
+ 
     if (this.saveUsername == false)
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
     else {
@@ -75,11 +81,22 @@ export class IndexPage implements OnInit {
     this.router.navigate(["/adults/note"]);
   }
 
+  ngAfterViewInit(){
+   var data= this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
+                                data[0].addEventListener('click', this.clearInput.bind(this));
+  }
+  
   RouteToToQuestions(item) {
     let url = `/journal${item.Landing_URL}`;
     this.router.navigate([url]);
     // this.router.navigate(['/journal/introduction'],{state:{"data":JSON.stringify(item)}})
   }
+
+ clearInput(){
+  this.searchedText='';
+  this.viewJournalAndReflections();
+  this.getDailyQuestion();
+ }
 
   getDailyQuestion() {
     this.service.getDailyQuestion(this.userId).subscribe(
@@ -131,6 +148,12 @@ export class IndexPage implements OnInit {
     this.isGuidedQueestionsTab = false;
     this.viewJournalAndReflections();
     this.getDailyQuestion();
+    var data= this.elementRef.nativeElement.getElementsByClassName('gqtns_search') as HTMLCollection;
+    setTimeout(() => {
+      if(data!=null && data!=undefined && data.length>0){
+        data[0].addEventListener('click', this.clearInput.bind(this));
+      }
+    }, 200);
   }
   GuidedQuestionTab() {
     this.isDiary = false;
@@ -141,7 +164,7 @@ export class IndexPage implements OnInit {
     if ($event.target.value == "") {
       this.viewJournalAndReflections();
       this.getDailyQuestion();
-      this.cd.detectChanges();
+         
     } else if ($event.target.value != "") {
       this.jrList = this.jrListC.filter(
         (it) =>
@@ -174,4 +197,5 @@ export class IndexPage implements OnInit {
   goBack() {
     this.location.back();
   }
+
 }

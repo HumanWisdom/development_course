@@ -50,10 +50,12 @@
                     <div class="row">
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-8 pr0">
                         <input
+                          id="inputSearch"
                           autofocus
                           type="search"
                           class="form-control has-feedback-left gqtns_search"
                           (keyup.enter)="searchText($event)"
+                          (blur)="searchText($event)"
                           [(ngModel)]="searchedText"
                           (change)="searchText($event)"
                           placeholder="Search"
@@ -65,6 +67,7 @@
                       </div>
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-4">
                         <button
+                        id="noteId"
                           type="button"
                           (click)="goToNote(0,'','','note')"
                           class="btn btn_aan"
@@ -150,7 +153,7 @@
                         </button>
                       </div>
                     </div>
-
+                    <ng-container *ngIf="isReloadList">
                     <div *ngFor="let j of jrList" class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <a>
@@ -181,6 +184,7 @@
                         </a>
                       </div>
                     </div>
+                    </ng-container>
                   </form>
                 </div>
 
