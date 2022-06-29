@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { OnboardingService } from '../onboarding.service';
 
 @Component({
@@ -9,8 +10,9 @@ import { OnboardingService } from '../onboarding.service';
   styleUrls: ['./subscription-payment.page.scss'],
 })
 export class SubscriptionPaymentPage implements OnInit {
-  stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
+  //stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
   // stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
+  stripeKey= environment.stripeKey;
   cardCaptureReady = false
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
 
@@ -27,8 +29,8 @@ export class SubscriptionPaymentPage implements OnInit {
   constructor(private service: OnboardingService,
     private router: Router) {
       this.amount = localStorage.getItem('totalAmount')
-    let quan = this.router.getCurrentNavigation().extras.state.quan;
-    let plan = this.router.getCurrentNavigation().extras.state.plan;
+    let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
+    let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let userId = JSON.parse(localStorage.getItem("userId"))
     let couponid = localStorage.getItem("couponid")
     let obj = {

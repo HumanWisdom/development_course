@@ -148,4 +148,10 @@ export class S51000Page implements OnInit,OnDestroy {
     this.location.back()
   }
 
+  audiopage(audiofile, title) {
+    let mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+    let audioLink= mediaAudio+audiofile
+    this.router.navigate(['/adults/curated/audiopage', audioLink, title])
+  }
+
 }
