@@ -22,7 +22,7 @@ export class WisdomScorePage implements OnInit {
   path=this.router.url
   points=localStorage.getItem("wisdomScore")
 
-
+isUseCloseButton:boolean;
   constructor(private router: Router,
     private service:AdultsService,
     private location:Location) { }
@@ -32,7 +32,8 @@ export class WisdomScorePage implements OnInit {
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
-   
+      const {isUseCloseButton} = window.history.state;
+      this.isUseCloseButton=isUseCloseButton;
   }
   receiveBookmark(e)
 {

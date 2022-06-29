@@ -41,4 +41,4 @@
 </div>
 <!-- /page content -->
 
-<app-course-footer (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [isUseCloseButton]="isUseCloseButton" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

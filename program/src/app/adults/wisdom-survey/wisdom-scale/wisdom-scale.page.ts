@@ -18,7 +18,7 @@ import { Label } from 'ng2-charts';
 export class WisdomScalePage implements OnInit {
   
   bg="bg_01"
-
+  
   startTime:any
   skipToPage="/adults/comparison/s159"
   userId:any
@@ -148,8 +148,8 @@ export class WisdomScalePage implements OnInit {
     })
 
     
+     
 
-   
   }
 
   onSelect(event){
@@ -312,7 +312,10 @@ export class WisdomScalePage implements OnInit {
       },
       ()=>{
         this.service.wisdomScore(this.wisdomScore).subscribe(r=>console.log(r))
-        this.router.navigate(["/wisdom-survey/wisdom-score"])
+        const {isUseCloseButton} = window.history.state;
+        if(isUseCloseButton){
+          this.router.navigate(["/wisdom-survey/wisdom-score"], { state: {'isUseCloseButton': true} });
+        }
       })
 
 
