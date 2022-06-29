@@ -315,10 +315,10 @@ export class WisdomScalePage implements OnInit {
         const {isUseCloseButton} = window.history.state;
         if(isUseCloseButton){
           this.router.navigate(["/wisdom-survey/wisdom-score"], { state: {'isUseCloseButton': true} });
+        }else{
+          this.router.navigate(["/wisdom-survey/wisdom-score"]);
         }
-      })
-
-
+      });
   }
   
   
