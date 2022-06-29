@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdultsService } from '../adults.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-refer-friend',
@@ -10,7 +11,7 @@ export class ReferFriendPage implements OnInit {
   email='';
   name='';
 
-  constructor(private service: AdultsService) { }
+  constructor(private service: AdultsService, private location:Location) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,10 @@ export class ReferFriendPage implements OnInit {
 
   keyemail(value: any) {
     this.email = value.value
+  }
+
+  goBack(){
+    this.location.back()
   }
 
   submitrefer() {
