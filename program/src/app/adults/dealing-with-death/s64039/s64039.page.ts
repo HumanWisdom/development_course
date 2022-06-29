@@ -44,7 +44,7 @@ export class S64039Page implements OnInit {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
       
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Dealing With Death").Percentage)
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Dealing with Death").Percentage)
      console.log(this.progressPercent)
     
     })
