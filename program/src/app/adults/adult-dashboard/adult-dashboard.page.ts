@@ -358,7 +358,7 @@ socialFirstName:any
   }
 
   curatedDash(name: any) {
-    if(name === 'Manage you emotions') {
+    if(name === 'Manage your emotions') {
       this.router.navigate(['/adults/curated/manage-your-emotions'])
     }else if(name === 'Overcome stress and anxiety') {
       this.router.navigate(['/adults/curated/overcome-stress-anxiety'])

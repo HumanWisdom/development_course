@@ -69,7 +69,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   clickbtn(name, val = '', event, ind, id) {
     if(val === '') {
-      if(name === 'Manage you emotions') {
+      if(name === 'Manage your emotions') {
         this.route.navigate(['/adults/curated/manage-your-emotions'])
       }else if(name === 'Overcome stress and anxiety') {
         this.route.navigate(['/adults/curated/overcome-stress-anxiety'])

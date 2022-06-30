@@ -62,7 +62,7 @@ export class ManageYourEmotionsPage implements OnInit {
   }
 
   s3video(link) {
-    this.router.navigate(['/adults/curated/s3link', link])
+    this.router.navigate(['/adults/wisdom-shorts', link])
   }
 
   audiopage(audiofile, title) {

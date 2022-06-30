@@ -47,7 +47,7 @@ export class AdultsService {
     },
     {
       id: "8",
-      name: 'Manage you emotions',
+      name: 'Manage your emotions',
     }
   ]
 
