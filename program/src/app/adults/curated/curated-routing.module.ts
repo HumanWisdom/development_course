@@ -81,10 +81,6 @@ const routes: Routes = [
     path: 'audiopage/:audiolink/:title',
     component: SingleAudioContentComponent
   },
-  {
-    path: 's3link/:videolink',
-    component: S3VideoComponent
-  },
 
 ];
 
