@@ -17,6 +17,9 @@ export class SubscriptionS09V02Page implements OnInit {
   public email = '';
   public message = '';
   public myself = 0;
+  public startinvite = 'Send Invite'
+  public currentid = '';
+  public previd = '';
 
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
@@ -50,17 +53,20 @@ if(res) {
 
   sendInvite(data) {
     let obj = {
-      ActKey: data['ActKey'],
-      Email: data['Email'],
-      Name: data['Name'],
-      Msg: data['Msg'],
-      MySelf: data['MySelf'],
+      "ActKey": data['ActKey'],
+        "Email": this.email,
+        "Name": data['Name'],
+        "Msg": this.message,
+        "Myself": this.myself
     }
 
     this.service.sendinvite(obj)
       .subscribe(res => {
-        
+
         alert('Successfully Invited');
+        this.myprograms = res.filter((d) => d['Active'] === 1)
+        this.notmyprograms = res.filter((d) => d['Active'] === 0)
+        this.dc.detectChanges()
       },
         (error: HttpErrorResponse) => {
 
@@ -70,10 +76,23 @@ if(res) {
         })
   }
 
-  getAssignClick(value, name) {
-    this.openAssign = true;
-    this.activeKey = value
-    this.activeName = name
+  getAssignClick(data) {
+    this.currentid = data['ActKey'];
+    this.email = ''
+    this.message = ''
+    this.myself = 0;
+    this.startinvite = 'Send Invite';
+    (<HTMLInputElement>document.getElementById(this.currentid + 'checkbox')).checked = false
+    if(this.previd === ''){
+      document.getElementById(this.currentid).style.display = 'block';
+      this.previd = this.currentid;
+    }else if(this.currentid === this.previd){
+      document.getElementById(this.currentid).style.display = 'block';
+    }else {
+      document.getElementById(this.currentid).style.display = 'block';
+      document.getElementById(this.previd).style.display = 'none';
+      this.previd = this.currentid;
+    }
   }
 
   donotautorenew(key, val='', id='', donot='') {
@@ -95,18 +114,8 @@ if(res) {
     this.openAssign = false;
   }
 
-  submitAssignKey() {
-    this.service.assignKey({
-      "ActKey": this.activeKey,
-      "Email": this.email,
-      "Name": this.activeName,
-      "Msg": this.message,
-      "Myself": this.myself
-    })
-      .subscribe(res => {
-        
-
-      })
+  submitAssignKey(data) {
+      this.sendInvite(data)
   }
 
   emailKeyup(event) {
@@ -119,5 +128,6 @@ if(res) {
  
   myselfEvent(event) {
     this.myself = event.checked ? 1 : 0
+    this.startinvite = event.checked ? 'Start Program' : 'Send Invite'
   }
 }

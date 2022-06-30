@@ -74,8 +74,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
     this.location.back()
   }
 
-  youtube(link) {
-    this.router.navigate(['/adults/curated/youtubelink', link])
+  s3video(link) {
+    this.router.navigate(['/adults/curated/s3link', link])
   }
 
   audiopage(audiofile, title) {
