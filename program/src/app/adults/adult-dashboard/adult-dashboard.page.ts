@@ -3868,4 +3868,8 @@ socialFirstName:any
   closeEvent() {
 
   }
+  
+  goToYourWisdomScoreComponent() {
+    this.router.navigate(['/adults/wisdom-survey'], { state: {'isUseCloseButton': true} });
+   }
 }

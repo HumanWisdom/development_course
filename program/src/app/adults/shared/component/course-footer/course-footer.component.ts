@@ -16,6 +16,7 @@ export class CourseFooterComponent implements OnInit {
   @Output() previousEmitter = new EventEmitter<string>();
   @Input() bg: string;
   @Input() bg_cft: string;
+  @Input() isUseCloseButton:boolean=false;
   urlT:any
   shared=false
   //@ViewChild('screen', { static: true }) screen: any;
@@ -37,6 +38,9 @@ export class CourseFooterComponent implements OnInit {
     {
       this.shared=true
     }
+   if(this.isUseCloseButton){
+    this.shared=true;
+   }
   }
 
   next(){
