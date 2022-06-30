@@ -37,6 +37,10 @@ export class WisdomForWorkplacePage implements OnInit {
     this.router.navigate(['/adults/curated/youtubelink', link])
   }
 
+  s3video(link) {
+    this.router.navigate(['/adults/curated/s3link', link])
+  }
+
   audiopage(audiofile, title) {
     let mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink= mediaAudio+audiofile

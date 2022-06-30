@@ -2,6 +2,7 @@ import { SingleAudioContentComponent } from './../shared/component/single-audio-
 import { YoutubeContentComponent } from './../shared/component/youtube-content/youtube-content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { S3VideoComponent } from '../shared/component/s3-video/s3-video.component';
 
 const routes: Routes = [
   {
@@ -72,14 +73,18 @@ const routes: Routes = [
     path: 'manage-your-emotions-transcript',
     loadChildren: () => import('./manage-your-emotions-transcript/manage-your-emotions-transcript.module').then( m => m.ManageYourEmotionsTranscriptPageModule)
   },
- {
-   path: 'youtubelink/:videolink',
-   component: YoutubeContentComponent
- },
- {
-  path: 'audiopage/:audiolink/:title',
-  component: SingleAudioContentComponent
-}
+  {
+    path: 'youtubelink/:videolink',
+    component: YoutubeContentComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:title',
+    component: SingleAudioContentComponent
+  },
+  {
+    path: 's3link/:videolink',
+    component: S3VideoComponent
+  },
 
 ];
 

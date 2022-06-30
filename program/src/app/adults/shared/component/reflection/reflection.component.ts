@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input,Output, EventEmitter} from '@angular/core';
+import { Component, OnInit ,Input,Output, EventEmitter, SimpleChange} from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from 'src/app/adults/adults.service';
 @Component({
@@ -30,11 +30,6 @@ export class ReflectionComponent implements OnInit {
      this.scrNumber=this.path.substring(lastSlash+2);
      console.log(this.scrNumber)
     this.getProgress(this.scrNumber)
-
-    console.log(this.hint)
-    //this.reflectionResponses=this.reflectionResponse
-    
-    console.log(this.reflection,this.reflectionResponse)
   }
   sharedForum(e){
     console.log(e)
@@ -78,4 +73,5 @@ export class ReflectionComponent implements OnInit {
   goToDash(){
     this.router.navigate(['/adults/adult-dashboard'])
   }
+  
 }

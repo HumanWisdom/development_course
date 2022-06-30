@@ -29212,3 +29212,9 @@ svg path
 {
   backdrop-filter: unset !important;
 }
+
+.cvideo_02
+{
+  width: 100%;
+  max-height: 100%;
+}
