@@ -17,7 +17,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import {TokenInterceptorService} from './token-interceptor.service'
@@ -61,6 +61,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       multi: true
     },
     //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {
+      provide: LocationStrategy, useClass:HashLocationStrategy
+      },
   
     {
       provide: 'SocialAuthServiceConfig',
