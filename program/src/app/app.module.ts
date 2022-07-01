@@ -61,9 +61,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       multi: true
     },
     //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-   {
-    provide: LocationStrategy, useClass: PathLocationStrategy
-    },
+  
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
