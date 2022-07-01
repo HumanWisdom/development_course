@@ -28,17 +28,17 @@ export class ModuleEndComponent implements OnInit {
     {
       name: 'Breathing',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
-      link: ''
+      link: '/breathing'
     },
     {
       name: 'Noticing Thoughts',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png',
-      link: ''
+      link: '/noticing-thoughts'
     },
     {
       name: 'Guided Audio Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/10.png',
-      link: ''
+      link: '/guided-meditation'
     },
   ]
 
