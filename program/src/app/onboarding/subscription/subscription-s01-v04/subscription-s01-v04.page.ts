@@ -85,20 +85,20 @@ export class SubscriptionS01V04Page implements OnInit {
     else
       this.userId=JSON.parse(localStorage.getItem("userId"))
     console.log("userID",this.userId)
-    this.getCountry()
-    this.viewCart()
+    this.getCountry();
+    this.viewCart();
    
 setTimeout(() => {
   console.log(this.cartList)
-  this.cartList[0].qty = this.cartitemList.length
-  if(this.cartitemList.length === 0){
-    this.cartList[0].price =  this.cartList[0]['Annual']
-  }else {
-    this.cartList[0].price = this.cartitemList[0].Amt
-    this.cartList[0].selectedSubscription = this.cartitemList[0].Plan
-  }
-  this.enableData = true
-  this.cd.detectChanges()
+  // this.cartList[0].qty = this.cartitemList.length
+  // if(this.cartitemList.length === 0){
+  //   this.cartList[0].price =  this.cartList[0]['Annual']
+  // }else {
+  //   this.cartList[0].price = this.cartitemList[0].Amt
+  //   this.cartList[0].selectedSubscription = this.cartitemList[0].Plan
+  // }
+  // this.enableData = true
+  // this.cd.detectChanges()
 
 }, 7000)
     
@@ -364,7 +364,8 @@ submitcode(){
           element.cartId=0
           element.later=0
         });
-        this.defaultCurrencySymbol=res[0]['ISOCode']
+        this.defaultCurrencySymbol=res[0]['ISOCode'];
+        this.getAmount();
       }, (err) => {
         window.alert(err.error['Message'])
       }
@@ -559,9 +560,20 @@ submitcode(){
     this.totalCartValue = 0;
     for(var i=0;i<this.cartList.length;i++){
       this.totalCartValue += (this.cartList[i].price);
-     
     }
     console.log(this.totalCartValue,this.totalItemCount)
+  }
+
+  getAmount(){
+    this.cartList[0].qty = this.cartitemList.length
+    if(this.cartitemList.length === 0){
+      this.cartList[0].price =  this.cartList[0]['Annual']
+    }else {
+      this.cartList[0].price = this.cartitemList[0].Amt
+      this.cartList[0].selectedSubscription = this.cartitemList[0].Plan
+    }
+    this.enableData = true;
+    this.cd.detectChanges();
   }
 
   ngOnDestroy(){

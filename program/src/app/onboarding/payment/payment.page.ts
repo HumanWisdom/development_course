@@ -15,6 +15,7 @@ import  { NgForm } from "@angular/forms"
 import { AngularStripeService } from '@fireflysemantics/angular-stripe-service'
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 var style = {
   base: {
@@ -39,8 +40,10 @@ var style = {
   styleUrls: ['./payment.page.scss'],
 })
 export class PaymentPage implements AfterViewInit, OnDestroy {
-  stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
+  //stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
   // stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
+  stripeKey= environment.stripeKey;
+ 
   cardCaptureReady = false
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
 

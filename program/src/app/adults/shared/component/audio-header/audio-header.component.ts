@@ -31,7 +31,7 @@ export class AudioHeaderComponent implements OnInit {
   scrNumber:any
 
 
-  @Output() sendBookmark = new EventEmitter<string>();
+  @Output() sendBookmark = new EventEmitter<boolean>();
 
   constructor(private router: Router,
     private service:AdultsService,
@@ -62,7 +62,7 @@ export class AudioHeaderComponent implements OnInit {
   toggleBookmark(){
     this.bookmark=!this.bookmark
     console.log(this.bookmark)
-    this.sendBookmark.emit(JSON.stringify(this.bookmark))
+    this.sendBookmark.emit(this.bookmark)
   }
   addZero(i) {
     if (i < 10) {

@@ -74,6 +74,7 @@ import { TnDashboardV03Component } from './component/tn-dashboard-v03/tn-dashboa
 import { HamburgerComponent } from './component/hamburger/hamburger.component';
 import { TnCloseComponent } from './component/tn-close/tn-close.component';
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
+import { S3VideoComponent } from './component/s3-video/s3-video.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -141,7 +142,8 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     HamburgerComponent,
     TnCloseComponent,
     YoutubeContentComponent,
-    SingleAudioContentComponent
+    SingleAudioContentComponent,
+    S3VideoComponent
   ],
   imports: [
     CommonModule,
@@ -232,7 +234,8 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     HamburgerComponent,
     TnCloseComponent,
     YoutubeContentComponent,
-    SingleAudioContentComponent
+    SingleAudioContentComponent,
+    S3VideoComponent
   ]
 })
 export class SharedModule { }

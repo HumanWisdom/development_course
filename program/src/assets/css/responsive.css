@@ -565,6 +565,11 @@
     {
         margin-top: 6%;
     }
+
+    .cvideo_02
+    {
+        max-height: 75vh;
+    }
 }
 
 @media (min-width: 1025px)
@@ -716,7 +721,8 @@
 
     .attitle.txt31 
     {
-        font-size: 14px;
+        /* font-size: 14px; */
+        font-size: 13px;
     }
 
     .dbg_black 
@@ -844,7 +850,7 @@
     .mdp_answer_here
     {
         margin: 10px 0 0 0;
-    }
+    }    
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)

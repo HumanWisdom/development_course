@@ -2,149 +2,202 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_index_tn">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a (click)="goBack()" class="">                          
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="p0">
-      </a>  
+      <a (click)="goBack()" class="">
+        <img
+          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg"
+          alt=""
+          class="p0"
+        />
+      </a>
     </div>
-    
+
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <a  class="">                       
-        <h1 class="txt151 mtb0px tcenter">
-          Journal
-        </h1>            
-      </a>  
+      <a class="">
+        <h1 class="txt151 mtb0px tcenter">Journal</h1>
+      </a>
     </div>
-    
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
   </div>
 </div>
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->  
+<div class="right_col mc_01">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_guided_questions sc_01">
-        <div class="x_panel p0">  
+      <div
+        class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_guided_questions sc_01"
+      >
+        <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs gqtns flex_ai mt30px">
                 <li [ngClass]="{'active':isDiary}">
-                  <a data-toggle="tab" (click)="YourDiary()" >
-                    Your Diary
-                  </a>
+                  <a data-toggle="tab" (click)="YourDiary()"> Your Diary </a>
                 </li>
                 <li [ngClass]="{'active':isGuidedQueestionsTab}">
-                  <a data-toggle="tab" (click)="GuidedQuestionTab()" >
+                  <a data-toggle="tab" (click)="GuidedQuestionTab()">
                     Guided Questions
                   </a>
-                </li>                  
+                </li>
               </ul>
-        
+
               <div class="tab-content mt30px">
                 <div id="tab1" *ngIf="isDiary" class="tab-pane fade in active">
                   <form>
-
                     <div class="row">
-                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-8 pr0">
-                          <input autofocus type="search" class="form-control has-feedback-left gqtns_search"
-                           (keyup.enter)="searchText($event)" 
-                            [(ngModel)]="searchedText" 
-                            (change)="searchText($event)"
-                             placeholder="Search">
-                          <span class="fa fa-search form-control-feedback left pfy_search_icon"
-                           aria-hidden="true"></span>
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-4">
-                          <button type="button" (click)="goToNote(0,'','','note')" 
-
-                          class="btn btn_aan">Add a note</button>
-                        </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-8 pr0">
+                        <input
+                          id="inputSearch"
+                          autofocus
+                          type="search"
+                          class="form-control has-feedback-left gqtns_search"
+                          (keyup.enter)="searchText($event)"
+                          (blur)="searchText($event)"
+                          [(ngModel)]="searchedText"
+                          (change)="searchText($event)"
+                          placeholder="Search"
+                        />
+                        <span
+                          class="fa fa-search form-control-feedback left pfy_search_icon"
+                          aria-hidden="true"
+                        ></span>
+                      </div>
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-4">
+                        <button
+                        id="noteId"
+                          type="button"
+                          (click)="goToNote(0,'','','note')"
+                          class="btn btn_aan"
+                        >
+                          Add a note
+                        </button>
+                      </div>
                     </div>
 
                     <div class="row center_flex gqtns_icon">
                       <div class="col-md-12 col-sm-12 col-xs-8 tcenter">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal.svg" alt="" class="img-responsive">
+                        <img
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal.svg"
+                          alt=""
+                          class="img-responsive"
+                        />
                       </div>
                     </div>
-      
+
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                        <h4 class="txt297 mtb0px">
-                          Question of the day
-                        </h4>
+                        <h4 class="txt297 mtb0px">Question of the day</h4>
                       </div>
                     </div>
 
                     <div class="row center_flex gqtns_qtn">
                       <div class="col-md-12 col-sm-12 col-xs-10 tcenter">
-                        <h4 class="txt307 mtb0px">
-                         {{dailyQuestion}}
-                        </h4>
+                        <h4 class="txt307 mtb0px">{{dailyQuestion}}</h4>
                       </div>
                     </div>
 
-                    <div class="row" (click)="goToNote(dailyId,dailyQuestion,dailyResponse,'dq')">
+                    <div
+                      class="row"
+                      (click)="goToNote(dailyId,dailyQuestion,dailyResponse,'dq')"
+                    >
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                          <textarea type="text" id="comment" name="thread" required="required"  class="textarea_01" placeholder="Tap to answer" maxlength="256">{{dailyResponse}}</textarea>
+                        <textarea
+                          type="text"
+                          id="comment"
+                          name="thread"
+                          required="required"
+                          class="textarea_01"
+                          placeholder="Tap to answer"
+                          maxlength="256"
+                        >
+{{dailyResponse}}</textarea
+                        >
                       </div>
                     </div>
-                    
+
                     <div class="row gqtns_recent_notes">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt308 mtb0px tcenter">
-                          RECENT NOTES
-                        </h4>
+                        <h4 class="txt308 mtb0px tcenter">RECENT NOTES</h4>
                       </div>
                     </div>
 
                     <div class="row gqtns_recent_tabs">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <button class="btn btn_recent" (click)="showAll()">
+                        <button
+                          type="button"
+                          class="btn btn_recent"
+                          (click)="showAll()"
+                        >
                           All Notes
                         </button>
-                      
+
                         <button (click)="showNotes()" class="btn btn_recent">
                           Diary
                         </button>
-                      
-                        <button (click)="showReflections()" class="btn btn_recent">
+
+                        <button
+                          (click)="showReflections()"
+                          class="btn btn_recent"
+                        >
                           Reflections
                         </button>
-                      
-                        <button (click)="showGuidedQuestions()" class="btn btn_recent">
+
+                        <button
+                          (click)="showGuidedQuestions()"
+                          class="btn btn_recent"
+                        >
                           Guided Questions
                         </button>
                       </div>
                     </div>
-
+                    <ng-container *ngIf="isReloadList">
                     <div *ngFor="let j of jrList" class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <a>
-                          <div  (click)="GoToQuestions(j)"  class="panel panel-default pdefault_01 prelative">
-                            <div class="panel-heading absolute_ptitle" [ngClass]="{'cyan_light': j.JrType=='Guided Questions','gray_light':j.JrType=='Diary'}" >
+                          <div
+                            (click)="GoToQuestions(j)"
+                            class="panel panel-default pdefault_01 prelative"
+                          >
+                            <div
+                              class="panel-heading absolute_ptitle"
+                              [ngClass]="{'cyan_light': j.JrType=='Guided Questions','gray_light':j.JrType=='Diary'}"
+                            >
                               <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
                             <div class="panel-body">
                               <h4 class="txt309">{{j.Date| date}}</h4>
-                              <h4  class="txt310" *ngIf="j.JrType=='Reflections' || j.JrType=='Guided Questions'">{{j.ModuleName}}</h4>
+                              <h4
+                                class="txt310"
+                                *ngIf="j.JrType=='Reflections' || j.JrType=='Guided Questions'"
+                              >
+                                {{j.ModuleName}}
+                              </h4>
                               <h4 class="txt73">{{j.TitleQue}}</h4>
-                              <h4 class="txt310">{{j.Response|slice:0:40}}...</h4>
+                              <h4 class="txt310">
+                                {{j.Response|slice:0:40}}...
+                              </h4>
                             </div>
                           </div>
                         </a>
                       </div>
                     </div>
+                    </ng-container>
                   </form>
                 </div>
 
-                <div *ngIf="isGuidedQueestionsTab" id="tab2" class="tab-pane fade in active">
+                <div
+                  *ngIf="isGuidedQueestionsTab"
+                  id="tab2"
+                  class="tab-pane fade in active"
+                >
                   <div class="row center_flex mb30px">
                     <div class="col-md-12 col-sm-12 col-xs-10 tcenter">
                       <h4 class="txt311 mtb0px">
-                        Explore these questions to understand yourself, and find fresh ways of dealing with life’s challenges
+                        Explore these questions to understand yourself, and find
+                        fresh ways of dealing with life’s challenges
                       </h4>
                     </div>
                   </div>
@@ -153,23 +206,25 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <a (click)="RouteToToQuestions(item)">
                         <div class="row guidedqtns_row_01 bgc_light_gray">
-                          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-10 col-sm-10 col-xs-10">                    
+                          <div
+                            class="col-md-12 col-sm-12 col-xs-12 p0 center_flex"
+                          >
+                            <div class="col-md-10 col-sm-10 col-xs-10">
                               <h4 class="session_name mtb0px">
                                 {{item.Topic}}
-                              </h4>    
+                              </h4>
                             </div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 tright">   
+                            <div class="col-md-2 col-sm-2 col-xs-2 tright">
                               <i class="fa fa-angle-right cfa_ar_01"></i>
                             </div>
-                          </div>                    
+                          </div>
                         </div>
-                      </a> 
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>              
+            </div>
 
             <div class="pagebreak"></div>
           </div>

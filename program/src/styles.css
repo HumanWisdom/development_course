@@ -10795,7 +10795,7 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-  width: 98%;
+  /* width: 98%; */
   position: absolute;
 }
 
@@ -10836,7 +10836,7 @@ body,
   bottom: -50px;
   right: 0;
   left: 0;
-  width: 98%;
+  /* width: 98%; */
   margin: 0 auto;
   padding: 40px;
   height: auto;
@@ -15112,6 +15112,7 @@ input[type="number"] {
   bottom: 5px;
   left: 15px;
   white-space: pre-wrap;
+  /* word-break: break-word; */
   /* width: 50%; */
   /* width: 75%; */
   width: 70%;
@@ -21263,7 +21264,7 @@ and (orientation : portrait)
 
 #wsi_bg_white
 {
-  margin: 0 -22px !important;
+  /* margin: 0 -22px !important; */
   background: #ffffff;
 }
 
@@ -28286,7 +28287,8 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   filter: invert(100%);
   background-size: contain;
   opacity: 1;
-  pointer-events: none;
+  pointer-events: all;
+  cursor: pointer;
 }
 
 .textarea_01 
@@ -29204,4 +29206,15 @@ svg path
   right: 0;
   left: 0;
   margin: auto;
+}
+
+.modal-open .mwrong.modal
+{
+  backdrop-filter: unset !important;
+}
+
+.cvideo_02
+{
+  width: 100%;
+  max-height: 100%;
 }
