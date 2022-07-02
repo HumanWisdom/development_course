@@ -1,8 +1,10 @@
 import { Component, HostListener } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { NavigationEnd, Router } from '@angular/router';
+import {
+  Platform
+} from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +30,9 @@ export class AppComponent {
   ) {
     localStorage.setItem("mediaAudio",JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo",JSON.stringify(this.mediaVideo))
+    if(this.platform.ANDROID || this.platform.IOS) {
+      localStorage.setItem('acceptcookie','T')
+    }
     this.initializeApp();
   }
 
