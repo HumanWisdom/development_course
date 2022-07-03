@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
+import { S3VideoComponent } from './shared/component/s3-video/s3-video.component';
 
 const routes: Routes = [   
   {
@@ -329,6 +330,10 @@ const routes: Routes = [
   {
     path: 'events',
     loadChildren: () => import('./events/events.module').then( m => m.EventsModule)
+  },
+  {
+    path: 'wisdom-shorts/:videolink',
+    component: S3VideoComponent
   },
 ];
 

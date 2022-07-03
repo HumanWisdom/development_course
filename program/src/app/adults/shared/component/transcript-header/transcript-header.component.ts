@@ -17,7 +17,7 @@ export class TranscriptHeaderComponent implements OnInit {
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() audioPage: string;
-  @Output() sendBookmark = new EventEmitter<string>();
+  @Output() sendBookmark = new EventEmitter<boolean>();
   note:any
   t=new Date()
   minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
@@ -87,7 +87,7 @@ export class TranscriptHeaderComponent implements OnInit {
   toggleBookmark(){
     this.bookmark=!this.bookmark
     console.log(this.bookmark)
-    this.sendBookmark.emit(JSON.stringify(this.bookmark))
+    this.sendBookmark.emit(this.bookmark)
   }
 
   courseNote(){

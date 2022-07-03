@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdultsService } from 'src/app/adults/adults.service';
 
 @Component({
   selector: 'app-intro-carousel',
@@ -8,9 +9,24 @@ import { Router } from '@angular/router';
 })
 export class IntroCarouselPage implements OnInit, AfterViewInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service: AdultsService) { }
 
   ngOnInit() {
+    let authtoken=JSON.parse(localStorage.getItem("token"))
+    let app= localStorage.getItem("fromapp")
+    if(authtoken && app && app !== 'F') {
+      localStorage.setItem('socialLogin', 'T');
+      this.service.verifytoken(authtoken).subscribe((res) => {
+        
+        if(res) {
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          let namedata = localStorage.getItem('name').split(' ')
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+        }
+     })
+    }
   }
 
   ngAfterViewInit() {
@@ -39,4 +55,5 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     // localStorage.setItem('personalised', 'F');
     this.router.navigate(['/intro/personalised-for-you']);
   }
+
 }

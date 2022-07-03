@@ -1,3 +1,4 @@
+import { IntroGuard } from './intro.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
@@ -47,13 +48,14 @@ const routes: Routes = [
   },
   {
     path: "intro",
+    canActivate:[IntroGuard],
     loadChildren: () => import("./introductory/introductory.module").then(m => m.IntroductoryModule)  
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {useHash:true, preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy', scrollPositionRestoration: 'top'})
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy', scrollPositionRestoration: 'top'})
   ],
   exports: [RouterModule]
 })

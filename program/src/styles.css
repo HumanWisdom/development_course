@@ -26210,6 +26210,7 @@ h1
 .dinline_box
 {
   display: -webkit-inline-box;
+  display: inline-block;
 }
 
 .lww 
@@ -29025,7 +29026,7 @@ svg path
 
 .traydiv
 {
-  display: flex;
+  display: flex !important;
   /* grid-gap: 10px; */
   padding: 0;
 }
@@ -29124,10 +29125,14 @@ svg path
       justify-content: center;
     }
 
-    #mdp_carousel .carousel-indicators,
     #ic_carousel .carousel-indicators
     {
       bottom: 5%;
+    }
+
+    #mdp_carousel .carousel-indicators
+    {
+      bottom: 15%;
     }
 
     .micb,
@@ -29211,4 +29216,18 @@ svg path
 .modal-open .mwrong.modal
 {
   backdrop-filter: unset !important;
+}
+
+.cvideo_02
+{
+  width: 100%;
+  max-height: 100%;
+}
+
+.odiv > [class^="col-"], 
+.ghn > [class^="col-"] 
+{
+  display: inline-block;
+  float: none;
+  vertical-align: text-top;
 }
