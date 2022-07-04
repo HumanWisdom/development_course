@@ -657,6 +657,11 @@
         right: 0;
         left: 0;
     }
+
+    .dplayappstore
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 1200px)
@@ -853,6 +858,16 @@
     {
         margin: 10px 0 0 0;
     }    
+
+    .dplayappstore
+    {
+        display: block;
+    }
+
+    .dnplayappstore
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)
