@@ -25,7 +25,7 @@ export class S74001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   
-  natureR=sessionStorage.getItem("natureR")
+  hcwhR=sessionStorage.getItem("hcwhR")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_can_wisdom_help.png"
   tocColor="white"
   lastvisited = false;
