@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'HumanWisdom-s74005',
+  selector: 'app-s74005',
   templateUrl: './s74005.page.html',
   styleUrls: ['./s74005.page.scss'],
 })
