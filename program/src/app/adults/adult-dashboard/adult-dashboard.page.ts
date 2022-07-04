@@ -140,6 +140,7 @@ socialFirstName:any
  lifestoriesList = []
  shortsList = []
  sId:any
+ hcwhP:any
 
  //static progress mapping
   mediaAudio="https://d1tenzemoxuh75.cloudfront.net"
@@ -1490,7 +1491,8 @@ socialFirstName:any
      this.addictionP=res.ModUserScrPc.find(e=>e.Module=="Addiction")?.Percentage
      this.foodP=res.ModUserScrPc.find(e=>e.Module=="Food")?.Percentage
      this.moneyP=res.ModUserScrPc.find(e=>e.Module=="Money")?.Percentage
-     this.sorrowandlossP=res.ModUserScrPc.find(e=>e.Module=="Sorrow And Loss")?.Percentage    
+     this.sorrowandlossP=res.ModUserScrPc.find(e=>e.Module=="Sorrow And Loss")?.Percentage  
+     this.hcwhP=res.ModUserScrPc.find(e=>e.Module=="How can widom help?")?.Percentage  
     })
   }
 
@@ -1655,8 +1657,11 @@ socialFirstName:any
                 break
                 }
       case "73":{this.routeMoney(1)
-        break
-        }
+                break
+                }
+      case "74":{this.routehowcanwisdomhelp(1)
+                break
+                }
     }
   }
 
@@ -3866,10 +3871,50 @@ socialFirstName:any
   }
 
   closeEvent() {
-
   }
   
   goToYourWisdomScoreComponent() {
     this.router.navigate(['/adults/wisdom-survey'], { state: {'isUseCloseButton': true} });
-   }
+  }
+
+  routehowcanwisdomhelp(cont: any = 1){
+    var hcwhR
+    localStorage.setItem("moduleId",JSON.stringify(74))
+    this.service.clickModule(74,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        hcwhR="s"+res.lastVisitedScreen
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("hcwhR",hcwhR)
+        this.mediaPercent=parseInt(res.MediaPercent)
+        this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens",JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent",JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      if(cont=="1")
+      {       
+        this.router.navigate([`/adults/how-can-wisdom-help/${hcwhR}`])
+      }
+      else
+        this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
+    })
+   
+
+  }
 }

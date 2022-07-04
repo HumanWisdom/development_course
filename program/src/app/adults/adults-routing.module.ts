@@ -331,6 +331,10 @@ const routes: Routes = [
     path: 'wisdom-shorts/:videolink',
     component: S3VideoComponent
   },
+  {
+    path: 'how-can-wisdom-help',
+    loadChildren: () => import('./how-can-wisdom-help/how-can-wisdom-help.module').then( m => m.HowCanWisdomHelpModule)
+  },
 ];
 
 @NgModule({

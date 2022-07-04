@@ -1,33 +1,32 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { AdultsService } from "../../adults.service"
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
-
+import { Location } from '@angular/common'
 
 @Component({
-  selector: 'app-s32001',
-  templateUrl: './s32001.page.html',
-  styleUrls: ['./s32001.page.scss'],
+  selector: 'HumanWisdom-s74001',
+  templateUrl: './s74001.page.html',
+  styleUrls: ['./s74001.page.scss'],
 })
-export class S32001Page implements OnInit,OnDestroy {
+export class S74001Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
-  bg="purple_blue_w1"
-  
+  bg="purple_blue_w1"  
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId:any
   //moduleId=localStorage.getItem("moduleId")
-  screenNumber="32001"
+  screenNumber="74001"
   startTime:any
   endTime:any
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  benefitsWisdomResume=sessionStorage.getItem("benefitsWisdomResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_wisdom.png"
+  
+  natureR=sessionStorage.getItem("natureR")
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_can_wisdom_help.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
@@ -36,7 +35,7 @@ export class S32001Page implements OnInit,OnDestroy {
     private router: Router,
     private service:AdultsService,
     private location:Location
-  )
+  ) 
   { 
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
@@ -71,8 +70,9 @@ export class S32001Page implements OnInit,OnDestroy {
     // this.stories = JSON.parse(this.stories)
   }
 
-  ngOnInit() {
-    // continue where you left
+  ngOnInit() 
+  {
+    // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
     {
@@ -81,45 +81,43 @@ export class S32001Page implements OnInit,OnDestroy {
     else 
     {
       this.lastvisited = false;
-    }
-    // /continue where you left    
-    localStorage.setItem("moduleId",JSON.stringify(32))
+    }    
+    // /continue where you left
+    localStorage.setItem("moduleId",JSON.stringify(74))
     this.moduleId=localStorage.getItem("moduleId")
     if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    { 
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.startTime = Date.now();
-  
     this.startTime = Date.now();
     this.createScreen()
-
-
-    
   }
-  toggleBookmark(){
+  
+  toggleBookmark()
+  {
     if(this.bookmark==0)
       this.bookmark=1
     else
       this.bookmark=0
-
   }
-  createScreen(){
+  
+  createScreen()
+  {
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
-
+    }).subscribe(res=>{})
   }
 
-
-  submitProgress(){
+  submitProgress()
+  {
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -133,21 +131,18 @@ export class S32001Page implements OnInit,OnDestroy {
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    
-
   }
+  
   ngOnDestroy(){
-   
-
-
-
   }
 
-  routeJournal(){
+  routeJournal()
+  {
     this.router.navigate(['/adults/journal'])
   }
-  goBack(){
+
+  goBack()
+  {
     this.location.back()
   }
-
 }
