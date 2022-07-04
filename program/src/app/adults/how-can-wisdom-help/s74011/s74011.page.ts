@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'HumanWisdom-s74011',
+  selector: 'app-s74011',
   templateUrl: './s74011.page.html',
   styleUrls: ['./s74011.page.scss'],
 })
@@ -45,12 +45,12 @@ export class S74011Page implements OnInit {
       this.points=res
       })
   }
-
+ 
   submitProgress()
   {
-    this.router.navigate(['/adults/how_can_wisdom_help/s74012'])
+    this.router.navigate(['/adults/how-can-wisdom-help/s74012'])
   }
   prev(){
-    this.router.navigate(['/adults/how_can_wisdom_help/s74010'])
+    this.router.navigate(['/adults/how-can-wisdom-help/s74010'])
   }
 }
