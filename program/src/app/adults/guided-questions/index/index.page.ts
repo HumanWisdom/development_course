@@ -88,7 +88,7 @@ export class IndexPage implements OnInit,AfterViewInit {
   
   RouteToToQuestions(item) {
     let url = `/journal${item.Landing_URL}`;
-    this.router.navigate([url]);
+    this.router.navigate([url],{state:{"isBypass":true}});
     // this.router.navigate(['/journal/introduction'],{state:{"data":JSON.stringify(item)}})
   }
 

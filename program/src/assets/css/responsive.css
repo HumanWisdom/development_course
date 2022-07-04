@@ -315,7 +315,8 @@
         margin-right: 0px;
     }
 
-    #ic_carousel .carousel-indicators
+    #ic_carousel .carousel-indicators,
+    #mdp_carousel .carousel-indicators
     {
         /* width: 50% */
         width: 30%
@@ -656,6 +657,11 @@
         right: 0;
         left: 0;
     }
+
+    .dplayappstore
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 1200px)
@@ -751,7 +757,8 @@
         display: none;
     }
 
-    #ic_carousel .carousel-indicators
+    #ic_carousel .carousel-indicators,
+    #mdp_carousel .carousel-indicators
     {
         /* width: 25% */
         width: 20%
@@ -851,6 +858,16 @@
     {
         margin: 10px 0 0 0;
     }    
+
+    .dplayappstore
+    {
+        display: block;
+    }
+
+    .dnplayappstore
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)

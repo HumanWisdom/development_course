@@ -40,6 +40,19 @@
                     <li data-target="#mdp_carousel" data-slide-to="2" [ngClass]="[dailyid === '2' ? 'active' : '']"></li>
                     <li data-target="#mdp_carousel" data-slide-to="3" [ngClass]="[dailyid === '3' ? 'active' : '']"></li>
                     <li data-target="#mdp_carousel" data-slide-to="4" [ngClass]="[dailyid === '4' ? 'active' : '']"></li>
+
+                    <a class="left carousel-control jc_flexstart flex_ai">
+                      <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
+                        Back
+                      </h4>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                      <h4 class="txt315 mtb0px">
+                        Next
+                      </h4>
+                      <span class="sr-only">Next</span>
+                    </a>
                   </ol>
                   
                   <div class="carousel-inner">
@@ -61,8 +74,8 @@
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <div class="row tcenter">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
+                          <div class="row tcenter center_flex">
+                            <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
                               <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video>  -->
@@ -242,15 +255,16 @@
                       <!-- /exercise -->
                     </div>
                   </div>
-              
-                  <a class="left carousel-control" href="#mdp_carousel" data-slide="prev">
+
+                  
+                  <!-- <a class="left carousel-control" href="#mdp_carousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="sr-only">Previous</span>
                   </a>
                   <a class="right carousel-control" href="#mdp_carousel" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <!-- /carousel -->
