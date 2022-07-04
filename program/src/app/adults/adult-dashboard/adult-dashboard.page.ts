@@ -100,7 +100,7 @@ export class AdultDashboardPage implements OnInit {
   private isloggedIn = false
   private x = []
   private isSubscribe = false
-  private enablebanner = false;
+  private enablebanner = '';
   private modaldata = {}
   private firstpage = true;
   private secondpage = false;
@@ -175,9 +175,11 @@ export class AdultDashboardPage implements OnInit {
     } else {
       let ban = localStorage.getItem('enablebanner');
       if (ban === null || ban === 'T') {
-        this.enablebanner = true;
-      } else {
-        this.enablebanner = false;
+        if (this.platform.ANDROID) {
+          this.enablebanner = 'PlayStore';
+        } else if (this.platform.IOS) {
+          this.enablebanner = 'AppStore';
+        }
       }
     }
 
@@ -373,7 +375,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getplaystore() {
-    this.enablebanner = false
+    this.enablebanner = ''
   }
 
   getUserPreference() {
@@ -1264,7 +1266,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   closeplaystore() {
-    this.enablebanner = false;
+    this.enablebanner = '';
   }
 
   submitrefer() {

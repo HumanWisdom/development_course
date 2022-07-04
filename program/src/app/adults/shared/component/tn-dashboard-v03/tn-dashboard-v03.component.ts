@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import {
   getSupportedInputTypes,
   Platform,
   supportsPassiveEventListeners,
-  supportsScrollBehavior,
+  supportsScrollBehavior
 } from '@angular/cdk/platform';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
 @Component({
   selector: 'app-tn-dashboard-v03',
@@ -23,9 +23,9 @@ export class TnDashboardV03Component implements OnInit {
   name = ''
   roleid = 0
   url = '';
-  subscriber= false;
+  subscriber = false;
   @Input()
-  enableplaystore = true
+  enableplaystore = ''
   @Input()
   routeid = ''
 
@@ -33,22 +33,22 @@ export class TnDashboardV03Component implements OnInit {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     this.name = localStorage.getItem('name');
-    if(userid === 'T') {
+    if (userid === 'T') {
       this.isloggedIn = true
     }
-    let userId=JSON.parse(localStorage.getItem("userId"))
-    this.Onboardingservice.getuser(userId).subscribe((res)=>{
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    this.Onboardingservice.getuser(userId).subscribe((res) => {
       let userdetail = res[0];
-      this.url = userdetail['UserImagePath'].split('\\')[1] 
+      this.url = userdetail['UserImagePath'].split('\\')[1]
     })
-   }
+  }
 
   ngOnInit() {
     setTimeout(() => {
       let sub: any = localStorage.getItem("Subscriber")
-    if(sub === '1' || sub === 1) {
-      this.subscriber = true;
-    }
+      if (sub === '1' || sub === 1) {
+        this.subscriber = true;
+      }
     }, 5000)
   }
 
@@ -61,11 +61,11 @@ export class TnDashboardV03Component implements OnInit {
   }
 
   routeAffiliate() {
-      let userId = JSON.parse(localStorage.getItem("userId"))
-      window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
-      return false;
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
+    return false;
   }
- 
+
   logout() {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
@@ -82,7 +82,7 @@ export class TnDashboardV03Component implements OnInit {
   }
 
   closeplaystore() {
-    this.enableplaystore = false;
+    this.enableplaystore = '';
     localStorage.setItem('enablebanner', 'F')
     this.playstoreenable.emit(false);
   }

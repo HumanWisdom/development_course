@@ -81,17 +81,22 @@
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routehowcanwisdomhelp(0)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/50.png" alt="How can wisdom help?" class="ctimg">
+                                  <img
+                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/50.png"
+                                    alt="How can wisdom help?" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">How can wisdom help?</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="hcwhP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="hcwhP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeBenefits(0)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/51.png" alt="Benefits of Wisdom" class="ctimg">
+                                  <img
+                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/51.png"
+                                    alt="Benefits of Wisdom" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">Wisdom brings change</h4>
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="benefitsWisdomP + '%'"
@@ -1926,7 +1931,7 @@
             <div class="row center_flex mb10px">
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <input type="password" class="form-control cfc14" placeholder="Password*"
+                  <input type="password" class="form-control cfc14" autocomplete="on" placeholder="Password*"
                     (keydown.space)="$event.preventDefault();" formControlName="password" required>
                   <label class="txt189">
                     Password must be Minimum 5 Characters. No Spaces allowed
@@ -1943,7 +1948,7 @@
             <div class="row center_flex mb10px">
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <input type="password" class="form-control cfc14" placeholder="Repeat Password*"
+                  <input type="password" class="form-control cfc14" autocomplete="on" placeholder="Repeat Password*"
                     (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
                   <label class="txt189">
                     Password must be Minimum 5 Characters. No Spaces allowed
