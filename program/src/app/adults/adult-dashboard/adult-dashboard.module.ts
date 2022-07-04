@@ -8,6 +8,7 @@ import { AdultDashboardPageRoutingModule } from './adult-dashboard-routing.modul
 
 import { AdultDashboardPage } from './adult-dashboard.page';
 import {SharedModule} from '../shared/shared.module'
+import {PlatformModule} from '@angular/cdk/platform';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {SharedModule} from '../shared/shared.module'
     FormsModule,
     IonicModule,
     AdultDashboardPageRoutingModule,
-    SharedModule
+    SharedModule,
+    PlatformModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   declarations: [AdultDashboardPage]
