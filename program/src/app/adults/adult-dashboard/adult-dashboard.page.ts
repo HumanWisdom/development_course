@@ -1,3 +1,4 @@
+import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -157,12 +158,19 @@ socialFirstName:any
   },{validator: this.PasswordValidator})
 
   constructor(
-    private router: Router,private service: AdultsService,private services: OnboardingService, private cd: ChangeDetectorRef, private fb: FormBuilder,private authService: SocialAuthService,
+    private router: Router,private service: AdultsService,private services: OnboardingService,
+     private cd: ChangeDetectorRef, private fb: FormBuilder,private authService: SocialAuthService,
+     private platform: Platform,
      ) {
-      localStorage.setItem('acceptcookie','T')
+      let app= localStorage.getItem("fromapp")
+      if(app && app === 'T') {
+        localStorage.setItem('acceptcookie','T')
+      }
+      if(this.platform.ANDROID || this.platform.IOS) {
+            localStorage.setItem('acceptcookie','T')
+          }
       localStorage.setItem('curated', 'F');
       let authtoken=JSON.parse(localStorage.getItem("token"))
-      let app= localStorage.getItem("fromapp")
       if(authtoken && app && app !== 'F') {
         localStorage.setItem('socialLogin', 'T');
         this.service.verifytoken(authtoken).subscribe((res) => {
