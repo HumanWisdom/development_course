@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
 
@@ -10,10 +10,15 @@ import { Location } from '@angular/common';
 })
 export class IntroductionPage implements OnInit {
   data: any
+  private currentUrl:string='';
+  private isByPass :boolean=false;
   constructor(public route: ActivatedRoute, private router: Router,
     private service: AdultsService, private location:Location) {
       let url = this.route.snapshot.paramMap.get('TopicName');
       this.GetGuidedQs_Topics(url);
+      if(this.router.getCurrentNavigation()!=null &&  this.router.getCurrentNavigation().extras && this.router.getCurrentNavigation().extras.state){
+        this.isByPass=  this.router.getCurrentNavigation().extras.state.isBypass;
+      }
   }
 
   ngOnInit() {
@@ -21,8 +26,12 @@ export class IntroductionPage implements OnInit {
   }
 
   goBack() {
-    // this.router.navigate(['/adults/journal'])
+  if(this.isByPass==true){
     this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+  }else{
+    this.location.back();
+  }
+    // this.router.navigate(['/adults/journal'])
   }
 
   NavigateToQuestions() {
