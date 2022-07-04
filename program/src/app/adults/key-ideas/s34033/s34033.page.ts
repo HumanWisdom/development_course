@@ -15,7 +15,7 @@ export class S34033Page implements OnInit {
  
   bg=""
   moduleLink="/adults/program-guide/"
-  moduleName="01. User Guide"
+  moduleName="User Guide"
   sectionName= "Introduction";
   moduleId=35
 

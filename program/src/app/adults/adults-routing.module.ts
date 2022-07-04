@@ -296,6 +296,10 @@ const routes: Routes = [
     loadChildren: () => import('./podcast/podcast.module').then( m => m.PodcastModule)
   },
   {
+    path: 'podcast/:tag',
+    loadChildren: () => import('./podcast/podcast.module').then( m => m.PodcastModule),
+  },
+  {
     path: 'refer-friend',
     loadChildren: () => import('./refer-friend/refer-friend.module').then( m => m.ReferFriendPageModule)
   },
@@ -330,6 +334,10 @@ const routes: Routes = [
   {
     path: 'wisdom-shorts/:videolink',
     component: S3VideoComponent
+  },
+  {
+    path: 'how-can-wisdom-help',
+    loadChildren: () => import('./how-can-wisdom-help/how-can-wisdom-help.module').then( m => m.HowCanWisdomHelpModule)
   },
 ];
 

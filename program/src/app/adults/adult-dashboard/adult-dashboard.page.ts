@@ -127,6 +127,7 @@ export class AdultDashboardPage implements OnInit {
   private lifestoriesList = []
   private shortsList = []
   private sId: any
+  hcwhP: any
 
   //static progress mapping
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
@@ -1386,6 +1387,7 @@ export class AdultDashboardPage implements OnInit {
         this.foodP = res.ModUserScrPc.find(e => e.Module == "Food")?.Percentage
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
+        this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can widom help?")?.Percentage
       })
   }
 
@@ -1409,134 +1411,6 @@ export class AdultDashboardPage implements OnInit {
       }
       case "14": {
         this.routeAnger(1)
-        break
-      }
-      case "15": {
-        this.routeConditioning(1)
-        break
-      }
-      case "16": {
-        this.routeCriticism(1)
-        break
-      }
-      case "17": {
-        this.routeSelfEsteem(1)
-        break
-      }
-      case "18": {
-        this.routeEmotionalNeeds(1)
-        break
-      }
-      case "19": {
-        this.routeFearAnxiety(1)
-        break
-      }
-      case "20": {
-        this.routePleasure(1)
-        break
-      }
-      case "21": {
-        this.routeIdentity(1)
-        break
-      }
-      case "22": {
-        this.routeMeditation(1)
-        break
-      }
-      case "23": {
-        this.routeHappiness(1)
-        break
-      }
-      case "25": {
-        this.routeSelfImage(1)
-        break
-      }
-      case "26": {
-        this.routeBenefitsEnquiry(1)
-        break
-      }
-      case "27": {
-        this.routeDiscoveringWisdom(1)
-        break
-      }
-      case "28": {
-        this.routeNature(1)
-        break
-      }
-      case "29": {
-        this.routeBreathing(1)
-        break
-      }
-      case "30": {
-        this.routeNoticingThoughts(1)
-        break
-      }
-      case "32": {
-        this.routeBenefits(1)
-        break
-      }
-      case "33": {
-        this.routeCircles(1)
-        break
-      }
-      case "34": {
-        this.routeIdeas(1)
-        break
-      }
-      case "35": {
-        this.routeGuide(1)
-        break
-      }
-      case "36": {
-        this.routeHowToBegin(1)
-        break
-      }
-      case "37": {
-        this.routeThreeSteps(1)
-        break
-      }
-      case "38": {
-        this.routeInsights(1)
-        break
-      }
-      case "39": {
-        this.routeAwareness(1)
-        break
-      }
-      case "40": {
-        this.routeNoJudgement(1)
-        break
-      }
-      case "41": {
-        this.routeQuestionsAreKey(1)
-        break
-      }
-      case "42": {
-        this.routeLookWithoutLanguage(1)
-        break
-      }
-      case "43": {
-        this.routeObstacles(1)
-        break
-      }
-      case "44": {
-        this.routeStress(1)
-        break
-      }
-      case "45": {
-        this.routeAddiction(1)
-        break
-      }
-      case "46": {
-        this.routeFood(1)
-        break
-      }
-      case "47": {
-        this.routeRelationships(1)
-        break
-      }
-      case "48": {
-        this.routeSuccessAndFailure(1)
         break
       }
       case "49": {
@@ -1597,6 +1471,10 @@ export class AdultDashboardPage implements OnInit {
       }
       case "73": {
         this.routeMoney(1)
+        break
+      }
+      case "74": {
+        this.routehowcanwisdomhelp(1)
         break
       }
     }
@@ -3222,5 +3100,40 @@ export class AdultDashboardPage implements OnInit {
 
   goToYourWisdomScoreComponent() {
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
+  }
+
+  routehowcanwisdomhelp(cont: any = 1) {
+    var hcwhR
+    localStorage.setItem("moduleId", JSON.stringify(74))
+    this.service.clickModule(74, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        hcwhR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("hcwhR", hcwhR)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/how-can-wisdom-help/${hcwhR}`])
+          }
+          else
+            this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
+        })
   }
 }
