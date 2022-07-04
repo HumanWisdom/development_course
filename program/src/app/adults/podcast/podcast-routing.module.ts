@@ -9,7 +9,11 @@ const routes: Routes = [
   {
     path: 'podcast-toc',
     loadChildren: () => import('./podcast-toc/podcast-toc.module').then( m => m.PodcastTocPageModule),
-  },    
+  },
+  {
+    path: 'podcast:/tag',
+    loadChildren: () => import('./podcast-toc/podcast-toc.module').then( m => m.PodcastTocPageModule),
+  }
 ];
 
 @NgModule({

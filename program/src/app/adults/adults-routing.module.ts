@@ -296,6 +296,10 @@ const routes: Routes = [
     loadChildren: () => import('./podcast/podcast.module').then( m => m.PodcastModule)
   },
   {
+    path: 'podcast/:tag',
+    loadChildren: () => import('./podcast/podcast.module').then( m => m.PodcastModule),
+  },
+  {
     path: 'refer-friend',
     loadChildren: () => import('./refer-friend/refer-friend.module').then( m => m.ReferFriendPageModule)
   },
