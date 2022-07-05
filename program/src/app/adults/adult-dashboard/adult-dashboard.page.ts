@@ -20,113 +20,113 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
 
   //get global settings here
-  private text = 2
-  private video = 3
-  private audio = 4
-  private question = 6
-  private reflection = 5
-  private feedbackSurvey = 7
-  private moduleId = 7
-  private userId = 100
-  private userName: any
-  private qrList: any
-  private goToPage: any
-  private saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  private loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  private points: any
-  private daysVisited: any
-  private timeSpent: any
-  private percentage: any
-  private bookmarks = []
-  private resume = []
-  private bookmarkLength: any
+  public text = 2
+  public video = 3
+  public audio = 4
+  public question = 6
+  public reflection = 5
+  public feedbackSurvey = 7
+  public moduleId = 7
+  public userId = 100
+  public userName: any
+  public qrList: any
+  public goToPage: any
+  public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  public loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+  public points: any
+  public daysVisited: any
+  public timeSpent: any
+  public percentage: any
+  public bookmarks = []
+  public resume = []
+  public bookmarkLength: any
 
   //static progress mapping
-  private angerP: any
-  private comparisonP: any
-  private awarenessP: any
-  private obstaclesP: any
-  private meditationP: any
-  private benefitsWisdomP: any
-  private guideP: any
-  private fearP: any
-  private benefitsEnquiryP: any
-  private questionsP: any
-  private identityP: any
-  private keyP: any
-  private selfEsteemP: any
-  private conditioningP: any
-  private fiveCirclesP: any
-  private happinessP: any
-  private threeStepsP: any
-  private noJudgementP: any
-  private discoveringP: any
-  private beginP: any
-  private insightP: any
-  private pleasureP: any
-  private withoutLanguageP: any
-  private criticismP: any
-  private stressP: any
-  private relationshipsP: any
-  private natureP: any
-  private breathingP: any
-  private ntP: any
-  private gamP: any
-  private communicationP: any
-  private rmP: any
-  private siP: any
-  private sinP: any
-  private enP: any
-  private ibP: any
-  private wP: any
-  private lP: any
-  private seP: any
-  private niP: any
-  private lonelinessP: any
-  private livingwithpeaceP: any
-  private loveP: any
-  private dealingwithdeathP: any
-  private opinionsandbeliefsP: any
-  private successandfailureP: any
-  private addictionP: any
-  private foodP: any
-  private moneyP: any
-  private Subscriber: any
-  private alertMsg: any
-  private friendemail = ''
-  private friendname = ''
-  private name = ''
-  private sorrowandlossP
-  private isloggedIn = false
-  private x = []
-  private isSubscribe = false
-  private enablebanner = '';
-  private modaldata = {}
-  private firstpage = true;
-  private secondpage = false;
-  private thirdpage = false;
-  private fourthpage = false;
-  private fifthpage = false;
-  private sixthpage = false;
-  private activationCode: any = ''
-  private countryCode: any = '';
-  private email: any = '';
-  private verificationCode: any;
-  private loginpassword: any = '';
-  private loginemail: any = '';
-  private subthirdpage = false;
-  private subfirstpage = true;
-  private subsecondpage = false;
-  private user: any
-  private idToken: any
-  private socialFirstName: any
-  private socialLastName: any
-  private socialEmail: any
-  private yearormonth = ''
-  private personalisedList = []
-  private lifestoriesList = []
-  private shortsList = []
-  private sId: any
+  public angerP: any
+  public comparisonP: any
+  public awarenessP: any
+  public obstaclesP: any
+  public meditationP: any
+  public benefitsWisdomP: any
+  public guideP: any
+  public fearP: any
+  public benefitsEnquiryP: any
+  public questionsP: any
+  public identityP: any
+  public keyP: any
+  public selfEsteemP: any
+  public conditioningP: any
+  public fiveCirclesP: any
+  public happinessP: any
+  public threeStepsP: any
+  public noJudgementP: any
+  public discoveringP: any
+  public beginP: any
+  public insightP: any
+  public pleasureP: any
+  public withoutLanguageP: any
+  public criticismP: any
+  public stressP: any
+  public relationshipsP: any
+  public natureP: any
+  public breathingP: any
+  public ntP: any
+  public gamP: any
+  public communicationP: any
+  public rmP: any
+  public siP: any
+  public sinP: any
+  public enP: any
+  public ibP: any
+  public wP: any
+  public lP: any
+  public seP: any
+  public niP: any
+  public lonelinessP: any
+  public livingwithpeaceP: any
+  public loveP: any
+  public dealingwithdeathP: any
+  public opinionsandbeliefsP: any
+  public successandfailureP: any
+  public addictionP: any
+  public foodP: any
+  public moneyP: any
+  public Subscriber: any
+  public alertMsg: any
+  public friendemail = ''
+  public friendname = ''
+  public name = ''
+  public sorrowandlossP
+  public isloggedIn = false
+  public x = []
+  public isSubscribe = false
+  public enablebanner = '';
+  public modaldata = {}
+  public firstpage = true;
+  public secondpage = false;
+  public thirdpage = false;
+  public fourthpage = false;
+  public fifthpage = false;
+  public sixthpage = false;
+  public activationCode: any = ''
+  public countryCode: any = '';
+  public email: any = '';
+  public verificationCode: any;
+  public loginpassword: any = '';
+  public loginemail: any = '';
+  public subthirdpage = false;
+  public subfirstpage = true;
+  public subsecondpage = false;
+  public user: any
+  public idToken: any
+  public socialFirstName: any
+  public socialLastName: any
+  public socialEmail: any
+  public yearormonth = ''
+  public personalisedList = []
+  public lifestoriesList = []
+  public shortsList = []
+  public sId: any
   hcwhP: any
 
   //static progress mapping
@@ -135,7 +135,7 @@ export class AdultDashboardPage implements OnInit {
   mediaPercent: any
   freeScreens = []
 
-  private registrationForm = this.fb.group({
+  public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
@@ -144,9 +144,9 @@ export class AdultDashboardPage implements OnInit {
   }, { validator: this.PasswordValidator })
 
   constructor(
-    private router: Router, private service: AdultsService, private services: OnboardingService,
-    private cd: ChangeDetectorRef, private fb: FormBuilder, private authService: SocialAuthService,
-    private platform: Platform,
+    public router: Router, public service: AdultsService, public services: OnboardingService,
+    public cd: ChangeDetectorRef, public fb: FormBuilder, public authService: SocialAuthService,
+    public platform: Platform,
   ) {
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
