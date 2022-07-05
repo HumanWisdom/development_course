@@ -25,9 +25,11 @@ export class TnDashboardV03Component implements OnInit {
   url = '';
   subscriber = false;
   @Input()
-  enableplaystore = ''
+  enableplaystore = false
   @Input()
   routeid = ''
+  android = false;
+  ios = false;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
@@ -50,6 +52,11 @@ export class TnDashboardV03Component implements OnInit {
         this.subscriber = true;
       }
     }, 5000)
+    if (this.platform.IOS || this.platform.SAFARI) {
+      this.ios = true;
+    } else if (this.platform.ANDROID) {
+      this.android = true;
+    }
   }
 
   routeGuide() {
@@ -82,16 +89,20 @@ export class TnDashboardV03Component implements OnInit {
   }
 
   closeplaystore() {
-    this.enableplaystore = '';
+    this.enableplaystore = false;
     localStorage.setItem('enablebanner', 'F')
     this.playstoreenable.emit(false);
   }
 
-  clickbanner() {
-    if (this.enableplaystore === 'AppStore') {
-      window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
-    } else if (this.enableplaystore === 'PlayStore') {
-      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=bn&gl=US");
+  clickbanner(url = '') {
+    if (url === '') {
+      if (this.platform.IOS || this.platform.SAFARI) {
+        window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
+      } else if (this.platform.ANDROID) {
+        window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=bn&gl=US");
+      }
+    } else {
+      window.open(url)
     }
   }
 }
