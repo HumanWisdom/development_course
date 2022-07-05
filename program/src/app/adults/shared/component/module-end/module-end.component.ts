@@ -231,6 +231,9 @@ else
       case "73":{this.routeMoney(1)
         break
         }
+        case "74":{this.routeHowCanWisdomHelp(1)
+          break
+          }
     }
   }
 
@@ -285,6 +288,44 @@ else
     
 
   }
+
+
+  routeHowCanWisdomHelp(cont: any = 1){
+    var hcwhR
+    localStorage.setItem("moduleId",JSON.stringify(74))
+    this.service.clickModule(74,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        hcwhR="s"+res.lastVisitedScreen
+        
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("hcwhR",hcwhR)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
+      // }
+      // else
+      this.router.navigate([`/adults/how-can-wisdom-help/`])
+    })
+  }    
+
   
   routeBenefits(cont: any = 1){
     var benefitsWisdomResume
