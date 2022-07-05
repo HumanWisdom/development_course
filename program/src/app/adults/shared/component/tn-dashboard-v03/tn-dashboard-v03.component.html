@@ -1,23 +1,23 @@
 <div class="dtn">
 
   <!-- google playstore -->
-  <div class="row center_flex" *ngIf="enableplaystore !== ''" [ngClass]="[enableplaystore !== '' ? '' : 'mt0px']">
+  <div class="row center_flex" *ngIf="enableplaystore" [ngClass]="[enableplaystore ? '' : 'mt0px']">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_playstore_banner">
       <!-- mobile -->
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex dnplayappstore">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex dnplayappstore" *ngIf="ios || android">
         <div class="col-md-11 col-sm-11 col-xs-11 p0 flex_ai">
           <h4 class="txt83 mtb0px tleft mr10px ws_nowrap">
             Also available on
           </h4>
           <!-- playstore -->
-          <a *ngIf="enableplaystore === 'PlayStore'" (click)="clickbanner()">
+          <a *ngIf="android" (click)="clickbanner()">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/google_playstore.png" alt=""
               class="img-responsive img_google_playstore">
           </a>
           <!-- /playstore -->
 
           <!-- appstore -->
-          <a style="display: none;" *ngIf="enableplaystore === 'AppStore'" (click)="clickbanner()">
+          <a *ngIf="ios" (click)="clickbanner()">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/appstore.svg" alt=""
               class="img-responsive img_google_playstore">
           </a>
@@ -30,11 +30,11 @@
       <!-- /mobile -->
 
       <!-- desktop -->
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex dplayappstore">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex dplayappstore" *ngIf="!ios && !android">
         <div class="col-md-11 col-sm-11 col-xs-11 p0 flex_ai">
           <!-- desktop playstore -->
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 flex_ai">
-            <a>
+            <a (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=bn&gl=US')">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dplaystore.svg" alt=""
                 class="img-responsive">
             </a>
@@ -43,7 +43,7 @@
 
           <!-- desktop appstore -->
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 flex_ai">
-            <a>
+            <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dappstore.svg" alt=""
                 class="img-responsive">
             </a>
