@@ -342,8 +342,9 @@ export class AdultDashboardPage implements OnInit {
     }
 
     setTimeout(() => {
-      if (localStorage.getItem('acceptcookie') === null)
+      if (localStorage.getItem('acceptcookie') === null) {
         this.enablecookiemodal.nativeElement.click();
+      }
 
       let sub: any = localStorage.getItem('Subscriber');
       if (sub === '0') {
