@@ -374,7 +374,7 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  getplaystore() {
+  getplaystore(event) {
     this.enablebanner = ''
   }
 
