@@ -14,31 +14,31 @@ export class PersonalisedForYouPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   //static progress mapping
-  private mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-  private mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
 
-  private selectList = [];
-  private indList = [];
-  private user: any
-  private userId: any
-  private idToken: any
-  private email: any;
-  private showAlert = false
-  private loginResponse: any
-  private socialFirstName: any
-  private socialLastName: any
-  private socialEmail: any
-  private userName: any
-  private video = 3
-  private audio = 4
-  private password: any
-  private saveUsername = false
-  private isloggedIn = false
+  public selectList = [];
+  public indList = [];
+  public user: any
+  public userId: any
+  public idToken: any
+  public email: any;
+  public showAlert = false
+  public loginResponse: any
+  public socialFirstName: any
+  public socialLastName: any
+  public socialEmail: any
+  public userName: any
+  public video = 3
+  public audio = 4
+  public password: any
+  public saveUsername = false
+  public isloggedIn = false
 
-  constructor(private router: Router,
-    private authService: SocialAuthService,
-    private aservice: AdultsService,
-    private service: OnboardingService) { }
+  constructor(public router: Router,
+    public authService: SocialAuthService,
+    public aservice: AdultsService,
+    public service: OnboardingService) { }
 
   ngOnInit() {
     localStorage.setItem('personalised', 'T');
