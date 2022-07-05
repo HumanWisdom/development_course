@@ -10,14 +10,14 @@
             Also available on
           </h4>
           <!-- playstore -->
-          <a *ngIf="enableplaystore === 'PlayStore'">
+          <a *ngIf="enableplaystore === 'PlayStore'" (click)="clickbanner()">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/google_playstore.png" alt=""
               class="img-responsive img_google_playstore">
           </a>
           <!-- /playstore -->
 
           <!-- appstore -->
-          <a style="display: none;" *ngIf="enableplaystore === 'AppStore'">
+          <a style="display: none;" *ngIf="enableplaystore === 'AppStore'" (click)="clickbanner()">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/appstore.svg" alt=""
               class="img-responsive img_google_playstore">
           </a>

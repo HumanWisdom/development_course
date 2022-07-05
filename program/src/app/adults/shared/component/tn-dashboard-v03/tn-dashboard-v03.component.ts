@@ -86,4 +86,12 @@ export class TnDashboardV03Component implements OnInit {
     localStorage.setItem('enablebanner', 'F')
     this.playstoreenable.emit(false);
   }
+
+  clickbanner() {
+    if (this.enableplaystore === 'AppStore') {
+      window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
+    } else if (this.enableplaystore === 'PlayStore') {
+      window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=bn&gl=US");
+    }
+  }
 }
