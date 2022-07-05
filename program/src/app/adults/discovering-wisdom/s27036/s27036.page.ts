@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -15,11 +15,10 @@ export class S27036Page implements OnInit {
   bg=""
   moduleLink="/adults/how-can-wisdom-help/"
   moduleName="How can wisdom help?"
-  sectionName= "Introduction";
+  sectionName= "Introduction"
   moduleId=74
   
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {} 
 }
