@@ -14976,6 +14976,7 @@ input[type="number"] {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
+  padding-bottom: 5px;
 }
 
 .odiv > .col-xs-4,
@@ -26152,6 +26153,7 @@ h1
   display: block;
   overflow-x: auto;
   white-space: nowrap;
+  padding-bottom: 5px;
 }
 
 .ghn > .col-xs-4,
@@ -26215,7 +26217,8 @@ h1
   background: #FFFFFF;
   box-shadow: 1px 1px 4px rgb(0 0 0 / 25%);
   border-radius: 10px;
-  margin: 5px 10px 5px 0;
+  /* margin: 5px 10px 5px 0; */
+  margin: 5px 10px 0 0;
 }
 
 .dlife_stories 
@@ -29253,4 +29256,9 @@ svg path
   display: inline-block;
   float: none;
   vertical-align: text-top;
+}
+
+.cp0_03
+{
+  padding: 0 10px;
 }
