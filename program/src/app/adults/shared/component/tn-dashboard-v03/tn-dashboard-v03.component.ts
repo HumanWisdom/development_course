@@ -38,11 +38,7 @@ export class TnDashboardV03Component implements OnInit {
     if (userid === 'T') {
       this.isloggedIn = true
     }
-    let userId = JSON.parse(localStorage.getItem("userId"))
-    this.Onboardingservice.getuser(userId).subscribe((res) => {
-      let userdetail = res[0];
-      this.url = userdetail['UserImagePath'].split('\\')[1]
-    })
+
   }
 
   ngOnInit() {
@@ -51,6 +47,12 @@ export class TnDashboardV03Component implements OnInit {
       if (sub === '1' || sub === 1) {
         this.subscriber = true;
       }
+      let userId = JSON.parse(localStorage.getItem("userId"))
+
+      this.Onboardingservice.getuser(userId).subscribe((res) => {
+        let userdetail = res[0];
+        this.url = userdetail['UserImagePath'].split('\\')[1]
+      })
     }, 5000)
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {

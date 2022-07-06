@@ -289,5 +289,11 @@ export class PersonalisedForYouPage implements OnInit {
 
   }
 
+  guest() {
+    localStorage.setItem('remember', 'T');
+    localStorage.setItem('guest', 'T');
+    this.router.navigate(['/adults/adult-dashboard'])
+  }
+
 }
 

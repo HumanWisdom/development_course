@@ -157,7 +157,7 @@ export class AdultDashboardPage implements OnInit {
     }
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
-    if (authtoken && app && app !== 'F') {
+    if (authtoken) {
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
 
@@ -206,10 +206,6 @@ export class AdultDashboardPage implements OnInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
-    this.getUserPreference()
-    this.getUsershorts()
-    this.getUserstories()
-
   }
 
   ngOnInit() {
@@ -351,6 +347,11 @@ export class AdultDashboardPage implements OnInit {
         this.isSubscribe = false;
       }
     }, 3000)
+
+    this.getUserPreference()
+    this.getUsershorts()
+    this.getUserstories()
+
   }
 
   curatedDash(name: any) {
@@ -1023,7 +1024,7 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("token", JSON.stringify(res.access_token))
     localStorage.setItem("Subscriber", res.Subscriber)
     localStorage.setItem("userId", JSON.stringify(this.userId))
-    localStorage.setItem("email", res.email)
+    localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
     this.name = res.Name
     let namedata = localStorage.getItem('name').split(' ')
@@ -1320,7 +1321,7 @@ export class AdultDashboardPage implements OnInit {
         this.timeSpent = res.noOfDaysVisited
         this.percentage = parseInt(res.overallPercentage)
         localStorage.setItem("overallPercentage", this.percentage)
-
+        this.resume = []
         //resume section
         res.ModUserScrPc.filter(x => {
           if (parseFloat(x.Percentage) < 100) {
@@ -1344,7 +1345,7 @@ export class AdultDashboardPage implements OnInit {
         this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
         this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
         this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        this.guideP = res.ModUserScrPc.find(e => e.Module == "Program Guide")?.Percentage
+        this.guideP = res.ModUserScrPc.find(e => e.Module == "User Guide")?.Percentage
         this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
         this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of Enquiry")?.Percentage
         this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
@@ -1388,7 +1389,9 @@ export class AdultDashboardPage implements OnInit {
         this.foodP = res.ModUserScrPc.find(e => e.Module == "Food")?.Percentage
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
-        this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can widom help?")?.Percentage
+        this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
+       
+        console.log(res)
       })
   }
 
