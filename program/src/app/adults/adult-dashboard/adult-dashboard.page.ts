@@ -1321,7 +1321,7 @@ export class AdultDashboardPage implements OnInit {
         this.timeSpent = res.noOfDaysVisited
         this.percentage = parseInt(res.overallPercentage)
         localStorage.setItem("overallPercentage", this.percentage)
-
+        this.resume = []
         //resume section
         res.ModUserScrPc.filter(x => {
           if (parseFloat(x.Percentage) < 100) {
