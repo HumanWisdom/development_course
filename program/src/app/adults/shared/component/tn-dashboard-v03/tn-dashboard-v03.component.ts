@@ -52,10 +52,15 @@ export class TnDashboardV03Component implements OnInit {
         this.subscriber = true;
       }
     }, 5000)
-    if (this.platform.IOS || this.platform.SAFARI) {
-      this.ios = true;
-    } else if (this.platform.ANDROID) {
-      this.android = true;
+    let ban = localStorage.getItem('enablebanner');
+    if (ban === null || ban === 'T') {
+      if (this.platform.IOS || this.platform.SAFARI) {
+        this.ios = true;
+      } else if (this.platform.ANDROID) {
+        this.android = true;
+      }
+    } else {
+      this.enableplaystore = false;
     }
   }
 
@@ -99,7 +104,7 @@ export class TnDashboardV03Component implements OnInit {
       if (this.platform.IOS || this.platform.SAFARI) {
         window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
       } else if (this.platform.ANDROID) {
-        window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=bn&gl=US");
+        window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
       }
     } else {
       window.open(url)
