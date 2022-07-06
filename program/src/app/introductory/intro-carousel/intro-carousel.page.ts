@@ -15,7 +15,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   ngOnInit() {
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
-    if (authtoken && app && app !== 'F') {
+    if (authtoken) {
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
 
