@@ -3,7 +3,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 flex_ai mdp_header onscrollbg unscroll">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a (click)="goBack()" class="">                         
+      <a (click)="goBack()" class="">                          
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="p0">
       </a>  
     </div>
@@ -26,7 +26,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 flex_ai mdp_header onscrollbg scroll">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a (click)="goBack()" class="">                    
+      <a (click)="goBack()" class="">                          
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0">
       </a>  
     </div>
@@ -34,7 +34,7 @@
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
       <a  class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                       
         <h1 class="txt301 mtb0px tcenter">
-          Managing your emotions
+          Overcome stress and anxiety
         </h1>            
       </a>  
     </div>
@@ -61,7 +61,7 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <h4 class="txt298 mtb0px">
-                      Managing your emotions
+                      Overcome stress and anxiety
                     </h4>
                   </div>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="row dm_desc">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <h4 class="txt299 mtb0px">
-                      Our emotions are not right or wrong. They are powerful and influence our decisions, our relationships, and our mood. Understanding them can help us manage them better, and this can contribute to our success in our personal lives and in the world. Find all our related content here.
+                      Stress and anxiety are part of being human. Begin your journey to understand Stress and Anxiety here, to help you deal with the problem now, and then go deeper to understand the root cause for long-term benefit.
                     </h4>
                   </div>
                 </div>
@@ -81,7 +81,7 @@
 
                       <ngx-circular-player id="aud3"  
                         strokeColor="#FFC455" 
-                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/manage_your_emotions.mp3" 
+                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/stress_anxiety.mp3" 
                         progressStrokeColor=rgba(173,173,173,0.25)
                       >
                       </ngx-circular-player>
@@ -94,12 +94,12 @@
                       </div>
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="txt304 mtb0px">
-                          01:19
+                          01:23
                         </h4>
                       </div>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-3 tright">
-                      <a routerLink="/adults/curated/manage-your-emotions-transcript">
+                      <a routerLink="/adults/curated/overcome-stress-anxiety-transcript">
                         <button class="btn flex_ai btn_pn">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dm_transcript.svg" alt="" class="crimg">
                         </button>
@@ -112,7 +112,7 @@
               <!-- get help now -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01 dm_panel">
                       <div class="panel-heading p0">
@@ -135,12 +135,20 @@
                         <div class="panel-body p0">
 
                           <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl5px pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="getsupport('/adults/get-support-now/s71003', 71)">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/03.svg" alt="Stress Management" class="crimg">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl0pxi">
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="getsupport('/adults/get-support-now/s71001', 71)">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/01.svg" alt="Stress Management" class="crimg">
                                   <h4 class="txt301 tile_title whitespace_preline">
-                                    Anger
+                                    Stress
+                                  </h4>
+                                </a>
+                              </div>
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="getsupport('/adults/get-support-now/s71002', 71)">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/02.svg" alt="Solution for Anxiety" class="crimg">
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Anxiety
                                   </h4>
                                 </a>
                               </div>
@@ -159,7 +167,7 @@
               <!-- modules to explore -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
@@ -182,16 +190,52 @@
                         <div class="panel-body p0 m-1px">
 
                           <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv">
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeAnger(0)">
+                                <a (click)="routeBreathing(0)">
+                                <div class="img-gradient">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png" alt="Breathing" class="ctimg">
+                                </div>
+                                <h4 class="tcenter txt31 attitle">Breathing</h4>
+                                <div class="progress dprogress">
+                                  <div class="progress-bar" role="progressbar" [style.width]="breathingP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeStress(0)">
                                   <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/33.png" alt="Anger" class="ctimg">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png" alt="Stress" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Anger</h4>
+                                  <h4 class="tcenter txt31 attitle">Stress</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="angerP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="stressP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeFearAnxiety(0)" >
+                                  <div class="img-gradient">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png" alt="Fear & Anxiety" class="ctimg">
+                                  </div>
+                                  <h4 class="tcenter txt31 attitle">Fear & Anxiety</h4>
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="fearP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeConditioning(0)">
+                                  <div class="img-gradient">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png" alt="Nature" class="ctimg">
+                                  </div>
+                                  <h4 class="tcenter txt31 attitle">Past Influences</h4>
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="natureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -204,54 +248,6 @@
                                   <h4 class="tcenter txt31 attitle">Reactive Mind</h4>
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="rmP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routePleasure(0)">
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png" alt="Pleasure" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Pleasure</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="pleasureP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeAddiction(0)">
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/45.png" alt="Addiction" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Addiction</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="addictionP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeComparison(0)">
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/21.png" alt="Comparison & Envy" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Comparison & Envy</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="comparisonP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeLoneliness(0)">
-                                  <div class="img-gradient">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/32.png" alt="Loneliness" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Loneliness</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="lonelinessP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -270,7 +266,7 @@
               <!-- life stories -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
@@ -285,7 +281,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/wisdom-stories">
+                                  <a >
                                     <h2 class="txt301 underline mtb0px tright">
                                       View all
                                     </h2>
@@ -343,7 +339,7 @@
               <!-- guided questions -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
@@ -372,12 +368,12 @@
                       <div id="ca_guidedqtns" class="panel-collapse collapse in">
                         <div class="panel-body m0px">
 
-                          <a routerLink="/journal/anger">
+                          <a routerLink="/journal/stress">
                             <div class="row guidedqtns_row bg_gray">
-                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Explore your anger 
+                                    Stress
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -387,27 +383,12 @@
                             </div>
                           </a> 
                           
-                          <a routerLink="/journal/pleasure">
+                          <a routerLink="/journal/anxiety">
                             <div class="row guidedqtns_row bg_gray">
-                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                 <div class="col-md-10 col-sm-10 col-xs-10">                    
                                   <h4 class="session_name mtb0px">
-                                    Exploring pleasure 
-                                  </h4>    
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-2 tright">   
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_questions_right_arrow.svg" alt="" class="img-responsive">
-                                </div>
-                              </div>                    
-                            </div>
-                          </a> 
-
-                          <a routerLink="/journal/envy">
-                            <div class="row guidedqtns_row bg_gray">
-                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
-                                <div class="col-md-10 col-sm-10 col-xs-10">                    
-                                  <h4 class="session_name mtb0px">
-                                    Understand Envy 
+                                    Anxiety
                                   </h4>    
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 tright">   
@@ -429,7 +410,7 @@
               <!-- wisdom shorts -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
@@ -452,33 +433,163 @@
                         <div class="panel-body p0">
 
                           <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl5px pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="s3video('1.42.mp4')">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl0pxi">
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.16.mp4')">
                                   <div class="prelative">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/31.svg" alt="Stress Management" class="br10px w100">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/01.svg" alt="Stress Management" class="br10px w100">
                                     <div class="play_black_ac">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
                                     </div>
                                   </div>
                                   <h4 class="txt301 tile_title whitespace_preline">
-                                    #5 ways to deal with anger
+                                    3 ways to deal with stress
                                   </h4>
                                 </a>
                               </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="s3video('1.43.mp4')">
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.1.mp4')">
                                   <div class="prelative">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/32.svg" alt="Stress Management" class="br10px w100">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/02.svg" alt="Stress Management" class="br10px w100">
                                     <div class="play_black_ac">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
                                     </div>
                                   </div>
                                   <h4 class="txt301 tile_title whitespace_preline">
-                                    Causes of anger
+                                    Access your own wisdom
                                   </h4>
                                 </a>
-                              </div>       
+                              </div>
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.17.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/03.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Dangers of social media
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.18.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/04.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Don't compare
+                                  </h4>
+                                </a>
+                              </div>     
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.19.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/05.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    How does envy impact you
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.20.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/06.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Let your stress go
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.6.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/07.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Overcome anxiety
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.21.1.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/08.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Overcome fear
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.7.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/09.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Overcome stress
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.22.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/10.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Root cause of stress
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.23.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/11.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Self-criticism
+                                  </h4>
+                                </a>
+                              </div>   
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="s3video('1.24.mp4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/12.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    You are enough
+                                  </h4>
+                                </a>
+                              </div>                  
                             </div>
                           </div>
                           
@@ -494,7 +605,7 @@
               <!-- podcasts -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
@@ -526,7 +637,7 @@
                           <!-- podcast widget -->
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <iframe title="The Human Wisdom Project Podcast" allowtransparency="true" height="185" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=5&filter=tags&tag=16582265&ss=606fdc76775e9c3765746404842f178a&btn-skin=60a0c8&size=185" allowfullscreen=""></iframe>
+                              <iframe title="The HumanWisdom Project Podcast" allowtransparency="true" height="240" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=2&filter=tags&tag=14520853&ss=665de7e2908753a7da2951cf4c2f3159&btn-skin=60a0c8&size=240" allowfullscreen=""></iframe>
                             </div>
                           </div>
                           <!-- /podcast widget -->
@@ -543,7 +654,7 @@
               <!-- events -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01 dm_panel">
                       <div class="panel-heading p0">
@@ -566,30 +677,56 @@
                         <div class="panel-body p0">
 
                           <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl5px pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="youtube('b5PZ6fFCL3g')">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl0pxi">
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a (click)="youtube('Pot852qY8vM')">
                                   <div class="prelative">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/12.svg" alt="Stress Management" class="br10px w100">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/01.svg" alt="Stress Management" class="br10px w100">
                                     <div class="play_black_ac">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
                                     </div>
                                   </div>
                                   <h4 class="txt301 tile_title whitespace_preline">
-                                    Overcoming emotional pain 
+                                    A talk on Stress
                                   </h4>
                                 </a>
                               </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a  (click)="youtube('1TNtWk_MK9Q')">
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a  (click)="youtube('HXnw_QKJUfQ')">
                                   <div class="prelative">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/13.svg" alt="Stress Management" class="br10px w100">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/02.svg" alt="Stress Management" class="br10px w100">
                                     <div class="play_black_ac">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
                                     </div>
                                   </div>
                                   <h4 class="txt301 tile_title whitespace_preline">
-                                    Understand and manage your anger
+                                    Stress in education
+                                  </h4>
+                                </a>
+                              </div>
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a  (click)="youtube('SXGJwovt-4s')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/03.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Wisdom, prejudice, and racism
+                                  </h4>
+                                </a>
+                              </div>
+                              <div class="col-md-6 col-sm-7 col-xs-7">
+                                <a  (click)="youtube('vUZE3meQws4')">
+                                  <div class="prelative">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/04.svg" alt="Stress Management" class="br10px w100">
+                                    <div class="play_black_ac">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg" alt="Stress Management" class="img-responsive">
+                                    </div>
+                                  </div>
+                                  <h4 class="txt301 tile_title whitespace_preline">
+                                    Overcoming anxiety using wisdom
                                   </h4>
                                 </a>
                               </div>
@@ -608,7 +745,7 @@
               <!-- guided meditation -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01 dm_panel">
                       <div class="panel-heading p0">
@@ -630,7 +767,7 @@
                       <div id="ca_gmeditation" class="panel-collapse collapse in">
                         <div class="panel-body p0 m0px">
                           <!-- audio row -->
-                          <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.6.mp3', 'Releasing Anger')">
+                          <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.7.mp3', 'Releasing Fear')">
                             <div class="row crow box bg_dark_blue p0 cd_gm">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10pxi flex_ai">
                                 <div class="col-md-2 col-sm-2 col-xs-2 landing_tile">          
@@ -641,7 +778,7 @@
                                   <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                     <div class="col-md-10 col-sm-10 col-xs-10">                    
                                       <h4 class="session_name mtb0px">
-                                        Releasing Anger
+                                        Releasing Fear - a meditation
                                       </h4>    
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">   
@@ -657,7 +794,7 @@
                           <!-- /audio row -->
 
                           <!-- audio row -->
-                          <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.14.mp3', 'Exploring desire')">
+                          <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.13.mp3', '3 ways to overcome stress')">
                             <div class="row crow box bg_dark_blue p0 cd_gm">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10pxi flex_ai">
                                 <div class="col-md-2 col-sm-2 col-xs-2 landing_tile">          
@@ -668,12 +805,12 @@
                                   <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                                     <div class="col-md-10 col-sm-10 col-xs-10">                    
                                       <h4 class="session_name mtb0px">
-                                        Exploring desire
+                                        3 ways to overcome stress
                                       </h4>    
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">   
                                       <h4 class="session_time mtb0px">
-                                        5 mins
+                                        4 mins
                                       </h4>    
                                     </div>
                                   </div>   
