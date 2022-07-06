@@ -29,7 +29,7 @@ export class S162Page implements OnInit,OnDestroy {
   toc="/anger/s162p0"
   path=this.router.url
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+  angerResume=sessionStorage.getItem("angerResume")
   
 
   constructor(
