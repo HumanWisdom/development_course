@@ -204,8 +204,9 @@ export class LoginSignupPage implements OnInit {
           localStorage.setItem("codeVerified", JSON.stringify(this.codeVerified))
           localStorage.setItem("email", JSON.stringify(this.registrationForm.get('email').value))
           localStorage.setItem("password", JSON.stringify(this.registrationForm.get('password').value))
-          // window.location.reload()
-          this.router.navigate(['/onboarding/login'])
+          window.alert('Code has been verified , Login with Your Credentials')
+          window.location.reload()
+          // this.router.navigate(['/onboarding/login'])
         }
 
       }, (err) => {
