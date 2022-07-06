@@ -157,7 +157,7 @@ export class AdultDashboardPage implements OnInit {
     }
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
-    if (authtoken && app && app !== 'F') {
+    if (authtoken) {
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
 
@@ -206,10 +206,6 @@ export class AdultDashboardPage implements OnInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
-    this.getUserPreference()
-    this.getUsershorts()
-    this.getUserstories()
-
   }
 
   ngOnInit() {
@@ -351,6 +347,11 @@ export class AdultDashboardPage implements OnInit {
         this.isSubscribe = false;
       }
     }, 3000)
+
+    this.getUserPreference()
+    this.getUsershorts()
+    this.getUserstories()
+
   }
 
   curatedDash(name: any) {
@@ -1023,7 +1024,7 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("token", JSON.stringify(res.access_token))
     localStorage.setItem("Subscriber", res.Subscriber)
     localStorage.setItem("userId", JSON.stringify(this.userId))
-    localStorage.setItem("email", res.email)
+    localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
     this.name = res.Name
     let namedata = localStorage.getItem('name').split(' ')
