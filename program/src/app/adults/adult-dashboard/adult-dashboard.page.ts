@@ -209,6 +209,9 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getUserPreference()
+    this.getUsershorts()
+    this.getUserstories()
     // carousel multiple items increment by 1 - c1_w33
     // Add minus icon for collapse element which is open by default
     $('.c1_w33 .item').each(function () {
@@ -347,10 +350,6 @@ export class AdultDashboardPage implements OnInit {
         this.isSubscribe = false;
       }
     }, 3000)
-
-    this.getUserPreference()
-    this.getUsershorts()
-    this.getUserstories()
 
   }
 
@@ -1321,7 +1320,6 @@ export class AdultDashboardPage implements OnInit {
         this.timeSpent = res.noOfDaysVisited
         this.percentage = parseInt(res.overallPercentage)
         localStorage.setItem("overallPercentage", this.percentage)
-        this.resume = []
         //resume section
         res.ModUserScrPc.filter(x => {
           if (parseFloat(x.Percentage) < 100) {
