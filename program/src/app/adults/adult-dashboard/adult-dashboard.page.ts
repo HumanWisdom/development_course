@@ -1321,7 +1321,7 @@ export class AdultDashboardPage implements OnInit {
         this.timeSpent = res.noOfDaysVisited
         this.percentage = parseInt(res.overallPercentage)
         localStorage.setItem("overallPercentage", this.percentage)
-
+        this.resume = []
         //resume section
         res.ModUserScrPc.filter(x => {
           if (parseFloat(x.Percentage) < 100) {
@@ -1345,7 +1345,7 @@ export class AdultDashboardPage implements OnInit {
         this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
         this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
         this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        this.guideP = res.ModUserScrPc.find(e => e.Module == "Program Guide")?.Percentage
+        this.guideP = res.ModUserScrPc.find(e => e.Module == "User Guide")?.Percentage
         this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
         this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of Enquiry")?.Percentage
         this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
@@ -1389,7 +1389,9 @@ export class AdultDashboardPage implements OnInit {
         this.foodP = res.ModUserScrPc.find(e => e.Module == "Food")?.Percentage
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
-        this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can widom help?")?.Percentage
+        this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
+       
+        console.log(res)
       })
   }
 
