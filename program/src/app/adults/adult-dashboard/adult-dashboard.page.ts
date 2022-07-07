@@ -426,7 +426,6 @@ export class AdultDashboardPage implements OnInit {
     this.service.getdashshorts().subscribe((res) => {
       if (res) {
         this.shortsList = res;
-        console.log(res)
       }
     })
   }
@@ -436,7 +435,6 @@ export class AdultDashboardPage implements OnInit {
     this.service.getdashstories().subscribe((res) => {
       if (res) {
         this.lifestoriesList = res
-        console.log(res)
       }
     })
   }
