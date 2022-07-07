@@ -38,10 +38,11 @@ export class PersonalisedForYouPage implements OnInit {
   constructor(public router: Router,
     public authService: SocialAuthService,
     public aservice: AdultsService,
-    public service: OnboardingService) { }
+    public service: OnboardingService) {
+    localStorage.setItem('personalised', 'T');
+  }
 
   ngOnInit() {
-    localStorage.setItem('personalised', 'T');
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true

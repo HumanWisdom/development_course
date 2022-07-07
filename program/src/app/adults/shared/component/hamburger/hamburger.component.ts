@@ -28,12 +28,16 @@ export class HamburgerComponent implements OnInit {
   subscriber = false;
   @Input()
   enableplaystore = true
+  ios = false
 
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
 
   }
 
   ngOnInit() {
+    if (this.platform.IOS) {
+      this.ios = true;
+    }
     setTimeout(() => {
       let sub: any = localStorage.getItem("Subscriber")
       this.roleid = JSON.parse(localStorage.getItem('RoleID'));
