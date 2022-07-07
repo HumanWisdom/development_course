@@ -1327,6 +1327,7 @@ export class AdultDashboardPage implements OnInit {
         this.daysVisited = res.noOfDaysVisited
         this.timeSpent = res.noOfDaysVisited
         this.percentage = parseInt(res.overallPercentage)
+        this.resume = []
         localStorage.setItem("overallPercentage", this.percentage)
         //resume section
         res.ModUserScrPc.filter(x => {
@@ -1397,7 +1398,6 @@ export class AdultDashboardPage implements OnInit {
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
 
-        console.log(res)
       })
   }
 

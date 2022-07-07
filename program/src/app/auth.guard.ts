@@ -40,11 +40,12 @@ export class AuthGuard implements CanActivate, OnInit {
     }
     let cookie = localStorage.getItem('acceptcookie')
     if (token[1] !== undefined && token[1] !== '') {
-      localStorage.setItem('personalised', 'T');
       let persub = localStorage.getItem('personalised subscription');
       let pers = localStorage.getItem('personalised');
       let persdata = localStorage.getItem('personalisedlist');
       localStorage.clear()
+      localStorage.setItem('personalised', 'T');
+      pers = localStorage.getItem('personalised');
       if (affrefcode !== '') {
         localStorage.setItem("AffReferralCode", affrefcode)
       }
