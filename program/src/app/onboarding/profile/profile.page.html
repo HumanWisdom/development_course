@@ -11,7 +11,7 @@
   <div class="cw100p">    
 
     <div class="row center_flex">
-        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 p0 sc_01 bg_user_profile">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_user_profile">
           <div class="x_panel p0">
             <div class="x_content p0">
               <form> 
@@ -33,7 +33,7 @@
                   </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                     <a class="" routerLink="/onboarding/profile-edit">
                       <h6 class="txt141 mtb0px pt20px">
@@ -49,13 +49,27 @@
                       </h6>
                     </a>
                   </div>
-                  <!-- <div class="col-md-6 col-sm-6 col-xs-6">
-                    <a class="" routerLink="/onboarding/profile-edit">
-                      <h6 class="txt141 mtb0px pt20px tright">
-                        Change Password
-                      </h6>
-                    </a>
-                  </div> -->
+                </div> -->
+
+                <div class="row pt20px center_flex">
+                  <div class="col-md-8 col-sm-8 col-xs-12 center_flex">
+                    <div class="col-md-6 col-sm-6 col-xs-6 tright pprofile_pwd">
+                      <a class="" routerLink="/onboarding/profile-edit">
+                        <h6 class="txt141 mtb0px">
+                          Edit Profile
+                        </h6>
+                      </a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 tleft">
+                      <a class="" routerLink="/onboarding/change-password">
+                        <h6 class="txt141 mtb0px">
+                          Change Password
+                        </h6>
+                      </a>
+                    </div>
+                  </div>
+
+                  
                 </div>
 
                 <div class="row">
@@ -70,13 +84,15 @@
 
                 <div class="row mt30px profile_div">
                   <div class="col-md-12 col-sm-12 col-xs-12 flex_ai forum_pt20px">
-                    <div class="col-md-2 col-sm-2 col-xs-3 prelative tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_03.svg" alt="" class="p0">
-                      <h6 class="txt66 absolute_01">
-                        {{loginResponse.Points}}
-                      </h6>
+                    <div class="col-md-2 col-sm-2 col-xs-2 prelative tcenter">
+                      <div class="wpts_circle">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_03.svg" alt="" class="p0">
+                        <h6 class="txt66 absolute_01">
+                          {{loginResponse.Points}}
+                        </h6>
+                      </div>
                     </div>
-                    <div class="col-md-6 col-sm-5 col-xs-4 p0">
+                    <div class="col-md-6 col-sm-5 col-xs-5 p0">
                       <h4 class="txt142">
                         Wisdom Points
                       </h4> 
@@ -327,7 +343,7 @@
                     <hr class="hr_style_4">
                   </div>
 
-                  <div class="col-md-12 col-sm-12 col-xs-12">
+                  <!-- <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                       <div class="col-md-6 col-sm-6 col-xs-6">
                         <h4 class="txt143 mtb0px">
@@ -355,7 +371,7 @@
 
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <hr class="hr_style_4">
-                  </div>
+                  </div> -->
 
                   <div class="col-md-12 col-sm-12 col-xs-12 pb5rem">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai" routerLink="/adults/refer-friend">
