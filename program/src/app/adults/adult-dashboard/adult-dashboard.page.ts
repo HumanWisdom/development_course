@@ -152,7 +152,7 @@ export class AdultDashboardPage implements OnInit {
     if (app && app === 'T') {
       localStorage.setItem('acceptcookie', 'T')
     }
-    if (this.platform.ANDROID || this.platform.IOS) {
+    if (this.platform.IOS) {
       localStorage.setItem('acceptcookie', 'T')
     }
     localStorage.setItem('curated', 'F');
@@ -206,91 +206,7 @@ export class AdultDashboardPage implements OnInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
-  }
 
-  ngOnInit() {
-    // carousel multiple items increment by 1 - c1_w33
-    // Add minus icon for collapse element which is open by default
-    $('.c1_w33 .item').each(function () {
-      let itemToClone = $(this);
-
-      for (let i = 1; i < 3; i++) {
-        itemToClone = itemToClone.next();
-
-        // wrap around if at end of item collection
-        if (!itemToClone.length) {
-          itemToClone = $(this).siblings(':first');
-        }
-
-        // grab item, clone, add marker class, add to collection
-        itemToClone.children(':first-child').clone()
-          .addClass(`cloneditem-${i}`)
-          .appendTo($(this));
-      }
-    });
-    // /carousel multiple items increment by 1 - c1_w33
-
-    // carousel multiple items increment by 1 - c2_w50
-    // Add minus icon for collapse element which is open by default
-    $('.c2_w50 .item').each(function () {
-      let itemToClone = $(this);
-
-      for (let i = 1; i < 2; i++) {
-        itemToClone = itemToClone.next();
-
-        // wrap around if at end of item collection
-        if (!itemToClone.length) {
-          itemToClone = $(this).siblings(':first');
-        }
-
-        // grab item, clone, add marker class, add to collection
-        itemToClone.children(':first-child').clone()
-          .addClass(`cloneditem-${i}`)
-          .appendTo($(this));
-      }
-    });
-    // /carousel multiple items increment by 1 - c2_w50
-
-    // carousel multiple items increment by 1 - c3_w100
-    // Add minus icon for collapse element which is open by default
-    $('.c3_w100 .item').each(function () {
-      let itemToClone = $(this);
-
-      for (let i = 1; i < 1; i++) {
-        itemToClone = itemToClone.next();
-
-        // wrap around if at end of item collection
-        if (!itemToClone.length) {
-          itemToClone = $(this).siblings(':first');
-        }
-
-        // grab item, clone, add marker class, add to collection
-        itemToClone.children(':first-child').clone()
-          .addClass(`cloneditem-${i}`)
-          .appendTo($(this));
-      }
-    });
-    // /carousel multiple items increment by 1 - c3_w100
-
-    // carousel multiple items increment by 1 - c1_w33_01
-    // Add minus icon for collapse element which is open by default
-    $('.c1_w33_01 .item').each(function () {
-      let itemToClone = $(this);
-
-      for (let i = 1; i < 6; i++) {
-        itemToClone = itemToClone.next();
-
-        // wrap around if at end of item collection
-        if (!itemToClone.length) {
-          itemToClone = $(this).siblings(':first');
-        }
-
-        // grab item, clone, add marker class, add to collection
-        itemToClone.children(':first-child').clone()
-          .addClass(`cloneditem-${i}`)
-          .appendTo($(this));
-      }
-    });
     // /carousel multiple items increment by 1 - c1_w33_01
     localStorage.setItem('cicd', 'T')
     let userid = localStorage.getItem('isloggedin');
@@ -312,7 +228,7 @@ export class AdultDashboardPage implements OnInit {
       }
       let app = localStorage.getItem("fromapp")
       if (!app || app === 'F') {
-        if (localStorage.getItem('socialLogin') === 'T') return 0;
+        if (localStorage.getItem('socialLogin') === 'T') return null;
         else this.emaillogin()
       } else {
         let authtoken = JSON.parse(localStorage.getItem("token"))
@@ -334,6 +250,14 @@ export class AdultDashboardPage implements OnInit {
         }
       })
     }
+  }
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.getUserPreference()
+      this.getUsershorts()
+      this.getUserstories()
+    }, 1000)
 
     setTimeout(() => {
       if (localStorage.getItem('acceptcookie') === null) {
@@ -346,11 +270,90 @@ export class AdultDashboardPage implements OnInit {
       } else {
         this.isSubscribe = false;
       }
-    }, 3000)
 
-    this.getUserPreference()
-    this.getUsershorts()
-    this.getUserstories()
+      // carousel multiple items increment by 1 - c1_w33
+      // Add minus icon for collapse element which is open by default
+      $('.c1_w33 .item').each(function () {
+        let itemToClone = $(this);
+
+        for (let i = 1; i < 3; i++) {
+          itemToClone = itemToClone.next();
+
+          // wrap around if at end of item collection
+          if (!itemToClone.length) {
+            itemToClone = $(this).siblings(':first');
+          }
+
+          // grab item, clone, add marker class, add to collection
+          itemToClone.children(':first-child').clone()
+            .addClass(`cloneditem-${i}`)
+            .appendTo($(this));
+        }
+      });
+      // /carousel multiple items increment by 1 - c1_w33
+
+      // carousel multiple items increment by 1 - c2_w50
+      // Add minus icon for collapse element which is open by default
+      $('.c2_w50 .item').each(function () {
+        let itemToClone = $(this);
+
+        for (let i = 1; i < 2; i++) {
+          itemToClone = itemToClone.next();
+
+          // wrap around if at end of item collection
+          if (!itemToClone.length) {
+            itemToClone = $(this).siblings(':first');
+          }
+
+          // grab item, clone, add marker class, add to collection
+          itemToClone.children(':first-child').clone()
+            .addClass(`cloneditem-${i}`)
+            .appendTo($(this));
+        }
+      });
+      // /carousel multiple items increment by 1 - c2_w50
+
+      // carousel multiple items increment by 1 - c3_w100
+      // Add minus icon for collapse element which is open by default
+      $('.c3_w100 .item').each(function () {
+        let itemToClone = $(this);
+
+        for (let i = 1; i < 1; i++) {
+          itemToClone = itemToClone.next();
+
+          // wrap around if at end of item collection
+          if (!itemToClone.length) {
+            itemToClone = $(this).siblings(':first');
+          }
+
+          // grab item, clone, add marker class, add to collection
+          itemToClone.children(':first-child').clone()
+            .addClass(`cloneditem-${i}`)
+            .appendTo($(this));
+        }
+      });
+      // /carousel multiple items increment by 1 - c3_w100
+
+      // carousel multiple items increment by 1 - c1_w33_01
+      // Add minus icon for collapse element which is open by default
+      $('.c1_w33_01 .item').each(function () {
+        let itemToClone = $(this);
+
+        for (let i = 1; i < 6; i++) {
+          itemToClone = itemToClone.next();
+
+          // wrap around if at end of item collection
+          if (!itemToClone.length) {
+            itemToClone = $(this).siblings(':first');
+          }
+
+          // grab item, clone, add marker class, add to collection
+          itemToClone.children(':first-child').clone()
+            .addClass(`cloneditem-${i}`)
+            .appendTo($(this));
+        }
+      });
+    }, 3000)
 
   }
 
@@ -419,6 +422,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getUsershorts() {
+    this.shortsList = []
     this.service.getdashshorts().subscribe((res) => {
       if (res) {
         this.shortsList = res;
@@ -427,6 +431,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getUserstories() {
+    this.lifestoriesList = []
     this.service.getdashstories().subscribe((res) => {
       if (res) {
         this.lifestoriesList = res
@@ -1320,8 +1325,8 @@ export class AdultDashboardPage implements OnInit {
         this.daysVisited = res.noOfDaysVisited
         this.timeSpent = res.noOfDaysVisited
         this.percentage = parseInt(res.overallPercentage)
-        localStorage.setItem("overallPercentage", this.percentage)
         this.resume = []
+        localStorage.setItem("overallPercentage", this.percentage)
         //resume section
         res.ModUserScrPc.filter(x => {
           if (parseFloat(x.Percentage) < 100) {
@@ -1390,8 +1395,7 @@ export class AdultDashboardPage implements OnInit {
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
-       
-        console.log(res)
+
       })
   }
 
