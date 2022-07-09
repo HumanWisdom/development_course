@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate, OnInit {
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     let ban = localStorage.getItem('enablebanner');
-    if(!ban) {
+    if (!ban) {
       localStorage.setItem("enablebanner", 'T')
     }
     let m: any = window.location.href;
@@ -44,6 +44,8 @@ export class AuthGuard implements CanActivate, OnInit {
       let pers = localStorage.getItem('personalised');
       let persdata = localStorage.getItem('personalisedlist');
       localStorage.clear()
+      localStorage.setItem('personalised', 'T');
+      pers = localStorage.getItem('personalised');
       if (affrefcode !== '') {
         localStorage.setItem("AffReferralCode", affrefcode)
       }
@@ -68,7 +70,7 @@ export class AuthGuard implements CanActivate, OnInit {
       return true
     }
     let pers = localStorage.getItem('personalised');
-    if (!cookie && !pers) {
+    if (!pers) {
       this.router.navigate(['/intro/intro-carousel'])
       return false;
     }

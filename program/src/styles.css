@@ -14976,6 +14976,7 @@ input[type="number"] {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
+  padding-bottom: 5px;
 }
 
 .odiv > .col-xs-4,
@@ -20178,14 +20179,14 @@ input{
 {
   margin: 0;
   border: 0;
-  background: #FFC455;
-  border: 1px solid #E69B5A;
+  background: #FFC455 !important;
+  border: 1px solid #E69B5A !important;
   box-sizing: border-box;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  color: #000000;
+  color: #000000 !important;
   line-height: 1.4;
   margin-right: 7px;
   width: 31px;
@@ -25954,11 +25955,33 @@ h1
   border: 0;
 }
 
-#mdp_carousel .carousel-control.left, 
+/* #mdp_carousel .carousel-control.left,
 #mdp_carousel .carousel-control.right
 {
   display: none;
+} */
+
+/* #mdp_carousel .carousel-control.left
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
 }
+
+#mdp_carousel .carousel-control.right
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+}
+
+#mdp_carousel .glyphicon-chevron-left:before, 
+#mdp_carousel .glyphicon-chevron-right:before
+{
+  color: #5d5d5d;
+} */
 
 .mdp_add_to_journal 
 {
@@ -26130,6 +26153,7 @@ h1
   display: block;
   overflow-x: auto;
   white-space: nowrap;
+  padding-bottom: 5px;
 }
 
 .ghn > .col-xs-4,
@@ -26193,7 +26217,8 @@ h1
   background: #FFFFFF;
   box-shadow: 1px 1px 4px rgb(0 0 0 / 25%);
   border-radius: 10px;
-  margin: 5px 10px 5px 0;
+  /* margin: 5px 10px 5px 0; */
+  margin: 5px 10px 0 0;
 }
 
 .dlife_stories 
@@ -26722,7 +26747,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
   
 }
 
-#ic_carousel .carousel-control h4 
+#ic_carousel .carousel-control h4,
+#mdp_carousel .carousel-control h4
 {
   text-shadow: 0 0 black;
 }
@@ -29232,10 +29258,24 @@ svg path
   vertical-align: text-top;
 }
 
-.carousel-control {
-  background-image: none !important;
+.cp0_03
+{
+  padding: 0 10px;
 }
 
-.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
-  color: red;
+.wpts_circle
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pprofile_pwd
+{
+  border-right: 2px solid #FFFFFF;
+  height: 2rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

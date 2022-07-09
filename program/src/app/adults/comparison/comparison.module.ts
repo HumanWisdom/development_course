@@ -421,7 +421,6 @@ import { ComparisonRoutingModule } from './comparison-routing.module';
     IonicModule,
     SharedModule,
     ComparisonRoutingModule,
-    SharedModule
   ],
   providers:[
     AdultsService

@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import {
   getSupportedInputTypes,
   Platform,
   supportsPassiveEventListeners,
-  supportsScrollBehavior,
+  supportsScrollBehavior
 } from '@angular/cdk/platform';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
 @Component({
   selector: 'app-toc-topnav',
@@ -22,7 +22,7 @@ export class TocTopnavComponent implements OnInit {
   name = ''
   roleid = 0
   url = '';
-  subscriber= false;
+  subscriber = false;
   @Input()
   enableplaystore = true
 
@@ -30,22 +30,23 @@ export class TocTopnavComponent implements OnInit {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     this.name = localStorage.getItem('name');
-    if(userid === 'T') {
+    if (userid === 'T') {
       this.isloggedIn = true
     }
-    let userId=JSON.parse(localStorage.getItem("userId"))
-    this.Onboardingservice.getuser(userId).subscribe((res)=>{
-      let userdetail = res[0];
-      this.url = userdetail['UserImagePath'].split('\\')[1] 
-    })
-   }
+
+  }
 
   ngOnInit() {
     setTimeout(() => {
       let sub: any = localStorage.getItem("Subscriber")
-    if(sub === '1' || sub === 1) {
-      this.subscriber = true;
-    }
+      if (sub === '1' || sub === 1) {
+        this.subscriber = true;
+      }
+      let userId = JSON.parse(localStorage.getItem("userId"))
+      this.Onboardingservice.getuser(userId).subscribe((res) => {
+        let userdetail = res[0];
+        this.url = userdetail['UserImagePath'].split('\\')[1]
+      })
     }, 5000)
   }
 
@@ -53,18 +54,18 @@ export class TocTopnavComponent implements OnInit {
     this.router.navigate([`/adults/program-guide/s35001`])
   }
 
-  
+
 
   getevent() {
     this.name = localStorage.getItem('name');
   }
 
   routeAffiliate() {
-      let userId = JSON.parse(localStorage.getItem("userId"))
-      window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
-      return false;
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
+    return false;
   }
- 
+
   logout() {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')

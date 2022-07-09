@@ -315,7 +315,8 @@
         margin-right: 0px;
     }
 
-    #ic_carousel .carousel-indicators
+    #ic_carousel .carousel-indicators,
+    #mdp_carousel .carousel-indicators
     {
         /* width: 50% */
         width: 30%
@@ -396,6 +397,11 @@
     .cp0_02
     {
         padding: 0px;
+    }
+
+    .cp0_03 
+    {
+        padding: 0 0;
     }
 }
 
@@ -656,6 +662,11 @@
         right: 0;
         left: 0;
     }
+
+    .dplayappstore
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 1200px)
@@ -751,7 +762,8 @@
         display: none;
     }
 
-    #ic_carousel .carousel-indicators
+    #ic_carousel .carousel-indicators,
+    #mdp_carousel .carousel-indicators
     {
         /* width: 25% */
         width: 20%
@@ -833,8 +845,10 @@
     {
         /* margin: 0 10px 2px 10px; */
         /* margin: 0 0px 2px 0px; */
+        /* margin: 0 10px 2px 10px;
+        padding: 0px; */
         margin: 0 10px 2px 10px;
-        padding: 0px;
+        padding: 0px 10px;
     }
 
     .mdp_icon 
@@ -851,6 +865,22 @@
     {
         margin: 10px 0 0 0;
     }    
+
+    .dplayappstore
+    {
+        /* display: block; */
+        display: flex;
+    }
+
+    .dnplayappstore
+    {
+        display: none;
+    }
+
+    .cp0_03 
+    {
+        padding: 0 10px;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)
@@ -875,13 +905,15 @@
     {
         /* margin: 0 10px 2px 10px; */
         /* margin: 0 0px 2px 0px; */
-        margin: 0 -10px 2px -10px;
-        padding: 10px;
+        /* margin: 0 -10px 2px -10px;
+        padding: 10px; */
+        margin: 0 0px 2px 0px;
     }
 
     .cd_gm
     {
-        margin: 0 -20px 2px -20px !important;
-        padding: 0 10px !important;
+        /* margin: 0 -20px 2px -20px !important;
+        padding: 0 10px !important; */
+        margin: 0 -10px 2px -10px !important;
     }
 }
