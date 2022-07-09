@@ -152,7 +152,7 @@ export class AdultDashboardPage implements OnInit {
     if (app && app === 'T') {
       localStorage.setItem('acceptcookie', 'T')
     }
-    if (this.platform.ANDROID || this.platform.IOS) {
+    if (this.platform.IOS) {
       localStorage.setItem('acceptcookie', 'T')
     }
     localStorage.setItem('curated', 'F');
@@ -206,9 +206,7 @@ export class AdultDashboardPage implements OnInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
-  }
 
-  ngOnInit() {
     // /carousel multiple items increment by 1 - c1_w33_01
     localStorage.setItem('cicd', 'T')
     let userid = localStorage.getItem('isloggedin');
@@ -230,7 +228,7 @@ export class AdultDashboardPage implements OnInit {
       }
       let app = localStorage.getItem("fromapp")
       if (!app || app === 'F') {
-        if (localStorage.getItem('socialLogin') === 'T') return 0;
+        if (localStorage.getItem('socialLogin') === 'T') return null;
         else this.emaillogin()
       } else {
         let authtoken = JSON.parse(localStorage.getItem("token"))
@@ -252,7 +250,9 @@ export class AdultDashboardPage implements OnInit {
         }
       })
     }
+  }
 
+  ngOnInit() {
     setTimeout(() => {
       this.getUserPreference()
       this.getUsershorts()
@@ -422,6 +422,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getUsershorts() {
+    this.shortsList = []
     this.service.getdashshorts().subscribe((res) => {
       if (res) {
         this.shortsList = res;
@@ -430,6 +431,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getUserstories() {
+    this.lifestoriesList = []
     this.service.getdashstories().subscribe((res) => {
       if (res) {
         this.lifestoriesList = res
@@ -1323,6 +1325,7 @@ export class AdultDashboardPage implements OnInit {
         this.daysVisited = res.noOfDaysVisited
         this.timeSpent = res.noOfDaysVisited
         this.percentage = parseInt(res.overallPercentage)
+        this.resume = []
         localStorage.setItem("overallPercentage", this.percentage)
         //resume section
         res.ModUserScrPc.filter(x => {
@@ -1393,7 +1396,6 @@ export class AdultDashboardPage implements OnInit {
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
 
-        console.log(res)
       })
   }
 

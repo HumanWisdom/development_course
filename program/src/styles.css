@@ -20179,14 +20179,14 @@ input{
 {
   margin: 0;
   border: 0;
-  background: #FFC455;
-  border: 1px solid #E69B5A;
+  background: #FFC455 !important;
+  border: 1px solid #E69B5A !important;
   box-sizing: border-box;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  color: #000000;
+  color: #000000 !important;
   line-height: 1.4;
   margin-right: 7px;
   width: 31px;
@@ -29261,4 +29261,21 @@ svg path
 .cp0_03
 {
   padding: 0 10px;
+}
+
+.wpts_circle
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pprofile_pwd
+{
+  border-right: 2px solid #FFFFFF;
+  height: 2rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
