@@ -24,7 +24,6 @@ export class TocHeaderComponent implements OnInit {
   }
 
   share(){
-    
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',

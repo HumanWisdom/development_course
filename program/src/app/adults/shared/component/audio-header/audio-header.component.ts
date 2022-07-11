@@ -129,7 +129,6 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   share() {
-    
     if (!this.ngNavigatorShareService.canShare()) {
       alert(`This service/api is not supported in your Browser`);
       return;
