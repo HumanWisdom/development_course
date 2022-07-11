@@ -35,6 +35,8 @@ import {ModulePercentComponent} from './module-percent/module-percent.component'
 import { SessionComponent } from './session/session.component';
 import { AllotScreensComponent } from './allot-screens/allot-screens.component';
 import { ForumsComponent } from './forums/forums.component';
+import { GuidedquestiontopicsComponent } from './guidedquestiontopics/guidedquestiontopics.component';
+import { GuidedquestionComponent } from './guidedquestion/guidedquestion.component';
 
 
 
@@ -180,7 +182,15 @@ const routes: Routes = [
 {
   path: "dailypractises",
   component: DailypractiseComponent
-}
+},
+{
+  path: "guidedQuestionTopics",
+  component: GuidedquestiontopicsComponent
+},
+{
+  path: "guidedQuestion",
+  component: GuidedquestionComponent
+},
 ];
 
 @NgModule({

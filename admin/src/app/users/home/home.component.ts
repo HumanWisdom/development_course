@@ -111,19 +111,23 @@ export class HomeComponent implements OnInit {
   }
 
   deleteUser(id){
-    console.log(id)
-    this.service.deleteUser({ "Id":parseInt(id)}).
-    subscribe(res=>
-      {
-      console.log(res)
-      },
-      error=>{
-        console.log(error)
-      },
-      ()=>{
-        this.getUsers()
-      }
-    )
+    var retVal = confirm("Are you sure you want to delete?");
+    if( retVal == true ) {
+      this.service.deleteUser({ "Id":parseInt(id)}).
+      subscribe(res=>
+        {
+        },
+        error=>{
+          console.log(error)
+        },
+        ()=>{
+          window.alert('User deleted successfully')
+          this.getUsers()
+        }
+      )
+    } else {
+      return false;
+    }
   }
 
   getUsers(){

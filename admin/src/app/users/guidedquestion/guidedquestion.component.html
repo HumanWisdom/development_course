@@ -1,0 +1,185 @@
+<app-top-nav></app-top-nav>
+<app-side-nav></app-side-nav>
+<!-- page content -->
+<div class="right_col" role="main" *ngIf="guidedQuestion">
+
+	<!-- Class -->
+	<div class="">
+
+		<div class="page-title">
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="row">
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="x_panel">
+
+					<div class="x_title">
+						<h2>Add Guided Questions</h2>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="x_content">
+						<br />
+
+						<form id="demo-form2">
+
+							<div class="form-group">
+								<div class="row-centered">
+									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+                                        <label for="p_name" class="control-label">Topic<span class="required">*</span></label>
+                                        <select  name="program" class="select2_group form-control" [(ngModel)]="guidedQuestion.TopicId"  required>
+                                            <option [value]="'0'" selected >Select Topic</option>
+                                            <option *ngFor="let a of topicList" [value]="a.RowID" >{{a.Topic}}</option>
+                                        </select>
+									</div>
+								</div>
+							</div>
+                            
+							<div class="form-group">
+								<div class="row-centered">
+									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+										<label for="topic_introduction" class="control-label">Question<span class="required">*</span></label>
+										<!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea> -->
+                                        <textarea id="message" required="required" class="form-control" [(ngModel)]="guidedQuestion.Question" name="message" rows="3" ></textarea>
+									</div>
+								</div>
+							</div>
+
+							<div class="ln_solid"></div>
+
+							<div class="form-group">
+								<div class="col-md-12 col-sm-6 col-xs-12" style="text-align:center;">
+									<div *ngIf="!guidedQuestion.TopicId||!guidedQuestion.Question">
+                                        <small class="text-danger">Please fill all details to submit</small>
+                                    </div>
+									<button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
+									<input name="method" id="method" type="hidden" value="<?=$method?>">
+									<input name="submit_Update" type="hidden">
+									<button [disabled]="!guidedQuestion.TopicId||!guidedQuestion.Question"
+									type="submit" form="demo-form2" class="btn btn-success" id="next" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3" (click)="addQuestion()">Submit</button>
+								</div>
+							</div>
+
+						</form>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+	
+					<div class="x_panel">
+	
+						<div class="x_title">
+							<h2>Guided Question Details</h2>
+							<ul class="nav navbar-right panel_toolbox">
+	
+							</ul>
+							<div class="clearfix"></div>
+
+
+						</div>
+	
+						<div class="x_content">
+	
+							<div class="x_content">
+	
+								<div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+								<div class="row">
+
+									<div class="col-md-8 col-sm-12 col-xs-12">
+                                        <label for="p_name" class="control-label">Topic<span class="required">*</span></label>
+                                        <select  name="program" class="select2_group form-control" [(ngModel)]="selectedTopicId" (change)="selectTopic($event.target.value)" required>
+                                            <option [value]="'0'" selected >Select Topic</option>
+                                            <option *ngFor="let a of topicList" [value]="a.RowID" >{{a.Topic}}</option>
+                                        </select>
+									</div>
+
+									<div class="col-md-4 col-sm-12 col-xs-12">
+										<div class="search_btn">
+										</div>
+									</div>
+								</div>
+							</div>
+	
+								<br>
+	
+								<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+									<thead>
+									<tr>
+										<th>Question</th>
+										<th>Commands</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr *ngFor="let s of guidedQuestionList;let i=index">
+										<td>{{s.Question}}</td>
+										<td>
+											<button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" (click)="initUpdate(s.RowID)" data-toggle="modal"  [attr.data-target]="'#updateModal'+s.RowID"></span></button>
+											<button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="deleteTopic(s.RowID)"></span></button>
+										</td>
+										<div class="modal fade" [attr.id]="'updateModal'+s.RowID" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+											<div class="modal-dialog vc70" role="document">
+											  <div class="modal-content cmodal-content">
+												<div class="modal-header cmodal-header tcenter white">
+												  <h1 class="modal-title cmodal-title"
+												  >Please enter new details</h1>
+												</div>
+												<div class="modal-body">
+	
+													<form id="demo-form2" action="form_c.php" method="post">
+	
+														<div class="form-group">
+															<div class="row-centered">
+																<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+																	<label for="p" class="control-label">Topic<span class="required">*</span></label>
+																	<select  name="program" class="select2_group form-control" [(ngModel)]="upguidedQuestion.TopicId" required>
+																		<option [value]="'0'" selected >Select Topic</option>
+																		<option *ngFor="let a of topicList" [value]="a.RowID" >{{a.Topic}}</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+	
+														<div class="form-group">
+															<div class="row-centered">
+																<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+																	<label for="story" class="control-label">Question<span class="required">*</span></label>
+																	<textarea id="message" required="required" class="form-control" name="message" rows="3" [(ngModel)]="upguidedQuestion.Question"></textarea>
+																</div>
+															</div>
+														</div>
+	
+	
+	
+													</form>
+	
+												</div>
+												<div class="modal-footer cmodal-footer tcenter">
+												  <button [disabled]="!upguidedQuestion.Question ||!upguidedQuestion.TopicId" type="button" class="btn fill_now btn btn-success"  data-dismiss="modal" (click)="updateQuestionById()" >UPDATE</button>
+												  <button type="button" class="btn fill_later" data-dismiss="modal" (click)="clearUpdateModel()"  >BACK</button>
+												</div>
+											  </div>
+											</div>
+										</div>
+									</tr>
+									</tbody>
+								</table>
+	
+	
+								</div>
+	
+						</div>
+					</div>
+				</div>
+			</div>
+       
+	</div>
+	<!--/Class -->
+
+</div>
+<!-- /page content -->
+<app-footer></app-footer>

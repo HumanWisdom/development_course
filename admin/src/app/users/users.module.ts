@@ -40,9 +40,11 @@ import { NgxEditorModule } from 'ngx-editor';
 import { ForumsComponent } from './forums/forums.component';
 import { BlogComponent } from './blog/blog.component';
 import { DailypractiseComponent } from './dailypractise/dailypractise.component';
+import { GuidedquestionComponent } from './guidedquestion/guidedquestion.component';
+import { GuidedquestiontopicsComponent } from './guidedquestiontopics/guidedquestiontopics.component';
 
 @NgModule({
-  declarations: [HomeComponent, FaqComponent, PricingComponent, SectionComponent, ModulesComponent, ForumComponent, ModeratorComponent, ProgramComponent, ReflectionComponent, SubscriptionComponent, AssessmentComponent, QuestionComponent, CategoryComponent, GroupComponent, CouponsComponent, PointsComponent, TagsComponent, ScenariosComponent, KeysComponent, TestimonialsComponent, ScreensComponent, SitesectionsComponent, DailyquestionComponent, OptionsComponent, ModulePercentComponent, SessionComponent, AllotScreensComponent, AffiliateComponent, AffiliateAllUsersComponent, MyAffiliateComponent, ViewAffiliateComponent, ManagePopupComponent, ForumsComponent, BlogComponent, DailypractiseComponent],
+  declarations: [HomeComponent, FaqComponent, PricingComponent, SectionComponent, ModulesComponent, ForumComponent, ModeratorComponent, ProgramComponent, ReflectionComponent, SubscriptionComponent, AssessmentComponent, QuestionComponent, CategoryComponent, GroupComponent, CouponsComponent, PointsComponent, TagsComponent, ScenariosComponent, KeysComponent, TestimonialsComponent, ScreensComponent, SitesectionsComponent, DailyquestionComponent, OptionsComponent, ModulePercentComponent, SessionComponent, AllotScreensComponent, AffiliateComponent, AffiliateAllUsersComponent, MyAffiliateComponent, ViewAffiliateComponent, ManagePopupComponent, ForumsComponent, BlogComponent, DailypractiseComponent, GuidedquestionComponent,GuidedquestiontopicsComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
