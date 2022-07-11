@@ -137,12 +137,12 @@ export class AudioHeaderComponent implements OnInit {
     if(this.urlT)
    {
      console.log("url")
-    this.path="https://humanwisdom.me/course/#/"+this.address+`?t=${this.urlT}`
+    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.urlT}`
 
    }
    else{
      console.log("local")
-    this.path="https://humanwisdom.me/course/#/"+this.address+`?t=${this.token}`
+    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.token}`
    }
  
     this.ngNavigatorShareService.share({
