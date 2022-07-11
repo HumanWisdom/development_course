@@ -326,6 +326,12 @@
         //   window.location.pathname="/onboarding/login"
         // }
        });
+       $(document).on('click', '#liSubscribe', function(){
+        if(window.webkit.messageHandlers.nativeActionHandler)
+        { 
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
+        }        
+       });
 
     });
 
