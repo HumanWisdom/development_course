@@ -255,7 +255,12 @@ export class SideNavComponent implements OnInit {
     this.router.navigate(['users/allotScreen'])
 
   }
+  routeGuidedQuestion(){
+    this.router.navigate(['users/guidedQuestion'])
+  }
 
-
+  routeGuidedTopics(){
+    this.router.navigate(['users/guidedQuestionTopics'])
+  }
 
 }
