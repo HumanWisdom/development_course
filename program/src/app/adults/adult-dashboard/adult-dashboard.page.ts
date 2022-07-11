@@ -18,6 +18,8 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('enablecookiemodal') enablecookiemodal: ElementRef;
   @ViewChild('closecookiemodal') closecookiemodal: ElementRef;
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
+  @ViewChild('closepopup') closepopup: ElementRef;
+  @ViewChild('journelsignuplogin') journelsignuplogin: ElementRef;
 
   //get global settings here
   public text = 2
@@ -250,6 +252,31 @@ export class AdultDashboardPage implements OnInit {
         }
       })
     }
+  }
+
+  loginpage() {
+    // $("#signuplogin").modal("hide");
+    this.closepopup.nativeElement.click();
+    localStorage.setItem('introoption', 'T')
+    this.router.navigate(['/onboarding/login'])
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.journelsignuplogin.nativeElement.click();
+    }
+  }
+
+  signInWithApple() {
+    const CLIENT_ID = "humanwisdom.web.service"
+    const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
+
+
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
+      '_self'
+    );
+
   }
 
   ngOnInit() {
