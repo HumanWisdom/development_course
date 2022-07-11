@@ -353,5 +353,23 @@ path="https://www.humanwisdom.info/api"
   updatedailypractice(data: any): Observable<any> {
     return this.http.post(this.path + '/AddDailyPractise', data)
   }
+  addGuidedTopics(data:any): Observable<any> {
+    return this.http.post(this.path + '/AddGuidedQs_Topics', data);
+  }
+ addGuidedQuestion(data:any): Observable<any> {
+   return this.http.post(this.path + '/AddGuidedQuestions', data);
+ }
+   getGuidedQuestionTopics(): Observable<any> {
+    return this.http.get(this.path + '/GetGuidedQs_Topics');
+   }
+   getGuidedQuestion(id:any): Observable<any> {
+    return this.http.get(this.path + '/GetGuidedQuestions/'+id);
+   }
+   deleteGuidedQuestion(n: Number): Observable<any> {
+    return this.http.post(this.path + `/DelGuidedQuestions/${n.Id}`, null)
+  }
+  deleteTopic(n: Number): Observable<any> {
+    return this.http.post(this.path + `/DelGuidedQs_Topics/${n.Id}`, null)
+  }
 }
 
