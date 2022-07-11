@@ -32,7 +32,7 @@ export class SessionEndComponent implements OnInit {
   shareIndex(){
     console.log(this.toc)
     //this.socialShare=true
-    this.shareUrl="https://humanwisdom.me/course/#/adults/"+this.toc+`?t=${this.token}`
+    this.shareUrl="https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`
     console.log(this.shareUrl)
 
     if (!this.ngNavigatorShareService.canShare()) {
