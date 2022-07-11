@@ -572,7 +572,7 @@ export class AdultDashboardPage implements OnInit {
 
   }
 
-  googleLogin() {
+  googleLogin(d = '') {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       this.user = user;
@@ -679,7 +679,9 @@ export class AdultDashboardPage implements OnInit {
                 }*/
 
             }
-
+            if (d === 'journal') {
+              window.location.reload();
+            }
           }
 
         })
@@ -695,7 +697,7 @@ export class AdultDashboardPage implements OnInit {
 
   }
 
-  fbLogin() {
+  fbLogin(d = '') {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       // this.user = user;
@@ -785,10 +787,18 @@ export class AdultDashboardPage implements OnInit {
                   if (subscribePage === 'T') {
                     localStorage.setItem("subscribepage", 'F')
                   }
-                  this.router.navigate(['/onboarding/add-to-cart'])
+                  if (d === 'journal') {
+                    window.location.reload();
+                  } else {
+                    this.router.navigate(['/onboarding/add-to-cart'])
+                  }
                 } else {
                   localStorage.setItem("isloggedin", 'T')
-                  this.router.navigate(['/adults/adult-dashboard'])
+                  if (d === 'journal') {
+                    window.location.reload();
+                  } else {
+                    this.router.navigate(['/adults/adult-dashboard'])
+                  }
                 }
 
 
@@ -800,6 +810,9 @@ export class AdultDashboardPage implements OnInit {
                     })
                   }*/
 
+              }
+              if (d === 'journal') {
+                window.location.reload();
               }
             }
 
