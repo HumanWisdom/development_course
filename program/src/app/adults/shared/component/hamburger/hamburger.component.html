@@ -235,8 +235,8 @@
         </a>
       </li>
 
-      <li *ngIf="!subscriber && !ios">
-        <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
+      <li *ngIf="!subscriber">
+        <a (click)="subscribeevent('/onboarding/add-to-cart')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
