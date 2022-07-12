@@ -12,6 +12,7 @@ declare var $: any;
 })
 export class PersonalisedForYouPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  @ViewChild('closepopup') closepopup: ElementRef;
 
   //static progress mapping
   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
@@ -50,7 +51,8 @@ export class PersonalisedForYouPage implements OnInit {
   }
 
   loginpage() {
-    $("#signuplogin").modal("hide");
+    // $("#signuplogin").modal("hide");
+    this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
     this.router.navigate(['/onboarding/login'])
   }
@@ -180,7 +182,9 @@ export class PersonalisedForYouPage implements OnInit {
               } else {
                 localStorage.setItem("isloggedin", 'T')
               }
+              this.router.navigate(['/intro/personalised-for-you']);
             }
+            window.location.reload();
           }
         })
     },
@@ -268,7 +272,9 @@ export class PersonalisedForYouPage implements OnInit {
                 } else {
                   localStorage.setItem("isloggedin", 'T')
                 }
+                this.router.navigate(['/intro/personalised-for-you']);
               }
+              window.location.reload();
             }
 
           })
