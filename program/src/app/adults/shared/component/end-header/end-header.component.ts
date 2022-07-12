@@ -19,7 +19,7 @@ export class EndHeaderComponent implements OnInit {
   }
 
   sendIndex(){
-   console.log("https://humanwisdom.me/course/#/adults/"+this.toc+`?t=${this.token}`)
+   console.log("https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`)
   }
   routeJournal(){
     this.router.navigate(['/adults/journal'])

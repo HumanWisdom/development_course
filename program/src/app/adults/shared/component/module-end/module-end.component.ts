@@ -58,7 +58,7 @@ else
 
   shareIndex(){
     this.socialShare=true
-    this.shareUrl="https://humanwisdom.me/course/#/adults/"+this.toc+`?t=${this.token}`
+    this.shareUrl="https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`
 
     if (!this.ngNavigatorShareService.canShare()) {
       alert(`This service/api is not supported in your Browser`);
