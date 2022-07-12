@@ -160,6 +160,9 @@ export class OnboardingService {
   updateUser(data:any):Observable<any>{
     return this.http.post(this.path+'/AddUser',data)
   }
+  deleteMyData(data:any):Observable<any>{
+    return this.http.post(this.path+'/DeleteMydata/',data);
+  } 
 
   getpaymentdetail(data:any):Observable<any>{
     return this.http.get(this.path+`/GetPaymentDetails/${data}`)

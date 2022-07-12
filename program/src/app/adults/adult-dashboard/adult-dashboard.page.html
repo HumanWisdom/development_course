@@ -1669,7 +1669,7 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<app-bottom-navigation (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 <!-- /footer -->
 
 <!-- popup modal -->
@@ -2318,3 +2318,79 @@
   <!-- /modal-body -->
 </div>
 <!-- /activate subscription modal -->
+
+<span #journelsignuplogin data-toggle="modal" data-target="#journelsignuplogin">
+</span>
+
+
+<!-- signup_login modal -->
+<div class="modal fade" id="journelsignuplogin" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- modal-body -->
+  <div class="h100p" role="document">
+    <!-- modal content -->
+    <div class="row center_flex h100p">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 modal_inner">
+        <form>
+          <div class="pfy_sl_modal">
+
+            <div class="row dpfys_login_signup">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button type="submit" class="btn btn_pfys_login_signup bpfys_01" (click)="loginpage()">
+                  Sign up to unlock this feature
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="txt244 tcenter mtb0px">
+                  Already a user?
+                  <a class="txt245 underline" (click)="loginpage()">
+                    Login here
+                  </a>
+                </h4>
+              </div>
+            </div>
+
+            <div class="row pfy_ocw">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="txt243 mtb0px">
+                  OR CONNECT WITH
+                </h4>
+              </div>
+            </div>
+
+            <span #closepopup data-dismiss="modal"></span>
+
+            <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
+                      (click)="fbLogin('journal')" class="img-responsive">
+                  </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
+                      (click)="googleLogin('journal')" class="img-responsive">
+                  </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg"
+                      (click)="signInWithApple()" class="img-responsive">
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /modal content -->
+  </div>
+  <!-- /modal-body -->
+</div>
+<!-- /signup_login modal -->
