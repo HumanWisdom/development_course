@@ -182,6 +182,7 @@ export class PersonalisedForYouPage implements OnInit {
               } else {
                 localStorage.setItem("isloggedin", 'T')
               }
+              this.router.navigate(['/intro/personalised-for-you']);
             }
             window.location.reload();
           }
@@ -271,6 +272,7 @@ export class PersonalisedForYouPage implements OnInit {
                 } else {
                   localStorage.setItem("isloggedin", 'T')
                 }
+                this.router.navigate(['/intro/personalised-for-you']);
               }
               window.location.reload();
             }
