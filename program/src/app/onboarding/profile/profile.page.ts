@@ -25,7 +25,7 @@ export class ProfilePage implements OnInit {
   paymentDetail;
   RoleID = 0
   url = ''
-
+  userData:any;
   constructor(private router: Router, private Onboardingservice: OnboardingService) {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
@@ -64,7 +64,9 @@ export class ProfilePage implements OnInit {
     setTimeout(() => {
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
-        this.url = userdetail['UserImagePath'].split('\\')[1]
+        this.url = userdetail['UserImagePath'].split('\\')[1];
+        this.userData=res[0];
+
       })
     }, 3000)
 
@@ -79,5 +81,41 @@ export class ProfilePage implements OnInit {
     window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
   }
 
+  deleteMyData(){
+   let isSubscribe
+    console.log(this.userData);
+    var retVal;
+    let sub: any = localStorage.getItem('Subscriber');
+    if (sub === '0') {
+      isSubscribe = true;
+    } else {
+    isSubscribe = false;
+    }
+    retVal = confirm("Are you sure you want to delete your data?");
+    if( retVal == true ) {
+      this.Onboardingservice.deleteMyData({
+        UserID: localStorage.getItem("userId").toString(),
+        Email: localStorage.getItem("email")
+        }).
+      subscribe(res=>
+        {
+         
+        },
+        error=>{
+          console.log(error)
+        },
+        ()=>{
+          if(isSubscribe){
+            alert("We will delete your data once your subscription period ends");
+          }else{
+            alert("Your data will be deleted from our system in a few days");
+          }
+        }
+      )
+    } else {
+      return false;
+    }
+
+  }
 
 }
