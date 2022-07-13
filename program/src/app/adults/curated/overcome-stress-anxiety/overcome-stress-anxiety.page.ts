@@ -73,7 +73,9 @@ export class OvercomeStressAnxietyPage implements OnInit {
   goBack(){
     this.location.back()
   }
-
+  routeGuided(){
+    this.router.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+  }
   youtube(link) {
     this.router.navigate(['/adults/curated/youtubelink', link])
   }

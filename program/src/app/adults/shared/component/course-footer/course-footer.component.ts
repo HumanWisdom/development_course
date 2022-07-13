@@ -34,6 +34,10 @@ export class CourseFooterComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(location.href.includes("t="))
+    {
+      this.shared=true
+    }
     if (this.urlT)
     {
       this.shared=true
