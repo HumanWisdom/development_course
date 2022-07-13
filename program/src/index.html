@@ -321,10 +321,10 @@
         { 
           window.AndroidHandler.logout();
         } 
-        // else
-        // {
-        //   window.location.pathname="/onboarding/login"
-        // }
+        if(window.webkit.messageHandlers.nativeActionHandler)
+        { 
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
+        }  
        });
        $(document).on('click', '#liSubscribe', function(){
         if(window.webkit.messageHandlers.nativeActionHandler)
