@@ -148,7 +148,7 @@
         </a>
       </li>
 
-      <li *ngIf="!platform.IOS && !platform.isBrowser">
+      <li *ngIf="!platform.IOS || (platform.IOS && platform.isBrowser)">
         <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
