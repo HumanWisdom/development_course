@@ -20194,6 +20194,7 @@ input{
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: auto;
 }
 
 .btn_tw_02
