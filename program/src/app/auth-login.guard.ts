@@ -42,6 +42,9 @@ export class authLoginGuard implements CanActivate, OnInit {
     if (cookie) {
       localStorage.setItem('acceptcookie', 'T');
     }
+    if (pers) {
+      localStorage.setItem('personalised', pers);
+    }
     if (m[1] !== undefined && m[1] !== '') {
     } else {
       localStorage.setItem("emailCode", 'F')
