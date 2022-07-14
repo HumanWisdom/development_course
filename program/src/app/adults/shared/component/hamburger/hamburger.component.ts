@@ -75,10 +75,12 @@ export class HamburgerComponent implements OnInit {
 
 
   logout() {
-
-    localStorage.setItem('isloggedin', 'F')
-    localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    if(this.platform.isBrowser)
+    {
+        localStorage.setItem('isloggedin', 'F')
+        localStorage.setItem('guest', 'T')
+        this.router.navigate(['/onboarding/login'])
+    }
   }
 
   loginroute() {
@@ -89,12 +91,12 @@ export class HamburgerComponent implements OnInit {
     localStorage.setItem('giftwisdom', 'T')
   }
 
-  subscribeevent(subs = '') {
+  /* subscribeevent(subs = '') {
     if (this.ios) {
       window.alert('Please close the app. Login again .Complete payment on the payment screen')
     } else {
       this.router.navigate([subs])
     }
-  }
+  } */
 
 }
