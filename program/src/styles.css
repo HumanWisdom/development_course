@@ -22778,7 +22778,8 @@ ul.dh_ul li
   background: linear-gradient(180deg, #1092A7 -1.41%, #70C6BD 100%);
   box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
   border-radius: 10px;
-  min-height: 356px;
+  /* min-height: 356px; */
+  min-height: 300px;
   width: 315px;
   transform: translate(0, 50%);
 }
@@ -29276,6 +29277,6 @@ svg path
   border-right: 2px solid #FFFFFF;
   height: 2rem;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
 }
