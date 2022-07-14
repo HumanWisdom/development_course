@@ -174,14 +174,16 @@ export class AdultDashboardPage implements OnInit {
           this.router.navigate(['/onboarding/login'])
         }
       })
-    } else {
-      let ban = localStorage.getItem('enablebanner');
-      if (ban === null || ban === 'T') {
-        this.enablebanner = true;
-      } else {
-        this.enablebanner = false;
-      }
     }
+
+
+    let ban = localStorage.getItem('enablebanner');
+    if (ban === null || ban === 'T') {
+      this.enablebanner = true;
+    } else {
+      this.enablebanner = false;
+    }
+
 
     this.services.getCountry().subscribe((res: any) => {
 
