@@ -339,6 +339,10 @@ const routes: Routes = [
     path: 'how-can-wisdom-help',
     loadChildren: () => import('./how-can-wisdom-help/how-can-wisdom-help.module').then( m => m.HowCanWisdomHelpModule)
   },
+  {
+    path: 'notification',
+    loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
+  },
 ];
 
 @NgModule({

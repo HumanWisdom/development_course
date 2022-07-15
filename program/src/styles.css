@@ -20194,6 +20194,7 @@ input{
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: auto;
 }
 
 .btn_tw_02
@@ -29277,6 +29278,17 @@ svg path
   border-right: 2px solid #FFFFFF;
   height: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
+}
+
+.notification_panel.panel-default>.panel-heading+.panel-collapse>.panel-body
+{
+  padding: 0 !important;
+}
+
+.dmd
+{
+  margin: 10px 10px 30px 10px;
+  text-align: center;
 }
