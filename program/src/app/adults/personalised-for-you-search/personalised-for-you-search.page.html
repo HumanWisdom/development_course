@@ -11,50 +11,55 @@
         <div class="x_panel p0">
           <div class="x_content p0">
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
-                  <input type="search" class="form-control has-feedback-left pfy_search" [(ngModel)]="searchinp" (keyup.enter)="getinp($event.target.value)" placeholder="Search">
-                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                </div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
+                <input type="search" class="form-control has-feedback-left pfy_search" [(ngModel)]="searchinp"
+                  (keyup.enter)="getinp($event.target.value)" placeholder="Search">
+                <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
               </div>
+            </div>
 
-              <div class="row pfys_title">
-                <div class="col-md-12 col-sm-12 col-xs-8">
-                  <h4 class="txt296 mtb0px">
-                    Personalised for you!
-                  </h4>
-                </div>
+            <div class="row pfys_title">
+              <div class="col-md-12 col-sm-12 col-xs-8">
+                <h4 class="txt296 mtb0px">
+                  Personalised for you!
+                </h4>
               </div>
+            </div>
 
-              <div class="row pfys_desc">
+            <div class="row pfys_desc">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4 class="txt297 mtb0px">
+                  Select a topic to explore. Find all related content in one place
+                </h4>
+              </div>
+            </div>
+
+            <ng-container *ngIf="personalisedforyou.length !== 0">
+              <div class="row mb15px" *ngFor="let item of personalisedforyou; let i = index">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <h4 class="txt297 mtb0px">
-                    Select a topic to explore. Find all related content in one place
-                  </h4>
-                </div>
-              </div>
-
-              <ng-container *ngIf="personalisedforyou.length !== 0">
-                <div class="row mb15px" *ngFor="let item of personalisedforyou; let i = index">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <button class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']" (click)="clickbtn(item['name'], '', $event, i, item['id'])">
-                      <div class="row flex_ai">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                          <div class="col-md-10 col-sm-10 col-xs-10 tleft">
-                            {{item['name']}}
-                          </div>
-                          <div class="col-md-2 col-sm-2 col-xs-2 tright" (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg" *ngIf="item['active']" class="img-responsive">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg" *ngIf="!item['active']" class="img-responsive">
-                          </div>
+                  <button class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']"
+                    (click)="clickbtn(item['name'], '', $event, i, item['id'])">
+                    <div class="row flex_ai">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
+                          {{item['name']}}
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2 tright"
+                          (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg"
+                            *ngIf="item['active']" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg"
+                            *ngIf="!item['active']" class="img-responsive">
                         </div>
                       </div>
-                    </button> 
-                  </div>
+                    </div>
+                  </button>
                 </div>
-              </ng-container>
-              
-              <div class="pagebreak"></div>
+              </div>
+            </ng-container>
+
+            <div class="pagebreak"></div>
 
           </div>
         </div>
@@ -68,3 +73,77 @@
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+<span data-toggle="modal" #enablepopup data-target="#signuplogin"></span>
+
+<!-- signup_login modal -->
+<div class="modal fade" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- modal-body -->
+  <div class="h100p" role="document">
+    <!-- modal content -->
+    <div class="row center_flex h100p">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 modal_inner">
+        <form>
+          <div class="pfy_sl_modal">
+
+            <div class="row dpfys_login_signup">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button type="submit" class="btn btn_pfys_login_signup bpfys_01" (click)="loginpage()">
+                  Sign up to unlock this feature
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="txt244 tcenter mtb0px">
+                  Already a user?
+                  <a class="txt245 underline" (click)="loginpage()">
+                    Login here
+                  </a>
+                </h4>
+              </div>
+            </div>
+
+            <div class="row pfy_ocw">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="txt243 mtb0px">
+                  OR CONNECT WITH
+                </h4>
+              </div>
+            </div>
+
+            <span #closepopup data-dismiss="modal"></span>
+
+            <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
+                      (click)="fbLogin()" class="img-responsive">
+                  </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
+                      (click)="googleLogin()" class="img-responsive">
+                  </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
+                  <button type="button" class="btn btn-default btn_as_sl">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg"
+                      (click)="signInWithApple()" class="img-responsive">
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /modal content -->
+  </div>
+  <!-- /modal-body -->
+</div>
+<!-- /signup_login modal -->
