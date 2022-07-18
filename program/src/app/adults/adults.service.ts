@@ -268,4 +268,12 @@ export class AdultsService {
   getcuratedrelationshipdashstories() : Observable<any>{
     return this.http.get(this.path + `/GetDashboardStories/3`)
   }
+
+  getNotificationList():Observable<any>{
+    return this.http.get(this.path+`/GetNotifications`);
+  }
+
+  MarkNotificationAsRead(NotificationId :number):Observable<any>{
+    return this.http.post(this.path+`SetNotificationRead/`+NotificationId,null);
+  }
 }

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: NotificationPage
+  },
+  {
+    path:'notification',
+    component: NotificationPage
   }
 ];
 

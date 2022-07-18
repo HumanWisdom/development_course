@@ -112,4 +112,7 @@ export class TnDashboardV03Component implements OnInit {
       window.open(url)
     }
   }
+  goToNotification(){
+    this.router.navigate(['adults/notification']);
+  }
 }
