@@ -37,6 +37,7 @@
     "@types/stripe-v3": "^3.1.23",
     "angular-socialshare": "^2.3.11",
     "angularx-social-login": "^3.5.4",
+    "bcswipe": "^2.0.4",
     "bootstrap": "^3.3.7",
     "chart.js": "^2.9.3",
     "font-awesome": "^4.7.0",
