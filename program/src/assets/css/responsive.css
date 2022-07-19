@@ -837,8 +837,14 @@
 
     .modal_inner
     {
-        bottom: unset;
         top: unset;
+        bottom: unset;
+    }
+
+    #signuplogin .modal_inner
+    {
+        top: 0;
+        transform: translate(0, 50%);
     }
 
     .guidedqtns_row
