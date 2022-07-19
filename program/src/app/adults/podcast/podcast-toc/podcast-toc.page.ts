@@ -2,7 +2,7 @@ import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-podcast-toc',
@@ -14,17 +14,20 @@ export class PodcastTocPage implements OnInit {
  
   path=this.router.url
   tag='all';
+  iframeSrc:SafeResourceUrl;
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router ,
     private activatedRoute:ActivatedRoute,
     private location: Location,
-    private sanitizer: DomSanitizer) { }
+    private sanitizer: DomSanitizer) {
+     }
 
   ngOnInit() {
   let routTag=   this.activatedRoute.snapshot.paramMap.get('tag');
   if(routTag && routTag!=null && routTag !='' && routTag =='sorrow'){
     this.tag=routTag;
   }
+ this.iframeSrc= this.getSourceForPodBin();
 }
 
   getSourceForPodBin(){
@@ -34,14 +37,19 @@ export class PodcastTocPage implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&logo_link=none&order=episodic&limit=5&filter=tags&tag=16106786&ss=55fe7c7156e4b9c14621bacb4c53cfa7&btn-skin=60a0c8&size=220");
 }
   goBack(){
-    this.location.back()
+   this.location.back();
   }
 
   share(){
+    if (!this.ngNavigatorShareService.canShare()) {
+      alert(`This service/api is not supported in your Browser`);
+      return;
+    }
+   let url="https://humanwisdom.me/course"+this.path;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
-      url: this.path
+      url: url
     }).then( (response) => {
       console.log(response);
     })
