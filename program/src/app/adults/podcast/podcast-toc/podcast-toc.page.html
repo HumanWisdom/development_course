@@ -32,7 +32,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
         <div class="x_panel p0">
           <div class="x_content p0 tleft">
-            <form> 
+            <form *ngIf="iframeSrc && iframeSrc!=null"> 
 
               <!-- podcast widget -->              
               <iframe  title="The HumanWisdom Project Podcast" 
@@ -42,7 +42,7 @@
                 style="border: none; min-width: min(100%, 430px);" 
                 scrolling="no" 
                 data-name="pb-iframe-player" 
-                [src]="getSourceForPodBin()" 
+                [src]="iframeSrc" 
                 allowfullscreen="">
               </iframe>
               <!-- /podcast widget -->
