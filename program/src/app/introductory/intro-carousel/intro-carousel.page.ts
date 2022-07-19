@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import 'bcswipe';
 import { AdultsService } from 'src/app/adults/adults.service';
+
+declare var $: any;
 
 @Component({
   selector: 'app-intro-carousel',
@@ -50,6 +53,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         document.getElementById('inactivenext').style.display = 'none';
       }
     })
+    $('.carousel').bcSwipe({ threshold: 50 });
   }
 
   skip() {
