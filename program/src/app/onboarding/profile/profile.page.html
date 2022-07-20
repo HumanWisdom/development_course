@@ -417,14 +417,19 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <hr class="hr_style_4">
                 </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <a (click)="deleteMyData()">
-                    <h4 class="txt60 dmd">
-                      Delete my data
-                    </h4>
-                  </a>
-                </div>
+                
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <!-- <a (click)="deleteMyData()">
+                      <h4 class="txt60 dmd">
+                        Delete my data
+                      </h4>       
+                    </a>    -->
+                    <button type="submit" class="btn btn-default" (click)="deleteMyData()">
+                      <h4 class="txt60 dmd">
+                        Delete my data
+                      </h4>       
+                    </button> 
+                  </div>
 
               </div>
 
