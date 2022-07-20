@@ -1,7 +1,7 @@
+import { Platform } from '@angular/cdk/platform';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from './../onboarding.service';
-
 
 @Component({
   selector: 'app-profile',
@@ -25,8 +25,10 @@ export class ProfilePage implements OnInit {
   paymentDetail;
   RoleID = 0
   url = ''
-  userData:any;
-  constructor(private router: Router, private Onboardingservice: OnboardingService) {
+  userData: any;
+  enablepayment = true;
+
+  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
     this.Onboardingservice.getpaymentdetail(userId).subscribe((res) => {
@@ -34,18 +36,16 @@ export class ProfilePage implements OnInit {
         this.paymentDetail = res[0]
       }
     })
+
+    if (this.platform.IOS) {
+      this.enablepayment = false;
+    }
   }
 
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId"))
-
     this.email = localStorage.getItem("email")
-
-    console.log(this.loginResponse, this.actKeys)
-
     this.myPrograms = this.actKeys.filter(x => x.MySelf == "1")
-    console.log(this.myPrograms)
-
     if (this.weekDays.includes("Sunday"))
       this.sun = true
     if (this.weekDays.includes("Monday"))
@@ -65,13 +65,11 @@ export class ProfilePage implements OnInit {
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
         this.url = userdetail['UserImagePath'].split('\\')[1];
-        this.userData=res[0];
-
+        this.userData = res[0];
       })
     }, 3000)
-
-
   }
+
   survey() {
     this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
@@ -81,37 +79,35 @@ export class ProfilePage implements OnInit {
     window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
   }
 
-  deleteMyData(){
-   let isSubscribe
-    console.log(this.userData);
+  deleteMyData() {
+    let isSubscribe
     var retVal;
     let sub: any = localStorage.getItem('Subscriber');
     if (sub === '0') {
       isSubscribe = true;
     } else {
-    isSubscribe = false;
+      isSubscribe = false;
     }
     retVal = confirm("Are you sure you want to delete your data?");
-    if( retVal == true ) {
+    if (retVal == true) {
       this.Onboardingservice.deleteMyData({
         UserID: localStorage.getItem("userId").toString(),
         Email: localStorage.getItem("email")
-        }).
-      subscribe(res=>
-        {
-         
+      }).
+        subscribe(res => {
+
         },
-        error=>{
-          console.log(error)
-        },
-        ()=>{
-          if(!isSubscribe){
-            alert("We will delete your data once your subscription period ends");
-          }else{
-            alert("Your data will be deleted from our system in a few days");
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (!isSubscribe) {
+              alert("We will delete your data once your subscription period ends");
+            } else {
+              alert("Your data will be deleted from our system in a few days");
+            }
           }
-        }
-      )
+        )
     } else {
       return false;
     }
