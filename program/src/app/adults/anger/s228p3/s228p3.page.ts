@@ -12,7 +12,7 @@ export class S228p3Page implements OnInit {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w1"
-  title="Releasing Anger - a meditation"
+  title="Releasing Anger"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/anger/audios/anger+4.1.mp3'
 

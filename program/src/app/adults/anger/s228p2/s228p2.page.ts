@@ -18,7 +18,7 @@ export class S228p2Page implements OnInit {
   progressPercent:any
   progressText="3/4"
   link="/adults/anger/s228p3"
-  name="#4  Releasing Anger - a meditation"
+  name="#4  Releasing Anger"
   progressImg=""
   toc="anger/s162p0"
 
