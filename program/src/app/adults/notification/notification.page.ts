@@ -106,16 +106,16 @@ export class NotificationPage implements OnInit {
     if (prefomattedDate) {
       // Today at 10:20
       // Yesterday at 10:20
-      return `${ prefomattedDate } at ${ hours }:${ minutes }`+ampm;
+      return `${ prefomattedDate }  ${ hours }:${ minutes }`+ampm;
     }
   
     if (hideYear) {
       // 10. January at 10:20
-      return `${ day }. ${ month } at ${ hours }:${ minutes }`+ampm;
+      return `${ day }. ${ month }  ${ hours }:${ minutes }`+ampm;
     }
   
     // 10. January 2017. at 10:20
-    return `${ day }. ${ month } ${ year }. at ${ hours }:${ minutes }`+ampm;
+    return `${ day }. ${ month } ${ year }.  ${ hours }:${ minutes }`+ampm;
   }
 
   NavigateToUrl(Url,NotificationId){
