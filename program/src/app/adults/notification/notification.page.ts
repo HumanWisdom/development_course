@@ -12,6 +12,7 @@ export class NotificationPage implements OnInit {
 
   
   notificationModel: NotificationModel[];
+  olderNotitification: NotificationModel[];
   MONTH_NAMES = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -21,17 +22,23 @@ export class NotificationPage implements OnInit {
 
   ngOnInit() {
     this.notificationModel= [];
+    this.olderNotitification=[];
     this.getNotificationList();
   }
 
   getNotificationList(){
-    debugger;
    this.adultService.getNotificationList().subscribe(res=>{
     if(res){
-      this.notificationModel=res;
-      for(var i=0;i<=this.notificationModel.length;i++){
+      this.notificationModel=res.slice(0, 10) as NotificationModel[];
+      for(var i=0;i<this.notificationModel.length;i++){
      this.notificationModel[i].Time=this.time_ago(this.notificationModel[i].UpdatedDate);
-      }
+    }
+    res.slice(11,res.length).map((item, i) => {
+      this.olderNotitification.push(item);
+    });
+    for(var i=0;i<this.olderNotitification.length;i++){
+      this.olderNotitification[i].Time=this.time_ago(this.olderNotitification[i].UpdatedDate);
+     }
     }
   });
   }
@@ -42,7 +49,7 @@ export class NotificationPage implements OnInit {
   MarkAsRead(NotificationId){
     this.adultService.MarkNotificationAsRead(NotificationId).subscribe(res=>{
       if(res){
-        this.getNotificationList();
+       // this.getNotificationList();
       }
     })
   }
@@ -86,9 +93,11 @@ export class NotificationPage implements OnInit {
     const day = date.getDate();
     const month = this.MONTH_NAMES[date.getMonth()];
     const year = date.getFullYear();
-    const hours = date.getHours();
+    let hours = date.getHours();
     let minutes = date.getMinutes();
-  
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    hours %= 12;
+    hours = hours || 12;    
     if (minutes < 10) {
       // Adding leading zero to minutes
       minutes = `0${ minutes }`;
@@ -97,19 +106,27 @@ export class NotificationPage implements OnInit {
     if (prefomattedDate) {
       // Today at 10:20
       // Yesterday at 10:20
-      return `${ prefomattedDate } at ${ hours }:${ minutes }`;
+      return `${ prefomattedDate } at ${ hours }:${ minutes }`+ampm;
     }
   
     if (hideYear) {
       // 10. January at 10:20
-      return `${ day }. ${ month } at ${ hours }:${ minutes }`;
+      return `${ day }. ${ month } at ${ hours }:${ minutes }`+ampm;
     }
   
     // 10. January 2017. at 10:20
-    return `${ day }. ${ month } ${ year }. at ${ hours }:${ minutes }`;
+    return `${ day }. ${ month } ${ year }. at ${ hours }:${ minutes }`+ampm;
   }
 
-  NavigateToUrl(Url){
+  NavigateToUrl(Url,NotificationId){
+    this.MarkAsRead(NotificationId);
     this.router.navigateByUrl(Url);
+  }
+
+  getClass(item){
+   if(item.IsRead==0){
+    return 'nrow_active row';
+   }
+    return 'nrow_inactive row';
   }
 }

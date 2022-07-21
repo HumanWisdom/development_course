@@ -274,6 +274,6 @@ export class AdultsService {
   }
 
   MarkNotificationAsRead(NotificationId :number):Observable<any>{
-    return this.http.post(this.path+`SetNotificationRead/`+NotificationId,null);
+    return this.http.post(this.path+`/SetNotificationRead/`+NotificationId,null);
   }
 }

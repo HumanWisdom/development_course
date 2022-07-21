@@ -23,8 +23,8 @@
             
               <ng-container *ngFor="let item of notificationModel">
               <!-- 2 -->
-              <div class="row nrow_active">
-                <a class="center_flex" (click)="NavigateToUrl(item.Url)">
+              <div class="{{getClass(item)}}">
+                <a class="center_flex" (click)="NavigateToUrl(item.Url,item.NotificationId)">
                   <div class="col-md-2 col-sm-2 col-xs-2">
                     <img src="{{item.IconPath}}" alt="">
                   </div>
@@ -94,31 +94,29 @@
                   <div id="a1" class="panel-collapse collapse">
                     <div class="panel-body p0">
 
-                      <!-- 1 -->
-                      <div class="row nrow_active">
-                        <a class="center_flex">
-                          <div class="col-md-2 col-sm-2 col-xs-2">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/nu_01.svg" alt="">
-                          </div>
-  
-                          <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
-                            <h6 class="tleft mtb0px">
-                              <span class="txt317">Govinda Arap</span>
-                              <span class="txt318">&nbsp;commented on your post</span>
-                              <span class="txt62">&nbsp;Thinking and doing are inseparable in a life governed...</span>                    
-                            </h6>
-                          </div>
-  
-                          <div class="col-md-2 col-sm-2 col-xs-2">
-                            <h6 class="tright mtb0px">
-                              <span class="txt63">Now</span>
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chat.svg" alt="" class="img_chat">
-                            </h6>
-                          </div>
-                        </a>
-                      </div> 
                       <!-- /1 -->
-
+                      <ng-container *ngFor="let item of olderNotitification">
+                        <!-- 2 -->
+                        <div class="{{getClass(item)}}">
+                          <a class="center_flex" (click)="NavigateToUrl(item.Url,NotificationId)">
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                              <img src="{{item.IconPath}}" alt="">
+                            </div>
+            
+                            <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
+                              <h6 class="tleft mtb0px">                    
+                                <span class="txt318">{{item.NotificationMsg}}</span>
+                              </h6>
+                            </div>
+            
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                              <h6 class="tright mtb0px">
+                                <span class="txt63">{{item.Time}}</span>                    
+                              </h6>
+                            </div>
+                          </a>
+                        </div>
+                      </ng-container>
                     </div>
                   </div>
                 </div>
