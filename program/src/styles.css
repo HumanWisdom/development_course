@@ -18954,7 +18954,7 @@ ngx-circular-player svg
   background: #FFFFFF;
   color: #5D5D5D;
   border-radius: 0;
-  padding: 25px 25px !important;
+  padding: 25px 20px !important;
 }
 
 .me_box
@@ -18965,7 +18965,7 @@ ngx-circular-player svg
   /* background: #EBEBEB; */
   color: #5D5D5D;
   border-radius: 0;
-  padding: 40px 30px !important;
+  padding: 40px 20px !important;
   background: #1092A7;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -23148,7 +23148,7 @@ ul.dh_ul li
   font-size: 12px;
   line-height: 18px;
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .btn_monthly
@@ -23372,7 +23372,7 @@ a
   /* margin-top: 6rem; */
   margin-bottom: 0;
   background: #EBEBEB;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   height: 60px;
 }
 
@@ -23560,7 +23560,7 @@ a
 }
 
 #searchtxt_02.dark::-webkit-search-cancel-button {
-  filter: invert(1);
+  /* filter: invert(1); */
 }
 /* /searchtxt_02 */
 
@@ -25220,7 +25220,7 @@ input:checked + .slider:before {
 
 .plr20px 
 {
-  padding: 0 20px;
+  padding: 0 20px !important;
 }
 
 .ca_day 
@@ -26724,7 +26724,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 
 .ic_title
 {
-  margin: 57px 0 18px 0;
+  /* margin: 57px 0 18px 0; */
+  margin: 57px 20px 18px 20px;
   /* display: flex;
   justify-content: center; */
 }
@@ -28820,6 +28821,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   z-index: 99;
   display: flex;
   align-items: center;
+  padding: 0 20px;
 }
 
 .tn_module_01
@@ -28834,7 +28836,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   z-index: 99;
   display: flex;
   align-items: center;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 20px;
 }
 
 .tn_fs
@@ -28850,6 +28852,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 0 20px;
 }
 
 .fctray 
@@ -29296,4 +29299,17 @@ svg path
 {
   margin: 10px 10px 30px 10px;
   text-align: center;
+}
+
+.tdiv 
+{
+  padding: 10px 10px;
+}
+
+.btn_annually.active, 
+.btn_annually:active,
+.btn_monthly.active, 
+.btn_monthly:active
+{
+  opacity: 0.9;
 }
