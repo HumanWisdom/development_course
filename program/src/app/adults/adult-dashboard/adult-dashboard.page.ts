@@ -1290,7 +1290,7 @@ export class AdultDashboardPage implements OnInit {
       if (date !== null) {
         let x = new Date(localStorage.getItem("getalertdate"))
         let y = new Date();
-        if (x.getDate() < y.getDate()) {
+        if (x.getDate()+7 < y.getDate()) {
           expire = false;
         } else {
           expire = true;

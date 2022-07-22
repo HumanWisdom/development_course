@@ -104,7 +104,7 @@ export class ProfilePage implements OnInit {
             if (!isSubscribe) {
               alert("We will delete your data once your subscription period ends");
             } else {
-              alert("Your data will be deleted from our system in a few days");
+              alert("Your data will be deleted from our system within the next 7 days");
             }
           }
         )
