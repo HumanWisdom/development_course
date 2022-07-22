@@ -1439,7 +1439,8 @@ export class AdultDashboardPage implements OnInit {
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
 
       })
-  }
+     
+    }
 
   getBookmarks() {
     this.service.getBookmarks(this.userId)
@@ -1462,6 +1463,102 @@ export class AdultDashboardPage implements OnInit {
       case "14": {
         this.routeAnger(1)
         break
+      }
+      case "15":{this.routeConditioning(1)
+        break
+        }
+      case "16":{this.routeCriticism(1)
+              break
+              }
+      case "17":{this.routeSelfEsteem(1)
+              break
+              }
+      case "18":{this.routeEmotionalNeeds(1)
+              break
+              }
+      case "19":{this.routeFearAnxiety(1)
+              break
+              }
+      case "20":{this.routePleasure(1)
+              break
+              }
+      case "21":{this.routeIdentity(1)
+              break
+              }
+      case "22":{this.routeMeditation(1)
+              break
+              }
+      case "23":{this.routeHappiness(1)
+              break
+              }
+      case "25":{this.routeSelfImage(1)
+              break
+              }
+      case "26":{this.routeBenefitsEnquiry(1)
+              break
+              }
+      case "27":{this.routeDiscoveringWisdom(1)
+              break
+              }
+      case "28":{this.routeNature(1)
+              break
+              }
+      case "29":{this.routeBreathing(1)
+              break
+              }
+      case "30":{this.routeNoticingThoughts(1)
+              break
+              }
+      case "32":{this.routeBenefits(1)
+              break
+              }
+      case "33":{this.routeCircles(1)
+              break
+              }
+      case "34":{this.routeIdeas(1)
+              break
+              }
+      case "35":{this.routeGuide(1)
+              break
+              }
+      case "36":{this.routeHowToBegin(1)
+              break
+              }
+      case "37":{this.routeThreeSteps(1)
+              break
+              }
+      case "38":{this.routeInsights(1)
+            break
+            }
+      case "39":{this.routeAwareness(1)
+            break
+            }
+      case "40":{this.routeNoJudgement(1)
+            break
+            }
+      case "41":{this.routeQuestionsAreKey(1)
+            break
+            }
+      case "42":{this.routeLookWithoutLanguage(1)
+            break
+            }
+      case "43":{this.routeObstacles(1)
+            break
+            }
+      case "44":{this.routeStress(1)
+            break
+            }
+      case "45":{this.routeAddiction(1)
+      break
+      }
+      case "46":{this.routeFood(1)
+        break
+        }
+      case "47":{this.routeRelationships(1)
+              break
+              }
+      case "48":{this.routeSuccessAndFailure(1)
+      break
       }
       case "49": {
         this.routeOpinionsAndBeliefs(1)
