@@ -29,7 +29,7 @@ export class ProfileEditPage implements OnInit {
         this.email = this.userdetail['Email']
         this.fullname = this.userdetail['FName'] + ' ' + this.userdetail['LName']
       })
-    }, 3000)
+    }, 1000)
   }
 
   getFileUpload(event) {
