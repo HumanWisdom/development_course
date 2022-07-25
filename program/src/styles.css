@@ -29313,3 +29313,10 @@ svg path
 {
   opacity: 0.9;
 }
+
+.vhr_01 
+{
+  border-right: 1.5px solid #FFFFFF;
+  height: 14px;
+  margin: 10px;
+}
