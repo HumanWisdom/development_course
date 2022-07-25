@@ -25,7 +25,7 @@ export class ProfileEditPage implements OnInit {
       this.onboardingService.getuser(this.userId).subscribe((res) => {
         this.userdetail = res[0];
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
-        this.url = this.userdetail['UserImagePath'].split('\\')[1]
+        this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.email = this.userdetail['Email']
         this.fullname = this.userdetail['FName'] + ' ' + this.userdetail['LName']
       })
