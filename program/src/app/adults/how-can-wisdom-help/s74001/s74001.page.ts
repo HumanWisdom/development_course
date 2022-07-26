@@ -18,7 +18,7 @@ export class S74001Page implements OnInit,OnDestroy {
   screenType=localStorage.getItem("text")
   moduleId:any
   //moduleId=localStorage.getItem("moduleId")
-  screenNumber="74001"
+  screenNumber=74001
   startTime:any
   endTime:any
   totalTime:any
