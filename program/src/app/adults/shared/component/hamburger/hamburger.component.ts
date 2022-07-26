@@ -49,12 +49,12 @@ export class HamburgerComponent implements OnInit {
       let userId = JSON.parse(localStorage.getItem("userId"))
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
-        this.url = userdetail['UserImagePath'].split('\\')[1]
+        this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
       })
       if (sub === '1' || sub === 1) {
         this.subscriber = true;
       }
-    }, 5000)
+    }, 2000)
   }
 
   routeGuide() {
@@ -75,11 +75,10 @@ export class HamburgerComponent implements OnInit {
 
 
   logout() {
-    if(this.platform.isBrowser)
-    {
-        localStorage.setItem('isloggedin', 'F')
-        localStorage.setItem('guest', 'T')
-        this.router.navigate(['/onboarding/login'])
+    if (this.platform.isBrowser) {
+      localStorage.setItem('isloggedin', 'F')
+      localStorage.setItem('guest', 'T')
+      this.router.navigate(['/onboarding/login'])
     }
   }
 
