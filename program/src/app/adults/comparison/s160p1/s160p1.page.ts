@@ -22,7 +22,7 @@ export class S160p1Page implements OnInit {
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=localStorage.getItem("moduleId")
   screenType=localStorage.getItem("feedbackSurvey")
-  screenNumber="161p1"
+  screenNumber="160p1"
   startTime:any
   endTime:any
   totalTime:any
