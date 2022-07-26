@@ -19,7 +19,7 @@ export class S37001Page implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=233
+  screenNumber=37001
   startTime:any
   endTime:any
   totalTime:any

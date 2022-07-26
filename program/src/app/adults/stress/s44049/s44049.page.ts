@@ -23,7 +23,7 @@ export class S44049Page implements OnInit,OnDestroy {
 
  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=26001
+  screenNumber=44049
   startTime:any
   endTime:any
   totalTime:any  
