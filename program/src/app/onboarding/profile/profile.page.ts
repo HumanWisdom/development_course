@@ -64,10 +64,10 @@ export class ProfilePage implements OnInit {
     setTimeout(() => {
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
-        this.url = userdetail['UserImagePath'].split('\\')[1];
+        this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
         this.userData = res[0];
       })
-    }, 3000)
+    }, 1000)
   }
 
   survey() {
