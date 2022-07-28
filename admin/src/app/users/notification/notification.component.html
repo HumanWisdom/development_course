@@ -1,0 +1,207 @@
+<app-top-nav></app-top-nav>
+<app-side-nav></app-side-nav>
+<!-- page content -->
+<div class="right_col" role="main" *ngIf="notificationList">
+
+	<!-- Class -->
+	<div class="">
+
+		<div class="page-title">
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="row">
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="x_panel">
+
+					<div class="x_title">
+						<h2>Add Notification Type</h2>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="x_content">
+						<br />
+
+						<form id="demo-form2">
+
+
+							
+							<div class="form-group" *ngIf="TypeList">
+								<div class="row-centered">
+									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+                                        <label for="p_name" class="control-label">Notification Type<span class="required">*</span></label>
+                                        <select  name="program" class="select2_group form-control" [(ngModel)]="notification.TypeId"  required>
+                                            <option [value]="'0'" selected >Select Type</option>
+                                            <option *ngFor="let a of TypeList" [value]="a.TypeId" >{{a.NotificationType}}</option>
+                                        </select>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="row-centered">
+									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+										<label for="Notification" class="control-label">Notification Msg<span class="required">*</span></label>
+										<input type="text" id="Notification" name="Notification" required="required" class="form-control" [(ngModel)]="notification.NotificationMsg">
+									</div>
+								</div>
+							</div>
+                            
+                            <div class="form-group">
+								<div class="row-centered">
+									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+										  <label for="url_pattern" class="control-label">Url<span class="required">*</span></label>
+										  <input type="text" id="url" name="url" required="url" class="form-control" [(ngModel)]="notification.Url">
+                                    </div>
+								</div>
+							</div>
+
+                          
+
+							<div class="ln_solid"></div>
+
+							<div class="form-group">
+								<div class="col-md-12 col-sm-6 col-xs-12" style="text-align:center;">
+									<div *ngIf="!notification.NotificationMsg||!notification.TypeId||!notification.Url">
+                                        <small class="text-danger">Please fill all details to submit</small>
+                                    </div>
+									<button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
+									<input name="method" id="method" type="hidden" value="<?=$method?>">
+									<input name="submit_Update" type="hidden">
+									<button [disabled]="!notification.NotificationMsg||!notification.TypeId||!notification.Url"
+									type="submit" form="demo-form2" class="btn btn-success" id="next" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3" (click)="addNotification()">Submit</button>
+								</div>
+							</div>
+
+						</form>
+
+					</div>
+
+				</div>
+			</div>
+		 <div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+	
+					<div class="x_panel">
+	
+						<div class="x_title">
+							<h2>Notification Details</h2>
+							<ul class="nav navbar-right panel_toolbox">
+	
+							</ul>
+							<div class="clearfix"></div>
+
+
+						</div>
+	
+						<div class="x_content">
+	
+							<div class="x_content">
+	
+								<div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+								<div class="row">
+
+									<div class="col-md-8 col-sm-12 col-xs-12">
+										<label class="filter_label display_initial"><input type="search" id="filter1" class="form-control input-sm" placeholder="Search Notification Type" aria-controls="datatable-checkbox"  [(ngModel)]="this.searchedTitle" (key.enter)="searchTitle()" (ngModelChange)="searchTitle()"></label>
+									</div>
+
+									<div class="col-md-4 col-sm-12 col-xs-12">
+										<div class="search_btn">
+										</div>
+									</div>
+								</div>
+							</div>
+	
+								<br>
+								<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+									<thead>
+									<tr>
+										<th>Notification Message</th>
+										<th>Icon</th>
+										<th>Url</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr *ngFor="let s of notificationList;let i=index">
+										<td>{{s.NotificationMsg}}</td>
+                                        
+										<td> 
+                                             <img src="{{ s.IconPath !== undefined ? s.IconPath: '' }}"
+                                            alt="" class="p0 opaque_border_inner img-responsive img_profile_01" alt="" height=50 width=50>
+                                        </td>
+										<td>{{s.Url}}</td>
+	
+										<td>
+											<button type="button" class="btn btn-xs btn-success command-add"><span class="glyphicon glyphicon-edit" (click)="initUpdate(s.NotificationId)" data-toggle="modal"  [attr.data-target]="'#updateModal'+s.NotificationId"></span></button>
+											<button type="button" class="btn btn-xs btn-danger command-edit"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#editforum" (click)="delete(s.NotificationId)"></span></button>
+										</td>
+										<div class="modal fade" [attr.id]="'updateModal'+s.NotificationId" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+											<div class="modal-dialog vc70" role="document">
+											  <div class="modal-content cmodal-content">
+												<div class="modal-header cmodal-header tcenter white">
+												  <h1 class="modal-title cmodal-title"
+												  >Please enter new details</h1>
+	
+												</div>
+												<div class="modal-body">
+	
+													<form id="demo-form2" action="form_c.php" method="post">
+	
+														<div class="form-group">
+															<div class="row-centered">
+																<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+																	<label for="p" class="control-label">Notification Message<span class="required">*</span></label>
+																	<input type="text" id="notify" name="notify" required="required" class="form-control" pattern="" [(ngModel)]="updateNotification.NotificationMsg">
+																</div>
+															</div>
+														</div>
+	
+	
+														<div class="form-group">
+															<div class="row-centered">
+																<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+                                                                    <label for="url_pattern" class="control-label">Icon Path<span class="required">*</span></label>
+                                                                        <input type="text" id="filename" name="filename" class="form-control" [(ngModel)]="updateNotification.IconPath"/>
+																</div>
+															</div>
+														</div>
+	
+	
+														<div class="form-group">
+															<div class="row-centered">
+																<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+																	<label for="story" class="control-label">Url<span class="required">*</span></label>
+																	<input type="text" id="p" name="p" required="required" class="form-control" pattern="" [(ngModel)]="updateNotification.Url">
+																</div>
+															</div>
+														</div>
+	
+	
+	
+													</form>
+	
+												</div>
+												<div class="modal-footer cmodal-footer tcenter">
+												  <button [disabled]="!updateNotification.NotificationMsg||!updateNotification.IconPath||!updateNotification.Url" type="button" class="btn fill_now btn btn-success"  data-dismiss="modal" (click)="update()" >UPDATE</button>
+												  <button type="button" class="btn fill_later" data-dismiss="modal" (click)="clearUpdateModel()"  >BACK</button>
+												</div>
+											  </div>
+											</div>
+										</div>
+									</tr>
+									</tbody>
+								</table> 
+	
+	
+								</div>
+	
+						</div>
+					</div>-->
+       
+	</div>
+	<!--/Class -->
+
+</div>
+<!-- /page content -->
+<app-footer></app-footer>

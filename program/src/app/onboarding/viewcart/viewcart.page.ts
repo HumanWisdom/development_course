@@ -9,7 +9,7 @@ import {OnboardingService} from '../onboarding.service'
   styleUrls: ['./viewcart.page.scss'],
 })
 export class ViewcartPage implements OnInit {
-  cartList:any
+  cartList:any[]=[];
   countryList=[]
   totalCartValue:any
   totalItemCount=0
@@ -82,8 +82,9 @@ export class ViewcartPage implements OnInit {
       {
         
         this.cartList=res
-        this.symbol=this.cartList[0].Symbol
-        
+        if(this.cartList.length>0){
+          this.symbol=this.cartList[0].Symbol;
+        }
         for(var i=0;i<this.cartList.length;i++){
           this.cartList[i].Qty=parseFloat(this.cartList[i].Qty)
           this.cartList[i].Amt=parseFloat(this.cartList[i].Amt)
@@ -144,24 +145,26 @@ export class ViewcartPage implements OnInit {
   personalisedaddcart() {
     let m = JSON.parse(localStorage.getItem('cartlist'));
     let ym = localStorage.getItem('personalised subscription');
-    this.service.addItem({
-      "UserId":this.userId,
-      "RateId": m['RateID'],
-      "Qty":1,
-      "PlanId": ym === 'Monthly' ? 1 : 2,
-      "MySelf": 1,
-      "LearnerEmail": '',
-      "LearnerMsg": '',
-      })
-      .subscribe(res=>{
-        this.viewCart()
-      },
-      error=>{
-        console.log(error)
-      },
-      ()=>{
-        this.totalPrice()  
-      })
+    if(m !=null && ym !=null){
+      this.service.addItem({
+        "UserId":this.userId,
+        "RateId": m['RateID'],
+        "Qty":1,
+        "PlanId": ym === 'Monthly' ? 1 : 2,
+        "MySelf": 1,
+        "LearnerEmail": '',
+        "LearnerMsg": '',
+        })
+        .subscribe(res=>{
+          this.viewCart()
+        },
+        error=>{
+          console.log(error)
+        },
+        ()=>{
+          this.totalPrice()  
+        })
+    }
   }
 
   addToCart(){
@@ -311,9 +314,6 @@ export class ViewcartPage implements OnInit {
     let pid = this.cartList[0]['ProgID']
     console.log(pid)
    
-    
-      
-
     if(this.cartList[0].Plan=="Monthly")
     {
       this.cartList[0].planId=1
