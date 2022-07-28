@@ -13,9 +13,9 @@ import { Number } from './interfaces/number'
 })
 export class UsersService {
 // path="http://18.132.47.231/api";
-//path="https://www.humanwisdom.info/api"
+path="https://www.humanwisdom.info/api"
 //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
- path="https://staging.humanwisdom.info/api"
+ //path="https://staging.humanwisdom.info/api"
 
   constructor(
     private http: HttpClient,
@@ -371,5 +371,33 @@ export class UsersService {
   deleteTopic(n: Number): Observable<any> {
     return this.http.post(this.path + `/DelGuidedQs_Topics/${n.Id}`, null)
   }
+  getNotificationTypeList(): Observable<any> {
+    return this.http.get(this.path + '/GetNotificationType');
+   }
+   
+   addNotificationType(data:any): Observable<any> {
+    return this.http.post(this.path + '/addNotificationType', data);
+  }
+  DelnotificationType(n: Number): Observable<any> {
+    return this.http.post(this.path + `/DelnotificationType/${n.Id}`, null)
+  }
+
+  Delnotification(n: Number): Observable<any> {
+    return this.http.post(this.path + `/DelNotifications/${n.Id}`, null)
+  }
+
+  NotificationList(): Observable<any> {
+    return this.http.get(this.path + `/GetAllNotifications/`)
+  }
+
+  addNotification(data:any): Observable<any> {
+    return this.http.post(this.path + '/AddNotifications', data);
+  }
+
+  NotificationTypeList(): Observable<any> {
+    return this.http.get(this.path + `/GetNotificationType/`)
+  }
+  
+  
 }
 

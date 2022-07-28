@@ -262,5 +262,11 @@ export class SideNavComponent implements OnInit {
   routeGuidedTopics(){
     this.router.navigate(['users/guidedQuestionTopics'])
   }
-
+  
+  routeNotificationType(){
+    this.router.navigate(['users/notificationType'])
+  }
+  routeNotification(){
+    this.router.navigate(['users/notification'])
+  }
 }
