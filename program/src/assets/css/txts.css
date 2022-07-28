@@ -2868,3 +2868,25 @@
     line-height: 130%;
     color: #5D5D5D;
 }
+
+.txt319 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    /* or 17px */
+    color: #000000;
+}
+
+.txt320 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    /* or 17px */
+    color: #000000;
+}

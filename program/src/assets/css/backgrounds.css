@@ -156,7 +156,7 @@
 
 .bg_treesisters
 {  
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/treesisters/treesisters.svg) no-repeat center center fixed !important;
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/treesisters/treesisters.svg) no-repeat center center!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
