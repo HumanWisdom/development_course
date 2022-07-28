@@ -111,12 +111,16 @@ export class S26018Page implements OnInit {
         document.getElementById(this.falseans).style.background = '#FFFFFF';
         document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
         document.getElementById(this.falseans).style.opacity = '0.75';
+        this.falseans = opt.OptId
+      } else {
+        this.falseans = opt.OptId
       }
     } else {
       if (this.falseans !== '') {
         document.getElementById(this.falseans).style.background = '#FFFFFF';
         document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
         document.getElementById(this.falseans).style.opacity = '0.75';
+        this.falseans = opt.OptId
       } else {
         this.falseans = opt.OptId
       }
