@@ -29,10 +29,12 @@
               "node_modules/slick-carousel/slick/slick-theme.scss",                            
               "src/assets/vendors/nprogress/nprogress.css",
               "src/assets/vendors/iCheck/skins/flat/green.css",              
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/summernote/dist/summernote-lite.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",   
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/summernote/dist/summernote-lite.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",       
               "node_modules/bootstrap/dist/js/bootstrap.min.js",    
               "node_modules/slick-carousel/slick/slick.min.js",              

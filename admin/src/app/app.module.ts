@@ -13,12 +13,7 @@ import { FrameworksModule } from './frameworks/frameworks.module';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
-
-
-
-
-
-
+// import { NgxSummernoteModule } from 'node_modules/ngx-summernote';
 @NgModule({
   declarations: [
     AppComponent,

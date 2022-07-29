@@ -36,6 +36,7 @@
     "ng2-fontawesome": "0.0.6",
     "ngx-editor": "^11.0.0",
     "ngx-slick-carousel": "^0.4.7",
+    "ngx-summernote": "^0.8.8",
     "popper.js": "^1.16.1",
     "rxjs": "^6.5.3",
     "slick-carousel": "^1.8.1",
