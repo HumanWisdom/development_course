@@ -37,6 +37,8 @@ import { AllotScreensComponent } from './allot-screens/allot-screens.component';
 import { ForumsComponent } from './forums/forums.component';
 import { GuidedquestiontopicsComponent } from './guidedquestiontopics/guidedquestiontopics.component';
 import { GuidedquestionComponent } from './guidedquestion/guidedquestion.component';
+import { NotificationTypeComponent } from './notification-type/notification-type.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
@@ -190,6 +192,14 @@ const routes: Routes = [
 {
   path: "guidedQuestion",
   component: GuidedquestionComponent
+},
+{
+  path: "notificationType",
+  component: NotificationTypeComponent
+},
+{
+  path: "notification",
+  component: NotificationComponent
 },
 ];
 

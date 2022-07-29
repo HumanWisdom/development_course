@@ -3,14 +3,15 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header onscrollbs bg_transparent">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
       <a routerLink="/onboarding/user-profile">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+          class="img-responsive">
       </a>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      
+
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      
+
     </div>
   </div>
 </div>
@@ -28,7 +29,8 @@
               <div class="row forum_pt20px center_flex">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex w50p">
                   <div class="opaque_border_outer">
-                    <img src="{{imageupload !== undefined ? imageupload : url === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
+                    <img
+                      src="{{imageupload !== undefined ? imageupload : url === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
                       alt="" class="p0 opaque_border_inner img-responsive img_profile_01">
                   </div>
                 </div>
@@ -116,7 +118,8 @@
 
               <div class="row mt40px center_flex">
                 <div class="col-md-6 col-sm-6 col-xs-6 center_flex">
-                  <button (click)="updateUser()" [disabled]="email === '' || fullname === ''" type="submit" class="btn btn-warning btn_update_changes w100">
+                  <button (click)="updateUser()" [disabled]="email === '' || fullname === ''" type="submit"
+                    class="btn btn-warning btn_update_changes w100">
                     Update Changes
                   </button>
                 </div>
