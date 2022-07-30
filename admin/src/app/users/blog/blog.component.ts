@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular
 import { Router } from '@angular/router';
 import { UsersService } from '../users.service';
 
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
