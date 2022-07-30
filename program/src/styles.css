@@ -23742,8 +23742,9 @@ a
   align-items: center;
   flex-flow: wrap;
   align-content: center;
-  margin-bottom: 2px;
+  /* margin-bottom: 2px; */
   display: flex;
+  margin: 0 -10px 2px -10px;
 }
 
 .bg_gallery
