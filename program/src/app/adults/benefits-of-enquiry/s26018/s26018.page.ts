@@ -9,7 +9,6 @@ import { AdultsService } from "../../adults.service";
   styleUrls: ['./s26018.page.scss'],
 })
 export class S26018Page implements OnInit {
-
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w5"
@@ -31,7 +30,7 @@ export class S26018Page implements OnInit {
   questionA: any
   checkedRight = false
   option: any
-  sessionOption = JSON.parse(sessionStorage.getItem("sessionOption"))
+  sessionOption = JSON.parse(sessionStorage.getItem("sessionOptions26018"))
   sendOption = []
   elseSelected = false
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
@@ -105,7 +104,7 @@ export class S26018Page implements OnInit {
     this.sessionOption = []
     if (opt.CorrectAns) {
       this.option = opt.OptId
-      sessionStorage.setItem("sessionOption", JSON.stringify(this.option))
+      sessionStorage.setItem("sessionOptions26018", JSON.stringify(this.option))
       document.getElementById(opt.OptId).style.background = '#FFC455';
       if (this.falseans !== '') {
         document.getElementById(this.falseans).style.background = '#FFFFFF';
