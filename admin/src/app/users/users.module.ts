@@ -44,6 +44,7 @@ import { GuidedquestionComponent } from './guidedquestion/guidedquestion.compone
 import { GuidedquestiontopicsComponent } from './guidedquestiontopics/guidedquestiontopics.component';
 import { NotificationTypeComponent } from './notification-type/notification-type.component';
 import { NotificationComponent } from './notification/notification.component';
+import { NgxSummernoteModule } from 'node_modules/ngx-summernote';
 
 @NgModule({
   declarations: [HomeComponent, FaqComponent, PricingComponent, SectionComponent, ModulesComponent, ForumComponent, ModeratorComponent, ProgramComponent, ReflectionComponent, SubscriptionComponent, AssessmentComponent, QuestionComponent, CategoryComponent, GroupComponent, CouponsComponent, PointsComponent, TagsComponent, ScenariosComponent, KeysComponent, TestimonialsComponent, ScreensComponent, SitesectionsComponent, DailyquestionComponent, OptionsComponent, ModulePercentComponent, SessionComponent, AllotScreensComponent, AffiliateComponent, AffiliateAllUsersComponent, MyAffiliateComponent, ViewAffiliateComponent, ManagePopupComponent, ForumsComponent, BlogComponent, DailypractiseComponent, GuidedquestionComponent,GuidedquestiontopicsComponent, NotificationTypeComponent,
@@ -55,7 +56,8 @@ import { NotificationComponent } from './notification/notification.component';
     SharedModule, 
     FormsModule,
     ReactiveFormsModule,
-    NgxEditorModule
+    NgxEditorModule,
+    NgxSummernoteModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
