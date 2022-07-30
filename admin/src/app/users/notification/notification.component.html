@@ -16,7 +16,7 @@
 				<div class="x_panel">
 
 					<div class="x_title">
-						<h2>Add Notification Type</h2>
+						<h2>Add Notification</h2>
 						<div class="clearfix"></div>
 					</div>
 
@@ -43,7 +43,7 @@
 								<div class="row-centered">
 									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
 										<label for="Notification" class="control-label">Notification Msg<span class="required">*</span></label>
-										<input type="text" id="Notification" name="Notification" required="required" class="form-control" [(ngModel)]="notification.NotificationMsg">
+										<textarea id="message" required="required" class="form-control" [(ngModel)]="notification.NotificationMsg" name="message" rows="3" ></textarea>
 									</div>
 								</div>
 							</div>
@@ -147,12 +147,22 @@
 												<div class="modal-body">
 	
 													<form id="demo-form2" action="form_c.php" method="post">
-	
+														<div class="form-group">
+															<div class="row-centered">
+														<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
+															<label for="p_name" class="control-label">Notification Type<span class="required">*</span></label>
+															<select  name="program" class="select2_group form-control" [(ngModel)]="updateNotification.TypeId"  required>
+																<option [value]="'0'" selected >Select Type</option>
+																<option *ngFor="let a of TypeList" [value]="a.TypeId" >{{a.NotificationType}}</option>
+															</select>
+														</div>
+														</div>
+														</div>
 														<div class="form-group">
 															<div class="row-centered">
 																<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
 																	<label for="p" class="control-label">Notification Message<span class="required">*</span></label>
-																	<input type="text" id="notify" name="notify" required="required" class="form-control" pattern="" [(ngModel)]="updateNotification.NotificationMsg">
+																	<textarea id="message" required="required" class="form-control" [(ngModel)]="updateNotification.NotificationMsg" name="message" rows="3" ></textarea>
 																</div>
 															</div>
 														</div>
