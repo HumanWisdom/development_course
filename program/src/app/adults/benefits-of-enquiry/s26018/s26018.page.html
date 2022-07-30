@@ -24,11 +24,11 @@
         <div class="col-md-12 col-sm-12 col-xs-12  p0">
           <div *ngIf="!o.CorrectAns">
             <!-- <a class="sb_anchor" data-toggle="modal" [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" > -->
-            <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
-              <div id="{{o.OptId}}" class="box select_box fleft">
-
+            <a class="sb_anchor">
+              <div id="{{o.OptId}}" class="box select_box fleft" (click)="checkOption(o)" data-toggle="modal"
+                data-target="#lab-slide-bottom-popup">
                 <div>
-                  <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}" (click)="checkOption(o)">
+                  <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}
                     <!-- Having done something before and succeeded -->
                   </h3>
@@ -40,9 +40,9 @@
           <div *ngIf="o.CorrectAns">
             <a class="sb_anchor">
               <div id="{{o.OptId}}" [ngStyle]="{'background-color': o.OptId==this.sessionOption ? '#FFC455' : ''}"
-                class="box select_box  fleft">
+                class="box select_box  fleft" (click)="checkOption(o)">
                 <div>
-                  <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}" (click)="checkOption(o)">
+                  <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}
                     <!-- Having done something before and succeeded -->
                   </h3>
