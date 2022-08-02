@@ -5,6 +5,8 @@ import { AdultsService } from 'src/app/adults/adults.service';
 
 declare var $: any;
 
+var moveleft = false;
+
 @Component({
   selector: 'app-intro-carousel',
   templateUrl: './intro-carousel.page.html',
@@ -38,6 +40,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     $('#ic_carousel').on('slid.bs.carousel', function (data) {
       let arr = data['relatedTarget']['classList'];
       let istrue = false;
+      if (Array.from(arr)[1] === '4') moveleft = true
+      else moveleft = false
       arr.forEach((d, ind) => {
         if (d === '4') {
           istrue = true;
@@ -49,15 +53,27 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         document.getElementById('activenext').style.display = 'none';
         document.getElementById('inactivenext').style.display = 'flex';
       } else {
-        document.getElementById('activenext').style.display = 'flex';
-        document.getElementById('inactivenext').style.display = 'none';
+        document.getElementById('activenext') ? document.getElementById('activenext').style.display = 'flex' : '';
+        document.getElementById('inactivenext') ? document.getElementById('inactivenext').style.display = 'none' : '';
       }
     })
+    var container = document.querySelector(".carousel");
+
+    container.addEventListener("touchstart", this.startTouch.bind(this), false);
+    container.addEventListener("touchmove", this.moveTouch.bind(this), false);
+
     $('.carousel').bcSwipe({ threshold: 50 });
   }
 
+  startTouch(e) {
+    if (moveleft) this.skip()
+  };
+
+  moveTouch(e) {
+    if (moveleft) this.skip()
+  };
+
   skip() {
-    // localStorage.setItem('personalised', 'F');
     this.router.navigate(['/intro/personalised-for-you']);
   }
 
