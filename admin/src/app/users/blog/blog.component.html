@@ -49,10 +49,13 @@
 								<div class="row-centered">
 									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
 										<label for="patient_name" class="control-label">Blog<span class="required">*</span></label>
-										<!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea> -->
+										<!-- <textarea id="message" required="required" class="form-control"  [(ngModel)]="this.newStory" name="message" rows="3"></textarea> -->
                                         <!-- <textarea id="message" required="required" class="form-control" name="message" rows="3" [(ngModel)]="this.newStory"></textarea> -->
 										<!-- <textarea id="summernote"></textarea> -->
-										<div [ngxSummernote]></div>
+										<textarea 
+										name="html" [(ngModel)]="newStory"
+										[ngxSummernote]="config" > -->
+									    </textarea>
 									</div>
 								</div>
 							</div>
@@ -79,7 +82,7 @@
 									<button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
 									<input name="method" id="method" type="hidden" value="<?=$method?>">
 									<input name="submit_Update" type="hidden">
-									<button [disabled]="!newTitle||!newStory"
+									<button [disabled]="!newTitle"
 									type="submit" form="demo-form2" class="btn btn-success" id="next" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3" (click)="addScenario()">Submit</button>
 								</div>
 							</div>
@@ -170,7 +173,11 @@
                                                             <div class="col-md-8 col-sm-6 col-xs-12 col-centered">
                                                                 <label for="story" class="control-label">Blog<span class="required">*</span></label>
                                                                 <!-- <textarea id="message" required="required" class="form-control" name="message" rows="3"></textarea> -->
-																<textarea id="message" required="required" class="form-control" name="message" rows="3" [(ngModel)]="this.updatedStory"></textarea>
+																<!-- <textarea id="message" required="required" class="form-control" name="message" rows="3" [(ngModel)]="this.updatedStory"></textarea> -->
+																 <textarea 
+																 name="html" [(ngModel)]="updatedStory"
+																 [ngxSummernote]="config" >
+																 </textarea>
                                                             </div>
                                                         </div>
                                                     </div>

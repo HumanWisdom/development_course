@@ -35,6 +35,7 @@ export class NotificationTypeComponent implements OnInit {
     this.service.addNotificationType(this.notificationType).subscribe((x) => {
       this.ClearInputBox();
       window.alert('Topics Saved successfully');
+      this.getNotificationTypeList();
     });
   }
 
