@@ -1290,7 +1290,7 @@ export class AdultDashboardPage implements OnInit {
       if (date !== null) {
         let x = new Date(localStorage.getItem("getalertdate"))
         let y = new Date();
-        if (x.getDate()+7 < y.getDate()) {
+        if (x.getDate() + 7 < y.getDate()) {
           expire = false;
         } else {
           expire = true;
@@ -1387,7 +1387,7 @@ export class AdultDashboardPage implements OnInit {
 
         //static progress
         this.angerP = res.ModUserScrPc.find(e => e.Module == "Anger")?.Percentage
-        this.comparisonP = res.ModUserScrPc.find(e => e.Module == "Comparison")?.Percentage
+        this.comparisonP = res.ModUserScrPc.find(e => e.Module == "Comparison & Envy")?.Percentage
         this.awarenessP = res.ModUserScrPc.find(e => e.Module == "Awareness")?.Percentage
         this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
         this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
@@ -1429,18 +1429,18 @@ export class AdultDashboardPage implements OnInit {
         this.lonelinessP = res.ModUserScrPc.find(e => e.Module == "Loneliness")?.Percentage
         this.livingwithpeaceP = res.ModUserScrPc.find(e => e.Module == "Living With Peace")?.Percentage
         this.loveP = res.ModUserScrPc.find(e => e.Module == "Love")?.Percentage
-        this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing With Death")?.Percentage
+        this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing with Death")?.Percentage
         this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions And Beliefs")?.Percentage
-        this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success And Failure")?.Percentage
+        this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
         this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
         this.foodP = res.ModUserScrPc.find(e => e.Module == "Food")?.Percentage
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
-        this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow And Loss")?.Percentage
+        this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
 
       })
-     
-    }
+
+  }
 
   getBookmarks() {
     this.service.getBookmarks(this.userId)
@@ -1464,101 +1464,133 @@ export class AdultDashboardPage implements OnInit {
         this.routeAnger(1)
         break
       }
-      case "15":{this.routeConditioning(1)
+      case "15": {
+        this.routeConditioning(1)
         break
-        }
-      case "16":{this.routeCriticism(1)
-              break
-              }
-      case "17":{this.routeSelfEsteem(1)
-              break
-              }
-      case "18":{this.routeEmotionalNeeds(1)
-              break
-              }
-      case "19":{this.routeFearAnxiety(1)
-              break
-              }
-      case "20":{this.routePleasure(1)
-              break
-              }
-      case "21":{this.routeIdentity(1)
-              break
-              }
-      case "22":{this.routeMeditation(1)
-              break
-              }
-      case "23":{this.routeHappiness(1)
-              break
-              }
-      case "25":{this.routeSelfImage(1)
-              break
-              }
-      case "26":{this.routeBenefitsEnquiry(1)
-              break
-              }
-      case "27":{this.routeDiscoveringWisdom(1)
-              break
-              }
-      case "28":{this.routeNature(1)
-              break
-              }
-      case "29":{this.routeBreathing(1)
-              break
-              }
-      case "30":{this.routeNoticingThoughts(1)
-              break
-              }
-      case "32":{this.routeBenefits(1)
-              break
-              }
-      case "33":{this.routeCircles(1)
-              break
-              }
-      case "34":{this.routeIdeas(1)
-              break
-              }
-      case "35":{this.routeGuide(1)
-              break
-              }
-      case "36":{this.routeHowToBegin(1)
-              break
-              }
-      case "37":{this.routeThreeSteps(1)
-              break
-              }
-      case "38":{this.routeInsights(1)
-            break
-            }
-      case "39":{this.routeAwareness(1)
-            break
-            }
-      case "40":{this.routeNoJudgement(1)
-            break
-            }
-      case "41":{this.routeQuestionsAreKey(1)
-            break
-            }
-      case "42":{this.routeLookWithoutLanguage(1)
-            break
-            }
-      case "43":{this.routeObstacles(1)
-            break
-            }
-      case "44":{this.routeStress(1)
-            break
-            }
-      case "45":{this.routeAddiction(1)
-      break
       }
-      case "46":{this.routeFood(1)
+      case "16": {
+        this.routeCriticism(1)
         break
-        }
-      case "47":{this.routeRelationships(1)
-              break
-              }
-      case "48":{this.routeSuccessAndFailure(1)
-      break
+      }
+      case "17": {
+        this.routeSelfEsteem(1)
+        break
+      }
+      case "18": {
+        this.routeEmotionalNeeds(1)
+        break
+      }
+      case "19": {
+        this.routeFearAnxiety(1)
+        break
+      }
+      case "20": {
+        this.routePleasure(1)
+        break
+      }
+      case "21": {
+        this.routeIdentity(1)
+        break
+      }
+      case "22": {
+        this.routeMeditation(1)
+        break
+      }
+      case "23": {
+        this.routeHappiness(1)
+        break
+      }
+      case "25": {
+        this.routeSelfImage(1)
+        break
+      }
+      case "26": {
+        this.routeBenefitsEnquiry(1)
+        break
+      }
+      case "27": {
+        this.routeDiscoveringWisdom(1)
+        break
+      }
+      case "28": {
+        this.routeNature(1)
+        break
+      }
+      case "29": {
+        this.routeBreathing(1)
+        break
+      }
+      case "30": {
+        this.routeNoticingThoughts(1)
+        break
+      }
+      case "32": {
+        this.routeBenefits(1)
+        break
+      }
+      case "33": {
+        this.routeCircles(1)
+        break
+      }
+      case "34": {
+        this.routeIdeas(1)
+        break
+      }
+      case "35": {
+        this.routeGuide(1)
+        break
+      }
+      case "36": {
+        this.routeHowToBegin(1)
+        break
+      }
+      case "37": {
+        this.routeThreeSteps(1)
+        break
+      }
+      case "38": {
+        this.routeInsights(1)
+        break
+      }
+      case "39": {
+        this.routeAwareness(1)
+        break
+      }
+      case "40": {
+        this.routeNoJudgement(1)
+        break
+      }
+      case "41": {
+        this.routeQuestionsAreKey(1)
+        break
+      }
+      case "42": {
+        this.routeLookWithoutLanguage(1)
+        break
+      }
+      case "43": {
+        this.routeObstacles(1)
+        break
+      }
+      case "44": {
+        this.routeStress(1)
+        break
+      }
+      case "45": {
+        this.routeAddiction(1)
+        break
+      }
+      case "46": {
+        this.routeFood(1)
+        break
+      }
+      case "47": {
+        this.routeRelationships(1)
+        break
+      }
+      case "48": {
+        this.routeSuccessAndFailure(1)
+        break
       }
       case "49": {
         this.routeOpinionsAndBeliefs(1)
