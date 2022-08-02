@@ -1430,7 +1430,7 @@ export class AdultDashboardPage implements OnInit {
         this.livingwithpeaceP = res.ModUserScrPc.find(e => e.Module == "Living With Peace")?.Percentage
         this.loveP = res.ModUserScrPc.find(e => e.Module == "Love")?.Percentage
         this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing with Death")?.Percentage
-        this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions And Beliefs")?.Percentage
+        this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
         this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
         this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
         this.foodP = res.ModUserScrPc.find(e => e.Module == "Food")?.Percentage
