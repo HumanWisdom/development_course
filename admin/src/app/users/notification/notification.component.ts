@@ -45,7 +45,8 @@ export class NotificationComponent implements OnInit {
     NotificationMsg:"",
     Url:"",
     IconPath:"",
-    NotificationId:0
+    NotificationId:0,
+    TypeId:0
  }
   }
   addNotification(){
@@ -97,6 +98,7 @@ export class NotificationComponent implements OnInit {
       this.updateNotification.IconPath = data[0].IconPath;
       this.updateNotification.Url = data[0].Url;
       this.updateNotification.NotificationMsg = data[0].NotificationMsg;
+      this.updateNotification.TypeId=data[0].TypeId;
     }
   }
 

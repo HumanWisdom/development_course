@@ -37,7 +37,60 @@ export class BlogComponent implements OnInit {
   updatedImagePath:any
   updatedMessage:any
   blogID:any
-
+  config: any = {
+    airMode: false,
+    tabDisable: true,
+    popover: {
+      table: [
+        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+      ],
+      image: [
+        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+        ['remove', ['removeMedia']],
+      ],
+      link: [['link', ['linkDialogShow', 'unlink']]],
+      air: [
+        [
+          'font',
+          [
+            'bold',
+            'italic',
+            'underline',
+            'strikethrough',
+            'superscript',
+            'subscript',
+            'clear',
+          ],
+        ],
+      ],
+    },
+    height: '200px',
+    uploadImagePath: '/api/upload',
+    toolbar: [
+      ['misc', ['codeview', 'undo', 'redo', 'codeBlock']],
+      [
+        'font',
+        [
+          'bold',
+          'italic',
+          'underline',
+          'strikethrough',
+          'superscript',
+          'subscript',
+          'clear',
+        ],
+      ],
+      ['fontsize', ['fontname', 'fontsize', 'color']],
+      ['para', ['style0', 'ul', 'ol', 'paragraph', 'height']],
+      ['insert', ['table', 'picture', 'link', 'video', 'hr']],
+    ],
+  
+    codeviewFilter: true,
+    codeviewFilterRegex: /<\/*(?:applet|b(?:ase|gsound|link)|embed|frame(?:set)?|ilayer|l(?:ayer|ink)|meta|object|s(?:cript|tyle)|t(?:itle|extarea)|xml|.*onmouseover)[^>]*?>/gi,
+    codeviewIframeFilter: true,
+  };
   constructor(private router: Router,private service:UsersService) { }
 
   ngOnInit() {
@@ -167,12 +220,12 @@ export class BlogComponent implements OnInit {
   }
 
   addScenario(){
-    this.service.addBlog({
-    "Title":this.newTitle,
-    "Blog":this.newStory,
-    "ImgPath":this.imagePath,
-    "BlogID": ''
-      })
+    let data ={
+      Title:this.newTitle,
+      Blog:this.newStory,
+      ImagPath:this.imagePath,
+    } as  any
+    this.service.addBlog(data)
     .subscribe(res=>
       {
       console.log(res)

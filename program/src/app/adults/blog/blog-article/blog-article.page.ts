@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { AdultsService } from '../../adults.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import {Location } from '@angular/common'
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -19,7 +20,7 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsListabove = []
   path=  this.router.url
 
-  constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,  private route: ActivatedRoute) {
+  constructor(private sanitizer: DomSanitizer,private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,  private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.blogid=params?.sId
   });
@@ -51,7 +52,9 @@ export class BlogArticlePage implements OnInit {
       }
     )
   }
-
+  getHtml(html){
+    return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
   timeSince(date) {
     return moment.utc(date).fromNow();
   }
