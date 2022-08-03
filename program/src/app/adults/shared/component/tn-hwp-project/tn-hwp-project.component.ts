@@ -11,7 +11,7 @@ export class TnHwpProjectComponent implements OnInit {
   name = ''
   roleid = 0
   url = '';
-  subscriper= false;
+  subscriper = false;
 
   @Input()
   enablebookmark = false
@@ -20,19 +20,19 @@ export class TnHwpProjectComponent implements OnInit {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem("Subscriber")
-    if(sub === '1') {
+    if (sub === '1') {
       this.subscriper = true;
     }
     this.name = localStorage.getItem('name');
-    if(userid === 'T') {
+    if (userid === 'T') {
       this.isloggedIn = true
     }
-    let userId=JSON.parse(localStorage.getItem("userId"))
-    this.Onboardingservice.getuser(userId).subscribe((res)=>{
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    this.Onboardingservice.getuser(userId).subscribe((res) => {
       let userdetail = res[0];
-      this.url = userdetail['UserImagePath'].split('\\')[1] 
+      this.url = userdetail['UserImagePath'].split('\\')[1]
     })
-   }
+  }
 
   ngOnInit() {
   }
@@ -46,11 +46,11 @@ export class TnHwpProjectComponent implements OnInit {
   }
 
   routeAffiliate() {
-      let userId = JSON.parse(localStorage.getItem("userId"))
-      window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
-      return false;
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
+    return false;
   }
- 
+
   logout() {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
@@ -64,6 +64,10 @@ export class TnHwpProjectComponent implements OnInit {
 
   giftwisdom() {
     localStorage.setItem('giftwisdom', 'T')
+  }
+
+  routedashboard() {
+    this.router.navigate(['/adults/adult-dashboard'])
   }
 
 }
