@@ -43,7 +43,11 @@
 								<div class="row-centered">
 									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
 										<label for="Notification" class="control-label">Notification Msg<span class="required">*</span></label>
-										<textarea id="message" required="required" class="form-control" [(ngModel)]="notification.NotificationMsg" name="message" rows="3" ></textarea>
+										<!-- <textarea id="message" required="required" class="form-control" [(ngModel)]="notification.NotificationMsg" name="message" rows="3" ></textarea> -->
+										<textarea 
+										name="html" [(ngModel)]="notification.NotificationMsg"
+										[ngxSummernote]="config" >
+										</textarea>
 									</div>
 								</div>
 							</div>
@@ -162,7 +166,11 @@
 															<div class="row-centered">
 																<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
 																	<label for="p" class="control-label">Notification Message<span class="required">*</span></label>
-																	<textarea id="message" required="required" class="form-control" [(ngModel)]="updateNotification.NotificationMsg" name="message" rows="3" ></textarea>
+																	
+																	<textarea 
+																	name="html" [(ngModel)]="updateNotification.NotificationMsg"
+																	[ngxSummernote]="config" >
+																	</textarea>
 																</div>
 															</div>
 														</div>
