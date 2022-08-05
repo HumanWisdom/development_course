@@ -39,13 +39,13 @@
 
               <div class="container">
                 <ul class="nav nav-tabs gqtns flex_ai mt30px">
-                  <li class="active">
-                    <a data-toggle="tab" href="#tab1">
+                  <li [ngClass]="{'active':!isHowItWorks}">
+                    <a data-toggle="tab" (click)="enabledtab('whybepartner')">
                       Why be a partner
                     </a>
                   </li>
-                  <li>
-                    <a data-toggle="tab" href="#tab2">
+                  <li [ngClass]="{'active':isHowItWorks}">
+                    <a (click)="enabledtab('howitworks')" data-toggle="tab">
                       How it works
                     </a>
                   </li>                  
@@ -53,7 +53,7 @@
           
                 <div class="tab-content mt30px plr10px">
                   <!-- tab1 -->
-                  <div id="tab1" class="tab-pane fade in active">
+                  <div id="tab1" class="tab-pane fade in active" *ngIf="!isHowItWorks">
                     <form>
   
                       <div class="row">
@@ -253,7 +253,7 @@
                       <div class="row pmlr-10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <video controls playinline class="cvideo" poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video.svg" controlsList="nodownload">
-                            <source src="videoLink" type="video/mp4">
+                            <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program.mp4" type="video/mp4">
                           </video>    
                         </div>
                       </div>
@@ -430,7 +430,7 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <a>
+                          <a (click)="scroll_to_obs(other_benefits)">
                             <h4 class="txt302 vpb">
                               View Partnership Benefits
                             </h4>
@@ -453,7 +453,7 @@
                   <!-- /tab1 -->
   
                   <!-- tab2 -->
-                  <div id="tab2" class="tab-pane fade">
+                  <div id="tab2" class="tab-pane fade in active" *ngIf="isHowItWorks">
                     <form>
                     
                       <div class="row">
@@ -595,7 +595,7 @@
                                     <div class="row chtl">
                                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                                         <h4 class="txt329">
-                                          <a>
+                                          <a routerLink="/partnership-webpage/illustration">
                                             <span class="underline bold">Click here</span>
                                           </a>
                                           to find an example of how much you could earn
@@ -614,7 +614,7 @@
                       <!-- /partnership income -->
                       
                       <!-- other benefits -->
-                      <div class="row mlr-10px_02 mt60px">
+                      <div class="row mlr-10px_02 mt60px" #other_benefits>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           
                           <div class="">
@@ -622,7 +622,7 @@
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#pa_other_benefits">
+                                    <a data-toggle="collapse" data-parent="#accordion" (click)="otherBenefitsClick()">
                                       <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                           <h4 class="txt328 mtb0px">
@@ -633,7 +633,7 @@
                                     </a>
                                   </h4>
                                 </div>
-                                <div id="pa_other_benefits" class="panel-collapse collapse">
+                                <div id="pa_other_benefits"  *ngIf="isOtherBenefits" class="panel-collapse collapse in">
                                   <div class="panel-body">
 
                                     <div class="row">
