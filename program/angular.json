@@ -74,7 +74,7 @@
               {
                 "input": "src/assets/css/overlay.css",
                 "inject": true
-              },              
+              },
               {
                 "input": "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.min.css",
                 "inject": true
@@ -94,7 +94,8 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.js",
               "node_modules/propellerkit-range-slider/node_modules/wnumb/wNumb.js",
-              "node_modules/html2canvas/dist/html2canvas.min.js"
+              "node_modules/html2canvas/dist/html2canvas.min.js",
+              "node_modules/bcswipe/dist/jquery.bcSwipe.min.js"
             ]
           },
           "configurations": {
