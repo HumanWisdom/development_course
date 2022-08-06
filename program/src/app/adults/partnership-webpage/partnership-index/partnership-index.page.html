@@ -39,13 +39,13 @@
 
               <div class="container">
                 <ul class="nav nav-tabs gqtns flex_ai mt30px">
-                  <li class="active">
-                    <a data-toggle="tab" href="#tab1">
+                  <li [ngClass]="{'active':!isHowItWorks}">
+                    <a data-toggle="tab" (click)="enabledtab('whybepartner')">
                       Why be a partner
                     </a>
                   </li>
-                  <li>
-                    <a data-toggle="tab" href="#tab2">
+                  <li [ngClass]="{'active':isHowItWorks}">
+                    <a (click)="enabledtab('howitworks')" data-toggle="tab">
                       How it works
                     </a>
                   </li>                  
@@ -53,7 +53,7 @@
           
                 <div class="tab-content mt30px plr10px">
                   <!-- tab1 -->
-                  <div id="tab1" class="tab-pane fade in active">
+                  <div id="tab1" class="tab-pane fade in active" *ngIf="!isHowItWorks">
                     <form>
   
                       <div class="row">
@@ -253,7 +253,7 @@
                       <div class="row pmlr-10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <video controls playinline class="cvideo" poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video.svg" controlsList="nodownload">
-                            <source src="videoLink" type="video/mp4">
+                            <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program.mp4" type="video/mp4">
                           </video>    
                         </div>
                       </div>
@@ -344,7 +344,35 @@
                           <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_01.svg" alt="" class="img-responsive"/> 
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_julie_goodfellow.svg" alt="" class="img-responsive"/> 
+                              </div>
+                            </div>
+
+                            <div class="row pt1">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h4 class="txt325 mt10px mb5px ">
+                                  Julie Goodfellow
+                                </h4>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h6 class="txt323 mt0px mb20px">
+                                  Headteacher, UK
+                                </h6>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <p class="txt324 tleft">
+                                  I subscribed to The HumanWisdom app for all my staff because I have seen how enlightening and transformative it is to understand my reactions to situations, and my personal emotions such as anxiety, depression and anger. To be able to help others understand, with wisdom, why they feel as they do, is my life-long gift to them
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_tinamarie_rodriguez.svg" alt="" class="img-responsive"/> 
                               </div>
                             </div>
 
@@ -372,26 +400,26 @@
                           <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_01.svg" alt="" class="img-responsive"/> 
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_dominic_curran.svg" alt="" class="img-responsive"/> 
                               </div>
                             </div>
 
                             <div class="row pt1">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h4 class="txt325 mt10px mb5px ">
-                                  Tinamarie Rodriguez
+                                  Dominic Curran
                                 </h4>
                               </div>
 
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h6 class="txt323 mt0px mb20px">
-                                  LIFE COACH, USA
+                                  Teacher England
                                 </h6>
                               </div>
 
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <p class="txt324 tleft">
-                                  This app is exactly what each and every person in the world needs every day. It will give each person the tools to lead a purposeful and fulfilling life.
+                                  The HumanWisdom App has helped me to look at what I think, how I think, and helped me to question why I think in certain ways. This understanding has transformed my life
                                 </p>
                               </div>
                             </div>
@@ -400,26 +428,82 @@
                           <div class="col-md-10 col-sm-10 col-xs-10 prelative">
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_01.svg" alt="" class="img-responsive"/> 
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_carolyn_king.svg" alt="" class="img-responsive"/> 
                               </div>
                             </div>
 
                             <div class="row pt1">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h4 class="txt325 mt10px mb5px ">
-                                  Tinamarie Rodriguez
+                                  Carolyn King
                                 </h4>
                               </div>
 
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h6 class="txt323 mt0px mb20px">
-                                  LIFE COACH, USA
+                                  Melbourne
                                 </h6>
                               </div>
 
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <p class="txt324 tleft">
-                                  This app is exactly what each and every person in the world needs every day. It will give each person the tools to lead a purposeful and fulfilling life.
+                                  I absolutely love the HumanWisdom app. It has enabled me to really go on a journey of self-exploration. It covers so many different aspects of how our mind works in the real world. I would highly recommend this app to anyone that wishes to improve their life through the art of self-enquiry.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_adam_beagley.svg" alt="" class="img-responsive"/> 
+                              </div>
+                            </div>
+
+                            <div class="row pt1">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h4 class="txt325 mt10px mb5px ">
+                                  Adam Beagley
+                                </h4>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h6 class="txt323 mt0px mb20px">
+                                  Student
+                                </h6>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <p class="txt324 tleft">
+                                  I find this app inspiring. I believe this could be monumental for our generation.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/partnership_chandra_ramamurthy.svg" alt="" class="img-responsive"/> 
+                              </div>
+                            </div>
+
+                            <div class="row pt1">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h4 class="txt325 mt10px mb5px ">
+                                  Chandra Ramamurthy
+                                </h4>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h6 class="txt323 mt0px mb20px">
+                                  Psychologist
+                                </h6>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <p class="txt324 tleft">
+                                  Using the Human Wisdom app has been life affirming. I have only two words after using this app - Game Changer! This app needs to be scaled up to reach every school and workplace. This program is an essential service and serves the need of mitigating mental health problems in our society
                                 </p>
                               </div>
                             </div>
@@ -430,7 +514,7 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <a>
+                          <a (click)="scroll_to_obs()">
                             <h4 class="txt302 vpb">
                               View Partnership Benefits
                             </h4>
@@ -453,7 +537,7 @@
                   <!-- /tab1 -->
   
                   <!-- tab2 -->
-                  <div id="tab2" class="tab-pane fade">
+                  <div id="tab2" class="tab-pane fade in active" *ngIf="isHowItWorks">
                     <form>
                     
                       <div class="row">
@@ -560,7 +644,7 @@
 
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/diagram/partnership/partnership_income_infographics.svg" alt="" class="img-responsive"/> 
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/diagram/partnership/partnership_income_infographics_01.png" alt="" class="img-responsive"/> 
                                       </div>
                                     </div>
 
@@ -595,7 +679,7 @@
                                     <div class="row chtl">
                                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                                         <h4 class="txt329">
-                                          <a>
+                                          <a routerLink="/partnership-webpage/illustration">
                                             <span class="underline bold">Click here</span>
                                           </a>
                                           to find an example of how much you could earn
@@ -614,7 +698,7 @@
                       <!-- /partnership income -->
                       
                       <!-- other benefits -->
-                      <div class="row mlr-10px_02 mt60px">
+                      <div class="row mlr-10px_02 mt60px" #other_benefits>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           
                           <div class="">
@@ -622,7 +706,7 @@
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#pa_other_benefits">
+                                    <a data-toggle="collapse" data-parent="#accordion" (click)="otherBenefitsClick()">
                                       <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                           <h4 class="txt328 mtb0px">
@@ -633,7 +717,7 @@
                                     </a>
                                   </h4>
                                 </div>
-                                <div id="pa_other_benefits" class="panel-collapse collapse">
+                                <div id="pa_other_benefits"  *ngIf="isOtherBenefits" class="panel-collapse collapse in">
                                   <div class="panel-body">
 
                                     <div class="row">
