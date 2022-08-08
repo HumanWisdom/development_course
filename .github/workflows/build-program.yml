@@ -1,7 +1,7 @@
 name: build-program-staging
 on:
   push:
-    branches: [main]
+    branches: [main, prod-setup-demo]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -86,5 +86,16 @@ jobs:
           mkdir -p builds/uncompressed/${{ github.run_id }}
           tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           rm -rf /var/www/html/course
-          mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
+          mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course
+
+    - name: 'Run on prod demo branch'
+      if: ${{ github.ref == 'refs/heads/prod-setup-demo' }}
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.PRODUCTION_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        run: |
+          mkdir -p myNewFolder/myNewSubFolder && cp -R dist myNewFolder/myNewSubFolder
+          ls myNewFolder/MyNewSubFolder   
           
