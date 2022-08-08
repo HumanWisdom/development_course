@@ -64,19 +64,15 @@
 								<div class="row-centered">
 									<div class="col-md-8 col-sm-6 col-xs-12 col-centered">
 										<label for="patient_name" class="control-label">Image path<span class="required">*</span></label>
-										<input type="text" id="patient_name" name="patient_name" required="required" class="form-control" pattern=""  [(ngModel)]="this.imagePath">
+										<input type="text" id="patient_name" name="patient_name" required="required" class="form-control" pattern=""  [(ngModel)]="imagePath">
 									</div>
 								</div>
 							</div>
 
-
-
-
-							<div class="ln_solid"></div>
-
-							<div class="form-group">
-								<div class="col-md-12 col-sm-6 col-xs-12" style="text-align:center;">
-									<div *ngIf="!newTitle||!newStory">
+								<div class="ln_solid"></div>
+								<div class="form-group">
+									<div class="col-md-12 col-sm-6 col-xs-12" style="text-align:center;">
+										<div *ngIf="!newTitle||!newStory">
                                         <small class="text-danger">Please fill all details to submit</small>
                                     </div>
 									<button type="reset" class="btn btn-primary" (click)="reset()">Reset</button>
@@ -139,7 +135,7 @@
 								<tbody>
 								<tr *ngFor="let s of scenarioList;let i=index">
 									<td>{{s.Title}}</td>
-									<td>{{s.Story}}</td>
+									<td class="limit-text">{{s.Story}}</td>
 
 
 									<td>
