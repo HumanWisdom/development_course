@@ -128,7 +128,7 @@
 									</thead>
 									<tbody>
 									<tr *ngFor="let s of notificationList;let i=index">
-										<td>{{s.NotificationMsg}}</td>
+										<td  class="limit-text">{{s.NotificationMsg}}</td>
                                         
 										<td> 
                                              <img src="{{ s.IconPath !== undefined ? s.IconPath: '' }}"
