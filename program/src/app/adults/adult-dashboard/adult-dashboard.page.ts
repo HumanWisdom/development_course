@@ -1433,11 +1433,10 @@ export class AdultDashboardPage implements OnInit {
         this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
         this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
         this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
-        this.foodP = res.ModUserScrPc.find(e => e.Module == "Food")?.Percentage
+        this.foodP = res.ModUserScrPc.find(e => e.Module == "Food and Health")?.Percentage
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
-
       })
 
   }
