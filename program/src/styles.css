@@ -23609,13 +23609,16 @@ a
 
 .blog_title
 {
-  margin-top: 29px;
-  margin-bottom: 62px;
+  /* margin-top: 29px;
+  margin-bottom: 62px; */
+
+  margin: 20px 0 20px 0;
 }
 
 .like_count
 {
-  margin-top: 5px;
+  /* margin-top: 5px; */
+  margin: 5px 0 0 0;
 }
 
 .blog_desc
@@ -29655,7 +29658,8 @@ svg path
   box-shadow: unset;
 }
 
-.btn_sub_unsubp.disabled 
+.btn_sub_unsubp.disabled,
+.btn_jhwpp.disabled
 {
   background: #EBEBEB !important;
   color: #ADADAD !important;
@@ -29916,4 +29920,37 @@ svg path
 .va_middle 
 {
   vertical-align: middle;
+}
+
+.mtb30px 
+{
+ margin: 30px 0;
+}
+
+.c3 
+{
+  font-size: 10pt;
+  font-family: Roboto,sans-serif;
+  color: #555a5e;
+  background-color: transparent;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  vertical-align: baseline;
+  white-space: pre;
+  white-space: pre-wrap;
+}
+
+.c4 
+{
+  font-size: 10pt;
+  color: rgb(17, 85, 204);
+  background-color: transparent;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+  vertical-align: baseline;
+  white-space: pre-wrap;
 }
