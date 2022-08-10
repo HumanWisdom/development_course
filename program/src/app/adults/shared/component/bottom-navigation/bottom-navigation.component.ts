@@ -26,7 +26,7 @@ export class BottomNavigationComponent implements OnInit {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
     }
-    if (this.router.url == "/adults/search") {
+    if (this.router.url == "/adults/search" || this.router.url.includes('/adults/site-search/')) {
       this.dash = false
       this.journal = false
       this.profile = false
@@ -39,7 +39,7 @@ export class BottomNavigationComponent implements OnInit {
       this.profile = false
       this.search = false;
     }
-    if ((this.router.url == "/adults/journal") || (this.router.url.indexOf('/adults/note') > -1)) {
+    if ((this.router.url == "/adults/journal") || this.router.url.includes('/journal') || (this.router.url.indexOf('/adults/note') > -1)) {
       this.dash = false
       this.profile = false
       this.journal = true
@@ -51,7 +51,9 @@ export class BottomNavigationComponent implements OnInit {
       this.profile = false
       this.fourm = true;
     }
-    if (this.router.url == "/onboarding/user-profile") {
+    if (this.router.url == "/onboarding/user-profile"
+      || this.router.url.includes('/onboarding/payment-details') ||
+      this.router.url.includes('/onboarding/myprogram') || this.router.url.includes('adults/refer-friend')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
