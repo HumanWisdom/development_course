@@ -288,11 +288,13 @@ export class AdultDashboardPage implements OnInit {
       this.getUserstories()
     }, 1000)
 
-    setTimeout(() => {
-      if (localStorage.getItem('acceptcookie') === null) {
-        this.enablecookiemodal.nativeElement.click();
-      }
+    if (localStorage.getItem('acceptcookie') === null) {
+      this.enablecookiemodal.nativeElement.click();
+    } else {
+      this.enableDailypopup();
+    }
 
+    setTimeout(() => {
       let sub: any = localStorage.getItem('Subscriber');
       if (sub === '0') {
         this.isSubscribe = true;
@@ -1015,7 +1017,6 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("reflection", JSON.stringify(this.reflection))
           localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
           this.userId = JSON.parse(localStorage.getItem("userId"))
-          if (localStorage.getItem('acceptcookie') === 'T') this.enableDailypopup();
           this.Subscriber = localStorage.getItem('Subscriber')
           this.cd.detectChanges();
           localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
@@ -1088,7 +1089,6 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("reflection", JSON.stringify(this.reflection))
     localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
     this.userId = JSON.parse(localStorage.getItem("userId"))
-    if (localStorage.getItem('acceptcookie') === 'T') this.enableDailypopup();
     this.Subscriber = localStorage.getItem('Subscriber')
     this.cd.detectChanges();
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
@@ -1171,7 +1171,6 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("reflection", JSON.stringify(this.reflection))
           localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
           this.userId = JSON.parse(localStorage.getItem("userId"))
-          if (localStorage.getItem('acceptcookie') === 'T') this.enableDailypopup();
           this.Subscriber = localStorage.getItem('Subscriber')
           this.cd.detectChanges();
           localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
@@ -1242,7 +1241,6 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("reflection", JSON.stringify(this.reflection))
           localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
           this.userId = JSON.parse(localStorage.getItem("userId"))
-          if (localStorage.getItem('acceptcookie') === 'T') this.enableDailypopup();
           this.Subscriber = localStorage.getItem('Subscriber')
           this.cd.detectChanges();
           localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
@@ -1433,11 +1431,10 @@ export class AdultDashboardPage implements OnInit {
         this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
         this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
         this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
-        this.foodP = res.ModUserScrPc.find(e => e.Module == "Food")?.Percentage
+        this.foodP = res.ModUserScrPc.find(e => e.Module == "Food and Health")?.Percentage
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
-
       })
 
   }
