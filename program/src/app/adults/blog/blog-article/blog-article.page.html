@@ -100,12 +100,36 @@
                 <!-- video -->
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <video controls playinline class="cvideo" poster="poster" controlsList="nodownload">                                                
-                      <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/email/videos/humanwisdom_launch.mp4#t=0.2" type="video/mp4">                                              
+                    <video controls playinline class="cvideo" poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video.svg" controlsList="nodownload">                                                
+                      <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/email/videos/humanwisdom_launch.mp4" type="video/mp4">                                              
                     </video> 
                   </div>
                 </div>
                 <!-- /video -->
+
+                <!-- desktop -->
+                <div class="row mt10px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
+                    <!-- desktop playstore -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0">
+                      <a (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dplaystore.svg" alt=""
+                          class="img-responsive">
+                      </a>
+                    </div>
+                    <!-- /desktop playstore -->
+
+                    <!-- desktop appstore -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0">
+                      <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dappstore.svg" alt=""
+                          class="img-responsive">
+                      </a>
+                    </div>
+                    <!-- /desktop appstore -->
+                  </div>
+                </div>
+                <!-- /desktop -->
 
                 <!-- <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
