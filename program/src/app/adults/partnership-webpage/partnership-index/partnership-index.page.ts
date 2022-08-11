@@ -53,5 +53,8 @@ export class PartnershipIndexPage implements OnInit {
       this.isOtherBenefits=true;
     }
   }
+  BecomeAPartner(){
+    
+  }
 
 }
