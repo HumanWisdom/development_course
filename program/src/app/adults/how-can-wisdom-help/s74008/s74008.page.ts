@@ -15,7 +15,7 @@ export class S74008Page implements OnInit {
   bg="purple_blue_w8"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/how_can_wisdom_help/videos/1.7.mp4'  
-  title="Betterplace"
+  title="Make the world better"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_07.svg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

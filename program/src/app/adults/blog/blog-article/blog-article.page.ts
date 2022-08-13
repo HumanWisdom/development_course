@@ -5,6 +5,7 @@ import { AdultsService } from '../../adults.service';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import {Location } from '@angular/common'
 import { DomSanitizer } from '@angular/platform-browser';
+import { Platform } from '@angular/cdk/platform';
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -20,7 +21,7 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsListabove = []
   path=  this.router.url
 
-  constructor(private sanitizer: DomSanitizer,private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,  private route: ActivatedRoute) {
+  constructor(private sanitizer: DomSanitizer,private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService,  private route: ActivatedRoute, public platform: Platform) {
     this.route.queryParams.subscribe(params => {
       this.blogid=params?.sId
   });
@@ -102,6 +103,18 @@ export class BlogArticlePage implements OnInit {
 
   commentbottom() {
     window.scrollTo(0,document.body.scrollHeight);
+  }
+
+  clickbanner(url = '') {
+    if (url === '') {
+      if (this.platform.IOS || this.platform.SAFARI) {
+        window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
+      } else if (this.platform.ANDROID) {
+        window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
+      }
+    } else {
+      window.open(url)
+    }
   }
 
 }
