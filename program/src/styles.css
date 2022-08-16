@@ -29965,3 +29965,90 @@ svg path
 {
   color: #757575;
 }
+
+/* partnership report */
+.btn_pr_code
+{
+  height: 40px;
+  background: #FFC455;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 140%;
+  /* identical to box height, or 21px */
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+
+.mtb30px 
+{
+  margin: 30px 0;
+}
+
+.pr_ab_wd 
+{
+  background: #F5F5F5;
+  margin: 0 -10px;
+  padding: 20px 0;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
+}
+
+.vhr_02
+{
+  border: 1px solid #DADADA;
+  margin: 0 auto;
+  height: 60px;
+  display: -webkit-inline-box;
+  display: inline-block;
+}
+
+.panel_pr .panel-default 
+{
+  background: transparent;
+  border: 0;
+  padding: 0 20px;
+  border-top: 1px solid #ADADAD;
+  box-shadow: unset;
+  border-radius: 0;
+}
+
+.panel_pr .panel-default>.panel-heading
+{
+  background: transparent;
+  border: 0;
+  box-shadow: unset;
+  padding: 20px 0;
+}
+
+.panel_pr .panel-default>.panel-heading+.panel-collapse>.panel-body
+{
+  padding: 0 !important;
+}
+
+.prp 
+{
+  padding: 0 20px 0 0;
+}
+
+.pr_cnt 
+{
+  margin: 0 -10px;
+  background: #FFC455;
+  padding: 20px 0;
+}
+
+.pr_ia_title 
+{
+  background: #DADADA;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 15px -10px 15px -10px;
+  padding: 10px;
+}
+/* /partnership report */
