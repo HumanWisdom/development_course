@@ -199,7 +199,7 @@
               </div>
 
               <!-- unsubscribed -->
-              <div class="row">
+              <div class="row" *ngIf="userType!='Annual'">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
                   <a>
                     <button type="button" class="btn btn-warning mb0 btn_sub_unsubp w100">
@@ -210,8 +210,7 @@
               </div>
               <!-- /unsubscribed -->
 
-              <!-- subscribed -->
-              <!-- <div class="row">
+              <div class="row" *ngIf="userType=='Annual'">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
                   <a>
                     <button type="button" class="btn btn-warning mb0 btn_sub_unsubp w100">
@@ -219,8 +218,8 @@
                     </button>
                   </a>
                 </div>
-              </div> -->
-              <!-- /subscribed -->
+              </div>  
+         
                        
   
               <div class="pagebreak"></div>

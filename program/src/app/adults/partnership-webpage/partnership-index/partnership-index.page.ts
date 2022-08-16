@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'HumanWisdom-partnership-index',
   templateUrl: './partnership-index.page.html',
@@ -9,7 +10,7 @@ export class PartnershipIndexPage implements OnInit {
   public isHowItWorks:boolean=false;
   public isOtherBenefits:boolean=false;
 
-  constructor() { }
+  constructor(private router :Router) { }
 
   ngOnInit() {
   }
@@ -54,7 +55,8 @@ export class PartnershipIndexPage implements OnInit {
     }
   }
   BecomeAPartner(){
-    
+    localStorage.setItem('btnClickBecomePartner','true');
+    this.router.navigate(['adults/subscribed-unsubscribed']);
   }
 
 }

@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./subscribed-unsubscribed.page.scss'],
 })
 export class SubscribedUnsubscribedPage implements OnInit {
-
+  userType:string;
   constructor() { }
 
   ngOnInit() {
+    this.userType=localStorage.getItem('SubscriberType');
   }
 
 }
