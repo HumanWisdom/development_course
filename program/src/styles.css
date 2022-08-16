@@ -29954,3 +29954,14 @@ svg path
   vertical-align: baseline;
   white-space: pre-wrap;
 }
+
+.pcfc
+{
+  font-size: 14px;
+  color: #000000;
+}
+
+.pcfc::-webkit-input-placeholder 
+{
+  color: #757575;
+}
