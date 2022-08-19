@@ -3,7 +3,7 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 partnership_app_tn">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_04.svg" alt="" class="p0"/>
+        <img (click)="goBack()" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_04.svg" alt="" class="p0"/>
       </a>
     </div>
 
@@ -213,7 +213,7 @@
               <div class="row" *ngIf="userType=='Annual'">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
                   <a>
-                    <button type="button" class="btn btn-warning mb0 btn_sub_unsubp w100">
+                    <button (click)="GetStarted()" type="button" class="btn btn-warning mb0 btn_sub_unsubp w100">
                       Get Started
                     </button>
                   </a>

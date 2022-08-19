@@ -351,16 +351,6 @@ const routes: Routes = [
     path: 'partnership-app',
     loadChildren: () => import('./partnership-app/partnership-app.module').then( m => m.PartnershipAppModule)
   },
-  {
-    path: 'subscribed-unsubscribed',
-    canActivate:[AuthGuard],
-    loadChildren: () => import('./partnership-app/subscribed-unsubscribed/subscribed-unsubscribed.module').then( m => m.SubscribedUnsubscribedPageModule)
-  },
-  {
-    path: 'partnership-subscribed',
-    canActivate:[AuthGuard],
-    loadChildren: () => import('./partnership-app/partnership-subscribed/partnership-subscribed.module').then( m => m.PartnershipSubscribedPageModule)
-  },
   
 ];
 

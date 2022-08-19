@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-partnership-subscribed',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartnershipSubscribedPage implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router,public location:Location) { }
 
   ngOnInit() {
   }
+
+    NavigateTreeSister(){
+      this.router.navigate(['adults/partnership-app/partnership-treesisters']);
+    }
+
+    NavigateRecieveIncome(){
+      this.router.navigate(['adults/partnership-app/payment-bank']);
+    }
+    
 
 }

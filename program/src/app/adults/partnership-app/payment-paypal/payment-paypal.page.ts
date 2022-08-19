@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentPaypalPage implements OnInit {
 
-  constructor() { }
+  referralCode:string='';
+  constructor() {
+    this.referralCode=localStorage.getItem('referralCode');
+   }
 
   ngOnInit() {
   }

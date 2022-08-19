@@ -56,7 +56,7 @@ export class PartnershipIndexPage implements OnInit {
   }
   BecomeAPartner(){
     localStorage.setItem('btnClickBecomePartner','true');
-    this.router.navigate(['adults/subscribed-unsubscribed']);
+    this.router.navigate(['adults/partnership-app']);
   }
 
 }

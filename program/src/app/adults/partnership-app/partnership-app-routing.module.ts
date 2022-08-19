@@ -9,6 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'subscribed-unsubscribed',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./subscribed-unsubscribed/subscribed-unsubscribed.module').then( m => m.SubscribedUnsubscribedPageModule)
   },
   {

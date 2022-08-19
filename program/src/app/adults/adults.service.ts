@@ -276,4 +276,17 @@ export class AdultsService {
   MarkNotificationAsRead(NotificationId :number):Observable<any>{
     return this.http.post(this.path+`/SetNotificationRead/`+NotificationId,null);
   }
+
+  AddPartner(data :any):Observable<any>{
+    return this.http.post(this.path+`/AddPartner/`+data,null);
+  }
+
+  UpdatePartner(data:any):Observable<any>{
+    return this.http.post(this.path+`/AddPartner/`,data);
+  }
+
+  GetCountry(){
+    return this.http.get(this.path+`/Countries`);
+  }
+
 }

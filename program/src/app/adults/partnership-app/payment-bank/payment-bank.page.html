@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<div class="row center_flex">
+<div class="row center_flex" >
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 partnership_app_tn">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="">
@@ -25,7 +25,7 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">				
+<div class="right_col mc_01" *ngIf="paymentBank">				
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -62,7 +62,7 @@
 
                         <div class="radio pradio">
                           <label class="mt0px">
-                            <input type="radio" checked="true" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                            <input type="radio" value="linkAccount" checked (click)="LinkbankAccountbtn()"  [(ngModel)]="LinkBankAccount" id="optionsRadios1" name="optionsRadios"> 
                             <span class="">
                               <span class="txt291 ml5px va_middle">
                                 Link your bank account
@@ -76,7 +76,7 @@
                         
                         <div class="radio pradio">
                           <label class="mt0px">
-                            <input type="radio" checked="false" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                            <input type="radio" value="Paypal" (click)="payPalbtn()" [(ngModel)]="LinkBankAccount" id="optionsRadios2" name="optionsRadios2"> 
                             <span class="">
                               <span class="">
                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/paypal_01.svg" alt="" class="ml5px"> 
@@ -88,40 +88,58 @@
                       </div>
                     </div>
                   </div>
-
                   <div class="row mb10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <select class="form-control cfc15_select">
+                    <div  *ngIf="LinkBankAccount!='Paypal'"  class="col-md-12 col-sm-12 col-xs-12">
+                      <!-- <select class="form-control cfc15_select">
                         <option value="Country">Country</option>
-                      </select>
+                      </select> -->
+                      <!-- <select (change)="onChange($event)" type="text" name="threadlist"  class="form-control h60px" [(ngModel)]="paymentBank.CountryId" >
+                        <option value="0">Select Country</option>
+                        <option *ngFor="let titl of countryList" [value]="titl.CID">{{titl.Country}}</option>
+                      </select> -->
+
+                      <div>
+                        <select type="text" name="threadlist"  class="form-control h60px" [(ngModel)]="paymentBank.CountryId" >
+                          <option  [ngValue]="0">Select Country</option>
+                          <option *ngFor="let titl of countryList" [ngValue]="titl.CID">{{titl.Country}}</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="row mb10px">                    
+                  <div *ngIf="LinkBankAccount!='Paypal'"  class="row mb10px">                    
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" class="form-control cfc15" placeholder="Bank Name">
+                      <input type="text" id="BankName" name="BankName" [(ngModel)]="paymentBank.BankName" class="form-control cfc15" placeholder="Bank Name">
                     </div>
                   </div>
 
-                  <div class="row mb10px">                    
+                 
+
+                  <div *ngIf="LinkBankAccount!='Paypal'"   class="row mb10px">                    
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" class="form-control cfc15" placeholder="Bank Account number">
+                      <input type="text" class="form-control cfc15" id="Acc_Number" name="Acc_Number"  [(ngModel)]="paymentBank.Acc_Number" placeholder="Bank Account number">
                     </div>
                   </div>
 
-                  <div class="row mb10px">                    
+                  <div *ngIf="LinkBankAccount!='Paypal'" class="row mb10px">                    
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" class="form-control cfc15" placeholder="IBAN / SWIFT">
+                      <input type="text" class="form-control cfc15" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" placeholder="IBAN / SWIFT">
                     </div>
                   </div>
-
+                
+                  <div *ngIf="LinkBankAccount=='Paypal'" class="row mb10px">                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <input type="text" class="form-control cfc15" id="PaypalId" name="PaypalId" [(ngModel)]="paymentBank.PayPalID" placeholder="PayPalId">
+                    </div>
+                  </div>
+         
                 </div>
               </div>
                 
               <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
                   <a>
-                    <button type="button" class="btn mb0 btn_sub_unsubp w100 disabled bg_cyan">
+                    <button type="button" class="btn mb0 btn_sub_unsubp w100 bg_cyan" (click)="Submit()" [ngClass]="getDisabled()">
                       Submit
                     </button>
                   </a>
