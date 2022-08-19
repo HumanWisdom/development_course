@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
+import { AdultsService } from "../../adults.service";
 
 @Component({
   selector: 'app-s47178',
@@ -9,124 +9,118 @@ import { Router } from '@angular/router';
 })
 export class S47178Page implements OnInit {
 
-  bg_tn="bg_purple"
-  bg_cft="bg_purple"
-  bg="purple_w5"
-  hint="This is a difficult question because we always think the other person is responsible for our hurt? Could the real reason lie in the hidden way our mind works?"  
+  bg_tn = "bg_purple"
+  bg_cft = "bg_purple"
+  bg = "purple_w5"
+  hint = "This is a difficult question because we always think the other person is responsible for our hurt? Could the real reason lie in the hidden way our mind works?"
 
-  toc="relationships/s47000"
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  qrList=JSON.parse(localStorage.getItem("qrList"))
-  moduleId=localStorage.getItem("moduleId")
-  screenType=localStorage.getItem("reflection")
-  screenNumber=47178
-  startTime:any
-  endTime:any
-  totalTime:any
-  bookmark:any
-  rId=416
-  reflection:any
-  reflectionA:any
-  r47178=JSON.parse(sessionStorage.getItem("r47178"))
+  toc = "relationships/s47000"
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+  moduleId = localStorage.getItem("moduleId")
+  screenType = localStorage.getItem("reflection")
+  screenNumber = 47178
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
+  rId = 416
+  reflection: any
+  reflectionA: any
+  r47178 = JSON.parse(sessionStorage.getItem("r47178"))
 
-  shared:any
-  confirmed:any
+  shared: any
+  confirmed: any
 
   constructor(private router: Router,
-    private service:AdultsService,
-    ) { }
+    private service: AdultsService,
+  ) { }
 
   ngOnInit() {
     this.createScreen()
     console.log(this.r47178)
-   
-    console.log(this.qrList,"Qrlist")
-    
-    this.reflectionA=this.qrList.ListOfReflection
-   
-  
+
+
+
+    this.reflectionA = this.qrList.ListOfReflection
+
+
     this.findReflection()
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-      this.startTime = Date.now();
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    this.startTime = Date.now();
   }
 
-  createScreen(){
+  createScreen() {
     this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {
+
+    })
+
 
   }
 
-  findReflection(){
-    for(var i=0;i<this.reflectionA.length;i++)
-    {
-      
-     
+  findReflection() {
+    for (var i = 0; i < this.reflectionA.length; i++) {
 
-      if(this.rId==this.reflectionA[i].ReflectionId)
-      {
-        this.reflection=this.reflectionA[i].Que
-       // this.optionList.push(this.questionA[i])
+
+
+      if (this.rId == this.reflectionA[i].ReflectionId) {
+        this.reflection = this.reflectionA[i].Que
+        // this.optionList.push(this.questionA[i])
       }
-       
+
     }
     console.log(this.reflection)
 
   }
 
-  submitProgress(e){
+  submitProgress(e) {
     console.log(e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-   sessionStorage.setItem("r47178",JSON.stringify(e))
-   this.r47178=JSON.parse(sessionStorage.getItem("r47178"))
-  
+    sessionStorage.setItem("r47178", JSON.stringify(e))
+    this.r47178 = JSON.parse(sessionStorage.getItem("r47178"))
+
     this.service.submitProgressReflection({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "ReflectionId":this.rId,
-      "Resp":JSON.parse(sessionStorage.getItem("r47178"))
-    }).subscribe(res=>
-      {
-        
-      },
-      error=>{
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": JSON.parse(sessionStorage.getItem("r47178"))
+    }).subscribe(res => {
+
+    },
+      error => {
         console.log(error)
         this.router.navigate(['/adults/relationships/s47179'])
-    
+
       },
-      ()=>{
+      () => {
         this.router.navigate(['/adults/relationships/s47179'])
       })
-    
 
-  
-    
+
+
+
 
   }
 
-  previous(){
+  previous() {
     this.router.navigate(['/adults/relationships/s47177'])
   }
-  
-  ngOnDestroy(){
-   
-  
+
+  ngOnDestroy() {
+
+
   }
 
 }
