@@ -70,4 +70,7 @@ export class TnHwpProjectComponent implements OnInit {
     this.router.navigate(['/adults/adult-dashboard'])
   }
 
+  goToNotification() {
+    this.router.navigate(['adults/notification']);
+  }
 }
