@@ -39,7 +39,9 @@ export class BottomNavigationComponent implements OnInit {
       this.profile = false
       this.search = false;
     }
-    if ((this.router.url == "/adults/journal") || this.router.url.includes('/journal') || (this.router.url.indexOf('/adults/note') > -1)) {
+    if ((this.router.url == "/adults/journal") ||
+      this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
+      (this.router.url.indexOf('/adults/note') > -1)) {
       this.dash = false
       this.profile = false
       this.journal = true
@@ -52,7 +54,7 @@ export class BottomNavigationComponent implements OnInit {
       this.fourm = true;
     }
     if (this.router.url == "/onboarding/user-profile"
-      || this.router.url.includes('/onboarding/payment-details') ||
+      || this.router.url.includes('/onboarding/payment-details') || this.router.url.includes('/profile-edit') ||
       this.router.url.includes('/onboarding/myprogram') || this.router.url.includes('adults/refer-friend')) {
       this.dash = false
       this.journal = false
