@@ -2772,7 +2772,7 @@
     line-height: 130%;
     /* or 16px */
     color: #000000;
-    opacity: 0.5;
+    /* opacity: 0.5; */
 }
 
 .txt310 
@@ -3129,4 +3129,101 @@
     line-height: 140%;
     /* or 25px */
     color: #000000;
+}
+
+.txt355 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #5D5D5D;
+}
+
+.txt356 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #1092A7;
+}
+
+.txt357 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+    /* identical to box height, or 21px */
+    color: #1092A7;
+}
+
+.txt358 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    /* or 25px */
+    color: #1092A7;
+}
+
+.txt359 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 140%;
+    /* or 21px */
+    color: #5D5D5D;
+}
+
+.txt400
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 140%;
+    /* or 18px */
+    color: #5D5D5D;
+}
+
+.txt401 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    color: #000000;
+}
+
+.txt402 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    /* or 25px */
+    color: #000000;
+}
+
+.txt403 
+{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    /* or 25px */
+    color: #B92F48;
 }
