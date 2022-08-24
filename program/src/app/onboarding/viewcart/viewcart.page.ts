@@ -416,6 +416,7 @@ export class ViewcartPage implements OnInit {
 
 
   ProceedWithMonthly(){
+  localStorage.setItem('isMonthlySelectedForPayment','T');
   this.isModalPopup=true;
   }
   getAddCartEvent() {
@@ -427,6 +428,7 @@ export class ViewcartPage implements OnInit {
     this.learnermsg = ''
   }
   Cancel(){
+    localStorage.setItem('isMonthlySelectedForPayment','F');
     this.isModalPopup=false;
   }
 

@@ -351,7 +351,14 @@ const routes: Routes = [
     path: 'partnership-app',
     loadChildren: () => import('./partnership-app/partnership-app.module').then( m => m.PartnershipAppModule)
   },
-  
+  {
+    path: 'humanwisdom-premium',
+    loadChildren: () => import('./humanwisdom-premium/humanwisdom-premium.module').then( m => m.HumanwisdomPremiumPageModule)
+  },
+  {
+    path: 'hwp-premium-congratulations',
+    loadChildren: () => import('./hwp-premium-congratulations/hwp-premium-congratulations.module').then( m => m.HwpPremiumCongratulationsPageModule)
+  },
 ];
 
 @NgModule({
