@@ -176,8 +176,8 @@
                   </div>
                   <!-- /unsubscribed -->
 
-                  <!-- subscribed -->
-                  <!-- <div class="row sub_unsubp">
+               
+                  <div class="row sub_unsubp" *ngIf="userType=='Annual'">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <p class="txt310 mtb20px">
                         Since you are already a Premium subscriber you can join our Partnership Program for free, and enjoy its many benefits.
@@ -192,9 +192,8 @@
                         </a>
                       </p>
                     </div>
-                  </div> -->
-                  <!-- /subscribed -->
-
+                  </div>
+           
                 </div>
               </div>
 
@@ -202,7 +201,7 @@
               <div class="row" *ngIf="userType!='Annual'">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp">
                   <a>
-                    <button type="button" class="btn btn-warning mb0 btn_sub_unsubp w100">
+                    <button  (click)="UpgradeToPremium()" type="button" class="btn btn-warning mb0 btn_sub_unsubp w100">
                       Upgrade to Premium
                     </button>
                   </a>

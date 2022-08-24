@@ -13,6 +13,7 @@ export class PaymentBankPage implements OnInit {
   LinkBankAccount: string = "linkAccount";
   countryList:any;
   paymentBank: any;
+  PlaceHolderRouter:string='IBAN / SWIFT';
   constructor(
     private service: AdultsService,
     public router: Router,
@@ -90,5 +91,14 @@ export class PaymentBankPage implements OnInit {
   }
   onChange($event){
     this.paymentBank.CountryId=$event;
+    if($event==50){
+      this.PlaceHolderRouter="Routing Number"
+    }else{
+      this.PlaceHolderRouter="IBAN / SWIFT"
+    }
+  }
+  getPlaceHolder(){
+    return this.PlaceHolderRouter;
   }
 }
+

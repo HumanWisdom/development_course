@@ -99,9 +99,14 @@
                       </select> -->
 
                       <div>
-                        <select type="text" name="threadlist"  class="form-control h60px" [(ngModel)]="paymentBank.CountryId" >
-                          <option  [ngValue]="0">Select Country</option>
-                          <option *ngFor="let titl of countryList" [ngValue]="titl.CID">{{titl.Country}}</option>
+                        <select type="text"
+                         name="threadlist"  class="form-control h60px"
+                          [(ngModel)]="paymentBank.CountryId" 
+                          #mySelect
+                          (change)='onChange(mySelect.value)'
+                          >
+                          <option  [value]="0">Select Country</option>
+                          <option *ngFor="let titl of countryList" [value]="titl.CID">{{titl.Country}}</option>
                         </select>
                       </div>
                     </div>
@@ -123,7 +128,7 @@
 
                   <div *ngIf="LinkBankAccount!='Paypal'" class="row mb10px">                    
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <input type="text" class="form-control cfc15" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" placeholder="IBAN / SWIFT">
+                      <input type="text" class="form-control cfc15" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" [placeholder]="getPlaceHolder()">
                     </div>
                   </div>
                 
