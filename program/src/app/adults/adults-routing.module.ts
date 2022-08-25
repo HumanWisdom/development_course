@@ -359,6 +359,10 @@ const routes: Routes = [
     path: 'hwp-premium-congratulations',
     loadChildren: () => import('./hwp-premium-congratulations/hwp-premium-congratulations.module').then( m => m.HwpPremiumCongratulationsPageModule)
   },
+  {
+    path: 'partnership-report',
+    loadChildren: () => import('./partnership-report/partnership-report.module').then( m => m.PartnershipReportModule)
+  },
 ];
 
 @NgModule({
