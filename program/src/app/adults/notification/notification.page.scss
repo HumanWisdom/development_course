@@ -1,7 +1,11 @@
 .limit-text {
-    display: inline-block;
-    width: 326px !important;
-    white-space: nowrap;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
+    // display: inline-block;
+    // width: 326px !important;
+    // white-space: nowrap;
+    // overflow: hidden !important;
+    // text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
