@@ -288,5 +288,8 @@ export class AdultsService {
   GetCountry(){
     return this.http.get(this.path+`/Countries`);
   }
+  GetPartnerCommReport():Observable<any>{
+    return this.http.get(this.path+`/GetPartnerCommReport`);
+  }
 
 }

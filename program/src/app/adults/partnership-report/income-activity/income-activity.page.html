@@ -22,7 +22,7 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">				
+<div class="right_col mc_01" id="partnershipReport">				
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -39,10 +39,10 @@
                       <h4 class="txt343 mtb0px">
                         Partnership Referral Code
                       </h4>
-                      <button type="button" class="btn btn_pr_code">
-                        NID2022S
+                      <button type="button"  class="btn btn_pr_code">
+                        {{this.partnershipReport.AffRefCode}}
                       </button>
-                      <a class="">
+                      <a class="" (click)="share(partnershipReport.AffRefCode)">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey_02.svg" alt="" class="p0"/>
                       </a>
                     </div>
@@ -61,10 +61,10 @@
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <h4 class="txt335 mtb0px tleft">
-                          Nidhi Singhvi
+                         {{partnershipReport.AffName}}
                         </h4>
                         <h4 class="txt311 mtb0px tleft">
-                          Lifetime earnings: $264.52
+                          Lifetime earnings: 
                         </h4>
                       </div>
                     </div>
@@ -77,9 +77,10 @@
                           AVAILABLE BALANCE
                         </h4>
                         <h4 class="txt344 mtb0px">
-                          USD 234.00
+                          USD {{partnershipReport.BalanceAmt}}
                         </h4>
-                        <a class="">
+                       
+                        <a href="mailto:info@humanwisdom.me">
                           <h4 class="txt345 mb0px mt5px underline ws_nowrap">
                             Request to withdraw
                           </h4>
@@ -93,11 +94,11 @@
                           WITHDRAWN
                         </h4>
                         <h4 class="txt344 mtb0px">
-                          USD 30.52
+                          USD {{partnershipReport.WithdrawnAmt}}
                         </h4>
-                        <a class="">
+                        <a class="" (click)="redirectToIncomeReport()">
                           <h4 class="txt345 mb0px mt5px underline ws_nowrap">
-                            View income activity
+                            View income report
                           </h4>
                         </a>
                       </div>
@@ -119,11 +120,11 @@
                       </h4>
                     </div>
                   </div> 
-
+               <ng-container *ngFor="let item of partnershipReport.IncomeActivity"> 
                   <div class="row pr_ia_title">
                     <div class="col-md-3 col-sm-3 col-xs-3">
                       <h4 class="txt309 mtb0px tleft">
-                        June 2020
+                        {{item.CreatedOn}}
                       </h4>
                     </div>
                   </div> 
@@ -132,18 +133,18 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                       <div class="col-md-6 col-sm-6 col-xs-6 pl0px">
                         <h4 class="txt310 mtb0px">
-                          22 June
+                          {{item.CreatedOn}}
                         </h4>
                       </div>
                       <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
                         <h4 class="txt294 mtb0px tright">
-                          USD 4.50
+                          USD {{item.Comm_Earned}} 
                         </h4>
                       </div>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt318 mtb0px">
-                        ID #0123456789 | Level 1
+                        ID #{{item.SubscriptionId}} | Level {{item.Level}} 
                       </h4>
                     </div>
                   </div> 
@@ -154,89 +155,12 @@
                     </div>
                   </div>
 
-                  <div class="row mtb15px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-md-6 col-sm-6 col-xs-6 pl0px">
-                        <h4 class="txt310 mtb0px">
-                          20 June
-                        </h4>
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                        <h4 class="txt294 mtb0px tright">
-                          USD 4.50
-                        </h4>
-                      </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt318 mtb0px">
-                        ID #3278438739 | Level 0
-                      </h4>
-                    </div>
-                  </div> 
-
-                  <div class="row pr_ia_title">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                      <h4 class="txt309 mtb0px tleft">
-                        May 2020
-                      </h4>
-                    </div>
-                  </div> 
-
-                  <div class="row mtb15px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-md-6 col-sm-6 col-xs-6 pl0px">
-                        <h4 class="txt310 mtb0px">
-                          22 May
-                        </h4>
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                        <h4 class="txt294 mtb0px tright">
-                          USD 4.50
-                        </h4>
-                      </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt318 mtb0px">
-                        ID #0123456789 | Level 1
-                      </h4>
-                    </div>
-                  </div> 
-
-                  <div class="row cmlr-10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <hr class="ws_hr mtb0px">
-                    </div>
-                  </div>
-
-                  <div class="row mtb15px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-md-6 col-sm-6 col-xs-6 pl0px">
-                        <h4 class="txt310 mtb0px">
-                          20 May
-                        </h4>
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                        <h4 class="txt351 mtb0px tright">
-                          - USD 20.00
-                        </h4>
-                      </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt318 mtb0px">
-                        ID #3278438739 | Withdrawal
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div class="row cmlr-10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <hr class="ws_hr mtb0px">
-                    </div>
-                  </div>
+                </ng-container>
+          
                   
                   <div class="row mt40px mb40px">
                     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <a class="flex_ai">
+                      <a class="flex_ai" (click)="DownloadPdf()">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
                         <h4 class="txt345 mtb0px ml10px">
                           Download PDF
