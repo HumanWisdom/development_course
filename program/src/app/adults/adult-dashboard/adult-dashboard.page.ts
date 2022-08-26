@@ -171,9 +171,17 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
           this.loginadult(res)
         } else {
-          this.router.navigate(['/onboarding/login'])
+          localStorage.setItem("email", 'guest@humanwisdom.me');
+          localStorage.setItem("pswd", '12345');
+          localStorage.setItem('guest', 'T');
+          // this.router.navigate(['/onboarding/login'])
         }
-      })
+      }, error => {
+        localStorage.setItem("email", 'guest@humanwisdom.me');
+        localStorage.setItem("pswd", '12345');
+        localStorage.setItem('guest', 'T');
+      },
+      )
     }
 
 
