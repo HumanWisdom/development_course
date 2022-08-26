@@ -288,7 +288,7 @@ export class AdultDashboardPage implements OnInit {
       this.getUserstories()
     }, 1000)
 
-    if (localStorage.getItem('acceptcookie') === null) {
+    if (localStorage.getItem('acceptcookie') === null) {      
       this.enablecookiemodal.nativeElement.click();
     } else {
       this.enableDailypopup();

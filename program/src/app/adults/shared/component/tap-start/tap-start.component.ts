@@ -30,25 +30,25 @@ export class TapStartComponent implements OnInit,AfterViewInit {
     this.path=this.router.url
     let str = this.path.replace(/\D/g,'');
     this.scrId = str;
-    this.scrId=this.scrId.parseInt()
-   console.log("str","id",this.scrId)    
+    //this.scrId=this.scrId.parseInt()
+     
   }
   next(){
     this.nextEmitter.emit()
   }
   ngAfterViewInit(){
-    this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
+    // this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
       
-      img = img.substring(img.indexOf(",") + 1);
-     // img.replace('data:image/png;base64,',' ')
-      console.log(img)
-     this.aservice.UploadThumbnail({"ScrNo":this.scrId,"byteArray":img}).subscribe(
-        r=>{
-          console.log(r)
-        }
-      )
+    //   img = img.substring(img.indexOf(",") + 1);
+    //  // img.replace('data:image/png;base64,',' ')
+    //   console.log(img)
+    //  this.aservice.UploadThumbnail({"ScrNo":this.scrId,"byteArray":img}).subscribe(
+    //     r=>{
+    //       console.log(r)
+    //     }
+    //   )
       
-    })
+    // })
 
 
   }

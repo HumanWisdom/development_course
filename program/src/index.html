@@ -296,12 +296,12 @@
         if (window.AndroidHandler) {
           window.AndroidHandler.logout();
         }
-        if (window.webkit.messageHandlers.nativeActionHandler) {
+        if (window.webkit) {
           window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
         }
       });
       $(document).on('click', '#liSubscribe', function () {
-        if (window.webkit.messageHandlers.nativeActionHandler) {
+        if (window.webkit) {
           window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
         }
       });
