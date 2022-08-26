@@ -57,14 +57,14 @@ export class CourseHeaderComponent implements OnInit {
 
     var lastSlash = this.path.lastIndexOf("/");
      this.scrNumber=this.path.substring(lastSlash+2);
-     console.log(this.scrNumber)
+
     this.getProgress(this.scrNumber)
     this.shared=false
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    console.log("recieved bm",this.bookmark,this.path)
+  
     if (this.urlT)
     {
       this.shared=true
@@ -73,7 +73,7 @@ export class CourseHeaderComponent implements OnInit {
   }
   toggleBookmark(){
     this.bookmark=!this.bookmark
-    console.log(this.bookmark)
+   
     this.sendBookmark.emit(this.bookmark)
   }
   addZero(i) {
@@ -90,15 +90,15 @@ export class CourseHeaderComponent implements OnInit {
    
    if(this.urlT)
    {
-     console.log("url")
+    
     this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.urlT}`
 
    }
    else{
-     console.log("local")
+   
     this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.token}`
    }
-   console.log(this.path)
+ 
    
 
    //history.replaceState(null, null,'course#'+ this.address+`?t=${this.token}`);
@@ -143,12 +143,12 @@ export class CourseHeaderComponent implements OnInit {
     }
     if(this.urlT)
    {
-     console.log("url")
+    
     this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.urlT}`
 
    }
    else{
-     console.log("local")
+   
     this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.token}`
    }
  
@@ -170,7 +170,7 @@ export class CourseHeaderComponent implements OnInit {
     .subscribe(
       r=>{
         this.progress=parseFloat(r)
-        console.log(this.progress,"sessionProgress")
+       
         setTimeout(() => {
           this.showheaderbar = true;
         }, 100)
