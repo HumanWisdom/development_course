@@ -247,7 +247,6 @@ export class LoginPage implements OnInit,OnDestroy {
   }
 
   emailLogin(){
-    debugger;
     localStorage.removeItem("token")
     if(this.urlEmail)
           {
@@ -260,7 +259,6 @@ export class LoginPage implements OnInit,OnDestroy {
     .subscribe(
       res=>
       {//
-        debugger;
         this.loginResponse=res
         this.userId=res.UserId
         console.log(this.loginResponse)

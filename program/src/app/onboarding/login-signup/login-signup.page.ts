@@ -484,7 +484,6 @@ export class LoginSignupPage implements OnInit {
     this.service.emailLogin(this.email, this.password)
       .subscribe(
         res => {//
-          debugger;
           this.loginResponse = res
           localStorage.setItem('socialLogin', 'F');
           localStorage.setItem('guest', 'F');

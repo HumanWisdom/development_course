@@ -132,7 +132,6 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
                 alert(result.error.message);
               } else {
                 alert('Your Payment Is Successfully Submitted');
-                debugger;
                 if(localStorage.getItem('ispartnershipClick')=='T'){
                   this.router.navigate(['/adults/humanwisdom-premium']);
                 }
