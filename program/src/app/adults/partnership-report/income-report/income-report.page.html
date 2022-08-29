@@ -40,9 +40,9 @@
                         Partnership Referral Code
                       </h4>
                       <button type="button" class="btn btn_pr_code">
-                        NID2022S
+                        {{this.partnershipReport.AffRefCode}}
                       </button>
-                      <a class="">
+                      <a class="" (click)="share()">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey_02.svg" alt="" class="p0"/>
                       </a>
                     </div>
@@ -61,10 +61,10 @@
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <h4 class="txt335 mtb0px tleft">
-                          Nidhi Singhvi
+                          {{partnershipReport.AffName}}
                         </h4>
                         <h4 class="txt311 mtb0px tleft">
-                          Lifetime earnings: $264.52
+                          Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
                         </h4>
                       </div>
                     </div>
@@ -77,13 +77,16 @@
                           AVAILABLE BALANCE
                         </h4>
                         <h4 class="txt344 mtb0px">
-                          USD 234.00
+                          USD {{partnershipReport.BalanceAmt}}
                         </h4>
-                        <a class="">
+                        <a href="mailto:info@humanwisdom.me"  *ngIf="partnershipReport.BalanceAmt>=20">
                           <h4 class="txt345 mb0px mt5px underline ws_nowrap">
                             Request to withdraw
                           </h4>
                         </a>
+                        <h4 *ngIf="partnershipReport.BalanceAmt<20">
+                          Reach $20 to get paid
+                        </h4>
                       </div>
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 dinline_box tcenter">
                         <hr class="vhr_02 mtb0px">
@@ -93,9 +96,9 @@
                           WITHDRAWN
                         </h4>
                         <h4 class="txt344 mtb0px">
-                          USD 30.52
+                          USD {{partnershipReport.WithdrawnAmt}}
                         </h4>
-                        <a class="">
+                        <a class="" (click)="redirectToIncomeActivity()">
                           <h4 class="txt345 mb0px mt5px underline ws_nowrap">
                             View income activity
                           </h4>
@@ -107,7 +110,7 @@
                   <div class="row mt40px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt320 mtb0px tleft">
-                        04 Aug 2022
+                        {{currentDate  | date: "longDate"}}
                       </h4>
                     </div>
                   </div> 
@@ -120,10 +123,13 @@
                     </div>
                   </div> 
 
-                  <div class="row mt5px mb20px">
+                  <div class="row mt5px mb20px" *ngIf="years.length>0">
                     <div class="col-md-3 col-sm-3 col-xs-3">
-                      <select class="form-control subscribe_select1">
-                        <option>2022</option>
+                      <select class="form-control subscribe_select1"  [(ngModel)]="selectedYear" 
+                      #mySelect
+                      (change)='onChange(mySelect.value)'>
+                      <option  [value]="'0'">Select Year</option>
+                        <option *ngFor="let titl of years" [value]="titl">{{titl}}</option>
                       </select>
                     </div>
                   </div> 
@@ -133,74 +139,9 @@
                       <!-- accordion -->
                       <div class="panel-group panel_pr" id="accordion">
 
-                        <!-- level 0 -->
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a1">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="txt294 mtb0px">
-                                        Level 0 
-                                        <span class="txt320">
-                                          (10%)
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="txt346 mtb0px">
-                                        USD 45.00
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="pr_a1" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      03
-                                      <span class="txt348 mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt348 mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      10
-                                      <span class="txt348 mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt347 mtb0px tright">
-                                      $675.00
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /level 0 -->
-
                         <!-- level 1 -->
+                        <ng-container *ngFor="let item of partnershipReport.IncomeReport">
+                      
                         <div class="panel panel-default">
                           <div class="panel-heading">
                             <h4 class="panel-title">
@@ -209,15 +150,15 @@
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
                                       <h4 class="txt294 mtb0px">
-                                        Level 1 
+                                        Level {{item.Level}}
                                         <span class="txt320">
-                                          (7%)
+                                          ( {{item.CommPercent}})
                                         </span>
                                       </h4>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
                                       <h4 class="txt346 mtb0px">
-                                        USD 47.25
+                                        USD {{item.CommEarned}}
                                       </h4>
                                     </div>  
                                   </div>
@@ -231,7 +172,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
                                     <h4 class="txt347 mtb0px">
-                                      03
+                                    {{item.PartnersCnt}}
                                       <span class="txt348 mtb0px">
                                         Partners
                                       </span>
@@ -249,7 +190,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
                                     <h4 class="txt347 mtb0px">
-                                      10
+                                    {{item.SubscribersCnt}}
                                       <span class="txt348 mtb0px">
                                         Subscribers
                                       </span>
@@ -257,7 +198,7 @@
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
                                     <h4 class="txt347 mtb0px tright">
-                                      $675.00
+                                      ${{item.RevenueEarned}}
                                     </h4>
                                   </div>
                                 </div>
@@ -265,423 +206,20 @@
                             </div>
                           </div>
                         </div>
-                        <!-- /level 1 -->
-
-                        <!-- level 2 -->
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a3">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="txt294 mtb0px">
-                                        Level 2 
-                                        <span class="txt320">
-                                          (6%)
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="txt346 mtb0px">
-                                        USD 40.00
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="pr_a3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      03
-                                      <span class="txt348 mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt348 mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      10
-                                      <span class="txt348 mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt347 mtb0px tright">
-                                      $675.00
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /level 2 -->
-
-                        <!-- level 3 -->
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a4">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="txt294 mtb0px">
-                                        Level 3 
-                                        <span class="txt320">
-                                          (5%)
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="txt346 mtb0px">
-                                        USD 33.75
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="pr_a4" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      03
-                                      <span class="txt348 mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt348 mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      10
-                                      <span class="txt348 mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt347 mtb0px tright">
-                                      $675.00
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /level 3 -->
-
-                        <!-- level 4 -->
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a5">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="txt294 mtb0px">
-                                        Level 4 
-                                        <span class="txt320">
-                                          (4%)
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="txt346 mtb0px">
-                                        USD 27.00
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="pr_a5" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      03
-                                      <span class="txt348 mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt348 mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      10
-                                      <span class="txt348 mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt347 mtb0px tright">
-                                      $675.00
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /level 4 -->
-
-                        <!-- level 5 -->
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a6">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="txt294 mtb0px">
-                                        Level 5 
-                                        <span class="txt320">
-                                          (3%)
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="txt346 mtb0px">
-                                        USD 20.25
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="pr_a6" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      03
-                                      <span class="txt348 mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt348 mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      10
-                                      <span class="txt348 mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt347 mtb0px tright">
-                                      $675.00
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /level 5 -->
-
-                        <!-- level 6 -->
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a7">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="txt294 mtb0px">
-                                        Level 6 
-                                        <span class="txt320">
-                                          (2%)
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="txt346 mtb0px">
-                                        USD 13.50
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="pr_a7" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      03
-                                      <span class="txt348 mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt348 mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      10
-                                      <span class="txt348 mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt347 mtb0px tright">
-                                      $675.00
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /level 6 -->
-
-                        <!-- level 7 -->
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a8">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                      <h4 class="txt294 mtb0px">
-                                        Level 7 
-                                        <span class="txt320">
-                                          (1%)
-                                        </span>
-                                      </h4>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
-                                      <h4 class="txt346 mtb0px">
-                                        USD 6.75
-                                      </h4>
-                                    </div>  
-                                  </div>
-                                </div>
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="pr_a8" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      03
-                                      <span class="txt348 mtb0px">
-                                        Partners
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt348 mtb0px tright">
-                                      Total Revenue
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
-                                    <h4 class="txt347 mtb0px">
-                                      10
-                                      <span class="txt348 mtb0px">
-                                        Subscribers
-                                      </span>
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
-                                    <h4 class="txt347 mtb0px tright">
-                                      $675.00
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /level 7 -->
-
+                      </ng-container>
                       </div>
                       <!-- /accordion -->
                     </div>
                   </div> 
 
-                  <div class="row pr_cnt">
+                  <div class="row pr_cnt" *ngIf="partnershipReport.IncomeReport.length>0">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                       <div class="col-md-4 col-sm-4 col-xs-4">
                         <h4 class="txt349 mtb0px">
                           Total Partners
                         </h4>
                         <h4 class="txt350 mb0px mt5px">
-                          21
+                         {{totalPartners}}
                         </h4>
                       </div>
 
@@ -690,7 +228,7 @@
                           Total Subscribers
                         </h4>
                         <h4 class="txt350 mtb0px mt5px">
-                          115
+                          {{totalSubscriber}}
                         </h4>
                       </div>
 
@@ -699,7 +237,7 @@
                           Total Earnings
                         </h4>
                         <h4 class="txt350 mtb0px mt5px">
-                          $234.00
+                          ${{totalRevenu}}
                         </h4>
                       </div>
                     </div>

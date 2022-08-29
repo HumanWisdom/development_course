@@ -12,14 +12,18 @@ import { Router } from '@angular/router';
 })
 export class IncomeActivityPage implements OnInit {
   partnershipReport:PartnershipReport;
+   groupedDates = [];
+   currentDate=new Date();
   constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router) { 
     this.InitializePartnershipReport();
+
   }
 
   ngOnInit() {
     this.adultService.GetPartnerCommReport().subscribe(res=>{
       if(res){
         this.partnershipReport=res;
+        this.groupDates();
       }
     })
   }
@@ -61,6 +65,38 @@ export class IncomeActivityPage implements OnInit {
     });
   }
   redirectToIncomeReport(){
-   this.router.navigate(['']);
+   this.router.navigate(['adults/partnership-report/income-report']);
   }
+
+ groupDates() {
+    this.partnershipReport.IncomeActivity.forEach(d => {
+      let obj={
+        SubscriptionId:'',
+        Level:'',
+        Comm_Earned:""
+      };
+      const dt = new Date(d.CreatedOn);
+      obj.SubscriptionId=d.SubscriptionId;
+      obj.Level= d.Level;
+      obj.Comm_Earned=d.Comm_Earned;
+        const date = dt.getDate();
+        const year = dt.getFullYear();
+        const month = dt.toLocaleString("default", {month: "long"});;
+        
+        const key = `${month} ${year}`;
+        if (key in this.groupedDates) {
+            this.groupedDates[key].dates = [...this.groupedDates[key].dates, obj];
+        } else {
+            this.groupedDates[key] = {
+                year,
+                month,
+                dates: [obj],
+            };
+        }
+
+    });
+
+    return Object.values(this.groupedDates);
+}
+
 }
