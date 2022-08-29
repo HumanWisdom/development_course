@@ -54,7 +54,7 @@
                                 {{c.text}}
                               </p> 
                               <!-- <a *ngIf="c.link" routerLink="{{c.link}}">
-                                <h6 class="tleft txt58">
+                                <h6 class="tleft txt58 underline">
                                   Explore this module
                                 </h6> 
                               </a> -->

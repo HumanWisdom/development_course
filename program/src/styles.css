@@ -23991,13 +23991,13 @@ a
 
 .bg_chathams_blue
 {
-  background: #13547A;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  background: #13547A !important;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25) !important;
 }
 
 .content_top
 {
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
   padding-top: 40px;
 }
 
@@ -24796,8 +24796,8 @@ a
 
 .affiliate_discount
 {
-  margin-right: -32px;
-  margin-left: -32px;
+  margin-right: -20px;
+  margin-left: -20px;
   background: #FFC455;
   padding: 17px 40px 23px 40px;
 }
@@ -26367,7 +26367,8 @@ h1
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: black;
+  /* color: black; */
+  color: #FFFFFF;
   font-size: 4rem;
   border: 0;
 }
@@ -30343,3 +30344,14 @@ svg path
   width: 60% !important;
 }
 /* /wisdom exercise */
+
+.mlr0px
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.mt20pxi 
+{
+  margin-top: 20px !important;
+}
