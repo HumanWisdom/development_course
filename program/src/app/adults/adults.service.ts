@@ -291,5 +291,8 @@ export class AdultsService {
   GetPartnerCommReport():Observable<any>{
     return this.http.get(this.path+`/GetPartnerCommReport`);
   }
-
+  getTreePlantationReport():Observable<any>{
+    return this.http.get(this.path+`/GetPartnerTreesReport`);
+  }
+  
 }
