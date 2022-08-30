@@ -23,21 +23,7 @@ export class LengthyTextComponent implements OnInit,AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit(){    
-    console.log("test bookmarks")
-    let str = this.next.routeConfig.path;
-    this.scrId = str.substring(1, str.length + 1);
-    this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
-      
-      img = img.substring(img.indexOf(",") + 1);
-     // img.replace('data:image/png;base64,',' ')
-      console.log(img)
-     this.service.UploadThumbnail({"ScrNo":this.scrId,"byteArray":img}).subscribe(
-        r=>{
-          console.log(r)
-        }
-      )
-      
-    })
+  
   
   
   }

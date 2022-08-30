@@ -93,8 +93,20 @@ export class SubscriptionPaymentPage implements OnInit {
               alert(result.error.message);
             } else {
               localStorage.setItem('personalised', 'F');
-              alert('Your Payment Is Successfully Submitted');
-              this.router.navigate(['/onboarding/myprogram'])
+              if(localStorage.getItem('ispartnershipClick')=='T'){
+                if(localStorage.getItem('isMonthlySelectedForPayment')=='T'){
+                  localStorage.setItem('ispartnershipClick', 'F');
+                  localStorage.setItem('isMonthlySelectedForPayment', 'F');
+                  this.router.navigate(['/adults/humanwisdom-premium']);
+                }else{
+                  localStorage.setItem('ispartnershipClick', 'F');
+                  localStorage.setItem('isMonthlySelectedForPayment', 'F');
+                  this.router.navigate(['/adults/hwp-premium-congratulations']);
+                }
+              }else {
+                alert('Your Payment Is Successfully Submitted');
+                this.router.navigate(['/onboarding/myprogram'])
+              }
             }
           });
         });
