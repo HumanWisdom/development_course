@@ -34,7 +34,7 @@ jobs:
         npm install -g @angular/cli
 
     - name: Install project dependencies
-      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+      # if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: |
         cd program
         npm ci
