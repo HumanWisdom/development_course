@@ -187,7 +187,7 @@ socialFirstName:any
 
   getclick(val) {
     if(val === 'click here') {
-    }else if(val === 'Yearly' || val === 'Monthly') {
+    }else if(val === 'c' || val === 'Monthly') {
       localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
       localStorage.setItem('personalised subscription', val);
       this.router.navigate(['/onboarding/viewcart'], { state: { quan:  '1', plan: val}})
