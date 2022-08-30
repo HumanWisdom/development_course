@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { faThinkPeaks } from '@fortawesome/free-brands-svg-icons';
 import { AdultsService } from './adults/adults.service';
 
 @Injectable({
@@ -102,7 +103,15 @@ export class AuthGuard implements CanActivate, OnInit {
       // this.router.navigate(['/onboarding/login'])
       this.router.navigate(['/onboarding/login'])
       return false
-    } else {
+     }else if (localStorage.getItem('btnClickBecomePartner')=='true'){
+      if(localStorage.getItem('SubscriberType')=='Monthly'|| localStorage.getItem('SubscriberType')=='Free' || localStorage.getItem('SubscriberType')=='Annual'){
+        localStorage.setItem('btnClickBecomePartner','false');
+        return true;
+      }
+       this.router.navigate(['/onboarding/login'])
+       return false;
+    }
+    else {
       // localStorage.clear()
       localStorage.setItem('btnclick', 'F');
       localStorage.setItem('guest', 'T');

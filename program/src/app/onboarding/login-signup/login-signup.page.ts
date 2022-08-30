@@ -493,6 +493,7 @@ export class LoginSignupPage implements OnInit {
           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
           localStorage.setItem("token", JSON.stringify(res.access_token))
           localStorage.setItem("Subscriber", res.Subscriber)
+          localStorage.setItem("SubscriberType", res.SubscriberType)
           localStorage.setItem("userId", JSON.stringify(this.userId))
           localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
           localStorage.setItem("email", this.email)
@@ -540,7 +541,12 @@ export class LoginSignupPage implements OnInit {
             this.freescreens()
             let roleid = JSON.parse(localStorage.getItem('RoleID'));
             let emailcode = localStorage.getItem("emailCode");
-
+            if (localStorage.getItem('btnClickBecomePartner')=='true'){
+              if(localStorage.getItem('SubscriberType')=='Monthly'|| localStorage.getItem('SubscriberType')=='Free' || localStorage.getItem('SubscriberType')=='Annual'){
+                this.router.navigate(['adults/subscribed-unsubscribed']);
+                localStorage.setItem('btnClickBecomePartner','false');
+              }
+            }
             let acceptCookie = localStorage.getItem('activeCode');
             let subscribePage = localStorage.getItem('subscribepage');
             let pers = localStorage.getItem('personalised');

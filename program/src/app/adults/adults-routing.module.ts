@@ -347,6 +347,22 @@ const routes: Routes = [
     path: 'partnership-webpage',
     loadChildren: () => import('./partnership-webpage/partnership-webpage.module').then( m => m.PartnershipWebpageModule)
   },
+  {
+    path: 'partnership-app',
+    loadChildren: () => import('./partnership-app/partnership-app.module').then( m => m.PartnershipAppModule)
+  },
+  {
+    path: 'humanwisdom-premium',
+    loadChildren: () => import('./humanwisdom-premium/humanwisdom-premium.module').then( m => m.HumanwisdomPremiumPageModule)
+  },
+  {
+    path: 'hwp-premium-congratulations',
+    loadChildren: () => import('./hwp-premium-congratulations/hwp-premium-congratulations.module').then( m => m.HwpPremiumCongratulationsPageModule)
+  },
+  {
+    path: 'partnership-report',
+    loadChildren: () => import('./partnership-report/partnership-report.module').then( m => m.PartnershipReportModule)
+  },
 ];
 
 @NgModule({
