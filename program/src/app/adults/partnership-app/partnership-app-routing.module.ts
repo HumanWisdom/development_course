@@ -5,6 +5,7 @@ import { AuthGuard } from 'src/app/auth.guard';
 const routes: Routes = [
   {
     path: '',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./subscribed-unsubscribed/subscribed-unsubscribed.module').then( m => m.SubscribedUnsubscribedPageModule)
   },
   {
