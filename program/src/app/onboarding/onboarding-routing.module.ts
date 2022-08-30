@@ -89,7 +89,8 @@ const routes: Routes = [
   {
     path: 'payment-details',
     loadChildren: () => import('./duplicate-subscription-payment/duplicate-subscription-payment.module').then(m => m.DuplicateSubscriptionPaymentModule)
-  }
+  },
+  
 ];
 
 @NgModule({
