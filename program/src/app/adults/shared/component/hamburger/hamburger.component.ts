@@ -19,8 +19,7 @@ export class HamburgerComponent implements OnInit {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
-
-
+  isPartner:any='0';
   isloggedIn = false;
   name = ''
   roleid = 0
@@ -49,7 +48,9 @@ export class HamburgerComponent implements OnInit {
       let userId = JSON.parse(localStorage.getItem("userId"))
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
+        localStorage.setItem("isPartner",res[0].IsPartner);
         this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
+        this.isPartner=localStorage.getItem('isPartner');
       })
       if (sub === '1' || sub === 1) {
         this.subscriber = true;
