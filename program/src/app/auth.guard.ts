@@ -30,14 +30,19 @@ export class AuthGuard implements CanActivate, OnInit {
     let m: any = window.location.href;
     let test = m.split('login')
     let affrefcode = '';
+    let affreftoken = '';
     let aff = m.split('AffrefCode')
     let token = m.split('authtoken')
     if (aff[1] !== undefined && aff[1] !== '') {
-      let token = aff[1].split('=')[1]
-      localStorage.setItem("Affreftoken", token)
+      let afftoken = aff[1].split('=')[1]
+      localStorage.setItem("Affreftoken", afftoken)
+      localStorage.setItem("AffReferralCode", afftoken)
     }
     if (localStorage.getItem('AffReferralCode') !== null) {
       affrefcode = localStorage.getItem('AffReferralCode');
+    }
+    if (localStorage.getItem('Affreftoken') !== null) {
+      affreftoken = localStorage.getItem('Affreftoken');
     }
     let cookie = localStorage.getItem('acceptcookie')
     if (token[1] !== undefined && token[1] !== '') {
@@ -49,6 +54,9 @@ export class AuthGuard implements CanActivate, OnInit {
       pers = localStorage.getItem('personalised');
       if (affrefcode !== '') {
         localStorage.setItem("AffReferralCode", affrefcode)
+      }
+      if (affreftoken !== '') {
+        localStorage.setItem("Affreftoken", affreftoken)
       }
       let authtoken = token[1].split('=')[1];
       localStorage.setItem("enablebanner", 'F')

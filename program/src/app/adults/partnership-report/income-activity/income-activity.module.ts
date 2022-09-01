@@ -9,6 +9,7 @@ import { IncomeActivityPageRoutingModule } from './income-activity-routing.modul
 import { IncomeActivityPage } from './income-activity.page';
 
 import { SharedModule } from '../../shared/shared.module';
+import { MaskPipe } from '../mask.pipe';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { SharedModule } from '../../shared/shared.module';
     IncomeActivityPageRoutingModule,
     SharedModule
   ],
-  declarations: [IncomeActivityPage]
+  declarations: [IncomeActivityPage,MaskPipe],
+  providers:[MaskPipe]
 })
 export class IncomeActivityPageModule {}
