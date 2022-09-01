@@ -111,6 +111,7 @@ export class LoginSignupPage implements OnInit {
       this.urlKey = params['key']
       // Print the parameter to the console. 
     });
+    localStorage.setItem("remember", 'F')
   }
 
   ngOnInit() {
@@ -503,6 +504,7 @@ export class LoginSignupPage implements OnInit {
           localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem("isPartner",res.IsPartner);
           if (res.UserId === 0) {
             this.showAlert = true
             window.alert('You have enetered wrong credentials. Please try again.')

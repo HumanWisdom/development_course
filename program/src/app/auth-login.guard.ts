@@ -21,6 +21,7 @@ export class authLoginGuard implements CanActivate, OnInit {
     m = m.split('?')
     let cookie = false;
     let affrefcode = '';
+    let affreftoken = '';
     let persub = localStorage.getItem('personalised subscription');
     let pers = localStorage.getItem('personalised');
     let persdata = localStorage.getItem('personalisedlist');
@@ -33,12 +34,18 @@ export class authLoginGuard implements CanActivate, OnInit {
     if (localStorage.getItem('AffReferralCode') !== null) {
       affrefcode = localStorage.getItem('AffReferralCode');
     }
+    if (localStorage.getItem('Affreftoken') !== null) {
+      affreftoken = localStorage.getItem('Affreftoken');
+    }
     localStorage.clear()
     if (option === 'T') {
       localStorage.setItem('introoption', 'T')
     }
     if (affrefcode !== '') {
       localStorage.setItem("AffReferralCode", affrefcode)
+    }
+    if (affreftoken !== '') {
+      localStorage.setItem("Affreftoken", affreftoken)
     }
     if (cookie) {
       localStorage.setItem('acceptcookie', 'T');

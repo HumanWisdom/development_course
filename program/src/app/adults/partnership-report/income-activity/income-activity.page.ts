@@ -99,4 +99,7 @@ export class IncomeActivityPage implements OnInit {
     return Object.values(this.groupedDates);
 }
 
+ChangeAccountDetais(){
+  this.router.navigate(['adults/partnership-app/payment-bank']);
+}
 }
