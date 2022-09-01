@@ -34,6 +34,8 @@
     "@ionic/angular": "^5.0.0",
     "@swimlane/ngx-charts": "^18.0.1",
     "@types/chart.js": "^2.9.34",
+    "@types/html2canvas": "^1.0.0",
+    "@types/jspdf": "^2.0.0",
     "@types/stripe-v3": "^3.1.23",
     "angular-socialshare": "^2.3.11",
     "angularx-social-login": "^3.5.4",

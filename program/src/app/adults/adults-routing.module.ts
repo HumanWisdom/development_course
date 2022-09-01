@@ -349,6 +349,7 @@ const routes: Routes = [
   },
   {
     path: 'partnership-app',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./partnership-app/partnership-app.module').then( m => m.PartnershipAppModule)
   },
   {
