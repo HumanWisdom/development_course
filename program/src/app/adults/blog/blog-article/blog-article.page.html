@@ -3,32 +3,39 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-        <a class="" routerLink="/adults/blog">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_03.svg" alt="" class="img-responsive">
+        <a class="" (click)="goBack()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_03.svg" alt=""
+            class="img-responsive">
         </a>
       </div>
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flexjc_end">
         <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright" (click)="likebtn()">
           <a class="">
-            <img *ngIf="this.likecount !== 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt="" class="img-responsive">
-            <img *ngIf="this.likecount === 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt="" class="img-responsive">
+            <img *ngIf="this.likecount !== 0"
+              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt=""
+              class="img-responsive">
+            <img *ngIf="this.likecount === 0"
+              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt=""
+              class="img-responsive">
           </a>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright">
           <a class="" (click)="commentbottom()">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue_01.svg" alt="" class="img-responsive">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue_01.svg" alt=""
+              class="img-responsive">
           </a>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright">
           <a class="" (click)="share()">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_01.svg" alt="" class="img-responsive">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_01.svg" alt=""
+              class="img-responsive">
           </a>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- /top navigation --> 
+<!-- /top navigation -->
 
 <!-- page content -->
 <div class="right_col mc_01">
@@ -45,9 +52,9 @@
                   <img src="{{blogList['ImgPath']}}" alt="" class="img-responsive w100p br_blr_20px">
                 </div>
               </div>
-              
+
               <div class="plr10px tleft">
-              
+
                 <!-- <div class="row center_flex blog_title">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <h4 class="mtb0px txt74">
@@ -64,15 +71,19 @@
                       </h4>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter p0">
-                      <img *ngIf="this.likecount === 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt="" class="img-responsive">
-                      <img *ngIf="this.likecount !== 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt="" class="img-responsive">
+                      <img *ngIf="this.likecount === 0"
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt=""
+                        class="img-responsive">
+                      <img *ngIf="this.likecount !== 0"
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg"
+                        alt="" class="img-responsive">
                       <h4 class="txt220 p0 tcenter like_count">
                         {{blogList['LikeCnt']}}
                       </h4>
                     </div>
                   </div>
                 </div>
-              
+
                 <!-- <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  flex_ai">
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -89,7 +100,7 @@
                     </div>
                   </div>
                 </div> -->
-              
+
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <h4 class="mtb0px txt78 p0" [innerHTML]="getHtml(blogList['Blog'])">
@@ -100,9 +111,12 @@
                 <!-- video -->
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <video controls playinline class="cvideo" poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video.svg" controlsList="nodownload">                                                
-                      <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/email/videos/humanwisdom_launch.mp4" type="video/mp4">                                              
-                    </video> 
+                    <video controls playinline class="cvideo"
+                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video.svg"
+                      controlsList="nodownload">
+                      <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/email/videos/humanwisdom_launch.mp4"
+                        type="video/mp4">
+                    </video>
                   </div>
                 </div>
                 <!-- /video -->
@@ -112,9 +126,10 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
                     <!-- desktop playstore -->
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0">
-                      <a (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dplaystore.svg" alt=""
-                          class="img-responsive">
+                      <a
+                        (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dplaystore.svg"
+                          alt="" class="img-responsive">
                       </a>
                     </div>
                     <!-- /desktop playstore -->
@@ -122,8 +137,8 @@
                     <!-- desktop appstore -->
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0">
                       <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dappstore.svg" alt=""
-                          class="img-responsive">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dappstore.svg"
+                          alt="" class="img-responsive">
                       </a>
                     </div>
                     <!-- /desktop appstore -->
@@ -136,7 +151,7 @@
                     <h4 class="mtb0px c3">This is a short video introduction to the HumanWisdom app - <a class="c4" href="https://staging.humanwisdom.me/course/adults/curated/youtubelink/GYbpYnkGJ0U">https://youtu.be/GYbpYnkGJ0U</a></h4>
                   </div>
                 </div> -->
-              
+
                 <!-- <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <h4 class="mtb0px txt221">
@@ -144,7 +159,7 @@
                     </h4>
                   </div>
                 </div> -->
-              
+
                 <!-- <div class="row center_flex mt15px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <button type="button" class="btn btn-default btn-sm btn_blog_tags">
@@ -164,13 +179,13 @@
                     </button>
                   </div>
                 </div> -->
-              
+
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <hr class="hr_style_11 mtb30px">
                   </div>
                 </div>
-              
+
                 <div class="row center_flex blog_comment">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <h4 class="mtb0px txt212 p0">
@@ -178,17 +193,19 @@
                     </h4>
                   </div>
                 </div>
-              
+
                 <div class="row center_flex blog_comment_desc" *ngFor="let item of BlogCommentsList">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  flex_ai">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
-                      <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
+                      <img
+                        src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}"
+                        alt="" class="img-responsive w100p">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                       <h4 class="mtb0px txt65 tleft">
                         <span class="txt143">
-                         {{item['UpdatedBy']}}
-                        </span> 
+                          {{item['UpdatedBy']}}
+                        </span>
                         {{item['Comments']}}
                         <span class="txt222">
                           {{timeSince(item['UpdatedOn'])}}
@@ -197,7 +214,7 @@
                     </div>
                   </div>
                 </div>
-              
+
                 <div class="row center_flex blog_vac" *ngIf="BlogCommentsListabove.length !== 0">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <!-- <h4 class="mtb0px txt223">
@@ -208,29 +225,33 @@
                       <div class="panel panel-default">
                         <div class="panel-heading">
                           <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                              href="#collapseOne">
                               <h4 class="mtb0px txt223">
-                                {{'View all comments' + '(' + BlogCommentsListabove.length  + ')'}}
+                                {{'View all comments' + '(' + BlogCommentsListabove.length + ')'}}
                               </h4>
                             </a>
                           </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                           <div class="panel-body">
-                            <div class="row center_flex blog_comment_desc_01"  *ngFor="let item of BlogCommentsListabove">
+                            <div class="row center_flex blog_comment_desc_01"
+                              *ngFor="let item of BlogCommentsListabove">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  flex_ai p0">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
-                                  <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
+                                  <img
+                                    src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}"
+                                    alt="" class="img-responsive w100p">
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                                   <h4 class="mtb0px txt65 tleft">
                                     <span class="txt143">
                                       {{item['UpdatedBy']}}
-                                    </span> 
+                                    </span>
                                     {{item['Comments']}}
                                     <span class="txt222">
                                       {{timeSince(item['UpdatedOn'])}}
-                                    </span> 
+                                    </span>
                                   </h4>
                                 </div>
                               </div>
@@ -242,32 +263,33 @@
                     <!-- /accordion -->
                   </div>
                 </div>
-              
-                
-              
+
+
+
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                    <input type="text" class="form-control cfc4" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}" placeholder="Leave a comment">
+                    <input type="text" class="form-control cfc4" [(ngModel)]="comment"
+                      [ngModelOptions]="{standalone: true}" placeholder="Leave a comment">
                     <!-- <i class="fa fa-send-o" style="font-size:24px" (click)="postcomment()"></i> -->
                   </div>
                 </div>
-              
+
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tright mt5px">
                     <button type="submit" class="btn btn-warning btn_post" (click)="postcomment()">
                       <i class="fa fa-send-o fa_post_01" (click)="postcomment()"></i>
                       <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class=""> -->
                       Post
-                    </button>             
-                  </div>     
+                    </button>
+                  </div>
                 </div>
-              
+
                 <!-- <div class="row center_flex mlr-10px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <hr class="hr_style_12">
                   </div>
                 </div> -->
-              
+
                 <!-- <div class="row center_flex blog_related_articles">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <h4 class="mtb0px txt212">
@@ -275,7 +297,7 @@
                     </h4>
                   </div>
                 </div> -->
-              
+
                 <!-- <div class="row center_flex blog_related_articles">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
@@ -294,8 +316,8 @@
                         </h4>
                       </a>
                     </div> -->
-              
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
+
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
                       <a href="">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_03.svg" alt="" class="img-responsive img_blog_ra">
                         <h4 class="mtb0px txt210 absolute_blog_ra_title tleft">
@@ -303,8 +325,8 @@
                         </h4>
                       </a>
                     </div> -->
-              
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
+
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
                       <a href="">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_04.svg" alt="" class="img-responsive img_blog_ra">
                         <h4 class="mtb0px txt210 absolute_blog_ra_title tleft">
@@ -312,11 +334,11 @@
                         </h4>
                       </a>
                     </div> -->
-                  <!-- </div>
+                <!-- </div>
                 </div> -->
-              
+
                 <div class="pagebreak"></div>
-              
+
               </div>
 
             </form>

@@ -111,6 +111,7 @@ export class LoginSignupPage implements OnInit {
       this.urlKey = params['key']
       // Print the parameter to the console. 
     });
+    localStorage.setItem("remember", 'F')
   }
 
   ngOnInit() {
