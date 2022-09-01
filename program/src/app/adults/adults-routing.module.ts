@@ -364,6 +364,10 @@ const routes: Routes = [
     path: 'partnership-report',
     loadChildren: () => import('./partnership-report/partnership-report.module').then( m => m.PartnershipReportModule)
   },
+  {
+    path: 'adverts',
+    loadChildren: () => import('./adverts/adverts.module').then( m => m.AdvertsPageModule)
+  },
 ];
 
 @NgModule({
