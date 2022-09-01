@@ -15,6 +15,8 @@ export class ViewcartPage implements OnInit {
   totalItemCount=0
   userId:any
   symbol:any
+  isModalPopup=false;
+  isMonthlySelected=false;
   couponCode:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   discount=0
@@ -35,6 +37,7 @@ export class ViewcartPage implements OnInit {
   enableemail=false
   enableDecide = false
   enableedit = false;
+  isUpgradeToPremium='';
 
 
   constructor(private router: Router,private service:OnboardingService, private location:Location) { 
@@ -43,6 +46,7 @@ export class ViewcartPage implements OnInit {
   }
 
   ngOnInit() {
+    this.isUpgradeToPremium = localStorage.getItem('upgradeToPremium');
     this.userEmail=JSON.parse(localStorage.getItem("userEmail"))
     localStorage.setItem("couponid", '0')
     console.log("save username",this.saveUsername)
@@ -52,11 +56,16 @@ export class ViewcartPage implements OnInit {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     if(localStorage.getItem('personalised') === 'T') {
       this.personalisedaddcart()
-    }else{
+    }
+    if(localStorage.getItem('upgradeToPremium') === 'T') {
+      localStorage.setItem('ispartnershipClick','T');
+      this.upgradeToPremium()
+    }
+    else{
       this.viewCart()
     }
     localStorage.setItem('personalised', 'F');
-    
+    localStorage.setItem('upgradeToPremium', 'F');
   }
  /* getMax(){
     this.cartList.forEach(obj => {
@@ -84,6 +93,7 @@ export class ViewcartPage implements OnInit {
         this.cartList=res
         if(this.cartList.length>0){
           this.symbol=this.cartList[0].Symbol;
+         this.isMonthlySelected= this.cartList.filter(x=>x.Plan=='Annual').length==0;
         }
         for(var i=0;i<this.cartList.length;i++){
           this.cartList[i].Qty=parseFloat(this.cartList[i].Qty)
@@ -167,6 +177,31 @@ export class ViewcartPage implements OnInit {
     }
   }
 
+  upgradeToPremium() {
+    let m = JSON.parse(localStorage.getItem('cartlist'));
+    let ym = localStorage.getItem('partnership-app');
+    if(m !=null && ym !=null){
+      this.service.addItem({
+        "UserId":this.userId,
+        "RateId": m['RateID'],
+        "Qty":1,
+        "PlanId": ym === 'Monthly' ? 1 : 2,
+        "MySelf": 1,
+        "LearnerEmail": '',
+        "LearnerMsg": '',
+        })
+        .subscribe(res=>{
+          this.viewCart()
+        },
+        error=>{
+          console.log(error)
+        },
+        ()=>{
+          this.totalPrice()  
+        })
+    }
+  }
+
   addToCart(){
     this.activeCard['LearnerEmail'] = this.learnermail
     this.activeCard['LearnerMsg'] = this.learnermsg
@@ -208,6 +243,7 @@ export class ViewcartPage implements OnInit {
         // {
           this.cartList[i].Qty==1
           this.cartList.splice(i,1)
+          this.isMonthlySelected= this.cartList.filter(x=>x.Plan=='Annual').length==0;
           if(this.cartList.length === 0) this.router.navigate(['/onboarding/add-to-cart'])
           //call service to delete
           this.service.deleteItem({"Id":parseFloat(cartId)})
@@ -376,20 +412,13 @@ export class ViewcartPage implements OnInit {
                   
             })
           }*/
-        
-       
-       
-          
-          
-      
-            
-  
-    
-    
-
-
   }
 
+
+  ProceedWithMonthly(){
+  localStorage.setItem('isMonthlySelectedForPayment','T');
+  this.isModalPopup=true;
+  }
   getAddCartEvent() {
     this.enableedit = false
     this.enableMySelf = true;
@@ -397,6 +426,10 @@ export class ViewcartPage implements OnInit {
     this.enableemail = false;
     this.learnermail = ''
     this.learnermsg = ''
+  }
+  Cancel(){
+    localStorage.setItem('isMonthlySelectedForPayment','F');
+    this.isModalPopup=false;
   }
 
 }

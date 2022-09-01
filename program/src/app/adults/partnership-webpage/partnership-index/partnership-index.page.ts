@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 @Component({
   selector: 'HumanWisdom-partnership-index',
   templateUrl: './partnership-index.page.html',
@@ -8,8 +10,9 @@ export class PartnershipIndexPage implements OnInit {
 
   public isHowItWorks:boolean=false;
   public isOtherBenefits:boolean=false;
-
-  constructor() { }
+  cardlist=[];
+  countryCode:any;
+  constructor(private router :Router,private services: OnboardingService,) { }
 
   ngOnInit() {
   }
@@ -53,5 +56,10 @@ export class PartnershipIndexPage implements OnInit {
       this.isOtherBenefits=true;
     }
   }
+  BecomeAPartner(){
+    localStorage.setItem('btnClickBecomePartner','true');
+    this.router.navigate(['adults/partnership-app']);
+  }
+
 
 }

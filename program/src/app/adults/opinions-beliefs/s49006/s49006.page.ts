@@ -1,7 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { AdultsService } from "../../adults.service";
 
 @Component({
   selector: 'app-s49006',
@@ -10,133 +10,127 @@ import {Location } from '@angular/common'
 })
 export class S49006Page implements OnInit {
 
-  bg_tn="bg_purple_red"
-  bg_cft="bg_purple_red"
-  bg="purple_red_w4"  
-  
-  toc="/opinions-beliefs/s49001"
-  path=this.router.url
+  bg_tn = "bg_purple_red"
+  bg_cft = "bg_purple_red"
+  bg = "purple_red_w4"
 
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  qrList=JSON.parse(localStorage.getItem("qrList"))
-  moduleId=localStorage.getItem("moduleId")
-  screenType=localStorage.getItem("reflection")
-  screenNumber=49006
-  startTime:any
-  endTime:any
-  totalTime:any
-  bookmark:any
-  rId=686
-  reflection:any
-  reflectionA:any
-  r49006=JSON.parse(sessionStorage.getItem("r49006"))
+  toc = "/opinions-beliefs/s49001"
+  path = this.router.url
 
-  shared:any
-  confirmed:any
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+  moduleId = localStorage.getItem("moduleId")
+  screenType = localStorage.getItem("reflection")
+  screenNumber = 49006
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
+  rId = 686
+  reflection: any
+  reflectionA: any
+  r49006 = JSON.parse(sessionStorage.getItem("r49006"))
+
+  shared: any
+  confirmed: any
 
 
-  constructor( private router: Router,
-    private service:AdultsService,
-    private location:Location) { }
+  constructor(private router: Router,
+    private service: AdultsService,
+    private location: Location) { }
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.qrList,"Qrlist")
-    
-    this.reflectionA=this.qrList.ListOfReflection
-   
-  
+
+
+    this.reflectionA = this.qrList.ListOfReflection
+
+
     this.findReflection()
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-      this.startTime = Date.now();
-   
-  
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    this.startTime = Date.now();
+
+
   }
-  sharedForum(e){
+  sharedForum(e) {
     console.log(e)
-    this.shared=e
+    this.shared = e
   }
 
-  confirmShare(){
-    this.confirmed=true
+  confirmShare() {
+    this.confirmed = true
   }
-  createScreen(){
+  createScreen() {
     this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {
+
+    })
+
 
   }
 
-  findReflection(){
-    for(var i=0;i<this.reflectionA.length;i++)
-    {
-      
-     
+  findReflection() {
+    for (var i = 0; i < this.reflectionA.length; i++) {
 
-      if(this.rId==this.reflectionA[i].ReflectionId)
-      {
-        this.reflection=this.reflectionA[i].Que
-       // this.optionList.push(this.questionA[i])
+
+
+      if (this.rId == this.reflectionA[i].ReflectionId) {
+        this.reflection = this.reflectionA[i].Que
+        // this.optionList.push(this.questionA[i])
       }
-       
+
     }
     console.log(this.reflection)
 
   }
-  
 
-  submitProgress(e){
-    console.log("returned response",e)
+
+  submitProgress(e) {
+    console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r49006",JSON.stringify(e))
-   this.r49006=sessionStorage.getItem("r49006")
-   console.log(this.r49006)
-  
-     
-      this.service.submitProgressReflection({
-        "ScrNumber":this.screenNumber,
-        "UserId":this.userId,
-        "BookMark":this.bookmark,
-        "ModuleId":this.moduleId,
-        "screenType":this.screenType,
-        "timeSpent":this.totalTime,
-        "ReflectionId":this.rId,
-        "Resp":this.r49006
-        }).subscribe(res=>
-        {
-          
-        },
-        error=>{
-          console.log(error)
-          this.router.navigate(['/adults/opinions-beliefs/s49007'])
+    sessionStorage.setItem("r49006", JSON.stringify(e))
+    this.r49006 = sessionStorage.getItem("r49006")
+    console.log(this.r49006)
 
-        },
-        ()=>{
-          this.router.navigate(['/adults/opinions-beliefs/s49007'])
-        })
- 
+
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r49006
+    }).subscribe(res => {
+
+    },
+      error => {
+        console.log(error)
+        this.router.navigate(['/adults/opinions-beliefs/s49007'])
+
+      },
+      () => {
+        this.router.navigate(['/adults/opinions-beliefs/s49007'])
+      })
+
 
   }
 
-  previous(){
+  previous() {
     this.router.navigate(['/adults/opinions-beliefs/s49005'])
   }
-  
-  ngOnDestroy(){
-   
-   
+
+  ngOnDestroy() {
+
+
   }
 
 
