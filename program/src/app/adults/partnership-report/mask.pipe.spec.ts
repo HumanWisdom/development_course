@@ -1,4 +1,4 @@
-import { MaskPipe } from './mask.pipe';
+import { MaskPipe } from '../shared/pipe/mask.pipe';
 
 describe('MaskPipe', () => {
   it('create an instance', () => {

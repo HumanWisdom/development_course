@@ -18,9 +18,10 @@ export class IncomeReportPage implements OnInit {
   currentDate=new Date();
   years:any=[];
   totalSubscriber:number;
-  selectedYear=0;
+  selectedYear='0';
   totalPartners:number;
   totalRevenu:number;
+  BankDet:string;
  constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router) { 
    this.InitializePartnershipReport();
 
@@ -47,7 +48,8 @@ export class IncomeReportPage implements OnInit {
      BalanceAmt:0,
      IncomeActivity:[],
      IncomeReport:[],
-     WithdrawnAmt:0 
+     WithdrawnAmt:0 ,
+     BankDet:''
    } as PartnershipReport;
  }
 
@@ -76,8 +78,12 @@ export class IncomeReportPage implements OnInit {
    });
  }
  redirectToIncomeActivity(){
-  this.router.navigate(['adults/partnership-report/income-activity']);
+  this.router.navigate(['/adults/partnership-report/income-activity']);
  }
+
+ getMaskAccountDetails(){
+  this.BankDet= 'XXX-XX-' + this.partnershipReport.BankDet.substr(0, this.partnershipReport.BankDet.length - 5); 
+}
 
 
  groupByYears(){

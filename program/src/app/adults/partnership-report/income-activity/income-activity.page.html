@@ -66,8 +66,8 @@
                         <h4 class="txt311 mtb0px tleft">
                           Lifetime earnings: {{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
                         </h4>
-                        <h4 class="txt311 mtb0px tleft">
-                        A/c # {{partnershipReport.BankDet | mask }}
+                        <h4 class="txt311 mtb0px tleft" *ngIf="BankDet">
+                        A/c # {{ BankDet }}
                         </h4>
                         <a>
                           <h4 class="txt311 tright" (click)="ChangeAccountDetais()" >
