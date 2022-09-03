@@ -150,12 +150,12 @@ export class AdultDashboardPage implements OnInit {
     public cd: ChangeDetectorRef, public fb: FormBuilder, public authService: SocialAuthService,
     public platform: Platform,
   ) {
-    let remem = localStorage.getItem("remember")
-    if (remem === null || remem === 'F') {
-      localStorage.setItem('isloggedin', 'F')
-      localStorage.setItem('guest', 'T')
-      this.router.navigate(['/onboarding/login'])
-    }
+    // let remem = localStorage.getItem("remember")
+    // if (remem === null || remem === 'F') {
+    //   localStorage.setItem('isloggedin', 'F')
+    //   localStorage.setItem('guest', 'T')
+    //   this.router.navigate(['/onboarding/login'])
+    // }
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
       localStorage.setItem('acceptcookie', 'T')
@@ -260,7 +260,7 @@ export class AdultDashboardPage implements OnInit {
       this.getProgress()
     }
 
-    if (localStorage.getItem("Affreftoken") !== null && localStorage.getItem('AffReferralCode') === null) {
+    if (localStorage.getItem("Affreftoken") !== null) {
       let token = localStorage.getItem("Affreftoken");
       this.service.decrypt(token).subscribe((res: any) => {
         if (res) {

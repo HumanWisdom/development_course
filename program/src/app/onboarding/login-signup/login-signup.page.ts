@@ -112,6 +112,7 @@ export class LoginSignupPage implements OnInit {
       // Print the parameter to the console. 
     });
     localStorage.setItem("remember", 'F')
+    localStorage.setItem("firsttime", 'T')
   }
 
   ngOnInit() {
@@ -487,6 +488,7 @@ export class LoginSignupPage implements OnInit {
         res => {//
           this.loginResponse = res
           localStorage.setItem('socialLogin', 'F');
+          localStorage.setItem("isloggedin", 'T')
           localStorage.setItem('guest', 'F');
           localStorage.setItem('btnclick', 'F')
           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
@@ -541,10 +543,10 @@ export class LoginSignupPage implements OnInit {
             this.freescreens()
             let roleid = JSON.parse(localStorage.getItem('RoleID'));
             let emailcode = localStorage.getItem("emailCode");
-            if (localStorage.getItem('btnClickBecomePartner')=='true'){
-              if(localStorage.getItem('SubscriberType')=='Monthly'|| localStorage.getItem('SubscriberType')=='Free' || localStorage.getItem('SubscriberType')=='Annual'){
+            if (localStorage.getItem('btnClickBecomePartner') == 'true') {
+              if (localStorage.getItem('SubscriberType') == 'Monthly' || localStorage.getItem('SubscriberType') == 'Free' || localStorage.getItem('SubscriberType') == 'Annual') {
                 this.router.navigate(['adults/subscribed-unsubscribed']);
-                localStorage.setItem('btnClickBecomePartner','false');
+                localStorage.setItem('btnClickBecomePartner', 'false');
               }
             }
             let acceptCookie = localStorage.getItem('activeCode');
