@@ -364,11 +364,6 @@
         /* margin: 0 0 0 0.2rem; */
     }
 
-    .wediv::-webkit-scrollbar-track
-    {
-        margin: 0 0 0 0 !important;
-    }
-
     .cp0_01
     {
         padding: 0;
@@ -791,7 +786,8 @@
 
     .mpfy
     {
-        margin: 50px 0 18px 0;
+        /* margin: 50px 0 18px 0; */
+        margin: 20px 0 18px 0;
     }
 
     .mica,
@@ -939,13 +935,5 @@
     .pt1
     {
         margin-top: -15%;
-    }
-}
-
-@media (max-width: 1366px)
-{
-    .flex_ai_imp
-    {
-        display: flex !important;
     }
 }

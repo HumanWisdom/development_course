@@ -506,6 +506,7 @@ export class LoginSignupPage implements OnInit {
           localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem("isPartner", res.IsPartner);
           if (res.UserId === 0) {
             this.showAlert = true
             window.alert('You have enetered wrong credentials. Please try again.')
@@ -532,7 +533,6 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("userName", JSON.stringify(this.userName))
 
             }
-
             else {
               sessionStorage.setItem("userId", JSON.stringify(this.userId))
               sessionStorage.setItem("userEmail", JSON.stringify(this.email))
@@ -543,10 +543,10 @@ export class LoginSignupPage implements OnInit {
             this.freescreens()
             let roleid = JSON.parse(localStorage.getItem('RoleID'));
             let emailcode = localStorage.getItem("emailCode");
-            if (localStorage.getItem('btnClickBecomePartner') == 'true') {
+            if (localStorage.getItem('btnClickBecomePartner') == 'T') {
               if (localStorage.getItem('SubscriberType') == 'Monthly' || localStorage.getItem('SubscriberType') == 'Free' || localStorage.getItem('SubscriberType') == 'Annual') {
-                this.router.navigate(['adults/subscribed-unsubscribed']);
                 localStorage.setItem('btnClickBecomePartner', 'false');
+                this.router.navigate(['adults/partnership-app']);
               }
             }
             let acceptCookie = localStorage.getItem('activeCode');
@@ -584,23 +584,20 @@ export class LoginSignupPage implements OnInit {
                   localStorage.setItem("emailCode", 'F');
                 }
                 localStorage.setItem("isloggedin", 'T')
-                if (roleid === 8) {
-                  let userId = JSON.parse(localStorage.getItem("userId"))
-                  window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
+                if (localStorage.getItem('btnClickBecomePartner') == 'T') {
+                  if (localStorage.getItem('SubscriberType') == 'Monthly' || localStorage.getItem('SubscriberType') == 'Free' || localStorage.getItem('SubscriberType') == 'Annual') {
+                    localStorage.setItem('btnClickBecomePartner', 'F')
+                    this.router.navigate(['adults/partnership-app']);
+                  }
                 } else {
-                  if (option === 'T') {
+                  if (pers && persub && pers === 'T') {
                     localStorage.setItem("isloggedin", 'T')
-                    localStorage.setItem('introoption', 'F')
-                    this.router.navigate(['/intro/personalised-for-you']);
+                    this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: persub } })
                   } else {
-                    if (pers && persub && pers === 'T') {
-                      localStorage.setItem("isloggedin", 'T')
-                      this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: persub } })
-                    } else {
-                      this.router.navigate(['/adults/adult-dashboard'])
-                    }
+                    this.router.navigate(['/adults/adult-dashboard'])
                   }
                 }
+
 
               }
             }
@@ -703,6 +700,7 @@ export class LoginSignupPage implements OnInit {
 
     )
   }
+
 
   signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"

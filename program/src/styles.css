@@ -16326,6 +16326,11 @@ textarea:focus
       display: block;
     }
 
+    .safari_dblock_imp
+    {
+      display: block !important;
+    }
+
     .safari_dflex
     {
       display: flex;
@@ -21256,7 +21261,7 @@ and (orientation : portrait)
 }
 
 .mb40px
-{
+{ 
   margin-bottom: 40px;
 }
 
@@ -30355,3 +30360,29 @@ svg path
 {
   margin-top: 20px !important;
 }
+
+/* adverts */
+.bgdiv_adverts 
+{
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/adverts/bg_01.svg) no-repeat center center;
+  background-size: cover;
+  margin: 0 -10px;
+  padding: 50px 10px 40px 10px;
+}
+
+.btn_yellow_01 
+{
+  margin: 0;
+  border: 0;
+  height: 60px;
+  background: linear-gradient(180deg, #FFC455 0%, #FFC455 100%);
+  box-shadow: 0px 0px 1px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+}
+
+.flex_ai_imp 
+{
+  display: flex;
+  align-items: center;
+}
+/* /adverts */

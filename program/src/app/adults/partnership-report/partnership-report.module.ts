@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PartnershipReportRoutingModule } from './partnership-report-routing.module';
+import { MaskPipe } from './mask.pipe';
 
 
 @NgModule({
@@ -9,6 +10,7 @@ import { PartnershipReportRoutingModule } from './partnership-report-routing.mod
   imports: [
     CommonModule,
     PartnershipReportRoutingModule
-  ]
+  ],
+  exports:[]
 })
 export class PartnershipReportModule { }

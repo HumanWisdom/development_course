@@ -349,6 +349,7 @@ const routes: Routes = [
   },
   {
     path: 'partnership-app',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./partnership-app/partnership-app.module').then( m => m.PartnershipAppModule)
   },
   {
@@ -362,6 +363,10 @@ const routes: Routes = [
   {
     path: 'partnership-report',
     loadChildren: () => import('./partnership-report/partnership-report.module').then( m => m.PartnershipReportModule)
+  },
+  {
+    path: 'adverts',
+    loadChildren: () => import('./adverts/adverts.module').then( m => m.AdvertsPageModule)
   },
 ];
 
