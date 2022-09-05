@@ -51,7 +51,8 @@ export class IncomeReportPage implements OnInit {
      IncomeActivity:[],
      IncomeReport:[],
      WithdrawnAmt:0 ,
-     BankDet:''
+     BankDet:'',
+     AffImgPath:''
    } as PartnershipReport;
  }
 
