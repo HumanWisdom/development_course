@@ -50,6 +50,7 @@ export class HamburgerComponent implements OnInit {
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
         localStorage.setItem("isPartner",res[0].IsPartner);
+        localStorage.setItem('PartnerOption',res[0].PartnerOption);
         this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.isPartner=localStorage.getItem('isPartner');
         this.partnerOption=localStorage.getItem('PartnerOption')
