@@ -14,6 +14,7 @@ export class IncomeActivityPage implements OnInit {
   partnershipReport:PartnershipReport;
    groupedDates = [];
    currentDate=new Date();
+   BankDet:string;
   constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router) { 
     this.InitializePartnershipReport();
 
@@ -23,9 +24,13 @@ export class IncomeActivityPage implements OnInit {
     this.adultService.GetPartnerCommReport().subscribe(res=>{
       if(res){
         this.partnershipReport=res;
+        this. getMaskAccountDetails();
         this.groupDates();
       }
     })
+  }
+  getMaskAccountDetails(){
+    this.BankDet= 'XXX-XX-' + this.partnershipReport.BankDet.substr(0, this.partnershipReport.BankDet.length - 5); 
   }
 
 
@@ -36,7 +41,8 @@ export class IncomeActivityPage implements OnInit {
       BalanceAmt:0,
       IncomeActivity:[],
       IncomeReport:[],
-      WithdrawnAmt:0 
+      WithdrawnAmt:0 ,
+      BankDet:''
     } as PartnershipReport;
   }
 
@@ -99,4 +105,7 @@ export class IncomeActivityPage implements OnInit {
     return Object.values(this.groupedDates);
 }
 
+ChangeAccountDetais(){
+  this.router.navigate(['adults/partnership-app/payment-bank']);
+}
 }

@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
-import { faThinkPeaks } from '@fortawesome/free-brands-svg-icons';
 import { AdultsService } from './adults/adults.service';
 
 @Injectable({
@@ -14,12 +13,8 @@ export class AuthGuard implements CanActivate, OnInit {
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
   constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
-
-
   }
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
@@ -30,14 +25,18 @@ export class AuthGuard implements CanActivate, OnInit {
     let m: any = window.location.href;
     let test = m.split('login')
     let affrefcode = '';
+    let affreftoken = '';
     let aff = m.split('AffrefCode')
     let token = m.split('authtoken')
     if (aff[1] !== undefined && aff[1] !== '') {
-      let token = aff[1].split('=')[1]
-      localStorage.setItem("Affreftoken", token)
+      let afftoken = aff[1].split('=')[1]
+      localStorage.setItem("Affreftoken", afftoken)
     }
     if (localStorage.getItem('AffReferralCode') !== null) {
       affrefcode = localStorage.getItem('AffReferralCode');
+    }
+    if (localStorage.getItem('Affreftoken') !== null) {
+      affreftoken = localStorage.getItem('Affreftoken');
     }
     let cookie = localStorage.getItem('acceptcookie')
     if (token[1] !== undefined && token[1] !== '') {
@@ -49,6 +48,9 @@ export class AuthGuard implements CanActivate, OnInit {
       pers = localStorage.getItem('personalised');
       if (affrefcode !== '') {
         localStorage.setItem("AffReferralCode", affrefcode)
+      }
+      if (affreftoken !== '') {
+        localStorage.setItem("Affreftoken", affreftoken)
       }
       let authtoken = token[1].split('=')[1];
       localStorage.setItem("enablebanner", 'F')
@@ -80,13 +82,10 @@ export class AuthGuard implements CanActivate, OnInit {
     }
     let res = localStorage.getItem("isloggedin")
     let rem = localStorage.getItem("remember")
-    let first = localStorage.getItem("first")
+    let first = localStorage.getItem("firsttime")
     let adult = localStorage.getItem("adult")
     let btnclick = localStorage.getItem('btnclick');
     if (res === 'T' && rem === 'T') {
-      localStorage.setItem('adult', 'T')
-      return true;
-    } else if (first === 'T') {
       localStorage.setItem('adult', 'T')
       return true;
     } else if (adult === 'T' && rem !== 'T') {
@@ -95,78 +94,18 @@ export class AuthGuard implements CanActivate, OnInit {
       // this.router.navigate(['/onboarding/login'])
       this.router.navigate(['/onboarding/login'])
       return false
-     }else if (localStorage.getItem('btnClickBecomePartner')=='true'){
-      if(localStorage.getItem('SubscriberType')=='Monthly'|| localStorage.getItem('SubscriberType')=='Free' || localStorage.getItem('SubscriberType')=='Annual'){
-        localStorage.setItem('btnClickBecomePartner','false');
+    } else if (localStorage.getItem('btnClickBecomePartner') == 'true') {
+      if (localStorage.getItem('SubscriberType') == 'Monthly' || localStorage.getItem('SubscriberType') == 'Free' || localStorage.getItem('SubscriberType') == 'Annual') {
+        localStorage.setItem('btnClickBecomePartner', 'false');
         return true;
       }
-       this.router.navigate(['/onboarding/login'])
-       return false;
-    }
-    else {
+      this.router.navigate(['/onboarding/login'])
+      return false;
+    } else {
       // localStorage.clear()
       localStorage.setItem('btnclick', 'F');
       localStorage.setItem('guest', 'T');
-      localStorage.setItem("isloggedin", 'F')
       return true
     }
-    //  this.x=[]
-    // 
-    // 
-    //  
-    //let v=this.router.navigate(["/adults/"])
-
-    //  if(!this.loginResponse)
-    //  {
-    //    this.loginResponse=JSON.parse(sessionStorage.getItem("loginResponse"))
-    //    
-    //  }
-
-    // if(localStorage.getItem("token")){
-    //   
-    //sessionStorage.setItem("loginResponse",this.loginResponse)
-
-
-    // if(this.loginResponse !== null && this.loginResponse.Subscriber==1)
-    // {
-    //
-    //localStorage.setItem("userId",this.loginResponse.UserId)
-    //   return true
-    // }
-    // else{
-
-    // call free pages to check if url is a free screen 
-
-    //   let str = next.routeConfig.path.replace(/\D/g,'');
-    //   this.scrId = str;
-    //  
-    //  if(this.freeScreens !== null && this.freeScreens.includes((this.scrId).toString()))
-    //   return true
-    // else{
-    //   this.router.navigate(['/onboarding/login'])
-    //   return false
-
-    // }
-
-
-
-    //   }
-    // }
-    // else 
-    // {
-    //   
-    //   if(this.t)    
-    //     return true 
-    //   else 
-    //     {
-    //       this.router.navigate(['/onboarding/login'])
-    //        return false 
-    //     }
-    // }
-
-
-
   }
-
-
 }

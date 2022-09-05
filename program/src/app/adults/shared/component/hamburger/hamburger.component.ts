@@ -19,13 +19,13 @@ export class HamburgerComponent implements OnInit {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
-
-
+  isPartner:any='0';
   isloggedIn = false;
   name = ''
   roleid = 0
   url = '';
   subscriber = false;
+  partnerOption:string='';
   @Input()
   enableplaystore = true
   ios = false
@@ -49,7 +49,11 @@ export class HamburgerComponent implements OnInit {
       let userId = JSON.parse(localStorage.getItem("userId"))
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
+        localStorage.setItem("isPartner",res[0].IsPartner);
+        localStorage.setItem('PartnerOption',res[0].PartnerOption);
         this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
+        this.isPartner=localStorage.getItem('isPartner');
+        this.partnerOption=localStorage.getItem('PartnerOption')
       })
       if (sub === '1' || sub === 1) {
         this.subscriber = true;
@@ -98,4 +102,11 @@ export class HamburgerComponent implements OnInit {
     }
   } */
 
+  routeToPartnerScreen(){
+    if(this.partnerOption=='ReceiveIncome'){
+      this.router.navigate(['adults/partnership-report/income-activity']);
+    }else{
+      this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
+    }
+  }
 }

@@ -8,7 +8,7 @@ import { PartnershipReportRoutingModule } from './partnership-report-routing.mod
   declarations: [],
   imports: [
     CommonModule,
-    PartnershipReportRoutingModule
-  ]
+    PartnershipReportRoutingModule,
+  ],
 })
 export class PartnershipReportModule { }

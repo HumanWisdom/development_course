@@ -18,6 +18,7 @@ import { SharedModule } from '../../shared/shared.module';
     IncomeActivityPageRoutingModule,
     SharedModule
   ],
-  declarations: [IncomeActivityPage]
+  declarations: [IncomeActivityPage],
+  providers:[]
 })
 export class IncomeActivityPageModule {}

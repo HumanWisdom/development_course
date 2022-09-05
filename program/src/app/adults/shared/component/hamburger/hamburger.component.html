@@ -12,7 +12,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft">
             <img
-              src="{{url === '' || url === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
+              src="{{url === '' || url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
               alt="" class="img_profile">
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ws_nowrap">
@@ -252,6 +252,43 @@
           </div>
         </a>
       </li>
+
+      <li  id="isNotPartner"  *ngIf="isPartner=='0'">
+        <a  routerLink="/adults/partnership-webpage" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="txt188 mtb0px">
+                 Join Partnership Program
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li  id="isPartner"  *ngIf="isPartner=='1'">
+        <a  (click)="routeToPartnerScreen()" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="txt188 mtb0px">
+                 Partnership Program
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
 
       <!-- multilayer li -->
       <li>
