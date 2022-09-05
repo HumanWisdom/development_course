@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
 import { PartnershipReport } from '../partnership-report.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tree-plantation-report',
@@ -21,7 +22,7 @@ export class TreePlantationReportPage implements OnInit {
   selectedYear=0;
   totalPartners:number;
   totalRevenu:number;
- constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router) { 
+ constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location:Location) { 
  }
 
  ngOnInit() {
@@ -65,5 +66,10 @@ export class TreePlantationReportPage implements OnInit {
      console.log(error);
    });
  }
+
+  goBack()
+  {
+    this.location.back()
+  }
 
 }

@@ -116,8 +116,9 @@ export class IncomeReportPage implements OnInit {
 });
 }
 
-back(){
-  this.location.back();
+goBack()
+{
+  this.location.back()
 }
 
 }

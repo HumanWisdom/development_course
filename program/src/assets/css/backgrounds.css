@@ -232,3 +232,8 @@
   /* z-index: 9; */ 
   min-height: 100vh; 
 }
+
+.bg_whitesmoke 
+{
+  background: #F5F5F5;
+}
