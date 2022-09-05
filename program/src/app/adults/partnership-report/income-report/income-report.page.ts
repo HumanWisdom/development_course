@@ -6,6 +6,7 @@ import jsPDF from 'jspdf';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
 import { PartnershipReport } from '../partnership-report.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-income-report',
@@ -22,7 +23,7 @@ export class IncomeReportPage implements OnInit {
   totalPartners:number;
   totalRevenu:number;
   BankDet:string;
- constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router) { 
+ constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location: Location) { 
    this.InitializePartnershipReport();
 
  }
@@ -102,4 +103,19 @@ export class IncomeReportPage implements OnInit {
     }
   })
  }
+
+ ChangeAccountDetais(){
+  this.router.navigate(['adults/partnership-app/payment-bank'],
+  {
+    state: {
+      isUpdate: true, ByPaypal:this.partnershipReport.ByPaypal
+    },
+ 
+});
+}
+
+back(){
+  this.location.back();
+}
+
 }

@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-income-activity',
   templateUrl: './income-activity.page.html',
@@ -15,8 +16,9 @@ export class IncomeActivityPage implements OnInit {
    groupedDates = [];
    currentDate=new Date();
    BankDet:string;
-  constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router) { 
+  constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location: Location,) { 
     this.InitializePartnershipReport();
+    
 
   }
 
@@ -106,6 +108,16 @@ export class IncomeActivityPage implements OnInit {
 }
 
 ChangeAccountDetais(){
-  this.router.navigate(['adults/partnership-app/payment-bank']);
+  this.router.navigate(['adults/partnership-app/payment-bank'],
+  {
+    state: {
+      isUpdate: true, ByPaypal:this.partnershipReport.ByPaypal
+    },
+ 
+});
+}
+
+back(){
+  this.location.back();
 }
 }
