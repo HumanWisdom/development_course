@@ -6,6 +6,7 @@ export interface PartnershipReport {
     WithdrawnAmt:   number;
     IncomeReport:   IncomeReport[];
     IncomeActivity: IncomeActivity[];
+    BankDet:string;
 }
 
 export interface IncomeActivity {
