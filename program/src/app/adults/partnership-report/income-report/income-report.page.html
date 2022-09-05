@@ -66,7 +66,7 @@
                         <h4 class="txt311 mtb0px tleft">
                           Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
                         </h4>
-                        <h4 class="txt311 mtb0px tleft">
+                        <h4 class="txt311 mtb0px tleft" *ngIf="BankDet">
                           A/c # {{partnershipReport.BankDet | mask }}
                           </h4>
                           <a>
@@ -118,7 +118,7 @@
                   <div class="row mt40px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt320 mtb0px tleft">
-                        {{currentDate  | date: "longDate"}}
+                        {{currentDate | date:'dd MMMM y'}}
                       </h4>
                     </div>
                   </div> 

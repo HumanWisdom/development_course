@@ -143,7 +143,7 @@ import { S3VideoComponent } from './component/s3-video/s3-video.component';
     TnCloseComponent,
     YoutubeContentComponent,
     SingleAudioContentComponent,
-    S3VideoComponent
+    S3VideoComponent,
   ],
   imports: [
     CommonModule,
@@ -235,7 +235,7 @@ import { S3VideoComponent } from './component/s3-video/s3-video.component';
     TnCloseComponent,
     YoutubeContentComponent,
     SingleAudioContentComponent,
-    S3VideoComponent
+    S3VideoComponent,
   ]
 })
 export class SharedModule { }

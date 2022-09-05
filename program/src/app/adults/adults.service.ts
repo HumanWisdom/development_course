@@ -282,7 +282,7 @@ export class AdultsService {
   }
 
   UpdatePartner(data:any):Observable<any>{
-    return this.http.post(this.path+`/AddPartner/`,data);
+    return this.http.post(this.path+`/UpdatePartnerDetails/`,data);
   }
 
   GetCountry(){

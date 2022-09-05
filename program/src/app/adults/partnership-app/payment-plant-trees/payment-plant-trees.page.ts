@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
@@ -8,7 +9,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 })
 export class PaymentPlantTreesPage implements OnInit {
  referralCode:string='';
-  constructor(public ngNavigatorShareService:NgNavigatorShareService) {
+  constructor(public ngNavigatorShareService:NgNavigatorShareService,public router:Router) {
     this.referralCode=localStorage.getItem('referralCode');
    }
 
@@ -31,5 +32,9 @@ export class PaymentPlantTreesPage implements OnInit {
     .catch( (error) => {
       console.log(error);
     });
+  }
+
+  routerToReport(){
+    this.router.navigate(['adults/partnership-report/tree-plantation-report']);
   }
 }

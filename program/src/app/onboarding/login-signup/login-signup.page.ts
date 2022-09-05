@@ -112,6 +112,7 @@ export class LoginSignupPage implements OnInit {
       // Print the parameter to the console. 
     });
     localStorage.setItem("remember", 'F')
+    localStorage.setItem("firsttime", 'T')
   }
 
   ngOnInit() {
@@ -487,6 +488,7 @@ export class LoginSignupPage implements OnInit {
         res => {//
           this.loginResponse = res
           localStorage.setItem('socialLogin', 'F');
+          localStorage.setItem("isloggedin", 'T')
           localStorage.setItem('guest', 'F');
           localStorage.setItem('btnclick', 'F')
           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
@@ -504,7 +506,7 @@ export class LoginSignupPage implements OnInit {
           localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
-          localStorage.setItem("isPartner",res.IsPartner);
+          localStorage.setItem("isPartner", res.IsPartner);
           if (res.UserId === 0) {
             this.showAlert = true
             window.alert('You have enetered wrong credentials. Please try again.')
@@ -541,9 +543,9 @@ export class LoginSignupPage implements OnInit {
             this.freescreens()
             let roleid = JSON.parse(localStorage.getItem('RoleID'));
             let emailcode = localStorage.getItem("emailCode");
-            if (localStorage.getItem('btnClickBecomePartner')=='T'){
-              if(localStorage.getItem('SubscriberType')=='Monthly'|| localStorage.getItem('SubscriberType')=='Free' || localStorage.getItem('SubscriberType')=='Annual'){
-                localStorage.setItem('btnClickBecomePartner','false');
+            if (localStorage.getItem('btnClickBecomePartner') == 'T') {
+              if (localStorage.getItem('SubscriberType') == 'Monthly' || localStorage.getItem('SubscriberType') == 'Free' || localStorage.getItem('SubscriberType') == 'Annual') {
+                localStorage.setItem('btnClickBecomePartner', 'false');
                 this.router.navigate(['adults/partnership-app']);
               }
             }
@@ -582,20 +584,20 @@ export class LoginSignupPage implements OnInit {
                   localStorage.setItem("emailCode", 'F');
                 }
                 localStorage.setItem("isloggedin", 'T')
-                 if (localStorage.getItem('btnClickBecomePartner')=='T'){
-                    if(localStorage.getItem('SubscriberType')=='Monthly'|| localStorage.getItem('SubscriberType')=='Free' || localStorage.getItem('SubscriberType')=='Annual'){
-                      localStorage.setItem('btnClickBecomePartner','F')
-                      this.router.navigate(['adults/partnership-app']);
-                    }
-                  } else {
-                    if (pers && persub && pers === 'T') {
-                      localStorage.setItem("isloggedin", 'T')
-                      this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: persub } })
-                    } else {
-                      this.router.navigate(['/adults/adult-dashboard'])
-                    }
+                if (localStorage.getItem('btnClickBecomePartner') == 'T') {
+                  if (localStorage.getItem('SubscriberType') == 'Monthly' || localStorage.getItem('SubscriberType') == 'Free' || localStorage.getItem('SubscriberType') == 'Annual') {
+                    localStorage.setItem('btnClickBecomePartner', 'F')
+                    this.router.navigate(['adults/partnership-app']);
                   }
-                
+                } else {
+                  if (pers && persub && pers === 'T') {
+                    localStorage.setItem("isloggedin", 'T')
+                    this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: persub } })
+                  } else {
+                    this.router.navigate(['/adults/adult-dashboard'])
+                  }
+                }
+
 
               }
             }
