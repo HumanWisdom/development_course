@@ -15,7 +15,7 @@ export class IncomeActivityPage implements OnInit {
   partnershipReport:PartnershipReport;
    groupedDates = [];
    currentDate=new Date();
-   BankDet:string;
+   BankDet:string='';
   constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location: Location,) { 
     this.InitializePartnershipReport();
     

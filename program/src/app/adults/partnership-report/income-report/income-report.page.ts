@@ -22,7 +22,7 @@ export class IncomeReportPage implements OnInit {
   selectedYear='0';
   totalPartners:number;
   totalRevenu:number;
-  BankDet:string;
+  BankDet:string='';
  constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location: Location) { 
    this.InitializePartnershipReport();
 
@@ -33,6 +33,7 @@ export class IncomeReportPage implements OnInit {
      if(res){
        this.partnershipReport=res;
        this.groupByYears()
+       this. getMaskAccountDetails();
        if(this.partnershipReport.IncomeReport.length>0){
      this.totalSubscriber=this.partnershipReport.IncomeReport.map(item => +item.SubscribersCnt).reduce((prev, curr) => prev + curr, 0);
      this.totalPartners=this.partnershipReport.IncomeReport.map(item => +item.PartnersCnt).reduce((prev, curr) => prev + curr, 0);
