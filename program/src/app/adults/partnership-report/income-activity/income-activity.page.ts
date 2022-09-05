@@ -117,7 +117,8 @@ ChangeAccountDetais(){
 });
 }
 
-back(){
-  this.location.back();
+goBack()
+{
+  this.location.back()
 }
 }
