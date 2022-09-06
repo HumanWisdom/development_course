@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 partnership_app_tn">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a class="">
+      <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_04.svg" alt="" class="p0"/>
       </a>
     </div>
@@ -10,7 +10,7 @@
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a class="">
         <h1 class="txt301 mtb0px tcenter">
-          Profile
+          My Partnership
         </h1>
       </a>
     </div>
@@ -54,7 +54,7 @@
                     </div>
                   </div>
 
-                  <div class="row mtb30px">
+                  <!-- <div class="row mtb30px">
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                       <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath">
                         <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
@@ -67,13 +67,49 @@
                           Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
                         </h4>
                         <h4 class="txt311 mtb0px tleft" *ngIf="BankDet">
-                          A/c # {{partnershipReport.BankDet | mask }}
+                          A/c # {{BankDet }}
                           </h4>
                           <a>
-                            <h4 class="txt311 tright" (click)="ChangeAccountDetais()" >
+                            <h4 class="txt311 tright underline" (click)="ChangeAccountDetais()" >
                             Change
                             </h4>
                           </a>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <div class="row mtb30px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath">
+                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pr0px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt335 mtb0px tleft">
+                            {{partnershipReport.AffName}}
+                          </h4>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt311 mtb0px tleft">
+                            Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
+                          </h4>
+                        </div>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h4 class="txt311 mtb0px tleft">
+                              A/c # {{BankDet}}
+                            </h4>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                            <a class="" (click)="ChangeAccountDetais()">
+                              <h4 class="txt345 underline ws_nowrap mtb0px tright">
+                                Change
+                              </h4>
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -92,7 +128,7 @@
                             Request to withdraw
                           </h4>
                         </a>
-                        <h4 *ngIf="partnershipReport.BalanceAmt<20">
+                        <h4 class="txt304 mb0pxi mt5px" *ngIf="partnershipReport.BalanceAmt<20">
                           Reach $20 to get paid
                         </h4>
                       </div>
@@ -103,11 +139,11 @@
                         <h4 class="txt314 mtb0px">
                           WITHDRAWN
                         </h4>
-                        <h4 class="txt344 mtb0px">
+                        <h4 class="txt107 mtb0px bold">
                           USD {{partnershipReport.WithdrawnAmt}}
                         </h4>
                         <a class="" (click)="redirectToIncomeActivity()">
-                          <h4 class="txt345 mb0px mt5px underline ws_nowrap">
+                          <h4 class="txt345 mb0pxi mt5px underline ws_nowrap">
                             View income activity
                           </h4>
                         </a>
