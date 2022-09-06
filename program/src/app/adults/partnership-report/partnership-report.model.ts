@@ -7,6 +7,8 @@ export interface PartnershipReport {
     IncomeReport:   IncomeReport[];
     IncomeActivity: IncomeActivity[];
     BankDet:string;
+    ByPaypal:number;
+    AffImgPath:string;
 }
 
 export interface IncomeActivity {

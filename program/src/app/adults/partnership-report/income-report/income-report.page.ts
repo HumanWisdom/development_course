@@ -6,6 +6,7 @@ import jsPDF from 'jspdf';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
 import { PartnershipReport } from '../partnership-report.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-income-report',
@@ -21,8 +22,8 @@ export class IncomeReportPage implements OnInit {
   selectedYear='0';
   totalPartners:number;
   totalRevenu:number;
-  BankDet:string;
- constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router) { 
+  BankDet:string='';
+ constructor(public adultService:AdultsService, private ngNavigatorShareService: NgNavigatorShareService,public router:Router,private location: Location) { 
    this.InitializePartnershipReport();
 
  }
@@ -32,6 +33,7 @@ export class IncomeReportPage implements OnInit {
      if(res){
        this.partnershipReport=res;
        this.groupByYears()
+       this. getMaskAccountDetails();
        if(this.partnershipReport.IncomeReport.length>0){
      this.totalSubscriber=this.partnershipReport.IncomeReport.map(item => +item.SubscribersCnt).reduce((prev, curr) => prev + curr, 0);
      this.totalPartners=this.partnershipReport.IncomeReport.map(item => +item.PartnersCnt).reduce((prev, curr) => prev + curr, 0);
@@ -49,7 +51,8 @@ export class IncomeReportPage implements OnInit {
      IncomeActivity:[],
      IncomeReport:[],
      WithdrawnAmt:0 ,
-     BankDet:''
+     BankDet:'',
+     AffImgPath:''
    } as PartnershipReport;
  }
 
@@ -102,4 +105,20 @@ export class IncomeReportPage implements OnInit {
     }
   })
  }
+
+ ChangeAccountDetais(){
+  this.router.navigate(['adults/partnership-app/payment-bank'],
+  {
+    state: {
+      isUpdate: true, ByPaypal:this.partnershipReport.ByPaypal
+    },
+ 
+});
+}
+
+goBack()
+{
+  this.location.back()
+}
+
 }
