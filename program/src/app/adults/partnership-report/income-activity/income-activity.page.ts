@@ -36,11 +36,11 @@ export class IncomeActivityPage implements OnInit {
   }
   getMaskAccountDetails() {
     this.BankDet =
-      "XXX-XX-" +
-      this.partnershipReport.BankDet.substr(
-        0,
-        this.partnershipReport.BankDet.length - 5
-      );
+    "XXX-XX-" +
+    this.partnershipReport.BankDet.substring(
+      this.partnershipReport.BankDet.length - 2,
+      this.partnershipReport.BankDet.length
+    );
   }
 
   InitializePartnershipReport() {

@@ -63,6 +63,7 @@ export class IncomeReportPage implements OnInit {
       WithdrawnAmt: 0,
       BankDet: "",
       AffImgPath: "",
+      ByPaypal:0
     } as PartnershipReport;
   }
 
@@ -100,9 +101,9 @@ export class IncomeReportPage implements OnInit {
   getMaskAccountDetails() {
     this.BankDet =
       "XXX-XX-" +
-      this.partnershipReport.BankDet.substr(
-        0,
-        this.partnershipReport.BankDet.length - 5
+      this.partnershipReport.BankDet.substring(
+        this.partnershipReport.BankDet.length - 2,
+        this.partnershipReport.BankDet.length
       );
   }
 
