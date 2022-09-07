@@ -8,12 +8,15 @@ import { PartnershipSubscribedPageRoutingModule } from './partnership-subscribed
 
 import { PartnershipSubscribedPage } from './partnership-subscribed.page';
 
+import { SharedModule } from '../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PartnershipSubscribedPageRoutingModule
+    PartnershipSubscribedPageRoutingModule,
+    SharedModule
   ],
   declarations: [PartnershipSubscribedPage]
 })

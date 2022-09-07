@@ -8,12 +8,15 @@ import { PartnershipTreesistersPageRoutingModule } from './partnership-treesiste
 
 import { PartnershipTreesistersPage } from './partnership-treesisters.page';
 
+import { SharedModule } from '../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PartnershipTreesistersPageRoutingModule
+    PartnershipTreesistersPageRoutingModule,
+    SharedModule
   ],
   declarations: [PartnershipTreesistersPage]
 })
