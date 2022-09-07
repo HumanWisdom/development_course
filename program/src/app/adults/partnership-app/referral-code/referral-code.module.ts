@@ -8,12 +8,15 @@ import { ReferralCodePageRoutingModule } from './referral-code-routing.module';
 
 import { ReferralCodePage } from './referral-code.page';
 
+import { SharedModule } from '../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReferralCodePageRoutingModule
+    ReferralCodePageRoutingModule,
+    SharedModule
   ],
   declarations: [ReferralCodePage]
 })

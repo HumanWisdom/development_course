@@ -76,6 +76,7 @@ import { TnCloseComponent } from './component/tn-close/tn-close.component';
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
 import { S3VideoComponent } from './component/s3-video/s3-video.component';
 import { AudioPlayerComponent } from './component/audio-player/audio-player.component';
+import { TnPartnershipAppComponent } from './component/tn-partnership-app/tn-partnership-app.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -145,7 +146,8 @@ import { AudioPlayerComponent } from './component/audio-player/audio-player.comp
     YoutubeContentComponent,
     SingleAudioContentComponent,
     S3VideoComponent,
-    AudioPlayerComponent
+    AudioPlayerComponent,
+    TnPartnershipAppComponent
   ],
   imports: [
     CommonModule,
@@ -238,7 +240,8 @@ import { AudioPlayerComponent } from './component/audio-player/audio-player.comp
     YoutubeContentComponent,
     SingleAudioContentComponent,
     S3VideoComponent,
-    AudioPlayerComponent
+    AudioPlayerComponent,
+    TnPartnershipAppComponent
   ]
 })
 export class SharedModule { }

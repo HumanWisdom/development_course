@@ -8,12 +8,15 @@ import { PaymentPlantTreesPageRoutingModule } from './payment-plant-trees-routin
 
 import { PaymentPlantTreesPage } from './payment-plant-trees.page';
 
+import { SharedModule } from '../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PaymentPlantTreesPageRoutingModule
+    PaymentPlantTreesPageRoutingModule,
+    SharedModule
   ],
   declarations: [PaymentPlantTreesPage]
 })
