@@ -126,7 +126,8 @@ export class IncomeActivityPage implements OnInit {
     });
   }
 
-  goBack() {
-    this.location.back();
+  goBack()
+  {
+  this.router.navigate(['adults/adult-dashboard'])
   }
 }

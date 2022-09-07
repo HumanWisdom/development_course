@@ -19,4 +19,7 @@ export class HwpPremiumCongratulationsPage implements OnInit {
   NotNow(){
     this.router.navigate(['/adults/adult-dashboard'])
   }
+  GoToIndex(){
+    this.router.navigate(['adults/partnership-webpage/partnership-index']);
+  }
 }

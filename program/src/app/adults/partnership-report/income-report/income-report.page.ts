@@ -136,7 +136,8 @@ export class IncomeReportPage implements OnInit {
     });
   }
 
-  goBack() {
-    this.location.back();
+  goBack()
+  {
+  this.router.navigate(['adults/adult-dashboard'])
   }
 }

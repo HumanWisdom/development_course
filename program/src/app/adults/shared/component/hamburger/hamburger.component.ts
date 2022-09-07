@@ -109,4 +109,11 @@ export class HamburgerComponent implements OnInit {
       this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
     }
   }
+
+  RouteToFaq(){
+    this.router.navigate(['/adults/partnership-webpage/partnership-index/'], {
+      state: {
+        isPartnerFaq: true,
+      }});
+  }
 }
