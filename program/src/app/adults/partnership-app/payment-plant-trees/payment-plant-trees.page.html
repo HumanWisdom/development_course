@@ -48,8 +48,11 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a>
-                        <h4 (click)="copyText()" class="txt338 mb0px underline tcenter">
+                        <h4 *ngIf="isCopy" (click)="copyText()" class="txt338 mb0px underline tcenter">
                           Copy code
+                        </h4>
+                        <h4 *ngIf="!isCopy"  class="txt338 mb0px underline tcenter">
+                          Copied
                         </h4>
                       </a>
                     </div>
