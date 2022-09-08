@@ -19,9 +19,10 @@ export class IncomeReportPage implements OnInit {
   currentDate = new Date();
   years: any = [];
   totalSubscriber: number;
-  selectedYear = "0";
+  selectedYear = new Date().getFullYear().toString();
   totalPartners: number;
   totalRevenu: number;
+  isPdfDownloading=false;
   BankDet: string = "";
   constructor(
     public adultService: AdultsService,
@@ -33,24 +34,7 @@ export class IncomeReportPage implements OnInit {
   }
 
   ngOnInit() {
-    this.adultService.GetPartnerCommReport().subscribe((res) => {
-      if (res) {
-        this.partnershipReport = res;
-        this.groupByYears();
-        this.getMaskAccountDetails();
-        if (this.partnershipReport.IncomeReport.length > 0) {
-          this.totalSubscriber = this.partnershipReport.IncomeReport.map(
-            (item) => +item.SubscribersCnt
-          ).reduce((prev, curr) => prev + curr, 0);
-          this.totalPartners = this.partnershipReport.IncomeReport.map(
-            (item) => +item.PartnersCnt
-          ).reduce((prev, curr) => prev + curr, 0);
-          this.totalRevenu = this.partnershipReport.IncomeReport.map(
-            (item) => +item.CommEarned
-          ).reduce((prev, curr) => prev + curr, 0);
-        }
-      }
-    });
+   this.onChange(this.selectedYear);
   }
 
   InitializePartnershipReport() {
@@ -68,17 +52,28 @@ export class IncomeReportPage implements OnInit {
   }
 
   DownloadPdf() {
-    let DATA: any = document.getElementById("partnershipReport");
-    html2canvas(DATA).then((canvas) => {
-      let fileWidth = 208;
-      let fileHeight = 300;
-      const FILEURI = canvas.toDataURL("image/png");
-      let PDF = new jsPDF("p", "mm", "a4");
-      let position = 0;
-      PDF.addImage(FILEURI, "PNG", 0, position, fileWidth, fileHeight);
-      PDF.save("partnership-report.pdf");
-    });
-  }
+   this.isPdfDownloading=true;
+    setTimeout(() => {
+      let DATA: any = document.getElementById("partnershipReport");
+      html2canvas(DATA).then((canvas) => {
+        const imgData = canvas.toDataURL("image/jpeg")
+   
+        const pdf = new jsPDF({});
+   
+        const imageProps = pdf.getImageProperties(imgData)
+   
+        const pdfw = pdf.internal.pageSize.getWidth()
+   
+        const pdfh = (imageProps.height * pdfw) / imageProps.width
+   
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh+100)
+        pdf.save("partnership-report.pdf");
+      
+      });
+      this.isPdfDownloading=false;
+    }, 500);
+}
+  
 
   share(refcode) {
     this.ngNavigatorShareService
@@ -107,21 +102,34 @@ export class IncomeReportPage implements OnInit {
       );
   }
 
-  groupByYears() {
+  groupByYears(res) {
     this.years = [
-      ...new Set(this.partnershipReport.IncomeReport.map((item) => item.Year)),
+      ...new Set(res.IncomeReport.map((item) => item.Year)),
     ];
   }
 
   onChange(value) {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
+        this.groupByYears(res);
+        this.getMaskAccountDetails();
         if (value == "0") {
           this.partnershipReport = res;
         } else {
           this.partnershipReport = res;
           this.partnershipReport.IncomeReport =
             this.partnershipReport.IncomeReport.filter((x) => x.Year == value);
+            if (this.partnershipReport.IncomeReport.length > 0) {
+              this.totalSubscriber = this.partnershipReport.IncomeReport.map(
+                (item) => +item.SubscribersCnt
+              ).reduce((prev, curr) => prev + curr, 0);
+              this.totalPartners = this.partnershipReport.IncomeReport.map(
+                (item) => +item.PartnersCnt
+              ).reduce((prev, curr) => prev + curr, 0);
+              this.totalRevenu = this.partnershipReport.IncomeReport.map(
+                (item) => +item.CommEarned
+              ).reduce((prev, curr) => prev + curr, 0);
+            }
         }
       }
     });

@@ -42,4 +42,7 @@ export class PaymentPlantTreesPage implements OnInit {
   routerToReport(){
     this.router.navigate(['adults/partnership-report/tree-plantation-report']);
   }
+  routeToDashboard(){
+    this.router.navigate(['/adults/adult-dashboard'])
+  }
 }
