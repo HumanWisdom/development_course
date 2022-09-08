@@ -33,6 +33,9 @@ export class ReferralCodePage implements OnInit {
     },);
   }
   
+  GoToIndex(){
+    this.router.navigate(['adults/partnership-webpage/partnership-index']);
+  }
 
   DontHaveCode() {
     this.isCode = true;
