@@ -192,7 +192,7 @@
                         <div class="panel panel-default">
                           <div class="panel-heading">
                             <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a2">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#{{item.Level}}">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
@@ -213,7 +213,7 @@
                               </a>
                             </h4>
                           </div>
-                          <div id="pr_a2" class="panel-collapse collapse">
+                          <div id="{{item.Level}}" class="panel-collapse collapse">
                             <div class="panel-body">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -245,7 +245,7 @@
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
                                     <h4 class="txt347 mtb0px tright">
-                                      ${{item.RevenueEarned}}
+                                      ${{item.RevenueEarned | number}}
                                     </h4>
                                   </div>
                                 </div>
@@ -284,7 +284,7 @@
                           Total Earnings
                         </h4>
                         <h4 class="txt350 mtb0px mt5px">
-                          ${{totalRevenu}}
+                          ${{totalRevenu| number}}
                         </h4>
                       </div>
                     </div>
