@@ -184,7 +184,7 @@
                           <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                             <div class="col-md-6 col-sm-6 col-xs-6 pl0px">
                               <h4 class="txt310 mtb0px">
-                                {{item.key}}
+                                {{val.date}} {{val.month}}
                               </h4>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
@@ -211,7 +211,7 @@
 
                 
                   
-                  <div class="row mt40px mb40px">
+                  <div class="row mt40px mb40px" *ngIf="!isPdfDownloading">
                     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                       <a class="flex_ai" (click)="DownloadPdf()">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
@@ -222,7 +222,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row"  *ngIf="!isPdfDownloading">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt343 mtb0px">
                         If you wish to switch your partnership benefits, and have a tree planted for every subscription instead, do write to us at 

@@ -26,10 +26,14 @@ export class ReferralCodePage implements OnInit {
 
   Proceed(data) {
     this.service.AddPartner(data).subscribe(res=> {
-      this.router.navigate(["adults/partnership-app/partnership-subscribed"]);
+      if(res!=null && res!=""){
+        alert(res)
+      }else{
+        this.router.navigate(["adults/partnership-app/partnership-subscribed"]);
+      }
     },
     error=>{
-    alert(error.Message)
+
     },);
   }
   
