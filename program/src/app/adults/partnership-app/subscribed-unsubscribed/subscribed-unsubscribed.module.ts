@@ -8,12 +8,15 @@ import { SubscribedUnsubscribedPageRoutingModule } from './subscribed-unsubscrib
 
 import { SubscribedUnsubscribedPage } from './subscribed-unsubscribed.page';
 
+import { SharedModule } from '../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SubscribedUnsubscribedPageRoutingModule
+    SubscribedUnsubscribedPageRoutingModule,
+    SharedModule
   ],
   declarations: [SubscribedUnsubscribedPage]
 })

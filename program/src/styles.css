@@ -30386,3 +30386,19 @@ svg path
   align-items: center;
 }
 /* /adverts */
+
+.dm_partnership 
+{
+  right: 10px;
+  left: auto;
+  list-style: none !important;
+  margin: 1rem 0 0 0;
+  border-radius: 0;
+  border: 0;
+  box-shadow: unset;
+}
+
+.dm_partnership>li>a
+{
+  padding: 5px 10px !important;
+}

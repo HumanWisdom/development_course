@@ -10,6 +10,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class PaymentIncomePage implements OnInit {
 
   referralCode:string='';
+  isCopy=true;
   constructor(public ngNavigatorShareService: NgNavigatorShareService,public router:Router) {
   this.referralCode=localStorage.getItem('referralCode');
    }
@@ -21,6 +22,10 @@ export class PaymentIncomePage implements OnInit {
     navigator.clipboard.writeText(this.referralCode).catch(() => {
       console.error("Unable to copy text");
     });
+    this.isCopy=false;
+    setTimeout(() => {
+      this.isCopy=true;
+    }, 4000);
   }
   
   share(){

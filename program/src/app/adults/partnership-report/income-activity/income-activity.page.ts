@@ -13,6 +13,7 @@ import { Location } from "@angular/common";
 })
 export class IncomeActivityPage implements OnInit {
   partnershipReport: PartnershipReport;
+  isPdfDownloading=false;
   groupedDates = [];
   currentDate = new Date();
   BankDet: string = "";
@@ -36,11 +37,11 @@ export class IncomeActivityPage implements OnInit {
   }
   getMaskAccountDetails() {
     this.BankDet =
-      "XXX-XX-" +
-      this.partnershipReport.BankDet.substr(
-        0,
-        this.partnershipReport.BankDet.length - 5
-      );
+    "XXX-XX-" +
+    this.partnershipReport.BankDet.substring(
+      this.partnershipReport.BankDet.length - 2,
+      this.partnershipReport.BankDet.length
+    );
   }
 
   InitializePartnershipReport() {
@@ -57,17 +58,27 @@ export class IncomeActivityPage implements OnInit {
   }
 
   DownloadPdf() {
-    let DATA: any = document.getElementById("partnershipReport");
-    html2canvas(DATA).then((canvas) => {
-      let fileWidth = 208;
-      let fileHeight = 300;
-      const FILEURI = canvas.toDataURL("image/png");
-      let PDF = new jsPDF("p", "mm", "a4");
-      let position = 0;
-      PDF.addImage(FILEURI, "PNG", 0, position, fileWidth, fileHeight);
-      PDF.save("partnership-report.pdf");
-    });
-  }
+    this.isPdfDownloading=true;
+     setTimeout(() => {
+       let DATA: any = document.getElementById("partnershipReport");
+       html2canvas(DATA).then((canvas) => {
+         const imgData = canvas.toDataURL("image/jpeg")
+    
+         const pdf = new jsPDF({});
+    
+         const imageProps = pdf.getImageProperties(imgData)
+    
+         const pdfw = pdf.internal.pageSize.getWidth()
+    
+         const pdfh = (imageProps.height * pdfw) / imageProps.width
+    
+         pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh+100)
+         pdf.save("partnership-report.pdf");
+       
+       });
+       this.isPdfDownloading=false;
+     }, 500);
+ }
 
   share(refcode) {
     this.ngNavigatorShareService
@@ -93,6 +104,8 @@ export class IncomeActivityPage implements OnInit {
         SubscriptionId: "",
         Level: "",
         Comm_Earned: "",
+        date:0,
+        month:""
       };
       const dt = new Date(d.CreatedOn);
       obj.SubscriptionId = d.SubscriptionId;
@@ -101,7 +114,8 @@ export class IncomeActivityPage implements OnInit {
       const date = dt.getDate();
       const year = dt.getFullYear();
       const month = dt.toLocaleString("default", { month: "long" });
-
+      obj.date=date;
+      obj.month=month;
       const key = `${month} ${year}`;
       if (key in this.groupedDates) {
         this.groupedDates[key].dates = [...this.groupedDates[key].dates, obj];
@@ -126,7 +140,8 @@ export class IncomeActivityPage implements OnInit {
     });
   }
 
-  goBack() {
-    this.location.back();
+  goBack()
+  {
+  this.router.navigate(['adults/adult-dashboard'])
   }
 }

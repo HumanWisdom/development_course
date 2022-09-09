@@ -61,4 +61,8 @@ export class SubscribedUnsubscribedPage implements OnInit {
           });  
     
       }
+
+      GoToIndex(){
+        this.router.navigate(['adults/partnership-webpage/partnership-index']);
+      }
 }

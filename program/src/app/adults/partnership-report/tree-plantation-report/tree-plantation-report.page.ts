@@ -69,7 +69,7 @@ export class TreePlantationReportPage implements OnInit {
 
   goBack()
   {
-    this.location.back()
+  this.router.navigate(['adults/adult-dashboard'])
   }
 
 }

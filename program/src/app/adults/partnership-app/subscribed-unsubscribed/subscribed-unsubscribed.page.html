@@ -1,27 +1,5 @@
 <!-- top navigation -->
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 partnership_app_tn">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a class="">
-        <img (click)="goBack()" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_04.svg" alt="" class="p0"/>
-      </a>
-    </div>
-
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <a class="">
-        <h1 class="txt301 mtb0px tcenter">
-          Partnership Program
-        </h1>
-      </a>
-    </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-      <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more_grey.svg" alt="" class="p0"/>
-      </a>
-    </div>
-  </div>
-</div>
+<app-tn-partnership-app></app-tn-partnership-app>
 <!-- /top navigation -->
 
 <!-- page content -->
@@ -166,7 +144,7 @@
     
                       <p class="txt310">
                         For more information on the Partnership Program,
-                        <a>
+                        <a (click)="GoToIndex()">
                           <span class="txt334 underline">
                             click here.
                           </span>
@@ -185,7 +163,7 @@
     
                       <p class="txt310">
                         For more information on the Partnership Program,
-                        <a>
+                        <a (click)="GoToIndex()">
                           <span class="txt334 underline">
                             click here.
                           </span>

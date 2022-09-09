@@ -92,14 +92,17 @@
 
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <h4 class="txt311 mtb0px tleft">
-                            Lifetime earnings: ${{totalRevenu}}
+                            Lifetime earnings: ${{totalRevenu| number}}
                           </h4>
                         </div>
                         
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                            <h4 class="txt311 mtb0px tleft">
+                            <h4 class="txt311 mtb0px tleft" *ngIf="partnershipReport.ByPaypal==0">
                               A/c # {{BankDet}}
+                            </h4>
+                            <h4 class="txt311 mtb0px tleft" *ngIf="partnershipReport.ByPaypal==1">
+                              Paypal # {{BankDet}}
                             </h4>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -169,7 +172,7 @@
 
                   <div class="row mt5px mb20px" *ngIf="years.length>0">
                     <div class="col-md-3 col-sm-3 col-xs-3">
-                      <select class="form-control subscribe_select1"  [(ngModel)]="selectedYear" 
+                      <select class="form-control subscribe_select1" name="drpSelectYear"  [(ngModel)]="selectedYear" 
                       #mySelect
                       (change)='onChange(mySelect.value)'>
                       <option  [value]="'0'">Select Year</option>
@@ -189,7 +192,7 @@
                         <div class="panel panel-default">
                           <div class="panel-heading">
                             <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#pr_a2">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#{{item.Level}}">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
@@ -210,7 +213,7 @@
                               </a>
                             </h4>
                           </div>
-                          <div id="pr_a2" class="panel-collapse collapse">
+                          <div id="{{item.Level}}" class="panel-collapse collapse">
                             <div class="panel-body">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -242,7 +245,7 @@
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
                                     <h4 class="txt347 mtb0px tright">
-                                      ${{item.RevenueEarned}}
+                                      ${{item.RevenueEarned | number}}
                                     </h4>
                                   </div>
                                 </div>
@@ -281,13 +284,13 @@
                           Total Earnings
                         </h4>
                         <h4 class="txt350 mtb0px mt5px">
-                          ${{totalRevenu}}
+                          ${{totalRevenu| number}}
                         </h4>
                       </div>
                     </div>
                   </div> 
 
-                  <div class="row mt40px mb40px">
+                  <div class="row mt40px mb40px" *ngIf="!isPdfDownloading">
                     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                       <a class="flex_ai" (click)="DownloadPdf()">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
@@ -298,7 +301,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row" *ngIf="!isPdfDownloading">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt343 mtb0px">
                         If you wish to switch your partnership benefits, and have a tree planted for every subscription instead, do write to us at 
