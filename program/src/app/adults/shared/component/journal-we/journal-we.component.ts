@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AdultsService } from 'src/app/adults/adults.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { AdultsService } from 'src/app/adults/adults.service';
   styleUrls: ['./journal-we.component.scss'],
 })
 export class JournalWeComponent implements OnInit {
+  @Input()
+  journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
 
   enabletick = false;
   userId: any
