@@ -78,6 +78,7 @@ import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project
 import { TnPartnershipAppComponent } from './component/tn-partnership-app/tn-partnership-app.component';
 import { TxtOverlayTopComponent } from './component/txt-overlay-top/txt-overlay-top.component';
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
+import { FtWisdomExerciseComponent } from './component/ft-wisdom-exercise/ft-wisdom-exercise.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -149,7 +150,8 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     S3VideoComponent,
     AudioPlayerComponent,
     TnPartnershipAppComponent,
-    JournalWeComponent
+    JournalWeComponent,
+    FtWisdomExerciseComponent
   ],
   imports: [
     CommonModule,
@@ -245,7 +247,8 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     S3VideoComponent,
     AudioPlayerComponent,
     TnPartnershipAppComponent,
-    JournalWeComponent
+    JournalWeComponent,
+    FtWisdomExerciseComponent
   ]
 })
 export class SharedModule { }

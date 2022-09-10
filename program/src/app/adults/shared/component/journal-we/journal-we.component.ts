@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AdultsService } from 'src/app/adults/adults.service';
 
 @Component({
-  selector: 'HumanWisdom-journal-we',
+  selector: 'app-journal-we',
   templateUrl: './journal-we.component.html',
   styleUrls: ['./journal-we.component.scss'],
 })
