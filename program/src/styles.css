@@ -30411,3 +30411,9 @@ svg path
   -ms-transform: translate3d(230px, 0, 0);
   transform: translate3d(230px, 0, 0);
 } */
+
+.ci_ft_01 
+{
+  bottom: 50px;
+  /* background: orange; */
+}
