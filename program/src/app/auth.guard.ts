@@ -31,6 +31,12 @@ export class AuthGuard implements CanActivate, OnInit {
     if (aff[1] !== undefined && aff[1] !== '') {
       let afftoken = aff[1].split('=')[1]
       localStorage.setItem("Affreftoken", afftoken)
+      this.service.decrypt(afftoken).subscribe((res: any) => {
+        if (res) {
+          localStorage.setItem("AffReferralCode", res)
+        }
+      })
+
     }
     if (localStorage.getItem('AffReferralCode') !== null) {
       affrefcode = localStorage.getItem('AffReferralCode');
