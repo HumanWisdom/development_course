@@ -111,7 +111,7 @@ export class LoginSignupPage implements OnInit {
       this.urlKey = params['key']
       // Print the parameter to the console. 
     });
-    localStorage.setItem("remember", 'F')
+    localStorage.setItem("remember", 'T')
     localStorage.setItem("firsttime", 'T')
   }
 
@@ -666,16 +666,6 @@ export class LoginSignupPage implements OnInit {
 
   getsignuptab() {
     this.showAlert = false;
-  }
-
-  rememberUsername(event) {
-    this.saveUsername = !this.saveUsername
-    localStorage.setItem("saveUsername", JSON.stringify(this.saveUsername))
-    if (event) {
-      localStorage.setItem("remember", 'T')
-    } else {
-      localStorage.setItem("remember", 'F')
-    }
   }
 
   freescreens() {
