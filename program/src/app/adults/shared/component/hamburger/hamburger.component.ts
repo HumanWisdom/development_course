@@ -109,4 +109,41 @@ export class HamburgerComponent implements OnInit {
       this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
     }
   }
+
+  // isShowDiv = false;  
+  // ispartnership = false;
+     
+  toggleDisplayDiv() 
+  {
+    // this.isShowDiv = !this.isShowDiv;
+    // let el: HTMLElement = document.getElementById('s1');
+    // el.style.transform = "translate3d(0,0,0)";
+
+    // this.isShowDiv = true;
+    // this.ispartnership = false;
+
+    // let el: HTMLElement = document.getElementById('s1');
+    // el.style.display = "block";
+
+    // let el2: HTMLElement = document.getElementsByClassName('s2');
+    // el2.style.display = "none";
+  }  
+
+  dpartnership()
+  {
+    // let el: HTMLElement = document.getElementById('ispartnership');
+    // el.style.display = "block";
+  }
+
+  // let el: HTMLElement = document.getElementById('s1');
+  //   el.style.transform = "translate3d(0,0,0)";
+  //   el.style.transition = "transform 0.35s";
+
+  // myCircle = document.querySelector('#s1');
+  // setTranslate(0,0,myCircle);
+  
+  // setTranslate(xPos, yPos, el) {
+  // 	el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
+  // }
+  
 }
