@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<div class="row center_flex">
+<div class="row center_flex" id="indexpage">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_index_tn">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" routerLink="/adults/adult-dashboard">
@@ -29,19 +29,19 @@
         </li>
 
         <li>
-          <a href="#">
+          <a (click)="share()">
             Share
           </a>
         </li>
 
         <li>
-          <a href="#">
+          <a (click)="becomePartner()">
             Become a Partner
           </a>
         </li>
         
         <li>
-          <a href="#">
+          <a (click)="scroll_to_Faq()">
             Partnership FAQ
           </a>
         </li>
@@ -760,7 +760,7 @@
                                     </a>
                                   </h4>
                                 </div>
-                                <div id="pa_other_benefits"  *ngIf="isOtherBenefits" class="panel-collapse collapse in">
+                                <div id="pa_other_benefits"  *ngIf="isOtherBenefits"  class="panel-collapse collapse in">
                                   <div class="panel-body">
 
                                     <div class="row">
@@ -837,7 +837,7 @@
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#pa_faqs">
+                                    <a data-toggle="collapse" data-parent="#accordion" (click)="partnerFaqClick()" href="#pa_faqs">
                                       <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                           <h4 class="txt328 mtb0px">
@@ -848,7 +848,7 @@
                                     </a>
                                   </h4>
                                 </div>
-                                <div id="pa_faqs" class="panel-collapse collapse">
+                                <div id="pa_faqs" id="pa_PartnerFaq"  *ngIf="isPartnerFaq"  class="panel-collapse collapse in">
                                   <div class="panel-body">
                                     
                                     <div class="row">

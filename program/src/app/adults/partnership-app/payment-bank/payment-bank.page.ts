@@ -85,6 +85,7 @@ export class PaymentBankPage implements OnInit {
   }
 
   payPalbtn() {
+    this.paymentBank.ByPaypal = "1";
     this.LinkBankAccount = "Paypal";
   }
   getDisabled() {

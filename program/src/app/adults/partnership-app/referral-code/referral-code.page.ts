@@ -11,6 +11,7 @@ import { AdultsService } from "../../adults.service";
 export class ReferralCodePage implements OnInit {
   isCode: boolean = false;
   referralCode:string='';
+  responseMessage:any;
   
   constructor(public router: Router, public location: Location,public service:AdultsService) {}
 
@@ -24,11 +25,21 @@ export class ReferralCodePage implements OnInit {
   }
 
   Proceed(data) {
-    this.service.AddPartner(data).subscribe(res=>{
-      this.router.navigate(["adults/partnership-app/partnership-subscribed"]);
-    });
+    this.service.AddPartner(data).subscribe(res=> {
+      if(res!=null && res!=""){
+        alert(res)
+      }else{
+        this.router.navigate(["adults/partnership-app/partnership-subscribed"]);
+      }
+    },
+    error=>{
+
+    },);
   }
   
+  GoToIndex(){
+    this.router.navigate(['adults/partnership-webpage/partnership-index']);
+  }
 
   DontHaveCode() {
     this.isCode = true;

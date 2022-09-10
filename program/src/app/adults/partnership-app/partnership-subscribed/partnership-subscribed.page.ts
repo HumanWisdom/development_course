@@ -22,5 +22,7 @@ export class PartnershipSubscribedPage implements OnInit {
       this.router.navigate(['adults/partnership-app/payment-bank']);
     }
     
-
+    GoToIndex(){
+      this.router.navigate(['adults/partnership-webpage/partnership-index']);
+    }
 }

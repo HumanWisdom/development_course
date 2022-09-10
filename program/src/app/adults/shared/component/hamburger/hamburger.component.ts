@@ -110,6 +110,14 @@ export class HamburgerComponent implements OnInit {
     }
   }
 
+
+  RouteToFaq(){
+    this.router.navigate(['/adults/partnership-webpage/partnership-index/'], {
+      state: {
+        isPartnerFaq: true,
+      }});
+  }
+
   // isShowDiv = false;  
   // ispartnership = false;
      

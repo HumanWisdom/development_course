@@ -14,9 +14,12 @@ export class HwpPremiumCongratulationsPage implements OnInit {
   }
   JoinHumanWisdom(){
     localStorage.setItem('btnClickBecomePartner','true');
-    this.router.navigate(['adults/partnership-app']);
+    this.router.navigate(['adults/partnership-app/referral-code']);
   }
   NotNow(){
     this.router.navigate(['/adults/adult-dashboard'])
+  }
+  GoToIndex(){
+    this.router.navigate(['adults/partnership-webpage/partnership-index']);
   }
 }
