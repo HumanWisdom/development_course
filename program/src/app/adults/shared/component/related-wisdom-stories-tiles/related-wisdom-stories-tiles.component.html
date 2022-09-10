@@ -31,17 +31,20 @@
 <div class="panel-group index_rwst_view_more" id="accordion_ws" *ngIf="wisdomstoriesbottom.length !== 0">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#ws_01">
+      <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#ws_01" (click)="toggleDisplayDiv()"> -->
+      <a class="accordion-toggle" (click)="toggle_view_more_less()">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
-            <h4 class="txt111 mtb0px tcenter mb20px">
-              View more
+            <h4 class="txt111 mtb0px tcenter mb20px" id="vm">
+              <!-- View more -->
+              {{view_more_less}}
             </h4>
           </div>
         </div>
       </a>
     </div>
-    <div id="ws_01" class="panel-collapse collapse">
+    <!-- <div id="ws_01" class="panel-collapse collapse"> -->
+    <div id="ws_01" class="panel-collapse" *ngIf="enable_view_more_less">
       <div class="panel-body">
         <!-- stories -->
          <div class="row index_rwst">
