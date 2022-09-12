@@ -127,8 +127,7 @@
                         <h4 class="txt344 mtb0px">
                           USD {{partnershipReport.BalanceAmt}}
                         </h4>
-                       
-                        <a href="mailto:info@humanwisdom.me"  *ngIf="partnershipReport.BalanceAmt>=20">
+                        <a href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=20">
                           <h4 class="txt345 mb0px mt5px underline ws_nowrap">
                             Request to withdraw
                           </h4>
