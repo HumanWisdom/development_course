@@ -198,7 +198,7 @@ nav
         {
             display: block;
         }
-        ~ .m-menu 
+        ~ .m-menu
         {
             @include transform(translate3d(0, 0, 0));
         }

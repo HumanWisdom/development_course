@@ -14,7 +14,9 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
 
   wisdomstoriesbottom = [];
 
-  enablewisdomstory = false
+  enablewisdomstory = false;
+  enable_view_more_less = false;
+  view_more_less="View More"
 
   constructor(private router: Router,private service:AdultsService) { 
     
@@ -36,6 +38,7 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
       this.enablewisdomstory = true
      }
      console.log(this.wisdomstories)
+     
   }
 
   viewstory(item){
@@ -49,6 +52,20 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit {
       this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${item['ScenarioID']}`}})
     }
     
+  }
+
+  toggle_view_more_less()
+  {
+    if(this.view_more_less == "View More")
+    {
+      this.enable_view_more_less = true;
+      this.view_more_less = "View Less";
+    }
+    else
+    {
+      this.enable_view_more_less = false;
+      this.view_more_less = "View More";
+    }
   }
 
 }

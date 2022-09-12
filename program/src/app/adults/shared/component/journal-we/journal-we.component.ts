@@ -1,12 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AdultsService } from 'src/app/adults/adults.service';
 
 @Component({
-  selector: 'HumanWisdom-journal-we',
+  selector: 'app-journal-we',
   templateUrl: './journal-we.component.html',
   styleUrls: ['./journal-we.component.scss'],
 })
 export class JournalWeComponent implements OnInit {
+
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+
+  @Input()
+  journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
+
+  @Input()
+  rId = 854
 
   enabletick = false;
   userId: any
@@ -19,6 +27,16 @@ export class JournalWeComponent implements OnInit {
 
   ngOnInit() {
     this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    this.findReflection()
+  }
+
+  findReflection() {
+    let reflectionA = this.qrList.ListOfReflection
+    for (var i = 0; i < reflectionA.length; i++) {
+      if (this.rId == reflectionA[i].ReflectionId) {
+        this.journalques = reflectionA[i].Que
+      }
+    }
   }
 
   addjournal() {
