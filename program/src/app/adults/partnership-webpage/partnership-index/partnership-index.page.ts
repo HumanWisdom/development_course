@@ -14,6 +14,7 @@ export class PartnershipIndexPage implements OnInit {
   public isPartnerFaq=false;
   cardlist=[];
   countryCode:any;
+  isPartner=false;
   constructor(private router :Router,private services: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
@@ -23,6 +24,7 @@ export class PartnershipIndexPage implements OnInit {
         this.scroll_to_Faq();
       }
     }
+    this.isPartner=localStorage.getItem('isPartner')=='1';
   }
 
   scroll_to_obs(): void 
