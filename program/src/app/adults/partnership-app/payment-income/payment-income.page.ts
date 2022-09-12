@@ -43,4 +43,7 @@ export class PaymentIncomePage implements OnInit {
   routerToReport(){
     this.router.navigate(['adults/partnership-report/income-activity']);
   }
+  routeToDashboard(){
+    this.router.navigate(['/adults/adult-dashboard'])
+  }
 }

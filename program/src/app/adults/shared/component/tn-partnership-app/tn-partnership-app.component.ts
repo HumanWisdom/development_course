@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./tn-partnership-app.component.scss'],
 })
 export class TnPartnershipAppComponent implements OnInit {
-
+ @Input() isShowLink:boolean=true;
   constructor(public location:Location) { }
 
   ngOnInit() {}
