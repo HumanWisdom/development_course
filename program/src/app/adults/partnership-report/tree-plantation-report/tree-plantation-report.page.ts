@@ -61,7 +61,7 @@ export class TreePlantationReportPage implements OnInit {
       const test = pdf.internal.pageSize.getHeight()
       const pdfh = (imageProps.height * pdfw) / imageProps.width
       pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
-      pdf.save("partnership-report.pdf");
+      pdf.save("tree-plantation-report.pdf");
     
     });
     this.isPdfDownloading=false;
