@@ -1,0 +1,52 @@
+<!-- journal -->
+<div class="row center_flex mt60px">
+  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt288 mtb0px">
+          {{journalques}}
+        </h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <textarea type="text" id="comment" name="thread" required="required" class="we_answer_here"
+          placeholder="Answer here" maxlength="256" [(ngModel)]="note" [disabled]="enabletick"></textarea>
+      </div>
+    </div>
+
+    <div class="row center_flex mt20px mb15px">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+        <button type="submit" class="btn btn-default we_add_to_journal" (click)="addjournal()">
+          {{btnText}}
+        </button>
+        <a class="ml10px" *ngIf="enabletick">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/tickmark_round_partnership.svg"
+            alt="" class="p0 img_we_tm" />
+        </a>
+      </div>
+    </div>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-8">
+        <h4 class="txt318 mtb0px tcenter">
+          Your online HumanWisdom journal is secure and private to you.
+        </h4>
+      </div>
+    </div>
+
+    <div class="row center_flex mt30px" *ngIf="enabletick">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt345 mtb0px tcenter underline">
+          View/edit in journal
+        </h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- /journal -->
+
+<!-- day start-->

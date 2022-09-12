@@ -1,19 +1,16 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { Observable } from "rxjs";
 import {
-  HttpClient,
-  HttpHeaders,
-  HttpBackend,
-  HttpParams
+  HttpBackend, HttpClient
 } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Observable } from "rxjs";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdultsService {
   //path="http://18.132.47.231/api";
-  path=environment.apiURL;
+  path = environment.apiURL;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
 
   personalisedforyoulist = [
@@ -52,135 +49,135 @@ export class AdultsService {
   ]
 
 
-  constructor( private http: HttpClient,handler: HttpBackend) { }
+  constructor(private http: HttpClient, handler: HttpBackend) { }
 
-  submitProgressText(data:any):Observable<any>{
-    return this.http.post(this.path+'/UserProgress',data)
-  }
-
-  submitProgressAv(data:any):Observable<any>{
-    return this.http.post(this.path+'/UserProgressAv',data)
+  submitProgressText(data: any): Observable<any> {
+    return this.http.post(this.path + '/UserProgress', data)
   }
 
-  submitProgressQuestion(data:any):Observable<any>{
-    return this.http.post(this.path+'/userProgressQuestion',data)
-  }
-  submitProgressReflection(data:any):Observable<any>{
-    return this.http.post(this.path+'/UserProgressReflection',data)
-  }
- createScreen(data:any):Observable<any>{
-    return this.http.post(this.path+'/AddScreen',data)
-  }
-  clickModule(data:any,userId:any):Observable<any>{
-    return this.http.get(this.path+`/clickModule/${data}/${userId}`)
-  }
-  getPoints(data:any):Observable<any>{
-    return this.http.get(this.path+`/UserScore/${data}`)
-  }
-  viewJournal(data:any):Observable<any>{
-    
-    return this.http.get(this.path+`/viewJournalAndReflections/${data}`)
-  }
-  submitJournal(data:any):Observable<any>{
-    return this.http.post(this.path+'/AddJournal',data)
+  submitProgressAv(data: any): Observable<any> {
+    return this.http.post(this.path + '/UserProgressAv', data)
   }
 
-  getDailyQuestion(data:any):Observable<any>{
-   
-    return this.http.get(this.path+`/userDailyQuestion/${data}`)
+  submitProgressQuestion(data: any): Observable<any> {
+    return this.http.post(this.path + '/userProgressQuestion', data)
   }
-  addDailyQuestion(data:any):Observable<any>{
-    return this.http.post(this.path+'/AddUserReflection',data)
+  submitProgressReflection(data: any): Observable<any> {
+    return this.http.post(this.path + '/UserProgressReflection', data)
   }
-  getBookmarks(data:any):Observable<any>{
-   
-    return this.http.get(this.path+`/UserBookMarks/${data}`)
+  createScreen(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddScreen', data)
+  }
+  clickModule(data: any, userId: any): Observable<any> {
+    return this.http.get(this.path + `/clickModule/${data}/${userId}`)
+  }
+  getPoints(data: any): Observable<any> {
+    return this.http.get(this.path + `/UserScore/${data}`)
+  }
+  viewJournal(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/viewJournalAndReflections/${data}`)
+  }
+  submitJournal(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddJournal', data)
   }
 
-  sessionPoints(data:any):Observable<any>{
-    
-    return this.http.post(this.path+`/sessionPoints`,data)
+  getDailyQuestion(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/userDailyQuestion/${data}`)
   }
-  addReflection(data:any):Observable<any>{
-    return this.http.post(this.path+'/AddUserReflection',data)
+  addDailyQuestion(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddUserReflection', data)
   }
-  freeScreens():Observable<any>{
-    return this.http.get(this.path+`/AllModulesFreeScrs`)
+  getBookmarks(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/UserBookMarks/${data}`)
   }
-  mediaPercent(data:any):Observable<any>{
-   
-    return this.http.get(this.path+`/mediaPercent/${data}`)
+
+  sessionPoints(data: any): Observable<any> {
+
+    return this.http.post(this.path + `/sessionPoints`, data)
   }
-  getScenarios():Observable<any>{
-    return this.http.get(this.path+`/Scenarios`)
+  addReflection(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddUserReflection', data)
   }
-  getScenarioswithId(data: any):Observable<any>{
-    return this.http.get(this.path+`/Scenarios/${data}`)
+  freeScreens(): Observable<any> {
+    return this.http.get(this.path + `/AllModulesFreeScrs`)
   }
-  readStories():Observable<any>{
-    return this.http.get(this.path+`/wisdomStories`)
+  mediaPercent(data: any): Observable<any> {
+
+    return this.http.get(this.path + `/mediaPercent/${data}`)
   }
-  clickStory(data:any):Observable<any>{
-    return this.http.post(this.path+`/clickStory/${data}`,null)
+  getScenarios(): Observable<any> {
+    return this.http.get(this.path + `/Scenarios`)
   }
-  userQuestion(data:any,edit:any):Observable<any>{
-   
-   // let params = new HttpParams();
+  getScenarioswithId(data: any): Observable<any> {
+    return this.http.get(this.path + `/Scenarios/${data}`)
+  }
+  readStories(): Observable<any> {
+    return this.http.get(this.path + `/wisdomStories`)
+  }
+  clickStory(data: any): Observable<any> {
+    return this.http.post(this.path + `/clickStory/${data}`, null)
+  }
+  userQuestion(data: any, edit: any): Observable<any> {
+
+    // let params = new HttpParams();
     //params = params.append('BeforeEdit', edit);
-    return this.http.post(this.path+`/UserQuestions/?BeforeEdit=${edit}`,data)
+    return this.http.post(this.path + `/UserQuestions/?BeforeEdit=${edit}`, data)
   }
 
-  screenProgress(data:any):Observable<any>{
-    return this.http.get(this.path+`/getSessionProgress/${data}`)
+  screenProgress(data: any): Observable<any> {
+    return this.http.get(this.path + `/getSessionProgress/${data}`)
   }
-  UploadThumbnail(data:any):Observable<any>{
-    
-     return this.http.post(this.path+`/UploadThumbnail`,data)
-   }
-   wisdomScore(data:any):Observable<any>{
-    
-     return this.http.post(this.path+`/UserWisdomSurveyScore/${data}`,null)
-   }
-   wisdomSurveyinsights(data:any):Observable<any>{
-    
-     return this.http.get(this.path+`/GetYearlyWisdomScore/${data}`)
-   }
+  UploadThumbnail(data: any): Observable<any> {
 
-   wisdomSurveyinsightsummary(data:any):Observable<any>{
-    
-     return this.http.get(this.path+`/GetYearlyWisdomScoreSummary/${data}`)
-   }
+    return this.http.post(this.path + `/UploadThumbnail`, data)
+  }
+  wisdomScore(data: any): Observable<any> {
 
-   adminPopup():Observable<any> {
-    return this.http.get(this.path+ `/GetAdminSetting/1`)
-   }
+    return this.http.post(this.path + `/UserWisdomSurveyScore/${data}`, null)
+  }
+  wisdomSurveyinsights(data: any): Observable<any> {
 
-   referfrd(data:any):Observable<any>{
-    return this.http.post(this.path+'/AddRefer',data)
+    return this.http.get(this.path + `/GetYearlyWisdomScore/${data}`)
   }
 
-  bookmark(data):Observable<any> {
-    return this.http.get(this.path+ `/UserBookMarks/${data}`)
-   }
+  wisdomSurveyinsightsummary(data: any): Observable<any> {
 
-   decrypt(encrypt){
+    return this.http.get(this.path + `/GetYearlyWisdomScoreSummary/${data}`)
+  }
+
+  adminPopup(): Observable<any> {
+    return this.http.get(this.path + `/GetAdminSetting/1`)
+  }
+
+  referfrd(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddRefer', data)
+  }
+
+  bookmark(data): Observable<any> {
+    return this.http.get(this.path + `/UserBookMarks/${data}`)
+  }
+
+  decrypt(encrypt) {
     return this.http.post(this.path + `/decryptURL?EncryptedKey=${encrypt}`, {})
   }
 
-  verifytoken(encrypt){
+  verifytoken(encrypt) {
     return this.http.get(this.path + `/VerifyAuthToken?AccessToken=${encrypt}`)
   }
 
-  verifyactkey(data):Observable<any> {
-    return this.http.get(this.path+ `/VerifyActKey/${data}`)
-   }
+  verifyactkey(data): Observable<any> {
+    return this.http.get(this.path + `/VerifyActKey/${data}`)
+  }
 
-   resendotp(data):Observable<any> {
-    return this.http.post(this.path+ `/ResendVerificationMail/${data}`, {})
-    
-   }
+  resendotp(data): Observable<any> {
+    return this.http.post(this.path + `/ResendVerificationMail/${data}`, {})
 
-   getBlog(): Observable<any> {
+  }
+
+  getBlog(): Observable<any> {
     return this.http.get(this.path + `/GetBlogs`)
   }
 
@@ -226,7 +223,7 @@ export class AdultsService {
 
 
   getSearchDataForSearchSite(data): Observable<any> {
-    return this.http.post(this.path + `/SiteSearch/${data}`,{})
+    return this.http.post(this.path + `/SiteSearch/${data}`, {})
   }
   getForumSearchDataSite(data): Observable<any> {
     return this.http.get(this.path + `/GetAllPosts/${data}`);
@@ -243,59 +240,63 @@ export class AdultsService {
     return this.personalisedforyoulist;
   }
 
-  getdashshorts() : Observable<any>{
+  getdashshorts(): Observable<any> {
     return this.http.get(this.path + `/GetDashboardShorts`)
   }
 
-  getdashstories() : Observable<any>{
+  getdashstories(): Observable<any> {
     return this.http.get(this.path + `/GetDashboardStories`)
   }
-  GetGuidedQs_Topics(): Observable<any>{
+  GetGuidedQs_Topics(): Observable<any> {
     return this.http.get(this.path + `/GetGuidedQs_Topics`)
   }
-  GetGuidedQs_Response(id:any,attempt:any): Observable<any>{
-    return this.http.get(this.path + `/GetGuidedQs_Response/`+id+'/'+attempt)
+  GetGuidedQs_Response(id: any, attempt: any): Observable<any> {
+    return this.http.get(this.path + `/GetGuidedQs_Response/` + id + '/' + attempt)
   }
-  AddGuidedQs_Response(data:any){
-    return this.http.post(this.path + `/AddGuidedQs_Response/`,data);
+  AddGuidedQs_Response(data: any) {
+    return this.http.post(this.path + `/AddGuidedQs_Response/`, data);
   }
-  getcuratedstressdashstories() : Observable<any>{
+  getcuratedstressdashstories(): Observable<any> {
     return this.http.get(this.path + `/GetDashboardStories/2`)
   }
-  getcuratedemotionsdashstories() : Observable<any>{
+  getcuratedemotionsdashstories(): Observable<any> {
     return this.http.get(this.path + `/GetDashboardStories/4`)
   }
-  getcuratedrelationshipdashstories() : Observable<any>{
+  getcuratedrelationshipdashstories(): Observable<any> {
     return this.http.get(this.path + `/GetDashboardStories/3`)
   }
 
-  getNotificationList():Observable<any>{
-    return this.http.get(this.path+`/GetNotifications`);
+  getNotificationList(): Observable<any> {
+    return this.http.get(this.path + `/GetNotifications`);
   }
 
-  MarkNotificationAsRead(NotificationId :number):Observable<any>{
-    return this.http.post(this.path+`/SetNotificationRead/`+NotificationId,null);
+  MarkNotificationAsRead(NotificationId: number): Observable<any> {
+    return this.http.post(this.path + `/SetNotificationRead/` + NotificationId, null);
   }
 
-  AddPartner(data :any):Observable<any>{
-    return this.http.post(this.path+`/AddPartner/`+data,null);
+  AddPartner(data: any): Observable<any> {
+    return this.http.post(this.path + `/AddPartner/` + data, null);
   }
 
-  UpdatePartner(data:any):Observable<any>{
-    return this.http.post(this.path+`/UpdatePartnerDetails/`,data);
+  UpdatePartner(data: any): Observable<any> {
+    return this.http.post(this.path + `/UpdatePartnerDetails/`, data);
   }
 
-  GetCountry(){
-    return this.http.get(this.path+`/Countries`);
+  GetCountry() {
+    return this.http.get(this.path + `/Countries`);
   }
-  GetPartnerCommReport():Observable<any>{
-    return this.http.get(this.path+`/GetPartnerCommReport`);
+  GetPartnerCommReport(): Observable<any> {
+    return this.http.get(this.path + `/GetPartnerCommReport`);
   }
-  getTreePlantationReport():Observable<any>{
-    return this.http.get(this.path+`/GetPartnerTreesReport`);
+  getTreePlantationReport(): Observable<any> {
+    return this.http.get(this.path + `/GetPartnerTreesReport`);
   }
-  getPartnerBankDetails():Observable<any>{
-    return this.http.get(this.path+'/GetPartnerBankDetails')
+  getPartnerBankDetails(): Observable<any> {
+    return this.http.get(this.path + '/GetPartnerBankDetails')
   }
-  
+
+  addJournal(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddJournal', data)
+  }
+
 }

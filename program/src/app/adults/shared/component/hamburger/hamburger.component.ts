@@ -19,13 +19,13 @@ export class HamburgerComponent implements OnInit {
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
-  isPartner:any='0';
+  isPartner: any = '0';
   isloggedIn = false;
   name = ''
   roleid = 0
   url = '';
   subscriber = false;
-  partnerOption:string='';
+  partnerOption: string = '';
   @Input()
   enableplaystore = true
   ios = false
@@ -49,11 +49,11 @@ export class HamburgerComponent implements OnInit {
       let userId = JSON.parse(localStorage.getItem("userId"))
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
-        localStorage.setItem("isPartner",res[0].IsPartner);
-        localStorage.setItem('PartnerOption',res[0].PartnerOption);
+        localStorage.setItem("isPartner", res[0].IsPartner);
+        localStorage.setItem('PartnerOption', res[0].PartnerOption);
         this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
-        this.isPartner=localStorage.getItem('isPartner');
-        this.partnerOption=localStorage.getItem('PartnerOption')
+        this.isPartner = localStorage.getItem('isPartner');
+        this.partnerOption = localStorage.getItem('PartnerOption')
       })
       if (sub === '1' || sub === 1) {
         this.subscriber = true;
@@ -79,10 +79,12 @@ export class HamburgerComponent implements OnInit {
 
 
   logout() {
-    if (this.platform.isBrowser) {
-      localStorage.setItem('isloggedin', 'F')
-      localStorage.setItem('guest', 'T')
-      this.router.navigate(['/onboarding/login'])
+    if (confirm('Are you sure you want to logout ?') === true) {
+      if (this.platform.isBrowser) {
+        localStorage.setItem('isloggedin', 'F')
+        localStorage.setItem('guest', 'T')
+        this.router.navigate(['/onboarding/login'])
+      }
     }
   }
 
@@ -102,18 +104,55 @@ export class HamburgerComponent implements OnInit {
     }
   } */
 
-  routeToPartnerScreen(){
-    if(this.partnerOption=='ReceiveIncome'){
+  routeToPartnerScreen() {
+    if (this.partnerOption == 'ReceiveIncome') {
       this.router.navigate(['adults/partnership-report/income-activity']);
-    }else{
+    } else {
       this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
     }
   }
 
-  RouteToFaq(){
+
+  RouteToFaq() {
     this.router.navigate(['/adults/partnership-webpage/partnership-index/'], {
       state: {
         isPartnerFaq: true,
-      }});
+      }
+    });
   }
+
+  // isShowDiv = false;  
+  // ispartnership = false;
+
+  toggleDisplayDiv() {
+    // this.isShowDiv = !this.isShowDiv;
+    // let el: HTMLElement = document.getElementById('s1');
+    // el.style.transform = "translate3d(0,0,0)";
+
+    // this.isShowDiv = true;
+    // this.ispartnership = false;
+
+    // let el: HTMLElement = document.getElementById('s1');
+    // el.style.display = "block";
+
+    // let el2: HTMLElement = document.getElementsByClassName('s2');
+    // el2.style.display = "none";
+  }
+
+  dpartnership() {
+    // let el: HTMLElement = document.getElementById('ispartnership');
+    // el.style.display = "block";
+  }
+
+  // let el: HTMLElement = document.getElementById('s1');
+  //   el.style.transform = "translate3d(0,0,0)";
+  //   el.style.transition = "transform 0.35s";
+
+  // myCircle = document.querySelector('#s1');
+  // setTranslate(0,0,myCircle);
+
+  // setTranslate(xPos, yPos, el) {
+  // 	el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
+  // }
+
 }
