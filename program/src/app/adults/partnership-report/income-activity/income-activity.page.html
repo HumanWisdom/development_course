@@ -22,14 +22,14 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01" id="partnershipReport">				
+<div class="right_col mc_01">				
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white" id="partnershipReport">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form>
+            <form >
 
               <div class="row center_flex mt40px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -81,7 +81,7 @@
 
                   <div class="row mtb30px">
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath">
+                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
                         <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pr0px">
@@ -106,7 +106,7 @@
                               Paypal # {{BankDet}}
                             </h4>
                           </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0" *ngIf="!isPdfDownloading">
                             <a class="" (click)="ChangeAccountDetais()">
                               <h4 class="txt345 underline ws_nowrap mtb0px tright">
                                 Change

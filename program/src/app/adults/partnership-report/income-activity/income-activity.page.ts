@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import jsPDF from "jspdf";
@@ -13,6 +13,7 @@ import { Location } from "@angular/common";
 })
 export class IncomeActivityPage implements OnInit {
   partnershipReport: PartnershipReport;
+
   isPdfDownloading=false;
   groupedDates = [];
   currentDate = new Date();
@@ -64,15 +65,11 @@ export class IncomeActivityPage implements OnInit {
        html2canvas(DATA).then((canvas) => {
          const imgData = canvas.toDataURL("image/jpeg")
     
-         const pdf = new jsPDF({});
-    
+         const pdf = new jsPDF("p","mm","a5");
          const imageProps = pdf.getImageProperties(imgData)
-    
          const pdfw = pdf.internal.pageSize.getWidth()
-    
-         const pdfh = (imageProps.height * pdfw) / imageProps.width
-    
-         pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh+100)
+         const pdfh = pdf.internal.pageSize.getHeight()
+         pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh)
          pdf.save("partnership-report.pdf");
        
        });
