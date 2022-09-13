@@ -20,7 +20,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                   <div class="opaque_border_outer">
                     <img
-                      src="{{url === '' || url === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
+                      src="{{url === '' ||  url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
                       alt="" class="p0 opaque_border_inner img-responsive img_profile_01">
                   </div>
                 </div>

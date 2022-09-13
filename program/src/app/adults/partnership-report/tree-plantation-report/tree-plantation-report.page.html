@@ -26,8 +26,8 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
-        <div class="x_panel p0">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white" id="partnershipReport" >
+        <div class="x_panel p0" >
           <div class="x_content p0">
             <form>
 
@@ -56,7 +56,7 @@
 
                   <div class="row mtb30px">
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
-                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath">
+                      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
                         <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -99,7 +99,7 @@
                   <div class="row mtb15px">
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                       <div class="col-md-10 col-sm-10 col-xs-10 pl0px">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/tree.svg" alt="" class="mr5px" *ngFor="let item of getLoop(item.Trees)">
+                        <img [src]=iframeSrc alt="" class="mr5px" *ngFor="let item of getLoop(item.Trees)">
                       </div>
                       <div class="col-md-2 col-sm-2 col-xs-2 pr0px">
                         <h4 class="txt294 mtb0px tright">
@@ -128,9 +128,9 @@
                     </div>
                   </div> 
                   
-                  <div class="row mt40px mb40px">
+                  <div class="row mt40px mb40px"  *ngIf="!isPdfDownloading">
                     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <a class="flex_ai" (click)="DownloadPdf()">
+                      <a class="flex_ai" (click)="DownloadPdf()" >
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
                         <h4 class="txt345 mtb0px ml10px">
                           Download PDF
@@ -139,7 +139,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row" *ngIf="!isPdfDownloading">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt343 mtb0px">
                         If you wish to switch your partnership benefits, and have a tree planted for every subscription instead, do write to us at 
