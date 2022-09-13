@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ft-wisdom-exercise',
@@ -6,9 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ft-wisdom-exercise.component.scss'],
 })
 export class FtWisdomExerciseComponent implements OnInit {
+  dayclass = 'intro'
+
+  @Output()
+  emitdayevent = new EventEmitter<any>()
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  dayevent(day) {
+    this.dayclass = day
+    this.emitdayevent.emit(day)
+  }
 
 }
