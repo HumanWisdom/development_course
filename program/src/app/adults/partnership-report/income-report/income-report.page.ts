@@ -1,5 +1,5 @@
 import { verifyHostBindings } from "@angular/compiler";
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -7,7 +7,8 @@ import { NgNavigatorShareService } from "ng-navigator-share";
 import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import { Location } from "@angular/common";
-
+import jspdf from "jspdf";
+import pdfMake from "pdfmake";
 @Component({
   selector: "app-income-report",
   templateUrl: "./income-report.page.html",
@@ -15,6 +16,7 @@ import { Location } from "@angular/common";
 })
 export class IncomeReportPage implements OnInit {
   partnershipReport: PartnershipReport;
+  @ViewChild('screen') screen: ElementRef;
   groupedDates = [];
   currentDate = new Date();
   years: any = [];
@@ -50,30 +52,79 @@ export class IncomeReportPage implements OnInit {
       ByPaypal:0
     } as PartnershipReport;
   }
+ 
+
 
   DownloadPdf() {
    this.isPdfDownloading=true;
-    setTimeout(() => {
-      let DATA: any = document.getElementById("partnershipReport");
-      html2canvas(DATA).then((canvas) => {
-        const imgData = canvas.toDataURL("image/jpeg")
+
+   setTimeout(() => {
+    let DATA: any = document.getElementById("partnershipReport");
+    html2canvas(DATA).then((canvas) => {
+      const imgData = canvas.toDataURL("image/jpeg")
+ 
+      const pdf = new jsPDF({orientation:'portrait'});
+ 
+      const imageProps = pdf.getImageProperties(imgData)
+ 
+      const pdfw = pdf.internal.pageSize.getWidth()
+      const test = pdf.internal.pageSize.getHeight()
+      const pdfh = (imageProps.height * pdfw) / imageProps.width
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfw, test)
+      pdf.save("partnership-report.pdf");
+    
+    });
+    this.isPdfDownloading=false;
+  }, 500);
+
+
+
+    }
+
+    //  // let DATA: any = document.getElementById("partnershipReport");
+    //   var markup = document.documentElement.innerHTML;
+    //   var encoded = window.btoa(markup); 
+
+    //   const source = `data:application/pdf;base64,${encoded}`;
+    //   const link = document.createElement("a");
+    //   link.href = source;
+    //   link.download = `test.pdf`
+    //   link.click();
+
+
+    //   // const blob = new Blob([DATA], { type: 'pdf' });
+    //   // const url = window.URL.createObjectURL(blob);
+    //   // const fileLink = document.createElement('a');
+    //   // fileLink.href = url;
+    //   // fileLink.download ='test.pdf';
+    //   // fileLink.click();
+
+
+    //   // html2canvas(DATA).then((canvas) => {
+    //   //   const imgData = canvas.toDataURL("image/jpeg")
    
-        const pdf = new jsPDF({});
+    //   //   const pdf = new jsPDF({
+          
+    //   //   });
    
-        const imageProps = pdf.getImageProperties(imgData)
+    //   //   const imageProps = pdf.getImageProperties(imgData)
    
-        const pdfw = pdf.internal.pageSize.getWidth()
+    //   //   const pdfw = pdf.internal.pageSize.getWidth()
    
-        const pdfh = (imageProps.height * pdfw) / imageProps.width
+    //   //   const pdfh = (imageProps.height * pdfw) / imageProps.width
    
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh+100)
-        pdf.save("partnership-report.pdf");
+    //   //   pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh+100)
+    //   //   pdf.save("partnership-report.pdf");
       
-      });
-      this.isPdfDownloading=false;
-    }, 500);
-}
+    //   // });
+    //   this.isPdfDownloading=false;
+    // }, 500);
+
+
+   
   
+ 
+
 
   share(refcode) {
     this.ngNavigatorShareService
