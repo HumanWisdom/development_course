@@ -11,4 +11,7 @@ export class S75002Page implements OnInit {
 
   ngOnInit() {
   }
+
+  getdayevent(event) {
+  }
 }
