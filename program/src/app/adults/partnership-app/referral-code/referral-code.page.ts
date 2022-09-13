@@ -26,7 +26,7 @@ export class ReferralCodePage implements OnInit {
 
   Proceed(data) {
     this.service.AddPartner(data).subscribe(res=> {
-      if(res!=null && res!=""){
+      if(res!=null && res!="" && res.length>5){
         alert(res)
       }else{
         this.router.navigate(["adults/partnership-app/partnership-subscribed"]);
