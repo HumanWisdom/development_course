@@ -8,7 +8,6 @@ import { AdultsService } from "../../adults.service";
 import { PartnershipReport } from "../partnership-report.model";
 import { Location } from "@angular/common";
 import jspdf from "jspdf";
-import pdfMake from "pdfmake";
 @Component({
   selector: "app-income-report",
   templateUrl: "./income-report.page.html",
