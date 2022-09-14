@@ -3329,4 +3329,8 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
+
+  wisdomexercise() {
+    this.router.navigate([`/adults/wisdom-exercise/s75001`])
+  }
 }
