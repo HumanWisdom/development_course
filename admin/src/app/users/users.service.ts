@@ -317,8 +317,8 @@ path="https://staging.humanwisdom.info/api"
     return this.http.get(this.path + `/GetAffliateCommision/${id}`)
   }
 
-  setAffliateCommision(Id:any): Observable<any> {
-    return this.http.put(this.path + `/SetCommisionPaid`, Id)
+  setAffliateCommision(id:any): Observable<any> {
+    return this.http.put(this.path + `/SetCommisionPaid/${id}`,null)
   }
 
 
