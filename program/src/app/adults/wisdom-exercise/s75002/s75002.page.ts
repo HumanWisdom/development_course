@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./s75002.page.scss'],
 })
 export class S75002Page implements OnInit {
-  
+
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -20,8 +20,7 @@ export class S75002Page implements OnInit {
   }
 
   getdayevent(event) {
-    if(event === 'intro')
-    {
+    if (event === 'intro') {
       this.enableintro = true;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -29,8 +28,7 @@ export class S75002Page implements OnInit {
       this.enableday4 = false;
       this.enableday5 = false;
     }
-    else if(event === '1')
-    {
+    else if (event === '1') {
       this.enableintro = false;
       this.enableday1 = true;
       this.enableday2 = false;
@@ -38,8 +36,7 @@ export class S75002Page implements OnInit {
       this.enableday4 = false;
       this.enableday5 = false;
     }
-    else if(event === '2')
-    {
+    else if (event === '2') {
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = true;
@@ -47,8 +44,7 @@ export class S75002Page implements OnInit {
       this.enableday4 = false;
       this.enableday5 = false;
     }
-    else if(event === '3')
-    {
+    else if (event === '3') {
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -56,8 +52,7 @@ export class S75002Page implements OnInit {
       this.enableday4 = false;
       this.enableday5 = false;
     }
-    else if(event === '4')
-    {
+    else if (event === '4') {
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -65,8 +60,7 @@ export class S75002Page implements OnInit {
       this.enableday4 = true;
       this.enableday5 = false;
     }
-    else if(event === '5')
-    {
+    else if (event === '5') {
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
