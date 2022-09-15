@@ -2768,8 +2768,8 @@ export class AdultDashboardPage implements OnInit {
   // living with wisdom 1
   routeStress(cont: any = 1) {
     var stressResume
-    localStorage.setItem("moduleId", JSON.stringify(75))
-    this.service.clickModule(75, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(44))
+    this.service.clickModule(44, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -2790,12 +2790,12 @@ export class AdultDashboardPage implements OnInit {
           console.log(error)
         },
         () => {
-          // if (cont == "1") {
-          //   this.router.navigate([`/adults/stress/${stressResume}`])
-          // }
-          // else
-          //   this.router.navigate([`/adults/stress/s44001`])
-          this.router.navigate([`/adults/wisdom-exercise/s75001`])
+          if (cont == "1") {
+            this.router.navigate([`/adults/stress/${stressResume}`])
+          }
+          else
+            this.router.navigate([`/adults/stress/s44001`])
+          //this.router.navigate([`/adults/wisdom-exercise/s75001`])
         })
   }
 
