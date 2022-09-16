@@ -50,7 +50,6 @@
   </script>
   <!-- /google analytics -->
 
-
   <!-- Meta Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
@@ -70,7 +69,6 @@
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=690898847774697&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
-
 </head>
 
 <body class="nav-md">
@@ -323,6 +321,14 @@
   <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61d6c6e90372b25e"></script> -->
 
   <!-- <script type="text/javascript" src="//s7.addthis.com/icons/official-addthis-angularjs/current/dist/official-addthis-angularjs.min.js"></script> -->
+
+  <script>
+  $(document).on('click', '#mdp_carousel .carousel-indicators li', function () {
+    $(window).scrollTop(0);
+    // window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+  </script>
+ 
 </body>
 
 </html>
