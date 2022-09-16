@@ -13,6 +13,151 @@
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr10pxi pt0px sc_01 bg_white">
           <div class="x_panel p0">
             <div class="x_content p0 bookmark_imgs" *ngIf="bookmarkList.length !== 0">                  
+              
+              <!-- unbookmarked -->
+              <!-- <div class="">
+                <div class="row tcenter unbookmarked_img">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/unbookmarked.svg" alt="" class="img-responsive m0px">
+                  </div>
+                </div>
+                
+                <div class="row center_flex tcenter">
+                  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <h4 class="txt318 mtb0px unbookmarked_txt">
+                      Oops! You haven’t 
+                      <br>bookmarked anything yet
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <hr class="hr_style_10 mtb0px">
+                  </div>
+                </div>
+
+                <div class="row unbookmarked_explore">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="txt310 mtb0px">
+                      <span class="bold">
+                        Here’s a start!
+                      </span>
+                      Explore a topic and bookmark your favourite pages
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    
+                    <div class="col-md-4 col-sm-6 col-xs-6 prelative">
+                      <a (click)="routeStress(0)">
+                        <div class="img-gradient">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png"
+                            alt="Stress" class="ctimg">
+                        </div>
+                        <h4 class="tcenter txt31 attitle">Stress</h4>
+                        <div class="progress dprogress">
+                          <div class="progress-bar" role="progressbar" [style.width]="stressP + '%'"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </a>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6 col-xs-6 prelative">
+                      <a (click)="routeRelationships(0)">
+                        <div class="img-gradient">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png"
+                            alt="Relationships" class="ctimg">
+                        </div>
+                        <h4 class="tcenter txt31 attitle">Relationships</h4>
+                        <div class="progress dprogress">
+                          <div class="progress-bar" role="progressbar" [style.width]="relationshipsP + '%'"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-6 prelative">
+                      <a (click)="routeLove(0)">
+                        <div class="img-gradient">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/36.png"
+                            alt="Love" class="ctimg">
+                        </div>
+                        <h4 class="tcenter txt31 attitle">Love</h4>
+                        <div class="progress dprogress">
+                          <div class="progress-bar" role="progressbar" [style.width]="loveP + '%'"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-6 prelative">
+                      <a (click)="routeHappiness(0)">
+                        <div class="img-gradient">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png"
+                            alt="Happiness" class="ctimg">
+                        </div>
+                        <h4 class="tcenter txt31 attitle">Happiness</h4>
+                        <div class="progress dprogress">
+                          <div class="progress-bar" role="progressbar" [style.width]="communicationP + '%'"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-6 prelative">
+                      <a (click)="routeCommunication(0)">
+                        <div class="img-gradient">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/43.png"
+                            alt="Communication" class="ctimg">
+                        </div>
+                        <h4 class="tcenter txt31 attitle">Communication</h4>
+                        <div class="progress dprogress">
+                          <div class="progress-bar" role="progressbar" [style.width]="communicationP + '%'"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-6 prelative">
+                      <a (click)="routeSuccessAndFailure(0)">
+                        <div class="img-gradient">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/44.png"
+                            alt="Success and Failure" class="ctimg">
+                        </div>
+                        <h4 class="tcenter txt31 attitle">Success and Failure</h4>
+                        <div class="progress dprogress">
+                          <div class="progress-bar" role="progressbar"
+                            [style.width]="successandfailureP + '%'" aria-valuenow="25" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                        </div>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="row tcenter">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <a class="">
+                      <h4 class="txt357 mt40px mb0px underline">
+                        View all
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+              </div> -->
+              <!-- /unbookmarked -->
+              
               <div *ngFor="let item of allkeys; let i=index">                                
                 
                 <div class="row bookmark_module_title">

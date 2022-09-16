@@ -30417,3 +30417,20 @@ svg path
   bottom: 50px;
   /* background: orange; */
 }
+
+/* unbookmarked */
+.unbookmarked_txt
+{
+  margin: 12px 0 67px 0;
+}
+
+.unbookmarked_explore
+{
+  margin: 36px 0 18px 0;
+}
+
+.unbookmarked_img
+{
+  margin: 46px 0 0 0;
+}
+/* /unbookmarked */
