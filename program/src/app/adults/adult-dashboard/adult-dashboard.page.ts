@@ -296,6 +296,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getuserDetail();
     setTimeout(() => {
       this.getUserPreference()
       this.getUsershorts()
@@ -309,7 +310,7 @@ export class AdultDashboardPage implements OnInit {
     } else {
       this.enableDailypopup();
     }
-
+ 
     setTimeout(() => {
       let sub: any = localStorage.getItem('Subscriber');
       if (sub === '0') {
@@ -3328,5 +3329,15 @@ export class AdultDashboardPage implements OnInit {
           else
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
+  }
+  getuserDetail(){
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    if(userId!=null){
+      this.services.getuser(userId).subscribe((res) => {
+        localStorage.setItem("isPartner", res[0].IsPartner);
+        localStorage.setItem('PartnerOption', res[0].PartnerOption);
+        localStorage.setItem("SubscriberType", res[0].SubscriberType)
+      })
+    }
   }
 }
