@@ -5489,9 +5489,16 @@ input[type=checkbox], input[type=radio]
 
 .center_flex
 {
-	display: flex;
+	/* display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+
 }
 
 .dtr-data
@@ -30434,3 +30441,8 @@ svg path
   margin: 46px 0 0 0;
 }
 /* /unbookmarked */
+
+.safari_tcenter
+{
+  text-align: center !important;
+}
