@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./s75002.page.scss'],
 })
 export class S75002Page implements OnInit {
+  dayclass = 'intro'
+
 
   enableintro = true;
   enableday1 = false;
@@ -69,4 +71,6 @@ export class S75002Page implements OnInit {
       this.enableday5 = true;
     }
   }
+
+  
 }
