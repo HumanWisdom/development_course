@@ -1656,6 +1656,110 @@
               <!-- /accordion -->
               <!-- /make the world a better place -->
 
+              <!-- wisdom exercise -->
+              <!-- accordion -->
+              <div class="row mlr-10px_01 accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group dpanelgroup" id="accordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading p0">
+                        <h4 class="panel-title dpaneltitle">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_we" aria-expanded="true">
+
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="txt290 mtb0px">
+                                    Wisdom Exercises
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                  <a routerLink="/adults/wisdom-exercise">
+                                    <h2 class="txt292 underline mtb0px tright">
+                                      View all
+                                    </h2>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="ca_we" class="panel-collapse collapse in">
+                        <div class="panel-body p0 wepanel">
+
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 plr0px pb5px">
+                              <h4 class="txt311 mtb0px bold">
+                                #1 See the world freshly
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row cmr-10px ">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
+
+                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                <a>
+                                  <button type="button" (click)="routewisdomexercise(0)" class="btn m0px btn_wed inactive">
+                                    Intro
+                                  </button>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                <a>
+                                  <button type="button" class="btn m0px btn_wed active">
+                                    Day 1
+                                  </button>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                <a>
+                                  <button type="button" class="btn m0px btn_wed">
+                                    Day 2
+                                  </button>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                <a>
+                                  <button type="button" class="btn m0px btn_wed">
+                                    Day 3
+                                  </button>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                <a>
+                                  <button type="button" class="btn m0px btn_wed">
+                                    Day 4
+                                  </button>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                <a>
+                                  <button type="button" class="btn m0px btn_wed">
+                                    Day 5
+                                  </button>
+                                </a>
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /accordion -->
+              <!-- /wisdom exercise -->
+
               <div class="pagebreak"></div>
 
             </form>
@@ -2267,7 +2371,7 @@
                 [disabled]="!this.loginemail||!this.loginpassword" (click)="emaillogin('act')">
                 Submit
               </button>
-          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2321,7 +2425,6 @@
 
 <span #journelsignuplogin data-toggle="modal" data-target="#journelsignuplogin">
 </span>
-
 
 <!-- signup_login modal -->
 <div class="modal fade" id="journelsignuplogin" tabindex="-1" role="dialog" aria-hidden="true">
