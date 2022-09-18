@@ -37,7 +37,14 @@ export class authLoginGuard implements CanActivate, OnInit {
     if (localStorage.getItem('Affreftoken') !== null) {
       affreftoken = localStorage.getItem('Affreftoken');
     }
-    localStorage.clear()
+    if(localStorage.getItem("navigateToUpgradeToPremium")=="true"){
+      localStorage.clear()
+      localStorage.setItem("navigateToUpgradeToPremium","true")
+    }
+    else{
+      localStorage.clear()
+    }
+    
     if (option === 'T') {
       localStorage.setItem('introoption', 'T')
     }

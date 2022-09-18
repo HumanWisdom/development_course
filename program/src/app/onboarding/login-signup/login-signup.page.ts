@@ -594,7 +594,12 @@ export class LoginSignupPage implements OnInit {
                     localStorage.setItem("isloggedin", 'T')
                     this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: persub } })
                   } else {
+                    if(localStorage.getItem("navigateToUpgradeToPremium")== "true"){
+                      this.router.navigate(['/adults/partnership-app'])
+                    }
+                    else{
                     this.router.navigate(['/adults/adult-dashboard'])
+                    }
                   }
                 }
 
