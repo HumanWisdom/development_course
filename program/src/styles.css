@@ -30446,3 +30446,6 @@ svg path
 {
   text-align: center !important;
 }
+.transcript-display {
+  display: none;
+}

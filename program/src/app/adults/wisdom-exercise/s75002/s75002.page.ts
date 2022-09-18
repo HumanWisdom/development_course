@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { colorSets } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'HumanWisdom-s75002',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class S75002Page implements OnInit {
   dayclass = 'intro'
-
-
+  isShowTranscript=false;
+  isShowAudio=false;
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -16,9 +17,10 @@ export class S75002Page implements OnInit {
   enableday4 = false;
   enableday5 = false;
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
+    this.next();
   }
 
   getdayevent(event) {
@@ -70,7 +72,42 @@ export class S75002Page implements OnInit {
       this.enableday4 = false;
       this.enableday5 = true;
     }
+    this.next();
   }
 
+  next(){
+    setTimeout(() => {
+     var data= this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
+     children[1]?.children[0]?.lastChild?.classList.value
+   if(data=='audio-test' && this.enableintro){
+   this.isShowTranscript=true;
+   }else{
+    this.isShowTranscript=false;
+    this.isShowAudio=false;
+   }
+    }, 700);
+  } 
   
+  back(){
+    setTimeout(() => {
+     var data= this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
+     children[1]?.children[0]?.lastChild?.classList.value
+   if(data=='audio-test' && this.enableintro){
+   this.isShowTranscript=true;
+   }else{
+    this.isShowTranscript=false;
+    this.isShowAudio=false;
+   }
+    }, 700);
+  } 
+
+  changeType(){
+    if(this.isShowTranscript){
+      this.isShowTranscript=false;
+      this.isShowAudio=true;
+    }else{
+      this.isShowTranscript=true;
+       this.isShowAudio=false;
+    }
+  }
 }
