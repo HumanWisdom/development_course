@@ -162,7 +162,7 @@ RouteToBecomeAPartner(){
    if(this.subscriberType=='Annual'){
     this.router.navigate(['/adults/partnership-app']);
    }else {
-    this.router.navigate(['/adults/partnership-index']);
+    this.router.navigate(['/adults/partnership-webpage']);
    }
 }
 
