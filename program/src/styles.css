@@ -30456,3 +30456,8 @@ svg path
 {
   margin-bottom: 10rem;
 }
+
+.transcript-display 
+{
+  display: none;
+}
