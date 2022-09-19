@@ -30446,6 +30446,18 @@ svg path
 {
   text-align: center !important;
 }
-.transcript-display {
+
+.height_auto
+{
+  height: auto;
+}
+
+.mb10rem
+{
+  margin-bottom: 10rem;
+}
+
+.transcript-display 
+{
   display: none;
 }
