@@ -37,19 +37,23 @@
 
               <!-- carousel -->
               <div class="container" *ngIf="enableintro">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem" data-ride="carousel"
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
                   <div class="row center_flex">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
                       <ol class="carousel-indicators">
-                        <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mdp_carousel" data-slide-to="1"></li>
                         <li data-target="#mdp_carousel" data-slide-to="2"></li>
                         <li data-target="#mdp_carousel" data-slide-to="3"></li>
                         <li data-target="#mdp_carousel" data-slide-to="4"></li>
                         <li data-target="#mdp_carousel" data-slide-to="5"></li>
-                        <li data-target="#mdp_carousel" data-slide-to="6"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="6"></li> -->
+
+                        <h4 class="txt315 mtb0px">
+                          01/07
+                        </h4>
 
                         <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
                           <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
@@ -161,7 +165,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt60px" [ngClass]="{'transcript-display':isShowTranscript}">
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt335 italic txt_justify">
 
                           <p>

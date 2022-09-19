@@ -30355,6 +30355,14 @@ svg path
   position: relative !important;
   width: 60% !important;
 }
+
+.wec_01 .carousel-indicators .active
+{
+  width: unset !important;
+  height: unset !important;
+  margin: 0 !important;
+  background: none !important;
+}
 /* /wisdom exercise */
 
 .mlr0px
@@ -30447,6 +30455,11 @@ svg path
   text-align: center !important;
 }
 
+.transcript-display 
+{
+  display: none;
+}
+
 .height_auto
 {
   height: auto;
@@ -30455,9 +30468,4 @@ svg path
 .mb10rem
 {
   margin-bottom: 10rem;
-}
-
-.transcript-display 
-{
-  display: none;
 }
