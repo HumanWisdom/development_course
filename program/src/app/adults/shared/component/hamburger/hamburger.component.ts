@@ -29,7 +29,7 @@ export class HamburgerComponent implements OnInit {
   @Input()
   enableplaystore = true
   ios = false
-
+  subscriberType='';
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
 
   }
@@ -54,6 +54,8 @@ export class HamburgerComponent implements OnInit {
         this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.isPartner = localStorage.getItem('isPartner');
         this.partnerOption = localStorage.getItem('PartnerOption')
+        this.partnerOption = localStorage.getItem('PartnerOption')
+        this.subscriberType=localStorage.getItem('SubscriberType');
       })
       if (sub === '1' || sub === 1) {
         this.subscriber = true;
@@ -83,6 +85,7 @@ export class HamburgerComponent implements OnInit {
       if (this.platform.isBrowser) {
         localStorage.setItem('isloggedin', 'F')
         localStorage.setItem('guest', 'T')
+        localStorage.setItem('navigateToUpgradeToPremium', 'false')
         this.router.navigate(['/onboarding/login'])
       }
     }
@@ -154,5 +157,13 @@ export class HamburgerComponent implements OnInit {
   // setTranslate(xPos, yPos, el) {
   // 	el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
   // }
+
+RouteToBecomeAPartner(){
+   if(this.subscriberType=='Annual'){
+    this.router.navigate(['/adults/partnership-app']);
+   }else {
+    this.router.navigate(['/adults/partnership-index']);
+   }
+}
 
 }
