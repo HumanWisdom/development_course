@@ -35,7 +35,7 @@
         </li>
 
         <li>
-          <a *ngIf="isPartner=='0'" (click)="BecomeAPartner()">
+          <a *ngIf="!isPartner" (click)="BecomeAPartner()">
             Become a Partner
           </a>
         </li>
