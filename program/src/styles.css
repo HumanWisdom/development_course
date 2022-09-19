@@ -30446,3 +30446,13 @@ svg path
 {
   text-align: center !important;
 }
+
+.height_auto
+{
+  height: auto;
+}
+
+.mb10rem
+{
+  margin-bottom: 10rem;
+}
