@@ -17,7 +17,13 @@ export class S75002Page implements OnInit {
   enableday4 = false;
   enableday5 = false;
 
-  constructor(private elementRef: ElementRef) { }
+  slideStart=0;
+  totalSlidesCount=7;
+details:string='1/8'
+  constructor(private elementRef: ElementRef) {
+   
+  
+   }
 
   ngOnInit() {
     this.next();
@@ -25,6 +31,8 @@ export class S75002Page implements OnInit {
 
   getdayevent(event) {
     if (event === 'intro') {
+      this.totalSlidesCount=7;
+      this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = true;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -77,6 +85,14 @@ export class S75002Page implements OnInit {
 
   next(){
     setTimeout(() => {
+      if(this.slideStart<this.totalSlidesCount){
+        this.slideStart=this.slideStart+1;
+      } else if(this.slideStart==this.totalSlidesCount){
+        this.slideStart=1;
+      }else{
+        this.slideStart=1;
+      }
+      this.details=(this.slideStart>9?this.slideStart:'0'+this.slideStart) +'/' + (this.totalSlidesCount>9?this.totalSlidesCount:'0'+this.totalSlidesCount);
      var data= this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
      children[1]?.children[0]?.lastChild?.classList.value
    if(data=='audio-test' && this.enableintro){
@@ -89,7 +105,18 @@ export class S75002Page implements OnInit {
   } 
   
   back(){
+
     setTimeout(() => {
+      if(this.slideStart<1){
+        this.slideStart=this.totalSlidesCount
+       }
+       else if(this.slideStart==1){
+        this.slideStart=this.totalSlidesCount;
+       }
+       else{
+        this.slideStart=this.slideStart-1;
+       }
+       this.details=(this.slideStart>9?this.slideStart:'0'+this.slideStart) +'/' + (this.totalSlidesCount>9?this.totalSlidesCount:'0'+this.totalSlidesCount);
      var data= this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
      children[1]?.children[0]?.lastChild?.classList.value
    if(data=='audio-test' && this.enableintro){
@@ -110,4 +137,5 @@ export class S75002Page implements OnInit {
        this.isShowAudio=false;
     }
   }
+  
 }
