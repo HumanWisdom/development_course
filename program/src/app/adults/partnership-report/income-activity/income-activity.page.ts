@@ -102,12 +102,14 @@ export class IncomeActivityPage implements OnInit {
         Level: "",
         Comm_Earned: "",
         date:0,
-        month:""
+        month:"",
+        PartnerName:''
       };
       const dt = new Date(d.CreatedOn);
       obj.SubscriptionId = d.SubscriptionId;
       obj.Level = d.Level;
       obj.Comm_Earned = d.Comm_Earned;
+      obj.PartnerName=d.PartnerName;
       const date = dt.getDate();
       const year = dt.getFullYear();
       const month = dt.toLocaleString("default", { month: "long" });
