@@ -105,32 +105,28 @@
                                     <tr>
                                         <th>Affiliate</th>
                                         <th>Date Of Joining</th>
-                                        <th>Coupen Code</th>
-                                        <th>Level 1 %</th>
-                                        <th>Level 2 %</th>
-                                        <th>Level 3 %</th>     
+                                        <th>Coupen Code</th>                                         
                                         <th>Totl Sales Achieved</th>     
                                         <th>Total Commission Earned</th>     
                                         <th>Commission Paid</th>     
                                         <th>Commission Unpaid</th>
                                         <th>Count of Affiliates Referred Level 1</th>
-                                        <th>Count of Affiliates Referred Level 2</th>
-                                    </tr>
+                                      </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let affiliate of affiliates; let i = index;">
                                         <td><a (click)="routeRevenueAffiliate(affiliate.AffiliateID)">{{affiliate.AffName}}</a></td>
                                         <td>{{affiliate.DOJ}}</td>
                                         <td>{{affiliate.CouponCode}}</td>
-                                        <td>{{affiliate.Level1}}</td>
-                                        <td>{{affiliate.Level2}}</td>
-                                        <td>{{affiliate.Level3}}</td>
+                                       <!-- <td>{{affiliate.Level1}}</td>
+                                         <td>{{affiliate.Level2}}</td>
+                                        <td>{{affiliate.Level3}}</td> -->
                                         <td>{{affiliate.TotSales}}</td>
                                         <td>{{affiliate.TotCommEarned}}</td>
                                         <td>{{affiliate.TotPaidComm}}</td>
                                         <td>{{affiliate.TotUnPaidComm}}</td>
                                         <td> <a (click)="routeMyAffiliate(affiliate.AffiliateID)">{{affiliate.ChildrenCnt}}</a></td>
-                                        <td> <a (click)="routeMyAffiliate(affiliate.AffiliateID)">{{affiliate.grandChildrenCnt}}</a></td>
+                                        <!-- <td> <a (click)="routeMyAffiliate(affiliate.AffiliateID)">{{affiliate.grandChildrenCnt}}</a></td> -->
                                     </tr>             
                                 </tbody>
                             </table>
