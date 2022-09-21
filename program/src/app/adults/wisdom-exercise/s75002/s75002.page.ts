@@ -31,6 +31,7 @@ details:string='1/8'
 
   getdayevent(event) {
     if (event === 'intro') {
+      this.slideStart=0;
       this.totalSlidesCount=7;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = true;
@@ -41,6 +42,7 @@ details:string='1/8'
       this.enableday5 = false;
     }
     else if (event === '1') {
+      this.slideStart=0;
       this.enableintro = false;
       this.enableday1 = true;
       this.enableday2 = false;
@@ -49,6 +51,7 @@ details:string='1/8'
       this.enableday5 = false;
     }
     else if (event === '2') {
+      this.slideStart=0;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = true;
@@ -57,6 +60,7 @@ details:string='1/8'
       this.enableday5 = false;
     }
     else if (event === '3') {
+      this.slideStart=0;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -65,6 +69,7 @@ details:string='1/8'
       this.enableday5 = false;
     }
     else if (event === '4') {
+      this.slideStart=0;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -73,6 +78,7 @@ details:string='1/8'
       this.enableday5 = false;
     }
     else if (event === '5') {
+      this.slideStart=0;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
