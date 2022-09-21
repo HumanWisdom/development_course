@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'HumanWisdom-treesisters',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreesistersPage implements OnInit {
 
-  constructor() { }
+  constructor(private location:Location,private ngNavigatorShareService: NgNavigatorShareService,) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    
   }
-
+  back(){
+   this.location.back();
+  }
+  share(){
+    this.ngNavigatorShareService
+    .share({
+      title: "HumanWisdom Program",
+      text:
+        "Hey, checkout HumanWisdom's Tree planting program – https://www.humanwisdom.me/course/adults/treesisters"
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
 }
