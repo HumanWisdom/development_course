@@ -86,9 +86,14 @@
                                     <label class="filter_label display_initial">
                                         Select Level : <select id="levels" class="form-control input-sm w22 cinherit" [(ngModel)]="this.searchedLevel" (ngModelChange)="searchFilter()">
                                             <option value="">All</option>
+                                            <option value="Level0">Level 0</option>
                                             <option value="Level1">Level 1</option>
                                             <option value="Level2">Level 2</option>
                                             <option value="Level3">Level 3</option>
+                                            <option value="Level4">Level 4</option>
+                                            <option value="Level5">Level 5</option>
+                                            <option value="Level6">Level 6</option>
+                                            <option value="Level7">Level 7</option>
                                         </select>
                                     </label>
                                 </div>
@@ -101,17 +106,21 @@
                                 <thead>
                                     <tr>
                                         <th>Level</th>     
-                                        <th>Name</th>     
+                                        <th>Name</th>   
+                                        <th>Coupon Code</th>     
                                         <th>Date Of Joining</th>     
                                         <th>Total Revenue</th> 
+                                        <th>Total Commission </th> 
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let affiliate of affiliates; let i = index;">
                                         <td>{{affiliate.Level}}</td>
                                         <td>{{affiliate.AffName}}</td>
+                                        <td>{{affiliate.CouponCode}}</td>
                                         <td>{{affiliate.DOJ}}</td>
                                         <td>{{affiliate.TotRevenue}}</td>
+                                        <td>{{affiliate.TotCommEarned}}</td>
                                     </tr>             
                                 </tbody>
                             </table>
