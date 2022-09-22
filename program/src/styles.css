@@ -10396,8 +10396,12 @@ div.rbox
   position: absolute;
   right: 0;
   top: 0;
+  bottom: 0;
   text-align: center;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .panel-title > a[aria-expanded="true"]:after {
   content: "\f077"; /* fa-chevron-up */
@@ -21269,7 +21273,7 @@ and (orientation : portrait)
 
 .mb40px
 { 
-  margin-bottom: 40px;
+  margin-bottom: 40px !important;
 }
 
 .ngx-charts-outer
@@ -30468,4 +30472,56 @@ svg path
 .mb10rem
 {
   margin-bottom: 10rem;
+}
+
+.wec_01 .carousel-inner .item 
+{
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s;
+}
+
+/* font weight */
+.fw_700 
+{
+  font-weight: 700 !important;
+}
+/* /font weight */
+
+.mtb70px 
+{
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+/* .ppr .panel-default:nth-child(1)
+{
+  border-top: 0 !important;
+} */
+
+.ppr .panel-default,
+.ppr_wbb .panel-default
+{
+  border-top: 0 !important;
+  border-bottom: 1px solid #ADADAD;
+}
+
+.ppr_wbb .panel-default:last-child
+{
+  border-bottom: 0 !important;
+}
+
+.ppr .panel-default>.panel-heading+.panel-collapse>.panel-body
+{
+  padding: 0 0 10px 0 !important
+}
+
+.fc_5d5d5d 
+{
+  color: #5d5d5d !important;
+}
+
+.fc_adadad
+{
+  color: #adadad !important;
 }
