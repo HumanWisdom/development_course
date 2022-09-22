@@ -345,6 +345,7 @@ const routes: Routes = [
   },
   {
     path: 'partnership-webpage',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./partnership-webpage/partnership-webpage.module').then( m => m.PartnershipWebpageModule)
   },
   {
