@@ -508,7 +508,7 @@ export class LoginSignupPage implements OnInit {
           localStorage.setItem("audio", JSON.stringify(this.audio))
           localStorage.setItem("isPartner", res.IsPartner);
           if (res.UserId === 0) {
-            this.showAlert = true
+            this.showAlert = true;
             window.alert('You have enetered wrong credentials. Please try again.')
             this.email = ""
             this.password = ""
@@ -596,6 +596,7 @@ export class LoginSignupPage implements OnInit {
                   } else {
                     if(localStorage.getItem("navigateToUpgradeToPremium")== "true"){
                       this.router.navigate(['/adults/partnership-app'])
+                      localStorage.setItem("navigateToUpgradeToPremium","false");
                     }
                     else{
                     this.router.navigate(['/adults/adult-dashboard'])
