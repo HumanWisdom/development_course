@@ -340,17 +340,21 @@
 
               <!-- day 01 -->
               <div class="container" *ngIf="enableday1">
-                <div id="mdp_carousel" class="carousel slide we_carousel h100vh day" data-ride="carousel"
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
                   <div class="row center_flex">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
                       <ol class="carousel-indicators">
-                        <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mdp_carousel" data-slide-to="1"></li>
                         <li data-target="#mdp_carousel" data-slide-to="2"></li>
                         <li data-target="#mdp_carousel" data-slide-to="3"></li>
-                        <li data-target="#mdp_carousel" data-slide-to="4"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="4"></li> -->
+
+                        <h4 class="txt315 mtb0px" [innerHTML]="details">
+                         
+                        </h4>
 
                         <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
                           <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
@@ -383,7 +387,7 @@
                             </div>
                           </div>
 
-                          <div class="row tcenter">
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.2.mp3">
@@ -393,6 +397,26 @@
 
                         </div>
                       </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt335 italic txt_justify">
+
+                          <p>
+                            In this first set of exercises we are going to remind ourselves how to notice the world around us with depth and wonder and be curious about what we see.
+                          </p>
+
+                          <p>
+                            You will notice things around you that you would normally overlook, and write about them in your journal. The aim is to improve your ability to notice. Our mind tends to overlook things it sees everyday. This skill will help you see the world freshly each day, and that in itself can be life enhancing. 
+                          </p>
+
+                          <p>
+                            This ability to notice freshly will be invaluable when you begin noticing your thoughts and feelings. We are going to begin with noticing the people we meet freshly
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
                     </div>
                     <!-- /audio -->
 
@@ -463,25 +487,29 @@
 
               <!-- day 02 -->
               <div class="container" *ngIf="enableday2">
-                <div id="mdp_carousel" class="carousel slide we_carousel h100vh day" data-ride="carousel"
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
                   <div class="row center_flex">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
                       <ol class="carousel-indicators">
-                        <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mdp_carousel" data-slide-to="1"></li>
                         <li data-target="#mdp_carousel" data-slide-to="2"></li>
                         <li data-target="#mdp_carousel" data-slide-to="3"></li>
-                        <li data-target="#mdp_carousel" data-slide-to="4"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="4"></li> -->
 
-                        <a class="left carousel-control jc_flexstart flex_ai">
+                        <h4 class="txt315 mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
                           <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
                             Back
                           </h4>
                           <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
                           <h4 class="txt315 mtb0px">
                             Next
                           </h4>
@@ -522,6 +550,31 @@
 
                         </div>
                       </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt335 italic txt_justify">
+
+                          <p>
+                            We normally walk past trees - or may look briefly and say ‘ how beautiful’.
+                            <br>
+                            But if we pause, go close and spend some time being with a tree there is so much we can learn. 
+                            Look at the bark, and the various patterns it creates. Look for the creatures that live in the tree - an oak tree supports 2300 species for example - isn’t that amazing?
+                            Look at the leaves - notice their intricate patterns. See the architecture of the branches. Let your mind go quiet with wonder, and just see what you can notice. 
+                          </p>
+
+                          <p>
+                            Do you notice in yourself the urge to move on and do something useful - that's normal - stay a while longer. Soak in the wonder that is this tree - we owe our life to it and other trees. 
+                            The quieter your mind becomes the more you notice. The more you notice, the quieter your mind becomes.
+                          </p>
+
+                          <p>
+                            Learn to be curious and notice. Ask a question about the tree and go find the answer.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
                     </div>
                     <!-- /audio -->
 
@@ -604,24 +657,24 @@
 
               <!-- day 03 -->
               <div class="container" *ngIf="enableday3">
-                <div id="mdp_carousel" class="carousel slide we_carousel h100vh day" data-ride="carousel"
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
                   <div class="row center_flex">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
                       <ol class="carousel-indicators">
-                        <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mdp_carousel" data-slide-to="1"></li>
                         <li data-target="#mdp_carousel" data-slide-to="2"></li>
-                        <li data-target="#mdp_carousel" data-slide-to="3"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="3"></li> -->
 
-                        <a  class="left carousel-control jc_flexstart flex_ai">
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
                           <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
                             Back
                           </h4>
                           <span class="sr-only">Previous</span>
                         </a>
-                        <a  class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
                           <h4 class="txt315 mtb0px">
                             Next
                           </h4>
@@ -662,6 +715,38 @@
 
                         </div>
                       </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt335 italic txt_justify">
+
+                          <p>
+                            You may think this is a silly thing to do - to look carefully at an ordinary vegetable. But it’s not about the vegetable - it is about developing our skill to be curious, and notice the extra-ordinary in the ordinary - this way you will live in wonder at the daily miracles of your life.
+                          </p>
+
+                          <p>
+                            Firstly - have you seen its colour? How did it get that way?
+                          </p>
+
+                          <p>
+                            Smell it - and take a deep breath in - what does this remind you of?
+                          </p>
+
+                          <p>
+                            All vegetables come in such different shapes and sizes - no two are alike.
+                          </p>
+
+                          <p>
+                            Now cut it open and notice the intricate patterns inside it.
+                          </p>
+
+                          <p>
+                            Feel its texture - and marvel at the wonder of creation it is
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
                     </div>
                     <!-- /audio -->
 
@@ -730,23 +815,27 @@
 
               <!-- day 04 -->
               <div class="container" *ngIf="enableday4">
-                <div id="mdp_carousel" class="carousel slide we_carousel h100vh day" data-ride="carousel"
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
                   <div class="row center_flex">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
                       <ol class="carousel-indicators">
-                        <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mdp_carousel" data-slide-to="1"></li>
-                        <li data-target="#mdp_carousel" data-slide-to="2"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="2"></li> -->
 
-                        <a  class="left carousel-control jc_flexstart flex_ai">
+                        <h4 class="txt315 mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
                           <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
                             Back
                           </h4>
                           <span class="sr-only">Previous</span>
                         </a>
-                        <a  class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
                           <h4 class="txt315 mtb0px">
                             Next
                           </h4>
@@ -787,6 +876,26 @@
 
                         </div>
                       </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt335 italic txt_justify">
+
+                          <p>
+                            Our mind takes what it sees everyday for granted. That is just the way the mind is wired. It's an old survival mechanism - to spot changes and look for danger, but it stops us noticing the wonder of our world, and we take what we already have for granted.
+                          </p>
+
+                          <p>
+                            The new toy quickly becomes the old toy - and the new car the old car which you don’t notice any more.
+                          </p>
+
+                          <p>
+                            Notice this process in yourself. Look with fresh eyes at the world and what you already have. Be grateful.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
                     </div>
                     <!-- /audio -->
 
@@ -839,24 +948,28 @@
 
               <!-- day 05 -->
               <div class="container" *ngIf="enableday5">
-                <div id="mdp_carousel" class="carousel slide we_carousel h100vh day" data-ride="carousel"
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
                   <div class="row center_flex">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
                       <ol class="carousel-indicators">
-                        <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mdp_carousel" data-slide-to="1"></li>
                         <li data-target="#mdp_carousel" data-slide-to="2"></li>
-                        <li data-target="#mdp_carousel" data-slide-to="3"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="3"></li> -->
 
-                        <a class="left carousel-control jc_flexstart flex_ai">
+                        <h4 class="txt315 mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
                           <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
                             Back
                           </h4>
                           <span class="sr-only">Previous</span>
                         </a>
-                        <a  class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
                           <h4 class="txt315 mtb0px">
                             Next
                           </h4>
@@ -897,6 +1010,26 @@
 
                         </div>
                       </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt335 italic txt_justify">
+
+                          <p>
+                            Normally when we walk our mind wanders. We take note of things around us only briefly - before the mind wanders off again. Walk consciously. Notice the air you breathe, the sound your footsteps make, and the details of the buildings or landscape around you.
+                          </p>
+
+                          <p>
+                            The more you notice the quieter your mind becomes. Pause from time to time and look carefully at a tree or a flower or a building - noticing the details.
+                          </p>
+
+                          <p>
+                            As you develop your ability to notice and be curious about the world around you, your sense of wonder at being alive will awaken
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
                     </div>
                     <!-- /audio -->
 
