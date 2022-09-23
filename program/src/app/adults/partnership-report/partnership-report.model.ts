@@ -17,6 +17,7 @@ export interface IncomeActivity {
     Comm_Earned:    string;
     CreatedOn:      string;
     Comm_PaidDt:    string;
+    PartnerName:    string;
 }
 
 export interface IncomeReport {
