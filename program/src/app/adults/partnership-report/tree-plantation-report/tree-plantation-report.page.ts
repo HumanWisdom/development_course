@@ -47,7 +47,9 @@ export class TreePlantationReportPage implements OnInit {
   return array;
  }
 
-
+ redirectToMyPartnership(){
+  this.router.navigate(['adults/partnership-report/my-partner'])
+}
  DownloadPdf(){
   this.isPdfDownloading=true;
   setTimeout(() => {

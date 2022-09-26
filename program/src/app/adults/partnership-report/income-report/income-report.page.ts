@@ -193,7 +193,9 @@ export class IncomeReportPage implements OnInit {
       },
     });
   }
-
+  redirectToMyPartnership(){
+    this.router.navigate(['adults/partnership-report/my-partner'])
+  }
   goBack()
   {
   this.router.navigate(['adults/adult-dashboard'])

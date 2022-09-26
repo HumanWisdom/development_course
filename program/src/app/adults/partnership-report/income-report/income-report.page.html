@@ -161,6 +161,13 @@
                       </h4>
                     </div>
                   </div> 
+                  <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                    <a (click)="redirectToMyPartnership()" class="">
+                      <h4 class="txt345 mtb0px underline">
+                       View Partners
+                      </h4>
+                    </a>
+                    </div>
                   
                   <div class="row mt5px mb20px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -168,8 +175,8 @@
                         Partnership Income Report
                       </h4>
                     </div>
-                  </div> 
-
+                    </div>  
+             
                   <div class="row mt5px mb20px" *ngIf="years.length>0">
                     <div class="col-md-3 col-sm-3 col-xs-3">
                       <select class="form-control subscribe_select1" name="drpSelectYear"  [(ngModel)]="selectedYear" 
@@ -179,8 +186,9 @@
                         <option *ngFor="let titl of years" [value]="titl">{{titl}}</option>
                       </select>
                     </div>
+                 
                   </div> 
-    
+     
                   <div class="row cmlr-10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <!-- accordion -->

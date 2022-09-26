@@ -143,4 +143,7 @@ export class IncomeActivityPage implements OnInit {
   {
   this.router.navigate(['adults/adult-dashboard'])
   }
+  redirectToMyPartnership(){
+    this.router.navigate(['adults/partnership-report/my-partner'])
+  }
 }
