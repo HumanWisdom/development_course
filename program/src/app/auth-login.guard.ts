@@ -27,7 +27,6 @@ export class authLoginGuard implements CanActivate, OnInit {
     let persdata = localStorage.getItem('personalisedlist');
     let cartdata = localStorage.getItem('cartlist');
     let option = localStorage.getItem('introoption');
-    let partnerLogin=localStorage.getItem('btnClickBecomePartner')
     if (localStorage.getItem('acceptcookie') === 'T') {
       cookie = true;
     }
@@ -59,9 +58,6 @@ export class authLoginGuard implements CanActivate, OnInit {
     }
     if (pers) {
       localStorage.setItem('personalised', pers);
-    }
-    if(partnerLogin){
-      localStorage.setItem('btnClickBecomePartner','T')
     }
     if (m[1] !== undefined && m[1] !== '') {
     } else {

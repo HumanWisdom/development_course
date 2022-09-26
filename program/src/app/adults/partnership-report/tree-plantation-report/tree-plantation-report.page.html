@@ -72,21 +72,28 @@
                   
 
                   <div class="row mt40px">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm- col-xs-">
                       <h4 class="txt320 mtb0px tleft">
                         {{currentDate | date:'dd MMMM y'}}
                       </h4>
                     </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                      <a (click)="redirectToMyPartnership()" class="">
+                        <h4 class="txt345 mtb0px underline">
+                         View Partners
+                        </h4>
+                      </a>
+                      </div>
                   </div> 
-                  
-                  <div class="row mt5px mb30px">
+             
+                  <div class="row mt5px mb30px" *ngIf="partnershipReport.AffReport.length>0">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt307 mtb0px tleft">
                         Tree plantation report
                       </h4>
                     </div>
                   </div> 
-<ng-container *ngFor="let item of partnershipReport.AffReport">
+                 <ng-container *ngFor="let item of partnershipReport.AffReport">
 
                   <div class="row mt20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -117,7 +124,7 @@
                 </ng-container>
 
 
-                  <div class="row pr_cnt">
+                  <div *ngIf="partnershipReport.AffReport.length>0" class="row pr_cnt">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                       <h4 class="txt349 mtb0px">
                         Total trees planted
@@ -128,7 +135,7 @@
                     </div>
                   </div> 
                   
-                  <div class="row mt40px mb40px"  *ngIf="!isPdfDownloading">
+                  <div class="row mt40px mb40px"  *ngIf="!isPdfDownloading && partnershipReport.AffReport.length>0">
                     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                       <a class="flex_ai" (click)="DownloadPdf()" >
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
@@ -139,7 +146,86 @@
                     </div>
                   </div>
 
-                  <div class="row" *ngIf="!isPdfDownloading">
+                  <ng-container *ngIf="partnershipReport.AffReport.length==0">
+                    <div class="row mtb70px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_no_partner.svg"
+                              alt=""
+                              class="img-responsive"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="row mt10px">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="txt318 mtb0px tcenter">
+                              You have no active partners
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row mt10px">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="txt345 mtb0px underline tcenter" (click)="redirectToMyPartnership()">
+                              Remind Inactive Partners
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <hr class="ws_hr mtb0px" />
+                      </div>
+                    </div>
+
+                    <div class="row mtb30px">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="txt311 mtb0px">
+                          To get started, share your partnership referral code
+                          with friends and organizations.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div
+                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex"
+                      >
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <h4 class="txt335 mtb0px p_rc fw_700">  {{this.partnershipReport.AffRefCode}}</h4>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tleft" (click)="share(partnershipReport.AffRefCode)">
+                          <a>
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_round.svg"
+                              alt=""
+                              class="img-responsive"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <a>
+                          <h4 *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode)" class="txt338 mb0px underline tcenter">
+                            Copy code
+                          </h4>
+                          <h4 *ngIf="!isCopy"  class="txt338 mb0px underline tcenter">
+                            Copied
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
+                  </ng-container>
+                  <div class="row" *ngIf="!isPdfDownloading && partnershipReport.AffReport.length>0 ">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt343 mtb0px">
                         If you wish to switch your partnership benefits, and have a tree planted for every subscription instead, do write to us at 
