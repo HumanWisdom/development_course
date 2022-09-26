@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
@@ -23,7 +24,8 @@ export class IncomePartnerPage implements OnInit {
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
-    public router: Router
+    public router: Router,
+   public location:Location
   ) {
     this.isRecieveIncome=localStorage.getItem('PartnerOption')=='ReceiveIncome';
     this.  InitializePartnershipReport();
@@ -112,9 +114,14 @@ export class IncomePartnerPage implements OnInit {
     this.router.navigate(['adults/partnership-report/income-activity'])
   }
   redirectToIReport(){
-    this.router.navigate(['adults/partnership-report/income-report'])
+    if(this.partnershipReport.IncomeActivity.length>0){
+      this.router.navigate(['adults/partnership-report/income-report'])
+    }
   }
   redirectToTreeReport(){
     this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
+  }
+  back(){
+    this.location.back();
   }
 }
