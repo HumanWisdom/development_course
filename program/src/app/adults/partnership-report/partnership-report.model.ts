@@ -9,6 +9,7 @@ export interface PartnershipReport {
     BankDet:string;
     ByPaypal:number;
     AffImgPath:string;
+    TreesCnt:number;
 }
 
 export interface IncomeActivity {
