@@ -86,6 +86,7 @@ export class HamburgerComponent implements OnInit {
         localStorage.setItem('isloggedin', 'F')
         localStorage.setItem('guest', 'T')
         localStorage.setItem('navigateToUpgradeToPremium', 'false')
+        localStorage.setItem('btnClickBecomePartner', 'false');
         this.router.navigate(['/onboarding/login'])
       }
     }

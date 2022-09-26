@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from 'src/app/auth.guard';
 
-import { PartnershipIndexPage } from './partnership-index.page';
+import { IncomePartnerPage } from './income-partner.page';
 
 const routes: Routes = [
   {
     path: '',
-    canActivate:[AuthGuard],
-    component: PartnershipIndexPage
+    component: IncomePartnerPage
   }
 ];
 
@@ -16,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PartnershipIndexPageRoutingModule {}
+export class IncomePartnerPageRoutingModule {}

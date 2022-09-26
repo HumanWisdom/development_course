@@ -689,16 +689,18 @@ export class LoginSignupPage implements OnInit {
                         localStorage.getItem("PartnerOption") ==
                         "ReceiveIncome"
                       ) {
+                        localStorage.setItem("navigateToUpgradeToPremium", "false");
                         this.router.navigate([
                           "/adults/partnership-report/income-activity"]);
                       } else {
+                        localStorage.setItem("navigateToUpgradeToPremium", "false");
                         this.router.navigate([
                           "/adults/partnership-report/tree-plantation-report"]);
                       }
                     } else {
+                      localStorage.setItem("navigateToUpgradeToPremium", "false");
                       this.router.navigate(["/adults/partnership-app"]);
                     }
-                    localStorage.setItem("navigateToUpgradeToPremium", "false");
                   } else {
                     this.router.navigate(["/adults/adult-dashboard"]);
                   }
