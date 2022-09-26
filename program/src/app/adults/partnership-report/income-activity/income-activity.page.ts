@@ -18,6 +18,8 @@ export class IncomeActivityPage implements OnInit {
   groupedDates = [];
   currentDate = new Date();
   BankDet: string = "";
+  isCopy=true;
+  partnerOption=localStorage.getItem('PartnerOption');
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -31,6 +33,8 @@ export class IncomeActivityPage implements OnInit {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
         this.partnershipReport = res;
+        this.partnershipReport.IncomeActivity=[];
+        this.partnershipReport.IncomeReport=[];
         this.getMaskAccountDetails();
         this.groupDates();
       }
@@ -43,6 +47,15 @@ export class IncomeActivityPage implements OnInit {
       this.partnershipReport.BankDet.length - 2,
       this.partnershipReport.BankDet.length
     );
+  }
+  copyText(referralCode): void {
+    navigator.clipboard.writeText(referralCode).catch(() => {
+      console.error("Unable to copy text");
+    });
+    this.isCopy=false;
+    setTimeout(() => {
+      this.isCopy=true;
+    }, 4000);
   }
 
   InitializePartnershipReport() {
@@ -92,7 +105,9 @@ export class IncomeActivityPage implements OnInit {
       });
   }
   redirectToIncomeReport() {
-    this.router.navigate(["adults/partnership-report/income-report"]);
+    if(this.partnershipReport.IncomeActivity.length>0){
+      this.router.navigate(["adults/partnership-report/income-report"]);
+    }
   }
 
   groupDates() {
@@ -142,5 +157,8 @@ export class IncomeActivityPage implements OnInit {
   goBack()
   {
   this.router.navigate(['adults/adult-dashboard'])
+  }
+  redirectToMyPartnership(){
+    this.router.navigate(['adults/partnership-report/my-partner'])
   }
 }
