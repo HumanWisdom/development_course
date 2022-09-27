@@ -78,6 +78,7 @@ export class IncomePartnerPage implements OnInit {
       WithdrawnAmt: 0,
       BankDet: "",
       AffImgPath: "",
+      TreesCnt:0
     } as PartnershipReport;
   }
   share(refcode) {

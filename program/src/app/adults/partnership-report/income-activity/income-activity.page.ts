@@ -33,8 +33,6 @@ export class IncomeActivityPage implements OnInit {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
         this.partnershipReport = res;
-        this.partnershipReport.IncomeActivity=[];
-        this.partnershipReport.IncomeReport=[];
         this.getMaskAccountDetails();
         this.groupDates();
       }
