@@ -61,7 +61,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                       <div
                         class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft"
-                        *ngIf="partnershipReport.AffImgPath && !isPdfDownloading"
+                        *ngIf="partnershipReport.AffImgPath"
                       >
                         <img
                           src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}"
@@ -99,7 +99,7 @@
                               Paypal # {{BankDet}}
                             </h4>
                           </div>
-                          <div
+                          <!-- <div
                             class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0"
                             *ngIf="!isPdfDownloading"
                           >
@@ -110,7 +110,7 @@
                                 Change
                               </h4>
                             </a>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                     </div>
@@ -120,7 +120,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                       <div
                         class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft"
-                        *ngIf="partnershipReport.AffImgPath && !isPdfDownloading"
+                        *ngIf="partnershipReport.AffImgPath"
                       >
                         <img
                           src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}"
