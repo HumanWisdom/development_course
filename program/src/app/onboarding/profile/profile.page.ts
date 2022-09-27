@@ -27,7 +27,7 @@ export class ProfilePage implements OnInit {
   url = ''
   userData: any;
   enablepayment = true;
-
+  partnerOption = localStorage.getItem('PartnerOption')
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
@@ -75,8 +75,13 @@ export class ProfilePage implements OnInit {
   }
 
   getAffiliate() {
-    let userId = JSON.parse(localStorage.getItem("userId"))
-    window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
+    if (this.partnerOption == 'ReceiveIncome') {
+      this.router.navigate(['adults/partnership-report/income-activity']);
+    } else {
+      this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
+    }
+    // let userId = JSON.parse(localStorage.getItem("userId"))
+    // window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
   }
 
   deleteMyData() {
