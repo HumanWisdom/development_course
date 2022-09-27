@@ -100,14 +100,13 @@ export class AuthGuard implements CanActivate, OnInit {
       // this.router.navigate(['/onboarding/login'])
       this.router.navigate(['/onboarding/login'])
       return false
-    } else if (localStorage.getItem('btnClickBecomePartner') == 'true') {
-      if (localStorage.getItem('SubscriberType') == 'Monthly' || localStorage.getItem('SubscriberType') == 'Free' || localStorage.getItem('SubscriberType') == 'Annual') {
-        localStorage.setItem('btnClickBecomePartner', 'false');
-        return true;
-      }
-      this.router.navigate(['/onboarding/login'])
-      return false;
     } else {
+       if (localStorage.getItem('navigateToUpgradeToPremium') == 'true') {
+        localStorage.setItem('btnclick', 'F');
+        localStorage.setItem('guest', 'T');
+        this.router.navigate(['/onboarding/login'])
+        return false;
+      }
       // localStorage.clear()
       localStorage.setItem('btnclick', 'F');
       localStorage.setItem('guest', 'T');
