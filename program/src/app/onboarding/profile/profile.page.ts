@@ -27,7 +27,8 @@ export class ProfilePage implements OnInit {
   url = ''
   userData: any;
   enablepayment = true;
-  partnerOption = localStorage.getItem('PartnerOption')
+  isPartner=false;
+  partnerOption = localStorage.getItem('PartnerOption');
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
@@ -36,7 +37,7 @@ export class ProfilePage implements OnInit {
         this.paymentDetail = res[0]
       }
     })
-
+    this.isPartner=localStorage.getItem('IsPartner')=='1';
     if (this.platform.IOS) {
       this.enablepayment = false;
     }

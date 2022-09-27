@@ -5,12 +5,10 @@ import { AuthGuard } from 'src/app/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    canActivate:[AuthGuard],
     loadChildren: () => import('./partnership-index/partnership-index.module').then( m => m.PartnershipIndexPageModule)
   },
   {
     path: 'partnership-index',
-    canActivate:[AuthGuard],
     loadChildren: () => import('./partnership-index/partnership-index.module').then( m => m.PartnershipIndexPageModule)
   },
   {
