@@ -85,7 +85,7 @@
                       </a>
                       </div>
                   </div> 
-             
+           <ng-container *ngIf="partnershipReport.AffReport!=null">     
                   <div class="row mt5px mb30px" *ngIf="partnershipReport.AffReport.length>0">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt307 mtb0px tleft">
@@ -145,8 +145,8 @@
                       </a>
                     </div>
                   </div>
-
-                  <ng-container *ngIf="partnershipReport.AffReport.length==0">
+              </ng-container>
+                  <ng-container *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length==0 || partnershipReport.AffReport==null">
                     <div class="row mtb70px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="row">
@@ -225,7 +225,7 @@
                       </div>
                     </div>
                   </ng-container>
-                  <div class="row" *ngIf="!isPdfDownloading && partnershipReport.AffReport.length>0 ">
+                  <div class="row" *ngIf="!isPdfDownloading && partnershipReport.AffReport!=null && partnershipReport.AffReport.length>0 ">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt343 mtb0px">
                         If you wish to switch your partnership benefits, and have a tree planted for every subscription instead, do write to us at 
