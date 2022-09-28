@@ -24,7 +24,7 @@ export class IncomeReportPage implements OnInit {
   totalPartners: number;
   totalRevenu: number;
   isPdfDownloading=false;
-  BankDet: string = "";
+  BankDet: string = null;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -161,6 +161,7 @@ export class IncomeReportPage implements OnInit {
   onChange(value) {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
+        this.partnershipReport = res;
         this.groupByYears(res);
         this.getMaskAccountDetails();
         if (value == "0") {

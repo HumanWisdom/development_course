@@ -7,7 +7,6 @@ import { PartnershipIndexPage } from './partnership-index.page';
 const routes: Routes = [
   {
     path: '',
-    canActivate:[AuthGuard],
     component: PartnershipIndexPage
   }
 ];

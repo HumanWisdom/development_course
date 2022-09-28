@@ -168,9 +168,9 @@ export class HamburgerComponent implements OnInit {
   // 	el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
   // }
 
-  RouteToBecomeAPartner() {
-    localStorage.setItem("navigateToUpgradeToPremium", "true");
-    this.router.navigate(['/adults/partnership-webpage']);
-  }
+RouteToBecomeAPartner(){
+  localStorage.setItem("navigateToUpgradeToPremium","true");
+    this.router.navigate(['/adults/partnership-app']);
+}
 
 }

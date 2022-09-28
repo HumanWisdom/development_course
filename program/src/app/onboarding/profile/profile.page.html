@@ -93,11 +93,11 @@
 
               </div>
 
-              <div class="row">
+              <div class="row" *ngIf="isPartner">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                   <a class="" (click)="getAffiliate()" *ngIf="RoleID === 8">
                     <h6 class="tcenter txt141 underline mtb0px mt10px">
-                      Affiliate Revenue Report
+                      Partnership Report
                     </h6>
                   </a>
                 </div>
