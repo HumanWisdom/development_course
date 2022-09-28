@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OnboardingService } from '../onboarding.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ProfileEditPage implements OnInit {
   userdetail = 'tset';
   imageupload;
 
-  constructor(private onboardingService: OnboardingService) {
+  constructor(private onboardingService: OnboardingService, private router: Router) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
 
@@ -27,7 +28,8 @@ export class ProfileEditPage implements OnInit {
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
         this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.email = this.userdetail['Email']
-        this.fullname = this.userdetail['FName'] + ' ' + this.userdetail['LName']
+        let userres = JSON.parse(localStorage.getItem("loginResponse"));
+        this.fullname = userres['Name']
       })
     }, 1000)
   }
@@ -60,6 +62,16 @@ export class ProfileEditPage implements OnInit {
         })
       }
     }
+  }
+
+  closeprofileedit() {
+    let res = JSON.parse(localStorage.getItem("loginResponse"))
+    res['Name'] = this.fullname
+    localStorage.setItem(
+      "loginResponse",
+      JSON.stringify(res)
+    );
+    this.router.navigate(["/onboarding/user-profile"]);
   }
 
   updateUser() {
