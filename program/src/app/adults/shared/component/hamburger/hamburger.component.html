@@ -2,7 +2,7 @@
   <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox mc_main">
   <label class="m-menu__toggle m0px" for="menu">
     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/hamburger_grey.svg"
-      class="img-responsive" alt="">
+      class="img-responsive" alt="" (click)="getmenuevent()">
   </label>
   <label class="m-menu__overlay" for="menu"></label>
   <!-- submenu -->
@@ -19,7 +19,7 @@
             <h4 class="txt187 mtb0px tleft">
               {{name}}
             </h4>
-            <a routerLink="/onboarding/user-profile">
+            <a routerLink="/onboarding/user-profile" *ngIf="enableprofile">
               <h4 class="txt158 mt5pxi mb0px tleft underline" *ngIf="isloggedIn">
                 View Profile
               </h4>
@@ -235,8 +235,8 @@
         </a>
       </li>
 
-      <li  id="liSubscribe"  *ngIf="!subscriber">
-        <a  routerLink="/onboarding/add-to-cart" class="p0 b0px">
+      <li id="liSubscribe" *ngIf="!subscriber">
+        <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -333,14 +333,14 @@
             </label>
           </div>
           <ul class="dh_ul">
-            
-            <li id="isNotPartner"  *ngIf="isPartner=='0'">
-              <a routerLink="/adults/partnership-app" class="p0 b0px">
+
+            <li id="isNotPartner" *ngIf="isPartner=='0'">
+              <a (click)="RouteToBecomeAPartner()" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
-                        class="img-responsive">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg"
+                        alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
                       <h4 class="txt188 mtb0px">
@@ -351,14 +351,14 @@
                 </div>
               </a>
             </li>
-      
-            <li  id="isPartner"  *ngIf="isPartner=='1'">
-              <a  (click)="routeToPartnerScreen()" class="p0 b0px">
+
+            <li id="isPartner" *ngIf="isPartner=='1'">
+              <a (click)="routeToPartnerScreen()" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
-                        class="img-responsive">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg"
+                        alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
                       <h4 class="txt188 mtb0px">
@@ -375,8 +375,8 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
-                        class="img-responsive">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg"
+                        alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
                       <h4 class="txt188 mtb0px">
@@ -393,8 +393,8 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
-                        class="img-responsive">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg"
+                        alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
                       <h4 class="txt188 mtb0px">
@@ -405,7 +405,7 @@
                 </div>
               </a>
             </li>
-            
+
           </ul>
         </div>
       </li>
@@ -722,7 +722,7 @@
         </a>
       </li>
 
-      <li id="liLogout" (click)="logout()"  *ngIf="isloggedIn">
+      <li id="liLogout" (click)="logout()" *ngIf="isloggedIn">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
             <div class="col-md-2 col-sm-2 col-xs-2">

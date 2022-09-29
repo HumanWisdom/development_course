@@ -296,7 +296,11 @@ export class AdultsService {
   }
 
   addJournal(data: any): Observable<any> {
-    return this.http.post(this.path + '/AddJournal', data)
+    return this.http.post(this.path + '/AddJournal', data);
+  }
+
+  GetMyPartners(): Observable<any> {
+    return this.http.get(this.path + '/GetMyPartners');
   }
 
 }

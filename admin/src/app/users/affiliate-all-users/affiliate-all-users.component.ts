@@ -167,14 +167,14 @@ export class AffiliateAllUsersComponent implements OnInit {
 
 
   pay(){
-  	let idsArr:any = [];
+  	let idsArr:string[]=[] ;
   	this.affiliates.forEach(res => {
   		if(res.isChecked == true && res.CommisionPaid == 0){
-  				idsArr.push({SubscrID: res.SubscrID,Level: res.Level});
+  				idsArr.push(res.CommissionId)
   		}
   	})
   	if(idsArr.length){
-  		this._userservice.setAffliateCommision(idsArr).subscribe((res: any) => {				
+  		this._userservice.setAffliateCommision(idsArr.join(",")).subscribe((res: any) => {				
 				console.log('success');
      		window.location.reload();
 			}, (err: any) => {

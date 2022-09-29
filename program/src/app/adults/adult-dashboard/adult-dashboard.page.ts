@@ -296,6 +296,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getuserDetail();
     setTimeout(() => {
       this.getUserPreference()
       this.getUsershorts()
@@ -309,7 +310,7 @@ export class AdultDashboardPage implements OnInit {
     } else {
       this.enableDailypopup();
     }
-
+ 
     setTimeout(() => {
       let sub: any = localStorage.getItem('Subscriber');
       if (sub === '0') {
@@ -2768,8 +2769,8 @@ export class AdultDashboardPage implements OnInit {
   // living with wisdom 1
   routeStress(cont: any = 1) {
     var stressResume
-    localStorage.setItem("moduleId", JSON.stringify(75))
-    this.service.clickModule(75, this.userId)
+    localStorage.setItem("moduleId", JSON.stringify(44))
+    this.service.clickModule(44, this.userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
@@ -2790,12 +2791,12 @@ export class AdultDashboardPage implements OnInit {
           console.log(error)
         },
         () => {
-          // if (cont == "1") {
-          //   this.router.navigate([`/adults/stress/${stressResume}`])
-          // }
-          // else
-          //   this.router.navigate([`/adults/stress/s44001`])
-          this.router.navigate([`/adults/wisdom-exercise/s75001`])
+          if (cont == "1") {
+            this.router.navigate([`/adults/stress/${stressResume}`])
+          }
+          else
+            this.router.navigate([`/adults/stress/s44001`])
+          //this.router.navigate([`/adults/wisdom-exercise/s75001`])
         })
   }
 
@@ -3328,5 +3329,55 @@ export class AdultDashboardPage implements OnInit {
           else
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
+  }
+  getuserDetail(){
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    if(userId!=null){
+      this.services.getuser(userId).subscribe((res) => {
+        localStorage.setItem("isPartner", res[0].IsPartner);
+        localStorage.setItem('PartnerOption', res[0].PartnerOption);
+        localStorage.setItem("SubscriberType", res[0].SubscriberType)
+      })
+    }
+  }
+
+  routewisdomexercise(cont: any = 1) {
+    var weR='75001'
+    localStorage.setItem("moduleId", JSON.stringify(75))
+    this.service.clickModule(75, this.userId)
+      .subscribe(res => {
+       console.log(res)
+        this.qrList = res
+        weR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("weR", weR)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/wisdom-exercise/${weR}`])
+          }
+          else
+          this.router.navigate([`/adults/wisdom-exercise/s75001`])
+        })
+  }
+
+
+  wisdomexercise() {
+    this.router.navigate([`/adults/wisdom-exercise/s75001`])
   }
 }

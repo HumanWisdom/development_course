@@ -29,9 +29,17 @@ export class HamburgerComponent implements OnInit {
   @Input()
   enableplaystore = true
   ios = false
+  subscriberType = '';
+  enableprofile = true
 
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
 
+  }
+
+  getmenuevent() {
+    if (this.router.url == "/onboarding/user-profile") {
+      this.enableprofile = false
+    }
   }
 
   ngOnInit() {
@@ -42,7 +50,8 @@ export class HamburgerComponent implements OnInit {
       let sub: any = localStorage.getItem("Subscriber")
       this.roleid = JSON.parse(localStorage.getItem('RoleID'));
       let userid = localStorage.getItem('isloggedin');
-      this.name = localStorage.getItem('name');
+      let userres = JSON.parse(localStorage.getItem("loginResponse"));
+      this.name = userres['Name']
       if (userid === 'T') {
         this.isloggedIn = true
       }
@@ -54,6 +63,8 @@ export class HamburgerComponent implements OnInit {
         this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.isPartner = localStorage.getItem('isPartner');
         this.partnerOption = localStorage.getItem('PartnerOption')
+        this.partnerOption = localStorage.getItem('PartnerOption')
+        this.subscriberType = localStorage.getItem('SubscriberType');
       })
       if (sub === '1' || sub === 1) {
         this.subscriber = true;
@@ -83,6 +94,8 @@ export class HamburgerComponent implements OnInit {
       if (this.platform.isBrowser) {
         localStorage.setItem('isloggedin', 'F')
         localStorage.setItem('guest', 'T')
+        localStorage.setItem('navigateToUpgradeToPremium', 'false')
+        localStorage.setItem('btnClickBecomePartner', 'false');
         this.router.navigate(['/onboarding/login'])
       }
     }
@@ -154,5 +167,10 @@ export class HamburgerComponent implements OnInit {
   // setTranslate(xPos, yPos, el) {
   // 	el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
   // }
+
+RouteToBecomeAPartner(){
+  localStorage.setItem("navigateToUpgradeToPremium","true");
+    this.router.navigate(['/adults/partnership-app']);
+}
 
 }

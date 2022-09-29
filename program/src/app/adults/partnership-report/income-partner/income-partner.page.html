@@ -1,0 +1,583 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 partnership_app_tn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="back()">
+        <img
+          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_04.svg"
+          alt=""
+          class="p0"
+        />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="txt301 mtb0px tcenter">My Partnership</h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright"></div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+              <div class="row center_flex mt40px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="row mb20px">
+                    <div
+                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex"
+                    >
+                      <h4 class="txt343 mtb0px">Partnership Referral Code</h4>
+                      <button type="button" class="btn btn_pr_code">
+                        {{this.partnershipReport.AffRefCode}}
+                      </button>
+                      <a class="" (click)="share(partnershipReport.AffRefCode)">
+                        <img
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_grey_02.svg"
+                          alt=""
+                          class="p0"
+                        />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="row cmlr-10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <hr class="ws_hr mtb0px" />
+                    </div>
+                  </div>
+
+                  <div class="row mtb30px" *ngIf="isRecieveIncome">
+                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                      <div
+                        class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft"
+                        *ngIf="partnershipReport.AffImgPath"
+                      >
+                        <img
+                          src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}"
+                          class="img-responsive w100"
+                        />
+                      </div>
+                      <div
+                        class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pr0px"
+                      >
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt335 mtb0px tleft">
+                            {{partnershipReport.AffName}}
+                          </h4>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <h4 class="txt311 mtb0px tleft">
+                            Lifetime earnings:
+                            ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
+                          </h4>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h4
+                              class="txt311 mtb0px tleft"
+                              *ngIf="partnershipReport.ByPaypal==0"
+                            >
+                              A/c # {{BankDet}}
+                            </h4>
+                            <h4
+                              class="txt311 mtb0px tleft"
+                              *ngIf="partnershipReport.ByPaypal==1"
+                            >
+                              Paypal # {{BankDet}}
+                            </h4>
+                          </div>
+                          <!-- <div
+                            class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0"
+                            *ngIf="!isPdfDownloading"
+                          >
+                            <a class="" (click)="ChangeAccountDetais()">
+                              <h4
+                                class="txt345 underline ws_nowrap mtb0px tright"
+                              >
+                                Change
+                              </h4>
+                            </a>
+                          </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mtb30px" *ngIf="!isRecieveIncome">
+                    <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                      <div
+                        class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft"
+                        *ngIf="partnershipReport.AffImgPath"
+                      >
+                        <img
+                          src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}"
+                          class="img-responsive w100"
+                        />
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <h4 class="txt335 mtb0px tleft">
+                          {{partnershipReport.AffName}}
+                        </h4>
+                        <h4 class="txt311 mtb0px tleft">
+                          Trees Planted : {{partnershipReport.TreesCnt}}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row pr_ab_wd" *ngIf="isRecieveIncome">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <h4 class="txt314 mtb0px">AVAILABLE BALANCE</h4>
+                        <h4 class="txt344 mtb0px">
+                          USD {{partnershipReport.BalanceAmt}}
+                        </h4>
+                        <a
+                          href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"
+                          *ngIf="partnershipReport.BalanceAmt>=20"
+                        >
+                          <h4 class="txt345 mb0px mt5px underline ws_nowrap">
+                            Request to withdraw
+                          </h4>
+                        </a>
+                        <h4
+                          class="txt304 mb0pxi mt5px"
+                          *ngIf="partnershipReport.BalanceAmt<20"
+                        >
+                          Reach $20 to get paid
+                        </h4>
+                      </div>
+                      <div
+                        class="col-lg-2 col-md-2 col-sm-2 col-xs-2 dinline_box tcenter"
+                      >
+                        <hr class="vhr_02 mtb0px" />
+                      </div>
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <h4 class="txt314 mtb0px">WITHDRAWN</h4>
+                        <h4 class="txt107 mtb0px bold">
+                          USD {{partnershipReport.WithdrawnAmt}}
+                        </h4>
+                        <a class="" (click)="redirectToIncomeActivityReport()">
+                          <h4 class="txt345 mb0pxi mt5px underline ws_nowrap">
+                            View income activity
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <ng-container *ngIf="partnersList.length>0">
+                    <div class="row mt40px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <h4 class="txt320 mtb0px tleft">Level 1</h4>
+                        </div>
+                        <div
+                          *ngIf="isRecieveIncome"
+                          class="col-md-6 col-sm-6 col-xs-6 tright"
+                        >
+                          <a [ngClass]="{'fc_adadad': partnershipReport.IncomeActivity.length==0 }" (click)="redirectToIReport()" class="">
+                            <h4 class="txt345 mtb0px underline">
+                              View Income Report
+                            </h4>
+                          </a>
+                        </div>
+                        <div
+                          *ngIf="!isRecieveIncome"
+                          class="col-md-6 col-sm-6 col-xs-6 tright"
+                        >
+                          <a (click)="redirectToTreeReport()" class="">
+                            <h4 class="txt345 mtb0px underline">
+                              View Tree Partnership Report
+                            </h4>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mt5px mb20px">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="txt307 mtb0px tleft">My Partners</h4>
+                      </div>
+                    </div>
+
+                    <div class="row pr_ia_title">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="txt309 mtb0px tleft">
+                          ACTIVE PARTNERS ({{activePartnerList.length}})
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row cmlr-10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <!-- accordion -->
+                        <div
+                          class="panel-group panel_pr ppr ppr_wbb"
+                          id="accordion"
+                        >
+                          <ng-container *ngFor="let item of activePartnerList">
+                            <!-- level 1 -->
+                            <div
+                              class="panel panel-default"
+                              *ngIf="item.Receive_income=='1'"
+                            >
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a
+                                    data-toggle="collapse"
+                                    data-parent="#accordion"
+                                    href="#pr_{{item.UserID}}"
+                                  >
+                                    <div class="row">
+                                      <div
+                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp"
+                                      >
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px"
+                                        >
+                                          <h4 class="txt294 mtb0px">
+                                            {{item.Name}}
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright"
+                                        >
+                                          <h4 class="txt346 mtb0px">
+                                            USD {{item.Inc_SubscrAmt}}
+                                          </h4>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div
+                                id="pr_{{item.UserID}}"
+                                class="panel-collapse collapse"
+                              >
+                                <div class="panel-body">
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        {{item.Email}}
+                                      </h4>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        <span class="fw_700">
+                                          {{item.Inc_SubscrCnt}}
+                                        </span>
+                                        Subscribers | Partner since
+                                        <span class="fw_700">
+                                          {{item.DOJ}}
+                                        </span>
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="panel panel-default"
+                              *ngIf="item.Plant_Trees=='1'"
+                            >
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a
+                                    data-toggle="collapse"
+                                    data-parent="#accordion"
+                                    href="#pr_{{item.UserID}}"
+                                  >
+                                    <div class="row">
+                                      <div
+                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp"
+                                      >
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px"
+                                        >
+                                          <h4 class="txt294 mtb0px">
+                                            {{item.Name}}
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright"
+                                        >
+                                          <h4 class="txt294 mtb0px">
+                                            {{item.Trees_SubscrCnt}} trees
+                                          </h4>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div
+                                id="pr_{{item.UserID}}"
+                                class="panel-collapse collapse"
+                              >
+                                <div class="panel-body">
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        {{item.Email}}
+                                      </h4>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        <span class="fw_700">
+                                          {{item.Trees_SubscrCnt}}
+                                        </span>
+                                        Subscribers | Partner since
+                                        <span class="fw_700">
+                                          {{item.DOJ}}
+                                        </span>
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </ng-container>
+                          <!-- /level 1 -->
+
+                          <!-- /level 3 -->
+                        </div>
+                        <!-- /accordion -->
+                      </div>
+                    </div>
+
+                    <div class="row pr_ia_title">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="txt309 mtb0px tleft">
+                          INACTIVE PARTNERS ({{inactivePartnerList.length}})
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row cmlr-10px mb40px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <!-- accordion -->
+                        <div class="panel-group panel_pr ppr" id="accordion">
+                          <ng-container
+                            *ngFor="let item of inactivePartnerList"
+                          >
+                            <!-- level 1 -->
+                            <div
+                              class="panel panel-default"
+                              *ngIf="item.Receive_income=='1'"
+                            >
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a [ngClass]="checkExpansion(item.UserID)" class="psaccordion">   
+                                    <div class="row">
+                                      <div
+                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp flex_ai"
+                                      >
+                                      
+                                      <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px"
+                                        >
+                                        <a
+                                  data-toggle="collapse"
+                                  data-parent="#accordion"
+                                  href="#pr_{{item.UserID}}"
+                                  class="saccordion"
+                                  (click)="Expand(item.UserID)"
+                                  >  
+                                          <h4 class="txt294 mtb0px">
+                                            {{item.Name}}
+                                          </h4>
+                                          </a>
+                                        </div>
+
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright"
+                                        >
+                                        <!-- <a *ngIf="item.Email!=null" href="mailto:{{item.Email}}?subject=Remainder&body= Hi! Thank you for joining the partnership program at my invitation. I hope we can work together to spread this wisdom to the world, and recruit more people to help us do this. This can also help us plant more trees, or earn an income. Please let me know when you may be free for a chat so we can discuss how best we can do this.%0D%0D Thanks %0D {{partnershipReport.AffName}}">
+                                          <h4 class="txt359 mtb0px underline">
+                                            Send reminder
+                                          </h4>
+                                        </a> -->
+                                        <!-- alert -->
+                                        <a (click)="alert()">
+                                          <h4 class="txt359 mtb0px underline">
+                                            Send reminder
+                                          </h4>
+                                        </a>
+                                        <!-- /alert -->
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div
+                                id="pr_{{item.UserID}}"
+                                class="panel-collapse collapse"
+                              >
+                                <div class="panel-body">
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        {{item.Email}}
+                                      </h4>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        Partner since
+                                        <span class="fw_700">
+                                          {{item.DOJ}}
+                                        </span>
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="panel panel-default"
+                              *ngIf="item.Plant_Trees=='1'"
+                            >
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a class="psaccordion">
+                                    <div class="row">
+                                      <div
+                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp"
+                                      >
+                                      
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px"
+                                        >
+                                        <a
+                                      data-toggle="collapse"
+                                      data-parent="#accordion"
+                                      href="#pr_{{item.UserID}}"
+                                    >
+                                          <h4 class="txt294 mtb0px">
+                                            {{item.Name}}
+                                          </h4> 
+                                        </a>
+                                        </div>
+                                        
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright"
+                                        >
+                                          <a *ngIf="item.Email!=null" href="mailto:{{item.Email}}?subject=Remainder&body= Hi! Thank you for joining the partnership program at my invitation. I hope we can work together to spread this wisdom to the world, and recruit more people to help us do this. This can also help us plant more trees, or earn an income. Please let me know when you may be free for a chat so we can discuss how best we can do this.%0D%0D Thanks %0D {{partnershipReport.AffName}}">
+                                          <h4 class="txt359 mtb0px underline">
+                                            Send reminder
+                                          </h4>
+                                        </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div
+                                id="pr_{{item.UserID}}"
+                                class="panel-collapse collapse"
+                              >
+                                <div class="panel-body">
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        {{item.Email}}
+                                      </h4>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div
+                                      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                    >
+                                      <h4 class="txt343 mtb0px">
+                                        Partner since
+                                        <span class="fw_700">
+                                          {{item.DOJ}}
+                                        </span>
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- /level 1 -->
+                          </ng-container>
+                        </div>
+                        <!-- /accordion -->
+                      </div>
+                    </div>
+                  </ng-container>
+
+
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="txt343 mtb0px">
+                        If you wish to switch your partnership benefits, and
+                        have a {{partnerOption}} for every subscription instead
+                        of receiving an income, do write to us at
+                        <a
+                          class="txt343 underline"
+                          href="mailto: partner@humanwisdom.me"
+                        >
+                          partner@humanwisdom.me
+                        </a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pagebreak"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

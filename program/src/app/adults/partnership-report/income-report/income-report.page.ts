@@ -24,7 +24,7 @@ export class IncomeReportPage implements OnInit {
   totalPartners: number;
   totalRevenu: number;
   isPdfDownloading=false;
-  BankDet: string = "";
+  BankDet: string = null;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -130,7 +130,7 @@ export class IncomeReportPage implements OnInit {
       .share({
         title: "HumanWisdom Program",
         text:
-          "Hi! I’ve just subscribed to the amazing HumanWisdom app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – https://www.humanwisdom.me/adults/partnership-webpage"
+          "Hi! I’ve just subscribed to the amazing HumanWisdom app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – https://www.humanwisdom.me/course/adults/partnership-webpage"
       })
       .then((response) => {
         console.log(response);
@@ -145,9 +145,9 @@ export class IncomeReportPage implements OnInit {
 
   getMaskAccountDetails() {
     this.BankDet =
-      "XXX-XX-" +
+      "XXXXXXX " +
       this.partnershipReport.BankDet.substring(
-        this.partnershipReport.BankDet.length - 2,
+        this.partnershipReport.BankDet.length - 4,
         this.partnershipReport.BankDet.length
       );
   }
@@ -161,6 +161,7 @@ export class IncomeReportPage implements OnInit {
   onChange(value) {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
+        this.partnershipReport = res;
         this.groupByYears(res);
         this.getMaskAccountDetails();
         if (value == "0") {
@@ -193,7 +194,9 @@ export class IncomeReportPage implements OnInit {
       },
     });
   }
-
+  redirectToMyPartnership(){
+    this.router.navigate(['adults/partnership-report/my-partner'])
+  }
   goBack()
   {
   this.router.navigate(['adults/adult-dashboard'])

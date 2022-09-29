@@ -118,66 +118,77 @@
                     </div>
                   </div>
                   
-                  <div class="row pr_ab_wd">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <h4 class="txt314 mtb0px">
-                          AVAILABLE BALANCE
-                        </h4>
-                        <h4 class="txt344 mtb0px">
-                          USD {{partnershipReport.BalanceAmt}}
-                        </h4>
-                        <a href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=20">
-                          <h4 class="txt345 mb0px mt5px underline ws_nowrap">
-                            Request to withdraw
+                  <!-- if partner available -->
+                  <div>
+                    <div class="row pr_ab_wd">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                          <h4 class="txt314 mtb0px">
+                            AVAILABLE BALANCE
                           </h4>
-                        </a>
-                        <h4 class="txt304 mb0pxi mt5px" *ngIf="partnershipReport.BalanceAmt<20">
-                          Reach $20 to get paid
-                        </h4>
-                      </div>
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 dinline_box tcenter">
-                        <hr class="vhr_02 mtb0px">
-                      </div>
-                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <h4 class="txt314 mtb0px">
-                          WITHDRAWN
-                        </h4>
-                        <h4 class="txt107 mtb0px bold">
-                          USD {{partnershipReport.WithdrawnAmt}}
-                        </h4>
-                        <a class="" (click)="redirectToIncomeReport()">
-                          <h4 class="txt345 mb0pxi mt5px underline ws_nowrap">
-                            View income report
+                          <h4 class="txt344 mtb0px">
+                            USD {{partnershipReport.BalanceAmt}}
                           </h4>
-                        </a>
+                          <a href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"  *ngIf="partnershipReport.BalanceAmt>=20">
+                            <h4 class="txt345 mb0px mt5px underline ws_nowrap">
+                              Request to withdraw
+                            </h4>
+                          </a>
+                          <h4 class="txt304 mb0pxi mt5px" *ngIf="partnershipReport.BalanceAmt<20">
+                            Reach $20 to get paid
+                          </h4>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 dinline_box tcenter">
+                          <hr class="vhr_02 mtb0px">
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                          <h4 class="txt314 mtb0px">
+                            WITHDRAWN
+                          </h4>
+                          <h4 class="txt107 mtb0px bold">
+                            USD {{partnershipReport.WithdrawnAmt}}
+                          </h4>
+                          <a (click)="redirectToIncomeReport()">
+                            <h4 [ngClass]="{'fc_adadad': partnershipReport.IncomeActivity.length==0 }"  class="txt345 mb0pxi mt5px underline ws_nowrap">
+                              View income report
+                            </h4>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="row mt40px">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt320 mtb0px tleft">
-                     {{currentDate  | date: "longDate"}}
-                      </h4>
-                    </div>
-                  </div> 
                   
-                  <div class="row mt5px mb20px">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt307 mtb0px tleft">
-                        Income Activity
-                      </h4>
-                    </div>
-                  </div> 
-               <ng-container *ngFor="let item of groupedDates| keyvalue"> 
-                  <div class="row pr_ia_title">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                      <h4 class="txt309 mtb0px tleft">
-                        {{item.key}}
-                      </h4>
-                    </div>
-                  </div> 
+                    <div class="row mt40px">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <h4 class="txt320 mtb0px tleft">
+                      {{currentDate  | date: "longDate"}}
+                        </h4>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                        <a (click)="redirectToMyPartnership()" class="">
+                          <h4 class="txt345 mtb0px underline">
+                           View Partners
+                          </h4>
+                        </a>
+                        </div>
+                    </div> 
+                    
+                    <div class="row mt5px mb20px" *ngIf="partnershipReport.IncomeActivity.length>0">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="txt307 mtb0px tleft">
+                          Income Activity
+                        </h4>
+                      </div>
+                    </div> 
+
+                    <ng-container *ngFor="let item of groupedDates| keyvalue"> 
+                      <div class="row pr_ia_title">
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                          <h4 class="txt309 mtb0px tleft">
+                            {{item.key}}
+                          </h4>
+                        </div>
+                      </div> 
+
                       <ng-container *ngFor="let val of item.value.dates">
                         <div class="row mtb15px">
                           <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
@@ -196,6 +207,9 @@
                             <h4 class="txt318 mtb0px">
                               ID #{{val.SubscriptionId}} | Level {{val.Level}} 
                             </h4>
+                            <h4 class="txt318 mtb0px">
+                              Partner Name: {{val.PartnerName}}
+                            </h4>
                           </div>
                         </div> 
                         <div class="row cmlr-10px">
@@ -204,35 +218,115 @@
                           </div>
                         </div>
                       </ng-container>
-              
-
-                </ng-container>
-
-                
-                  
-                  <div class="row mt40px mb40px" *ngIf="!isPdfDownloading">
-                    <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <a class="flex_ai" (click)="DownloadPdf()">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
-                        <h4 class="txt345 mtb0px ml10px">
-                          Download PDF
-                        </h4>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="row"  *ngIf="!isPdfDownloading">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt343 mtb0px">
-                        If you wish to switch your partnership benefits, and have a tree planted for every subscription instead, do write to us at 
-                        <a class="txt343 underline">
-                          partner@humanwisdom.me
+                    </ng-container>
+                    
+                    <div class="row mt40px mb40px" *ngIf="!isPdfDownloading && partnershipReport.IncomeActivity.length>0">
+                      <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                        <a class="flex_ai" (click)="DownloadPdf()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/download_01.svg" alt="" class="img-responsive">
+                          <h4 class="txt345 mtb0px ml10px">
+                            Download PDF
+                          </h4>
                         </a>
-                      </h4>
+                      </div>
+                     </div>
+   
+                  <ng-container *ngIf="partnershipReport.IncomeActivity.length==0">
+                    <div class="row mtb70px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_no_partner.svg"
+                              alt=""
+                              class="img-responsive"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="row mt10px">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="txt318 mtb0px tcenter">
+                              You have no active partners
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="row mt10px">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="txt345 mtb0px underline tcenter" (click)="redirectToMyPartnership()">
+                              Remind Inactive Partners
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <hr class="ws_hr mtb0px" />
+                      </div>
+                    </div>
+
+                    <div class="row mtb30px">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="txt311 mtb0px">
+                          To get started, share your partnership referral code
+                          with friends and organizations.
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div
+                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex"
+                      >
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <h4 class="txt335 mtb0px p_rc fw_700">  {{this.partnershipReport.AffRefCode}}</h4>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tleft" (click)="share(partnershipReport.AffRefCode)">
+                          <a>
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_round.svg"
+                              alt=""
+                              class="img-responsive"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <a>
+                          <h4 *ngIf="isCopy" (click)="copyText(partnershipReport.AffRefCode)" class="txt338 mb0px underline tcenter">
+                            Copy code
+                          </h4>
+                          <h4 *ngIf="!isCopy"  class="txt338 mb0px underline tcenter">
+                            Copied
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
+                  </ng-container>
+                    <div class="row"  *ngIf="!isPdfDownloading">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="txt343 mtb0px">
+                          If you wish to switch your partnership benefits, and
+                          have a {{partnerOption}} for every subscription instead
+                          of receiving an income, do write to us at
+                          <a
+                            class="txt343 underline"
+                            href="mailto: partner@humanwisdom.me"
+                          >
+                            partner@humanwisdom.me
+                          </a>
+                        </h4>
+                      </div>
+                    </div>
                     </div>
                   </div>
-
-                </div>
               </div>
 
               <div class="pagebreak"></div>
