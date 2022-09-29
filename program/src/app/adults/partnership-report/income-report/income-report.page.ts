@@ -145,9 +145,9 @@ export class IncomeReportPage implements OnInit {
 
   getMaskAccountDetails() {
     this.BankDet =
-      "XXX-XX-" +
+      "XXXXXXX " +
       this.partnershipReport.BankDet.substring(
-        this.partnershipReport.BankDet.length - 2,
+        this.partnershipReport.BankDet.length - 4,
         this.partnershipReport.BankDet.length
       );
   }
