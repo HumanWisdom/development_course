@@ -19,7 +19,9 @@ export class IncomePartnerPage implements OnInit {
    activePartnerList=[];
    inactivePartnerList=[];
    isRecieveIncome=true;
+   isExpand=false;
    isCopy=true;
+   expandedUserId=0;
    partnerOption=localStorage.getItem('PartnerOption');
   constructor(
     public adultService: AdultsService,
@@ -61,9 +63,9 @@ export class IncomePartnerPage implements OnInit {
   }
   getMaskAccountDetails() {
     this.BankDet =
-    "XXX-XX-" +
+    "XXXXXXX " +
     this.partnershipReport.BankDet.substring(
-      this.partnershipReport.BankDet.length - 2,
+      this.partnershipReport.BankDet.length - 4,
       this.partnershipReport.BankDet.length
     );
   }
@@ -106,6 +108,25 @@ export class IncomePartnerPage implements OnInit {
       },
     });
   }
+  Expand(userId){
+    if(this.isExpand && userId==this.expandedUserId){
+      this.isExpand=false;
+    }else if(!this.isExpand && userId==this.expandedUserId){
+      this.isExpand=true;
+    }else{
+      this.isExpand=true;
+      this.expandedUserId=userId;
+    }
+
+  }
+  checkExpansion(userId){
+    if(this.isExpand && userId==this.expandedUserId){
+      return 'parenta:after';
+    }else if(!this.isExpand && userId==this.expandedUserId){
+      return ''
+    }
+  }
+
   goBack()
   {
   this.router.navigate(['adults/adult-dashboard'])
@@ -124,5 +145,9 @@ export class IncomePartnerPage implements OnInit {
   }
   back(){
     this.location.back();
+  }
+
+  alert(){
+    window.alert('hi');
   }
 }
