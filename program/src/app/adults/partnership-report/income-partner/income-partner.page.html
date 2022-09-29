@@ -396,7 +396,7 @@
                             >
                               <div class="panel-heading">
                                 <h4 class="panel-title">
-                                  <a [ngClass]="checkExpansion(item.UserID)">   
+                                  <a [ngClass]="checkExpansion(item.UserID)" class="psaccordion">   
                                     <div class="row">
                                       <div
                                         class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp flex_ai"
@@ -476,24 +476,26 @@
                             >
                               <div class="panel-heading">
                                 <h4 class="panel-title">
-                               
+                                  <a class="psaccordion">
                                     <div class="row">
                                       <div
                                         class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prp"
                                       >
-                                      <a
+                                      
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px"
+                                        >
+                                        <a
                                       data-toggle="collapse"
                                       data-parent="#accordion"
                                       href="#pr_{{item.UserID}}"
                                     >
-                                        <div
-                                          class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px"
-                                        >
                                           <h4 class="txt294 mtb0px">
                                             {{item.Name}}
                                           </h4> 
-                                        </div>
                                         </a>
+                                        </div>
+                                        
                                         <div
                                           class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright"
                                         >
@@ -505,6 +507,7 @@
                                         </div>
                                       </div>
                                     </div>
+                                  </a>
                                 </h4>
                               </div>
                               <div

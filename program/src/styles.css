@@ -30549,3 +30549,7 @@ svg path
 .parenta:after {
   content: "\f077";
 }
+
+.panel-title  a.psaccordion:after {
+  content: "";
+}
