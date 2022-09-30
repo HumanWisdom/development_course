@@ -51,7 +51,14 @@ export class HamburgerComponent implements OnInit {
       this.roleid = JSON.parse(localStorage.getItem('RoleID'));
       let userid = localStorage.getItem('isloggedin');
       let userres = JSON.parse(localStorage.getItem("loginResponse"));
-      this.name = userres['Name']
+      let nameupdate = localStorage.getItem(
+        "nameupdate"
+      );
+      if (nameupdate) {
+        this.name = nameupdate
+      } else {
+        this.name = userres['Name']
+      }
       if (userid === 'T') {
         this.isloggedIn = true
       }
