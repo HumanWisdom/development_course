@@ -18212,7 +18212,7 @@ ngx-circular-player svg
 
 .circle-container {
   position: relative;
-  /* width: 24em; */
+  width: 24em;
   height: 24em;
   padding: 2.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
   /* border: dashed 1px; */
@@ -18343,32 +18343,32 @@ ngx-circular-player svg
 
 .deg78
 {
-  /* transform: rotate(78deg) translate(-12em) rotate(-78deg); */
-  transform: rotate(80deg) translate(-12em) rotate(-80deg);
+  transform: rotate(78deg) translate(-12em) rotate(-78deg);
+  /* transform: rotate(80deg) translate(-12em) rotate(-80deg); */
 }
 
 .deg55
 {
-  /* transform: rotate(55deg) translate(4em) rotate(-55deg); */
-  transform: rotate(63deg) translate(10em,0em) rotate(-63deg);
+  transform: rotate(55deg) translate(4em) rotate(-55deg);
+  /* transform: rotate(63deg) translate(10em,0em) rotate(-63deg); */
 }
 
 .deg157
 {
-  /* transform: rotate(157deg) translate(8em) rotate(-157deg); */
-  transform: rotate(91deg) translate(9em, 8em) rotate(-91deg);
+  transform: rotate(157deg) translate(8em) rotate(-157deg);
+  /* transform: rotate(91deg) translate(9em, 8em) rotate(-91deg); */
 }
 
 .deg210
 {
-  /* transform: rotate(210deg) translate(12em) rotate(-210deg); */
-  transform: rotate(196deg) translate(12em) rotate(-196deg);
+  transform: rotate(210deg) translate(12em) rotate(-210deg);
+  /* transform: rotate(196deg) translate(12em) rotate(-196deg); */
 }
 
 .deg312
 {
-  /* transform: rotate(312deg) translate(8em) rotate(-312deg); */
-  transform: rotate(335deg) translate(8em) rotate(-335deg);
+  transform: rotate(312deg) translate(8em) rotate(-312deg);
+  /* transform: rotate(335deg) translate(8em) rotate(-335deg); */
 }
 /* /5circles */
 
@@ -30080,6 +30080,15 @@ svg path
   align-items: center;
   margin: 15px -10px 15px -10px;
   padding: 10px;
+}
+
+.pr_tr
+{
+  background: #F5F5F5;
+  margin: 0 -10px;
+  padding: 20px 10px;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
 }
 /* /partnership report */
 
