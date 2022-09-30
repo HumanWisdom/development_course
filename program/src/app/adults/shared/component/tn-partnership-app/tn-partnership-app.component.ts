@@ -54,23 +54,22 @@ export class TnPartnershipAppComponent implements OnInit {
   }
 
   BecomeAPartner(){
-    localStorage.setItem('btnClickBecomePartner','true');
-    localStorage.setItem("navigateToUpgradeToPremium","true")
-    this.router.navigate(['adults/partnership-app']);
+   this.router.navigate(['/adults/partnership-webpage']);
   }
 
   scroll_to_Faq(): void 
   {
-    this.isHowItWorks=true;
-    this.isPartnerFaq=true;
-    setTimeout(() => {
-      window.scrollTo({
-        behavior: 'smooth',
-        top:
-        document.getElementById('pa_PartnerFaq').getBoundingClientRect().top -
-          document.body.getBoundingClientRect().top -
-          120,
-      })
-    }, 150);
-  }
+    // this.isHowItWorks=true;
+    // this.isPartnerFaq=true;
+    // setTimeout(() => {
+    //   window.scrollTo({
+    //     behavior: 'smooth',
+    //     top:
+    //     document.getElementById('pa_PartnerFaq').getBoundingClientRect().top -
+    //       document.body.getBoundingClientRect().top -
+    //       120,
+    //   })
+    // }, 150);
+    this.router.navigate(['/adults/partnership-webpage'], { state: { isScroll: true}}) 
+  }  
 }

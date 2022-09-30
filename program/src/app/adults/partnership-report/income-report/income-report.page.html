@@ -160,7 +160,7 @@
                         {{currentDate | date:'dd MMMM y'}}
                       </h4>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                    <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
                       <a (click)="redirectToMyPartnership()" class="">
                         <h4 class="txt345 mtb0px underline">
                          View Partners
