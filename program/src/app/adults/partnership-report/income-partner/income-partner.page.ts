@@ -19,7 +19,10 @@ export class IncomePartnerPage implements OnInit {
    activePartnerList=[];
    inactivePartnerList=[];
    isRecieveIncome=true;
+   isExpand=false;
    isCopy=true;
+   expandedUserId=0;
+   footerOption:string='Receive Income';
    partnerOption=localStorage.getItem('PartnerOption');
   constructor(
     public adultService: AdultsService,
@@ -28,27 +31,49 @@ export class IncomePartnerPage implements OnInit {
    public location:Location
   ) {
     this.isRecieveIncome=localStorage.getItem('PartnerOption')=='ReceiveIncome';
-    this.  InitializePartnershipReport();
+    this.InitializePartnershipReport();
+    if(this.isRecieveIncome){
+      this.footerOption='tree planted';
+    }else{
+      this.footerOption='Receive Income';
+    }
   }
 
 
   ngOnInit() {
- 
-    this.adultService.GetPartnerCommReport().subscribe((res) => {
-      if (res) {
-        this.partnershipReport = res;
-        this.getMaskAccountDetails();
-        this.adultService.GetMyPartners().subscribe((res) => {
-          if (res) {
-            this.partnersList=res;
-            if(res){
-              this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
-              this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
-            }
+ if(!this.isRecieveIncome){
+  this.adultService.getTreePlantationReport().subscribe((res) => {
+    if (res) {
+      this.partnershipReport = res;
+      this.adultService.GetMyPartners().subscribe((res) => {
+        if (res) {
+          this.partnersList=res;
+          if(res){
+            this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
+            this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
           }
-        });
-      }
-    });
+        }
+      });
+    }
+  });
+ }else{
+  this.adultService.GetPartnerCommReport().subscribe((res) => {
+    if (res) {
+      this.partnershipReport = res;
+      this.getMaskAccountDetails();
+      this.adultService.GetMyPartners().subscribe((res) => {
+        if (res) {
+          this.partnersList=res;
+          if(res){
+            this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
+            this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
+          }
+        }
+      });
+    }
+  });
+ }
+   
   }
   copyText(referralCode): void {
     navigator.clipboard.writeText(referralCode).catch(() => {
@@ -61,9 +86,9 @@ export class IncomePartnerPage implements OnInit {
   }
   getMaskAccountDetails() {
     this.BankDet =
-    "XXX-XX-" +
+    "XXXXXXX " +
     this.partnershipReport.BankDet.substring(
-      this.partnershipReport.BankDet.length - 2,
+      this.partnershipReport.BankDet.length - 4,
       this.partnershipReport.BankDet.length
     );
   }
@@ -106,6 +131,25 @@ export class IncomePartnerPage implements OnInit {
       },
     });
   }
+  Expand(userId){
+    if(this.isExpand && userId==this.expandedUserId){
+      this.isExpand=false;
+    }else if(!this.isExpand && userId==this.expandedUserId){
+      this.isExpand=true;
+    }else{
+      this.isExpand=true;
+      this.expandedUserId=userId;
+    }
+
+  }
+  checkExpansion(userId){
+    if(this.isExpand && userId==this.expandedUserId){
+      return 'parenta:after';
+    }else if(!this.isExpand && userId==this.expandedUserId){
+      return ''
+    }
+  }
+
   goBack()
   {
   this.router.navigate(['adults/adult-dashboard'])
@@ -124,5 +168,9 @@ export class IncomePartnerPage implements OnInit {
   }
   back(){
     this.location.back();
+  }
+
+  alert(){
+    window.alert('hi');
   }
 }

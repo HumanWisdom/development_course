@@ -24,7 +24,7 @@ export class IncomeReportPage implements OnInit {
   totalPartners: number;
   totalRevenu: number;
   isPdfDownloading=false;
-  BankDet: string = "";
+  BankDet: string = null;
   constructor(
     public adultService: AdultsService,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -48,7 +48,8 @@ export class IncomeReportPage implements OnInit {
       WithdrawnAmt: 0,
       BankDet: "",
       AffImgPath: "",
-      ByPaypal:0
+      ByPaypal:0,
+      PartnerCount:0
     } as PartnershipReport;
   }
  
@@ -145,9 +146,9 @@ export class IncomeReportPage implements OnInit {
 
   getMaskAccountDetails() {
     this.BankDet =
-      "XXX-XX-" +
+      "XXXXXXX " +
       this.partnershipReport.BankDet.substring(
-        this.partnershipReport.BankDet.length - 2,
+        this.partnershipReport.BankDet.length - 4,
         this.partnershipReport.BankDet.length
       );
   }
@@ -161,6 +162,7 @@ export class IncomeReportPage implements OnInit {
   onChange(value) {
     this.adultService.GetPartnerCommReport().subscribe((res) => {
       if (res) {
+        this.partnershipReport = res;
         this.groupByYears(res);
         this.getMaskAccountDetails();
         if (value == "0") {

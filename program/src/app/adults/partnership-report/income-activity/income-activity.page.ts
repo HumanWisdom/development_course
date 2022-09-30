@@ -40,9 +40,9 @@ export class IncomeActivityPage implements OnInit {
   }
   getMaskAccountDetails() {
     this.BankDet =
-    "XXX-XX-" +
+    "XXXXXXX " +
     this.partnershipReport.BankDet.substring(
-      this.partnershipReport.BankDet.length - 2,
+      this.partnershipReport.BankDet.length - 4,
       this.partnershipReport.BankDet.length
     );
   }
@@ -66,6 +66,7 @@ export class IncomeActivityPage implements OnInit {
       WithdrawnAmt: 0,
       BankDet: "",
       AffImgPath: "",
+      PartnerCount:0
     } as PartnershipReport;
   }
 
