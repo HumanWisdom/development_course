@@ -78,16 +78,15 @@
                           {{currentDate | date:'dd MMMM y'}}
                         </h4>
                       </div>
-                      <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                      <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
                         <a (click)="redirectToMyPartnership()" class="">
                           <h4 class="txt345 mtb0px underline">
-                          View Partners
+                           View Partners
                           </h4>
-                        </a>
-                      </div>
+                        </div>
                     </div>
                   </div> 
-             
+           <ng-container *ngIf="partnershipReport.AffReport!=null">     
                   <div class="row mt5px mb30px" *ngIf="partnershipReport.AffReport.length>0">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt307 mtb0px tleft">
@@ -147,8 +146,8 @@
                       </a>
                     </div>
                   </div>
-
-                  <ng-container *ngIf="partnershipReport.AffReport.length==0">
+              </ng-container>
+                  <ng-container *ngIf="partnershipReport.AffReport && partnershipReport.AffReport.length==0 || partnershipReport.AffReport==null">
                     <div class="row mtb70px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="row">
@@ -169,7 +168,7 @@
                           </div>
                         </div>
 
-                        <div class="row mt10px">
+                        <div class="row mt10px" *ngIf="partnershipReport.PartnerCount>0">
                           <div class="col-md-12 col-sm-12 col-xs-12">
                             <h4 class="txt345 mtb0px underline tcenter" (click)="redirectToMyPartnership()">
                               Remind Inactive Partners
@@ -227,12 +226,12 @@
                       </div>
                     </div>
                   </ng-container>
-                  <div class="row" *ngIf="!isPdfDownloading && partnershipReport.AffReport.length>0 ">
+                  <div class="row" *ngIf="!isPdfDownloading && partnershipReport.AffReport!=null && partnershipReport.AffReport.length>0 ">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="txt343 mtb0px">
-                        If you wish to switch your partnership benefits, and have a tree planted for every subscription instead, do write to us at 
-                        <a class="txt343 underline">
-                          partner@humanwisdom.me
+                        If you wish to switch your partnership benefits, and receive an income instead of planting trees, write to us at 
+                        <a class="txt343 underline"  href="mailto: partner@humanwisdom.me">
+                         partner@humanwisdom.me
                         </a>
                       </h4>
                     </div>

@@ -40,6 +40,7 @@ export class TreePlantationReportPage implements OnInit {
      }
    })
  }
+ 
  getLoop(tree){
   var array=[]
   for(let i=1;i<=+tree;i++){
