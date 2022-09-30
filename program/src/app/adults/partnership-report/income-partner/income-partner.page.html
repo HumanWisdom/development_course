@@ -427,7 +427,7 @@
                                           </h4>
                                         </a> -->
                                         <!-- alert -->
-                                        <a (click)="alert()">
+                                        <a *ngIf="item.Email!=null" href="mailto:{{item.Email}}?subject=Remainder&body= Hi! Thank you for joining the partnership program at my invitation. I hope we can work together to spread this wisdom to the world, and recruit more people to help us do this. This can also help us plant more trees, or earn an income. Please let me know when you may be free for a chat so we can discuss how best we can do this.%0D%0D Thanks %0D {{partnershipReport.AffName}}">
                                           <h4 class="txt359 mtb0px underline">
                                             Send reminder
                                           </h4>

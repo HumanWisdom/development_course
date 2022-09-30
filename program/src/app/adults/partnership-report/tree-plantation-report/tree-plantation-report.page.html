@@ -77,7 +77,7 @@
                         {{currentDate | date:'dd MMMM y'}}
                       </h4>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 tright">
+                    <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
                       <a (click)="redirectToMyPartnership()" class="">
                         <h4 class="txt345 mtb0px underline">
                          View Partners
@@ -167,7 +167,7 @@
                           </div>
                         </div>
 
-                        <div class="row mt10px">
+                        <div class="row mt10px" *ngIf="partnershipReport.PartnerCount>0">
                           <div class="col-md-12 col-sm-12 col-xs-12">
                             <h4 class="txt345 mtb0px underline tcenter" (click)="redirectToMyPartnership()">
                               Remind Inactive Partners

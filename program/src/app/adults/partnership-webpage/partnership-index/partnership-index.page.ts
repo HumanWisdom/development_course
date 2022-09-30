@@ -16,6 +16,7 @@ export class PartnershipIndexPage implements OnInit {
   countryCode:any;
   isPartner=false;
   constructor(private router :Router,private services: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService) { }
+  isScroll=false;
 
   ngOnInit() {
     if(window.history.state && window.history.state.isPartnerFaq){
@@ -25,6 +26,14 @@ export class PartnershipIndexPage implements OnInit {
       }
     }
     this.isPartner=localStorage.getItem('isPartner')=='1';
+    if(window.history.state && window.history.state.isScroll){
+    this.isScroll = window.history.state.isScroll;
+    if(this.isScroll){
+      setTimeout(() => {
+        this.scroll_to_Faq() 
+      }, 200);    
+    }
+   }
   }
 
   scroll_to_obs(): void 
