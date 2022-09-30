@@ -22,6 +22,7 @@ export class IncomePartnerPage implements OnInit {
    isExpand=false;
    isCopy=true;
    expandedUserId=0;
+   footerOption:string='Receive Income';
    partnerOption=localStorage.getItem('PartnerOption');
   constructor(
     public adultService: AdultsService,
@@ -30,27 +31,49 @@ export class IncomePartnerPage implements OnInit {
    public location:Location
   ) {
     this.isRecieveIncome=localStorage.getItem('PartnerOption')=='ReceiveIncome';
-    this.  InitializePartnershipReport();
+    this.InitializePartnershipReport();
+    if(this.isRecieveIncome){
+      this.footerOption='tree Planted';
+    }else{
+      this.footerOption='Receive Income';
+    }
   }
 
 
   ngOnInit() {
- 
-    this.adultService.GetPartnerCommReport().subscribe((res) => {
-      if (res) {
-        this.partnershipReport = res;
-        this.getMaskAccountDetails();
-        this.adultService.GetMyPartners().subscribe((res) => {
-          if (res) {
-            this.partnersList=res;
-            if(res){
-              this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
-              this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
-            }
+ if(!this.isRecieveIncome){
+  this.adultService.getTreePlantationReport().subscribe((res) => {
+    if (res) {
+      this.partnershipReport = res;
+      this.adultService.GetMyPartners().subscribe((res) => {
+        if (res) {
+          this.partnersList=res;
+          if(res){
+            this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
+            this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
           }
-        });
-      }
-    });
+        }
+      });
+    }
+  });
+ }else{
+  this.adultService.GetPartnerCommReport().subscribe((res) => {
+    if (res) {
+      this.partnershipReport = res;
+      this.getMaskAccountDetails();
+      this.adultService.GetMyPartners().subscribe((res) => {
+        if (res) {
+          this.partnersList=res;
+          if(res){
+            this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
+            this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
+          }
+        }
+      });
+    }
+  });
+ }
+   
   }
   copyText(referralCode): void {
     navigator.clipboard.writeText(referralCode).catch(() => {
