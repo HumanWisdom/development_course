@@ -48,7 +48,8 @@ export class IncomeReportPage implements OnInit {
       WithdrawnAmt: 0,
       BankDet: "",
       AffImgPath: "",
-      ByPaypal:0
+      ByPaypal:0,
+      PartnerCount:0
     } as PartnershipReport;
   }
  
