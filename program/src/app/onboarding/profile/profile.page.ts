@@ -68,6 +68,12 @@ export class ProfilePage implements OnInit {
         this.userData = res[0];
       })
     }, 1000)
+    let nameupdate = localStorage.getItem(
+      "nameupdate"
+    );
+    if (nameupdate) {
+      this.loginResponse['Name'] = nameupdate
+    }
   }
 
   survey() {

@@ -29,7 +29,14 @@ export class ProfileEditPage implements OnInit {
         this.url = this.userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
         this.email = this.userdetail['Email']
         let userres = JSON.parse(localStorage.getItem("loginResponse"));
-        this.fullname = userres['Name']
+        let nameupdate = localStorage.getItem(
+          "nameupdate"
+        );
+        if (nameupdate) {
+          this.fullname = nameupdate
+        } else {
+          this.fullname = userres['Name']
+        }
       })
     }, 1000)
   }
@@ -65,12 +72,6 @@ export class ProfileEditPage implements OnInit {
   }
 
   closeprofileedit() {
-    let res = JSON.parse(localStorage.getItem("loginResponse"))
-    res['Name'] = this.fullname
-    localStorage.setItem(
-      "loginResponse",
-      JSON.stringify(res)
-    );
     this.router.navigate(["/onboarding/user-profile"]);
   }
 
@@ -86,6 +87,10 @@ export class ProfileEditPage implements OnInit {
     this.onboardingService.updateUser(obj).subscribe((r) => {
       console.log(r)
       if (r) {
+        localStorage.setItem(
+          "nameupdate",
+          this.fullname
+        );
         window.alert('User profile updated successfully')
       }
     })

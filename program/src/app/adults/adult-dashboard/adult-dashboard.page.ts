@@ -230,7 +230,14 @@ export class AdultDashboardPage implements OnInit {
     let userid = localStorage.getItem('isloggedin');
     let rem = localStorage.getItem('remember');
     let guest = localStorage.getItem('guest');
-    this.name = localStorage.getItem('name');
+    let nameupdate = localStorage.getItem(
+      "nameupdate"
+    );
+    if (nameupdate) {
+      this.name = nameupdate
+    } else {
+      this.name = localStorage.getItem('name')
+    }
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     localStorage.setItem("first", 'F')
@@ -310,7 +317,7 @@ export class AdultDashboardPage implements OnInit {
     } else {
       this.enableDailypopup();
     }
- 
+
     setTimeout(() => {
       let sub: any = localStorage.getItem('Subscriber');
       if (sub === '0') {
@@ -1023,7 +1030,14 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
           localStorage.setItem("email", socialEmail)
           localStorage.setItem("pswd", '')
-          this.name = res.Name
+          let nameupdate = localStorage.getItem(
+            "nameupdate"
+          );
+          if (nameupdate) {
+            this.name = nameupdate
+          } else {
+            this.name = res.Name
+          }
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1091,7 +1105,14 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("userId", JSON.stringify(this.userId))
     localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
-    this.name = res.Name
+    let nameupdate = localStorage.getItem(
+      "nameupdate"
+    );
+    if (nameupdate) {
+      this.name = nameupdate
+    } else {
+      this.name = res.Name
+    }
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1173,7 +1194,14 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("email", email)
           localStorage.setItem("pswd", password)
           localStorage.setItem("name", res.Name)
-          this.name = res.Name
+          let nameupdate = localStorage.getItem(
+            "nameupdate"
+          );
+          if (nameupdate) {
+            this.name = nameupdate
+          } else {
+            this.name = res.Name
+          }
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1247,7 +1275,14 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
           localStorage.setItem("userId", JSON.stringify(this.userId))
           localStorage.setItem("name", this.loginResponse.Name)
-          this.name = this.loginResponse.Name
+          let nameupdate = localStorage.getItem(
+            "nameupdate"
+          );
+          if (nameupdate) {
+            this.name = nameupdate
+          } else {
+            this.name = this.loginResponse.Name
+          }
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -3330,9 +3365,9 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
-  getuserDetail(){
+  getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
-    if(userId!=null){
+    if (userId != null) {
       this.services.getuser(userId).subscribe((res) => {
         localStorage.setItem("isPartner", res[0].IsPartner);
         localStorage.setItem('PartnerOption', res[0].PartnerOption);
@@ -3342,11 +3377,11 @@ export class AdultDashboardPage implements OnInit {
   }
 
   routewisdomexercise(cont: any = 1) {
-    var weR='75001'
+    var weR = '75001'
     localStorage.setItem("moduleId", JSON.stringify(75))
     this.service.clickModule(75, this.userId)
       .subscribe(res => {
-       console.log(res)
+        console.log(res)
         this.qrList = res
         weR = "s" + res.lastVisitedScreen
         // continue where you left
@@ -3372,7 +3407,7 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/wisdom-exercise/${weR}`])
           }
           else
-          this.router.navigate([`/adults/wisdom-exercise/s75001`])
+            this.router.navigate([`/adults/wisdom-exercise/s75001`])
         })
   }
 
