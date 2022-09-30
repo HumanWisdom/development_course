@@ -33,7 +33,7 @@ export class IncomePartnerPage implements OnInit {
     this.isRecieveIncome=localStorage.getItem('PartnerOption')=='ReceiveIncome';
     this.InitializePartnershipReport();
     if(this.isRecieveIncome){
-      this.footerOption='tree Planted';
+      this.footerOption='tree planted';
     }else{
       this.footerOption='Receive Income';
     }
