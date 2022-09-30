@@ -30081,6 +30081,15 @@ svg path
   margin: 15px -10px 15px -10px;
   padding: 10px;
 }
+
+.pr_tr
+{
+  background: #F5F5F5;
+  margin: 0 -10px;
+  padding: 20px 10px;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
+}
 /* /partnership report */
 
 /* wisdom exercise */
