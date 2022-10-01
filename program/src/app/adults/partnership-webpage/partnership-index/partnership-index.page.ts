@@ -19,6 +19,7 @@ export class PartnershipIndexPage implements OnInit {
   isScroll=false;
 
   ngOnInit() {
+   
     if(window.history.state && window.history.state.isPartnerFaq){
       this.isPartnerFaq= window.history.state.isPartnerFaq;
       if(this.isPartnerFaq==true){
@@ -34,6 +35,7 @@ export class PartnershipIndexPage implements OnInit {
       }, 200);    
     }
    }
+
   }
 
   scroll_to_obs(): void 

@@ -23,6 +23,7 @@ export class IncomePartnerPage implements OnInit {
    isCopy=true;
    expandedUserId=0;
    footerOption:string='Receive Income';
+   opositefooter:string ='planting trees';
    partnerOption=localStorage.getItem('PartnerOption');
   constructor(
     public adultService: AdultsService,
@@ -34,8 +35,10 @@ export class IncomePartnerPage implements OnInit {
     this.InitializePartnershipReport();
     if(this.isRecieveIncome){
       this.footerOption='tree planted';
+      this.opositefooter='receiving an income';
     }else{
       this.footerOption='Receive Income';
+      this.opositefooter='planting trees';
     }
   }
 
