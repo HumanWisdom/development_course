@@ -86,6 +86,22 @@
               {
                 "input": "src/assets/css/responsive.css",
                 "inject": true
+              },
+              {
+                "input": "src/assets/font/font_weight.css",
+                "inject": true
+              },
+              {
+                "input": "src/assets/font/font_size.css",
+                "inject": true
+              },
+              {
+                "input": "src/assets/font/font_colour.css",
+                "inject": true
+              },
+              {
+                "input": "src/assets/font/line_height.css",
+                "inject": true
               }
             ],
             "scripts": [
