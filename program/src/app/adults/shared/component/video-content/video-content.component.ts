@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
@@ -8,7 +8,7 @@ import { AdultsService } from 'src/app/adults/adults.service';
   templateUrl: './video-content.component.html',
   styleUrls: ['./video-content.component.scss'],
 })
-export class VideoContentComponent implements OnInit, AfterViewInit {
+export class VideoContentComponent implements OnInit {
   @Input() videoLink: any;
   @Input() bg: string;
   @Input() title: string;
@@ -76,23 +76,4 @@ export class VideoContentComponent implements OnInit, AfterViewInit {
     }
 
   }
-
-  ngAfterViewInit() {
-    this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img => {
-
-      img = img.substring(img.indexOf(",") + 1);
-      // img.replace('data:image/png;base64,',' ')
-      // this.service.UploadThumbnail({ "ScrNo": this.scrId, "byteArray": img }).subscribe(
-      //   r => {
-      //     console.log(r)
-      //   }
-      // )
-
-    })
-
-
-  }
-
-
-
 }
