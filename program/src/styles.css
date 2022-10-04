@@ -5528,12 +5528,12 @@ input[type=checkbox], input[type=radio]
 	vertical-align: middle;
 }
 
-/* .flex_end
+.flex_end
 {
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
-} */
+}
 
 select.input-sm
 {
@@ -23145,7 +23145,7 @@ ul.dh_ul li
   justify-content: center; */
 }
 
-.btn_annually
+/* .btn_annually
 {
   margin: 0;
   border: 0;
@@ -23164,6 +23164,29 @@ ul.dh_ul li
   line-height: 18px;
   text-align: center;
   color: #FFFFFF !important;
+} */
+
+.btn_annually
+{
+  margin: 0;
+  margin-right: 5px !important;
+  border: 0;
+  box-shadow: none;
+
+  width: 109px;
+  height: 30px;
+
+  background: #EBEBEB;
+  border-radius: 5px 0px 0px 5px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #5D5D5D;
+  opacity: 1 !important;
 }
 
 .btn_monthly
@@ -29339,12 +29362,26 @@ svg path
   padding: 10px 10px;
 }
 
-.btn_annually.active, 
+/* .btn_annually.active, 
 .btn_annually:active,
 .btn_monthly.active, 
 .btn_monthly:active
 {
   opacity: 0.9;
+} */
+
+.btn_annually.hover, 
+.btn_annually:hover, 
+.btn_monthly.hover, 
+.btn_monthly:hover,
+.btn_annually.active, 
+.btn_annually:active,
+.btn_monthly.active, 
+.btn_monthly:active
+{
+  background-color: #1092A7 !important;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .vhr_01 
@@ -30671,4 +30708,19 @@ svg path
 
 .panel-title  a.psaccordion:after {
   content: "";
+}
+
+.btn_scode
+{
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #1092A7;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #1092A7;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
 }
