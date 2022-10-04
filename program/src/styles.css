@@ -30724,3 +30724,28 @@ svg path
   margin-right: 0 !important;
   margin-bottom: 0 !important;
 }
+
+.opacity_pt75
+{
+  opacity: 0.75;
+}
+
+.ls_pt1em 
+{
+  letter-spacing: 0.1em;
+}
+
+.ls_pt2em 
+{
+  letter-spacing: 0.2em;
+}
+
+.ls_pt12em 
+{
+  letter-spacing: 0.12em;
+}
+
+.ww_break_word 
+{
+  word-wrap: break-word;
+}

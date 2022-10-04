@@ -75,7 +75,7 @@
                     <h6 class="txt51 mtb0px mb10px">
                       Congratulations! You have completed this module.
                     </h6>
-                    <h6 class="txt83 mtb0px">
+                    <h6 class="fw_400 fs_14px lh_16px fc_5d5d5d mtb0px">
                       Continue to the next module
                     </h6>
                   </div>
@@ -89,11 +89,11 @@
                       <!-- <div class="me_overlay me_max_width"></div> -->
                       <div class="me_overlay"></div>
   
-                      <h6 class="txt84 me_module_title">
+                      <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 me_module_title">
                           {{sectionName}}
                       </h6>
   
-                      <h6 class="txt85 me_session_title">
+                      <h6 class="fw_500 fs_20px lh_130p fc_ffffff me_session_title">
                           {{moduleName}}
                       </h6>
   
@@ -118,7 +118,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col_orm" *ngFor="let item of moduleList">
                       <a  routerLink="{{item['link']}}">
                         <img src="{{item['image']}}" alt="{{item['name']}}" class="img-responsive img_orm">
-                        <h4 class="mtb0px txt158 absolute_index_rwst_title tleft">
+                        <h4 class="mtb0px fw_500 fs_12px lh_14px fc_ffffff absolute_index_rwst_title tleft">
                           {{item['name']}}
                         </h4>
                       </a>
@@ -130,7 +130,7 @@
                 <div class="row me_rtd">
                   <a (click)="goDashboard()">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">                  
-                      <h6 class="txt86 mtb0px center_flex">
+                      <h6 class="fw_500 fs_16px lh_19px fc_1092a7 mtb0px center_flex">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/module_end_dashboard.svg" alt="">
                         <span class="pl5px pt5px">
                             Return to Dashboard
