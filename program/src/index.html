@@ -17,20 +17,22 @@
   <meta property="og:title" content="HumanWisdom: Mental Well-being" />
  
   <meta property="og:description" content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom" />
-<!--   <meta property="og:image"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
+  <meta property="og:image"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
   <meta property="og:image:alt"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
 
 
 <meta property="og:image:width" content="768" />
-<meta property="og:image:height" content="432" /> -->
-<meta property="og:image" content="https://miro.medium.com/max/940/1*VPvVZJsM1SYAMr8JME3z8Q.jpeg" />
+<meta property="og:image:height" content="432" />
+<!-- <meta property="og:image" content="https://miro.medium.com/max/940/1*VPvVZJsM1SYAMr8JME3z8Q.jpeg" />
 <meta property="og:image:width" content="375" />
-<meta property="og:image:height" content="314" />
+<meta property="og:image:height" content="314" /> -->
 
 <meta property="fb:app_id" content="124024574287414">
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://miro.medium.com/max/940/1*VPvVZJsM1SYAMr8JME3z8Q.jpeg" />
-
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HumanWisdom_me">
+<meta name="twitter:title" content="HumanWisdom: Mental Well-being">
+<meta name="twitter:description" content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom">
+<meta name="twitter:image" content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg">
 
 
 
@@ -315,8 +317,28 @@
       });
 
       $(document).on('click', '#mailto', function (e) {
+      
+        var str=  $('a#mailto').prop('href').split("mailto:")[1]
+        var emailstr="",mlbody="",mlsubject=""
+
+        if(str.indexOf("?") == -1 ){
+          emailstr=str       
+        }
+        else
+        {
+          emailstr= str.split("?")[0]
+          if(str.indexOf("&")>0){
+            mlsubject= str.split("?")[1].split("&")[0].replace("subject=","")
+            mlbody= str.split("?")[1].split("&")[1].replace("body=","")
+          }
+         
+
+        }
+        console.log(emailstr)
+        console.log(mlsubject)
+        console.log(mlbody)
         if (window.AndroidHandler) {
-          window.AndroidHandler.mailto($('a#mailto').prop('href'));
+          window.AndroidHandler.mailto(emailstr,mlsubject,mlbody);
         }
       });
 
