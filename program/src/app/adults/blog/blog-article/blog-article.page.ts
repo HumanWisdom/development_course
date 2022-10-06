@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
+import { Meta } from '@angular/platform-browser'; 
 
 @Component({
   selector: 'HumanWisdom-blog-article',
@@ -24,7 +25,7 @@ export class BlogArticlePage implements OnInit {
 
   constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,
-    private route: ActivatedRoute, public platform: Platform) {
+    private route: ActivatedRoute,private meta: Meta, public platform: Platform ) {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
     });
@@ -33,7 +34,8 @@ export class BlogArticlePage implements OnInit {
   }
 
   ngOnInit() {
-
+    this.meta.updateTag({property: 'og:title', content: this.blogList['Title']});
+    this.meta.updateTag({property: 'og:image', content: this.blogList['ImgPath']});
   }
 
   getblog() {
