@@ -57,6 +57,7 @@
     "ngx-sharebuttons": "^8.0.5",
     "ngx-social-share": "^1.0.0",
     "nouislider": "^14.6.3",
+    "pdfmake": "^0.2.5",
     "popper.js": "^1.14.3",
     "pretty-checkbox": "^3.0.3",
     "propellerkit-range-slider": "^1.2.0",
