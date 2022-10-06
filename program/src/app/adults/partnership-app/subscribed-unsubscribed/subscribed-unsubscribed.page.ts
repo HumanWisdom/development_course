@@ -28,7 +28,8 @@ export class SubscribedUnsubscribedPage implements OnInit {
   }
 
   GetStarted(){
-    localStorage.setItem("navigateToUpgradeToPremium","true")
+    this.services.navigateToUpgradeToPremium=true;
+    //localStorage.setItem("navigateToUpgradeToPremium","true")
     this.router.navigate(['adults/partnership-app/referral-code']);
   }
   
@@ -37,7 +38,8 @@ export class SubscribedUnsubscribedPage implements OnInit {
       }
       UpgradeToPremium(){
         let val='Yearly';
-        localStorage.setItem("navigateToUpgradeToPremium","true")
+        this.services.navigateToUpgradeToPremium=true;
+        //localStorage.setItem("navigateToUpgradeToPremium","true")
         localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
         localStorage.setItem('partnership-app', val);
         localStorage.setItem('upgradeToPremium', 'T');

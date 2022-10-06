@@ -681,24 +681,27 @@ export class LoginSignupPage implements OnInit {
                     state: { quan: "1", plan: persub },
                   });
                 } else {
-                  if (
-                    localStorage.getItem("navigateToUpgradeToPremium") == "true"
+                  if (this.service.navigateToUpgradeToPremium
+                    //localStorage.getItem("navigateToUpgradeToPremium") == "true"
                   ) {
                     if (localStorage.getItem("IsPartner") == "1") {
                       if (
                         localStorage.getItem("PartnerOption") ==
                         "ReceiveIncome"
                       ) {
-                        localStorage.setItem("navigateToUpgradeToPremium", "false");
+                        this.service.navigateToUpgradeToPremium=false;
+                        //localStorage.setItem("navigateToUpgradeToPremium", "false");
                         this.router.navigate([
                           "/adults/partnership-report/income-activity"]);
                       } else {
-                        localStorage.setItem("navigateToUpgradeToPremium", "false");
+                        //localStorage.setItem("navigateToUpgradeToPremium", "false");
+                        this.service.navigateToUpgradeToPremium=false;
                         this.router.navigate([
                           "/adults/partnership-report/tree-plantation-report"]);
                       }
                     } else {
-                      localStorage.setItem("navigateToUpgradeToPremium", "false");
+                      this.service.navigateToUpgradeToPremium=false;
+                      // localStorage.setItem("navigateToUpgradeToPremium", "false");
                       this.router.navigate(["/adults/partnership-app"]);
                     }
                   } else {
