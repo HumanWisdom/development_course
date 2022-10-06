@@ -91,14 +91,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
     ()=>{
       // this.router.navigate(["/onboarding/assign-key"])
     })
-
-    
-      this.service.getCountry().subscribe((res:any)=>{  
-          console.log(res);
-      });
-
-
-  }
+    }
     ngAfterViewInit() {
       setTimeout(() => {
         if(this.stripeId !== undefined) {
