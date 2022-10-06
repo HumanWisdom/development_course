@@ -48,16 +48,16 @@
                     </div>
                   </div>
 
-                  <div class="row cmlr-10px">
+                  <!-- <div class="row cmlr-10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <hr class="ws_hr mtb0px">
                     </div>
-                  </div>
+                  </div> -->
 
-                  <div class="row mtb30px">
+                  <div class="row mtb30px pr_tr">
                     <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                       <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft" *ngIf="partnershipReport.AffImgPath && !isPdfDownloading">
-                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100">
+                        <img src="{{partnershipReport.AffImgPath === '' || partnershipReport.AffImgPath === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + partnershipReport.AffImgPath}}" class="img-responsive w100 br50p">
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <h4 class="txt335 mtb0px tleft">
@@ -72,18 +72,20 @@
                   
 
                   <div class="row mt40px">
-                    <div class="col-md-6 col-sm- col-xs-">
-                      <h4 class="txt320 mtb0px tleft">
-                        {{currentDate | date:'dd MMMM y'}}
-                      </h4>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
-                      <a (click)="redirectToMyPartnership()" class="">
-                        <h4 class="txt345 mtb0px underline">
-                         View Partners
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <h4 class="txt320 mtb0px tleft">
+                          {{currentDate | date:'dd MMMM y'}}
                         </h4>
-                      </a>
                       </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6 tright" *ngIf="partnershipReport.PartnerCount>0">
+                        <a (click)="redirectToMyPartnership()" class="">
+                          <h4 class="txt345 mtb0px underline">
+                           View Partners
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
                   </div> 
            <ng-container *ngIf="partnershipReport.AffReport!=null">     
                   <div class="row mt5px mb30px" *ngIf="partnershipReport.AffReport.length>0">
