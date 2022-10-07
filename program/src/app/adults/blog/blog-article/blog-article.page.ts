@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
-import { Meta } from '@angular/platform-browser'; 
+import { Meta, Title } from '@angular/platform-browser'; 
 
 @Component({
   selector: 'HumanWisdom-blog-article',
@@ -25,17 +25,19 @@ export class BlogArticlePage implements OnInit {
 
   constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,
-    private route: ActivatedRoute,private meta: Meta, public platform: Platform ) {
+    private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
     });
     // this.blogid=JSON.parse(localStorage.getItem("blogId"))
     this.getblog()
+  
   }
 
   ngOnInit() {
-    this.meta.updateTag({property: 'og:title', content: this.blogList['Title']});
-    this.meta.updateTag({property: 'og:image', content: this.blogList['ImgPath']});
+   /*  this.meta.updateTag({property: 'og:title', content: this.blogList['Title']});
+    this.meta.updateTag({property: 'og:image', content: this.blogList['ImgPath']}); */
+   
   }
 
   getblog() {
@@ -50,6 +52,13 @@ export class BlogArticlePage implements OnInit {
           this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3)
         }
         this.likecount = parseInt(this.blogList['LikeCnt'])
+        this.title.setTitle(this.blogList['Title'])
+        this.meta.updateTag({ property: 'og:type', content: 'article'})
+        this.meta.updateTag({ property: 'og:url', content: this.path})
+        this.meta.updateTag({ property: 'og:title', content: this.blogList['Title']})
+        this.meta.updateTag({ name: 'og:image', content: this.blogList['ImgPath']})
+        // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
+
       }
     },
       error => console.log(error),
