@@ -87,7 +87,8 @@ export class PartnershipIndexPage implements OnInit {
   }
   BecomeAPartner(){
     localStorage.setItem('btnClickBecomePartner','true');
-    localStorage.setItem("navigateToUpgradeToPremium","true")
+    this.services.navigateToUpgradeToPremium=true;
+    //localStorage.setItem("navigateToUpgradeToPremium","true")
     this.router.navigate(['adults/partnership-app']);
   }
 
