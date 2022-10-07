@@ -325,8 +325,29 @@
       });
 
       $(document).on('click', '#mailto', function (e) {
+
+        var str=  $('a#mailto').prop('href').split("mailto:")[1]
+        var emailstr="",mlbody="",mlsubject=""
+
+        if(str.indexOf("?") == -1 ){
+          emailstr=str       
+        }
+        else
+        {
+          emailstr= str.split("?")[0]
+          if(str.indexOf("&")>0){
+            mlsubject= str.split("?")[1].split("&")[0].replace("subject=","")
+            mlbody= str.split("?")[1].split("&")[1].replace("body=","")
+          }
+
+
+        }
+        console.log(emailstr)
+        console.log(mlsubject)
+        console.log(mlbody)
         if (window.AndroidHandler) {
-          window.AndroidHandler.mailto($('a#mailto').prop('href'));
+          // window.AndroidHandler.mailto($('a#mailto').prop('href'));
+          window.AndroidHandler.mailto(emailstr,mlsubject,mlbody);
         }
       });
 
