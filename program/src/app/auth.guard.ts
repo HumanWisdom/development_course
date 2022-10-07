@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
+import { OnboardingService } from './onboarding/onboarding.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthGuard implements CanActivate, OnInit {
   x = []
   scrId: any
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
-  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
+  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService,private onboarding:OnboardingService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
   }
   ngOnInit() { }
@@ -101,7 +102,9 @@ export class AuthGuard implements CanActivate, OnInit {
       this.router.navigate(['/onboarding/login'])
       return false
     } else {
-       if (localStorage.getItem('navigateToUpgradeToPremium') == 'true') {
+       if (     this.onboarding.navigateToUpgradeToPremium
+        //localStorage.getItem('navigateToUpgradeToPremium') == 'true'
+        ) {
         localStorage.setItem('btnclick', 'F');
         localStorage.setItem('guest', 'T');
         this.router.navigate(['/onboarding/login'])
