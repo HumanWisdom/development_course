@@ -55,8 +55,8 @@ export class BlogArticlePage implements OnInit {
         this.title.setTitle(this.blogList['Title'])
         this.meta.updateTag({ property: 'og:type', content: 'article'})
         this.meta.updateTag({ property: 'og:url', content: this.path})
-        this.meta.updateTag({ property: 'og:title', content: this.blogList['Title']})
-        this.meta.updateTag({ name: 'og:image', content: this.blogList['ImgPath']})
+        this.meta.updateTag({ property: 'og:description', content: this.blogList['Title']})
+        this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
         // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
 
       }
@@ -133,5 +133,7 @@ export class BlogArticlePage implements OnInit {
       window.open(url)
     }
   }
+ 
+  
 
 }
