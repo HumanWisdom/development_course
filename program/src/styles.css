@@ -26775,7 +26775,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 .ic_title
 {
   /* margin: 57px 0 18px 0; */
-  margin: 57px 20px 18px 20px;
+  /* margin: 57px 20px 18px 20px; */
+  margin: 45px 20px 18px 20px;
   /* display: flex;
   justify-content: center; */
 }
