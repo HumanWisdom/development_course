@@ -176,8 +176,9 @@ export class HamburgerComponent implements OnInit {
   // }
 
 RouteToBecomeAPartner(){
-  localStorage.setItem("navigateToUpgradeToPremium","true");
-    this.router.navigate(['/adults/partnership-app']);
+//  localStorage.setItem("navigateToUpgradeToPremium","true");
+this.Onboardingservice.navigateToUpgradeToPremium=true;  
+this.router.navigate(['/adults/partnership-app']);
 }
 
 }
