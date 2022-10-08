@@ -101,7 +101,7 @@
                       [imageSrc]="progressImg"               
                     >
                     </circle-progress> 
-                    <h4 class="txt82 absolute_flex_center">
+                    <h4 class="fw_500 fs_30px lh_35px fc_5d5d5d absolute_flex_center">
                      {{progressText}}
                     </h4>   
                   </a>                                                            
@@ -117,7 +117,7 @@
 
               <div class="row plr25px pt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                  <h4 class="txt81">
+                  <h4 class="fw_700 fs_18px lh_130p fc_ffffff">
                     {{name}}
                   </h4>    
                 </div>

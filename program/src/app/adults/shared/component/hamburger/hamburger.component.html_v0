@@ -16,11 +16,11 @@
               alt="" class="img_profile">
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ws_nowrap">
-            <h4 class="txt187 mtb0px tleft">
+            <h4 class="fw_700 fs_14px lh_16px fc_ffffff mtb0px tleft">
               {{name}}
             </h4>
             <a routerLink="/onboarding/user-profile">
-              <h4 class="txt158 mt5pxi mb0px tleft underline" *ngIf="isloggedIn">
+              <h4 class="fw_500 fs_12px lh_14px fc_ffffff mt5pxi mb0px tleft underline" *ngIf="isloggedIn">
                 View Profile
               </h4>
             </a>
@@ -36,7 +36,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/02.svg" alt="" class="img-responsive">
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="txt188 mtb0px">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                 My Progress
               </h4>
             </div>
@@ -51,7 +51,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/04.svg" alt="" class="img-responsive">
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 p0 flex_ai" *ngIf="roleid !== 8">
-              <h4 class="txt188 mtb0px mw75p">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px mw75p">
                 Redeem Wisdom Points
                 <span class="fs_12px">
                   (Coming Soon)
@@ -59,7 +59,7 @@
               </h4>
               <div class="prelative center_flex pl5px">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_05.png" alt="" class="prelative">
-                <h6 class="txt209 wpts_count">
+                <h6 class="fw_700 fs_10px lh_12px fc_243949 wpts_count">
                   9999
                 </h6>
               </div>
@@ -77,7 +77,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Subscribe
                 </h4>
               </div>
@@ -95,7 +95,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px" (click)="giftwisdom()">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="giftwisdom()">
                   Give the gift of Wisdom
                 </h4>
               </div>
@@ -113,7 +113,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px" data-toggle="modal" data-target="#refer_popup">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
                   Refer a Friend
                 </h4>
               </div>
@@ -131,7 +131,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Subscribe to Newsletter
                 </h4>
               </div>
@@ -149,7 +149,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   HumanWisdom for Businesses
                 </h4>
               </div>
@@ -167,7 +167,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   HumanWisdom for Education
                 </h4>
               </div>
@@ -185,7 +185,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Programs
                 </h4>
               </div>
@@ -203,7 +203,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Events
                 </h4>
               </div>
@@ -223,7 +223,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Help & Support
                 </h4>
               </div>
@@ -247,7 +247,7 @@
                       alt="" class="img-responsive r180deg">
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="txt188 mtb0px">
+                    <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       Help & Support
                     </h4>
                   </div>
@@ -264,7 +264,7 @@
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="txt188 mtb0px">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         User Guide
                       </h4>
                     </div>
@@ -282,7 +282,7 @@
                         alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="txt188 mtb0px">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         FAQ
                       </h4>
                     </div>
@@ -298,7 +298,7 @@
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="txt188 mtb0px">
+                    <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       Help Centre
                     </h4>
                   </div>
@@ -315,7 +315,7 @@
                         alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="txt188 mtb0px">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         Contact Us
                       </h4>
                     </div>
@@ -333,7 +333,7 @@
                         alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="txt188 mtb0px">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         Terms & Policies
                       </h4>
                     </div>
@@ -351,7 +351,7 @@
                         alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="txt188 mtb0px">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         Privacy Policy
                       </h4>
                     </div>
@@ -373,7 +373,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
               </div>
               <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Settings
                 </h4>
               </div>
@@ -394,7 +394,7 @@
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg" alt="" class="img-responsive r180deg">
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="txt188 mtb0px">
+                    <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       Settings
                     </h4>
                   </div>
@@ -410,7 +410,7 @@
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="txt188 mtb0px">
+                    <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       Account Settings
                     </h4>
                   </div>
@@ -427,7 +427,7 @@
                         alt="" class="img-responsive">
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="txt188 mtb0px">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         Privacy Policy
                       </h4>
                     </div>
@@ -443,7 +443,7 @@
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="txt188 mtb0px">
+                    <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       Report a Problem
                     </h4>
                   </div>
@@ -458,7 +458,7 @@
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="txt188 mtb0px">
+                    <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       Security
                     </h4>
                   </div>
@@ -478,7 +478,7 @@
                 class="img-responsive">
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="txt188 mtb0px">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                 Logout
               </h4>
             </div>
@@ -494,7 +494,7 @@
                 class="img-responsive">
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="txt188 mtb0px" (click)="routeAffiliate()">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="routeAffiliate()">
                 Affiliate Revenue Report
               </h4>
             </div>
@@ -511,7 +511,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Wisdom Survey
                 </h4>
               </div>
@@ -529,7 +529,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   HumanWisdom Podcast
                 </h4>
               </div>
@@ -547,7 +547,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   My Subscriptions
                 </h4>
               </div>
@@ -565,7 +565,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   HumanWisdom Project
                 </h4>
               </div>
@@ -583,7 +583,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Tree Planting Program
                 </h4>
               </div>
@@ -601,7 +601,7 @@
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="txt188 mtb0px">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   Add to Home Screen
                 </h4>
               </div>
@@ -617,7 +617,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/01.svg" alt="" class="img-responsive">
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="txt188 mtb0px">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                 Get a Wisdom Coach
               </h4>
             </div>
@@ -632,7 +632,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/09.svg" alt="" class="img-responsive">
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="txt188 mtb0px">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                 Become a Coach
               </h4>
             </div>

@@ -26,7 +26,7 @@
                   <form  [formGroup]="registrationForm">
                     <div class="row ls_connect_with">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt243 mtb0px">
+                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
                           CONNECT WITH
                         </h4>
                       </div>
@@ -54,7 +54,7 @@
 
                     <div class="row ls_or_signup">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt243 mtb0px">
+                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
                           OR SIGN UP
                         </h4>
                       </div>
@@ -62,21 +62,21 @@
 
                     <!-- <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">First Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">First Name*</label>
                         <input type="text" id="fullname" class="form-control cfc8" name="firstname" required />
                       </div>
                     </div>
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Last Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Last Name*</label>
                         <input type="text" id="fullname" class="form-control cfc8" name="lastname" required />
                       </div>
                     </div> -->
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Full Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full Name*</label>
                         <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8" name="fullname" required />
                         <div *ngIf="fullname.invalid && fullname.touched">
                           <small *ngIf="fullname.errors?.required" class="text danger">Full Name is required</small>
@@ -87,7 +87,7 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Email address*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
                         <input type="email" formControlName="email" id="fullname" class="form-control cfc8" name="fullname" required />
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
                           <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email address</small>
@@ -98,9 +98,9 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Password*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
                         <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();" id="fullname" class="form-control cfc8" name="fullname" required />
-                        <label class="txt189">
+                        <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                           Password must be Minimum 6 Characters. No Spaces allowed
                         </label>
                       </div>
@@ -112,7 +112,7 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Repeat password*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat password*</label>
                         <input type="password" formControlName="confirmPassword" (keydown.space)="$event.preventDefault();" id="fullname" class="form-control cfc8" name="fullname" required />
                       </div>
                       <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
@@ -159,9 +159,9 @@
 
                     <div class="row ls_already_user">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt244 tcenter mtb0px" style="cursor: pointer;">
+                        <h4 class="fw_400 fs_12px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
                           Already a user?
-                          <a class="txt245 underline">
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
                             Login here
                           </a>
                         </h4>
@@ -175,7 +175,7 @@
                 <div id="tab2" class="tab-pane fade in active">
                   <div class="row ls_connect_with">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt243 mtb0px">
+                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
                         CONNECT WITH
                       </h4>
                     </div>
@@ -203,7 +203,7 @@
 
                   <div class="row ls_or_login">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt243 mtb0px">
+                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
                         OR LOGIN
                       </h4>
                     </div>
@@ -211,16 +211,16 @@
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="txt189 mt0px">Email address*</label>
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
                       <input type="email" id="fullname" [(ngModel)]="this.email" class="form-control cfc8" name="fullname" required />
                     </div>
                   </div>
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="txt189 mt0px">Password*</label>
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
                       <input type="password" id="fullname" [(ngModel)]="this.password" class="form-control cfc8" name="fullname" required />
-                      <label class="txt189">
+                      <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                         Password must be Minimum 6 Characters. No Spaces allowed
                       </label>
                     </div>
@@ -249,7 +249,7 @@
                   <div class="row ls_forgot_password">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a routerLink="/onboarding/forgotpassword">
-                        <h4 class="txt192 tcenter mtb0px" style="cursor: pointer;">
+                        <h4 class="fw_500 fs_14px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
                           Forgot Password?
                         </h4>
                       </a>
@@ -280,7 +280,7 @@
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
           <div class="row mt20px center_flex">
             <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
-              <h4 class="txt191">
+              <h4 class="fw_700 fs_12px lh_14px fc_243949 ls_pt12em">
                 OR CONNECT WITH
               </h4>
             </div>

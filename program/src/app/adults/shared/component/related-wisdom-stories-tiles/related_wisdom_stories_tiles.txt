@@ -1,7 +1,7 @@
 <!-- related wisdom stories -->
 <div class="row index_rwst_title">
     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-      <h4 class="txt212 mtb0px">
+      <h4 class="fw_700 fs_14px lh_16px fc_5d5d5d mtb0px">
         Related Wisdom Stories
       </h4>
     </div>
@@ -13,7 +13,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px" *ngFor="let item of wisdomstories">
         <a (click)="viewstory(item)">
           <img src="{{item['Img']}}" alt="" class="img-responsive img_index_rwst">
-          <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
+          <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
             {{item['Title']}}
           </h4>
         </a>
@@ -28,7 +28,7 @@
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#ws_01">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <h4 class="txt111 mtb0px tcenter mb20px">
+              <h4 class="fw_500 fs_14px lh_16px fc_1092a7 mtb0px tcenter mb20px">
                 View more
               </h4>
             </div>
@@ -43,7 +43,7 @@
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
                 <a href="">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/timothy-eberly-2JV3dbrFt-Y-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
-                  <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
+                  <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
                     Ryan Had A Hippo’s Temper
                   </h4>
                 </a>
@@ -51,7 +51,7 @@
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
                 <a href="">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/luke-southern-gW7QRXDSvec-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
-                  <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
+                  <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
                     The Well-Being of an Alcoholic
                   </h4>
                 </a>
@@ -60,7 +60,7 @@
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
                 <a href="">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/kelly-sikkema-k0o-cw5Y_9s-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
-                  <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
+                  <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
                     My Stepmother Humiliated Me
                   </h4>
                 </a>
@@ -69,7 +69,7 @@
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prelative mb10px">
                 <a href="">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/wisdom_stories/gregory-pappas-rUc9hVE-L-E-unsplash.jpg" alt="" class="img-responsive img_index_rwst">
-                  <h4 class="mtb0px txt210 absolute_index_rwst_title tleft">
+                  <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_index_rwst_title tleft">
                     An Apple A Day Is An Eating Disorder
                   </h4>
                 </a>
