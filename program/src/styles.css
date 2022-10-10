@@ -26775,7 +26775,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 .ic_title
 {
   /* margin: 57px 0 18px 0; */
-  margin: 57px 20px 18px 20px;
+  /* margin: 57px 20px 18px 20px; */
+  margin: 45px 20px 18px 20px;
   /* display: flex;
   justify-content: center; */
 }
@@ -30723,4 +30724,29 @@ svg path
   color: #1092A7;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
+}
+
+.opacity_pt75
+{
+  opacity: 0.75;
+}
+
+.ls_pt1em 
+{
+  letter-spacing: 0.1em;
+}
+
+.ls_pt2em 
+{
+  letter-spacing: 0.2em;
+}
+
+.ls_pt12em 
+{
+  letter-spacing: 0.12em;
+}
+
+.ww_break_word 
+{
+  word-wrap: break-word;
 }

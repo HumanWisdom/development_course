@@ -21,10 +21,10 @@
                     <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_09.svg" alt="" class="p0"> -->
                   </div>  
                   <div class="col-md-7 col-sm-7 col-xs-7 pr0">
-                    <h4 class="txt114 mtb0px">
+                    <h4 class="fw_500 fs_14px lh_16px fc_000000 mtb0px">
                       {{posttread.UserName}}
                     </h4>
-                    <h4 class="txt133 mtb0px">
+                    <h4 class="fw_400 fs_12px fc_adadad mtb0px">
                       {{getLocalPostDate(posttread.PostDate)| date: 'medium' }}
                     </h4>
                   </div>
@@ -37,7 +37,7 @@
               <div class="row forum_pt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h4 class="mtb0px">
-                    <span class="txt127">{{posttread.POST}} </span>                      
+                    <span class="fw_500 fs_14px lh_16px fc_000000">{{posttread.POST}} </span>                      
                   </h4>
                 </div>
               </div>
@@ -47,19 +47,19 @@
                   <div class="col-md-9 col-sm-9 col-xs-9 p0">
                     <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
-                      <span class="txt128 lcs">{{posttread.PostLikeCount}}</span>
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">{{posttread.PostLikeCount}}</span>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
-                      <span class="txt128 lcs">{{posttread.ReplyCount}}</span>
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">{{posttread.ReplyCount}}</span>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
-                      <span class="txt128 lcs">Share</span>
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">Share</span>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3 tright pr0">
-                    <span class="txt129">
+                    <span class="fw_400 fs_10px lh_12px fc_1092a7">
                       Following
                     </span>
                   </div>
@@ -92,7 +92,7 @@
                     </div>
                     <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
-                      <span class="txt128 lcs">Share</span>
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">Share</span>
                     </div> -->
                   </div>
                   <div *ngIf="isLoggedIn" class="col-md-3 col-sm-3 col-xs-3 pr0 flex_ai">
@@ -146,13 +146,13 @@
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
-                        <h4 class="txt127 commenter mtb0px">
+                        <h4 class="fw_500 fs_14px lh_16px fc_000000 commenter mtb0px">
                           {{item.ReplyPostUserName}}
-                          <span class="txt130">
+                          <span class="fw_400 fs_10px fc_adadad">
                             {{getLocalPostDate(item.ReplyPostDate)| date: 'medium' }}
                           </span>
                         </h4>
-                        <h4 class="txt120 mtb0px">
+                        <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                           {{item.ReplyPost}}
                         </h4>                      
                       </div>                    
@@ -164,7 +164,7 @@
                       <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
-                          <span class="txt128 lcs">{{item.ReplyPostLikeCount}}</span> -->
+                          <span class="fw_400 fs_12px fc_1092a7 lcs">{{item.ReplyPostLikeCount}}</span> -->
                           <button  [disabled]="!isLoggedIn"  type="submit"  (click)="like(item.ReplyPostID,posttread.PostID,index)" class="btn btn_ficons jc_flexstart">
                             <i 
                               *ngIf="item.Liked=='0'"
@@ -182,13 +182,13 @@
                       <!-- 
                       <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai"  (click)="toggle(item)">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
-                        <span class="txt128 lcs">{{item.ReplyPostReplyCount}}</span>
+                        <span class="fw_400 fs_12px fc_1092a7 lcs">{{item.ReplyPostReplyCount}}</span>
                       </div>            
                       -->
                       <div class="col-md-6 col-sm-6 col-xs-6 flex_ai jc_flexend" *ngIf="isLoggedIn">
                         <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai"  (click)="reportpost(item)">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
-                          <span class="txt128 lcs ws_nowrap">Report Post</span> -->
+                          <span class="fw_400 fs_12px fc_1092a7 lcs ws_nowrap">Report Post</span> -->
                           <button type="submit" class="btn btn_ficons jc_flexend">
                             <i class="fa fa-triangle-exclamation"></i>
                             Report

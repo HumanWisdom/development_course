@@ -80,10 +80,6 @@
                 "inject": true
               },
               {
-                "input": "src/assets/css/txts.css",
-                "inject": true
-              },
-              {
                 "input": "src/assets/css/responsive.css",
                 "inject": true
               },
