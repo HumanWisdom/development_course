@@ -1,4 +1,9 @@
 /* font weight */
+.fw_300 
+{
+    font-weight: 300;
+}
+
 .fw_400 
 {
     font-weight: 400;
