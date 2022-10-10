@@ -1,10 +1,12 @@
 <!-- top navigation -->
-<app-tn-hwp-project></app-tn-hwp-project>
+<!-- <app-tn-hwp-project></app-tn-hwp-project> -->
+<app-tn-dashboard-v03></app-tn-dashboard-v03>
+
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->  
+<div class="right_col mc_01">
+  <!-- Class -->
   <div class="">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
@@ -16,15 +18,15 @@
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <h4 class="ob_txt1">
                     Subscribe
-                  </h4>  
+                  </h4>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 tright mr10px">
-                  <a  class="acurrency">
+                  <a class="acurrency">
                     Currency
                   </a>
                   <button class="btn btn-default btn_inr" type="button">
                     {{defaultCurrencySymbol}}
-                   </button>
+                  </button>
                 </div>
               </div>
 
@@ -44,13 +46,14 @@
               <div class="row plr10px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <p class="txt50">
-                    The adult program is suitable for use by anyone 16 years and older. <span *ngIf="enableGift">You may choose to subscribe it for yourself or even gift it to your family, friends or colleagues.</span>
+                    The adult program is suitable for use by anyone 16 years and older. <span *ngIf="enableGift">You may
+                      choose to subscribe it for yourself or even gift it to your family, friends or colleagues.</span>
                   </p>
 
                   <p class="txt51">
-                    For bulk subscriptions, please 
+                    For bulk subscriptions, please
                     <a href="mailto:info@humanwisdom.me" target="_blank" class="txt52">
-                      Contact Us 
+                      Contact Us
                     </a>
                   </p>
                 </div>
@@ -59,22 +62,26 @@
               <div class="row pt30px center_flex">
                 <div class="col-md-8 col-sm-12 col-xs-12 tcenter" *ngIf="!enableLoginSubscriber && !isSubscribe">
                   <a>
-                    <button type="button" class="btn btn-success mb0 btn_subscribe_code"  data-toggle="modal" data-target="#activate_subscription_01">I already have a Subscription Code</button>
+                    <button type="button" class="btn btn-success mb0 btn_subscribe_code" data-toggle="modal"
+                      data-target="#activate_subscription_01">I already have a Subscription Code</button>
                   </a>
                 </div>
                 <div class="col-md-8 col-sm-12 col-xs-12 tcenter" *ngIf="enableLoginSubscriber && !isSubscribe">
                   <a>
-                    <button type="button" class="btn btn-success mb0 btn_subscribe_code"  data-toggle="modal" (click)="getActivationCode()">I already have a Subscription Code</button>
+                    <button type="button" class="btn btn-success mb0 btn_subscribe_code" data-toggle="modal"
+                      (click)="getActivationCode()">I already have a Subscription Code</button>
                   </a>
                 </div>
               </div>
 
-       
-              
+
+
               <!-- adults -->
               <div class="row center_flex mt30px">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/programs/subscription/adults_01.png" class="w100">
+                  <img
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/programs/subscription/adults_01.png"
+                    class="w100">
                 </div>
               </div>
 
@@ -92,20 +99,23 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
                         <div id="annual_monthly" class="btn-group" data-toggle="buttons">
-                          <label class="btn btn_annually" data-toggle-class="btn-primary" (click)="selectPlan('Annual',c.ProgID)" [ngStyle]="{
-                           'opacity': c.selectedSubscription === 'Annual' || c.selectedSubscription === 'null' || cartitemList.length === 0 ? '' : '0.5'}" data-toggle-passive-class="btn-default">
+                          <label class="btn btn_annually" data-toggle-class="btn-primary"
+                            (click)="selectPlan('Annual',c.ProgID)"
+                            [ngStyle]="{
+                           'opacity': c.selectedSubscription === 'Annual' || c.selectedSubscription === 'null' || cartitemList.length === 0 ? '' : '0.5'}"
+                            data-toggle-passive-class="btn-default">
                             <input type="radio" name="annual_monthly" value="annual"> &nbsp; Annual &nbsp;
                           </label>
                           <label class="btn btn_monthly" (click)="selectPlan('Monthly',c.ProgID)"
-                           [ngStyle]="{'opacity': c.selectedSubscription === 'Monthly'  || c.selectedSubscription === 'null' || cartitemList.length === 0 ? '' : '0.5'}" 
-                          data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                            [ngStyle]="{'opacity': c.selectedSubscription === 'Monthly'  || c.selectedSubscription === 'null' || cartitemList.length === 0 ? '' : '0.5'}"
+                            data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                             <input type="radio" name="annual_monthly" value="monthly"> Monthly
                           </label>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div class="row center_flex mtb22px">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter">
                       <h6 class="txt54">
@@ -114,29 +124,31 @@
                     </div>
                   </div>
                   <div class="row center_flex">
-                    <div class="col-md-8 col-sm-12 col-xs-12 tcenter">                      
+                    <div class="col-md-8 col-sm-12 col-xs-12 tcenter">
                       <a>
-                        <button type="button" class="btn btn-warning mb0 btn_add_cart w100" data-toggle="modal" data-target="#modal_recipient">Add to Cart</button>
+                        <button type="button" class="btn btn-warning mb0 btn_add_cart w100" data-toggle="modal"
+                          data-target="#modal_recipient">Add to Cart</button>
                       </a>
                     </div>
-                  </div>  
+                  </div>
 
                   <div class="row mt20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/cart.svg" class="img-responsive">
-                        <h6 class="txt83 mtb0px pl10px">
-                          {{c.qty}} item in cart
-                        </h6>
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/cart.svg"
+                        class="img-responsive">
+                      <h6 class="fw_400 fs_14px lh_16px fc_5d5d5d mtb0px pl10px">
+                        {{c.qty}} item in cart
+                      </h6>
                     </div>
                   </div>
                 </ng-container>
               </ng-container>
 
-              
+
 
               <div class="row center_flex mt28px mb26px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <h6 class="txt120 mtb0px tcenter italic">
+                  <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px tcenter italic">
                     Add more if you wish to gift this program to others
                   </h6>
                 </div>
@@ -147,7 +159,8 @@
               <div class="row mt40px">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_vc">
                   <a>
-                    <button type="button" class="btn btn-warning mb0 proceed_cart w100" data-dismiss="modal" [disabled]="cartitemList.length === 0" (click)="proceedcart()">View Cart</button>
+                    <button type="button" class="btn btn-warning mb0 proceed_cart w100" data-dismiss="modal"
+                      [disabled]="cartitemList.length === 0" (click)="proceedcart()">View Cart</button>
                   </a>
                 </div>
               </div>
@@ -162,31 +175,32 @@
 <!-- /page content -->
 
 <!-- modal -->
-<div class="modal fade" id="modal_recipient"tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modal_recipient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="">      
+    <div class="">
       <div class="modal-body p0">
         <!-- modal content -->
         <div class="row modal_recipient">
           <div class="row center_flex pt40px">
             <div class="col-md-6 col-sm-6 col-xs-6">
-              <h4 class="txt107 mb0px">
+              <h4 class="fw_500 fs_12px lh_14px fc_000000 mb0px">
                 Adult (&gt;16 years)
-              </h4>  
+              </h4>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                <!-- quantity btn -->
-                <!-- <div class="input-group mb0px ig1">
+              <!-- quantity btn -->
+              <!-- <div class="input-group mb0px ig1">
                     <input type="button" value="-" class="button-minus grey" data-field="quantity">
                     <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field orange">
                     <input type="button" value="+" class="button-plus grey" data-field="quantity">
                 </div>                     -->
-                <!-- /quantity btn -->
+              <!-- /quantity btn -->
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">  
+            <div class="col-md-12 col-sm-12 col-xs-12">
               <hr class="shr1">
             </div>
           </div>
@@ -195,91 +209,99 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <h4 class="fw_400 fs_18px lh_21px fc_000000">
                 Is this program for you?
-              </h4>  
+              </h4>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 mt10px" *ngIf="enableMySelf">                  
+            <div class="col-md-12 col-sm-12 col-xs-12 mt10px" *ngIf="enableMySelf">
               <div class="radio">
                 <label class="mt0px">
-                  <input type="radio" checked="false" (click)="radioevent($event)" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                  <input type="radio" checked="false" (click)="radioevent($event)" value="option1" id="optionsRadios1"
+                    name="optionsRadios">
                   <span class="">
                     <span class="pl0_3rem">
-                      Yes, I am buying this for myself. 
-                    </span>                          
+                      Yes, I am buying this for myself.
+                    </span>
                   </span>
                 </label>
-              </div>                  
-            </div>                
+              </div>
+            </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
+            <div class="col-md-12 col-sm-12 col-xs-12 mt10px">
               <div class="radio">
                 <label class="mt0px">
-                  <input type="radio" checked="false" value="option1" (click)="someoneradioevent($event)" id="optionsRadios1" name="optionsRadios"> 
+                  <input type="radio" checked="false" value="option1" (click)="someoneradioevent($event)"
+                    id="optionsRadios1" name="optionsRadios">
                   <span class="">
                     <span class="pl0_3rem">
-                      No, I am buying this for someone else. 
-                    </span>                          
+                      No, I am buying this for someone else.
+                    </span>
                   </span>
                 </label>
-              </div>                  
-            </div>                
+              </div>
+            </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
+            <div class="col-md-12 col-sm-12 col-xs-12 mt10px">
               <div class="radio">
                 <label class="mt0px">
-                  <input type="radio" checked="false" (click)="laterradioevent($event)" value="option1" id="optionsRadios1" name="optionsRadios"> 
+                  <input type="radio" checked="false" (click)="laterradioevent($event)" value="option1"
+                    id="optionsRadios1" name="optionsRadios">
                   <span class="">
                     <span class="pl0_3rem">
                       I will decide later.
-                    </span>                          
+                    </span>
                   </span>
                 </label>
-              </div>                  
-            </div>                
+              </div>
+            </div>
           </div>
 
           <div class="row mt20px" *ngIf="enableemail">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <input type="text" class="form-control cfc6" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
+              <input type="text" class="form-control cfc6" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
             </div>
           </div>
 
           <div class="row mt10px" *ngIf="enableemail">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <textarea class="form-control cfc6" rows="5" (keyup)="msginput($event)" placeholder="Message for Learner (optional)"></textarea>
+              <textarea class="form-control cfc6" rows="5" (keyup)="msginput($event)"
+                placeholder="Message for Learner (optional)"></textarea>
             </div>
           </div>
 
           <div class="row center_flex mt20px">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="col-md-2 col-sm-2 col-xs-2 pl0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift_01.svg" alt="" class="">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift_01.svg" alt=""
+                  class="">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h6 class="txt178 ml-20px mtb5px">
-                  An invitation will be sent to this user after payment. You can view the activation status of this program in 
+                <h6 class="fw_400 fs_12px lh_130p fc_b92f48 ml-20px mtb5px">
+                  An invitation will be sent to this user after payment. You can view the activation status of this
+                  program in
                   <a routerLink="/onboarding/myprogram">
                     <span class="fw_500 fs_12px lh_130p fc_b92f48 underline">
                       My Programs
-                    </span>                      
+                    </span>
                   </a>
                 </h6>
               </div>
-            </div>                  
-          </div>     
+            </div>
+          </div>
 
           <div class="row mt40px mb40px">
-            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+            <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
               <a>
-                <button type="button" class="btn btn-warning mb0 proceed_cart w100" [disabled]="enableemail && learnermail === ''" data-dismiss="modal" (click)="addToCart()">Done</button>
+                <button type="button" class="btn btn-warning mb0 proceed_cart w100"
+                  [disabled]="enableemail && learnermail === ''" data-dismiss="modal"
+                  (click)="addToCart()">Done</button>
               </a>
             </div>
-          </div> 
+          </div>
         </div>
-        <!-- /modal content -->  
-      </div>      
+        <!-- /modal content -->
+      </div>
     </div>
   </div>
 </div>
@@ -288,22 +310,23 @@
 <!-- activate subscription modal -->
 <div class="modal fade" id="activate_subscription_01" data-keyboard="false" data-backdrop="true">
   <!-- modal-body -->
-  <div class="" role="document">       
-    <!-- modal content -->          
+  <div class="" role="document">
+    <!-- modal content -->
     <div class="row center_flex activate_subscription_outer" *ngIf="!fourthpage">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">
         <div class="mactivate_subscription_01">
           <div class="row center_flex">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">              
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+                  class="img-responsive fright">
               </button>
             </div>
-          </div>  
-          
+          </div>
+
           <div class="row center_flex as_main_title">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <h4 class="txt151 mtb0px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <h4 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px">
                 Activate Subscription!
               </h4>
             </div>
@@ -311,7 +334,7 @@
 
           <div class="row center_flex mb10px">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <input type="text" id="" class="cfc14" placeholder="{{modaldata['firstname']}}" disabled>
               </div>
             </div>
@@ -319,123 +342,128 @@
 
           <div class="row center_flex mb10px">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <input type="text" id="" class="cfc14" placeholder="{{modaldata['lastname']}}" disabled>
               </div>
             </div>
           </div>
-          
+
           <div class="row center_flex mb10px">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <input type="text" id="" class="cfc14" placeholder="{{modaldata['email']}}" disabled>
               </div>
             </div>
-          </div> 
+          </div>
 
           <div class="row center_flex">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">     
-                <input type="text" id="" class="cfc11" (keyup)="getcode($event.target.value)" placeholder="Enter Activation Code">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <input type="text" id="" class="cfc11" (keyup)="getcode($event.target.value)"
+                  placeholder="Enter Activation Code">
               </div>
             </div>
           </div>
 
           <div class="row center_flex as_diff_user_01">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <h4 class="txt242 mtb0px tcenter">
-                Not 
-                <span class="txt240">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <h4 class="fw_400 fs_14px lh_180p fc_ffffff mtb0px tcenter">
+                Not
+                <span class="fw_700 fs_14px lh_180p fc_ffffff">
                   {{modaldata['email']}}
                 </span>
               </h4>
             </div>
-          </div>  
+          </div>
 
           <div class="row center_flex as_diff_user_code">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <a (click)="already('')">     
-                <h4 class="txt241 mtb0px tcenter underline">
+              <a (click)="already('')">
+                <h4 class="fw_700 fs_14px lh_180p fc_ffc455 mtb0px tcenter underline">
                   Login as a different user
                 </h4>
               </a>
             </div>
-          </div>  
+          </div>
 
           <div class="row center_flex as_code_desc_logged_in_01" *ngIf="thirdpage">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <h4 class="txt89 mtb0px">
-                  The activation code you have used is invalid. Please check again, or email us at support@humanwisdom.me
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <h4 class="fw_400 fs_14px lh_130p fc_ffffff mtb0px">
+                The activation code you have used is invalid. Please check again, or email us at support@humanwisdom.me
               </h4>
             </div>
-          </div>  
+          </div>
 
           <div class="row center_flex as_submit_01" *ngIf="firstpage">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''" (click)="submitcode()">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''"
+                (click)="submitcode()">
                 Submit
               </button>
             </div>
           </div>
 
           <div class="row center_flex as_code_desc_logged_in" *ngIf="secondpage">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <h4 class="txt89 mtb0px">
-                This code entitles you to 1 month of subscription to the HumanWisdom Program for Adults. Click below to activate this subscription, and enjoy the benefits of the HumanWisdom App.
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <h4 class="fw_400 fs_14px lh_130p fc_ffffff mtb0px">
+                This code entitles you to 1 month of subscription to the HumanWisdom Program for Adults. Click below to
+                activate this subscription, and enjoy the benefits of the HumanWisdom App.
               </h4>
             </div>
-          </div>  
+          </div>
 
           <div class="row center_flex as_submit_01" *ngIf="secondpage">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn btn-warning btn_ms_submit" (click)="enablelastpage()">
                 Activate Now
               </button>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
 
     <div class="row center_flex activate_subscription_outer" *ngIf="fourthpage">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">          
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">
         <div class="mactivate_subscription_01">
           <div class="row center_flex">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">              
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+              <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+                  class="img-responsive fright">
               </button>
             </div>
-          </div>  
-          
+          </div>
+
           <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <h4 class="txt151 mtb0px">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <h4 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px">
                 Congratulations!
               </h4>
             </div>
-          </div>  
+          </div>
 
           <div class="row center_flex as_congratulations">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <h4 class="txt89 mtb0px">
-                You are now subscribed to 1 month of the HumanWisdom Program for Adults. Continue to the dahboard to enjoy the app.
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              <h4 class="fw_400 fs_14px lh_130p fc_ffffff mtb0px">
+                You are now subscribed to 1 month of the HumanWisdom Program for Adults. Continue to the dahboard to
+                enjoy the app.
               </h4>
             </div>
-          </div>   
+          </div>
 
           <div class="row center_flex as_continue_dashboard">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn btn-warning btn_ms_submit" (click)="already('home')">
                 Continue to dashboard
               </button>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
-    <!-- /modal content -->      
-  </div>  
+    <!-- /modal content -->
+  </div>
   <!-- /modal-body -->
 </div>
 <!-- /activate subscription modal -->
