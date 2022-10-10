@@ -1,4 +1,9 @@
 /* line height */
+.lh_100p 
+{
+    line-height: 100%;
+}
+
 .lh_120p 
 {
     line-height: 120%;
@@ -12,6 +17,16 @@
 .lh_140p 
 {
     line-height: 140%;
+}
+
+.lh_150p 
+{
+    line-height: 150%;
+}
+
+.lh_180p 
+{
+    line-height: 180%;
 }
 
 .lh_14px

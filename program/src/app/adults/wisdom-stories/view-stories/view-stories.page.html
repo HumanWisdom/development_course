@@ -9,7 +9,7 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
       <a>
-        <h1 class="txt88 mtb0px">
+        <h1 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px tcenter">
           Wisdom Stories
         </h1>
       </a>
@@ -33,7 +33,7 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
       <a>
-        <h1 class="txt110 mtb0px tcenter">
+        <h1 class="fw_500 fs_14px lh_16px fc_5d5d5d mtb0px tcenter">
           {{story.Title}}
         </h1>    
       </a>
@@ -86,10 +86,10 @@
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/ws_01.svg" alt="">
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9 p0">        
-                    <h6 class="txt76 mtb0px">
+                    <h6 class="fw_500 fs_16px lh_130p fc_f55858 mtb0px">
                       Anonymous
                     </h6>
-                    <h6 class="txt77 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_130p fc_5d5d5d mtb0px">
                       {{story.PublishedOn|date:'dd MMM yy'}}| 5 mins
                     </h6>
                   </div>
@@ -98,7 +98,7 @@
           
               <div class="row plr20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h6 class="txt78 mt0px" style="white-space: pre-line" [innerHTML]="story.Story">
+                  <h6 class="fw_300 fs_18px lh_150p fc_5d5d5d mt0px" style="white-space: pre-line" [innerHTML]="story.Story">
                   
                   </h6>
                 </div>
@@ -115,7 +115,7 @@
                       </div>
                 
                       <div class="col-md-10 col-sm-10 col-xs-10">
-                        <h6 class="txt100">
+                        <h6 class="fw_500 fs_18px lh_150p fc_ffffff">
                           HumanWisdom Team
                         </h6>
                       </div>
@@ -125,13 +125,13 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h6 class="txt101">
+                        <h6 class="fw_300 fs_18px lh_150p fc_ffffff">
                          {{story.Msg}}
                         </h6>
                 
-                        <h6 class="txt101 ws_modules">
+                        <h6 class="fw_300 fs_18px lh_150p fc_ffffff ws_modules">
                           Now explore the modules on
-                          <span *ngFor="let l of links"><a (click)="loadReflections(l.id)" class="txt102 underline" routerLink="{{l.route}}">{{l.module}},</a></span>which you may find helpful.
+                          <span *ngFor="let l of links"><a (click)="loadReflections(l.id)" class="fw_500 fs_18px lh_150p fc_ffc455 underline" routerLink="{{l.route}}">{{l.module}},</a></span>which you may find helpful.
                         </h6>
                       </div>
                     </div>
