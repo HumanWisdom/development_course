@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../onboarding.service';
 import {Location } from '@angular/common'
+import { AdultsService } from 'src/app/adults/adults.service';
+
 
 @Component({
   selector: 'app-subscription-s01-v04',
@@ -53,8 +55,9 @@ export class SubscriptionS01V04Page implements OnInit {
   secondpage = false;
   thirdpage = false;
   fourthpage = false;
+  yearormonth = ''
 
-  constructor(private router: Router,private service:OnboardingService, private location:Location, private cd: ChangeDetectorRef) {
+  constructor(private router: Router,private service:OnboardingService, private services:AdultsService, private location:Location, private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
     if(localStorage.getItem('subscribepage') === 'T') {
@@ -168,6 +171,41 @@ enablelastpage() {
   this.fourthpage = true;
 }
 
+verifyactkey() {
+  console.log("Submit verify")
+  this.services.verifyactkey(this.activationCode)
+  .subscribe(
+    res=>
+    {
+      if(res) {
+       this.yearormonth = res
+      this.thirdpage = false
+        this.firstpage = false
+        this.secondpage = true;
+      }else {
+        this.secondpage = false;
+        this.thirdpage = true
+      }
+      // this.enableActivate = true;
+      // this.closemodal.nativeElement.click()
+      
+      // this.router.navigate(['/adults/adult-dashboard'])
+    },
+    error=>{
+      console.log(error);
+     
+      // window.alert(error.error['Message'])
+    },
+   
+    ()=>{
+      
+
+    }
+  )
+}
+
+
+
 submitcode(){
   this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
   .subscribe(
@@ -178,7 +216,8 @@ submitcode(){
       localStorage.setItem('Subscriber', code)
       this.thirdpage = false
       this.firstpage = false
-      this.secondpage = true;
+      this.secondpage = false;
+      this.fourthpage = true;
       }else {
         this.secondpage = false;
         this.thirdpage = true
