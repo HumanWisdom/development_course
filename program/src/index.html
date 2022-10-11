@@ -369,12 +369,21 @@
      
 
       $(document).on('click', '#liLogout', function () {
-        if (window.AndroidHandler) {
-          window.AndroidHandler.logout();
+        
+        if((localStorage.getItem('isloggedin')=='T')==false)
+        {
+
+          if (window.AndroidHandler) {
+            window.AndroidHandler.logout();
+          }
+          if (window.webkit) {
+            window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
+          }
         }
-        if (window.webkit) {
-          window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
-        }
+          
+
+        
+       
       });
       $(document).on('click', '#liSubscribe', function () {
         if (window.webkit) {
