@@ -18,6 +18,7 @@ export class OnboardingService {
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
   //path="https://staging.humanwisdom.info/api"
   navigateToUpgradeToPremium:boolean=false;
+  isActivationFlow:boolean=false;
 
   constructor(private http: HttpClient,handler: HttpBackend) {
    // this.http = new HttpClient(handler);

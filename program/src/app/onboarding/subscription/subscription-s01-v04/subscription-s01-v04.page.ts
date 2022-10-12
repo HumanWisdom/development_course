@@ -27,7 +27,7 @@ export class SubscriptionS01V04Page implements OnInit {
   planWarning=false
 
   cartProductionList:any
-  
+  isModalPopup=false;
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   countryList=[]
   totalCartValue:any
@@ -56,14 +56,14 @@ export class SubscriptionS01V04Page implements OnInit {
   thirdpage = false;
   fourthpage = false;
   yearormonth = ''
-
+  isActivateModal=false;
   constructor(private router: Router,private service:OnboardingService, private services:AdultsService, private location:Location, private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
     if(localStorage.getItem('subscribepage') === 'T') {
       this.router.navigate(['/onboarding/login'])
     }
-    if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
+    if(localStorage.getItem("email") === 'Betsy.test22@gmail.com') {
       this.enableLoginSubscriber = true;
     }else {
       this.enableLoginSubscriber = false;
@@ -73,6 +73,11 @@ export class SubscriptionS01V04Page implements OnInit {
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
     this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    if( this.service.isActivationFlow){
+      setTimeout(() => {
+        this.ActivationFlow();
+      }, 300);
+    }
    }
 
   ngOnInit() {
@@ -203,7 +208,9 @@ verifyactkey() {
     }
   )
 }
-
+Confirm(){
+  this.submitcode();
+}
 
 
 submitcode(){
@@ -218,6 +225,9 @@ submitcode(){
       this.firstpage = false
       this.secondpage = false;
       this.fourthpage = true;
+      if(this.yearormonth=='Year' && this.service.isActivationFlow){
+        this.router.navigate(['/adults/hwp-premium-congratulations']);
+      }
       }else {
         this.secondpage = false;
         this.thirdpage = true
@@ -622,6 +632,18 @@ submitcode(){
     } 
   //   totalCartValue:any
   // totalItemCount=0
+  }
+  ActivationFlow(){
+    if(this.isActivateModal){
+      this.isActivateModal=false;
+    }else{
+      this.isActivateModal=true;
+    }
+
+  }
+  Cancel(){
+    localStorage.setItem('isMonthlySelectedForPayment','F');
+    this.isModalPopup=false;
   }
 
 }
