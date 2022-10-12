@@ -63,7 +63,7 @@ export class SubscriptionS01V04Page implements OnInit {
     if(localStorage.getItem('subscribepage') === 'T') {
       this.router.navigate(['/onboarding/login'])
     }
-    if(localStorage.getItem("email") === 'Betsy.test22@gmail.com') {
+    if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
     }else {
       this.enableLoginSubscriber = false;
