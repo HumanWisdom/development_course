@@ -60,7 +60,7 @@
               </div>
 
               <div class="row pt30px center_flex">
-                <div class="col-md-8 col-sm-12 col-xs-12 tcenter">
+                <div class="col-md-8 col-sm-12 col-xs-12 tcenter" *ngIf="!enableLoginSubscriber && !isSubscribe">
                   <a>
                     <button type="button" class="btn btn-success mb0 btn_subscribe_code" (click)="ActivationFlow()" data-toggle="modal"
                       data-target="#activate_subscription_01">I already have a Subscription Code</button>
