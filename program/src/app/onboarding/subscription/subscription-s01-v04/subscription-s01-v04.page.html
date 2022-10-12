@@ -397,13 +397,29 @@
           <div class="row center_flex as_submit_01" *ngIf="firstpage">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn btn-warning btn_ms_submit" [disabled]="activationCode === ''"
-                (click)="submitcode()">
+              (click)="verifyactkey()">
                 Submit
               </button>
             </div>
           </div>
 
           <div class="row center_flex as_code_desc_logged_in" *ngIf="secondpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <h4 class="fw_400 fs_14px lh_130p fc_ffffff mtb0px">
+                This code entitles you to 1 <span>{{yearormonth}}</span> of subscription to the HumanWisdom Program for Adults. Click below to activate this subscription, and enjoy the benefits of the HumanWisdom App.
+              </h4>
+            </div>
+          </div>  
+
+          <div class="row center_flex as_submit_01" *ngIf="secondpage">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="submitcode()">
+                Activate Now
+              </button>
+            </div>
+          </div>  
+
+         <!--  <div class="row center_flex as_code_desc_logged_in" *ngIf="secondpage">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <h4 class="fw_400 fs_14px lh_130p fc_ffffff mtb0px">
                 This code entitles you to 1 month of subscription to the HumanWisdom Program for Adults. Click below to
@@ -418,7 +434,7 @@
                 Activate Now
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -446,7 +462,7 @@
           <div class="row center_flex as_congratulations">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <h4 class="fw_400 fs_14px lh_130p fc_ffffff mtb0px">
-                You are now subscribed to 1 month of the HumanWisdom Program for Adults. Continue to the dahboard to
+                You are now subscribed to 1 <span>{{yearormonth}}</span> of the HumanWisdom Program for Adults. Continue to the dahboard to
                 enjoy the app.
               </h4>
             </div>

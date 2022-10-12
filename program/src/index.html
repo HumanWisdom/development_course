@@ -17,7 +17,7 @@
   <meta property="og:url" content="" />
    <meta property="og:title"  content="HumanWisdom: Mental Well-being" />
  
-  <meta property="og:description" name="og:description" content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom" />
+  <meta property="og:description" content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom" />
   <meta property="og:image"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" />
   <!-- <meta property="og:image:alt"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/feature/feature_title_01.jpg" /> -->
 
@@ -369,12 +369,21 @@
      
 
       $(document).on('click', '#liLogout', function () {
-        if (window.AndroidHandler) {
-          window.AndroidHandler.logout();
+        
+        if((localStorage.getItem('isloggedin')=='T')==false)
+        {
+
+          if (window.AndroidHandler) {
+            window.AndroidHandler.logout();
+          }
+          if (window.webkit) {
+            window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
+          }
         }
-        if (window.webkit) {
-          window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
-        }
+          
+
+        
+       
       });
       $(document).on('click', '#liSubscribe', function () {
         if (window.webkit) {
