@@ -62,7 +62,7 @@
               <div class="row pt30px center_flex">
                 <div class="col-md-8 col-sm-12 col-xs-12 tcenter" *ngIf="!enableLoginSubscriber && !isSubscribe">
                   <a>
-                    <button type="button" class="btn btn-success mb0 btn_subscribe_code" data-toggle="modal"
+                    <button type="button" class="btn btn-success mb0 btn_subscribe_code" (click)="ActivationFlow()" data-toggle="modal"
                       data-target="#activate_subscription_01">I already have a Subscription Code</button>
                   </a>
                 </div>
@@ -308,14 +308,14 @@
 <!-- /modal -->
 
 <!-- activate subscription modal -->
-<div class="modal fade" id="activate_subscription_01" data-keyboard="false" data-backdrop="true">
+<div class="modal fade in" [ngStyle]="{'display':isActivateModal? 'block' : 'none' }" data-keyboard="false" data-backdrop="true">
   <!-- modal-body -->
   <div class="" role="document">
     <!-- modal content -->
     <div class="row center_flex activate_subscription_outer" *ngIf="!fourthpage">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner">
         <div class="mactivate_subscription_01">
-          <div class="row center_flex">
+          <div class="row center_flex" (click)="ActivationFlow()">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
@@ -411,9 +411,17 @@
             </div>
           </div>  
 
-          <div class="row center_flex as_submit_01" *ngIf="secondpage">
+          <div class="row center_flex as_submit_01" *ngIf="secondpage && yearormonth=='Year'">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
               <button type="button" class="btn btn-warning btn_ms_submit" (click)="submitcode()">
+                Activate Now
+              </button>
+            </div>
+          </div>
+          
+          <div class="row center_flex as_submit_01" *ngIf="secondpage && yearormonth=='Month' && service.isActivationFlow">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
+              <button class="btn btn-warning btn_ms_submit"  type="button" data-toggle="modal" data-target="#modal_join_anyway" (click)="submitcode()">
                 Activate Now
               </button>
             </div>
@@ -483,3 +491,31 @@
   <!-- /modal-body -->
 </div>
 <!-- /activate subscription modal -->
+<div class="modal fade"  id="modal_join_anyway"  data-keyboard="false" data-backdrop="false">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 modal_bottom_fixed join_anyway">
+      <div class="row mb40px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px">
+            Are you sure you would like to proceed with Monthly Subscription?
+          </h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+            <button type="button" class="btn btn_ja_cancel" (click)="Cancel()" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
+            <button type="button" (click)="Confirm()" class="btn btn_ja_confirm" data-dismiss="modal">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
