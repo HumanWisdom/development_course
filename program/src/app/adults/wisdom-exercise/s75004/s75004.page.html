@@ -1,0 +1,2354 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" routerLink="/adults/wisdom-exercise/s75001">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          Notice your thoughts
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_whitesmoke sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- carousel -->
+              <div class="container" *ngIf="enableintro">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- introduction -->
+                    <div class="item active">
+                      <div class="row center_flex mt40px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01.svg"
+                                alt="" class="img-responsive w100">
+                            </div>
+                          </div>
+
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_12px lh_14px fc_000000 mtb0px">
+                                Exercise #3
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row mt10px mb15px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_500 fs_24px lh_130p fc_000000 mtb0px">
+                                Notice your thoughts
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
+                                Welcome to this session where we are going to learn to notice our thoughts and understand our thinking process.
+                                Keep in mind the basic principles of enquiry:
+                              </h4>
+
+                              <ul class="fw_400 fs_15px lh_140p fc_000000 pt15px pl15px">
+                                <li class="">
+                                  We are just looking and learning about ourselves
+                                </li>
+
+                                <li class="">
+                                  Have a mind open to learning
+                                </li>
+
+                                <li class="">
+                                  For learning to take place we need to pause judgement
+                                </li>
+
+                                <li class="">
+                                  What we observe in ourselves is not  right or wrong, good or bad - it just needs to be understood
+                                </li>
+
+                                <li class="">
+                                  Deep down, we are all the same human beings
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /introduction -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Noticing your thoughts
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/3.1.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Welcome to this session where we are going to learn how to notice our thoughts. Our minds are constantly buzzing away. Our mind thinks 60-80000 thoughts in a day. How many of them do we notice? How do we decide which ones to focus on?
+                          </p>
+
+                          <p>
+                            Yet these thoughts decide our feelings, and how we act in the world. Where do these thoughts come from, and what can we learn about them?
+                          </p>
+
+                          <p>
+                            We are going to learn about the many hidden ways they operate which we are not aware of.
+                          </p>
+
+                          <p>
+                            We will learn how little control we have over our thinking process. Understanding this can help us be in charge of our own lives.
+                          </p>
+
+                          <p>
+                            It involves a simple process of looking and learning about yourself. You will make some profound discoveries that are true - not just for yourself, but for all human beings because deep down our minds function in similar ways.
+                          </p>
+
+                          <p>
+                            With this understanding you can make better decisions, be able to think clearly, understand others better, and develop a calm mind. Let’s get started
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Noticing our thoughts can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Think clearly
+                                </li>
+
+                                <li class="">
+                                  Stay hydrated
+                                </li>
+
+                                <li class="">
+                                  Make better decisions
+                                </li>
+
+                                <li class="">
+                                  Understand others
+                                </li>
+
+                                <li class="">
+                                  Develop a calm mind
+                                </li>
+
+                                <li class="">
+                                  Be in charge of our own life
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                We cannot solve our problems with the same thinking we used when we created them
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Albert Einstein
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Understanding our thinking helps us find fresh ways of dealing with old problems and the challenges we face in the world
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            We are now going to set you an
+                            <span class="fw_700">
+                              eight
+                            </span>
+                            day challenge.
+                          </p>
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Do one exercise a day and record what you are learning in your journal
+                          </p>
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            These exercises are powerful and the key to living your best life
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /carousel -->
+
+              <!-- day 01 -->
+              <div class="container" *ngIf="enableday1">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- simple text -->
+                    <div class="item active">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Sit down with a pen and paper.
+                            Write down every thought you notice for 10 minutes.
+                            Notice the quietest thoughts as well as the obvious ones.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                When you pay attention your mind quietens
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/3.2.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            When we pay attention to our thinking, and notice every thought that comes and goes, our mind quietens down. Journaling is a good way of making sense of what is going on in our thinking.
+                          </p>
+
+                          <p>
+                            Try looking at what is happening in your thinking from the outside - just noticing what is going on. Do it at any time of the day.  Do it without judging yourself or trying to change it - just notice.
+                          </p>
+
+                          <p>
+                            If you do this everyday - it will become easier. Do not get frustrated if you cannot do this - there is no target or goal - a gentle perseverance will bring the change.
+                          </p>
+
+                          <p>
+                            This is a great way of developing a calm mind in the middle of a busy day.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                When you really pay attention, everything is your teacher.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Ezra Bayda
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The simple act of paying attention can take you a long way.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Keanu Reeves
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Just noticing what is going on in your thinking, without engaging with it, or justifying it, or being critical, helps your mind to go quiet.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 01 -->
+
+              <!-- day 02 -->
+              <div class="container" *ngIf="enableday2">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- simple text -->
+                    <div class="item active">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Notice how one thought leads to another one.
+                            It develops into a chain reaction.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Notice how little control you have over your thinking process.
+                            One thought leads to another one, and it leads you far away from the first thought you had.
+                            If you try to control your thoughts, you can get frustrated.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                The wandering mind
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/3.3.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            We are just looking and learning about our thoughts - and if we look carefully we notice how our mind has a habit of wandering. This is not right or wrong - but a fact to observe.
+                            We do not notice the moment the mind begins it wandering but are able to snap back to the present and relaise we have been doing so. While it's wandering we lose touch with our surroundings. If you are in a conversation you stop hearing what is being said. You may be able to remember what you have been thinking about and the chain of thoughts that you had. The more you are able to notice this happening, without trying to change it, the less your mind wanders, and the quieter it becomes. Be aware of this today and see what you notice. Don’t try to force anything - the awareness brings its own change
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Meditation stills the wandering mind.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Anon
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 02 -->
+
+              <!-- day 03 -->
+              <div class="container" *ngIf="enableday3">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Notice how your mind is reactive
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/3.4.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            We are usually not aware that our minds are constantly reacting to the world around us.
+                          </p>
+
+                          <p>
+                            Notice what thoughts are triggered when you meet someone you like, someone you don’t like, or when someone challenges your opinion. 
+                          </p>
+
+                          <p>
+                            These reactions usually arise from our memory, from all our past influences we have accumulated since childhood. They are automatic and we have little control over them.  We can call this our conditioning. Understanding our reactive mind helps us to respond with wisdom, and understand others better
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Benefits of understanding our reactive mind:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Realize how little control we have over our thinking
+                                </li>
+
+                                <li class="">
+                                  Understand why others have so little control over their reactions
+                                </li>
+
+                                <li class="">
+                                  See how one reaction triggers another reaction in the other person
+                                </li>
+
+                                <li class="">
+                                  Help you be less reactive
+                                </li>
+
+                                <li class="">
+                                  Help us avoid conflict
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Understanding that others have little control over their reactions helps us view them with more compassion
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            The next time you have a reaction and are about to have an argument, pause and say - ‘I think I am having a reaction. Can we talk about this later?’
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Life is 10% of what happens to you, and 90% of how you react to it.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Anon.
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            The more aware you become of your reactions, the better you are able to manage them.
+                            Carry that awareness with you through the day.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 03 -->
+
+              <!-- day 04 -->
+              <div class="container" *ngIf="enableday4">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Our mind assumes what we think is true.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            When we are listening to someone, our mind reacts with a stream of thoughts.
+                            We assume our thoughts are true, and real, and rarely doubt them.
+                          </p>
+
+                          <p>
+                            We rarely doubt our opinion of someone we meet for the first time for example - and do not realise it is just a reaction from our thinking.
+                          </p>
+
+                          <p>
+                            When we are anxious, every thought we have feels very real and we believe it without questioning.
+                          </p>
+
+                          <p>
+                            Or, we never doubt our opinions - about a politician or a movie for example.
+                          </p>
+
+                          <p>
+                            Just as we do not doubt our thoughts, and assume them to be true, others assume their thoughts are true - you can see now arguments occur.
+                          </p>
+
+                          <p>
+                            Our mind also assumes that others must think in the way we do - which is often not the case.
+                          </p>
+
+                          <p>
+                            This understanding can help us question our own thinking and not accept every thought we have to be true. This can help us to understand others better.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Our mind assumes what it thinks is true. This understanding can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Pause, and question our assumptions
+                                </li>
+
+                                <li class="">
+                                  Help us understand others
+                                </li>
+
+                                <li class="">
+                                  Can help us realize all our fears may not be true
+                                </li>
+
+                                <li class="">
+                                  Understand others
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The most misleading assumptions are the ones you don’t even know you are making.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Douglas Adams
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Assumptions are the termites of relationships.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Henry Winkler
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->                    
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 04 -->
+
+              <!-- day 05 -->
+              <div class="container" *ngIf="enableday5">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Notice how an unconscious thought triggers an action
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/3.1.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Now things get really interesting! Today you are going to notice how you do something, and then notice the chain of thoughts that led to that action.
+                          </p>
+
+                          <p>
+                            For example you might pick up the phone and order something online - like some clothes or a book. What were the thoughts that led up to that? It may have involved seeing an advertisement, or a post on social media, or seeing someone wearing those clothes.
+                          </p>
+
+                          <p>
+                            You may open a bottle of wine for example - what chain of thoughts that led to that?
+                          </p>
+
+                          <p>
+                            Or the smell of coffee as you walk past a coffee shop can trigger an urge to have some yourself.
+                          </p>
+
+                          <p>
+                            Think of a habit you have - like smoking or browsing your phone. Notice the unconscious triggers behind that. You may not even realize it was a thought that led to that action.
+                          </p>
+
+                          <p>
+                            Behind most of our daily actions is a thought - and our thoughts control our actions, in ways we are not aware of.
+                          </p>
+
+                          <p>
+                            This is not right or wrong and not your fault. By becoming aware of this process we can pause, respond with wisdom - and be in charge of our actions and behavior in the world
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding that behind most of our actions is an unconscious thought can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Make good choices in our lives
+                                </li>
+
+                                <li class="">
+                                  Identify our triggers
+                                </li>
+
+                                <li class="">
+                                  Avoid unhelpful habits - like overeating, or being on the phone constantly
+                                </li>
+
+                                <li class="">
+                                  Avoid buying things we do not need
+                                </li>
+
+                                <li class="">
+                                  Focus better
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The ancestor of every action is a thought.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Ralph Waldo Emerson
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 05 -->
+
+              <!-- day 06 -->
+              <div class="container" *ngIf="enableday6">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Notice how your mind judges all the time
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Our mind is constantly comparing what it sees or hears in the world with what it knows - and judges things as good or bad, right or wrong. This affects how we feel. 
+                          </p>
+
+                          <p>
+                            This seems to be an unconscious and automatic process happening in our thinking. Do you notice it in yourself?
+
+                          </p>
+
+                          <p>
+                            Notice when you meet someone new how your mind is already forming its impressions of them and judging them. Or, if you meet someone you know how your mind pulls out of its database what you already know about them.
+                          </p>
+
+                          <p>
+                            Notice how you judge yourself as well - and are sometimes critical of yourself.
+                          </p>
+
+                          <p>
+                            This process occurs without our awareness and waking up to it allows us to respond with wisdom
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding that our mind is constantly judging can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Have a more balanced perspective
+                                </li>
+
+                                <li class="">
+                                  Have more compassion for ourselves and others
+                                </li>
+
+                                <li class="">
+                                  Meet people freshly each time 
+                                </li>
+
+                                <li class="">
+                                  Allow us to pause judgment, and appreciate things as they are
+                                </li>
+
+                                <li class="">
+                                  Be less critical of others
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Notice how your mind automatically judges people, politicians, and yourself - and how certain you are about your view. Now pause and ask if there is another way of seeing things?
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Judging a person does not define who they are. It defines who you are.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Anon
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                     <!-- quotation -->
+                     <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                When you become a witness and stop judging yourself, you stop judging others too. You become more compassionate, more human, more understanding.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Rajneesh
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 06 -->
+
+              <!-- day 07 -->
+              <div class="container" *ngIf="enableday7">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Notice how your thought patterns repeat themselves
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Some of our thinking patterns make our life easier - like brushing our teeth, or driving to work. These are helpful for our life.
+                          </p>
+
+                          <p>
+                            But some of our automatic thinking patterns are not helpful. Like when we are critical of someone for the same reason each time - for example when a child’s room is untidy.
+                          </p>
+
+                          <p>
+                            We may also react in the same way when we are caught up in traffic, or when someone criticizes us.
+                          </p>
+
+                          <p>
+                            We may have a pattern of being critical of ourselves if we do not like our body shape, or when we think others are better than us.
+                          </p>
+
+                          <p>
+                            Each time the pattern is repeated it gets reinforced.
+                          </p>
+
+                          <p>
+                            The feelings of Stress and anxiety are also just repeating reactions from our thinking - and the same trigger usually creates the same response.
+                          </p>
+
+                          <p>
+                            Being aware of these repeating patterns of thinking and reaction helps us break them when they no longer serve us - and live our best life.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding our repeating patterns of thought and reaction can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Look at ourselves and others freshly
+                                </li>
+
+                                <li class="">
+                                  Break negative patterns of thinking
+                                </li>
+
+                                <li class="">
+                                  Reconsider our behavioral patterns
+                                </li>
+
+                                <li class="">
+                                  Be less stressed and anxious
+                                </li>
+
+                                <li class="">
+                                  Have happier relationships
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                For many, negative thinking is a habit which, over time, can become an addiction.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Peter McWilliams
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Simply being aware of the patterns of thinking as they arise, without judging them or trying to change them, brings its own transformation.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 07 -->
+
+              <!-- day 08 -->
+              <div class="container" *ngIf="enableday8">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Our mind likes to generalize
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Have you noticed how the mind likes to generalize?
+                          </p>
+
+                          <p>
+                            If you don’t like a particular political party you are likely to think everyone from that political party is ‘bad’.
+                          </p>
+
+                          <p>
+                            If you fail an exam you may think all your life is a failure.
+                          </p>
+
+                          <p>
+                            If your country has had a history of conflict with another country - you are likely to think everyone from that country is ‘bad’ or the ‘enemy’.
+                          </p>
+
+                          <p>
+                            This process is behind the prejudices we develop - when we say  - all  …. are …
+                          </p>
+
+                          <p>
+                            Why does our mind do that? Perhaps it is lazy and does not want to do the work of seeing people, and events freshly? Or is it rooted in the fear response?
+                          </p>
+
+                          <p>
+                            Whatever the reason, waking up to this hidden process in our own thinking can help us think critically
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding how our mind likes to generalize can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Recognize and overcome our prejudices
+                                </li>
+
+                                <li class="">
+                                  See ourselves and others freshly
+                                </li>
+
+                                <li class="">
+                                  Be less stressed and anxious
+                                </li>
+
+                                <li class="">
+                                  Think clearly
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            All our prejudices are rooted in our conditioning and the mind's tendency to generalize - both of which are hidden from our awareness. We look for evidence which supports our prejudices, and ignore facts that don’t. Do you do that?
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                An unprejudiced mind is probably the rarest thing in the world.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Andre Gide.
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Continue to the next session. Noticing your feelings.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 08 -->
+
+              <!-- day 09 -->
+              <div class="container" *ngIf="enableday9">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Our mind seeks external validation
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Have you noticed how our mind is constantly seeking external validation? We seek this out actively, which is where the phrase ‘fishing for a complement comes from’. This is not right or wrong, but it is usually hidden from our awareness - and a natural function of thinking - but we are usually not aware of this.
+                          </p>
+
+                          <p>
+                            What are the different ways our mind does this?
+                          </p>
+
+                          <p>
+                            We want others to appreciate us, agree with us, make us feel important, and ask us for our opinion. Our need for likes on our social media posts is one example of this.
+                          </p>
+
+                          <p>
+                            If we get this from others we feel a glow of pleasure. If we don’t we can feel frustrated and unloved. We need this external validation to feel good about ourselves.
+                          </p>
+
+                          <p>
+                            Why does our mind do that? Probably in response to our feeling of an inner emptiness.
+                            Being aware of this and being able to question it allows us to respond with wisdom
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Being aware of our need for external validation can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Avoid getting frustrated when we don’t get it
+                                </li>
+
+                                <li class="">
+                                  Realize that we are giving the keys to our happiness to others
+                                </li>
+
+                                <li class="">
+                                  Observe how it shapes our behavior
+                                </li>
+
+                                <li class="">
+                                  Learn to love ourselves
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]=""></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Freedom on the inside comes when validation from the outside does not matter
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Richie Norton
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                If you give people the power to build you up, you also give the the power to break you down
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Anon
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Go quietly. Notice this need for external validation in yourself and where it comes from. Don’t judge it. Observe the different ways it shapes your life. This brings its own change. 
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 09 -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter p0">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec" [ngClass]="[dayclass === 'intro' ? 'editable' : 'inactive']"
+          (click)="getdayevent('intro')">
+          Intro
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '1' ? 'editable' : dayclass === '2' ? 'inactive' : '']" (click)="getdayevent('1')">
+          Day 1
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '2' ? 'editable' : dayclass === '3' ? 'inactive' : '']" (click)="getdayevent('2')">
+          Day 2
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '3' ? 'editable' : dayclass === '4' ? 'inactive' : '']" (click)="getdayevent('3')">
+          Day 3
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '4' ? 'editable' : dayclass === '5' ? 'inactive' : '']" (click)="getdayevent('4')">
+          Day 4
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '5' ? 'editable' : dayclass === '6' ? 'inactive' : '']" (click)="getdayevent('5')">
+          Day 5
+        </button>
+      </a>
+
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '6' ? 'editable' : dayclass === '7' ? 'inactive' : '']" (click)="getdayevent('6')">
+          Day 6
+        </button>
+      </a>
+
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '7' ? 'editable' : dayclass === '8' ? 'inactive' : '']" (click)="getdayevent('7')">
+          Day 7
+        </button>
+      </a>
+
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="[dayclass === '8' ? 'editable' : dayclass === '9' ? 'inactive' : '']" (click)="getdayevent('8')">
+          Day 8
+        </button>
+      </a>
+
+      <a>
+        <button type="button" class="btn m0px btn_wec" [ngClass]="[dayclass === '9' ? 'editable' : '']"
+          (click)="getdayevent('9')">
+          Day 9
+        </button>
+      </a>
+  
+    </div>
+  </div>
+</div>
+<!-- /footer -->
