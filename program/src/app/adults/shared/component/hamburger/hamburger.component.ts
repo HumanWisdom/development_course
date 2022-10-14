@@ -1,44 +1,45 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { OnboardingService } from "src/app/onboarding/onboarding.service";
 
 import {
   getSupportedInputTypes,
   Platform,
   supportsPassiveEventListeners,
-  supportsScrollBehavior
-} from '@angular/cdk/platform';
-
+  supportsScrollBehavior,
+} from "@angular/cdk/platform";
 
 @Component({
-  selector: 'app-hamburger',
-  templateUrl: './hamburger.component.html',
-  styleUrls: ['./hamburger.component.scss'],
+  selector: "app-hamburger",
+  templateUrl: "./hamburger.component.html",
+  styleUrls: ["./hamburger.component.scss"],
 })
 export class HamburgerComponent implements OnInit {
-  supportedInputTypes = Array.from(getSupportedInputTypes()).join(', ');
+  supportedInputTypes = Array.from(getSupportedInputTypes()).join(", ");
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
-  isPartner: any = '0';
+  isPartner: any = "0";
   isloggedIn = false;
-  name = ''
-  roleid = 0
-  url = '';
+  name = "";
+  roleid = 0;
+  url = "";
   subscriber = false;
-  partnerOption: string = '';
+  partnerOption: string = "";
   @Input()
-  enableplaystore = true
-  ios = false
-  subscriberType = '';
-  enableprofile = true
+  enableplaystore = true;
+  ios = false;
+  subscriberType = "";
+  enableprofile = true;
 
-  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
-
-  }
+  constructor(
+    private router: Router,
+    private Onboardingservice: OnboardingService,
+    public platform: Platform
+  ) {}
 
   getmenuevent() {
     if (this.router.url == "/onboarding/user-profile") {
-      this.enableprofile = false
+      this.enableprofile = false;
     }
   }
 
@@ -47,73 +48,71 @@ export class HamburgerComponent implements OnInit {
       this.ios = true;
     }
     setTimeout(() => {
-      let sub: any = localStorage.getItem("Subscriber")
-      this.roleid = JSON.parse(localStorage.getItem('RoleID'));
-      let userid = localStorage.getItem('isloggedin');
+      let sub: any = localStorage.getItem("Subscriber");
+      this.roleid = JSON.parse(localStorage.getItem("RoleID"));
+      let userid = localStorage.getItem("isloggedin");
       let userres = JSON.parse(localStorage.getItem("loginResponse"));
-      let nameupdate = localStorage.getItem(
-        "nameupdate"
-      );
+      let nameupdate = localStorage.getItem("nameupdate");
       if (nameupdate) {
-        this.name = nameupdate
+        this.name = nameupdate;
       } else {
-        this.name = userres['Name']
+        this.name = userres["Name"];
       }
-      if (userid === 'T') {
-        this.isloggedIn = true
+      if (userid === "T") {
+        this.isloggedIn = true;
       }
-      let userId = JSON.parse(localStorage.getItem("userId"))
+      let userId = JSON.parse(localStorage.getItem("userId"));
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
         localStorage.setItem("isPartner", res[0].IsPartner);
-        localStorage.setItem('PartnerOption', res[0].PartnerOption);
-        this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime()
-        this.isPartner = localStorage.getItem('isPartner');
-        this.partnerOption = localStorage.getItem('PartnerOption')
-        this.partnerOption = localStorage.getItem('PartnerOption')
-        this.subscriberType = localStorage.getItem('SubscriberType');
-      })
-      if (sub === '1' || sub === 1) {
+        localStorage.setItem("PartnerOption", res[0].PartnerOption);
+        this.url =
+          userdetail["UserImagePath"].split("\\")[1] +
+          "?" +
+          new Date().getTime();
+        this.isPartner = localStorage.getItem("isPartner");
+        this.partnerOption = localStorage.getItem("PartnerOption");
+        this.partnerOption = localStorage.getItem("PartnerOption");
+        this.subscriberType = localStorage.getItem("SubscriberType");
+      });
+      if (sub === "1" || sub === 1) {
         this.subscriber = true;
       }
-    }, 2000)
+    }, 2000);
   }
 
   routeGuide() {
-    this.router.navigate([`/adults/program-guide/s35001`])
+    this.router.navigate([`/adults/program-guide/s35001`]);
   }
 
-
-
   getevent() {
-    this.name = localStorage.getItem('name');
+    this.name = localStorage.getItem("name");
   }
 
   routeAffiliate() {
-    let userId = JSON.parse(localStorage.getItem("userId"))
+    let userId = JSON.parse(localStorage.getItem("userId"));
     window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
     return false;
   }
 
-
   logout() {
-    if (confirm('Are you sure you want to logout ?') === true) {
+    if (confirm("Are you sure you want to logout ?") === true) {
       if (this.platform.isBrowser) {
-        localStorage.setItem('isloggedin', 'F')
-        localStorage.setItem('guest', 'T')
-        localStorage.setItem('navigateToUpgradeToPremium', 'false')
-        localStorage.setItem('btnClickBecomePartner', 'false');
-        this.router.navigate(['/onboarding/login'])
+        localStorage.setItem("isloggedin", "F");
+        localStorage.setItem("guest", "T");
+        localStorage.setItem("navigateToUpgradeToPremium", "false");
+        localStorage.setItem("btnClickBecomePartner", "false");
+        this.router.navigate(["/onboarding/login"]);
       }
     }
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(["/onboarding/login"]);
   }
 
   giftwisdom() {
-    localStorage.setItem('giftwisdom', 'T')
+    localStorage.setItem("giftwisdom", "T");
   }
 
   /* subscribeevent(subs = '') {
@@ -125,36 +124,34 @@ export class HamburgerComponent implements OnInit {
   } */
 
   routeToPartnerScreen() {
-    if (this.partnerOption == 'ReceiveIncome') {
-      this.router.navigate(['adults/partnership-report/income-activity']);
+    if (this.partnerOption == "ReceiveIncome") {
+      this.router.navigate(["adults/partnership-report/income-activity"]);
     } else {
-      this.router.navigate(['/adults/partnership-report/tree-plantation-report']);
+      this.router.navigate([
+        "/adults/partnership-report/tree-plantation-report",
+      ]);
     }
   }
 
-
   RouteToFaq() {
-    this.router.navigate(['/adults/partnership-webpage/partnership-index/'], {
+    this.router.navigate(["/adults/partnership-webpage/partnership-index/"], {
       state: {
         isPartnerFaq: true,
-      }
+      },
     });
   }
 
-  // isShowDiv = false;  
+  // isShowDiv = false;
   // ispartnership = false;
 
   toggleDisplayDiv() {
     // this.isShowDiv = !this.isShowDiv;
     // let el: HTMLElement = document.getElementById('s1');
     // el.style.transform = "translate3d(0,0,0)";
-
     // this.isShowDiv = true;
     // this.ispartnership = false;
-
     // let el: HTMLElement = document.getElementById('s1');
     // el.style.display = "block";
-
     // let el2: HTMLElement = document.getElementsByClassName('s2');
     // el2.style.display = "none";
   }
@@ -175,10 +172,19 @@ export class HamburgerComponent implements OnInit {
   // 	el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
   // }
 
-RouteToBecomeAPartner(){
-//  localStorage.setItem("navigateToUpgradeToPremium","true");
-this.Onboardingservice.navigateToUpgradeToPremium=true;  
-this.router.navigate(['/adults/partnership-app']);
-}
-
+  RouteToBecomeAPartner() {
+    //  localStorage.setItem("navigateToUpgradeToPremium","true");
+    if (localStorage.getItem("isloggedin") == "F" || localStorage.getItem("isloggedin") == null) {
+      var retVal = confirm("To become a Partner you will need to Complete Registration and login?");
+      if (retVal == true) {
+        this.Onboardingservice.navigateToUpgradeToPremium = true;
+        this.router.navigate(["/adults/partnership-app"]);
+      } else {
+        return false;
+      }
+    } else {
+      this.Onboardingservice.navigateToUpgradeToPremium = true;
+      this.router.navigate(["/adults/partnership-app"]);
+    }
+  }
 }
