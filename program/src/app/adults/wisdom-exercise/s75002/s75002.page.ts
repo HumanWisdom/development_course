@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { colorSets } from '@swimlane/ngx-charts';
+import { AdultsService } from '../../adults.service';
 
 @Component({
   selector: 'HumanWisdom-s75002',
@@ -16,13 +17,20 @@ export class S75002Page implements OnInit {
   enableday3 = false;
   enableday4 = false;
   enableday5 = false;
-
+  totalTime:any;
+  screenType:string="8";
+  screenNumber:string="75002p0";
+userId:string=localStorage.getItem('userId');
+endTime:any;
+startTime:any;
+ moduleId:number=75;
+ bookmark:number=0;
   slideStart=0;
   totalSlidesCount=7;
 details:string='1/8'
-  constructor(private elementRef: ElementRef) {
-   
-  
+  constructor(private elementRef: ElementRef,
+    public service:AdultsService,) {
+      this.startTime=Date.now()
    }
 
   ngOnInit() {
@@ -31,6 +39,7 @@ details:string='1/8'
 
   getdayevent(event) {
     if (event === 'intro') {
+      this.startTime=Date.now()
       this.slideStart=0;
       this.totalSlidesCount=7;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
@@ -42,6 +51,7 @@ details:string='1/8'
       this.enableday5 = false;
     }
     else if (event === '1') {
+      this.startTime=Date.now()
       this.isShowTranscript=false;
       this.slideStart=0;
       this.totalSlidesCount=5;
@@ -52,8 +62,10 @@ details:string='1/8'
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
+      this.screenNumber= "75002p1";
     }
     else if (event === '2') {
+      this.startTime=Date.now()
       this.slideStart=0;
       this.totalSlidesCount=5;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
@@ -63,8 +75,10 @@ details:string='1/8'
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
+      this.screenNumber= "75002p2";
     }
     else if (event === '3') {
+      this.startTime=Date.now()
       this.slideStart=0;
       this.totalSlidesCount=4;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
@@ -74,8 +88,10 @@ details:string='1/8'
       this.enableday3 = true;
       this.enableday4 = false;
       this.enableday5 = false;
+      this.screenNumber= "75002p3";
     }
     else if (event === '4') {
+      this.startTime=Date.now()
       this.slideStart=0;
       this.totalSlidesCount=3;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
@@ -85,8 +101,10 @@ details:string='1/8'
       this.enableday3 = false;
       this.enableday4 = true;
       this.enableday5 = false;
+      this.screenNumber= "75002p4";
     }
     else if (event === '5') {
+      this.startTime=Date.now()
       this.slideStart=0;
       this.totalSlidesCount=4;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
@@ -96,6 +114,7 @@ details:string='1/8'
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = true;
+      this.screenNumber= "75002p5";
     }
     this.next();
   }
@@ -104,6 +123,13 @@ details:string='1/8'
     setTimeout(() => {
       if(this.slideStart<this.totalSlidesCount){
         this.slideStart=this.slideStart+1;
+        if(this.slideStart==this.totalSlidesCount){
+          setTimeout(() => {
+            this.endTime = Date.now();
+            this.totalTime = this.endTime - this.startTime;
+            this.submitProgress(); 
+          }, 400);
+        }
       } else if(this.slideStart==this.totalSlidesCount){
         this.slideStart=1;
       }else{
@@ -158,5 +184,23 @@ details:string='1/8'
        this.isShowAudio=false;
     }
   }
-  
+  submitProgress(){
+    this.service.submitProgressText({
+      "ScrNumber":this.screenNumber,
+      "UserId":+this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime
+    }).subscribe(res=>
+      {
+        
+        // this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        // localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+        //this.router.navigate(['/adults/conditioning/s234'])
+      })
+  }
 }

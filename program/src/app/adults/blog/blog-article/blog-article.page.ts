@@ -30,13 +30,13 @@ export class BlogArticlePage implements OnInit {
       this.blogid = params?.sId
     });
     // this.blogid=JSON.parse(localStorage.getItem("blogId"))
-    this.getblog()
+   
   
   }
 
   ngOnInit() {
-   /*  this.meta.updateTag({property: 'og:title', content: this.blogList['Title']});
-    this.meta.updateTag({property: 'og:image', content: this.blogList['ImgPath']}); */
+   
+    this.getblog()
    
   }
 
@@ -52,13 +52,17 @@ export class BlogArticlePage implements OnInit {
           this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3)
         }
         this.likecount = parseInt(this.blogList['LikeCnt'])
-        this.title.setTitle(this.blogList['Title'])
-        this.meta.updateTag({ property: 'og:type', content: 'article'})
-        // this.meta.updateTag({ property: 'og:url', content: this.path})
-        this.meta.updateTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
-        this.meta.updateTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
-        this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
-        // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
+      
+
+         this.title.setTitle(this.blogList['Title'])
+          this.meta.updateTag({ property: 'og:type', content: 'article'})
+          //this.meta.updateTag({ property: 'og:url', content: "https://staging.humanwisdom.me/course/"+ this.path})
+          console.log(this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom")
+          this.meta.updateTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+          this.meta.updateTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+          this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
+          // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
+
 
       }
     },
