@@ -57,7 +57,7 @@ export class SubscriptionS01V04Page implements OnInit {
   fourthpage = false;
   yearormonth = ''
   isActivateModal=false;
-  constructor(private router: Router,private service:OnboardingService, private services:AdultsService, private location:Location, private cd: ChangeDetectorRef) {
+  constructor(private router: Router,private service:OnboardingService, public services:AdultsService, private location:Location, private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
     if(localStorage.getItem('subscribepage') === 'T') {
