@@ -1,5 +1,4 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -13,7 +12,7 @@ import { OnboardingService } from '../onboarding.service';
 export class SubscriptionPaymentPage implements OnInit {
   //stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
   // stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
-  stripeKey= environment.stripeKey;
+  stripeKey = environment.stripeKey;
   cardCaptureReady = false
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
 
@@ -25,11 +24,14 @@ export class SubscriptionPaymentPage implements OnInit {
   error: string;
   stripeId: string;
   amount: any;
-
+  countryCode: any = '';
+  defaultCountry: any;
+  defaultCurrencySymbol: any
 
   constructor(private service: OnboardingService,
     private router: Router) {
-      this.amount = localStorage.getItem('totalAmount')
+    this.getCountry()
+    this.amount = localStorage.getItem('totalAmount')
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;
     let plan = this.router.getCurrentNavigation()?.extras?.state?.plan;
     let userId = JSON.parse(localStorage.getItem("userId"))
@@ -44,12 +46,10 @@ export class SubscriptionPaymentPage implements OnInit {
     }
     this.service.stripe(obj)
       .subscribe(res => {
-        
         this.stripeId = res;
         this.enable = true;
         // this.keyList=res
         // localStorage.setItem("keyList",JSON.stringify(this.keyList))
-
       },
         (error: HttpErrorResponse) => {
           this.enable = true
@@ -60,16 +60,38 @@ export class SubscriptionPaymentPage implements OnInit {
         })
   }
 
+  getCountry() {
+    this.service.getCountry().subscribe((res: any) => {
+      if (res['in_eu']) {
+        this.countryCode = 'EUR'
+      } else {
+        this.countryCode = res['country_code_iso3']
+      }
+      this.getPricing()
+      this.defaultCountry = res.country_name
+    },
+      error => {
+        console.log(error)
+      });
+  }
+
+  getPricing() {
+    this.service.getPricing(this.countryCode).subscribe(res => {
+      this.defaultCurrencySymbol = res[0]['ISOCode'];
+    }, (err) => {
+      window.alert(err.error['Message'])
+    }
+    )
+  }
+
   ngAfterViewInit() {
     setTimeout(() => {
       if (this.stripeId !== undefined) {
-
         let stripe = Stripe(this.stripeKey);
         let elements = stripe.elements();
-        console.log(this.amount)
         var paymentRequest = stripe.paymentRequest({
-          country: 'IN',
-          currency: 'inr',
+          country: this.defaultCurrencySymbol.toLowerCase() === 'usd' ? 'US' : this.countryCode,
+          currency: this.defaultCurrencySymbol.toLowerCase(),
           total: {
             label: 'Total Payable',
             amount: parseFloat(this.amount),
@@ -77,14 +99,14 @@ export class SubscriptionPaymentPage implements OnInit {
           requestPayerName: true,
           requestPayerEmail: true,
         });
-        
-        
+
+
         var prButton = elements.create('paymentRequestButton', {
           paymentRequest: paymentRequest,
         });
-        
+
         // Check the availability of the Payment Request API first.
-        paymentRequest.canMakePayment().then(function(result) {
+        paymentRequest.canMakePayment().then(function (result) {
           if (result) {
             prButton.mount('#payment-request-button');
           } else {
@@ -93,13 +115,13 @@ export class SubscriptionPaymentPage implements OnInit {
         });
 
 
-        paymentRequest.on('paymentmethod', function(ev) {
+        paymentRequest.on('paymentmethod', function (ev) {
           // Confirm the PaymentIntent without handling potential next actions (yet).
           stripe.confirmCardPayment(
             this.stripeId,
-            {payment_method: ev.paymentMethod.id},
-            {handleActions: false}
-          ).then(function(confirmResult) {
+            { payment_method: ev.paymentMethod.id },
+            { handleActions: false }
+          ).then(function (confirmResult) {
             if (confirmResult.error) {
               // Report to the browser that the payment failed, prompting it to
               // re-show the payment interface, or show an error message and close
@@ -114,44 +136,44 @@ export class SubscriptionPaymentPage implements OnInit {
               // instead check for: `paymentIntent.status === "requires_source_action"`.
               if (confirmResult.paymentIntent.status === "requires_action") {
                 // Let Stripe.js handle the rest of the payment flow.
-                stripe.confirmCardPayment(this.stripeId).then(function(result) {
+                stripe.confirmCardPayment(this.stripeId).then(function (result) {
                   if (result.error) {
                     // The payment failed -- ask your customer for a new payment method.
                   } else {
-      
+
                     // The payment has succeeded.
                     localStorage.setItem('personalised', 'F');
-                    if(localStorage.getItem('ispartnershipClick')=='T'){
-                      if(localStorage.getItem('isMonthlySelectedForPayment')=='T'){
+                    if (localStorage.getItem('ispartnershipClick') == 'T') {
+                      if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
                         localStorage.setItem('ispartnershipClick', 'F');
                         localStorage.setItem('isMonthlySelectedForPayment', 'F');
                         this.router.navigate(['/adults/humanwisdom-premium']);
-                      }else{
+                      } else {
                         localStorage.setItem('ispartnershipClick', 'F');
                         localStorage.setItem('isMonthlySelectedForPayment', 'F');
                         this.router.navigate(['/adults/hwp-premium-congratulations']);
                       }
-                    }else {
+                    } else {
                       alert('Your Payment Is Successfully Submitted');
                       this.router.navigate(['/onboarding/myprogram'])
                     }
                   }
                 });
               } else {
-           
+
                 // The payment has succeeded.
                 localStorage.setItem('personalised', 'F');
-                if(localStorage.getItem('ispartnershipClick')=='T'){
-                  if(localStorage.getItem('isMonthlySelectedForPayment')=='T'){
+                if (localStorage.getItem('ispartnershipClick') == 'T') {
+                  if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
                     localStorage.setItem('ispartnershipClick', 'F');
                     localStorage.setItem('isMonthlySelectedForPayment', 'F');
                     this.router.navigate(['/adults/humanwisdom-premium']);
-                  }else{
+                  } else {
                     localStorage.setItem('ispartnershipClick', 'F');
                     localStorage.setItem('isMonthlySelectedForPayment', 'F');
                     this.router.navigate(['/adults/hwp-premium-congratulations']);
                   }
-                }else {
+                } else {
                   alert('Your Payment Is Successfully Submitted');
                   this.router.navigate(['/onboarding/myprogram'])
                 }
@@ -160,9 +182,9 @@ export class SubscriptionPaymentPage implements OnInit {
             }
           });
         });
-        
 
-        var cardNumberElement = elements.create('cardNumber',{placeholder:'Card Number'});
+
+        var cardNumberElement = elements.create('cardNumber', { placeholder: 'Card Number' });
         var cardExpiryElement = elements.create('cardExpiry');
         var cardCvcElement = elements.create('cardCvc');
 
@@ -191,17 +213,17 @@ export class SubscriptionPaymentPage implements OnInit {
               alert(result.error.message);
             } else {
               localStorage.setItem('personalised', 'F');
-              if(localStorage.getItem('ispartnershipClick')=='T'){
-                if(localStorage.getItem('isMonthlySelectedForPayment')=='T'){
+              if (localStorage.getItem('ispartnershipClick') == 'T') {
+                if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
                   localStorage.setItem('ispartnershipClick', 'F');
                   localStorage.setItem('isMonthlySelectedForPayment', 'F');
                   this.router.navigate(['/adults/humanwisdom-premium']);
-                }else{
+                } else {
                   localStorage.setItem('ispartnershipClick', 'F');
                   localStorage.setItem('isMonthlySelectedForPayment', 'F');
                   this.router.navigate(['/adults/hwp-premium-congratulations']);
                 }
-              }else {
+              } else {
                 alert('Your Payment Is Successfully Submitted');
                 this.router.navigate(['/onboarding/myprogram'])
               }
