@@ -38,11 +38,22 @@ export class ViewcartPage implements OnInit {
   enableDecide = false
   enableedit = false;
   isUpgradeToPremium='';
-
-
+  enableLoginSubscriber=false;
+  enablepopup=false;
+  isSubscribe=false;
+  
   constructor(private router: Router,private service:OnboardingService, private location:Location) { 
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
+    if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
+      this.enableLoginSubscriber = true;
+    }else {
+      this.enableLoginSubscriber = false;
+      localStorage.setItem("activeCode", 'F')
+    }
+    let popup = JSON.parse(localStorage.getItem("Subscriber"))
+    if(popup === 1) this.enablepopup = true
+    this.isSubscribe = popup === 0 ? false : true;
   }
 
   ngOnInit() {
