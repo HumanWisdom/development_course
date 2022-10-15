@@ -445,6 +445,7 @@ export class ViewcartPage implements OnInit {
 
   remove(){
     if(this.cartList.length==0){
+      this.service.isActivationFlow=true;
       this.router.navigate(['/onboarding/add-to-cart']);
     }else{
       for(var i=0;i<this.cartList.length;i++){
