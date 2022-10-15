@@ -28,6 +28,7 @@ startTime:any;
   slideStart=0;
   totalSlidesCount=7;
 details:string='1/8'
+currentDay:number=0;
   constructor(private elementRef: ElementRef,
     public service:AdultsService,) {
       this.startTime=Date.now()
@@ -44,16 +45,19 @@ details:string='1/8'
       this.totalSlidesCount=7;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = true;
+      this.currentDay=0;
       this.enableday1 = false;
       this.enableday2 = false;
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
+      this.dayclass="intro";
     }
     else if (event === '1') {
       this.startTime=Date.now()
       this.isShowTranscript=false;
       this.slideStart=0;
+      this.currentDay=1;
       this.totalSlidesCount=5;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
@@ -63,10 +67,12 @@ details:string='1/8'
       this.enableday4 = false;
       this.enableday5 = false;
       this.screenNumber= "75002p1";
+      this.dayclass='1';
     }
     else if (event === '2') {
       this.startTime=Date.now()
       this.slideStart=0;
+      this.currentDay=2;
       this.totalSlidesCount=5;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
@@ -76,10 +82,12 @@ details:string='1/8'
       this.enableday4 = false;
       this.enableday5 = false;
       this.screenNumber= "75002p2";
+      this.dayclass='2';
     }
     else if (event === '3') {
       this.startTime=Date.now()
       this.slideStart=0;
+      this.currentDay=3;
       this.totalSlidesCount=4;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
@@ -89,11 +97,13 @@ details:string='1/8'
       this.enableday4 = false;
       this.enableday5 = false;
       this.screenNumber= "75002p3";
+      this.dayclass='3';
     }
     else if (event === '4') {
       this.startTime=Date.now()
       this.slideStart=0;
       this.totalSlidesCount=3;
+      this.currentDay=4;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -102,11 +112,13 @@ details:string='1/8'
       this.enableday4 = true;
       this.enableday5 = false;
       this.screenNumber= "75002p4";
+      this.dayclass='4';
     }
     else if (event === '5') {
       this.startTime=Date.now()
       this.slideStart=0;
       this.totalSlidesCount=4;
+      this.currentDay=5;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -115,6 +127,7 @@ details:string='1/8'
       this.enableday4 = false;
       this.enableday5 = true;
       this.screenNumber= "75002p5";
+      this.dayclass='5';
     }
     this.next();
   }
@@ -130,8 +143,10 @@ details:string='1/8'
             this.submitProgress(); 
           }, 400);
         }
+        
       } else if(this.slideStart==this.totalSlidesCount){
-        this.slideStart=1;
+          this.currentDay=this.currentDay+1;
+          this.getdayevent(this.currentDay.toString());
       }else{
         this.slideStart=1;
       }
@@ -158,7 +173,8 @@ details:string='1/8'
         this.slideStart=this.totalSlidesCount
        }
        else if(this.slideStart==1){
-        this.slideStart=this.totalSlidesCount;
+        this.currentDay=this.currentDay-1;
+        this.getdayevent(this.currentDay.toString())
        }
        else{
         this.slideStart=this.slideStart-1;
