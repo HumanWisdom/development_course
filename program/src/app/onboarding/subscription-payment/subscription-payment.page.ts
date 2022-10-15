@@ -26,6 +26,7 @@ export class SubscriptionPaymentPage implements OnInit {
   amount: any;
   countryCode: any = '';
   defaultCountry: any;
+  defaultCountryname: any;
   defaultCurrencySymbol: any
 
   constructor(private service: OnboardingService,
@@ -69,6 +70,7 @@ export class SubscriptionPaymentPage implements OnInit {
       }
       this.getPricing()
       this.defaultCountry = res.country_name
+      this.defaultCountryname = res.country
     },
       error => {
         console.log(error)
@@ -90,7 +92,7 @@ export class SubscriptionPaymentPage implements OnInit {
         let stripe = Stripe(this.stripeKey);
         let elements = stripe.elements();
         var paymentRequest = stripe.paymentRequest({
-          country: this.defaultCurrencySymbol.toLowerCase() === 'usd' ? 'US' : this.countryCode,
+          country: this.defaultCountryname,
           currency: this.defaultCurrencySymbol.toLowerCase(),
           total: {
             label: 'Total Payable',
