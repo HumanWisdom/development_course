@@ -459,6 +459,9 @@ export class ViewcartPage implements OnInit {
             this.service.isActivationFlow=true;
             this.router.navigate(['/onboarding/add-to-cart']);
           })
+        }else{
+          this.service.isActivationFlow=true;
+          this.router.navigate(['/onboarding/add-to-cart']);
         }
       }
       console.log(this.cartList)
