@@ -38,11 +38,22 @@ export class ViewcartPage implements OnInit {
   enableDecide = false
   enableedit = false;
   isUpgradeToPremium='';
-
-
+  enableLoginSubscriber=false;
+  enablepopup=false;
+  isSubscribe=false;
+  
   constructor(private router: Router,private service:OnboardingService, private location:Location) { 
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
+    if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
+      this.enableLoginSubscriber = true;
+    }else {
+      this.enableLoginSubscriber = false;
+      localStorage.setItem("activeCode", 'F')
+    }
+    let popup = JSON.parse(localStorage.getItem("Subscriber"))
+    if(popup === 1) this.enablepopup = true
+    this.isSubscribe = popup === 0 ? false : true;
   }
 
   ngOnInit() {
@@ -433,19 +444,24 @@ export class ViewcartPage implements OnInit {
   }
 
   remove(){
-    for(var i=0;i<this.cartList.length;i++){
-      if(this.cartList[i].MySelf=="True")
-      {
-        var id=this.cartList[i].CartId;
-        this.cartList[i].Qty==1
-        this.cartList.splice(i,1)
-        this.service.deleteItem({"Id":parseFloat(id)})
-        .subscribe(res=> {
-          this.service.isActivationFlow=true;
-          this.router.navigate(['/onboarding/add-to-cart']);
-        })
+    if(this.cartList.length==0){
+      this.router.navigate(['/onboarding/add-to-cart']);
+    }else{
+      for(var i=0;i<this.cartList.length;i++){
+        if(this.cartList[i].MySelf=="True")
+        {
+          var id=this.cartList[i].CartId;
+          this.cartList[i].Qty==1
+          this.cartList.splice(i,1)
+          this.service.deleteItem({"Id":parseFloat(id)})
+          .subscribe(res=> {
+            this.service.isActivationFlow=true;
+            this.router.navigate(['/onboarding/add-to-cart']);
+          })
+        }
       }
+      console.log(this.cartList)
     }
-    console.log(this.cartList)
+   
   }
 }
