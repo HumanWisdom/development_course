@@ -1,13 +1,12 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { colorSets } from '@swimlane/ngx-charts';
-import { AdultsService } from '../../adults.service';
 
 @Component({
-  selector: 'HumanWisdom-s75002',
-  templateUrl: './s75002.page.html',
-  styleUrls: ['./s75002.page.scss'],
+  selector: 'HumanWisdom-s75008',
+  templateUrl: './s75008.page.html',
+  styleUrls: ['./s75008.page.scss'],
 })
-export class S75002Page implements OnInit {
+export class S75008Page implements OnInit {
   dayclass = 'intro'
   isShowTranscript=false;
   isShowAudio=false;
@@ -17,21 +16,15 @@ export class S75002Page implements OnInit {
   enableday3 = false;
   enableday4 = false;
   enableday5 = false;
-  totalTime:any;
-  screenType:string="8";
-  screenNumber:string="75002p0";
-userId:string=localStorage.getItem('userId');
-endTime:any;
-startTime:any;
- moduleId:number=75;
- bookmark:number=0;
+  enableday6 = false;
+  enableday7 = false;
+
   slideStart=0;
-  totalSlidesCount=7;
-details:string='1/8'
-currentDay:number=0;
-  constructor(private elementRef: ElementRef,
-    public service:AdultsService,) {
-      this.startTime=Date.now()
+  totalSlidesCount=6;
+  details:string='1/8'
+  constructor(private elementRef: ElementRef) {
+   
+  
    }
 
   ngOnInit() {
@@ -40,25 +33,22 @@ currentDay:number=0;
 
   getdayevent(event) {
     if (event === 'intro') {
-      this.startTime=Date.now()
       this.slideStart=0;
-      this.totalSlidesCount=7;
+      this.totalSlidesCount=5;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = true;
-      this.currentDay=0;
       this.enableday1 = false;
       this.enableday2 = false;
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
-      this.dayclass="intro";
+      this.enableday6 = false;
+      this.enableday7 = false;
     }
     else if (event === '1') {
-      this.startTime=Date.now()
       this.isShowTranscript=false;
       this.slideStart=0;
-      this.currentDay=1;
-      this.totalSlidesCount=5;
+      this.totalSlidesCount=7;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = true;
@@ -66,14 +56,12 @@ currentDay:number=0;
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
-      this.screenNumber= "75002p1";
-      this.dayclass='1';
+      this.enableday6 = false;
+      this.enableday7 = false;
     }
     else if (event === '2') {
-      this.startTime=Date.now()
       this.slideStart=0;
-      this.currentDay=2;
-      this.totalSlidesCount=5;
+      this.totalSlidesCount=6;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -81,14 +69,12 @@ currentDay:number=0;
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
-      this.screenNumber= "75002p2";
-      this.dayclass='2';
+      this.enableday6 = false;
+      this.enableday7 = false;
     }
     else if (event === '3') {
-      this.startTime=Date.now()
       this.slideStart=0;
-      this.currentDay=3;
-      this.totalSlidesCount=4;
+      this.totalSlidesCount=5;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -96,14 +82,12 @@ currentDay:number=0;
       this.enableday3 = true;
       this.enableday4 = false;
       this.enableday5 = false;
-      this.screenNumber= "75002p3";
-      this.dayclass='3';
+      this.enableday6 = false;
+      this.enableday7 = false;
     }
     else if (event === '4') {
-      this.startTime=Date.now()
       this.slideStart=0;
-      this.totalSlidesCount=3;
-      this.currentDay=4;
+      this.totalSlidesCount=7;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -111,14 +95,12 @@ currentDay:number=0;
       this.enableday3 = false;
       this.enableday4 = true;
       this.enableday5 = false;
-      this.screenNumber= "75002p4";
-      this.dayclass='4';
+      this.enableday6 = false;
+      this.enableday7 = false;
     }
     else if (event === '5') {
-      this.startTime=Date.now()
       this.slideStart=0;
-      this.totalSlidesCount=4;
-      this.currentDay=5;
+      this.totalSlidesCount=6;
       this.details=this.slideStart+'/'+this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -126,8 +108,34 @@ currentDay:number=0;
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = true;
-      this.screenNumber= "75002p5";
-      this.dayclass='5';
+      this.enableday6 = false;
+      this.enableday7 = false;
+    }
+    else if (event === '6') {
+      this.slideStart=0;
+      this.totalSlidesCount=7;
+      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.enableintro = false;
+      this.enableday1 = false;
+      this.enableday2 = false;
+      this.enableday3 = false;
+      this.enableday4 = false;
+      this.enableday5 = false;
+      this.enableday6 = true;
+      this.enableday7 = false;
+    }
+    else if (event === '7') {
+      this.slideStart=0;
+      this.totalSlidesCount=7;
+      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.enableintro = false;
+      this.enableday1 = false;
+      this.enableday2 = false;
+      this.enableday3 = false;
+      this.enableday4 = false;
+      this.enableday5 = false;
+      this.enableday6 = false;
+      this.enableday7 = true;
     }
     this.next();
   }
@@ -136,17 +144,8 @@ currentDay:number=0;
     setTimeout(() => {
       if(this.slideStart<this.totalSlidesCount){
         this.slideStart=this.slideStart+1;
-        if(this.slideStart==this.totalSlidesCount){
-          setTimeout(() => {
-            this.endTime = Date.now();
-            this.totalTime = this.endTime - this.startTime;
-            this.submitProgress(); 
-          }, 400);
-        }
-        
       } else if(this.slideStart==this.totalSlidesCount){
-          this.currentDay=this.currentDay+1;
-          this.getdayevent(this.currentDay.toString());
+        this.slideStart=1;
       }else{
         this.slideStart=1;
       }
@@ -173,8 +172,7 @@ currentDay:number=0;
         this.slideStart=this.totalSlidesCount
        }
        else if(this.slideStart==1){
-        this.currentDay=this.currentDay-1;
-        this.getdayevent(this.currentDay.toString())
+        this.slideStart=this.totalSlidesCount;
        }
        else{
         this.slideStart=this.slideStart-1;
@@ -200,23 +198,5 @@ currentDay:number=0;
        this.isShowAudio=false;
     }
   }
-  submitProgress(){
-    this.service.submitProgressText({
-      "ScrNumber":this.screenNumber,
-      "UserId":+this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime
-    }).subscribe(res=>
-      {
-        
-        // this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        // localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      },
-      error=>{console.log(error)},
-      ()=>{
-        //this.router.navigate(['/adults/conditioning/s234'])
-      })
-  }
+  
 }

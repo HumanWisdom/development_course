@@ -30750,3 +30750,13 @@ svg path
 {
   word-wrap: break-word;
 }
+
+.hr_style_19 
+{
+  border: 1px solid #5D5D5D;
+}
+
+.display_webkit_inline_box
+{
+  display: -webkit-inline-box;
+}

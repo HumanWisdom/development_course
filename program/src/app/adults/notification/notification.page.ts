@@ -111,7 +111,8 @@ export class NotificationPage implements OnInit {
   
     if (hideYear) {
       // 10. January at 10:20
-      return `${ day }. ${ month }  ${ hours }:${ minutes }`+ampm;
+      return `${ day } ${ month?.substring(0,3) }`;
+      // //${ hours }:${ minutes }`+ampm;
     }
   
     // 10. January 2017. at 10:20
