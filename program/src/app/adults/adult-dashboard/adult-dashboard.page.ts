@@ -1333,22 +1333,19 @@ export class AdultDashboardPage implements OnInit {
 
   enableDailypopup() {
     this.service.adminPopup().subscribe((res) => {
-
       this.alertMsg = res;
-      let date = localStorage.getItem("getalertdate")
-      let expire = false;
-      if (date !== null) {
-        let x = new Date(localStorage.getItem("getalertdate"))
-        let y = new Date();
-        if (x.getDate() + 7 < y.getDate()) {
-          expire = false;
+      let olddate = localStorage.getItem("getalertdate")
+      if (olddate !== null) {
+        let date1: any = new Date(olddate);
+        let date2: any = new Date();
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays: any = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        console.log(diffDays)
+        if (parseInt(diffDays) >= 7) {
+          localStorage.setItem("getalertdate", new Date().toDateString())
+          this.enablemodal.nativeElement.click();
         } else {
-          expire = true;
         }
-      }
-      if (date === null || !expire) {
-        localStorage.setItem("getalertdate", new Date().toDateString())
-        this.enablemodal.nativeElement.click();
       }
     }, error => {
       if (error.error['Message'] === 'Not generated') {
