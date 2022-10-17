@@ -26,6 +26,7 @@ export class ActiveGuard implements CanActivate, OnInit {
       let m: any = window.location.href;
       m = m.split('?')
     let str = next.routeConfig.path;
+    console.log(str)
     this.scrId = str.substring(1, str.length + 1);
     if(this.scrId !== '29000') {
       let substrin = this.scrId.substring(0, 2)
@@ -34,7 +35,9 @@ export class ActiveGuard implements CanActivate, OnInit {
       }
     }
     let sub: any = localStorage.getItem("Subscriber")
+    console.log(this.freeScreens)
 
+    
     if (sub === '1' || m[1]?.slice(0, 2) === 't=') {
       return true;
     } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {

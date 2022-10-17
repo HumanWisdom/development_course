@@ -74,7 +74,7 @@
 
               <div class="row center_flex mt30px">
                 <div class="col-md-12 col-sm-12 col-xs-12">                      
-                  <a>
+                  <a (click)="remove()">
                     <button type="button" class="btn btn-warning btn_scode w100">
                       I already have a Subscription Code
                     </button>
@@ -355,9 +355,9 @@
 
               <div class="row" *ngIf="isMonthlySelected">
                 <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
-                  <button class="btn btn-default btn_ptp" type="button" data-toggle="modal" data-target="#modal_join_anyway" (click)="ProceedWithMonthly()">
-                    Proceed to  pay
-                  </button>
+                <button class="btn btn-default btn_ptp" type="button" data-toggle="modal" data-target="#modal_join_anyway" (click)="ProceedWithMonthly()">
+                  Proceed to  pay
+                </button>
                 </div>                
               </div>
               
