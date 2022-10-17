@@ -29,12 +29,27 @@
         </div>
       </a>
     
-      <a (click)="routeJournal()" class="footer_index">        
+      <!-- <a (click)="routeJournal()" class="footer_index">        
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">
-        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal_active.svg" alt=""> -->
         <p class="mb0px">
           Journal
         </p>
+      </a> -->
+
+      <a (click)="routeJournal()" class="footer_index">
+        <div *ngIf="!journal">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">
+          <p class="mb0px silver_chalice">
+            Journal
+          </p>
+        </div>
+
+        <div *ngIf="journal">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal_active.svg" alt="">
+          <p class="mb0px">
+            Journal
+          </p>
+        </div>
       </a>
     
       <a (click)="routeForum()" class="footer_index">
