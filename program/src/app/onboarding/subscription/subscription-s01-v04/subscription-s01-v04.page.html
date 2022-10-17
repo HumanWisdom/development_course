@@ -99,11 +99,18 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
                         <div id="annual_monthly" class="btn-group" data-toggle="buttons">
-                          <label class="btn btn_annually" data-toggle-class="btn-primary"
+
+                          <!--
+                          <label class="btn btn_annually active" data-toggle-class="btn-primary" (click)="selectPlan('Annual',c.ProgID)" [ngStyle]="{
+                           'opacity': c.selectedSubscription === 'Annual' || c.selectedSubscription === 'null' || cartitemList.length === 0 ? '' : '0.5'}" data-toggle-passive-class="btn-default">
+                           -->
+
+                          <label class="btn btn_annually active" data-toggle-class="btn-primary"
                             (click)="selectPlan('Annual',c.ProgID)"
                             [ngStyle]="{
                            'opacity': c.selectedSubscription === 'Annual' || c.selectedSubscription === 'null' || cartitemList.length === 0 ? '' : '0.5'}"
                             data-toggle-passive-class="btn-default">
+
                             <input type="radio" name="annual_monthly" value="annual"> &nbsp; Annual &nbsp;
                           </label>
                           <label class="btn btn_monthly" (click)="selectPlan('Monthly',c.ProgID)"
@@ -317,7 +324,7 @@
         <div class="mactivate_subscription_01">
           <div class="row center_flex" (click)="ActivationFlow()">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" aria-label="Close">
+              <button type="button" class="btn_popup_close m0px" #closemodal data-dismiss="modal" (click)="Cancel()" aria-label="Close">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
                   class="img-responsive fright">
               </button>

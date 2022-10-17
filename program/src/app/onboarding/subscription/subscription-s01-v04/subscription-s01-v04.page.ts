@@ -642,8 +642,14 @@ submitcode(){
 
   }
   Cancel(){
-    localStorage.setItem('isMonthlySelectedForPayment','F');
-    this.isModalPopup=false;
+    if(this.service.isActivationFlow){
+      this.proceedcart();
+      localStorage.setItem('isMonthlySelectedForPayment','F');
+      this.isModalPopup=false;
+    }else{
+      localStorage.setItem('isMonthlySelectedForPayment','F');
+      this.isModalPopup=false;
+    }
   }
 
 }
