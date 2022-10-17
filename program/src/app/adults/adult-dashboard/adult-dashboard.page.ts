@@ -1340,12 +1340,13 @@ export class AdultDashboardPage implements OnInit {
         let date2: any = new Date();
         const diffTime = Math.abs(date2 - date1);
         const diffDays: any = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        console.log(diffDays)
         if (parseInt(diffDays) >= 7) {
           localStorage.setItem("getalertdate", new Date().toDateString())
           this.enablemodal.nativeElement.click();
-        } else {
         }
+      } else {
+        localStorage.setItem("getalertdate", new Date().toDateString())
+        this.enablemodal.nativeElement.click();
       }
     }, error => {
       if (error.error['Message'] === 'Not generated') {
