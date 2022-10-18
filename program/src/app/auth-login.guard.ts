@@ -23,6 +23,7 @@ export class authLoginGuard implements CanActivate, OnInit {
     let cookie = false;
     let affrefcode = '';
     let affreftoken = '';
+    let getalertdate= localStorage.getItem('getalertdate');
     let persub = localStorage.getItem('personalised subscription');
     let pers = localStorage.getItem('personalised');
     let persdata = localStorage.getItem('personalisedlist');
@@ -47,6 +48,9 @@ export class authLoginGuard implements CanActivate, OnInit {
       localStorage.clear()
     }
     
+    if (getalertdate !== null) {
+      localStorage.setItem('getalertdate', getalertdate)
+    }
     if (option === 'T') {
       localStorage.setItem('introoption', 'T')
     }
