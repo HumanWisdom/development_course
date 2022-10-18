@@ -24735,7 +24735,7 @@ a
   padding: 20px 20px 70px 20px;
   /* min-height: 500px; */
 
-  height: 70rem;
+  /* height: 70rem; */
   overflow-y: overlay;
 }
 
@@ -30755,3 +30755,12 @@ svg path
   background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
   box-shadow: 0px 0px 8px 0px #0000001A;
   }
+.hr_style_19 
+{
+  border: 1px solid #5D5D5D;
+}
+
+.display_webkit_inline_box
+{
+  display: -webkit-inline-box;
+}

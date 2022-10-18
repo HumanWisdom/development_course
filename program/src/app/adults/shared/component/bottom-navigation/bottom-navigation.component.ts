@@ -60,7 +60,8 @@ export class BottomNavigationComponent implements OnInit {
       this.journal = false
       this.fourm = false;
       this.profile = true
-      if (this.Subscriber === '1') {
+      
+      if (this.isloggedIn) {
         this.enableprofile = true;
       }
     }

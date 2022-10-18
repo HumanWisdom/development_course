@@ -372,6 +372,26 @@ const routes: Routes = [
     path: 'wisdom-exercise',
     loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then( m => m.WisdomExerciseModule)
   },
+  {
+    path: 'adverts-hwp',
+    loadChildren: () => import('./adverts-hwp/adverts-hwp.module').then( m => m.AdvertsHwpPageModule)
+  },
+  {
+    path: 'adverts-hwp-app',
+    loadChildren: () => import('./adverts-hwp-app/adverts-hwp-app.module').then( m => m.AdvertsHwpAppPageModule)
+  },
+  {
+    path: 'adverts-about',
+    loadChildren: () => import('./adverts-about/adverts-about.module').then( m => m.AdvertsAboutPageModule)
+  },
+  {
+    path: 'adverts-work',
+    loadChildren: () => import('./adverts-work/adverts-work.module').then( m => m.AdvertsWorkPageModule)
+  },
+  {
+    path: 'adverts-student',
+    loadChildren: () => import('./adverts-student/adverts-student.module').then( m => m.AdvertsStudentPageModule)
+  },
 ];
 
 @NgModule({
