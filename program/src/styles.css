@@ -30750,3 +30750,8 @@ svg path
 {
   word-wrap: break-word;
 }
+
+.nextDayButton{
+  background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
+  box-shadow: 0px 0px 8px 0px #0000001A;
+  }
