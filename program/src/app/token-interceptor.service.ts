@@ -1,7 +1,8 @@
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http'
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { catchError } from 'rxjs/internal/operators/catchError';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +10,27 @@ import { ActivatedRoute } from '@angular/router';
 export class TokenInterceptorService implements HttpInterceptor {
   token = JSON.parse(localStorage.getItem("token"))
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.token = JSON.parse(localStorage.getItem("token"))
     let tokenizedReq = req.clone({
-        setHeaders: {
-               Authorization: `Bearer ` + this.token
+      setHeaders: {
+        Authorization: `Bearer ` + this.token
+      }
+    })
+    return next.handle(tokenizedReq).pipe(catchError(err => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401) {
+          localStorage.clear()
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('personalised', 'T');
+          localStorage.setItem('acceptcookie', 'T');
+          this.router.navigate(['/adults/adult-dashboard'])
         }
-      })
-    return next.handle(tokenizedReq)
+      }
+      return new Observable<HttpEvent<any>>();
+    }));
   }
 }
