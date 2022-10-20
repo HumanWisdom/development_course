@@ -65,7 +65,7 @@
                 <div class="row mt10px center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h4 class="mtb0px fw_400 fs_14px lh_140p fc_5d5d5d limit_characters">
-                      <span [innerHTML]="item['Story']"></span>
+                      <span>{{stripTags(item['Story'])}}</span>
                     </h4>
                   </div>
                 </div>
