@@ -14,7 +14,7 @@ export class BlogIndexPage implements OnInit {
   blogList:any;
   searchedTitle:any;
   path='#' + this.router.url
-
+  
   constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService) { }
 
   ngOnInit() {
@@ -68,5 +68,10 @@ export class BlogIndexPage implements OnInit {
       console.log(error);
     });
   }
-
+   stripTags (original) {
+   // (A1) PARSE STRING INTO NEW HTML DOCUMENT
+  let parsed = new DOMParser().parseFromString(original, "text/html");
+  // (A2) STRIP TAGS, RETURN AS TEXT CONTENT
+  return parsed.body.textContent;
+  }
 }
