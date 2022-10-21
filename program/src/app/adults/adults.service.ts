@@ -306,4 +306,8 @@ export class AdultsService {
    GetVisitedScreen(moduleId){
     return this.http.get(this.path + '/GetVisitedScreens/'+moduleId);
    }
+
+   getModuleList(): Observable<any> {
+      return this.http.get(this.path + '/modules');
+   }
 }
