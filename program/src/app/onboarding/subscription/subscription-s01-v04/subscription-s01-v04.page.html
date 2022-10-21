@@ -133,7 +133,7 @@
                   <div class="row center_flex">
                     <div class="col-md-8 col-sm-12 col-xs-12 tcenter">
                       <a>
-                        <button type="button" class="btn btn-warning mb0 btn_add_cart w100" data-toggle="modal"
+                        <button type="button" class="btn btn-warning mb0 btn_add_cart w100" (click)="AddCarBeforePopuP()" data-toggle="modal"
                           data-target="#modal_recipient">Add to Cart</button>
                       </a>
                     </div>
@@ -239,7 +239,7 @@
               <div class="radio">
                 <label class="mt0px">
                   <input type="radio" checked="false" value="option1" (click)="someoneradioevent($event)"
-                    id="optionsRadios1" name="optionsRadios">
+                    id="optionsRadios10" name="optionsRadios">
                   <span class="">
                     <span class="pl0_3rem">
                       No, I am buying this for someone else.
@@ -249,7 +249,7 @@
               </div>
             </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 mt10px">
+            <!-- <div class="col-md-12 col-sm-12 col-xs-12 mt10px">
               <div class="radio">
                 <label class="mt0px">
                   <input type="radio" checked="false" (click)="laterradioevent($event)" value="option1"
@@ -261,7 +261,7 @@
                   </span>
                 </label>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="row mt20px" *ngIf="enableemail">

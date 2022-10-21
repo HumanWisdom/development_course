@@ -651,5 +651,13 @@ submitcode(){
       this.isModalPopup=false;
     }
   }
-
+  AddCarBeforePopuP(){
+    setTimeout(() => {
+      if(this.enableMySelf==false){
+        this.myself = 0;
+        this.enableemail = true;
+        $("#optionsRadios10").prop("checked", true);
+      }
+    }, 100);
+  }
 }
