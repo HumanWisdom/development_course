@@ -46,10 +46,18 @@ export class VideoContentComponent implements OnInit {
 
     //var str=this.router.getCurrentNavigation().finalUrl.root.children.primary.segments[1].path
     var str = this.router.url
-    var lastSlash = str.lastIndexOf("/");
-    str = str.substring(lastSlash + 2);
+    // var lastSlash = str.lastIndexOf("/");
+    // str = str.substring(lastSlash + 2);
     //str = str.replace(/\D/g,'');
-    this.scrId = str
+    if (str.includes('next') || str.includes('prev')) {
+      let lastSlash: any = str.split("/");
+      let getsplit = lastSlash[lastSlash.length - 2]
+      this.scrId = getsplit.substring(1);
+    } else {
+      var lastSlash = str.lastIndexOf("/");
+      this.scrId = str.substring(lastSlash + 2);
+    }
+
 
     //call api to geta percent
     this.service.mediaPercent(this.scrId).subscribe(res => {
