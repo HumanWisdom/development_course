@@ -23,10 +23,32 @@ export class ActiveGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-      let m: any = window.location.href;
+     // let m: any = window.location.href;
+      let m: any =state.url;
+      let sub: any = localStorage.getItem("Subscriber")
+
       m = m.split('?')
+      /*For Life Stories */
+       if(m[0].includes("view-stories") ===true  || 
+       m[0].includes("blog-article") ===true){  
+        if(sub==='1')    
+        {
+          return true;
+        }
+        else{
+
+          if ((m[1]==="sId=1" || m[1]==="sId=2" || m[1]==="sId=3")==false){
+            this.router.navigate(['/onboarding/free-limit'])
+            return false;
+          }
+          else{
+            return true;
+          }
+        }
+      
+      }
+
     let str = next.routeConfig.path;
-    console.log(str)
     this.scrId = str.substring(1, str.length + 1);
     if(this.scrId !== '29000') {
       let substrin = this.scrId.substring(0, 2)
@@ -34,10 +56,8 @@ export class ActiveGuard implements CanActivate, OnInit {
         this.scrId = (parseInt(this.scrId) - 1).toString();
       }
     }
-    let sub: any = localStorage.getItem("Subscriber")
-    console.log(this.freeScreens)
-
-    
+  
+     
     if (sub === '1' || m[1]?.slice(0, 2) === 't=') {
       return true;
     } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
