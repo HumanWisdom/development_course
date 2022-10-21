@@ -30,7 +30,7 @@ startTime:any;
 details:string='1/8'
 vistedScreens:any[]=[];
 currentDay:number=0;
-nextDay:number=0;
+nextDay:number=null;
 maxDay=0;
   constructor(private elementRef: ElementRef,
     public service:AdultsService,private adult:AdultsService) {
@@ -54,7 +54,7 @@ maxDay=0;
     var dayclass='';
     var className='';
     if (day === '75002p0') {
-      dayclass="75002p0";
+      dayclass="0";
     }
     else if (day === '75002p1') {
       dayclass='1';
@@ -97,6 +97,7 @@ maxDay=0;
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
+      this.screenNumber= "75002p0";
       this.dayclass="intro";
     }
     else if (event === '1') {
