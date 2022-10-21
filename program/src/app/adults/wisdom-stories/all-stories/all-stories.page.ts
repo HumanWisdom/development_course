@@ -30,10 +30,24 @@ export class AllStoriesPage implements OnInit {
   getStories(){
     this.service.getScenarios().subscribe(res=>
       {
-        if(res) {
-          
+        if(res) 
+        {
           let dateres = res.sort((a, b) => b['PublishedOn'] - a['PublishedOn'])
-          this.storyList=dateres.slice(0, 10)
+      
+          
+          if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F') {
+
+            res = new Array()
+            res = dateres.filter(p => p.ScenarioID >= 1 && p.ScenarioID <= 3)
+            res.forEach(element => {
+              dateres.unshift(element)
+            });
+
+
+
+          }
+
+         this.storyList=dateres.slice(0, 10)
           this.secondstoryList=dateres.slice(10)
           this.searchstoryList = dateres;
           localStorage.setItem("storyList",JSON.stringify(this.storyList))
@@ -58,12 +72,13 @@ export class AllStoriesPage implements OnInit {
     this.sId=obj.ScenarioID
     if(res && res === 'T') {
       this.service.clickStory(obj.ScenarioID).subscribe(res=>{
-        
-        this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
+          this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
       })
     }  else {
       this.router.navigate(['/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
     }
+
+
     
   }
 
