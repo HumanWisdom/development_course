@@ -14,6 +14,7 @@ export class VideoContentComponent implements OnInit {
   @Input() title: string;
   @Input() poster: any;
   @Input() videoclass = '';
+  @Input() pageaction = '';
 
   @Output() sendAvDuration = new EventEmitter<string>();
   url: SafeResourceUrl;
