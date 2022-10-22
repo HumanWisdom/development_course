@@ -30764,3 +30764,27 @@ svg path
 {
   display: -webkit-inline-box;
 }
+
+.rtltext {
+  animation: fadeInRight 1s ease-in-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+  }
+}
+
+.ltrtext {
+ animation: fadeInLeft 2s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+  }
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ActiveGuard } from 'src/app/active.guard';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'view-stories',
+    canActivate:[ActiveGuard],  
     loadChildren: () => import('./view-stories/view-stories.module').then( m => m.ViewStoriesPageModule)
   },
   {

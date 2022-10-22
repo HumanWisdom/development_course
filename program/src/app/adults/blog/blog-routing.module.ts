@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActiveGuard } from 'src/app/active.guard';
+
 
 const routes: Routes = [
   {
@@ -12,6 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'blog-article',
+    canActivate:[ActiveGuard],  
     loadChildren: () => import('./blog-article/blog-article.module').then( m => m.BlogArticlePageModule),
   },
 ];
