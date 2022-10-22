@@ -653,7 +653,13 @@ submitcode(){
   }
   AddCarBeforePopuP(){
     setTimeout(() => {
+      if(this.isSubscribe){
+        this.enableMySelf=false;
+      }
       if(this.enableMySelf==false){
+        if(this.isSubscribe){
+          this.enableMySelf=false;
+        }
         this.myself = 0;
         this.enableemail = true;
         $("#optionsRadios10").prop("checked", true);

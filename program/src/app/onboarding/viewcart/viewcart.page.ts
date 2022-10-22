@@ -438,6 +438,9 @@ export class ViewcartPage implements OnInit {
     this.learnermail = ''
     this.learnermsg = ''
     setTimeout(() => {
+      if(this.isSubscribe){
+        this.enableMySelf=false;
+      }
       if(this.enableMySelf==false){
         this.myself = 0;
         this.enableemail = true;
