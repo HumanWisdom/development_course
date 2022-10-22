@@ -30766,14 +30766,12 @@ svg path
 }
 
 .rtltext {
-  animation: fadeInRight 1s ease-in-out;
+  animation: fadeInRight 2s ease-in-out;
 }
 
 @keyframes fadeInRight {
   from {
     transform: translateX(300px);
-  }
-  to {
   }
 }
 
@@ -30784,7 +30782,5 @@ svg path
 @keyframes fadeInLeft {
   from {
     transform: translateX(-300px);
-  }
-  to {
   }
 }

@@ -14,6 +14,7 @@ export class CourseHeaderComponent implements OnInit {
   @Input() path: string; //to go back to the course page from note 
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
+  @Input() pageaction = '';
   note: any
   t = new Date()
   minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
@@ -28,7 +29,7 @@ export class CourseHeaderComponent implements OnInit {
   address = this.router.url
   modName: any
   scrNumber: any
-  progress: any
+  progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
 
 
   constructor(private router: Router,
@@ -165,7 +166,7 @@ export class CourseHeaderComponent implements OnInit {
       .subscribe(
         r => {
           this.progress = parseFloat(r)
-
+          localStorage.setItem("progressbarvalue", this.progress.toString())
           setTimeout(() => {
             this.showheaderbar = true;
           }, 100)
