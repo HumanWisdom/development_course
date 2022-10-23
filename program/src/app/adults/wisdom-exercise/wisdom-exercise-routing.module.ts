@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 's75009',
     loadChildren: () => import('./s75009/s75009.module').then( m => m.S75009PageModule)
   },
+  {
+    path: 's75010',
+    loadChildren: () => import('./s75010/s75010.module').then( m => m.S75010PageModule)
+  },
   
 ];
 

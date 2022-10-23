@@ -4890,7 +4890,9 @@ table.dataTable>tbody>tr.child span.dtr-title
 	margin-right:5px!important;
 }
 
-.signature
+.
+
+
 {
 /* 	width:79.8%!important;
 	text-align:right!important; */
@@ -30764,6 +30766,167 @@ svg path
 {
   display: -webkit-inline-box;
 }
+
+.hbtn_subscribe_ext
+{
+  width: 106px;
+}
+
+.pl20pxi
+{
+  padding-left: 20px !important;
+}
+
+.mlr20px
+{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mr20px
+{
+  margin-right: 20px;
+}
+
+.ad_search_icon
+{
+  color: #5D5D5D;
+  font-size: 20px;
+  left: 8% !important;
+  text-align: center;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* adverts hamburger */
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle {
+    border: none;
+}
+
+.navbar-toggle span.icon-bar {
+    transition: all 0.15s;
+}
+
+.navbar-toggle span:nth-child(2) {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggle span:nth-child(3) {
+    opacity: 0;
+}
+
+.navbar-toggle span:nth-child(4) {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+
+.navbar-toggle.collapsed span:nth-child(2),
+.navbar-toggle.collapsed span:nth-child(4) {
+    transform: rotate(0);
+}
+
+.navbar-toggle.collapsed span:nth-child(3) {
+    opacity: 1;
+}
+
+.navbar-static-top
+{
+  position: absolute;
+  right: 0;
+}
+
+.navbar-header,
+.navbar-nav,
+.navbar-nav>li
+{
+  float: none !important;
+}
+
+.navbar-toggle
+{
+  display: block !important;
+  right: unset;
+  position: unset;
+}
+
+.navbar-default .navbar-toggle .icon-bar 
+{
+  background-color: #5d5d5d;
+}
+
+#navbar
+{
+  background: #F5F5F5;
+  padding: 40px 20px 0 20px;
+}
+
+#navbar ul
+{
+  height: 100vh;
+  overflow: auto;
+}
+
+#navbar .nav>li>a 
+{
+  padding: 20px 10px 20px 10px;
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #DADADA;
+}
+
+#navbar .navbar-nav>.active>a, 
+#navbar .navbar-nav>.active>a:focus, 
+#navbar .navbar-nav>.active>a:hover
+{
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#navbar .nav>li>a:hover 
+{
+  text-decoration: underline;
+}
+
+.mr20pxi
+{
+  margin-right: 20px !important;
+}
+
+
+.btn_htry_free 
+{
+  width: 115px;
+  height: 40px;
+  background: linear-gradient(180deg, #FFC455 0%, #FFC455 100%);
+  box-shadow: 0px 0px 1px rgb(0 0 0 / 25%);
+  border-radius: 20px;
+  border: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.mcflex_advertsh
+{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.mcflex_advertsh a 
+{
+  flex-grow: 1;
+}
+/* /adverts hamburger */
 
 .rtltext {
   animation: fadeInRight 1s ease-in-out;
