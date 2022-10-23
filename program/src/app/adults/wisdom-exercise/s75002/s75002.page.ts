@@ -28,14 +28,60 @@ startTime:any;
   slideStart=0;
   totalSlidesCount=7;
 details:string='1/8'
+vistedScreens:any[]=[];
 currentDay:number=0;
+nextDay:number=null;
+maxDay=0;
   constructor(private elementRef: ElementRef,
-    public service:AdultsService,) {
+    public service:AdultsService,private adult:AdultsService) {
       this.startTime=Date.now()
    }
 
   ngOnInit() {
-    this.next();
+    this.adult.GetVisitedScreen(this.moduleId).subscribe((x:any)=>{
+      if(x){
+        this.vistedScreens= x?.sort((a, b) =>+b.ScreenNo.substring(6,7)> +a.ScreenNo.substring(6,7) ? 1: -1);
+        this.currentDay= +this.vistedScreens[0].ScreenNo.substring(6,7)+1;
+        this.maxDay=this.currentDay;
+        this.getdayevent(this.currentDay.toString());
+      }
+    })
+   
+  }
+
+  getClass(day)
+  {
+    var dayclass='';
+    var className='';
+    if (day === '75002p0') {
+      dayclass="0";
+    }
+    else if (day === '75002p1') {
+      dayclass='1';
+    }
+    else if (day === '75002p2') {
+      dayclass='2';
+    }
+    else if (day === '75002p3') {
+      dayclass='3';
+    }
+    else if (day === '75002p4') {
+      dayclass='4';
+    }
+    else if (day === '75002p5') {
+      dayclass='5';
+    }
+
+    if(this.currentDay.toString()==dayclass){
+      className+='editable ';
+    }
+    if(this.vistedScreens.some(x=>x.ScreenNo==day)){
+     className+='inactive ';
+    }
+    if(this.nextDay==+(dayclass)){
+      className='nextDayButton ';
+    }
+    return className;
   }
 
   getdayevent(event) {
@@ -51,6 +97,7 @@ currentDay:number=0;
       this.enableday3 = false;
       this.enableday4 = false;
       this.enableday5 = false;
+      this.screenNumber= "75002p0";
       this.dayclass="intro";
     }
     else if (event === '1') {
@@ -133,10 +180,12 @@ currentDay:number=0;
   }
 
   next(){
+    this.nextDay=null;
     setTimeout(() => {
       if(this.slideStart<this.totalSlidesCount){
         this.slideStart=this.slideStart+1;
         if(this.slideStart==this.totalSlidesCount){
+          this.nextDay=this.currentDay+1;
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
@@ -146,6 +195,11 @@ currentDay:number=0;
         
       } else if(this.slideStart==this.totalSlidesCount){
           this.currentDay=this.currentDay+1;
+          this.vistedScreens.push({
+            "ScreenNo":'75002p'+ (parseInt(this.screenNumber.substring(6,7))),
+            "ModuleID":75,
+            "SessionID":0,
+            })
           this.getdayevent(this.currentDay.toString());
       }else{
         this.slideStart=1;
@@ -167,7 +221,7 @@ currentDay:number=0;
   } 
   
   back(){
-
+    this.nextDay= null;
     setTimeout(() => {
       if(this.slideStart<1){
         this.slideStart=this.totalSlidesCount
@@ -210,7 +264,7 @@ currentDay:number=0;
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        
+      
         // this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         // localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },

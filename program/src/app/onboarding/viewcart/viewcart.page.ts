@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {OnboardingService} from '../onboarding.service'
-
+import * as $ from 'jquery' 
 @Component({
   selector: 'app-viewcart',
   templateUrl: './viewcart.page.html',
@@ -437,6 +437,13 @@ export class ViewcartPage implements OnInit {
     this.enableemail = false;
     this.learnermail = ''
     this.learnermsg = ''
+    setTimeout(() => {
+      if(this.enableMySelf==false){
+        this.myself = 0;
+        this.enableemail = true;
+        $("#optionsRadios10").prop("checked", true);
+      }
+    }, 100);
   }
   Cancel(){
     localStorage.setItem('isMonthlySelectedForPayment','F');

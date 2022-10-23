@@ -4890,7 +4890,9 @@ table.dataTable>tbody>tr.child span.dtr-title
 	margin-right:5px!important;
 }
 
-.signature
+.
+
+
 {
 /* 	width:79.8%!important;
 	text-align:right!important; */
@@ -30751,6 +30753,10 @@ svg path
   word-wrap: break-word;
 }
 
+.nextDayButton{
+  background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
+  box-shadow: 0px 0px 8px 0px #0000001A;
+  }
 .hr_style_19 
 {
   border: 1px solid #5D5D5D;
@@ -30921,3 +30927,27 @@ svg path
   flex-grow: 1;
 }
 /* /adverts hamburger */
+
+.rtltext {
+  animation: fadeInRight 1s ease-in-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+  }
+}
+
+.ltrtext {
+ animation: fadeInLeft 2s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+  }
+}

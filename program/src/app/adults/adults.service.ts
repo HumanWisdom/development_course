@@ -303,4 +303,11 @@ export class AdultsService {
     return this.http.get(this.path + '/GetMyPartners');
   }
 
+   GetVisitedScreen(moduleId){
+    return this.http.get(this.path + '/GetVisitedScreens/'+moduleId);
+   }
+
+   getModuleList(): Observable<any> {
+      return this.http.get(this.path + '/modules');
+   }
 }

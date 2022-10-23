@@ -210,3 +210,14 @@ nav
   border: 0;
   color: #FFFFFF;
 }
+ 
+.autocomplete-list {
+    margin-top: 14%;
+    width: 88%;
+    margin-left: 7%;
+}
+
+li:hover,
+li:hover:before {
+  background: #93dfd7;
+}
