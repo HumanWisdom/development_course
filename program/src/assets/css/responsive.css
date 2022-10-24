@@ -586,6 +586,11 @@
     {
         max-height: 75vh;
     }
+
+    .ad_search_icon
+    {
+        left: 7% !important;
+    }
 }
 
 @media (min-width: 1025px)
