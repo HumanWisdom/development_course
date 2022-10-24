@@ -30927,14 +30927,12 @@ svg path
 /* /adverts hamburger */
 
 .rtltext {
-  animation: fadeInRight 1s ease-in-out;
+  animation: fadeInRight 2s ease-in-out;
 }
 
 @keyframes fadeInRight {
   from {
     transform: translateX(300px);
-  }
-  to {
   }
 }
 
@@ -30946,6 +30944,6 @@ svg path
   from {
     transform: translateX(-300px);
   }
-  to {
-  }
 }
+
+
