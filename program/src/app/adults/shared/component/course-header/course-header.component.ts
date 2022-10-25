@@ -25,7 +25,7 @@ export class CourseHeaderComponent implements OnInit {
   token = JSON.parse(localStorage.getItem("token"))
   urlT: any
   shared = false
-  showheaderbar = false
+  showheaderbar = true
   address = this.router.url
   modName: any
   scrNumber: any
@@ -44,7 +44,7 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showheaderbar = false;
+    this.showheaderbar = true;
     // console.log(this.ac)
     // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
 
