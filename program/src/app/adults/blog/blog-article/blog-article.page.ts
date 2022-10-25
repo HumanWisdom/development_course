@@ -56,7 +56,7 @@ export class BlogArticlePage implements OnInit {
 
          this.title.setTitle(this.blogList['Title'])
 
-        if(this.meta.getTag('property=og:type'))
+        if(this.meta.getTag("property='og:type'"))
           this.meta.updateTag({ property: 'og:type', content: 'article'})
         else
          this.meta.addTag({ property: 'og:type', content: 'article'})
@@ -64,17 +64,17 @@ export class BlogArticlePage implements OnInit {
           //this.meta.updateTag({ property: 'og:url', content: "https://staging.humanwisdom.me/course/"+ this.path})
           console.log(this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom")
           
-        if(this.meta.getTag('property=og:description'))
+        if(this.meta.getTag("property='og:description'"))
           this.meta.updateTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
         else
          this.meta.addTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
         
-        if(this.meta.getTag('property=og:image'))
+        if(this.meta.getTag("property='og:image'"))
          this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
         else
          this.meta.addTag({ property: 'og:image', content: this.blogList['ImgPath']})
 
-        if(this.meta.getTag('property=twitter:description'))
+        if(this.meta.getTag("property='twitter:description'"))
            this.meta.updateTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
         else
           this.meta.addTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
