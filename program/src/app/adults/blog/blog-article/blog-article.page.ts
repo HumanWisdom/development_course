@@ -28,6 +28,7 @@ export class BlogArticlePage implements OnInit {
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
+      this.getblog()
     });
     // this.blogid=JSON.parse(localStorage.getItem("blogId"))
    
@@ -36,7 +37,7 @@ export class BlogArticlePage implements OnInit {
 
   ngOnInit() {
    
-    this.getblog()
+  
    
   }
 
