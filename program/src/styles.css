@@ -203,7 +203,7 @@ body { margin: 0px}
   position: fixed;
 }
 body .container.body .right_col {
-  background: #F7F7F7;
+  /* background: #F7F7F7; */
 }
 .nav-md .container.body .right_col {
   padding: 10px 20px 0;
@@ -6070,7 +6070,7 @@ body {
     line-height: 1.471;
     /* color: #444!important; */
     /* background: #F7F7F7; */
-    background: #fff;
+    /* background: #fff; */
 }
 .main_container .top_nav {
     display: block;
@@ -10411,7 +10411,7 @@ body,
 .body
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/Green_Yellow.jpg) no-repeat center center fixed; */
-  background: transparent;
+  /* background: transparent; */
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/module1/module1_flat.png) no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -30927,7 +30927,7 @@ svg path
 /* /adverts hamburger */
 
 .rtltext {
-  animation: fadeInRight 2s ease-in-out;
+  animation: fadeInRight 1s ease-in-out;
 }
 
 @keyframes fadeInRight {
@@ -30937,7 +30937,7 @@ svg path
 }
 
 .ltrtext {
- animation: fadeInLeft 2s;
+ animation: fadeInLeft 1s;
 }
 
 @keyframes fadeInLeft {
