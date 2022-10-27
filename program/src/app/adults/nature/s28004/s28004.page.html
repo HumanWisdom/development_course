@@ -1,5 +1,5 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path"
-    [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" [pageaction]="ispageright" (sendBookmark)="receiveBookmark($event)"
+    [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-video-content [title]="title" [poster]="poster" [pageaction]="ispageright" [bg]="bg" [videoLink]="videoLink">
 </app-video-content>
