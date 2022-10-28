@@ -458,24 +458,10 @@ export class ViewcartPage implements OnInit {
       this.service.isActivationFlow=true;
       this.router.navigate(['/onboarding/add-to-cart']);
     }else{
-      for(var i=0;i<this.cartList.length;i++){
-        if(this.cartList[i].MySelf=="True")
-        {
-          var id=this.cartList[i].CartId;
-          this.cartList[i].Qty==1
-          this.cartList.splice(i,1)
-          this.service.deleteItem({"Id":parseFloat(id)})
-          .subscribe(res=> {
-            this.service.isActivationFlow=true;
-            this.router.navigate(['/onboarding/add-to-cart']);
-          })
-        }else{
-          this.service.isActivationFlow=true;
-          this.router.navigate(['/onboarding/add-to-cart']);
-        }
+      this.service.isActivationFlow=true;
+      this.router.navigate(['/onboarding/add-to-cart']);
       }
       console.log(this.cartList)
     }
    
   }
-}

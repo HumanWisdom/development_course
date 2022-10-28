@@ -30,7 +30,8 @@ export class TnDashboardV03Component implements OnInit {
   routeid = ''
   android = false;
   ios = false;
-
+  cardlist=[];
+  countryCode:any;
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
@@ -99,6 +100,10 @@ export class TnDashboardV03Component implements OnInit {
     this.enableplaystore = false;
     localStorage.setItem('enablebanner', 'F')
     this.playstoreenable.emit(false);
+  }
+
+  Subscribe(){
+    this.router.navigate(['/onboarding/add-to-cart']);
   }
 
   clickbanner(url = '') {

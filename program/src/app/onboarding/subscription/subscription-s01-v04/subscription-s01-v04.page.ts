@@ -98,16 +98,6 @@ export class SubscriptionS01V04Page implements OnInit {
    
 setTimeout(() => {
   console.log(this.cartList)
-  // this.cartList[0].qty = this.cartitemList.length
-  // if(this.cartitemList.length === 0){
-  //   this.cartList[0].price =  this.cartList[0]['Annual']
-  // }else {
-  //   this.cartList[0].price = this.cartitemList[0].Amt
-  //   this.cartList[0].selectedSubscription = this.cartitemList[0].Plan
-  // }
-  // this.enableData = true
-  // this.cd.detectChanges()
-
 }, 7000)
     
   }
@@ -218,37 +208,45 @@ submitcode(){
   .subscribe(
     res=>
     {
-      if(res) {
-        let code: any = 1
-      localStorage.setItem('Subscriber', code)
-      this.thirdpage = false
-      this.firstpage = false
-      this.secondpage = false;
-      this.fourthpage = true;
-      if(this.yearormonth=='Year' && this.service.isActivationFlow){
-        this.router.navigate(['/adults/hwp-premium-congratulations']);
-      }
-      }else {
-        this.secondpage = false;
-        this.thirdpage = true
-      }
-      // this.enableActivate = true;
-      // this.closemodal.nativeElement.click()
+      for(var i=0;i<this.cartList.length;i++){
+        if(this.cartList[i].MySelf=="True")
+        {
+          var id=this.cartList[i].CartId;
+          this.cartList[i].Qty==1
+          this.cartList.splice(i,1)
+          this.service.deleteItem({"Id":parseFloat(id)})
+          .subscribe(res=> {
+            if(res) {
+              let code: any = 1
+            localStorage.setItem('Subscriber', code)
+            this.thirdpage = false
+            this.firstpage = false
+            this.secondpage = false;
+            this.fourthpage = true;
+            if(this.yearormonth=='Year' && this.service.isActivationFlow){
+              this.router.navigate(['/adults/hwp-premium-congratulations']);
+            }
+            }else {
+              this.secondpage = false;
+              this.thirdpage = true
+            }
+          },
+          error=>{
+            this.secondpage = false;
+              this.thirdpage = true
+          },
+         
+          ()=>{
+            
       
-      // this.router.navigate(['/adults/adult-dashboard'])
-    },
-    error=>{
-      this.secondpage = false;
-        this.thirdpage = true
-      // window.alert(error.error['Message'])
-    },
-   
-    ()=>{
-      
-
-    }
-  )
-
+          }
+        )
+            this.service.isActivationFlow=true;
+        }else{
+          this.service.isActivationFlow=true;
+        }
+      }
+    });
 }
 
   radioevent(event) {
@@ -646,9 +644,11 @@ submitcode(){
       this.proceedcart();
       localStorage.setItem('isMonthlySelectedForPayment','F');
       this.isModalPopup=false;
+      this.service.isActivationFlow=false;
     }else{
       localStorage.setItem('isMonthlySelectedForPayment','F');
       this.isModalPopup=false;
+      this.service.isActivationFlow=false;
     }
   }
   AddCarBeforePopuP(){

@@ -29,7 +29,8 @@ export class DailyPracticePage implements OnInit {
   audioTitle = ''
   dailybreathTitle = ''
   isloggedIn = false
-
+  enablepopup=false;
+  isSubscribe=false;
   constructor(
     private route: ActivatedRoute,
     private service: AdultsService
@@ -38,6 +39,9 @@ export class DailyPracticePage implements OnInit {
   }
 
   ngOnInit() {
+    let popup = JSON.parse(localStorage.getItem("Subscriber"))
+    if(popup === 1) this.enablepopup = true
+    this.isSubscribe = popup === 0 ? false : true;
     this.dailyid = this.route.snapshot.paramMap.get('id')
     this.getdailyques();
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -85,16 +89,20 @@ export class DailyPracticePage implements OnInit {
   }
 
   subdailyques() {
-    let obj = {
-      ReflectionId: this.dailyqusrefid,
-      SubscriberId: this.userId,
-      Resp: this.questext
-    }
-    this.service.submitDailypractiseQuestion(obj).subscribe((res) => {
-      if (res) {
-        window.alert('Successfully added daily question')
+    if(!this.isloggedIn && !this.isSubscribe){
+      alert("Subscribe to activate your online journal");
+    }else{
+      let obj = {
+        ReflectionId: this.dailyqusrefid,
+        SubscriberId: this.userId,
+        Resp: this.questext
       }
-    })
+      this.service.submitDailypractiseQuestion(obj).subscribe((res) => {
+        if (res) {
+          window.alert('Successfully added daily question')
+        }
+      })
+    }
   }
 
   getTime() {
