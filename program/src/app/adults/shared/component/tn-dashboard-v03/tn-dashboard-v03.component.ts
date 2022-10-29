@@ -44,9 +44,12 @@ export class TnDashboardV03Component implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      let sub: any = localStorage.getItem("Subscriber")
-      if (sub === '1' || sub === 1) {
-        this.subscriber = true;
+      let sub: any = localStorage.getItem("Subscriber");
+      let data = localStorage.getItem('SubscriberType');
+      if(data=='Free'){
+         this.subscriber=false;
+      }else{
+        this.subscriber=true;
       }
       let userId = JSON.parse(localStorage.getItem("userId"))
 

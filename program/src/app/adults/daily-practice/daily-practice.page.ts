@@ -89,7 +89,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   subdailyques() {
-    if(!this.isloggedIn && !this.isSubscribe){
+    if(!this.isloggedIn || !this.isSubscribe){
       alert("Subscribe to activate your online journal");
     }else{
       let obj = {
