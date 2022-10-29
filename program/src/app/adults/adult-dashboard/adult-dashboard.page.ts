@@ -42,7 +42,7 @@ export class AdultDashboardPage implements OnInit {
   public bookmarks = []
   public resume = []
   public bookmarkLength: any
-
+  searchinp = '';
   //static progress mapping
   public angerP: any
   public comparisonP: any
@@ -74,6 +74,7 @@ export class AdultDashboardPage implements OnInit {
   public breathingP: any
   public ntP: any
   public gamP: any
+  searchResult=[];
   public communicationP: any
   public rmP: any
   public siP: any
@@ -130,7 +131,7 @@ export class AdultDashboardPage implements OnInit {
   public shortsList = []
   public sId: any
   hcwhP: any
-
+  public moduleList = [];
   //static progress mapping
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
@@ -150,6 +151,7 @@ export class AdultDashboardPage implements OnInit {
     public cd: ChangeDetectorRef, public fb: FormBuilder, public authService: SocialAuthService,
     public platform: Platform,
   ) {
+    this.getModuleList();
     // let remem = localStorage.getItem("remember")
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
@@ -275,6 +277,7 @@ export class AdultDashboardPage implements OnInit {
         }
       })
     }
+   
   }
 
   loginpage() {
@@ -724,7 +727,11 @@ export class AdultDashboardPage implements OnInit {
 
 
   }
-
+  getModuleList(){
+    this.service.getModuleList().subscribe(res=>{
+      this.moduleList=res;
+    })
+  }
   fbLogin(d = '') {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
@@ -3412,5 +3419,30 @@ export class AdultDashboardPage implements OnInit {
 
   wisdomexercise() {
     this.router.navigate([`/adults/wisdom-exercise/s75001`])
+  }
+
+  getinp(event) {
+    let url = `/adults/site-search/${this.searchinp}`
+    this.router.navigate([url])
+  }
+
+  getAutoCompleteList(value){
+    if(this.moduleList.length>0){
+      if(value==null|| value==""){
+        this.searchResult=[]
+      }else{
+        this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+clearSearch(){
+  this.searchinp="";
+  this.searchResult=[];
+}
+
+  searchEvent(module){
+    this.searchinp=module;
+    this.searchResult=[];
+    this.getinp(module);
   }
 }
