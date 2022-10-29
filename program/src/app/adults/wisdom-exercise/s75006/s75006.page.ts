@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { colorSets } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'HumanWisdom-s75006',
@@ -8,8 +7,8 @@ import { colorSets } from '@swimlane/ngx-charts';
 })
 export class S75006Page implements OnInit {
   dayclass = 'intro'
-  isShowTranscript=false;
-  isShowAudio=false;
+  isShowTranscript = false;
+  isShowAudio = false;
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -17,13 +16,13 @@ export class S75006Page implements OnInit {
   enableday4 = false;
   enableday5 = false;
 
-  slideStart=0;
-  totalSlidesCount=6;
-  details:string='1/8'
+  slideStart = 0;
+  totalSlidesCount = 6;
+  details: string = '1/8'
   constructor(private elementRef: ElementRef) {
-   
-  
-   }
+
+
+  }
 
   ngOnInit() {
     this.next();
@@ -31,9 +30,9 @@ export class S75006Page implements OnInit {
 
   getdayevent(event) {
     if (event === 'intro') {
-      this.slideStart=0;
-      this.totalSlidesCount=4;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 4;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = true;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -42,10 +41,10 @@ export class S75006Page implements OnInit {
       this.enableday5 = false;
     }
     else if (event === '1') {
-      this.isShowTranscript=false;
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.isShowTranscript = false;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = true;
       this.enableday2 = false;
@@ -54,9 +53,9 @@ export class S75006Page implements OnInit {
       this.enableday5 = false;
     }
     else if (event === '2') {
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = true;
@@ -65,9 +64,9 @@ export class S75006Page implements OnInit {
       this.enableday5 = false;
     }
     else if (event === '3') {
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -76,9 +75,9 @@ export class S75006Page implements OnInit {
       this.enableday5 = false;
     }
     else if (event === '4') {
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -87,9 +86,9 @@ export class S75006Page implements OnInit {
       this.enableday5 = false;
     }
     else if (event === '5') {
-      this.slideStart=0;
-      this.totalSlidesCount=9;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 9;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -100,63 +99,63 @@ export class S75006Page implements OnInit {
     this.next();
   }
 
-  next(){
+  next() {
     setTimeout(() => {
-      if(this.slideStart<this.totalSlidesCount){
-        this.slideStart=this.slideStart+1;
-      } else if(this.slideStart==this.totalSlidesCount){
-        this.slideStart=1;
-      }else{
-        this.slideStart=1;
+      if (this.slideStart < this.totalSlidesCount) {
+        this.slideStart = this.slideStart + 1;
+      } else if (this.slideStart == this.totalSlidesCount) {
+        this.slideStart = 1;
+      } else {
+        this.slideStart = 1;
       }
-      this.details=(this.slideStart>9?this.slideStart:'0'+this.slideStart) +'/' + (this.totalSlidesCount>9?this.totalSlidesCount:'0'+this.totalSlidesCount);
-     var data= this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
-     children[1]?.children[0]?.lastChild?.classList.value;
-     if(data==undefined){
-      data= this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
-      children[1]?.children[0]?.lastChild?.classList.value;
-     }
-   if(data=='audio-test'){
-   this.isShowTranscript=true;
-   }else{
-    this.isShowTranscript=false;
-    this.isShowAudio=false;
-   }
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
+        children[1]?.children[0]?.lastChild?.classList.value;
+      if (data == undefined) {
+        data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
+          children[1]?.children[0]?.lastChild?.classList.value;
+      }
+      if (data == 'audio-test') {
+        this.isShowTranscript = true;
+      } else {
+        this.isShowTranscript = false;
+        this.isShowAudio = false;
+      }
     }, 700);
-  } 
-  
-  back(){
+  }
+
+  back() {
 
     setTimeout(() => {
-      if(this.slideStart<1){
-        this.slideStart=this.totalSlidesCount
-       }
-       else if(this.slideStart==1){
-        this.slideStart=this.totalSlidesCount;
-       }
-       else{
-        this.slideStart=this.slideStart-1;
-       }
-       this.details=(this.slideStart>9?this.slideStart:'0'+this.slideStart) +'/' + (this.totalSlidesCount>9?this.totalSlidesCount:'0'+this.totalSlidesCount);
-     var data= this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
-     children[1]?.children[0]?.lastChild?.classList.value
-   if(data=='audio-test'){
-   this.isShowTranscript=true;
-   }else{
-    this.isShowTranscript=false;
-    this.isShowAudio=false;
-   }
+      if (this.slideStart < 1) {
+        this.slideStart = this.totalSlidesCount
+      }
+      else if (this.slideStart == 1) {
+        this.slideStart = this.totalSlidesCount;
+      }
+      else {
+        this.slideStart = this.slideStart - 1;
+      }
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
+        children[1]?.children[0]?.lastChild?.classList.value
+      if (data == 'audio-test') {
+        this.isShowTranscript = true;
+      } else {
+        this.isShowTranscript = false;
+        this.isShowAudio = false;
+      }
     }, 700);
-  } 
+  }
 
-  changeType(){
-    if(this.isShowTranscript){
-      this.isShowTranscript=false;
-      this.isShowAudio=true;
-    }else{
-      this.isShowTranscript=true;
-       this.isShowAudio=false;
+  changeType() {
+    if (this.isShowTranscript) {
+      this.isShowTranscript = false;
+      this.isShowAudio = true;
+    } else {
+      this.isShowTranscript = true;
+      this.isShowAudio = false;
     }
   }
-  
+
 }
