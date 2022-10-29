@@ -1,6 +1,6 @@
 import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
@@ -147,7 +147,7 @@ export class AdultDashboardPage implements OnInit {
 
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
-    public cd: ChangeDetectorRef, public fb: FormBuilder, public authService: SocialAuthService,
+    public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
     public platform: Platform,
   ) {
     // let remem = localStorage.getItem("remember")

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
@@ -23,7 +23,7 @@ export class ForgetPasswordPage implements OnInit {
   urlKey:any
   showMessage=false
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
     private router: Router,
     private activate:ActivatedRoute,
     private authService: SocialAuthService,
