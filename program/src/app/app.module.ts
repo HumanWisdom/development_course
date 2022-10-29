@@ -25,57 +25,52 @@ import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    AdultsModule,
-    OnboardingModule,
-    FormsModule,
-    HttpClientModule,
-    SocialLoginModule,
-    SplashPageModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
-    NgxCaptureModule,
-    BrowserAnimationsModule,
-    PlatformModule,
-    AngularFireModule.initializeApp(stgenvironment.firebase),
-    AngularFireAnalyticsModule
-  ],
-  providers: [
-    StatusBar,
-    FormsModule,
-    AuthGuard,
-    authLoginGuard,
-    ActiveGuard,
-    ReactiveFormsModule,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true
-    },
-    //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com'
-            )
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('238869214957032')
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
-
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+        AdultsModule,
+        OnboardingModule,
+        FormsModule,
+        HttpClientModule,
+        SocialLoginModule,
+        SplashPageModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
+        NgxCaptureModule,
+        BrowserAnimationsModule,
+        PlatformModule,
+        AngularFireModule.initializeApp(stgenvironment.firebase),
+        AngularFireAnalyticsModule
+    ],
+    providers: [
+        StatusBar,
+        FormsModule,
+        AuthGuard,
+        authLoginGuard,
+        ActiveGuard,
+        ReactiveFormsModule,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptorService,
+            multi: true
+        },
+        //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+                    },
+                    {
+                        id: FacebookLoginProvider.PROVIDER_ID,
+                        provider: new FacebookLoginProvider('238869214957032')
+                    }
+                ]
+            } as SocialAuthServiceConfig,
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
