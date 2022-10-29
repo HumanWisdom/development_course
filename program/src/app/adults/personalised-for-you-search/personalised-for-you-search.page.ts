@@ -357,4 +357,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     );
 
   }
+
+  clearSearch(){
+    this.searchinp="";
+    this.searchResult=[];
+  }
+  
 }
