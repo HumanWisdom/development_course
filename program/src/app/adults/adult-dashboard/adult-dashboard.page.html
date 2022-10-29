@@ -40,10 +40,11 @@
 
               <div class="row mt30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
-                  <input type="search" class="form-control has-feedback-left pfy_search" name="search-list" [(ngModel)]="searchinp"
+                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
                      (keyup)="getAutoCompleteList($event.target.value)"
                     (keyup.enter)="getinp($event.target.value)" placeholder="Search">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                  <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon" aria-hidden="true"></span>
                 </div>
                 <ul class="list-group autocomplete-list" *ngIf="searchResult.length>0">
                   <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
@@ -600,6 +601,7 @@
                                 </div>
                               </div>
                             </div>
+
                           </a>
                         </h4>
                       </div>
@@ -660,7 +662,7 @@
                         <h4 class="panel-title dpaneltitle">
                           <a data-toggle="collapse" data-parent="#accordion" href="#ca_ws" aria-expanded="true">
 
-                            <div class="row">
+                            <!-- <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="">
                                   <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
@@ -668,7 +670,25 @@
                                   </h2>
                                 </div>
                               </div>
+                            </div> -->
+
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
+                                    Wisdom shorts
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                  <a routerLink="/adults/wisdom-shorts">
+                                    <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
+                                      View all
+                                    </h2>
+                                  </a>
+                                </div>
+                              </div>
                             </div>
+
                           </a>
                         </h4>
                       </div>

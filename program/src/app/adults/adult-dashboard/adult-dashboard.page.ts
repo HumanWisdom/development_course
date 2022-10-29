@@ -3435,7 +3435,10 @@ export class AdultDashboardPage implements OnInit {
       }
     }
   }
-
+clearSearch(){
+  this.searchinp="";
+  this.searchResult=[];
+}
 
   searchEvent(module){
     this.searchinp=module;
