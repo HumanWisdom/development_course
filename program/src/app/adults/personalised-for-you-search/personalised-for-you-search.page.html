@@ -10,19 +10,19 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white">
         <div class="x_panel p0">
           <div class="x_content p0">
-
+           
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
-                <input type="search" class="form-control has-feedback-left pfy_search" [(ngModel)]="searchinp"
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
                    (keyup)="getAutoCompleteList($event.target.value)"
                   (keyup.enter)="getinp($event.target.value)" placeholder="Search">
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon" aria-hidden="true"></span>
               </div>
               <ul class="list-group autocomplete-list" *ngIf="searchResult.length>0">
-                <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" class="is-search list-group-item">{{item.ModuleName}}</li>
+                <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
               </ul>
             </div>
-
             <div class="row pfys_title">
               <div class="col-md-12 col-sm-12 col-xs-8">
                 <h4 class="fw_500 fs_21px lh_25px fc_000000 mtb0px">
