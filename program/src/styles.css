@@ -30946,4 +30946,26 @@ svg path
   }
 }
 
+input[type="search"].hide_search::-webkit-search-cancel-button 
+{
+  display: none !important;
+}
 
+.ad_sclose_icon
+{
+  color: #5D5D5D;
+  font-size: 20px;
+  right: 8% !important;
+  text-align: center;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 0;
+  pointer-events: all;
+}
+
+.ad_sclose_icon.fa-search:before
+{
+  content: "\f00d";
+}
