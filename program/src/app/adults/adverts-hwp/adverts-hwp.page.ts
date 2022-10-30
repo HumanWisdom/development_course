@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AdvertsHwpPage implements OnInit {
   public isGuestuser = false
   public isFirsttime = false
+  public isSubscriber = false
 
   constructor(
     public platform: Platform,
@@ -21,6 +22,12 @@ export class AdvertsHwpPage implements OnInit {
     }
     if (guest === 'T') {
       this.isGuestuser = true
+    }
+    let sub: any = localStorage.getItem('Subscriber');
+    if (sub && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
     }
   }
 
@@ -39,8 +46,10 @@ export class AdvertsHwpPage implements OnInit {
     }
   }
 
-  routedashboard() {
-    if (this.isFirsttime) {
+  routedashboard(val = '') {
+    if (val === 'free') {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }else if (this.isFirsttime) {
       this.router.navigate(['/intro/intro-carousel'])
     } else if (this.isGuestuser) {
       this.router.navigate(['/adults/adult-dashboard'])
