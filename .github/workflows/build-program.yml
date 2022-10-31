@@ -41,7 +41,7 @@ jobs:
     - name: Build the project
       run: |
         cd program
-        ionic build -- -c=staging --base-href /course/
+        ionic build --staging --base-href /course/
     
     - name: Compress the build artifacts
       run: |
