@@ -30,11 +30,8 @@ jobs:
         
     - name: Install global dependencies
       run: |
-        sudo npm cache clean -f
-        sudo npm install -g n
-        sudo n stable
         npm install -g @ionic/cli
-        npm install -g @angular/cli@latest
+        npm install -g @angular/cli
 
     - name: Install project dependencies
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
@@ -46,7 +43,7 @@ jobs:
       run: |
         cd program
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build -- -c=staging --base-href /course/ --verbose
+        ionic build --configuration=staging --base-href /course/
     
     - name: Compress the build artifacts
       run: |
