@@ -39,6 +39,7 @@ jobs:
         npm ci
 
     - name: Build the project
+    if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: |
         cd program
         ionic build --staging --base-href /course/
