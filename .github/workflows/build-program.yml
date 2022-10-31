@@ -43,7 +43,7 @@ jobs:
       run: |
         cd program
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build -- -c=staging --base-href /course/
+        ionic build --staging --base-href /course/
     
     - name: Compress the build artifacts
       run: |
