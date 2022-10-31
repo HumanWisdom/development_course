@@ -33,8 +33,7 @@ jobs:
         npm install -g @ionic/cli
         npm install -g @angular/cli
 
-    - name: Install project dependencies
-      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+    - name: Install project dependencies      
       run: |
         cd program
         npm ci
