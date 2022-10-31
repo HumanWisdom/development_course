@@ -34,16 +34,15 @@ jobs:
         npm install -g @angular/cli
 
     - name: Install project dependencies
-      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: |
         cd program
-        npm ci
+        npm install --force
 
     - name: Build the project
       run: |
         cd program
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --staging --base-href /course/
+        ionic build --configuration=staging -- --base-href /course/
     
     - name: Compress the build artifacts
       run: |
