@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
@@ -139,7 +139,7 @@ export class SubscriptionOptionsPage implements OnInit, OnDestroy {
   }, { validator: this.PasswordValidator })
 
 
-  constructor(public router: Router, private service: AdultsService, private services: OnboardingService, private cd: ChangeDetectorRef, private fb: FormBuilder, private authService: SocialAuthService) { }
+  constructor(public router: Router, private service: AdultsService, private services: OnboardingService, private cd: ChangeDetectorRef, private fb: UntypedFormBuilder, private authService: SocialAuthService) { }
 
   ngOnInit() {
     this.userId = JSON.parse(localStorage.getItem("userId"))
