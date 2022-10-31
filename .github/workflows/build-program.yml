@@ -34,7 +34,7 @@ jobs:
         sudo npm install -g n
         sudo n stable
         npm install -g @ionic/cli
-        npm install -g @angular/cli
+        npm install -g @angular/cli@latest
 
     - name: Install project dependencies
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
