@@ -158,7 +158,7 @@
                                 <div class="panel-body p0">
                                   <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                      <button type="submit" (click)="routedashboard()"
+                                      <button type="submit" [disabled]="isSubscriber" (click)="routedashboard()"
                                         class="btn btn_subscription_options">
                                         <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
                                           Yearly - 14 day free trial
@@ -176,7 +176,8 @@
 
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <button type="submit" (click)="routedashboard()" class="btn btn_subscription_options">
+                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard()"
+                                class="btn btn_subscription_options">
                                 <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
                                   Monthly - 14 day free trial
                                 </h4>
@@ -198,7 +199,7 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                               <a>
-                                <button type="button" (click)="routedashboard()"
+                                <button type="button" (click)="routedashboard('free')"
                                   class="btn h60px bg_lg_ffc4f5_01 bs_01 br_30px m0px fw_500 fs_18px lh_21px fc_000000 w100">
                                   Try for free
                                 </button>

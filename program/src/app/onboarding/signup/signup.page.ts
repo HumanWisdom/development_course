@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup,FormBuilder,Validators, AbstractControl} from '@angular/forms'
+import {FormControl, FormGroup,UntypedFormBuilder,Validators, AbstractControl} from '@angular/forms'
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {OnboardingService} from '../onboarding.service'
@@ -49,7 +49,7 @@ export class SignupPage implements OnInit {
     verificationCode:['']
   },{validator: this.PasswordValidator})
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
     private router: Router,
     private service:OnboardingService,
     private location:Location) { }
