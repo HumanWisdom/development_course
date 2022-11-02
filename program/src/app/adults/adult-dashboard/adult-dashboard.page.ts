@@ -151,7 +151,6 @@ export class AdultDashboardPage implements OnInit {
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
     public platform: Platform,
   ) {
-    this.getModuleList();
     // let remem = localStorage.getItem("remember")
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
@@ -728,9 +727,11 @@ export class AdultDashboardPage implements OnInit {
 
   }
   getModuleList(){
-    this.service.getModuleList().subscribe(res=>{
-      this.moduleList=res;
-    })
+    if(this.moduleList.length==0){
+      this.service.getModuleList().subscribe(res=>{
+        this.moduleList=res;
+      });
+    }
   }
   fbLogin(d = '') {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
