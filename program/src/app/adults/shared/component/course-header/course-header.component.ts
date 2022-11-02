@@ -1,11 +1,7 @@
-import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
-import {Location } from '@angular/common'
-import {AdultsService} from "../../../../adults/adults.service"
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-
-
-
+import { AdultsService } from "../../../../adults/adults.service";
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -18,62 +14,65 @@ export class CourseHeaderComponent implements OnInit {
   @Input() path: string; //to go back to the course page from note 
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
-  note:any
-  t=new Date()
-  minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  @Input() pageaction = '';
+  note: any
+  t = new Date()
+  minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   @Output() sendBookmark = new EventEmitter<boolean>();
-  socialShare=false
-  token=JSON.parse(localStorage.getItem("token"))
-  urlT:any
-  shared=false
-  showheaderbar=false
-  address=this.router.url
-  modName:any
-  scrNumber:any
-  progress:any
- 
+  socialShare = false
+  token = JSON.parse(localStorage.getItem("token"))
+  urlT: any
+  shared = false
+  showheaderbar = true
+  address = this.router.url
+  modName: any
+  scrNumber: any
+  progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
 
-  constructor( private router: Router,
-    private service:AdultsService,
-    private ac:ActivatedRoute,
-    private ngNavigatorShareService: NgNavigatorShareService  
-    ) {
-      if(this.router.getCurrentNavigation()) {
-        this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
-      }
-      this.ngNavigatorShareService = ngNavigatorShareService;
-     }
+
+  constructor(private router: Router,
+    private service: AdultsService,
+    private ac: ActivatedRoute,
+    private ngNavigatorShareService: NgNavigatorShareService
+  ) {
+    if (this.router.getCurrentNavigation()) {
+      this.urlT = this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t : ''
+    }
+    this.ngNavigatorShareService = ngNavigatorShareService;
+  }
 
   ngOnInit() {
-   this.showheaderbar = false;
-  // console.log(this.ac)
-   // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
-    
-   // var modLast=module.lastIndexOf("/")
+    this.showheaderbar = true;
+    // console.log(this.ac)
+    // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
+
+    // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
 
+    if (this.path.includes('next') || this.path.includes('prev')) {
+      let lastSlash: any = this.path.split("/");
+      let getsplit = lastSlash[lastSlash.length - 2]
+      this.scrNumber = getsplit.substring(1);
+      this.getProgress(this.scrNumber)
+    } else {
+      var lastSlash = this.path.lastIndexOf("/");
+      this.scrNumber = this.path.substring(lastSlash + 2);
+      this.getProgress(this.scrNumber)
+    }
+    this.shared = false
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
 
-    var lastSlash = this.path.lastIndexOf("/");
-     this.scrNumber=this.path.substring(lastSlash+2);
-
-    this.getProgress(this.scrNumber)
-    this.shared=false
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-  
-    if (this.urlT)
-    {
-      this.shared=true
-      this.socialShare=true
+    if (this.urlT) {
+      this.shared = true
+      this.socialShare = true
     }
   }
-  toggleBookmark(){
-    this.bookmark=!this.bookmark
-   
+  toggleBookmark() {
+    this.bookmark = !this.bookmark
+
     this.sendBookmark.emit(this.bookmark)
   }
   addZero(i) {
@@ -83,99 +82,96 @@ export class CourseHeaderComponent implements OnInit {
     return i;
   }
 
- 
-  addToken(){
-   // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
-   this.socialShare=true
-   
-   if(this.urlT)
-   {
-    
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.urlT}`
 
-   }
-   else{
-   
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.token}`
-   }
- 
-   
+  addToken() {
+    // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
+    this.socialShare = true
 
-   //history.replaceState(null, null,'course#'+ this.address+`?t=${this.token}`);
-   //history.replaceState(null, null, this.address+`?t=${this.token}`);
-   
+    if (this.urlT) {
+
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+
+    }
+    else {
+
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+    }
+
+
+
+    //history.replaceState(null, null,'course#'+ this.address+`?t=${this.token}`);
+    //history.replaceState(null, null, this.address+`?t=${this.token}`);
+
   }
 
-  courseNote(){
-    this.router.navigate(['/adults/coursenote',{path:this.path}])
+  courseNote() {
+    this.router.navigate(['/adults/coursenote', { path: this.path }])
   }
 
-  goToToc(){
-    this.router.navigate(['/adults/'+this.toc])
+  goToToc() {
+    this.router.navigate(['/adults/' + this.toc])
   }
 
-  goToDash(){
+  goToDash() {
     this.router.navigate(['/adults/adult-dashboard'])
   }
 
-  addNote(){
+  addNote() {
     this.service.submitJournal({
-      "JournalId":0,
-      "JDate":this.minDate,
-      "Title":"Module Note",
-      "Notes":this.note,
-      "UserId":this.userId
+      "JournalId": 0,
+      "JDate": this.minDate,
+      "Title": "Module Note",
+      "Notes": this.note,
+      "UserId": this.userId
 
-    }).subscribe((res) => {},
-    error=>{
-      console.log(error)
-    },
-    ()=>{
-     
-    })
+    }).subscribe((res) => { },
+      error => {
+        console.log(error)
+      },
+      () => {
+
+      })
   }
 
   share() {
-    
+
     if (!this.ngNavigatorShareService.canShare()) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }
-    if(this.urlT)
-   {
-    
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.urlT}`
+    if (this.urlT) {
 
-   }
-   else{
-   
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.token}`
-   }
- 
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+
+    }
+    else {
+
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+    }
+
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
       url: this.path
-    }).then( (response) => {
+    }).then((response) => {
       console.log(response);
     })
-    .catch( (error) => {
-      console.log(error);
-    });
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  getProgress(p)
-  {
+  getProgress(p) {
     this.service.screenProgress(p)
-    .subscribe(
-      r=>{
-        this.progress=parseFloat(r)
-       
-        setTimeout(() => {
-          this.showheaderbar = true;
-        }, 100)
-      }
-    )
+      .subscribe(
+        r => {
+          this.progress = parseFloat(r)
+          localStorage.setItem("progressbarvalue", this.progress.toString())
+          setTimeout(() => {
+            this.showheaderbar = true;
+          }, 100)
+        }
+      )
 
   }
 

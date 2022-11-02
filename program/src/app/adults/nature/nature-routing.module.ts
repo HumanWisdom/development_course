@@ -20,84 +20,84 @@ import { S28015Page } from './s28015/s28015.page';
 
 const routes: Routes = [
   {
-    path: '',  
+    path: '',
     component: S28001Page,
-  }, 
+  },
   {
-    path: 's28001',    
-    canActivate:[ActiveGuard],  
+    path: 's28001',
+    canActivate: [ActiveGuard],
     component: S28001Page,
   },
   {
     path: 's28002',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28002Page,
   },
   {
-    path: 's28003',    
-    canActivate:[ActiveGuard],  
+    path: 's28003',
+    canActivate: [ActiveGuard],
     component: S28003Page,
-  },   
+  },
   {
-    path: 's28004',
-    canActivate:[ActiveGuard],  
+    path: 's28004/:action',
+    canActivate: [ActiveGuard],
     component: S28004Page,
   },
   {
     path: 's28005',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28005Page,
   },
   {
     path: 's28006',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28006Page,
   },
   {
     path: 's28007',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28007Page,
   },
   {
     path: 's28008',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28008Page,
   },
   {
     path: 's28009',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28009Page,
   },
   {
     path: 's28010',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28010Page,
   },
   {
     path: 's28011',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28011Page,
   },
   {
     path: 's28012',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28012Page,
   },
   {
     path: 's28013',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28013Page,
   },
   {
     path: 's28014',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28014Page,
   },
   {
     path: 's28015',
-    canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S28015Page,
-  },  
+  },
 ];
 
 @NgModule({

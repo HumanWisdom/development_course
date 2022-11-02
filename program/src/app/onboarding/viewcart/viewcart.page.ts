@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {OnboardingService} from '../onboarding.service'
-
+import * as $ from 'jquery' 
 @Component({
   selector: 'app-viewcart',
   templateUrl: './viewcart.page.html',
@@ -437,6 +437,16 @@ export class ViewcartPage implements OnInit {
     this.enableemail = false;
     this.learnermail = ''
     this.learnermsg = ''
+    setTimeout(() => {
+      if(this.isSubscribe){
+        this.enableMySelf=false;
+      }
+      if(this.enableMySelf==false){
+        this.myself = 0;
+        this.enableemail = true;
+        $("#optionsRadios10").prop("checked", true);
+      }
+    }, 100);
   }
   Cancel(){
     localStorage.setItem('isMonthlySelectedForPayment','F');
@@ -448,24 +458,10 @@ export class ViewcartPage implements OnInit {
       this.service.isActivationFlow=true;
       this.router.navigate(['/onboarding/add-to-cart']);
     }else{
-      for(var i=0;i<this.cartList.length;i++){
-        if(this.cartList[i].MySelf=="True")
-        {
-          var id=this.cartList[i].CartId;
-          this.cartList[i].Qty==1
-          this.cartList.splice(i,1)
-          this.service.deleteItem({"Id":parseFloat(id)})
-          .subscribe(res=> {
-            this.service.isActivationFlow=true;
-            this.router.navigate(['/onboarding/add-to-cart']);
-          })
-        }else{
-          this.service.isActivationFlow=true;
-          this.router.navigate(['/onboarding/add-to-cart']);
-        }
+      this.service.isActivationFlow=true;
+      this.router.navigate(['/onboarding/add-to-cart']);
       }
       console.log(this.cartList)
     }
    
   }
-}

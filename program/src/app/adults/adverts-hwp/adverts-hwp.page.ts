@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'HumanWisdom-adverts-hwp',
@@ -7,11 +7,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./adverts-hwp.page.scss'],
 })
 export class AdvertsHwpPage implements OnInit {
+  public isGuestuser = false
+  public isFirsttime = false
+  public isSubscriber = false
 
   constructor(
     public platform: Platform,
     private router: Router
-  ) { }
+  ) {
+    let guest = localStorage.getItem('guest');
+    let firsttime = localStorage.getItem('first');
+    if (firsttime === 'T' || !firsttime) {
+      this.isFirsttime = true
+    }
+    if (guest === 'T') {
+      this.isGuestuser = true
+    }
+    let sub: any = localStorage.getItem('Subscriber');
+    if (sub && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
+    }
+  }
 
   ngOnInit() {
   }
@@ -28,8 +46,14 @@ export class AdvertsHwpPage implements OnInit {
     }
   }
 
-  routedashboard() {
-    this.router.navigate(['/adults/adult-dashboard'])
+  routedashboard(val = '') {
+    if (val === 'free') {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }else if (this.isFirsttime) {
+      this.router.navigate(['/intro/intro-carousel'])
+    } else if (this.isGuestuser) {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
   }
 
 }

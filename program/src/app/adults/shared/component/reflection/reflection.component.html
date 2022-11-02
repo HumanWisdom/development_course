@@ -1,20 +1,20 @@
 <!-- top navigation - with hint -->
 <div *ngIf="hint" class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01" [ngClass]="bg_tn">
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 flex_ai">
+      <div class="p0 mr20px">
         <a class="" (click)="goToDash()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg" class="img-responsive" alt="HumanWisdom">
         </a>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+      <div class="p0">
         <a class="" (click)="goToToc()" > 
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive" alt="HumanWisdom">
         </a>
       </div>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 flex_ai">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 flex_ai">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
         <h6 class="fw_500 fs_16px fc_ffc455 tcenter">
           Reflection   
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai jc_flexend rmargin">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 flex_ai jc_flexend rmargin">
       <a aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reflection_hint.svg" class="img-responsive" alt="">
       </a>
@@ -142,7 +142,7 @@
                     <div class="input-group cinputgroup1">                    
 
                       <a class="">
-                        <div class="box tleft flex_left jbox1 cbr1">                                                
+                        <div class="box tleft flex_left jbox2 cbr1">                                                
                           <input class="inp-cbx" id="cb1" type="checkbox" name="shared"[(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)"/>
                           <label class="cbx mt0px" for="cb1">
                             <span>
