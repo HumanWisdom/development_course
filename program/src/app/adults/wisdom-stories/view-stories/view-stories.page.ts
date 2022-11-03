@@ -306,7 +306,7 @@ export class ViewStoriesPage implements OnInit {
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
-      url: this.path+'?sId='+this.sId
+      url: this.path+'?sId='+this.sId +'?t='+ JSON.parse(localStorage.getItem("token"))
     }).then( (response) => {
     })
     .catch( (error) => {
