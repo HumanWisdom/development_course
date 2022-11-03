@@ -97,7 +97,10 @@ createScreen(){
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
-      error=>{console.log(error)},
+      error=>{
+        console.log(error)
+        this.router.navigate(['/adults/criticism/s376'])
+      },
       ()=>{
         this.router.navigate(['/adults/criticism/s376'])
       })

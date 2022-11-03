@@ -14,11 +14,11 @@ export class ActiveGuard implements CanActivate, OnInit {
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
   constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
-
+    console.log(this.t)
 
   }
   ngOnInit() {
-
+     
   }
 
   canActivate(next: ActivatedRouteSnapshot,
@@ -28,25 +28,7 @@ export class ActiveGuard implements CanActivate, OnInit {
       let sub: any = localStorage.getItem("Subscriber")
 
       m = m.split('?')
-      /*For Life Stories */
-       if(m[0].includes("view-stories") ===true  || 
-       m[0].includes("blog-article") ===true){  
-        if(sub==='1')    
-        {
-          return true;
-        }
-        else{
-
-          if ((m[1]==="sId=1" || m[1]==="sId=2" || m[1]==="sId=3")==false){
-            this.router.navigate(['/onboarding/free-limit'])
-            return false;
-          }
-          else{
-            return true;
-          }
-        }
       
-      }
 
     let str = next.routeConfig.path;
     this.scrId = str.substring(1, str.length + 1);
@@ -58,9 +40,28 @@ export class ActiveGuard implements CanActivate, OnInit {
     }
   
      
-    if (sub === '1' || m[1]?.slice(0, 2) === 't=') {
+    if (sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined ) {
       return true;
-    } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
+    }
+   else if(m[0].includes("view-stories") ===true  || m[0].includes("blog-article") ===true)
+    {  
+     if(sub==='1')    
+     {
+       return true;
+     }
+     else{
+
+       if ((m[1]==="sId=1" || m[1]==="sId=2" || m[1]==="sId=3")==false){
+         this.router.navigate(['/onboarding/free-limit'])
+         return false;
+       }
+       else{
+         return true;
+       }
+     }
+   
+   }
+   else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
       return true;
     } else {
       // window.alert('You Have Reached Free Limit')
