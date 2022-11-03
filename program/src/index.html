@@ -121,10 +121,13 @@
 
 
   <script>
+     
     // load Branch
     (function (b, r, a, n, c, h, _, s, d, k) { if (!b[n] || !b[n]._q) { for (; s < _.length;)c(h, _[s++]); d = r.createElement(a); d.async = 1; d.src = "https://cdn.branch.io/branch-latest.min.js"; k = r.getElementsByTagName(a)[0]; k.parentNode.insertBefore(d, k); b[n] = h } })(window, document, "script", "branch", function (b, r) { b[r] = function () { b._q.push([r, arguments]) } }, { _q: [], _v: 1 }, "addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
     // init Branch
-    branch.init('key_live_bp4YDTtrt396i4nbsYtbvofaszix6xAP');
+       branch.init('key_test_gnZ0qVCtA902l7liwWAawcmkssjzWrtZ',
+                  {'tracking_disabled' : false});
+                 
   </script>
 </head>
 
@@ -428,30 +431,6 @@
     });
   </script>
 
-  <!-- firebase -->
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBvrX8WpyA4YoqdzwhNOmCG4tDP34_92Nc",
-    authDomain: "human-wisdom-program-303708.firebaseapp.com",
-    projectId: "human-wisdom-program-303708",
-    storageBucket: "human-wisdom-program-303708.appspot.com",
-    messagingSenderId: "907009432190",
-    appId: "1:907009432190:web:5855b9c076f6d0ff86d62f",
-    measurementId: "G-1WBHRGL7VH"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 
 </body>
 
