@@ -23,7 +23,8 @@ export class TnDashboardV03Component implements OnInit {
   name = ''
   roleid = 0
   url = '';
-  subscriber = false;
+  subscriber = true;
+  isShowbookMark=false;
   @Input()
   enableplaystore = false
   @Input()
@@ -45,11 +46,12 @@ export class TnDashboardV03Component implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       let sub: any = localStorage.getItem("Subscriber");
-      let data = localStorage.getItem('SubscriberType');
-      if(data=='Free'){
-         this.subscriber=false;
+      if(sub=='1'){
+         this.subscriber=true;
+         this.isShowbookMark=true;
       }else{
-        this.subscriber=true;
+        this.subscriber=false;
+        this.isShowbookMark=false;
       }
       let userId = JSON.parse(localStorage.getItem("userId"))
 

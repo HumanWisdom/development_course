@@ -278,7 +278,7 @@ submitcode(){
 
   msginput(event) {
     this.learnermsg = event.target.value;
-  }
+  } 
 
   getCountry(){
     this.service.getCountry().subscribe((res:any)=>{  
@@ -600,7 +600,14 @@ submitcode(){
     this.totalPrice()  
   }
 
-  
+  ValidateEmail() {
+    var validRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    if (this.learnermail.match(validRegex)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   totalPrice(){
     //this.selectedSubscription="annual"
