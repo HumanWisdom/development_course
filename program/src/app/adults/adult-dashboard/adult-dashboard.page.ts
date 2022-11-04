@@ -157,6 +157,9 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
+      setTimeout(() => {
+        this.getModuleList();
+      }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
       localStorage.setItem('acceptcookie', 'T')
@@ -726,10 +729,17 @@ export class AdultDashboardPage implements OnInit {
 
 
   }
-  getModuleList(){
+  getModuleList(isLoad?){
     if(this.moduleList.length==0){
       this.service.getModuleList().subscribe(res=>{
         this.moduleList=res;
+        if(isLoad==true){
+          if(this.searchinp==''){
+            this.searchResult=this.moduleList;
+          }else{
+            this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+          }
+        }
       });
     }
   }
@@ -3336,6 +3346,14 @@ export class AdultDashboardPage implements OnInit {
   goToYourWisdomScoreComponent() {
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
   }
+  onFocus(){
+    this.getModuleList(true);
+    if(this.searchinp==''){
+      this.searchResult=this.moduleList;
+    }else{
+      this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
 
   routehowcanwisdomhelp(cont: any = 1) {
     var hcwhR
@@ -3430,11 +3448,17 @@ export class AdultDashboardPage implements OnInit {
   getAutoCompleteList(value){
     if(this.moduleList.length>0){
       if(value==null|| value==""){
-        this.searchResult=[]
+        this.searchResult=this.moduleList;
       }else{
         this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
     }
+  }
+
+  onFocusOutEvent(){
+  setTimeout(() => {
+    this.searchResult=[];
+  }, 500);
   }
 clearSearch(){
   this.searchinp="";
@@ -3446,4 +3470,11 @@ clearSearch(){
     this.searchResult=[];
     this.getinp(module);
   }
+
+  // GetWisdomScreens(){
+  //   let result=[];
+  //    this.service.GetWisdomScreens().subscribe(res=>{
+  //     result=res.filter(x=>x.completed=='0');
+  //    })
+  // }
 }
