@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./s75001/s75001.module').then( m => m.S75001PageModule)
+  },
+  {
     path: 's75001',
     loadChildren: () => import('./s75001/s75001.module').then( m => m.S75001PageModule)
   },
@@ -41,6 +45,18 @@ const routes: Routes = [
   {
     path: 's75010',
     loadChildren: () => import('./s75010/s75010.module').then( m => m.S75010PageModule)
+  },
+  {
+    path: 's75011',
+    loadChildren: () => import('./s75011/s75011.module').then( m => m.S75011PageModule)
+  },
+  {
+    path: 's75012',
+    loadChildren: () => import('./s75012/s75012.module').then( m => m.S75012PageModule)
+  },
+  {
+    path: 's75013',
+    loadChildren: () => import('./s75013/s75013.module').then( m => m.S75013PageModule)
   },
   
 ];
