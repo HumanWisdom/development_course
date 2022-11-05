@@ -1,11 +1,8 @@
 import { Component, HostListener } from '@angular/core';
-
 import {
   Platform
 } from '@angular/cdk/platform';
 import { NavigationEnd, Router } from '@angular/router';
-import { DeviceDetectorService } from 'ngx-device-detector';
-import { LogEventService } from './log-event.service';
 
 @Component({
   selector: 'app-root',
@@ -26,9 +23,7 @@ export class AppComponent {
 
   constructor(
     private platform: Platform,
-    private router: Router,
-    private deviceService: DeviceDetectorService,
-    private logeventService: LogEventService,
+    private router: Router
   ) {
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
@@ -36,10 +31,6 @@ export class AppComponent {
       localStorage.setItem('acceptcookie', 'T')
     }
     this.initializeApp();
-    let device_info: any = this.deviceService.getDeviceInfo()
-    delete device_info.userAgent
-    delete device_info.orientation
-    this.logeventService.logEvent('device_info', { details: JSON.stringify(device_info) })
   }
 
   initializeApp() {
