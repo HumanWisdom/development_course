@@ -3441,7 +3441,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getinp(event) {
-    let url = `/adults/site-search/${this.searchinp}`
+    let url = `/adults/site-search/${event}`
     this.router.navigate([url])
   }
 
