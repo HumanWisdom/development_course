@@ -169,8 +169,6 @@ export class AdultDashboardPage implements OnInit {
     if (this.platform.IOS) {
       localStorage.setItem('acceptcookie', 'T')
     }
-    
-    this.logeventservice.logEvent('dashboard', { name: localStorage.getItem('name') })
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
