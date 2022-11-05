@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { colorSets } from '@swimlane/ngx-charts';
+//import { colorSets } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'HumanWisdom-s75011',
