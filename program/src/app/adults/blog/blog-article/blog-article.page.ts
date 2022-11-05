@@ -134,7 +134,7 @@ export class BlogArticlePage implements OnInit {
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
-      url: this.path
+      url: this.path+'&t='+ JSON.parse(localStorage.getItem("token"))
     }).then((response) => {
       console.log(response);
     })

@@ -468,8 +468,18 @@
 
           <div class="row mt20px" *ngIf="enableemail">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <input type="text" class="form-control cfc6" [(ngModel)]="learnermail" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
-            </div>
+              
+                <input [class.is-invalid]="emailRef.invalid && emailRef.touched" 
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                #emailRef="ngModel" 
+                  type="email" class="form-control cfc6" [(ngModel)]="learnermail" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
+                
+                <div *ngIf="(emailRef.touched && emailRef.invalid)">
+                <span *ngIf="emailRef.errors?.required" class="text-danger" >Email address is required</span>
+                <span class="text-danger" *ngIf="emailRef.errors">Email address is invalid</span>
+                </div>
+             
+              </div>
           </div>
 
           <div class="row mt10px" *ngIf="enableemail">
@@ -499,7 +509,8 @@
           <div class="row mt40px mb40px">
             <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
               <a>
-                <button type="button" class="btn btn-warning mb0 proceed_cart w100" [disabled]="enableemail && learnermail === ''" data-dismiss="modal" (click)="enableedit ? addToCart() : addtoCart()">Done</button>
+                <button type="button" class="btn btn-warning mb0 proceed_cart w100"
+                 [disabled]="enableemail && (learnermail === '' || ValidateEmail())" data-dismiss="modal" (click)="enableedit ? addToCart() : addtoCart()">Done</button>
               </a>
             </div>
           </div> 

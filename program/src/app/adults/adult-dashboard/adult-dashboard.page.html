@@ -41,7 +41,8 @@
               <div class="row mt30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
                   <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
-                     (keyup)="getAutoCompleteList($event.target.value)"
+                     (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" 
+                     (focusout)="onFocusOutEvent ()"
                     (keyup.enter)="getinp($event.target.value)" placeholder="Search">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                   <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon" aria-hidden="true"></span>

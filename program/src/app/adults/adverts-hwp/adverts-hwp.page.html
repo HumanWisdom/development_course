@@ -158,13 +158,13 @@
                                 <div class="panel-body p0">
                                   <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                      <button type="submit" [disabled]="isSubscriber" (click)="routedashboard()"
+                                      <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('Yearly')"
                                         class="btn btn_subscription_options">
                                         <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
-                                          Yearly - 14 day free trial
+                                          Yearly
                                         </h4>
                                         <h4 class="fw_400 fs_18px lh_21px mtb0px">
-                                          £72.00/year - Save 25%
+                                          {{cardlist['CurSymbol'] + ' ' + cardlist['Annual']}}/year - Save 25%
                                         </h4>
                                       </button>
                                     </div>
@@ -176,13 +176,13 @@
 
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard()"
+                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('Monthly')"
                                 class="btn btn_subscription_options">
                                 <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
-                                  Monthly - 14 day free trial
+                                  Monthly
                                 </h4>
                                 <h4 class="fw_400 fs_18px lh_21px mtb0px">
-                                  £7.99/month
+                                  {{cardlist['CurSymbol'] + ' ' + cardlist['Monthly']}}/month
                                 </h4>
                               </button>
                             </div>

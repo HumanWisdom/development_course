@@ -46,15 +46,22 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.isloggedIn = true
     }
   }
-  getModuleList(){
+  getModuleList(isLoad?){
     this.aservice.getModuleList().subscribe(res=>{
       this.moduleList=res;
+      if(isLoad){
+        if(this.searchinp==''){
+          this.searchResult=this.moduleList;
+        }else{
+          this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+        }
+      }
     })
   }
   getAutoCompleteList(value){
     if(this.moduleList.length>0){
       if(value==null|| value==""){
-        this.searchResult=[]
+        this.searchResult=this.moduleList;
       }else{
         this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
@@ -345,6 +352,21 @@ export class PersonalisedForYouSearchPage implements OnInit {
       }
     });
   }
+
+  onFocus(){
+    this.getModuleList(true);
+    if(this.searchinp==''){
+      this.searchResult=this.moduleList;
+    }else{
+      this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
+
+  onFocusOutEvent(){
+    setTimeout(() => {
+      this.searchResult=[];
+    }, 400);
+    }
 
   signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"

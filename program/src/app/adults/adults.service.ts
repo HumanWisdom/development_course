@@ -310,4 +310,9 @@ export class AdultsService {
    getModuleList(): Observable<any> {
       return this.http.get(this.path + '/modules');
    }
+
+   GetWisdomScreens():Observable<any> {
+    return this.http.get(this.path + '/GetWisdomScreens');
+   }
+
 }

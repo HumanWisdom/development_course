@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
+import { LogEventService } from './../../log-event.service';
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -74,7 +75,7 @@ export class AdultDashboardPage implements OnInit {
   public breathingP: any
   public ntP: any
   public gamP: any
-  searchResult=[];
+  searchResult = [];
   public communicationP: any
   public rmP: any
   public siP: any
@@ -150,14 +151,17 @@ export class AdultDashboardPage implements OnInit {
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
     public platform: Platform,
+    public logeventservice: LogEventService
   ) {
-    this.getModuleList();
     // let remem = localStorage.getItem("remember")
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
+    setTimeout(() => {
+      this.getModuleList();
+    }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
       localStorage.setItem('acceptcookie', 'T')
@@ -165,6 +169,8 @@ export class AdultDashboardPage implements OnInit {
     if (this.platform.IOS) {
       localStorage.setItem('acceptcookie', 'T')
     }
+    
+    this.logeventservice.logEvent('dashboard', { name: localStorage.getItem('name') })
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
@@ -277,7 +283,7 @@ export class AdultDashboardPage implements OnInit {
         }
       })
     }
-   
+
   }
 
   loginpage() {
@@ -727,10 +733,19 @@ export class AdultDashboardPage implements OnInit {
 
 
   }
-  getModuleList(){
-    this.service.getModuleList().subscribe(res=>{
-      this.moduleList=res;
-    })
+  getModuleList(isLoad?) {
+    if (this.moduleList.length == 0) {
+      this.service.getModuleList().subscribe(res => {
+        this.moduleList = res;
+        if (isLoad == true) {
+          if (this.searchinp == '') {
+            this.searchResult = this.moduleList;
+          } else {
+            this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+          }
+        }
+      });
+    }
   }
   fbLogin(d = '') {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
@@ -3335,6 +3350,14 @@ export class AdultDashboardPage implements OnInit {
   goToYourWisdomScoreComponent() {
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
   }
+  onFocus() {
+    this.getModuleList(true);
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
 
   routehowcanwisdomhelp(cont: any = 1) {
     var hcwhR
@@ -3422,27 +3445,40 @@ export class AdultDashboardPage implements OnInit {
   }
 
   getinp(event) {
-    let url = `/adults/site-search/${this.searchinp}`
+    let url = `/adults/site-search/${event}`
     this.router.navigate([url])
   }
 
-  getAutoCompleteList(value){
-    if(this.moduleList.length>0){
-      if(value==null|| value==""){
-        this.searchResult=[]
-      }else{
-        this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
     }
   }
-clearSearch(){
-  this.searchinp="";
-  this.searchResult=[];
-}
 
-  searchEvent(module){
-    this.searchinp=module;
-    this.searchResult=[];
+  onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 500);
+  }
+  clearSearch() {
+    this.searchinp = "";
+    this.searchResult = [];
+  }
+
+  searchEvent(module) {
+    this.searchinp = module;
+    this.searchResult = [];
     this.getinp(module);
   }
+
+  // GetWisdomScreens(){
+  //   let result=[];
+  //    this.service.GetWisdomScreens().subscribe(res=>{
+  //     result=res.filter(x=>x.completed=='0');
+  //    })
+  // }
 }
