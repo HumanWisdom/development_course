@@ -22,6 +22,7 @@ import { authLoginGuard } from './auth-login.guard';
 import { AuthGuard } from './auth.guard';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
+import {LogEventService} from './log-event.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -46,6 +47,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
         AuthGuard,
         authLoginGuard,
         ActiveGuard,
+        LogEventService,
         ReactiveFormsModule,
         {
             provide: HTTP_INTERCEPTORS,

@@ -68,6 +68,7 @@
     "ng2-charts": "^2.2.3",
     "ngx-capture": "^0.10.2",
     "ngx-circular-player": "0.0.3",
+    "ngx-device-detector": "^4.0.1",
     "ngx-sharebuttons": "^8.0.5",
     "ngx-social-share": "^1.0.0",
     "nouislider": "^14.6.3",
@@ -114,4 +115,3 @@
   },
   "description": "An Ionic project"
 }
-
