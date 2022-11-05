@@ -338,7 +338,8 @@ body .container.body .right_col {
 }
 body {
   color: #73879C;
-  background: #2A3F54;
+  /* background: #2A3F54; */
+  background: #000000;
   font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
   font-size: 13px;
   font-weight: 400;
@@ -23141,6 +23142,7 @@ ul.dh_ul li
   right: 0;
   left: 0;
   margin: 0 auto;
+  z-index: 9;
   /* width: 100%;
   display: flex;
   align-items: center;
@@ -30980,4 +30982,13 @@ input[type="search"].hide_search::-webkit-search-cancel-button
   color: #5D5D5D;
   border-radius: 5px 0 0 5px;
   padding: 0 1rem !important;
+}
+
+.ellipsis_01
+{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
 }
