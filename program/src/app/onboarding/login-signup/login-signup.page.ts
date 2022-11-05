@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { AngularFireAnalytics } from '@angular/fire/analytics';
 import { AbstractControl, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
@@ -103,8 +102,7 @@ export class LoginSignupPage implements OnInit {
     private activate: ActivatedRoute,
     private authService: SocialAuthService,
     private aservice: AdultsService,
-    private service: OnboardingService,
-    private analytics: AngularFireAnalytics
+    private service: OnboardingService
   ) {
     // let acceptCookie = localStorage.getItem('acceptcookie');
     // if(acceptCookie === null)
@@ -123,7 +121,6 @@ export class LoginSignupPage implements OnInit {
     });
     localStorage.setItem("remember", "T");
     localStorage.setItem("firsttime", "T");
-    this.analytics.logEvent('login', { name: 'humanwisdom user' });
   }
 
   ngOnInit() {
