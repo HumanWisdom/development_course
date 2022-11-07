@@ -14,9 +14,7 @@ export class ActiveGuard implements CanActivate, OnInit {
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
   constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
-    console.log(this.t)
-
-  }
+   }
   ngOnInit() {
      
   }
