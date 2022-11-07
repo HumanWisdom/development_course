@@ -198,7 +198,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '0']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '0', click_breathing_exercise)">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_01.svg"
                                     alt="Wisdom Stories" class="crimg">
@@ -209,7 +209,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '1']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '1', click_question_of_the_day)">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_01.svg"
                                     alt="Journal" class="crimg">
@@ -220,7 +220,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '2']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '2','click_daily_inspiration')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_01.svg"
                                     alt="Testimonials" class="crimg">
@@ -231,7 +231,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '3']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '3', 'click_audio_meditation')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_01.svg"
                                     alt="Forum" class="crimg">
@@ -242,7 +242,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '4']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise_01.svg"
                                     alt="Forum" class="crimg">
@@ -282,7 +282,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a [routerLink]="['/adults/search']">
+                                  <a (click)="DashboardLogevent('/adults/search', '', 'click_personalised')" >
                                     <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
                                       View all
                                     </h2>
