@@ -12,13 +12,14 @@ export class LogEventService {
         private deviceService: DeviceDetectorService
     ) { }
 
-    logEvent(eventname: string, param:string, val: string) {
-        let userinfo;
+    logEvent(eventname: string, param: string, val: string) {
         let obj = {};
         let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User'
         let device_info: any = this.deviceService.getDeviceInfo()
-        userinfo = name + ', ' + device_info.os + ', ' + device_info.browser + ', ' + device_info.device
-        val = val + ', ' + userinfo
+        this.analytics.logEvent(eventname, { username: name });
+        this.analytics.logEvent(eventname, { deviceOS: device_info.os });
+        this.analytics.logEvent(eventname, { deviceBrowser: device_info.browser });
+        this.analytics.logEvent(eventname, { device: device_info.device });
         obj[param] = val;
         this.analytics.logEvent(eventname, obj);
     }
