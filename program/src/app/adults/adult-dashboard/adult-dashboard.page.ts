@@ -3472,11 +3472,6 @@ export class AdultDashboardPage implements OnInit {
     this.searchResult = [];
     this.getinp(module);
   }
-  
-  dailyPracticeRoute(route, params) {
-this.logeventservice.logEvent('click_breathing_exercise');
-this.router.navigate([route, params]);
-}
 
   // GetWisdomScreens(){
   //   let result=[];
