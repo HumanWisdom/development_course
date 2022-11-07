@@ -1,10 +1,8 @@
 import { Component, HostListener } from '@angular/core';
-
 import {
   Platform
 } from '@angular/cdk/platform';
 import { NavigationEnd, Router } from '@angular/router';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +23,6 @@ export class AppComponent {
 
   constructor(
     private platform: Platform,
-    private statusBar: StatusBar,
     private router: Router
   ) {
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
