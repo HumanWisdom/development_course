@@ -3474,7 +3474,7 @@ export class AdultDashboardPage implements OnInit {
   }
   
   dailyPracticeRoute(route, params) {
-this.logeventservice.logEvent('Breathing Exercise', 'click', 'dailypractice');
+this.logeventservice.logEvent('click_breathing_exercise');
 this.router.navigate([route, params]);
 }
 
