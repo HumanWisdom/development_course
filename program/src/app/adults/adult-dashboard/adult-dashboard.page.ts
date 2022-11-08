@@ -1,11 +1,13 @@
 import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
 import { LogEventService } from './../../log-event.service';
+
+declare const gtag: Function;
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -133,15 +135,15 @@ export class AdultDashboardPage implements OnInit {
   public sId: any
   hcwhP: any
   public moduleList = [];
-  public exerciseNo:string='';
-  public day:string='';
+  public exerciseNo: string = '';
+  public day: string = '';
   //static progress mapping
-  public wisdomExerciseList=[];
+  public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
   mediaPercent: any
   freeScreens = []
-  currentList=[];
+  currentList = [];
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -162,6 +164,11 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        gtag('config', 'G-44RHVTTNB8', { '/adults/adult-dashboard': event.urlAfterRedirects });
+      }
+    })
     setTimeout(() => {
       this.getModuleList();
       this.GetWisdomScreens();
@@ -3478,46 +3485,46 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-  GetWisdomScreens(){
-     this.service.GetWisdomScreens().subscribe(res=>{
-     this.wisdomExerciseList=res;
-     let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
-     console.log(data.length);
-     let exercise= this.wisdomExerciseList[data.length];
-     this.exerciseNo=exercise.SessionNo.charAt (exercise.SessionNo.length-1);
-     this.day = exercise.ScreenNo.charAt(exercise.ScreenNo.length-1);
+  GetWisdomScreens() {
+    this.service.GetWisdomScreens().subscribe(res => {
+      this.wisdomExerciseList = res;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      console.log(data.length);
+      let exercise = this.wisdomExerciseList[data.length];
+      this.exerciseNo = exercise.SessionNo.charAt(exercise.SessionNo.length - 1);
+      this.day = exercise.ScreenNo.charAt(exercise.ScreenNo.length - 1);
       console.log(this.day);
-      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo)){
-            let obj={
-              "SessionNo": item.SessionNo,
-              "ScreenNo": item.ScreenNo,
-              "completed": item.completed,
-              "day": item.ScreenNo.charAt(item.ScreenNo.length-1)
-            }
-            this.currentList.push(obj);
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo)) {
+        let obj = {
+          "SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": item.ScreenNo.charAt(item.ScreenNo.length - 1)
+        }
+        this.currentList.push(obj);
       }
-        console.log(this.currentList);
-     })
+      console.log(this.currentList);
+    })
   }
 
-  getWisdomClass(exercise){
-       if(exercise.completed=='1'){
-        return 'inactive';
-       }else if(exercise.completed=='0' && this.day == exercise.day){
-            return 'editable';
-       }else{
-        return 'active';
-       }
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return 'inactive';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return 'editable';
+    } else {
+      return 'active';
+    }
   }
-  
+
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(params !='') {
+    if (params != '') {
       this.router.navigate([route, params]);
-    }else { 
-    this.router.navigate([route]) 
+    } else {
+      this.router.navigate([route])
     }
-    }
+  }
 
 
   // GetWisdomScreens(){
