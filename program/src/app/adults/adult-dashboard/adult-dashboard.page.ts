@@ -3477,6 +3477,7 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
+
   GetWisdomScreens(){
      this.service.GetWisdomScreens().subscribe(res=>{
      this.wisdomExerciseList=res;
@@ -3520,4 +3521,12 @@ export class AdultDashboardPage implements OnInit {
     }
 
   
+
+  // GetWisdomScreens(){
+  //   let result=[];
+  //    this.service.GetWisdomScreens().subscribe(res=>{
+  //     result=res.filter(x=>x.completed=='0');
+  //    })
+  // }
+
 }
