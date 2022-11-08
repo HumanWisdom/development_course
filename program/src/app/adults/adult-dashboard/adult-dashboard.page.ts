@@ -3508,4 +3508,16 @@ export class AdultDashboardPage implements OnInit {
         return 'active';
        }
   }
+
+  
+  DashboardLogevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(params !='') {
+      this.router.navigate([route, params]);
+    }else { 
+    this.router.navigate([route]) 
+    }
+    }
+
+  
 }
