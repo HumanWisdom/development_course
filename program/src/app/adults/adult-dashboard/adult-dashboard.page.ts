@@ -3477,11 +3477,11 @@ export class AdultDashboardPage implements OnInit {
   
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(params !='') {
+    if(params !='' && route !='') {
       this.router.navigate([route, params]);
-    }else { 
-    this.router.navigate([route]) 
-    }
+    }else if(route !='') { 
+      this.router.navigate([route]) 
+      }
     }
 
 
