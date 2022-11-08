@@ -131,7 +131,7 @@
       </li>
 
       <li>
-        <a routerLink="/adults/podcast/podcast-toc" class="p0 b0px">
+        <a (click)="Logevent('/adults/podcast/podcast-toc', '', 'click_podcast_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -149,7 +149,7 @@
       </li>
 
       <li *ngIf="isloggedIn  && subscriber">
-        <a routerLink="/onboarding/myprogram" class="p0 b0px">
+        <a (click)="Logevent('/onboarding/myprogram', '', 'click_MySubscription_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -167,7 +167,7 @@
       </li>
 
       <li *ngIf="!platform.IOS">
-        <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
+        <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_Subscribe_Hamburger')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -185,7 +185,7 @@
       </li>
 
       <li>
-        <a routerLink="/adults/refer-friend" class="p0 b0px">
+        <a  (click)="Logevent('/adults/refer-friend', '', 'click_refer_friend_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -218,7 +218,7 @@
       </li> -->
 
       <li>
-        <a routerLink="/adults/hwp-project" class="p0 b0px">
+        <a (click)="Logevent('/adults/hwp-project', '', 'click_hwp_project_Hamburger')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -236,7 +236,7 @@
       </li>
 
       <li>
-        <a routerLink="/adults/treesisters" class="p0 b0px">
+        <a  (click)="Logevent('/adults/treesisters', '', 'click_treesisters_Hamburger')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -389,7 +389,7 @@
             </li>
 
             <li>
-              <a class="p0 b0px" routerLink="/adults/partnership-webpage/partnership-index/">
+              <a class="p0 b0px" (click)="Logevent('/adults/partnership-webpage/partnership-index/', '', 'click_About_Partnership_Hamburger')"   >
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -491,7 +491,7 @@
             </li> -->
 
             <li>
-              <a routerLink="/adults/help-support/faq" class="p0 b0px">
+              <a (click)="Logevent('/adults/help-support/faq', '', 'click_FAQ_Hamburger')"  class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -524,7 +524,7 @@
             </li> -->
 
             <li>
-              <a routerLink="/adults/help-support/support" class="p0 b0px">
+              <a  (click)="Logevent('/adults/help-support/support', '', 'click_Contact_Us_Hamburger')"  class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -542,7 +542,7 @@
             </li>
 
             <li>
-              <a routerLink="/adults/help-support/terms-conditions" class="p0 b0px">
+              <a  (click)="Logevent('/adults/help-support/terms-conditions', '', 'click_terms_conditions_Hamburger')"  class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -687,7 +687,7 @@
       <!-- /multilayer li -->
 
       <li *ngIf="platform.IOS">
-        <a routerLink="/adults/add-to-home-screen-ios" class="p0 b0px">
+        <a  (click)="Logevent('/adults/add-to-home-screen-ios', '', 'click_Add_HomeScreen_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -705,7 +705,7 @@
       </li>
 
       <li>
-        <a href="https://humanwisdom.me/newsletter.html" class="p0 b0px">
+        <a  (click)="Logevent('https://humanwisdom.me/newsletter.html', '', 'click_newsletter_Hamburger')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -723,7 +723,7 @@
       </li>
 
       <li>
-        <a routerLink="/adults/events" class="p0 b0px">
+        <a (click)="Logevent('/adults/events', '', 'click_events_Hamburger')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">

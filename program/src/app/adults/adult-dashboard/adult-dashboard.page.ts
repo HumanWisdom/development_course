@@ -3350,6 +3350,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   goToYourWisdomScoreComponent() {
+    this.logeventservice.logEvent('click_wisdom_score');
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
   }
   onFocus() {
