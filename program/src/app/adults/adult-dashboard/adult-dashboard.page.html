@@ -1725,62 +1725,31 @@
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 plr0px pb5px">
                               <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px bold">
-                                #1 See the world freshly
+                                #{{exerciseNo}} See the world freshly
                               </h4>
                             </div>
                           </div>
 
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" (click)="routewisdomexercise(0)" class="btn m0px btn_wed inactive">
+                             <ng-container *ngFor="let item of currentList">
+                              <div class="col-md-3 col-sm-3 col-xs-3" >
+                                <a routerLink="/adults/wisdom-exercise" *ngIf="item.ScreenNo =='75002p0';else notIntro">
+                                  <button type="button" (click)="routewisdomexercise(0)" class="btn m0px btn_wec"  [ngClass]="getWisdomClass(item)">
                                     Intro
                                   </button>
                                 </a>
                               </div>
-
+                            <ng-template #notIntro>
                               <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed active">
-                                    Day 1
+                                <a routerLink="/adults/wisdom-exercise">
+                                  <button type="button" class="btn m0px btn_wec" [ngClass]="getWisdomClass(item)">
+                                   {{item.day}}
                                   </button>
                                 </a>
                               </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 2
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 3
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 4
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 5
-                                  </button>
-                                </a>
-                              </div>
-
+                            </ng-template>
+                          </ng-container>
                             </div>
                           </div>
 
