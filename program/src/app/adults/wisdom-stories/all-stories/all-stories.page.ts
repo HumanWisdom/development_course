@@ -35,7 +35,7 @@ export class AllStoriesPage implements OnInit {
           let dateres = res.sort((a, b) => b['PublishedOn'] - a['PublishedOn'])
       
           
-          if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F') {
+          if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F' || localStorage.getItem("Subscriber")=='0' ) {
 
             res = new Array()
             res = dateres.filter(p => p.ScenarioID >= 1 && p.ScenarioID <= 3)

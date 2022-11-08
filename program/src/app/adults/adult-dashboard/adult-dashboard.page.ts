@@ -3477,6 +3477,7 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
+
   GetWisdomScreens(){
      this.service.GetWisdomScreens().subscribe(res=>{
      this.wisdomExerciseList=res;
@@ -3508,4 +3509,22 @@ export class AdultDashboardPage implements OnInit {
         return 'active';
        }
   }
+  
+  DashboardLogevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(params !='') {
+      this.router.navigate([route, params]);
+    }else { 
+    this.router.navigate([route]) 
+    }
+    }
+
+
+  // GetWisdomScreens(){
+  //   let result=[];
+  //    this.service.GetWisdomScreens().subscribe(res=>{
+  //     result=res.filter(x=>x.completed=='0');
+  //    })
+  // }
+
 }
