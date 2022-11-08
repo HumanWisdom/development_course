@@ -3473,6 +3473,18 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
+
+  
+  DashboardLogevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(params !='') {
+      this.router.navigate([route, params]);
+    }else { 
+    this.router.navigate([route]) 
+    }
+    }
+
+
   // GetWisdomScreens(){
   //   let result=[];
   //    this.service.GetWisdomScreens().subscribe(res=>{
