@@ -8,12 +8,15 @@ import { AdvertsWorkPageRoutingModule } from './adverts-work-routing.module';
 
 import { AdvertsWorkPage } from './adverts-work.page';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AdvertsWorkPageRoutingModule
+    AdvertsWorkPageRoutingModule,
+    SharedModule
   ],
   declarations: [AdvertsWorkPage]
 })
