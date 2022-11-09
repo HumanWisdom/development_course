@@ -3510,6 +3510,7 @@ export class AdultDashboardPage implements OnInit {
         return 'active';
        }
   }
+
   
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
@@ -3520,6 +3521,7 @@ export class AdultDashboardPage implements OnInit {
       }
     }
 
+  
 
   // GetWisdomScreens(){
   //   let result=[];
