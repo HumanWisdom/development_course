@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { OnboardingService } from "src/app/onboarding/onboarding.service";
+import { LogEventService } from "src/app/log-event.service";
+
 
 import {
   getSupportedInputTypes,
@@ -34,7 +36,8 @@ export class HamburgerComponent implements OnInit {
   constructor(
     private router: Router,
     private Onboardingservice: OnboardingService,
-    public platform: Platform
+    public platform: Platform,
+    public logeventservice: LogEventService
   ) {}
 
   getmenuevent() {
@@ -55,13 +58,14 @@ export class HamburgerComponent implements OnInit {
       let nameupdate = localStorage.getItem("nameupdate");
       if (nameupdate) {
         this.name = nameupdate;
-      } else {
+      } else if(userres) {
         this.name = userres["Name"];
       }
       if (userid === "T") {
         this.isloggedIn = true;
       }
       let userId = JSON.parse(localStorage.getItem("userId"));
+      console.log(userid)
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
         localStorage.setItem("isPartner", res[0].IsPartner);
@@ -96,6 +100,7 @@ export class HamburgerComponent implements OnInit {
   }
 
   logout() {
+    this.logeventservice.logEvent('click_logout_Hamburger')
     if (confirm("Are you sure you want to logout ?") === true) {
       if (this.platform.isBrowser) {
         localStorage.setItem("isloggedin", "F");
@@ -112,6 +117,7 @@ export class HamburgerComponent implements OnInit {
   }
 
   giftwisdom() {
+    this.logeventservice.logEvent('click_gift_wisdom_Hamburger')
     localStorage.setItem("giftwisdom", "T");
   }
 
@@ -124,6 +130,7 @@ export class HamburgerComponent implements OnInit {
   } */
 
   routeToPartnerScreen() {
+    this.logeventservice.logEvent('click_My_Partnership_Hamburger')
     if (this.partnerOption == "ReceiveIncome") {
       this.router.navigate(["adults/partnership-report/income-activity"]);
     } else {
@@ -134,6 +141,7 @@ export class HamburgerComponent implements OnInit {
   }
 
   RouteToFaq() {
+    this.logeventservice.logEvent('click_Partnership_FAQ_Hamburger')
     this.router.navigate(["/adults/partnership-webpage/partnership-index/"], {
       state: {
         isPartnerFaq: true,
@@ -173,6 +181,7 @@ export class HamburgerComponent implements OnInit {
   // }
 
   RouteToBecomeAPartner() {
+    this.logeventservice.logEvent('click_BecomeAPartner_Hamburger')
     //  localStorage.setItem("navigateToUpgradeToPremium","true");
     if (localStorage.getItem("isloggedin") == "F" || localStorage.getItem("isloggedin") == null) {
       var retVal = confirm("To become a Partner you will need to Complete Registration and login?");
@@ -187,4 +196,13 @@ export class HamburgerComponent implements OnInit {
       this.router.navigate(["/adults/partnership-app"]);
     }
   }
+
+  Logevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(params !='' && route !='') {
+      this.router.navigate([route, params]);
+    }else if(route !='') { 
+      this.router.navigate([route]) 
+      }
+    }
 }
