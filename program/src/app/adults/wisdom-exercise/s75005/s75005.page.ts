@@ -50,8 +50,8 @@ export class S75005Page implements OnInit {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
         var data =x.filter(x=>x.ScreenNo.includes('75005'));
-        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
+        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6,b.ScreenNo.length ) > +a.ScreenNo.substring(6, b.ScreenNo.length) ? 1 : -1);
+        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, this.vistedScreens[0].ScreenNo.length) + 1;
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
@@ -424,7 +424,7 @@ export class S75005Page implements OnInit {
       } else if (this.slideStart == this.totalSlidesCount) {
         this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '75005p' + (parseInt(this.screenNumber.substring(6, 7))),
+          "ScreenNo": '75005p' + (parseInt(this.screenNumber.substring(6, this.screenNumber.length))),
           "ModuleID": 75,
           "SessionID": 0,
         })
