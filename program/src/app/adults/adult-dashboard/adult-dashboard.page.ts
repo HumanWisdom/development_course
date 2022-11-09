@@ -3350,6 +3350,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   goToYourWisdomScoreComponent() {
+    this.logeventservice.logEvent('click_wisdom_score');
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
   }
   onFocus() {
@@ -3513,11 +3514,11 @@ export class AdultDashboardPage implements OnInit {
   
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(params !='') {
+    if(params !='' && route !='') {
       this.router.navigate([route, params]);
-    }else { 
-    this.router.navigate([route]) 
-    }
+    }else if(route !='') { 
+      this.router.navigate([route]) 
+      }
     }
 
   

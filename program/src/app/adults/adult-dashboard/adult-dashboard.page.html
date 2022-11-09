@@ -178,7 +178,7 @@
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
                         <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#adp" aria-expanded="true">
+                          <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#adp" aria-expanded="true" >
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="">
@@ -272,7 +272,7 @@
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
                         <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_pfy" aria-expanded="true">
+                          <a (click)="DashboardLogevent('', '', 'click_personalised')" data-toggle="collapse" data-parent="#accordion" href="#ca_pfy" aria-expanded="true">
 
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -328,7 +328,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv">
 
                   <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a routerLink="/adults/wisdom-stories">
+                    <a  (click)="DashboardLogevent('/adults/wisdom-stories', '', 'click_life_stories')"  >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/life_stories.svg"
                           alt="" class="prelative">
@@ -338,7 +338,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/journal">
+                    <a (click)="DashboardLogevent('/adults/journal', '', 'click_journal')" routerLink=>
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_journaling.svg"
@@ -349,7 +349,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/forum">
+                    <a (click)="DashboardLogevent('/forum', '', 'click_forum')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/forum.svg" alt=""
                           class="prelative">
@@ -359,7 +359,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/blog">
+                    <a (click)="DashboardLogevent('/adults/blog', '', 'click_blog')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/blog.svg" alt=""
                           class="prelative">
@@ -369,7 +369,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/events">
+                    <a (click)="DashboardLogevent('/adults/events', '', 'click_events')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/events.svg" alt=""
                           class="prelative">
@@ -381,7 +381,7 @@
                   </div>
 
                   <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a routerLink="/adults/wisdom-shorts">
+                    <a (click)="DashboardLogevent('/adults/wisdom-shorts', '', 'click_wisdom_shorts')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_shorts.svg"
                           alt="" class="prelative">
@@ -391,7 +391,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/podcast">
+                    <a (click)="DashboardLogevent('/adults/podcast', '', 'click_podcasts')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/podcasts.svg"
                           alt="" class="prelative">
@@ -411,7 +411,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/testimonials">
+                    <a (click)="DashboardLogevent('/adults/testimonials', '', 'click_testimonials')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/testimonials.svg"
                           alt="" class="prelative">
