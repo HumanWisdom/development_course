@@ -79,14 +79,14 @@
                       </div>
 
                       <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                           <div class="row tcenter center_flex">
                             <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
                               <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video>  -->
-                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata"> 
-                                <source [src]="videoLink" type="video/mp4">                                              
+                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" > 
+                                <source [src]="videoLink" type="video/mp4" >                                               
                               </video> 
                             </div>
                           </div>
@@ -227,7 +227,7 @@
                           
                           <div class="row tcenter">
                             <div class="col-md-12 col-sm-12 col-xs-12 p7rem" *ngIf="audioLink !== ''">
-                              <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>
+                              <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="Logevent('click_play_audio_meditation')" #audio ></ngx-circular-player>
                             </div>
                           </div>
                         </div>
