@@ -1,13 +1,11 @@
 import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
 import { LogEventService } from './../../log-event.service';
-
-declare const gtag: Function;
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -164,11 +162,9 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        gtag('config', 'G-44RHVTTNB8', { '/adults/adult-dashboard': event.urlAfterRedirects });
-      }
-    })
+
+    this.logeventservice.logEvent('ga4sampletest');
+
     setTimeout(() => {
       this.getModuleList();
       this.GetWisdomScreens();
@@ -3518,18 +3514,18 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  
+
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(params !='' && route !='') {
+    if (params != '' && route != '') {
       this.router.navigate([route, params]);
-    }else if(route !='') { 
-      this.router.navigate([route]) 
-      }
+    } else if (route != '') {
+      this.router.navigate([route])
     }
   }
+}
 
-  
+
 
   // GetWisdomScreens(){
   //   let result=[];
@@ -3537,5 +3533,3 @@ export class AdultDashboardPage implements OnInit {
   //     result=res.filter(x=>x.completed=='0');
   //    })
   // }
-
-}
