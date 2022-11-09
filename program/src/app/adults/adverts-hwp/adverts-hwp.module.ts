@@ -8,12 +8,15 @@ import { AdvertsHwpPageRoutingModule } from './adverts-hwp-routing.module';
 
 import { AdvertsHwpPage } from './adverts-hwp.page';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AdvertsHwpPageRoutingModule
+    AdvertsHwpPageRoutingModule,
+    SharedModule
   ],
   declarations: [AdvertsHwpPage]
 })

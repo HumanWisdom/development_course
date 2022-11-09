@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
 import { AdultsService } from '../adults.service';
+import { Router } from '@angular/router';
+import { LogEventService } from './../../log-event.service';
+
 
 declare var $: any;
 @Component({
@@ -33,7 +36,9 @@ export class DailyPracticePage implements OnInit {
   isSubscribe=false;
   constructor(
     private route: ActivatedRoute,
-    private service: AdultsService
+    private service: AdultsService,
+    public router: Router,
+    public logeventservice: LogEventService
   ) {
     this.getdailyquestion();
   }
@@ -89,6 +94,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   subdailyques() {
+    this.logeventservice.logEvent('click_ add_to_Journal');
     if(!this.isloggedIn || !this.isSubscribe){
       alert("Subscribe to activate your online journal");
     }else{
@@ -105,8 +111,10 @@ export class DailyPracticePage implements OnInit {
     }
   }
 
-  getTime() {
-
+ 
+  Logevent(evtName) {
+    console.log('hi')
+    this.logeventservice.logEvent(evtName);
   }
 
 }
