@@ -5,6 +5,8 @@ import { Location } from "@angular/common";
 import * as $ from 'jquery';
 import { BehaviorSubject, Subject } from "rxjs";
 import { addEventListener } from "@ionic/core/dist/types/utils/helpers";
+import { LogEventService } from "src/app/log-event.service";
+
 @Component({
   selector: "app-index",
   templateUrl: "./index.page.html",
@@ -33,6 +35,7 @@ export class IndexPage implements OnInit,AfterViewInit {
     private rout: ActivatedRoute,
     public service: AdultsService,
     private location: Location,
+    public logeventservice: LogEventService,
     private elementRef:ElementRef
   ) {
    
@@ -69,6 +72,7 @@ export class IndexPage implements OnInit,AfterViewInit {
   }
 
   goToNote(jId, jTitle, jNotes, type) {
+    this.logeventservice.logEvent('click_ journal_add_note');
     this.router.navigate([
       "/adults/note",
       { title: jTitle, jId: jId, jNotes: jNotes, type: type },
@@ -144,6 +148,7 @@ export class IndexPage implements OnInit,AfterViewInit {
     }
   }
   YourDiary() {
+    this.logeventservice.logEvent('click_journal_YourDiary');
     this.isDiary = true;
     this.isGuidedQueestionsTab = false;
     this.viewJournalAndReflections();
@@ -156,11 +161,13 @@ export class IndexPage implements OnInit,AfterViewInit {
     }, 200);
   }
   GuidedQuestionTab() {
+    this.logeventservice.logEvent('click_journal_guided_questions');
     this.isDiary = false;
     this.isGuidedQueestionsTab = true;
     this.GetGuidedQs_Topics();
   }
   searchText($event) {
+    this.logeventservice.logEvent('click_search');
     if ($event.target.value == "") {
       this.viewJournalAndReflections();
       this.getDailyQuestion();
