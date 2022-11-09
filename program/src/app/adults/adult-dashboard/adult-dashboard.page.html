@@ -1734,7 +1734,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
                              <ng-container *ngFor="let item of currentList">
                               <div class="col-md-3 col-sm-3 col-xs-3" >
-                                <a routerLink="/adults/wisdom-exercise" *ngIf="item.ScreenNo =='75002p0';else notIntro">
+                                <a routerLink="/adults/wisdom-exercise" *ngIf="item.day =='0';else notIntro">
                                   <button type="button" (click)="routewisdomexercise(0)" class="btn m0px btn_wec"  [ngClass]="getWisdomClass(item)">
                                     Intro
                                   </button>
@@ -1743,7 +1743,7 @@
                             <ng-template #notIntro>
                               <div class="col-md-3 col-sm-3 col-xs-3">
                                 <a routerLink="/adults/wisdom-exercise">
-                                  <button type="button" class="btn m0px btn_wec" [ngClass]="getWisdomClass(item)">
+                                  <button type="button" class="btn m0px btn_wec"(click)="routewisdomexercise(0)"  [ngClass]="getWisdomClass(item)">
                                    {{item.day}}
                                   </button>
                                 </a>
