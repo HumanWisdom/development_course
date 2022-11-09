@@ -8,12 +8,15 @@ import { AdvertsStudentPageRoutingModule } from './adverts-student-routing.modul
 
 import { AdvertsStudentPage } from './adverts-student.page';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AdvertsStudentPageRoutingModule
+    AdvertsStudentPageRoutingModule,
+    SharedModule
   ],
   declarations: [AdvertsStudentPage]
 })
