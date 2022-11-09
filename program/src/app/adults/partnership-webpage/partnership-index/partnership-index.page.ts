@@ -43,6 +43,7 @@ export class PartnershipIndexPage implements OnInit {
     this.isHowItWorks=true;
     this.isOtherBenefits=true;
 
+    /*
     setTimeout(() => {
       window.scrollTo({
         behavior: 'smooth',
@@ -51,6 +52,12 @@ export class PartnershipIndexPage implements OnInit {
           document.body.getBoundingClientRect().top -
           150,
       })
+    }, 100);
+    */
+
+    setTimeout(() => 
+    {
+      window.scrollTo({ top: 400, behavior: 'smooth' });
     }, 100);
   }
 
