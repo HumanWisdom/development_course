@@ -1,6 +1,87 @@
 <div class="wrapper">
   <!-- top navigation -->
-  <app-tn-advert></app-tn-advert>
+  <div class="dtn">
+
+    <!-- top navigation -->
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px onscrollbg">
+        <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+          <a (click)="routedashboard()">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_01.svg" class="img-responsive" alt="HumanWisdom">
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+        </div> -->
+
+        <!-- hamburger -->
+        <nav class="navbar navbar-default navbar-static-top">
+
+          <div class="row dtn_default flex_ai">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+
+              <div class="mcflex_advertsh">
+
+                <button type="button" class="navbar-toggle collapsed m0px" data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+
+                <button type="button" class="btn m0px mr20pxi fright btn_htry_free">
+                  Try for free
+                </button>
+
+                <a class="" (click)="routedashboard()">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_01.svg"
+                    alt="HumanWisdom" class="img-responsive">
+                </a>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div id="navbar" class="collapse">
+            <ul class="nav navbar-nav fw_400 fs_18px lh_21px fc_000000">
+              <li class="active">
+                <a routerLink="/adults/adverts-about/">
+                  Our Story
+                </a>
+              </li>
+              <li>
+                <a routerLink="/adults/adverts-hwp-app/">
+                  The HumanWisdom App
+                </a>
+              </li>
+              <li>
+                <a routerLink="/adults/adverts-work/">
+                  HumanWisdom for Work
+                </a>
+              </li>
+              <li>
+                <a routerLink="/adults/adverts-student/">
+                  HumanWisdom for Students
+                </a>
+              </li>
+              <li>
+                <a href="https://humanwisdom.me/course/onboarding/login">
+                  Login
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+        <!-- /hamburger -->
+
+      </div>
+    </div>
+    <!-- /top navigation -->
+
+  </div>
   <!-- /top navigation -->
 
   <!-- page content -->
@@ -379,7 +460,203 @@
                     </div>
 
                     <!-- accordion -->
-                    <app-ft-advert></app-ft-advert>
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <!-- accordion -->
+                        <div class="panel-group panel_adverts" id="panel_adverts">
+
+                          <!-- get humanwisdom -->
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#padverts_a1">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+                                        <h4 class="fw_400 fs_18px lh_140p fc_5d5d5d mtb0px">
+                                          Get HumanWisdom
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="padverts_a1" class="panel-collapse collapse">
+                              <div class="panel-body">
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <ul class="advert_ft_ul">
+                                      <a class="">
+                                        <li class="">
+                                          Send a gift
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Redeem subscription code
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          HumanWisdom for Work
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          HumanWisdom for Education
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Subscribe to HumanWisdom Premium
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Subscribe to newsletter
+                                        </li>
+                                      </a>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /get humanwisdom -->
+
+                          <!-- about us -->
+                          <div class="panel panel-default mt30px">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#padverts_a2">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+                                        <h4 class="fw_400 fs_18px lh_140p fc_5d5d5d mtb0px">
+                                          About Us
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="padverts_a2" class="panel-collapse collapse">
+                              <div class="panel-body">
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <ul class="advert_ft_ul">
+                                      <a class="">
+                                        <li class="">
+                                          About HumanWisdom
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          About the app
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Testimonials
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Blog
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Partnership Program
+                                        </li>
+                                      </a>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /about us -->
+
+                          <!-- support -->
+                          <div class="panel panel-default mt30px">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#padverts_a3">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+                                        <h4 class="fw_400 fs_18px lh_140p fc_5d5d5d mtb0px">
+                                          Support
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="padverts_a3" class="panel-collapse collapse">
+                              <div class="panel-body">
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <ul class="advert_ft_ul">
+                                      <a class="">
+                                        <li class="">
+                                          Help
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Contact us
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Terms & Conditions
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Privacy Policy
+                                        </li>
+                                      </a>
+
+                                      <a class="">
+                                        <li class="">
+                                          Cookie Policy
+                                        </li>
+                                      </a>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /support -->
+
+                        </div>
+                      </div>
+                    </div>
                     <!-- /accordion -->
 
 
