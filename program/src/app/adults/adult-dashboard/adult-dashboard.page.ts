@@ -133,15 +133,15 @@ export class AdultDashboardPage implements OnInit {
   public sId: any
   hcwhP: any
   public moduleList = [];
-  public exerciseNo:string='';
-  public day:string='';
+  public exerciseNo: string = '';
+  public day: string = '';
   //static progress mapping
-  public wisdomExerciseList=[];
+  public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
   mediaPercent: any
   freeScreens = []
-  currentList=[];
+  currentList = [];
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -162,6 +162,9 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
+
+    this.logeventservice.logEvent('ga4sampletest');
+
     setTimeout(() => {
       this.getModuleList();
       this.GetWisdomScreens();
@@ -3479,49 +3482,50 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-  GetWisdomScreens(){
-     this.service.GetWisdomScreens().subscribe(res=>{
-     this.wisdomExerciseList=res;
-     let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
-     console.log(data.length);
-     let exercise= this.wisdomExerciseList[data.length];
-     this.exerciseNo=exercise.SessionNo.charAt (exercise.SessionNo.length-1);
-     this.day = exercise.ScreenNo.charAt(exercise.ScreenNo.length-1);
+  GetWisdomScreens() {
+    this.service.GetWisdomScreens().subscribe(res => {
+      this.wisdomExerciseList = res;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      console.log(data.length);
+      let exercise = this.wisdomExerciseList[data.length];
+      this.exerciseNo = exercise.SessionNo.charAt(exercise.SessionNo.length - 1);
+      this.day = exercise.ScreenNo.charAt(exercise.ScreenNo.length - 1);
       console.log(this.day);
-      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo)){
-            let obj={
-              "SessionNo": item.SessionNo,
-              "ScreenNo": item.ScreenNo,
-              "completed": item.completed,
-              "day": item.ScreenNo.charAt(item.ScreenNo.length-1)
-            }
-            this.currentList.push(obj);
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo)) {
+        let obj = {
+          "SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": item.ScreenNo.charAt(item.ScreenNo.length - 1)
+        }
+        this.currentList.push(obj);
       }
-        console.log(this.currentList);
-     })
+      console.log(this.currentList);
+    })
   }
 
-  getWisdomClass(exercise){
-       if(exercise.completed=='1'){
-        return 'inactive';
-       }else if(exercise.completed=='0' && this.day == exercise.day){
-            return 'editable';
-       }else{
-        return 'active';
-       }
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return 'inactive';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return 'editable';
+    } else {
+      return 'active';
+    }
   }
 
-  
+
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(params !='' && route !='') {
+    if (params != '' && route != '') {
       this.router.navigate([route, params]);
-    }else if(route !='') { 
-      this.router.navigate([route]) 
-      }
+    } else if (route != '') {
+      this.router.navigate([route])
     }
+  }
+}
 
-  
+
 
   // GetWisdomScreens(){
   //   let result=[];
@@ -3529,5 +3533,3 @@ export class AdultDashboardPage implements OnInit {
   //     result=res.filter(x=>x.completed=='0');
   //    })
   // }
-
-}

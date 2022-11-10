@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { NgxCaptureModule } from 'ngx-capture';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { StripeModule } from "stripe-angular";
 import { environment } from '../environments/environment';
 import { ActiveGuard } from './active.guard';
@@ -20,9 +21,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { authLoginGuard } from './auth-login.guard';
 import { AuthGuard } from './auth.guard';
+import { LogEventService } from './log-event.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
-import {LogEventService} from './log-event.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -39,7 +40,9 @@ import {LogEventService} from './log-event.service';
         BrowserAnimationsModule,
         PlatformModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFireAnalyticsModule
+        AngularFireAnalyticsModule,
+        NgxGoogleAnalyticsModule.forRoot('G-44RHVTTNB8'),
+        NgxGoogleAnalyticsRouterModule
     ],
     providers: [
         StatusBar,
