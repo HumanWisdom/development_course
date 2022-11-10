@@ -33,7 +33,7 @@ export class S75012Page implements OnInit {
   endTime: any;
   startTime: any;
   moduleId: number = 75;
-  screenNumber='750012p0';
+  screenNumber='75012p0';
   totalTime:any;
   bookmark: number = 0;
   screenType: string = "8";
@@ -46,9 +46,9 @@ export class S75012Page implements OnInit {
   ngOnInit() {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
-        var data =x.filter(x=>x.ScreenNo.includes('750012'));
-        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(7, b.ScreenNo.length) > +a.ScreenNo.substring(7,  b.ScreenNo.length) ? 1 : -1);
-        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(7,this.vistedScreens[0].ScreenNo.length ) + 1;
+        var data =x.filter(x=>x.ScreenNo.includes('75012'));
+        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, b.ScreenNo.length) > +a.ScreenNo.substring(6,  b.ScreenNo.length) ? 1 : -1);
+        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6,this.vistedScreens[0].ScreenNo.length ) + 1;
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
@@ -69,7 +69,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p0";
+      this.screenNumber = "75012p0";
       this.dayclass = "0";
       this.currentDay = 0;
     }
@@ -88,7 +88,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p1";
+      this.screenNumber = "75012p1";
       this.dayclass = "1";
       this.currentDay = 1;
     }
@@ -106,7 +106,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p2";
+      this.screenNumber = "75012p2";
       this.dayclass = "2";
       this.currentDay = 2;
     }
@@ -124,7 +124,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p3";
+      this.screenNumber = "75012p3";
       this.dayclass = "3";
       this.currentDay = 3;
     }
@@ -143,7 +143,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p4";
+      this.screenNumber = "75012p4";
       this.dayclass = "4";
       this.currentDay = 4;
     }
@@ -161,7 +161,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p5";
+      this.screenNumber = "75012p5";
       this.dayclass = "5";
       this.currentDay = 5;
     }
@@ -179,7 +179,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p6";
+      this.screenNumber = "75012p6";
       this.dayclass = "6";
       this.currentDay = 6;
     }
@@ -197,7 +197,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = true;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.screenNumber = "750012p7";
+      this.screenNumber = "75012p7";
       this.dayclass = "7";
       this.currentDay = 7;
     }
@@ -215,7 +215,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = true;
       this.enableday9 = false;
-      this.screenNumber = "750012p8";
+      this.screenNumber = "75012p8";
       this.dayclass = "8";
       this.currentDay = 8;
     }
@@ -233,7 +233,7 @@ export class S75012Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = true;
-      this.screenNumber = "750012p8";
+      this.screenNumber = "75012p8";
       this.dayclass = "8";
       this.currentDay = 8;
     }
@@ -257,7 +257,7 @@ export class S75012Page implements OnInit {
       } else if (this.slideStart == this.totalSlidesCount) {
         this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '750012p' + (parseInt(this.screenNumber.substring(7, this.screenNumber.length))),
+          "ScreenNo": '75012p' + (parseInt(this.screenNumber.substring(6, this.screenNumber.length))),
           "ModuleID": 75,
           "SessionID": 0,
         })
@@ -283,34 +283,34 @@ export class S75012Page implements OnInit {
   getClass(day) {
     var dayclass = '';
     var className = '';
-    if (day === '750012p0') {
+    if (day === '75012p0') {
       dayclass = "0";
     }
-    else if (day === '750012p1') {
+    else if (day === '75012p1') {
       dayclass = '1';
     }
-    else if (day === '750012p2') {
+    else if (day === '75012p2') {
       dayclass = '2';
     }
-    else if (day === '750012p3') {
+    else if (day === '75012p3') {
       dayclass = '3';
     }
-    else if (day === '750012p4') {
+    else if (day === '75012p4') {
       dayclass = '4';
     }
-    else if (day === '750012p5') {
+    else if (day === '75012p5') {
       dayclass = '5';
     }
-    else if (day === '750012p6') {
+    else if (day === '75012p6') {
       dayclass = '6';
     }
-    else if (day === '750012p7') {
+    else if (day === '75012p7') {
       dayclass = '7';
     }
-    else if (day === '750012p7') {
+    else if (day === '75012p7') {
       dayclass = '8';
     }
-    else if (day === '750012p8') {
+    else if (day === '75012p8') {
       dayclass = '9';
     }
 
