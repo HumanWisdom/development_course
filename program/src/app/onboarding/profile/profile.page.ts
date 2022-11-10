@@ -2,6 +2,7 @@ import { Platform } from '@angular/cdk/platform';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from './../onboarding.service';
+import { LogEventService } from "src/app/log-event.service";
 
 @Component({
   selector: 'app-profile',
@@ -29,7 +30,8 @@ export class ProfilePage implements OnInit {
   enablepayment = true;
   isPartner=false;
   partnerOption = localStorage.getItem('PartnerOption');
-  constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
+  constructor(private router: Router, private Onboardingservice: OnboardingService, 
+              public platform: Platform, public logeventservice: LogEventService) {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
     this.Onboardingservice.getpaymentdetail(userId).subscribe((res) => {
@@ -125,5 +127,14 @@ export class ProfilePage implements OnInit {
     }
 
   }
+
+  Logevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(params !='' && route !='') {
+      this.router.navigate([route, params]);
+    }else if(route !='') { 
+      this.router.navigate([route]) 
+      }
+    }
 
 }

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {OnboardingService} from '../onboarding.service'
 import * as $ from 'jquery' 
+import { LogEventService } from "src/app/log-event.service";
+
 @Component({
   selector: 'app-viewcart',
   templateUrl: './viewcart.page.html',
@@ -42,7 +44,7 @@ export class ViewcartPage implements OnInit {
   enablepopup=false;
   isSubscribe=false;
   
-  constructor(private router: Router,private service:OnboardingService, private location:Location) { 
+  constructor(private router: Router,private service:OnboardingService, private location:Location, public logeventservice: LogEventService) { 
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
     if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
@@ -330,6 +332,7 @@ export class ViewcartPage implements OnInit {
   }
 
   getKey(){
+    this.logeventservice.logEvent('click_proceed_to_pay');
     this.router.navigate(['/onboarding/payment'], { state: { quan:  this.cartList.length.toString(), plan: this.cartList[0]['Plan']}})
   }
   

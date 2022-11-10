@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { LogEventService } from "src/app/log-event.service";
 
 @Component({
   selector: 'app-change-password',
@@ -29,7 +30,9 @@ export class ChangePasswordPage implements OnInit {
   constructor(private router: Router,
     private service: OnboardingService,
     private authService: SocialAuthService,
-    private activate: ActivatedRoute) {
+    private activate: ActivatedRoute,
+    public logeventservice: LogEventService
+    ) {
     this.activate.queryParams.subscribe(params => {
       this.urlEmail = params['email'];
     });
@@ -40,6 +43,7 @@ export class ChangePasswordPage implements OnInit {
   }
 
   forgotPassword() {
+    this.logeventservice.logEvent('click_submit_change_password');
     this.showWarning = false
     if (!this.password && !this.confirmPassword && !this.oldpassword) {
       window.alert('Please enter all the password fields')

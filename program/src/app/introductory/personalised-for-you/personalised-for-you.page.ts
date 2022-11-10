@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { LogEventService } from "src/app/log-event.service";
 
 declare var $: any;
 @Component({
@@ -39,7 +40,8 @@ export class PersonalisedForYouPage implements OnInit {
   constructor(public router: Router,
     public authService: SocialAuthService,
     public aservice: AdultsService,
-    public service: OnboardingService) {
+    public service: OnboardingService,
+    public logeventservice: LogEventService) {
     localStorage.setItem('personalised', 'T');
   }
 
@@ -52,6 +54,7 @@ export class PersonalisedForYouPage implements OnInit {
 
   loginpage() {
     // $("#signuplogin").modal("hide");
+    this.logeventservice.logEvent('click_unlock_signup');
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
     this.router.navigate(['/onboarding/login'])
@@ -106,6 +109,7 @@ export class PersonalisedForYouPage implements OnInit {
 
 
   googleLogin() {
+    this.logeventservice.logEvent('gmail_login');
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       this.user = user;
@@ -194,6 +198,7 @@ export class PersonalisedForYouPage implements OnInit {
   }
 
   fbLogin() {
+    this.logeventservice.logEvent('facebook_login');
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
       // this.user = user;
