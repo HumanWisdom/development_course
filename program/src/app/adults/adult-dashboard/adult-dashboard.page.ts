@@ -316,7 +316,6 @@ export class AdultDashboardPage implements OnInit {
   ngOnInit() {
     this.getuserDetail();
     setTimeout(() => {
-      this.getUserPreference()
       this.getUsershorts()
       this.getUserstories()
     }, 1000)
@@ -3478,6 +3477,8 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
+ 
+
 
   GetWisdomScreens(){
      this.service.GetWisdomScreens().subscribe(res=>{
@@ -3485,18 +3486,25 @@ export class AdultDashboardPage implements OnInit {
      let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
      console.log(data.length);
      let exercise= this.wisdomExerciseList[data.length];
-     this.exerciseNo=exercise.SessionNo.charAt (exercise.SessionNo.length-1);
-     this.day = exercise.ScreenNo.charAt(exercise.ScreenNo.length-1);
+     this.exerciseNo=exercise.SessionNo.substring(exercise.SessionNo.length-2);
+     this.day = (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString();
       console.log(this.day);
       for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo)){
             let obj={
               "SessionNo": item.SessionNo,
               "ScreenNo": item.ScreenNo,
               "completed": item.completed,
-              "day": item.ScreenNo.charAt(item.ScreenNo.length-1)
+              "day": item.ScreenNo.substring(6, item.ScreenNo.length)
             }
             this.currentList.push(obj);
       }
+      setTimeout(() => {
+        var data=document.getElementsByClassName('editable');
+          document.getElementsByClassName('wediv')[0].scrollTo({
+              behavior: 'smooth',
+              left: data[0].getBoundingClientRect().right-420
+            })
+        }, 2000);
         console.log(this.currentList);
      })
   }
@@ -3521,6 +3529,13 @@ export class AdultDashboardPage implements OnInit {
       }
     }
 
+
+    RouteToWisdomExercise(exercise){
+      this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+        state: {
+          day: exercise.day,
+        }});
+    }
   
 
   // GetWisdomScreens(){
