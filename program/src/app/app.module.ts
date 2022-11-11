@@ -20,9 +20,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { authLoginGuard } from './auth-login.guard';
 import { AuthGuard } from './auth.guard';
+import { LogEventService } from './log-event.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
-import {LogEventService} from './log-event.service';
 
 @NgModule({
     declarations: [AppComponent],

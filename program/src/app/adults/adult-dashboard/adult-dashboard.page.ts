@@ -133,15 +133,15 @@ export class AdultDashboardPage implements OnInit {
   public sId: any
   hcwhP: any
   public moduleList = [];
-  public exerciseNo:string='';
-  public day:string='';
+  public exerciseNo: string = '';
+  public day: string = '';
   //static progress mapping
-  public wisdomExerciseList=[];
+  public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
   mediaPercent: any
   freeScreens = []
-  currentList=[];
+  currentList = [];
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -162,6 +162,9 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
+
+    this.logeventservice.logEvent('ga4sampletest');
+
     setTimeout(() => {
       this.getModuleList();
       this.GetWisdomScreens();
@@ -1011,7 +1014,8 @@ export class AdultDashboardPage implements OnInit {
 
 
   opennewTab() {
-    this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    this.router.navigate([]).then(() => { window.open('/adults/help-support/cookie-policy', '_blank'); });
   }
 
   socialLogin() {
@@ -3507,27 +3511,29 @@ export class AdultDashboardPage implements OnInit {
         }, 2000);
         console.log(this.currentList);
      })
+    }
+ 
+
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return 'inactive';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return 'editable';
+    } else {
+      return 'active';
+    }
   }
 
-  getWisdomClass(exercise){
-       if(exercise.completed=='1'){
-        return 'inactive';
-       }else if(exercise.completed=='0' && this.day == exercise.day){
-            return 'editable';
-       }else{
-        return 'active';
-       }
-  }
 
-  
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(params !='' && route !='') {
+    if (params != '' && route != '') {
       this.router.navigate([route, params]);
-    }else if(route !='') { 
-      this.router.navigate([route]) 
-      }
+    } else if (route != '') {
+      this.router.navigate([route])
     }
+  }
+
 
 
     RouteToWisdomExercise(exercise){
@@ -3537,12 +3543,4 @@ export class AdultDashboardPage implements OnInit {
         }});
     }
   
-
-  // GetWisdomScreens(){
-  //   let result=[];
-  //    this.service.GetWisdomScreens().subscribe(res=>{
-  //     result=res.filter(x=>x.completed=='0');
-  //    })
-  // }
-
-}
+  }

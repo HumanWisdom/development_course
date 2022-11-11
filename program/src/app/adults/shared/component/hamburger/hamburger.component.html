@@ -19,7 +19,7 @@
             <h4 class="fw_700 fs_14px lh_16px fc_ffffff mtb0px tleft">
               {{name}}
             </h4>
-            <a routerLink="/onboarding/user-profile" *ngIf="enableprofile">
+            <a  (click)="Logevent('/onboarding/user-profile', '', 'click_profile')"  *ngIf="enableprofile">
               <h4 class="fw_500 fs_12px lh_14px fc_ffffff mt5pxi mb0px tleft underline" *ngIf="isloggedIn">
                 View Profile
               </h4>
@@ -60,7 +60,7 @@
       </li> -->
 
       <li id="liSubscribe" *ngIf="!subscriber">
-        <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
+        <a (click)="Logevent('/onboarding/add-to-cart', '', 'click_Subscribe')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -78,7 +78,7 @@
       </li>
 
       <li>
-        <a routerLink="/adults/wisdom-survey" class="p0 b0px">
+        <a (click)="Logevent('/adults/wisdom-survey', '', 'click_survey')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -705,7 +705,7 @@
       </li>
 
       <li>
-        <a  (click)="Logevent('https://humanwisdom.me/newsletter.html', '', 'click_newsletter_Hamburger')"  class="p0 b0px">
+        <a  (click)="Logevent('', '', 'click_newsletter_Hamburger')" href="https://humanwisdom.me/newsletter.html"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
