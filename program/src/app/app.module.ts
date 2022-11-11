@@ -40,9 +40,6 @@ import { TokenInterceptorService } from './token-interceptor.service';
         PlatformModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAnalyticsModule
-        /* ,
-        NgxGoogleAnalyticsModule.forRoot('G-44RHVTTNB8'),
-        NgxGoogleAnalyticsRouterModule */
     ],
     providers: [
         StatusBar,

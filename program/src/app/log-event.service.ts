@@ -17,9 +17,9 @@ export class LogEventService {
     logEvent(eventname: string) {
         let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User'
         let device_info: any = this.deviceService.getDeviceInfo()
-        /* gtag('event', eventname, { UserName: name })
+        gtag('event', eventname, { UserName: name })
         gtag('event', eventname, { DeviceOS: device_info.os })
-        gtag('event', eventname, { DeviceBrowser: device_info.browser }) */
+        gtag('event', eventname, { DeviceBrowser: device_info.browser })
         this.analytics.logEvent(eventname, { UserName: name });
         this.analytics.logEvent(eventname, { DeviceOS: device_info.os });
         this.analytics.logEvent(eventname, { DeviceBrowser: device_info.browser });
