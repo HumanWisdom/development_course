@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../adults.service"
 import {Location } from '@angular/common'
 import { Router,ActivatedRoute } from '@angular/router';
-
+import { LogEventService } from "src/app/log-event.service";
 
 
 @Component({
@@ -30,7 +30,8 @@ export class NotePage implements OnInit {
     private router: Router,
     private service:AdultsService,
     private location:Location,
-    private activate:ActivatedRoute
+    private activate:ActivatedRoute,
+    public logeventservice: LogEventService
   ) {
    
   

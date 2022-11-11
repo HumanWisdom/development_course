@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { AdultsService } from '../adults.service';
+import { LogEventService } from "src/app/log-event.service";
 
 @Component({
   selector: 'app-journal',
@@ -22,7 +23,8 @@ export class JournalPage implements OnInit {
   jrListC=[]
   searchedText:any
 
-  constructor(private router: Router, private location:Location,private service: AdultsService) { }
+  constructor(private router: Router, private location:Location,
+              private service: AdultsService, public logeventservice: LogEventService) { }
 
   ngOnInit() {
   
@@ -102,6 +104,7 @@ export class JournalPage implements OnInit {
   }
 
   searchText(){
+    this.logeventservice.logEvent('click_search');
     if(this.searchedText=="")
       this.viewJournalAndReflections()
     else if(this.searchedText!="")

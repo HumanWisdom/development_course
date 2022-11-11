@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import 'bcswipe';
 import { AdultsService } from 'src/app/adults/adults.service';
+import { LogEventService } from "src/app/log-event.service";
+
 
 declare var $: any;
 
@@ -15,7 +17,8 @@ var moveleft = false;
 export class IntroCarouselPage implements OnInit, AfterViewInit {
   public loading = false;
 
-  constructor(private router: Router, private service: AdultsService) { }
+  constructor(private router: Router, private service: AdultsService,
+    public logeventservice: LogEventService) { }
 
   ngOnInit() {
     let authtoken = JSON.parse(localStorage.getItem("token"))
@@ -74,10 +77,21 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   };
 
   skip() {
+    this.logeventservice.logEvent('click_skip_onboarding');
     this.router.navigate(['/intro/personalised-for-you']);
   }
 
   onLoad() {
     this.loading = true;
   }
+
+  Logevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if(params !='' && route !='') {
+      this.router.navigate([route, params]);
+    }else if(route !='') { 
+      this.router.navigate([route]) 
+      }
+    }
+    
 }
