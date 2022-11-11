@@ -86,7 +86,7 @@ export class S75002Page implements OnInit {
     if (event === 'intro') {
       this.startTime = Date.now()
       this.slideStart = 0;
-      this.totalSlidesCount = 7;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = true;
       this.currentDay = 0;
