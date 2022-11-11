@@ -3489,7 +3489,7 @@ export class AdultDashboardPage implements OnInit {
      this.wisdomExerciseList=res;
      let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
      console.log(data.length);
-     let exercise= this.wisdomExerciseList[data.length];
+     let exercise= data[data.length-1];
      this.exerciseNo=exercise.SessionNo.substring(exercise.SessionNo.length-2);
      this.day = (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString();
       console.log(this.day);
@@ -3508,7 +3508,7 @@ export class AdultDashboardPage implements OnInit {
               behavior: 'smooth',
               left: data[0].getBoundingClientRect().right-420
             })
-        }, 2000);
+        }, 3000);
         console.log(this.currentList);
      })
     }
