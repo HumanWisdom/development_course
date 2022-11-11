@@ -1015,7 +1015,8 @@ export class AdultDashboardPage implements OnInit {
 
 
   opennewTab() {
-    this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    this.router.navigate([]).then(() => { window.open('/adults/help-support/cookie-policy', '_blank'); });
   }
 
   socialLogin() {
