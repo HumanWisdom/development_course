@@ -127,9 +127,10 @@ export class S74001Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+        if(res['GetBkMrkScr']) { 
+          this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+          localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+        }
       })
   }
   
