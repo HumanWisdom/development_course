@@ -3502,13 +3502,17 @@ export class AdultDashboardPage implements OnInit {
             }
             this.currentList.push(obj);
       }
-      setTimeout(() => {
-        var data=document.getElementsByClassName('editable');
-          document.getElementsByClassName('wediv')[0].scrollTo({
-              behavior: 'smooth',
-              left: data[0].getBoundingClientRect().right-420
-            })
-        }, 3000);
+      // setTimeout(() => {
+        setTimeout(() => {
+          var element = document.querySelector(".wediv .editable");
+          element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+      }, 3000);
+        // var data=document.getElementsByClassName('editable');
+        //   document.getElementsByClassName('wediv')[0].scrollTo({
+        //       behavior: 'smooth',
+        //       left: data[0].getBoundingClientRect().right-420
+        //     })
+        // }, 3000);
         console.log(this.currentList);
      })
     }
