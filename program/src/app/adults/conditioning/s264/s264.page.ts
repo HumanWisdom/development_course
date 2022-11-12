@@ -125,7 +125,7 @@ export class S264Page implements OnInit {
   ngOnDestroy() {
 
 
-    //this.submitProgress()
+
   }
 
 
