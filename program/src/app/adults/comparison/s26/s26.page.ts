@@ -341,7 +341,7 @@ export class S26Page implements OnInit {
   //this.endTime = Date.now();
   //this.totalTime = this.endTime - this.startTime;
   
-  //this.submitProgress()
+  
   }
 
  

@@ -40,9 +40,20 @@ export class S75002Page implements OnInit {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
         this.vistedScreens = x?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
-        this.maxDay = this.currentDay;
-        this.getdayevent(this.currentDay.toString());
+        if(window.history.state.day && window.history.state.day !=null ){
+           this.getdayevent(window.history.state.day);
+        }else{
+          this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
+          this.maxDay = this.currentDay;
+          this.getdayevent(this.currentDay.toString());
+        }
+        setTimeout(() => {
+          var data=document.getElementsByClassName('editable');
+            document.getElementsByClassName('we_ft')[0].scrollTo({
+                behavior: 'smooth',
+                left: data[0].getBoundingClientRect().right-420
+              })
+          }, 2000);
       }
     })
 
@@ -86,7 +97,7 @@ export class S75002Page implements OnInit {
     if (event === 'intro') {
       this.startTime = Date.now()
       this.slideStart = 0;
-      this.totalSlidesCount = 7;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = true;
       this.currentDay = 0;
@@ -187,7 +198,7 @@ export class S75002Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 

@@ -18,8 +18,8 @@ export class S75010Page implements OnInit {
   enableday5 = false;
   enableday6 = false;
   enableday7 = false;
-  slideStart=0;
-  totalSlidesCount=5;
+  slideStart = 0;
+  totalSlidesCount = 5;
   details: string = '1/5'
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -28,8 +28,8 @@ export class S75010Page implements OnInit {
   endTime: any;
   startTime: any;
   moduleId: number = 75;
-  screenNumber='75010p0';
-  totalTime:any;
+  screenNumber = '75010p0';
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
   userId: string = localStorage.getItem('userId');
@@ -43,10 +43,21 @@ export class S75010Page implements OnInit {
       if (x) {
         var data =x.filter(x=>x.ScreenNo.includes('75010'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, b.ScreenNo.length) > +a.ScreenNo.substring(6,  b.ScreenNo.length) ? 1 : -1);
+        if(window.history.state.day && window.history.state.day !=null ){
+          this.getdayevent(window.history.state.day);
+       }else{
         this.currentDay = +this.vistedScreens[0]?.ScreenNo.substring(6,this.vistedScreens[0]?.ScreenNo.length ) + 1;
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
+      setTimeout(() => {
+        var data=document.getElementsByClassName('editable');
+          document.getElementsByClassName('we_ft')[0].scrollTo({
+              behavior: 'smooth',
+              left: data[0].getBoundingClientRect().right-420
+            })
+        }, 2000); 
+    }
     });
   }
   getdayevent(event) {
@@ -193,7 +204,7 @@ export class S75010Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 

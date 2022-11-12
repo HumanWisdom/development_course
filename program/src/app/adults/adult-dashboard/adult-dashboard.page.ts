@@ -319,7 +319,6 @@ export class AdultDashboardPage implements OnInit {
   ngOnInit() {
     this.getuserDetail();
     setTimeout(() => {
-      this.getUserPreference()
       this.getUsershorts()
       this.getUserstories()
     }, 1000)
@@ -3482,28 +3481,38 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
+ 
 
-  GetWisdomScreens() {
-    this.service.GetWisdomScreens().subscribe(res => {
-      this.wisdomExerciseList = res;
-      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
-      console.log(data.length);
-      let exercise = this.wisdomExerciseList[data.length];
-      this.exerciseNo = exercise.SessionNo.charAt(exercise.SessionNo.length - 1);
-      this.day = exercise.ScreenNo.charAt(exercise.ScreenNo.length - 1);
+
+  GetWisdomScreens(){
+     this.service.GetWisdomScreens().subscribe(res=>{
+     this.wisdomExerciseList=res;
+     let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
+     console.log(data.length);
+     let exercise= data[data.length-1];
+     this.exerciseNo=exercise.SessionNo.substring(exercise.SessionNo.length-2);
+     this.day = (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString();
       console.log(this.day);
-      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo)) {
-        let obj = {
-          "SessionNo": item.SessionNo,
-          "ScreenNo": item.ScreenNo,
-          "completed": item.completed,
-          "day": item.ScreenNo.charAt(item.ScreenNo.length - 1)
-        }
-        this.currentList.push(obj);
+      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo)){
+            let obj={
+              "SessionNo": item.SessionNo,
+              "ScreenNo": item.ScreenNo,
+              "completed": item.completed,
+              "day": item.ScreenNo.substring(6, item.ScreenNo.length)
+            }
+            this.currentList.push(obj);
       }
-      console.log(this.currentList);
-    })
-  }
+      setTimeout(() => {
+        var data=document.getElementsByClassName('editable');
+          document.getElementsByClassName('wediv')[0].scrollTo({
+              behavior: 'smooth',
+              left: data[0].getBoundingClientRect().right-420
+            })
+        }, 3000);
+        console.log(this.currentList);
+     })
+    }
+ 
 
   getWisdomClass(exercise) {
     if (exercise.completed == '1') {
@@ -3524,13 +3533,14 @@ export class AdultDashboardPage implements OnInit {
       this.router.navigate([route])
     }
   }
-}
 
 
 
-  // GetWisdomScreens(){
-  //   let result=[];
-  //    this.service.GetWisdomScreens().subscribe(res=>{
-  //     result=res.filter(x=>x.completed=='0');
-  //    })
-  // }
+    RouteToWisdomExercise(exercise){
+      this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+        state: {
+          day: exercise.day,
+        }});
+    }
+  
+  }

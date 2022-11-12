@@ -9,8 +9,8 @@ import { AdultsService } from '../../adults.service';
 })
 export class S75011Page implements OnInit {
   dayclass = 'intro'
-  isShowTranscript=false;
-  isShowAudio=false;
+  isShowTranscript = false;
+  isShowAudio = false;
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -21,8 +21,8 @@ export class S75011Page implements OnInit {
   enableday7 = false;
   enableday8 = false;
 
-  slideStart=0;
-  totalSlidesCount=3;
+  slideStart = 0;
+  totalSlidesCount = 3;
   details: string = '1/3'
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -31,8 +31,8 @@ export class S75011Page implements OnInit {
   endTime: any;
   startTime: any;
   moduleId: number = 75;
-  screenNumber='75011p0';
-  totalTime:any;
+  screenNumber = '75011p0';
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
   userId: string = localStorage.getItem('userId');
@@ -46,17 +46,28 @@ export class S75011Page implements OnInit {
       if (x) {
         var data =x.filter(x=>x.ScreenNo.includes('75011'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, b.ScreenNo.length) > +a.ScreenNo.substring(6,  b.ScreenNo.length) ? 1 : -1);
+        if(window.history.state.day && window.history.state.day !=null ){
+          this.getdayevent(window.history.state.day);
+       }else{
         this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6,this.vistedScreens[0].ScreenNo.length ) + 1;
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
+      setTimeout(() => {
+        var data=document.getElementsByClassName('editable');
+          document.getElementsByClassName('we_ft')[0].scrollTo({
+              behavior: 'smooth',
+              left: data[0].getBoundingClientRect().right-420
+            })
+        }, 2000); 
+    }
     });
   }
   getdayevent(event) {
     if (event === 'intro' || event == '0') {
-      this.slideStart=0;
-      this.totalSlidesCount=3;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 3;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = true;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -71,10 +82,10 @@ export class S75011Page implements OnInit {
       this.currentDay = 0;
     }
     else if (event === '1') {
-      this.isShowTranscript=false;
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.isShowTranscript = false;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = true;
       this.enableday2 = false;
@@ -89,9 +100,9 @@ export class S75011Page implements OnInit {
       this.currentDay = 1;
     }
     else if (event === '2') {
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = true;
@@ -106,9 +117,9 @@ export class S75011Page implements OnInit {
       this.currentDay = 2;
     }
     else if (event === '3') {
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -123,9 +134,9 @@ export class S75011Page implements OnInit {
       this.currentDay = 3;
     }
     else if (event === '4') {
-      this.slideStart=0;
-      this.totalSlidesCount=5;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 5;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -140,9 +151,9 @@ export class S75011Page implements OnInit {
       this.currentDay = 4;
     }
     else if (event === '5') {
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -157,9 +168,9 @@ export class S75011Page implements OnInit {
       this.currentDay = 5;
     }
     else if (event === '6') {
-      this.slideStart=0;
-      this.totalSlidesCount=7;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -174,9 +185,9 @@ export class S75011Page implements OnInit {
       this.currentDay = 6;
     }
     else if (event === '7') {
-      this.slideStart=0;
-      this.totalSlidesCount=6;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 6;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -191,9 +202,9 @@ export class S75011Page implements OnInit {
       this.currentDay = 7;
     }
     else if (event === '8') {
-      this.slideStart=0;
-      this.totalSlidesCount=6;
-      this.details=this.slideStart+'/'+this.totalSlidesCount;
+      this.slideStart = 0;
+      this.totalSlidesCount = 6;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
       this.enableday2 = false;
@@ -220,7 +231,7 @@ export class S75011Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 
