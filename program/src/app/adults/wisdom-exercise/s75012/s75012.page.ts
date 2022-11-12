@@ -46,12 +46,24 @@ export class S75012Page implements OnInit {
   ngOnInit() {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
-        var data = x.filter(x => x.ScreenNo.includes('75012'));
-        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, b.ScreenNo.length) > +a.ScreenNo.substring(6, b.ScreenNo.length) ? 1 : -1);
-        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, this.vistedScreens[0].ScreenNo.length) + 1;
+
+        var data =x.filter(x=>x.ScreenNo.includes('75012'));
+        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, b.ScreenNo.length) > +a.ScreenNo.substring(6,  b.ScreenNo.length) ? 1 : -1);
+        if(window.history.state.day && window.history.state.day !=null ){
+          this.getdayevent(window.history.state.day);
+       }else{
+        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6,this.vistedScreens[0].ScreenNo.length ) + 1;
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
+      setTimeout(() => {
+        var data=document.getElementsByClassName('editable');
+          document.getElementsByClassName('we_ft')[0].scrollTo({
+              behavior: 'smooth',
+              left: data[0].getBoundingClientRect().right-420
+            })
+        }, 2000); 
+    }
     });
   }
   getdayevent(event) {

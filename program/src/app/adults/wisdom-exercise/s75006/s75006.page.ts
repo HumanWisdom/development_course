@@ -42,10 +42,21 @@ export class S75006Page implements OnInit {
       if (x) {
         var data = x.filter(x => x.ScreenNo.includes('75006'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
+        if(window.history.state.day && window.history.state.day !=null ){
+          this.getdayevent(window.history.state.day);
+       }else{
         this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
+      setTimeout(() => {
+        var data=document.getElementsByClassName('editable');
+          document.getElementsByClassName('we_ft')[0].scrollTo({
+              behavior: 'smooth',
+              left: data[0].getBoundingClientRect().right-420
+            })
+        }, 2000); 
+    }
     });
   }
 
