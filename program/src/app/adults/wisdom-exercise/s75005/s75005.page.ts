@@ -40,7 +40,7 @@ export class S75005Page implements OnInit {
   totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   constructor(private elementRef: ElementRef,
     public service: AdultsService, private adult: AdultsService) {
     this.startTime = Date.now()

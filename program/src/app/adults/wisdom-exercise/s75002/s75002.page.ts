@@ -19,7 +19,7 @@ export class S75002Page implements OnInit {
   totalTime: any;
   screenType: string = "8";
   screenNumber: string = "75002p0";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   endTime: any;
   startTime: any;
   moduleId: number = 75;
