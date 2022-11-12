@@ -27,12 +27,12 @@ export class S75003Page implements OnInit {
   moduleId: number = 75;
   slideStart = 0;
   totalSlidesCount = 6;
-  screenNumber='';
+  screenNumber = '';
   details: string = '1/6'
-  totalTime:any;
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   totalDays=5;
   constructor(private elementRef: ElementRef,
     public service: AdultsService, private adult: AdultsService,public router:Router) {
@@ -42,7 +42,7 @@ export class S75003Page implements OnInit {
   ngOnInit() {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
-        var data =x.filter(x=>x.ScreenNo.includes('75003'));
+        var data = x.filter(x => x.ScreenNo.includes('75003'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
         if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
@@ -187,7 +187,7 @@ export class S75003Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 

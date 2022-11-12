@@ -19,8 +19,8 @@ export class S75010Page implements OnInit {
   enableday5 = false;
   enableday6 = false;
   enableday7 = false;
-  slideStart=0;
-  totalSlidesCount=5;
+  slideStart = 0;
+  totalSlidesCount = 5;
   details: string = '1/5'
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -29,12 +29,12 @@ export class S75010Page implements OnInit {
   endTime: any;
   startTime: any;
   moduleId: number = 75;
-  screenNumber='75010p0';
-  totalTime:any;
+  screenNumber = '75010p0';
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
-  userId: string = localStorage.getItem('userId');
   totaldays=7;
+  userId: any = localStorage.getItem('userId');
   constructor(private elementRef: ElementRef,
     public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
@@ -204,7 +204,7 @@ export class S75010Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 

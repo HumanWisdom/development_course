@@ -31,12 +31,12 @@ export class S75008Page implements OnInit {
   endTime: any;
   startTime: any;
   moduleId: number = 75;
-  screenNumber='75008p0';
-  totalTime:any;
+  screenNumber = '75008p0';
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
   totaldays=7;
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   constructor(private elementRef: ElementRef,
     public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
@@ -45,7 +45,7 @@ export class S75008Page implements OnInit {
   ngOnInit() {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
-        var data =x.filter(x=>x.ScreenNo.includes('75008'));
+        var data = x.filter(x => x.ScreenNo.includes('75008'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
         if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
@@ -73,7 +73,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75008p0";
       this.dayclass = '0';
-      this.currentDay=0;
+      this.currentDay = 0;
     }
     else if (event === '1') {
       this.isShowTranscript = false;
@@ -90,7 +90,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75008p1";
       this.dayclass = '1';
-      this.currentDay=1;
+      this.currentDay = 1;
     }
     else if (event === '2') {
       this.slideStart = 0;
@@ -106,7 +106,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75008p2";
       this.dayclass = '2';
-      this.currentDay=2;
+      this.currentDay = 2;
     }
     else if (event === '3') {
       this.slideStart = 0;
@@ -122,7 +122,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75008p3";
       this.dayclass = '3';
-      this.currentDay=3;
+      this.currentDay = 3;
     }
     else if (event === '4') {
       this.slideStart = 0;
@@ -138,7 +138,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75008p4";
       this.dayclass = '4';
-      this.currentDay=4;
+      this.currentDay = 4;
     }
     else if (event === '5') {
       this.slideStart = 0;
@@ -154,7 +154,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75008p5";
       this.dayclass = '5';
-      this.currentDay=5;
+      this.currentDay = 5;
     }
     else if (event === '6') {
       this.slideStart = 0;
@@ -170,7 +170,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75008p6";
       this.dayclass = '6';
-      this.currentDay=6;
+      this.currentDay = 6;
     }
     else if (event === '7') {
       this.slideStart = 0;
@@ -186,7 +186,7 @@ export class S75008Page implements OnInit {
       this.enableday7 = true;
       this.screenNumber = "75008p7";
       this.dayclass = '7';
-      this.currentDay=7;
+      this.currentDay = 7;
     }
     this.next();
     setTimeout(() => {
@@ -205,7 +205,7 @@ export class S75008Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 

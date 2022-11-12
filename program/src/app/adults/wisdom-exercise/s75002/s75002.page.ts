@@ -20,7 +20,7 @@ export class S75002Page implements OnInit {
   totalTime: any;
   screenType: string = "8";
   screenNumber: string = "75002p0";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   endTime: any;
   startTime: any;
   moduleId: number = 75;
@@ -197,7 +197,7 @@ export class S75002Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 
