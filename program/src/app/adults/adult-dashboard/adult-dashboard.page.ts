@@ -3535,12 +3535,34 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-
     RouteToWisdomExercise(exercise){
-      this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
-        state: {
-          day: exercise.day,
-        }});
-    }
-  
+        var weR = exercise.ScreenNo;
+      localStorage.setItem("moduleId", JSON.stringify(75))
+      this.service.clickModule(75, this.userId)
+        .subscribe(res => {
+          console.log(res)
+          this.qrList = res
+          weR = "s" + res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("weR", weR)
+          this.mediaPercent = parseInt(res.MediaPercent)
+          this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+          localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+          localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+          this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+            state: {
+              day: exercise.day,
+            }});
+        },
+          error => {
+            console.log(error)
+          })}
   }

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class S75007Page implements OnInit {
 
   slideStart = 0;
   totalSlidesCount = 4;
-
+   totaldays=7;
   details: string = '1/4'
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -36,7 +37,7 @@ export class S75007Page implements OnInit {
   screenType: string = "8";
   userId: string = localStorage.getItem('userId');
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService) {
+    public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
   }
 
@@ -52,13 +53,6 @@ export class S75007Page implements OnInit {
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
-      setTimeout(() => {
-        var data=document.getElementsByClassName('editable');
-          document.getElementsByClassName('we_ft')[0].scrollTo({
-              behavior: 'smooth',
-              left: data[0].getBoundingClientRect().right-420
-            })
-        }, 2000); 
     }
     });
   }
@@ -194,6 +188,10 @@ export class S75007Page implements OnInit {
       this.currentDay=7;
     }
     this.next();
+    setTimeout(() => {
+      var element = document.querySelector(".we_ft .editable");
+      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+  }, 2000);
   }
 
 
@@ -218,7 +216,11 @@ export class S75007Page implements OnInit {
           "ModuleID": 75,
           "SessionID": 0,
         })
-        this.getdayevent(this.currentDay.toString());
+        if(this.currentDay>this.totaldays){
+          this.router.navigate(['adults/wisdom-exercise/s75008']);
+        }else{
+          this.getdayevent(this.currentDay.toString());
+        }
       } else {
         this.slideStart = 1;
       }
