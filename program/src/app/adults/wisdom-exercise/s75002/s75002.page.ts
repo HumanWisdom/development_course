@@ -1,13 +1,16 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import 'bcswipe';
 import { AdultsService } from '../../adults.service';
+
+declare var $: any;
 
 @Component({
   selector: 'HumanWisdom-s75002',
   templateUrl: './s75002.page.html',
   styleUrls: ['./s75002.page.scss'],
 })
-export class S75002Page implements OnInit {
+export class S75002Page implements OnInit, AfterViewInit {
   dayclass = 'intro'
   isShowTranscript = false;
   isShowAudio = false;
@@ -32,9 +35,9 @@ export class S75002Page implements OnInit {
   currentDay: number = 0;
   nextDay: number = null;
   maxDay = 0;
-  totalDays=5;
+  totalDays = 5;
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService,public router:Router) {
+    public service: AdultsService, private adult: AdultsService, public router: Router) {
     this.startTime = Date.now()
   }
 
@@ -42,9 +45,9 @@ export class S75002Page implements OnInit {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
         this.vistedScreens = x?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        if(window.history.state.day && window.history.state.day !=null ){
-           this.getdayevent(window.history.state.day);
-        }else{
+        if (window.history.state.day && window.history.state.day != null) {
+          this.getdayevent(window.history.state.day);
+        } else {
           this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
           this.maxDay = this.currentDay;
           this.getdayevent(this.currentDay.toString());
@@ -52,6 +55,10 @@ export class S75002Page implements OnInit {
       }
     })
 
+  }
+
+  ngAfterViewInit(): void {
+    $('.carousel').bcSwipe({ threshold: 50 });
   }
 
   getClass(day) {
@@ -183,8 +190,8 @@ export class S75002Page implements OnInit {
     this.next();
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
-      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
-  }, 2000);
+      element.scrollIntoView({ behavior: "smooth", inline: "center" });
+    }, 2000);
   }
 
   next() {
@@ -208,11 +215,11 @@ export class S75002Page implements OnInit {
           "ModuleID": 75,
           "SessionID": 0,
         })
-        if(this.currentDay>this.totalDays){
+        if (this.currentDay > this.totalDays) {
           this.router.navigate(['adults/wisdom-exercise/s75003']);
-        }else{
-        this.getdayevent(this.currentDay.toString());
-      }
+        } else {
+          this.getdayevent(this.currentDay.toString());
+        }
       } else {
         this.slideStart = 1;
       }
