@@ -107,7 +107,7 @@ export class S12Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.submitProgress()
+    if (this.userId !== 563) this.submitProgress()
   }
 
 

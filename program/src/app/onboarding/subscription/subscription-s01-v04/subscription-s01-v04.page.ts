@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { OnboardingService } from '../../onboarding.service';
 import {Location } from '@angular/common'
 import { AdultsService } from 'src/app/adults/adults.service';
+import { LogEventService } from "src/app/log-event.service";
 
 
 @Component({
@@ -57,7 +58,7 @@ export class SubscriptionS01V04Page implements OnInit {
   fourthpage = false;
   yearormonth = ''
   isActivateModal=false;
-  constructor(private router: Router,public service:OnboardingService, public services:AdultsService, private location:Location, private cd: ChangeDetectorRef) {
+  constructor(private router: Router,public service:OnboardingService, public services:AdultsService, private location:Location, public logeventservice: LogEventService,  private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
     if(localStorage.getItem('subscribepage') === 'T') {
@@ -139,6 +140,7 @@ setTimeout(() => {
 
  
  proceedcart() {
+  this.logeventservice.logEvent('click_view_cart');
    this.router.navigate(['/onboarding/viewcart'])
  }
 
@@ -167,6 +169,7 @@ enablelastpage() {
 }
 
 verifyactkey() {
+ 
   console.log("Submit verify")
   this.services.verifyactkey(this.activationCode)
   .subscribe(
@@ -204,6 +207,7 @@ Confirm(){
 
 
 submitcode(){
+  this.logeventservice.logEvent('click_activation_code_submit');
   this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
   .subscribe(
     res=>
@@ -420,6 +424,7 @@ submitcode(){
   }  
 
   addToCart(){
+    this.logeventservice.logEvent('click_done');
     this.loggedUser()
     let pid = this.cartList[0]['ProgID']
     console.log(pid)
@@ -639,6 +644,7 @@ submitcode(){
   // totalItemCount=0
   }
   ActivationFlow(){
+    this.logeventservice.logEvent('click_already_have_subscription_code');
     if(this.isActivateModal){
       this.isActivateModal=false;
     }else{
@@ -659,6 +665,7 @@ submitcode(){
     }
   }
   AddCarBeforePopuP(){
+    this.logeventservice.logEvent('click_addtocart');
     setTimeout(() => {
       if(this.isSubscribe){
         this.enableMySelf=false;

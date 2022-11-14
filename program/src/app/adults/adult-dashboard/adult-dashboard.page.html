@@ -178,7 +178,7 @@
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
                         <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#adp" aria-expanded="true">
+                          <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#adp" aria-expanded="true" >
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="">
@@ -198,7 +198,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '0']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_01.svg"
                                     alt="Wisdom Stories" class="crimg">
@@ -209,7 +209,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '1']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_01.svg"
                                     alt="Journal" class="crimg">
@@ -220,7 +220,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '2']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '2','click_daily_inspiration')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_01.svg"
                                     alt="Testimonials" class="crimg">
@@ -231,7 +231,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '3']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '3', 'click_audio_meditation')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_01.svg"
                                     alt="Forum" class="crimg">
@@ -242,7 +242,7 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a [routerLink]="['/adults/daily-practise', '4']">
+                                <a (click)="DashboardLogevent('/adults/daily-practise', '4', 'click_daily_challenge')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise_01.svg"
                                     alt="Forum" class="crimg">
@@ -272,7 +272,7 @@
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
                         <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_pfy" aria-expanded="true">
+                          <a (click)="DashboardLogevent('', '', 'click_personalised')" data-toggle="collapse" data-parent="#accordion" href="#ca_pfy" aria-expanded="true">
 
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -282,7 +282,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a [routerLink]="['/adults/search']">
+                                  <a (click)="DashboardLogevent('/adults/search', '', 'click_personalised')" >
                                     <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
                                       View all
                                     </h2>
@@ -328,7 +328,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv">
 
                   <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a routerLink="/adults/wisdom-stories">
+                    <a  (click)="DashboardLogevent('/adults/wisdom-stories', '', 'click_life_stories')"  >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/life_stories.svg"
                           alt="" class="prelative">
@@ -338,7 +338,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/journal">
+                    <a (click)="DashboardLogevent('/adults/journal', '', 'click_journal')" routerLink=>
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_journaling.svg"
@@ -349,7 +349,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/forum">
+                    <a (click)="DashboardLogevent('/forum', '', 'click_forum')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/forum.svg" alt=""
                           class="prelative">
@@ -359,7 +359,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/blog">
+                    <a (click)="DashboardLogevent('/adults/blog', '', 'click_blog')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/blog.svg" alt=""
                           class="prelative">
@@ -369,7 +369,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/events">
+                    <a (click)="DashboardLogevent('/adults/events', '', 'click_events')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/events.svg" alt=""
                           class="prelative">
@@ -381,7 +381,7 @@
                   </div>
 
                   <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a routerLink="/adults/wisdom-shorts">
+                    <a (click)="DashboardLogevent('/adults/wisdom-shorts', '', 'click_wisdom_shorts')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_shorts.svg"
                           alt="" class="prelative">
@@ -391,7 +391,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/podcast">
+                    <a (click)="DashboardLogevent('/adults/podcast', '', 'click_podcasts')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/podcasts.svg"
                           alt="" class="prelative">
@@ -411,7 +411,7 @@
                       </button>
                     </a>
 
-                    <a routerLink="/adults/testimonials">
+                    <a (click)="DashboardLogevent('/adults/testimonials', '', 'click_testimonials')" >
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/testimonials.svg"
                           alt="" class="prelative">
@@ -1725,62 +1725,31 @@
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 plr0px pb5px">
                               <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px bold">
-                                #1 See the world freshly
+                                #{{exerciseNo}} See the world freshly
                               </h4>
                             </div>
                           </div>
 
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" (click)="routewisdomexercise(0)" class="btn m0px btn_wed inactive">
+                             <ng-container *ngFor="let item of currentList">
+                              <div class="col-md-3 col-sm-3 col-xs-3" >
+                                <a  *ngIf="item.day =='0';else notIntro">
+                                  <button type="button" (click)="RouteToWisdomExercise(item)" class="btn m0px btn_wec"  [ngClass]="getWisdomClass(item)">
                                     Intro
                                   </button>
                                 </a>
                               </div>
-
+                            <ng-template #notIntro>
                               <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed active">
-                                    Day 1
+                                <a >
+                                  <button type="button" class="btn m0px btn_wec"(click)="RouteToWisdomExercise(item)"  [ngClass]="getWisdomClass(item)">
+                                   {{item.day}}
                                   </button>
                                 </a>
                               </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 2
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 3
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 4
-                                  </button>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a>
-                                  <button type="button" class="btn m0px btn_wed">
-                                    Day 5
-                                  </button>
-                                </a>
-                              </div>
-
+                            </ng-template>
+                          </ng-container>
                             </div>
                           </div>
 

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class S75002Page implements OnInit {
   totalTime: any;
   screenType: string = "8";
   screenNumber: string = "75002p0";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   endTime: any;
   startTime: any;
   moduleId: number = 75;
@@ -31,8 +32,9 @@ export class S75002Page implements OnInit {
   currentDay: number = 0;
   nextDay: number = null;
   maxDay = 0;
+  totalDays=5;
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService) {
+    public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
   }
 
@@ -40,9 +42,13 @@ export class S75002Page implements OnInit {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
         this.vistedScreens = x?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
-        this.maxDay = this.currentDay;
-        this.getdayevent(this.currentDay.toString());
+        if(window.history.state.day && window.history.state.day !=null ){
+           this.getdayevent(window.history.state.day);
+        }else{
+          this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
+          this.maxDay = this.currentDay;
+          this.getdayevent(this.currentDay.toString());
+        }
       }
     })
 
@@ -175,6 +181,10 @@ export class S75002Page implements OnInit {
       this.dayclass = '5';
     }
     this.next();
+    setTimeout(() => {
+      var element = document.querySelector(".we_ft .editable");
+      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+  }, 2000);
   }
 
   next() {
@@ -187,7 +197,7 @@ export class S75002Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 
@@ -198,7 +208,11 @@ export class S75002Page implements OnInit {
           "ModuleID": 75,
           "SessionID": 0,
         })
+        if(this.currentDay>this.totalDays){
+          this.router.navigate(['adults/wisdom-exercise/s75003']);
+        }else{
         this.getdayevent(this.currentDay.toString());
+      }
       } else {
         this.slideStart = 1;
       }

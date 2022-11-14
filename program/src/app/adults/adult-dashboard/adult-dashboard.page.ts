@@ -133,12 +133,15 @@ export class AdultDashboardPage implements OnInit {
   public sId: any
   hcwhP: any
   public moduleList = [];
+  public exerciseNo: string = '';
+  public day: string = '';
   //static progress mapping
+  public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
   mediaPercent: any
   freeScreens = []
-
+  currentList = [];
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -159,8 +162,12 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
+
+    this.logeventservice.logEvent('ga4sampletest');
+
     setTimeout(() => {
       this.getModuleList();
+      this.GetWisdomScreens();
     }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
@@ -169,8 +176,6 @@ export class AdultDashboardPage implements OnInit {
     if (this.platform.IOS) {
       localStorage.setItem('acceptcookie', 'T')
     }
-    
-    this.logeventservice.logEvent('dashboard', { name: localStorage.getItem('name') })
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
@@ -314,7 +319,6 @@ export class AdultDashboardPage implements OnInit {
   ngOnInit() {
     this.getuserDetail();
     setTimeout(() => {
-      this.getUserPreference()
       this.getUsershorts()
       this.getUserstories()
     }, 1000)
@@ -1010,7 +1014,8 @@ export class AdultDashboardPage implements OnInit {
 
 
   opennewTab() {
-    this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    this.router.navigate([]).then(() => { window.open('/adults/help-support/cookie-policy', '_blank'); });
   }
 
   socialLogin() {
@@ -3348,6 +3353,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   goToYourWisdomScoreComponent() {
+    this.logeventservice.logEvent('click_wisdom_score');
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
   }
   onFocus() {
@@ -3475,10 +3481,92 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
-  // GetWisdomScreens(){
-  //   let result=[];
-  //    this.service.GetWisdomScreens().subscribe(res=>{
-  //     result=res.filter(x=>x.completed=='0');
-  //    })
-  // }
-}
+ 
+
+
+  GetWisdomScreens(){
+     this.service.GetWisdomScreens().subscribe(res=>{
+     this.wisdomExerciseList=res;
+     let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
+     console.log(data.length);
+     let exercise= data[data.length-1];
+     this.exerciseNo=exercise.SessionNo.substring(exercise.SessionNo.length-2);
+     this.day = (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString();
+      console.log(this.day);
+      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo)){
+            let obj={
+              "SessionNo": item.SessionNo,
+              "ScreenNo": item.ScreenNo,
+              "completed": item.completed,
+              "day": item.ScreenNo.substring(6, item.ScreenNo.length)
+            }
+            this.currentList.push(obj);
+      }
+      // setTimeout(() => {
+        setTimeout(() => {
+          var element = document.querySelector(".wediv .editable");
+          element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+      }, 3000);
+        // var data=document.getElementsByClassName('editable');
+        //   document.getElementsByClassName('wediv')[0].scrollTo({
+        //       behavior: 'smooth',
+        //       left: data[0].getBoundingClientRect().right-420
+        //     })
+        // }, 3000);
+        console.log(this.currentList);
+     })
+    }
+ 
+
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return 'inactive';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return 'editable';
+    } else {
+      return 'active';
+    }
+  }
+
+
+  DashboardLogevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if (params != '' && route != '') {
+      this.router.navigate([route, params]);
+    } else if (route != '') {
+      this.router.navigate([route])
+    }
+  }
+
+
+    RouteToWisdomExercise(exercise){
+        var weR = exercise.ScreenNo;
+      localStorage.setItem("moduleId", JSON.stringify(75))
+      this.service.clickModule(75, this.userId)
+        .subscribe(res => {
+          console.log(res)
+          this.qrList = res
+          weR = "s" + res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("weR", weR)
+          this.mediaPercent = parseInt(res.MediaPercent)
+          this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+          localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+          localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+          this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+            state: {
+              day: exercise.day,
+            }});
+        },
+          error => {
+            console.log(error)
+          })}
+  }
