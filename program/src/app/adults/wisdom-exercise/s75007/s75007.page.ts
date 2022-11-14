@@ -31,7 +31,7 @@ export class S75007Page implements OnInit {
   endTime: any;
   startTime: any;
   moduleId: number = 75;
-  screenNumber = '';
+  screenNumber = '75007p0';
   totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
@@ -49,9 +49,14 @@ export class S75007Page implements OnInit {
         if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
        }else{
-        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
-        this.maxDay = this.currentDay;
-        this.getdayevent(this.currentDay.toString());
+        if(this.vistedScreens[0]!=null){
+          this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
+          this.maxDay = this.currentDay;
+          this.getdayevent(this.currentDay.toString());
+        }else{
+          this.maxDay = this.currentDay;
+          this.getdayevent(this.currentDay.toString());
+        }
       }
     }
     });
@@ -75,7 +80,6 @@ export class S75007Page implements OnInit {
       this.currentDay = 0;
     }
     else if (event === '1') {
-      this.isShowTranscript = false;
       this.slideStart = 0;
       this.totalSlidesCount = 5;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
@@ -153,7 +157,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p5";
       this.dayclass = '5';
-      this.currentDay = 4;
+      this.currentDay = 5;
     }
     else if (event === '6') {
       this.slideStart = 0;
@@ -293,7 +297,11 @@ export class S75007Page implements OnInit {
       }
       this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
       var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
-        children[1]?.children[0]?.lastChild?.classList.value
+        children[1]?.children[0]?.lastChild?.classList.value;
+        if (data == undefined) {
+          data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
+            children[1]?.children[0]?.lastChild?.classList.value;
+        }
       if (data == 'audio-test') {
         this.isShowTranscript = true;
       } else {
