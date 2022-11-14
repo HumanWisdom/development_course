@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -29,21 +30,22 @@ export class S75004Page implements OnInit {
   moduleId: number = 75;
   slideStart = 0;
   totalSlidesCount = 6;
-  screenNumber='';
+  screenNumber = '';
   details: string = '1/6'
-  totalTime:any;
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
+  totaldays=9;
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService) {
+    public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
   }
 
   ngOnInit() {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
-        var data =x.filter(x=>x.ScreenNo.includes('75004'));
+        var data = x.filter(x => x.ScreenNo.includes('75004'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
         if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
@@ -53,13 +55,6 @@ export class S75004Page implements OnInit {
         this.getdayevent(this.currentDay.toString());
         
       }
-      setTimeout(() => {
-        var data=document.getElementsByClassName('editable');
-          document.getElementsByClassName('we_ft')[0].scrollTo({
-              behavior: 'smooth',
-              left: data[0].getBoundingClientRect().right-420
-            })
-        }, 2000); 
     }
     })
   }
@@ -249,6 +244,10 @@ export class S75004Page implements OnInit {
       this.currentDay = 9;
     }
     this.next();
+    setTimeout(() => {
+      var element = document.querySelector(".we_ft .editable");
+      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+  }, 2000);
   }
 
   next() {
@@ -261,7 +260,7 @@ export class S75004Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 
@@ -272,7 +271,11 @@ export class S75004Page implements OnInit {
           "ModuleID": 75,
           "SessionID": 0,
         })
-        this.getdayevent(this.currentDay.toString());
+        if(this.currentDay>this.totaldays){
+          this.router.navigate(['adults/wisdom-exercise/s75005']);
+        }else{
+          this.getdayevent(this.currentDay.toString());
+        }
       } else {
         this.slideStart = 1;
       }
@@ -325,7 +328,7 @@ export class S75004Page implements OnInit {
     else if (day === '75004p9') {
       dayclass = '9';
     }
-  
+
     if (this.currentDay.toString() == dayclass) {
       className += 'editable ';
     }

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class S75002Page implements OnInit {
   totalTime: any;
   screenType: string = "8";
   screenNumber: string = "75002p0";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   endTime: any;
   startTime: any;
   moduleId: number = 75;
@@ -31,8 +32,9 @@ export class S75002Page implements OnInit {
   currentDay: number = 0;
   nextDay: number = null;
   maxDay = 0;
+  totalDays=5;
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService) {
+    public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
   }
 
@@ -47,13 +49,6 @@ export class S75002Page implements OnInit {
           this.maxDay = this.currentDay;
           this.getdayevent(this.currentDay.toString());
         }
-        setTimeout(() => {
-          var data=document.getElementsByClassName('editable');
-            document.getElementsByClassName('we_ft')[0].scrollTo({
-                behavior: 'smooth',
-                left: data[0].getBoundingClientRect().right-420
-              })
-          }, 2000);
       }
     })
 
@@ -186,6 +181,10 @@ export class S75002Page implements OnInit {
       this.dayclass = '5';
     }
     this.next();
+    setTimeout(() => {
+      var element = document.querySelector(".we_ft .editable");
+      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+  }, 2000);
   }
 
   next() {
@@ -198,7 +197,7 @@ export class S75002Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 
@@ -209,7 +208,11 @@ export class S75002Page implements OnInit {
           "ModuleID": 75,
           "SessionID": 0,
         })
+        if(this.currentDay>this.totalDays){
+          this.router.navigate(['adults/wisdom-exercise/s75003']);
+        }else{
         this.getdayevent(this.currentDay.toString());
+      }
       } else {
         this.slideStart = 1;
       }

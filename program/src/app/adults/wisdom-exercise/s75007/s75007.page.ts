@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class S75007Page implements OnInit {
 
   slideStart = 0;
   totalSlidesCount = 4;
-
+   totaldays=7;
   details: string = '1/4'
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -30,20 +31,20 @@ export class S75007Page implements OnInit {
   endTime: any;
   startTime: any;
   moduleId: number = 75;
-  screenNumber='';
-  totalTime:any;
+  screenNumber = '';
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService) {
+    public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
   }
 
   ngOnInit() {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
-        var data =x.filter(x=>x.ScreenNo.includes('75007'));
+        var data = x.filter(x => x.ScreenNo.includes('75007'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
         if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
@@ -52,13 +53,6 @@ export class S75007Page implements OnInit {
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
       }
-      setTimeout(() => {
-        var data=document.getElementsByClassName('editable');
-          document.getElementsByClassName('we_ft')[0].scrollTo({
-              behavior: 'smooth',
-              left: data[0].getBoundingClientRect().right-420
-            })
-        }, 2000); 
     }
     });
   }
@@ -78,7 +72,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p0";
       this.dayclass = '0';
-      this.currentDay=0;
+      this.currentDay = 0;
     }
     else if (event === '1') {
       this.isShowTranscript = false;
@@ -95,7 +89,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p1";
       this.dayclass = '1';
-      this.currentDay=1;
+      this.currentDay = 1;
     }
     else if (event === '2') {
       this.slideStart = 0;
@@ -111,7 +105,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p2";
       this.dayclass = '2';
-      this.currentDay=2;
+      this.currentDay = 2;
     }
     else if (event === '3') {
       this.slideStart = 0;
@@ -127,7 +121,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p3";
       this.dayclass = '3';
-      this.currentDay=3;
+      this.currentDay = 3;
     }
     else if (event === '4') {
       this.slideStart = 0;
@@ -143,7 +137,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p4";
       this.dayclass = '4';
-      this.currentDay=4;
+      this.currentDay = 4;
     }
     else if (event === '5') {
       this.slideStart = 0;
@@ -159,7 +153,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p5";
       this.dayclass = '5';
-      this.currentDay=4;
+      this.currentDay = 4;
     }
     else if (event === '6') {
       this.slideStart = 0;
@@ -175,7 +169,7 @@ export class S75007Page implements OnInit {
       this.enableday7 = false;
       this.screenNumber = "75007p6";
       this.dayclass = '6';
-      this.currentDay=6;
+      this.currentDay = 6;
     }
     else if (event === '7') {
       this.slideStart = 0;
@@ -191,9 +185,13 @@ export class S75007Page implements OnInit {
       this.enableday7 = true;
       this.screenNumber = "75007p7";
       this.dayclass = '7';
-      this.currentDay=7;
+      this.currentDay = 7;
     }
     this.next();
+    setTimeout(() => {
+      var element = document.querySelector(".we_ft .editable");
+      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+  }, 2000);
   }
 
 
@@ -207,7 +205,7 @@ export class S75007Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 
@@ -218,7 +216,11 @@ export class S75007Page implements OnInit {
           "ModuleID": 75,
           "SessionID": 0,
         })
-        this.getdayevent(this.currentDay.toString());
+        if(this.currentDay>this.totaldays){
+          this.router.navigate(['adults/wisdom-exercise/s75008']);
+        }else{
+          this.getdayevent(this.currentDay.toString());
+        }
       } else {
         this.slideStart = 1;
       }

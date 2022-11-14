@@ -140,6 +140,7 @@ setTimeout(() => {
 
  
  proceedcart() {
+  this.logeventservice.logEvent('click_view_cart');
    this.router.navigate(['/onboarding/viewcart'])
  }
 
@@ -423,6 +424,7 @@ submitcode(){
   }  
 
   addToCart(){
+    this.logeventservice.logEvent('click_done');
     this.loggedUser()
     let pid = this.cartList[0]['ProgID']
     console.log(pid)

@@ -3502,13 +3502,17 @@ export class AdultDashboardPage implements OnInit {
             }
             this.currentList.push(obj);
       }
-      setTimeout(() => {
-        var data=document.getElementsByClassName('editable');
-          document.getElementsByClassName('wediv')[0].scrollTo({
-              behavior: 'smooth',
-              left: data[0].getBoundingClientRect().right-420
-            })
-        }, 3000);
+      // setTimeout(() => {
+        setTimeout(() => {
+          var element = document.querySelector(".wediv .editable");
+          element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+      }, 3000);
+        // var data=document.getElementsByClassName('editable');
+        //   document.getElementsByClassName('wediv')[0].scrollTo({
+        //       behavior: 'smooth',
+        //       left: data[0].getBoundingClientRect().right-420
+        //     })
+        // }, 3000);
         console.log(this.currentList);
      })
     }
@@ -3535,12 +3539,34 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-
     RouteToWisdomExercise(exercise){
-      this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
-        state: {
-          day: exercise.day,
-        }});
-    }
-  
+        var weR = exercise.ScreenNo;
+      localStorage.setItem("moduleId", JSON.stringify(75))
+      this.service.clickModule(75, this.userId)
+        .subscribe(res => {
+          console.log(res)
+          this.qrList = res
+          weR = "s" + res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("weR", weR)
+          this.mediaPercent = parseInt(res.MediaPercent)
+          this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+          localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+          localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+          this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+            state: {
+              day: exercise.day,
+            }});
+        },
+          error => {
+            console.log(error)
+          })}
   }

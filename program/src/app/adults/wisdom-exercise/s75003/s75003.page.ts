@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -26,21 +27,22 @@ export class S75003Page implements OnInit {
   moduleId: number = 75;
   slideStart = 0;
   totalSlidesCount = 6;
-  screenNumber='';
+  screenNumber = '';
   details: string = '1/6'
-  totalTime:any;
+  totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
-  userId: string = localStorage.getItem('userId');
+  userId: any = localStorage.getItem('userId');
+  totalDays=5;
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService) {
+    public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
   }
 
   ngOnInit() {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
-        var data =x.filter(x=>x.ScreenNo.includes('75003'));
+        var data = x.filter(x => x.ScreenNo.includes('75003'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
         if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
@@ -49,13 +51,6 @@ export class S75003Page implements OnInit {
         this.maxDay = this.currentDay;
         this.getdayevent(this.currentDay.toString());
        }
-       setTimeout(() => {
-        var data=document.getElementsByClassName('editable');
-          document.getElementsByClassName('we_ft')[0].scrollTo({
-              behavior: 'smooth',
-              left: data[0].getBoundingClientRect().right-420
-            })
-        }, 2000); 
       }
     })
   }
@@ -176,6 +171,10 @@ export class S75003Page implements OnInit {
       this.dayclass = '6';
     }
     this.next();
+    setTimeout(() => {
+      var element = document.querySelector(".we_ft .editable");
+      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+  }, 2000);
   }
 
   next() {
@@ -188,7 +187,7 @@ export class S75003Page implements OnInit {
           setTimeout(() => {
             this.endTime = Date.now();
             this.totalTime = this.endTime - this.startTime;
-            this.submitProgress();
+            if (this.userId !== 563) this.submitProgress();
           }, 400);
         }
 
@@ -199,7 +198,11 @@ export class S75003Page implements OnInit {
           "ModuleID": 75,
           "SessionID": 0,
         })
+        if(this.currentDay>this.totalDays){
+          this.router.navigate(['adults/wisdom-exercise/s75004']);
+        }else{
         this.getdayevent(this.currentDay.toString());
+      }
       } else {
         this.slideStart = 1;
       }
