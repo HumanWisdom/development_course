@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
 @Component({
   selector: 'app-ft-advert',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FtAdvertComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router,public service:OnboardingService) { }
 
-  ngOnInit() {}
-
+  ngOnInit( ) {}
+  RedeemCode(){
+    this.service.isActivationFlow=true;
+    this.service.isAdvert_hwp=true;
+    this.router.navigate(['/onboarding/add-to-cart']);
+  }
 }
