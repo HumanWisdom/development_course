@@ -134,6 +134,7 @@ export class AdultDashboardPage implements OnInit {
   hcwhP: any
   public moduleList = [];
   public exerciseNo: string = '';
+  public Title:string='';
   public day: string = '';
   //static progress mapping
   public wisdomExerciseList = [];
@@ -3489,30 +3490,54 @@ export class AdultDashboardPage implements OnInit {
      this.wisdomExerciseList=res;
      let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
      console.log(data.length);
-     let exercise= data[data.length-1];
-     this.exerciseNo=exercise.SessionNo.substring(exercise.SessionNo.length-2);
-     this.day = (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString();
-      console.log(this.day);
-      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo)){
+     let exercise:any
+     let emptyList=false;
+     let increaseExcercise=false;
+     // Any of the exercise is not completed
+     if(data.length==0){
+       emptyList=true;
+      data=this.wisdomExerciseList;
+      exercise=data[0];
+     }
+     else{
+      // It contains data may be some exercise is completed 
+      exercise= data[data.length-1];
+      var completed=this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo && x.completed=='0');
+      if(completed.length==0){
+        increaseExcercise=true;
+        emptyList=true;
+      }
+     }
+     //Setting final title and Exercise no
+     this.Title=exercise.Title; 
+     this.exerciseNo=!increaseExcercise?exercise.SessionNo.substring(exercise.SessionNo.length-2)
+     :((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length-2)))+1).toString();
+
+     //Checking the length if its less than 10  to append for current session number
+      if(this.exerciseNo.length==1){
+        this.exerciseNo="0"+this.exerciseNo;
+      }
+     this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
+     var sessionNo=exercise.SessionNo.substring(0,exercise.SessionNo.length-2)+this.exerciseNo;
+    
+     //Pushing final list for display
+     for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==sessionNo)){
             let obj={
               "SessionNo": item.SessionNo,
               "ScreenNo": item.ScreenNo,
               "completed": item.completed,
-              "day": item.ScreenNo.substring(6, item.ScreenNo.length)
+              "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+              "Title":item.Title
             }
             this.currentList.push(obj);
       }
-      // setTimeout(() => {
+
+      //Dynamic Scroll
         setTimeout(() => {
           var element = document.querySelector(".wediv .editable");
-          element.scrollIntoView({behavior: "smooth" ,inline: "center"});
+          element?.scrollIntoView({behavior: "smooth" ,inline: "center"});
       }, 3000);
-        // var data=document.getElementsByClassName('editable');
-        //   document.getElementsByClassName('wediv')[0].scrollTo({
-        //       behavior: 'smooth',
-        //       left: data[0].getBoundingClientRect().right-420
-        //     })
-        // }, 3000);
+      
         console.log(this.currentList);
      })
     }
@@ -3540,7 +3565,7 @@ export class AdultDashboardPage implements OnInit {
 
 
     RouteToWisdomExercise(exercise){
-        var weR = exercise.ScreenNo;
+        var weR = exercise?.ScreenNo;
       localStorage.setItem("moduleId", JSON.stringify(75))
       this.service.clickModule(75, this.userId)
         .subscribe(res => {
@@ -3561,10 +3586,14 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
           localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
           localStorage.setItem("qrList", JSON.stringify(this.qrList))
-          this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
-            state: {
-              day: exercise.day,
-            }});
+          if(exercise!=null){
+            this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+              state: {
+                day: exercise.day,
+              }});
+          }else{
+            this.router.navigate(['adults/wisdom-exercise/']);
+          }
         },
           error => {
             console.log(error)
