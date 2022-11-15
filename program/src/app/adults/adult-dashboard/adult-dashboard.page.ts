@@ -1125,7 +1125,10 @@ export class AdultDashboardPage implements OnInit {
       this.isSubscribe = true;
     }
     let guest = localStorage.getItem('guest');
-    if (guest === 'T') localStorage.setItem('guest', 'F')
+   // if (guest === 'T') localStorage.setItem('guest', 'F')
+    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+    else localStorage.setItem("guest", 'F')
+
     sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("token", JSON.stringify(res.access_token))
@@ -1213,7 +1216,9 @@ export class AdultDashboardPage implements OnInit {
             this.isSubscribe = true;
           }
           let guest = localStorage.getItem('guest');
-          if (guest === 'T') localStorage.setItem('guest', 'F')
+         // if (guest === 'T') localStorage.setItem('guest', 'F')
+          if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+          else localStorage.setItem("guest", 'F')
           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
           localStorage.setItem("token", JSON.stringify(res.access_token))
@@ -1234,8 +1239,8 @@ export class AdultDashboardPage implements OnInit {
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
           this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-          this.getProgress()
-          this.freescreens();
+         // this.getProgress()
+         // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -1257,7 +1262,13 @@ export class AdultDashboardPage implements OnInit {
             this.userName = JSON.parse(sessionStorage.getItem("userName"))
 
           }
-          this.getBookmarks()
+          //this.getBookmarks()
+          setTimeout(() => {
+            this.getProgress()
+            this.freescreens();
+            this.getBookmarks()
+           }, 1000);
+
           if (res.UserId == 0) {
 
           }
