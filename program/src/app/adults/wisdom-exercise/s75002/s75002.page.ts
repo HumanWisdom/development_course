@@ -45,12 +45,19 @@ export class S75002Page implements OnInit, AfterViewInit {
     this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
       if (x) {
         this.vistedScreens = x?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        if (window.history.state.day && window.history.state.day != null) {
-          this.getdayevent(window.history.state.day);
-        } else {
-          this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
-          this.maxDay = this.currentDay;
-          this.getdayevent(this.currentDay.toString());
+
+        if(window.history.state.day && window.history.state.day !=null ){
+           this.getdayevent(window.history.state.day);
+        }else{
+          if(this.vistedScreens[0]!=null){
+            this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
+            this.maxDay = this.currentDay;
+            this.getdayevent(this.currentDay.toString());
+          }else{
+            this.maxDay = this.currentDay;
+            this.getdayevent(this.currentDay.toString());
+          }
+
         }
       }
     })
@@ -113,7 +120,6 @@ export class S75002Page implements OnInit, AfterViewInit {
     }
     else if (event === '1') {
       this.startTime = Date.now()
-      this.isShowTranscript = false;
       this.slideStart = 0;
       this.currentDay = 1;
       this.totalSlidesCount = 5;
@@ -255,7 +261,11 @@ export class S75002Page implements OnInit, AfterViewInit {
       this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
       var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
         children[1]?.children[0]?.lastChild?.classList.value
-      if (data == 'audio-test') {
+        if (data == undefined) {
+          data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
+            children[1]?.children[0]?.lastChild?.classList.value;
+        }
+        if (data == 'audio-test') {
         this.isShowTranscript = true;
       } else {
         this.isShowTranscript = false;
