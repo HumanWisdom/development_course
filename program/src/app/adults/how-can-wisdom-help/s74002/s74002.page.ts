@@ -87,8 +87,10 @@ export class S74002Page implements OnInit {
       "timeSpent": this.totalTime,
       "avDuration": this.avDuration
     }).subscribe(res => {
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+      if(res['GetBkMrkScr']) {
+        this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+      }
     })
   }
 
