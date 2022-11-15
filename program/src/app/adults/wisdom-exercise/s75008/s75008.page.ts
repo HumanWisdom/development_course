@@ -50,9 +50,14 @@ export class S75008Page implements OnInit {
         if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
        }else{
-        this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
-        this.maxDay = this.currentDay;
-        this.getdayevent(this.currentDay.toString());
+        if(this.vistedScreens[0]!=null){
+          this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
+          this.maxDay = this.currentDay;
+          this.getdayevent(this.currentDay.toString());
+        }else{
+          this.maxDay = this.currentDay;
+          this.getdayevent(this.currentDay.toString());
+        }
       }
     }
     });
@@ -76,7 +81,6 @@ export class S75008Page implements OnInit {
       this.currentDay = 0;
     }
     else if (event === '1') {
-      this.isShowTranscript = false;
       this.slideStart = 0;
       this.totalSlidesCount = 7;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
@@ -294,6 +298,11 @@ export class S75008Page implements OnInit {
       this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
       var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
         children[1]?.children[0]?.lastChild?.classList.value
+
+        if (data == undefined) {
+          data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
+            children[1]?.children[0]?.lastChild?.classList.value;
+        }
       if (data == 'audio-test') {
         this.isShowTranscript = true;
       } else {
