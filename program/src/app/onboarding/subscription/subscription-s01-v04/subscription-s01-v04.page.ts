@@ -653,7 +653,7 @@ submitcode(){
 
   }
   Cancel(){
-    if(this.service.isActivationFlow){
+    if(this.service.isActivationFlow && !this.service.isAdvert_hwp){
       this.proceedcart();
       localStorage.setItem('isMonthlySelectedForPayment','F');
       this.isModalPopup=false;
@@ -662,6 +662,10 @@ submitcode(){
       localStorage.setItem('isMonthlySelectedForPayment','F');
       this.isModalPopup=false;
       this.service.isActivationFlow=false;
+      if(this.service.isAdvert_hwp){
+        this.service.isAdvert_hwp=false;
+        this.router.navigate(['/adults/adverts-hwp-app']);
+      }
     }
   }
   AddCarBeforePopuP(){

@@ -315,4 +315,8 @@ export class AdultsService {
     return this.http.get(this.path + '/GetWisdomScreens');
    }
 
+   isGuest() {
+    return localStorage.getItem('guest') && localStorage.getItem('guest') === 'T' ? true : false;
+   }
+
 }
