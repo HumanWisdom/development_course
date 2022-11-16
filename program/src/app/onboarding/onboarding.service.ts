@@ -19,7 +19,7 @@ export class OnboardingService {
   //path="https://staging.humanwisdom.info/api"
   navigateToUpgradeToPremium:boolean=false;
   isActivationFlow:boolean=false;
-
+  isAdvert_hwp:boolean=false;
   constructor(private http: HttpClient,handler: HttpBackend) {
    // this.http = new HttpClient(handler);
   }
