@@ -34,7 +34,7 @@
                     </li>
                   </a>
 
-                  <a class="">
+                  <a class="" (click)="RedeemCode()" *ngIf="!isSubscribe && isLoggedIn">
                     <li class="">
                       Redeem subscription code
                     </li>
