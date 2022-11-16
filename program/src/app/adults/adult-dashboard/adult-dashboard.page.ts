@@ -3499,7 +3499,11 @@ export class AdultDashboardPage implements OnInit {
   GetWisdomScreens(){
      this.service.GetWisdomScreens().subscribe(res=>{
      this.wisdomExerciseList=res;
+     var allCompletedScreen:boolean=false;
      let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
+     if( this.wisdomExerciseList.length==data.length){
+      allCompletedScreen=true;
+    }
      console.log(data.length);
      let exercise:any
      let emptyList=false;
@@ -3511,6 +3515,7 @@ export class AdultDashboardPage implements OnInit {
       exercise=data[0];
      }
      else{
+
       // It contains data may be some exercise is completed 
       exercise= data[data.length-1];
       var completed=this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo && x.completed=='0');
@@ -3521,8 +3526,12 @@ export class AdultDashboardPage implements OnInit {
      }
      //Setting final title and Exercise no
      this.Title=exercise.Title; 
+    
      this.exerciseNo=!increaseExcercise?exercise.SessionNo.substring(exercise.SessionNo.length-2)
      :((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length-2)))+1).toString();
+     if(allCompletedScreen){
+      this.exerciseNo="1";
+     }
 
      //Checking the length if its less than 10  to append for current session number
       if(this.exerciseNo.length==1){
@@ -3531,6 +3540,7 @@ export class AdultDashboardPage implements OnInit {
      this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
      var sessionNo=exercise.SessionNo.substring(0,exercise.SessionNo.length-2)+this.exerciseNo;
     
+
      //Pushing final list for display
      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==sessionNo)){
             let obj={
@@ -3542,7 +3552,9 @@ export class AdultDashboardPage implements OnInit {
             }
             this.currentList.push(obj);
       }
-
+     if(this.currentList.length>0){
+      this.Title=this.currentList[0].Title;
+     }
       //Dynamic Scroll
         setTimeout(() => {
           var element = document.querySelector(".wediv .editable");
