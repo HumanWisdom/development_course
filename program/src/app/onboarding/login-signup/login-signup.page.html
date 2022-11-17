@@ -8,12 +8,12 @@
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs login_signup_tab flex_ai">
-                <li>
+                <li class="active">
                   <a data-toggle="tab" (click)="getsignuptab()" href="#tab1">
                     Sign up
                   </a>
                 </li>
-                <li class="active" #enabletab onclick="$('#tab2').trigger('click')">
+                <li #enabletab onclick="$('#tab2').trigger('click')">
                   <a data-toggle="tab" href="#tab2">
                     Login
                   </a>
@@ -22,8 +22,9 @@
 
               <div class="tab-content mt40px">
                 <!-- signup -->
-                <div id="tab1" class="tab-pane fade">
+                <div id="tab1" class="tab-pane fade in active">
                   <form [formGroup]="registrationForm">
+
                     <div class="row ls_connect_with">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
@@ -175,7 +176,7 @@
                     </div>
                     <!-- /windows -->
 
-                    <div class="row ls_already_user">
+                    <!-- <div class="row ls_already_user">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h4 class="fw_400 fs_12px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
                           Already a user?
@@ -184,13 +185,39 @@
                           </a>
                         </h4>
                       </div>
+                    </div> -->
+
+                    <div class="row ls_already_user">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                          <span class="">
+                            <span class="fw_400 fs_12px lh_140p fc_ffffff">
+                              Already a user?
+                            </span>
+
+                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
+                              Login here 
+                            </a>
+                          </span>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
+                            Continue as Guest
+                          </a>
+                        </div>
+                        
+                      </div>
                     </div>
+
                   </form>
                 </div>
                 <!-- /signup -->
 
                 <!-- login -->
-                <div id="tab2" class="tab-pane fade in active">
+                <div id="tab2" class="tab-pane fade">
+                  
                   <div class="row ls_connect_with">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
@@ -272,7 +299,7 @@
                     </div>
                   </div>
 
-                  <div class="row ls_forgot_password">
+                  <!-- <div class="row ls_forgot_password">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a routerLink="/onboarding/forgotpassword">
                         <h4 class="fw_500 fs_14px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
@@ -280,7 +307,26 @@
                         </h4>
                       </a>
                     </div>
+                  </div> -->
+
+                  <div class="row ls_forgot_password">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline" routerLink="/onboarding/forgotpassword">
+                          Forgot Password?
+                        </a>
+                      </div>
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline">
+                          Continue as Guest
+                        </a>
+                      </div>
+                      
+                    </div>
                   </div>
+
                 </div>
                 <!-- /login -->
               </div>
