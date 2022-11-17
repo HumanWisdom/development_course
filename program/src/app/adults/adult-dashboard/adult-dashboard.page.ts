@@ -3559,6 +3559,7 @@ export class AdultDashboardPage implements OnInit {
         setTimeout(() => {
           var element = document.querySelector(".wediv .editable");
           element?.scrollIntoView({behavior: "smooth" ,inline: "center"});
+          window.scroll(0,0);
       }, 3000);
       
         console.log(this.currentList);
