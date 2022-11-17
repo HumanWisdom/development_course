@@ -1459,7 +1459,7 @@ export class AdultDashboardPage implements OnInit {
         //resume section
         res.ModUserScrPc.filter(x => {
           if (parseFloat(x.Percentage) < 100) {
-            if (x.ModuleId != 71 && x.ModuleId != 72) {
+            if (x.ModuleId != 71 && x.ModuleId != 72 && x.ModuleId != 75) {
               if (x.ModuleId < 10) {
                 x.ModuleId = "0" + x.ModuleId
 
@@ -3422,7 +3422,7 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  routewisdomexercise(cont: any = 1) {
+ /*  routewisdomexercise(cont: any = 1) {
     var weR = '75001'
     localStorage.setItem("moduleId", JSON.stringify(75))
     this.service.clickModule(75, this.userId)
@@ -3456,7 +3456,7 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/wisdom-exercise/s75001`])
         })
   }
-
+ */
 
   wisdomexercise() {
     this.router.navigate([`/adults/wisdom-exercise/s75001`])
