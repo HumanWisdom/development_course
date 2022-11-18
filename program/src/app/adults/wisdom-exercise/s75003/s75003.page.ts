@@ -27,7 +27,7 @@ export class S75003Page implements OnInit {
   moduleId: number = 75;
   slideStart = 0;
   totalSlidesCount = 6;
-  screenNumber = '';
+  screenNumber = '75003p0';
   details: string = '1/6'
   totalTime: any;
   bookmark: number = 0;
@@ -44,7 +44,10 @@ export class S75003Page implements OnInit {
       if (x) {
         var data = x.filter(x => x.ScreenNo.includes('75003'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        if(window.history.state.day && window.history.state.day !=null ){
+        if(data && data.length>=this.totalDays){
+          this.getdayevent("intro");
+        }
+       else if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
        }else{
         if(this.vistedScreens[0]!=null){

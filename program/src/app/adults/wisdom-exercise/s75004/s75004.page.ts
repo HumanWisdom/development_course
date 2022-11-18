@@ -47,7 +47,10 @@ export class S75004Page implements OnInit {
       if (x) {
         var data = x.filter(x => x.ScreenNo.includes('75004'));
         this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        if(window.history.state.day && window.history.state.day !=null ){
+        if(data && data.length>=this.totaldays){
+          this.getdayevent("intro");
+        }
+       else if(window.history.state.day && window.history.state.day !=null ){
           this.getdayevent(window.history.state.day);
        }else{
         if(this.vistedScreens[0]!=null){
