@@ -81,6 +81,7 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
 import { FtWisdomExerciseComponent } from './component/ft-wisdom-exercise/ft-wisdom-exercise.component';
 import { FtAdvertComponent } from './component/ft-advert/ft-advert.component';
 import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
+import { NewsletterComponent } from './component/newsletter/newsletter.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -155,7 +156,8 @@ import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
     JournalWeComponent,
     FtWisdomExerciseComponent,
     FtAdvertComponent,
-    TnAdvertComponent
+    TnAdvertComponent,
+    NewsletterComponent
   ],
   imports: [
     CommonModule,
@@ -254,7 +256,8 @@ import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
     JournalWeComponent,
     FtWisdomExerciseComponent,
     FtAdvertComponent,
-    TnAdvertComponent
+    TnAdvertComponent,
+    NewsletterComponent
   ]
 })
 export class SharedModule { }
