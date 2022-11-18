@@ -3557,10 +3557,10 @@ export class AdultDashboardPage implements OnInit {
      }
       //Dynamic Scroll
         setTimeout(() => {
-          var ypos=window.scrollY;
-          var element = document.querySelector(".wediv .editable");
-          element?.scrollIntoView({behavior: "smooth" ,inline: "center"});
-          window.scroll(0,ypos);
+          var editable=document.querySelector(".editable").getBoundingClientRect().x;
+          var wediv = document.querySelector(".wediv").getBoundingClientRect().x;
+          document.querySelector(".wediv").scrollLeft=editable-wediv;
+          
       }, 3000);
       
         console.log(this.currentList);
