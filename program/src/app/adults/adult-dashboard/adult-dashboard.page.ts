@@ -143,6 +143,7 @@ export class AdultDashboardPage implements OnInit {
   mediaPercent: any
   freeScreens = []
   currentList = [];
+  maxExceriseCount="12;"
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -3529,10 +3530,13 @@ export class AdultDashboardPage implements OnInit {
     
      this.exerciseNo=!increaseExcercise?exercise.SessionNo.substring(exercise.SessionNo.length-2)
      :((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length-2)))+1).toString();
+   
      if(allCompletedScreen){
       this.exerciseNo="1";
      }
-
+     if(this.exerciseNo=="13"){
+      this.exerciseNo="1";
+    }
      //Checking the length if its less than 10  to append for current session number
       if(this.exerciseNo.length==1){
         this.exerciseNo="0"+this.exerciseNo;
