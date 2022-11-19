@@ -10,6 +10,19 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white">
         <div class="x_panel p0">
           <div class="x_content p0">
+
+            <div class="row mb10px">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <a routerLink="/adult-dashboard/" class="">
+                  <h4 class="fw_400 fs_14px lh_16px fc_1092a7 flex_ai">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/arrow_left.svg" class="img-responsive" alt="">
+                    <span class="ml5px lh0px underline">
+                      Continue to Dashboard
+                    </span>
+                  </h4>
+                </a>
+              </div>
+            </div>
            
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
@@ -65,6 +78,16 @@
                 </div>
               </div>
             </ng-container>
+
+            <!-- welcome popup button -->
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                <button type="button" class="btn btn-primary m0px" data-toggle="modal" data-target="#modal_popup">
+                  Welcome Popup
+                </button>
+              </div>
+            </div>
+            <!-- /welcome popup button -->
 
             <div class="pagebreak"></div>
 
@@ -154,3 +177,49 @@
   <!-- /modal-body -->
 </div>
 <!-- /signup_login modal -->
+
+<!-- welcome popup -->
+<div class="modal fade" id="modal_popup" tabindex="-1" data-keyboard="false" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered center_flex" role="document">
+    <div class="modal-content popup_01">
+      <div class="modal-header b0">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <button type="button" #closemodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close"
+              style="cursor:pointer;">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white_01.svg" alt=""
+                class="img-responsive fright">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <!-- modal content -->
+        <!-- <div class="row mt6px">
+          <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_01.svg" alt=""
+              class="img-responsive">
+          </div>
+        </div> -->
+        <div class="row mt24px">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="fw_700 fs_24px lh_28px fc_ffffff tcenter mt0px">
+              Welcome!
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="fw_400 fs_14px lh_16px fc_ffffff tcenter">
+              <!-- {{alertMsg}} -->
+              Begin with the free introduction modules and then follow your interest. Read a story, listen to a podcast, watch a video, or read a blog. Discover how wisdom can help you be successful - as a person, and in the world.
+            </h4>
+          </div>
+        </div>
+        <!-- /modal content -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /welcome popup -->
