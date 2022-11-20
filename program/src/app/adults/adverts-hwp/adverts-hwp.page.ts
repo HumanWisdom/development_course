@@ -13,6 +13,7 @@ import { AdultsService } from '../adults.service';
 })
 export class AdvertsHwpPage implements OnInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
+  @ViewChild('redeemsubscription') redeemsubscription: ElementRef;
 
   public isGuestuser = false
   public isFirsttime = false
@@ -42,6 +43,13 @@ export class AdvertsHwpPage implements OnInit {
   public yearormonth = ''
   public modaldata = {}
   public activationCode: any = ''
+  public loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+  mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
+  mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
+  public video = 3
+  public audio = 4
+  public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  public userName: any
 
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
@@ -196,6 +204,20 @@ export class AdvertsHwpPage implements OnInit {
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
+    } else if (val === 'redeem') {
+      let res = localStorage.getItem("isloggedin")
+      if (res === 'T') {
+        this.firstpage = false
+        this.thirdpage = true;
+        let namedata = localStorage.getItem('name').split(' ')
+        this.modaldata['email'] = localStorage.getItem('email');
+        this.modaldata['firstname'] = namedata[0];
+        this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+        this.redeemsubscription.nativeElement.click()
+      } else {
+        this.firstpage = true
+        this.redeemsubscription.nativeElement.click()
+      }
     } else if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T')
       this.router.navigate(['/onboarding/login'])
@@ -209,22 +231,13 @@ export class AdvertsHwpPage implements OnInit {
   }
 
   already(value) {
-    if (value === 'home') {
-      this.actclosemodal.nativeElement.click()
-      let userid = localStorage.getItem('isloggedin');
-      if (userid === 'T') {
-        window.location.reload();
-      }
-    } else if (value === 'login') {
-      this.firstpage = false;
-      this.fourthpage = false;
-      this.thirdpage = false;
-      this.fifthpage = true;
-    } else if (value === 'register') {
-      this.firstpage = true;
-      this.secondpage = false;
-      this.fifthpage = false
-    }
+    this.actclosemodal.nativeElement.click()
+    this.firstpage = true;
+    this.fourthpage = false;
+    this.thirdpage = false;
+    this.secondpage = false;
+    this.fifthpage = false;
+    this.sixthpage = false;
   }
 
   PasswordValidator(control: AbstractControl): { [key: string]: boolean } | null {
@@ -292,16 +305,69 @@ export class AdvertsHwpPage implements OnInit {
     this.services.emailLogin(email, password)
       .subscribe(
         res => {//
-          if (val === 'act') {
-            localStorage.setItem("isloggedin", 'T')
-            localStorage.setItem("remember", 'T')
-            this.fifthpage = false;
-            this.thirdpage = true;
-          } else if (val === 'second') {
-            localStorage.setItem("isloggedin", 'T')
-            localStorage.setItem("remember", 'T')
-            this.secondpage = false;
-            this.thirdpage = true;
+          this.firstpage = false
+          this.fifthpage = false
+          this.thirdpage = true
+
+          localStorage.setItem("isloggedin", 'T')
+          this.loginResponse = res
+          localStorage.setItem('guest', 'F');
+          localStorage.setItem("remember", 'T')
+          localStorage.setItem('socialLogin', 'T');
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+          localStorage.setItem("video", JSON.stringify(this.video))
+          localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem('btnclick', 'F')
+          localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+          localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+          localStorage.setItem("userId", JSON.stringify(this.userId))
+          localStorage.setItem("email", this.socialEmail)
+          localStorage.setItem("FnName", this.socialFirstName)
+          localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+          localStorage.setItem("LName", this.socialLastName)
+          localStorage.setItem("pswd", '')
+          localStorage.setItem("name", this.loginResponse.Name)
+          localStorage.setItem("first", 'T')
+          let namedata = localStorage.getItem('name').split(' ')
+          this.modaldata['email'] = localStorage.getItem('email');
+          this.modaldata['firstname'] = namedata[0];
+          this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+          if (parseInt(this.loginResponse.UserId) == 0) {
+
+          }
+          else {
+            this.userId = this.loginResponse.UserId
+            this.userName = this.loginResponse.Name
+            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+            if (this.saveUsername == true) {
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+              localStorage.setItem("userName", JSON.stringify(this.userName))
+            }
+            else {
+              sessionStorage.setItem("userId", JSON.stringify(this.userId))
+              sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+              sessionStorage.setItem("userName", JSON.stringify(this.userName))
+            }
+            let acceptCookie = localStorage.getItem('activeCode');
+            let subscribePage = localStorage.getItem('subscribepage');
+            if (acceptCookie === 'T' || subscribePage === 'T') {
+              localStorage.setItem("isloggedin", 'T')
+              if (acceptCookie === 'T') {
+                localStorage.setItem("activeCode", 'F')
+              }
+              if (subscribePage === 'T') {
+                localStorage.setItem("subscribepage", 'F')
+              }
+            } else {
+              localStorage.setItem("isloggedin", 'T')
+            }
           }
         },
         error => { console.log(error) },
@@ -330,12 +396,70 @@ export class AdvertsHwpPage implements OnInit {
         .subscribe(res => {
 
           if (res) {
-
             this.firstpage = false
             this.fifthpage = false
             this.thirdpage = true
-          }
 
+            this.loginResponse = res
+            localStorage.setItem('guest', 'F');
+            localStorage.setItem("remember", 'T')
+            localStorage.setItem('socialLogin', 'T');
+            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+            localStorage.setItem("video", JSON.stringify(this.video))
+            localStorage.setItem("audio", JSON.stringify(this.audio))
+            localStorage.setItem('btnclick', 'F')
+            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("email", this.socialEmail)
+            localStorage.setItem("FnName", this.socialFirstName)
+            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+            localStorage.setItem("LName", this.socialLastName)
+            localStorage.setItem("pswd", '')
+            localStorage.setItem("name", this.loginResponse.Name)
+            localStorage.setItem("first", 'T')
+            let namedata = localStorage.getItem('name').split(' ')
+            this.modaldata['email'] = localStorage.getItem('email');
+            this.modaldata['firstname'] = namedata[0];
+            this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+            if (parseInt(this.loginResponse.UserId) == 0) {
+
+            }
+            else {
+              this.userId = this.loginResponse.UserId
+              this.userName = this.loginResponse.Name
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              if (this.saveUsername == true) {
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                localStorage.setItem("userName", JSON.stringify(this.userName))
+              }
+              else {
+                sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                sessionStorage.setItem("userName", JSON.stringify(this.userName))
+              }
+              let acceptCookie = localStorage.getItem('activeCode');
+              let subscribePage = localStorage.getItem('subscribepage');
+              if (acceptCookie === 'T' || subscribePage === 'T') {
+                localStorage.setItem("isloggedin", 'T')
+                if (acceptCookie === 'T') {
+                  localStorage.setItem("activeCode", 'F')
+                }
+                if (subscribePage === 'T') {
+                  localStorage.setItem("subscribepage", 'F')
+                }
+              } else {
+                localStorage.setItem("isloggedin", 'T')
+              }
+            }
+          }
         })
     },
       error => console.log(error),
@@ -367,6 +491,66 @@ export class AdvertsHwpPage implements OnInit {
               this.firstpage = false
               this.fifthpage = false
               this.thirdpage = true
+
+              this.loginResponse = res
+              localStorage.setItem('guest', 'F');
+              localStorage.setItem("remember", 'T')
+              localStorage.setItem('socialLogin', 'T');
+              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+              localStorage.setItem("video", JSON.stringify(this.video))
+              localStorage.setItem("audio", JSON.stringify(this.audio))
+              localStorage.setItem('btnclick', 'F')
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("email", this.socialEmail)
+              localStorage.setItem("FnName", this.socialFirstName)
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+              localStorage.setItem("LName", this.socialLastName)
+              localStorage.setItem("pswd", '')
+              localStorage.setItem("name", this.loginResponse.Name)
+              localStorage.setItem("first", 'T')
+              let namedata = localStorage.getItem('name').split(' ')
+              this.modaldata['email'] = localStorage.getItem('email');
+              this.modaldata['firstname'] = namedata[0];
+              this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+              if (parseInt(this.loginResponse.UserId) == 0) {
+
+              }
+              else {
+                this.userId = this.loginResponse.UserId
+                this.userName = this.loginResponse.Name
+                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId))
+                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  localStorage.setItem("userName", JSON.stringify(this.userName))
+                }
+                else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
+                }
+                let acceptCookie = localStorage.getItem('activeCode');
+                let subscribePage = localStorage.getItem('subscribepage');
+                if (acceptCookie === 'T' || subscribePage === 'T') {
+                  localStorage.setItem("isloggedin", 'T')
+                  if (acceptCookie === 'T') {
+                    localStorage.setItem("activeCode", 'F')
+                  }
+                  if (subscribePage === 'T') {
+                    localStorage.setItem("subscribepage", 'F')
+                  }
+                } else {
+                  localStorage.setItem("isloggedin", 'T')
+                }
+              }
             }
           })
       } else {

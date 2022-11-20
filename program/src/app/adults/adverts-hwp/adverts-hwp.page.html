@@ -127,7 +127,7 @@
 
                           <div class="row mb30px">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('Monthly')"
+                              <button type="submit" (click)="routedashboard('redeem')"
                                 class="btn btn_subscription_options">
                                 <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
                                   Redeem subscription code
@@ -674,6 +674,9 @@
   </div>
   <!-- /page content -->
 </div>
+
+<span #redeemsubscription data-toggle="modal" data-target="#activate_subscription">
+</span>
 
 <!-- activate subscription modal -->
 <div class="modal fade" id="activate_subscription" data-keyboard="false" data-backdrop="true">
