@@ -67,6 +67,7 @@ export class AdvertsHwpPage implements OnInit {
     public service: AdultsService,
     public authService: SocialAuthService
   ) {
+    localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
     let firsttime = localStorage.getItem('first');
     if (firsttime === 'T' || !firsttime) {
