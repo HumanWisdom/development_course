@@ -3516,9 +3516,13 @@ export class AdultDashboardPage implements OnInit {
       exercise=data[0];
      }
      else{
-
+      var incomppletedExercise=this.wisdomExerciseList.filter(x=>x.completed=='0');
+      if(incomppletedExercise.length>0){
+        exercise=incomppletedExercise[0];
+      }else{
+        exercise= data[data.length-1];
+      }
       // It contains data may be some exercise is completed 
-      exercise= data[data.length-1];
       var completed=this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo && x.completed=='0');
       if(completed.length==0){
         increaseExcercise=true;
@@ -3541,7 +3545,11 @@ export class AdultDashboardPage implements OnInit {
       if(this.exerciseNo.length==1){
         this.exerciseNo="0"+this.exerciseNo;
       }
-     this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
+      if(incomppletedExercise.length>0){
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))).toString():"0";
+      }else{
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
+      }
      var sessionNo=exercise.SessionNo.substring(0,exercise.SessionNo.length-2)+this.exerciseNo;
     
 
