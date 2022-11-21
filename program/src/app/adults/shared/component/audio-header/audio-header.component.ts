@@ -2,6 +2,7 @@ import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import { Router,ActivatedRoute} from '@angular/router';
 import {AdultsService} from "../../../../adults/adults.service"
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { Platform } from "@angular/cdk/platform";
 
 
 @Component({
@@ -34,7 +35,7 @@ export class AudioHeaderComponent implements OnInit {
   @Output() sendBookmark = new EventEmitter<boolean>();
 
   constructor(private router: Router,
-    private service:AdultsService,
+    private service:AdultsService, public platform:Platform,
     private ngNavigatorShareService: NgNavigatorShareService  ) { 
       this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
       this.ngNavigatorShareService = ngNavigatorShareService;
@@ -129,7 +130,7 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   share() {
-    if (!this.ngNavigatorShareService.canShare()) {
+    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }
