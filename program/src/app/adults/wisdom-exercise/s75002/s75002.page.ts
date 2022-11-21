@@ -98,7 +98,7 @@ export class S75002Page implements OnInit, AfterViewInit {
     $event.srcEvent.cancelBubble=true;
     this.methodSTartTime=Date.now();
     let eventText="";
-    const x = Math.abs($event.de) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
     const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
     eventText += `${x} ${y}<br/>`;
