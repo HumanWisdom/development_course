@@ -28,6 +28,8 @@ export class S75002Page implements OnInit, AfterViewInit {
   userId: any = localStorage.getItem('userId');
   endTime: any;
   startTime: any;
+  lastClick=0;
+   delay = 20;
   moduleId: number = 75;
   bookmark: number = 0;
   slideStart = 0;
@@ -39,6 +41,8 @@ export class S75002Page implements OnInit, AfterViewInit {
   maxDay = 0;
   totalDays = 5;
   DaysWithIntro=6;
+  methodSTartTime:any;
+  methodEndTime:any;
   constructor(private elementRef: ElementRef,
     public service: AdultsService, private adult: AdultsService, public router: Router) {
     this.startTime = Date.now()
@@ -84,22 +88,35 @@ export class S75002Page implements OnInit, AfterViewInit {
     // container.addEventListener("touchmove", this.moveTouch.bind(this), false);
   }
 
-  onSwipe(evt) {
+  onSwipe($event) {
+    if (this.lastClick >= (Date.now() - this.delay))
+  {
+    return;
+  }
+    this.lastClick = Date.now();
+    $event.srcEvent.stopPropagation()
+    $event.srcEvent.cancelBubble=true;
+    this.methodSTartTime=Date.now();
     let eventText="";
-    const x = Math.abs(evt.deltaX) > 40 ? (evt.deltaX > 0 ? 'right' : 'left'):'';
-    const y = Math.abs(evt.deltaY) > 40 ? (evt.deltaY > 0 ? 'down' : 'up') : '';
+    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+    const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
     eventText += `${x} ${y}<br/>`;
     if(eventText.includes("right")){
     this.back();
+    }else if(eventText.includes("left")){
+      this.next();
     }
     else if(eventText.includes('up')|| eventText.includes('down')){
-      window.scrollTo(0, -evt.deltaY);
+      window.scrollTo(0, -$event.deltaY);
       return;
     }
     else{
       this.next();
     }
+
+    debugger;
+    console.log("testing--------")
 }
   moveTouch(e) {
     if (moveleft) {
