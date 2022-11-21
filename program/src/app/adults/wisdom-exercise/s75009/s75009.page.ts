@@ -37,6 +37,7 @@ export class S75009Page implements OnInit {
   totalTime: any;
   bookmark: number = 0;
   screenType: string = "8";
+  DaysWithIntro=11;
   userId: any = localStorage.getItem('userId');
   totaldays=10;
   constructor(private elementRef: ElementRef,
@@ -45,29 +46,35 @@ export class S75009Page implements OnInit {
   }
 
   ngOnInit() {
-    this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
-      if (x) {
-        var data = x.filter(x => x.ScreenNo.includes('75009'));
-        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        if(data && data.length>=this.totaldays){
-          this.getdayevent("intro");
-        }
-       else if(window.history.state.day && window.history.state.day !=null ){
-          this.getdayevent(window.history.state.day);
-       }else{
-        if(this.vistedScreens[0]!=null){
-          this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
-          this.maxDay = this.currentDay;
-          this.getdayevent(this.currentDay.toString());
-        }else{
-          this.maxDay = this.currentDay;
-          this.getdayevent(this.currentDay.toString());
-        };
-      }
+    this.adult.GetWisdomScreens().subscribe((x: any) => {
+   if (x) {
+    var data = x.filter(x => x.ScreenNo.includes('75009'));
+    
+    let completed=data?.filter(x=>x.completed=="0");  
+    
+    let visitedScreen = data?.filter(x=>x.completed=="1");  
+    
+    for(let item of visitedScreen){
+      this.vistedScreens.push({
+        "ScreenNo": item.ScreenNo,
+        "ModuleID": 75,
+        "SessionID": 0,
+     });
     }
-    });
-  }
+    if(window.history.state.day && window.history.state.day !=null ){
+     this.getdayevent(window.history.state.day);
+    }else if(visitedScreen.length == this.DaysWithIntro || completed.length == this.DaysWithIntro){
+          this.currentDay=0;
+     this.getdayevent(this.currentDay.toString());
+    }
+    else if(completed.length>0){
+     this.currentDay = +completed[0].ScreenNo.substring(6, 7);
+     this.getdayevent(this.currentDay.toString());
+    }
 
+   }
+   });
+ }
 
   getdayevent(event) {
     if (event === 'intro') {
@@ -238,6 +245,9 @@ export class S75009Page implements OnInit {
       this.enableday8 = true;
       this.enableday9 = false;
       this.enableday10 = false;
+      this.screenNumber = "75009p8";
+      this.dayclass = '8';
+      this.currentDay = 8;
     }
     else if (event === '9') {
       this.slideStart = 0;
@@ -254,6 +264,9 @@ export class S75009Page implements OnInit {
       this.enableday8 = false;
       this.enableday9 = true;
       this.enableday10 = false;
+      this.screenNumber = "75009p9";
+      this.dayclass = '9';
+      this.currentDay = 9;
     }
     else if (event === '10') {
       this.slideStart = 0;
@@ -270,6 +283,9 @@ export class S75009Page implements OnInit {
       this.enableday8 = false;
       this.enableday9 = false;
       this.enableday10 = true;
+      this.screenNumber = "75009p10";
+      this.dayclass = '10';
+      this.currentDay = 10;
     }
     this.next();
     setTimeout(() => {

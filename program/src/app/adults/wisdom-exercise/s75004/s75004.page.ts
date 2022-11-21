@@ -37,35 +37,42 @@ export class S75004Page implements OnInit {
   screenType: string = "8";
   userId: any = localStorage.getItem('userId');
   totaldays=9;
+  DaysWithIntro=10;
   constructor(private elementRef: ElementRef,
     public service: AdultsService, private adult: AdultsService,public router:Router) {
     this.startTime = Date.now()
   }
 
   ngOnInit() {
-    this.adult.GetVisitedScreen(this.moduleId).subscribe((x: any) => {
-      if (x) {
-        var data = x.filter(x => x.ScreenNo.includes('75004'));
-        this.vistedScreens = data?.sort((a, b) => +b.ScreenNo.substring(6, 7) > +a.ScreenNo.substring(6, 7) ? 1 : -1);
-        if(data && data.length>=this.totaldays){
-          this.getdayevent("intro");
-        }
-       else if(window.history.state.day && window.history.state.day !=null ){
-          this.getdayevent(window.history.state.day);
-       }else{
-        if(this.vistedScreens[0]!=null){
-          this.currentDay = +this.vistedScreens[0].ScreenNo.substring(6, 7) + 1;
-          this.maxDay = this.currentDay;
-          this.getdayevent(this.currentDay.toString());
-        }else{
-          this.maxDay = this.currentDay;
-          this.getdayevent(this.currentDay.toString());
-        }
-        
-      }
+    this.adult.GetWisdomScreens().subscribe((x: any) => {
+   if (x) {
+    var data = x.filter(x => x.ScreenNo.includes('75004'));
+    
+    let completed=data?.filter(x=>x.completed=="0");  
+    
+    let visitedScreen = data?.filter(x=>x.completed=="1");  
+
+    for(let item of visitedScreen){
+      this.vistedScreens.push({
+        "ScreenNo": item.ScreenNo,
+        "ModuleID": 75,
+        "SessionID": 0,
+     });
     }
-    })
-  }
+     if(window.history.state.day && window.history.state.day !=null ){
+      this.getdayevent(window.history.state.day);
+     }else if(visitedScreen.length == this.DaysWithIntro || completed.length == this.DaysWithIntro){
+           this.currentDay=0;
+      this.getdayevent(this.currentDay.toString());
+     }
+     else if(completed.length>0){
+      this.currentDay = +completed[0].ScreenNo.substring(6, 7);
+      this.getdayevent(this.currentDay.toString());
+     }
+  
+   }
+   });
+ }
 
   getdayevent(event) {
     if (event === 'intro') {
