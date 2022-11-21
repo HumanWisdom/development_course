@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../../adults/adults.service";
+import { Platform } from "@angular/cdk/platform";
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -35,6 +36,7 @@ export class CourseHeaderComponent implements OnInit {
   constructor(private router: Router,
     private service: AdultsService,
     private ac: ActivatedRoute,
+    public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService
   ) {
     if (this.router.getCurrentNavigation()) {
@@ -135,7 +137,7 @@ export class CourseHeaderComponent implements OnInit {
 
   share() {
 
-    if (!this.ngNavigatorShareService.canShare()) {
+    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }
