@@ -5,7 +5,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ForumService } from '../forum.service';
-
+import { Platform } from "@angular/cdk/platform";
 
 @Component({
   selector: 'app-forum-landing',
@@ -39,7 +39,7 @@ export class ForumLandingPage implements OnInit {
   }, {
     value: 3, label: 'Reflections'
   }];
-  constructor(private serivce: ForumService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService, private location: Location) {
+  constructor(private serivce: ForumService, public platform:Platform, private router: Router, private ngNavigatorShareService: NgNavigatorShareService, private location: Location) {
     this.UserID = localStorage.getItem('userId');
     console.log(this.UserID);
     this.token = JSON.parse(localStorage.getItem("token"));
@@ -180,7 +180,7 @@ export class ForumLandingPage implements OnInit {
 
   share() {
 
-    if (!this.ngNavigatorShareService.canShare()) {
+    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }
