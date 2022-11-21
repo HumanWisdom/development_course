@@ -3545,7 +3545,7 @@ export class AdultDashboardPage implements OnInit {
       if(this.exerciseNo.length==1){
         this.exerciseNo="0"+this.exerciseNo;
       }
-      if(incomppletedExercise.length>0){
+      if(incomppletedExercise && incomppletedExercise.length>0){
         this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))).toString():"0";
       }else{
         this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
@@ -3556,7 +3556,7 @@ export class AdultDashboardPage implements OnInit {
      //Pushing final list for display
      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==sessionNo)){
             let obj={
-              "SessionNo": item.SessionNo,
+              " SessionNo": item.SessionNo,
               "ScreenNo": item.ScreenNo,
               "completed": item.completed,
               "day": item.ScreenNo.substring(6, item.ScreenNo.length),

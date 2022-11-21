@@ -2,9 +2,11 @@ import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import 'bcswipe';
 import { AdultsService } from '../../adults.service';
-
+import   'hammerjs';
 declare var $: any;
 var moveleft = false;
+
+
 @Component({
   selector: 'HumanWisdom-s75002',
   templateUrl: './s75002.page.html',
@@ -76,13 +78,33 @@ export class S75002Page implements OnInit, AfterViewInit {
  }
 
   ngAfterViewInit(): void {
-    $('.carousel').bcSwipe({ threshold: 50 });
-    var container = document.querySelector(".carousel");
+    // $('.carousel').bcSwipe({ threshold: 50 });
+    // var container = document.querySelector(".carousel");
 
-    container.addEventListener("touchmove", this.moveTouch.bind(this), false);
+    // container.addEventListener("touchmove", this.moveTouch.bind(this), false);
   }
+
+  onSwipe(evt) {
+    let eventText="";
+    const x = Math.abs(evt.deltaX) > 40 ? (evt.deltaX > 0 ? 'right' : 'left'):'';
+    const y = Math.abs(evt.deltaY) > 40 ? (evt.deltaY > 0 ? 'down' : 'up') : '';
+
+    eventText += `${x} ${y}<br/>`;
+    if(eventText.includes("right")){
+    this.back();
+    }
+    else if(eventText.includes('up')|| eventText.includes('down')){
+      window.scrollTo(0, -evt.deltaY);
+      return;
+    }
+    else{
+      this.next();
+    }
+}
   moveTouch(e) {
-    if (moveleft) {this.next()}else{
+    if (moveleft) {
+      this.next()
+    }else{
       this.back();
     }
   };
