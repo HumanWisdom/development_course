@@ -2,6 +2,8 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { Platform } from "@angular/cdk/platform";
+
 @Component({
   selector: 'HumanWisdom-wisdom-shorts-index',
   templateUrl: './wisdom-shorts-index.page.html',
@@ -10,7 +12,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class WisdomShortsIndexPage implements OnInit {
   path: string;
   address: string;
-  constructor(private ngNavigatorShareService: NgNavigatorShareService, private router: Router,
+  constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
@@ -23,7 +25,7 @@ export class WisdomShortsIndexPage implements OnInit {
     this.location.back()
   }
   share() {
-    if (!this.ngNavigatorShareService.canShare()) {
+    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }

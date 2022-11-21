@@ -2,7 +2,7 @@ import { Component, OnInit ,Input,Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import {AdultsService} from '../../../adults.service'
 import { NgNavigatorShareService } from 'ng-navigator-share';
-
+import { Platform } from "@angular/cdk/platform";
 
 @Component({
   selector: 'app-module-end',
@@ -42,7 +42,7 @@ export class ModuleEndComponent implements OnInit {
     },
   ]
 
-  constructor(private router:Router,private service: AdultsService, 
+  constructor(private router:Router,private service: AdultsService,  public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService) { 
 
       this.ngNavigatorShareService = ngNavigatorShareService;
@@ -60,7 +60,7 @@ else
     this.socialShare=true
     this.shareUrl="https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`
 
-    if (!this.ngNavigatorShareService.canShare()) {
+    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }
