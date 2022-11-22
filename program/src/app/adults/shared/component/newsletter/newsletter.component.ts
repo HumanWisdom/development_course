@@ -9,10 +9,8 @@ export class NewsletterComponent implements OnInit {
 
    constructor(  public fb: UntypedFormBuilder) { }
   public newsletterForm = this.fb.group({
-   
-    email: ['Invalid email', [Validators.required, Validators.email]]
-    
-  })
+       email: ['', [Validators.required, Validators.email]]    
+  }, )
   ngOnInit() {}
 
   get emailvalid() {

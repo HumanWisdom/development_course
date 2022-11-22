@@ -19,7 +19,7 @@
                       
                   </div>
                   <input type="hidden" name="ml-submit" value="1" />
-                  <button type="submit" class="primary" >
+                  <button type="submit" class="primary" [disabled]="email.invalid" >
                       Sign up for newsletter
                   </button>
                   <button disabled="disabled" style="display: none;" type="button" class="loading">
