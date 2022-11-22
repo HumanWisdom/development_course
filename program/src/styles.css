@@ -26871,7 +26871,7 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 {
   color: #5D5D5D;
   font-size: 20px;
-  left: 20px !important;
+  left: 30px !important;
   text-align: center;
   display: flex !important;
   align-items: center;
@@ -30525,9 +30525,9 @@ svg path
 
 .wec_01 .carousel-inner .item 
 {
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s;
+  transition: -webkit-transform 0s;
+  transition: transform 0s;
+  transition: transform 0s;
 }
 
 /* font weight */
@@ -31000,4 +31000,37 @@ input[type="search"].hide_search::-webkit-search-cancel-button
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   word-break: break-word;
+}
+
+.adsearch
+{
+  position: absolute;
+  top: 60px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 9;
+  border-radius: 0;
+}
+
+.adsearch_ul
+{
+  border: 1px solid #EBEBEB;
+  border-radius: 0 0 20px 20px;
+  border-top: 2px solid #EBEBEB;
+  height: 19.3rem;
+  overflow-y: scroll;
+}
+
+.adsearch_ul .list-group-item
+{
+  border-radius: 0 !important;
+  border: 0;
+}
+
+.adsearch_ul .list-group-item:last-child
+{
+  border-radius: 0 0 18px 18px !important;
 }
