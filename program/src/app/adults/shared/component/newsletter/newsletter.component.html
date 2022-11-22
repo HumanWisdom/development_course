@@ -10,10 +10,10 @@
                   <div class="form-section">
                     <strong  *ngIf="email.invalid && email.touched" >Error! Please enter a vaid email</strong>
                       <div class="form-group ml-field-name">
-                          <input type="text" name="fields[name]" class="form-control" placeholder="Your name" value="" autocomplete="name" x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off">
+                          <input type="text"  name="fields[name]"  class="form-control" placeholder="Your name" value="" autocomplete="name" x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off">
                       </div>
                       <div class="form-group ml-field-email ml-validate-required ml-validate-email">
-                          <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"   type="email" name="fields[email]" class="form-control" placeholder="Your e-mail address*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off"  [(ngModel)]="newsletterForm.email" #email="ngModel"  required>
+                          <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"  name="fields[email]"  type="email"  class="form-control" placeholder="Your e-mail address*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off"  [(ngModel)]="newsletterForm.email"  #email="ngModel"  required>
                           
                         </div>
                       
