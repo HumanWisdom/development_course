@@ -12,7 +12,7 @@
           <div class="x_content p0">
 
             <div class="row mb10px">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <a routerLink="/adult-dashboard/" class="">
                   <h4 class="fw_400 fs_14px lh_16px fc_1092a7 flex_ai">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/arrow_left.svg" class="img-responsive" alt="">
@@ -25,7 +25,7 @@
             </div>
            
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback zi0">
                 <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
                    (keyup)="getAutoCompleteList($event.target.value)"
                    autocomplete="off"
@@ -40,7 +40,7 @@
               </ul>
             </div>
             <div class="row pfys_title">
-              <div class="col-md-12 col-sm-12 col-xs-8">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="fw_500 fs_21px lh_25px fc_000000 mtb0px">
                   Personalised for you!
                 </h4>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="row pfys_desc">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
                   Select a topic to explore. Find all related content in one place
                 </h4>
@@ -57,15 +57,15 @@
 
             <ng-container *ngIf="personalisedforyou.length !== 0">
               <div class="row mb15px" *ngFor="let item of personalisedforyou; let i = index">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <button class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']"
                     (click)="clickbtn(item['name'], '', $event, i, item['id'])">
                     <div class="row flex_ai">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-10 col-sm-10 col-xs-10 tleft">
+                        <div class="col-md-10 col-sm-10 col-xs-10 p0 tleft">
                           {{item['name']}}
                         </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 tright"
+                        <div class="col-md-2 col-sm-2 col-xs-2 p0 tright"
                           (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg"
                             *ngIf="item['active']" class="img-responsive">
@@ -81,7 +81,7 @@
 
             <!-- welcome popup button -->
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                 <button type="button" class="btn btn-primary m0px" data-toggle="modal" data-target="#modal_popup">
                   Welcome Popup
                 </button>
