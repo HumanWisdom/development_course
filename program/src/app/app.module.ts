@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -23,13 +23,20 @@ import { AuthGuard } from './auth.guard';
 import { LogEventService } from './log-event.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
+import * as Hammer from 'hammerjs';
 
+export class MyHammerConfig extends HammerGestureConfig {
+    overrides = <any> {
+      swipe: { direction: Hammer.DIRECTION_ALL },
+    };
+  }
 @NgModule({
     declarations: [AppComponent],
     imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
         AdultsModule,
         OnboardingModule,
         FormsModule,
+        HammerModule,
         HttpClientModule,
         SocialLoginModule,
         SplashPageModule,
@@ -54,6 +61,10 @@ import { TokenInterceptorService } from './token-interceptor.service';
             useClass: TokenInterceptorService,
             multi: true
         },
+        {
+            provide: HAMMER_GESTURE_CONFIG,
+            useClass: MyHammerConfig,
+          },
         //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         {
             provide: 'SocialAuthServiceConfig',
