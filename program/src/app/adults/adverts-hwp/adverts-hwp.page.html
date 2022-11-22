@@ -144,7 +144,7 @@
                               <a>
                                 <button type="button" (click)="routedashboard('free')"
                                   class="btn h60px bg_lg_ffc4f5_01 bs_01 br_30px m0px fw_500 fs_18px lh_21px fc_000000 w100">
-                                  Try for free
+                                  {{isLoggedIn ? 'Go to App' : 'Try for free'}}
                                 </button>
                               </a>
                             </div>
