@@ -137,10 +137,10 @@ export class CourseHeaderComponent implements OnInit {
 
   share() {
 
-    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
+    /* if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
       alert(`This service/api is not supported in your Browser`);
       return;
-    }
+    } */
     if (this.urlT) {
 
       this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`

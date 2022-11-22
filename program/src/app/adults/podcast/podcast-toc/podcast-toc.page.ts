@@ -42,10 +42,10 @@ export class PodcastTocPage implements OnInit {
   }
 
   share(){
-    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
+    /* if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
       alert(`This service/api is not supported in your Browser`);
       return;
-    }
+    } */
    let url="https://humanwisdom.me/course"+this.path;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',

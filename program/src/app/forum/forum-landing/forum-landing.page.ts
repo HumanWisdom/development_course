@@ -180,10 +180,10 @@ export class ForumLandingPage implements OnInit {
 
   share() {
 
-    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
+   /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
-    }
+    } */
     if (this.urlT) {
       console.log("url")
       this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
