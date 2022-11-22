@@ -87,53 +87,59 @@ export class S75002Page implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     $(".carousel").bcSwipe({ threshold: 50 });
     var container = document.querySelector(".carousel");
-    container.addEventListener("touchmove", this.moveTouch.bind(this), false);
+   // container.addEventListener("touchmove", this.moveTouch.bind(this), false);
   }
 
-  //   onSwipe($event) {
-  //     if (this.lastClick >= (Date.now() - this.delay))
-  //   {
-  //     return;
-  //   }
-  //     this.lastClick = Date.now();
-  //     $event.srcEvent.stopPropagation()
-  //     $event.srcEvent.cancelBubble=true;
-  //     this.methodSTartTime=Date.now();
-  //     let eventText="";
-  //     const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
-  //     const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
-
-  //     eventText += `${x} ${y}<br/>`;
-  //     if(eventText.includes("right")){
-  //     this.back();
-  //     }else if(eventText.includes("left")){
-  //       this.next();
-  //     }
-  //     else if(eventText.includes('down')){
-  //       window.scrollTo(0, 500);
-  //       return;
-  //     }
-  //     else if(eventText.includes('up')){
-  //       window.scrollTo(0,0);
-  //     }
-  //     else{
-  //       this.next();
-  //     }
-
-  //     debugger;
-  //     console.log("testing--------")
-  // }
-  moveTouch(e) {
-    if (this.lastClick >= Date.now() - this.delay) {
+    onSwipe($event) {
+      if (this.lastClick >= (Date.now() - this.delay))
+    {
       return;
     }
-    this.lastClick = Date.now();
-    if (moveleft) {
-      this.next();
-    } else {
+      this.lastClick = Date.now();
+      $event.srcEvent.stopPropagation()
+      $event.srcEvent.cancelBubble=true;
+      this.methodSTartTime=Date.now();
+      let eventText="";
+      const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+      const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+
+      eventText += `${x} ${y}<br/>`;
+      if(eventText.includes("right")){
+        $('#mdp_carousel').carousel('prev');
       this.back();
-    }
+      }else if(eventText.includes("left")){
+        $('#mdp_carousel').carousel('next');
+        this.next();
+      }
+      else if(eventText.includes('down')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:0
+        });
+        return;
+      }
+      else if(eventText.includes('up')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:800
+        });
+      }
+      else{
+        this.next();
+        $('#mdp_carousel').carousel('next');
+      }
   }
+  // moveTouch(e) {
+  //   if (this.lastClick >= Date.now() - this.delay) {
+  //     return;
+  //   }
+  //   this.lastClick = Date.now();
+  //   if (moveleft) {
+  //     this.next();
+  //   } else {
+  //     this.back();
+  //   }
+  // }
   getClass(day) {
     var dayclass = "";
     var className = "";
