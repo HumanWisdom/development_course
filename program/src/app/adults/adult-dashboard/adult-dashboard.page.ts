@@ -143,6 +143,7 @@ export class AdultDashboardPage implements OnInit {
   mediaPercent: any
   freeScreens = []
   currentList = [];
+  maxExceriseCount="12;"
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -3515,9 +3516,13 @@ export class AdultDashboardPage implements OnInit {
       exercise=data[0];
      }
      else{
-
+      var incomppletedExercise=this.wisdomExerciseList.filter(x=>x.completed=='0');
+      if(incomppletedExercise.length>0){
+        exercise=incomppletedExercise[0];
+      }else{
+        exercise= data[data.length-1];
+      }
       // It contains data may be some exercise is completed 
-      exercise= data[data.length-1];
       var completed=this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo && x.completed=='0');
       if(completed.length==0){
         increaseExcercise=true;
@@ -3529,22 +3534,29 @@ export class AdultDashboardPage implements OnInit {
     
      this.exerciseNo=!increaseExcercise?exercise.SessionNo.substring(exercise.SessionNo.length-2)
      :((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length-2)))+1).toString();
+   
      if(allCompletedScreen){
       this.exerciseNo="1";
      }
-
+     if(this.exerciseNo=="13"){
+      this.exerciseNo="1";
+    }
      //Checking the length if its less than 10  to append for current session number
       if(this.exerciseNo.length==1){
         this.exerciseNo="0"+this.exerciseNo;
       }
-     this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
+      if(incomppletedExercise && incomppletedExercise.length>0){
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))).toString():"0";
+      }else{
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
+      }
      var sessionNo=exercise.SessionNo.substring(0,exercise.SessionNo.length-2)+this.exerciseNo;
     
 
      //Pushing final list for display
      for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==sessionNo)){
             let obj={
-              "SessionNo": item.SessionNo,
+              " SessionNo": item.SessionNo,
               "ScreenNo": item.ScreenNo,
               "completed": item.completed,
               "day": item.ScreenNo.substring(6, item.ScreenNo.length),
@@ -3557,10 +3569,10 @@ export class AdultDashboardPage implements OnInit {
      }
       //Dynamic Scroll
         setTimeout(() => {
-          var ypos=window.scrollY;
-          var element = document.querySelector(".wediv .editable");
-          element?.scrollIntoView({behavior: "smooth" ,inline: "center"});
-          window.scroll(0,ypos);
+          var editable=document.querySelector(".editable").getBoundingClientRect().x;
+          var wediv = document.querySelector(".wediv").getBoundingClientRect().x;
+          document.querySelector(".wediv").scrollLeft=editable-wediv;
+          
       }, 3000);
       
         console.log(this.currentList);
