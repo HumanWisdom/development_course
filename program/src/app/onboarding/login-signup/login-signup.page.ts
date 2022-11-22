@@ -357,7 +357,11 @@ export class LoginSignupPage implements OnInit {
                     if (subscribePage === "T") {
                       localStorage.setItem("subscribepage", "F");
                     }
-                    this.router.navigate(["/onboarding/add-to-cart"]);
+                    if (this.loginResponse.Subscriber === '0') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else {
+                      this.router.navigate(["/onboarding/viewcart"])
+                    }
                   } else {
                     localStorage.setItem("isloggedin", "T");
                     if (pers && persub && pers === "T") {
@@ -510,7 +514,11 @@ export class LoginSignupPage implements OnInit {
                     if (subscribePage === "T") {
                       localStorage.setItem("subscribepage", "F");
                     }
-                    this.router.navigate(["/onboarding/add-to-cart"]);
+                    if (this.loginResponse.Subscriber === '0') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else {
+                      this.router.navigate(["/onboarding/viewcart"])
+                    }
                   } else {
                     localStorage.setItem("isloggedin", "T");
                     if (pers && persub && pers === "T") {
@@ -660,7 +668,11 @@ export class LoginSignupPage implements OnInit {
                 if (localStorage.getItem("emailCode") === "T") {
                   localStorage.setItem("emailCode", "F");
                 }
-                this.router.navigate(["/onboarding/add-to-cart"]);
+                if (this.loginResponse.Subscriber === '0') {
+                  this.router.navigate(["/onboarding/add-to-cart"]);
+                } else {
+                  this.router.navigate(["/onboarding/viewcart"])
+                }
               }
             } else {
               if (roleid === 8 && emailcode === "T") {

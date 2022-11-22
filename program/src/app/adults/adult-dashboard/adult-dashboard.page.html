@@ -38,18 +38,23 @@
           <div class="x_content p0 mt0px">
             <form>
 
-              <div class="row mt30px">
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0">
+              <div class="row mt30px prelative">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 plr20px">
                   <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
                      (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" 
                      (focusout)="onFocusOutEvent ()"
-                    (keyup.enter)="getinp($event.target.value)" placeholder="Search">
+                    (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                   <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon" aria-hidden="true"></span>
                 </div>
-                <ul class="list-group autocomplete-list" *ngIf="searchResult.length>0">
-                  <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
-                </ul>
+
+                <div class="row adsearch">
+                  <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
+                    <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                      <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               <!-- introduction -->
@@ -526,7 +531,7 @@
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
                         <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_we" aria-expanded="true">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="true">
 
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -548,7 +553,7 @@
                           </a>
                         </h4>
                       </div>
-                      <div id="ca_we" class="panel-collapse collapse in">
+                      <div id="" class="panel-collapse collapse in">
                         <div class="panel-body p0 wepanel">
 
                           <div class="row">

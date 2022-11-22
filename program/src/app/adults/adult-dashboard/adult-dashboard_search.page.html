@@ -518,9 +518,82 @@
               <!-- /accordion -->
               <!-- /get help now -->
 
+              <!-- wisdom exercise -->
+              <!-- accordion -->
+              <div class="row mlr-10px_01 accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group dpanelgroup" id="accordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading p0">
+                        <h4 class="panel-title dpaneltitle">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="true">
+
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
+                                    Wisdom Exercises
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                <a (click)="RouteToWisdomExercise(null)" >
+                                    <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
+                                      View all
+                                    </h2>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="" class="panel-collapse collapse in">
+                        <div class="panel-body p0 wepanel">
+
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 plr0px pb5px">
+                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px bold">
+                                #{{exerciseNo}} {{Title}}
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row cmr-10px ">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
+                             <ng-container *ngFor="let item of currentList">
+                              <div class="col-md-3 col-sm-3 col-xs-3" >
+                                <a  *ngIf="item.day =='0';else notIntro">
+                                  <button type="button" (click)="RouteToWisdomExercise(item)" class="btn m0px btn_wec"  [ngClass]="getWisdomClass(item)">
+                                    Intro
+                                  </button>
+                                </a>
+                              </div>
+                            <ng-template #notIntro>
+                              <div class="col-md-3 col-sm-3 col-xs-3">
+                                <a >
+                                  <button type="button" class="btn m0px btn_wec"(click)="RouteToWisdomExercise(item)"  [ngClass]="getWisdomClass(item)">
+                                   Day {{item.day}}
+                                  </button>
+                                </a>
+                              </div>
+                            </ng-template>
+                          </ng-container>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /accordion -->
+              <!-- /wisdom exercise -->
+
               <!-- continue where you left -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row" *ngIf="isloggedIn">
+              <div class="row mlr-10px_01 accordion_row" *ngIf="(isloggedIn) && (resume.length !== 0)">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
@@ -1688,79 +1761,6 @@
               </div>
               <!-- /accordion -->
               <!-- /make the world a better place -->
-
-              <!-- wisdom exercise -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_we" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    Wisdom Exercises
-                                  </h2>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                <a (click)="RouteToWisdomExercise(null)" >
-                                    <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
-                                      View all
-                                    </h2>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_we" class="panel-collapse collapse in">
-                        <div class="panel-body p0 wepanel">
-
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 plr0px pb5px">
-                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px bold">
-                                #{{exerciseNo}} {{Title}}
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row cmr-10px ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
-                             <ng-container *ngFor="let item of currentList">
-                              <div class="col-md-3 col-sm-3 col-xs-3" >
-                                <a  *ngIf="item.day =='0';else notIntro">
-                                  <button type="button" (click)="RouteToWisdomExercise(item)" class="btn m0px btn_wec"  [ngClass]="getWisdomClass(item)">
-                                    Intro
-                                  </button>
-                                </a>
-                              </div>
-                            <ng-template #notIntro>
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a >
-                                  <button type="button" class="btn m0px btn_wec"(click)="RouteToWisdomExercise(item)"  [ngClass]="getWisdomClass(item)">
-                                   Day {{item.day}}
-                                  </button>
-                                </a>
-                              </div>
-                            </ng-template>
-                          </ng-container>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /accordion -->
-              <!-- /wisdom exercise -->
 
               <div class="pagebreak"></div>
 

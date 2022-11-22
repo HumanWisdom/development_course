@@ -3,6 +3,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Platform } from "@angular/cdk/platform";
 
 @Component({
   selector: 'app-podcast-toc',
@@ -16,7 +17,7 @@ export class PodcastTocPage implements OnInit {
   tag='all';
   iframeSrc:SafeResourceUrl;
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
-    private router: Router ,
+    private router: Router , public platform: Platform,
     private activatedRoute:ActivatedRoute,
     private location: Location,
     private sanitizer: DomSanitizer) {
@@ -41,10 +42,10 @@ export class PodcastTocPage implements OnInit {
   }
 
   share(){
-    if (!this.ngNavigatorShareService.canShare()) {
+    /* if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)   ) {
       alert(`This service/api is not supported in your Browser`);
       return;
-    }
+    } */
    let url="https://humanwisdom.me/course"+this.path;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',

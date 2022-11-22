@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module'
 
 import { WisdomExerciseRoutingModule } from './wisdom-exercise-routing.module';
 
@@ -7,7 +8,8 @@ import { WisdomExerciseRoutingModule } from './wisdom-exercise-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    WisdomExerciseRoutingModule
+    WisdomExerciseRoutingModule,
+    SharedModule,
   ]
 })
 export class WisdomExerciseModule { }
