@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, Validators } from '@angular/forms';
+import {UntypedFormBuilder , Validators } from '@angular/forms';
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
   styleUrls: ['./newsletter.component.scss'],
 })
 export class NewsletterComponent implements OnInit {
-  constructor(  public fb: FormBuilder) {}
+  constructor(  public fb: UntypedFormBuilder) {}
 
   public newsletterForm = this.fb.group({
        email: ['', [Validators.required, Validators.email]]    
