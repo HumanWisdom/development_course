@@ -30,10 +30,10 @@ export class EventsIndexPage implements OnInit {
     this.router.navigate(['/adults/curated/youtubelink', link])
   }
   share() {
-    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
+   /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
       alert(`This service/api is not supported in your Browser`);
       return;
-    }
+    } */
      console.log("url")
     this.path="https://humanwisdom.me/course"+this.address;
     this.ngNavigatorShareService.share({

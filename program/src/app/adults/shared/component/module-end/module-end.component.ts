@@ -60,10 +60,10 @@ else
     this.socialShare=true
     this.shareUrl="https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`
 
-    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
+   /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
-    }
+    } */
 
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',

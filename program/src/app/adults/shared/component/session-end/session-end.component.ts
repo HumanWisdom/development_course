@@ -35,11 +35,11 @@ export class SessionEndComponent implements OnInit {
     this.shareUrl="https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`
     console.log(this.shareUrl)
 
-    if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
+   /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }
- 
+  */
 
    this.ngNavigatorShareService.share({
     title: 'HumanWisdom Program',
