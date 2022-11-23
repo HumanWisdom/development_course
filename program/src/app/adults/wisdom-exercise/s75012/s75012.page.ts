@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 //import { colorSets } from '@swimlane/ngx-charts';
-
+declare var $: any;
 @Component({
   selector: 'HumanWisdom-s75012',
   templateUrl: './s75012.page.html',
@@ -22,8 +22,10 @@ export class S75012Page implements OnInit {
   enableday7 = false;
   enableday8 = false;
   enableday9 = false;
-
-
+  lastClick = 0;
+  delay = 20;
+  methodSTartTime: any;
+  methodEndTime: any;
   slideStart = 0;
   totalSlidesCount = 5;
   details: string = '1/5'
@@ -413,5 +415,43 @@ export class S75012Page implements OnInit {
       this.isShowAudio = false;
     }
   }
-
+  onSwipe($event) {
+    if (this.lastClick >= (Date.now() - this.delay))
+  {
+    return;
+  }
+    this.lastClick = Date.now();
+    $event.srcEvent.stopPropagation()
+    $event.srcEvent.cancelBubble=true;
+    this.methodSTartTime=Date.now();
+    let eventText="";
+    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+    const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+  
+    eventText += `${x} ${y}<br/>`;
+    if(eventText.includes("right")){
+      $('#mdp_carousel').carousel('prev');
+    this.back();
+    }else if(eventText.includes("left")){
+      $('#mdp_carousel').carousel('next');
+      this.next();
+    }
+    else if(eventText.includes('down')){
+      window.scrollTo({
+        behavior:'smooth',
+        top:0
+      });
+      return;
+    }
+    else if(eventText.includes('up')){
+      window.scrollTo({
+        behavior:'smooth',
+        top:800
+      });
+    }
+    else{
+      this.next();
+      $('#mdp_carousel').carousel('next');
+    }
+  }
 }

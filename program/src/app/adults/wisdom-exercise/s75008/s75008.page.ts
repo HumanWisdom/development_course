@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
-
+declare var $: any;
 @Component({
   selector: 'HumanWisdom-s75008',
   templateUrl: './s75008.page.html',
@@ -12,7 +12,10 @@ export class S75008Page implements OnInit {
   // active_color = "#FFC455";
   // base_color = "rgba(255,255,255,0.2)";
   // child =1;
-
+  lastClick = 0;
+  delay = 20;
+  methodSTartTime: any;
+  methodEndTime: any;
   dayclass = 'intro'
   isShowTranscript = false;
   isShowAudio = false;
@@ -316,7 +319,45 @@ export class S75008Page implements OnInit {
   }, 2000);
   
   }
-
+  onSwipe($event) {
+    if (this.lastClick >= (Date.now() - this.delay))
+  {
+    return;
+  }
+    this.lastClick = Date.now();
+    $event.srcEvent.stopPropagation()
+    $event.srcEvent.cancelBubble=true;
+    this.methodSTartTime=Date.now();
+    let eventText="";
+    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+    const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+  
+    eventText += `${x} ${y}<br/>`;
+    if(eventText.includes("right")){
+      $('#mdp_carousel').carousel('prev');
+    this.back();
+    }else if(eventText.includes("left")){
+      $('#mdp_carousel').carousel('next');
+      this.next();
+    }
+    else if(eventText.includes('down')){
+      window.scrollTo({
+        behavior:'smooth',
+        top:0
+      });
+      return;
+    }
+    else if(eventText.includes('up')){
+      window.scrollTo({
+        behavior:'smooth',
+        top:800
+      });
+    }
+    else{
+      this.next();
+      $('#mdp_carousel').carousel('next');
+    }
+  }
   next() {
     this.nextDay = null;
     setTimeout(() => {
