@@ -8,11 +8,7 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ['./s75008.page.scss'],
 })
 export class S75008Page implements OnInit {
-
-  // active_color = "#FFC455";
-  // base_color = "rgba(255,255,255,0.2)";
-  // child =1;
-
+  
   dayclass = 'intro'
   isShowTranscript = false;
   isShowAudio = false;
@@ -226,7 +222,7 @@ export class S75008Page implements OnInit {
     }
     else if (event === '7') {
       this.slideStart = 0;
-      this.totalSlidesCount = 11;
+      this.totalSlidesCount = 10;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -239,76 +235,7 @@ export class S75008Page implements OnInit {
       this.screenNumber = "75008p7";
       this.dayclass = '7';
       this.currentDay = 7;
-
-      setTimeout(() => {
-  
-      // multistep wizard
-      $( document ).ready(function() {
-
-        var base_color = "rgba(36.5,36.5,36.5,0.2)";
-        var active_color = "#FFC455";
-
-        var i;
-        
-        var child = 1;
-        var length = $("section").length - 1;
-        $("#prev").addClass("disabled");
-        $("#submit").addClass("disabled");
-        
-        $("section").not("section:nth-of-type(1)").hide();
-        $("section").not("section:nth-of-type(1)").css('transform','translateX(100px)');
-        
-        var svgWidth = length * 200 + 24;
-        $("#svg_wrap").html(
-          '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
-            svgWidth +
-            ' 24" xml:space="preserve"></svg>'
-        );
-        
-        function makeSVG(tag, attrs) {
-          var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
-          for (var k in attrs) el.setAttribute(k, attrs[k]);
-          return el;
-        }
-        
-        for (i = 0; i < length; i++) {
-          var positionX = 12 + i * 200;
-        var rect = makeSVG("rect", { x: positionX+12, y: 9, width: 176, height: 6 });
-          document.getElementById("svg_form_time").appendChild(rect);
-          // <g><rect x="12" y="9" width="200" height="6"></rect></g>'
-          var circle = makeSVG("circle", {
-            cx: positionX,
-            cy: 12,
-            r: 12,
-            width: positionX,
-            height: 6
-          });
-          document.getElementById("svg_form_time").appendChild(circle);
-        }
-        
-        var circle = makeSVG("circle", {
-          cx: positionX + 200,
-          cy: 12,
-          r: 12,
-          width: positionX,
-          height: 6
-        });
-        document.getElementById("svg_form_time").appendChild(circle);
-        
-        $('#svg_form_time rect').css('fill',base_color);
-        $('#svg_form_time circle').css('fill',base_color);
-        $("circle:nth-of-type(1)").css("fill", active_color);
-        
-        
-      
-          
-        
-      });
-      // /multistep wizard
-  
-      }, 3000);
     }
-
     this.next();
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");

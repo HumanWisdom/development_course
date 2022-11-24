@@ -24,7 +24,7 @@
               </div>
             </div>
            
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback zi0">
                 <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
                    (keyup)="getAutoCompleteList($event.target.value)"
@@ -38,7 +38,27 @@
               <ul class="list-group autocomplete-list" *ngIf="searchResult.length>0">
                 <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
               </ul>
+            </div> -->
+
+            <div class="row mt30px prelative">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
+                   (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" 
+                   (focusout)="onFocusOutEvent ()"
+                  (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
+                <span class="fa fa-search form-control-feedback left pfy_search_icon pfy_search_icon_ext" aria-hidden="true"></span>
+                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
+              </div>
+
+              <div class="row adsearch">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                    <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+
             <div class="row pfys_title">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="fw_500 fs_21px lh_25px fc_000000 mtb0px">
