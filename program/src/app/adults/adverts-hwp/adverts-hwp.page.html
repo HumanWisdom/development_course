@@ -685,7 +685,8 @@
     <!-- modal content -->
     <div class="row center_flex activate_subscription_outer" *ngIf="firstpage">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 activate_subscription_inner asi_extended">
-        <form [formGroup]="registrationForm">
+        <form [formGroup]="registrationForm" autocomplete="off">
+          <input autocomplete="false" name="hidden" type="text" class="hidden">
           <div class="mactivate_subscription_01">
             <div class="row center_flex">
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -774,7 +775,7 @@
             <div class="row center_flex mb10px">
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <input type="text" class="form-control cfc14" placeholder="E-mail*" formControlName="email" required>
+                  <input type="text" class="form-control cfc14" placeholder="E-mail*" formControlName="email" autocomplete="new-password"  required >
                   <div *ngIf="emailvalid.invalid && emailvalid.touched">
                     <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email address</small>
                     <small *ngIf="emailvalid.errors?.email" class="text danger">Please enter a valid email</small>
@@ -967,7 +968,7 @@
           <div class="row center_flex">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <input type="text" id="activatecode" class="cfc11" (keyup)="getcode($event.target.value)"
+                <input type="text" id="activatecode" class="cfc11" (keyup)="getcode($event.target.value)" [disabled]="subsecondpage"
                   placeholder="Enter Activation Code">
               </div>
             </div>
@@ -1160,7 +1161,7 @@
 
           <div class="row center_flex as_continue_dashboard">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              <button type="button" class="btn btn-warning btn_ms_submit" (click)="already('home')">
+              <button type="button" class="btn btn-warning btn_ms_submit" (click)="routedashboard('free')">
                 Continue to dashboard
               </button>
             </div>
