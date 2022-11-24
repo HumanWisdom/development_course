@@ -28,6 +28,10 @@ export class TnAdvertComponent implements OnInit {
     this.router.navigate(['/adults/adult-dashboard'])
   }
 
+  route_adverts_hwp() {
+    this.router.navigate(['/adults/adverts-hwp'])
+  }
+
   Logevent() {
     if (this.login === 'Logout') {
       if (confirm("Are you sure you want to logout ?") === true) {
