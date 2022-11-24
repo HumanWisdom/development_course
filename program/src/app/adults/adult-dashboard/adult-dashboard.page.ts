@@ -330,7 +330,7 @@ export class AdultDashboardPage implements OnInit {
         this.enablecookiemodal.nativeElement.click();
       }, 1000)
     } else {
-      this.enableDailypopup();
+      // this.enableDailypopup();
     }
 
     setTimeout(() => {
@@ -557,7 +557,7 @@ export class AdultDashboardPage implements OnInit {
   acceptCookies() {
     localStorage.setItem('acceptcookie', 'T');
     this.closecookiemodal.nativeElement.click();
-    this.enableDailypopup();
+    // this.enableDailypopup();
   }
 
   freescreens() {
@@ -1372,6 +1372,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   enableDailypopup() {
+
     this.service.adminPopup().subscribe((res) => {
       this.alertMsg = res;
       let olddate = localStorage.getItem("getalertdate")
