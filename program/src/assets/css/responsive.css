@@ -945,6 +945,13 @@
     {
         margin-top: -15%;
     }
+
+    .asi_extended 
+    {
+        overflow: unset;
+        height: auto;
+        z-index: unset;
+    }
 }
 
 @media (max-width: 1366px)
@@ -960,5 +967,15 @@
     .col-lg-4 
     {
         width: 10.333333%;
+    }
+}
+
+@media (max-width: 375px)
+{
+    .asi_extended 
+    {
+        overflow: overlay;
+        height: 75%;
+        z-index: 99;
     }
 }

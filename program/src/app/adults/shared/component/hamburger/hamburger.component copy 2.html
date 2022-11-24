@@ -77,6 +77,77 @@
         </a>
       </li>
 
+      <li>
+        <a (click)="Logevent('/adults/wisdom-survey', '', 'click_survey')"  class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/03.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Wisdom Survey
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li *ngIf="isloggedIn && roleid === 8">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+            <!-- 
+            <div class="col-md-2 col-sm-2 col-xs-2">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/04.svg" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-10 p0 flex_ai" *ngIf="roleid !== 8">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px mw75p">
+                Redeem Wisdom Points
+                <span class="fs_12px">
+                  (Coming Soon)
+                </span>
+              </h4>
+              <div class="prelative center_flex pl5px">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_05.png" alt="" class="prelative">
+                <h6 class="fw_700 fs_10px lh_12px fc_243949 wpts_count">
+                  9999
+                </h6>
+              </div>
+            </div> 
+            -->
+            <div class="col-md-2 col-sm-2 col-xs-2">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/04.svg" alt=""
+                class="img-responsive">
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="routeAffiliate()">
+                Affiliate Revenue Report
+              </h4>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <a (click)="Logevent('/adults/podcast/podcast-toc', '', 'click_podcast_Hamburger')"   class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/05.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  HumanWisdom Podcast
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
       <li *ngIf="isloggedIn  && subscriber">
         <a (click)="Logevent('/onboarding/myprogram', '', 'click_MySubscription_Hamburger')"   class="p0 b0px">
           <div class="row">
@@ -95,23 +166,146 @@
         </a>
       </li>
 
-      <li>
-        <a (click)="Logevent('/adults/wisdom-survey', '', 'click_survey')"  class="p0 b0px">
+      <li *ngIf="!platform.IOS">
+        <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_Subscribe_Hamburger')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/03.svg" alt=""
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/07.svg" alt=""
                   class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  Wisdom Survey
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="giftwisdom()">
+                  Give the gift of Wisdom
                 </h4>
               </div>
             </div>
           </div>
         </a>
       </li>
+
+      <li>
+        <a  (click)="Logevent('/adults/refer-friend', '', 'click_refer_friend_Hamburger')"   class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/08.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
+                  Refer a Friend
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <!-- <li>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/09.svg" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                Become a Coach
+              </h4>
+            </div>
+          </div>
+        </div>
+      </li> -->
+
+      <li>
+        <a (click)="Logevent('/adults/hwp-project', '', 'click_hwp_project_Hamburger')"  class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/10.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  HumanWisdom Project
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a  (click)="Logevent('/adults/treesisters', '', 'click_treesisters_Hamburger')"  class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/11.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Tree Planting Program
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <!-- <li id="liSubscribe" *ngIf="!subscriber">
+        <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Subscribe
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li> -->
+
+      <!-- <li  id="isNotPartner"  *ngIf="isPartner=='0'">
+        <a  routerLink="/adults/partnership-app" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Become a Partner
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li  id="isPartner"  *ngIf="isPartner=='1'">
+        <a  (click)="routeToPartnerScreen()" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  My Partnership
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li> -->
 
       <!-- multilayer li for partnership -->
       <li>
@@ -235,199 +429,7 @@
       </li>
       <!-- /multilayer li for partnership -->
 
-      <li *ngIf="!platform.IOS">
-        <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_Subscribe_Hamburger')"  class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/07.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="giftwisdom()">
-                  Give the gift of Wisdom
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a  (click)="Logevent('/adults/refer-friend', '', 'click_refer_friend_Hamburger')"   class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/08.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
-                  Refer a Friend
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a  (click)="Logevent('/adults/adverts-work', '', 'click_hwp_business_Hamburger')"   class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/20.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
-                  HumanWisdom for Businesses
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a  (click)="Logevent('/adults/adverts-student', '', 'click_hwp_education_Hamburger')"   class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/21.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
-                  HumanWisdom for Education
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a  (click)="Logevent('/adults/treesisters', '', 'click_treesisters_Hamburger')"  class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/11.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  Tree Planting Program
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a  (click)="Logevent('', '', 'click_newsletter_Hamburger')" href="https://humanwisdom.me/newsletter.html"  class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/15.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  Signup for newsletter
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- multilayer li for about us -->
-      <li>
-        <label class="a-label__chevron" for="item-about_us">
-          <!-- Item 2 -->
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/19.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  About Us
-                </h4>
-              </div>
-              <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg"
-                  alt="" class="img-responsive">
-              </div>
-            </div>
-          </div>
-        </label>
-        <input type="checkbox" id="item-about_us" name="item-about_us" class="m-menu__checkbox">
-
-        <div class="m-menu">
-          <div class="m-menu__header">
-            <label class="m-menu__toggle" for="item-about_us">
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                  <div class="col-md-2 col-sm-2 col-xs-2">
-                    <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg"
-                      alt="" class="img-responsive r180deg">
-                  </div>
-                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                      About Us
-                    </h4>
-                  </div>
-                </div>
-              </div>
-            </label>
-          </div>
-          <ul class="dh_ul">
-            <li>
-              <a (click)="Logevent('/adults/hwp-project', '', 'click_hwp_project_Hamburger')" class="p0 b0px">
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/10.svg"
-                        alt="" class="img-responsive">
-                    </div>
-                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                        HumanWisdom Project
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a (click)="Logevent('/adults/adverts-about', '', 'click_our_story_Hamburger')"  class="p0 b0px">
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
-                    </div>
-                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                        Our Story
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <!-- /multilayer li for about us -->
-
-      <!-- multilayer li for help & support -->
+      <!-- multilayer li -->
       <li>
         <label class="a-label__chevron" for="item-2">
           <!-- Item 2 -->
@@ -574,147 +576,10 @@
                 </div>
               </a>
             </li>
-
-            <li>
-              <a routerLink="/adults/help-support/cookie-policy" class="p0 b0px">
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
-                    </div>
-                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                        Cookie Policy
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
           </ul>
         </div>
       </li>
-      <!-- /multilayer li for help & support -->
-
-      <li id="liLogout" (click)="logout()" *ngIf="isloggedIn">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/14.svg" alt=""
-                class="img-responsive">
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                Logout
-              </h4>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- <li *ngIf="isloggedIn && roleid === 8">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/04.svg" alt=""
-                class="img-responsive">
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="routeAffiliate()">
-                Affiliate Revenue Report
-              </h4>
-            </div>
-          </div>
-        </div>
-      </li> -->
-
-      <!-- <li>
-        <a (click)="Logevent('/adults/podcast/podcast-toc', '', 'click_podcast_Hamburger')"   class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/05.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  HumanWisdom Podcast
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li> -->
-
-      <!-- <li>
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/09.svg" alt="" class="img-responsive">
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">
-              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                Become a Coach
-              </h4>
-            </div>
-          </div>
-        </div>
-      </li> -->
-
-      <!-- <li id="liSubscribe" *ngIf="!subscriber">
-        <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  Subscribe
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li> -->
-
-      <!-- <li  id="isNotPartner"  *ngIf="isPartner=='0'">
-        <a  routerLink="/adults/partnership-app" class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  Become a Partner
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li  id="isPartner"  *ngIf="isPartner=='1'">
-        <a  (click)="routeToPartnerScreen()" class="p0 b0px">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
-                  class="img-responsive">
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  My Partnership
-                </h4>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li> -->
+      <!-- /multilayer li -->
 
       <!-- multilayer li -->
       <!-- <li>
@@ -821,7 +686,7 @@
       </li> -->
       <!-- /multilayer li -->
 
-      <!-- <li *ngIf="platform.IOS">
+      <li *ngIf="platform.IOS">
         <a  (click)="Logevent('/adults/add-to-home-screen-ios', '', 'click_Add_HomeScreen_Hamburger')"   class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -837,9 +702,27 @@
             </div>
           </div>
         </a>
-      </li> -->
+      </li>
 
-      <!-- <li>
+      <li>
+        <a  (click)="Logevent('', '', 'click_newsletter_Hamburger')" href="https://humanwisdom.me/newsletter.html"  class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/15.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Signup for newsletter
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li>
         <a (click)="Logevent('/adults/events', '', 'click_events_Hamburger')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -855,33 +738,23 @@
             </div>
           </div>
         </a>
-      </li> -->
+      </li>
 
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="hr hr_hamburger"></div>
+      <li id="liLogout" (click)="logout()" *ngIf="isloggedIn">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/14.svg" alt=""
+                class="img-responsive">
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">
+              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                Logout
+              </h4>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0">
-          <a class="" href="https://www.facebook.com/humanwisdomguide" target="_blank">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/facebook.svg" alt="" class="img-responsive">
-          </a>
-          <a class="" href="https://twitter.com/HumanWisdom_me" target="_blank">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/twitter.svg" alt="" class="img-responsive">
-          </a>
-          <a class="" href="https://www.instagram.com/humanwisdom.me/" target="_blank">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/instagram.svg" alt="" class="img-responsive">
-          </a>
-          <a class="" href="https://www.linkedin.com/company/humanwisdom" target="_blank">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/linkedin.svg" alt="" class="img-responsive">
-          </a>
-          <a class="" href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/youtube.svg" alt="" class="img-responsive">
-          </a>
-        </div>
-      </div>
+      </li>
 
       <div class="pagebreak"></div>
     </ul>
