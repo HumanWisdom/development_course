@@ -36,7 +36,7 @@
             <form>
 
               <!-- carousel -->
-              <div class="container" *ngIf="enableintro">
+              <div class="container" *ngIf="enableintro" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -260,7 +260,7 @@
               <!-- /carousel -->
 
               <!-- day 01 -->
-              <div class="container" *ngIf="enableday1">
+              <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -455,7 +455,7 @@
               <!-- /day 01 -->
 
               <!-- day 02 -->
-              <div class="container" *ngIf="enableday2">
+              <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -650,7 +650,7 @@
               <!-- /day 02 -->
 
               <!-- day 03 -->
-              <div class="container" *ngIf="enableday3">
+              <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -800,7 +800,7 @@
               <!-- /day 03 -->
 
               <!-- day 04 -->
-              <div class="container" *ngIf="enableday4">
+              <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -1049,7 +1049,7 @@
               <!-- /day 04 -->
 
               <!-- day 05 -->
-              <div class="container" *ngIf="enableday5">
+              <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -1252,7 +1252,7 @@
               <!-- /day 05 -->
 
               <!-- day 06 -->
-              <div class="container" *ngIf="enableday6">
+              <div class="container" *ngIf="enableday6" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -1480,7 +1480,7 @@
               <!-- /day 06 -->
 
               <!-- day 07 -->
-              <div class="container" *ngIf="enableday7">
+              <div class="container" *ngIf="enableday7" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -1510,7 +1510,7 @@
 
                   <div class="carousel-inner">
 
-                    <!-- multipoint-00 -->
+                    <!-- multipoint-01 -->
                     <div class="item active">
                       <div class="row center_flex tleft mt60px">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
@@ -1519,66 +1519,13 @@
                             5 Tips on how to question your assumptions.
                           </h5>
 
-                          <div class="clearfix"></div>
-            
-                          <!-- multistep wizard -->
-                          <div id="svg_wrap"></div>              
-            
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <!-- /multistep wizard -->  
-            
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /multipoint-00 -->
-
-                    <!-- multipoint-01 -->
-                    <div class="item">
-                      <div class="row center_flex tleft mt60px">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-
-                          <h5 class="fw_300 fs_30px lh_130p fc_000000 mtb0px">
-                            5 Tips on how to question your assumptions.
-                          </h5>
-
-                          <div class="clearfix"></div>
-            
-                          <!-- multistep wizard -->
-                          <div id="svg_wrap"></div>              
-            
-                          <section>
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft">
-                                  1.
-                                </h4>
-            
-                                <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft">
-                                  Realize that having assumptions is not wrong. They feel real, but may not be true. 
-                                 </h4>
-                              </div>
-                            </div>
-                          </section>
-
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <!-- /multistep wizard -->  
-            
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            </div>
-                          </div>
+                          <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft mt30px mb5px">
+                            Tip 1
+                          </h4>
+      
+                          <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft mtb0px">
+                            Realize that having assumptions is not wrong. They feel real, but may not be true. 
+                          </h4>
 
                         </div>
                       </div>
@@ -1594,35 +1541,13 @@
                             5 Tips on how to question your assumptions.
                           </h5>
 
-                          <div class="clearfix"></div>
-            
-                          <!-- multistep wizard -->
-                          <div id="svg_wrap"></div>              
-            
-                          <section>
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft">
-                                  2.
-                                </h4>
-            
-                                <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft">
-                                  They are an automatic response from your many past influences, which we are not aware of.
-                                 </h4>
-                              </div>
-                            </div>
-                          </section>
-
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <!-- /multistep wizard -->  
-            
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            </div>
-                          </div>
+                          <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft mt30px mb5px">
+                            Tip 2
+                          </h4>
+      
+                          <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft mtb0px">
+                            They are an automatic response from your many past influences, which we are not aware of.
+                          </h4>
 
                         </div>
                       </div>
@@ -1638,35 +1563,13 @@
                             5 Tips on how to question your assumptions.
                           </h5>
 
-                          <div class="clearfix"></div>
-            
-                          <!-- multistep wizard -->
-                          <div id="svg_wrap"></div>              
-            
-                          <section>
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft">
-                                  3.
-                                </h4>
-            
-                                <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft">
-                                  Be curious. Have an open mind. Explore the assumptions you make about yourself and others.
-                                 </h4>
-                              </div>
-                            </div>
-                          </section>
-
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <!-- /multistep wizard -->  
-            
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            </div>
-                          </div>
+                          <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft mt30px mb5px">
+                            Tip 3
+                          </h4>
+      
+                          <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft mtb0px">
+                            Be curious. Have an open mind. Explore the assumptions you make about yourself and others.
+                          </h4>
 
                         </div>
                       </div>
@@ -1682,35 +1585,13 @@
                             5 Tips on how to question your assumptions.
                           </h5>
 
-                          <div class="clearfix"></div>
-            
-                          <!-- multistep wizard -->
-                          <div id="svg_wrap"></div>              
-            
-                          <section>
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft">
-                                  4.
-                                </h4>
-            
-                                <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft">
-                                  Ask yourself a simple question - Is there another way of thinking about this situation that may also be true? Write that down.
-                                 </h4>
-                              </div>
-                            </div>
-                          </section>
-
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <!-- /multistep wizard -->  
-            
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            </div>
-                          </div>
+                          <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft mt30px mb5px">
+                            Tip 4
+                          </h4>
+      
+                          <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft mtb0px">
+                            Ask yourself a simple question - Is there another way of thinking about this situation that may also be true? Write that down.
+                          </h4>
 
                         </div>
                       </div>
@@ -1726,35 +1607,13 @@
                             5 Tips on how to question your assumptions.
                           </h5>
 
-                          <div class="clearfix"></div>
-            
-                          <!-- multistep wizard -->
-                          <div id="svg_wrap"></div>              
-            
-                          <section>
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft">
-                                  5.
-                                </h4>
-            
-                                <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft">
-                                  Be kind to yourself. Is there a kinder, more generous way of thinking about yourself or others? You are just human and it is okay to feel what you do.
-                                 </h4>
-                              </div>
-                            </div>
-                          </section>
-
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <section></section>
-                          <!-- /multistep wizard -->  
-            
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            </div>
-                          </div>
+                          <h4 class="fw_500 fs_30px lh_130p fc_ffc455 tleft mt30px mb5px">
+                            Tip 5
+                          </h4>
+      
+                          <h4 class="fw_300 fs_24px lh_130p fc_000000 tleft mtb0px">
+                            Be kind to yourself. Is there a kinder, more generous way of thinking about yourself or others? You are just human and it is okay to feel what you do.
+                          </h4>
 
                         </div>
                       </div>

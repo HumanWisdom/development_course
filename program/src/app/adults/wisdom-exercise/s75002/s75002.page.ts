@@ -32,7 +32,7 @@ export class S75002Page implements OnInit, AfterViewInit {
   moduleId: number = 75;
   bookmark: number = 0;
   slideStart = 0;
-  totalSlidesCount = 7;
+  totalSlidesCount = 6;
   details: string = "1/8";
   vistedScreens: any[] = [];
   currentDay: number = 0;

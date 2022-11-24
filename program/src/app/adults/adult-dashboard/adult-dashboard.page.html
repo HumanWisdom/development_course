@@ -45,7 +45,7 @@
                      (focusout)="onFocusOutEvent ()"
                     (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                  <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon" aria-hidden="true"></span>
+                  <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext_01" aria-hidden="true"></span>
                 </div>
 
                 <div class="row adsearch">
@@ -53,6 +53,11 @@
                     <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
                       <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
                     </ul>
+                    <!-- <ul class="list-group autocomplete-list adsearch_ul">
+                      <li  class="is-search list-group-item">benefits of wisdom</li>
+                      <li  class="is-search list-group-item">benefits of wisdom</li>
+                      <li  class="is-search list-group-item">benefits of wisdom</li>
+                    </ul> -->
                   </div>
                 </div>
               </div>
