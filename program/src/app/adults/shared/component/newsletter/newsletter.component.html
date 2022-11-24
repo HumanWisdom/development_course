@@ -5,21 +5,21 @@
                   <p>Thank you! You will receive an email to this address to confirm your subscription .</p>
               </div>
           </div>
-          <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/v8a6h0" data-id="515169" data-code="v8a6h0" method="POST" target="_blank">
+          <form  class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/v8a6h0" data-id="515169" data-code="v8a6h0" method="POST" target="_blank">
               <div class="subscribe-form">
                   <div class="form-section">
                     <strong  *ngIf="email.invalid && email.touched" >Error! Please enter a vaid email</strong>
                       <div class="form-group ml-field-name">
-                          <input type="text" name="fields[name]" class="form-control" placeholder="Your name" value="" autocomplete="name" x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off">
+                          <input type="text"   name="fields[name]"  class="form-control" placeholder="Your name" value="" autocomplete="name" x-autocompletetype="name" spellcheck="false" autocapitalize="off" autocorrect="off">
                       </div>
                       <div class="form-group ml-field-email ml-validate-required ml-validate-email">
-                          <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"   type="email" name="fields[email]" class="form-control" placeholder="Your e-mail address*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off"  [(ngModel)]="newsletterForm.email" #email="ngModel"  required>
+                          <input pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"    name="fields[email]"  type="email"  class="form-control" placeholder="Your e-mail address*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off"  [(ngModel)]="newsletterForm['email']"  #email="ngModel"  required>
                           
                         </div>
                       
                   </div>
                   <input type="hidden" name="ml-submit" value="1" />
-                  <button type="submit" class="primary" >
+                  <button type="submit" class="primary" [disabled]="email.invalid" >
                       Sign up for newsletter
                   </button>
                   <button disabled="disabled" style="display: none;" type="button" class="loading">
