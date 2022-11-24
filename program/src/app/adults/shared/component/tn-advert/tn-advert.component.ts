@@ -10,6 +10,7 @@ import { LogEventService } from 'src/app/log-event.service';
 })
 export class TnAdvertComponent implements OnInit {
   login = 'Login';
+  public isLoggedIn = false;
 
   constructor(
     private router: Router,
@@ -21,11 +22,17 @@ export class TnAdvertComponent implements OnInit {
     let userid = localStorage.getItem("isloggedin");
     if (userid === "T") {
       this.login = 'Logout'
+      this.isLoggedIn =true
     }
   }
 
   routedashboard() {
-    this.router.navigate(['/adults/adult-dashboard'])
+    if (!this.isLoggedIn) {
+      this.router.navigate(['/onboarding/login'])
+    } else {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+
   }
 
   route_adverts_hwp() {
