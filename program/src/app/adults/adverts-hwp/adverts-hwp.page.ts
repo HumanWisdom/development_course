@@ -50,7 +50,7 @@ export class AdvertsHwpPage implements OnInit {
   public audio = 4
   public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   public userName: any
-
+  public showWarning=false
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -92,6 +92,7 @@ export class AdvertsHwpPage implements OnInit {
 
   ngOnInit() {
     this.getCountry()
+    this.userId=JSON.parse(localStorage.getItem("userId"))
   }
 
   getCountry() {
@@ -151,34 +152,46 @@ export class AdvertsHwpPage implements OnInit {
   }
 
   verifyactkey() {
-    this.service.verifyactkey(this.activationCode)
+    console.log('verify')
+    this.showWarning=false
+    this.service.verifyactkey(this.activationCode)    
       .subscribe(
         res => {
           if (res) {
+            console.log('res');
+            this.showWarning=true
             this.yearormonth = res
             this.subthirdpage = false
             this.subfirstpage = false
             this.subsecondpage = true;
           } else {
+            console.log('false');
             this.subsecondpage = false;
             this.subthirdpage = true
           }
         },
         error => {
-          console.log(error);
+          console.log('error');
           this.subsecondpage = false;
           this.subthirdpage = true
         },
         () => {
-        }
-      )
+        }     
+      );
+      console.log('Warning')
+      if(this.showWarning===false){
+        this.subsecondpage = false;
+        this.subthirdpage = true
+      }
   }
 
   submitcode() {
+    
     this.services.verifyActivationKey(this.activationCode, this.userId, this.countryCode)
       .subscribe(
         res => {
           if (res) {
+            this.showWarning=false
             let code: any = 1
             localStorage.setItem('Subscriber', code)
             this.subthirdpage = false;
@@ -187,14 +200,21 @@ export class AdvertsHwpPage implements OnInit {
             this.subfirstpage = true;
             this.sixthpage = true;
           } else {
+            this.subthirdpage=true
           }
         },
         error => {
+          this.subthirdpage=true
+
           console.log(error);
         },
         () => {
-        }
-      )
+            }
+      );
+      console.log('Warning')
+      if(this.showWarning===false){
+             this.subthirdpage = true
+      }
 
   }
 
@@ -232,13 +252,29 @@ export class AdvertsHwpPage implements OnInit {
   }
 
   already(value) {
-    this.actclosemodal.nativeElement.click()
+    /* this.actclosemodal.nativeElement.click()
     this.firstpage = true;
     this.fourthpage = false;
     this.thirdpage = false;
     this.secondpage = false;
     this.fifthpage = false;
-    this.sixthpage = false;
+    this.sixthpage = false; */
+    if (value === 'home') {
+      this.actclosemodal.nativeElement.click()
+      let userid = localStorage.getItem('isloggedin');
+      if (userid === 'T') {
+        window.location.reload();
+      }
+    } else if (value === 'login') {
+      this.firstpage = false;
+      this.fourthpage = false;
+      this.thirdpage = false;
+      this.fifthpage = true;
+    } else if (value === 'register') {
+      this.firstpage = true;
+      this.secondpage = false;
+      this.fifthpage = false
+    }
   }
 
   PasswordValidator(control: AbstractControl): { [key: string]: boolean } | null {
@@ -306,11 +342,25 @@ export class AdvertsHwpPage implements OnInit {
     this.services.emailLogin(email, password)
       .subscribe(
         res => {//
+          if (val === 'act') {
+            localStorage.setItem("isloggedin", 'T')
+            localStorage.setItem("remember", 'T')
+            this.fifthpage = false;
+            this.thirdpage = true;
+          } else if (val === 'second') {
+            localStorage.setItem("isloggedin", 'T')
+            localStorage.setItem("remember", 'T')
+            this.secondpage = false;
+            this.thirdpage = true;
+          }
+
+
           this.firstpage = false
           this.fifthpage = false
           this.thirdpage = true
 
           localStorage.setItem("isloggedin", 'T')
+          this.isLoggedIn =true
           this.loginResponse = res
           localStorage.setItem('guest', 'F');
           localStorage.setItem("remember", 'T')
@@ -325,7 +375,7 @@ export class AdvertsHwpPage implements OnInit {
           localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
           localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
           localStorage.setItem("userId", JSON.stringify(this.userId))
-          localStorage.setItem("email", this.socialEmail)
+          localStorage.setItem("email", email)
           localStorage.setItem("FnName", this.socialFirstName)
           localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
           localStorage.setItem("LName", this.socialLastName)
