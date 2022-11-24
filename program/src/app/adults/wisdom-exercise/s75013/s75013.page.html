@@ -36,7 +36,7 @@
             <form>
 
               <!-- carousel -->
-              <div class="container" *ngIf="enableintro">
+              <div class="container" *ngIf="enableintro" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -67,7 +67,7 @@
                   <div class="carousel-inner">
 
                     <!-- introduction -->
-                    <div class="item active">
+                    <div class="item active" >
                       <div class="row center_flex mt40px">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
 
@@ -264,7 +264,7 @@
               <!-- /carousel -->
 
               <!-- day 01 -->
-              <div class="container" *ngIf="enableday1">
+              <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -419,7 +419,7 @@
               <!-- /day 01 -->
 
               <!-- day 02 -->
-              <div class="container" *ngIf="enableday2">
+              <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -586,7 +586,7 @@
               <!-- /day 02 -->
 
               <!-- day 03 -->
-              <div class="container" *ngIf="enableday3">
+              <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -734,7 +734,7 @@
               <!-- /day 03 -->
 
               <!-- day 04 -->
-              <div class="container" *ngIf="enableday4">
+              <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -886,7 +886,7 @@
               <!-- /day 04 -->
 
               <!-- day 05 -->
-              <div class="container" *ngIf="enableday5">
+              <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -1041,7 +1041,7 @@
               <!-- /day 05 -->
 
               <!-- day 06 -->
-              <div class="container" *ngIf="enableday6">
+              <div class="container" *ngIf="enableday6" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
@@ -1192,7 +1192,7 @@
               <!-- /day 06 -->
 
               <!-- day 07 -->
-              <div class="container" *ngIf="enableday7">
+              <div class="container" *ngIf="enableday7" (swipe)="onSwipe($event)">
                 <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
                   data-interval="3000000">
 
