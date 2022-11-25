@@ -29,7 +29,7 @@
               </button>
 
               <button type="button" class="btn m0px mr20pxi fright btn_htry_free" (click)="routedashboard()">
-                Try for free
+                {{isLoggedIn ? 'Go to App' : 'Try for free'}}
               </button>
 
               <a class="" (click)="route_adverts_hwp()">
@@ -56,12 +56,12 @@
             </li>
             <li>
               <a routerLink="/adults/adverts-work/">
-                HumanWisdom for Work
+                HumanWisdom for Businesses
               </a>
             </li>
             <li>
               <a routerLink="/adults/adverts-student/">
-                HumanWisdom for Students
+                HumanWisdom for Education
               </a>
             </li>
             <li>

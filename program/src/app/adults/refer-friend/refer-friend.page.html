@@ -90,7 +90,15 @@
 
               <div class="row center_flex mt10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <a  href="https://web.whatsapp.com/" action="whatsapp://send" >
+                  <share-buttons  [theme]="'circles-dark'"
+                  [include]="['facebook','twitter','linkedin','whatsapp']"
+                  [show]="4"
+                  [size]="1"
+                  [url]="'https://humanwisdom.me/'"
+                  [description]="'Check out the HumanWisdom Program: the Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom'"
+                  [autoSetMeta]="false"
+                 ></share-buttons>
+                  <!-- <a  href="https://web.whatsapp.com/" action="whatsapp://send" >
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/whatsapp.png"
                       class="">
@@ -115,7 +123,7 @@
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/twitter.png"
                         class="">
                     </div>
-                  </a>
+                  </a> -->
                 </div>
               </div>
 
