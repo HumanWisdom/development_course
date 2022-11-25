@@ -100,13 +100,13 @@
             </ng-container>
 
             <!-- welcome popup button -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                 <button type="button" class="btn btn-primary m0px" data-toggle="modal" data-target="#modal_popup">
                   Welcome Popup
                 </button>
               </div>
-            </div>
+            </div> -->
             <!-- /welcome popup button -->
 
             <div class="pagebreak"></div>
@@ -199,7 +199,8 @@
 <!-- /signup_login modal -->
 
 <!-- welcome popup -->
-<div class="modal fade" id="modal_popup" tabindex="-1" data-keyboard="false" role="dialog"
+<div  id="modal_popup"  class="modal fade in" [ngStyle]="{'display':isWelcomePopup? 'block' : 'none' }" 
+data-backdrop="true" tabindex="-1" data-keyboard="false" role="dialog"
   aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered center_flex" role="document">
     <div class="modal-content popup_01">
