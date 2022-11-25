@@ -220,6 +220,7 @@ export class AdvertsHwpPage implements OnInit {
 
   routedashboard(val = '') {
     if (val === 'free') {
+      this.redeemsubscription.nativeElement.click()
       if (!this.isLoggedIn) {
         this.router.navigate(['/onboarding/login'])
       } else {
@@ -316,7 +317,8 @@ export class AdvertsHwpPage implements OnInit {
       }, (err) => {
         console.log(err);
       })
-
+      this.firstpage = false;
+      this.secondpage = true;
   }
 
   verifyCode() {
@@ -362,6 +364,7 @@ export class AdvertsHwpPage implements OnInit {
           localStorage.setItem("isloggedin", 'T')
           this.isLoggedIn =true
           this.loginResponse = res
+          console.log(this.loginResponse)
           localStorage.setItem('guest', 'F');
           localStorage.setItem("remember", 'T')
           localStorage.setItem('socialLogin', 'T');
