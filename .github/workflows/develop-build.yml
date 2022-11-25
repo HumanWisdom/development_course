@@ -1,27 +1,50 @@
-name: build-program-develop
+name: build-program-develop-CI
 on:
+  pull_request:
+    branches: [ "main" ]
   push:
     branches: [main]
+    
 jobs:
-  debug:
-    name: Debug
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up secret file
+    - name: Setup nodejs
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Cache node modules
+      id: cache-nodemodules
+      uses: actions/cache@v2
       env:
-        STAGING_HOST: ${{ secrets.STAGING_HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        SSH_KEY : ${{ secrets.SSH_KEY  }}
-        PRODUCTION_HOST : ${{ secrets.PRODUCTION_HOST  }}
+        cache-name: cache-node-modules
+      with:
+        path: program/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+        
+    - name: Install global dependencies
       run: |
-        echo $STAGING_HOST >> secrets.txt
-        echo $USERNAME >> secrets.txt
-        echo $SSH_KEY >> secrets.txt
-        echo $PRODUCTION_HOST >> secrets.txt
- 
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
+        npm install -g @ionic/cli
+        npm install -g @angular/cli
+
+    - name: Install project dependencies
+      run: |
+        cd program
+        npm install --force
+
+    - name: Build the project
+      run: |
+        cd program
+        export NODE_OPTIONS=--max_old_space_size=8096
+        ionic build --configuration=staging -- --base-href /course/
+
+          
