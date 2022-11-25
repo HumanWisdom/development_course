@@ -59,6 +59,7 @@ export class ViewcartPage implements OnInit {
   }
 
   ngOnInit() {
+    
     this.isUpgradeToPremium = localStorage.getItem('upgradeToPremium');
     this.userEmail=JSON.parse(localStorage.getItem("userEmail"))
     localStorage.setItem("couponid", '0')
@@ -79,6 +80,8 @@ export class ViewcartPage implements OnInit {
     }
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('upgradeToPremium', 'F');
+
+    console.log(this.cartList)
   }
  /* getMax(){
     this.cartList.forEach(obj => {

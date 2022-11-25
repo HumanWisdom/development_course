@@ -1,0 +1,27 @@
+name: build-program-develop
+on:
+  push:
+    branches: [main]
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        STAGING_HOST: ${{ secrets.STAGING_HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        SSH_KEY : ${{ secrets.SSH_KEY  }}
+        PRODUCTION_HOST : ${{ secrets.PRODUCTION_HOST  }}
+      run: |
+        echo $STAGING_HOST >> secrets.txt
+        echo $USERNAME >> secrets.txt
+        echo $SSH_KEY >> secrets.txt
+        echo $PRODUCTION_HOST >> secrets.txt
+ 
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2

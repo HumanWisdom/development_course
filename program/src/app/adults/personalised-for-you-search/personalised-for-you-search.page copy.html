@@ -100,7 +100,13 @@
             </ng-container>
 
             <!-- welcome popup button -->
-            <span #welcome data-toggle="modal" data-target="#modal_popup"></span>
+            <!-- <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                <button type="button" class="btn btn-primary m0px" data-toggle="modal" data-target="#modal_popup">
+                  Welcome Popup
+                </button>
+              </div>
+            </div> -->
             <!-- /welcome popup button -->
 
             <div class="pagebreak"></div>
@@ -193,13 +199,15 @@
 <!-- /signup_login modal -->
 
 <!-- welcome popup -->
-<div class="modal fade" id="modal_popup" tabindex="-1" role="dialog" aria-hidden="true">
+<div  id="modal_popup"  class="modal fade in" [ngStyle]="{'display':isWelcomePopup? 'block' : 'none' }" 
+data-backdrop="true" tabindex="-1" data-keyboard="false" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered center_flex" role="document">
     <div class="modal-content popup_01">
       <div class="modal-header b0">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <button type="button" #closemodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close"
+            <button type="button" #closemodal class="btn_popup_close m0px" (click)="closeWelcome()" data-dismiss="modal" aria-label="Close"
               style="cursor:pointer;">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white_01.svg" alt=""
                 class="img-responsive fright">
