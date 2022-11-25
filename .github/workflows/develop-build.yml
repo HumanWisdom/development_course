@@ -23,3 +23,5 @@ jobs:
         echo $SSH_KEY >> secrets.txt
         echo $PRODUCTION_HOST >> secrets.txt
  
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
