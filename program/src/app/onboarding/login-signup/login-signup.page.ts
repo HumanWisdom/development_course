@@ -723,7 +723,9 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(["/adults/partnership-app"]);
                       }
                     } else {
-                      this.router.navigate(["/adults/adult-dashboard"]);
+                      this.router.navigate(["/adults/search"], { state: {
+                          routedFromLogin: true,
+                        }});
                     }
                   }
                 }
