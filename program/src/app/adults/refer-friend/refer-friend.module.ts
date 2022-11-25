@@ -9,6 +9,8 @@ import { ReferFriendPageRoutingModule } from './refer-friend-routing.module';
 import { ReferFriendPage } from './refer-friend.page';
 
 import { SharedModule } from '../shared/shared.module';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 
 @NgModule({
   imports: [
@@ -16,7 +18,11 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     IonicModule,
     ReferFriendPageRoutingModule,
-    SharedModule
+    SharedModule,
+    ShareButtonsModule.withConfig({
+      debug: true
+    }),
+    ShareIconsModule,
   ],
   declarations: [ReferFriendPage]
 })

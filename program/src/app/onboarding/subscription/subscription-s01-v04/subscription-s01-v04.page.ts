@@ -58,6 +58,7 @@ export class SubscriptionS01V04Page implements OnInit {
   fourthpage = false;
   yearormonth = ''
   isActivateModal=false;
+  public showWarning=false
   constructor(private router: Router,public service:OnboardingService, public services:AdultsService, private location:Location, public logeventservice: LogEventService,  private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
@@ -82,6 +83,8 @@ export class SubscriptionS01V04Page implements OnInit {
    }
 
   ngOnInit() {
+    this.service.isActivationFlow=true
+    
     if(localStorage.getItem('giftwisdom') === 'F')   {
       this.enableGift = true;
     } 
@@ -169,13 +172,14 @@ enablelastpage() {
 }
 
 verifyactkey() {
- 
+  this.showWarning=false
   console.log("Submit verify")
   this.services.verifyactkey(this.activationCode)
   .subscribe(
     res=>
     {
       if(res) {
+        this.showWarning=true
        this.yearormonth = res
       this.thirdpage = false
         this.firstpage = false
@@ -194,12 +198,12 @@ verifyactkey() {
      
       // window.alert(error.error['Message'])
     },
-   
-    ()=>{
-      
-
+    ()=>{    
+    });
+    if(this.showWarning===false){
+      this.secondpage = false;
+      this.thirdpage = true
     }
-  )
 }
 Confirm(){
   this.submitcode();
@@ -208,16 +212,21 @@ Confirm(){
 
 submitcode(){
   this.logeventservice.logEvent('click_activation_code_submit');
+ 
+  
   this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
   .subscribe(
     res=>
     {
-      for(var i=0;i<this.cartList.length;i++){
-        if(this.cartList[i].MySelf=="True")
+     
+      for(var i=0;i<this.cartitemList.length;i++){
+        if(this.cartitemList[i].MySelf=="True")
         {
-          var id=this.cartList[i].CartId;
-          this.cartList[i].Qty==1
-          this.cartList.splice(i,1)
+          console.log('delete cart')
+          var id=this.cartitemList[i].CartId;
+          console.log(id)
+          this.cartitemList[i].Qty==1
+          this.cartitemList.splice(i,1)
           this.service.deleteItem({"Id":parseFloat(id)})
           .subscribe(res=> {
             if(res) {
@@ -232,7 +241,8 @@ submitcode(){
             }
             }else {
               this.secondpage = false;
-              this.thirdpage = true
+              this.thirdpage = false
+              this.fourthpage = true
             }
           },
           error=>{
@@ -251,6 +261,9 @@ submitcode(){
         }
       }
     });
+    this.secondpage = false;
+    this.thirdpage = false
+    this.fourthpage = true
 }
 
   radioevent(event) {

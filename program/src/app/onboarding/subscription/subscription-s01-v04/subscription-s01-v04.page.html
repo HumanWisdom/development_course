@@ -378,7 +378,7 @@
           <div class="row center_flex">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <input type="text" id="" class="cfc11" (keyup)="getcode($event.target.value)"
+                <input type="text" id="" class="cfc11" (keyup)="getcode($event.target.value)" [disabled]="secondpage"
                   placeholder="Enter Activation Code">
               </div>
             </div>
@@ -438,9 +438,9 @@
             </div>
           </div>
           
-          <div class="row center_flex as_submit_01" *ngIf="secondpage && yearormonth=='Month' && service.isActivationFlow">
+          <div class="row center_flex as_submit_01" *ngIf="secondpage && yearormonth=='Month'">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">     
-              <button class="btn btn-warning btn_ms_submit"  type="button" data-toggle="modal" data-target="#modal_join_anyway" (click)="submitcode()">
+              <button class="btn btn-warning btn_ms_submit"  type="button" data-toggle="modal" data-target="#modal_join_anyway" >
                 Activate Now
               </button>
             </div>
@@ -489,7 +489,7 @@
           <div class="row center_flex as_congratulations">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
               <h4 class="fw_400 fs_14px lh_130p fc_ffffff mtb0px">
-                You are now subscribed to 1 <span>{{yearormonth}}</span> of the HumanWisdom Program for Adults. Continue to the dahboard to
+                You are now subscribed to 1 <span>{{yearormonth}}</span> of the HumanWisdom Program for Adults. Continue to the dashboard to
                 enjoy the app.
               </h4>
             </div>

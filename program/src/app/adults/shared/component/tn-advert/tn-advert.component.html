@@ -29,7 +29,7 @@
               </button>
 
               <button type="button" class="btn m0px mr20pxi fright btn_htry_free" (click)="routedashboard()">
-                Try for free
+                {{isLoggedIn ? 'Go to App' : 'Try for free'}}
               </button>
 
               <a class="" (click)="route_adverts_hwp()">
