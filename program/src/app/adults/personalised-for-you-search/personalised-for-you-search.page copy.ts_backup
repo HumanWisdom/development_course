@@ -11,10 +11,7 @@ import { AdultsService } from '../adults.service';
 })
 export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
-  @ViewChild('welcome') welcome: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-  @ViewChild('enablemodal') enablemodal: ElementRef;
-
   searchResult=[];
   personalisedforyou = []
 
@@ -49,14 +46,15 @@ export class PersonalisedForYouSearchPage implements OnInit {
     if (userid === 'T') {
       this.isloggedIn = true
       if(window.history.state.routedFromLogin && window.history.state.routedFromLogin ==true ){
-      setTimeout(() => {
-        this.welcome.nativeElement.click();
-      }, 1000);
+         this.isWelcomePopup=true;
       }
     }
     
   }
 
+  closeWelcome(){
+    this.isWelcomePopup=false;
+  }
   getModuleList(isLoad?){
     this.aservice.getModuleList().subscribe(res=>{
       this.moduleList=res;
