@@ -28,7 +28,6 @@ jobs:
         
      - name: Install global dependencies
        run: |
-        npm install -g @ionic/cli
         npm install -g @angular/cli
 
      - name: Install project dependencies
@@ -40,4 +39,4 @@ jobs:
        run: |
         cd program
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --configuration=staging -- --base-href /course/
+        ng build --configuration=staging 
