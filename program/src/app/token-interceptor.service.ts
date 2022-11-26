@@ -1,7 +1,7 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/internal/operators/catchError';
 
 @Injectable({
@@ -29,8 +29,8 @@ export class TokenInterceptorService implements HttpInterceptor {
           localStorage.setItem('acceptcookie', 'T');
           this.router.navigate(['/adults/adult-dashboard'])
         }
+        return throwError(err);
       }
-      return new Observable<HttpEvent<any>>();
     }));
   }
 }
