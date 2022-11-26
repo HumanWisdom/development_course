@@ -88,7 +88,7 @@ jobs:
           sudo rm -rf builds/uncompressed/${{ github.run_id }}
           sudo mkdir -p builds/uncompressed/${{ github.run_id }}
           sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          sudo mkdir -p /var/www/html/testbuild
-          sudo rm -rf /var/www/html/testbuild
-          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/testbuild        
+          sudo mkdir -p /var/www/html/course
+          sudo rm -rf /var/www/html/course
+          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course        
           
