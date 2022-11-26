@@ -55,7 +55,7 @@ export class VideoContentComponent implements OnInit {
       this.scrId = getsplit.substring(1);
     } else {
       var lastSlash = str.lastIndexOf("/");
-      this.scrId = str.substring(lastSlash + 2);
+      this.scrId = str.substring(lastSlash + 1);
     }
 
 

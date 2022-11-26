@@ -12,44 +12,44 @@ const routes: Routes = [
     loadChildren: () => import('./wisdom-shorts-index/wisdom-shorts-index.module').then( m => m.WisdomShortsIndexPageModule),
   },
   {
-    path: 'wisdom-shorts-s01',
+    path: 'wisdom-shorts-s1',
     loadChildren: () => import('./wisdom-shorts-s01/wisdom-shorts-s01.module').then( m => m.WisdomShortsS01PageModule)
   },
   {
-    path: 'wisdom-shorts-s02',
+    path: 'wisdom-shorts-s2',
     loadChildren: () => import('./wisdom-shorts-s02/wisdom-shorts-s02.module').then( m => m.WisdomShortsS02PageModule)
   },
   {
-    path: 'wisdom-shorts-s03',
+    path: 'wisdom-shorts-s3',
     loadChildren: () => import('./wisdom-shorts-s03/wisdom-shorts-s03.module').then( m => m.WisdomShortsS03PageModule)
   },
   {
-    path: 'wisdom-shorts-s04',
+    path: 'wisdom-shorts-s4',
     canActivate:[ActiveGuard],  
     loadChildren: () => import('./wisdom-shorts-s04/wisdom-shorts-s04.module').then( m => m.WisdomShortsS04PageModule)
   },
   {
-    path: 'wisdom-shorts-s05',
+    path: 'wisdom-shorts-s5',
     canActivate:[ActiveGuard],  
     loadChildren: () => import('./wisdom-shorts-s05/wisdom-shorts-s05.module').then( m => m.WisdomShortsS05PageModule)
   },
   {
-    path: 'wisdom-shorts-s06',
+    path: 'wisdom-shorts-s6',
     canActivate:[ActiveGuard],  
     loadChildren: () => import('./wisdom-shorts-s06/wisdom-shorts-s06.module').then( m => m.WisdomShortsS06PageModule)
   },
   {
-    path: 'wisdom-shorts-s07',
+    path: 'wisdom-shorts-s7',
     canActivate:[ActiveGuard], 
     loadChildren: () => import('./wisdom-shorts-s07/wisdom-shorts-s07.module').then( m => m.WisdomShortsS07PageModule)
   },
   {
-    path: 'wisdom-shorts-s08',
+    path: 'wisdom-shorts-s8',
     canActivate:[ActiveGuard], 
     loadChildren: () => import('./wisdom-shorts-s08/wisdom-shorts-s08.module').then( m => m.WisdomShortsS08PageModule)
   },
   {
-    path: 'wisdom-shorts-s09',
+    path: 'wisdom-shorts-s9',
     canActivate:[ActiveGuard],  
     loadChildren: () => import('./wisdom-shorts-s09/wisdom-shorts-s09.module').then( m => m.WisdomShortsS09PageModule)
   },

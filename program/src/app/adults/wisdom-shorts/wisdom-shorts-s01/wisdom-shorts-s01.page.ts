@@ -1,7 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
-import {Location } from '@angular/common';
+import { AdultsService } from "../../adults.service";
 
 @Component({
   selector: 'HumanWisdom-wisdom-shorts-s01',
@@ -12,7 +12,7 @@ export class WisdomShortsS01Page implements OnInit {
 
   bg="red_pink_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.1.mp4'
+  videoLink=this.mediaVideo+localStorage.getItem("wisdomvideo")
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/wisdom_shorts/wisdom_shorts_01.jpg"
 
   title="Access your own wisdom"
