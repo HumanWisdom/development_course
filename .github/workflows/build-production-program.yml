@@ -2,7 +2,7 @@ name: build-program-prod
 
 on:
   push:
-    branches: [main]
+    branches: [Production]
     
 jobs:
   build:
