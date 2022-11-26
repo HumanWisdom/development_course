@@ -96,7 +96,7 @@ export class SubscriptionPaymentPage implements OnInit {
           currency: this.defaultCurrencySymbol.toLowerCase(),
           total: {
             label: 'Total Payable',
-            amount: parseFloat(this.amount),
+            amount: parseFloat(this.amount)*100,
           },
           requestPayerName: true,
           requestPayerEmail: true,

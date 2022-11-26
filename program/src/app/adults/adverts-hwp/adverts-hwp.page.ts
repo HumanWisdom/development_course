@@ -220,13 +220,21 @@ export class AdvertsHwpPage implements OnInit {
 
   routedashboard(val = '') {
     if (val === 'free') {
+      if (!this.isLoggedIn) {
+        this.router.navigate(['/onboarding/login'])
+      } else {
+        this.router.navigate(['/adults/adult-dashboard'])
+      }
+    }
+    else  if (val === 'dashboard') {
       this.redeemsubscription.nativeElement.click()
       if (!this.isLoggedIn) {
         this.router.navigate(['/onboarding/login'])
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
-    } else if (val === 'redeem') {
+    }
+    else if (val === 'redeem') {
       let res = localStorage.getItem("isloggedin")
       if (res === 'T') {
         this.firstpage = false
