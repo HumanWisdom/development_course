@@ -1,27 +1,94 @@
-name: build-program-develop
+name: build-program-prod
+
 on:
+  pull_request:
+    branches: [ "main" ]
   push:
     branches: [main]
+    
 jobs:
-  debug:
-    name: Debug
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up secret file
+    - name: Setup nodejs
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Cache node modules
+      id: cache-nodemodules
+      uses: actions/cache@v2
       env:
-        STAGING_HOST: ${{ secrets.STAGING_HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        SSH_KEY : ${{ secrets.SSH_KEY  }}
-        PRODUCTION_HOST : ${{ secrets.PRODUCTION_HOST  }}
+        cache-name: cache-node-modules
+      with:
+        path: program/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+        
+    - name: Install global dependencies
       run: |
-        echo $STAGING_HOST >> secrets.txt
-        echo $USERNAME >> secrets.txt
-        echo $SSH_KEY >> secrets.txt
-        echo $PRODUCTION_HOST >> secrets.txt
- 
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
+        npm install -g @ionic/cli
+        npm install -g @angular/cli
+
+    - name: Install project dependencies
+      run: |
+        cd program
+        npm install --force
+
+    - name: Build the project
+      run: |
+        cd program
+        export NODE_OPTIONS=--max_old_space_size=8096
+        ionic build --configuration=production -- --base-href /course/
+    
+    - name: Compress the build artifacts
+      run: |
+        cd program
+        mkdir -p builds/compressed
+        tar -czf builds/compressed/program.tgz www/
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: program-artifact
+        path: program/builds/compressed/program.tgz
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: program-artifact
+
+    - name: Copy the artifact to remote server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.PRODUCTION_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRODUCTION_SSH_KEY }}
+        source: "program.tgz"
+        target: "builds/compressed/${{ github.run_id }}"
+        
+    - name: Setup the build on remote server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.PRODUCTION_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRODUCTION_SSH_KEY }}
+        script: |
+          sudo rm -rf builds/uncompressed/${{ github.run_id }}
+          sudo mkdir -p builds/uncompressed/${{ github.run_id }}
+          sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
+          sudo mkdir -p /var/www/html/testbuild
+          sudo rm -rf /var/www/html/testbuild
+          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/testbuild        
+          
