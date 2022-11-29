@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
+import { LogEventService } from 'src/app/log-event.service';
 
 @Component({
   selector: 'HumanWisdom-adverts-hwp',
@@ -15,6 +16,7 @@ export class AdvertsHwpPage implements OnInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('redeemsubscription') redeemsubscription: ElementRef;
 
+  login = 'Login';
   public isGuestuser = false
   public isFirsttime = false
   public isSubscriber = false
@@ -65,7 +67,8 @@ export class AdvertsHwpPage implements OnInit {
     private services: OnboardingService,
     public fb: UntypedFormBuilder,
     public service: AdultsService,
-    public authService: SocialAuthService
+    public authService: SocialAuthService,
+    public logeventservice: LogEventService
   ) {
     localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
@@ -620,5 +623,26 @@ export class AdvertsHwpPage implements OnInit {
       }
     });
 
+  }
+
+  route_adverts_hwp() {
+    this.router.navigate(['/adults/adverts-hwp'])
+  }
+
+  Logevent() {
+    if (this.login === 'Logout') {
+      if (confirm("Are you sure you want to logout ?") === true) {
+        this.logeventservice.logEvent('click_logout_Hamburger')
+        if (this.platform.isBrowser) {
+          localStorage.setItem("isloggedin", "F");
+          localStorage.setItem("guest", "T");
+          localStorage.setItem("navigateToUpgradeToPremium", "false");
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(["/onboarding/login"]);
+        }
+      }
+    } else {
+      this.router.navigate(["/onboarding/login"]);
+    }
   }
 }
