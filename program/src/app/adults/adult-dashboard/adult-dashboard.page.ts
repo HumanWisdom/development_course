@@ -321,6 +321,7 @@ export class AdultDashboardPage implements OnInit {
   ngOnInit() {
     this.getuserDetail();
     setTimeout(() => {
+      this.getUserPreference()
       this.getUsershorts()
       this.getUserstories()
     }, 1000)
