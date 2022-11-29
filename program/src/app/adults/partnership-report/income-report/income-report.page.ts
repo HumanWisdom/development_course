@@ -48,7 +48,8 @@ export class IncomeReportPage implements OnInit {
       WithdrawnAmt: 0,
       BankDet: "",
       AffImgPath: "",
-      ByPaypal:0
+      ByPaypal:0,
+      PartnerCount:0
     } as PartnershipReport;
   }
  
@@ -130,7 +131,7 @@ export class IncomeReportPage implements OnInit {
       .share({
         title: "HumanWisdom Program",
         text:
-          "Hi! I’ve just subscribed to the amazing HumanWisdom app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – https://www.humanwisdom.me/course/adults/partnership-webpage"
+          "Hi! I’ve just subscribed to the amazing HumanWisdom app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – <a href='https://humanwisdom.me/course/adults/partnership-webpage'> https://humanwisdom.me/course/adults/partnership-webpage</a>"
       })
       .then((response) => {
         console.log(response);

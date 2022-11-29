@@ -8,7 +8,7 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
       <a>
-        <h1 class="txt210 tcenter mtb0px">
+        <h1 class="fw_500 fs_16px lh_19px fc_ffffff tcenter mtb0px">
           My daily practice
         </h1>
       </a>
@@ -44,13 +44,13 @@
                         <li data-target="#mdp_carousel" data-slide-to="4" [ngClass]="[dailyid === '4' ? 'active' : '']"></li>
     
                         <a class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="txt315 mtb0px" href="#mdp_carousel" data-slide="prev">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
                             Back
                           </h4>
                           <span class="sr-only">Previous</span>
                         </a>
                         <a class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
-                          <h4 class="txt315 mtb0px">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
                             Next
                           </h4>
                           <span class="sr-only">Next</span>
@@ -72,28 +72,28 @@
         
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="txt268 mtb0px">
+                          <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
                             Breathing Exercise
                           </h4>
                         </div>
                       </div>
 
                       <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                           <div class="row tcenter center_flex">
                             <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
                               <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video>  -->
-                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata"> 
-                                <source [src]="videoLink" type="video/mp4">                                              
+                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" > 
+                                <source [src]="videoLink" type="video/mp4" >                                               
                               </video> 
                             </div>
                           </div>
 
                           <div class="row mt15px">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <h1 class="txt297 tcenter mtb0px">
+                              <h1 class="fw_400 fs_15px lh_18px fc_000000 tcenter mtb0px">
                                 {{dailybreathTitle}}
                               </h1>
                             </div>
@@ -113,7 +113,7 @@
         
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="txt268 mtb0px">
+                          <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
                             Question of the day
                           </h4>
                         </div>
@@ -121,7 +121,7 @@
 
                       <div class="row center_flex safari_dblock">
                         <div class="col-md-12 col-sm-12 col-xs-10 float_none">
-                          <h4 class="txt288 mtb0px">
+                          <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px">
                             {{dailyqus}}
                           </h4>
                         </div>
@@ -135,7 +135,7 @@
 
                       <div class="row center_flex safari_dblock">
                         <div class="col-md-6 col-sm-6 col-xs-6 float_none">
-                          <button type="submit" [disabled]="!isloggedIn" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
+                          <button type="submit" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
                             Add to journal
                           </button> 
                         </div>
@@ -143,7 +143,7 @@
 
                       <div class="row center_flex safari_dblock">
                         <div class="col-md-12 col-sm-12 col-xs-7 float_none">
-                          <h4 class="txt237 mtb0px">
+                          <h4 class="fw_400 fs_12px lh_130p fc_000000 mtb0px">
                             Your online HumanWisdom journal is secure and private to you.
                           </h4>
                         </div>
@@ -163,7 +163,7 @@
         
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="txt268 mtb0px">
+                          <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
                             Daily inspiration
                           </h4>
                         </div>
@@ -177,7 +177,7 @@
 
                       <div class="row center_flex mdp_quotation safari_dblock">
                         <div class="col-md-12 col-sm-12 col-xs-10 float_none">
-                          <h4 class="txt288 mtb0px italic">
+                          <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px italic">
                             {{dailyinstext}}
                           </h4>
                         </div>
@@ -191,7 +191,7 @@
                       
                       <div class="row center_flex mdp_author safari_dblock">
                         <div class="col-md-12 col-sm-12 col-xs-7 float_none">
-                          <h4 class="txt289 mtb0px">
+                          <h4 class="fw_400 fs_18px lh_140p fc_000000 ls_pt1em mtb0px">
                            {{dailyinsAuthor}} 
                           </h4>
                         </div>
@@ -209,7 +209,7 @@
 
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="txt268 mtb0px">
+                          <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
                             Audio meditation
                           </h4>
                         </div>
@@ -219,7 +219,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <h1 class="txt307 tcenter mtb0px">
+                              <h1 class="fw_400 fs_24px lh_140p fc_000000 tcenter mtb0px">
                                {{audioTitle}}
                               </h1>
                             </div>
@@ -227,7 +227,7 @@
                           
                           <div class="row tcenter">
                             <div class="col-md-12 col-sm-12 col-xs-12 p7rem" *ngIf="audioLink !== ''">
-                              <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>
+                              <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="Logevent('click_play_audio_meditation')" #audio ></ngx-circular-player>
                             </div>
                           </div>
                         </div>
@@ -245,7 +245,7 @@
         
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h4 class="txt268 mtb0px">
+                          <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
                             Daily challenge
                           </h4>
                         </div>
@@ -253,7 +253,7 @@
 
                       <div class="row center_flex safari_dblock">
                         <div class="col-md-12 col-sm-12 col-xs-10 float_none">
-                          <h4 class="txt288 mtb0px">
+                          <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px">
                             {{trythistoday}}
                           </h4>
                         </div>

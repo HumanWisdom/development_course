@@ -16,11 +16,20 @@ export class SubscribedUnsubscribedPage implements OnInit {
 
   ngOnInit() {
     this.getCountry();
-    this.userType=localStorage.getItem('SubscriberType');
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    this.services.getuser(userId).subscribe((res) => {
+   //  let userdetail = res[0];
+     localStorage.setItem("isPartner", res[0].IsPartner);
+     localStorage.setItem('PartnerOption', res[0].PartnerOption);
+     localStorage.setItem('SubscriberType', res[0].SubscriberType);
+     this.userType = localStorage.getItem('SubscriberType');
+   })
+   // this.userType=localStorage.getItem('SubscriberType');
   }
 
   GetStarted(){
-    localStorage.setItem("navigateToUpgradeToPremium","true")
+    this.services.navigateToUpgradeToPremium=true;
+    //localStorage.setItem("navigateToUpgradeToPremium","true")
     this.router.navigate(['adults/partnership-app/referral-code']);
   }
   
@@ -29,7 +38,8 @@ export class SubscribedUnsubscribedPage implements OnInit {
       }
       UpgradeToPremium(){
         let val='Yearly';
-        localStorage.setItem("navigateToUpgradeToPremium","true")
+        this.services.navigateToUpgradeToPremium=true;
+        //localStorage.setItem("navigateToUpgradeToPremium","true")
         localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
         localStorage.setItem('partnership-app', val);
         localStorage.setItem('upgradeToPremium', 'T');

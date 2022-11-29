@@ -23,19 +23,25 @@ export class IndexFooterComponent implements OnInit {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
     }
-    if(this.router.url=="/adults/search") {
-      this.dash=false
-      this.journal=false
-      this.profile=false
-      this.fourm = false;
-      this.search = true;
-    }
     if(this.router.url=="/adults/adult-dashboard")
     {
       this.dash=true
       this.journal=false
       this.profile=false
       this.search = false;
+    }else {
+      this.dash=false
+      this.journal=false
+      this.profile=false
+      this.fourm = false;
+      this.search = false;
+    }
+    if(this.router.url=="/adults/search") {
+      this.dash=false
+      this.journal=false
+      this.profile=false
+      this.fourm = false;
+      this.search = true;
     }
     if((this.router.url=="/adults/journal")||(this.router.url.indexOf('/adults/note') > -1))
     {

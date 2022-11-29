@@ -8,12 +8,12 @@
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs login_signup_tab flex_ai">
-                <li>
+                <li class="active">
                   <a data-toggle="tab" (click)="getsignuptab()" href="#tab1">
                     Sign up
                   </a>
                 </li>
-                <li class="active" #enabletab onclick="$('#tab2').trigger('click')">
+                <li #enabletab onclick="$('#tab2').trigger('click')">
                   <a data-toggle="tab" href="#tab2">
                     Login
                   </a>
@@ -22,11 +22,12 @@
 
               <div class="tab-content mt40px">
                 <!-- signup -->
-                <div id="tab1" class="tab-pane fade">
+                <div id="tab1" class="tab-pane fade in active">
                   <form [formGroup]="registrationForm">
+
                     <div class="row ls_connect_with">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt243 mtb0px tcenter">
+                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
                           CONNECT WITH
                         </h4>
                       </div>
@@ -61,7 +62,7 @@
 
                     <div class="row ls_or_signup">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt243 mtb0px tcenter">
+                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
                           OR SIGN UP
                         </h4>
                       </div>
@@ -69,21 +70,21 @@
 
                     <!-- <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">First Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">First Name*</label>
                         <input type="text" id="fullname" class="form-control cfc8" name="firstname" required />
                       </div>
                     </div>
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Last Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Last Name*</label>
                         <input type="text" id="fullname" class="form-control cfc8" name="lastname" required />
                       </div>
                     </div> -->
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Full Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full Name*</label>
                         <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8"
                           name="fullname" required />
                         <div *ngIf="fullname.invalid && fullname.touched">
@@ -96,8 +97,8 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Email address*</label>
-                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname"
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
+                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname" autocomplete="new-password" 
                           required />
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
                           <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email
@@ -109,10 +110,10 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Password*</label>
-                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();"
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
+                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" 
                           id="password" class="form-control cfc8" name="fullname" required />
-                        <label class="txt189">
+                        <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                           Password must be Minimum 6 Characters. No Spaces allowed
                         </label>
                       </div>
@@ -125,7 +126,7 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="txt189 mt0px">Repeat password*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat password*</label>
                         <input type="password" formControlName="confirmPassword"
                           (keydown.space)="$event.preventDefault();" id="repeatpassowrd" class="form-control cfc8"
                           name="fullname" required />
@@ -140,14 +141,14 @@
 
                     <div class="row mt20px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="txt190 m0px pl8px">
+                        <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
                           By continuing, you agree to our
                           <a routerLink="/adults/help-support/terms-conditions">
-                            <span class="txt190 bold underline">Terms of Use</span>
+                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Terms of Use</span>
                           </a>
                           &nbsp;and&nbsp;
                           <a routerLink="/adults/help-support/privacy-policy">
-                            <span class="txt190 bold underline">Privacy Policy </span>
+                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Privacy Policy </span>
                           </a>
                         </h4>
                       </div>
@@ -175,25 +176,51 @@
                     </div>
                     <!-- /windows -->
 
-                    <div class="row ls_already_user">
+                    <!-- <div class="row ls_already_user">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt244 tcenter mtb0px" style="cursor: pointer;">
+                        <h4 class="fw_400 fs_12px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
                           Already a user?
-                          <a class="txt245 underline">
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
                             Login here
                           </a>
                         </h4>
                       </div>
+                    </div> -->
+
+                    <div class="row ls_already_user">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                          <span class="">
+                            <span class="fw_400 fs_12px lh_140p fc_ffffff">
+                              Already a user?
+                            </span>
+
+                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
+                              Login here 
+                            </a>
+                          </span>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" routerLink="/adults/adult-dashboard">
+                            Continue as Guest
+                          </a>
+                        </div>
+                        
+                      </div>
                     </div>
+
                   </form>
                 </div>
                 <!-- /signup -->
 
                 <!-- login -->
-                <div id="tab2" class="tab-pane fade in active">
+                <div id="tab2" class="tab-pane fade">
+                  
                   <div class="row ls_connect_with">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt243 mtb0px tcenter">
+                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
                         CONNECT WITH
                       </h4>
                     </div>
@@ -226,7 +253,7 @@
 
                   <div class="row ls_or_login">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt243 mtb0px tcenter">
+                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
                         OR LOGIN
                       </h4>
                     </div>
@@ -234,18 +261,18 @@
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="txt189 mt0px">Email address*</label>
-                      <input type="email" id="email2" [(ngModel)]="this.email" class="form-control cfc8" name="fullname"
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
+                      <input type="email" id="email2" [(ngModel)]="this.email" class="form-control cfc8" name="fullname" autocomplete="new-password"
                         required />
                     </div>
                   </div>
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="txt189 mt0px">Password*</label>
-                      <input type="password" id="password2" [(ngModel)]="this.password" class="form-control cfc8"
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
+                      <input type="password" id="password2" [(ngModel)]="this.password" class="form-control cfc8"  autocomplete="new-password"
                         name="fullname" required />
-                      <label class="txt189">
+                      <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                         Password must be Minimum 6 Characters. No Spaces allowed
                       </label>
                     </div>
@@ -257,7 +284,7 @@
                         <label class="mt0px inline_box ls_checkbox">
                           <input type="checkbox" [checked]="true" disabled />
                           <span></span>
-                          <h4 class="txt190 m0px pl8px">
+                          <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
                             Remember me
                           </h4>
                         </label>
@@ -272,15 +299,34 @@
                     </div>
                   </div>
 
-                  <div class="row ls_forgot_password">
+                  <!-- <div class="row ls_forgot_password">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a routerLink="/onboarding/forgotpassword">
-                        <h4 class="txt192 tcenter mtb0px" style="cursor: pointer;">
+                        <h4 class="fw_500 fs_14px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
                           Forgot Password?
                         </h4>
                       </a>
                     </div>
+                  </div> -->
+
+                  <div class="row ls_forgot_password">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline" routerLink="/onboarding/forgotpassword">
+                          Forgot Password?
+                        </a>
+                      </div>
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline" routerLink="/adults/adult-dashboard">
+                          Continue as Guest
+                        </a>
+                      </div>
+                      
+                    </div>
                   </div>
+
                 </div>
                 <!-- /login -->
               </div>
@@ -306,7 +352,7 @@
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
           <div class="row mt20px center_flex">
             <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
-              <h4 class="txt191">
+              <h4 class="fw_700 fs_12px lh_14px fc_243949 ls_pt12em">
                 OR CONNECT WITH
               </h4>
             </div>
@@ -355,25 +401,25 @@
         <!-- modal content -->
         <div class="row center_flex">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <h4 class="txt59 tcenter boldi">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter boldi">
               You do not have an Active Subcription
             </h4>
-            <!-- <h4 class="txt59 tcenter">
+            <!-- <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
               Please <a (click)="getrenew()" style="color: blue;">Click</a> Here to renew or <a style="color: blue;" (click)="getfreeuser()">Click</a> Here to proceed as a free user
             </h4>   -->
-            <h4 class="txt59 tcenter">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
               Click here to <a (click)="getrenew()" style="color: blue;" class="italic">Subscribe</a>
             </h4>
-            <h4 class="txt59 tcenter">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
               <span class="">OR</span>
             </h4>
-            <h4 class="txt59 tcenter">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
               Click here to <a (click)="getrenew()" style="color: blue;" class="italic">Use Your Subscription Code</a>
             </h4>
-            <h4 class="txt59 tcenter">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
               <span class="">OR</span>
             </h4>
-            <h4 class="txt59 tcenter">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
               Click Here to proceed as a <a style="color: blue;" (click)="getfreeuser()" class="italic">Free User</a>
             </h4>
           </div>

@@ -23,14 +23,16 @@ export class TnDashboardV03Component implements OnInit {
   name = ''
   roleid = 0
   url = '';
-  subscriber = false;
+  subscriber = true;
+  isShowbookMark=false;
   @Input()
   enableplaystore = false
   @Input()
   routeid = ''
   android = false;
   ios = false;
-
+  cardlist=[];
+  countryCode:any;
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
@@ -43,9 +45,13 @@ export class TnDashboardV03Component implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      let sub: any = localStorage.getItem("Subscriber")
-      if (sub === '1' || sub === 1) {
-        this.subscriber = true;
+      let sub: any = localStorage.getItem("Subscriber");
+      if(sub=='1'){
+         this.subscriber=true;
+         this.isShowbookMark=true;
+      }else{
+        this.subscriber=false;
+        this.isShowbookMark=false;
       }
       let userId = JSON.parse(localStorage.getItem("userId"))
 
@@ -99,6 +105,10 @@ export class TnDashboardV03Component implements OnInit {
     this.enableplaystore = false;
     localStorage.setItem('enablebanner', 'F')
     this.playstoreenable.emit(false);
+  }
+
+  Subscribe(){
+    this.router.navigate(['/onboarding/add-to-cart']);
   }
 
   clickbanner(url = '') {

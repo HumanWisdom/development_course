@@ -25,11 +25,11 @@
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                  <h4 class="tcenter txt139 mtb0px pt20px">
+                  <h4 class="tcenter fw_400 fs_20px lh_23px fc_ffffff mtb0px pt20px">
                     {{loginResponse.Name}}
                   </h4>
 
-                  <h6 class="tcenter txt140 mtb0px mt5px mb0pxi">
+                  <h6 class="tcenter fw_400 fs_12px lh_14px fc_ffffff mtb0px mt5px mb0pxi">
                     {{email}}
                   </h6>
                 </div>
@@ -38,7 +38,7 @@
               <!-- <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                     <a class="" routerLink="/onboarding/profile-edit">
-                      <h6 class="txt141 underline mtb0px pt20px">
+                      <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px pt20px">
                         Edit Profile
                       </h6>
                     </a>
@@ -46,7 +46,7 @@
 
                   <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                     <a class="" routerLink="/onboarding/change-password">
-                      <h6 class="tcenter txt141 underline mtb0px mt10px">
+                      <h6 class="tcenter fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px mt10px">
                         Change Password
                       </h6>
                     </a>
@@ -57,33 +57,33 @@
                 <div class="col-md-8 col-sm-8 col-xs-12 center_flex">
                   <!-- <div class="col-md-6 col-sm-6 col-xs-6 tright pprofile_pwd">
                     <a class="" routerLink="/onboarding/profile-edit">
-                      <h6 class="txt141 underline mtb0px">
+                      <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
                         Edit Profile
                       </h6>
                     </a>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6 tleft">
                     <a class="" routerLink="/onboarding/change-password">
-                      <h6 class="txt141 underline mtb0px">
+                      <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
                         Change Password
                       </h6>
                     </a>
                   </div> -->
-                  <a class="" routerLink="/onboarding/profile-edit">
-                    <h6 class="txt141 underline mtb0px">
+                  <a class=""  (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')" >
+                    <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
                       Edit Profile
                     </h6>
                   </a>
                   <hr class="vhr_01">
-                  <a class="" routerLink="/onboarding/change-password">
-                    <h6 class="txt141 underline mtb0px">
+                  <a class=""  (click)="Logevent('/onboarding/change-password', '', 'click_change_password')"   >
+                    <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
                       Change Password
                     </h6>
                   </a>
 
                   <!-- <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
                       <a class="" (click)="deleteMyData()">
-                        <h6 class="txt141 underline mtb0px">
+                        <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
                           Delete My Data
                         </h6>
                       </a>
@@ -96,7 +96,7 @@
               <div class="row" *ngIf="isPartner">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                   <a class="" (click)="getAffiliate()" *ngIf="RoleID === 8">
-                    <h6 class="tcenter txt141 underline mtb0px mt10px">
+                    <h6 class="tcenter fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px mt10px">
                       Partnership Report
                     </h6>
                   </a>
@@ -110,19 +110,19 @@
                       <img
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_03.svg"
                         alt="" class="p0">
-                      <h6 class="txt66 absolute_01">
+                      <h6 class="fw_700 fs_16px lh_19px fc_243949 absolute_01">
                         {{loginResponse.Points}}
                       </h6>
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-5 col-xs-5 p0">
-                    <h4 class="txt142">
+                    <h4 class="fw_700 fs_12px lh_14px fc_243949">
                       Wisdom Points
                     </h4>
                   </div>
                   <!-- <div class="col-md-6 col-sm-5 col-xs-5 tright">
                     <a>
-                      <h4 class="txt60">
+                      <h4 class="fw_500 fs_12px lh_130p fc_1092a7">
                         <span class="pr5px">
                           Redeem Now
                         </span>
@@ -140,7 +140,7 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="txt143 tleft mtb0px">
+                    <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d tleft mtb0px">
                       Overall Progress
                     </h4>
                   </div>
@@ -150,7 +150,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="progress prelative profile_progress">
                       <div class="progress-bar prelative profile_pb" [style.width]="overallPercentage + '%'"></div>
-                      <h6 class="absolute_02 txt144">
+                      <h6 class="absolute_02 fw_700 fs_16px lh_19px fc_ffffff">
                         {{overallPercentage}}%
                       </h6>
                     </div>
@@ -159,28 +159,28 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="txt143 mtb0px">
+                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                       {{loginResponse.Modules}}
                     </h6>
-                    <h6 class="txt145 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                       Modules
                     </h6>
                   </div>
 
                   <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="txt143 mtb0px">
+                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                       {{loginResponse.Notes}}
                     </h6>
-                    <h6 class="txt145 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                       Notes
                     </h6>
                   </div>
 
                   <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="txt143 mtb0px">
+                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                       {{loginResponse.Surveys}}
                     </h6>
-                    <h6 class="txt145 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                       Surveys
                     </h6>
                   </div>
@@ -192,13 +192,13 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                   <div class="col-md-6 col-sm-6 col-xs-6">
-                    <h4 class="txt143">
+                    <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d">
                       Wisdom Survey Score
                     </h4>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6 tright">
                     <a routerLink="/adults/wisdom-survey/wisdom-survey-insight">
-                      <h4 class="txt60">
+                      <h4 class="fw_500 fs_12px lh_130p fc_1092a7">
                         <span class="pr5px">
                           Insights
                         </span>
@@ -212,12 +212,12 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                   <div class="col-md-2 col-sm-2 col-xs-3">
-                    <h4 class="txt146">
+                    <h4 class="fw_700 fs_32px lh_37px fc_b92f48">
                       {{loginResponse.hwScore}}
                     </h4>
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-9 p0 tleft">
-                    <h4 class="txt145">
+                    <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d">
                       12% up since last survey
                     </h4>
                   </div>
@@ -233,7 +233,7 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="txt145">
+                    <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d">
                       Fill the wisdom survey once a week and track your wisdom progress
                     </h4>
                   </div>
@@ -245,7 +245,7 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="txt143">
+                    <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d">
                       This week
                     </h4>
                   </div>
@@ -279,35 +279,35 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 pt16px">
                   <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <h6 class="txt143 mtb0px">
+                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                       {{loginResponse.WkHours}} hours
                     </h6>
-                    <h6 class="txt145 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                       This week
                     </h6>
                   </div>
 
                   <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <!-- <h6 class="txt143 mtb0px">
+                    <!-- <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                       {{loginResponse.Streak}} days
                     </h6>
-                    <h6 class="txt145 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                       Streak
                     </h6> -->
                   </div>
 
                   <div class="col-md-4 col-sm-4 col-xs-4 tcenter">
-                    <!-- <h6 class="txt143 mtb0px">
+                    <!-- <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                       72 hours
                     </h6>
-                    <h6 class="txt145 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                       Total usage
                     </h6> -->
 
-                    <h6 class="txt143 mtb0px">
+                    <h6 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                       {{loginResponse.Streak}} days
                     </h6>
-                    <h6 class="txt145 mtb0px">
+                    <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                       Streak
                     </h6>
                   </div>
@@ -320,13 +320,13 @@
                 <div class="col-md-12 col-sm-12 col-xs-12" *ngIf="enablepayment">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                      <h4 class="txt143 mtb0px">
+                      <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                         Payment Details
                       </h4>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6 tright">
                       <a routerLink="/onboarding/payment-details">
-                        <h4 class="txt60 mtb0px">
+                        <h4 class="fw_500 fs_12px lh_130p fc_1092a7 mtb0px">
                           <span class="pr5px">
                             Update
                           </span>
@@ -339,7 +339,7 @@
 
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="txt147 mt5b0px" *ngIf="paymentDetail">
+                    <h4 class="fw_400 fs_12px lh_14px fc_adadad mt5b0px" *ngIf="paymentDetail">
                       {{paymentDetail['CCName'] + ' ' + 'xxxx xxxx xxxx ' + paymentDetail['CCNumber']}}
                     </h4>
                   </div>
@@ -352,13 +352,13 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                      <h4 class="txt143 mtb0px">
+                      <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                         Subscriptions
                       </h4>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6 tright">
                       <a routerLink="/onboarding/myprogram">
-                        <h4 class="txt60 mtb0px">
+                        <h4 class="fw_500 fs_12px lh_130p fc_1092a7 mtb0px">
                           <span class="pr5px">
                             Details
                           </span>
@@ -371,7 +371,7 @@
 
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 *ngFor="let p of myPrograms" class="txt147 mt5b0px">
+                    <h4 *ngFor="let p of myPrograms" class="fw_400 fs_12px lh_14px fc_adadad mt5b0px">
                       {{p.Prog}} : {{p.ActKey}}
                     </h4>
                   </div>
@@ -384,13 +384,13 @@
                 <!-- <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                       <div class="col-md-6 col-sm-6 col-xs-6">
-                        <h4 class="txt143 mtb0px">
+                        <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                           Certificates
                         </h4> 
                       </div>
                       <div class="col-md-6 col-sm-6 col-xs-6 tright">
                         <a>
-                          <h4 class="txt148 mtb0px">
+                          <h4 class="fw_500 fs_12px lh_130p fc_c4c4c4 mtb0px">
                             <span class="pr5px">
                               Details
                             </span>                        
@@ -401,7 +401,7 @@
                       
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h4 class="txt147 mt5b0px">
+                      <h4 class="fw_400 fs_12px lh_14px fc_adadad mt5b0px">
                         No certificates earned yet
                       </h4> 
                     </div>
@@ -414,13 +414,13 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 pb5rem">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai" routerLink="/adults/refer-friend">
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                      <h4 class="txt143 mtb0px">
+                      <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                         Invite Friends
                       </h4>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6 tright">
                       <a>
-                        <h4 class="txt60 mtb0px">
+                        <h4 class="fw_500 fs_12px lh_130p fc_1092a7 mtb0px">
                           <span class="pr5px">
                             Share
                           </span>
@@ -439,12 +439,12 @@
                 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <a (click)="deleteMyData()">
-                    <h4 class="txt60 dmd">
+                    <h4 class="fw_500 fs_12px lh_130p fc_1092a7 dmd">
                       Delete my data
                     </h4>       
                   </a>   
                   <!-- <button type="submit" class="btn btn-default" (click)="deleteMyData()">
-                    <h4 class="txt60 dmd">
+                    <h4 class="fw_500 fs_12px lh_130p fc_1092a7 dmd">
                       Delete my data
                     </h4>       
                   </button>  -->

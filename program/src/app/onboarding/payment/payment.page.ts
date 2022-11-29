@@ -16,6 +16,7 @@ import { AngularStripeService } from '@fireflysemantics/angular-stripe-service'
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { LogEventService } from "src/app/log-event.service";
 
 var style = {
   base: {
@@ -61,8 +62,9 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   constructor(private cd: ChangeDetectorRef,
     private service: OnboardingService,
     private router: Router,
-    private stripeService:AngularStripeService
-    ) { 
+    private stripeService:AngularStripeService,
+    public logeventservice: LogEventService
+   ) { 
       let quan = this.router.getCurrentNavigation().extras.state.quan;
       let plan = this.router.getCurrentNavigation().extras.state.plan;
       let userId=JSON.parse(localStorage.getItem("userId"))
@@ -131,6 +133,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               if(result.error) {
                 alert(result.error.message);
               } else {
+                this.logeventservice.logEvent('click_confirm_payment');
                 alert('Your Payment Is Successfully Submitted');
                 if(localStorage.getItem('ispartnershipClick')=='T'){
                   this.router.navigate(['/adults/humanwisdom-premium']);

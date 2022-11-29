@@ -22,6 +22,8 @@ export class IncomePartnerPage implements OnInit {
    isExpand=false;
    isCopy=true;
    expandedUserId=0;
+   footerOption:string='Receive Income';
+   opositefooter:string ='planting trees';
    partnerOption=localStorage.getItem('PartnerOption');
   constructor(
     public adultService: AdultsService,
@@ -30,27 +32,51 @@ export class IncomePartnerPage implements OnInit {
    public location:Location
   ) {
     this.isRecieveIncome=localStorage.getItem('PartnerOption')=='ReceiveIncome';
-    this.  InitializePartnershipReport();
+    this.InitializePartnershipReport();
+    if(this.isRecieveIncome){
+      this.footerOption='tree planted';
+      this.opositefooter='receiving an income';
+    }else{
+      this.footerOption='Receive Income';
+      this.opositefooter='planting trees';
+    }
   }
 
 
   ngOnInit() {
- 
-    this.adultService.GetPartnerCommReport().subscribe((res) => {
-      if (res) {
-        this.partnershipReport = res;
-        this.getMaskAccountDetails();
-        this.adultService.GetMyPartners().subscribe((res) => {
-          if (res) {
-            this.partnersList=res;
-            if(res){
-              this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
-              this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
-            }
+ if(!this.isRecieveIncome){
+  this.adultService.getTreePlantationReport().subscribe((res) => {
+    if (res) {
+      this.partnershipReport = res;
+      this.adultService.GetMyPartners().subscribe((res) => {
+        if (res) {
+          this.partnersList=res;
+          if(res){
+            this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
+            this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
           }
-        });
-      }
-    });
+        }
+      });
+    }
+  });
+ }else{
+  this.adultService.GetPartnerCommReport().subscribe((res) => {
+    if (res) {
+      this.partnershipReport = res;
+      this.getMaskAccountDetails();
+      this.adultService.GetMyPartners().subscribe((res) => {
+        if (res) {
+          this.partnersList=res;
+          if(res){
+            this.activePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="active");
+            this.inactivePartnerList=this.partnersList.filter(x=>x.PartnerStatus=="inactive");
+          }
+        }
+      });
+    }
+  });
+ }
+   
   }
   copyText(referralCode): void {
     navigator.clipboard.writeText(referralCode).catch(() => {
@@ -88,7 +114,7 @@ export class IncomePartnerPage implements OnInit {
       .share({
         title: "HumanWisdom Program",
         text:
-        "Hi! I’ve just subscribed to the amazing HumanWisdom app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – https://www.humanwisdom.me/adults/partnership-webpage"
+        "Hi! I’ve just subscribed to the amazing HumanWisdom app and joined their partnership program to help share this with others and make the world a better place. The app is free to download and browse. This is a short video introduction: https://youtu.be/GYbpYnkGJ0U. If you like it and want to subscribe use this referral code to get 10% off – "+refcode+". If you want to find out more about the partnership program – https://humanwisdom.me/course/adults/partnership-webpage"
       })
       .then((response) => {
         console.log(response);

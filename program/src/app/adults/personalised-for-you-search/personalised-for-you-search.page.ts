@@ -11,8 +11,11 @@ import { AdultsService } from '../adults.service';
 })
 export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  @ViewChild('welcome') welcome: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
+  @ViewChild('enablemodal') enablemodal: ElementRef;
 
+  searchResult=[];
   personalisedforyou = []
 
   indList = []
@@ -34,15 +37,45 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public saveUsername = false
   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
-
+  public moduleList = [];
+  isWelcomePopup=false;
   constructor(private route: Router, private aservice: AdultsService, public authService: SocialAuthService, public service: OnboardingService) {
-    this.getUserPreference()
+    this.getUserPreference();
+    this.getModuleList();
   }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
+      if(window.history.state.routedFromLogin && window.history.state.routedFromLogin ==true ){
+      setTimeout(() => {
+        this.welcome.nativeElement.click();
+      }, 1000);
+      }
+    }
+    
+  }
+
+  getModuleList(isLoad?){
+    this.aservice.getModuleList().subscribe(res=>{
+      this.moduleList=res;
+      if(isLoad){
+        if(this.searchinp==''){
+          this.searchResult=this.moduleList;
+        }else{
+          this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+        }
+      }
+    })
+  }
+  getAutoCompleteList(value){
+    if(this.moduleList.length>0){
+      if(value==null|| value==""){
+        this.searchResult=this.moduleList;
+      }else{
+        this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
     }
   }
 
@@ -87,6 +120,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.route.navigate([url])
   }
 
+  searchEvent(module){
+    this.searchinp=module;
+    this.searchResult=[];
+    this.getinp(module);
+  }
 
   clickbtn(name, val = '', event, ind, id) {
     if (val === '') {
@@ -326,6 +364,21 @@ export class PersonalisedForYouSearchPage implements OnInit {
     });
   }
 
+  onFocus(){
+    this.getModuleList(true);
+    if(this.searchinp==''){
+      this.searchResult=this.moduleList;
+    }else{
+      this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
+  }
+
+  onFocusOutEvent(){
+    setTimeout(() => {
+      this.searchResult=[];
+    }, 400);
+    }
+
   signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
     const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
@@ -337,4 +390,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     );
 
   }
+
+  clearSearch(){
+    this.searchinp="";
+    this.searchResult=[];
+  }
+  
 }

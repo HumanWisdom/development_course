@@ -2,6 +2,9 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../onboarding.service';
 import {Location } from '@angular/common'
+import { AdultsService } from 'src/app/adults/adults.service';
+import { LogEventService } from "src/app/log-event.service";
+
 
 @Component({
   selector: 'app-subscription-s01-v04',
@@ -25,7 +28,7 @@ export class SubscriptionS01V04Page implements OnInit {
   planWarning=false
 
   cartProductionList:any
-  
+  isModalPopup=false;
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   countryList=[]
   totalCartValue:any
@@ -53,8 +56,10 @@ export class SubscriptionS01V04Page implements OnInit {
   secondpage = false;
   thirdpage = false;
   fourthpage = false;
-
-  constructor(private router: Router,private service:OnboardingService, private location:Location, private cd: ChangeDetectorRef) {
+  yearormonth = ''
+  isActivateModal=false;
+  public showWarning=false
+  constructor(private router: Router,public service:OnboardingService, public services:AdultsService, private location:Location, public logeventservice: LogEventService,  private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
     if(localStorage.getItem('subscribepage') === 'T') {
@@ -70,9 +75,16 @@ export class SubscriptionS01V04Page implements OnInit {
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
     this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    if( this.service.isActivationFlow){
+      setTimeout(() => {
+        this.ActivationFlow();
+      }, 300);
+    }
    }
 
   ngOnInit() {
+    this.service.isActivationFlow=true
+    
     if(localStorage.getItem('giftwisdom') === 'F')   {
       this.enableGift = true;
     } 
@@ -90,16 +102,6 @@ export class SubscriptionS01V04Page implements OnInit {
    
 setTimeout(() => {
   console.log(this.cartList)
-  // this.cartList[0].qty = this.cartitemList.length
-  // if(this.cartitemList.length === 0){
-  //   this.cartList[0].price =  this.cartList[0]['Annual']
-  // }else {
-  //   this.cartList[0].price = this.cartitemList[0].Amt
-  //   this.cartList[0].selectedSubscription = this.cartitemList[0].Plan
-  // }
-  // this.enableData = true
-  // this.cd.detectChanges()
-
 }, 7000)
     
   }
@@ -141,6 +143,7 @@ setTimeout(() => {
 
  
  proceedcart() {
+  this.logeventservice.logEvent('click_view_cart');
    this.router.navigate(['/onboarding/viewcart'])
  }
 
@@ -168,17 +171,19 @@ enablelastpage() {
   this.fourthpage = true;
 }
 
-submitcode(){
-  this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
+verifyactkey() {
+  this.showWarning=false
+  console.log("Submit verify")
+  this.services.verifyactkey(this.activationCode)
   .subscribe(
     res=>
     {
       if(res) {
-        let code: any = 1
-      localStorage.setItem('Subscriber', code)
+        this.showWarning=true
+       this.yearormonth = res
       this.thirdpage = false
-      this.firstpage = false
-      this.secondpage = true;
+        this.firstpage = false
+        this.secondpage = true;
       }else {
         this.secondpage = false;
         this.thirdpage = true
@@ -189,17 +194,76 @@ submitcode(){
       // this.router.navigate(['/adults/adult-dashboard'])
     },
     error=>{
-      this.secondpage = false;
-        this.thirdpage = true
+      console.log(error);
+     
       // window.alert(error.error['Message'])
     },
-   
-    ()=>{
-      
-
+    ()=>{    
+    });
+    if(this.showWarning===false){
+      this.secondpage = false;
+      this.thirdpage = true
     }
-  )
+}
+Confirm(){
+  this.submitcode();
+}
 
+
+submitcode(){
+  this.logeventservice.logEvent('click_activation_code_submit');
+ 
+  
+  this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
+  .subscribe(
+    res=>
+    {
+     
+      for(var i=0;i<this.cartitemList.length;i++){
+        if(this.cartitemList[i].MySelf=="True")
+        {
+          console.log('delete cart')
+          var id=this.cartitemList[i].CartId;
+          console.log(id)
+          this.cartitemList[i].Qty==1
+          this.cartitemList.splice(i,1)
+          this.service.deleteItem({"Id":parseFloat(id)})
+          .subscribe(res=> {
+            if(res) {
+              let code: any = 1
+            localStorage.setItem('Subscriber', code)
+            this.thirdpage = false
+            this.firstpage = false
+            this.secondpage = false;
+            this.fourthpage = true;
+            if(this.yearormonth=='Year' && this.service.isActivationFlow){
+              this.router.navigate(['/adults/hwp-premium-congratulations']);
+            }
+            }else {
+              this.secondpage = false;
+              this.thirdpage = false
+              this.fourthpage = true
+            }
+          },
+          error=>{
+            this.secondpage = false;
+              this.thirdpage = true
+          },
+         
+          ()=>{
+            
+      
+          }
+        )
+            this.service.isActivationFlow=true;
+        }else{
+          this.service.isActivationFlow=true;
+        }
+      }
+    });
+    this.secondpage = false;
+    this.thirdpage = false
+    this.fourthpage = true
 }
 
   radioevent(event) {
@@ -231,7 +295,7 @@ submitcode(){
 
   msginput(event) {
     this.learnermsg = event.target.value;
-  }
+  } 
 
   getCountry(){
     this.service.getCountry().subscribe((res:any)=>{  
@@ -373,6 +437,7 @@ submitcode(){
   }  
 
   addToCart(){
+    this.logeventservice.logEvent('click_done');
     this.loggedUser()
     let pid = this.cartList[0]['ProgID']
     console.log(pid)
@@ -553,7 +618,14 @@ submitcode(){
     this.totalPrice()  
   }
 
-  
+  ValidateEmail() {
+    var validRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    if (this.learnermail.match(validRegex)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   totalPrice(){
     //this.selectedSubscription="annual"
@@ -584,5 +656,45 @@ submitcode(){
   //   totalCartValue:any
   // totalItemCount=0
   }
+  ActivationFlow(){
+    this.logeventservice.logEvent('click_already_have_subscription_code');
+    if(this.isActivateModal){
+      this.isActivateModal=false;
+    }else{
+      this.isActivateModal=true;
+    }
 
+  }
+  Cancel(){
+    if(this.service.isActivationFlow && !this.service.isAdvert_hwp){
+      this.proceedcart();
+      localStorage.setItem('isMonthlySelectedForPayment','F');
+      this.isModalPopup=false;
+      this.service.isActivationFlow=false;
+    }else{
+      localStorage.setItem('isMonthlySelectedForPayment','F');
+      this.isModalPopup=false;
+      this.service.isActivationFlow=false;
+      if(this.service.isAdvert_hwp){
+        this.service.isAdvert_hwp=false;
+        this.router.navigate(['/adults/adverts-hwp-app']);
+      }
+    }
+  }
+  AddCarBeforePopuP(){
+    this.logeventservice.logEvent('click_addtocart');
+    setTimeout(() => {
+      if(this.isSubscribe){
+        this.enableMySelf=false;
+      }
+      if(this.enableMySelf==false){
+        if(this.isSubscribe){
+          this.enableMySelf=false;
+        }
+        this.myself = 0;
+        this.enableemail = true;
+        $("#optionsRadios10").prop("checked", true);
+      }
+    }, 100);
+  }
 }

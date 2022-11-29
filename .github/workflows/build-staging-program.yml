@@ -2,25 +2,23 @@ name: build-program-staging
 on:
   push:
     branches: [main]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Setup nodejs
-      uses: actions/setup-node@v2
-      with:
+     - name: Setup nodejs
+       uses: actions/setup-node@v2
+       with:
         node-version: '14'
 
-    - name: Cache node modules
-      id: cache-nodemodules
-      uses: actions/cache@v2
-      env:
+     - name: Cache node modules
+       id: cache-nodemodules
+       uses: actions/cache@v2
+       env:
         cache-name: cache-node-modules
-      with:
+       with:
         path: program/node_modules
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
@@ -28,32 +26,32 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
         
-    - name: Install global dependencies
-      run: |
+     - name: Install global dependencies
+       run: |
         npm install -g @ionic/cli
         npm install -g @angular/cli
+        ionic init
 
-    - name: Install project dependencies
-      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-      run: |
+     - name: Install project dependencies
+       run: |
         cd program
-        npm ci
+        npm install --force
 
-    - name: Build the project
-      run: |
+     - name: Build the project
+       run: |
         cd program
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build -- -c=staging --base-href /course/
+        ionic build --configuration=staging -- --base-href /course/
     
-    - name: Compress the build artifacts
-      run: |
+     - name: Compress the build artifacts
+       run: |
         cd program
         mkdir -p builds/compressed
         tar -czf builds/compressed/program.tgz www/
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
+     - name: Upload artifact
+       uses: actions/upload-artifact@v2
+       with:
         name: program-artifact
         path: program/builds/compressed/program.tgz
   

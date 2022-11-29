@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { AbstractControl, FormBuilder, Validators } from "@angular/forms";
+import { AbstractControl, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
   FacebookLoginProvider,
   GoogleLoginProvider,
-  SocialAuthService,
+  SocialAuthService
 } from "angularx-social-login";
 import { AdultsService } from "src/app/adults/adults.service";
 import { OnboardingService } from "src/app/onboarding/onboarding.service";
@@ -97,7 +97,7 @@ export class LoginSignupPage implements OnInit {
   );
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private router: Router,
     private activate: ActivatedRoute,
     private authService: SocialAuthService,
@@ -127,7 +127,7 @@ export class LoginSignupPage implements OnInit {
     setTimeout(() => {
       if (localStorage.getItem("emailCode") === "T") {
         let userid = localStorage.getItem("userIdCode");
-        this.service.verifyUser(userid).subscribe((res) => {});
+        this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
   }
@@ -164,7 +164,7 @@ export class LoginSignupPage implements OnInit {
         FName: this.registrationForm.get("fullname").value.split(" ")[0],
         Lname:
           this.registrationForm.get("fullname").value.split(" ")[1] ===
-          undefined
+            undefined
             ? ""
             : this.registrationForm.get("fullname").value.split(" ")[1],
         Email: this.registrationForm.get("email").value,
@@ -357,7 +357,11 @@ export class LoginSignupPage implements OnInit {
                     if (subscribePage === "T") {
                       localStorage.setItem("subscribepage", "F");
                     }
-                    this.router.navigate(["/onboarding/add-to-cart"]);
+                    if (this.loginResponse.Subscriber === '0') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else {
+                      this.router.navigate(["/onboarding/viewcart"])
+                    }
                   } else {
                     localStorage.setItem("isloggedin", "T");
                     if (pers && persub && pers === "T") {
@@ -510,7 +514,11 @@ export class LoginSignupPage implements OnInit {
                     if (subscribePage === "T") {
                       localStorage.setItem("subscribepage", "F");
                     }
-                    this.router.navigate(["/onboarding/add-to-cart"]);
+                    if (this.loginResponse.Subscriber === '0') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else {
+                      this.router.navigate(["/onboarding/viewcart"])
+                    }
                   } else {
                     localStorage.setItem("isloggedin", "T");
                     if (pers && persub && pers === "T") {
@@ -544,7 +552,7 @@ export class LoginSignupPage implements OnInit {
   emailLogin() {
     localStorage.removeItem("token");
     if (this.urlEmail) {
-      this.service.verifyUser(this.urlEmail).subscribe((res) => {});
+      this.service.verifyUser(this.urlEmail).subscribe((res) => { });
     }
     this.service.emailLogin(this.email, this.password).subscribe(
       (res) => {
@@ -633,76 +641,92 @@ export class LoginSignupPage implements OnInit {
           let pers = localStorage.getItem("personalised");
           let persub = localStorage.getItem("personalised subscription");
           let option = localStorage.getItem("introoption");
-          if (pers && persub && pers === "T") {
+          if (option === "T") {
+            localStorage.setItem("introoption", "F");
             localStorage.setItem("isloggedin", "T");
-            this.router.navigate(["/onboarding/payment"], {
-              state: { quan: "1", plan: persub },
-            });
-          }
-          if (acceptCookie === "T" || subscribePage === "T") {
-            localStorage.setItem("isloggedin", "T");
-            if (acceptCookie === "T") {
-              localStorage.setItem("activeCode", "F");
-            }
-            if (subscribePage === "T") {
-              localStorage.setItem("subscribepage", "F");
-            }
-            if (roleid === 8 && emailcode === "T") {
-              localStorage.setItem("isloggedin", "T");
-              this.router.navigate(["/onboarding/change-password"]);
-            } else {
-              if (localStorage.getItem("emailCode") === "T") {
-                localStorage.setItem("emailCode", "F");
-              }
-              this.router.navigate(["/onboarding/add-to-cart"]);
-            }
+            this.router.navigate(["/intro/personalised-for-you"]);
           } else {
-            if (roleid === 8 && emailcode === "T") {
+            if (pers && persub && pers === "T") {
               localStorage.setItem("isloggedin", "T");
-              this.router.navigate(["/onboarding/change-password"]);
-            } else {
-              if (localStorage.getItem("emailCode") === "T") {
-                localStorage.setItem("emailCode", "F");
+              this.router.navigate(["/onboarding/payment"], {
+                state: { quan: "1", plan: persub },
+              });
+            }
+
+            if (acceptCookie === "T" || subscribePage === "T") {
+              localStorage.setItem("isloggedin", "T");
+              if (acceptCookie === "T") {
+                localStorage.setItem("activeCode", "F");
               }
-              localStorage.setItem("isloggedin", "T");
-              if (localStorage.getItem("btnClickBecomePartner") == "T") {
-                if (
-                  localStorage.getItem("SubscriberType") == "Monthly" ||
-                  localStorage.getItem("SubscriberType") == "Free" ||
-                  localStorage.getItem("SubscriberType") == "Annual"
-                ) {
-                  localStorage.setItem("btnClickBecomePartner", "F");
-                  this.router.navigate(["adults/partnership-app"]);
-                }
+              if (subscribePage === "T") {
+                localStorage.setItem("subscribepage", "F");
+              }
+              if (roleid === 8 && emailcode === "T") {
+                localStorage.setItem("isloggedin", "T");
+                this.router.navigate(["/onboarding/change-password"]);
               } else {
-                if (pers && persub && pers === "T") {
-                  localStorage.setItem("isloggedin", "T");
-                  this.router.navigate(["/onboarding/viewcart"], {
-                    state: { quan: "1", plan: persub },
-                  });
+                if (localStorage.getItem("emailCode") === "T") {
+                  localStorage.setItem("emailCode", "F");
+                }
+                if (this.loginResponse.Subscriber === '0') {
+                  this.router.navigate(["/onboarding/add-to-cart"]);
                 } else {
+                  this.router.navigate(["/onboarding/viewcart"])
+                }
+              }
+            } else {
+              if (roleid === 8 && emailcode === "T") {
+                localStorage.setItem("isloggedin", "T");
+                this.router.navigate(["/onboarding/change-password"]);
+              } else {
+                if (localStorage.getItem("emailCode") === "T") {
+                  localStorage.setItem("emailCode", "F");
+                }
+                localStorage.setItem("isloggedin", "T");
+                if (localStorage.getItem("btnClickBecomePartner") == "T") {
                   if (
-                    localStorage.getItem("navigateToUpgradeToPremium") == "true"
+                    localStorage.getItem("SubscriberType") == "Monthly" ||
+                    localStorage.getItem("SubscriberType") == "Free" ||
+                    localStorage.getItem("SubscriberType") == "Annual"
                   ) {
-                    if (localStorage.getItem("IsPartner") == "1") {
-                      if (
-                        localStorage.getItem("PartnerOption") ==
-                        "ReceiveIncome"
-                      ) {
-                        localStorage.setItem("navigateToUpgradeToPremium", "false");
-                        this.router.navigate([
-                          "/adults/partnership-report/income-activity"]);
+                    localStorage.setItem("btnClickBecomePartner", "F");
+                    this.router.navigate(["adults/partnership-app"]);
+                  }
+                } else {
+                  if (pers && persub && pers === "T") {
+                    localStorage.setItem("isloggedin", "T");
+                    this.router.navigate(["/onboarding/viewcart"], {
+                      state: { quan: "1", plan: persub },
+                    });
+                  } else {
+                    if (this.service.navigateToUpgradeToPremium
+                      //localStorage.getItem("navigateToUpgradeToPremium") == "true"
+                    ) {
+                      if (localStorage.getItem("IsPartner") == "1") {
+                        if (
+                          localStorage.getItem("PartnerOption") ==
+                          "ReceiveIncome"
+                        ) {
+                          this.service.navigateToUpgradeToPremium = false;
+                          //localStorage.setItem("navigateToUpgradeToPremium", "false");
+                          this.router.navigate([
+                            "/adults/partnership-report/income-activity"]);
+                        } else {
+                          //localStorage.setItem("navigateToUpgradeToPremium", "false");
+                          this.service.navigateToUpgradeToPremium = false;
+                          this.router.navigate([
+                            "/adults/partnership-report/tree-plantation-report"]);
+                        }
                       } else {
-                        localStorage.setItem("navigateToUpgradeToPremium", "false");
-                        this.router.navigate([
-                          "/adults/partnership-report/tree-plantation-report"]);
+                        this.service.navigateToUpgradeToPremium = false;
+                        // localStorage.setItem("navigateToUpgradeToPremium", "false");
+                        this.router.navigate(["/adults/partnership-app"]);
                       }
                     } else {
-                      localStorage.setItem("navigateToUpgradeToPremium", "false");
-                      this.router.navigate(["/adults/partnership-app"]);
+                      this.router.navigate(["/adults/search"], { state: {
+                          routedFromLogin: true,
+                        }});
                     }
-                  } else {
-                    this.router.navigate(["/adults/adult-dashboard"]);
                   }
                 }
               }

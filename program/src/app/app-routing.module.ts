@@ -25,7 +25,8 @@ const routes: Routes = [
     path: "",
   // redirectTo: "/adults/adult-dashboard",
     // redirectTo: "/onboarding/login",
-    redirectTo: "/adults/adult-dashboard",
+   // redirectTo: "/adults/adult-dashboard",
+   redirectTo: "/adults/adverts-hwp",
     // redirectTo: "/",
     pathMatch: "full"
   },

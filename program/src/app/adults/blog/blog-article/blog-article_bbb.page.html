@@ -41,7 +41,7 @@
 
   <div class="row center_flex blog_title">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-      <h4 class="mtb0px txt74">
+      <h4 class="mtb0px fw_400 fs_30px lh_130p fc_000000">
         {{blogList['Title']}}
       </h4>
     </div>
@@ -50,14 +50,14 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01 flex_ai">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h4 class="mtb0px txt61">
+        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_5d5d5d">
           {{blogList['CreatedDate'] | date:'dd MMM y'}}
         </h4>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter p0">
         <img *ngIf="this.likecount === 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt="" class="img-responsive">
         <img *ngIf="this.likecount !== 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt="" class="img-responsive">
-        <h4 class="mtb0px txt220 like_count">
+        <h4 class="mtb0px fw_700 fs_12px lh_130p fc_adadad like_count">
           {{blogList['LikeCnt']}}
         </h4>
       </div>
@@ -66,7 +66,7 @@
 
   <div class="row center_flex blog_desc">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-      <h4 class="mtb0px txt78">
+      <h4 class="mtb0px fw_300 fs_18px lh_150p fc_5d5d5d">
         {{blogList['Blog']}}
       </h4>
     </div>
@@ -74,7 +74,7 @@
 
   <!-- <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-      <h4 class="mtb0px txt221">
+      <h4 class="mtb0px fw_300 fs_12px lh_150p fc_5d5d5d">
         Tags
       </h4>
     </div>
@@ -108,7 +108,7 @@
 
   <div class="row center_flex blog_comment">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-      <h4 class="mtb0px txt212">
+      <h4 class="mtb0px fw_700 fs_14px lh_16px fc_5d5d5d">
         {{'Comments' + '(' + BlogCommentsLen + ')'}}
       </h4>
     </div>
@@ -120,12 +120,12 @@
         <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
       </div>
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h4 class="mtb0px txt65 tleft">
-          <span class="txt143">
+        <h4 class="mtb0px fw_400 fs_12px lh_14px fc_5d5d5d tleft">
+          <span class="fw_700 fs_12px lh_14px fc_5d5d5d">
            {{item['UpdatedBy']}}
           </span> 
           {{item['Comments']}}
-          <span class="txt222">
+          <span class="fw_500 fs_10px lh_12px fc_adadad">
             {{timeSince(item['UpdatedOn'])}}
           </span>
         </h4>
@@ -135,7 +135,7 @@
 
   <div class="row center_flex blog_vac" *ngIf="BlogCommentsListabove.length !== 0">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-      <!-- <h4 class="mtb0px txt223">
+      <!-- <h4 class="mtb0px fw_700 fs_14px lh_16px fc_4491a5">
         View all comments (47)
       </h4> -->
       <!-- accordion -->
@@ -144,7 +144,7 @@
           <div class="panel-heading">
             <h4 class="panel-title">
               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                <h4 class="mtb0px txt223">
+                <h4 class="mtb0px fw_700 fs_14px lh_16px fc_4491a5">
                   {{'View all comments' + '(' + BlogCommentsListabove.length  + ')'}}
                 </h4>
               </a>
@@ -158,12 +158,12 @@
                     <img src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}" alt="" class="img-responsive w100p">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="mtb0px txt65 tleft">
-                      <span class="txt143">
+                    <h4 class="mtb0px fw_400 fs_12px lh_14px fc_5d5d5d tleft">
+                      <span class="fw_700 fs_12px lh_14px fc_5d5d5d">
                         {{item['UpdatedBy']}}
                       </span> 
                       {{item['Comments']}}
-                      <span class="txt222">
+                      <span class="fw_500 fs_10px lh_12px fc_adadad">
                         {{timeSince(item['UpdatedOn'])}}
                       </span> 
                     </h4>
@@ -205,7 +205,7 @@
 
   <!-- <div class="row center_flex blog_related_articles">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
-      <h4 class="mtb0px txt212">
+      <h4 class="mtb0px fw_700 fs_14px lh_16px fc_5d5d5d">
         Related Articles
       </h4>
     </div>
@@ -216,7 +216,7 @@
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
         <a href="">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_02.svg" alt="" class="img-responsive img_blog_ra">
-          <h4 class="mtb0px txt210 absolute_blog_ra_title tleft">
+          <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
             An eating disorder
           </h4>
         </a>
@@ -224,7 +224,7 @@
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
         <a href="">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_02.svg" alt="" class="img-responsive img_blog_ra">
-          <h4 class="mtb0px txt210 absolute_blog_ra_title tleft">
+          <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
             Angry Young Ryan
           </h4>
         </a>
@@ -233,7 +233,7 @@
       <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
         <a href="">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_03.svg" alt="" class="img-responsive img_blog_ra">
-          <h4 class="mtb0px txt210 absolute_blog_ra_title tleft">
+          <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
             Getting over bereavement
           </h4>
         </a>
@@ -242,7 +242,7 @@
       <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
         <a href="">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_04.svg" alt="" class="img-responsive img_blog_ra">
-          <h4 class="mtb0px txt210 absolute_blog_ra_title tleft">
+          <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
             Article Name
           </h4>
         </a>

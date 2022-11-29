@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
+import { OnboardingService } from './onboarding/onboarding.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { AdultsService } from './adults/adults.service';
 export class authLoginGuard implements CanActivate, OnInit {
   t: any
 
-  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
+  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService,private onboarding:OnboardingService) {
 
   }
   ngOnInit() {
@@ -22,6 +23,7 @@ export class authLoginGuard implements CanActivate, OnInit {
     let cookie = false;
     let affrefcode = '';
     let affreftoken = '';
+    let getalertdate= localStorage.getItem('getalertdate');
     let persub = localStorage.getItem('personalised subscription');
     let pers = localStorage.getItem('personalised');
     let persdata = localStorage.getItem('personalisedlist');
@@ -36,14 +38,19 @@ export class authLoginGuard implements CanActivate, OnInit {
     if (localStorage.getItem('Affreftoken') !== null) {
       affreftoken = localStorage.getItem('Affreftoken');
     }
-    if(localStorage.getItem("navigateToUpgradeToPremium")=="true"){
+    if(this.onboarding.navigateToUpgradeToPremium
+    //  localStorage.getItem("navigateToUpgradeToPremium")=="true"
+    ){
       localStorage.clear()
-      localStorage.setItem("navigateToUpgradeToPremium","true")
+      //localStorage.setItem("navigateToUpgradeToPremium","true")
     }
     else{
       localStorage.clear()
     }
     
+    if (getalertdate !== null) {
+      localStorage.setItem('getalertdate', getalertdate)
+    }
     if (option === 'T') {
       localStorage.setItem('introoption', 'T')
     }

@@ -203,3 +203,20 @@ nav
         }
     }
 }
+
+.activebtn {
+    background: #70C6BD;
+    border: 0;
+    color: #FFFFFF;
+  }
+   
+  //.autocomplete-list {
+    // width: 90%;
+    // margin-left: 7%; //
+    // margin: 16% auto 0 auto;
+  //}
+  
+  li:hover,
+  li:hover:before {
+    background: #93dfd7;
+  }

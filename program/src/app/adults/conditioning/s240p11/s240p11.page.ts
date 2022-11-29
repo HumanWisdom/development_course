@@ -345,7 +345,7 @@ export class S240p11Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     
-    this.submitProgress()
+    if(this.userId !== 563) this.submitProgress()
 
   }
 

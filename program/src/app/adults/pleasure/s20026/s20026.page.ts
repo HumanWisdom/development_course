@@ -130,7 +130,7 @@ export class S20026Page implements OnInit {
   ngOnDestroy() {
 
 
-    //this.submitProgress()
+
   }
 
 

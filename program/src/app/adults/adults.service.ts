@@ -303,4 +303,20 @@ export class AdultsService {
     return this.http.get(this.path + '/GetMyPartners');
   }
 
+   GetVisitedScreen(moduleId){
+    return this.http.get(this.path + '/GetVisitedScreens/'+moduleId);
+   }
+
+   getModuleList(): Observable<any> {
+      return this.http.get(this.path + '/modules');
+   }
+
+   GetWisdomScreens():Observable<any> {
+    return this.http.get(this.path + '/GetWisdomScreens');
+   }
+
+   isGuest() {
+    return localStorage.getItem('guest') && localStorage.getItem('guest') === 'T' ? true : false;
+   }
+
 }

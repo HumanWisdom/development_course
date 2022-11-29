@@ -13,7 +13,7 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a class="">
-        <h1 class="txt151 mtb0px tcenter">Journal</h1>
+        <h1 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px tcenter">Journal</h1>
       </a>
     </div>
 
@@ -87,13 +87,13 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                        <h4 class="txt297 mtb0px">Question of the day</h4>
+                        <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">Question of the day</h4>
                       </div>
                     </div>
 
                     <div class="row center_flex gqtns_qtn">
                       <div class="col-md-12 col-sm-12 col-xs-10 tcenter">
-                        <h4 class="txt307 mtb0px">{{dailyQuestion}}</h4>
+                        <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px">{{dailyQuestion}}</h4>
                       </div>
                     </div>
 
@@ -118,7 +118,7 @@
 
                     <div class="row gqtns_recent_notes">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="txt308 mtb0px tcenter">RECENT NOTES</h4>
+                        <h4 class="fw_700 fs_12px lh_130p fc_000000 ls_pt1em mtb0px tcenter">RECENT NOTES</h4>
                       </div>
                     </div>
 
@@ -166,15 +166,15 @@
                               <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
                             <div class="panel-body">
-                              <h4 class="txt309">{{j.Date| date}}</h4>
+                              <h4 class="fw_400 fs_12px lh_130p fc_000000">{{j.Date| date}}</h4>
                               <h4
-                                class="txt310"
+                                class="fw_400 fs_15px lh_130p fc_000000"
                                 *ngIf="j.JrType=='Reflections' || j.JrType=='Guided Questions'"
                               >
                                 {{j.ModuleName}}
                               </h4>
-                              <h4 class="txt73">{{j.TitleQue}}</h4>
-                              <h4 class="txt310">
+                              <h4 class="fw_500 fs_18px lh_130p fc_000000">{{j.TitleQue}}</h4>
+                              <h4 class="fw_400 fs_15px lh_130p fc_000000">
                                 {{j.Response|slice:0:40}}...
                               </h4>
                             </div>
@@ -192,8 +192,8 @@
                   class="tab-pane fade in active plr10px"
                 >
                   <div class="row center_flex mb30px">
-                    <div class="col-md-12 col-sm-12 col-xs-10 tcenter">
-                      <h4 class="txt311 mtb0px">
+                    <div class="col-md-12 col-sm-12 col-xs-10 tleft">
+                      <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
                         Explore these questions to understand yourself, and find
                         fresh ways of dealing with life’s challenges
                       </h4>
@@ -203,7 +203,7 @@
                   <div *ngFor="let item of topic" class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <a (click)="RouteToToQuestions(item)">
-                        <div class="row guidedqtns_row_01 bgc_light_gray">
+                        <div class="row guidedqtns_row_01">
                           <div
                             class="col-md-12 col-sm-12 col-xs-12 p0 center_flex"
                           >

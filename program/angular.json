@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "app",
   "newProjectRoot": "projects",
   "projects": {
     "app": {
@@ -80,11 +79,27 @@
                 "inject": true
               },
               {
-                "input": "src/assets/css/txts.css",
+                "input": "src/assets/css/responsive.css",
                 "inject": true
               },
               {
-                "input": "src/assets/css/responsive.css",
+                "input": "src/assets/font/font_weight.css",
+                "inject": true
+              },
+              {
+                "input": "src/assets/font/font_size.css",
+                "inject": true
+              },
+              {
+                "input": "src/assets/font/font_colour.css",
+                "inject": true
+              },
+              {
+                "input": "src/assets/font/line_height.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ngx-sharebuttons/themes/circles/circles-dark-theme.scss",
                 "inject": true
               }
             ],
@@ -97,7 +112,15 @@
               "node_modules/html2canvas/dist/html2canvas.min.js",
               "node_modules/bcswipe/dist/jquery.bcSwipe.min.js",
               "node_modules/jspdf/dist/jspdf.umd.min.js"
-            ]
+              
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -153,7 +176,8 @@
             "ci": {
               "progress": false
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -165,7 +189,6 @@
               "browserTarget": "app:build:production"
             },
             "ci": {
-              "progress": false
             }
           }
         },
@@ -206,19 +229,6 @@
             }
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -257,13 +267,19 @@
               "devServerTarget": "app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
   "cli": {
-    "defaultCollection": "@ionic/angular-toolkit",
-    "analytics": "001ae092-cd06-476b-b66e-dec3fff6955c"
+    "analytics": "001ae092-cd06-476b-b66e-dec3fff6955c",
+    "schematicCollections": [
+      "@ionic/angular-toolkit"
+    ]
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

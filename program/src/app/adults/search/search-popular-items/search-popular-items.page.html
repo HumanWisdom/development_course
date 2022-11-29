@@ -7,7 +7,7 @@
       </a>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-      <h4 class="txt210 tcenter mtb0px">
+      <h4 class="fw_500 fs_16px lh_19px fc_ffffff tcenter mtb0px">
         Search
       </h4>
     </div>
@@ -28,7 +28,7 @@
 
 <!-- <div class="row center_flex bg_black">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dsearch_result">
-    <h4 class="mtb0px txt61">
+    <h4 class="mtb0px fw_400 fs_12px lh_130p fc_5d5d5d">
     {{getTotalRecords()}} results found
     </h4>
   </div>
@@ -46,7 +46,7 @@
 
             <div class="row center_flex bg_black">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dsearch_result">
-                <h4 class="mtb0px txt61">
+                <h4 class="mtb0px fw_400 fs_12px lh_130p fc_5d5d5d">
                 {{getTotalRecords()}} results found
                 </h4>
               </div>
@@ -56,17 +56,17 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <ul class="nav nav-tabs search_nav_tabs">
                   <li class="active">
-                    <a data-toggle="tab" (click)="pageChangeEvent('Learning')" class="txt213">
+                    <a data-toggle="tab" (click)="pageChangeEvent('Learning')" class="fw_500 fs_14px lh_16px fc_adadad">
                       Learning ({{getLearningRecords()}})
                     </a>
                   </li>
                   <li>
-                    <a data-toggle="tab"  (click)="pageChangeEvent('Forum')" class="txt213">
+                    <a data-toggle="tab"  (click)="pageChangeEvent('Forum')" class="fw_500 fs_14px lh_16px fc_adadad">
                       Forum ({{getForumSearchRecords()}})
                     </a>
                   </li>
                   <li>
-                    <a data-toggle="tab" (click)="pageChangeEvent('Journal')" class="txt213">
+                    <a data-toggle="tab" (click)="pageChangeEvent('Journal')" class="fw_500 fs_14px lh_16px fc_adadad">
                       Journal ({{journalSearchRecords()}})
                     </a>
                   </li>
@@ -87,11 +87,11 @@
                             </div>
                         
                             <div class="col-lg-9 col-md-7 col-sm-7 col-xs-7">
-                              <h4 class="mtb5px txt214 fp_3">
+                              <h4 class="mtb5px fw_500 fs_12px lh_14px fp_3">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bullet/fpb_03.svg" alt="" class="img-responsive maxh15px mr5px">
                                 {{item.SectionName}}
                               </h4>
-                              <h4 class="txt215 mtb0px">
+                              <h4 class="fw_500 fs_18px lh_21px fc_000000 mtb0px">
                               {{item.ModuleName}}
                               </h4>
                             </div>
@@ -113,18 +113,18 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <h4 class="txt216 mt0px mb5px capitalize">
+                              <h4 class="fw_500 fs_10px lh_150p fc_adadad mt0px mb5px capitalize">
                                 {{item.ModuleName}}
                               </h4>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flexai_baseline">
                               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                <h4 class="txt217 mtb0px">
+                                <h4 class="fw_500 fs_14px lh_150p fc_000000 mtb0px">
                                   #{{i+1}} {{item.SessionName}}
                                 </h4>
                               </div>
                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                <h4 class="mtb0px txt119 tright">
+                                <h4 class="mtb0px fw_400 fs_10px lh_12px fc_5d5d5d tright">
                                   <!-- 8 min -->
                                 </h4>
                               </div>
@@ -165,11 +165,11 @@
                                 <div class="row">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                      <h6  class="txt69 mtb0px capitalize"> {{item.Title}} </h6>
+                                      <h6  class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize"> {{item.Title}} </h6>
                                     </div>
                                   </div>
                                   <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <h6  class="txt70 ellipsis"> {{item.Message}} </h6>
+                                    <h6  class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis"> {{item.Message}} </h6>
                                   </div>
                                 </div>
                               </div>
@@ -206,12 +206,12 @@
                               <div class="col-md-9 col-sm-9 col-xs-9 p10px">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
-                                    <h4 class="txt226 mtb0px">
+                                    <h4 class="fw_500 fs_15px lh_18px fc_5d5d5d mtb0px">
                                       {{item.Title}}
                                     </h4>    
                                   </div>
                                   <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-                                    <h4 class="txt119 mtb0px">
+                                    <h4 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
                                       <!-- 1:41 min -->
                                     </h4>    
                                   </div>
@@ -302,7 +302,7 @@
                     <div class="row center_flex">
                       <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
                         <h4 class="mtb0px">
-                          <span class="txt127">{{item.POST}} </span>
+                          <span class="fw_500 fs_14px lh_16px fc_000000">{{item.POST}} </span>
                         </h4>
                       </div>
                     </div>    
@@ -360,13 +360,13 @@
                     <div class="row" *ngFor="let i of getOrderbyLatestPost(item.child)">
                       <div class="col-md-12 col-sm-12 col-xs-12 div_bl">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="txt127 commenter mtb0px">
+                          <h4 class="fw_500 fs_14px lh_16px fc_000000 commenter mtb0px">
                             {{i.UserName}}
-                            <span class="txt130">
+                            <span class="fw_400 fs_10px fc_adadad">
                               {{getLocalPostDate(i.PostDate) | date: 'medium' }}
                             </span>
                           </h4>
-                          <h4 class="txt120 mtb0px">
+                          <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
                             {{i.POST}}
                           </h4>
                         </div>                      

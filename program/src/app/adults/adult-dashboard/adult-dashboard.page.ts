@@ -1,10 +1,11 @@
 import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
+import { LogEventService } from './../../log-event.service';
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -42,7 +43,7 @@ export class AdultDashboardPage implements OnInit {
   public bookmarks = []
   public resume = []
   public bookmarkLength: any
-
+  searchinp = '';
   //static progress mapping
   public angerP: any
   public comparisonP: any
@@ -74,6 +75,7 @@ export class AdultDashboardPage implements OnInit {
   public breathingP: any
   public ntP: any
   public gamP: any
+  searchResult = [];
   public communicationP: any
   public rmP: any
   public siP: any
@@ -130,13 +132,18 @@ export class AdultDashboardPage implements OnInit {
   public shortsList = []
   public sId: any
   hcwhP: any
-
+  public moduleList = [];
+  public exerciseNo: string = '';
+  public Title:string='';
+  public day: string = '';
   //static progress mapping
+  public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
   mediaPercent: any
   freeScreens = []
-
+  currentList = [];
+  maxExceriseCount="12;"
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -147,8 +154,9 @@ export class AdultDashboardPage implements OnInit {
 
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
-    public cd: ChangeDetectorRef, public fb: FormBuilder, public authService: SocialAuthService,
+    public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
     public platform: Platform,
+    public logeventservice: LogEventService
   ) {
     // let remem = localStorage.getItem("remember")
     // if (remem === null || remem === 'F') {
@@ -156,6 +164,13 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'])
     // }
+
+    this.logeventservice.logEvent('ga4sampletest');
+
+    setTimeout(() => {
+      this.getModuleList();
+      this.GetWisdomScreens();
+    }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
       localStorage.setItem('acceptcookie', 'T')
@@ -230,7 +245,14 @@ export class AdultDashboardPage implements OnInit {
     let userid = localStorage.getItem('isloggedin');
     let rem = localStorage.getItem('remember');
     let guest = localStorage.getItem('guest');
-    this.name = localStorage.getItem('name');
+    let nameupdate = localStorage.getItem(
+      "nameupdate"
+    );
+    if (nameupdate) {
+      this.name = nameupdate
+    } else {
+      this.name = localStorage.getItem('name')
+    }
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     localStorage.setItem("first", 'F')
@@ -268,6 +290,7 @@ export class AdultDashboardPage implements OnInit {
         }
       })
     }
+
   }
 
   loginpage() {
@@ -308,9 +331,9 @@ export class AdultDashboardPage implements OnInit {
         this.enablecookiemodal.nativeElement.click();
       }, 1000)
     } else {
-      this.enableDailypopup();
+      // this.enableDailypopup();
     }
- 
+
     setTimeout(() => {
       let sub: any = localStorage.getItem('Subscriber');
       if (sub === '0') {
@@ -535,7 +558,7 @@ export class AdultDashboardPage implements OnInit {
   acceptCookies() {
     localStorage.setItem('acceptcookie', 'T');
     this.closecookiemodal.nativeElement.click();
-    this.enableDailypopup();
+    // this.enableDailypopup();
   }
 
   freescreens() {
@@ -717,7 +740,20 @@ export class AdultDashboardPage implements OnInit {
 
 
   }
-
+  getModuleList(isLoad?) {
+    if (this.moduleList.length == 0) {
+      this.service.getModuleList().subscribe(res => {
+        this.moduleList = res;
+        if (isLoad == true) {
+          if (this.searchinp == '') {
+            this.searchResult = this.moduleList;
+          } else {
+            this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+          }
+        }
+      });
+    }
+  }
   fbLogin(d = '') {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
@@ -981,7 +1017,8 @@ export class AdultDashboardPage implements OnInit {
 
 
   opennewTab() {
-    this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
+    this.router.navigate([]).then(() => { window.open('/adults/help-support/cookie-policy', '_blank'); });
   }
 
   socialLogin() {
@@ -1023,7 +1060,14 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
           localStorage.setItem("email", socialEmail)
           localStorage.setItem("pswd", '')
-          this.name = res.Name
+          let nameupdate = localStorage.getItem(
+            "nameupdate"
+          );
+          if (nameupdate) {
+            this.name = nameupdate
+          } else {
+            this.name = res.Name
+          }
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1083,7 +1127,10 @@ export class AdultDashboardPage implements OnInit {
       this.isSubscribe = true;
     }
     let guest = localStorage.getItem('guest');
-    if (guest === 'T') localStorage.setItem('guest', 'F')
+   // if (guest === 'T') localStorage.setItem('guest', 'F')
+    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+    else localStorage.setItem("guest", 'F')
+
     sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("token", JSON.stringify(res.access_token))
@@ -1091,7 +1138,14 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("userId", JSON.stringify(this.userId))
     localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
-    this.name = res.Name
+    let nameupdate = localStorage.getItem(
+      "nameupdate"
+    );
+    if (nameupdate) {
+      this.name = nameupdate
+    } else {
+      this.name = res.Name
+    }
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1164,7 +1218,9 @@ export class AdultDashboardPage implements OnInit {
             this.isSubscribe = true;
           }
           let guest = localStorage.getItem('guest');
-          if (guest === 'T') localStorage.setItem('guest', 'F')
+         // if (guest === 'T') localStorage.setItem('guest', 'F')
+          if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+          else localStorage.setItem("guest", 'F')
           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
           localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
           localStorage.setItem("token", JSON.stringify(res.access_token))
@@ -1173,13 +1229,20 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("email", email)
           localStorage.setItem("pswd", password)
           localStorage.setItem("name", res.Name)
-          this.name = res.Name
+          let nameupdate = localStorage.getItem(
+            "nameupdate"
+          );
+          if (nameupdate) {
+            this.name = nameupdate
+          } else {
+            this.name = res.Name
+          }
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
           this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-          this.getProgress()
-          this.freescreens();
+         // this.getProgress()
+         // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -1201,7 +1264,13 @@ export class AdultDashboardPage implements OnInit {
             this.userName = JSON.parse(sessionStorage.getItem("userName"))
 
           }
-          this.getBookmarks()
+          //this.getBookmarks()
+          setTimeout(() => {
+            this.getProgress()
+            this.freescreens();
+            this.getBookmarks()
+           }, 1000);
+
           if (res.UserId == 0) {
 
           }
@@ -1247,7 +1316,14 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
           localStorage.setItem("userId", JSON.stringify(this.userId))
           localStorage.setItem("name", this.loginResponse.Name)
-          this.name = this.loginResponse.Name
+          let nameupdate = localStorage.getItem(
+            "nameupdate"
+          );
+          if (nameupdate) {
+            this.name = nameupdate
+          } else {
+            this.name = this.loginResponse.Name
+          }
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1297,21 +1373,20 @@ export class AdultDashboardPage implements OnInit {
   }
 
   enableDailypopup() {
-    this.service.adminPopup().subscribe((res) => {
 
+    this.service.adminPopup().subscribe((res) => {
       this.alertMsg = res;
-      let date = localStorage.getItem("getalertdate")
-      let expire = false;
-      if (date !== null) {
-        let x = new Date(localStorage.getItem("getalertdate"))
-        let y = new Date();
-        if (x.getDate() + 7 < y.getDate()) {
-          expire = false;
-        } else {
-          expire = true;
+      let olddate = localStorage.getItem("getalertdate")
+      if (olddate !== null) {
+        let date1: any = new Date(olddate);
+        let date2: any = new Date();
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays: any = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (parseInt(diffDays) >= 7) {
+          localStorage.setItem("getalertdate", new Date().toDateString())
+          this.enablemodal.nativeElement.click();
         }
-      }
-      if (date === null || !expire) {
+      } else {
         localStorage.setItem("getalertdate", new Date().toDateString())
         this.enablemodal.nativeElement.click();
       }
@@ -1387,7 +1462,7 @@ export class AdultDashboardPage implements OnInit {
         //resume section
         res.ModUserScrPc.filter(x => {
           if (parseFloat(x.Percentage) < 100) {
-            if (x.ModuleId != 71 && x.ModuleId != 72) {
+            if (x.ModuleId != 71 && x.ModuleId != 72 && x.ModuleId != 75) {
               if (x.ModuleId < 10) {
                 x.ModuleId = "0" + x.ModuleId
 
@@ -3293,7 +3368,16 @@ export class AdultDashboardPage implements OnInit {
   }
 
   goToYourWisdomScoreComponent() {
+    this.logeventservice.logEvent('click_wisdom_score');
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
+  }
+  onFocus() {
+    this.getModuleList(true);
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    }
   }
 
   routehowcanwisdomhelp(cont: any = 1) {
@@ -3330,9 +3414,9 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
-  getuserDetail(){
+  getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
-    if(userId!=null){
+    if (userId != null) {
       this.services.getuser(userId).subscribe((res) => {
         localStorage.setItem("isPartner", res[0].IsPartner);
         localStorage.setItem('PartnerOption', res[0].PartnerOption);
@@ -3341,12 +3425,12 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  routewisdomexercise(cont: any = 1) {
-    var weR='75001'
+ /*  routewisdomexercise(cont: any = 1) {
+    var weR = '75001'
     localStorage.setItem("moduleId", JSON.stringify(75))
     this.service.clickModule(75, this.userId)
       .subscribe(res => {
-       console.log(res)
+        console.log(res)
         this.qrList = res
         weR = "s" + res.lastVisitedScreen
         // continue where you left
@@ -3372,12 +3456,185 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/wisdom-exercise/${weR}`])
           }
           else
-          this.router.navigate([`/adults/wisdom-exercise/s75001`])
+            this.router.navigate([`/adults/wisdom-exercise/s75001`])
         })
   }
-
+ */
 
   wisdomexercise() {
     this.router.navigate([`/adults/wisdom-exercise/s75001`])
   }
-}
+
+  getinp(event) {
+    let url = `/adults/site-search/${event}`
+    this.router.navigate([url])
+  }
+
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+      }
+    }
+  }
+
+  onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 500);
+  }
+  clearSearch() {
+    this.searchinp = "";
+    this.searchResult = [];
+  }
+
+  searchEvent(module) {
+    this.searchinp = module;
+    this.searchResult = [];
+    this.getinp(module);
+  }
+
+ 
+
+
+  GetWisdomScreens(){
+     this.service.GetWisdomScreens().subscribe(res=>{
+     this.wisdomExerciseList=res;
+     var allCompletedScreen:boolean=false;
+     let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
+     if( this.wisdomExerciseList.length==data.length){
+      allCompletedScreen=true;
+    }
+     console.log(data.length);
+     let exercise:any
+     let emptyList=false;
+     let increaseExcercise=false;
+     // Any of the exercise is not completed
+     if(data.length==0){
+       emptyList=true;
+      data=this.wisdomExerciseList;
+      exercise=data[0];
+     }
+     else{
+      var incomppletedExercise=this.wisdomExerciseList.filter(x=>x.completed=='0');
+      if(incomppletedExercise.length>0){
+        exercise=incomppletedExercise[0];
+      }else{
+        exercise= data[data.length-1];
+      }
+      // It contains data may be some exercise is completed 
+      var completed=this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo && x.completed=='0');
+      if(completed.length==0){
+        increaseExcercise=true;
+        emptyList=true;
+      }
+     }
+     //Setting final title and Exercise no
+     this.Title=exercise.Title; 
+    
+     this.exerciseNo=!increaseExcercise?exercise.SessionNo.substring(exercise.SessionNo.length-2)
+     :((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length-2)))+1).toString();
+   
+     if(allCompletedScreen){
+      this.exerciseNo="1";
+     }
+     if(this.exerciseNo=="13"){
+      this.exerciseNo="1";
+    }
+     //Checking the length if its less than 10  to append for current session number
+      if(this.exerciseNo.length==1){
+        this.exerciseNo="0"+this.exerciseNo;
+      }
+      if(incomppletedExercise && incomppletedExercise.length>0){
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))).toString():"0";
+      }else{
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
+      }
+     var sessionNo=exercise.SessionNo.substring(0,exercise.SessionNo.length-2)+this.exerciseNo;
+    
+
+     //Pushing final list for display
+     for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==sessionNo)){
+            let obj={
+              " SessionNo": item.SessionNo,
+              "ScreenNo": item.ScreenNo,
+              "completed": item.completed,
+              "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+              "Title":item.Title
+            }
+            this.currentList.push(obj);
+      }
+     if(this.currentList.length>0){
+      this.Title=this.currentList[0].Title;
+     }
+      //Dynamic Scroll
+        setTimeout(() => {
+          var editable=document.querySelector(".editable").getBoundingClientRect().x;
+          var wediv = document.querySelector(".wediv").getBoundingClientRect().x;
+          document.querySelector(".wediv").scrollLeft=editable-wediv;
+          
+      }, 3000);
+      
+        console.log(this.currentList);
+     })
+    }
+ 
+
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return 'inactive';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return 'editable';
+    } else {
+      return 'active';
+    }
+  }
+
+
+  DashboardLogevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if (params != '' && route != '') {
+      this.router.navigate([route, params]);
+    } else if (route != '') {
+      this.router.navigate([route])
+    }
+  }
+
+
+    RouteToWisdomExercise(exercise){
+        var weR = exercise?.ScreenNo;
+      localStorage.setItem("moduleId", JSON.stringify(75))
+      this.service.clickModule(75, this.userId)
+        .subscribe(res => {
+          console.log(res)
+          this.qrList = res
+          weR = "s" + res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("weR", weR)
+          this.mediaPercent = parseInt(res.MediaPercent)
+          this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+          localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+          localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+          if(exercise!=null){
+            this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+              state: {
+                day: exercise.day,
+              }});
+          }else{
+            this.router.navigate(['adults/wisdom-exercise/']);
+          }
+        },
+          error => {
+            console.log(error)
+          })}
+  }

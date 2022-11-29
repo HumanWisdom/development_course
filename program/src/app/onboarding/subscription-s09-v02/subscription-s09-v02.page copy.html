@@ -73,13 +73,13 @@
 
                             <div class="row active_programs mt30px cmlr-10px">
                                 <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                                    <h6 class="txt59">
+                                    <h6 class="fw_400 fs_18px lh_21px fc_000000">
                                         Active Programs
                                     </h6>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                    <h6 class="txt59">
+                                    <h6 class="fw_400 fs_18px lh_21px fc_000000">
                                         {{myprograms.length}}
                                     </h6>
                                 </div>
@@ -87,16 +87,16 @@
                             <ng-container *ngFor="let item of myprograms">
                                 <div class="row center_flex pt20px">
                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                                        <h6 class="txt106">
+                                        <h6 class="fw_500 fs_16px lh_19px fc_000000">
                                             {{item['Prog']}}
                                         </h6>
-                                        <h6 class="txt119">
+                                        <h6 class="fw_400 fs_10px lh_12px fc_5d5d5d">
                                             Program Code: {{item['ActKey']}}
                                         </h6>
                                     </div>
                   
                                     <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                        <h6 class="txt120">
+                                        <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d">
                                             Auto-renew: {{item['ExpDate']}}
                                         </h6>
                                     </div>
@@ -104,7 +104,7 @@
 
                                 <div class="row center_flex">
                                     <div class="col-md-6 col-sm-6 col-xs-6 p0">
-                                        <h6 class="txt121 tleft mtb0px">
+                                        <h6 class="fw_500 fs_14px lh_16px fc_1092a7 tleft mtb0px">
                                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/subscription_01.svg" alt="" class="">
                                             <span>{{item['BoughtName']}}</span>
                                         </h6>                        
@@ -123,14 +123,14 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
                       </div>
                       <div class="col-md-10 col-sm-10 col-xs-10 p0">                            
-                          <h6 class="stxt69 tleft mtb0px">                            
+                          <h6 class="sfw_500 fs_18px lh_130p fc_5d5d5d tleft mtb0px">                            
                               agata.corcrain@gmail.com
                           </h6>  
                       </div>                                           
                   </div>
 
                   <div class="col-md-6 col-sm-6 col-xs-4 p0 tright">
-                      <h6 class="txt120">
+                      <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d">
                           Expiry: 10 Apr 21
                       </h6>
                   </div>
@@ -139,13 +139,13 @@
 
                             <div class="row active_programs mt30px cmlr-10px">
                                 <div class="col-md-6 col-sm-6 col-xs-6 tleft">
-                                    <h6 class="txt59">
+                                    <h6 class="fw_400 fs_18px lh_21px fc_000000">
                                         Not Yet Started
                                     </h6>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-6 tright">
-                                    <h6 class="txt59">
+                                    <h6 class="fw_400 fs_18px lh_21px fc_000000">
                                         {{notmyprograms.length}}
                                     </h6>
                                 </div>
@@ -158,14 +158,14 @@
                                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg" alt="" class="">
                                         </div>
                                         <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                                            <h6 class="stxt69 tleft mtb0px">
+                                            <h6 class="sfw_500 fs_18px lh_130p fc_5d5d5d tleft mtb0px">
                                                 {{item['Email']}}
                                             </h6>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 col-sm-6 col-xs-4 tright" (click)="sendInvite(item)">
-                                        <h6 class="txt123 mtb0px fright">
+                                        <h6 class="fw_500 fs_12px lh_14px fc_b92f48 mtb0px fright">
                                             Invite Sent
                                         </h6>
                                     </div>
@@ -173,14 +173,14 @@
                                 <hr class="shr3">
                                 <div class="row pt0px center_flex" *ngIf="item['Email'] === ''">
                                     <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                                        <h6 class="txt110 mtb0px">
+                                        <h6 class="fw_500 fs_14px lh_16px fc_5d5d5d mtb0px">
                                             Adults
                                         </h6>
                                     </div>
 
                                     <div class="col-md-8 col-sm-8 col-xs-8 tright flexalign_center">
                                         <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                                            <h6 class="txt119 mtb0px">
+                                            <h6 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
                                                 {{item['ActKey']}}
                                             </h6>
                                         </div>
@@ -199,14 +199,14 @@
 
                             <!-- <div class="row pt0px center_flex">
                   <div class="col-md-4 col-sm-4 col-xs-4 p0 tleft flexalign_center">
-                      <h6 class="txt110 mtb0px">
+                      <h6 class="fw_500 fs_14px lh_16px fc_5d5d5d mtb0px">
                           Adults
                       </h6>
                   </div>
 
                   <div class="col-md-8 col-sm-8 col-xs-8 p0 tright flexalign_center">
                       <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <h6 class="txt119 mtb0px">
+                          <h6 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
                               A580IUBG
                           </h6>
                       </div>
@@ -229,10 +229,10 @@
 
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0 tright">
                                     <h6 class="mtb0px inline_box">
-                                        <span class="txt120">
+                                        <span class="fw_400 fs_12px lh_14px fc_5d5d5d">
                                             Subscription Code:
                                         </span>
-                                        <span class="txt107">
+                                        <span class="fw_500 fs_12px lh_14px fc_000000">
                                            {{activeKey}}
                                         </span>
                                     </h6>
@@ -245,7 +245,7 @@
                                         <label class="subscribe_check mt0px">
                                             <input type="checkbox" (change)="myselfEvent($event.target)" name="remember" value="" />
                                             <span class="">
-                                                <span class="pl0_3rem chk_rm txt120">
+                                                <span class="pl0_3rem chk_rm fw_400 fs_12px lh_14px fc_5d5d5d">
                                                     This program is for me
                                                 </span>
                                             </span>

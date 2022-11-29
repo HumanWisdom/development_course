@@ -6,7 +6,7 @@
       <!-- mobile -->
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex dnplayappstore" *ngIf="ios || android">
         <div class="col-md-11 col-sm-11 col-xs-11 p0 flex_ai">
-          <h4 class="txt83 mtb0px tleft mr10px ws_nowrap">
+          <h4 class="fw_400 fs_14px lh_16px fc_5d5d5d mtb0px tleft mr10px ws_nowrap">
             Also available on
           </h4>
           <!-- playstore -->
@@ -71,42 +71,102 @@
 
       <!-- unlogged -->
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="!isloggedIn">
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 jc_flexend">
-          <a routerLink="/onboarding/login">
-            <button type="button" class="btn_login">
-              Login
-            </button>
-          </a>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
+
+          <div class="mr20px">
+            <a routerLink="/onboarding/login">
+              <button type="button" class="btn_login">
+                Login
+              </button>
+            </a>
+          </div>
+
+     
+
+          <div>
+            <app-hamburger></app-hamburger>
+          </div>
+
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 ctxtalignment">
-          <app-hamburger></app-hamburger>
-        </div>
+        
       </div>
       <!-- /unlogged -->
 
       <!-- logged in  -->
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="isloggedIn">
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 jc_flexend">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
+          <div class="mr20px"  *ngIf="!subscriber" >
+            <a (click)="Subscribe()">
+              <button type="button" class="btn_login">
+                Subscribe
+              </button>
+            </a>
+          </div>
+          <div *ngIf="isShowbookMark">
             <a routerLink="/adults/bookmarks">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_grey.svg"
-                class="img-responsive" alt="">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_grey.svg" class="" alt="">
             </a>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+
+          <div class="mlr20px">
             <a>
-              <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/notifications_grey.svg" class="img-responsive" alt="">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_filled.svg" class="img-responsive" alt=""> -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_active.svg"
-                (click)="goToNotification()" class="img-responsive" alt="">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_active.svg" (click)="goToNotification()" class="" alt="">
             </a>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-          <app-hamburger></app-hamburger>
+
+          <div>
+            <app-hamburger></app-hamburger>
+          </div>
+
         </div>
       </div>
       <!-- logged in -->
+
+      <!-- subscribe + hamburger -->
+      <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="!isloggedIn">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
+          
+          <div class="mr20px">
+            <a routerLink="/onboarding/login">
+              <button type="button" class="btn_login hbtn_subscribe_ext">
+                Subscribe
+              </button>
+            </a>
+          </div>
+         
+          <div>
+            <app-hamburger></app-hamburger>
+          </div>
+
+        </div>
+      </div> -->
+      <!-- /subscribe + hamburger -->
+
+      <!-- subscribe + notification + hamburger -->
+      <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="!isloggedIn">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
+          
+          <div>
+            <a routerLink="/onboarding/login">
+              <button type="button" class="btn_login hbtn_subscribe_ext">
+                Subscribe
+              </button>
+            </a>
+          </div>
+         
+          <div class="mlr20px">
+            <a>
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/alert_badge_active.svg" (click)="goToNotification()" class="" alt="">
+            </a>
+          </div>
+         
+          <div>
+            <app-hamburger></app-hamburger>
+          </div>
+
+        </div>
+      </div> -->
+      <!-- /subscribe + notification + hamburger -->
     </div>
   </div>
   <!-- /top navigation -->

@@ -16,8 +16,10 @@ export class PartnershipIndexPage implements OnInit {
   countryCode:any;
   isPartner=false;
   constructor(private router :Router,private services: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService) { }
+  isScroll=false;
 
   ngOnInit() {
+   
     if(window.history.state && window.history.state.isPartnerFaq){
       this.isPartnerFaq= window.history.state.isPartnerFaq;
       if(this.isPartnerFaq==true){
@@ -25,6 +27,15 @@ export class PartnershipIndexPage implements OnInit {
       }
     }
     this.isPartner=localStorage.getItem('isPartner')=='1';
+    if(window.history.state && window.history.state.isScroll){
+    this.isScroll = window.history.state.isScroll;
+    if(this.isScroll){
+      setTimeout(() => {
+        this.scroll_to_Faq() 
+      }, 200);    
+    }
+   }
+
   }
 
   scroll_to_obs(): void 
@@ -32,6 +43,7 @@ export class PartnershipIndexPage implements OnInit {
     this.isHowItWorks=true;
     this.isOtherBenefits=true;
 
+    /*
     setTimeout(() => {
       window.scrollTo({
         behavior: 'smooth',
@@ -40,6 +52,12 @@ export class PartnershipIndexPage implements OnInit {
           document.body.getBoundingClientRect().top -
           150,
       })
+    }, 100);
+    */
+
+    setTimeout(() => 
+    {
+      window.scrollTo({ top: 400, behavior: 'smooth' });
     }, 100);
   }
 
@@ -76,7 +94,8 @@ export class PartnershipIndexPage implements OnInit {
   }
   BecomeAPartner(){
     localStorage.setItem('btnClickBecomePartner','true');
-    localStorage.setItem("navigateToUpgradeToPremium","true")
+    this.services.navigateToUpgradeToPremium=true;
+    //localStorage.setItem("navigateToUpgradeToPremium","true")
     this.router.navigate(['adults/partnership-app']);
   }
 

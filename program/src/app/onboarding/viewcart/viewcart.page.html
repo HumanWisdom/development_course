@@ -62,7 +62,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <a routerLink="/onboarding/add-to-cart" class="">
-                    <h4 class="txt211">
+                    <h4 class="fw_400 fs_14px lh_16px fc_1092a7 display_webkit_inline_box">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/arrow_left.svg" class="img-responsive" alt="">
                       <span class="ml10px">
                         Continue Shopping
@@ -71,6 +71,17 @@
                   </a>
                 </div>
               </div>
+
+              <div class="row center_flex mt30px" *ngIf="!enableLoginSubscriber && !isSubscribe">
+                <div class="col-md-12 col-sm-12 col-xs-12">                      
+                  <a (click)="remove()">
+                    <button type="button" class="btn btn-warning btn_scode w100">
+                      <!-- I already have a Subscription Code -->
+                      Redeem subscription code
+                    </button>
+                  </a>
+                </div>
+              </div>  
               
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px">
@@ -80,7 +91,8 @@
                   <hr class="chr">  
                 </div>
               </div> -->
-              <div class="row flex_ai">
+
+              <div class="row flex_ai mt40px">
                 <div class="col-md-6 col-sm-6 col-xs-6 p0">
                   <h4 class="ob_txt1">
                     Cart
@@ -105,7 +117,7 @@
               <!-- adults -->
               <div class="row center_flex pt40px">
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                  <h4 class="txt106">
+                  <h4 class="fw_500 fs_16px lh_19px fc_000000">
                     Adults (&lt;16 years)
                   </h4>  
                 </div>
@@ -133,7 +145,7 @@
                     <div class="col-md-7 col-sm-7 col-xs-8"> 
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h6 class="txt107">
+                          <h6 class="fw_500 fs_12px lh_14px fc_000000">
                             Adult (&gt;16 years)
                           </h6>
                         </div>
@@ -152,7 +164,7 @@
 
     
                         <div class="col-md-6 col-sm-6 col-xs-6 pr0px">
-                          <h6 class="txt108 tleft mtb0px">
+                          <h6 class="fw_700 fs_16px lh_19px fc_b92f48 tleft mtb0px">
                             {{c.Amt}}
                           </h6>
                         </div>                        
@@ -161,7 +173,7 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-10 col-sm-10 col-xs-10 p0 flex_ai">
                           <div class="col-md-9 col-sm-9 col-xs-9 p0">
-                            <h6 class="txt115">
+                            <h6 class="fw_500 fs_12px lh_14px fc_1092a7 ellipsis_01">
                               {{c.MySelf === 'True' ? userEmail : c.LearnerEmail === '' ? 'Unknown recipient' : c.LearnerEmail}}
                             </h6>
                           </div>
@@ -240,7 +252,7 @@
               <div class="row cpt10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
                   <div class="col-md-8 col-sm-8 col-xs-7 p0">
-                    <input name="coupon"type="text" class="form-control fcinput2 mt0px" placeholder="Enter Coupon Code"[(ngModel)]="this.couponCode">
+                    <input name="coupon"type="text" class="form-control fcinput2 mt0px" placeholder="Enter Discount / Referral Code"[(ngModel)]="this.couponCode">
                   </div>
                   <div class="col-md-4 col-sm-4 col-xs-5 pr0">
                     <button class="btn btn-warning btn_apply" type="button" (click)="couponValidation()">
@@ -344,9 +356,9 @@
 
               <div class="row" *ngIf="isMonthlySelected">
                 <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
-                  <button class="btn btn-default btn_ptp" type="button" data-toggle="modal" data-target="#modal_join_anyway" (click)="ProceedWithMonthly()">
-                    Proceed to  pay
-                  </button>
+                <button class="btn btn-default btn_ptp" type="button" data-toggle="modal" data-target="#modal_join_anyway" (click)="ProceedWithMonthly()">
+                  Proceed to  pay
+                </button>
                 </div>                
               </div>
               
@@ -385,7 +397,7 @@
         <div class="row modal_recipient">
           <div class="row center_flex pt40px">
             <div class="col-md-6 col-sm-6 col-xs-6">
-              <h4 class="txt107 mb0px">
+              <h4 class="fw_500 fs_12px lh_14px fc_000000 mb0px">
                 Adult (&gt;16 years)
               </h4>  
             </div>
@@ -408,7 +420,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <h4 class="txt59">
+              <h4 class="fw_400 fs_18px lh_21px fc_000000">
                 Is this program for you?
               </h4>  
             </div>
@@ -431,7 +443,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12 mt10px">                  
               <div class="radio">
                 <label class="mt0px">
-                  <input type="radio" checked="false" value="option1" (click)="someoneradioevent($event)" id="optionsRadios1" name="optionsRadios"> 
+                  <input type="radio" checked="false" value="option1" (click)="someoneradioevent($event)" id="optionsRadios10" name="optionsRadios"> 
                   <span class="">
                     <span class="pl0_3rem">
                       No, I am buying this for someone else. 
@@ -441,7 +453,7 @@
               </div>                  
             </div>                
 
-            <div class="col-md-12 col-sm-12 col-xs-12 mt10px" *ngIf="enableDecide">                  
+            <!-- <div class="col-md-12 col-sm-12 col-xs-12 mt10px" *ngIf="enableDecide">                  
               <div class="radio">
                 <label class="mt0px">
                   <input type="radio" checked="false" (click)="laterradioevent($event)" value="option1" id="optionsRadios1" name="optionsRadios"> 
@@ -452,13 +464,23 @@
                   </span>
                 </label>
               </div>                  
-            </div>                
+            </div>                 -->
           </div>
 
           <div class="row mt20px" *ngIf="enableemail">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <input type="text" class="form-control cfc6" [(ngModel)]="learnermail" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
-            </div>
+              
+                <input [class.is-invalid]="emailRef.invalid && emailRef.touched" 
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                #emailRef="ngModel" 
+                  type="email" class="form-control cfc6" [(ngModel)]="learnermail" (keyup)="emailinput($event)" placeholder="Learner’s Email*">
+                
+                <div *ngIf="(emailRef.touched && emailRef.invalid)">
+                <span *ngIf="emailRef.errors?.required" class="text-danger" >Email address is required</span>
+                <span class="text-danger" *ngIf="emailRef.errors">Email address is invalid</span>
+                </div>
+             
+              </div>
           </div>
 
           <div class="row mt10px" *ngIf="enableemail">
@@ -473,10 +495,10 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift_01.svg" alt="" class="">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                <h6 class="txt178 ml-20px mtb5px">
+                <h6 class="fw_400 fs_12px lh_130p fc_b92f48 ml-20px mtb5px">
                   An invitation will be sent to this user after payment. You can view the activation status of this program in 
                   <a routerLink="/onboarding/myprogram">
-                    <span class="txt64 underline">
+                    <span class="fw_500 fs_12px lh_130p fc_b92f48 underline">
                       My Programs
                     </span>                      
                   </a>
@@ -488,7 +510,8 @@
           <div class="row mt40px mb40px">
             <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
               <a>
-                <button type="button" class="btn btn-warning mb0 proceed_cart w100" [disabled]="enableemail && learnermail === ''" data-dismiss="modal" (click)="enableedit ? addToCart() : addtoCart()">Done</button>
+                <button type="button" class="btn btn-warning mb0 proceed_cart w100"
+                 [disabled]="enableemail && (learnermail === '' || ValidateEmail())" data-dismiss="modal" (click)="enableedit ? addToCart() : addtoCart()">Done</button>
               </a>
             </div>
           </div> 
@@ -505,7 +528,7 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 modal_bottom_fixed join_anyway">
       <div class="row mb40px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h4 class="txt294 mtb0px">
+          <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px">
             Are you sure you would like to proceed with Monthly Subscription?
           </h4>
         </div>

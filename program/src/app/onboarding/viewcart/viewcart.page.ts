@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {OnboardingService} from '../onboarding.service'
+import * as $ from 'jquery' 
+import { LogEventService } from "src/app/log-event.service";
 
 @Component({
   selector: 'app-viewcart',
@@ -38,14 +40,26 @@ export class ViewcartPage implements OnInit {
   enableDecide = false
   enableedit = false;
   isUpgradeToPremium='';
-
-
-  constructor(private router: Router,private service:OnboardingService, private location:Location) { 
+  enableLoginSubscriber=false;
+  enablepopup=false;
+  isSubscribe=false;
+  
+  constructor(private router: Router,private service:OnboardingService, private location:Location, public logeventservice: LogEventService) { 
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'])
+    if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
+      this.enableLoginSubscriber = true;
+    }else {
+      this.enableLoginSubscriber = false;
+      localStorage.setItem("activeCode", 'F')
+    }
+    let popup = JSON.parse(localStorage.getItem("Subscriber"))
+    if(popup === 1) this.enablepopup = true
+    this.isSubscribe = popup === 0 ? false : true;
   }
 
   ngOnInit() {
+    
     this.isUpgradeToPremium = localStorage.getItem('upgradeToPremium');
     this.userEmail=JSON.parse(localStorage.getItem("userEmail"))
     localStorage.setItem("couponid", '0')
@@ -66,6 +80,8 @@ export class ViewcartPage implements OnInit {
     }
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('upgradeToPremium', 'F');
+
+    console.log(this.cartList)
   }
  /* getMax(){
     this.cartList.forEach(obj => {
@@ -319,6 +335,7 @@ export class ViewcartPage implements OnInit {
   }
 
   getKey(){
+    this.logeventservice.logEvent('click_proceed_to_pay');
     this.router.navigate(['/onboarding/payment'], { state: { quan:  this.cartList.length.toString(), plan: this.cartList[0]['Plan']}})
   }
   
@@ -426,10 +443,43 @@ export class ViewcartPage implements OnInit {
     this.enableemail = false;
     this.learnermail = ''
     this.learnermsg = ''
+    setTimeout(() => {
+      if(this.isSubscribe){
+        this.enableMySelf=false;
+      }
+      if(this.enableMySelf==false){
+        this.myself = 0;
+        this.enableemail = true;
+        $("#optionsRadios10").prop("checked", true);
+      }
+    }, 100);
   }
   Cancel(){
     localStorage.setItem('isMonthlySelectedForPayment','F');
     this.isModalPopup=false;
   }
 
-}
+  remove(){
+    if(this.cartList.length==0){
+      this.service.isActivationFlow=true;
+      this.router.navigate(['/onboarding/add-to-cart']);
+    }else{
+      this.service.isActivationFlow=true;
+      this.router.navigate(['/onboarding/add-to-cart']);
+      }
+      console.log(this.cartList)
+    }
+
+     ValidateEmail() {
+      var validRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+      if (this.learnermail.match(validRegex)) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  
+    
+  }
+
+

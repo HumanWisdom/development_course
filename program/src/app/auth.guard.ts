@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
+import { OnboardingService } from './onboarding/onboarding.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthGuard implements CanActivate, OnInit {
   x = []
   scrId: any
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
-  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
+  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService, private onboarding: OnboardingService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
   }
   ngOnInit() { }
@@ -26,10 +27,10 @@ export class AuthGuard implements CanActivate, OnInit {
     let test = m.split('login')
     let affrefcode = '';
     let affreftoken = '';
-    let aff = m.split('AffrefCode')
+    let aff = m.split('AffrefCode=')
     let token = m.split('authtoken')
     if (aff[1] !== undefined && aff[1] !== '') {
-      let afftoken = aff[1].split('=')[1]
+      let afftoken = aff[1]
       localStorage.setItem("Affreftoken", afftoken)
       this.service.decrypt(afftoken).subscribe((res: any) => {
         if (res) {
@@ -44,6 +45,7 @@ export class AuthGuard implements CanActivate, OnInit {
     if (localStorage.getItem('Affreftoken') !== null) {
       affreftoken = localStorage.getItem('Affreftoken');
     }
+    let getalertdate = localStorage.getItem('getalertdate');
     let cookie = localStorage.getItem('acceptcookie')
     if (token[1] !== undefined && token[1] !== '') {
       let persub = localStorage.getItem('personalised subscription');
@@ -74,7 +76,9 @@ export class AuthGuard implements CanActivate, OnInit {
       localStorage.setItem("remember", 'T')
       localStorage.setItem('adult', 'T')
       localStorage.setItem("isloggedin", 'T')
-
+      if (getalertdate !== null) {
+        localStorage.setItem('getalertdate', getalertdate)
+      }
       localStorage.setItem("token", JSON.stringify(authtoken))
       return true
     }
@@ -101,7 +105,9 @@ export class AuthGuard implements CanActivate, OnInit {
       this.router.navigate(['/onboarding/login'])
       return false
     } else {
-       if (localStorage.getItem('navigateToUpgradeToPremium') == 'true') {
+      if (this.onboarding.navigateToUpgradeToPremium
+        //localStorage.getItem('navigateToUpgradeToPremium') == 'true'
+      ) {
         localStorage.setItem('btnclick', 'F');
         localStorage.setItem('guest', 'T');
         this.router.navigate(['/onboarding/login'])

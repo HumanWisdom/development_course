@@ -1,7 +1,7 @@
 import { Component, OnInit ,Input,Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-
+import { Platform } from "@angular/cdk/platform";
 
 @Component({
   selector: 'app-session-end',
@@ -21,7 +21,7 @@ export class SessionEndComponent implements OnInit {
   socialShare=false
   shareUrl:any
 
-  constructor(private router:Router,
+  constructor(private router:Router, public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService  ) { 
       this.ngNavigatorShareService = ngNavigatorShareService; }
 
@@ -35,11 +35,11 @@ export class SessionEndComponent implements OnInit {
     this.shareUrl="https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`
     console.log(this.shareUrl)
 
-    if (!this.ngNavigatorShareService.canShare()) {
+   /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
     }
- 
+  */
 
    this.ngNavigatorShareService.share({
     title: 'HumanWisdom Program',
