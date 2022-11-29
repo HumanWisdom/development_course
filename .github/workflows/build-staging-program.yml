@@ -39,6 +39,7 @@ jobs:
      - name: Build the project
        run: |
         cd program
+        ionic init ionic-angular-hwp
         export NODE_OPTIONS=--max_old_space_size=8096
         ionic build --configuration=staging -- --base-href /course/
     
