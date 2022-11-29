@@ -323,4 +323,8 @@ export class AdultsService {
     return this.http.get(this.path + '/GetWisdomShortsListing');
   }
 
+  GetAudioMeditation(): Observable<any> {
+    return this.http.get(this.path + '/GetAudioMeditationsListing');
+  }
+
 }
