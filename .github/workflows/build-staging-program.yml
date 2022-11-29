@@ -30,7 +30,6 @@ jobs:
        run: |
         npm install -g @ionic/cli
         npm install -g @angular/cli
-        npm install -g ionic
         ionic init
 
      - name: Install project dependencies
