@@ -223,7 +223,8 @@
 .bg_guided_questions
 {  
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/flat.svg) no-repeat center center fixed !important; */
-  background: #F5F5F5 !important;
+  /* background: #F5F5F5 !important; */
+  background: #FFFFFF !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
