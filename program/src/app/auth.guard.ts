@@ -82,11 +82,11 @@ export class AuthGuard implements CanActivate, OnInit {
       localStorage.setItem("token", JSON.stringify(authtoken))
       return true
     }
-    let pers = localStorage.getItem('personalised');
+   /*  let pers = localStorage.getItem('personalised');
     if (!pers) {
       this.router.navigate(['/intro/intro-carousel'])
       return false;
-    }
+    } */
     if (!(localStorage.getItem("fromapp")) || localStorage.getItem("fromapp") !== 'T') {
       localStorage.setItem("fromapp", 'F')
     }
