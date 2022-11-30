@@ -1,0 +1,13 @@
+<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage"></app-audio-header>
+
+<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)>
+  <!-- <form>
+
+    <h1 class="txt1 tcenter">
+      Why bother exploring comparison?
+    </h1>           
+
+  </form> -->
+</app-audio-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

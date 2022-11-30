@@ -1,0 +1,379 @@
+<!-- page content -->
+<div class="right_col bg_login_signup" role="main">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex mrl0px">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p">
+        <div class="x_panel">
+          <div class="x_content">
+            <div class="container">
+              <ul class="nav nav-tabs login_signup_tab flex_ai">
+                <li>
+                  <a data-toggle="tab" (click)="getsignuptab()" href="#tab1">
+                    Sign up
+                  </a>
+                </li>
+                <li class="active" #enabletab onclick="$('#tab2').trigger('click')">
+                  <a data-toggle="tab" href="#tab2">
+                    Login
+                  </a>
+                </li>
+              </ul>
+
+              <div class="tab-content mt40px">
+                <!-- signup -->
+                <div id="tab1" class="tab-pane fade">
+                  <form  [formGroup]="registrationForm">
+                    <div class="row ls_connect_with">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
+                          CONNECT WITH
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                          <button type="submit" class="btn btn-default w100 btn_login_signup tcenter" (click)="fbLogin()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_ls.svg" alt="" class="img-responsive">
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                          <button type="submit" class="btn btn-default w100 btn_login_signup tcenter" (click)="googleLogin()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_ls.svg" alt="" class="img-responsive">
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+                          <button type="button" class="btn btn-default w100 btn_login_signup tcenter" (click)="signInWithApple()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row ls_or_signup">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
+                          OR SIGN UP
+                        </h4>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">First Name*</label>
+                        <input type="text" id="fullname" class="form-control cfc8" name="firstname" required />
+                      </div>
+                    </div>
+
+                    <div class="row mt15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Last Name*</label>
+                        <input type="text" id="fullname" class="form-control cfc8" name="lastname" required />
+                      </div>
+                    </div> -->
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full Name*</label>
+                        <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8" name="fullname" required />
+                        <div *ngIf="fullname.invalid && fullname.touched">
+                          <small *ngIf="fullname.errors?.required" class="text danger">Full Name is required</small>
+                          <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 3 characters</small>
+                      </div>
+                      </div>
+                    </div>
+
+                    <div class="row mt15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
+                        <input type="email" formControlName="email" id="fullname" class="form-control cfc8" name="fullname" required />
+                        <div *ngIf="emailvalid.invalid && emailvalid.touched">
+                          <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email address</small>
+                          <small *ngIf="emailvalid.errors?.email" class="text danger">Please enter a valid email</small>
+                      </div>
+                      </div>
+                    </div>
+
+                    <div class="row mt15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
+                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();" id="fullname" class="form-control cfc8" name="fullname" required />
+                        <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
+                          Password must be Minimum 6 Characters. No Spaces allowed
+                        </label>
+                      </div>
+                      <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
+                          <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
+                          <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 3 characters</small>
+                      </div>
+                    </div>
+
+                    <div class="row mt15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat password*</label>
+                        <input type="password" formControlName="confirmPassword" (keydown.space)="$event.preventDefault();" id="fullname" class="form-control cfc8" name="fullname" required />
+                      </div>
+                      <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
+                        <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat password</small>
+                        <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must be at least 3 characters</small>
+                    </div>
+                    </div>
+
+                    <div class="row mt20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
+                          By continuing, you agree to our
+                          <a routerLink="/adults/help-support/terms-conditions">
+                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Terms of Use</span>
+                          </a>
+                          &nbsp;and&nbsp;
+                          <a routerLink="/adults/help-support/privacy-policy">
+                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Privacy Policy </span>
+                          </a>
+                        </h4>
+                      </div>
+                    </div>
+
+                    <!-- ios -->
+                    <!-- <div class="row mt21px">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                        <button type="submit" class="btn btn-default w100 btn_scan_ios">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/scan_ios.svg" alt="" class="img-responsive w100p">
+                        </button>
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 pl0">
+                        <button type="submit" class="btn btn-default w100 btn_login_signup">Sign Up</button>
+                      </div>
+                    </div> -->
+                    <!-- /ios -->
+
+                    <!-- windows -->
+                    <div class="row btn_ls_signup">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button type="submit" class="btn btn-default w100 btn_login_signup" [disabled]="!registrationForm.valid" (click)="signup()">Sign Up</button>
+                      </div>
+                    </div>
+                    <!-- /windows -->
+
+                    <div class="row ls_already_user">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="fw_400 fs_12px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
+                          Already a user?
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
+                            Login here
+                          </a>
+                        </h4>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- /signup -->
+
+                <!-- login -->
+                <div id="tab2" class="tab-pane fade in active">
+                  <div class="row ls_connect_with">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
+                        CONNECT WITH
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row center_flex">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <button type="submit" class="btn btn-default w100 btn_login_signup tcenter" (click)="fbLogin()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_ls.svg" alt="" class="img-responsive">
+                        </button>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <button type="submit" class="btn btn-default w100 btn_login_signup tcenter" (click)="googleLogin()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_ls.svg" alt="" class="img-responsive">
+                        </button>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+                        <button type="button" class="btn btn-default w100 btn_login_signup tcenter" (click)="signInWithApple()">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row ls_or_login">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
+                        OR LOGIN
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="row mt15px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
+                      <input type="email" id="fullname" [(ngModel)]="this.email" class="form-control cfc8" name="fullname" required />
+                    </div>
+                  </div>
+
+                  <div class="row mt15px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
+                      <input type="password" id="fullname" [(ngModel)]="this.password" class="form-control cfc8" name="fullname" required />
+                      <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
+                        Password must be Minimum 6 Characters. No Spaces allowed
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="row mt30px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="checkbox p0 mtb0px">
+                        <label class="mt0px inline_box ls_checkbox">
+                          <input type="checkbox" name="remember" value="" (change)="rememberUsername($event.target.checked)"/>
+                          <span></span>
+                          <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
+                            Remember me
+                          </h4>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row btn_ls_login">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <button type="submit" class="btn btn-default w100 btn_login_signup" [disabled]="!this.email||!this.password"type="button" (click)="emailLogin()">Login</button>
+                    </div>
+                  </div>
+
+                  <div class="row ls_forgot_password">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a routerLink="/onboarding/forgotpassword">
+                        <h4 class="fw_500 fs_14px lh_140p fc_ffffff tcenter mtb0px" style="cursor: pointer;">
+                          Forgot Password?
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- /login -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+
+  <!-- footer  -->
+  <!-- <div class="ls_position">
+    <div class="prelative">
+
+      <div class="row mt20px ls-row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/login_signup/footer.png" class="img-responsive ls_footer_img">
+        </div>
+      </div>
+
+      <div class="row absolute_center_ls_footer">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <div class="row mt20px center_flex">
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+              <h4 class="fw_700 fs_12px lh_14px fc_243949 ls_pt12em">
+                OR CONNECT WITH
+              </h4>
+            </div>
+          </div>
+
+          <div class="row mt15px center_flex">
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 p0">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <button type="submit" class="btn btn-warning w100 btn_login_signup tcenter" (click)="fbLogin()">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/facebook_ls.png" alt="" class="img-responsive">
+                </button>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <button type="submit" class="btn btn-warning w100 btn_login_signup tcenter" (click)="googleLogin()">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/google_ls.png" alt="" class="img-responsive">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div> -->
+  <!-- /footer -->
+</div>
+<!-- /page content -->
+
+
+<!-- popup modal -->
+<div class="modal fade" id="modal_popup" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal_free_limit" role="document">
+    <div class="">
+      <div class="modal-header b0">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <button type="button" #closemodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/modal_close_01.svg" alt="" class="img-responsive fright">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body pt0px">
+        <!-- modal content -->
+        <div class="row center_flex">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter boldi">
+              You do not have an Active Subcription
+            </h4>
+            <!-- <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Please <a (click)="getrenew()" style="color: blue;">Click</a> Here to renew or <a style="color: blue;" (click)="getfreeuser()">Click</a> Here to proceed as a free user
+            </h4>   -->
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Click here to <a (click)="getrenew()" style="color: blue;" class="italic">Subscribe</a>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              <span class="">OR</span>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Click here to <a (click)="getrenew()" style="color: blue;" class="italic">Use Your Subscription Code</a>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              <span class="">OR</span>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Click Here to proceed as a <a style="color: blue;" (click)="getfreeuser()" class="italic">Free User</a>
+            </h4>
+          </div>
+        </div>
+        <!-- /modal content -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /popup modal -->
+<span #enablemodal data-toggle="modal" data-target="#modal_popup"></span>
+
+<div class="modal fade" id="enableotpmodal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="otpModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <span #closemodal data-dismiss="modal" aria-label="Close">
+        </span>
+        <div class="form-group">
+          <label>A one-time password has been sent to your email address (Check your spam folder too). Please enter it below.</label>
+          <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" [disabled]="!verificationCode" (click)="verifyCode()" >Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<span #enableotpmodal data-toggle="modal" data-target="#enableotpmodal"></span>

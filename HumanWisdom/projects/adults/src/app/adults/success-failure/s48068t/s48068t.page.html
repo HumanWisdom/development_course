@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Stephen King, the famous author, received 30 rejections for his first novel before it was finally accepted. JK Rowling who wrote the Harry Potter books was on welfare raising a son on her own but kept going with her writing. She has now sold more than 500 million books. Most people you now see as successful struggled in their early years. Perseverance is one of the keys to getting anything done in life. It really helps if you love what you do, that makes it so much easier
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

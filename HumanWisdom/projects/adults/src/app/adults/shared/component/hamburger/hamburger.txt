@@ -1,0 +1,745 @@
+<nav class="lh0">
+    <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox mc_main" (click)=toggleDisplayDiv() >
+    <label class="m-menu__toggle m0px" for="menu">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/hamburger_grey.svg"
+        class="img-responsive" alt="">
+    </label>
+    <label class="m-menu__overlay" for="menu"></label>
+    <!-- submenu -->
+    <div class="m-menu mc_main_menu" *ngIf="isShowDiv" id="s1">
+      <div class="m-menu__header">
+        <div class="row w100">
+          <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 p0 tleft">
+              <img
+                src="{{url === '' || url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
+                alt="" class="img_profile">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ws_nowrap">
+              <h4 class="fw_700 fs_14px lh_16px fc_ffffff mtb0px tleft">
+                {{name}}
+              </h4>
+              <a routerLink="/onboarding/user-profile">
+                <h4 class="fw_500 fs_12px lh_14px fc_ffffff mt5pxi mb0px tleft underline" *ngIf="isloggedIn">
+                  View Profile
+                </h4>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="dh_ul">
+        <!-- <li>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/01.svg" alt="" class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Get a Wisdom Coach
+                </h4>
+              </div>
+            </div>
+          </div>
+        </li> -->
+  
+        <!-- <li *ngIf="isloggedIn">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/02.svg" alt="" class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  My Progress
+                </h4>
+              </div>
+            </div>
+          </div>
+        </li> -->
+  
+        <li>
+          <a routerLink="/adults/wisdom-survey" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/03.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Wisdom Survey
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li *ngIf="isloggedIn && roleid === 8">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <!-- 
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/04.svg" alt="" class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0 flex_ai" *ngIf="roleid !== 8">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px mw75p">
+                  Redeem Wisdom Points
+                  <span class="fs_12px">
+                    (Coming Soon)
+                  </span>
+                </h4>
+                <div class="prelative center_flex pl5px">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_05.png" alt="" class="prelative">
+                  <h6 class="fw_700 fs_10px lh_12px fc_243949 wpts_count">
+                    9999
+                  </h6>
+                </div>
+              </div> 
+              -->
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/04.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="routeAffiliate()">
+                  Affiliate Revenue Report
+                </h4>
+              </div>
+            </div>
+          </div>
+        </li>
+  
+        <li>
+          <a routerLink="/adults/podcast/podcast-toc" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/05.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    HumanWisdom Podcast
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li *ngIf="isloggedIn  && subscriber">
+          <a routerLink="/onboarding/myprogram" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    My Subscriptions
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li *ngIf="!platform.IOS">
+          <a routerLink="/onboarding/add-to-cart" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/07.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="giftwisdom()">
+                    Give the gift of Wisdom
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li>
+          <a routerLink="/adults/refer-friend" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/08.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
+                    Refer a Friend
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <!-- <li>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/09.svg" alt="" class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Become a Coach
+                </h4>
+              </div>
+            </div>
+          </div>
+        </li> -->
+  
+        <li>
+          <a routerLink="/adults/hwp-project" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/10.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    HumanWisdom Project
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li>
+          <a routerLink="/adults/treesisters" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/11.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Tree Planting Program
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li  id="liSubscribe"  *ngIf="!subscriber">
+          <a  routerLink="/onboarding/add-to-cart" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Subscribe
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <!-- <li  id="isNotPartner"  *ngIf="isPartner=='0'">
+          <a  routerLink="/adults/partnership-app" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Become a Partner
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li  id="isPartner"  *ngIf="isPartner=='1'">
+          <a  (click)="routeToPartnerScreen()" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/06.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    My Partnership
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li> -->
+  
+        <!-- multilayer li for partnership -->
+        <li>
+          <label class="a-label__chevron" for="item-partnership">
+            <!-- Item 2 -->
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Partnership Program
+                  </h4>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 tright">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg"
+                    alt="" class="img-responsive">
+                </div>
+              </div>
+            </div>
+          </label>
+          <input type="checkbox" id="item-partnership" name="item-partnership" class="m-menu__checkbox">
+  
+          <div class="m-menu">
+            <div class="m-menu__header">
+              <label class="m-menu__toggle" for="item-partnership">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg"
+                        alt="" class="img-responsive r180deg">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                        Partnership Program
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <ul class="dh_ul">
+              
+              <li id="isNotPartner"  *ngIf="isPartner=='0'">
+                <a routerLink="/adults/partnership-app" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
+                          class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          Become a Partner
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+        
+              <li  id="isPartner"  *ngIf="isPartner=='1'">
+                <a  (click)="routeToPartnerScreen()" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
+                          class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          My Partnership
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <a class="p0 b0px" routerLink="/adults/partnership-webpage/partnership-index/">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
+                          class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          About Partnership
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <a class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/17.svg" alt=""
+                          class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          Partnership FAQ
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </li>
+        <!-- /multilayer li for partnership -->
+  
+        <!-- multilayer li -->
+        <li>
+          <label class="a-label__chevron" for="item-2">
+            <!-- Item 2 -->
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Help & Support
+                  </h4>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 tright">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg"
+                    alt="" class="img-responsive">
+                </div>
+              </div>
+            </div>
+          </label>
+          <input type="checkbox" id="item-2" name="item-2" class="m-menu__checkbox">
+  
+          <div class="m-menu">
+            <div class="m-menu__header">
+              <label class="m-menu__toggle" for="item-2">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg"
+                        alt="" class="img-responsive r180deg">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                        Help & Support
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <ul class="dh_ul">
+              <!-- <li>
+                <a (click)="routeGuide()" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          User Guides
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li> -->
+  
+              <li>
+                <a routerLink="/adults/help-support/faq" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg"
+                          alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          FAQ
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+  
+              <!-- <li>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                        Help Centre
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </li> -->
+  
+              <li>
+                <a routerLink="/adults/help-support/support" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg"
+                          alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          Contact Us
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <a routerLink="/adults/help-support/terms-conditions" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg"
+                          alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          Terms & Conditions
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <a routerLink="/adults/help-support/privacy-policy" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg"
+                          alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          Privacy Policy
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- /multilayer li -->
+  
+        <!-- multilayer li -->
+        <!-- <li>
+          <label class="a-label__chevron" for="item-3">                            
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Settings
+                  </h4>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 tright">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg" alt="" class="img-responsive">
+                </div>
+              </div>
+            </div>
+          </label>
+          <input type="checkbox" id="item-3" name="item-3" class="m-menu__checkbox">
+  
+          <div class="m-menu">
+            <div class="m-menu__header">
+              <label class="m-menu__toggle" for="item-3">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg" alt="" class="img-responsive r180deg">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                        Settings
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <ul class="dh_ul">
+              <li>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                        Account Settings
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </li>
+  
+              <li>
+                <a routerLink="/adults/help-support/terms-conditions" class="p0 b0px">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                          Privacy Policy
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                        Report a Problem
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </li>
+  
+              <li>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/13.svg" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                        Security
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li> -->
+        <!-- /multilayer li -->
+  
+        <li *ngIf="platform.IOS">
+          <a routerLink="/adults/add-to-home-screen-ios" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Add to Home Screen
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li>
+          <a href="https://humanwisdom.me/newsletter.html" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/15.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Subscribe to Newsletter
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li>
+          <a routerLink="/adults/events" class="p0 b0px">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/16.svg" alt=""
+                    class="img-responsive">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                    Events
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+  
+        <li id="liLogout" (click)="logout()"  *ngIf="isloggedIn">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/14.svg" alt=""
+                  class="img-responsive">
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                  Logout
+                </h4>
+              </div>
+            </div>
+          </div>
+        </li>
+  
+        <div class="pagebreak"></div>
+      </ul>
+    </div>
+    <!-- /submenu -->
+  </nav>

@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Questions can help us uncover what is happening in the deeper layers of our thinking.
+          </p>
+          
+          <p>
+            Suppose I feel angry and I think it was caused by someone criticising me. I can pause and ask 'what is going on in my thinking to make me feel the way I do?' I then learn about my many images of myself, and how behind all anger is a feeling of being hurt. I can then ask why I get hurt, and that leads me to explore the nature of the "I' that gets hurt, and so on. The next screens offer some more questions you can explore for yourself. Remember, asking the question is sometimes more important than finding the answer.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer> 

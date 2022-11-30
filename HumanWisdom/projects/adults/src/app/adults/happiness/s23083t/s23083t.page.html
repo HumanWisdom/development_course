@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Let’s have a look at this pyramid again, which represents the different layers of our thinking. We begin in layer 4, where the ‘I’ feels restless and bored. In layer 3, the mind seeks stimulation which covers over this feeling. Stimulation comes from the new, not the old, so we overlook what we already have and take what we have for granted. By understanding and observing this process at work in our thinking we can look freshly at what we already have and learn to appreciate it and be grateful. We need to do this consciously, because our mind is not going to do it for us
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

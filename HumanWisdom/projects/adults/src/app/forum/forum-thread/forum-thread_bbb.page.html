@@ -1,0 +1,255 @@
+<!-- page content -->
+<div class="right_col" role="main">				
+  <!-- Class -->
+  <div class="cw100p dabsolute_09">    
+
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 h100p ">
+        <div class="x_panel xpanel_01 p0">
+          <div class="x_content p0px_b">
+            <form>  
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <div class="col-md-1 col-sm-1 col-xs-1 p0">
+                    <a routerLink="/forum/forum-landing/">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_black.svg" alt="" class="p0">
+                    </a>
+                  </div>  
+                  <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                    <img src="{{'data:image/jpg;base64,' + posttread.UserImage}}" *ngIf="posttread.UserImage" alt="" class="w100 fimg_02">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!posttread.UserImage" alt="" class="w100 fimg_01">
+                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_09.svg" alt="" class="p0"> -->
+                  </div>  
+                  <div class="col-md-7 col-sm-7 col-xs-7 pr0">
+                    <h4 class="fw_500 fs_14px lh_16px fc_000000 mtb0px">
+                      {{posttread.UserName}}
+                    </h4>
+                    <h4 class="fw_400 fs_12px fc_adadad mtb0px">
+                      {{getLocalPostDate(posttread.PostDate)| date: 'medium' }}
+                    </h4>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
+                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" alt="" class="p0"> -->
+                  </div>  
+                </div>
+              </div>
+
+              <div class="row forum_pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="mtb0px">
+                    <span class="fw_500 fs_14px lh_16px fc_000000">{{posttread.POST}} </span>                      
+                  </h4>
+                </div>
+              </div>
+
+              <!-- <div class="row forum_pt10px">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <div class="col-md-9 col-sm-9 col-xs-9 p0">
+                    <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">{{posttread.PostLikeCount}}</span>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">{{posttread.ReplyCount}}</span>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">Share</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 tright pr0">
+                    <span class="fw_400 fs_10px lh_12px fc_1092a7">
+                      Following
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="row forum_pt10px">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                  <div class="col-md-9 col-sm-9 col-xs-9 p0">
+                    <div class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
+                      <button type="submit" [disabled]="!isLoggedIn" (click)="like(posttread.PostID,null,0)" class="btn btn_ficons">
+                        <i  
+                          *ngIf="posttread.Liked=='0'"
+                          class="fa fa-heart-o">
+                        </i>
+
+                        <i 
+                          *ngIf="posttread.Liked=='1'"
+                          class="fa fa-heart">
+                        </i>                  
+                        <span [innerText]="posttread.PostLikeCount"></span>
+                      </button>  
+                    </div>
+                    <div *ngIf="isLoggedIn" class="col-md-2 col-sm-2 col-xs-4 flex_ai pl0">
+                      <button type="submit" class="btn btn_ficons">
+                        <i class="fa fa-reply"></i>
+                        <!-- <span [innerText]="GetReplyCount()" ></span> -->
+                        Comment
+                      </button>  
+                    </div>
+                    <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue.svg" alt="">
+                      <span class="fw_400 fs_12px fc_1092a7 lcs">Share</span>
+                    </div> -->
+                  </div>
+                  <div *ngIf="isLoggedIn" class="col-md-3 col-sm-3 col-xs-3 pr0 flex_ai">
+                    <button type="submit" class="btn btn_ficons jc_flexend" (click)="follow(posttread)">
+                      <i class="fa fa-user-plus"></i>
+                      <span *ngIf="posttread.Followed=='1'">
+                        Following
+                      </span>
+                      <span *ngIf="posttread.Followed=='0'">
+                        Follow
+                      </span>
+                    </button>  
+                  </div>
+                </div>
+              </div>
+
+              <!-- comment -->
+              <!-- <div class="row pt20px pb10px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" id="comment" required="required" class="form-control fc_comment" placeholder="Add a comment" (click)="navi()">
+                </div>
+              </div> -->
+
+              <div class="row pt20px pb10px" *ngIf="isLoggedIn">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0" >
+                      <textarea type="text"name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>           
+                    </div> 
+              
+                    <div class="col-md-12 col-sm-12 col-xs-12 tright mt5px p0" *ngIf="isLoggedIn">
+                      <button type="submit"(click)="submitComment()" class="btn btn-warning btn_post">
+                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
+                        Comment
+                      </button>             
+                    </div>                   
+                </div>
+              </div> 
+              <!-- /comment -->
+
+              <hr class="hr_style_3">
+
+              <ng-container *ngIf="list && list.ReplyPost">
+                <div *ngFor="let item of replyPost();let index=index">
+                  <!-- section 1 -->
+                  <div class="row pt30px" >
+                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0 pl10px_imp" (click)="reloadthread(item)">
+                      <img src="{{'data:image/jpg;base64,' + item.ReplyPostUserImage}}" *ngIf="item.ReplyPostUserImage" alt="" class="w100 fimg_02">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/add_user.svg" *ngIf="!item.ReplyPostUserImage" alt="" class="w100 fimg_01">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_04.svg" alt="" class="w100">
+                    </div> -->
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
+                        <h4 class="fw_500 fs_14px lh_16px fc_000000 commenter mtb0px">
+                          {{item.ReplyPostUserName}}
+                          <span class="fw_400 fs_10px fc_adadad">
+                            {{getLocalPostDate(item.ReplyPostDate)| date: 'medium' }}
+                          </span>
+                        </h4>
+                        <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
+                          {{item.ReplyPost}}
+                        </h4>                      
+                      </div>                    
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex lcs_div">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai">
+                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="">
+                          <span class="fw_400 fs_12px fc_1092a7 lcs">{{item.ReplyPostLikeCount}}</span> -->
+                          <button  [disabled]="!isLoggedIn"  type="submit"  (click)="like(item.ReplyPostID,posttread.PostID,index)" class="btn btn_ficons jc_flexstart">
+                            <i 
+                              *ngIf="item.Liked=='0'"
+                              class="fa fa-heart-o">
+                            </i>
+    
+                            <i  
+                              *ngIf="item.Liked=='1'"
+                              class="fa fa-heart">
+                            </i> 
+                            <span [innerText]="item.ReplyPostLikeCount"></span>
+                          </button> 
+                        </div>
+                      </div>
+                      <!-- 
+                      <div class="col-md-2 col-sm-3 col-xs-4 p0 flex_ai"  (click)="toggle(item)">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
+                        <span class="fw_400 fs_12px fc_1092a7 lcs">{{item.ReplyPostReplyCount}}</span>
+                      </div>            
+                      -->
+                      <div class="col-md-6 col-sm-6 col-xs-6 flex_ai jc_flexend" *ngIf="isLoggedIn">
+                        <div class="col-md-3 col-sm-3 col-xs-3 p0 flex_ai"  (click)="reportpost(item)">
+                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/reply_blue.svg" alt="">
+                          <span class="fw_400 fs_12px fc_1092a7 lcs ws_nowrap">Report Post</span> -->
+                          <button type="submit" class="btn btn_ficons jc_flexend">
+                            <i class="fa fa-triangle-exclamation"></i>
+                            Report
+                          </button> 
+                        </div>                      
+                      </div>                 
+                    </div>
+                  </div>
+
+                  <!-- comment -->
+                  <div class="row forum_pt20px" *ngIf="replyflag && activereply.ReplyPostID === item.ReplyPostID">
+                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_08.svg" alt="" class="w100">
+                    </div> -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn" >                      
+                        <input type="text" name="posttext" id="comment" [(ngModel)]="posttext" required="required" class="form-control fc_comment" placeholder="Report Post">                    
+                      </div> 
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px p0 tright mt5px">
+                        <button type="submit" class="btn btn-warning btn_post" (click)="post(item)">
+                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
+                          Report
+                        </button>             
+                      </div>                   
+                    </div>
+                  </div> 
+                  <!-- /comment -->
+                  
+                  <!-- reply post -->
+                  <div class="row forum_pt20px" *ngIf="commentflag && activecomment.ReplyPostID === item.ReplyPostID">
+                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0"></div> -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
+                        <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext" required="required" class="form-control fc_comment" placeholder="Report Post">                
+                      </div> 
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px p0 tright mt5px">
+                        <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item)">
+                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
+                          Report
+                        </button>             
+                      </div>                   
+                    </div>
+                  </div> 
+                  <!-- /reply post -->
+                  <!-- /section 1 -->
+                </div>
+              </ng-container>   
+
+              <div class="pagebreak"></div>
+            </form>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

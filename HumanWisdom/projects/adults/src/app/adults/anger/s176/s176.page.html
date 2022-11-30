@@ -1,0 +1,370 @@
+<!-- top navigation -->
+<app-course-header [toc]="toc"[bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<!-- /top navigation -->  
+
+<!-- page content -->
+<div class="right_col mc_01">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 anger_w12">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+              <!-- <h5 class="txt4 justified_center"> -->
+              <h5 class="txt4">
+               {{reflection}}
+              </h5>
+              <div class="clearfix"></div>
+
+              <h5 class="txt4">                
+                1. 	Apparent cause (what you think) 
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                </div>
+              </div>
+
+              <br>
+              
+              <h5 class="txt4">                
+                2. 	Real cause (layer 3)
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                </div>
+              </div>
+
+              <div *ngIf="!shared && !confirmed" class="row pt40px pb31px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="">
+                    <div class="box tleft flex_left jbox1">                        
+                      <!-- svg checkbox -->
+                      <input class="inp-cbx" id="cb1" type="checkbox" name="shared" [(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)"/>
+                      <label class="cbx mt0px" for="cb1">
+                        <span>
+                          <svg width="12px" height="10px">
+                            <use xlink:href="#check"></use>
+                          </svg>
+                        </span>
+                        <span class="txt42 cb_span">
+                          Share this note on the forum
+                        </span>
+
+                        
+                      </label>
+                      <!--SVG Sprites-->
+                      <svg class="inline-svg">
+                        <symbol id="check" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </symbol>
+                      </svg>
+                      <!-- /svg checkbox -->
+                    </div>                    
+                  </a>
+                </div>
+              </div>
+
+              <div *ngIf="shared && !confirmed" class="row pt40px pb31px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="input-group cinputgroup1">                    
+
+                    <a class="">
+                      <div class="box tleft flex_left jbox1 cbr1">                                                
+                        <input class="inp-cbx" id="cb1" type="checkbox" name="shared"[(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)"/>
+                        <label class="cbx mt0px" for="cb1">
+                          <span>
+                            <svg width="12px" height="10px">
+                              <use xlink:href="#check"></use>
+                            </svg>
+                          </span>
+                          <span class="txt42 cb_span">
+                            Share this note on the forum
+                          </span>
+                        </label>                      
+                        <svg class="inline-svg">
+                          <symbol id="check" viewbox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                          </symbol>
+                        </svg>                        
+                      </div>                    
+                    </a>
+
+                    <span class="input-group-btn">
+                      <button type="button" (click)="confirmShare()" class="btn btn-warning igbtn1">Confirm?</button>
+                    </span>
+                  </div>
+
+                  
+                </div>
+              </div>
+
+             
+              
+              <h5 class="txt7 justified_center pb16px">
+                All posts shared on the forum are moderated
+              </h5>              
+
+              <div *ngIf="confirmed" class="row center_flex safari_dblock">
+                <div class="col-md-5 col-sm-12 col-xs-12 p0">
+                  <button type="button" class="btn btn-default w100 mb0 jbtn1">See what others have to say</button>
+                </div>
+              </div>        
+              
+              <!-- modal test -->
+              <div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="false">
+                <div class="ex_modal_body">
+                  <button type="button" class="close ex_close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>                    
+                    <span class="sr-only">Close</span>
+                  </button>                    
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="lh2_5rem tleft">
+                        My son did not call on my birthday
+                        <br>
+                        My anger is caused by my own expectations
+                      </h4>    
+                    </div>
+                  </div>                                        
+                </div>
+              </div>
+              <!-- /modal test -->
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- screen2  -->
+<!-- <div class="right_col ml0 anger_w5" role="main">				  
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel cxpanel center_flex dflexblock">                                                
+          <div class="x_content c_white fwunset tcenter">
+            <form>              
+              <h5 class="txt4">
+                Go back to your list of things that make you angry – what is the:
+              </h5>
+              <div class="clearfix"></div>
+
+              <h5 class="txt4">                
+                1. 	Apparent cause (what you think) 
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                </div>
+              </div>
+
+              <br>
+
+              <h5 class="txt4">                
+                2. 	Real cause (layer 3)
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                </div>
+              </div>
+
+              <div class="row pt40px pb31px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="input-group cinputgroup1">                    
+
+                    <a class="">
+                      <div class="box tleft flex_left jbox1 cbr1">                                                
+                        <input class="inp-cbx" id="cb1" type="checkbox" />
+                        <label class="cbx mt0px" for="cb1">
+                          <span>
+                            <svg width="12px" height="10px">
+                              <use xlink:href="#check"></use>
+                            </svg>
+                          </span>
+                          <span class="txt42 cb_span">
+                            Share this note on the forum
+                          </span>
+                        </label>                      
+                        <svg class="inline-svg">
+                          <symbol id="check" viewbox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                          </symbol>
+                        </svg>                        
+                      </div>                    
+                    </a>
+
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-warning igbtn1">Confirm?</button>
+                    </span>
+                  </div>
+
+                  
+                </div>
+              </div>
+              
+              <h5 class="txt7 justified_center">
+                All posts shared on the forum are moderated
+              </h5> 
+              
+              <div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="false">
+                <div class="ex_modal_body">
+                  <button type="button" class="close ex_close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>                    
+                    <span class="sr-only">Close</span>
+                  </button>                    
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="lh2_5rem tleft">
+                        I get angry when someone does not do what they said they would, and when my son forgets my birthday
+                      </h4>    
+                    </div>
+                  </div>                                        
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div> -->
+<!-- /screen2 -->
+
+<!-- screen3 -->
+<!-- <div class="right_col ml0 anger_w5" role="main">				  
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">
+        <div class="x_panel cxpanel center_flex dflexblock">                                                
+          <div class="x_content c_white fwunset tcenter">
+            <form>        
+              <h5 class="txt4">
+                Go back to your list of things that make you angry – what is the:
+              </h5>
+              <div class="clearfix"></div>
+
+              <h5 class="txt4">                
+                1. 	Apparent cause (what you think) 
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                </div>
+              </div>
+
+              <br>
+
+              <h5 class="txt4">                
+                2. 	Real cause (layer 3)
+              </h5>
+              <div class="clearfix"></div>
+
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your answer here"></textarea>
+                </div>
+              </div>
+
+              <div class="row pb8px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/icons/body/post.png" alt="" class="">
+                </div>
+              </div>              
+              
+              <h5 class="txt7 justified_center pb16px">
+                All posts shared on the forum are moderated
+              </h5>              
+
+              <div class="row center_flex">
+                <div class="col-md-5 col-sm-12 col-xs-12 p0">
+                  <button type="button" class="btn btn-default w100 mb0 jbtn1">Next</button>
+                </div>
+              </div>
+              
+              <div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="false">
+                <div class="ex_modal_body">
+                  <button type="button" class="close ex_close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>                    
+                    <span class="sr-only">Close</span>
+                  </button>                    
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="lh2_5rem tleft">
+                        I get angry when someone does not do what they said they would, and when my son forgets my birthday
+                      </h4>    
+                    </div>
+                  </div>                                        
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div> -->
+<!-- /screen3 -->
+
+<!-- footer  -->
+<!-- <div class="sidebar-footer hidden-small">
+  <div class="row lh5rem center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex p0">
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">
+        <a routerLink="/adults/anger/s175">
+          <button type="button" class="btn w100 mb0 btn_prev">Previous</button>          
+        </a>        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6 p0">
+        <a routerLink="/adults/anger/s177">          
+          <button type="button" class="btn btn-default w100 mb0 btn_next">Next</button>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4">        
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- /footer -->
+
+<div class="mfooter">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex fctray" [ngClass]="bg_cft">      
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">
+        <a routerLink="/adults/anger/s175">
+          <button type="button" class="btn w100 mb0 btn_prev">Previous</button>          
+        </a>        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6 p0">
+        <a routerLink="/adults/anger/s177">
+          <button type="button" class="btn btn-default w100 mb0 btn_next">Next</button>
+        </a>
+      </div>    
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4">        
+      </div>  
+    </div>
+  </div>
+</div>
+
+<!-- bottom navigation -->
+<!-- <app-botnav></app-botnav> -->
+<!-- /bottom navigation -->

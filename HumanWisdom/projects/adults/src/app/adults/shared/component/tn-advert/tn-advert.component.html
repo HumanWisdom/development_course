@@ -1,0 +1,84 @@
+<!-- top navigation -->
+<div class="dtn">
+
+  <!-- top navigation -->
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px onscrollbg">
+      <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+        <a (click)="routedashboard()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_01.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+      </div> -->
+
+      <!-- hamburger -->
+      <nav class="navbar navbar-default navbar-static-top">
+
+        <div class="row dtn_default flex_ai">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+
+            <div class="mcflex_advertsh">
+
+              <button type="button" class="navbar-toggle collapsed m0px" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <button type="button" class="btn m0px mr20pxi fright btn_htry_free" (click)="routedashboard()">
+                {{isLoggedIn ? 'Go to App' : 'Try for free'}}
+              </button>
+
+              <a class="" (click)="route_adverts_hwp()">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_01.svg"
+                  alt="HumanWisdom" class="img-responsive">
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div id="navbar" class="collapse">
+          <ul class="nav navbar-nav fw_400 fs_18px lh_21px fc_000000">
+            <li class="active">
+              <a routerLink="/adults/adverts-about/">
+                Our Story
+              </a>
+            </li>
+            <li>
+              <a routerLink="/adults/adverts-hwp-app/">
+                The HumanWisdom App
+              </a>
+            </li>
+            <li>
+              <a routerLink="/adults/adverts-work/">
+                HumanWisdom for Businesses
+              </a>
+            </li>
+            <li>
+              <a routerLink="/adults/adverts-student/">
+                HumanWisdom for Education
+              </a>
+            </li>
+            <li>
+              <a (click)="Logevent()">
+                {{login}}
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+      </nav>
+      <!-- /hamburger -->
+
+    </div>
+  </div>
+  <!-- /top navigation -->
+
+</div>
+<!-- /top navigation -->

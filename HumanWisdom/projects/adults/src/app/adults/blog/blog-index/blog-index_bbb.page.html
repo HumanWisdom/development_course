@@ -1,0 +1,76 @@
+<!-- top navigation -->
+<div class="bg_monte_carlo nav_search col-lg-4 col-md-6 col-sm-6 col-xs-12">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+        <a class="" routerLink="/adults/adult-dashboard">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="img-responsive">
+        </a>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <h4 class="fw_500 fs_16px lh_19px fc_ffffff tcenter mtb0px">
+          Blog
+        </h4>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+        <a class="" (click)="share()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_02.svg" alt="" class="img-responsive">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 form-group has-feedback p0 zi0 div_search">
+    <input type="search" class="form-control has-feedback-left h60px searchtxt_02" [(ngModel)]="this.searchedTitle" (ngModelChange)="searchTitle()"  id="searchtxt_02" placeholder="Search Blog">
+    <span class="form-control-feedback left sfeedback" aria-hidden="true">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/magnifying_glass_01.svg" alt="" class="">
+    </span>
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<!-- content  -->
+<div class="plr10px">
+  <!-- article 01 -->
+  <a *ngFor="let item of blogList" (click)="viewblog(item)">
+    <div class="row mt40px mb15px center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
+        <img src="{{item['ImagePath']}}" alt="" class="img-responsive w100p br5px">
+      </div>
+    </div>
+
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
+        <h4 class="mtb0px fw_500 fs_22px lh_130p fc_000000">
+         {{item['Title']}}
+        </h4>
+      </div>
+    </div>
+
+    <div class="row mt10px center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
+        <h4 class="mtb0px fw_400 fs_14px lh_140p fc_5d5d5d limit_characters">
+          {{item['Story']}}
+        </h4>
+      </div>
+    </div>
+
+    <div class="row mt20px center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plr_01">
+        <h4 class="mtb0px fw_700 fs_12px lh_130p fc_adadad">
+          {{timeSince(item['CreatedDate'])}}
+        </h4>
+      </div>
+    </div>
+  </a>
+  <!-- /article 01 -->
+
+  <div class="pagebreak"></div>
+</div>
+<!-- /content  -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

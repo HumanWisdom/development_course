@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There is a debate among psychologists about this question. Watching TV every evening is a habit and you could stop that and not feel any consequences. Taking cocaine regularly is an addiction, and if you stopped suddenly you’d get severe withdrawal effects.  There are several compulsive behaviours which we find difficult to stop - like gambling, smoking or using the phone and you could call them an addiction. Perhaps it is a spectrum of behaviour, with some habits gradually evolving into addiction. The occasional alcohol drinker can change his behaviour, but it can also evolve into an addiction. In this module we are going to discuss them together, because they can all cause us problems and have similar roots in our thinking.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Fear can be subtle and operate in the background without our awareness. It can make us feel insecure and possessive of the other person, to the extent our behaviour can become controlling and we justify that as reasonable to ourselves. Or we may be in an abusive relationship but our fear stops us from admitting that to ourselves and doing something about it. We can also just live with a chronic anxiety that the other person doesn't love us enough and could leave anytime. Understanding the nature of fear can help us live with intelligence
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

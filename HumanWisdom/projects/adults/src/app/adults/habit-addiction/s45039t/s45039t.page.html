@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Every pleasurable activity results in the release of chemicals called neurotransmitters in the brain. Serotonin, oxytocin and endorphin actually create the feeling of pleasure, and dopamine helps reinforce enjoyable sensations by linking what makes you feel good, with a desire to do it again. This is why the patterns of pleasure repeat themselves in our lives. If we get pleasure from eating fast food, every time we pass a fast food restaurant, that pleasure centre gets activated. The trigger creates the burst of pleasure and makes us want that thing that has brought pleasure before. The same applies to shopping, alcohol and drugs. If we can watch that process in slow motion, using our intelligence, then it does not act automatically, and we can retain control of our behavior.
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

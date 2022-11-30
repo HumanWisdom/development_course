@@ -1,0 +1,32 @@
+<!-- footer  -->
+<div  *ngIf="!shared"  class="sidebar-footer hidden-small" [ngClass]="bg">
+  <div class="row lh5rem center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex p0">      
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">
+        <a (click)="previous()">
+          <button type="button" class="btn w100 mb0 btn_prev">Previous</button>          
+        </a>        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6 p0">
+        <a (click)="next()">
+          <button type="button" class="btn btn-default w100 mb0 btn_next">Next</button>
+        </a>
+      </div>    
+      <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4">        
+      </div>  
+    </div>
+  </div>
+</div>
+<!-- /footer -->
+
+<!-- footer  -->
+<div *ngIf="shared" class="sidebar-footer hidden-small" [ngClass]="bg">
+  <div class="row lh5rem">
+    <div class="col-md-12 col-sm-12 col-xs-12 tcenter center_flex">
+      <a (click)="routeDashboard()" class="width_inherit">
+        <button type="button" class="btn btn-default iw100 mb0 btn_next">Explore the HumanWisdom Program</button>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /footer -->

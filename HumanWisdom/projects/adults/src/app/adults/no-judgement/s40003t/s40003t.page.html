@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Why do we judge ourselves and others so quickly as good or bad or right or wrong? What is going in our thinking that does that?
+          </p>
+          <p>
+            Perhaps our minds automatically compares who we are and what we observe with our ideal of who we would like to be, and this makes us critical of ourselves and stops enquiry. The idea of who we should be comes from our unconscious conditioning influences, but we don't see that.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

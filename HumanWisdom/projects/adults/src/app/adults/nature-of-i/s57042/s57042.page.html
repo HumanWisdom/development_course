@@ -1,0 +1,35 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Why bother exploring the ‘I’ and trying to change?
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. So we can live in peace with ourselves, each other and the earth
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. So we we can live with wisdom, and be happy
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. So we can be physically and mentally healthy
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. So we become less attached to our opinions and beliefs
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. So we can understand ourselves and others better
+    </h3>
+  </form>          
+</app-oneline-text>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

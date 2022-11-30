@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            This is a simple question that can open the door to enquiry. If we discover the root cause of the problem ourselves, we can be transformed. If someone says, don’t be so critical of yourself, we don’t know how to do that, And can get frustrated. If we accept the problem lies in our thinking process, we can go deeper to find out what is going on. Begin writing your responses in your journal 
+                    </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+            
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Some people seem to take criticism in their stride and others feel more hurt, and take in more personally. Why is that? Again, this pyramid which explores the different layers of our thinking may help us understand why. If you are my boss and criticize my work I may react with anger and blame you for my anger. If the ‘I’ that feels the hurt has already been hurt before, from previous criticism, or traumas of childhood, or just a bad day, and is already disturbed, then any additional hurt results in a magnified reaction. It's similar to putting pressure on an area of already bruised skin.I blame my boss for my reaction and feel it's entirely justified, because I am are not aware of what is happening in the deeper layers of my thinking. This understanding allows me to respond with intelligence        
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+            
+         
+
+
