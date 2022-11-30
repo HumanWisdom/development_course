@@ -8,12 +8,12 @@
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs login_signup_tab flex_ai">
-                <li class="active">
+                <li id="SignupTab" class="active">
                   <a data-toggle="tab" (click)="getsignuptab()" href="#tab1">
                     Sign up
                   </a>
                 </li>
-                <li #enabletab onclick="$('#tab2').trigger('click')">
+                <li id="LoginTab" #enabletab onclick="$('#tab2').trigger('click')">
                   <a data-toggle="tab" href="#tab2">
                     Login
                   </a>
@@ -196,14 +196,14 @@
                               Already a user?
                             </span>
 
-                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline">
+                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline"  onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')" data-toggle="tab" href="#tab2" >
                               Login here 
                             </a>
                           </span>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" routerLink="/adults/adult-dashboard">
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" (click)="routedashboard()" >
                             Continue as Guest
                           </a>
                         </div>
@@ -319,7 +319,7 @@
                       </div>
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline" routerLink="/adults/adult-dashboard">
+                        <a class="fw_500 fs_14px lh_140p fc_ffffff underline" (click)="routedashboard()">
                           Continue as Guest
                         </a>
                       </div>
