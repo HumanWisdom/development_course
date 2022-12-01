@@ -22,18 +22,21 @@ export class S21068Page implements OnInit {
     {
       name: 'Emotional Needs',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/26.png',
-      link: '/emotional-needs'
+      link: '/emotional-needs',
+      id: 18
     },
     {
       name: 'Self Image',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/23.png',
-      link: '/self-image'
+      link: '/self-image',
+      id: 25
  
     },
     {
       name: 'The Nature of the ‘I’',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/28.png',
-      link: '/nature-of-i'
+      link: '/nature-of-i',
+      id: 57
   
     },
   ]
