@@ -24,6 +24,7 @@
                 "input": "projects/adults/src/assets",
                 "output": "assets"
               },
+              "projects/adults/src/web.config",
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -283,7 +284,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/teenager",
+            "outputPath": "teenager",
             "index": "projects/teenager/src/index.html",
             "main": "projects/teenager/src/main.ts",
             "polyfills": "projects/teenager/src/polyfills.ts",
@@ -291,7 +292,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/teenager/src/favicon.ico",
-              "projects/teenager/src/assets"
+              "projects/teenager/src/assets",
+              "projects/teenager/src/web.config"
             ],
             "styles": [
               "projects/teenager/src/styles.scss"
