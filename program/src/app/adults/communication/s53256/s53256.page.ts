@@ -23,18 +23,21 @@ export class S53256Page  implements OnInit {
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
-      link: '/conditioning'
+      link: '/conditioning',
+      id: 15
  
     },
     {
       name: 'Reactive mind',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/22.png',
-      link: '/reactive-mind'
+      link: '/reactive-mind',
+      id: 54
     },
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
-      link: '/relationships'
+      link: '/relationships',
+      id: 47
     },
   ]
 
