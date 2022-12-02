@@ -56,9 +56,7 @@ export class WisdomShortsIndexPage implements OnInit {
   }
 
   wisdoshortsevent(val, video, title) {
-    localStorage.setItem('wisdomvideo', video);
     localStorage.setItem('wisdomvideotitle', title);
-    localStorage.setItem('wisdomvideoid', parseInt(val['RowID']) <= 9 ? '0' + val['RowID'] : val['RowID']);
-    this.router.navigate(['/wisdom-shorts/wisdom-shorts-v'])
+    this.router.navigate([video])
   }
 }
