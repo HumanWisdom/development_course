@@ -65,7 +65,7 @@
     </div>
 
     <!-- audio row -->
-    <a *ngFor="let data of audiomeditation; let i=index">
+    <a *ngFor="let data of audiomeditation; let i=index" (click)="audioevent(data)">
       <div class="row crow box bg_dark_blue p0">
         <div class="col-md-2 col-sm-2 col-xs-2 p0 landing_tile">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg" alt=""
