@@ -57,7 +57,7 @@
                 "inject": true
               },
               {
-                "input": "projects/adults/src/styles.css",
+                "input": "projects/assets/styles/styles.css",
                 "inject": true
               },
               {
@@ -296,7 +296,11 @@
               "projects/teenager/src/web.config"
             ],
             "styles": [
-              "projects/teenager/src/styles.scss"
+              "projects/teenager/src/styles.scss",
+              {
+                "input": "projects/assets/styles/styles.css",
+                "inject": true
+              }
             ],
             "scripts": []
           },
