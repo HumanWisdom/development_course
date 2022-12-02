@@ -22,17 +22,20 @@ export class S57074Page implements OnInit {
     {
       name: 'Identity',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/25.png',
-      link: '/identity'
+      link: '/identity',
+      id: 21
     },
     {
       name: 'Self Interest',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/24.png',
-      link: '/self-interest'
+      link: '/self-interest',
+      id: 55
     },
     {
       name: 'Self Image',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/23.png',
-      link: '/self-image'
+      link: '/self-image',
+      id: 25
     },
   ]
 

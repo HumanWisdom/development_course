@@ -22,18 +22,21 @@ export class S49103Page implements OnInit {
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
-      link: '/conditioning'
+      link: '/conditioning',
+      id: 15
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
  
     },
     {
       name: 'Identity',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/25.png',
-      link: '/identity'
+      link: '/identity',
+      id: 21
     },
   ]
 

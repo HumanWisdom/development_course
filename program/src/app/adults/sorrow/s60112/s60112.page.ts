@@ -22,17 +22,20 @@ export class S60112Page implements OnInit {
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
     },
     {
       name: 'Identity',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/25.png',
-      link: '/identity'
+      link: '/identity',
+      id: 21
     },
     {
       name: 'Love',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/36.png',
-      link: '/love'
+      link: '/love',
+      id: 18
     },
   ]
 
