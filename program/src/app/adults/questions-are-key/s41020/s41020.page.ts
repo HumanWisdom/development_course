@@ -22,19 +22,22 @@ export class S41020Page implements OnInit {
     {
       name: 'Key Ideas',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/04.png',
-      link: '/key-ideas'
+      link: '/key-ideas',
+      id: 34
   
     },
     {
       name: 'The Nature of the ‘I’',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/28.png',
-      link: '/nature-of-i'
+      link: '/nature-of-i',
+      id: 57
  
     },
     {
       name: 'No Judgement',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/16.png',
-      link: '/no-judgement'
+      link: '/no-judgement',
+      id: 40
   
     },
   ]
