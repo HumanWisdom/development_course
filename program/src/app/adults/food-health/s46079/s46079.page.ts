@@ -22,17 +22,20 @@ export class S46079Page implements OnInit {
     {
       name: 'Pleasure',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png',
-      link: '/pleasure'
+      link: '/pleasure',
+      id: 20
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
     },
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
-      link: '/conditioning'
+      link: '/conditioning',
+      id: 15
 
     },
   ]

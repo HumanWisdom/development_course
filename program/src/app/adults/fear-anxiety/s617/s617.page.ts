@@ -22,18 +22,21 @@ export class S617Page implements OnInit {
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
     },
     {
       name: 'Living with Peace',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/39.png',
-      link: '/living-with-peace'
+      link: '/living-with-peace',
+      id: 63
  
     },
     {
       name: 'Happiness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/41.png',
-      link: '/happiness'
+      link: '/happiness',
+      id: 23
   
     },
   ]
