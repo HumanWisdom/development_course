@@ -149,4 +149,10 @@ export class S51000Page implements OnInit, OnDestroy {
     this.router.navigate(['/adults/curated/audiopage', audioLink, title])
   }
 
+  audioevent(data) {
+    localStorage.setItem('meditationaudio', data['Text_URL']);
+    localStorage.setItem('meditationtitle', data['Title']);
+    localStorage.setItem('meditationaudioid', parseInt(data['RowID']) <= 9 ? '0' + data['RowID'] : data['RowID']);
+    this.router.navigate(['/adults/audio-meditation/audio'])
+  }
 }
