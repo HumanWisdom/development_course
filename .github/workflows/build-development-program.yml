@@ -1,29 +1,27 @@
-name: build-program-develop-CI
+name: build-program-development-staging
 on:
-  pull_request:
-    branches: [ "main" ]
   push:
-    branches: [main]
-    
+    branches:
+      - feature/*
+  
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Setup nodejs
-      uses: actions/setup-node@v2
-      with:
+  development:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
+   
+     - name: Setup nodejs
+       uses: actions/setup-node@v2
+       with:
         node-version: '14'
 
-    - name: Cache node modules
-      id: cache-nodemodules
-      uses: actions/cache@v2
-      env:
+     - name: Cache node modules
+       id: cache-nodemodules
+       uses: actions/cache@v2
+       env:
         cache-name: cache-node-modules
-      with:
+       with:
         path: program/node_modules
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
@@ -31,20 +29,17 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
         
-    - name: Install global dependencies
-      run: |
+     - name: Install global dependencies
+       run: |
         npm install -g @ionic/cli
         npm install -g @angular/cli
-
-    - name: Install project dependencies
-      run: |
+     - name: Install project dependencies
+       run: |
         cd program
         npm install --force
-
-    - name: Build the project
-      run: |
+     - name: Build the project
+       run: |
         cd program
+        ionic init
         export NODE_OPTIONS=--max_old_space_size=8096
         ionic build --configuration=staging -- --base-href /course/
-
-          

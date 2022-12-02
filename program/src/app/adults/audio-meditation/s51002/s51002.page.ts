@@ -1,66 +1,55 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'HumanWisdom-wisdom-shorts-s08',
-  templateUrl: './wisdom-shorts-s08.page.html',
-  styleUrls: ['./wisdom-shorts-s08.page.scss'],
+  selector: 'app-s51002',
+  templateUrl: './s51002.page.html',
+  styleUrls: ['./s51002.page.scss'],
 })
-export class WisdomShortsS08Page implements OnInit {
+export class S51002Page implements OnInit {
 
-  bg = "red_pink_w8"
-  mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + localStorage.getItem("wisdomvideo")
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/wisdom_shorts/wisdom_shorts_08.jpg"
+  bg_tn = "bg_dark_blue"
+  bg_cft = "bg_dark_blue"
+  bg = "dark_blue_w1"
+  title = localStorage.getItem("meditationtitle")
+  mediaAudio = localStorage.getItem("meditationaudio")
+  audioLink = this.mediaAudio
 
-  title = "Questions"
-  toc = "/wisdom-shorts"
+  transcriptPage = ""
+  toc = "guided-meditation/s51000"
+  bookmark = 0
+  path = this.router.url
+  avDuration: any
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  path = this.router.url
-
-  screenType = localStorage.getItem("video")
+  screenType = localStorage.getItem("audio")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = "s08"
+  screenNumber = 51002
   startTime: any
   endTime: any
   totalTime: any
-  bookmark = 0
-  avDuration: any
+
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
-  constructor(
-    private router: Router,
+  constructor(private router: Router,
     private service: AdultsService,
     private location: Location
   ) { }
 
   ngOnInit() {
-    //localStorage.removeItem("bookmarkList")
-    this.createScreen()
-
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-    }
-    this.startTime = Date.now();
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmarks08")) == 0)
+    this.startTime = Date.now();
+    this.createScreen()
+    if (JSON.parse(sessionStorage.getItem("bookmark51002")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmarks08")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark51002")) == 1)
       this.bookmark = 1
-  }
 
-  receiveBookmark(e) {
-    console.log(e)
-    if (e == true)
-      this.bookmark = 1
-    else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmarks08", JSON.stringify(this.bookmark))
   }
 
   createScreen() {
@@ -72,16 +61,30 @@ export class WisdomShortsS08Page implements OnInit {
     }).subscribe(res => {
 
     })
+
+
+  }
+
+  receiveBookmark(e) {
+    console.log(e)
+    if (e == true)
+      this.bookmark = 1
+    else
+      this.bookmark = 0
+    sessionStorage.setItem("bookmark51002", JSON.stringify(this.bookmark))
   }
 
   receiveAvDuration(e) {
+    console.log(e)
     this.avDuration = e
+
   }
 
   submitProgress() {
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    this.router.navigate(['/adults/guided-meditation/s51003'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -95,10 +98,20 @@ export class WisdomShortsS08Page implements OnInit {
       this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
       localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
     })
-    this.router.navigate(['/adults/wisdom-shorts/wisdom-shorts-s09'])
-  }
 
+
+
+
+  }
   prev() {
-    this.router.navigate(['/adults/wisdom-shorts'])
+    this.location.back()
+
+
+  }
+  ngOnDestroy() {
+    localStorage.setItem("totalTime51002", this.totalTime)
+    localStorage.setItem("avDuration51002", this.avDuration)
+
   }
 }
+

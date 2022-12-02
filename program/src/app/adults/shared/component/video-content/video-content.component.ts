@@ -15,6 +15,7 @@ export class VideoContentComponent implements OnInit {
   @Input() poster: any;
   @Input() videoclass = '';
   @Input() pageaction = '';
+  @Input() wisdomshortsv = false;
 
   @Output() sendAvDuration = new EventEmitter<string>();
   url: SafeResourceUrl;
@@ -49,13 +50,17 @@ export class VideoContentComponent implements OnInit {
     // var lastSlash = str.lastIndexOf("/");
     // str = str.substring(lastSlash + 2);
     //str = str.replace(/\D/g,'');
-    if (str.includes('next') || str.includes('prev')) {
-      let lastSlash: any = str.split("/");
-      let getsplit = lastSlash[lastSlash.length - 2]
-      this.scrId = getsplit.substring(1);
+    if (!this.wisdomshortsv) {
+      if (str.includes('next') || str.includes('prev')) {
+        let lastSlash: any = str.split("/");
+        let getsplit = lastSlash[lastSlash.length - 2]
+        this.scrId = getsplit.substring(1);
+      } else {
+        var lastSlash = str.lastIndexOf("/");
+        this.scrId = str.substring(lastSlash + 1);
+      }
     } else {
-      var lastSlash = str.lastIndexOf("/");
-      this.scrId = str.substring(lastSlash + 2);
+      this.scrId = localStorage.getItem("wisdomvideoid");
     }
 
 

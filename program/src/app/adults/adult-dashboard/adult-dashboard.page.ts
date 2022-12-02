@@ -100,6 +100,7 @@ export class AdultDashboardPage implements OnInit {
   public friendemail = ''
   public friendname = ''
   public name = ''
+  public streak = ''
   public sorrowandlossP
   public isloggedIn = false
   public x = []
@@ -321,6 +322,7 @@ export class AdultDashboardPage implements OnInit {
   ngOnInit() {
     this.getuserDetail();
     setTimeout(() => {
+      this.getUserPreference()
       this.getUsershorts()
       this.getUserstories()
     }, 1000)
@@ -1067,6 +1069,8 @@ export class AdultDashboardPage implements OnInit {
           } else {
             this.name = res.Name
           }
+          this.streak = res.Streak
+          console.log(this.streak)
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1145,6 +1149,8 @@ export class AdultDashboardPage implements OnInit {
     } else {
       this.name = res.Name
     }
+    this.streak = res.Streak
+    console.log(this.streak)
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1236,6 +1242,8 @@ export class AdultDashboardPage implements OnInit {
           } else {
             this.name = res.Name
           }
+          this.streak = res.Streak
+          console.log(this.streak)
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1323,6 +1331,8 @@ export class AdultDashboardPage implements OnInit {
           } else {
             this.name = this.loginResponse.Name
           }
+          this.streak = this.loginResponse.Streak
+          console.log(this.streak)
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
