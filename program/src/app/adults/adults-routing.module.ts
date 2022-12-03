@@ -396,6 +396,14 @@ const routes: Routes = [
     path: 'audio-meditation',
     loadChildren: () => import('./audio-meditation/audio-meditation.module').then(m => m.AudioMeditationModule)
   },
+  {
+    path: 'bullying',
+    loadChildren: () => import('./bullying/bullying.module').then(m => m.BullyingModule)
+  },
+  {
+    path: 'making-better-decisions',
+    loadChildren: () => import('./making-better-decisions/making-better-decisions.module').then(m => m.MakingBetterDecisionsModule)
+  },
 ];
 
 @NgModule({

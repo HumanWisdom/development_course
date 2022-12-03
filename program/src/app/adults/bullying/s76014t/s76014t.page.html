@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The long term impact of bullying can be considerable. It impacts learning and academic achievement. People who have been bullied when young are more likely to be obese when older. They are more prone to depression and a higher risk of suicidal thoughts and self-harm. They struggle to form intimate and enduring relationships and can become bullies in turn. There is a higher risk of alcohol or drug abuse, and health problems. They struggle in their jobs. Their feelings of low self esteem continue and they are more prone to getting angry.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
