@@ -50,7 +50,6 @@ export class VideoContentComponent implements OnInit {
     // var lastSlash = str.lastIndexOf("/");
     // str = str.substring(lastSlash + 2);
     //str = str.replace(/\D/g,'');
-    if (!this.wisdomshortsv) {
       if (str.includes('next') || str.includes('prev')) {
         let lastSlash: any = str.split("/");
         let getsplit = lastSlash[lastSlash.length - 2]
@@ -59,10 +58,8 @@ export class VideoContentComponent implements OnInit {
         var lastSlash = str.lastIndexOf("/");
         this.scrId = str.substring(lastSlash + 1);
       }
-    } else {
-      this.scrId = localStorage.getItem("wisdomvideoid");
-    }
-
+    
+      
 
     //call api to geta percent
     this.service.mediaPercent(this.scrId).subscribe(res => {
