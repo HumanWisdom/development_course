@@ -1,0 +1,12 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Talking ill of a person in a group chat sows the seeds for bullying because it shapes attitudes and normalises a negative opinion about a person. Eventually it impacts the person concerned directly, or indirectly.
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
