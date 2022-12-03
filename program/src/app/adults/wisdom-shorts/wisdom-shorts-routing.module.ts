@@ -9,10 +9,6 @@ const routes: Routes = [
   {
     path: 'widom-shorts-index',
     loadChildren: () => import('./wisdom-shorts-index/wisdom-shorts-index.module').then(m => m.WisdomShortsIndexPageModule),
-  },
-  {
-    path: 'wisdom-shorts-v',
-    loadChildren: () => import('./wisdom-shorts-s01/wisdom-shorts-s01.module').then(m => m.WisdomShortsS01PageModule)
   }
 ];
 
