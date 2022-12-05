@@ -22,19 +22,22 @@ export class S37018Page implements OnInit {
     {
       name: 'Awareness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
-      link: '/awareness'
+      link: '/awareness',
+      id: 39
     },
     {
       name: 'Questions are Key',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/17.png',
-      link: '/questions-are-key'
+      link: '/questions-are-key',
+      id: 41
  
     },
     {
       
       name: 'Insight',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/14.png',
-      link: '/insight'
+      link: '/insight',
+      id: 38
   
     },
   ]

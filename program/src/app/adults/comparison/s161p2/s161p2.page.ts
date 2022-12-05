@@ -22,18 +22,21 @@ export class S161p2Page implements OnInit {
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
     },
     {
       name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/38.png',
-      link: '/self-esteem'
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/39.png',
+      link: '/self-esteem',
+      id: 17
  
     },
     {
       name: 'Anger',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/33.png',
-      link: '/anger'
+      link: '/anger',
+      id: 14
   
     },
   ]

@@ -22,19 +22,22 @@ export class S59171Page implements OnInit {
   moduleList: any = [
     {
       name: 'Communication',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
-      link: '/communication'
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/43.png',
+      link: '/communication',
+      id: 53
     },
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
-      link: '/relationships'
+      link: '/relationships',
+      id: 47
  
     },
     {
       name: 'Self Interest',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/24.png',
-      link: '/self-interest'
+      link: '/self-interest',
+      id: 55
   
     },
   ]

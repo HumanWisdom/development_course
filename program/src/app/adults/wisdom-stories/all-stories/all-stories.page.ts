@@ -15,7 +15,9 @@ export class AllStoriesPage implements OnInit {
   readStories=[]
   searchedText:any
   sId:any
-
+  enable_view_more_less = false;
+  view_more_less="View More"
+  
   constructor(private router: Router,
     private service:AdultsService,
     private location:Location) { }
@@ -86,6 +88,20 @@ export class AllStoriesPage implements OnInit {
       let filterlist =this.searchstoryList.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
       this.storyList=filterlist.slice(0, 10)
       this.secondstoryList=filterlist.slice(10);
+  }
+
+  toggle_view_more_less()
+  {
+    if(this.view_more_less == "View More")
+    {
+      this.enable_view_more_less = true;
+      this.view_more_less = "View Less";
+    }
+    else
+    {
+      this.enable_view_more_less = false;
+      this.view_more_less = "View More";
+    }
   }
 
 }

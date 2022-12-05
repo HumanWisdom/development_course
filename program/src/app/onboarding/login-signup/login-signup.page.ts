@@ -822,4 +822,9 @@ export class LoginSignupPage implements OnInit {
       "_self"
     );
   }
+
+  
+  routedashboard() {
+      this.router.navigate(['/adults/adult-dashboard'])
+  }
 }
