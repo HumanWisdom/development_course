@@ -23,18 +23,21 @@ export class S73107Page implements OnInit {
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
     },
     {
       name: 'Work',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/54.png',
-      link: '/work'
+      link: '/work',
+      id: 58
  
     },
     {
       name: 'Pleasure',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png',
-      link: '/pleasure'
+      link: '/pleasure',
+      id: 20
   
     },
   ]
