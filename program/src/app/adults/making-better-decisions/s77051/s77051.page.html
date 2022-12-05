@@ -1,9 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77051</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      In the decisions you make, are you just following the crowd, or thinking for yourself?
+      Are you happy to stand alone for what you believe to be right?
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

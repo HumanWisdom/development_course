@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77080t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes we have an inner voice which is telling us one thing, but because that is contradicting what we have decided to do, we tend to not listen to it. 
+          </p>
 
-</ion-content>
+          <p>
+            It is worth giving your inner voice space to be heard and consider what it is saying.
+          </p>
+
+          <p>
+            If you are a doctor, your sixth sense can often tell you something is not right with a patient even though all the tests are negative. This is true in any field you have experience. 
+          </p>
+
+          <p>
+            Or in a romantic relationship, your inner voice can tell you that something is not right with a person, and the relationship is unsuitable for you, even though you find that person attractive.
+          </p>
+
+          <p>
+            Nurturing the sensitivity to be able to hear that inner voice, and then having the courage to consider what it is saying is an important skill to learn
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
