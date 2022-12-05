@@ -11,17 +11,20 @@ export class S72005p1Page implements OnInit {
     {
       name: 'Discovering Wisdom',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/01.png',
-      link: '/discovering-wisdom'
+      link: '/discovering-wisdom',
+      id: 27
     },
     {
       name: 'Benefits of Wisdom',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/02.png',
-      link: '/benefits-of-wisdom'
+      link: '/benefits-of-wisdom',
+      id: 22
     },
     {
       name: 'Key Ideas',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/04.png',
-      link: '/key-ideas'
+      link: '/key-ideas',
+      id: 34
     }
   ]
 
