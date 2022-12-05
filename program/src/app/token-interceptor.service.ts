@@ -27,7 +27,7 @@ export class TokenInterceptorService implements HttpInterceptor {
           localStorage.setItem('guest', 'T');
           localStorage.setItem('personalised', 'T');
           localStorage.setItem('acceptcookie', 'T');
-          this.router.navigate(['/adults/adult-dashboard'])
+          // this.router.navigate(['/adults/adult-dashboard'])
         }
         return throwError(err);
       }
