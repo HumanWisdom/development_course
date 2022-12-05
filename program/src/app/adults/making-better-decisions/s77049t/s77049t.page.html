@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77049t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our environment also shapes our thinking and our decisions.
+          </p>
 
-</ion-content>
+          <p>
+            If people around us are prejudiced towards a certain minority group, that becomes our thinking as well - and determines how we behave towards them.
+          </p>
+
+          <p>
+            Or if we are part of a group where everyone is drinking or smoking or taking drugs, or bullying others, that gradually becomes our norm too - and all along we think we are in control of our own actions.
+          </p>
+
+          <p>
+            Or if the boss and the rest of the group want to go drinking after work we decide to go along because we don’t want to be left out.
+          </p>
+
+          <p>
+            If everyone around us is chasing money and fame, we start doing that too - and think it is what we want for ourselves
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -38,7 +38,7 @@ export class S76093Page implements OnInit {
 
   constructor() {
     let cur = localStorage.getItem('curated');
-    if (cur && cur === 'bullying') {
+    if (cur && cur === 'leadership') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
       this.moduleLink = "/adults/leadership"
       this.moduleName = "Leadership"

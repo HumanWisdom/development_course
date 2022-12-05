@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77087t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We are usually so focused on solving the problem in front of us, and the one we are responsible for, we rarely pause and ask the second question - what problems could this decision create in the future? 
+          </p>
 
-</ion-content>
+          <p>
+            Large parts of the Amazon jungle were cut down to make way for cattle farms, not realising the impact that was going to have on global warming and biodiversity.
+          </p>
+
+          <p>
+            Or, electric cars may use less fossil fuels, but down the line no one has considered the problem of disposing of the car batteries, or the cost of them. Bitcoin has made transferring funds easier, but need an incredible amount of energy to produce, and the environmental impact is considerable.
+          </p>
+
+          <p>
+            In our personal lives too, a decision to eat a sweet dish after dinner on a regular basis may cause obesity and diabetes later, but it is difficult for most to find the resolve to decide against doing that. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77089t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes you know you need to do something but keep avoiding it because you can’t cope with the fallout from it - for example telling someone at work that they are not performing to expectations, or telling a friend or partner you have a problem with the relationship.
+          </p>
 
-</ion-content>
+          <p>
+            We can also avoid doing things that need doing because they are out of our comfort zone - it could be as simple as clearing the leaves from the garden in the fall, or more important decisions like filling in a tax return.
+          </p>
+
+          <p>
+            Procrastination is common, and you are not alone if you do so as well. A good first step is to acknowledge what it is you are putting off doing, and then realise you are going to have to do this sooner rather than later, and the sooner you do it, the better you will feel afterwards, and it won’t be hanging over your head.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

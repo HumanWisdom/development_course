@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77082t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are always other ways of looking at a situation - but our mind usually jumps to conclusions - for example, if you are called to see the boss in his office, our mind assumes there is a problem, when in fact there may not be.
+          </p>
 
-</ion-content>
+          <p>
+            Or at work if you are faced with a problem it is worth stepping back and exploring other, less obvious ways of looking at the situation. This could avoid so many medical errors - for example a patient may present with back pain and the doctor may forget to consider a diagnosis of cancer, and that could delay the diagnosis for the patient.
+          </p>
+
+          <p>
+            Or, if a child on a day trip is not reachable, rather than panic, it is possible the phone ran out of battery, and so on.
+          </p>
+
+          <p>
+            If is therefore worth asking - what assumptions am I making here, and can I re-examine them?
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
