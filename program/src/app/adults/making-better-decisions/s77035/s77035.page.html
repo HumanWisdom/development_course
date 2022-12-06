@@ -1,9 +1,54 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77035</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>              
+              <h5 class="txt1">
+                #9 Personal values that shape our decision making in life. How does this reflect in your life?
+              </h5>
 
-</ion-content>
+              <div class="clearfix"></div>
+
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>              
+
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                     7. Cooperation
+                    </h4>
+
+                    <h4 class="txt45 tleft">
+                      How flexible are you, and how well do you work with others? Are you willing to make an effort to look at things from other people’s point of view, and work towards a common goal, or are you more likely to dig your heels in and stick to your point of view?
+                    </h4>
+                  </div>
+                </div>
+              </section>
+
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <!-- /multistep wizard -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -27,10 +27,9 @@ export class S25041Page implements OnInit {
     },
     {
       name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/38.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/39.png',
       link: '/self-esteem',
       id: 17
- 
     },
     {
       name: 'The Nature of the ‘I’',

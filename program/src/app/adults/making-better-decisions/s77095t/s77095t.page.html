@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77095t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We often make decisions on incomplete information and that makes for bad decisions.
+            It is worth pausing to ask if you have all the facts to hand before deciding. 
+          </p>
 
-</ion-content>
+          <p>
+            For example, when buying a house have you considered what the neighbours are like, or when deciding whom to marry have you spent enough time getting to know the other person? 
+          </p>
+
+          <p>
+            We also make assumptions about people - for example in a doctors surgery when you see the same patient repeatedly it is easy to assume that it is the same problem they are presenting with each time - but that may not be the case.
+          </p>
+
+          <p>
+            Or, when you get upset with someone because they were supposed to call you and didn’t, it is worth finding out why beforehand - they may have met with an unforeseen problem 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

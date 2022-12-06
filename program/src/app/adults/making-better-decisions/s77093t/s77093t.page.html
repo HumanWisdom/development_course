@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77093t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Do you speak to others before you make big decisions ? It is often worth doing so, just to get different points of view you may not have considered before.
+          </p>
 
-</ion-content>
+          <p>
+            Someone with more experience than you will have and have fresh perspectives to offer or ask you questions you may not have considered.
+          </p>
+
+          <p>
+            It is especially important to seek out those who may be critical of your decision, and listen to them carefully. Our tendency is to avoid them.
+          </p>
+
+          <p>
+            In the end of course, it is your decision to make but consulting widely is a sign of maturity and strength, not weakness
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s77002</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="submitProgress()">  
+  <form>
+    <h4 class="mtb0px comparison">
+      Making better decisions
+    </h4>
+    <div class="clearfix"></div>
+ 
+    <h5 class="mtb0px session">
+      Session #1
+    </h5>
+    <div class="clearfix"></div>
+ 
+    <br>
+ 
+    <h1 class="session_title ">
+      Your decisions determine your destiny.
+      <br>
+      How can we make better decisions?
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-tap-start>
