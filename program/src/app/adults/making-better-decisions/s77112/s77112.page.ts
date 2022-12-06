@@ -11,28 +11,28 @@ import { AdultsService } from '../../adults.service';
 export class S77112Page implements OnInit {
   
   toc="making-better-decisions/s77001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
  
   bg=""
-  moduleLink="/adults/leadership"
-  moduleName="09. Leadership"
+  moduleLink="/adults/happiness"
+  moduleName=" Happiness"
   sectionName= "Living with Wisdom - II";
-  moduleId=59
+  moduleId=23
   moduleList: any = [
     {
-      name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
-      link: '/happiness'
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
+      link: '/conditioning'
+    },
+    {
+      name: 'Fear & Anxiety',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
+      link: '/fear-anxiety'
     },
     {
       name: 'Emotional Needs',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/26.png',
       link: '/emotional-needs'
-    },
-    {
-      name: 'Communication',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/43.png',
-      link: '/communication'
     },
   ]
 
