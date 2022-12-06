@@ -54,8 +54,8 @@ export class S76061Page implements OnInit {
     }
 
     this.questionA=this.qrList?.ListOfQueOpts
-    this.question=this.findQuestion(41).Question
-    this.optionList=this.findQuestion(41).optionList
+    this.question=this.findQuestion(304).Question
+    this.optionList=this.findQuestion(304).optionList
     console.log(this.optionList,this.question)
 
     if(this.saveUsername==false)
