@@ -2,8 +2,12 @@ import {
   HttpBackend, HttpClient
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import { UntypedFormBuilder } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 import { Observable } from "rxjs";
 import { environment } from 'src/environments/environment';
+import { OnboardingService } from "../onboarding/onboarding.service";
 
 @Injectable({
   providedIn: 'root'
@@ -48,8 +52,41 @@ export class AdultsService {
     }
   ]
 
+  mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
+  mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
 
-  constructor(private http: HttpClient, handler: HttpBackend) { }
+  video = 3;
+  audio = 4;
+
+  user: any;
+  userId: any;
+  idToken: any;
+  email: any;
+  password: any;
+  showAlert = false;
+  successPassword = JSON.parse(sessionStorage.getItem("successPassword"));
+  showSuccessPassword: any;
+  saveUsername = false;
+  urlEmail: any;
+  urlPassword: any;
+  urlKey: any;
+  loginResponse: any;
+  socialFirstName: any;
+  socialLastName: any;
+  socialEmail: any;
+  userName: any;
+  deferredPrompt: any;
+  showButton = true;
+  enableLogin = false;
+  scrId: any;
+  x = [];
+
+  constructor(private http: HttpClient, handler: HttpBackend, private fb: UntypedFormBuilder,
+    private router: Router,
+    private activate: ActivatedRoute,
+    private authService: SocialAuthService,
+    private aservice: AdultsService,
+    private service: OnboardingService) { }
 
   submitProgressText(data: any): Observable<any> {
     return this.http.post(this.path + '/UserProgress', data)
@@ -325,6 +362,182 @@ export class AdultsService {
 
   GetAudioMeditation(): Observable<any> {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
+  }
+
+  userSocialLogin(type) {
+    if (type === 'Facebook') {
+      this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+      this.authService.authState.subscribe((user) => {
+        this.user = user;
+        this.idToken = user.authToken;
+        this.socialFirstName = user.firstName;
+        this.socialLastName = user.lastName;
+        this.socialEmail = user.email;
+        if (user.email !== undefined) {
+          this.service
+            .verifyFb({
+              TokenID: this.idToken,
+              FName: this.socialFirstName,
+              LName: this.socialLastName,
+              Email: this.socialEmail,
+              VCode: "",
+              Pwd: "",
+            })
+            .subscribe((res) => {
+              this.storeuserlocaldata(res);
+            });
+        } else {
+          window.alert(
+            "Please ensure that you use an email based authentication with your Auth provider or try another method"
+          );
+        }
+      });
+    } else {
+      this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+      this.authService.authState.subscribe((user) => {
+        this.user = user;
+        this.idToken = user.idToken;
+        this.socialFirstName = user.firstName;
+        this.socialLastName = user.lastName;
+        this.socialEmail = user.email;
+
+        this.service
+          .verifyGoogle({
+            TokenID: this.idToken,
+            FName: this.socialFirstName,
+            LName: this.socialLastName,
+            Email: this.socialEmail,
+            VCode: "",
+            Pwd: "",
+          })
+          .subscribe((res) => {
+            this.storeuserlocaldata(res);
+          },
+            (error) => console.log(error));
+      });
+    }
+  }
+
+  storeuserlocaldata(res) {
+    if (res) {
+      this.loginResponse = res;
+      localStorage.setItem("socialLogin", "T");
+      localStorage.setItem(
+        "mediaAudio",
+        JSON.stringify(this.mediaAudio)
+      );
+      localStorage.setItem(
+        "mediaVideo",
+        JSON.stringify(this.mediaVideo)
+      );
+      localStorage.setItem("video", JSON.stringify(this.video));
+      localStorage.setItem("audio", JSON.stringify(this.audio));
+      localStorage.setItem("remember", "T");
+      localStorage.setItem("guest", "F");
+      localStorage.setItem("btnclick", "F");
+      localStorage.setItem("FnName", this.socialFirstName);
+      localStorage.setItem("LName", this.socialLastName);
+      localStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      sessionStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
+      localStorage.setItem(
+        "token",
+        JSON.stringify(this.loginResponse.access_token)
+      );
+      localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+      localStorage.setItem("userId", JSON.stringify(this.userId));
+      localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+      localStorage.setItem("email", this.socialEmail);
+      localStorage.setItem("pswd", "");
+      localStorage.setItem("name", this.loginResponse.Name);
+      localStorage.setItem("first", "T");
+      if (parseInt(this.loginResponse.UserId) == 0) {
+        this.showAlert = true;
+        window.alert(
+          "You have enetered wrong credentials. Please try again."
+        );
+        this.email = "";
+        this.password = "";
+      } else {
+        this.showAlert = false;
+        this.userId = this.loginResponse.UserId;
+        this.userName = this.loginResponse.Name;
+        localStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        sessionStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        localStorage.setItem("userId", JSON.stringify(this.userId));
+        localStorage.setItem(
+          "token",
+          JSON.stringify(this.loginResponse.access_token)
+        );
+        if (this.saveUsername == true) {
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          localStorage.setItem(
+            "userEmail",
+            JSON.stringify(this.socialEmail)
+          );
+          localStorage.setItem(
+            "userName",
+            JSON.stringify(this.userName)
+          );
+        } else {
+          sessionStorage.setItem("userId", JSON.stringify(this.userId));
+          sessionStorage.setItem(
+            "userEmail",
+            JSON.stringify(this.socialEmail)
+          );
+          sessionStorage.setItem(
+            "userName",
+            JSON.stringify(this.userName)
+          );
+        }
+        let pers = localStorage.getItem("personalised");
+        let persub = localStorage.getItem("personalised subscription");
+        let acceptCookie = localStorage.getItem("activeCode");
+        let subscribePage = localStorage.getItem("subscribepage");
+        let option = localStorage.getItem("introoption");
+        if (option === "T") {
+          localStorage.setItem("introoption", "F");
+          localStorage.setItem("isloggedin", "T");
+          this.router.navigate(["/intro/personalised-for-you"]);
+        } else {
+          if (acceptCookie === "T" || subscribePage === "T") {
+            localStorage.setItem("isloggedin", "T");
+            if (acceptCookie === "T") {
+              localStorage.setItem("activeCode", "F");
+            }
+            if (subscribePage === "T") {
+              localStorage.setItem("subscribepage", "F");
+            }
+            if (this.loginResponse.Subscriber === '0') {
+              this.router.navigate(["/onboarding/add-to-cart"]);
+            } else {
+              this.router.navigate(["/onboarding/viewcart"])
+            }
+          } else {
+            localStorage.setItem("isloggedin", "T");
+            if (pers && persub && pers === "T") {
+              this.router.navigate(["/onboarding/viewcart"], {
+                state: { quan: "1", plan: persub },
+              });
+            } else {
+              this.router.navigate(["/adults/adult-dashboard"]);
+            }
+          }
+        }
+      }
+    }
+
   }
 
 }
