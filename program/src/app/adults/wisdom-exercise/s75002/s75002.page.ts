@@ -14,13 +14,14 @@ var moveleft = false;
 export class S75002Page implements OnInit, AfterViewInit {
   dayclass = "intro";
   isShowTranscript = false;
-  isShowAudio = false;
+  isShowAudio = true;
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
   enableday3 = false;
   enableday4 = false;
   enableday5 = false;
+  isShowButton=false;
   totalTime: any;
   screenType: string = "8";
   screenNumber: string = "75002p0";
@@ -306,8 +307,11 @@ export class S75002Page implements OnInit, AfterViewInit {
             ?.classList.value;
       }
       if (data == "audio-test") {
+        this.isShowButton=true;
         this.isShowTranscript = true;
+        this.isShowAudio=false;
       } else {
+        this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
@@ -342,9 +346,12 @@ export class S75002Page implements OnInit, AfterViewInit {
       }
       if (data == "audio-test") {
         this.isShowTranscript = true;
+        this.isShowAudio=false;
+      this.isShowButton=true;
       } else {
         this.isShowTranscript = false;
         this.isShowAudio = false;
+        this.isShowButton=false;
       }
     }, 700);
   }
