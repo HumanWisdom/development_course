@@ -137,6 +137,8 @@ export class AdultDashboardPage implements OnInit {
   public exerciseNo: string = '';
   public Title:string='';
   public day: string = '';
+  public bullyingP: any
+  public making_better_decisionsP: any
   //static progress mapping
   public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
@@ -1536,6 +1538,8 @@ export class AdultDashboardPage implements OnInit {
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
+        this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
+        this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
       })
 
   }
@@ -3076,6 +3080,72 @@ export class AdultDashboardPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/dealing-with-death/s64001`])
+
+        })
+  }
+
+  routeBullying(cont: any = 1) {
+    var bullyingResume
+    localStorage.setItem("moduleId", JSON.stringify(76))
+    this.service.clickModule(76, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        bullyingResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("bullyingResume", bullyingResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/bullying/${bullyingResume}`])
+          }
+          else
+            this.router.navigate([`/adults/bullying/s76001`])
+
+        })
+  }
+
+  routeMakingBetterDecisions(cont: any = 1) {
+    var making_better_decisionsResume
+    localStorage.setItem("moduleId", JSON.stringify(77))
+    this.service.clickModule(77, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        making_better_decisionsResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("making_better_decisionsResume", making_better_decisionsResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/making-better-decisions/${making_better_decisionsResume}`])
+          }
+          else
+            this.router.navigate([`/adults/making-better-decisions/s77001`])
 
         })
   }
