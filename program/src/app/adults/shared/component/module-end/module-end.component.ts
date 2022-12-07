@@ -237,6 +237,13 @@ else
         case "74":{this.routeHowCanWisdomHelp(1)
           break
           }
+        
+            case "76":{this.routeBullying(1)
+              break
+              }
+              case "77":{this.routeMakingBetterDecision(1)
+                break
+                }
     }
   }
 
@@ -2438,6 +2445,85 @@ else
   
   }
 
+  routeMakingBetterDecision(cont: any = 1){
+    var lDec
+    localStorage.setItem("moduleId",JSON.stringify(77))
+    this.service.clickModule(77,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        lDec="s"+res.lastVisitedScreen
+        
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("lDec",lDec)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/leadership/${lR}`])
+      // }
+      // else
+        this.router.navigate([`adults/making-better-decisions/s77001`])
+      
+     
+  
+    })
+  
+  }
+
+  routeBullying(cont: any = 1){
+    var lB
+    localStorage.setItem("moduleId",JSON.stringify(76))
+    this.service.clickModule(76,this.userId)
+    .subscribe(res=>
+      {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList=res
+        lB="s"+res.lastVisitedScreen
+        
+        // continue where you left
+        if(res.lastVisitedScreen ==='') 
+        {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else 
+        {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("lB",lB)
+        localStorage.setItem("qrList",JSON.stringify(this.qrList))
+    },
+    error=>{
+      console.log(error)
+    },
+    ()=>{
+      // if(cont=="1")
+      // {        
+      //   this.router.navigate([`/adults/leadership/${lR}`])
+      // }
+      // else
+        this.router.navigate([`/adults/bullying/s76001`])
+      
+     
+  
+    })
+  
+  }
   routeLeadership(cont: any = 1){
     var lR
     localStorage.setItem("moduleId",JSON.stringify(59))
