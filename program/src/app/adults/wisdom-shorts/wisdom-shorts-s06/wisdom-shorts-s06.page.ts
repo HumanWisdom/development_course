@@ -12,7 +12,7 @@ export class WisdomShortsS06Page implements OnInit {
 
   bg="red_pink_w6"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/wisdom_shorts/videos/1.6.mp4'
+  videoLink=this.mediaVideo+localStorage.getItem("wisdomvideo")
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/wisdom_shorts/wisdom_shorts_06.jpg"
 
   title="Overcoming anxiety"

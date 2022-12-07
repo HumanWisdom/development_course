@@ -180,7 +180,7 @@
               <div *ngIf="confirmed">                
                 <div class="row pb8px pt30px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/body/post.png" alt="" class="">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post.svg" alt="" class="">
                   </div>
                 </div>              
                 
@@ -189,8 +189,8 @@
                 </h5>  
 
                 <div class="row center_flex">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                    <button type="button" class="btn btn-default w100 mb0 jbtn1">See what others have to say</button>
+                  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0">
+                    <button type="button" class="btn btn-default w100 mb0 jbtn1" (click)="this.router.navigate(['/forum'])">See what others have to say</button>
                   </div>
                 </div>
               </div>        
@@ -216,6 +216,8 @@
                 </div>
               </div>
               <!-- /modal -->
+
+              <div class="pagebreak"></div>
 
             </form>
           </div>

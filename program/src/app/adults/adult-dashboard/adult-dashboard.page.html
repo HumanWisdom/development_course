@@ -40,18 +40,21 @@
 
               <div class="row mt30px prelative">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 plr20px">
-                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
-                     (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" 
-                     (focusout)="onFocusOutEvent ()"
-                    (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
+                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list"
+                    [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
+                    (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)"
+                    [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                  <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext_01" aria-hidden="true"></span>
+                  <span *ngIf=" searchinp!=''" (click)="clearSearch()"
+                    class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext_01"
+                    aria-hidden="true"></span>
                 </div>
 
                 <div class="row adsearch">
                   <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
                     <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
-                      <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
+                      <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                        class="is-search list-group-item">{{item.ModuleName}}</li>
                     </ul>
                     <!-- <ul class="list-group autocomplete-list adsearch_ul">
                       <li  class="is-search list-group-item">benefits of wisdom</li>
@@ -188,13 +191,34 @@
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
                         <h4 class="panel-title dpaneltitle">
-                          <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#adp" aria-expanded="true" >
-                            <div class="row">
+                          <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse"
+                            data-parent="#accordion" href="#adp" aria-expanded="true">
+                            <!-- <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="">
                                   <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
                                     My daily practice
                                   </h2>
+                                </div>
+                              </div>
+                            </div> -->
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
+                                    My daily practice
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                  <a>
+                                    <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tright">
+                                      Streak:
+                                      <span class="fw_700">
+                                        {{streak}}
+                                      </span>
+                                      days
+                                    </h2>
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -208,7 +232,8 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a (click)="DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise')">
+                                <a
+                                  (click)="DashboardLogevent('/adults/daily-practise', '0', 'click_breathing_exercise')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_01.svg"
                                     alt="Wisdom Stories" class="crimg">
@@ -219,7 +244,8 @@
                               </div>
 
                               <div class="col-md-2 col-sm-2 col-xs-2 w20p">
-                                <a (click)="DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day')">
+                                <a
+                                  (click)="DashboardLogevent('/adults/daily-practise', '1', 'click_question_of_the_day')">
                                   <img
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_01.svg"
                                     alt="Journal" class="crimg">
@@ -282,7 +308,8 @@
                     <div class="panel panel-default dpanel dpanel_01">
                       <div class="panel-heading p0">
                         <h4 class="panel-title dpaneltitle">
-                          <a (click)="DashboardLogevent('', '', 'click_personalised')" data-toggle="collapse" data-parent="#accordion" href="#ca_pfy" aria-expanded="true">
+                          <a (click)="DashboardLogevent('', '', 'click_personalised')" data-toggle="collapse"
+                            data-parent="#accordion" href="#ca_pfy" aria-expanded="true">
 
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -292,7 +319,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a (click)="DashboardLogevent('/adults/search', '', 'click_personalised')" >
+                                  <a (click)="DashboardLogevent('/adults/search', '', 'click_personalised')">
                                     <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
                                       View all
                                     </h2>
@@ -300,6 +327,7 @@
                                 </div>
                               </div>
                             </div>
+
                           </a>
                         </h4>
                       </div>
@@ -338,12 +366,22 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv">
 
                   <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a  (click)="DashboardLogevent('/adults/wisdom-stories', '', 'click_life_stories')"  >
+                    <a (click)="DashboardLogevent('/adults/wisdom-stories', '', 'click_life_stories')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/life_stories.svg"
                           alt="" class="prelative">
                         <span class="ml10px">
                           Life Stories
+                        </span>
+                      </button>
+                    </a>
+
+                    <a (click)="DashboardLogevent('/adults/audio-meditation', '', 'click_audio_meditation')">
+                      <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_meditation.svg"
+                          alt="" class="prelative">
+                        <span class="ml10px">
+                          Audio Meditations
                         </span>
                       </button>
                     </a>
@@ -359,7 +397,7 @@
                       </button>
                     </a>
 
-                    <a (click)="DashboardLogevent('/forum', '', 'click_forum')" >
+                    <a (click)="DashboardLogevent('/forum', '', 'click_forum')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/forum.svg" alt=""
                           class="prelative">
@@ -369,7 +407,7 @@
                       </button>
                     </a>
 
-                    <a (click)="DashboardLogevent('/adults/blog', '', 'click_blog')" >
+                    <a (click)="DashboardLogevent('/adults/blog', '', 'click_blog')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/blog.svg" alt=""
                           class="prelative">
@@ -378,20 +416,10 @@
                         </span>
                       </button>
                     </a>
-
-                    <a (click)="DashboardLogevent('/adults/events', '', 'click_events')" >
-                      <button type="submit" class="btn btn-default btn_mdpd_tray">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/events.svg" alt=""
-                          class="prelative">
-                        <span class="ml10px">
-                          Events
-                        </span>
-                      </button>
-                    </a>
                   </div>
 
                   <div class="col-md-12 col-sm-12 col-xs-12 traydiv">
-                    <a (click)="DashboardLogevent('/adults/wisdom-shorts', '', 'click_wisdom_shorts')" >
+                    <a (click)="DashboardLogevent('/adults/wisdom-shorts', '', 'click_wisdom_shorts')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_shorts.svg"
                           alt="" class="prelative">
@@ -421,12 +449,22 @@
                       </button>
                     </a>
 
-                    <a (click)="DashboardLogevent('/adults/testimonials', '', 'click_testimonials')" >
+                    <a (click)="DashboardLogevent('/adults/testimonials', '', 'click_testimonials')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/testimonials.svg"
                           alt="" class="prelative">
                         <span class="ml10px">
                           Testimonials
+                        </span>
+                      </button>
+                    </a>
+
+                    <a (click)="DashboardLogevent('/adults/events', '', 'click_events')">
+                      <button type="submit" class="btn btn-default btn_mdpd_tray">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/events.svg" alt=""
+                          class="prelative">
+                        <span class="ml10px">
+                          Events
                         </span>
                       </button>
                     </a>
@@ -546,7 +584,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                <a (click)="RouteToWisdomExercise(null)" >
+                                  <a (click)="RouteToWisdomExercise(null)">
                                     <h2 class="fw_500 fs_15px lh_18px fc_5097a4 underline mtb0px tright">
                                       View all
                                     </h2>
@@ -571,24 +609,26 @@
 
                           <div class="row cmr-10px ">
                             <div class="col-md-12 col-sm-12 col-xs-12 ghn wediv">
-                             <ng-container *ngFor="let item of currentList">
-                              <div class="col-md-3 col-sm-3 col-xs-3" >
-                                <a  *ngIf="item.day =='0';else notIntro">
-                                  <button type="button" (click)="RouteToWisdomExercise(item)" class="btn m0px btn_wec"  [ngClass]="getWisdomClass(item)">
-                                    Intro
-                                  </button>
-                                </a>
-                              </div>
-                            <ng-template #notIntro>
-                              <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a >
-                                  <button type="button" class="btn m0px btn_wec"(click)="RouteToWisdomExercise(item)"  [ngClass]="getWisdomClass(item)">
-                                   Day {{item.day}}
-                                  </button>
-                                </a>
-                              </div>
-                            </ng-template>
-                          </ng-container>
+                              <ng-container *ngFor="let item of currentList">
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                  <a *ngIf="item.day =='0';else notIntro">
+                                    <button type="button" (click)="RouteToWisdomExercise(item)" class="btn m0px btn_wec"
+                                      [ngClass]="getWisdomClass(item)">
+                                      Intro
+                                    </button>
+                                  </a>
+                                </div>
+                                <ng-template #notIntro>
+                                  <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <a>
+                                      <button type="button" class="btn m0px btn_wec"
+                                        (click)="RouteToWisdomExercise(item)" [ngClass]="getWisdomClass(item)">
+                                        Day {{item.day}}
+                                      </button>
+                                    </a>
+                                  </div>
+                                </ng-template>
+                              </ng-container>
                             </div>
                           </div>
 
@@ -633,7 +673,7 @@
                               <div *ngFor="let r of resume;; let i = index"
                                 class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeResume(r)">
-                                  <img [src]="r.imgPath" alt="r.Module" class="ctimg">
+                                  <img [src]="r.imgPath" alt="r.Module" class="ctimg br5px">
                                   <!--<h4 class="tcenter txt30 atsrno">
                                   {{i+1}}
                                 </h4>-->
@@ -1083,6 +1123,21 @@
                               </div>
 
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeBullying(0)">
+                                  <div class="img-gradient">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/52.png"
+                                      alt="Bullying" class="ctimg br5px">
+                                  </div>
+                                  <h4 class="tcenter txt31 attitle">Bullying</h4>
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="bullyingP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeHappiness(0)">
                                   <div class="img-gradient">
                                     <img
@@ -1198,6 +1253,21 @@
                                   <h4 class="tcenter txt31 attitle">Leadership</h4>
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="lP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeMakingBetterDecisions(0)">
+                                  <div class="img-gradient">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/53.png"
+                                      alt="Making better decisions" class="ctimg br5px">
+                                  </div>
+                                  <h4 class="tcenter txt31 attitle">Making better decisions</h4>
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="making_better_decisionsP + '%'"
                                       aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
@@ -1365,7 +1435,7 @@
                                       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png"
                                       alt="Nature" class="ctimg">
                                   </div>
-                                  <h4 class="tcenter txt31 attitle">Past Influences</h4>
+                                  <h4 class="tcenter txt31 attitle">Conditioning</h4>
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="natureP + '%'"
                                       aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -2466,7 +2536,7 @@
                 </h4>
               </div>
             </div>
-            
+
 
             <div class="row pfy_ocw">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

@@ -23,18 +23,21 @@ export class S29010Page implements OnInit {
     {
       name: 'Nature',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/06.png',
-      link: '/nature'
+      link: '/nature',
+      id: 28
     },
     {
       name: 'Noticing Thoughts',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/08.png',
-      link: '/noticing-thoughts'
+      link: '/noticing-thoughts',
+      id: 30
  
     },
     {
       name: 'Guided Audio Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/10.png',
-      link: '/guided-meditation'
+      link: '/guided-meditation',
+      id: 51
   
     },
   ]

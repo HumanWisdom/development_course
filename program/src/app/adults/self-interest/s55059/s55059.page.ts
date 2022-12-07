@@ -22,18 +22,21 @@ export class S55059Page implements OnInit {
     {
       name: 'Love',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/36.png',
-      link: '/love'
+      link: '/love',
+      id: 62
     },
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
-      link: '/relationships'
+      link: '/relationships',
+      id: 47
  
     },
     {
       name: 'Emotional Needs',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/26.png',
-      link: '/emotional-needs'
+      link: '/emotional-needs',
+      id: 18
   
     },
   ]

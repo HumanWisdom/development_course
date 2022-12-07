@@ -100,6 +100,7 @@ export class AdultDashboardPage implements OnInit {
   public friendemail = ''
   public friendname = ''
   public name = ''
+  public streak = ''
   public sorrowandlossP
   public isloggedIn = false
   public x = []
@@ -136,6 +137,8 @@ export class AdultDashboardPage implements OnInit {
   public exerciseNo: string = '';
   public Title:string='';
   public day: string = '';
+  public bullyingP: any
+  public making_better_decisionsP: any
   //static progress mapping
   public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
@@ -321,6 +324,7 @@ export class AdultDashboardPage implements OnInit {
   ngOnInit() {
     this.getuserDetail();
     setTimeout(() => {
+      this.getUserPreference()
       this.getUsershorts()
       this.getUserstories()
     }, 1000)
@@ -1067,6 +1071,8 @@ export class AdultDashboardPage implements OnInit {
           } else {
             this.name = res.Name
           }
+          this.streak = res.Streak
+          console.log(this.streak)
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1145,6 +1151,8 @@ export class AdultDashboardPage implements OnInit {
     } else {
       this.name = res.Name
     }
+    this.streak = res.Streak
+    console.log(this.streak)
     let namedata = localStorage.getItem('name').split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
@@ -1236,6 +1244,8 @@ export class AdultDashboardPage implements OnInit {
           } else {
             this.name = res.Name
           }
+          this.streak = res.Streak
+          console.log(this.streak)
           let namedata = localStorage.getItem('name').split(' ')
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
@@ -1323,6 +1333,8 @@ export class AdultDashboardPage implements OnInit {
           } else {
             this.name = this.loginResponse.Name
           }
+          this.streak = this.loginResponse.Streak
+          console.log(this.streak)
           this.getProgress()
           this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
@@ -1526,6 +1538,8 @@ export class AdultDashboardPage implements OnInit {
         this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
         this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
+        this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
+        this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
       })
 
   }
@@ -1742,6 +1756,14 @@ export class AdultDashboardPage implements OnInit {
       }
       case "74": {
         this.routehowcanwisdomhelp(1)
+        break
+      }
+      case "76": {
+        this.routeBullying(1)
+        break
+      }
+      case "77": {
+        this.routeMakingBetterDecisions(1)
         break
       }
     }
@@ -3070,6 +3092,72 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
+  routeBullying(cont: any = 1) {
+    var bullyingResume
+    localStorage.setItem("moduleId", JSON.stringify(76))
+    this.service.clickModule(76, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        bullyingResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("bullyingResume", bullyingResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/bullying/${bullyingResume}`])
+          }
+          else
+            this.router.navigate([`/adults/bullying/s76001`])
+
+        })
+  }
+
+  routeMakingBetterDecisions(cont: any = 1) {
+    var making_better_decisionsResume
+    localStorage.setItem("moduleId", JSON.stringify(77))
+    this.service.clickModule(77, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        making_better_decisionsResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("making_better_decisionsResume", making_better_decisionsResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/making-better-decisions/${making_better_decisionsResume}`])
+          }
+          else
+            this.router.navigate([`/adults/making-better-decisions/s77001`])
+
+        })
+  }
+
   // /living with wisdom 1
 
   // living with wisdom 2
@@ -3413,6 +3501,9 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
+
+
+  
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     if (userId != null) {

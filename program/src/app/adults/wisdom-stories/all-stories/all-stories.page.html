@@ -104,20 +104,21 @@
                 </a>
 
                 <!-- view more  -->
-                <div class="panel-group ws_view_more" id="accordion_ws">
+                <div class="panel-group ws_view_more" id="accordion_ws"  *ngIf="secondstoryList.length !== 0">
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#ws_01">
+                      <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#ws_01"> -->
+                        <a class="accordion-toggle" (click)="toggle_view_more_less()" data-toggle="collapse" data-parent="#accordion" href="#ws_01"  >
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12">
                             <h4 class="fw_500 fs_14px lh_16px fc_1092a7 mtb0px tcenter mb20px twhite">
-                              View more
+                               {{view_more_less}}
                             </h4>
                           </div>
                         </div>
                       </a>
                     </div>
-                    <div id="ws_01" class="panel-collapse collapse">
+                    <div id="ws_01" class="panel-collapse collapse" *ngIf="enable_view_more_less">
                       <div class="panel-body">
                         <!-- stories -->
                         <!-- story 1 -->
@@ -144,7 +145,8 @@
         
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                   <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                  {{s.Story|slice:0:40}}...
+                                  <!-- {{s.Story|slice:0:40}}... -->
+                                  {{s.Story}}
                                   </h6>
                                 </div>
         
@@ -154,11 +156,11 @@
                                       Anonymous
                                     </h6> -->
                                   </div>
-                                  <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                                 <!--  <div class="col-md-6 col-sm-6 col-xs-6 p0">
                                     <h6 class="fw_400 fs_10px lh_130p fc_5d5d5d mtb0px">
                                       {{s.PublishedOn|date:'dd MMM yy'}} | 5 mins
                                     </h6>
-                                  </div>
+                                  </div> -->
                                 </div>
                               </div>
                               

@@ -22,18 +22,21 @@ export class S61113Page implements OnInit {
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
-      link: '/relationships'
+      link: '/relationships',
+      id: 47
     },
     {
       name: 'The Nature of the ‘I’',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/28.png',
-      link: '/nature-of-i'
+      link: '/nature-of-i',
+      id: 57
  
     },
     {
       name: 'Sorrow and Loss',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/31.png',
-      link: '/sorrow'
+      link: '/sorrow',
+      id: 60
   
     },
   ]

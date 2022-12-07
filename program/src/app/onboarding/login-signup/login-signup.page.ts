@@ -369,7 +369,9 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/adult-dashboard"]);
+                      this.router.navigate(["/adults/search"], { state: {
+                          routedFromLogin: true,
+                        }});
                     }
                   }
                 }
@@ -525,8 +527,10 @@ export class LoginSignupPage implements OnInit {
                       this.router.navigate(["/onboarding/viewcart"], {
                         state: { quan: "1", plan: persub },
                       });
-                    } else {
-                      this.router.navigate(["/adults/adult-dashboard"]);
+                    }else {
+                      this.router.navigate(["/adults/search"], { state: {
+                          routedFromLogin: true,
+                        }});
                     }
                   }
                 }
@@ -817,5 +821,10 @@ export class LoginSignupPage implements OnInit {
       )}&response_type=code id_token&scope=name email&response_mode=form_post`,
       "_self"
     );
+  }
+
+  
+  routedashboard() {
+      this.router.navigate(['/adults/adult-dashboard'])
   }
 }

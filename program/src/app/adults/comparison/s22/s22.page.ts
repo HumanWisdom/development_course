@@ -28,7 +28,7 @@ export class S22Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=239
+  screenNumber=22
   startTime:any
   endTime:any
   totalTime:any
