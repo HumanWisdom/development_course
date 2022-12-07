@@ -40,7 +40,7 @@ export class S216Page implements OnInit,AfterViewInit {
     private service:AdultsService,
     private location:Location) { }
 
-
+    
   ngAfterViewInit(){
     // console.log(this.playerContainer.nativeElement)    
     // console.log("hello")
@@ -321,6 +321,12 @@ export class S216Page implements OnInit,AfterViewInit {
   }
   ngOnInit() {       
     this.createScreen()
+    if(this.saveUsername==false)
+    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+else
+  {this.userId=JSON.parse(localStorage.getItem("userId"))}
+  this.startTime = Date.now();
+
   }
   receiveBookmark(e)
   {
