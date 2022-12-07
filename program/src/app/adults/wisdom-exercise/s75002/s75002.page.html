@@ -15,7 +15,7 @@
       </a>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright" *ngIf="isShowButton">
       <a (click)="changeType()" class="">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
@@ -153,7 +153,7 @@
                             </div>
                           </div>
 
-                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                          <div class="row tcenter"  [ngClass]="{'transcript-display':!isShowTranscript}">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.1.mp3">
@@ -165,7 +165,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                      <div class="row center_flex tleft mt20px"  *ngIf="!isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
 
                           <p>

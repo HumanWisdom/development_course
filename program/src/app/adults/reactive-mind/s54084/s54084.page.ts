@@ -21,18 +21,21 @@ export class S54084Page implements OnInit {
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/adults/stress'
+      link: '/adults/stress',
+      id: 44
     },
     {
       name: 'Anger',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/33.png',
-      link: '/adults/anger'
+      link: '/adults/anger',
+      id: 14
 
     },
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
-      link: '/adults/fear-anxiety'
+      link: '/adults/fear-anxiety',
+      id: 19
 
     },
   ]

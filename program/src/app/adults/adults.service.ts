@@ -303,20 +303,28 @@ export class AdultsService {
     return this.http.get(this.path + '/GetMyPartners');
   }
 
-   GetVisitedScreen(moduleId){
-    return this.http.get(this.path + '/GetVisitedScreens/'+moduleId);
-   }
+  GetVisitedScreen(moduleId) {
+    return this.http.get(this.path + '/GetVisitedScreens/' + moduleId);
+  }
 
-   getModuleList(): Observable<any> {
-      return this.http.get(this.path + '/modules');
-   }
+  getModuleList(): Observable<any> {
+    return this.http.get(this.path + '/modules');
+  }
 
-   GetWisdomScreens():Observable<any> {
+  GetWisdomScreens(): Observable<any> {
     return this.http.get(this.path + '/GetWisdomScreens');
-   }
+  }
 
-   isGuest() {
+  isGuest() {
     return localStorage.getItem('guest') && localStorage.getItem('guest') === 'T' ? true : false;
-   }
+  }
+
+  GetWisdomShorts(): Observable<any> {
+    return this.http.get(this.path + '/GetWisdomShortsListing');
+  }
+
+  GetAudioMeditation(): Observable<any> {
+    return this.http.get(this.path + '/GetAudioMeditationsListing');
+  }
 
 }

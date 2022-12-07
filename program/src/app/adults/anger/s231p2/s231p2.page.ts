@@ -21,17 +21,20 @@ export class S231p2Page implements OnInit {
     {
       name: 'Reactive mind',
       image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/vectorless/22.png',
-      link: '/reactive-mind'
+      link: '/reactive-mind',
+      id: 54
     },
     {
       name: 'Stress',
       image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
     },
     {
       name: 'Relationships',
       image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/vectorless/35.png',
-      link: '/relationships'
+      link: '/relationships',
+      id: 47
     },
   ]
 

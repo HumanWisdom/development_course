@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            All the decisions you make will not be the right ones. You will get some wrong. 
+            That is part of life and you need to be prepared for that. 
+          </p>
+
+          <p>
+            The key is to learn from them and not live with regret because that stops you living fully in the present. 
+          </p>
+
+          <p>
+            Our patterns of behavior can repeat themselves because the hidden drivers in our thinking have not been understood. For example, we can repeatedly buy the same thing like shoes, even though we have more than we need, or we may make the same mistakes in our relationships. 
+          </p>
+
+          <p>
+            The fear of making a wrong decision can sometimes stop managers doing what they know is needed.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

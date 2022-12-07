@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Bad things happen to all of us. How can we move on from the past, so it does not impact the present in ways that do not serve us?
+          </p>
+
+          <p>
+            The first step is to keep a diary and write down the many different ways past bullying has shaped your thinking, and your actions - and if that serves you today.
+          </p>
+
+          <p>
+            Are you more wary of people now, are you quick to react to any perceived criticism, or do you bully others and are not aware you are doing so?
+          </p>
+
+          <p>
+            Your self-esteem which was damaged by bullying may not have recovered, or you may be overeating to compensate for the distress you still feel.
+          </p>
+
+          <p>
+            Once you become aware of the many hidden ways your past impacts your present, you can ask if that still serves you, and if it doesn’t, let it go. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
