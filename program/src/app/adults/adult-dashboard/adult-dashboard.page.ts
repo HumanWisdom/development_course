@@ -1758,6 +1758,14 @@ export class AdultDashboardPage implements OnInit {
         this.routehowcanwisdomhelp(1)
         break
       }
+      case "76": {
+        this.routeBullying(1)
+        break
+      }
+      case "77": {
+        this.routeMakingBetterDecisions(1)
+        break
+      }
     }
   }
 
@@ -3493,6 +3501,9 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
+
+
+  
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     if (userId != null) {
