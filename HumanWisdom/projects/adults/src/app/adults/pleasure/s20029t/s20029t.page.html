@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If browsing social media brings me brings me pleasure then my mind automates that process and every time I feel a little empty or bored I am presented with the thought that I should pick up my phone and look at my social media account. The same applies to holidays, or alcohol, or drugs, or exercise, or shopping. The patterns of pleasure repeat themselves in our lives. This happens without our awareness. These habits can last a life-time, and are not wrong, but waking up to them allows us to respond with intelligence. You can see this illustrated in this pyramid diagram, and this occurs in layer 3, which is usually beyond our awareness
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

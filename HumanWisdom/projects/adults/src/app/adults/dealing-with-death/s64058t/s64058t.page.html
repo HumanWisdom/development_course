@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Living with the awareness that our time on earth is limited, gives us the urgency and energy to make the most of our life and be fully present in it. We would at least not waste our life doing things we did not enjoy, living in conflict, being stressed, or feeling like victims of our circumstances. We would strive to live with wisdom and in peace - with ourselves, each other and the earth. We may not spend our time searching for new experiences, because we know all pleasure is fleeting.  Instead we may search for simple joys on our doorstep, noticing, with fresh eyes, the extraordinary in the ordinary - in nature, people and food. Above all, we may regard life as a gift, and not waste a moment of it.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

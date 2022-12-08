@@ -1,0 +1,15 @@
+<app-course-header [bg]="bg" [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      If you can forgive, forget and move on, you do not carry with you that long-term anger which can damage your health.
+    </h1>
+    <div class="clearfix"></div>
+   
+  </form>
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [fbg]="bg" (prev)="previous()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

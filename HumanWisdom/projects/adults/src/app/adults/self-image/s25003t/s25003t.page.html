@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module on self-image, which is part of the 3rd circle of wisdom, where we explore how the mind works. We all develop unconscious images or opinions about ourselves, both positive and negative. These images form unconsciously, for example I may like to think I care for the environment and am not selfish, or that I am a good cook. I may also think I am not attractive enough and unsuccessful. We are going to explore where these images come from, the impact they can have on our life, and how we can respond with wisdom.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

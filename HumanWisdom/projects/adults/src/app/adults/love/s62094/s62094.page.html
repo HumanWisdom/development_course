@@ -1,0 +1,36 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Four phases of a romantic relationship
+
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. Infatuation
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. Power struggle. Conflict.
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Acceptance
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Long term commitment
+
+    </h3>
+
+   
+  </form>          
+</app-oneline-text>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

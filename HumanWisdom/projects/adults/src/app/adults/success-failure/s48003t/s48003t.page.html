@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module exploring success and failure. It is part of the 5th circle of wisdom, where we apply . Every human being wants to be successful, but how much time do we spend exploring what that means to us personally? We are going to explore questions like what does it mean to be successful, how can we find out what it means for us, what are the qualities we need to be successful, and the pitfalls of chasing success. We also explore failure, how to plan for it, and how to meet it with wisdom when it happens
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

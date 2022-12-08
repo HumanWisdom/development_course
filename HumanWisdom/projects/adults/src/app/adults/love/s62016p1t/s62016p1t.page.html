@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Words can be deceptive. The word love is not love, just as going to a restaurant and reading the menu is not the same as eating the food. I can say I love you, but if I do not follow that with action, you are not going to feel loved. I may even convince myself I love you, and believe that telling you that is enough. If you ask yourself how you want to be loved by another, what would you say?<br>
+          Perhaps love is kindness, consideration, putting the needs of others above your own, accepting the other person as they are and so on. It's not just a word, it's what you do for others that counts 
+          
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

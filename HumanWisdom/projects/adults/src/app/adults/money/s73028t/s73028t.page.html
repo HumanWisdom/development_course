@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Why has money become so important in our lives? Of course we need money to live, but we think money can also make us happier. Money can buy us things and experiences which can bring pleasure, but this pleasure is always short-lived. When it ends it leaves a void you need to fill with more possessions and more experiences which have to be bigger and better and the cycle continues. Money can make us feel important as if we are somebody. That is a hidden need in all of us. Money can also buy power and influence and that can bring pleasure. Having that power becomes all important and we want more and more of it. We are uncomfortable being still with ourselves. Making money keeps us busy and being occupied is a core human need. It's a balm for our inner restlessness.
+            </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

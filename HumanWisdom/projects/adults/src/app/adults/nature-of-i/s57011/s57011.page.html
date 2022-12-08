@@ -1,0 +1,83 @@
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
+
+<!-- page content -->
+<div class="right_col mc_01">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form class="">
+              <h1 class="txt1 tcenter pb0px mb0px">
+                The psychological body
+              </h1>  
+
+              <!-- angular audio player plugin  -->                                            
+              <div class="row tcenter">
+                <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
+                  <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                  
+                </div>
+              </div>
+              <!-- /angular audio player plugin -->     
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-md-6 col-sm-6 col-xs-6 center_flex">
+                    <div class="noi_body">
+                      <h4 class="fw_700 fs_16px lh_19px fc_000000 tcenter">
+                        THE BODY
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 noi_right center_flex">
+                    <div class="noi_i">
+                      <h4 class="fw_700 fs_16px lh_19px fc_000000 tcenter">
+                        THE ‘I’
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+
+              <div class="row pt5px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-md-6 col-sm-6 col-xs-6 noi_left">
+                    <div class="prelative">                      
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/white_man_01.png" class="img-responsive">
+                      <h6 class="noi_left_right_txt">
+                        The physical body needs food, water and exercise to be healthy. If we cut a finger we feel a physical pain.
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 noi_right">
+                    <div class="prelative">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/yellow_man_01.png" class="img-responsive">
+                      <h6 class="noi_left_right_txt">
+                        The psychological body or the ‘I’ needs love, attention, and pleasure. It also gets hurt, by criticism, for example.
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+
+              <!-- angular audio player plugin  -->                
+              <!-- <ngx-circular-player></ngx-circular-player>   -->
+              <!-- <div class="row tcenter">
+                <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
+                  <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                  
+                </div>
+              </div> -->
+              <!-- /angular audio player plugin -->                   
+              
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

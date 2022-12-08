@@ -1,0 +1,59 @@
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
+
+<!-- page content -->
+<div class="right_col mc_01">				
+    <!-- Class -->  
+    <div class="cw100p">
+        <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+                <div class="x_panel p0">
+                    <div class="x_content p0">
+                        <form class="">
+                            <!-- angular audio player plugin  -->                                            
+                            <div class="row tcenter">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
+                                  <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                  
+                                </div>
+                            </div>
+                            <!-- /angular audio player plugin -->     
+
+                            <h1 class="txt1 tcenter pt0px">
+                                Why is it important to explore the I? 
+                            </h1>  
+                            
+                            <h3 class="txt8 oneliner_txt_pointer">
+                                01. It helps us to understand ourselves and others  
+                            </h3>
+
+                            <h3 class="txt8 oneliner_txt_pointer">
+                                02. Being aware of it allows us to respond with intelligence
+                            </h3>
+
+                            <h3 class="txt8 oneliner_txt_pointer">
+                                03. When the ‘I’ is stressed, it impacts our physical health
+                            </h3>
+
+                            <h3 class="txt8 oneliner_txt_pointer">
+                                04. It is the root cause of all our suffering and conflict in the world
+                            </h3>
+
+                            <h3 class="txt8 oneliner_txt_pointer">
+                                05. Exploring it can help us live in peace 
+                            </h3>
+
+                            <h3 class="txt8 oneliner_txt_pointer">
+                                06. We are destroying our own habitat, and we can’t seem to stop ourselves
+                            </h3>
+
+                            <div class="pagebreak"></div>
+                        </form>            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

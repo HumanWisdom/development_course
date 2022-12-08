@@ -1,0 +1,19 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            No matter what we are anxious about, if we can accept that completely, our anxiety can end. For example if we are worried about dying, and not knowing what happens after that, because we accept that it is part of the cycle of life and nothing lives forever, then our fear can end. Or if I am learning to ride the bicycle and accept that I may fall off it, my fear can end. This deep acceptance of whatever happens is not easy, but ask yourself the question and see what emerges. So many of our anxieties are inconsequential, like what others think of us.
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

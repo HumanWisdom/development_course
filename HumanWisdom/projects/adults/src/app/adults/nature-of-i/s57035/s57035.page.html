@@ -1,0 +1,60 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-multi-select [bg]="bg">
+  <form>
+    <h4 class="txt4">
+      What are the features of the ‘I’?
+
+    </h4>
+    <div class="clearfix"></div>
+
+    <h6 class="txt5 pb10p">
+      Click all that apply
+    </h6>
+
+    <div *ngFor="let o of optionList"> 
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+          <a class="">
+            <div class="box cb_box tleft flex_left cb1_box">                        
+            <!-- svg checkbox -->
+              <input class="inp-cbx" [id]="o.OptId" type="checkbox" [checked]="sessionFetch(o.OptId)" (click)="selectOption(o.OptId,$event.target.checked)"/>
+              <label class="cbx mt0px" [for]="o.OptId">
+                <span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check"></use>
+                  </svg>
+                </span>
+                <span class="txt46 cb_span">
+                  The nature of the ‘I’ is the same in everyone
+                  The ‘I’ wants more and more and is never satisfied
+                  Our suffering, and our emotions are rooted in the ‘I’
+                  The ‘I’ feels restless, and wants to move away from the moment
+                  The ‘I’ has emotional needs it is not aware of
+                  The ‘I’ always seeks to strengthen itself
+                  The ‘I’ struggles to control the activities of the ‘I’
+                  
+                  
+                </span>
+              </label>
+              <!--SVG Sprites-->
+              <svg class="inline-svg">
+                <symbol id="check" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+              </svg>
+              <!-- /svg checkbox -->
+            </div>                    
+          </a>
+        </div>
+      </div>
+
+      <br>
+
+    </div>
+  
+    <div class="pagebreak"></div>
+  </form>      
+</app-multi-select>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

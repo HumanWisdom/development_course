@@ -1,0 +1,208 @@
+<!-- top navigation -->
+<div class="row center_flex" *ngIf="!shared">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module" [ngClass]="bg_tn">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
+      <div class="p0 mr20px">
+        <a class="" (click)="goToDash()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+      <div class="p0">
+        <a class="tcenter" *ngIf="toc" (click)="goToToc()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 flex_ai">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a class="" (click)="goToAudio()" >
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai jc_flexend">
+      <div class="p0">
+        <a href="javascript:;" data-toggle="modal" data-target="#exampleModalCenter">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt="">
+        </a>
+      </div>
+      <div class="p0 mlr20px">
+        <a *ngIf="!bookmark" href="javascript:;" (click)="toggleBookmark()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_course_01.svg" class="img-responsive" alt="">
+        </a>
+        <a *ngIf="bookmark" href="javascript:;" (click)="toggleBookmark()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_course_active.svg" class="img-responsive" alt="">
+        </a>
+      </div>
+      <div class="p0">
+        <a href="javascript:;" (click)="share()"  id="btnShare">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_opaque.svg" class="img-responsive" alt="">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+      <div class="progress progress-sm hprogress">
+        <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div> 
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- top navigation -->
+<div class="row center_flex" *ngIf="shared">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module" [ngClass]="bg_tn">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+        <a class="" href="#">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+        <a class="" href="#">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive" alt="HumanWisdom">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+        <a>
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt="">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+        <a>
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_course_01.svg" class="img-responsive" alt="">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+        <a>
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_opaque.svg" class="img-responsive" alt="">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+      <div class="progress progress-sm hprogress">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal_note_journal" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        
+        <form>
+
+          <div class="row pt20px pb30px">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your thoughts here(Your notes can only be seen by you)" [(ngModel)]="note"></textarea>
+            </div>
+          </div>          
+          
+          <div class="row center_flex flex_wrap">
+            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">                    
+              <a>
+                <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"data-dismiss="modal">Add Note to Journal</button>
+              </a>
+            </div>
+          </div>                    
+
+          <br>
+
+          <div class="row center_flex flex_wrap">
+            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">                    
+              <a>
+                <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button>
+              </a>
+            </div>
+          </div>                           
+
+        </form>
+        
+      </div>
+      
+    </div>
+  </div>
+</div> -->
+<!-- /Modal -->
+
+<!-- add note modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal_note_journal w100p mt0px" role="document">
+    <!-- top navigation -->
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module bg_border_box">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
+        </div>
+    
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 flex_ai">
+        </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+            <a data-toggle="modal" data-dismiss="modal">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit_fill.svg" class="img-responsive" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /top navigation -->
+
+    <!-- content -->
+    <div class="row center_flex h100vh">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+        <!-- <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <div class="modal-body">
+          <form>
+  
+            <div class="row pt20px pb30px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Type your note here..." [(ngModel)]="note"></textarea>
+              </div>
+            </div>          
+            
+            <div class="row center_flex flex_wrap">
+              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+                <a>
+                  <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"data-dismiss="modal">Add Note to Journal</button>
+                </a>
+              </div>
+            </div>                    
+  
+            <br>
+  
+            <div class="row center_flex flex_wrap">
+              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+                <a>
+                  <!-- <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button> -->
+                  <h4 class="mb0 w100 btn_skip txt5 fs16px tcenter" data-dismiss="modal">Skip</h4>
+                </a>
+              </div>
+            </div>                           
+  
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /content -->
+    
+  </div>
+</div>
+<!-- /add note modal -->

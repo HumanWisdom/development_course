@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this session we are going to explore #10 tips on how we can make good decisions and #6 decisions we can make every day to be happier. 
+          </p>
+
+          <p>
+            We are going to build on the last two sessions where we explore our values and the hidden drivers in our thinking that drive decision making in our lives.
+          </p>
+
+          <p>
+            Being aware of them is the internal foundation of good decision making, but there are many other things we can consider to make sure we make the right choices in our lives. Being aware of them all can help you make better decisions for yourself.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

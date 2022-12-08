@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We are so conditioned to eating 3 meals a day we forget the many benefits of occasional fasting. It helps to break our habits around food and we realise that we can do without a meal with no side-effects. It's interesting that when you fast, you only feel hungry around the time the body is expecting food. Once that time passes, the hunger eases. Research has shown that occasional fasting contributes to weight loss, reduces the risk of diabetes, reduces inflammation, is good for heart health, and may help prevent some cancers. We do need to keep well hydrated throughout though. Too much fasting can be harmful as well, because the body needs its nutrition.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

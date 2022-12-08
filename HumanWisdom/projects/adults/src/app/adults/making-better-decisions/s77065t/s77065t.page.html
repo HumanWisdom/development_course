@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Humans need to feel safe. It is a core human need and influences our decisions in ways we may not be aware of.
+          </p>
+
+          <p>
+            When choosing whom to marry we may opt for the person who has more money over what our heart is telling us, or we may pick a job that pays the most even though it may not be doing something we love. 
+          </p>
+
+          <p>
+            In any relationship the need for security can make us possessive of our partners or friends, and behave in a way that can harm that relationship.
+          </p>
+
+          <p>
+            We feel more secure being with people like us, and that can make us join groups where we feel we belong. 
+          </p>
+
+          <p>
+            Paradoxically, the need for security can create in us a feeling of feeling insecure.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
