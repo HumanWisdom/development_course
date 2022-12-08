@@ -2,7 +2,7 @@ import { Component, OnInit,OnDestroy,Input,ViewChild,  ElementRef,AfterViewInit,
 import { Router,ActivatedRoute } from '@angular/router';
 import * as jQuery from 'jquery';
 import { NgxCaptureService } from 'ngx-capture';
-import { AdultsService } from 'src/app/adults/adults.service';
+import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 
 @Component({
   selector: 'app-audio-bucket',

@@ -1,7 +1,7 @@
 import { Component, OnInit,OnDestroy,Input,ViewChild,  ElementRef,AfterViewInit,Output,EventEmitter} from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
-import { AdultsService } from 'src/app/adults/adults.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-audio-image-overlay',

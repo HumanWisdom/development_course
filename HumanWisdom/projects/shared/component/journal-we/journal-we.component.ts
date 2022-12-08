@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AdultsService } from 'src/app/adults/adults.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-journal-we',
