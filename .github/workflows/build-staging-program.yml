@@ -1,4 +1,4 @@
-name: build-program-staging
+name: build-HumanWisdom-staging
 on:
   push:
     branches: [main]
@@ -22,7 +22,7 @@ jobs:
        env:
         cache-name: cache-node-modules
        with:
-        path: program/node_modules
+        path: HumanWisdom/node_modules
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -36,18 +36,18 @@ jobs:
 
      - name: Install project dependencies
        run: |
-        cd program
+        cd HumanWisdom
         npm install --force
 
      - name: Build the project
        run: |
-        cd program
+        cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --configuration=staging -- --base-href /course/
+        ionic build --Project='adults' --configuration=staging -- --base-href /course/
     
      - name: Compress the build artifacts
        run: |
-        cd program
+        cd HumanWisdom
         mkdir -p builds/compressed
         tar -czf builds/compressed/program.tgz www/
 
@@ -55,7 +55,7 @@ jobs:
        uses: actions/upload-artifact@v2
        with:
         name: program-artifact
-        path: program/builds/compressed/program.tgz
+        path: HumanWisdom/builds/compressed/program.tgz
   
   deploy:
     runs-on: ubuntu-latest
