@@ -39,11 +39,11 @@ jobs:
         cd HumanWisdom
         npm install --force
 
-     - name: Build the project
+     - name: Build the Adult project
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --Project='adults' --configuration=staging -- --base-href /course/
+        ionic build --configuration=staging --project="adults" -- --base-href /course/
     
      - name: Compress the build artifacts
        run: |
