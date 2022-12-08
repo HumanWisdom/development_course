@@ -54,7 +54,7 @@ import { RouterModule } from '@angular/router';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
-import { TopnavComponent } from 'src/app/onboarding/shared/component/topnav/topnav.component';
+import { TopnavComponent } from '../adults/src/app/onboarding/shared/component/topnav/topnav.component';
 import { TocHeaderComponent } from '../shared/component/toc-header/toc-header.component';
 import { TocTopnavComponent } from '../shared/component/toc-topnav/toc-topnav.component';
 import { AudioBucketComponent } from './component/audio-bucket/audio-bucket.component';
