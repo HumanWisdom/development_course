@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
-import { AdultsService } from 'src/app/adults/adults.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 @Component({
   selector: 'app-video-content',
   templateUrl: './video-content.component.html',

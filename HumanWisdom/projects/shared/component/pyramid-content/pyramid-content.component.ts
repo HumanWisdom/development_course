@@ -1,7 +1,7 @@
 import { Component, OnInit,Input,ViewChild,  ElementRef,AfterViewInit,Output,EventEmitter, OnDestroy} from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
-import { AdultsService } from 'src/app/adults/adults.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-pyramid-content',

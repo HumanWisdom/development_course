@@ -2,7 +2,7 @@ import { Component, OnInit,Input,Output, EventEmitter,AfterViewInit,ViewChild } 
 import { ActivatedRoute, Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { NgxCaptureService } from 'ngx-capture';
-import { AdultsService } from 'src/app/adults/adults.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-image-text',

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdultsService } from 'src/app/adults/adults.service';
-
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 @Component({
   selector: 'app-related-wisdom-stories-tiles',
   templateUrl: './related-wisdom-stories-tiles.component.html',

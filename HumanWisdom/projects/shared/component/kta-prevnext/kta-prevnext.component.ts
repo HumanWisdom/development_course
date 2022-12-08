@@ -1,7 +1,7 @@
 import { Component, OnInit,AfterViewInit,ViewChild } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
-import { AdultsService } from 'src/app/adults/adults.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-kta-prevnext',
