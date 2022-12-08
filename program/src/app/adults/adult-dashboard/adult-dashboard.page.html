@@ -378,7 +378,8 @@
 
                     <a (click)="DashboardLogevent('/adults/audio-meditation', '', 'click_audio_meditation')">
                       <button type="submit" class="btn btn-default btn_mdpd_tray mb0pxi">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_meditation.svg"
+                        <img
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_meditation.svg"
                           alt="" class="prelative">
                         <span class="ml10px">
                           Audio Meditations
@@ -1267,8 +1268,9 @@
                                   </div>
                                   <h4 class="tcenter txt31 attitle">Making better decisions</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="making_better_decisionsP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar"
+                                      [style.width]="making_better_decisionsP + '%'" aria-valuenow="25"
+                                      aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -2049,13 +2051,13 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
-                      (click)="fbLogin()" class="img-responsive">
+                      (click)="socialLoginService('Facebook')" class="img-responsive">
                   </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
-                      (click)="googleLogin()" class="img-responsive">
+                      (click)="socialLoginService('Google')" class="img-responsive">
                   </button>
                 </div>
                 <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
@@ -2396,13 +2398,13 @@
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
-                    (click)="fbLogin()" class="img-responsive">
+                    (click)="socialLoginService('Facebook')" class="img-responsive">
                 </button>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
-                    (click)="googleLogin()" class="img-responsive">
+                    (click)="socialLoginService('Google')" class="img-responsive">
                 </button>
               </div>
               <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
@@ -2553,13 +2555,13 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
-                      (click)="fbLogin('journal')" class="img-responsive">
+                      (click)="socialLoginService('Facebook')" class="img-responsive">
                   </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                   <button type="button" class="btn btn-default btn_as_sl">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
-                      (click)="googleLogin('journal')" class="img-responsive">
+                      (click)="socialLoginService('Google')" class="img-responsive">
                   </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
