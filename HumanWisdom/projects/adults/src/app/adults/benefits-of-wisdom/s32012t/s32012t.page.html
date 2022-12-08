@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We all despair at the state of the world and global problems that seem to have no solution - pollution, war, climate change, environmental destruction, racism and so on. A global problem is just an individual problem, multiplied 8 billion times. All these problems also begin in our thinking and by understanding how our mind works, these problems can be avoided and more easily addressed. Most wars, for example, are fought between people with different identities. When we understand the hidden conditioning process by which identities form, how they divide us, and how beneath that we are the same human being, all war could end. Our section on solving global problems explores this in more detail, through a series of 10 minute long videos. We can use this wisdom at scale to address problems like racism, conflict, global health challenges, climate change and to transform education.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

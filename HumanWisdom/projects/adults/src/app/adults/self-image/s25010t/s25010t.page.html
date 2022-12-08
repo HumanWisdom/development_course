@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Images play a huge role in all our relationships. We never see each other freshly, but always through the many layers of memory and conditioning we have accumulated about each other. If we are work colleagues, and I’m brown skinned, from Iran and a muslim, and you are white skinned, American and a Catholic, you can imagine the many layers of conditioned memories we already have about each other, which are a wall between us before we have said hullo. Images get in the way of us meeting people freshly and connecting with them in meaningful ways. If we could do that, all our relationships could be so much better.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

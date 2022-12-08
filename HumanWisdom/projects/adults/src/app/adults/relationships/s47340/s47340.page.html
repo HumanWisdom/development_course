@@ -1,0 +1,13 @@
+ <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Being aware of the unconscious need for power, which is present in all of us, can prevent it translating into bullying and abuse in our relationships, which starts subtly.
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

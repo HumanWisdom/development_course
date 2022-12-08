@@ -1,0 +1,21 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      <p>
+        How can you forgive yourself?
+      </p>
+      <p>
+        In the same way you forgive others.
+      </p>
+      <p>
+        By understanding why you did what you did,<br>and learning the lessons from that.
+
+      </p>
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

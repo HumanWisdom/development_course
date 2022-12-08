@@ -1,0 +1,17 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Fear, like all strong emotions, makes us lose our ability to think clearly and that can result in irrational decisions. A common example is the global arms race. Some countries have enough nuclear weapons to destroy other countries many times over, but they still feel they need even more arms to protect themselves. Military spending goes up every year, fuelled by a fear of being attacked by other countries. It's also behind the stockpiling of military style weapons by ordinary people in some countries, fuelled by an irrational fear of being attacked by their own government
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

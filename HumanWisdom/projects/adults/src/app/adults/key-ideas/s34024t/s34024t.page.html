@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          No matter how many books you read about what water tastes like you will never know till you drink it yourself. Similarly to truly discover the life changing beauty of this wisdom you have to travel inwards and understand yourself and how your mind works. We are going to show you how to do this and walk with you as you do so. It’s not complicated and is just like learning to swim. It’s the difference between reading a travellers guide book, or actually visiting a city yourself 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          It is regarded as normal to buy presents to celebrate birthdays, weddings and anniversaries, and the more you spend, the more you are seen to love and value people. This is right or wrong, but just shall we just explore this together? Most often we do it as part of our conditioning and never question it. 
+<br>A symbol of love isn't actually love. It is easy for us to mistake it for the real thing. We could give children and our loved ones gifts and think that is enough, but as we have explored in another module, love is so much more than that. If it becomes a replacement for time spent with people, or caring for them, or accepting people as they are, it is a poor substitute and it ceases to be of value.
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

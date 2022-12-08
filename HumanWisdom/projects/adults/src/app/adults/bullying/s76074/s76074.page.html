@@ -1,0 +1,33 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      How can you find the courage to speak up?
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Speak to the bully with a friend present
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Realise if you don’t speak up, it’s going to continue
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. Do it in a safe place
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. Realise that most fears don’t come to pass
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      05. Realise that others do not have power over you - unless you give it to them
+    </h3>
+
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

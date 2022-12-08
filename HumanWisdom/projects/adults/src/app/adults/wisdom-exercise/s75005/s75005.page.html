@@ -1,0 +1,2853 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" routerLink="/adults/wisdom-exercise/s75001">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          #4 Learning about Feelings
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_whitesmoke sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- carousel -->
+              <div class="container" *ngIf="enableintro" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- introduction -->
+                    <div class="item active">
+                      <div class="row center_flex mt40px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_04_a.png"
+                                alt="" class="img-responsive w100">
+                            </div>
+                          </div>
+
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_12px lh_14px fc_000000 mtb0px">
+                                Exercise #4
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row mt10px mb15px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_500 fs_24px lh_130p fc_000000 mtb0px">
+                                Learning about Feelings
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
+                                Welcome to this session where we are going to learn about our feelings, and notice the different ways they impact our life. This understanding leads to wisdom.
+                                Keep in mind the basic principles of enquiry:
+                              </h4>
+
+                              <ul class="fw_400 fs_15px lh_140p fc_000000 pt15px pl15px">
+                                <li class="">
+                                  We are just looking and learning about ourselves
+                                </li>
+
+                                <li class="">
+                                  Have a mind open to learning
+                                </li>
+
+                                <li class="">
+                                  For learning to take place we need to pause judgement
+                                </li>
+
+                                <li class="">
+                                  What we observe in ourselves is not  right or wrong, good or bad - it just needs to be understood
+                                </li>
+
+                                <li class="">
+                                  Deep down, we are all the same human beings
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /introduction -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Exploring and understanding feelings
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.1.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Welcome to this session where we are going to go deeper and explore and understand our feelings, where they come from, how they shape our lives in ways we are not aware of, and how this understanding can help us respond with wisdom to live our best lives.
+                          </p>
+
+                          <p>
+                            We are going to give you a set of 14 Daily challenges - to explore one idea a day, and write your reflections in your journal.
+                          </p>
+
+                          <p>
+                            We are going to travel together, to learn how to notice and name our feelings and how to make sense of them.
+                          </p>
+
+                          <p>
+                            Our feelings can be powerful and arise automatically. We assume they are true and can sometimes struggle to cope with them. Understanding them more deeply gives us options on how we can respond and make the best choices for our lives.
+                          </p>
+
+                          <p>
+                            It involves a simple process of looking and learning, but you will make some profound discoveries that are true - not just for yourself, but for all human beings because deep down our minds function in similar ways.
+                          </p>
+
+                          <p>
+                            With this understanding you can make better decisions, be able to think clearly, understand others better, and develop a calm mind. Let’s get started
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                     <!-- simple text -->
+                     <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Feelings are not right or wrong, good or bad. They are common to all human beings and just need to be understood..
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding your feelings can help you:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Understand yourself
+                                </li>
+
+                                <li class="">
+                                  Understand others
+                                </li>
+
+                                <li class="">
+                                  Make better decisions
+                                </li>
+
+                                <li class="">
+                                  Manage your emotions
+                                </li>
+
+                                <li class="">
+                                  Be calm
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Thoughts lead to feelings. Feelings lead to actions. Actions lead to results.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Y. Harv. Eker
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /carousel -->
+
+              <!-- day 01 -->
+              <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Naming a feeling
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.2.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            We name our feelings based on the external circumstances which create them.
+                            We say we are angry when we feel upset if someone has disappointed us, or sad when someone we love leaves us. We feel excited when we are looking forward to something, and anxious when we are afraid that something bad is going to happen to us. 
+                            Similarly we can feel stressed, happy, lonely and experience feelings of being in love.
+                          </p>
+
+                          <p>
+                            Our mind automatically labels what we are feeling and then we respond to the label we have given it. We can experience guilt if we feel jealous, for example.
+                          </p>
+
+                          <p>
+                            Sometimes our feelings are not easy to label, or they may be a mixture of different feelings - like sadness and anxiety, or happiness and excitement. That is okay as well.
+                          </p>
+
+                          <p>
+                            Though we give feelings different names based on external circumstances, inside us they may not be that different from each other. Sadness, stress and anger may feel similar for example, or anxiety and excitement may feel similar.
+                          </p>
+
+                          <p>
+                            We will explore later the benefits of not naming a feeling and just being with the sensation of it as it arises
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="895"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Not all feelings can be named, and sometimes what we feel may be a mix of many different feelings
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="896"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="897"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 01 -->
+
+              <!-- day 02 -->
+              <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Are feelings linked to thinking?
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.3.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            What comes first - a feeling or a thought? To anyone who has felt anxious or stressed it feels pretty obvious that the feeling comes first.
+                          </p>
+
+                          <p>
+                            But that may not be the whole story. 
+                          </p>
+
+                          <p>
+                            When you feel anxious for example, if you distract yourself and think of something else, the feeling goes away. This suggests that before the feeling came a thought about what may happen in the future, but the feeling happened so fast that we cannot see the thought behind it.
+                          </p>
+
+                          <p>
+                            Similarly when you get angry, if you look carefully you will see that behind that is an unmet expectation, and that is linked to thinking.
+                          </p>
+
+                          <p>
+                            All our feelings are a reaction from our thinking, and so thought must be involved, suggesting that our thoughts and feelings are linked.
+                          </p>
+
+                          <p>
+                            What do you think?
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="898"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="899"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Behind all our feelings is a thought, but feelings arise so quickly that we do not notice the thought behind them.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            If we can change the way we think about something, we can change the way we feel. We will explore this more fully later.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 02 -->
+
+              <!-- day 03 -->
+              <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Feelings change, and don’t always last.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.4.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            All feelings change, and have a beginning and an ending - they don’t last.
+                          </p>
+
+                          <p>
+                            When faced with strong feelings our mind can sometimes forget this and we assume the feeling will last forever.
+                          </p>
+
+                          <p>
+                            When you feel stressed or anxious, and your mind feels like it is in a fog, remember the feeling will pass, even if the circumstances that caused the feeling remain.
+                          </p>
+
+                          <p>
+                            Or, in the middle of the shock of bereavement it is useful to remind ourselves that this grief will pass  - it always does. There is a way of dealing with stress and grief using wisdom, which is explored more fully in separate modules.
+                          </p>
+
+                          <p>
+                            When we buy a new car or fall in love, our mind assumes that the pleasure will last forever, but like all feelings, pleasure too is fleeting, and when it ends we are left feeling empty, and need to chase a new pleasure to feel good about ourselves again. Understanding this allows us to respond with wisdom.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding that all feelings pass can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Deal with a stressful situation
+                                </li>
+
+                                <li class="">
+                                  Stay with the feeling of grief knowing it will pass
+                                </li>
+
+                                <li class="">
+                                  Realize all pleasure is fleeting
+                                </li>
+
+                                <li class="">
+                                  Deal with the feeling of anxiety. The danger may not be real.
+                                </li>
+
+                                <li class="">
+                                  Know that the feeling of ‘being in love’ will end one day
+                                </li>
+
+                                <li class="">
+                                  Not escape from a strong feeling through drink or drugs
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="900"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                     <!-- journal -->
+                     <div class="item">
+                      <app-journal-we [rId]="901"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                You are not your feelings. You just experience them. This is the rain you walk in. But you don’t become the rain. You walk on. You know the rain will pass. 
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Matt Haig
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 03 -->
+
+              <!-- day 04 -->
+              <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Feelings are felt in the body
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Our feelings are powerful and we experience them in the body, unlike our thoughts.
+                          </p>
+
+                          <p>
+                            You can find your heart beating faster for example.
+                          </p>
+
+                          <p>
+                            Different emotions are felt in different parts of the body. Happiness for example is felt in the entire body, but fear is felt in the upper half of the body excluding the arms.
+                          </p>
+
+                          <p>
+                            Sometimes the first experience of a feeling is in the body - you may feel a tightness in your chest and may not even think that is related to a feeling of anxiety.
+                          </p>
+
+                          <p>
+                            Many people do not know they are stressed, but experience a feeling of tension in their head and neck.
+                          </p>
+
+                          <p>
+                            Working on the body can impact our feelings. Yoga and aerobic exercises have been shown to have a positive impact on our mental health.
+                          </p>
+
+                          <p>
+                            The body and mind are One - and intimately linked. The brain sends signals to the body using different neurotransmitters. Being sensitive to our body can help us identify our feelings before we feel them in our mind.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Recognising our emotions as they are felt in the body can help us identify our feelings before we consciously become aware of them
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="902"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="903"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            The mind and body are not separate. What affects one, affects the other.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The body knows things a long time before the mind catches up. I wonder what my body knows that I don’t.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Sue Monk Kidd
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 04 -->
+
+              <!-- day 05 -->
+              <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Notice how feelings shape your actions
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.6.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Our feelings can be subtle or powerful - but they influence our actions in ways we may not be aware of.
+                          </p>
+
+                          <p>
+                            Fear can make us withdraw from others, give in to someone’s demands, not make the changes we feel we need to make in our lives, or work to accumulate wealth.
+                          </p>
+
+                          <p>
+                            Seeing food or alcohol can trigger a feeling of desire and this can make us eat and drink more than we need, or if we are in a shop – buy things on impulse.
+                          </p>
+
+                          <p>
+                            The feeling of unbearable stress prompts many people to take their own lives every year.
+                          </p>
+
+                          <p>
+                            Or the feeling of restlessness can prompt us to spend hours browsing our phones.
+                          </p>
+
+                          <p>
+                            The feeling of anger can make us shout at someone or bully someone.
+                          </p>
+
+                          <p>
+                            Once the feeling arises, it can trigger an action automatically.
+                          </p>
+
+                          <p>
+                            Remember - feelings are not right or wrong - they are part of being human - and just need to be understood. Understanding how feelings shape our behaviour can help us pause, and decide what is the best action in that moment
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding how our feelings shape our actions can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Not eat or drink on impulse
+                                </li>
+
+                                <li class="">
+                                  Manage our fear and act with intelligence
+                                </li>
+
+                                <li class="">
+                                  Not buy things we do not need
+                                </li>
+
+                                <li class="">
+                                  Better manage our time on the phone
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="904"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="905"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Every action and feeling is preceded by a thought.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                James Allen
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            By observing the automatic link between a feeling and an action, we can break our unhelpful habits, and respond with wisdom.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 05 -->
+
+              <!-- day 06 -->
+              <div class="container" *ngIf="enableday6" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Strong feelings can stop us from thinking clearly
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.7.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Powerful feelings can make us lose our ability to think clearly, by affecting a part of the brain called the frontal cortex. They can make us do things we may later regret.
+                          </p>
+
+                          <p>
+                            You may go into a restaurant thinking you must not eat too much, but the sight of the food can trigger a sensation of pleasure and you can end up overeating. The same process can make us buy more than we need when we go shopping.
+                          </p>
+
+                          <p>
+                            Our anger can make us disregard the consequences and we may hit someone – causing more problems for ourselves than we intended.
+                          </p>
+
+                          <p>
+                            Overwhelming feelings of desire can make us have an affair or misread the signals around consent and behave inappropriately – all of which can have adverse consequences.
+                          </p>
+
+                          <p>
+                            Just being aware of this beforehand allows us to observe our feelings, not act on them immediately, consider the consequences of acting on them, and then respond with wisdom
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Understanding that our feelings can suspend our critical thinking can help us pause, consider the consequences of acting on them, and then respond with wisdom.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="906"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Many of our decisions and actions are based on what we feel, rather than on what we think. This is not always for the best.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="907"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                When we have strong emotions, we are liable to fool ourselves.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Carl Sagan
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 06 -->
+
+              <!-- day 07 -->
+              <div class="container" *ngIf="enableday7" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                We believe what we feel is true
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.8.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Since our feelings arise spontaneously from our mind and are often powerful, we assume what they are telling us is true, and don’t pause to question them.
+                          </p>
+
+                          <p>
+                            For example when we are feeling anxious we assume the danger they are pointing to is real – but quite often our mind imagines danger where there isn’t one, or exaggerates the risk of the danger present. I may feel anxious getting on a plane because I think it may crash – but the danger of that actually happening is very very small. Recognizing the danger is not real could make it dissolve.
+                          </p>
+
+                          <p>
+                            We may get angry at someone because we feel they have done something wrong, and are certain we are right – but may discover later that our anger was unjustified and we did not know all the facts.
+                          </p>
+
+                          <p>
+                            We may fall in love with someone and be sure we want to spend our life with them, but those feelings may make us overlook the many challenges we may face in that relationship – especially when the feeling we have changes – as all feelings do one day. 
+                          </p>
+
+                          <p>
+                            This is not to say that any of these feelings are wrong. Falling in love is a beautiful feeling for example. 
+                          </p>
+
+                          <p>
+                            Understanding that what our feelings are telling us may not be true could make us pause, ask a question, and consider all the options before acting on them.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                This feeling will pass. The fear is real but the danger is not.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Cammie McGovern
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Understanding that what are feelings are telling us may not be true could help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  End our anxiety 
+                                </li>
+
+                                <li class="">
+                                  Pause before getting angry at someone
+                                </li>
+
+                                <li class="">
+                                  Consider all the options before making a decision
+                                </li>
+
+                                <li class="">
+                                  Stop feeling unhappy about our circumstances
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="908"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Our feelings are always real, but what they may be telling may not be, so it is always useful to question them.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="909"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 07 -->
+
+              <!-- day 08 -->
+              <div class="container" *ngIf="enableday8" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Feelings are not right or wrong. Don’t judge them, but be curious and understand them.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.9.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            We often label feelings as right or wrong, good or bad. We justify them if we feel they are right, and can be critical of ourselves and others if we think they are wrong. Once we judge them we are unable to examine them and learn about them.
+                          </p>
+
+                          <p>
+                            We may have regular bursts of anger, feel guilty afterwards, and try and suppress it, but it never goes away, because the roots of it in our thinking have not been understood – we need to explore our expectations, our conditioning, the reactive mind, and our feeling of being hurt to truly respond with wisdom.
+                          </p>
+
+                          <p>
+                            We may feel jealous or envious of others, and either justify it and blame others for how we are feeling, or feel guilty because we think it’s a bad thing – both of these responses stop us from understanding the feeling in depth. If we were curious and asked why we feel that way we may learn that our mind compares all the time.
+                          </p>
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Being curious about our feelings, rather than justifying or condemning them can help us understand them better, so they have their rightful place in our lives.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="910"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="911"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Feelings are not right or wrong. It's what you do with them that causes the problems.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                James C Dobson
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 08 -->
+
+              <!-- day 09 -->
+              <div class="container" *ngIf="enableday9" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Our feelings and actions repeat in predictable patterns.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.10.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            If we look carefully we notice that patterns of feelings repeat themselves in our lives.
+                          </p>
+
+                          <p>
+                            Every time a certain event happens, it can trigger the same feeling in us.
+                          </p>
+
+                          <p>
+                            For example, whenever we see a friend has more than us or is better than us, it generates a feeling of envy which we can’t seem to control.
+                          </p>
+
+                          <p>
+                            Or if we think of a political leader we don’t like, or an injustice in the world – it makes us feel angry.
+                          </p>
+
+                          <p>
+                            If we feel restless or bored we may reach for our phone to browse the internet, or every time we feel stressed we may eat something to make me feel good – obesity follows. 
+                          </p>
+
+                          <p>
+                            In the same way we could reach for a drink if we are feeling emotional pain.
+                          </p>
+
+                          <p>
+                            These patterns of feeling and reaction are unconscious and operate in the background. They get embedded in our lives and are difficult to break.
+                          </p>
+
+                          <p>
+                            Being deeply aware of this process allows us to respond with wisdom
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            The same event can trigger the same feeling and action each time, and this pattern repeats itself. Being aware of this allows us to break those patterns and respond with wisdom.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="912"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="913"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 09 -->
+
+              <!-- day 10 -->
+              <div class="container" *ngIf="enableday10" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Our feelings condition us, and can dictate our future behavior.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.11.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Our feelings are powerful, and not only influence how we act in the present moment, but can condition us and dictate our behavior in the future, often without our awareness.
+                          </p>
+
+                          <p>
+                            If I have been emotionally hurt in a relationship, it may condition me to not get into another intimate relationship and be suspicious of people who are trying to get close to me.
+                          </p>
+
+                          <p>
+                            If I have been criticized in the past and it has been painful, I can get anxious about doing anything where I get criticized in the future – a teacher I know left the profession because she could not cope with regular feedback.
+                          </p>
+
+                          <p>
+                            If a certain activity has brought me pleasure – for example when taking drugs or drinking alcohol or gambling, my mind can want to repeat that pleasure – and this can lead to addiction.
+                          </p>
+
+                          <p>
+                            Conditioning is neither right nor wrong, but understanding how our feelings can condition our behavior for the future allows us to respond with wisdom.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Understanding how our feelings can condition our future behavior can help us respond with wisdom.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="914"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="915"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Being aware of how our past conditions our present brings freedom.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Anon
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 10 -->
+
+              <!-- day 11 -->
+              <div class="container" *ngIf="enableday11" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                We are uncomfortable talking about how we feel.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.12.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Have you noticed how uncomfortable you can feel talking about your feelings.
+                          </p>
+
+                          <p>
+                            Men find this more difficult, probably because they think they are supposed to be tough and not express their true feelings.
+                          </p>
+
+                          <p>
+                            Talking about our feelings also makes us feel vulnerable – as if we will be judged in some way, or criticized, or made fun of.
+                          </p>
+
+                          <p>
+                            Or, we may feel no one is genuinely interested in hearing about our feelings.
+                          </p>
+
+                          <p>
+                            Deep down though we have a need to talk about how we are feeling. This helps us release these feelings from ourselves and once they are out in the open we can examine them and make sense of them. Finding someone to talk to who will not judge us, interrupt us or try to fix us is not easy. We also have to ask ourselves if we do that for others. This is why it is so important to nurture relationships with depth – so this free expression can take place.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            We are uncomfortable talking about our feelings because we are worried about feeling judged, criticized, or not being understood. We have a need to do so, but it makes us feel vulnerable, so we don’t.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="916"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="917"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Be a person who listens without judgment and with empathy. Be a friend that others can speak their heart to.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            If we cannot express our feelings we cannot explore them and make sense of them. Who do you share your feelings with?
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The universe only makes sense when we have someone we can share our feelings with.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Paulo Coelho
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 11 -->
+
+              <!-- day 12 -->
+              <div class="container" *ngIf="enableday12" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                We believe others, or external events, are responsible for how we feel.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.13.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            It is normal to think that others are responsible for how we feel, or that external events are. That is the way our mind is wired.
+                          </p>
+
+                          <p>
+                            If you are telling me about your amazing holiday and I feel jealous, I can blame you for making me feel bad. Actually it is the unconscious process of comparison in my thinking that makes me feel jealous – and it has nothing to do with you.
+                          </p>
+
+                          <p>
+                            If I have an exam or interview coming up I feel stressed and anxious and blame the exam for how I am feeling. My stress comes from my own fear though – of failure, of what others will think, and so on. This is the way our mind responds automatically.
+                          </p>
+
+                          <p>
+                            Our feelings are a reaction from our thinking to others, or external events, and come from within us. We don’t see this though. Two people faced with the same situation will respond differently because we have had different past influences.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Our mind assumes how we feel is caused by others, or external events. 
+                            Our feelings are actually a reaction from our thinking to external triggers, but come from within us.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="918"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="919"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Asking a simple question helps us grow as human beings and opens the door to wisdom - What is going on in my mind to make me feel this way? What can I learn about myself?
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                When you blame others you give up your power to change.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Robert Anthony
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 12 -->
+
+              <!-- day 13 -->
+              <div class="container" *ngIf="enableday13" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Be curious. Explore where feelings come from. What is behind them?
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.14.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            This may seem like a strange question because we assume there is nothing to explore – feelings just are what they are and we may think there is nothing to understand about anger, or fear, or jealousy or stress or anxiety.
+                          </p>
+
+                          <p>
+                            For this we need to have a mind that is curious, and open to learning. All the answers are within you already – you just need to look deeper and learn – there are many benefits of doing so.
+                          </p>
+
+                          <p>
+                            To go on this journey of understanding our feelings we also need to suspend judgment – that they are good or bad, or blame ourselves or others for how we are feeling – this judgment blocks further learning. We need to take ownership of the feeling because it has come from within us – and then begin a journey of learning more about it.
+                          </p>
+
+                          <p>
+                            Can you do that?
+                          </p>
+
+                          <p>
+                            Here is one example. When you are jealous and blame others for how you are feeling, go deeper and you will find that it is your mind comparing all the time that is causing you to feel this way
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                To explore a feeling and understand where it comes from we need to:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Not judge it as right or wrong, good or bad
+                                </li>
+
+                                <li class="">
+                                  Not blame ourselves or others for it
+                                </li>
+
+                                <li class="">
+                                  Be curious
+                                </li>
+
+                                <li class="">
+                                  Have a mind open to learning
+                                </li>
+
+                                <li class="">
+                                  Ask yourself – ‘What is going on in my mind to make me feel this way?’
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="920"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="921"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                What are the benefits of taking ownership of a feeling, and exploring it more deeply for ourselves?
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  We stop blaming others and external events for how we feel
+                                </li>
+
+                                <li class="">
+                                  We can develop a positive attitude to deal with it
+                                </li>
+
+                                <li class="">
+                                  We can have lasting freedom from stress and anxiety
+                                </li>
+
+                                <li class="">
+                                  We can learn to manage our emotions better and become emotionally intelligent
+                                </li>
+
+                                <li class="">
+                                  We can learn about ourselves and grow in wisdom
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The better you know yourself, the better your relationship with the world.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Toni Collette
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 13 -->
+
+              <!-- day 14 -->
+              <div class="container" *ngIf="enableday14" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Meet a feeling without language, without thinking.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/4.15.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            This may seem initially like a very strange idea, but please be curious, and have an open mind as we explore this, because the impact of this can be profound.
+                          </p>
+
+                          <p>
+                            We have already explored how behind most of our emotions is a thought – even though we may not be aware of this.
+                          </p>
+
+                          <p>
+                            It follows that if we can meet a feeling without language, without thinking about it, without labeling it, and be with the sensation completely, we can cut off the oxygen supply of thought which sustains that feeling and it can dissolve – at least in that moment.
+                          </p>
+
+                          <p>
+                            If we can meet our anxiety, or stress, or emotional pain, or grief in this way – those feelings can dissolve and transform into silence and a sense of peace.
+                          </p>
+
+                          <p>
+                            This is a skill to learn – like swimming – and not easy at first – but like any skill, you can master it and it can be transformative.
+                          </p>
+
+                          <p>
+                            To explore this in depth please have a look at the Looking without language module in the Understanding Yourself section of the app.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Meeting the sensation of a feeling completely, without labeling it or thinking about it can help transform it to silence and a sense of peace. This gives you the space to consider all the options and respond with wisdom
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="922"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Check your learning. Which of these 14 challenges have you understood and applied?
+                                You can repeat them. These are important life skills to learn and the foundation of wisdom.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  #1 Label a feeling. Some have no name.
+                                </li>
+
+                                <li class="">
+                                  #2 Behind most feelings is a thought, but you may not be aware of it
+                                </li>
+
+                                <li class="">
+                                  #3 All feelings change, and do not last
+                                </li>
+
+                                <li class="">
+                                  #4 Feelings are felt in the body, in different parts
+                                </li>
+
+                                <li class="">
+                                  #5 They dictate our actions
+                                </li>
+
+                                <li class="">
+                                  #6 They can stop us thinking critically
+                                </li>
+
+                                <li class="">
+                                  #7 We believe them to be true
+                                </li>
+
+                                <li class="">
+                                  #8 They are not right or wrong. Don’t judge them.
+                                </li>
+
+                                <li class="">
+                                  #9 Feelings and actions repeat in patterns
+                                </li>
+
+                                <li class="">
+                                  #10 They can condition our behavior in the future
+                                </li>
+
+                                <li class="">
+                                  #11 We are uncomfortable talking about them
+                                </li>
+
+                                <li class="">
+                                  #12 We think others are responsible for how we feel
+                                </li>
+
+                                <li class="">
+                                  #13 Be curious. Where do they come from?
+                                </li>
+
+                                <li class="">
+                                  #14 Meet a feeling without language
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Well done for completing this session.
+                            Continue to the next session – Change a thought, Change a feeling.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 14 -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter p0">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"   [ngClass]="getClass('75005p0')"
+          (click)="getdayevent('intro')">
+          Intro
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="getClass('75005p1')" (click)="getdayevent('1')">
+          Day 1
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75005p2')" (click)="getdayevent('2')">
+          Day 2
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75005p3')" (click)="getdayevent('3')">
+          Day 3
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass] ="getClass('75005p4')" (click)="getdayevent('4')">
+          Day 4
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p5')"
+          (click)="getdayevent('5')">
+          Day 5
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p6')"
+          (click)="getdayevent('6')">
+          Day 6
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p7')"
+          (click)="getdayevent('7')">
+          Day 7
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p8')"
+          (click)="getdayevent('8')">
+          Day 8
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p9')"
+          (click)="getdayevent('9')">
+          Day 9
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p10')"
+          (click)="getdayevent('10')">
+          Day 10
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p11')"
+          (click)="getdayevent('11')">
+          Day 11
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p12')"
+          (click)="getdayevent('12')">
+          Day 12
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p13')"
+          (click)="getdayevent('13')">
+          Day 13
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75005p14')"
+          (click)="getdayevent('14')">
+          Day 14
+        </button>
+      </a>
+  
+    </div>
+  </div>
+</div>
+<!-- /footer -->

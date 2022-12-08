@@ -1,0 +1,12 @@
+ <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      In being critical of others, we subtly strengthen our own sense of importance, because all criticism assumes ‘I’ am right, ‘I’ am okay. For me to be right, you have to be wrong.
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

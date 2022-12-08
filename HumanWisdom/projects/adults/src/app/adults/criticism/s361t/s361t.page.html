@@ -1,0 +1,43 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            We have explored how hurtful criticism can be and how it can invite an angry backlash. So its worth asking yourself a few questions before you criticize another:
+          </p>
+          <p>
+            1. Is this for my benefit or for the other person's benefit?
+          </p>
+          <p>
+            2. How is it going to be received?
+          </p>
+          <p>
+            3. Is this the best time to say it?
+          </p>
+          <p>
+            4. What would happen if I said nothing?
+          </p>
+          <p>
+            5. Can I find something to praise instead? Much more effective at bringing change.
+          </p>
+          <p>
+            6. Am I angry and irritated? Might it be better said once I’ve calmed down?
+          </p>            
+          <p>
+            These questions also ensure the criticism offered is well thought through and not automatic, which sometimes does more harm than good.
+          </p>               
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+        
+          
+          
+          
+             

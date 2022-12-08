@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+           Let's explore what happens in our thinking when we find love. In layer 1 we make new friends who love us, or find a romantic partner, or get married. In layer 2 we feel happy and overjoyed. In layer 3, our emotional needs are now being met. In layer 4, the ‘I’ continues to be the same, but the feeling of loneliness and emptiness is covered over by the pleasure we feel when our emotional needs are met. We get attached to the person who meets our emotional needs in layer 1.
+            </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

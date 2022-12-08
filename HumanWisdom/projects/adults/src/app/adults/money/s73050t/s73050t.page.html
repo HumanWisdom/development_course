@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We know the lack of money for basics like food, and health can be devastating. We have seen people die in famines. When we don’t have enough money, we live in the hope that when we are rich we will be happy. If we do get rich that illusion goes away, and we may find we are still unhappy. We now find ourselves unoccupied and whatever pleasure we chase seems short-lived. People start behaving strangely towards us, probably reacting to the way we are behaving. We then turn to alcohol or drugs to numb the pain and loneliness we feel, and can slide into addiction. To be rich, and happy, with healthy relationships, needs tremendous inner intelligence and wisdom. To be poor, and happy, needs the same.
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

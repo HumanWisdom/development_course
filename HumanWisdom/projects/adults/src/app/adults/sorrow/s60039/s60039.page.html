@@ -1,0 +1,48 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext>
+  
+  <form class="">
+
+    <h1 class="txt3">
+      Check your learning about sorrow.
+
+
+    </h1>
+
+    <h1 class="txt21">
+      01. It can be triggered by any kind of loss
+    </h1>
+
+    <h1 class="txt21">
+      02. The pain and despair can be beyond words
+    </h1>
+
+    <h1 class="txt21">
+      03. The cycle of grief ends in acceptance 
+    </h1>
+
+    <h1 class="txt21">
+      04. The pain of sorrow eventually passes
+    </h1>
+    <h1 class="txt21">
+      05. Escaping through addiction can cause long term harm 
+
+    </h1>
+    <h1 class="txt21">
+      06. We often grieve more for ourselves. Our pain. Our future
+
+    </h1>
+    <h1 class="txt21">
+      07. Sorrow can make us focus on ourselves
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+			
+
+    

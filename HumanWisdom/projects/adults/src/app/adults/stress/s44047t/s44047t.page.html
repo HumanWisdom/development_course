@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          To not be stressed, either I can change the situation, or my reaction to it.
+          To change my reaction, I need to understand where it comes from. That opens
+          The door to enquiry. I can then explore where my reaction comes from, and what is behind that.
+          For example, if a friend does not call on my birthday I can get stressed and angry with him and blame him for how I am feeling. That is an automatic reaction and I can justify my anger. I am sure I am right and he is responsible.If I pause to ask what is behind my reaction, I realise it’s my own unmet expectation that has caused my own pain. Are others responsible for meeting my expectations? Why? Where do they come from? As a result of that understanding my anger towards him dissipates, as does my stress. I still tell him I felt bad he did not call. He apologises and says he got busy and forgot, and that was that. In the process I learn something new about myself, and then realise that the more expectations I have the more likely I am to be disappointed.
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Most leaders are judged on the numbers their organisation achieves, either a performance target, or profitability. Few leaders seek feedback from their teams about their management style, and how they can improve. It requires great strength of character to do this, but can be invaluable for your own development and to make you a great leader. You are not obliged to change, but there may be some gems in that feedback that can illuminate a blind-spot that you h
+          feedback should be done at arms length from you, and anonymously, so employees can feel to be candid.
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

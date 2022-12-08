@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+           We have some fears that are clearly visible, and others that lie buried in our subconscious. 
+           <br>The fear of not having enough money is one of them, and operates from the deeper layers of our thinking, shaping our lives. We can live with an anxiety of not having enough to pay the bills, or for our future, or for our loved ones. We know fear can make us behave in irrational ways. It may make us pick jobs that pay well that we do not enjoy, or work too hard and not have time for other, more important things, like spending time with people we love or looking after our health. We can justify this to ourselves and others, but behind this is fear which we do not see. 
+In exploring the nature of fear in our thinking, our irrational fears can melt away and we can do the right thing and respond with intelligence.
+
+            </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
