@@ -1,0 +1,36 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-done>
+  <form class="">
+
+    <!-- <div class="row pb3rem">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="tcenter">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/body/keytakeaway.png" alt="" class="img_kta cmw">
+        </div>
+      </div>
+    </div>  			 -->
+
+    <h1 class="txt3">
+      To develop a healthy relationship with ourselves we need a vibrant self-awareness and an understanding of the many hidden patterns of thinking that can come in the way.  This allows us to live in harmony with who we are and look after ourselves.
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <br><br><br><br><br> -->
+
+    <div class="row tcenter ptkta">
+      <div class="col-md-12 col-sm-12 col-xs-12">                    
+        <!-- <a class="btn_pulse_next_done" routerLink="/adults/relationships/m1s1-p15"> -->
+        <a class="kta_done_pulse_button" routerLink="/adults/relationships/s47225">
+          <!-- <i class="fa fa-check"></i> -->
+          <h6 class="kta_done_pulse_button_label">
+            Done
+          </h6>
+        </a>
+      </div>
+    </div>
+    
+  </form>   
+</app-kta-done>
+
+<app-kta-footer [bg_cft]="bg_cft" (previousEmitter)="prev()"></app-kta-footer>

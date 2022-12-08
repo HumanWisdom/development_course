@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Indulging in pleasure dulls the mind - for example if you watch video games or movies all day, and these activities soon cease to give us pleasure. A dull mind loses its sensitivity and ability to make rational decisions that are in its best interest.
+          </p>
+          
+          <p>
+            Seeing this some religions and cultures advocated suppressing pleasure and advocated vows of celibacy.
+          </p>
+
+          <p>
+            Suppressing pleasure does not work either. Our inner craving for pleasure is stronger than our willpower and tortures the mind because of the conflict it creates. So what is the answer?
+          </p>
+
+          <p>
+            A deeper understanding of the way the mind works leads to a natural sense of peace, and pleasure finds its rightful place in our lives
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

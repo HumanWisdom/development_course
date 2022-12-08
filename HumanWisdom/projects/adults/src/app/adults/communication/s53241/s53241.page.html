@@ -1,0 +1,39 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Early signs of an argument
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. You start repeating your point of view
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. You notice your tone of voice going up
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. You feel you need to ‘win’ the argument or convince the other person to change their point of view
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. You talk about unrelated issues from the past
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      05. You start feeling attacked. It becomes an ego issue
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      06. Your mind goes into reactive mode. All intelligence gets bypassed.
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      07. You start becoming personal or generalise. ‘You always…’
+    </h3>
+
+  </form>
+</app-lengthy-text>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

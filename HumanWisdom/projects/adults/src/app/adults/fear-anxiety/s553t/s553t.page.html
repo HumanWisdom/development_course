@@ -1,0 +1,17 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Since fear is often an automatic and unconscious response from the deeper layers of our thinking we struggle to put an end to it using our will power alone. That is why a deeper understanding of the nature of fear can help. Telling a person who is anxious not to be anxious does not work. The other reason, which is difficult to grasp, is that the ‘I’ that wants to end fear is a part of the same thinking process that creates fear in the first place. We explore this more fully in a separate module - The Nature of the ‘I’.
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

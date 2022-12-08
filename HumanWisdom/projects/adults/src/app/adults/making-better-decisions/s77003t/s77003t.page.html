@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module where we are going to explore all the factors that go into making better decisions. We are aware of some of them, but not aware of others. At the end of this module you will be equipped with the skills you need to make good decisions throughout your life.
+          </p>
+
+          <p>
+            Some decisions alter the direction of our lives - where to study, our choice of careers, whom we marry, where we live, our habits around food, drink and exercise, how we respond to the challenges we face in life, and so on.
+          </p>
+
+          <p>
+            Sometimes we make poor decisions perhaps use the phrase “decisions that could have been better”  which also alter the course of our lives - doing something unlawful that puts us in jail - or becoming addicted to drugs, alcohol or smoking, or having an affair which may lead to the end of a long marriage, or making bad financial decisions, and so on. 
+          </p>
+
+          <p>
+            If you are leading an organization, and have to make crucial decisions that affect the lives of thousands, how do you ensure they are the right ones for the employees, the company, and the planet?
+          </p>
+
+          <p>
+            There is so much to explore. Let’s get started.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

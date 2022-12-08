@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            In this session we are going to explore self-criticism. That word can be used in a positive way to mean the ability to look at ourselves objectively, and change if necessary. It is more commonly used to mean someone who doesn't like themselves for who they are, and that causes an inner turmoil from which seems like there is no escape. It is the latter meaning, which some people also call self-hate, that we are going to explore in this session, and find out how we can silence our constant inner critic and live in peace with ourselves
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+            
+              

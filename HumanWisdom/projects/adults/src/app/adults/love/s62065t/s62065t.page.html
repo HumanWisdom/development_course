@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+           Let's explore what is happening in our thinking when we are looking for love. This pyramid represents the different layers of our thinking. Let's start at the bottom in layer 4, at the core of our being, where the ‘I’ feels restless, empty, and lonely. We are not aware of this. Layer 3, which we are also not aware of, represents our emotional needs which are not being met. So in layer 2, which represents our conscious mind, we feel unhappy and incomplete. We think this unhappiness is caused by a lack of something in the world outside, which is layer 1, and that makes us go looking for love. Please examine this in yourself and find out if it is true.
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

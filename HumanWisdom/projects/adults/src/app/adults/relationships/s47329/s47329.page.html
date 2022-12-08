@@ -1,0 +1,40 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <!--<h1 class="txt8 fw_500 oneliner_txt_title">
+      Our suffering is an opportunity for understanding:
+    </h1>
+    <div class="clearfix"></div> -->
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. In the UK in 2019, 2.3m people reported being victims of domestic abuse.
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. In the US 10m people report physical abuse every year. Verbal abuse is even more common.
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. The WHO estimates 30% of women worldwide are victims of abuse in their lifetime.
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. In the US it is estimated 20% of marriages are abusive.
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. Both men and women can be victims of abuse.
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      06. These numbers underestimate the problem.
+    </h3>
+
+   
+     </form>          
+</app-oneline-text>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

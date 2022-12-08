@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          This is perhaps the most difficult thing for us to do. Our minds play so many tricks on us, and we gradually start having opinions about ourselves that are not quite true and we project that image to the world. We may not be as selfless as we like to think we are, or as important, or as loving or as good at listening and so on. We might pretend that money is not important to us when it really really is. Holding on to these illusions feels comfortable. We are afraid to admit the truth of who we are to ourselves. The difficulty with this is that we stop growing as human beings because growth can only occur by acknowledging the truth of who we are. Only by realising I am a poor listener, can I begin to learn to change.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

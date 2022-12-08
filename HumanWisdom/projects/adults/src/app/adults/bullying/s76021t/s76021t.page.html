@@ -1,0 +1,51 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are many situations where the bully may not be aware that their actions constitute bullying. This is important to know in organizations which have rules about bullying, and if you are accused of bullying it can derail your career.
+          </p>
+
+          <p>
+            Subtle forms of bullying can include:
+          </p>
+
+          <ul>
+            <li>
+              excluding and ignoring people and their contribution
+            </li>
+
+            <li>
+              overloading people with work
+            </li>
+
+            <li>
+              spreading malicious rumours
+            </li>
+
+            <li>
+              unfair treatment
+            </li>
+
+            <li>
+              picking on or regularly undermining someone
+            </li>
+
+            <li>
+              denying someone promotion opportunities
+            </li>
+          </ul>
+
+          <p>
+            Most people do not have an awareness of their own behaviour and how it is being received by others. A person may have grown up in a culture where bullying was normalised so they do not regard their actions as constituting bullying
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

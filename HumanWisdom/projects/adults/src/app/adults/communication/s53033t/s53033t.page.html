@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          So much of our communication is not genuine. Do we mean what we say, and say what we mean? As the poet Tagore asked ‘Do our words come from the depth of truth?’. We often say things that we think other people want to hear, or that will make us look good in other people’s eyes, or out of fear, or projecting an image of ourselves as someone we are not. We tell small white lies, sometimes without realising we are doing that. The more we accept ourselves for who we are, the more authentic we can be in our communication with others. If you are authentic and speak from your depth, people recognise that, and are likely to reciprocate.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

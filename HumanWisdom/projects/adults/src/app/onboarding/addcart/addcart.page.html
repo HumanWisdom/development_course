@@ -1,0 +1,248 @@
+<nav class="navbar navbar-default navbar-static-top cnavbar-default pt1rem">
+  <div class="container ncenter_flex">
+    <div class="navbar-header nh center_flex">
+      <button type="button" class="navbar-toggle collapsed unhide_ntbtn" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="cimg" href="#">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_transparent.png" class="img-responsive clogo" alt="">
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse hide_nav">      
+      <ul class="nav navbar-nav navbar-right">        
+        <ul class="nav navbar-nav cnavbar-nav mr-20px pb1rem">          
+          <li class="libr"><a href="https://humanwisdom.me/course/onboarding/login">Login</a></li>                    
+          <li class="libr"><a href="https://humanwisdom.me/course/onboarding/signup">Register</a></li>
+          <li class="libr"><a href="https://humanwisdom.me/hwp/webpages/help.php">Help</a></li>
+          <li class=""><a href="https://humanwisdom.me/hwp/webpages/profile.php">My Profile</a></li>          
+          <li role="separator" class="divider"></li>
+        </ul>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">        
+        <ul class="nav navbar-nav cnavbar-nav">          
+          <li><a href="">About</a></li>          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Programs <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_childrens.php">Children</a></li>
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_teenagers.php">Teenager</a></li>
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_adults.php">Adults</a></li>
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_parents.php">Parents</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="https://humanwisdom.me/hwp/webpages/wisdom_community.php">Community</a></li>
+          <li><a href="">Wisdom Survey</a></li>
+          <li><a href="">Wisdom Journal</a></li>
+          <li><a href="https://humanwisdom.me/course/onboarding/addcart">Subscribe</a></li>
+          <li><a href="https://humanwisdom.me/hwp/webpages/testimonials.php">Testimonials</a></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- page content -->
+<div class="right_col ml0 bg_lynx_white" role="main">				
+  <!-- Class -->  
+  <div class="">
+    <div class="row center_flex optb10rem">
+      <div class="col-md-6 col-sm-8 col-xs-12">
+        <div class="x_panel">                        
+          <div class="x_content fwunset">
+            <form>
+              
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
+                  <h4 class="ob_txt1">
+                    Subscribe
+                  </h4>  
+                  <hr class="chr">  
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
+                  <h4>
+                    <a class="ob_txt3" routerLink="/onboarding/activationkey">Click here</a>&nbsp;<span class="ob_txt2">if you already have an Activation Key.</span>
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
+                  <div class="form-group">                  
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <select class="form-control ob_select" placeholder="Select currency" (click)="selectCountry($event.target.value)" >
+                        <option [value]="">Select currency</option>
+                        <option *ngFor="let c of countryList" [value]="c.CountryId">{{c.CurSymbol}} | {{c.Country}}</option>
+                
+                      </select>
+                      <!-- do not remove-->
+                      <!-- <input list="country" name="country" class="form-control ob_select" placeholder="Select currency" [(ngModel)]="this.selectedCountry" (change)="selectCountry($event.target.value)">
+                      <datalist id="country" >
+                
+                        <option *ngFor="let c of countryList"  >{{c.CurSymbol}}-{{c.Country}}</option>
+                      </datalist> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="planWarning">
+                <div class="text text-danger">Please select a monthly/annual plan before adding to cart</div>
+              </div>
+
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 pt3px">
+                  <h4 class="ob_txt4">
+                    View monthly / annual subscription prices
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="radio">
+                      <label class="mt0px">
+                        <input type="radio" checked="" value="monthly" id="optionsRadios1" name="optionsRadios" (click)="selectPriceBracket($event.target.value)"> 
+                        <span class="">
+                          <span class="pl1rem">
+                            Monthly
+                          </span>                          
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="radio">
+                      <label class="mt0px">
+                        <input type="radio" checked="" value="annual" id="optionsRadios1" name="optionsRadios" (click)="selectPriceBracket($event.target.value)">
+                          <span class="">
+                            <span class="pl1rem">
+                              Annual
+                            </span>                            
+                          </span> 
+                      </label>
+                    </div>
+                  </div>
+                </div>                
+              </div> -->
+
+              <hr class="bhr">
+              <div *ngFor="let c of cartList">
+                <div  class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                      <h4 class="ob_txt5 mt5px mt0px">
+                       {{c.Program}}
+                      </h4>
+  
+                      <!-- <h5 class="ob_txt4 mt5px">
+                        Ages 5-11 
+                      </h5> -->
+
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 pt3px">
+                          <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="radio">
+                              <label class="mt0px">
+                                <input type="radio" [checked]=false value="monthly" id="{{c.Program}}" name="{{c.Program}}" (click)="selectPlan($event.target.value,c.ProgID)" > 
+                                <span class="">
+                                  <span class="pl1rem">
+                                    Monthly- {{c.Monthly}}
+                                  </span>                          
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="radio">
+                              <label class="mt0px">
+                                <input type="radio" [checked]=false value="annual" id="{{c.Program}}" name="{{c.Program}}" (click)="selectPlan($event.target.value,c.ProgID)">
+                                  <span class="">
+                                    <span class="pl1rem">
+                                      Annual-{{c.Annual}}
+                                    </span>                            
+                                  </span> 
+                              </label>
+                            </div>
+                          </div>
+                        </div>                
+                      </div>                     
+                    </div>
+  
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/programs/onboarding/{{c.Program}}.png" alt="..." class="img-responsive w100">
+                      </div>                    
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter tm12px">
+                        
+                        <button *ngIf="c.qty==0; else showQuantity" class="btn btn-default btn-xs btn_add" type="button" (click)="addToCart(c.ProgID)">Add</button>
+                        <div class="col-md-4 col-sm-4 col-xs-6 tcenter">                    
+                          <!-- quantity btn -->
+                          <ng-template #showQuantity class="input-group mb0px">
+                            <input type="button" value="-" class="button-minus" data-field="quantity" (click)="removeFromCart(c.ProgID)" >
+                            <input type="number"  max=""  name="{{c.Program}}" class="quantity-field" [(ngModel)]="c.qty">
+                            <input type="button" value="+" class="button-plus" data-field="quantity" (click)="addToCart(c.ProgID)">
+                          </ng-template>                    
+                          <!-- /quantity btn -->
+                        </div>
+
+                         <!-- quantity btn -->
+                          <!-- <ng-template #showQuantity class="input-group mb0px">
+                            <input type="button" value="-" class="button-minus" data-field="quantity">
+                            <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                            <input type="button" value="+" class="button-plus" data-field="quantity">
+                          </ng-template>                     -->
+                         <!-- /quantity btn -->
+
+                        <!-- <button class="btn btn-default btn-xs btn_add" type="button" (click)="removeItem(c.ProgID)">REMOVE</button> -->
+                      </div>                    
+                    </div>
+                    
+                  </div>
+                </div>
+  
+                <hr class="thr">
+              </div>
+              <div>
+                <div  *ngIf="showCart" class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 pt3px cdiv">
+                    <div class="col-md-6 col-sm-6 col-xs-8">
+                      <h4 class="ob_txt6">
+                        {{this.totalItemCount}} items | {{this.totalCartValue}}
+                      </h4>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">
+                      <h4 class="ob_txt6 fright">
+                        <a class="twhite" routerLink="/onboarding/viewcart">View Cart</a>
+                      </h4>
+                    </div>
+                  </div>                
+                </div>
+                <!-- Total Cart Value-{{this.totalCartValue}}
+                Total Number of Item-{{this.totalItemCount}} -->
+              </div> 
+                       
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer content -->
+<footer class="cfooter ml0">
+  <div class="tcenter twhite">    
+    © 2020 HumanWisdom Ltd. All Rights Reserved.&nbsp;<a href="" class="twhite">Terms of Use</a>&nbsp;|&nbsp;<a href="" class="twhite">Privacy Policy</a>
+  </div>
+  <div class="clearfix"></div>
+</footer>
+<!-- /footer content -->

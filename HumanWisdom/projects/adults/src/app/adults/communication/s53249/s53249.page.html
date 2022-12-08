@@ -1,0 +1,25 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      Living with wisdom helps us to avoid arguments and other problems in communication, get our point across clearly, and build meaningful relationships.
+
+    </h1>
+      <!--<h1 class="txt3">
+      2. Long term stress can affect our mental and physical health
+    </h1>
+      <h1 class="txt3">
+      3. Exploring it in detail allows us to avoid it and manage it better
+    </h1>
+      <h1 class="txt3">
+      4. Preventing it is far easier than dealing with it
+    </h1>-->
+    <div class="clearfix"></div>
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

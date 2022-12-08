@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          What is joy? How is it different from pleasure. I love this definition - Joy is gladness not based on circumstances. You could say joy is a state of being happy, that does not depend on external events. You don’t pursue joy, it comes from within, or spontaneously, unexpectedly, from the small things in life, like the warmth of the sun on a cool day, or a cool breeze on a hot one, from the smile of a child, and sometimes for no reason, other than you are glad to be alive
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

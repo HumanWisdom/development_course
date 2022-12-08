@@ -1,0 +1,234 @@
+<nav class="navbar navbar-default navbar-static-top cnavbar-default pt1rem">
+  <div class="container ncenter_flex">
+    <div class="navbar-header nh center_flex">
+      <button type="button" class="navbar-toggle collapsed unhide_ntbtn" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="cimg" href="#">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_transparent.png" class="img-responsive clogo" alt="">
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse hide_nav">      
+      <ul class="nav navbar-nav navbar-right">        
+        <ul class="nav navbar-nav cnavbar-nav mr-20px pb1rem">          
+          <li class="libr"><a href="https://humanwisdom.me/course/onboarding/login">Login</a></li>                    
+          <li class="libr"><a href="https://humanwisdom.me/course/onboarding/signup">Register</a></li>
+          <li class="libr"><a href="https://humanwisdom.me/hwp/webpages/help.php">Help</a></li>
+          <li class=""><a href="https://humanwisdom.me/hwp/webpages/profile.php">My Profile</a></li>          
+          <li role="separator" class="divider"></li>
+        </ul>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">        
+        <ul class="nav navbar-nav cnavbar-nav">          
+          <li><a href="">About</a></li>          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Programs <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_childrens.php">Children</a></li>
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_teenagers.php">Teenager</a></li>
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_adults.php">Adults</a></li>
+              <li><a href="https://humanwisdom.me/hwp/webpages/wp_parents.php">Parents</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="https://humanwisdom.me/hwp/webpages/wisdom_community.php">Community</a></li>
+          <li><a href="">Wisdom Survey</a></li>
+          <li><a href="">Wisdom Journal</a></li>
+          <li><a href="https://humanwisdom.me/course/onboarding/addcart">Subscribe</a></li>
+          <li><a href="https://humanwisdom.me/hwp/webpages/testimonials.php">Testimonials</a></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- page content -->
+<div #screen class="right_col ml0 bg_lynx_white ip0" role="main" *ngIf="enableLogin">                        
+  <!-- Class -->
+  <div class="">                            
+    <div class="clearfix"></div>            
+    <div class="row center_flex optb10rem">
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="x_panel p0 center_flex">                        
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 p0 dnone">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/webpage/login.png" alt="..." class="img-responsive mh68vh ">
+          </div>                        
+          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/webpage/social-media-caution.png" alt="..." class="img-responsive" style="display:none;">
+            <div class="x_content">
+              <br />
+              <form class="form-horizontal form-label-left input_mask">
+                <div class="form-group">                                         
+                  <div class="col-lg-7 col-md-7">
+                    <a>
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_transparent.png" alt="..." class="img-responsive">        
+                    </a>
+                  </div>                                                    
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="black">Login </h4>
+                  </label> 
+                </div> 
+               
+                  <div *ngIf="showSuccessPassword" class="white alert alert-success w100">
+                    Please login with your new password.
+                  </div>
+
+                                                      
+                <div class="form-group">                                                
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input class="form-control col-md-7 col-xs-12 cform-control" required="required" type="text" name="email"placeholder="Email"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" [(ngModel)]="email" #emailField="ngModel">
+                    <div *ngIf="emailField.invalid && emailField.touched">
+                      <div *ngIf="emailField.errors?.required">Email is required</div>
+                      <div *ngIf="emailField.errors?.pattern">Please enter a valid email address</div>
+
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group">                                                
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input class="form-control col-md-7 col-xs-12 cform-control" required="required" type="password" name="password" placeholder="Password" [(ngModel)]="this.password">                                                
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="form-group">                                                
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">                    
+                    <div class="checkbox p0">
+                      <label class="mt0px">
+                        <input type="checkbox" name="remember" value="" [checked]="saveUsername"
+                        (change)="rememberUsername($event.target.checked)"/> 
+                        <span class="">
+                          <span class="pl0_3rem chk_rm fs14px">
+                            Remember me
+                          </span>                          
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">                                               
+                    <label class="m0px">
+                      <a routerLink="/onboarding/password-link" class="fs14px">
+                        Forgot Password ?
+                      </a>
+                    </label>                                                
+                  </div>       
+                </div>
+
+                <br><br>
+
+                <div class="form-group">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <a>
+                      <button [disabled]="!this.email||!this.password"type="button" (click)="emailLogin()" class="btn btn-primary w100 bg_cyan h5rem">LOGIN</button>                                                   
+                    </a>
+                  </div>
+                </div>
+
+                <div *ngIf="showAlert" class="form-group">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="alert alert-danger w100  h5rem" >You have enetered wrong credentials. Please try again. <br>
+                       
+
+                      </div>                                                   
+                  </div>
+              </div>
+
+              
+
+                <br>
+                
+                <div class="form-group center_flex">
+                  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 tcenter">                                                                                                
+                    <a>
+                      <button type="button" class="btn btn-primary btn-sm w100 cfs" (click)="fbLogin()">
+                        <i class="fa fa-facebook"></i>
+                      </button>
+                    </a>
+                  </div>
+
+                  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 tcenter">                                                
+                    <a>
+                      <button type="button" class="btn btn-danger btn-sm w100 cfs" (click)="googleLogin()">
+                        <i class="fa fa-google-plus"></i>
+                      </button>
+                    </a>
+                  </div>                                                                                        
+                </div>
+
+                <br>
+                
+                <div class="form-group tcenter">
+                  <label class="col-lg-12 col-md-12 col-sm-12 col-xs-12 black fs14px">New Here ? <a  routerLink="/onboarding/signup"><span class="cyan">Signup</span></a></label>                    
+                </div>
+                
+                
+              </form>
+            </div>  
+          </div>                            
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+  <!--/Class -->  
+</div>
+<!-- /page content -->
+
+<!-- footer content -->
+<footer class="cfooter ml0">
+  <div class="tcenter twhite">    
+    © 2020 HumanWisdom Ltd. All Rights Reserved.&nbsp;<a href="" class="twhite">Terms of Use</a>&nbsp;|&nbsp;<a href="" class="twhite">Privacy Policy</a>
+  </div>
+  <div class="clearfix"></div>
+</footer>
+<!-- /footer content -->
+
+
+<!-- popup modal -->
+<div class="modal fade" id="modal_popup" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal_popup" role="document">
+    <div class="">  
+      <div class="modal-header b0">        
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <button type="button" #closemodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close">              
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/modal_close_01.svg" alt="" class="img-responsive fright">
+            </button>
+          </div>
+        </div>        
+      </div>    
+      <div class="modal-body pt0px">
+        <!-- modal content -->          
+        <div class="row center_flex">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter boldi">
+              You do not have an Active Subcription
+            </h4>  
+            <!-- <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Please <a (click)="getrenew()" style="color: blue;">Click</a> Here to renew or <a style="color: blue;" (click)="getfreeuser()">Click</a> Here to proceed as a free user
+            </h4>   -->
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Please click here to <a (click)="getrenew()" style="color: blue;" class="italic">Renew</a> 
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              <span class="">OR</span>
+            </h4>
+            <h4 class="fw_400 fs_18px lh_21px fc_000000 tcenter">
+              Click Here to proceed as a <a style="color: blue;" (click)="getfreeuser()" class="italic">Free User</a>
+            </h4>  
+          </div>
+        </div>
+        <!-- /modal content -->  
+      </div>      
+    </div>
+  </div>
+</div>
+<!-- /popup modal -->
+<span #enablemodal data-toggle="modal" data-target="#modal_popup"></span>

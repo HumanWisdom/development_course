@@ -1,0 +1,24 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-image-text base="anger_base2" overlay="anger_overlay2">
+  <form>
+
+    <h1 class="txt1 tcenter">
+      Anger comes from conditioning
+    </h1>           
+
+    <!-- audio  -->                
+    <!-- angular audio player plugin  -->                 
+      <div class="row tcenter">
+        <div class="col-md-12 col-sm-12 col-xs-12 p7rem">         
+          <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" #audio ></ngx-circular-player>
+        </div>
+      </div>
+    <!-- /angular audio player plugin  -->   
+    <!-- /audio --> 
+                   
+    
+  </form>
+</app-image-text>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>
