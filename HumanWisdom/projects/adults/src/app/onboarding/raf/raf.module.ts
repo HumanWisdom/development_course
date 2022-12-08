@@ -8,7 +8,7 @@ import { RafPageRoutingModule } from './raf-routing.module';
 
 import { RafPage } from './raf.page';
 
-import {SharedModule} from '../../adults/shared/shared.module';
+import {SharedModule} from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

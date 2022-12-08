@@ -8,7 +8,7 @@ import { ViewcartPageRoutingModule } from './viewcart-routing.module';
 
 import { ViewcartPage } from './viewcart.page';
 
-import {SharedModule} from '../../adults/shared/shared.module'
+import {SharedModule} from '../../../../../shared/shared.module'
 
 @NgModule({
   imports: [

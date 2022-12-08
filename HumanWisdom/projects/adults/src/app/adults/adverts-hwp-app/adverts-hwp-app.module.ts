@@ -8,7 +8,7 @@ import { AdvertsHwpAppPageRoutingModule } from './adverts-hwp-app-routing.module
 
 import { AdvertsHwpAppPage } from './adverts-hwp-app.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

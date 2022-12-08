@@ -8,7 +8,7 @@ import { BlogIndexPageRoutingModule } from './blog-index-routing.module';
 
 import { BlogIndexPage } from './blog-index.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

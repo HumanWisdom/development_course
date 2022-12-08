@@ -8,7 +8,7 @@ import { TermsConditionsPageRoutingModule } from './terms-conditions-routing.mod
 
 import { TermsConditionsPage } from './terms-conditions.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

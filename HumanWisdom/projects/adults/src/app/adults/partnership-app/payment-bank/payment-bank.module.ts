@@ -8,7 +8,7 @@ import { PaymentBankPageRoutingModule } from './payment-bank-routing.module';
 
 import { PaymentBankPage } from './payment-bank.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,

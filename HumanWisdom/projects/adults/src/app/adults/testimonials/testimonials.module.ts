@@ -8,7 +8,7 @@ import { TestimonialsPageRoutingModule } from './testimonials-routing.module';
 
 import { TestimonialsPage } from './testimonials.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

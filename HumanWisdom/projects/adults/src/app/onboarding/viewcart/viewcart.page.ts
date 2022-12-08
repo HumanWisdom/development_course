@@ -4,13 +4,13 @@ import {Location } from '@angular/common'
 import {OnboardingService} from '../onboarding.service'
 import * as $ from 'jquery' 
 import { LogEventService } from "src/app/log-event.service";
-    
+
 @Component({
   selector: 'app-viewcart',
   templateUrl: './viewcart.page.html',
   styleUrls: ['./viewcart.page.scss'],
 })
-export class ViewcartPage implements OnInit { 
+export class ViewcartPage implements OnInit {
   cartList:any[]=[];
   countryList=[]
   totalCartValue:any

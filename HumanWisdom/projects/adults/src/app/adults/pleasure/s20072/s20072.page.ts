@@ -22,7 +22,7 @@ export class S20072Page implements OnInit {
   moduleList: any = [
     {
       name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/41.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
       link: '/happiness'
     },
     {
@@ -54,7 +54,7 @@ export class S20072Page implements OnInit {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
       
       this.moduleLink = "/adults/conditioning"
-      this.moduleName = "Past Influences"
+      this.moduleName = "Conditioning"
       this.sectionName = "Explore How Your Mind Works";
       this.moduleId = 15
      

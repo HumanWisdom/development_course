@@ -8,7 +8,7 @@ import { PodcastTocPageRoutingModule } from './podcast-toc-routing.module';
 
 import { PodcastTocPage } from './podcast-toc.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

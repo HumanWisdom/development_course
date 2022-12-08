@@ -21,18 +21,21 @@ export class S26029Page implements OnInit {
     {
       name: 'How to begin?',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/12.png',
-      link: '/how-to-begin'
+      link: '/how-to-begin',
+      id: 36
     },
     {
       name: 'Three Steps to Enquiry',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/13.png',
-      link: '/three-steps-enquiry'
+      link: '/three-steps-enquiry',
+      id: 37
  
     },
     {
       name: 'Insight',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/14.png',
-      link: '/insight'
+      link: '/insight',
+      id: 38
   
     },
   ]

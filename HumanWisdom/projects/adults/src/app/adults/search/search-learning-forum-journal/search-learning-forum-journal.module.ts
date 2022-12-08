@@ -8,7 +8,7 @@ import { SearchLearningForumJournalPageRoutingModule } from './search-learning-f
 
 import { SearchLearningForumJournalPage } from './search-learning-forum-journal.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

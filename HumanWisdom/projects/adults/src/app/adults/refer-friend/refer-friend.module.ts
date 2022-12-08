@@ -8,7 +8,7 @@ import { ReferFriendPageRoutingModule } from './refer-friend-routing.module';
 
 import { ReferFriendPage } from './refer-friend.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 

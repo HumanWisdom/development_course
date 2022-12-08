@@ -8,7 +8,7 @@ import { SubscribedUnsubscribedPageRoutingModule } from './subscribed-unsubscrib
 
 import { SubscribedUnsubscribedPage } from './subscribed-unsubscribed.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

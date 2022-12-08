@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SubmitStoryPageRoutingModule } from './submit-story-routing.module';
 
 import { SubmitStoryPage } from './submit-story.page';
-import {SharedModule} from '../../shared/shared.module'
+import {SharedModule} from '../../../../../../shared/shared.module'
 
 @NgModule({
   imports: [

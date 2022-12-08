@@ -8,7 +8,7 @@ import { QuestionsPageRoutingModule } from './questions-routing.module';
 
 import { QuestionsPage } from './questions.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

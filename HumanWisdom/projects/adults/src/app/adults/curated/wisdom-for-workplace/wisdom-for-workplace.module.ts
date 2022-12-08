@@ -8,7 +8,7 @@ import { WisdomForWorkplacePageRoutingModule } from './wisdom-for-workplace-rout
 
 import { WisdomForWorkplacePage } from './wisdom-for-workplace.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 

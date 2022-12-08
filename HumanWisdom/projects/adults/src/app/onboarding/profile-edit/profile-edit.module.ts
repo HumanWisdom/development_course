@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProfileEditPageRoutingModule } from './profile-edit-routing.module';
 
 import { ProfileEditPage } from './profile-edit.page';
-import { SharedModule } from 'src/app/adults/shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 
 @NgModule({

@@ -8,7 +8,7 @@ import { ManageYourEmotionsPageRoutingModule } from './manage-your-emotions-rout
 
 import { ManageYourEmotionsPage } from './manage-your-emotions.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 

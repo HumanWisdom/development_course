@@ -1,8 +1,7 @@
-import { SingleAudioContentComponent } from './../shared/component/single-audio-content/single-audio-content.component';
-import { YoutubeContentComponent } from './../shared/component/youtube-content/youtube-content.component';
+import { SingleAudioContentComponent } from '../../../../../shared/component/single-audio-content/single-audio-content.component';
+import { YoutubeContentComponent } from '../../../../../shared/component/youtube-content/youtube-content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { S3VideoComponent } from '../shared/component/s3-video/s3-video.component';
 
 const routes: Routes = [
   {

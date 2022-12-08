@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PartnershipAppRoutingModule } from './partnership-app-routing.module';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 @NgModule({
   declarations: [],
   imports: [

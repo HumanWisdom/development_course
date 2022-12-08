@@ -8,7 +8,7 @@ import { NewsletterSubscribePageRoutingModule } from './newsletter-subscribe-rou
 
 import { NewsletterSubscribePage } from './newsletter-subscribe.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

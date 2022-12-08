@@ -8,7 +8,7 @@ import { PaymentPlantTreesPageRoutingModule } from './payment-plant-trees-routin
 
 import { PaymentPlantTreesPage } from './payment-plant-trees.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

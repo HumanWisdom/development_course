@@ -22,18 +22,21 @@ export class S43035Page implements OnInit {
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
-      link: '/fear-anxiety'
+      link: '/fear-anxiety',
+      id: 19
     },
     {
       name: 'No Judgement',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/16.png',
-      link: '/no-judgement'
+      link: '/no-judgement',
+      id: 40
  
     },
     {
       name: 'Key Ideas',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/04.png',
-      link: '/key-ideas'
+      link: '/key-ideas',
+      id: 34
   
     },
   ]

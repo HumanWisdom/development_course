@@ -21,17 +21,20 @@ export class S39029Page implements OnInit {
     {
       name: 'Breathing',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/07.png',
-      link: '/breathing'
+      link: '/breathing',
+      id: 29
     },
     {
       name: 'Noticing Thoughts',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/08.png',
-      link: '/noticing-thoughts'
+      link: '/noticing-thoughts',
+      id: 30
     },
     {
       name: 'Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/09.png',
-      link: '/meditation'
+      link: '/meditation',
+      id: 22
     },
   ]
   

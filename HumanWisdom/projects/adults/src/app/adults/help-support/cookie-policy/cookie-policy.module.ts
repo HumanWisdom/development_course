@@ -8,7 +8,7 @@ import { CookiePolicyPageRoutingModule } from './cookie-policy-routing.module';
 
 import { CookiePolicyPage } from './cookie-policy.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

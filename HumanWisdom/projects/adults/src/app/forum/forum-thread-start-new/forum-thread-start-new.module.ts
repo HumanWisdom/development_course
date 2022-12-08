@@ -8,7 +8,7 @@ import { ForumThreadStartNewPageRoutingModule } from './forum-thread-start-new-r
 
 import { ForumThreadStartNewPage } from './forum-thread-start-new.page';
 // import {SharedModule} from '../../shared/shared.module'
-import {SharedModule} from '../../adults/shared/shared.module'
+import {SharedModule} from '../../../../../shared/shared.module'
 
 @NgModule({
   imports: [

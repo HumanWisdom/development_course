@@ -8,7 +8,7 @@ import { AdvertsStudentPageRoutingModule } from './adverts-student-routing.modul
 
 import { AdvertsStudentPage } from './adverts-student.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

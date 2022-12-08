@@ -8,7 +8,7 @@ import { AddToCartPageRoutingModule } from './add-to-cart-routing.module';
 
 import { AddToCartPage } from './add-to-cart.page';
 
-import {SharedModule} from '../../adults/shared/shared.module'
+import {SharedModule} from '../../../../../../../../../shared/shared.module'
 
 @NgModule({
   imports: [

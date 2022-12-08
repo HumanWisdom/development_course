@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { JournalPageRoutingModule } from './journal-routing.module';
 
 import { JournalPage } from './journal.page';
-import {SharedModule} from '../shared/shared.module'
+import {SharedModule} from '../../../../../shared/shared.module'
 
 @NgModule({
   imports: [

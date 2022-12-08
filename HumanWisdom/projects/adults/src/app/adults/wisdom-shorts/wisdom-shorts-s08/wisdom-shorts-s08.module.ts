@@ -8,7 +8,7 @@ import { WisdomShortsS08PageRoutingModule } from './wisdom-shorts-s08-routing.mo
 
 import { WisdomShortsS08Page } from './wisdom-shorts-s08.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

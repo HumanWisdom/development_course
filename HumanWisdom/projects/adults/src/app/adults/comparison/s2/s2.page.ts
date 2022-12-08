@@ -81,7 +81,7 @@ export class S2Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/comparison/s3'])
+   
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -114,7 +114,7 @@ export class S2Page implements OnInit, OnDestroy {
     this.totalTime = this.endTime - this.startTime;
 
     if (this.userId !== 563) this.submitProgress()
-
+    this.router.navigate(['/adults/comparison/s3'])
   }
 
   ngOnDestroy() {

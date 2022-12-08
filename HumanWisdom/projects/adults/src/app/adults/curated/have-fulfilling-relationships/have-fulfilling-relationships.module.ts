@@ -8,7 +8,7 @@ import { HaveFulfillingRelationshipsPageRoutingModule } from './have-fulfilling-
 
 import { HaveFulfillingRelationshipsPage } from './have-fulfilling-relationships.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 

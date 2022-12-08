@@ -8,7 +8,7 @@ import { TreesistersPageRoutingModule } from './treesisters-routing.module';
 
 import { TreesistersPage } from './treesisters.page';
 
-import {SharedModule}from '../shared/shared.module';
+import {SharedModule}from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

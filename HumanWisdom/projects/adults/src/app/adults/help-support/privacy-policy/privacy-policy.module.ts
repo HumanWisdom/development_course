@@ -8,7 +8,7 @@ import { PrivacyPolicyPageRoutingModule } from './privacy-policy-routing.module'
 
 import { PrivacyPolicyPage } from './privacy-policy.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { IntroCarouselPageRoutingModule } from './intro-carousel-routing.module';
 
-import { SharedModule } from 'src/app/adults/shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 import { SplashPageModule } from 'src/app/adults/splash/splash.module';
 import { IntroCarouselPage } from './intro-carousel.page';
 

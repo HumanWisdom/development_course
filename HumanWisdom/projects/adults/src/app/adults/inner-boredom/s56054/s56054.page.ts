@@ -21,19 +21,22 @@ export class S56054Page implements OnInit {
   moduleList: any = [
     {
       name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/41.png',
-      link: '/happiness'
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
+      link: '/happiness',
+      id: 23
     },
     {
       name: 'Pleasure',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png',
-      link: '/pleasure'
+      link: '/pleasure',
+      id: 20
  
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
     },
   ]
 

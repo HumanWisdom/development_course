@@ -10,7 +10,7 @@ import { DashboardModulePage } from './dashboard-module.page';
 
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

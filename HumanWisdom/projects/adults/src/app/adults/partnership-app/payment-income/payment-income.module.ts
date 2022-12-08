@@ -8,7 +8,7 @@ import { PaymentIncomePageRoutingModule } from './payment-income-routing.module'
 
 import { PaymentIncomePage } from './payment-income.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,

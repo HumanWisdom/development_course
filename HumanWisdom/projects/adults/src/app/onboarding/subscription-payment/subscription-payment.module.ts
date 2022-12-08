@@ -8,7 +8,7 @@ import { SubscriptionPaymentPageRoutingModule } from './subscription-payment-rou
 
 import { SubscriptionPaymentPage } from './subscription-payment.page';
 
-import { SharedModule } from 'src/app/adults/shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,

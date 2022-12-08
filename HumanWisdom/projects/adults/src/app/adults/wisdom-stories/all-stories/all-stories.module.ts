@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AllStoriesPageRoutingModule } from './all-stories-routing.module';
 
 import { AllStoriesPage } from './all-stories.page';
-import {SharedModule} from '../../shared/shared.module'
+import {SharedModule} from '../../../../../../shared/shared.module'
 
 @NgModule({
   imports: [

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NotePageRoutingModule } from './note-routing.module';
 
 import { NotePage } from './note.page';
-import {SharedModule}from '../shared/shared.module'
+import {SharedModule}from '../../../../../shared/shared.module'
 
 @NgModule({
   imports: [

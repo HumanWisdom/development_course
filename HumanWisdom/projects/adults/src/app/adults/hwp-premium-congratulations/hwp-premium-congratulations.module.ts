@@ -8,7 +8,7 @@ import { HwpPremiumCongratulationsPageRoutingModule } from './hwp-premium-congra
 
 import { HwpPremiumCongratulationsPage } from './hwp-premium-congratulations.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,

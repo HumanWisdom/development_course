@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PersonalisedForYouSearchPageRoutingModule } from './personalised-for-you-search-routing.module';
 
 import { PersonalisedForYouSearchPage } from './personalised-for-you-search.page';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 
 @NgModule({

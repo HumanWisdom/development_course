@@ -8,7 +8,7 @@ import { AddToHomeScreenIosPageRoutingModule } from './add-to-home-screen-ios-ro
 
 import { AddToHomeScreenIosPage } from './add-to-home-screen-ios.page';
 
-import {SharedModule}from '../shared/shared.module';
+import {SharedModule}from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

@@ -8,7 +8,7 @@ import { DailyPracticePageRoutingModule } from './daily-practice-routing.module'
 
 import { DailyPracticePage } from './daily-practice.page';
 
-import {SharedModule} from '../shared/shared.module';
+import {SharedModule} from '../../../../../shared/shared.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 

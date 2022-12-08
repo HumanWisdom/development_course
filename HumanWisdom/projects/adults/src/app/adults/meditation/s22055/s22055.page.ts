@@ -2,6 +2,7 @@ import { Options } from '@angular-slider/ngx-slider';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+//node_modules/propellerkit-range-slider/node_modules/nouislider/';
 import * as noUiSlider from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/nouislider/';
 import * as wNumb from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/wnumb/';
 import { AdultsService } from "../../adults.service";

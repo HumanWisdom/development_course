@@ -8,8 +8,8 @@ import { ForumThreadPageRoutingModule } from './forum-thread-routing.module';
 
 import { ForumThreadPage } from './forum-thread.page';
 
-// import {SharedModule} from '../../shared/shared.module'
-import {SharedModule} from '../../adults/shared/shared.module'
+// import {SharedModule} from '../../../../../../shared/shared.module'
+import {SharedModule} from '../../../../../shared/shared.module'
 @NgModule({
   imports: [
     CommonModule,

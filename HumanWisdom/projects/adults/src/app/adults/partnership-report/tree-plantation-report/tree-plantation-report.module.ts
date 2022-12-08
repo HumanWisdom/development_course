@@ -8,7 +8,7 @@ import { TreePlantationReportPageRoutingModule } from './tree-plantation-report-
 
 import { TreePlantationReportPage } from './tree-plantation-report.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

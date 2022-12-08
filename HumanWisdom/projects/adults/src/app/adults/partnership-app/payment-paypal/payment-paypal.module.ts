@@ -8,7 +8,7 @@ import { PaymentPaypalPageRoutingModule } from './payment-paypal-routing.module'
 
 import { PaymentPaypalPage } from './payment-paypal.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,

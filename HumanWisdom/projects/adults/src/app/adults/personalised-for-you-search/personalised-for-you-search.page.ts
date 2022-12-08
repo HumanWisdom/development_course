@@ -38,6 +38,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
+  public alertMsg: any
   isWelcomePopup=false;
   constructor(private route: Router, private aservice: AdultsService, public authService: SocialAuthService, public service: OnboardingService) {
     this.getUserPreference();
@@ -50,6 +51,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.isloggedIn = true
       if(window.history.state.routedFromLogin && window.history.state.routedFromLogin ==true ){
       setTimeout(() => {
+        this.aservice.adminPopup().subscribe((res) => {
+          this.alertMsg = res;
+        });
         this.welcome.nativeElement.click();
       }, 1000);
       }

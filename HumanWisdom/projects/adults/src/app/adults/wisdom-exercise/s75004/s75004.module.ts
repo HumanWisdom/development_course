@@ -8,7 +8,7 @@ import { S75004PageRoutingModule } from './s75004-routing.module';
 
 import { S75004Page } from './s75004.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

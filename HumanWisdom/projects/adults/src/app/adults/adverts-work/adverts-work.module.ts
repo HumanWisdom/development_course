@@ -8,7 +8,7 @@ import { AdvertsWorkPageRoutingModule } from './adverts-work-routing.module';
 
 import { AdvertsWorkPage } from './adverts-work.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

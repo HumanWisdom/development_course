@@ -23,17 +23,20 @@ export class S432Page implements OnInit {
     {
       name: 'Comparison & Envy',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/21.png',
-      link: '/comparison'
+      link: '/comparison',
+      id: 7
     },
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
-      link: '/conditioning'
+      link: '/conditioning',
+      id: 15
     },
     {
       name: 'Reactive mind',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/22.png',
-      link: '/reactive-mind'
+      link: '/reactive-mind',
+      id: 54
   
     },
   ]

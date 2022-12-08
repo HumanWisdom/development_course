@@ -8,7 +8,7 @@ import { SearchPopularItemsPageRoutingModule } from './search-popular-items-rout
 
 import { SearchPopularItemsPage } from './search-popular-items.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

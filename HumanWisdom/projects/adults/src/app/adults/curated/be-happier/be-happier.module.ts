@@ -8,7 +8,7 @@ import { BeHappierPageRoutingModule } from './be-happier-routing.module';
 
 import { BeHappierPage } from './be-happier.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 

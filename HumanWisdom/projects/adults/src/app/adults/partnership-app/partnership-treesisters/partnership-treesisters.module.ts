@@ -8,7 +8,7 @@ import { PartnershipTreesistersPageRoutingModule } from './partnership-treesiste
 
 import { PartnershipTreesistersPage } from './partnership-treesisters.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

@@ -8,7 +8,7 @@ import { BookmarksPageRoutingModule } from './bookmarks-routing.module';
 
 import { BookmarksPage } from './bookmarks.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

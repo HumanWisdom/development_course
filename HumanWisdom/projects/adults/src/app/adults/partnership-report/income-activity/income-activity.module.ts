@@ -8,7 +8,7 @@ import { IncomeActivityPageRoutingModule } from './income-activity-routing.modul
 
 import { IncomeActivityPage } from './income-activity.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

@@ -8,7 +8,7 @@ import { SubscriptionS01V04PageRoutingModule } from './subscription-s01-v04-rout
 
 import { SubscriptionS01V04Page } from './subscription-s01-v04.page';
 
-import { SharedModule } from 'src/app/adults/shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

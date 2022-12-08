@@ -8,7 +8,7 @@ import { DealWithSorrowLossPageRoutingModule } from './deal-with-sorrow-loss-rou
 
 import { DealWithSorrowLossPage } from './deal-with-sorrow-loss.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 

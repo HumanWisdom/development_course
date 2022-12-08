@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import {SharedModule} from '../shared/shared.module'
+import {SharedModule} from '../../../../../shared/shared.module'
 import {AdultsService} from '../adults.service';
 
 import { S47000Page } from './s47000/s47000.page';  

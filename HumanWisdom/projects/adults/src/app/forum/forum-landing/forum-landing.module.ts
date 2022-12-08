@@ -9,7 +9,9 @@ import { ForumLandingPageRoutingModule } from './forum-landing-routing.module';
 import { ForumLandingPage } from './forum-landing.page';
 
 //import {SharedModule} from '../../shared/shared.module'
-import {SharedModule} from '../../adults/shared/shared.module'
+import {SharedModule} from '../../../../../shared/shared.module'
+
+
 
 @NgModule({
   imports: [

@@ -8,7 +8,7 @@ import { OvercomeStressAnxietyPageRoutingModule } from './overcome-stress-anxiet
 
 import { OvercomeStressAnxietyPage } from './overcome-stress-anxiety.page';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 

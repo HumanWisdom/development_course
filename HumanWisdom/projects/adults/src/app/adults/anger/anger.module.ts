@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import {SharedModule} from '../shared/shared.module'
+import {SharedModule} from '../../../../../shared/shared.module'
 import {AdultsService} from '../adults.service';
 
-import { S162Page } from './s162/s162.page'; 
+import { S162Page } from './s162/s162.page';  
 import { S162p0Page } from './s162p0/s162p0.page'; 
 import { S163Page } from './s163/s163.page'; 
 import { S164Page } from './s164/s164.page'; 

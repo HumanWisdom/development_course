@@ -8,7 +8,7 @@ import { EventsIndexPageRoutingModule } from './events-index-routing.module';
 
 import { EventsIndexPage } from './events-index.page';
 
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../../../../../shared/shared.module';
 
 @NgModule({
   imports: [

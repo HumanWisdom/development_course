@@ -8,7 +8,7 @@ import { TestScreenPageRoutingModule } from './test-screen-routing.module';
 
 import { TestScreenPage } from './test-screen.page';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @NgModule({
   imports: [
