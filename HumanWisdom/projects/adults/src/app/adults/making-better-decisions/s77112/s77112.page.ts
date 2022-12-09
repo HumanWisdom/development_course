@@ -11,13 +11,21 @@ import { AdultsService } from '../../adults.service';
 export class S77112Page implements OnInit {
   
   toc="making-better-decisions/s77001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
  
+  // bg=""
+  // moduleLink="/adults/happiness"
+  // moduleName=" Happiness"
+  // sectionName= "Living with Wisdom - II";
+  // moduleId=23
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/work.jpg"
+  
   bg=""
-  moduleLink="/adults/happiness"
-  moduleName=" Happiness"
+  moduleLink="/adults/work/s58001"
+  moduleName=" Work"
   sectionName= "Living with Wisdom - II";
-  moduleId=23
+  moduleId=58
   moduleList: any = [
     {
       name: 'Conditioning',

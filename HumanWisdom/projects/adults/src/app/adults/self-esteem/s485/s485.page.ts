@@ -11,13 +11,20 @@ import { AdultsService } from '../../adults.service';
 export class S485Page implements OnInit {
   
   toc="self-esteem/s433"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/living_with_peace.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/living_with_peace.jpg"
+ 
+  // bg=""
+  // moduleLink="/adults/living-with-peace"
+  // moduleName=" Living with Peace"
+  // sectionName= "Living with Wisdom - I";
+  // moduleId=63
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/addiction.jpg"
  
   bg=""
-  moduleLink="/adults/living-with-peace"
-  moduleName=" Living with Peace"
-  sectionName= "Living with Wisdom - I";
-  moduleId=63
+  moduleLink="/adults/habit-addiction"
+  moduleName=" Addiction"
+  sectionName= "Living with Wisdom - II";
+  moduleId=45
   moduleList: any = [
     {
       name: 'Self Image',

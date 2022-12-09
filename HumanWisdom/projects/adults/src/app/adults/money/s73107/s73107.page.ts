@@ -12,13 +12,21 @@ import { AdultsService } from '../../adults.service';
 export class S73107Page implements OnInit {
   
   toc="money/s73001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/work.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/work.jpg"
+  
+  // bg=""
+  // moduleLink="/adults/work/s58001"
+  // moduleName=" Work"
+  // sectionName= "Living with Wisdom - II";
+  // moduleId=58
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
   
   bg=""
-  moduleLink="/adults/work/s58001"
-  moduleName=" Work"
-  sectionName= "Living with Wisdom - II";
-  moduleId=58
+  moduleLink="/adults/opinions-beliefs"
+  moduleName="Opinions and Beliefs"
+  sectionName= "Living with Wisdom - I";
+  moduleId=49
   moduleList: any = [
     {
       name: 'Stress',
