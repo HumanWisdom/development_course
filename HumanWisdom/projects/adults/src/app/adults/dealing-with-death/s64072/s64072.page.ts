@@ -11,14 +11,22 @@ import { AdultsService } from '../../adults.service';
 export class S64072Page implements OnInit {
   
   toc="dealing-with-death/s64001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/bullying.png"
-  bg_tn="bg_teal"
-  bg_cft="bg_teal"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/bullying.png"
+  // bg_tn="bg_teal"
+  // bg_cft="bg_teal"
+  // bg=""
+  // moduleLink="/adults/bullying"
+  // moduleName=" Bullying"
+  // sectionName= "Living with Wisdom - I";
+  // moduleId=76
+  
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+ 
   bg=""
-  moduleLink="/adults/bullying"
-  moduleName=" Bullying"
+  moduleLink="/adults/stress"
+  moduleName=" Stress"
   sectionName= "Living with Wisdom - I";
-  moduleId=76
+  moduleId=44
   moduleList: any = [
     {
       name: 'Sorrow and Loss',

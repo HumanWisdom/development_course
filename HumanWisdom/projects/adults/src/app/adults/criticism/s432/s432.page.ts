@@ -11,14 +11,21 @@ import { AdultsService } from '../../adults.service';
 export class S432Page implements OnInit {
   
   toc="criticism/s324"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+  
+  // bg=""
+  // moduleLink="/adults/opinions-beliefs"
+  // moduleName="Opinions and Beliefs"
+  // sectionName= "Living with Wisdom - I";
+  // moduleId=49
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/relationships.jpg"
   
   bg=""
-  moduleLink="/adults/opinions-beliefs"
-  moduleName="Opinions and Beliefs"
+  moduleLink="/adults/relationships"
+  moduleName=" Relationships"
   sectionName= "Living with Wisdom - I";
-  moduleId=49
-
+  moduleId=47
   moduleList: any = [
     {
       name: 'Comparison & Envy',
