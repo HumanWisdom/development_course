@@ -18,6 +18,8 @@ export class WisdomForWorkplacePage implements OnInit {
   communicationP:any
   successandfailureP:any
   relationshipsP:any
+  bullyingP:any
+  making_better_decisionsP
 
   constructor(private service: AdultsService, private router: Router,private location:Location) { }
 
@@ -362,6 +364,8 @@ export class WisdomForWorkplacePage implements OnInit {
      this.communicationP=res.ModUserScrPc.find(e=>e.Module=="Communication")?.Percentage
      this.successandfailureP=res.ModUserScrPc.find(e=>e.Module=="Success And Failure")?.Percentage
      this.relationshipsP=res.ModUserScrPc.find(e=>e.Module=="Relationships")?.Percentage
+     this.bullyingP=res.ModUserScrPc.find(e=>e.Module=="Bullying")?.Percentage
+     this.making_better_decisionsP=res.ModUserScrPc.find(e=>e.Module=="Making better decisions")?.Percentage
     })
   }
 }
