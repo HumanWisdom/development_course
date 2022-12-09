@@ -11,13 +11,20 @@ import { AdultsService } from '../../adults.service';
 export class S44240Page implements OnInit {
   
   toc="stress/s44001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/relationships.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/relationships.jpg"
+  
+  // bg=""
+  // moduleLink="/adults/relationships"
+  // moduleName=" Relationships"
+  // sectionName= "Living with Wisdom - I";
+  // moduleId=47
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_esteem.jpg"
   
   bg=""
-  moduleLink="/adults/relationships"
-  moduleName=" Relationships"
-  sectionName= "Living with Wisdom - I";
-  moduleId=47
+  moduleLink="/adults/self-esteem"
+  moduleName=" Self Esteem"
+  sectionName= "Living with Wisdom - II";
+  moduleId=17
   moduleList: any = [
     {
       name: 'Conditioning',

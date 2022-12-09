@@ -11,13 +11,20 @@ import { AdultsService } from '../../adults.service';
 export class S46079Page implements OnInit {
   
   toc="food-health/s46001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/money.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/money.jpg"
+ 
+  // bg=""
+  // moduleLink="/adults/money"
+  // moduleName=" Money"
+  // sectionName= "Living with Wisdom - II";
+  // moduleId=73
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/living_with_peace.jpg"
  
   bg=""
-  moduleLink="/adults/money"
-  moduleName=" Money"
-  sectionName= "Living with Wisdom - II";
-  moduleId=73
+  moduleLink="/adults/living-with-peace"
+  moduleName=" Living with Peace"
+  sectionName= "Living with Wisdom - I";
+  moduleId=63
   moduleList: any = [
     {
       name: 'Pleasure',

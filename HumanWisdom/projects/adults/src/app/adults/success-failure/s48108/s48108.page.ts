@@ -11,13 +11,21 @@ import { AdultsService } from '../../adults.service';
 export class S48108Page implements OnInit {
   
   toc="success-failure/s48001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/addiction.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/addiction.jpg"
  
+  // bg=""
+  // moduleLink="/adults/habit-addiction"
+  // moduleName=" Addiction"
+  // sectionName= "Living with Wisdom - II";
+  // moduleId=45
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/making_better_decisions.png"
+  
   bg=""
-  moduleLink="/adults/habit-addiction"
-  moduleName=" Addiction"
-  sectionName= "Living with Wisdom - II";
-  moduleId=45
+  moduleLink="/adults/making-better-decisions"
+  moduleName=" Making better decisions"
+  sectionName= "Living with Wisdom - I";
+  moduleId=77
   moduleList: any = [
     {
       name: 'Stress',

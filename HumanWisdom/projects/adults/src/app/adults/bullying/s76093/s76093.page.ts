@@ -11,13 +11,21 @@ import { AdultsService } from '../../adults.service';
 export class S76093Page implements OnInit {
   
   toc="bullying/s76001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
  
+  // bg=""
+  // moduleLink="/adults/stress"
+  // moduleName=" Stress"
+  // sectionName= "Living with Wisdom - I";
+  // moduleId=44
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/criticism.png"
+  
   bg=""
-  moduleLink="/adults/stress"
-  moduleName=" Stress"
+  moduleLink="/adults/criticism"
+  moduleName=" Criticism"
   sectionName= "Living with Wisdom - I";
-  moduleId=44
+  moduleId=16
   moduleList: any = [
     {
       name: 'Fear & Anxiety',
