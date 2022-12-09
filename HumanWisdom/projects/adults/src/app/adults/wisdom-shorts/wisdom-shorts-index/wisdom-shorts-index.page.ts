@@ -11,6 +11,10 @@ import { AdultsService } from './../../adults.service';
   styleUrls: ['./wisdom-shorts-index.page.scss'],
 })
 export class WisdomShortsIndexPage implements OnInit {
+
+  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/wisdom_shorts.png"
+  tocColor = "white"
+
   path: string;
   address: string;
   wisdomshorts = [];

@@ -1,113 +1,72 @@
 <title>Wisdom Shorts | Mental Wellness Apps | HumanWisdom</title>
 
-<!-- top navigation -->
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header onscrollbs">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt=""
-          class="img-responsive">
-      </a>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <a>
-        <h1 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px tcenter">
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
           Wisdom Shorts
         </h1>
-      </a>
+      </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a href="javascript:;" (click)="share()" id="btnShare">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_02.svg" alt=""
-          class="img-responsive fright">
-      </a>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          <!-- In this module you will find a series of audio meditations. You can listen to them anywhere. -->
+          Explore these short videos which offer a nugget of wisdom to reflect on. Carry that thought with you through the day and see how you can apply it in your life.
+        </h4>
+      </div>
     </div>
-  </div>
-</div>
-<!-- /top navigation -->
 
-<!-- page content -->
-<div class="right_col mc_01">
-  <!-- class -->
-  <div class="cw100p">
-    <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_white sc_01">
-        <div class="x_panel p0">
-          <div class="x_content p0 tcenter">
-            <form>
+    <br>
 
-              <!-- <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group has-feedback p0 zi0 div_search">
-                  <input type="search" class="form-control has-feedback-left h60px searchtxt_02" id="searchtxt_02"
-                    placeholder="Search Videos">
-                  <span class="form-control-feedback left sfeedback" aria-hidden="true">
-                    <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/magnifying_glass_01.svg"
-                      alt="" class="">
-                  </span>
-                </div>
-              </div> -->
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
 
-              <div class="">
-                <div class="row center_flex shorts_desc safari_dblock">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="mtb0px fw_300 fs_18px lh_140p fc_000000 tleft plr10px">
-                      Explore these short videos which offer a nugget of wisdom to reflect on. Carry that thought with
-                      you through the day and see how you can apply it in your life.
-                    </h4>
-                  </div>
-                </div>
+    <!-- video row -->
+    <a (click)="wisdoshortsevent(data, data['VideoUrl'], data['Title'])"
+    *ngFor="let data of wisdomshorts; let i=index">
+    <div class="row box_01 bg_gallery p0">
+      <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_shorts/wisdom_shorts_01.jpg" alt="Access your own wisdom" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
+      </div>    -->
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img"
+        [ngStyle]="{'background-image': 'url(' + data['ImgUrl'] + ')'}">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg"
+          alt="" class="p0 eindex_img_playicon">
+      </div>
 
-                <div class="row center_flex safari_dblock">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <!-- video row -->
-                    <a (click)="wisdoshortsevent(data, data['VideoUrl'], data['Title'])"
-                      *ngFor="let data of wisdomshorts; let i=index">
-                      <div class="row box_01 bg_gallery p0">
-                        <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_shorts/wisdom_shorts_01.jpg" alt="Access your own wisdom" class="p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-                        </div>    -->
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img"
-                          [ngStyle]="{'background-image': 'url(' + data['ImgUrl'] + ')'}">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg"
-                            alt="" class="p0 eindex_img_playicon">
-                        </div>
-
-                        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-                          <div class="col-md-12 col-sm-12 col-xs-12 p0 tleft">
-                            <h4 class="fw_500 fs_15px lh_18px fc_5d5d5d mtb0px">
-                              {{data['Title']}}
-                            </h4>
-                          </div>
-                          <div class="col-md-12 col-sm-12 col-xs-12 tright">
-                            <h4 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
-                              {{data['Timing']}} min
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                    <!-- /video row -->
-                  </div>
-                </div>
-
-                <div class="pagebreak"></div>
-              </div>
-
-            </form>
-          </div>
+      <div class="col-md-9 col-sm-9 col-xs-9 p10px">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 tleft">
+          <h4 class="fw_500 fs_15px lh_18px fc_5d5d5d mtb0px">
+            {{data['Title']}}
+          </h4>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 tright">
+          <h4 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
+            {{data['Timing']}} min
+          </h4>
         </div>
       </div>
     </div>
-  </div>
-  <!--/class -->
-</div>
-<!-- /page content -->
+  </a>
+  <!-- /video row -->
 
-<!-- content  -->
-<!-- /content  -->
+    <div class="pagebreak"></div>
 
-<!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
-<!-- /footer -->
+  </form>
+
+</app-index-content>
+
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
+<app-index-footer></app-index-footer>

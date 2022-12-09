@@ -270,6 +270,72 @@ export class WisdomForWorkplacePage implements OnInit {
     })
   }
 
+  routeBullying(cont: any = 1) {
+    var bullyingResume
+    localStorage.setItem("moduleId", JSON.stringify(76))
+    this.service.clickModule(76, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        bullyingResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("bullyingResume", bullyingResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/bullying/${bullyingResume}`])
+          }
+          else
+            this.router.navigate([`/adults/bullying/s76001`])
+
+        })
+  }
+
+  routeMakingBetterDecisions(cont: any = 1) {
+    var making_better_decisionsResume
+    localStorage.setItem("moduleId", JSON.stringify(77))
+    this.service.clickModule(77, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        making_better_decisionsResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("making_better_decisionsResume", making_better_decisionsResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/making-better-decisions/${making_better_decisionsResume}`])
+          }
+          else
+            this.router.navigate([`/adults/making-better-decisions/s77001`])
+
+        })
+  }
+
   getProgress(){
     this.service.getPoints(this.userId)
     .subscribe(res=>{
