@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "human-wisdom-program-303708": {
+      "hosting": {
+        "app": [
+          "human-wisdom-program-303708"
+        ]
+      }
+    }
+  }
+}
