@@ -22,19 +22,22 @@ export class S18104Page implements OnInit {
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
-      link: '/relationships'
+      link: '/relationships',
+      id: 47
+
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
  
     },
     {
       name: 'No Judgement',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/16.png',
-      link: '/no-judgement'
-
+      link: '/no-judgement',
+      id: 40
   
     },
   ]
