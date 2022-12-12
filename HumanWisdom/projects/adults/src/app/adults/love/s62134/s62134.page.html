@@ -1,0 +1,16 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#4</p>
+      Understanding our conditioning makes us less attached to our opinions, understand others better, and be more respectful of other points of view. So much conflict can be avoided, allowing us to nurture the love we began with.
+
+
+    </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

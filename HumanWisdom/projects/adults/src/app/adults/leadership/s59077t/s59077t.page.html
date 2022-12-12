@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Empathy is the ability to see things from another person’s point of view, to understand what they are feeling, and imagine yourself in their place. Empathy is the hallmark of great leaders. But how does one develop empathy? To begin, realise that we see the world through the prism of our own conditioning which we regard as normal. We judge others based on that. Empathy means being aware of that process, and pausing it. The next step is to accept what the other person is thinking and feeling is true for them, and then imagining what that must feel like. They cannot help thinking and feeling what they do and it’s a reflection of their own conditioning. If they feel you understand, and are not judging them, a connection is established. Begin by asking a question about what they have said to check your understanding.
+           If people feel you empathize, even if you do not agree, they will go that extra mile for you.
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

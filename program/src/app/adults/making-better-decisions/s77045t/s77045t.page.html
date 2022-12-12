@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We all think we are in control of our lives and we think the decisions we make are ours alone. 
+          </p>
+
+          <p>
+            As we will explore in this section there are many hidden drivers in our thinking that influence the decisions we make. This is one reason we can get confused sometimes, with different thoughts pulling us in different directions.
+          </p>
+
+          <p>
+            Understanding these factors operating in the background, all will allow us to make better decisions, and be in charge of our own life. Journaling is very helpful when it comes to making critical decisions in our lives and asking these questions of ourselves.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

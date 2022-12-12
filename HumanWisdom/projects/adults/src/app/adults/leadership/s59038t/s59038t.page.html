@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+           Welcome to this session where we explore how wisdom can help you develop leadership skills. 
+          This wisdom can not only help you be a good leader, but also be a successful human being, 
+          on the inside, and in the world. Most of the ideas in this session have been explored elsewhere 
+          in the program, but  we bring them together to focus on how they can help us be better leaders.
+           You will see that they require you to go inwards and develop a deeper understanding of yourself
+            and how your mind works. We are going to go through the list of qualities we expect of leaders 
+            we discussed in session 1, 
+          and then explore how a deeper self-understanding can help us acquire them for ourselves.
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          I may be afraid of spiders and you may be afraid of the dark, but the nature of fear is the same in us both, so we can explore it together. It makes us imagine and magnify threats, for example. 
+        </h3>
+          <h3 class="transcript_txt">
+          We human beings look physically different and have different memories which shape our personalities. But our mind functions in similar ways. Just like computers which have different contents in their memory but share the same operating system which the user doesn’t see. You may be anxious about an exam result and I am anxious about a job interview but the nature of anxiety in both of us is the same. Our hearts function in similar ways too and understanding the way the heart works allows scientists to prevent and treat so many problems linked to the heart. Understanding the way our minds function can do the same.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

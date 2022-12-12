@@ -1,0 +1,1433 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" routerLink="/adults/wisdom-exercise/s75001">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          #6 Exploring judgment
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_whitesmoke sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- carousel -->
+              <div class="container" *ngIf="enableintro">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- introduction -->
+                    <div class="item active" (swipe)="onSwipe($event)">
+                      <div class="row center_flex mt40px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_06_a.png"
+                                alt="" class="img-responsive w100">
+                            </div>
+                          </div>
+
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_12px lh_14px fc_000000 mtb0px">
+                                Exercise #6
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row mt10px mb15px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_500 fs_24px lh_130p fc_000000 mtb0px">
+                                Exploring judgment
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
+                                Welcome to this session where we are going to explore how our mind is always judging ourselves and others, the impact of that on our lives, and how we may respond with wisdom.
+                                Keep in mind the basic principles of enquiry:
+                              </h4>
+
+                              <ul class="fw_400 fs_15px lh_140p fc_000000 pt15px pl15px">
+                                <li class="">
+                                  We are just looking and learning about ourselves
+                                </li>
+
+                                <li class="">
+                                  Have a mind open to learning
+                                </li>
+
+                                <li class="">
+                                  For learning to take place we need to pause judgement
+                                </li>
+
+                                <li class="">
+                                  What we observe in ourselves is not  right or wrong, good or bad - it just needs to be understood
+                                </li>
+
+                                <li class="">
+                                  Deep down, we are all the same human beings
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /introduction -->
+
+                    <!-- audio -->
+                    <div class="item" (swipe)="onSwipe($event)">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Exploring judgement. Why do we judge ourselves and others?
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/6.1.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Welcome to this session. We are going to explore how our mind judges all the time, why it does that, and the implications of this for our lives.
+                          </p>
+
+                          <p>
+                            We judge ourselves, judge others, and the world around us as good or bad, right or wrong – our mind does that unconsciously and automatically. We are also worried about how others judge us – and that can create a feeling of insecurity, or a need to put on a mask so we can control what others think of us.
+                          </p>
+
+                          <p>
+                            Every time we pass judgement and form an opinion it strengthens the sense of ‘me’ – notice the subtle pleasure you get from expressing your opinion.
+                          </p>
+
+                          <p>
+                            We judge our thoughts and our feelings, our achievements and failures.
+                          </p>
+
+                          <p>
+                            Judgement is important  because it allows us to make sense of the world and to protect us from harm, but as we will explore, it can also cause problems and stop us from making the most of our short time on earth. A deeper understanding of what is going on in our thinking allows us to be free, and respond with wisdom
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item" (swipe)="onSwipe($event)">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            The process of judgement in our thinking is automatic and unconscious. It serves an important function in our lives, but can also cause problems for ourselves and others. The fear of being judged can make us feel anxious.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item" (swipe)="onSwipe($event)">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Be curious, not judgemental.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Walt Whitman
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /carousel -->
+
+              <!-- day 01 -->
+              <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)"> 
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- simple text -->
+                    <div class="item active">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Begin with a short breathing exercise. Breathe in slowly to a count of 4, and breathe out slowly to a count of 6. Do this for 2 minutes.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="933"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            We do not judge our breathing because we do not have a fixed idea of how it should be, and just accept it as it is. If we already have an idea of how we, others, or the world should be, judgement follows.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="934"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="935"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 01 -->
+
+              <!-- day 02 -->
+              <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]="936"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="937"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Judging the world
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/6.2.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Our mind constantly judges the world around us as good or bad, right or wrong. Think of the news you read or listen to – you will have an opinion on most things that you come across – even if they are completely outside your zone of control and not impacting you in any way.
+                          </p>
+
+                          <p>
+                            The opinions we form then affect how we feel and we can get distressed reading the news – and this can stop us noticing the beauty of the world we live in.
+                          </p>
+
+                          <p>
+                            We are usually certain our opinions are correct and others with a different opinion must be wrong.
+                          </p>
+
+                          <p>
+                            By noticing how our mind judges the world constantly we can ask if we really need to do that, how it affects us, and how it serves us.
+                          </p>
+
+                          <p>
+                            Just as we look at a tree, or our breathing, it is possible to look at the world without automatically judging everything as good or bad, right or wrong – this allows us to see things as they are, and stops the chattering of the mind, allowing us to notice the beauty around us.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            We automatically judge people who have different opinions to our own and feel closer to people who think like us.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 02 -->
+
+              <!-- day 03 -->
+              <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]="938"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Just noticing, without automatically judging, allows our mind to go quiet, see things as they are, and be sensitive to the beauty of the world
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                     <!-- journal -->
+                     <div class="item">
+                      <app-journal-we [rId]="939"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                What is going on in our thinking when we pass judgement?
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/6.3.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            What is going on in our thinking when we pass judgement – and why do we do that all the time?
+                          </p>
+
+                          <p>
+                            We all carry our memories from childhood and we use this to make sense of the world and interact with it. Our mind compares what it sees with what it knows and there is an automatic reaction of judgement if something is different. 
+                          </p>
+
+                          <p>
+                            This process is very useful to help us make sense of the world, do our daily tasks and avoid danger.
+                          </p>
+
+                          <p>
+                            The same process continues when it no longer serves our needs – passing judgement on ourselves, others, and the world. 
+                          </p>
+
+                          <p>
+                            Understanding what is going on in the background gives us choices, and we can decide when we need to have an opinion and when we don’t.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Ask yourself - Do I really need to have an opinion on this person or situation? - can I just accept things as they are?
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 03 -->
+
+              <!-- day 04 -->
+              <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Judging ourselves
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/6.4.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Just as our mind judges the world around us, we also judge ourselves - as good or bad, or right or wrong. This can make us arrogant - thinking we are always right, or the best, or it can make us self-critical - thinking we are not good enough, are a failure, or ruminate over what we have done in the past.
+                          </p>
+
+                          <p>
+                            Neither of these serves us, because this judgement blocks our learning about ourselves - which is the doorway to wisdom.
+                          </p>
+
+                          <p>
+                            It seems challenging for us to look at ourselves as we are - without judging ourselves. If I observe I am not a good listener or I am overweight  I can explore why, and do something about it - but if I feel bad and start criticising myself - all my energy is taken up being critical - and the problem remains
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Judging ourselves can make us arrogant or self-critical - both don't serve us and can stop us learning about ourselves and growing in wisdom.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="940"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="941"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Excessively self-criticism can make us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Have low self-esteem
+                                </li>
+
+                                <li class="">
+                                  Unhappy
+                                </li>
+
+                                <li class="">
+                                  Anxious to try new things
+                                </li>
+
+                                <li class="">
+                                  Not feel worthy of love
+                                </li>
+
+                                <li class="">
+                                  Lack confidence
+                                </li>
+
+                                <li class="">
+                                  Create a  loop of thinking negatively about yourself
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The worst loneliness is not to be comfortable with yourself
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Mark Twain
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 04 -->
+
+              <!-- day 05 -->
+              <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]="942"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Judging others.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/6.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Just as we judge ourselves and the world around us, we also judge the people we meet. We do this unconsciously - even before they have said a word, for example the clothes people wear or their skin color. Our judgements are more a reflection of our own conditioning than who others really are. We can take a dislike to people without realising why, or the other way around.
+                          </p>
+
+                          <p>
+                            We give people a label, categorise them into different groups and then assume they are the same as everyone else in that group - and this is how prejudices get established.
+                          </p>
+
+                          <p>
+                            We are usually pretty certain about our judgement of others and rarely question our view. Others are equally quick to judge us, but we rarely know what they actually think.
+                          </p>
+
+                          <p>
+                            We prefer to be with people who are like us, and try and avoid people whom we regard as different.
+                          </p>
+
+                          <p>
+                            Everytime we judge others, we strengthen the ‘me’ which brings a certain pleasure.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="943"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Everything that irritates us about others can lead us to a deeper understanding of ourselves.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Carl Jung.
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 05 -->
+
+              <!-- day 06 -->
+              <div class="container" *ngIf="enableday6" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- exercise -->
+                    <div class="item active" (swipe)="onSwipe($event)">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Check what you think is true:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Judging is an automatic, unconscious process
+                                </li>
+
+                                <li class="">
+                                  It stops us seeing others as they are
+                                </li>
+
+                                <li class="">
+                                  It reveals more about us than others
+                                </li>
+
+                                <li class="">
+                                  Judging others strengthens the sense of ‘me’
+                                </li>
+
+                                <li class="">
+                                  Our judgements reveal a lack of compassion
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item" (swipe)="onSwipe($event)">
+                      <app-journal-we [rId]="944"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                     <!-- simple text -->
+                     <div class="item" (swipe)="onSwipe($event)">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Once we judge others, we apply the same judgement to them everytime we meet them, even though they may have changed
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item" (swipe)="onSwipe($event)">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                It is easy to judge. It is more difficult to understand. Understanding needs compassion, patience, and a willingness to see people as they are, with a generosity of spirit.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Anon
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item" (swipe)="onSwipe($event)">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Seeing ourselves as we are and others as they are, without judgement is wisdom in action.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 06 -->
+
+              <!-- day 07 -->
+              <div class="container" *ngIf="enableday7" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Feeling judged
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/6.6.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Just as we judge others, we also worry how others judge us. We assume we know what they are thinking.
+                          </p>
+
+                          <p>
+                            Sometimes this can create anxiety. We want to be liked, and cannot bear the thought of anyone not liking us. This is because we are afraid that if we are not liked we will end up alone and that feels frightening.
+                          </p>
+
+                          <p>
+                            This anxiety can impact our lives in many ways - we may try to avoid meeting people for fear of being judged by them, or be afraid to share our ideas with others. We may put on a mask and try to be a person that we think others will like - but behind the mask our anxiety continues . We may even leave jobs where we are worried about being judged - like teaching where there is constant assessment.
+                          </p>
+
+                          <p>
+                            We assume others' judgments of us are correct - both positive and negative -  and this reinforces what we believe about ourselves - but it may not be true.
+                          </p>
+
+                          <p>
+                            We can be certain that we know what others are thinking - even when people tell us we are mistaken.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            We think others are thinking of us and we also assume to know what they are thinking. This can create a feeling of anxiety.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            We assume others' judgments of us are correct - both positive and negative -  and this reinforces what we believe about ourselves.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="945"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Feeling judged by others can affect us in many ways:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Feel anxious what others are thinking
+                                </li>
+
+                                <li class="">
+                                  Pretend to be someone we think will be more likeable
+                                </li>
+
+                                <li class="">
+                                  Assume we know what others are thinking
+                                </li>
+
+                                <li class="">
+                                  Avoid doing things where we may be judged
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Overcoming the anxiety of being judged by others.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/6.7.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            How can we overcome the anxiety of being judged by others?
+                          </p>
+
+                          <p>
+                            The first is to realise that people’s judgement of us is a reflection of their conditioning, and not who we really are. They are also judging automatically and are not aware of the process in their own thinking.
+                          </p>
+
+                          <p>
+                            The second is to realise that people rarely have any time to think about us - because they are too busy thinking about themselves - that's just the way our mind is wired.
+                          </p>
+
+                          <p>
+                            And the third is to realise that no matter what you do people will think something - and it is not something we can control. We can see how the fear of being judged is shaping our life and decide that it does not serve us - and this can free us to walk our own path in life.
+                          </p>
+
+                          <p>
+                            We could realise that our mind has a negative bias and gives much more weight to negative comments than to positive ones.
+                          </p>
+
+                          <p>
+                            The people you are close to and love you will love you anyway, and you will attract the people who like you for who you really are - so relax, and just be yourself. There is such a huge relief in doing that.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="946"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                How can we be free of the anxiety of feeling judged by others?
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Realise its a reflection of their conditioning, and not who you are
+                                </li>
+
+                                <li class="">
+                                  Realise people are usually preoccupied with themselves
+                                </li>
+
+                                <li class="">
+                                  You cannot control what people think - so why try?
+                                </li>
+
+                                <li class="">
+                                  Being authentic will allow the right people to find you
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Well done for completing this session.
+                            Continue to the next session: Questioning our thoughts and feelings.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 07 -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter p0">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"   [ngClass]="getClass('75007p0')"
+          (click)="getdayevent('intro')">
+          Intro
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="getClass('75007p1')" (click)="getdayevent('1')">
+          Day 1
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75007p2')" (click)="getdayevent('2')">
+          Day 2
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75007p3')" (click)="getdayevent('3')">
+          Day 3
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75007p4')" (click)="getdayevent('4')">
+          Day 4
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75007p5')"
+          (click)="getdayevent('5')">
+          Day 5
+        </button>
+      </a>
+
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75007p6')"
+          (click)="getdayevent('6')">
+          Day 6
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75007p7')"
+          (click)="getdayevent('7')">
+          Day 7
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /footer -->

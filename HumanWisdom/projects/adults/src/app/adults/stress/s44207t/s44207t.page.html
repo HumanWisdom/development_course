@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Since stress is an automatic reaction from our thinking, it is often worth pausing to ask if the thing we are stressing about is in our zone of control? If it isn't, what is the point of stressing about it? Examples of things that aren’t in our zone of control are many - including the opinions and behaviour of others, what’s happening in other countries, climate change, the wars in the world and so on. This does not mean that we should not be concerned or try and do something about it, but that we do it without feeling stressed about it.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

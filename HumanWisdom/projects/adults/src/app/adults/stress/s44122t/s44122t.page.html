@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The challenges of life never stop coming and if we live long enough we will face many periods where we feel we cannot cope with what we face: whether it's too much work, or the pain of loss, or public humiliation, or a natural disaster, or financial ruin, and so on. Why do some people seem to cope much better than others, and carry on and face the situation and get past it? Perhaps you could ask yourself: Why do I feel that way and what do I need to do next to get past this?
+          </p>
+          <p>
+            It may involve accepting things as they are or doing something active, but a positive attitude can make all the difference. Other people have endured worse and come through, and so will I. The best way to get past the challenges life throws at us is to face them with a positive attitude. I know it's not easy, but the alternative is a chronic feeling of stress which may lead to depression, and rob of us of the energy we need to solve the problem
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

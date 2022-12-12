@@ -1,0 +1,28 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There is a crisis in leadership the world over. Finding good leaders is becoming harder. 
+          1 in 2 people will leave a job in their careers just to get away from a bad boss. 
+          A shocking 70% of employees in the US are unhappy because of negative management,
+           and this is likely to be the same the world over. Being a leader is a tough, lonely job,
+            and few people are equipped with the inner resilience to cope and burnout rates are high.
+             Because many leaders lack empathy and people skills, workplace bullying is common.
+              A third of leaders fail at their jobs.  What this translates into are millions of 
+              unhappy employees who find work stressful and an unhappy place to be, and distressed
+               leaders who struggle to cope. This drains productivity. When it comes to government the
+                impact of poor
+           leadership is seen on a much larger scale. It does not have to be this way.
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

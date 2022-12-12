@@ -1,0 +1,14 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      Our mind unconsciously compares who we are, with our ideal of who we think we should be, or with others, and this makes us critical of ourselves. This ideal comes from our unconscious conditioning influences.
+    </h1>
+    <div class="clearfix"></div>
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

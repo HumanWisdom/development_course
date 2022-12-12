@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If you give your heart to understanding yourself and how your mind works, you can discover wisdom which naturally leads to a sense of peace. Then money finds its rightful place in your life. We have explored this in the module on Living with Peace. You need much less to be happy. You don’t need more things and possessions to fill this inner void in your life, because where there was this void, there is now a sense of peace. It sounds more challenging than it is. 
+          <br>You just need to take the first step and begin.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

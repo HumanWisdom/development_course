@@ -1,0 +1,39 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are times in life when there are many factors to consider when making a decision. 
+            Each of these is pulling you in a different direction but you can make only one decision. 
+            How do you decide?
+          </p>
+
+          <p>
+            There is no easy answer but writing everything down is a good first step. Then consider how important each factor is for you and assign it a value from 0-5, and then put them in two columns and see how they add up.
+          </p>
+
+          <p>
+            For example if you are thinking of dating someone for a long term relationship there will be many things to consider: Looks, compatibility, kindness, sense of humour, secure income, the views of your friends and family, shared interests, ability to communicate, flexibility, how you feel, and so on. 
+          </p>
+
+          <p>
+            If you think of looks you may want to be with that person, but if you think of shared interests you don't. You feel torn, unsure of what to do. 
+          </p>
+
+          <p>
+            Will you use pure logic and be sensible, or follow your emotions, or a blend of both? 
+          </p>
+
+          <p>
+            This is where talking to others can help - to help you figure out what is most important for you, and base your decision on that
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

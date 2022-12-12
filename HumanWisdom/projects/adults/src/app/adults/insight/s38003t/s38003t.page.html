@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this module we explore the subject of insight. It's the transformation that is possible when something that was hidden from our awareness, is now seen clearly. It’s an ‘Aha!’ moment.
+          </p>
+          <p>
+            Think of a lake with brooding dark clouds over it. Then, through a break in the clouds a shaft of sunlight illuminates a part of the lake and you see it clearly. Insight is that process occurring in our thinking.
+          </p>
+          <p>
+            It’s like shining a light into an area that was once hidden from our awareness. Once something in ourselves is seen clearly it leaves you changed. You could say it leaves you enlightened, if you use that word to mean that you have shone a light, and seen something that was previously hidden.
+          </p>
+          <p>
+            The other beauty of insight is that it requires no effort. 
+            All you need to do is to see something clearly.            
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

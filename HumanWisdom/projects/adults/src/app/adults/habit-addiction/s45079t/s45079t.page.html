@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored how the nature of the ‘I’ is restless, bored, empty. If we stop and are quiet with ourselves, we can see that. If the mind is occupied then we are distracted and don’t feel this ache within us. The smartphone is so popular because it keeps us distracted all day. It begins as a habit and can become an addiction. This could also explain our compulsive behaviour around shopping, overeating, and smoking. The answer as always is though a deeper understanding of what is going on in our thinking, and to make our peace with our inner boredom.
+          </h3>
+
+      </div>
+    </div>
+   </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

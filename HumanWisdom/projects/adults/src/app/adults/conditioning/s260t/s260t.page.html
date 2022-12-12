@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Our religious beliefs develop as a result of our unconscious conditioning influences and usually depend on the family we are born into. The very nature of conditioning is that we become attached to it, so it is no wonder we also get attached to our religious beliefs and feel threatened when they are challenged. The reason we get attached to them is because they become part of our identity, the ‘me,' and also because they meet so many of our emotional needs. We do not see that the same process of conditioning and attachment operates in those with different religious beliefs. If we understood this deeply, much of the conflict between people of different faiths would end.
+          </p>
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

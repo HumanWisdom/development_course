@@ -11,14 +11,14 @@ import { AdultsService } from '../../adults.service';
 export class S64072Page implements OnInit {
   
   toc="dealing-with-death/s64001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/bullying.png"
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg=""
-  moduleLink="/adults/stress"
-  moduleName=" Stress"
+  moduleLink="/adults/bullying"
+  moduleName=" Bullying"
   sectionName= "Living with Wisdom - I";
-  moduleId=44
+  moduleId=76
   moduleList: any = [
     {
       name: 'Sorrow and Loss',

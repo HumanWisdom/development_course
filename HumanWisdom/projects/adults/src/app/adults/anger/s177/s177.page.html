@@ -1,0 +1,25 @@
+<app-course-header [toc]="toc"[bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-quotation [bg]="bg">
+  <form>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/quotation.svg" alt="">
+      </div>
+    </div>
+
+    <hr class="quotation_hr mt30px">
+
+    <h1 class="quotation_txt">
+      For every minute you remain angry, you give up 60 seconds of peace of mind.
+    </h1>
+
+    <hr class="quotation_hr">
+
+    <h1 class="quotation_writer">
+      Ralph Waldo Emerson
+    </h1>
+  </form>
+</app-quotation>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

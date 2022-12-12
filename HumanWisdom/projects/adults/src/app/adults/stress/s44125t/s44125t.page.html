@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We all feel lonely sometimes. It's a normal human emotion. The human mind is naturally restless and wants to be occupied all the time and when it cannot be, it can result in the ache of loneliness.
+          </p>
+          <p>
+            We can feel lonely if we are alone for a long time, or even in a relationship if we do not feel understood. How can we deepen our connection with others, and with ourselves? How can we nurture our relationships so they continue to nourish us, and not fall out with people and end up feeling alone? All this requires a great deal of reflection and enquiry. We also need to explore how we can turn the pain of loneliness into the balm of solitude. We can do this by practicing the art of enquiry and nurturing a quiet mind, which we do throughout this program. It is one of the greatest skills to learn, the art of being comfortable in our own company.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

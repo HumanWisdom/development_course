@@ -1,0 +1,97 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <a routerLink="/adults/adult-dashboard">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt=""
+          class="img-responsive">
+      </a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <a>
+        <h1 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px tcenter">
+          Blog
+        </h1>
+      </a>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <a id="btnShare" (click)="share()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_02.svg" alt=""
+          class="img-responsive fright">
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_white sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0 tcenter">
+
+            <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group has-feedback p0 zi0 div_search">
+                <input type="search" class="form-control has-feedback-left h60px searchtxt_02"
+                  [(ngModel)]="this.searchedTitle" (ngModelChange)="searchTitle()" id="searchtxt_02"
+                  placeholder="Search Blog">
+                <span class="form-control-feedback left sfeedback" aria-hidden="true">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/magnifying_glass_01.svg"
+                    alt="" class="">
+                </span>
+              </div>
+            </div>
+
+            <div class="tleft">
+              <!-- article 01 -->
+              <a *ngFor="let item of blogList" (click)="viewblog(item)">
+                <div class="row mt40px mb15px center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="{{item['ImagePath']}}" alt="" class="img-responsive w100p br5px">
+                  </div>
+                </div>
+
+                <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="mtb0px fw_500 fs_22px lh_130p fc_000000">
+                      {{item['Title']}}
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row mt10px center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="mtb0px fw_400 fs_14px lh_140p fc_5d5d5d limit_characters">
+                      <span>{{stripTags(item['Story'])}}</span>
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row mt20px center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="mtb0px fw_700 fs_12px lh_130p fc_adadad">
+                      {{timeSince(item['CreatedDate'])}}
+                    </h4>
+                  </div>
+                </div>
+              </a>
+              <!-- /article 01 -->
+
+              <div class="pagebreak"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
