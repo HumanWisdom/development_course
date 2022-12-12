@@ -10,8 +10,8 @@ import { AdultsService } from "../../adults.service";
 })
 export class S77108Page implements OnInit {
 
-  bg_tn = "bg_red_pink"
-  bg_cft = "bg_red_pink"
+  bg_tn = "bg_light_blue"
+  bg_cft = "bg_light_blue"
   bg = "feedback_survey_footer"
 
   userId: any

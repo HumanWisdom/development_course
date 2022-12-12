@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S77003Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_w1"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
+  bg="light_blue_w1"
   title="Introduction"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/making-better-decisions/audios/making-better-decisions+1.1.mp3'
