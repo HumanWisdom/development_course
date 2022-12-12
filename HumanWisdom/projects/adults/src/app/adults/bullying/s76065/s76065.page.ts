@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S76065Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_w1"
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w5"
   title="When we see someone else being bullied, how can we respond?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/bullying/audios/bullying+3.2.mp3'

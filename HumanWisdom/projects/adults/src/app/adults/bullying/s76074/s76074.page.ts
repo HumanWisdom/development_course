@@ -10,9 +10,9 @@ import { AdultsService } from "../../adults.service";
 })
 export class S76074Page implements OnInit, OnDestroy {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_w10" 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w2" 
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
