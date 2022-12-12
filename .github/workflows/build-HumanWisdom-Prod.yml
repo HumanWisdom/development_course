@@ -1,4 +1,4 @@
-name: build-program-prod
+name: build-humanwisdom-prod
 
 on:
   push:
