@@ -364,7 +364,7 @@ export class AdultsService {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
   }
 
-  userSocialLogin(type, program = '') {
+  userSocialLogin(type) {
     if (type === 'Facebook') {
       this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
       this.authService.authState.subscribe((user) => {
@@ -384,7 +384,7 @@ export class AdultsService {
               Pwd: "",
             })
             .subscribe((res) => {
-              this.storeuserlocaldata(res, program);
+              this.storeuserlocaldata(res);
             });
         } else {
           window.alert(
@@ -411,14 +411,14 @@ export class AdultsService {
             Pwd: "",
           })
           .subscribe((res) => {
-            this.storeuserlocaldata(res, program);
+            this.storeuserlocaldata(res);
           },
             (error) => console.log(error));
       });
     }
   }
 
-  storeuserlocaldata(res, type) {
+  storeuserlocaldata(res) {
     if (res) {
       this.loginResponse = res;
       localStorage.setItem("socialLogin", "T");
@@ -510,8 +510,6 @@ export class AdultsService {
           localStorage.setItem("introoption", "F");
           localStorage.setItem("isloggedin", "T");
           this.router.navigate(["/intro/personalised-for-you"]);
-        } else if(type === 'adult') {
-          localStorage.setItem("isloggedin", "T");
         } else {
           if (acceptCookie === "T" || subscribePage === "T") {
             localStorage.setItem("isloggedin", "T");
