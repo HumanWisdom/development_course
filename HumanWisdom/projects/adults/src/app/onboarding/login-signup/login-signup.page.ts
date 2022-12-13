@@ -258,7 +258,41 @@ export class LoginSignupPage implements OnInit {
           .subscribe((res) => {
             if (res) {
               this.loginResponse = res;
-              this.aservice.storeuserlocaldata(res, true)
+              localStorage.setItem("guest", "F");
+              localStorage.setItem("remember", "T");
+              localStorage.setItem("socialLogin", "T");
+              localStorage.setItem(
+                "mediaAudio",
+                JSON.stringify(this.mediaAudio)
+              );
+              localStorage.setItem(
+                "mediaVideo",
+                JSON.stringify(this.mediaVideo)
+              );
+              localStorage.setItem("video", JSON.stringify(this.video));
+              localStorage.setItem("audio", JSON.stringify(this.audio));
+              localStorage.setItem("btnclick", "F");
+              localStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              sessionStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              localStorage.setItem(
+                "token",
+                JSON.stringify(this.loginResponse.access_token)
+              );
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+              localStorage.setItem("userId", JSON.stringify(this.userId));
+              localStorage.setItem("email", this.socialEmail);
+              localStorage.setItem("FnName", this.socialFirstName);
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+              localStorage.setItem("LName", this.socialLastName);
+              localStorage.setItem("pswd", "");
+              localStorage.setItem("name", this.loginResponse.Name);
+              localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
                 window.alert(
@@ -270,6 +304,41 @@ export class LoginSignupPage implements OnInit {
                 this.showAlert = false;
                 this.userId = this.loginResponse.UserId;
                 this.userName = this.loginResponse.Name;
+                localStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                sessionStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                localStorage.setItem("userId", JSON.stringify(this.userId));
+                localStorage.setItem(
+                  "token",
+                  JSON.stringify(this.loginResponse.access_token)
+                );
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId));
+                  localStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  localStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                } else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
+                  sessionStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  sessionStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                }
+
                 let pers = localStorage.getItem("personalised");
                 let persub = localStorage.getItem("personalised subscription");
                 let acceptCookie = localStorage.getItem("activeCode");
@@ -300,19 +369,29 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
+                      this.router.navigate(["/adults/search"], { state: {
                           routedFromLogin: true,
-                        }
-                      });
+                        }});
                     }
                   }
                 }
+
+                /* if(this.urlEmail)
+                {
+                  this.service.verifyUser(this.userId)
+                  .subscribe(res=>{
+                    
+                  })
+                }*/
               }
             }
           });
       },
       (error) => console.log(error),
+      () => {
+        //this.router.navigate[('/onboarding/addcart')]
+        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+      }
     );
   }
 
@@ -338,7 +417,41 @@ export class LoginSignupPage implements OnInit {
           .subscribe((res) => {
             if (res) {
               this.loginResponse = res;
-              this.aservice.storeuserlocaldata(res, true)
+              localStorage.setItem("socialLogin", "T");
+              localStorage.setItem(
+                "mediaAudio",
+                JSON.stringify(this.mediaAudio)
+              );
+              localStorage.setItem(
+                "mediaVideo",
+                JSON.stringify(this.mediaVideo)
+              );
+              localStorage.setItem("video", JSON.stringify(this.video));
+              localStorage.setItem("audio", JSON.stringify(this.audio));
+              localStorage.setItem("remember", "T");
+              localStorage.setItem("guest", "F");
+              localStorage.setItem("btnclick", "F");
+              localStorage.setItem("FnName", this.socialFirstName);
+              localStorage.setItem("LName", this.socialLastName);
+              localStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              sessionStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              localStorage.setItem(
+                "token",
+                JSON.stringify(this.loginResponse.access_token)
+              );
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+              localStorage.setItem("userId", JSON.stringify(this.userId));
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+              localStorage.setItem("email", this.socialEmail);
+              localStorage.setItem("pswd", "");
+              localStorage.setItem("name", this.loginResponse.Name);
+              localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
                 window.alert(
@@ -350,6 +463,41 @@ export class LoginSignupPage implements OnInit {
                 this.showAlert = false;
                 this.userId = this.loginResponse.UserId;
                 this.userName = this.loginResponse.Name;
+                localStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                sessionStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                localStorage.setItem("userId", JSON.stringify(this.userId));
+                localStorage.setItem(
+                  "token",
+                  JSON.stringify(this.loginResponse.access_token)
+                );
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId));
+                  localStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  localStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                } else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
+                  sessionStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  sessionStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                }
+
                 let pers = localStorage.getItem("personalised");
                 let persub = localStorage.getItem("personalised subscription");
                 let acceptCookie = localStorage.getItem("activeCode");
@@ -379,12 +527,10 @@ export class LoginSignupPage implements OnInit {
                       this.router.navigate(["/onboarding/viewcart"], {
                         state: { quan: "1", plan: persub },
                       });
-                    } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
+                    }else {
+                      this.router.navigate(["/adults/search"], { state: {
                           routedFromLogin: true,
-                        }
-                      });
+                        }});
                     }
                   }
                 }
@@ -393,7 +539,7 @@ export class LoginSignupPage implements OnInit {
                   {
                     this.service.verifyUser(this.userId)
                     .subscribe(res=>{
-
+                      
                     })
                   }*/
               }
@@ -416,7 +562,34 @@ export class LoginSignupPage implements OnInit {
       (res) => {
         //
         this.loginResponse = res;
-        this.aservice.storeuserlocaldata(res, false)
+        localStorage.setItem("socialLogin", "F");
+        localStorage.setItem("isloggedin", "T");
+        localStorage.setItem("guest", "F");
+        localStorage.setItem("btnclick", "F");
+        localStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
+        localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
+        sessionStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        localStorage.setItem("token", JSON.stringify(res.access_token));
+        localStorage.setItem("Subscriber", res.Subscriber);
+        localStorage.setItem("SubscriberType", res.SubscriberType);
+        localStorage.setItem("userId", JSON.stringify(this.userId));
+        localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+        localStorage.setItem("email", this.email);
+        localStorage.setItem("pswd", this.password);
+        localStorage.setItem("name", res.Name);
+        localStorage.setItem("first", "T");
+        localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+        localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+        localStorage.setItem("video", JSON.stringify(this.video));
+        localStorage.setItem("audio", JSON.stringify(this.audio));
+        localStorage.setItem("isPartner", res.IsPartner);
         if (res.UserId === 0) {
           this.showAlert = true;
           window.alert(
@@ -435,6 +608,25 @@ export class LoginSignupPage implements OnInit {
           this.showAlert = false;
           this.userId = res.UserId;
           this.userName = res.Name;
+          localStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          sessionStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          localStorage.setItem("token", JSON.stringify(res.access_token));
+          if (this.saveUsername == true) {
+            localStorage.setItem("userId", JSON.stringify(this.userId));
+            localStorage.setItem("userEmail", JSON.stringify(this.email));
+            localStorage.setItem("userName", JSON.stringify(this.userName));
+          } else {
+            sessionStorage.setItem("userId", JSON.stringify(this.userId));
+            sessionStorage.setItem("userEmail", JSON.stringify(this.email));
+            sessionStorage.setItem("userName", JSON.stringify(this.userName));
+          }
           this.freescreens();
           let roleid = JSON.parse(localStorage.getItem("RoleID"));
           let emailcode = localStorage.getItem("emailCode");
@@ -520,34 +712,69 @@ export class LoginSignupPage implements OnInit {
                           "ReceiveIncome"
                         ) {
                           this.service.navigateToUpgradeToPremium = false;
+                          //localStorage.setItem("navigateToUpgradeToPremium", "false");
                           this.router.navigate([
                             "/adults/partnership-report/income-activity"]);
                         } else {
+                          //localStorage.setItem("navigateToUpgradeToPremium", "false");
                           this.service.navigateToUpgradeToPremium = false;
                           this.router.navigate([
                             "/adults/partnership-report/tree-plantation-report"]);
                         }
                       } else {
                         this.service.navigateToUpgradeToPremium = false;
+                        // localStorage.setItem("navigateToUpgradeToPremium", "false");
                         this.router.navigate(["/adults/partnership-app"]);
                       }
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
+                      this.router.navigate(["/adults/search"], { state: {
                           routedFromLogin: true,
-                        }
-                      });
+                        }});
                     }
                   }
                 }
               }
             }
           }
+
+          /* if(this.urlEmail)
+             {
+               this.service.verifyUser(this.userId)
+               .subscribe(res=>{
+                 
+               })
+             }*/
         }
       },
       (error) => {
         console.log(error);
       },
+      () => {
+        // this.freeScreens()
+        // localStorage.setItem("userId",JSON.stringify(this.userId))
+        // console.log("urlKey",this.urlKey)
+        // if(this.showAlert==false)
+        // {
+        //   console.log("showAlert is false",this.loginResponse.Subscriber,"subscriber")
+        //   if((this.loginResponse.Subscriber==0) && this.urlKey)
+        //   {
+        //     console.log("key and not subscriber")
+        //     sessionStorage.setItem("urlKey",JSON.stringify(this.urlKey))
+        //     this.router.navigate(['/onboarding/activationkey'])
+        //   }
+        //  else if((this.loginResponse.Subscriber==0) && !this.urlKey)
+        //  {
+        //  console.log("no key no subscriber")
+        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+        //    this.router.navigate(['/adults/adult-dashboard'])
+        //   }
+        //  else if(this.loginResponse.Subscriber==1)
+        //  {
+        //    console.log("subscriber")
+        //    this.router.navigate(['/adults/adult-dashboard'])
+        //  }
+        // }
+      }
     );
   }
 
@@ -584,11 +811,20 @@ export class LoginSignupPage implements OnInit {
   }
 
   signInWithApple() {
-    this.aservice.signInWithApple()
+    const CLIENT_ID = "humanwisdom.web.service";
+    const REDIRECT_API_URL =
+      "https://www.humanwisdom.info/api/verifyAppleToken_html";
+
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+        REDIRECT_API_URL
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`,
+      "_self"
+    );
   }
 
-
+  
   routedashboard() {
-    this.router.navigate(['/adults/adult-dashboard'])
+      this.router.navigate(['/adults/adult-dashboard'])
   }
 }
