@@ -2,8 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AbstractControl, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
-  FacebookLoginProvider,
-  GoogleLoginProvider,
   SocialAuthService
 } from "angularx-social-login";
 import { AdultsService } from "src/app/adults/adults.service";
@@ -236,163 +234,9 @@ export class LoginSignupPage implements OnInit {
     this.agree = value;
   }
 
- fbLogin() {
-  this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  this.authService.authState.subscribe((user) => {
-    // this.user = user;
-    this.user = user;
-    this.idToken = user.authToken;
-    this.socialFirstName = user.firstName;
-    this.socialLastName = user.lastName;
-    this.socialEmail = user.email;
-    if (user.email !== undefined) {
-      this.service
-        .verifyFb({
-          TokenID: this.idToken,
-          FName: this.socialFirstName,
-          LName: this.socialLastName,
-          Email: this.socialEmail,
-          VCode: "",
-          Pwd: "",
-        })
-        .subscribe((res) => {
-          if (res) {
-            this.loginResponse = res;
-            this.aservice.storeuserlocaldata(res, true)
-            if (parseInt(this.loginResponse.UserId) == 0) {
-              this.showAlert = true;
-              window.alert(
-                "You have enetered wrong credentials. Please try again."
-              );
-              this.email = "";
-              this.password = "";
-            } else {
-              this.showAlert = false;
-              this.userId = this.loginResponse.UserId;
-              this.userName = this.loginResponse.Name;
-
-              let pers = localStorage.getItem("personalised");
-              let persub = localStorage.getItem("personalised subscription");
-              let acceptCookie = localStorage.getItem("activeCode");
-              let subscribePage = localStorage.getItem("subscribepage");
-              let option = localStorage.getItem("introoption");
-              if (option === "T") {
-                localStorage.setItem("introoption", "F");
-                localStorage.setItem("isloggedin", "T");
-                this.router.navigate(["/intro/personalised-for-you"]);
-              } else {
-                if (acceptCookie === "T" || subscribePage === "T") {
-                  localStorage.setItem("isloggedin", "T");
-                  if (acceptCookie === "T") {
-                    localStorage.setItem("activeCode", "F");
-                  }
-                  if (subscribePage === "T") {
-                    localStorage.setItem("subscribepage", "F");
-                  }
-                  if (this.loginResponse.Subscriber === '0') {
-                    this.router.navigate(["/onboarding/add-to-cart"]);
-                  } else {
-                    this.router.navigate(["/onboarding/viewcart"])
-                  }
-                } else {
-                  localStorage.setItem("isloggedin", "T");
-                  if (pers && persub && pers === "T") {
-                    this.router.navigate(["/onboarding/viewcart"], {
-                      state: { quan: "1", plan: persub },
-                    });
-                  }else {
-                    this.router.navigate(["/adults/search"], { state: {
-                        routedFromLogin: true,
-                      }});
-                  }
-                }
-              }
-            }
-          }
-        });
-    } else {
-      window.alert(
-        "Please ensure that you use an email based authentication with your Auth provider or try another method"
-      );
-    }
-  });
-}
-
- googleLogin() {
-  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-  this.authService.authState.subscribe(
-    (user) => {
-      this.user = user;
-      this.idToken = user.idToken;
-      this.socialFirstName = user.firstName;
-      this.socialLastName = user.lastName;
-      this.socialEmail = user.email;
-
-      this.service
-        .verifyGoogle({
-          TokenID: this.idToken,
-          FName: this.socialFirstName,
-          LName: this.socialLastName,
-          Email: this.socialEmail,
-          VCode: "",
-          Pwd: "",
-        })
-        .subscribe((res) => {
-          if (res) {
-            this.loginResponse = res;
-            this.aservice.storeuserlocaldata(res, true)
-            if (parseInt(this.loginResponse.UserId) == 0) {
-              this.showAlert = true;
-              this.email = "";
-              this.password = "";
-            } else {
-              this.showAlert = false;
-              this.userId = this.loginResponse.UserId;
-              this.userName = this.loginResponse.Name;
-              let pers = localStorage.getItem("personalised");
-              let persub = localStorage.getItem("personalised subscription");
-              let acceptCookie = localStorage.getItem("activeCode");
-              let subscribePage = localStorage.getItem("subscribepage");
-              let option = localStorage.getItem("introoption");
-              if (option === "T") {
-                localStorage.setItem("introoption", "F");
-                localStorage.setItem("isloggedin", "T");
-                this.router.navigate(["/intro/personalised-for-you"]);
-              } else {
-                if (acceptCookie === "T" || subscribePage === "T") {
-                  localStorage.setItem("isloggedin", "T");
-                  if (acceptCookie === "T") {
-                    localStorage.setItem("activeCode", "F");
-                  }
-                  if (subscribePage === "T") {
-                    localStorage.setItem("subscribepage", "F");
-                  }
-                  if (this.loginResponse.Subscriber === '0') {
-                    this.router.navigate(["/onboarding/add-to-cart"]);
-                  } else {
-                    this.router.navigate(["/onboarding/viewcart"])
-                  }
-                } else {
-                  localStorage.setItem("isloggedin", "T");
-                  if (pers && persub && pers === "T") {
-                    this.router.navigate(["/onboarding/viewcart"], {
-                      state: { quan: "1", plan: persub },
-                    });
-                  } else {
-                    this.router.navigate(["/adults/search"], { state: {
-                        routedFromLogin: true,
-                      }});
-                  }
-                }
-              }
-            }
-          }
-        });
-    },
-    (error) => console.log(error)
-  );
-}
-
+  socialLogin(type) {
+    this.aservice.userSocialLogin(type)
+ }
 
   emailLogin() {
     localStorage.removeItem("token");
@@ -401,8 +245,36 @@ export class LoginSignupPage implements OnInit {
     }
     this.service.emailLogin(this.email, this.password).subscribe(
       (res) => {
+        //
         this.loginResponse = res;
-        this.aservice.storeuserlocaldata(res, false)
+        localStorage.setItem("socialLogin", "F");
+        localStorage.setItem("isloggedin", "T");
+        localStorage.setItem("guest", "F");
+        localStorage.setItem("btnclick", "F");
+        localStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
+        localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
+        sessionStorage.setItem(
+          "loginResponse",
+          JSON.stringify(this.loginResponse)
+        );
+        localStorage.setItem("token", JSON.stringify(res.access_token));
+        localStorage.setItem("Subscriber", res.Subscriber);
+        localStorage.setItem("SubscriberType", res.SubscriberType);
+        localStorage.setItem("userId", JSON.stringify(this.userId));
+        localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+        localStorage.setItem("email", this.email);
+        localStorage.setItem("pswd", this.password);
+        localStorage.setItem("name", res.Name);
+        localStorage.setItem("first", "T");
+        localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+        localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+        localStorage.setItem("video", JSON.stringify(this.video));
+        localStorage.setItem("audio", JSON.stringify(this.audio));
+        localStorage.setItem("isPartner", res.IsPartner);
         if (res.UserId === 0) {
           this.showAlert = true;
           window.alert(
@@ -551,11 +423,45 @@ export class LoginSignupPage implements OnInit {
               }
             }
           }
+
+          /* if(this.urlEmail)
+             {
+               this.service.verifyUser(this.userId)
+               .subscribe(res=>{
+                 
+               })
+             }*/
         }
       },
       (error) => {
         console.log(error);
       },
+      () => {
+        // this.freeScreens()
+        // localStorage.setItem("userId",JSON.stringify(this.userId))
+        // console.log("urlKey",this.urlKey)
+        // if(this.showAlert==false)
+        // {
+        //   console.log("showAlert is false",this.loginResponse.Subscriber,"subscriber")
+        //   if((this.loginResponse.Subscriber==0) && this.urlKey)
+        //   {
+        //     console.log("key and not subscriber")
+        //     sessionStorage.setItem("urlKey",JSON.stringify(this.urlKey))
+        //     this.router.navigate(['/onboarding/activationkey'])
+        //   }
+        //  else if((this.loginResponse.Subscriber==0) && !this.urlKey)
+        //  {
+        //  console.log("no key no subscriber")
+        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+        //    this.router.navigate(['/adults/adult-dashboard'])
+        //   }
+        //  else if(this.loginResponse.Subscriber==1)
+        //  {
+        //    console.log("subscriber")
+        //    this.router.navigate(['/adults/adult-dashboard'])
+        //  }
+        // }
+      }
     );
   }
 
@@ -592,7 +498,16 @@ export class LoginSignupPage implements OnInit {
   }
 
   signInWithApple() {
-    this.aservice.signInWithApple()
+    const CLIENT_ID = "humanwisdom.web.service";
+    const REDIRECT_API_URL =
+      "https://www.humanwisdom.info/api/verifyAppleToken_html";
+
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+        REDIRECT_API_URL
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`,
+      "_self"
+    );
   }
 
 
