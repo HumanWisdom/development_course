@@ -23,13 +23,13 @@ export class S58088Page implements OnInit {
       name: 'Happiness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
       link: '/happiness',
-      id: 20
+      id: 23
     },
     {
       name: 'Emotional Needs',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/26.png',
       link: '/emotional-needs',
-      id: 10
+      id: 18
     },
     {
       name: 'Communication',
