@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S77067Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_w1"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
+  bg="light_blue_w11"
   title="#8  Our stress, anxiety, anger, and emotional pain"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/making-better-decisions/audios/making-better-decisions+2.9.mp3'

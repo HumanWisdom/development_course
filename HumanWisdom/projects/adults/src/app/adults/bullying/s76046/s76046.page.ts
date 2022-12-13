@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S76046Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_w1"
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w5"
   title="#5 The thrill of dominating others"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/bullying/audios/bullying+2.5.mp3'

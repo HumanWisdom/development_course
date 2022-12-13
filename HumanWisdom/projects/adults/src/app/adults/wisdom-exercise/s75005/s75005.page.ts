@@ -45,6 +45,7 @@ export class S75005Page implements OnInit {
   DaysWithIntro=15;
   userId: any = localStorage.getItem('userId');
   lastClick = 0;
+  isShowButton = false;
   delay = 20;
   methodSTartTime: any;
   methodEndTime: any;
@@ -516,9 +517,12 @@ export class S75005Page implements OnInit {
         data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
           children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == 'audio-test') {
+      if (data == "audio-test") {
+        this.isShowButton=true;
         this.isShowTranscript = true;
+        this.isShowAudio=false;
       } else {
+        this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
@@ -604,12 +608,15 @@ export class S75005Page implements OnInit {
           data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
             children[1]?.children[0]?.lastChild?.classList.value;
         }
-      if (data == 'audio-test') {
-        this.isShowTranscript = true;
-      } else {
-        this.isShowTranscript = false;
-        this.isShowAudio = false;
-      }
+        if (data == "audio-test") {
+          this.isShowButton=true;
+          this.isShowTranscript = true;
+          this.isShowAudio=false;
+        } else {
+          this.isShowButton=false;
+          this.isShowTranscript = false;
+          this.isShowAudio = false;
+        }
     }, 700);
   }
 
