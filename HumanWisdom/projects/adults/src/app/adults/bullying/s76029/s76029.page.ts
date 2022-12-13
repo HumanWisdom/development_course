@@ -10,10 +10,10 @@ import { Location } from '@angular/common';
 })
 export class S76029Page implements OnInit {
 
-  bg_tts = "bg_red_pink"
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_flat"  
+  bg_tts = "bg_pink_orange"
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_rpink_orange"
+  bg="pink_orange_flat"  
   toc="bullying/s76001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

@@ -10,9 +10,9 @@ import { Location } from '@angular/common';
 })
 export class S76018Page implements OnInit {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_w10" 
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w4" 
   
   toc="bullying/s76001"
   userId:any

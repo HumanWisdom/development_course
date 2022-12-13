@@ -10,9 +10,9 @@ import { AdultsService } from "../../adults.service";
 })
 export class S77007Page implements OnInit {
 
-  bg_tn = "bg_red_pink"
-  bg_cft = "bg_red_pink"
-  bg = "red_pink_w2"
+  bg_tn = "bg_light_blue"
+  bg_cft = "bg_light_blue"
+  bg = "light_blue_w5"
   hint = ""
   toc = "/making-better-decisions/s77001"
   path = this.router.url
