@@ -236,7 +236,7 @@ export class LoginSignupPage implements OnInit {
 
   socialLogin(type) {
     this.aservice.userSocialLogin(type)
- }
+``  }
 
   emailLogin() {
     localStorage.removeItem("token");
