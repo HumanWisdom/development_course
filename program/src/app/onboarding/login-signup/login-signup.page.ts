@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { AbstractControl, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
   SocialAuthService
 } from "angularx-social-login";
 import { AdultsService } from "src/app/adults/adults.service";
@@ -234,9 +236,318 @@ export class LoginSignupPage implements OnInit {
     this.agree = value;
   }
 
-  socialLogin(type) {
-    this.aservice.userSocialLogin(type)
-``  }
+  googleLogin() {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.authState.subscribe(
+      (user) => {
+        this.user = user;
+        this.idToken = user.idToken;
+        this.socialFirstName = user.firstName;
+        this.socialLastName = user.lastName;
+        this.socialEmail = user.email;
+
+        this.service
+          .verifyGoogle({
+            TokenID: this.idToken,
+            FName: this.socialFirstName,
+            LName: this.socialLastName,
+            Email: this.socialEmail,
+            VCode: "",
+            Pwd: "",
+          })
+          .subscribe((res) => {
+            if (res) {
+              this.loginResponse = res;
+              localStorage.setItem("guest", "F");
+              localStorage.setItem("remember", "T");
+              localStorage.setItem("socialLogin", "T");
+              localStorage.setItem(
+                "mediaAudio",
+                JSON.stringify(this.mediaAudio)
+              );
+              localStorage.setItem(
+                "mediaVideo",
+                JSON.stringify(this.mediaVideo)
+              );
+              localStorage.setItem("video", JSON.stringify(this.video));
+              localStorage.setItem("audio", JSON.stringify(this.audio));
+              localStorage.setItem("btnclick", "F");
+              localStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              sessionStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              localStorage.setItem(
+                "token",
+                JSON.stringify(this.loginResponse.access_token)
+              );
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+              localStorage.setItem("userId", JSON.stringify(this.userId));
+              localStorage.setItem("email", this.socialEmail);
+              localStorage.setItem("FnName", this.socialFirstName);
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+              localStorage.setItem("LName", this.socialLastName);
+              localStorage.setItem("pswd", "");
+              localStorage.setItem("name", this.loginResponse.Name);
+              localStorage.setItem("first", "T");
+              if (parseInt(this.loginResponse.UserId) == 0) {
+                this.showAlert = true;
+                window.alert(
+                  "You have enetered wrong credentials. Please try again."
+                );
+                this.email = "";
+                this.password = "";
+              } else {
+                this.showAlert = false;
+                this.userId = this.loginResponse.UserId;
+                this.userName = this.loginResponse.Name;
+                localStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                sessionStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                localStorage.setItem("userId", JSON.stringify(this.userId));
+                localStorage.setItem(
+                  "token",
+                  JSON.stringify(this.loginResponse.access_token)
+                );
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId));
+                  localStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  localStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                } else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
+                  sessionStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  sessionStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                }
+
+                let pers = localStorage.getItem("personalised");
+                let persub = localStorage.getItem("personalised subscription");
+                let acceptCookie = localStorage.getItem("activeCode");
+                let subscribePage = localStorage.getItem("subscribepage");
+                let option = localStorage.getItem("introoption");
+                if (option === "T") {
+                  localStorage.setItem("introoption", "F");
+                  localStorage.setItem("isloggedin", "T");
+                  this.router.navigate(["/intro/personalised-for-you"]);
+                } else {
+                  if (acceptCookie === "T" || subscribePage === "T") {
+                    localStorage.setItem("isloggedin", "T");
+                    if (acceptCookie === "T") {
+                      localStorage.setItem("activeCode", "F");
+                    }
+                    if (subscribePage === "T") {
+                      localStorage.setItem("subscribepage", "F");
+                    }
+                    if (this.loginResponse.Subscriber === '0') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else {
+                      this.router.navigate(["/onboarding/viewcart"])
+                    }
+                  } else {
+                    localStorage.setItem("isloggedin", "T");
+                    if (pers && persub && pers === "T") {
+                      this.router.navigate(["/onboarding/viewcart"], {
+                        state: { quan: "1", plan: persub },
+                      });
+                    } else {
+                      this.router.navigate(["/adults/adult-dashboard"]);
+                    }
+                  }
+                }
+
+                /* if(this.urlEmail)
+                {
+                  this.service.verifyUser(this.userId)
+                  .subscribe(res=>{
+                    
+                  })
+                }*/
+              }
+            }
+          });
+      },
+      (error) => console.log(error),
+      () => {
+        //this.router.navigate[('/onboarding/addcart')]
+        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+      }
+    );
+  }
+
+  fbLogin() {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.authService.authState.subscribe((user) => {
+      // this.user = user;
+      this.user = user;
+      this.idToken = user.authToken;
+      this.socialFirstName = user.firstName;
+      this.socialLastName = user.lastName;
+      this.socialEmail = user.email;
+      if (user.email !== undefined) {
+        this.service
+          .verifyFb({
+            TokenID: this.idToken,
+            FName: this.socialFirstName,
+            LName: this.socialLastName,
+            Email: this.socialEmail,
+            VCode: "",
+            Pwd: "",
+          })
+          .subscribe((res) => {
+            if (res) {
+              this.loginResponse = res;
+              localStorage.setItem("socialLogin", "T");
+              localStorage.setItem(
+                "mediaAudio",
+                JSON.stringify(this.mediaAudio)
+              );
+              localStorage.setItem(
+                "mediaVideo",
+                JSON.stringify(this.mediaVideo)
+              );
+              localStorage.setItem("video", JSON.stringify(this.video));
+              localStorage.setItem("audio", JSON.stringify(this.audio));
+              localStorage.setItem("remember", "T");
+              localStorage.setItem("guest", "F");
+              localStorage.setItem("btnclick", "F");
+              localStorage.setItem("FnName", this.socialFirstName);
+              localStorage.setItem("LName", this.socialLastName);
+              localStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              sessionStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              localStorage.setItem(
+                "token",
+                JSON.stringify(this.loginResponse.access_token)
+              );
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+              localStorage.setItem("userId", JSON.stringify(this.userId));
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+              localStorage.setItem("email", this.socialEmail);
+              localStorage.setItem("pswd", "");
+              localStorage.setItem("name", this.loginResponse.Name);
+              localStorage.setItem("first", "T");
+              if (parseInt(this.loginResponse.UserId) == 0) {
+                this.showAlert = true;
+                window.alert(
+                  "You have enetered wrong credentials. Please try again."
+                );
+                this.email = "";
+                this.password = "";
+              } else {
+                this.showAlert = false;
+                this.userId = this.loginResponse.UserId;
+                this.userName = this.loginResponse.Name;
+                localStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                sessionStorage.setItem(
+                  "loginResponse",
+                  JSON.stringify(this.loginResponse)
+                );
+                localStorage.setItem("userId", JSON.stringify(this.userId));
+                localStorage.setItem(
+                  "token",
+                  JSON.stringify(this.loginResponse.access_token)
+                );
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId));
+                  localStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  localStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                } else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
+                  sessionStorage.setItem(
+                    "userEmail",
+                    JSON.stringify(this.socialEmail)
+                  );
+                  sessionStorage.setItem(
+                    "userName",
+                    JSON.stringify(this.userName)
+                  );
+                }
+
+                let pers = localStorage.getItem("personalised");
+                let persub = localStorage.getItem("personalised subscription");
+                let acceptCookie = localStorage.getItem("activeCode");
+                let subscribePage = localStorage.getItem("subscribepage");
+                let option = localStorage.getItem("introoption");
+                if (option === "T") {
+                  localStorage.setItem("introoption", "F");
+                  localStorage.setItem("isloggedin", "T");
+                  this.router.navigate(["/intro/personalised-for-you"]);
+                } else {
+                  if (acceptCookie === "T" || subscribePage === "T") {
+                    localStorage.setItem("isloggedin", "T");
+                    if (acceptCookie === "T") {
+                      localStorage.setItem("activeCode", "F");
+                    }
+                    if (subscribePage === "T") {
+                      localStorage.setItem("subscribepage", "F");
+                    }
+                    if (this.loginResponse.Subscriber === '0') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else {
+                      this.router.navigate(["/onboarding/viewcart"])
+                    }
+                  } else {
+                    localStorage.setItem("isloggedin", "T");
+                    if (pers && persub && pers === "T") {
+                      this.router.navigate(["/onboarding/viewcart"], {
+                        state: { quan: "1", plan: persub },
+                      });
+                    } else {
+                      this.router.navigate(["/adults/adult-dashboard"]);
+                    }
+                  }
+                }
+
+                /* if(this.urlEmail)
+                  {
+                    this.service.verifyUser(this.userId)
+                    .subscribe(res=>{
+                      
+                    })
+                  }*/
+              }
+            }
+          });
+      } else {
+        window.alert(
+          "Please ensure that you use an email based authentication with your Auth provider or try another method"
+        );
+      }
+    });
+  }
 
   emailLogin() {
     localStorage.removeItem("token");
