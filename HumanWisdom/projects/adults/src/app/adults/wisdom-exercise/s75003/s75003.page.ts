@@ -12,6 +12,7 @@ export class S75003Page implements OnInit {
   dayclass = 'intro'
   isShowTranscript = false;
   isShowAudio = false;
+  isShowButton = false;
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -275,9 +276,12 @@ export class S75003Page implements OnInit {
         data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
           children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == 'audio-test') {
+      if (data == "audio-test") {
+        this.isShowButton=true;
         this.isShowTranscript = true;
+        this.isShowAudio=false;
       } else {
+        this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
@@ -339,12 +343,15 @@ export class S75003Page implements OnInit {
           data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
             children[1]?.children[0]?.lastChild?.classList.value;
         }
-      if (data == 'audio-test') {
-        this.isShowTranscript = true;
-      } else {
-        this.isShowTranscript = false;
-        this.isShowAudio = false;
-      }
+        if (data == "audio-test") {
+          this.isShowButton=true;
+          this.isShowTranscript = true;
+          this.isShowAudio=false;
+        } else {
+          this.isShowButton=false;
+          this.isShowTranscript = false;
+          this.isShowAudio = false;
+        }
     }, 700);
   }
 

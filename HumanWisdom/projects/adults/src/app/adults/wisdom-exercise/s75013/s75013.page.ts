@@ -41,7 +41,7 @@ export class S75013Page implements OnInit {
   totaldays=7;
   userId: any = localStorage.getItem('userId');
   DaysWithIntro=8;
-
+  isShowButton = false;
   lastClick = 0;
   delay = 20;
   methodSTartTime: any;
@@ -256,9 +256,12 @@ export class S75013Page implements OnInit {
         data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
           children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == 'audio-test') {
+      if (data == "audio-test") {
+        this.isShowButton=true;
         this.isShowTranscript = true;
+        this.isShowAudio=false;
       } else {
+        this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
@@ -324,12 +327,15 @@ export class S75013Page implements OnInit {
           data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
             children[1]?.children[0]?.lastChild?.classList.value;
         }
-      if (data == 'audio-test') {
-        this.isShowTranscript = true;
-      } else {
-        this.isShowTranscript = false;
-        this.isShowAudio = false;
-      }
+        if (data == "audio-test") {
+          this.isShowButton=true;
+          this.isShowTranscript = true;
+          this.isShowAudio=false;
+        } else {
+          this.isShowButton=false;
+          this.isShowTranscript = false;
+          this.isShowAudio = false;
+        }
     }, 700);
   }
 
