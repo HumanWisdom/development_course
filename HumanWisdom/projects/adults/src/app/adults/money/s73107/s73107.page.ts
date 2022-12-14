@@ -36,7 +36,7 @@ export class S73107Page implements OnInit {
     },
     {
       name: 'Work',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/58.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/48.png',
       link: '/work',
       id: 58
  

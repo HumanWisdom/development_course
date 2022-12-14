@@ -22,18 +22,21 @@ export class S42022Page implements OnInit {
     {
       name: 'Three Steps to Enquiry',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/13.png',
-      link: '/three-steps-enquiry'
+      link: '/three-steps-enquiry',
+      id: 37
     },
     {
       name: 'Awareness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
-      link: '/awareness'
+      link: '/awareness',
+      id: 39
  
     },
     {
       name: 'Nature',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/06.png',
-      link: '/nature'
+      link: '/nature',
+      id: 28
   
     },
   ]
