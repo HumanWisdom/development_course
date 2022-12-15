@@ -1,0 +1,34 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Examples of Insight to explore:
+    </h1>
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. All pleasure is short-lived
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. If you are not at peace with yourself, your relationships will be unhappy
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Fear is linked to thinking, which magnifies the threats
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Our opinions are not originally ours, and come from our conditioning
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. Behind all anger is a feeling of being hurt
+    </h3>
+  </form>          
+</app-oneline-text>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s

@@ -1,0 +1,27 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      <p class="mb0px fw_bold"></p>
+      To continue learning about yourself, exploring how your mind works, and discovering the many benefits of wisdom, we invite you to subscribe and explore the rest of the program, or go back to the dashboard and browse some other modules for free.
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+        <div class="col-md-3 col-sm-3 col-xs-12 tcenter p0">        
+          <a routerLink="/onboarding/add-to-cart">
+            <button type="button" class="btn btn-success mb0 w100 btn_begin_here_orange" data-dismiss="modal">Subscribe</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

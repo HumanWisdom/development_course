@@ -1,0 +1,1482 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" routerLink="/adults/wisdom-exercise/s75001">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          #12 Exploring the masks we wear
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_whitesmoke sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- carousel -->
+              <div class="container" *ngIf="enableintro" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- introduction -->
+                    <div class="item active" >
+                      <div class="row center_flex mt40px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_12_a.png"
+                                alt="" class="img-responsive w100">
+                            </div>
+                          </div>
+
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_12px lh_14px fc_000000 mtb0px">
+                                Exercise #12
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row mt10px mb15px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_500 fs_24px lh_130p fc_000000 mtb0px">
+                                Exploring the masks we wear
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
+                                Welcome. In this set of exercises we are going to explore the many masks we wear, how they form, how they impact us and how we can live in freedom without them. 
+                                Keep in mind the basic principles of enquiry:
+                              </h4>
+
+                              <ul class="fw_400 fs_15px lh_140p fc_000000 pt15px pl15px">
+                                <li class="">
+                                  We are just looking and learning about ourselves
+                                </li>
+
+                                <li class="">
+                                  We need to have a mind open to learning
+                                </li>
+
+                                <li class="">
+                                  For learning to take place we need to pause judgement
+                                </li>
+
+                                <li class="">
+                                  What we observe in ourselves is not  right or wrong, good or bad - it just needs to be understood
+                                </li>
+
+                                <li class="">
+                                  Deep down, we are the same human being
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /introduction -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Why do we have masks? 
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.1.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Have you ever felt one thing inside, and pretended to be someone else on the outside? 
+                            Or pretended to yourself that you are something you really are not? You are not alone.
+                            This is part of being human, and how our shared human mind works. This happens without our awareness.
+                          </p>
+
+                          <p>
+                            Even if we are aware of it, we don’t seem to be able to do anything about it. Seeing this clearly can bring its own change.
+                          </p>
+
+                          <p>
+                            The difference between who we actually are, and who we pretend to be to the world can make us feel disconnected from ourselves. We don’t feel comfortable in our own skin and are not authentic in how we present ourselves to the world.
+                          </p>
+
+                          <p>
+                            Sometimes we need to wear these masks so we can do our job - if I am a doctor I need patients to have confidence in me - so I need to appear confident, even when I am not.
+                          </p>
+
+                          <p>
+                            Or, we may delude ourselves and not face the truth of who we are - so never grow as human beings. I may be anxious but pretend I am not and believe that - and so my anxiety never gets addressed.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Our masks form without our awareness because we want to fit in, or do not want to accept ourselves as we are, and want to control what other people think of us.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text --> 
+                            
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1033"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Problems our masks can cause include:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Don’t feel comfortable being ourselves
+                                </li>
+
+                                <li class="">
+                                  Feel anxious about what others think
+                                </li>
+
+                                <li class="">
+                                  Feel tired keeping our masks in place
+                                </li>
+
+                                <li class="">
+                                  Do not make friends who like us for who we really are
+                                </li>
+
+                                <li class="">
+                                  Delude ourselves
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1034"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /carousel -->
+
+              <!-- day 01 -->
+              <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Sarah is unhappy in her marriage, but pretends to be happy
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.2.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Sarah is 30 and has been married for 5 years. She has a 1 year old baby. She is deeply unhappy with her husband. She feels he is quite bossy and wants things his way. He is always telling her what to do and she feels he does not listen to her.
+                          </p>
+
+                          <p>
+                            She pretends to be happy though, and does not share how she feels  because she is worried about his anger and the consequences of admitting even to herself that she is unhappy. After all - she chose him, and it would be admitting to herself and others that she had failed.
+                          </p>
+
+                          <p>
+                            Behind her mask she suffers and feels trapped - unable to leave, and unhappy to stay. She gets increasingly depressed
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1035"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1036"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Communicating our unhappiness is not easy
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.3.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            When we are unhappy in a relationship, communicating our unhappiness is not easy. We worry how the other person will react, and what it will do to the relationship. Because of our fear, we say nothing, and the problem never gets addressed. We continue to be unhappy and drift apart emotionally from the other person. The other person does not understand why we have drifted apart, and reacts by engaging less and less - and that is how many relationships lose their essence and get strained, or die.
+                          </p>
+
+                          <p>
+                            The answer perhaps is to face up to our fear, and have the courage to communicate how we feel - but do it with kindness, in a soft voice, or in a letter - asking for an open discussion on the subject. Do it without blaming the other person, but just share how you feel.
+                          </p>
+
+                          <p>
+                            Though that discussion may be difficult, at the end of it your relationship will be stronger, and you will feel closer to the other person.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            The next time you are unhappy in a relationship, challenge yourself to accept and share how you feel, and have a conversation to deal with the issue. Do it with kindness.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 01 -->
+
+              <!-- day 02 -->
+              <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Michael is anxious, but pretends that he is fine.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.4.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Michael is 40 and works as a chartered accountant. He has suffered from anxiety for many years. He has tried many treatments with limited benefit. He puts on a mask of normality pretending to others that he is okay.
+                          </p>
+
+                          <p>
+                            Behind the mask he continues to feel anxious and is also worried that others will find out the truth of who he really is and will think badly of him. His mask also stops him getting the help he needs to overcome it.
+                          </p>
+
+                          <p>
+                            He hates going to work and continues to suffer behind the mask he projects to the world.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1037"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Have you ever felt anxious but pretended you were fine? How did that feel?
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Admitting we are anxious or depressed is not easy
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Mental health problems are common. We often put on a brave face, pretending they do not exist - and that can make things worse. It is much better to be open about them and get the help you need.
+                          </p>
+
+                          <p>
+                            We often hide how we really feel even from ourselves - because that challenges our image of ourselves as ‘strong’ or ‘capable’ or ‘able to sort this out’ - this is especially true of men.
+                          </p>
+
+                          <p>
+                            Accepting how we really feel can help us explore why we feel that way, and begin a journey to freedom, and get help if we need to.
+                          </p>
+
+                          <p>
+                            Most people are not aware they are stressed or anxious, and so continue to suffer. 
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            The next time you feel anxious, challenge yourself to be authentic and admit that to yourself, and if appropriate, to others. This may allow you to manage it better and allow others to understand you more.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 02 -->
+
+              <!-- day 03 -->
+              <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Alex is a headteacher. He pretends to be confident, but inside feels like an impostor.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.6.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Alex is 38 and has been a school teacher for many years. He was recently appointed as a headteacher in a new school. He feels like an impostor - unsure about what to do sometimes, and feels he has to carry the expectations of many teachers and parents. He pretends to know everything about the job and works very long hours. Inside though he feels like an impostor, and gets more and more stressed. He lives with an anxiety that people will find out that he is not really up to the job
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1038"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                     <!-- journal -->
+                     <div class="item">
+                      <app-journal-we [rId]="1039"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                In any situation realise you do not have to know everything. You can ask for help.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.7.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            In any job we do, our fear of being judged by others creates a certain anxiety. We worry people will think less of us and we need to know everything. It is useful to realise that everyone has been in your shoes before and understands what you are going through.
+                          </p>
+
+                          <p>
+                            Realise that asking for help is not a weakness, but a strength, because people recognise that it takes courage to do so and are more than happy to offer support.
+                          </p>
+
+                          <p>
+                            Being authentic makes us feel vulnerable, but brings a great freedom because you can stop pretending. People usually respond to your honesty by being supportive.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Challenge yourself to be authentic and open about what you know and what you don’t. Be open to learning from others.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 03 -->
+
+              <!-- day 04 -->
+              <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Raj pretends he is successful and well connected, when he isn’t.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.8.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Raj is 42, and a self-employed businessman. He has tried to start several businesses and had limited success. When he meets other people he pretends to be more successful than he is - showing off about the people he knows or how well his business is doing. He feels compelled to do this because everyone else is doing the same. He wants people to think he is doing well and is very well connected - so he can feel important and because he thinks this will help his business. He compensates for his feeling inadequate by pretending to be more successful than he is.
+                          </p>
+
+                          <p>
+                            Underneath his mask he is stressed and anxious and disappointed in himself and his own life.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1040"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1041"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Pretending to be successful
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.9.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            We pretend to be more successful than we are, because we want to feel important and impress others. In doing that we stop being true to ourselves and lose our sense of peace.
+                            This is because our definition of success is narrow and linked to money, fame and how important we are. Success is much more than that - and includes being at peace with yourself, having excellent relationships and living with purpose.
+                          </p>
+
+                          <p>
+                            We are competitive because being better than others makes us feel good. We cannot admit we are less than others in any way.
+                          </p>
+
+                          <p>
+                            Being authentic allows us to be at peace with ourselves, build authentic relationships - and this can contribute to our success in the world.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Challenge yourself to be authentic - to yourself and others. Be comfortable with who you are, and your achievements - however humble they may be. This leads to a feeling of peace.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 04 -->
+
+              <!-- day 05 -->
+              <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                       
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Sophie pretends to enjoy partying with her friends
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.10.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Sophie is 19 and has a group of friends she has just met at University. They enjoy partying, binge drinking and have begun experimenting with drugs like ecstasy. She pretends to enjoy this because she desperately wants to fit in, and does not want to be alone. She actually does not want to take drugs, or drink as much, but is afraid she might lose her friends if she does not go along with them.
+                          </p>
+
+                          <p>
+                            She pretends to have a good time, but inside she feels lonely and does not feel she fits in. Her heavy drinking has now become a habit she is struggling to get rid of.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1042"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1043"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                All of us need connection and community 
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.11.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            All of us need connection and community because we are social animals and afraid of being alone. In our desperate need to belong, we can forget who we are at times, and join a group where we cannot be ourselves and do things we are not comfortable with.
+                          </p>
+
+                          <p>
+                            This is amplified in gang culture.
+                          </p>
+
+                          <p>
+                            Being authentic allows us to attract the right kind of people to join us. In this environment we can flourish and grow as human beings.
+                          </p>
+
+                          <p>
+                            It does need the courage to stand alone if necessary though. It may feel difficult, but it is much better than feeling you don’t fit in all the time.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Challenge yourself to be authentic, be yourself,  and speak up about what you like and don’t like in a group. You will attract people who like you for who you really are.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 05 -->
+
+              <!-- day 06 -->
+              <div class="container" *ngIf="enableday6" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Max is a psychologist. He hides his sadness and drinking problem - even from himself.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.12.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Max is 38 and a psychologist with a successful practice. He lectures on alcohol addiction in colleges and his clients rate him highly.
+                          </p>
+
+                          <p>
+                            He however has a secret alcohol addiction himself - but does not admit to it - even to himself. He drinks to deal with the pressures of the job and his own sadness, from which he feels he cannot escape. His marriage is unhappy, and his daughter doesn't speak with him - because he behaves badly when drunk. His wife is talking about leaving him.
+                          </p>
+
+                          <p>
+                            Except for his family, nobody knows he is unhappy or has a drinking problem. He feels that being a psychologist means he should be able to sort this himself - but has not been able to.
+                          </p>
+
+                          <p>
+                            He is too proud and embarrassed to seek professional help himself - and the problem continues
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1044"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1045"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Acknowledging the truth of who we are is not easy, but brings freedom
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.13.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Acknowledging the truth of who we really are is not easy, but the first step in dealing with a problem we may have and growing as a human being.
+                          </p>
+
+                          <p>
+                            We think that accepting the truth of who we are is going to be more painful, or we do not think there is a way out. Alcohol or drugs can help us numb the pain - but the problem is never dealt with so never goes away. Soon the habit takes over and we are trapped - and continue even if the original sadness recedes.
+                          </p>
+
+                          <p>
+                            Dealing with the situation head on, often by getting help, however painful it may be, is the best way of moving forwards - and avoids us falling into the trap of addiction
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1046"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 06 -->
+
+              <!-- day 07 -->
+              <div class="container" *ngIf="enableday7" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Sam pretends to be strong, but actually feels insecure
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.14.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Sam is 28 and has had a tough life. His father left when he was very young and he was brought up by his mother who had problems with alcohol. He was bullied at school.
+                          </p>
+
+                          <p>
+                            He now has a family and two small children. He pretends he is strong, but inside he feels insecure. He gets angry with his wife and bullies her sometimes just to exert his authority and this makes him feel good. He regrets it afterwards - but the cycle of behavior continues.
+                          </p>
+
+                          <p>
+                            He gets jealous every time his wife goes out with her friends and tries to control what she does.
+                          </p>
+
+                          <p>
+                            He feels insecure about people and worries they will leave him. He also worries about the future. By pretending to be strong, he feels he can exert some control over his life.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1047"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="1048"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Dealing with our insecurity is not easy, but brings freedom
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/12.15.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Feeling insecure is part of being human. We try to deal with it by controlling the people in our life because we are afraid we will get hurt. In doing so however we can damage our relationships and behave in ways that hurt others.
+                          </p>
+
+                          <p>
+                            Rather than deal with our own insecurities, we sometimes compensate by blaming others for how we feel, and try to control their behaviour.
+                          </p>
+
+                          <p>
+                            Wisdom is realising that others are not responsible for our insecurity - and it comes from ourselves. We cannot keep someone’s heart a prisoner.  A complete acceptance of the fact that people in our lives are not in a prison, and are free to leave brings freedom - though this is not easy to do. It also brings freedom for the other person - and a conversation about this can bring you closer together.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Challenge yourself to take ownership of your own insecurities, and use your wisdom to understand why, instead of blaming others. You will grow as a person if you do.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Uncertainty is the only certainty there is, and learning to live with it is the only security.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                John Paulos
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Well done for completing this session. Continue to reflect on the masks you wear and think of the masks others wear, and why.
+                            Continue to the next exercise.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 07 -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter p0">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"   [ngClass]="getClass('75013p0')"
+          (click)="getdayevent('intro')">
+          Intro
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="getClass('75013p1')" (click)="getdayevent('1')">
+          Day 1
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75013p2')" (click)="getdayevent('2')">
+          Day 2
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75013p3')" (click)="getdayevent('3')">
+          Day 3
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75013p4')" (click)="getdayevent('4')">
+          Day 4
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75013p5')"
+          (click)="getdayevent('5')">
+          Day 5
+        </button>
+      </a>
+
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75013p6')"
+          (click)="getdayevent('6')">
+          Day 6
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75013p7')"
+          (click)="getdayevent('7')">
+          Day 7
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /footer -->

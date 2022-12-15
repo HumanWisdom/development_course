@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We live in a society that glorifies wealth and we are often conditioned to regard it as the most important goal for our lives. Without realising it we gradually allow money to define who we are.
+          <br> We then project this image onto others. We regard ourselves as successful if we have a lot of money, or unsuccessful if we haven’t. We buy things to impress people, and are impressed by what others own. Money becomes part of our value system. We subtly try to show off our wealth to others, but try to do it so people don’t think we are showing off. Inside though, we may remain frightened, empty, and be unhappy. All our efforts go into making more money, but very little on being an excellent human being who is happy within. All this can happen without our awareness.
+            </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,428 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt=""
+          class="img-responsive">
+      </a>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h4 class="fw_500 fs_16px lh_19px fc_ffffff tcenter mtb0px">
+        Search
+      </h4>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 form-group has-feedback p0 zi0 div_search">
+    <input type="search" [(ngModel)]="search"  (keyup.enter)="searchEvent()" class="form-control has-feedback-left h60px searchtxt_01" id="searchtxt_01" placeholder="Search HumanWisdom">
+    <span class="form-control-feedback left sfeedback" aria-hidden="true">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/magnifying_glass_01.svg" alt="" class="">
+    </span>
+  </div>
+</div> -->
+
+<!-- <div class="row center_flex bg_black">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dsearch_result">
+    <h4 class="mtb0px fw_400 fs_12px lh_130p fc_5d5d5d">
+    {{getTotalRecords()}} results found
+    </h4>
+  </div>
+</div> -->
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+            <div class="row center_flex bg_black">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dsearch_result">
+                <h4 class="mtb0px fw_400 fs_12px lh_130p fc_5d5d5d">
+                  {{getTotalRecords()}} results found
+                </h4>
+              </div>
+            </div>
+
+            <div class="row tab_lfj center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <ul class="nav nav-tabs search_nav_tabs">
+                  <li class="active">
+                    <a data-toggle="tab" (click)="pageChangeEvent('Learning')" class="fw_500 fs_14px lh_16px fc_adadad">
+                      Learning ({{getLearningRecords()}})
+                    </a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" (click)="pageChangeEvent('Forum')" class="fw_500 fs_14px lh_16px fc_adadad">
+                      Forum ({{getForumSearchRecords()}})
+                    </a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" (click)="pageChangeEvent('Journal')" class="fw_500 fs_14px lh_16px fc_adadad">
+                      Journal ({{journalSearchRecords()}})
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="tab-content">
+
+                  <!-- learning -->
+                  <div id="tab1" *ngIf="tabName=='Learning'" class="tab-pane fade in active">
+
+                    <!-- modules -->
+                    <ng-container *ngFor="let item of searchData.ModuleRes">
+                      <div class="row">
+                        <a (click)="routemodule(item)">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex mb20px">
+                            <div class="col-lg-3 col-md-5 col-sm-5 col-xs-5">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/{{item.ModuleId}}.png"
+                                alt="" class="img-responsive">
+                            </div>
+
+                            <div class="col-lg-9 col-md-7 col-sm-7 col-xs-7">
+                              <h4 class="mtb5px fw_500 fs_12px lh_14px fp_3">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bullet/fpb_03.svg"
+                                  alt="" class="img-responsive maxh15px mr5px">
+                                {{item.SectionName}}
+                              </h4>
+                              <h4 class="fw_500 fs_18px lh_21px fc_000000 mtb0px">
+                                {{item.ModuleName}}
+                              </h4>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </ng-container>
+                    <!-- /modules -->
+
+                    <div class="row" *ngIf="searchData.ModuleRes.length>0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <hr class="hr_style_10 mb15px mt0px">
+                      </div>
+                    </div>
+
+                    <!-- sessions -->
+                    <ng-container *ngFor="let item of searchData.SessionRes;let i=index">
+                      <a [routerLink]="item.ModuleUrl">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_500 fs_10px lh_150p fc_adadad mt0px mb5px capitalize">
+                                {{item.ModuleName}}
+                              </h4>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flexai_baseline">
+                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <h4 class="fw_500 fs_14px lh_150p fc_000000 mtb0px">
+                                  #{{i+1}} {{item.SessionName}}
+                                </h4>
+                              </div>
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <h4 class="mtb0px fw_400 fs_10px lh_12px fc_5d5d5d tright">
+                                  <!-- 8 min -->
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <hr class="hr_style_10 mtb15px">
+                        </div>
+                      </div>
+                    </ng-container>
+                    <!-- /sessions -->
+
+                    <!-- wisdom stories -->
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                        <h4>Wisdom Stories</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px"
+                      *ngIf="searchData.WisdomStoriesRes.length==0">
+                      <span>No Record Found</span>
+                    </div>
+
+                    <ng-container *ngIf="searchData.WisdomStoriesRes.length>0">
+                      <ng-container *ngFor="let item of searchData.WisdomStoriesRes">
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
+                            <a href="https://humanwisdom.me/course/wisdom-stories/view-stories?sId={{item.ScenarioID}}"
+                              class="center_flex swisdom_stories">
+                              <div class="col-md-2 col-sm-2 col-xs-3 p0">
+                                <img alt="" class="w100 c150px" [src]="item.ImgUrl">
+                              </div>
+                              <div class="col-md-10 col-sm-10 col-xs-9">
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                      <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize"> {{item.Title}}
+                                      </h6>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis"> {{item.Message}} </h6>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </ng-container>
+                    </ng-container>
+                    <!-- /wisdom stories -->
+
+                    <div class="row" *ngIf="searchData.SessionRes.length==0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <hr class="hr_style_10 mtb15px">
+                      </div>
+                    </div>
+
+                    <!-- wisdom shorts -->
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                        <h4>Wisdom Shorts</h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cp20px"
+                        *ngIf="searchData && searchData.WisdomShortsRes.length>0">
+                        <ng-container *ngFor="let item of searchData.WisdomShortsRes">
+                          <a routerLink="{{item.VideoUrl}}">
+                            <div class="row box_01 bg_gallery p0">
+                              <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
+                                <img [src]="item.ImgUrl" alt="Access your own wisdom" class="p0">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg"
+                                  alt="" class="p0 absolute_center_lt_video">
+                              </div>
+
+                              <div class="col-md-9 col-sm-9 col-xs-9 p10px">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                                    <h4 class="fw_500 fs_15px lh_18px fc_5d5d5d mtb0px">
+                                      {{item.Title}}
+                                    </h4>
+                                  </div>
+                                  <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                                    <h4 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px">
+                                      <!-- 1:41 min -->
+                                    </h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </ng-container>
+                      </div>
+                    </div>
+
+                    <div class="row" *ngIf="searchData.WisdomShortsRes.length==0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                        <span>No Record Found</span>
+                      </div>
+                    </div>
+                    <!-- /wisdom shorts -->
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <hr class="hr_style_10 mtb15px">
+                      </div>
+                    </div>
+
+                    <!-- podcasts -->
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                        <h4>Wisdom Podcast</h4>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px"
+                        *ngIf="searchData && searchData.PodCastRes.length>0">
+                        <ng-container *ngFor="let item of searchData.PodCastRes">
+                          <!-- podcast widget -->
+                          <iframe title="Avoiding and Overcoming Addiction" allowtransparency="true" height="auto"
+                            width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no"
+                            data-name="pb-iframe-player" [src]="getSourceForPodBin(item.URL)">
+                          </iframe>
+                          <!-- /podcast widget -->
+                        </ng-container>
+                      </div>
+                    </div>
+
+                    <div class="row" *ngIf="searchData.PodCastRes.length==0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                        <span>No Record Found</span>
+                      </div>
+                    </div>
+
+                    <!-- <div class="cw100p">
+                      <div class="row">
+                        <h4>Wisdom Podcast</h4>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+                          <div class="x_panel p0 bg_white c_zambezi ">
+                            <div class="x_content tleft" *ngIf="searchData && searchData.PodCastRes.length>0">
+                              <form>
+                                <ng-container *ngFor="let item of searchData.PodCastRes">
+                                  <iframe title="Avoiding and Overcoming Addiction"
+                                    allowtransparency="true" height="300" width="100%"
+                                    style="border: none; min-width: min(100%, 430px);"
+                                    scrolling="no" data-name="pb-iframe-player"
+                                    [src]="getSourceForPodBin(item.URL)"></iframe>
+                                </ng-container>
+
+                                <div class="pagebreak"></div>
+                             </form>
+                            </div>
+                            <div *ngIf="searchData.PodCastRes.length==0" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <span>No Record Found</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- /podcasts -->
+
+                    <div class="pagebreak"></div>
+
+                  </div>
+                  <!-- /learning -->
+
+                  <!-- forum -->
+                  <div id="tab2" *ngIf="tabName=='Forum'" class="tab-pane fade in active">
+                    <ng-container *ngFor="let item of post;let index=index;">
+                      <div class="row center_flex">
+                        <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
+                          <h4 class="mtb0px">
+                            <span class="fw_500 fs_14px lh_16px fc_000000">{{item.POST}} </span>
+                          </h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+                          <div class="col-md-9 col-sm-9 col-xs-9 lcs_div">
+                            <div class="col-md-2 col-sm-2 col-xs-2 p0 flex_ai">
+                              <button (click)="like(item,index)" type="submit" class="btn btn_ficons jc_flexstart">
+                                <i *ngIf="item.Liked=='0'" class="fa fa-heart-o">
+                                </i>
+
+                                <i *ngIf="item.Liked=='1'" class="fa fa-heart">
+                                </i>
+                                <span [innerText]="item.PostLikeCount"></span>
+                              </button>
+                            </div>
+                            <div class="col-md-2 col-sm-3 col-xs-4 pl0 flex_ai">
+                              <button (click)="reportpost(item)" type="submit" class="btn btn_ficons jc_flexstart">
+                                <i class="fa fa-reply"> </i>
+                                Comment
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col-md-3 col-sm-3 col-xs-3 tright pl0" (click)="follow(item,index)">
+                            <button type="submit" class="btn btn_ficons jc_flexend">
+                              <i class="fa fa-user-plus"></i>
+                              <span *ngIf="item.Followed=='1'">
+                                Following
+                              </span>
+                              <span *ngIf="item.Followed=='0'">
+                                Follow
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row forum_pt20px" *ngIf="replyflag && activereply.PostID === item.PostID">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
+                            required="required" class="txtarea_fl_comment" placeholder="Comment Here"
+                            rows="5"></textarea>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 tright mt5px">
+                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,'comment')">
+                            Comment
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="row" *ngFor="let i of getOrderbyLatestPost(item.child)">
+                        <div class="col-md-12 col-sm-12 col-xs-12 div_bl">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                            <h4 class="fw_500 fs_14px lh_16px fc_000000 commenter mtb0px">
+                              {{i.UserName}}
+                              <span class="fw_400 fs_10px fc_adadad">
+                                {{getLocalPostDate(i.PostDate) | date: 'medium' }}
+                              </span>
+                            </h4>
+                            <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px">
+                              {{i.POST}}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr class="hr_style_2">
+                    </ng-container>
+                    <!-- /section 2 -->
+                  </div>
+                  <!-- /forum -->
+
+                  <!-- journal -->
+                  <div id="tab3" *ngIf="tabName=='Journal'" class="tab-pane fade in active">
+                    <ng-container *ngFor="let item of searchData.JournalRes">
+                      <div class="row plr10px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
+                          <div class="panel panel-default prelative panel_search">
+                            <div class="panel-heading absolute_ptitle">
+                              <h4 class="panel-title">{{item.ModuleName}}</h4>
+                            </div>
+                            <div class="panel-body">
+                              <h4 class="txt36 opacity_pt5">{{item.Date | date: 'medium' }}</h4>
+                              <h4 class="txt37">{{item.TitleQue}}</h4>
+                              <h4 class="txt38">{{item.Response}}</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <!-- /journal -->
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

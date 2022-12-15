@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Constant comparison can bring pleasure, cause envy, make us critical of others, make us want to imitate others, and lower our self-esteem – all this happens without our awareness or our consent. It isn’t right or wrong, just an unconscious automatic process in our thinking that needs to be explored and understood, because it can impact our life in so many ways. A deeper understanding of this process allows us to respond with wisdom and avoid many of the problems it can cause.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

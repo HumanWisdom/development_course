@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There are as many definitions of leadership as there are leaders. You could lead an organisation,
+           or a country, in which case you need a vision for what you want to achieve, and then inspire people
+           anslate that vision into reality. People who are inspired by you will follow you, and that is what 
+           makes you a leader. If you want people to follow you you have to build a connection with them and 
+           look after them. How are you going to do that?
+           In this module we will explore the skills you need to be a great leader
+
+        </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

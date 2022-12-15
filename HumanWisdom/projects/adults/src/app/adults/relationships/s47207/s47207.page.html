@@ -1,0 +1,13 @@
+ <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Letting go of our ideals and not comparing ourselves with others would allow us to accept ourselves for who we are, and appreciate what we have. Imagine the peace we would feel, if we could do that.
+      </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

@@ -1,0 +1,12 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      By educating ourselves and others about the many hidden drivers in our thinking that are behind bullying, we may be able to prevent it. 
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

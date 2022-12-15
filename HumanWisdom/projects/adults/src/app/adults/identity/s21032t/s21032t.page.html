@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Sometimes our multiple identities can be a cause of internal conflict and we may find ourselves torn between our allegiance to our different identities. When America invaded Iraq for example, American muslims were torn between their allegiance to their national identity - America, and their religious one - being a Muslim. Or in the recent American elections some electors were torn between their religious identity and their political one. Seeing all this conflict the identity can cause,  we never ask ourselves do we need to have an identity at all? Could we just be simple human beings?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

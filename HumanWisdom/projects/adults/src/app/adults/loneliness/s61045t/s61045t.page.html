@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The fear of being alone shapes our lives in many ways we are not always aware of. I asked some students why they were so anxious about what others thought of them. ‘Otherwise we would be alone’ they said. Have you ever tried being alone I asked, and they said ‘No’. This fear can push us to be part of a group and do things like take drugs or drink too much, that we may not always be comfortable with.
+           Or it may push us to join groups we don’t agree with, just so we are not alone.
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

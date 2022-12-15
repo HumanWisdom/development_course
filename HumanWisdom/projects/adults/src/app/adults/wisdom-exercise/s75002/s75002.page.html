@@ -1,0 +1,1213 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" routerLink="/adults/wisdom-exercise/s75001">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
+          #1 See the world freshly
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright" *ngIf="isShowButton">
+      <a (click)="changeType()" class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/transcript_grey_02.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_whitesmoke sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <!-- carousel -->
+              <div class="container" *ngIf="enableintro" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="1"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="2"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="3"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="4"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="5"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="6"></li> -->
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- introduction -->
+                    <div class="item active">
+                      <div class="row center_flex mt40px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01_a.png"
+                                alt="" class="img-responsive w100">
+                            </div>
+                          </div>
+
+                          <div class="row mt30px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_12px lh_14px fc_000000 mtb0px">
+                                Exercise #1
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row mt10px mb15px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_500 fs_24px lh_130p fc_000000 mtb0px">
+                                See the world freshly
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
+                                Welcome to this series of wisdom exercises which are aimed at developing the skills you
+                                need to discover your own wisdom, meet life’s challenges, and live your best life. Keep
+                                in mind the basic principles of enquiry:
+                              </h4>
+
+                              <ul class="fw_400 fs_15px lh_140p fc_000000 pt15px pl15px">
+                                <li class="">
+                                  We are just looking and learning about ourselves
+                                </li>
+
+                                <li class="">
+                                  Have a mind open to learning
+                                </li>
+
+                                <li class="">
+                                  For learning to take place we need to pause judgement
+                                </li>
+
+                                <li class="">
+                                  What we observe in ourselves is not right or wrong, good or bad - it just needs to be
+                                  understood
+                                </li>
+
+                                <li class="">
+                                  Deep down, we are all the same human beings
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /introduction -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Introducing wisdom exercises
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter"  [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.1.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px"  *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Welcome.
+                            <br>
+                            In this series of wisdom exercises we are going to learn a set of skills which can help us understand ourselves and how our mind works, and then apply this to different areas of our life. You do not need a degree to learn these skills - just as you do not need a degree to learn to cook, or to swim.
+                          </p>
+
+                          <p>
+                            Just as our hearts work in the same way, so does our thinking. Understanding the way our heart works helped us to prevent and treat many problems linked to the heart. Understanding the way our mind works can help us do the same. This understanding also helps us to understand others better, think clearly, manage our own emotions, and make good decisions for our lives.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Benefits of understanding our own thinking
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <ul class="fw_400 fs_18px lh_140p fc_000000 wec_ul">
+                                <li class="">
+                                  Help us think clearly
+                                </li>
+
+                                <li class="">
+                                  Be emotionally intelligent
+                                </li>
+
+                                <li class="">
+                                  Make good decisions
+                                </li>
+
+                                <li class="">
+                                  Understand others
+                                </li>
+
+                                <li class="">
+                                  Communicate better
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            These wisdom exercises are the key to developing the skills to enjoying your life and living
+                            with wisdom, rather than just reading about it.
+                          </p>
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            It is the difference between just reading a travel guide about London, and actually going to
+                            visit the city yourself.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Without self-knowledge you are not properly educated
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                J Krishnamurti
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            We are now going to invite you to a
+                            <span class="bold">five day</span>
+                            challenge.
+                          </p>
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Do one exercise a day and record what you are learning in your journal
+                          </p>
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            These exercises are powerful and the key to living your best life
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /carousel -->
+
+              <!-- day 01 -->
+              <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="1"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="2"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="3"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="4"></li> -->
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                See the world freshly
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.2.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            In this first set of exercises we are going to remind ourselves how to notice the world around us with depth and wonder and be curious about what we see.
+                          </p>
+
+                          <p>
+                            You will notice things around you that you would normally overlook, and write about them in your journal. The aim is to improve your ability to notice. Our mind tends to overlook things it sees everyday. This skill will help you see the world freshly each day, and that in itself can be life enhancing. 
+                          </p>
+
+                          <p>
+                            This ability to notice freshly will be invaluable when you begin noticing your thoughts and feelings. We are going to begin with noticing the people we meet freshly
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Look at everything as though you are seeing it for the first time, with the eyes of a
+                                child, fresh with wonder.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Joseph Cornell
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="854"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="855"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we [rId]="856"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 01 -->
+
+              <!-- day 02 -->
+              <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="1"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="2"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="3"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="4"></li> -->
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]="857"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                A tree has so much to teach us.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.3.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            We normally walk past trees - or may look briefly and say ‘ how beautiful’.
+                            <br>
+                            But if we pause, go close and spend some time being with a tree there is so much we can learn. 
+                            Look at the bark, and the various patterns it creates. Look for the creatures that live in the tree - an oak tree supports 2300 species for example - isn’t that amazing?
+                            Look at the leaves - notice their intricate patterns. See the architecture of the branches. Let your mind go quiet with wonder, and just see what you can notice. 
+                          </p>
+
+                          <p>
+                            Do you notice in yourself the urge to move on and do something useful - that's normal - stay a while longer. Soak in the wonder that is this tree - we owe our life to it and other trees. 
+                            The quieter your mind becomes the more you notice. The more you notice, the quieter your mind becomes.
+                          </p>
+
+                          <p>
+                            Learn to be curious and notice. Ask a question about the tree and go find the answer.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                Be still, my heart, these great trees are prayers.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Tagore
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Come back to this tree three times this week - and notice how it changes. Watch the leaves
+                            fill with light and notice how they move in the breeze. Stay with the tree for a while. Keep
+                            noticing.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Look at this tree and be grateful. Feel its presence, without thinking about it. Without
+                            trees, we humans could not survive.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 02 -->
+
+              <!-- day 03 -->
+              <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="1"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="2"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="3"></li> -->
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]="858"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Lessons from looking at a vegetable
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.4.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px"  *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            You may think this is a silly thing to do - to look carefully at an ordinary vegetable. But it’s not about the vegetable - it is about developing our skill to be curious, and notice the extra-ordinary in the ordinary - this way you will live in wonder at the daily miracles of your life.
+                          </p>
+
+                          <p>
+                            Firstly - have you seen its colour? How did it get that way?
+                          </p>
+
+                          <p>
+                            Smell it - and take a deep breath in - what does this remind you of?
+                          </p>
+
+                          <p>
+                            All vegetables come in such different shapes and sizes - no two are alike.
+                          </p>
+
+                          <p>
+                            Now cut it open and notice the intricate patterns inside it.
+                          </p>
+
+                          <p>
+                            Feel its texture - and marvel at the wonder of creation it is
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Notice the vegetables you cook with every day. Be curious. Notice something consciously.
+                            This helps develop your power of observation and you will apply this to noticing your
+                            thoughts later.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                I hope you find, as I did, that happiness comes from noticing and enjoying the little
+                                things in life.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Barbara Kipfer
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 03 -->
+
+              <!-- day 04 -->
+              <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="1"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="2"></li> -->
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]="859"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Our mind takes what it sees every day for granted
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.5.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Our mind takes what it sees everyday for granted. That is just the way the mind is wired. It's an old survival mechanism - to spot changes and look for danger, but it stops us noticing the wonder of our world, and we take what we already have for granted.
+                          </p>
+
+                          <p>
+                            The new toy quickly becomes the old toy - and the new car the old car which you don’t notice any more.
+                          </p>
+
+                          <p>
+                            Notice this process in yourself. Look with fresh eyes at the world and what you already have. Be grateful.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                The real voyage of discovery consists not in seeing new landscapes, but in seeing the
+                                world with new eyes.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Marcel Proust
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 04 -->
+
+              <!-- day 05 -->
+              <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
+                  data-interval="3000000">
+
+                  <div class="row center_flex">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci">
+                      <ol class="carousel-indicators">
+                        <!-- <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="1"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="2"></li>
+                        <li data-target="#mdp_carousel" data-slide-to="3"></li> -->
+
+                        <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" [innerHTML]="details">
+                         
+                        </h4>
+
+                        <a (click)="back()" class="left carousel-control jc_flexstart flex_ai">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                            Back
+                          </h4>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a (click)="next()" class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+                            Next
+                          </h4>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- journal -->
+                    <div class="item active">
+                      <app-journal-we [rId]="860"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- audio -->
+                    <div class="item">
+                      <div class="row center_flex safari_tcenter mt60px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 cnexrol-xs-12">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px">
+                                Walking with awareness
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p7rem">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.6.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
+
+                          <p>
+                            Normally when we walk our mind wanders. We take note of things around us only briefly - before the mind wanders off again. Walk consciously. Notice the air you breathe, the sound your footsteps make, and the details of the buildings or landscape around you.
+                          </p>
+
+                          <p>
+                            The more you notice the quieter your mind becomes. Pause from time to time and look carefully at a tree or a flower or a building - noticing the details.
+                          </p>
+
+                          <p>
+                            As you develop your ability to notice and be curious about the world around you, your sense of wonder at being alive will awaken
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- quotation -->
+                    <div class="item">
+                      <div class="row center_flex mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 safari_tcenter">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg"
+                                alt="" class="img-responsive">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_21px lh_140p fc_000000 mtb0px italic">
+                                I have travelled all around the world to see rivers and mountains and cities, and spent
+                                a great deal of money. But I forgot to step outside my house and see a dewdrop on a
+                                blade of grass, a dewdrop which reflects in its convexity the whole universe.
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px ls_01 ttuppercase">
+                                Tagore
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft mt60px">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+                          <p class="fw_400 fs_21px lh_140p fc_000000">
+                            Challenge yourself to walk consciously, noticing the air you breathe and the details of the
+                            world around you. Walk with wonder, be curious, and be grateful.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- /day 05 -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter p0">
+  <!-- carousel indicators -->
+  <!-- <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex bg_whitesmoke">
+      <ol class="carousel-indicators">
+        <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#mdp_carousel" data-slide-to="1"></li>
+        <li data-target="#mdp_carousel" data-slide-to="2"></li>
+        <li data-target="#mdp_carousel" data-slide-to="3"></li>
+        <li data-target="#mdp_carousel" data-slide-to="4"></li>
+        <li data-target="#mdp_carousel" data-slide-to="5"></li>
+        <a class="left carousel-control jc_flexstart flex_ai">
+          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+            Back
+          </h4>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
+            Next
+          </h4>
+          <span class="sr-only">Next</span>
+        </a>
+      </ol>
+    </div>
+  </div> -->
+  <!-- /carousel indicators -->
+
+  <!-- <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+      
+      <a>
+        <button type="button" class="btn m0px btn_wec inactive">
+          Intro
+        </button>
+      </a>
+    
+      <a>
+        <button type="button" class="btn m0px btn_wec editable">
+          Day 1
+        </button>
+      </a>
+    
+      <a>
+        <button type="button" class="btn m0px btn_wec uneditable">
+          Day 2
+        </button>
+      </a>  
+      <a>
+        <button type="button" class="btn m0px btn_wec">
+          Day 3
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec">
+          Day 4
+        </button>
+      </a>
+      <a>
+        <button type="button" class="btn m0px btn_wec">
+          Day 5
+        </button>
+      </a>
+    </div>
+  </div>   -->
+
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex we_ft">
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"   [ngClass]="getClass('75002p0')"
+          (click)="getdayevent('intro')">
+          Intro
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+          [ngClass]="getClass('75002p1')" (click)="getdayevent('1')">
+          Day 1
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75002p2')" (click)="getdayevent('2')">
+          Day 2
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75002p3')" (click)="getdayevent('3')">
+          Day 3
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"
+        [ngClass]="getClass('75002p4')" (click)="getdayevent('4')">
+          Day 4
+        </button>
+      </a>
+  
+      <a>
+        <button type="button" class="btn m0px btn_wec"  [ngClass]="getClass('75002p5')"
+          (click)="getdayevent('5')">
+          Day 5
+        </button>
+      </a>
+  
+    </div>
+  </div>
+
+  <!-- <app-ft-wisdom-exercise (emitdayevent)="getdayevent($event)"></app-ft-wisdom-exercise> -->
+</div>
+<!-- /footer -->

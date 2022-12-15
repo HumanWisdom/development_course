@@ -1,0 +1,186 @@
+<!-- top navigation -->
+<!-- <div class="top_nav ml0 tcenter inav">
+  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/criticism.png" alt="" class="img-responsive iw100">
+  <div class="nav_menu absolute_top p20px">
+      <nav>          
+          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
+            <li class="">                    
+                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
+                  <h4 class="btn_back_white">
+                    Back
+                  </h4> 
+                </a>                  
+            </li>   
+            
+            <li class="lishare">                    
+              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                        
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
+              </a>                  
+            </li>
+          </ul>
+      </nav>
+  </div>
+</div> -->
+<!-- /top navigation -->
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
+          Criticism
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          In this module we are going to explore the process why criticism feels so painful, why we are critical of others and ourselves, and how a deeper understanding allows us to respond with intelligence. This can make a big difference to our lives.
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/adults/criticism', criticismResume]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_green" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <!-- <a routerLink="/adults/criticism/s325">
+          <button type="button" class="btn btn_default mb0 txt_green" data-dismiss="modal">Start from the beginning</button>
+        </a> -->
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/adults/criticism/s325">
+      <div class="row crow box bg_green">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Impact of criticism
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              21 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+
+    <a routerLink="/criticism/s347">
+      <div class="row crow box bg_green">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Why are we critical of others
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              19 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/criticism/s367">
+      <div class="row crow box bg_green">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #3
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Why is criticism so painful?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              10 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/criticism/s393">
+      <div class="row crow box bg_green">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #4
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Why are we critical of ourselves? 
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              10 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/criticism/s418p0">
+      <div class="row crow box bg_green">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #5
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Role-play scenario 
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              10 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+
+  </form>   
+
+</app-index-content> 
+
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
+<app-index-footer></app-index-footer>

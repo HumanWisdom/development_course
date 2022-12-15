@@ -1,0 +1,107 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_introduction_tn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a (click)="Backward()" class="">                          
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0">
+      </a>  
+    </div>
+    
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a  class="">                       
+        <h1 class="fw_500 fs_18px lh_21px fc_5d5d5d mtb0px tcenter" *ngIf="data">
+        {{data[0].Topic}}
+        </h1>            
+      </a>  
+    </div>
+    
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_guided_questions sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+            <!-- carousel -->
+            <div class="container" *ngIf="data">
+              <div id="cgqtns" class="carousel slide" data-ride="carousel" data-interval="false">
+               
+                <ol class="carousel-indicators">
+                  <button type="submit" (click)="back()" class="left carousel-control jc_flexstart btn_gqtns" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                  </button>
+                  <h4  class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px tcenter">
+                   {{title}}
+                  </h4>
+                  <button  (click)="forward()" class="right carousel-control jc_flexend btn_gqtns" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                  </button> 
+                </ol>
+                
+                <div class="carousel-inner" >
+                  <ng-container *ngFor="let item of data;let i=index" >
+                  <div class="item" [ngClass]="getClass(item.QuestionNo)">
+                    <!-- slide 1 -->
+                    <div class="row cgqtns_qtn">
+                      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                        <h4 class="fw_400 fs_18px lh_140p fc_000000 mtb0px tleft">
+                          {{item.QuestionNo}} . {{item.Question}}
+                        </h4>
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <textarea type="text" id="comment"
+                         name="thread" required="required" 
+                         class="textarea_02" [(ngModel)]="item.Response"
+                          placeholder="Tap to answer" 
+                          (blur)="SaveAnswers(item)" 
+                          maxlength="256">{{item.Response }}</textarea>
+                      </div>
+                    </div>
+        
+                    <div class="row cgqtns_autosavemsg">
+                      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+                        <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d mtb0px tcenter">
+                          Your answers are automatically saved.
+                        </h4>
+                      </div>
+                    </div>
+                  
+                    <!-- /slide 1 -->
+                  </div>
+                </ng-container>
+                </div>
+
+              </div>
+             
+            </div>
+            <!-- /carousel -->
+
+            <div class="pagebreak"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation *ngIf="counter==numSlides;else withoutSaveButton" 
+[isGuidedQuestion]="true" (saveQuestion)="SubmitButton()"></app-bottom-navigation>
+
+<ng-template #withoutSaveButton>
+  <app-bottom-navigation></app-bottom-navigation>
+</ng-template>
+<!-- /footer -->

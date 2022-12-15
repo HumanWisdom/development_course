@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          I love the word kindness because it demands an action and cannot be corrupted. It is important to ask what we can do to be more kind, because our mind will not do it for us. It is too busy thinking of the past or the future, or the next pleasure, or some worry it may have. This kindness may stop you saying something critical that you were about to say and say something positive instead. It may get you to listen deeply without interrupting, or do something unexpected for someone for no reason other than to make them happy. It may also stop you being critical of yourself. Kindness has so many ways to express itself. Nurture it, so it becomes your first instinct in all relationships, and see the joy it brings to your life
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          It is a universal feature of the ‘I’ that contentment eludes most human beings. 
+          We want more and more and are never satisfied. This comes from our deep sense of insecurity and our 
+          restlessness. For example, every time we buy something we get a small burst of pleasure and that
+           feeling of restlessness goes away. All pleasure is fleeting though, and when that pleasure fades,
+            the restlessness comes back and we need to buy something again. As possessions accumulate they seem
+             to mean less and less to people. What was new once and brought pleasure, is now overlooked as we
+              pursue the new. If we can find our own sense of peace within, we can discover the joy of contentment
+               for ourselves.
+           In pursuing more and more our mind wears itself out, and encounters many frustrations along the way.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

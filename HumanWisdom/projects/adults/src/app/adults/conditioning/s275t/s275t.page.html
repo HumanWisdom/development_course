@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            We identify with our country, our religion, our skin colour, our profession, our football club, and so on. We become attached to these identities which we pick up unconsciously from our conditioning influences, without our awareness or our consent. All the wars in the world have been fought between people who were attached to different identities. Why do we get attached to these identities? This is part of the conditioning process and brings a sense of comfort. Understanding this allows us to respond with intelligence.
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

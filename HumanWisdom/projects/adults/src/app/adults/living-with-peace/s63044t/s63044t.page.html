@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          Not accepting ourselves for who we are, what we have, and what we do can contribute so much to a lack of peace. This feels like an automatic process in our thinking we seem to have no control over, even if we want to. The first step as always is to observe what is happening without judgement and then look deeper at the underlying processes in our thinking that are causing us to think in this way.
+          <br>
+          In this case it is our unconscious conditioning which creates images of who we think we should be, or how successful. By questioning our conditioning we can wake up to this process going on in the background, and realize that none of the ideas of who we think we should be are originally ours anyway, and we can let them go. This allows us to be comfortable in our own skin, and live fully, with passion, doing the things we love doing.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,35 @@
+<app-begin-survey [bg]="bg">
+  <form>
+    <div class="row center_flex flex_align">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">                    
+        <h4 class="txt11 txt11_lh">
+          Take a moment to fill in this short wisdom survey, based on your assessment of yourself. 
+          <br>It’s a series of 10 questions. 
+          <br>We will invite you to fill it in again so you can track your journey. 
+          <br>Do not think too much before answering.
+        </h4>
+      </div>
+    </div>                    
+
+    <br><br>
+
+    <div class="row center_flex flex_align">
+      <div class="col-md-4 col-sm-4 col-xs-12 tcenter p0">                    
+        <!-- <a routerLink="/adults/comparison/m1s9-p8"> -->
+        <a (click)="routeSurvey()">
+          <button type="button" class="btn btn-success mb0 w100 btn_begin_here_orange" data-dismiss="modal">Begin Survey</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <!--<div class="row center_flex flex_align">
+      <div class="col-md-3 col-sm-3 col-xs-12 tcenter p0">                    
+        <a routerLink="/adults/anger/s231p1">
+          <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button>
+        </a>
+      </div>
+    </div>      -->              
+  </form>
+ </app-begin-survey>

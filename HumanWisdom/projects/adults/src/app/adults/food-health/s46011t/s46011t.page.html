@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          In this diagram we see the physical body and the psychological body, as the ‘I’ or the self, are represented separately, just as a way of exploring them. The physical body has its need for the right amount and type of food. The psychological body has its need for pleasure, to be occupied, and to be at peace. If the two are not in harmony with each other, and there is a disturbance in our thinking, it can contribute to obesity, or eating disorders.
+          <br>
+          For example, as a response to our boredom, or stress or loneliness, we can eat more than we need, and this can become a habit. Or, we can use food as a source of pleasure and that can lead to obesity. Or, as a result of psychological trauma in our past, or body-image issues we may develop an eating disorder. If we want to address the problem of obesity and eating disorders we need to go inwards, so there is harmony between the mind and the body. Wisdom can help us do that.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

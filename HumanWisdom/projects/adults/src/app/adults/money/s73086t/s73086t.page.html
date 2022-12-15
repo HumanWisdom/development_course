@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our mind compares itself to others unconsciously and automatically. We compare ourselves to how much others are earning, the size of their homes, the holidays they go on, and so on. This can make us feel envious or a burst of pleasure. It can strain our relationships, make us want to work harder to earn more, make us hate others, and make us feel less worthy somehow. 
+<br>The first step is to wake up and realise our mind is doing this without our awareness or our consent. The second step is to explore the many different ways this impacts our thoughts, feelings and actions, and to ask if this is what we really want for ourselves. Does it tie us to other people’s ideas of success, for example? Does it make us unhappy with what we have and forever discontented?
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
