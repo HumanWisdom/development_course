@@ -58,13 +58,11 @@
                       </ol>
                     </div>
                   </div>
-
-                  
                   
                   <div class="carousel-inner">
+                    <!-- video -->
                     <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
-                      <!-- video -->
-                      <div class="row center_flex mdp_icon safari_dblock">
+                      <div class="row mdp_icon">
                         <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video.svg" alt="" class="img-responsive">
                         </div>
@@ -80,8 +78,8 @@
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0" >
-                          <div class="row tcenter center_flex">
-                            <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
+                          <div class="row tcenter">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
                               <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video>  -->
@@ -100,12 +98,12 @@
                           </div>
                         </div>
                       </div>
-                      <!-- /video -->
                     </div>
+                    <!-- /video -->
               
+                    <!-- journal -->
                     <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
-                      <!-- journal -->
-                      <div class="row center_flex mdp_icon safari_dblock">
+                      <div class="row mdp_icon">
                         <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal.svg" alt="" class="img-responsive">
                         </div>
@@ -119,7 +117,7 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex safari_dblock">
+                      <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px">
                             {{dailyqus}}
@@ -133,7 +131,7 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex safari_dblock">
+                      <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6 float_none">
                           <button type="submit" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
                             Add to journal
@@ -141,7 +139,7 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex safari_dblock">
+                      <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-7 float_none">
                           <h4 class="fw_400 fs_12px lh_130p fc_000000 mtb0px">
                             Your online HumanWisdom journal is secure and private to you.
@@ -150,12 +148,12 @@
                       </div>
 
                       <div class="pagebreak"></div>
-                      <!-- /journal -->
                     </div>
+                    <!-- /journal -->
                   
+                    <!-- quotation -->
                     <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
-                      <!-- quotation -->
-                      <div class="row center_flex mdp_icon safari_dblock">
+                      <div class="row mdp_icon">
                         <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation.svg" alt="" class="img-responsive">
                         </div>
@@ -169,13 +167,13 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex safari_dblock">
+                      <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation_black.svg" alt="" class="img-responsive">
                         </div>
                       </div>
 
-                      <div class="row center_flex mdp_quotation safari_dblock">
+                      <div class="row mdp_quotation">
                         <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px italic">
                             {{dailyinstext}}
@@ -183,25 +181,25 @@
                         </div>
                       </div>
 
-                     <div class="row center_flex safari_dblock">
+                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <hr class="mdp_hr">
                         </div>
                       </div>
                       
-                      <div class="row center_flex mdp_author safari_dblock">
+                      <div class="row mdp_author">
                         <div class="col-md-12 col-sm-12 col-xs-7 float_none">
                           <h4 class="fw_400 fs_18px lh_140p fc_000000 ls_pt1em mtb0px">
                            {{dailyinsAuthor}} 
                           </h4>
                         </div>
                       </div> 
-                      <!-- /quotation -->
                     </div>
+                    <!-- /quotation -->
 
+                    <!-- audio -->
                     <div class="item" [ngClass]="[dailyid === '3' ? 'active' : '']">
-                      <!-- audio -->
-                      <div class="row center_flex mdp_icon safari_dblock">
+                      <div class="row mdp_icon">
                         <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio.svg" alt="" class="img-responsive">
                         </div>
@@ -232,12 +230,12 @@
                           </div>
                         </div>
                       </div>
-                      <!-- /audio -->
                     </div>
+                    <!-- /audio -->
 
+                    <!-- exercise -->
                     <div class="item" [ngClass]="[dailyid === '4' ? 'active' : '']">
-                      <!-- exercise -->
-                      <div class="row center_flex mdp_icon safari_dblock">
+                      <div class="row mdp_icon">
                         <div class="col-md-12 col-sm-12 col-xs-8 float_none">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise.svg" alt="" class="img-responsive">
                         </div>
@@ -251,17 +249,16 @@
                         </div>
                       </div>
 
-                      <div class="row center_flex safari_dblock">
+                      <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-10 float_none">
                           <h4 class="fw_400 fs_24px lh_140p fc_000000 mtb0px">
                             {{trythistoday}}
                           </h4>
                         </div>
                       </div>
-                      <!-- /exercise -->
                     </div>
+                    <!-- /exercise -->
                   </div>
-
                   
                   <!-- <a class="left carousel-control" href="#mdp_carousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -271,6 +268,7 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                   </a> -->
+                  
                 </div>
               </div>
               <!-- /carousel -->
