@@ -12,13 +12,21 @@ import { AdultsService } from '../../adults.service';
 export class S59171Page implements OnInit {
   
   toc="leadership/s59001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/making_better_decisions.png"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/making_better_decisions.png"
   
+  // bg=""
+  // moduleLink="/adults/making-better-decisions"
+  // moduleName=" Making better decisions"
+  // sectionName= "Living with Wisdom - I";
+  // moduleId=77
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/money.jpg"
+ 
   bg=""
-  moduleLink="/adults/making-better-decisions"
-  moduleName=" Making better decisions"
-  sectionName= "Living with Wisdom - I";
-  moduleId=77
+  moduleLink="/adults/money"
+  moduleName=" Money"
+  sectionName= "Living with Wisdom - II";
+  moduleId=73
   moduleList: any = [
     {
       name: 'Communication',

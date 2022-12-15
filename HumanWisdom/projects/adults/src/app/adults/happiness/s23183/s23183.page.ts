@@ -11,13 +11,21 @@ import { AdultsService } from '../../adults.service';
 export class S23183Page implements OnInit {
   
   toc="happiness/s23001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
+  
+  // bg=""
+  // moduleLink="/adults/communication"
+  // moduleName="02. Communication"
+  // sectionName= "Living with Wisdom - II";
+  // moduleId=53
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/love.jpg"
   
   bg=""
-  moduleLink="/adults/communication"
-  moduleName="02. Communication"
-  sectionName= "Living with Wisdom - II";
-  moduleId=53
+  moduleLink="/adults/love/"
+  moduleName=" Love"
+  sectionName= "Living with Wisdom - I";
+  moduleId=62
   moduleList: any = [
     {
       name: 'Love',

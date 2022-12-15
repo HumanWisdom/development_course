@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class S77106Page implements OnInit {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_flat"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
+  bg="light_blue_flat"
 
   constructor() { }
 

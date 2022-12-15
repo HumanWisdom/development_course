@@ -369,9 +369,7 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], { state: {
-                          routedFromLogin: true,
-                        }});
+                      this.router.navigate(["/adults/adult-dashboard"]);
                     }
                   }
                 }
@@ -527,10 +525,8 @@ export class LoginSignupPage implements OnInit {
                       this.router.navigate(["/onboarding/viewcart"], {
                         state: { quan: "1", plan: persub },
                       });
-                    }else {
-                      this.router.navigate(["/adults/search"], { state: {
-                          routedFromLogin: true,
-                        }});
+                    } else {
+                      this.router.navigate(["/adults/adult-dashboard"]);
                     }
                   }
                 }
@@ -727,9 +723,11 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(["/adults/partnership-app"]);
                       }
                     } else {
-                      this.router.navigate(["/adults/search"], { state: {
+                      this.router.navigate(["/adults/search"], {
+                        state: {
                           routedFromLogin: true,
-                        }});
+                        }
+                      });
                     }
                   }
                 }
@@ -823,8 +821,8 @@ export class LoginSignupPage implements OnInit {
     );
   }
 
-  
+
   routedashboard() {
-      this.router.navigate(['/adults/adult-dashboard'])
+    this.router.navigate(['/adults/adult-dashboard'])
   }
 }

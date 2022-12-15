@@ -165,7 +165,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px"  *ngIf="!isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="row center_flex tleft mt20px"  *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
 
                           <p>
@@ -379,7 +379,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
 
                           <p>
@@ -532,7 +532,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
 
                           <p>
@@ -702,7 +702,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                      <div class="row center_flex tleft mt20px"  *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
 
                           <p>
@@ -863,7 +863,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
 
                           <p>
@@ -997,7 +997,7 @@
                       </div>
 
                       <!-- transcript -->
-                      <div class="row center_flex tleft mt20px" [ngClass]="{'transcript-display':isShowTranscript}">
+                      <div class="row center_flex tleft mt20px" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 fw_400 fs_21px lh_140p fc_000000 italic txt_justify">
 
                           <p>

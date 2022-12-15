@@ -10,9 +10,9 @@ import { AdultsService } from "../../adults.service";
 })
 export class S77001Page implements OnInit, OnDestroy {
 
-  bg_tn = "bg_red_pink"
-  bg_cft = "bg_red_pink"
-  bg = "red_pink_w1"
+  bg_tn = "bg_light_blue"
+  bg_cft = "bg_light_blue"
+  bg = "light_blue_w1"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -27,7 +27,7 @@ export class S77001Page implements OnInit, OnDestroy {
   bookmarkList = []
   making_better_decisionsResume = sessionStorage.getItem("making_better_decisionsResume")
 
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/making_better_decisions.png"
+  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/making_better_decisions.png"
   tocColor = "white"
   lastvisited = false;
   stories: any = []

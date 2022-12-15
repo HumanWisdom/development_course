@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S77061Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_w1"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
+  bg="light_blue_w5"
   title="#6 Our need to feel important and be recognised"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/making-better-decisions/audios/making-better-decisions+2.7.mp3'

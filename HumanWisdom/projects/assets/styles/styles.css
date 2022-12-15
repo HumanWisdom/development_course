@@ -26306,7 +26306,7 @@ h1
 .lww 
 {
   display: grid;
-  grid-template-columns: repeat(8,42%);
+  grid-template-columns: repeat(6,42%);
   /* grid-gap: 10px; */
   grid-gap: 7px 0px;
 }
@@ -26352,7 +26352,7 @@ h1
 
   .lww 
   {
-    grid-template-columns: repeat(8,30%);
+    grid-template-columns: repeat(6,30%);
   }
 }
 
