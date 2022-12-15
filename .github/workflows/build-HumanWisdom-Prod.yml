@@ -50,7 +50,7 @@ jobs:
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --configuration=production -- --base-href /course-preProd/
+        ionic build --configuration=production --project="adults" -- --base-href /course/
     
      - name: Compress the build artifacts
        run: |
@@ -94,7 +94,7 @@ jobs:
           sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/course_backup_1
           sudo cp -R /var/www/html/course/ /var/www/html/course_backup_1
-          sudo mkdir -p /var/www/html/course-preprod
-          sudo rm -rf /var/www/html/course-preprod
-          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course-preprod        
+          sudo mkdir -p /var/www/html/course
+          sudo rm -rf /var/www/html/course
+          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course      
           
