@@ -22,18 +22,21 @@ export class S38020Page implements OnInit {
     {
       name: 'Awareness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
-      link: '/awareness'
+      link: '/awareness',
+      id:39
     },
     {
       name: 'Look without Language',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/18.png',
-      link: '/without-language'
+      link: '/without-language',
+      id:42
  
     },
     {
       name: 'Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/09.png',
-      link: '/meditation'
+      link: '/meditation',
+      id:22
     },
   ]
   constructor() { }
