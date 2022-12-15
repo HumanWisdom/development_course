@@ -15143,7 +15143,7 @@ input[type="number"] {
   /* background: linear-gradient(180deg, rgba(36, 57, 73, 0) 0%, #243949 100%); */
   /* mix-blend-mode: multiply; */
   /* opacity: 0.75; */
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .aticon

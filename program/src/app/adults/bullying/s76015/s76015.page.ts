@@ -87,7 +87,7 @@ export class S76015Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/bullying/s76016'])
+    this.router.navigate(['/adults/bullying/s76015p0'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

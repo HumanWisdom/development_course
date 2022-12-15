@@ -210,6 +210,11 @@
     {
         padding: 0px 10px !important;
     }
+
+    .bg_adverts_hwp
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 768px)

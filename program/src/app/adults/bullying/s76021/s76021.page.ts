@@ -105,7 +105,7 @@ export class S76021Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/adults/bullying/s76020'])
+    this.router.navigate(['/adults/bullying/s76020p0'])
   }
 
   ngOnDestroy()
