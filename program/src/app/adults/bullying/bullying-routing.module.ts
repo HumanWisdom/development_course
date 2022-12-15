@@ -22,12 +22,14 @@ import { S76014Page } from './s76014/s76014.page'; 
 import { S76014tPage } from './s76014t/s76014t.page';  
 import { S76015Page } from './s76015/s76015.page';  
 import { S76015tPage } from './s76015t/s76015t.page';  
+import { S76015p0Page } from './s76015p0/s76015p0.page';  
 import { S76016Page } from './s76016/s76016.page';  
 import { S76017Page } from './s76017/s76017.page';  
 import { S76018Page } from './s76018/s76018.page'; 
 import { S76019Page } from './s76019/s76019.page';  
 import { S76020Page } from './s76020/s76020.page';  
 import { S76020tPage } from './s76020t/s76020t.page';  
+import { S76020p0Page } from './s76020p0/s76020p0.page';  
 import { S76021Page } from './s76021/s76021.page';  
 import { S76021tPage } from './s76021t/s76021t.page';  
 import { S76022Page } from './s76022/s76022.page';  
@@ -223,6 +225,11 @@ const routes: Routes = [
     component: S76015tPage,
   },
   {
+    path: 's76015p0',   
+    canActivate:[ActiveGuard],  
+    component: S76015p0Page,
+  },
+  {
     path: 's76016',   
     canActivate:[ActiveGuard],  
     component: S76016Page,
@@ -246,6 +253,11 @@ const routes: Routes = [
     path: 's76020',   
     canActivate:[ActiveGuard],  
     component: S76020Page,
+  },
+  {
+    path: 's76020p0',   
+    canActivate:[ActiveGuard],  
+    component: S76020p0Page,
   },
   {
     path: 's76020t',   
