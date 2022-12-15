@@ -23,70 +23,58 @@ const routes: Routes = [
 
   {
     path: 's74001',   
-    canActivate:[ActiveGuard],  
     component: S74001Page,
   },
   
   {
     path: 's74002',   
-    canActivate:[ActiveGuard],  
-    component: S74002Page,
+     component: S74002Page,
   },
 
   {
     path: 's74003',   
-    canActivate:[ActiveGuard],  
     component: S74003Page,
   },
 
   {
     path: 's74004',   
-    canActivate:[ActiveGuard],  
     component: S74004Page,
   },
 
   {
     path: 's74005',   
-    canActivate:[ActiveGuard],  
     component: S74005Page,
   },
 
   {
     path: 's74006',   
-    canActivate:[ActiveGuard],  
     component: S74006Page,
   },
 
   {
     path: 's74007',   
-    canActivate:[ActiveGuard],  
-    component: S74007Page,
+     component: S74007Page,
   },
 
   {
     path: 's74008',   
-    canActivate:[ActiveGuard],  
     component: S74008Page,
   },
 
   {
     path: 's74009',   
-    canActivate:[ActiveGuard],  
     component: S74009Page,
   },
   {
     path: 's74010',
-    canActivate:[ActiveGuard],  
     component: S74010Page,
   },
   {
     path: 's74011',
-    canActivate:[ActiveGuard],  
     component: S74011Page,
   },
   {
     path: 's74012',
-    canActivate:[ActiveGuard],  
     component: S74012Page,
   },
 ];
