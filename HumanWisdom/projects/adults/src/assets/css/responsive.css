@@ -210,6 +210,16 @@
     {
         padding: 0px 10px !important;
     }
+
+    .tsp 
+    {
+        padding: 0px 10px !important;
+    }
+
+    .td_search_icon_ext
+    {
+        left: 5% !important;
+    }
 }
 
 @media (min-width: 768px)
@@ -412,6 +422,11 @@
     .pa_img 
     {
         width: 70%
+    }
+
+    .tsp
+    {
+        padding: 0px 20px !important;
     }
 }
 

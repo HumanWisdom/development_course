@@ -84,8 +84,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full
-                          Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full Name*</label>
                         <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8"
                           name="fullname" required />
                         <div *ngIf="fullname.invalid && fullname.touched">
@@ -98,10 +97,9 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email
-                          address*</label>
-                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname"
-                          autocomplete="new-password" required />
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
+                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname" autocomplete="new-password" 
+                          required />
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
                           <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email
                             address</small>
@@ -112,11 +110,9 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname"
-                          class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
-                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();"
-                          autocomplete="new-password" id="password" class="form-control cfc8" name="fullname"
-                          required />
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
+                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" 
+                          id="password" class="form-control cfc8" name="fullname" required />
                         <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                           Password must be Minimum 6 Characters. No Spaces allowed
                         </label>
@@ -130,8 +126,7 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat
-                          password*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat password*</label>
                         <input type="password" formControlName="confirmPassword"
                           (keydown.space)="$event.preventDefault();" id="repeatpassowrd" class="form-control cfc8"
                           name="fullname" required />
@@ -201,20 +196,18 @@
                               Already a user?
                             </span>
 
-                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline"
-                              onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')"
-                              data-toggle="tab" href="#tab2">
-                              Login here
+                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline"  onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')" data-toggle="tab" href="#tab2" >
+                              Login here 
                             </a>
                           </span>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" (click)="routedashboard()">
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" (click)="routedashboard()" >
                             Continue as Guest
                           </a>
                         </div>
-
+                        
                       </div>
                     </div>
 
@@ -224,7 +217,7 @@
 
                 <!-- login -->
                 <div id="tab2" class="tab-pane fade">
-
+                  
                   <div class="row ls_connect_with">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
@@ -268,18 +261,17 @@
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email
-                        address*</label>
-                      <input type="email" id="email2" [(ngModel)]="this.email" class="form-control cfc8" name="fullname"
-                        autocomplete="new-password" required />
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
+                      <input type="email" id="email2" [(ngModel)]="this.email" class="form-control cfc8" name="fullname" autocomplete="new-password"
+                        required />
                     </div>
                   </div>
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
-                      <input type="password" id="password2" [(ngModel)]="this.password" class="form-control cfc8"
-                        autocomplete="new-password" name="fullname" required />
+                      <input type="password" id="password2" [(ngModel)]="this.password" class="form-control cfc8"  autocomplete="new-password"
+                        name="fullname" required />
                       <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                         Password must be Minimum 6 Characters. No Spaces allowed
                       </label>
@@ -331,7 +323,7 @@
                           Continue as Guest
                         </a>
                       </div>
-
+                      
                     </div>
                   </div>
 

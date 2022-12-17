@@ -135,7 +135,7 @@ export class AdultDashboardPage implements OnInit {
   hcwhP: any
   public moduleList = [];
   public exerciseNo: string = '';
-  public Title: string = '';
+  public Title:string='';
   public day: string = '';
   public bullyingP: any
   public making_better_decisionsP: any
@@ -146,7 +146,7 @@ export class AdultDashboardPage implements OnInit {
   mediaPercent: any
   freeScreens = []
   currentList = [];
-  maxExceriseCount = "12;"
+  maxExceriseCount="12;"
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -310,7 +310,15 @@ export class AdultDashboardPage implements OnInit {
   }
 
   signInWithApple() {
-    this.service.signInWithApple()
+    const CLIENT_ID = "humanwisdom.web.service"
+    const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
+
+
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
+      '_self'
+    );
+
   }
 
   ngOnInit() {
@@ -636,17 +644,62 @@ export class AdultDashboardPage implements OnInit {
             this.fifthpage = false
             this.thirdpage = true
             this.loginResponse = res
-            this.service.storeuserlocaldata(res, true)
+            localStorage.setItem('guest', 'F');
+            localStorage.setItem("remember", 'T')
+            localStorage.setItem('socialLogin', 'T');
+            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+            localStorage.setItem("video", JSON.stringify(this.video))
+            localStorage.setItem("audio", JSON.stringify(this.audio))
+            localStorage.setItem('btnclick', 'F')
+            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("email", this.socialEmail)
+            localStorage.setItem("FnName", this.socialFirstName)
+            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+            localStorage.setItem("LName", this.socialLastName)
+            localStorage.setItem("pswd", '')
+            localStorage.setItem("name", this.loginResponse.Name)
+            localStorage.setItem("first", 'T')
             let namedata = localStorage.getItem('name').split(' ')
             this.modaldata['email'] = localStorage.getItem('email');
             this.modaldata['firstname'] = namedata[0];
             this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
             if (parseInt(this.loginResponse.UserId) == 0) {
+              // this.showAlert=true
+              // window.alert('You have enetered wrong credentials. Please try again.')
+              // this.email=""
+              // this.password=""
 
             }
             else {
+              // this.showAlert=false
               this.userId = this.loginResponse.UserId
               this.userName = this.loginResponse.Name
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              if (this.saveUsername == true) {
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                localStorage.setItem("userName", JSON.stringify(this.userName))
+
+              }
+
+              else {
+                sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                sessionStorage.setItem("userName", JSON.stringify(this.userName))
+
+
+              }
+
+
+
               let acceptCookie = localStorage.getItem('activeCode');
               let subscribePage = localStorage.getItem('subscribepage');
               if (acceptCookie === 'T' || subscribePage === 'T') {
@@ -657,9 +710,21 @@ export class AdultDashboardPage implements OnInit {
                 if (subscribePage === 'T') {
                   localStorage.setItem("subscribepage", 'F')
                 }
+                // this.router.navigate(['/onboarding/add-to-cart'])
               } else {
                 localStorage.setItem("isloggedin", 'T')
+                // this.router.navigate(['/adults/adult-dashboard'])
               }
+
+
+              /* if(this.urlEmail)
+                {
+                  this.service.verifyUser(this.userId)
+                  .subscribe(res=>{
+                    
+                  })
+                }*/
+
             }
             if (d === 'journal') {
               window.location.reload();
@@ -668,10 +733,16 @@ export class AdultDashboardPage implements OnInit {
 
         })
     },
-      error => console.log(error));
+      error => console.log(error),
+      () => {
+        //this.router.navigate[('/onboarding/addcart')]
+        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+      });
+
+
+
+
   }
-
-
   getModuleList(isLoad?) {
     if (this.moduleList.length == 0) {
       this.service.getModuleList().subscribe(res => {
@@ -686,10 +757,10 @@ export class AdultDashboardPage implements OnInit {
       });
     }
   }
-
   fbLogin(d = '') {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
+      // this.user = user;
       this.user = user;
       this.idToken = user.authToken
       this.socialFirstName = user.firstName
@@ -711,17 +782,61 @@ export class AdultDashboardPage implements OnInit {
               this.fifthpage = false
               this.thirdpage = true
               this.loginResponse = res
-              this.service.storeuserlocaldata(res, true)
+              localStorage.setItem('socialLogin', 'T');
+              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+              localStorage.setItem("video", JSON.stringify(this.video))
+              localStorage.setItem("audio", JSON.stringify(this.audio))
+              localStorage.setItem("remember", 'T')
+              localStorage.setItem('guest', 'F');
+              localStorage.setItem('btnclick', 'F')
+              localStorage.setItem("FnName", this.socialFirstName)
+              localStorage.setItem("LName", this.socialLastName)
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+              localStorage.setItem("email", this.socialEmail)
+              localStorage.setItem("pswd", '')
+              localStorage.setItem("name", this.loginResponse.Name)
+              localStorage.setItem("first", 'T')
               let namedata = localStorage.getItem('name').split(' ')
               this.modaldata['email'] = localStorage.getItem('email');
               this.modaldata['firstname'] = namedata[0];
               this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
               if (parseInt(this.loginResponse.UserId) == 0) {
+                // this.showAlert=true
+                // window.alert('You have enetered wrong credentials. Please try again.')
+                // this.email=""
+                // this.password=""
 
               }
               else {
+                // this.showAlert=false
                 this.userId = this.loginResponse.UserId
                 this.userName = this.loginResponse.Name
+                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId))
+                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  localStorage.setItem("userName", JSON.stringify(this.userName))
+
+                }
+
+                else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
+
+
+                }
+
+
                 let acceptCookie = localStorage.getItem('activeCode');
                 let subscribePage = localStorage.getItem('subscribepage');
                 if (acceptCookie === 'T' || subscribePage === 'T') {
@@ -745,6 +860,16 @@ export class AdultDashboardPage implements OnInit {
                     this.router.navigate(['/adults/adult-dashboard'])
                   }
                 }
+
+
+                /* if(this.urlEmail)
+                  {
+                    this.service.verifyUser(this.userId)
+                    .subscribe(res=>{
+                      
+                    })
+                  }*/
+
               }
               if (d === 'journal') {
                 window.location.reload();
@@ -756,6 +881,7 @@ export class AdultDashboardPage implements OnInit {
         window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
       }
     });
+
   }
 
   signup() {
@@ -911,10 +1037,32 @@ export class AdultDashboardPage implements OnInit {
         res => {
           this.loginResponse = res
           this.userId = res.UserId
-          this.service.storeuserlocaldata(res, true)
+          localStorage.setItem('guest', 'F');
+          localStorage.setItem("remember", 'T')
+          localStorage.setItem('socialLogin', 'T');
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+          localStorage.setItem("video", JSON.stringify(this.video))
+          localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem('btnclick', 'F')
+          localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+          localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+          localStorage.setItem("userId", JSON.stringify(this.userId))
+          localStorage.setItem("email", this.socialEmail)
+          localStorage.setItem("FnName", this.socialFirstName)
+          localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+          localStorage.setItem("LName", this.socialLastName)
+          localStorage.setItem("pswd", '')
+          localStorage.setItem("name", this.loginResponse.Name)
+          localStorage.setItem("first", 'T')
           if (res.Subscriber === 0) {
             this.isSubscribe = true;
           }
+
+          localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("email", socialEmail)
+          localStorage.setItem("pswd", '')
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
@@ -927,9 +1075,18 @@ export class AdultDashboardPage implements OnInit {
           console.log(this.streak)
           this.getProgress()
           this.freescreens();
+          localStorage.setItem("text", JSON.stringify(this.text))
+          localStorage.setItem("video", JSON.stringify(this.video))
+          localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+          localStorage.setItem("question", JSON.stringify(this.question))
+          localStorage.setItem("reflection", JSON.stringify(this.reflection))
+          localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
           this.userId = JSON.parse(localStorage.getItem("userId"))
           this.Subscriber = localStorage.getItem('Subscriber')
           this.cd.detectChanges();
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
           if (localStorage.getItem("token") && (this.saveUsername == true)) {
             this.userId = JSON.parse(localStorage.getItem("userId"))
             this.userName = JSON.parse(localStorage.getItem("userName"))
@@ -937,16 +1094,34 @@ export class AdultDashboardPage implements OnInit {
           else {
             this.userId = JSON.parse(sessionStorage.getItem("userId"))
             this.userName = JSON.parse(sessionStorage.getItem("userName"))
+
           }
           this.getBookmarks()
           if (res.UserId == 0) {
+
           }
           else {
             this.userId = res.UserId
             this.userName = res.Name
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("token", JSON.stringify(res.access_token))
+            if (this.saveUsername == true) {
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("userEmail", JSON.stringify(socialEmail))
+              localStorage.setItem("userName", JSON.stringify(this.userName))
+
+            }
+            else {
+              sessionStorage.setItem("userId", JSON.stringify(this.userId))
+              sessionStorage.setItem("userEmail", JSON.stringify(socialEmail))
+              sessionStorage.setItem("userName", JSON.stringify(this.userName))
+            }
           }
         },
         error => { console.log(error) },
+        () => {
+        }
       )
   }
 
@@ -957,7 +1132,7 @@ export class AdultDashboardPage implements OnInit {
       this.isSubscribe = true;
     }
     let guest = localStorage.getItem('guest');
-    // if (guest === 'T') localStorage.setItem('guest', 'F')
+   // if (guest === 'T') localStorage.setItem('guest', 'F')
     if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
     else localStorage.setItem("guest", 'F')
 
@@ -1032,24 +1207,35 @@ export class AdultDashboardPage implements OnInit {
     let password = val === '' || val === 'second' ? localStorage.getItem("pswd") : this.loginpassword;
     this.services.emailLogin(email, password)
       .subscribe(
-        res => {
+        res => {//
           if (val === 'act') {
+            localStorage.setItem("isloggedin", 'T')
+            localStorage.setItem("remember", 'T')
             this.fifthpage = false;
             this.thirdpage = true;
           } else if (val === 'second') {
+            localStorage.setItem("isloggedin", 'T')
+            localStorage.setItem("remember", 'T')
             this.secondpage = false;
             this.thirdpage = true;
           }
           this.loginResponse = res
-          this.service.storeuserlocaldata(res, false)
           this.userId = res.UserId
           if (res.Subscriber === 0) {
             this.isSubscribe = true;
           }
           let guest = localStorage.getItem('guest');
-          // if (guest === 'T') localStorage.setItem('guest', 'F')
+         // if (guest === 'T') localStorage.setItem('guest', 'F')
           if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
           else localStorage.setItem("guest", 'F')
+          sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("token", JSON.stringify(res.access_token))
+          localStorage.setItem("Subscriber", res.Subscriber)
+          localStorage.setItem("userId", JSON.stringify(this.userId))
+          localStorage.setItem("email", email)
+          localStorage.setItem("pswd", password)
+          localStorage.setItem("name", res.Name)
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
@@ -1064,9 +1250,20 @@ export class AdultDashboardPage implements OnInit {
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
           this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+         // this.getProgress()
+         // this.freescreens();
+          localStorage.setItem("text", JSON.stringify(this.text))
+          localStorage.setItem("video", JSON.stringify(this.video))
+          localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+          localStorage.setItem("question", JSON.stringify(this.question))
+          localStorage.setItem("reflection", JSON.stringify(this.reflection))
+          localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
           this.userId = JSON.parse(localStorage.getItem("userId"))
           this.Subscriber = localStorage.getItem('Subscriber')
           this.cd.detectChanges();
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
           if (localStorage.getItem("token") && (this.saveUsername == true)) {
             this.userId = JSON.parse(localStorage.getItem("userId"))
             this.userName = JSON.parse(localStorage.getItem("userName"))
@@ -1074,21 +1271,39 @@ export class AdultDashboardPage implements OnInit {
           else {
             this.userId = JSON.parse(sessionStorage.getItem("userId"))
             this.userName = JSON.parse(sessionStorage.getItem("userName"))
+
           }
+          //this.getBookmarks()
           setTimeout(() => {
             this.getProgress()
             this.freescreens();
             this.getBookmarks()
-          }, 1000);
+           }, 1000);
 
           if (res.UserId == 0) {
+
           }
           else {
             this.userId = res.UserId
             this.userName = res.Name
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("token", JSON.stringify(res.access_token))
+            if (this.saveUsername == true) {
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("userEmail", JSON.stringify(email))
+              localStorage.setItem("userName", JSON.stringify(this.userName))
+            }
+            else {
+              sessionStorage.setItem("userId", JSON.stringify(this.userId))
+              sessionStorage.setItem("userEmail", JSON.stringify(email))
+              sessionStorage.setItem("userName", JSON.stringify(this.userName))
+            }
           }
         },
-        error => { console.log(error) }
+        error => { console.log(error) },
+        () => {
+        }
       )
   }
 
@@ -1098,13 +1313,18 @@ export class AdultDashboardPage implements OnInit {
       .subscribe(
         res => {//
           this.loginResponse = res
-          this.service.storeuserlocaldata(res,false)
           this.userId = this.loginResponse.UserId
           if (this.loginResponse.Subscriber === 0) {
             this.isSubscribe = true;
           }
           let guest = localStorage.getItem('guest');
           if (guest === 'T') localStorage.setItem('guest', 'F')
+          sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+          localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+          localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+          localStorage.setItem("userId", JSON.stringify(this.userId))
+          localStorage.setItem("name", this.loginResponse.Name)
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
@@ -1114,11 +1334,21 @@ export class AdultDashboardPage implements OnInit {
             this.name = this.loginResponse.Name
           }
           this.streak = this.loginResponse.Streak
+          console.log(this.streak)
           this.getProgress()
           this.freescreens();
+          localStorage.setItem("text", JSON.stringify(this.text))
+          localStorage.setItem("video", JSON.stringify(this.video))
+          localStorage.setItem("audio", JSON.stringify(this.audio))
+          localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+          localStorage.setItem("question", JSON.stringify(this.question))
+          localStorage.setItem("reflection", JSON.stringify(this.reflection))
+          localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
           this.userId = JSON.parse(localStorage.getItem("userId"))
           this.Subscriber = localStorage.getItem('Subscriber')
           this.cd.detectChanges();
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
           if (localStorage.getItem("token") && (this.saveUsername == true)) {
             this.userId = JSON.parse(localStorage.getItem("userId"))
             this.userName = JSON.parse(localStorage.getItem("userName"))
@@ -1134,10 +1364,22 @@ export class AdultDashboardPage implements OnInit {
           else {
             this.userId = this.loginResponse.UserId
             this.userName = this.loginResponse.Name
-
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+            if (this.saveUsername == true) {
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("userName", JSON.stringify(this.userName))
+            }
+            else {
+              sessionStorage.setItem("userId", JSON.stringify(this.userId))
+              sessionStorage.setItem("userName", JSON.stringify(this.userName))
+            }
           }
         },
-        error => { console.log(error) }
+        error => { console.log(error) },
+        () => {
+        }
       )
   }
 
@@ -3261,7 +3503,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-
+  
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     if (userId != null) {
@@ -3273,41 +3515,41 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  /*  routewisdomexercise(cont: any = 1) {
-     var weR = '75001'
-     localStorage.setItem("moduleId", JSON.stringify(75))
-     this.service.clickModule(75, this.userId)
-       .subscribe(res => {
-         console.log(res)
-         this.qrList = res
-         weR = "s" + res.lastVisitedScreen
-         // continue where you left
-         if (res.lastVisitedScreen === '') {
-           localStorage.setItem("lastvisited", 'F')
-         }
-         else {
-           localStorage.setItem("lastvisited", 'T')
-         }
-         // /continue where you left
-         sessionStorage.setItem("weR", weR)
-         this.mediaPercent = parseInt(res.MediaPercent)
-         this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
-         localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
-         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
-         localStorage.setItem("qrList", JSON.stringify(this.qrList))
-       },
-         error => {
-           console.log(error)
-         },
-         () => {
-           if (cont == "1") {
-             this.router.navigate([`/adults/wisdom-exercise/${weR}`])
-           }
-           else
-             this.router.navigate([`/adults/wisdom-exercise/s75001`])
-         })
-   }
-  */
+ /*  routewisdomexercise(cont: any = 1) {
+    var weR = '75001'
+    localStorage.setItem("moduleId", JSON.stringify(75))
+    this.service.clickModule(75, this.userId)
+      .subscribe(res => {
+        console.log(res)
+        this.qrList = res
+        weR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("weR", weR)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/wisdom-exercise/${weR}`])
+          }
+          else
+            this.router.navigate([`/adults/wisdom-exercise/s75001`])
+        })
+  }
+ */
 
   wisdomexercise() {
     this.router.navigate([`/adults/wisdom-exercise/s75001`])
@@ -3344,91 +3586,91 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
+ 
 
 
+  GetWisdomScreens(){
+     this.service.GetWisdomScreens().subscribe(res=>{
+     this.wisdomExerciseList=res;
+     var allCompletedScreen:boolean=false;
+     let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
+     if( this.wisdomExerciseList.length==data.length){
+      allCompletedScreen=true;
+    }
+     console.log(data.length);
+     let exercise:any
+     let emptyList=false;
+     let increaseExcercise=false;
+     // Any of the exercise is not completed
+     if(data.length==0){
+       emptyList=true;
+      data=this.wisdomExerciseList;
+      exercise=data[0];
+     }
+     else{
+      var incomppletedExercise=this.wisdomExerciseList.filter(x=>x.completed=='0');
+      if(incomppletedExercise.length>0){
+        exercise=incomppletedExercise[0];
+      }else{
+        exercise= data[data.length-1];
+      }
+      // It contains data may be some exercise is completed 
+      var completed=this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo && x.completed=='0');
+      if(completed.length==0){
+        increaseExcercise=true;
+        emptyList=true;
+      }
+     }
+     //Setting final title and Exercise no
+     this.Title=exercise.Title; 
+    
+     this.exerciseNo=!increaseExcercise?exercise.SessionNo.substring(exercise.SessionNo.length-2)
+     :((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length-2)))+1).toString();
+   
+     if(allCompletedScreen){
+      this.exerciseNo="1";
+     }
+     if(this.exerciseNo=="13"){
+      this.exerciseNo="1";
+    }
+     //Checking the length if its less than 10  to append for current session number
+      if(this.exerciseNo.length==1){
+        this.exerciseNo="0"+this.exerciseNo;
+      }
+      if(incomppletedExercise && incomppletedExercise.length>0){
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))).toString():"0";
+      }else{
+        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
+      }
+     var sessionNo=exercise.SessionNo.substring(0,exercise.SessionNo.length-2)+this.exerciseNo;
+    
 
-  GetWisdomScreens() {
-    this.service.GetWisdomScreens().subscribe(res => {
-      this.wisdomExerciseList = res;
-      var allCompletedScreen: boolean = false;
-      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
-      if (this.wisdomExerciseList.length == data.length) {
-        allCompletedScreen = true;
+     //Pushing final list for display
+     for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==sessionNo)){
+            let obj={
+              " SessionNo": item.SessionNo,
+              "ScreenNo": item.ScreenNo,
+              "completed": item.completed,
+              "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+              "Title":item.Title
+            }
+            this.currentList.push(obj);
       }
-      console.log(data.length);
-      let exercise: any
-      let emptyList = false;
-      let increaseExcercise = false;
-      // Any of the exercise is not completed
-      if (data.length == 0) {
-        emptyList = true;
-        data = this.wisdomExerciseList;
-        exercise = data[0];
-      }
-      else {
-        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
-        if (incomppletedExercise.length > 0) {
-          exercise = incomppletedExercise[0];
-        } else {
-          exercise = data[data.length - 1];
-        }
-        // It contains data may be some exercise is completed 
-        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
-        if (completed.length == 0) {
-          increaseExcercise = true;
-          emptyList = true;
-        }
-      }
-      //Setting final title and Exercise no
-      this.Title = exercise.Title;
-
-      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
-        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
-
-      if (allCompletedScreen) {
-        this.exerciseNo = "1";
-      }
-      if (this.exerciseNo == "13") {
-        this.exerciseNo = "1";
-      }
-      //Checking the length if its less than 10  to append for current session number
-      if (this.exerciseNo.length == 1) {
-        this.exerciseNo = "0" + this.exerciseNo;
-      }
-      if (incomppletedExercise && incomppletedExercise.length > 0) {
-        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
-      } else {
-        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
-      }
-      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
-
-
-      //Pushing final list for display
-      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
-        let obj = {
-          " SessionNo": item.SessionNo,
-          "ScreenNo": item.ScreenNo,
-          "completed": item.completed,
-          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
-          "Title": item.Title
-        }
-        this.currentList.push(obj);
-      }
-      if (this.currentList.length > 0) {
-        this.Title = this.currentList[0].Title;
-      }
+     if(this.currentList.length>0){
+      this.Title=this.currentList[0].Title;
+     }
       //Dynamic Scroll
-      setTimeout(() => {
-        var editable = document.querySelector(".editable").getBoundingClientRect().x;
-        var wediv = document.querySelector(".wediv").getBoundingClientRect().x;
-        document.querySelector(".wediv").scrollLeft = editable - wediv;
-
+        setTimeout(() => {
+          var editable=document.querySelector(".editable").getBoundingClientRect().x;
+          var wediv = document.querySelector(".wediv").getBoundingClientRect().x;
+          document.querySelector(".wediv").scrollLeft=editable-wediv;
+          
       }, 3000);
-
-      console.log(this.currentList);
-    })
-  }
-
+      
+        console.log(this.currentList);
+     })
+    }
+ 
 
   getWisdomClass(exercise) {
     if (exercise.completed == '1') {
@@ -3451,40 +3693,38 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-  RouteToWisdomExercise(exercise) {
-    var weR = exercise?.ScreenNo;
-    localStorage.setItem("moduleId", JSON.stringify(75))
-    this.service.clickModule(75, this.userId)
-      .subscribe(res => {
-        console.log(res)
-        this.qrList = res
-        weR = "s" + res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("weR", weR)
-        this.mediaPercent = parseInt(res.MediaPercent)
-        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
-        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-        if (exercise != null) {
-          this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
-            state: {
-              day: exercise.day,
-            }
-          });
-        } else {
-          this.router.navigate(['adults/wisdom-exercise/']);
-        }
-      },
-        error => {
-          console.log(error)
-        })
+    RouteToWisdomExercise(exercise){
+        var weR = exercise?.ScreenNo;
+      localStorage.setItem("moduleId", JSON.stringify(75))
+      this.service.clickModule(75, this.userId)
+        .subscribe(res => {
+          console.log(res)
+          this.qrList = res
+          weR = "s" + res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("weR", weR)
+          this.mediaPercent = parseInt(res.MediaPercent)
+          this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+          localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+          localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+          if(exercise!=null){
+            this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
+              state: {
+                day: exercise.day,
+              }});
+          }else{
+            this.router.navigate(['adults/wisdom-exercise/']);
+          }
+        },
+          error => {
+            console.log(error)
+          })}
   }
-}

@@ -2,12 +2,8 @@ import {
   HttpBackend, HttpClient
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { UntypedFormBuilder } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { SocialAuthService } from "angularx-social-login";
 import { Observable } from "rxjs";
 import { environment } from 'src/environments/environment';
-import { OnboardingService } from "../onboarding/onboarding.service";
 
 @Injectable({
   providedIn: 'root'
@@ -52,19 +48,8 @@ export class AdultsService {
     }
   ]
 
-  mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
-  mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
 
-  video = 3;
-  audio = 4;
-  successPassword = JSON.parse(sessionStorage.getItem("successPassword"));
-  public loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-
-  constructor(private http: HttpClient, handler: HttpBackend, private fb: UntypedFormBuilder,
-    private router: Router,
-    private activate: ActivatedRoute,
-    private authService: SocialAuthService,
-    private service: OnboardingService) { }
+  constructor(private http: HttpClient, handler: HttpBackend) { }
 
   submitProgressText(data: any): Observable<any> {
     return this.http.post(this.path + '/UserProgress', data)
@@ -342,91 +327,4 @@ export class AdultsService {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
   }
 
-  storeuserlocaldata(res, social) {
-    if (res) {
-      this.loginResponse = res;
-      if (social) {
-        localStorage.setItem("socialLogin", "T");
-      } else {
-        localStorage.setItem("socialLogin", "F");
-      }
-      localStorage.setItem("isloggedin", "T");
-      localStorage.setItem(
-        "mediaAudio",
-        JSON.stringify(this.mediaAudio)
-      );
-      localStorage.setItem(
-        "mediaVideo",
-        JSON.stringify(this.mediaVideo)
-      );
-      localStorage.setItem("video", JSON.stringify(this.video));
-      localStorage.setItem("audio", JSON.stringify(this.audio));
-      localStorage.setItem("remember", "T");
-      localStorage.setItem("guest", "F");
-      localStorage.setItem("btnclick", "F");
-      localStorage.setItem("FnName", this.loginResponse.FName);
-      localStorage.setItem("LName", this.loginResponse.LName);
-      localStorage.setItem(
-        "loginResponse",
-        JSON.stringify(this.loginResponse)
-      );
-      sessionStorage.setItem(
-        "loginResponse",
-        JSON.stringify(this.loginResponse)
-      );
-      localStorage.setItem(
-        "token",
-        JSON.stringify(this.loginResponse.access_token)
-      );
-      localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-      localStorage.setItem("userId", JSON.stringify(this.loginResponse.UserId));
-      localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-      localStorage.setItem("email", this.loginResponse.Email);
-      localStorage.setItem("pswd", "");
-      localStorage.setItem("name", this.loginResponse.Name);
-      localStorage.setItem("first", "T");
-      if (parseInt(this.loginResponse.UserId) == 0) {
-        window.alert(
-          "You have enetered wrong credentials. Please try again."
-        );
-      } else {
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        sessionStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem("userId", JSON.stringify(this.loginResponse.UserId));
-        localStorage.setItem(
-          "token",
-          JSON.stringify(this.loginResponse.access_token)
-        );
-        localStorage.setItem("userId", JSON.stringify(this.loginResponse.UserId));
-        localStorage.setItem(
-          "userEmail",
-          JSON.stringify(this.loginResponse.Email)
-        );
-        localStorage.setItem(
-          "userName",
-          JSON.stringify(this.loginResponse.Name)
-        );
-      }
-    }
-
-  }
-
-  signInWithApple() {
-    const CLIENT_ID = "humanwisdom.web.service"
-    const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
-
-
-    window.open(
-      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
-      '_self'
-    );
-
-  }
 }
-

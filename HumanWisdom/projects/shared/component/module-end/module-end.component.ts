@@ -81,12 +81,15 @@ else
   }
 
   proceed(){
-    this.routeResume(this.moduleId)
+    this.routeResume(this.moduleId,'')
   }
 
-  routeResume(r){
+  routeResume(r, link){
   
     switch(r.toString()){
+      case "0": { this.router.navigate([link])
+                  break
+                }
       case "7":{this.routeComparison(1)
                 break
                 }

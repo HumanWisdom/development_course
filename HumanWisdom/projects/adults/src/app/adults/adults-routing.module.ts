@@ -404,6 +404,10 @@ const routes: Routes = [
     path: 'making-better-decisions',
     loadChildren: () => import('./making-better-decisions/making-better-decisions.module').then(m => m.MakingBetterDecisionsModule)
   },
+  {
+    path: 'give-the-gift-of-wisdom',
+    loadChildren: () => import('./give-the-gift-of-wisdom/give-the-gift-of-wisdom.module').then(m => m.GiveTheGiftOfWisdomPageModule)
+  },
 ];
 
 @NgModule({
