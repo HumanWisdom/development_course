@@ -217,17 +217,26 @@
                             </div>
                           </div> -->
 
-                          <div class="row mb30px">
+                          <div class="row mb10px">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('redeem')"
-                                class="btn btn_subscription_options">
+                              <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('redeem')" class="btn btn_subscription_options h60pxi flex_ai">
                                 <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
                                   Redeem subscription code
                                 </h4>
-                                <h4 class="fw_400 fs_18px lh_21px mtb0px">
-                                  <!-- {{cardlist['CurSymbol'] + ' ' + cardlist['Monthly']}}/month -->
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="row mb30px">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <a routerLink="/give-the-gift-of-wisdom/">
+                              <button type="submit" class="btn btn_subscription_options h60pxi flex_ai">
+                                <h4 class="fw_500 fs_18px lh_21px mtb0px flex_ai">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_ffc455.svg" class="img-responsive mr10px">
+                                  Give the gift of wisdom
                                 </h4>
                               </button>
+                              </a>
                             </div>
                           </div>
 

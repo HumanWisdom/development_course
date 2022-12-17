@@ -211,9 +211,14 @@
         padding: 0px 10px !important;
     }
 
-    .bg_adverts_hwp
+    .tsp 
     {
-        display: none;
+        padding: 0px 10px !important;
+    }
+
+    .td_search_icon_ext
+    {
+        left: 5% !important;
     }
 }
 
@@ -417,6 +422,11 @@
     .pa_img 
     {
         width: 70%
+    }
+
+    .tsp
+    {
+        padding: 0px 20px !important;
     }
 }
 
