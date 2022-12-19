@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { Location } from '@angular/common';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-give-the-gift-of-wisdom',
@@ -15,7 +16,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
   public countryCode: any = '';
 
 
-  constructor(private location:Location, private router: Router, private services: OnboardingService) {
+  constructor(private location:Location, private router: Router, private services: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService) {
     let sub: any = localStorage.getItem('Subscriber');
     let login: any = localStorage.getItem("isloggedin");
     if (sub && sub === '1') {
@@ -59,7 +60,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
   back(){
       this.location.back();
   }
-  
+
   proceed() {
     if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T')
@@ -67,6 +68,22 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
     } else if (this.isLoggedIn) {
           this.router.navigate(["/onboarding/add-to-cart"]);
     } 
+  }
+
+
+  share(){
+    this.ngNavigatorShareService
+    .share({
+      title: "HumanWisdom Program",
+      text:
+        "Hey, checkout HumanWisdom's Give the gift of Wisdom program – https://www.humanwisdom.me/course/adults/give-the-gift-of-wisdom"
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
 }
