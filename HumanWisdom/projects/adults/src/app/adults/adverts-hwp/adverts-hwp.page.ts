@@ -3,9 +3,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { LogEventService } from 'src/app/log-event.service';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
-import { LogEventService } from 'src/app/log-event.service';
 
 @Component({
   selector: 'HumanWisdom-adverts-hwp',
@@ -52,7 +52,7 @@ export class AdvertsHwpPage implements OnInit {
   public audio = 4
   public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   public userName: any
-  public showWarning=false
+  public showWarning = false
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -88,6 +88,7 @@ export class AdvertsHwpPage implements OnInit {
     }
     if (login && login === 'T') {
       this.isLoggedIn = true;
+      this.login = 'Logout';
     } else {
       this.isLoggedIn = false;
     }
@@ -95,7 +96,7 @@ export class AdvertsHwpPage implements OnInit {
 
   ngOnInit() {
     this.getCountry()
-    this.userId=JSON.parse(localStorage.getItem("userId"))
+    this.userId = JSON.parse(localStorage.getItem("userId"))
   }
 
   getCountry() {
@@ -156,13 +157,13 @@ export class AdvertsHwpPage implements OnInit {
 
   verifyactkey() {
     console.log('verify')
-    this.showWarning=false
-    this.service.verifyactkey(this.activationCode)    
+    this.showWarning = false
+    this.service.verifyactkey(this.activationCode)
       .subscribe(
         res => {
           if (res) {
             console.log('res');
-            this.showWarning=true
+            this.showWarning = true
             this.yearormonth = res
             this.subthirdpage = false
             this.subfirstpage = false
@@ -179,22 +180,22 @@ export class AdvertsHwpPage implements OnInit {
           this.subthirdpage = true
         },
         () => {
-        }     
+        }
       );
-      console.log('Warning')
-      if(this.showWarning===false){
-        this.subsecondpage = false;
-        this.subthirdpage = true
-      }
+    console.log('Warning')
+    if (this.showWarning === false) {
+      this.subsecondpage = false;
+      this.subthirdpage = true
+    }
   }
 
   submitcode() {
-    
+
     this.services.verifyActivationKey(this.activationCode, this.userId, this.countryCode)
       .subscribe(
         res => {
           if (res) {
-            this.showWarning=false
+            this.showWarning = false
             let code: any = 1
             localStorage.setItem('Subscriber', code)
             this.subthirdpage = false;
@@ -203,21 +204,21 @@ export class AdvertsHwpPage implements OnInit {
             this.subfirstpage = true;
             this.sixthpage = true;
           } else {
-            this.subthirdpage=true
+            this.subthirdpage = true
           }
         },
         error => {
-          this.subthirdpage=true
+          this.subthirdpage = true
 
           console.log(error);
         },
         () => {
-            }
+        }
       );
-      console.log('Warning')
-      if(this.showWarning===false){
-             this.subthirdpage = true
-      }
+    console.log('Warning')
+    if (this.showWarning === false) {
+      this.subthirdpage = true
+    }
 
   }
 
@@ -229,7 +230,7 @@ export class AdvertsHwpPage implements OnInit {
         this.router.navigate(['/adults/adult-dashboard'])
       }
     }
-    else  if (val === 'dashboard') {
+    else if (val === 'dashboard') {
       this.redeemsubscription.nativeElement.click()
       if (!this.isLoggedIn) {
         this.router.navigate(['/onboarding/login'])
@@ -328,8 +329,8 @@ export class AdvertsHwpPage implements OnInit {
       }, (err) => {
         console.log(err);
       })
-      this.firstpage = false;
-      this.secondpage = true;
+    this.firstpage = false;
+    this.secondpage = true;
   }
 
   verifyCode() {
@@ -373,7 +374,7 @@ export class AdvertsHwpPage implements OnInit {
           this.thirdpage = true
 
           localStorage.setItem("isloggedin", 'T')
-          this.isLoggedIn =true
+          this.isLoggedIn = true
           this.loginResponse = res
           console.log(this.loginResponse)
           localStorage.setItem('guest', 'F');
