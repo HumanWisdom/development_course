@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-give-the-gift-of-wisdom',
@@ -14,7 +15,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
   public countryCode: any = '';
 
 
-  constructor(private router: Router, private services: OnboardingService) {
+  constructor(private location:Location, private router: Router, private services: OnboardingService) {
     let sub: any = localStorage.getItem('Subscriber');
     let login: any = localStorage.getItem("isloggedin");
     if (sub && sub === '1') {
@@ -55,17 +56,17 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
     )
   }
 
-
+  back(){
+      this.location.back();
+  }
+  
   proceed() {
     if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T')
       this.router.navigate(['/onboarding/login'])
-    } else if (this.isLoggedIn && !this.isSubscriber) {
-      localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
-      this.router.navigate(["/onboarding/add-to-cart"]);
-    } else if (this.isLoggedIn && this.isSubscriber) {
-      this.router.navigate(['/onboarding/viewcart'])
-    }
+    } else if (this.isLoggedIn) {
+          this.router.navigate(["/onboarding/add-to-cart"]);
+    } 
   }
 
 }
