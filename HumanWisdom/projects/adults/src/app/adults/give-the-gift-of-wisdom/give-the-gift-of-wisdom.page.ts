@@ -56,7 +56,10 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
     )
   }
 
-
+  back(){
+      this.location.back();
+  }
+  
   proceed() {
     if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T')
