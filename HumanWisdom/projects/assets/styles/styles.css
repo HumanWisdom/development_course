@@ -31405,6 +31405,13 @@ input[type="search"].hide_search::-webkit-search-cancel-button
   z-index: 99;
 }
 
+.cdownload
+{
+  color: #5d5d5d;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
 /* teenagers */
 .btn_intro_splash 
 {
