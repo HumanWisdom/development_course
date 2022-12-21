@@ -39,19 +39,19 @@
             <form>
 
               <div class="row mt30px prelative">
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 plr20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px tsp">
                   <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list"
                     [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
                     (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)"
                     [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
-                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                  <span class="fa fa-search form-control-feedback left pfy_search_icon td_search_icon_ext" aria-hidden="true"></span>
                   <span *ngIf=" searchinp!=''" (click)="clearSearch()"
                     class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext_01"
                     aria-hidden="true"></span>
                 </div>
 
                 <div class="row adsearch">
-                  <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                     <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
                       <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
                         class="is-search list-group-item">{{item.ModuleName}}</li>
@@ -93,6 +93,19 @@
                           <div class="row cmr-10px">
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
 
+                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                                <a (click)="routeGuide(0)">
+                                  <img
+                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/05.png"
+                                    alt="User Guide" class="ctimg">
+                                  <h4 class="tcenter txt31 attitle">Start Here</h4>
+                                  <div class="progress dprogress">
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                </a>
+                              </div>
+                              
                               <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                                 <a (click)="routeDiscoveringWisdom(0)">
                                   <img
@@ -153,19 +166,6 @@
                                   <h4 class="tcenter txt31 attitle">Key Ideas</h4>
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="keyP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeGuide(0)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/05.png"
-                                    alt="User Guide" class="ctimg">
-                                  <h4 class="tcenter txt31 attitle">User Guide</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'"
                                       aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>

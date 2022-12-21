@@ -101,6 +101,7 @@ export class S35001Page implements OnInit,OnDestroy {
 
     
   }
+
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
@@ -108,6 +109,7 @@ export class S35001Page implements OnInit,OnDestroy {
       this.bookmark=0
 
   }
+
   createScreen(){
     this.service.createScreen({
       "ScrId":0,
@@ -121,7 +123,6 @@ export class S35001Page implements OnInit,OnDestroy {
     
 
   }
-
 
   submitProgress(){
     this.service.submitProgressText({
@@ -140,18 +141,27 @@ export class S35001Page implements OnInit,OnDestroy {
     
 
   }
+
   ngOnDestroy(){
  
 
 
 
   }
-
   routeJournal(){
     this.router.navigate(['/adults/journal'])
   }
+
   goBack(){
     this.location.back()
+  }
+
+  youtube(link) 
+  {
+    this.router.navigate(['/adults/curated/youtubelink', link],{
+    state: {
+      class: this.bg,
+    }})
   }
 
 }
