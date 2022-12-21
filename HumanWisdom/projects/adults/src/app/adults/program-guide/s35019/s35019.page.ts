@@ -15,7 +15,7 @@ export class S35019Page implements OnInit {
   
   bg=""
   moduleLink="/adults/discovering-wisdom/"
-  moduleName="02. Discovering Wisdom"
+  moduleName="What is Wisdom?"
   sectionName= "Introduction";
   moduleId=27
 
