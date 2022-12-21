@@ -32,7 +32,7 @@
         </div>
       </a>
 
-      <a (click)="routeSearch()" class="footer_index">
+      <!-- <a (click)="routeSearch()" class="footer_index">
         <div *ngIf="!search">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg"
             alt="">
@@ -48,6 +48,26 @@
             alt="">
           <p class="mb0px">
             Search
+          </p>
+        </div>
+      </a> -->
+
+      <a (click)="routeSearch()" class="footer_index">
+        <div *ngIf="!search">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/for_you.svg"
+            alt="">
+          <p class="mb0px silver_chalice">
+            For you
+          </p>
+        </div>
+
+
+        <div *ngIf="search">
+          <img
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/for_you_active.svg"
+            alt="">
+          <p class="mb0px">
+            For you
           </p>
         </div>
       </a>

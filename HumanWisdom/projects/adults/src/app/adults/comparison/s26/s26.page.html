@@ -19,12 +19,14 @@
                   <div class="row">
                     <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList0" class="btn btn-default btn_grp txt12"  (click)="selectOption(o.OptId)">
-                        <div [ngClass]="{'btn btn-primary': sendOptions.includes(o.OptId)}">
+                        <!-- <div [ngClass]="{'btn btn-primary': sendOptions.includes(o.OptId)}">
+                          <input  type="radio" name="options1" id="o.OptId"> {{o.OptStr}}
+                        </div> -->
+
+                        <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input  type="radio" name="options1" id="o.OptId"> {{o.OptStr}}
                         </div>
-                        
-                      </label>                        
-                     
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -42,7 +44,7 @@
                   <div class="row">
                     <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList1" class="btn btn-default btn_grp txt12"  (click)="selectOption(o.OptId)">
-                        <div [ngClass]="{'btn btn-primary': sendOptions.includes(o.OptId)}">
+                        <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input type="radio" name="options2" id="o.OptId"> {{o.OptStr}}
                         </div>
                         
@@ -68,7 +70,7 @@
                     <div class="btn-group" data-toggle="buttons">
                      
                       <label *ngFor="let o of optionList2" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
-                        <div [ngClass]="{'btn btn-primary': sendOptions.includes(o.OptId)}">
+                        <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input type="radio" name="options" id="option1"> {{o.OptStr}}
                         </div>
                         
@@ -91,7 +93,7 @@
                   <div class="row">
                     <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList3" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
-                        <div [ngClass]="{'btn btn-primary': sendOptions.includes(o.OptId)}" >
+                        <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}" >
                           <input type="radio" name="options" id="option2"> {{o.OptStr}}
                         </div>
                        
@@ -113,7 +115,7 @@
                   <div class="row">
                     <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList4" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
-                        <div [ngClass]="{'btn btn-primary': sendOptions.includes(o.OptId)}">
+                        <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input  type="radio" name="options" id="option3"> {{o.OptStr}}
                         </div>
                         
@@ -135,7 +137,7 @@
                   <div class="row">
                     <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList5" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
-                        <div [ngClass]="{'btn btn-primary': sendOptions.includes(o.OptId)}">
+                        <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input  type="radio" name="options" id="option4">{{o.OptStr}} 
                         </div>
                         
