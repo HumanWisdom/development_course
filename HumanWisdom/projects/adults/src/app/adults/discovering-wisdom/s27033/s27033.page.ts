@@ -81,7 +81,7 @@ export class S27033Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/discovering-wisdom/s27034'])
+   
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -109,12 +109,12 @@ export class S27033Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/adults/discovering-wisdom/s27033'])
+    this.router.navigate(['/adults/discovering-wisdom/s27034'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
     if (this.userId !== 563) this.submitProgress()
-
+   
   }
 
   ngOnDestroy() {

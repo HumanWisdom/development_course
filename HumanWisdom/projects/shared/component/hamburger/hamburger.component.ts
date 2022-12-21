@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { OnboardingService } from "src/app/onboarding/onboarding.service";
-import { LogEventService } from "src/app/log-event.service";
+import { OnboardingService } from '../../../adults/src/app/onboarding/onboarding.service';
+import { LogEventService } from "../../../adults/src/app/log-event.service";
 
 
 import {

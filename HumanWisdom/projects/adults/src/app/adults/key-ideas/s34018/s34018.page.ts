@@ -81,7 +81,7 @@ export class S34018Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/key-ideas/s34019'])
+    
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -109,7 +109,7 @@ export class S34018Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/adults/key-ideas/s34018'])
+    this.router.navigate(['/adults/key-ideas/s34019'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

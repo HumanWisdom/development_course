@@ -23,18 +23,22 @@ export class S20072Page implements OnInit {
     {
       name: 'Happiness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
-      link: '/happiness'
+      link: '/happiness',
+      id: 23
+      
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
-      link: '/stress'
+      link: '/stress',
+      id: 44
  
     },
     {
       name: 'Inner Boredom',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/27.png',
-      link: '/inner-boredom'
+      link: '/inner-boredom',
+      id: 56
   
     },
   ]

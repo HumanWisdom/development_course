@@ -2,23 +2,23 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 flex_ai gow_header">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-      <a class="" routerLink="/adults/adult-dashboard">
+      <a class="" (click)="back()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="img-responsive">
       </a>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-      <a class="">
+      <a class="" (click)="share()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_02.svg" alt="" class="img-responsive">
       </a>
     </div>
   </div>
 </div>
-<!-- /top navigation --> 
+<!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_03">				
+<div class="right_col mc_03">
   <!-- Class -->
-  <div class="cw100p">   
+  <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_gift_of_wisdom">
         <div class="x_panel p0">
@@ -44,7 +44,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <a>
-                    <button type="button" class="btn btn-warning btn_gow_proceed">
+                    <button type="button" class="btn btn-warning btn_gow_proceed" (click)="proceed()">
                       Proceed
                     </button>
                   </a>
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
 
