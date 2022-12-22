@@ -3,6 +3,8 @@ import { AdultsService } from '../adults.service';
 import {NotificationModel} from '../../adults/notification/notification-model';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'HumanWisdom-notification',
   templateUrl: './notification.page.html',
@@ -17,7 +19,7 @@ export class NotificationPage implements OnInit {
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
-  constructor(private adultService:AdultsService,
+  constructor(private adultService:AdultsService,private datePipe: DatePipe,
    public  router:Router) { }
 
   ngOnInit() {
@@ -26,12 +28,23 @@ export class NotificationPage implements OnInit {
     this.getNotificationList();
   }
 
+  convertUTCToIST(date:any){
+    var dateUTC:any = new Date(date);
+    dateUTC = dateUTC.getTime() 
+    var dateIST = new Date(dateUTC);
+    dateIST.setHours(dateIST.getHours() + 5); 
+    dateIST.setMinutes(dateIST.getMinutes() + 30);
+    let selectedDateString =  this.datePipe.transform(dateIST,'M/d/yy, h:mm:ss a');
+    return selectedDateString;
+  }
+
   getNotificationList(){
    this.adultService.getNotificationList().subscribe(res=>{
     if(res){
       this.notificationModel=res.slice(0, 10) as NotificationModel[];
       for(var i=0;i<this.notificationModel.length;i++){
-     this.notificationModel[i].Time=this.time_ago(this.notificationModel[i].UpdatedDate);
+      let updatedDate= this.convertUTCToIST(this.notificationModel[i].UpdatedDate)
+     this.notificationModel[i].Time=this.time_ago(updatedDate);
     }
     res.slice(11,res.length).map((item, i) => {
       this.olderNotitification.push(item);
