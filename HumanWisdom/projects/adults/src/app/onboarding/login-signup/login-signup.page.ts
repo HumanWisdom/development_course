@@ -344,6 +344,7 @@ export class LoginSignupPage implements OnInit {
                 let acceptCookie = localStorage.getItem("activeCode");
                 let subscribePage = localStorage.getItem("subscribepage");
                 let option = localStorage.getItem("introoption");
+                let giftwisdom = localStorage.getItem("giftwisdom");
                 if (option === "T") {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
@@ -357,7 +358,9 @@ export class LoginSignupPage implements OnInit {
                     if (subscribePage === "T") {
                       localStorage.setItem("subscribepage", "F");
                     }
-                    if (this.loginResponse.Subscriber === '0') {
+                    if (giftwisdom === 'T') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else if (this.loginResponse.Subscriber === '0') {
                       this.router.navigate(["/onboarding/add-to-cart"]);
                     } else {
                       this.router.navigate(["/onboarding/viewcart"])
@@ -369,9 +372,11 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], { state: {
+                      this.router.navigate(["/adults/search"], {
+                        state: {
                           routedFromLogin: true,
-                        }});
+                        }
+                      });
                     }
                   }
                 }
@@ -380,7 +385,7 @@ export class LoginSignupPage implements OnInit {
                 {
                   this.service.verifyUser(this.userId)
                   .subscribe(res=>{
-                    
+
                   })
                 }*/
               }
@@ -503,6 +508,7 @@ export class LoginSignupPage implements OnInit {
                 let acceptCookie = localStorage.getItem("activeCode");
                 let subscribePage = localStorage.getItem("subscribepage");
                 let option = localStorage.getItem("introoption");
+                let giftwisdom = localStorage.getItem("giftwisdom");
                 if (option === "T") {
                   localStorage.setItem("introoption", "F");
                   localStorage.setItem("isloggedin", "T");
@@ -516,7 +522,9 @@ export class LoginSignupPage implements OnInit {
                     if (subscribePage === "T") {
                       localStorage.setItem("subscribepage", "F");
                     }
-                    if (this.loginResponse.Subscriber === '0') {
+                    if (giftwisdom === 'T') {
+                      this.router.navigate(["/onboarding/add-to-cart"]);
+                    } else if (this.loginResponse.Subscriber === '0') {
                       this.router.navigate(["/onboarding/add-to-cart"]);
                     } else {
                       this.router.navigate(["/onboarding/viewcart"])
@@ -527,10 +535,12 @@ export class LoginSignupPage implements OnInit {
                       this.router.navigate(["/onboarding/viewcart"], {
                         state: { quan: "1", plan: persub },
                       });
-                    }else {
-                      this.router.navigate(["/adults/search"], { state: {
+                    } else {
+                      this.router.navigate(["/adults/search"], {
+                        state: {
                           routedFromLogin: true,
-                        }});
+                        }
+                      });
                     }
                   }
                 }
@@ -539,7 +549,7 @@ export class LoginSignupPage implements OnInit {
                   {
                     this.service.verifyUser(this.userId)
                     .subscribe(res=>{
-                      
+
                     })
                   }*/
               }
@@ -645,6 +655,7 @@ export class LoginSignupPage implements OnInit {
           let pers = localStorage.getItem("personalised");
           let persub = localStorage.getItem("personalised subscription");
           let option = localStorage.getItem("introoption");
+          let giftwisdom = localStorage.getItem("giftwisdom");
           if (option === "T") {
             localStorage.setItem("introoption", "F");
             localStorage.setItem("isloggedin", "T");
@@ -672,7 +683,9 @@ export class LoginSignupPage implements OnInit {
                 if (localStorage.getItem("emailCode") === "T") {
                   localStorage.setItem("emailCode", "F");
                 }
-                if (this.loginResponse.Subscriber === '0') {
+                if (giftwisdom === 'T') {
+                  this.router.navigate(["/onboarding/add-to-cart"]);
+                } else if (this.loginResponse.Subscriber === '0') {
                   this.router.navigate(["/onboarding/add-to-cart"]);
                 } else {
                   this.router.navigate(["/onboarding/viewcart"])
@@ -727,9 +740,11 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(["/adults/partnership-app"]);
                       }
                     } else {
-                      this.router.navigate(["/adults/search"], { state: {
+                      this.router.navigate(["/adults/search"], {
+                        state: {
                           routedFromLogin: true,
-                        }});
+                        }
+                      });
                     }
                   }
                 }
@@ -741,7 +756,7 @@ export class LoginSignupPage implements OnInit {
              {
                this.service.verifyUser(this.userId)
                .subscribe(res=>{
-                 
+
                })
              }*/
         }
@@ -823,8 +838,8 @@ export class LoginSignupPage implements OnInit {
     );
   }
 
-  
+
   routedashboard() {
-      this.router.navigate(['/adults/adult-dashboard'])
+    this.router.navigate(['/adults/adult-dashboard'])
   }
 }
