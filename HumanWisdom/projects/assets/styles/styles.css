@@ -31648,6 +31648,31 @@ input[type="search"].hide_search::-webkit-search-cancel-button
   -webkit-box-orient: vertical;
 }
 
+.br_10px
+{
+  border-radius: 10px;
+}
+
+.br_tl_bl_10px
+{
+  border-radius: 10px 0 0 10px;
+}
+
+.box_ws
+{
+  height: 100px;
+}
+
+.box_ws h4
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 /* teenagers */
 .btn_intro_splash 
 {
