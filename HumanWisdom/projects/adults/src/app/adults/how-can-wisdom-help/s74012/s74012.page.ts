@@ -14,7 +14,7 @@ export class S74012Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_wisdom.png"
   bg=""
   moduleLink="/adults/benefits-of-wisdom/"
-  moduleName=" Benefits of Wisdom"
+  moduleName=" Wisdom brings change"
   sectionName= "Introduction";
   moduleId=32
 
