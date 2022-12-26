@@ -9,7 +9,7 @@ import { OnboardingService } from './onboarding/onboarding.service';
 export class authLoginGuard implements CanActivate, OnInit {
   t: any
 
-  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService,private onboarding:OnboardingService) {
+  constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService, private onboarding: OnboardingService) {
 
   }
   ngOnInit() {
@@ -23,12 +23,14 @@ export class authLoginGuard implements CanActivate, OnInit {
     let cookie = false;
     let affrefcode = '';
     let affreftoken = '';
-    let getalertdate= localStorage.getItem('getalertdate');
+    let getalertdate = localStorage.getItem('getalertdate');
     let persub = localStorage.getItem('personalised subscription');
     let pers = localStorage.getItem('personalised');
     let persdata = localStorage.getItem('personalisedlist');
     let cartdata = localStorage.getItem('cartlist');
     let option = localStorage.getItem('introoption');
+    let subscribepage = localStorage.getItem('subscribepage');
+    let giftwisdom = localStorage.getItem("giftwisdom");
     if (localStorage.getItem('acceptcookie') === 'T') {
       cookie = true;
     }
@@ -38,16 +40,16 @@ export class authLoginGuard implements CanActivate, OnInit {
     if (localStorage.getItem('Affreftoken') !== null) {
       affreftoken = localStorage.getItem('Affreftoken');
     }
-    if(this.onboarding.navigateToUpgradeToPremium
-    //  localStorage.getItem("navigateToUpgradeToPremium")=="true"
-    ){
+    if (this.onboarding.navigateToUpgradeToPremium
+      //  localStorage.getItem("navigateToUpgradeToPremium")=="true"
+    ) {
       localStorage.clear()
       //localStorage.setItem("navigateToUpgradeToPremium","true")
     }
-    else{
+    else {
       localStorage.clear()
     }
-    
+
     if (getalertdate !== null) {
       localStorage.setItem('getalertdate', getalertdate)
     }
@@ -65,6 +67,12 @@ export class authLoginGuard implements CanActivate, OnInit {
     }
     if (pers) {
       localStorage.setItem('personalised', pers);
+    }
+    if (subscribepage) {
+      localStorage.setItem('subscribepage', subscribepage);
+    }
+    if (giftwisdom) {
+      localStorage.setItem('giftwisdom', giftwisdom);
     }
     if (m[1] !== undefined && m[1] !== '') {
     } else {

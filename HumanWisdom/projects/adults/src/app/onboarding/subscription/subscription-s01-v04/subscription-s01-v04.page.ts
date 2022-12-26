@@ -83,8 +83,6 @@ export class SubscriptionS01V04Page implements OnInit {
    }
 
   ngOnInit() {
-    this.service.isActivationFlow=true
-    
     if(localStorage.getItem('giftwisdom') === 'F')   {
       this.enableGift = true;
     } 
