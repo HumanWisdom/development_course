@@ -326,5 +326,7 @@ export class AdultsService {
   GetAudioMeditation(): Observable<any> {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
   }
-
+  contactForm(form:any){
+    return this.http.post(this.path + '/ContactCoach',form);
+  }
 }
