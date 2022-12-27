@@ -31633,8 +31633,10 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 
 .box_blog img 
 {
-  min-height: 100px !important;
+  /* min-height: 100px !important; */
+  height: 100px !important;
   object-fit: cover;
+  object-position: center;
   border-radius: 10px 0 0 10px;
 }
 
