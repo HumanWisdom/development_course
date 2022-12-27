@@ -45,28 +45,15 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="col-md-2 col-sm-2 col-xs-3 pr0px pl0px">
                     <div class="dropdown dropdown_outer">
-                      <!-- <button  type="button" data-toggle="dropdown">
-                        <div class="row">
-                          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                            <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                              <h6 class="fw_500 fs_12px lh_14px fc_5d5d5d mtb0px">
-                                Title
-                              </h6>
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                              <i class="fa fa-angle-down ffad"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </button> -->
-                      <select  name="Title" (change)="titleChangeEvent($event.target.value)" id="test" class="btn dropdown-toggle cfc10 btn_dropdown" [(ngModel)]="form.Title" >
-                        <option id="tes"  value="1"   selected>Title</option>
-                        <option value="Ms">Ms</option>
-                        <option value="Mr.">Mr.</option>
-                        <option  value="Mrs.">Mrs.</option>
-                        <option  value="Others">Others</option>
-                      </select>
-                      
+                      <label class="select_label m0px w100">
+                        <select name="Title" (change)="titleChangeEvent($event.target.value)" id="test" class="btn dropdown-toggle cfc10 btn_select" [(ngModel)]="form.Title" >
+                          <option id="tes" value="1" selected>Title</option>
+                          <option value="Ms">Ms</option>
+                          <option value="Mr.">Mr.</option>
+                          <option value="Mrs.">Mrs.</option>
+                          <option value="Others">Others</option>
+                        </select> 
+                      </label>
                     </div>
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-9 pr0px">
@@ -83,33 +70,12 @@
 
               <div class="row mt15px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  
-                  <div class="dropdown dropdown_outer">
-                    <!-- <button class="btn dropdown-toggle cfc10 btn_dropdown" type="button" data-toggle="dropdown">
-                      <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                          <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                            <h6 class="fw_500 fs_12px lh_14px fc_5d5d5d mtb0px">
-                              Country
-                            </h6>
-                          </div>
-                          <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                            <i class="fa fa-angle-down ffad"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </button> -->
-                    <select (change)="onChange($event)" type="text" name="countryList"  class="cfc10 btn_dropdown" [(ngModel)]="form.Country" >
+                  <label class="select_label m0px w100">
+                    <select (change)="onChange($event)" type="text" name="countryList"  class="cfc10 btn_select" [(ngModel)]="form.Country" >
                       <option value="0" selected >Select Country</option>
                       <option *ngFor="let list of countryList" [ngValue]="list.CountryName">{{list.CountryName}}</option>
                     </select>
-                    <!-- <ul class="dropdown-menu">
-                      <li><a href="#">A</a></li>
-                      <li><a href="#">B</a></li>
-                      <li><a href="#">C</a></li>
-                    </ul> -->
-                  </div>
-
+                  </label>
                 </div>
               </div>
 
@@ -138,19 +104,11 @@
                         </div>
                       </div>
                     </button>
-
-                    <!-- <ul class="dropdown-menu">
-                      <li><a href="#">IN</a></li>
-                      <li><a href="#">IN</a></li>
-                      <li><a href="#">IN</a></li>
-                    </ul> -->
                   </div>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9 pr0px">
                   <input type="number" required="required" name="ContactNo" class="cfc10 feedback_left cfc10_fl_p" [(ngModel)]="form.ContactNo" placeholder="">
-                  <span id="phoneCode" [innerHTML]="phoneCode" class="form-control-feedback left cfc10_fl" aria-hidden="true">
-                    
-                  </span>
+                  <span id="phoneCode" [innerHTML]="phoneCode" class="form-control-feedback left cfc10_fl" aria-hidden="true"></span>
                 </div>
               </div>
 
