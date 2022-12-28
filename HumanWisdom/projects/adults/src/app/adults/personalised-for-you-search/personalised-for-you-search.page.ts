@@ -15,7 +15,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('enablemodal') enablemodal: ElementRef;
 
-  searchResult=[];
+  searchResult = [];
   personalisedforyou = []
 
   indList = []
@@ -39,7 +39,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
   public alertMsg: any
-  isWelcomePopup=false;
+  isWelcomePopup = false;
   constructor(private route: Router, private aservice: AdultsService, public authService: SocialAuthService, public service: OnboardingService) {
     this.getUserPreference();
     this.getModuleList();
@@ -49,36 +49,51 @@ export class PersonalisedForYouSearchPage implements OnInit {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
-      if(window.history.state.routedFromLogin && window.history.state.routedFromLogin ==true ){
-      setTimeout(() => {
-        this.aservice.adminPopup().subscribe((res) => {
-          this.alertMsg = res;
-        });
-        this.welcome.nativeElement.click();
-      }, 1000);
+      if (window.history.state.routedFromLogin && window.history.state.routedFromLogin == true) {
+        setTimeout(() => {
+          this.aservice.adminPopup().subscribe((res) => {
+            this.alertMsg = res;
+          });
+          this.welcome.nativeElement.click();
+        }, 1000);
       }
     }
-    
+    let authtoken = JSON.parse(localStorage.getItem("token"))
+    let app = localStorage.getItem("fromapp")
+    if (authtoken && app && app === 'T') {
+      localStorage.setItem('socialLogin', 'T');
+      localStorage.setItem('acceptcookie', 'T')
+      this.aservice.verifytoken(authtoken).subscribe((res) => {
+        if (res) {
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          let namedata = localStorage.getItem('name').split(' ')
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          localStorage.setItem("Subscriber", res['Subscriber'])
+        }
+      })
+    }
   }
 
-  getModuleList(isLoad?){
-    this.aservice.getModuleList().subscribe(res=>{
-      this.moduleList=res;
-      if(isLoad){
-        if(this.searchinp==''){
-          this.searchResult=this.moduleList;
-        }else{
-          this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+  getModuleList(isLoad?) {
+    this.aservice.getModuleList().subscribe(res => {
+      this.moduleList = res;
+      if (isLoad) {
+        if (this.searchinp == '') {
+          this.searchResult = this.moduleList;
+        } else {
+          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
         }
       }
     })
   }
-  getAutoCompleteList(value){
-    if(this.moduleList.length>0){
-      if(value==null|| value==""){
-        this.searchResult=this.moduleList;
-      }else{
-        this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+  getAutoCompleteList(value) {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
     }
   }
@@ -124,9 +139,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.route.navigate([url])
   }
 
-  searchEvent(module){
-    this.searchinp=module;
-    this.searchResult=[];
+  searchEvent(module) {
+    this.searchinp = module;
+    this.searchResult = [];
     this.getinp(module);
   }
 
@@ -368,20 +383,20 @@ export class PersonalisedForYouSearchPage implements OnInit {
     });
   }
 
-  onFocus(){
+  onFocus() {
     this.getModuleList(true);
-    if(this.searchinp==''){
-      this.searchResult=this.moduleList;
-    }else{
-      this.searchResult=this.moduleList.filter(x=>(x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
     }
   }
 
-  onFocusOutEvent(){
+  onFocusOutEvent() {
     setTimeout(() => {
-      this.searchResult=[];
+      this.searchResult = [];
     }, 400);
-    }
+  }
 
   signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
@@ -395,9 +410,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   }
 
-  clearSearch(){
-    this.searchinp="";
-    this.searchResult=[];
+  clearSearch() {
+    this.searchinp = "";
+    this.searchResult = [];
   }
-  
+
 }
