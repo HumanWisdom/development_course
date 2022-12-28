@@ -57,6 +57,8 @@ export class ContactCoachPage implements OnInit {
    this.adultService.contactForm(this.form).subscribe(res=>{
     if(res){
       this.initializeForm();
+      this.phonecode='';
+      this.code='';
       alert("Contacted Successfully");
     }
    });
