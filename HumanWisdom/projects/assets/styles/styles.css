@@ -26922,7 +26922,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
   line-height: 19px;
   /* identical to box height */
   color: #5D5D5D !important;
-  height: 60px;
+  /* height: 60px; */
+  height: 50px;
 }
 
 .pfy_search::placeholder
@@ -31271,7 +31272,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 .adsearch
 {
   position: absolute;
-  top: 60px;
+  /* top: 60px; */
+  top: 50px;
   right: 0;
   left: 0;
   bottom: 0;
