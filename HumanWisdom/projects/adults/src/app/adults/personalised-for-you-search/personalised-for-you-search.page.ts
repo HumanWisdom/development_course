@@ -39,6 +39,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
   public alertMsg: any
+  public qrList: any
+  public goToPage: any
+  mediaPercent: any
+  freeScreens = []
   isWelcomePopup = false;
   constructor(private route: Router, private aservice: AdultsService, public authService: SocialAuthService, public service: OnboardingService) {
     this.getUserPreference();
@@ -46,6 +50,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   ngOnInit() {
+    this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
       this.isloggedIn = true
@@ -414,5 +419,221 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.searchinp = "";
     this.searchResult = [];
   }
+
+
+
+  
+  // introduction
+  routeDiscoveringWisdom(cont: any = 1) {
+    var discoveringWisdomResume
+    localStorage.setItem("moduleId", JSON.stringify(27))
+    this.aservice.clickModule(27, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        discoveringWisdomResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.route.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
+          }
+          else
+            this.route.navigate([`/adults/discovering-wisdom/s27001`])
+        })
+  }
+
+  routeBenefits(cont: any = 1) {
+    var benefitsWisdomResume
+    localStorage.setItem("moduleId", JSON.stringify(32))
+    this.aservice.clickModule(32, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        benefitsWisdomResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("benefitsWisdomResume", benefitsWisdomResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.route.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
+          }
+          else
+            this.route.navigate([`/adults/benefits-of-wisdom/s32001`])
+        })
+  }
+
+  routeCircles(cont: any = 1) {
+    var fiveCirclesResume
+    localStorage.setItem("moduleId", JSON.stringify(33))
+    this.aservice.clickModule(33, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        fiveCirclesResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("fiveCirclesResume", fiveCirclesResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.route.navigate([`/adults/five-circles/${fiveCirclesResume}`])
+          }
+          else
+            this.route.navigate([`/adults/five-circles/s33001`])
+        })
+
+
+  }
+
+  routehowcanwisdomhelp(cont: any = 1) {
+    var hcwhR
+    localStorage.setItem("moduleId", JSON.stringify(74))
+    this.aservice.clickModule(74, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        hcwhR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("hcwhR", hcwhR)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.route.navigate([`/adults/how-can-wisdom-help/${hcwhR}`])
+          }
+          else
+            this.route.navigate([`/adults/how-can-wisdom-help/s74001`])
+        })
+  }
+
+
+
+  routeIdeas(cont: any = 1) {
+    var keyIdeasResume
+    localStorage.setItem("moduleId", JSON.stringify(34))
+    this.aservice.clickModule(34, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        keyIdeasResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("keyIdeasResume", keyIdeasResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.route.navigate([`/adults/key-ideas/${keyIdeasResume}`])
+          }
+          else
+            this.route.navigate([`/adults/key-ideas/s34001`])
+          /*if(!this.goToPage)
+          {
+            
+            this.router.navigate([`/adults/key-ideas`])
+          }
+          else
+            this.router.navigate([`/adults/key-ideas/s${keyIdeasResume}`])*/
+
+        })
+
+  }
+
+  routeGuide(cont: any = 1) {
+    var pgResume
+    localStorage.setItem("moduleId", JSON.stringify(35))
+    this.aservice.clickModule(35, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        pgResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("pgResume", pgResume)
+        pgResume = "s" + res.lastVisitedScreen
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.route.navigate([`/adults/program-guide/${pgResume}`])
+          }
+          else
+            this.route.navigate([`/adults/program-guide/s35001`])
+        })
+  }
+  // /introduction
 
 }
