@@ -281,7 +281,8 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: () => import('./personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule)
+    loadChildren: () => import('./personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'help-support',
@@ -407,6 +408,10 @@ const routes: Routes = [
   {
     path: 'give-the-gift-of-wisdom',
     loadChildren: () => import('./give-the-gift-of-wisdom/give-the-gift-of-wisdom.module').then(m => m.GiveTheGiftOfWisdomPageModule)
+  },
+  {
+    path: 'contact-coach',
+    loadChildren: () => import('./contact-coach/contact-coach.module').then(m => m.ContactCoachPageModule)
   },
 ];
 

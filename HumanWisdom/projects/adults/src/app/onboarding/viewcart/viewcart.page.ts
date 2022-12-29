@@ -260,11 +260,11 @@ export class ViewcartPage implements OnInit {
           this.cartList[i].Qty==1
           this.cartList.splice(i,1)
           this.isMonthlySelected= this.cartList.filter(x=>x.Plan=='Annual').length==0;
-          if(this.cartList.length === 0) this.router.navigate(['/onboarding/add-to-cart'])
           //call service to delete
           this.service.deleteItem({"Id":parseFloat(cartId)})
           .subscribe(res=> {
-            
+            this.totalPrice();
+            if(this.cartList.length === 0) this.router.navigate(['/onboarding/add-to-cart'])
           })
        // }
         // else{
@@ -289,7 +289,7 @@ export class ViewcartPage implements OnInit {
         
       }
     }
-    this.totalPrice()
+
     console.log(this.cartList)
   }
 

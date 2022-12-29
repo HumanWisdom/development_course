@@ -22772,7 +22772,7 @@ ul.dh_ul li
 
 .cfc10_fl_p
 {
-  padding-left: 20%;
+  padding-left: 20% !important;
 }
 
 .activate_subscription_outer,
@@ -26922,7 +26922,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
   line-height: 19px;
   /* identical to box height */
   color: #5D5D5D !important;
-  height: 60px;
+  /* height: 60px; */
+  height: 50px;
 }
 
 .pfy_search::placeholder
@@ -31271,7 +31272,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 .adsearch
 {
   position: absolute;
-  top: 60px;
+  /* top: 60px; */
+  top: 50px;
   right: 0;
   left: 0;
   bottom: 0;
@@ -31633,8 +31635,10 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 
 .box_blog img 
 {
-  min-height: 100px !important;
+  /* min-height: 100px !important; */
+  height: 100px !important;
   object-fit: cover;
+  object-position: center;
   border-radius: 10px 0 0 10px;
 }
 
@@ -31646,6 +31650,59 @@ input[type="search"].hide_search::-webkit-search-cancel-button
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.br_10px
+{
+  border-radius: 10px;
+}
+
+.br_tl_bl_10px
+{
+  border-radius: 10px 0 0 10px;
+}
+
+.box_ws
+{
+  height: 100px;
+}
+
+.box_ws h4
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.btn_select 
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 6px 12px;
+  margin: 0 !important;
+  border: 0;
+  box-shadow: unset;
+}
+
+label.select_label:after
+{
+  content:"\f107";
+  font-family: FontAwesome;
+  font-size: 18px;
+  width: 100%;
+  position: absolute;
+  right: 12px;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #5d5d5d;
 }
 
 /* teenagers */

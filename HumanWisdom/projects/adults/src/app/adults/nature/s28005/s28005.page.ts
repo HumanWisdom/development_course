@@ -36,7 +36,7 @@ export class S28005Page implements OnInit {
   avDuration: any
 
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
-
+  ispageright = ''
 
 
   constructor(
@@ -47,6 +47,13 @@ export class S28005Page implements OnInit {
   ngOnInit() {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    let m: any = window.location.href;
+    m = m.split('/')
+    if (m.at(-1) === 'next') {
+      this.ispageright = 'next';
+    } else if (m.at(-1) === 'prev') {
+      this.ispageright = 'prev';
+    }
 
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }

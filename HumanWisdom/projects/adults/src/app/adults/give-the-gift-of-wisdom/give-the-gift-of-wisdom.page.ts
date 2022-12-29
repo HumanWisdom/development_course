@@ -1,8 +1,8 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
-import { Location } from '@angular/common';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
 @Component({
   selector: 'app-give-the-gift-of-wisdom',
@@ -16,7 +16,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
   public countryCode: any = '';
 
 
-  constructor(private location:Location, private router: Router, private services: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService) {
+  constructor(private location: Location, private router: Router, private services: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService) {
     let sub: any = localStorage.getItem('Subscriber');
     let login: any = localStorage.getItem("isloggedin");
     if (sub && sub === '1') {
@@ -57,33 +57,34 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
     )
   }
 
-  back(){
-      this.location.back();
+  back() {
+    this.location.back();
   }
 
   proceed() {
     if (!this.isLoggedIn) {
-      localStorage.setItem("subscribepage", 'T')
+      localStorage.setItem("subscribepage", 'T');
+      localStorage.setItem('giftwisdom', 'T');
       this.router.navigate(['/onboarding/login'])
     } else if (this.isLoggedIn) {
-          this.router.navigate(["/onboarding/add-to-cart"]);
-    } 
+      this.router.navigate(["/onboarding/add-to-cart"]);
+    }
   }
 
 
-  share(){
+  share() {
     this.ngNavigatorShareService
-    .share({
-      title: "HumanWisdom Program",
-      text:
-        "Hey, checkout HumanWisdom's Give the gift of Wisdom program – https://www.humanwisdom.me/course/adults/give-the-gift-of-wisdom"
-    })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .share({
+        title: "HumanWisdom Program",
+        text:
+          "Hey, checkout HumanWisdom's Give the gift of Wisdom program – https://www.humanwisdom.me/course/adults/give-the-gift-of-wisdom"
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
 }
