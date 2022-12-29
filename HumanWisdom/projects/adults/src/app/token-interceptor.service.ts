@@ -23,7 +23,7 @@ export class TokenInterceptorService implements HttpInterceptor {
     return next.handle(tokenizedReq).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
-          localStorage.clear()
+          // localStorage.clear()
           localStorage.setItem('guest', 'T');
           localStorage.setItem('personalised', 'T');
           localStorage.setItem('acceptcookie', 'T');
