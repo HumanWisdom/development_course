@@ -114,16 +114,16 @@ export class NotificationPage implements OnInit {
 
     if (isToday) {
       if(minutes<=1){
-        return '1 minute ago';
+        return '1m ago';
       }
       if (minutes < 30) {
-        return `${minutes} minutes ago`;
+        return `${minutes}m ago`;
       }
       if (minutes > 30 && minutes < 60) {
-        return `1 hour ago`;
+        return `1h ago`;
       }
       if (hours >= 1 || hours <= 24) {
-        return `${hours} hours ago`;
+        return `${hours}h ago`;
       }
       //return this.getFormattedDate(date, 'Today'); // Today at 10:20
     } else if (isYesterday) {
