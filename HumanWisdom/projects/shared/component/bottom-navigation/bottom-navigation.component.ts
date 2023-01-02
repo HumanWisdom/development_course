@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./bottom-navigation.component.scss'],
 })
 export class BottomNavigationComponent implements OnInit {
-  dash = false
+  @Input() dash = false;
   journal = false
   fourm = false
   profile = false

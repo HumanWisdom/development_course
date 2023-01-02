@@ -44,6 +44,7 @@ export class AdultDashboardPage implements OnInit {
   public resume = []
   public bookmarkLength: any
   searchinp = '';
+  public dash = false;
   //static progress mapping
   public angerP: any
   public comparisonP: any
@@ -322,6 +323,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+    this.dash=this.router.url.includes('adult-dashboard');
     this.getuserDetail();
     setTimeout(() => {
       this.getUserPreference()
