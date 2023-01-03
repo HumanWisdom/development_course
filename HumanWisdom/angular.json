@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "course",
+            "outputPath": "www",
             "index": "projects/adults/src/index.html",
             "main": "projects/adults/src/main.ts",
             "polyfills": "projects/adults/src/polyfills.ts",
