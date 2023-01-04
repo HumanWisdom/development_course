@@ -58,7 +58,7 @@ export class S35018Page implements OnInit {
 
   }
   prev(){
-    this.router.navigate(['/adults/program-guide/s35017'])
+    this.router.navigate(['/adults/program-guide/s35016'])
 
   }
 
