@@ -110,7 +110,7 @@ export class S35004Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/adults/program-guide/s35003p0'])
+    this.router.navigate(['/adults/program-guide/s35003'])
  
  
   }
