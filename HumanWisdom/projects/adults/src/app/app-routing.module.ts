@@ -26,9 +26,10 @@ const routes: Routes = [
   // redirectTo: "/adults/adult-dashboard",
     // redirectTo: "/onboarding/login",
    // redirectTo: "/adults/adult-dashboard",
-   redirectTo: "/adults/adverts-hwp",
+   //redirectTo: "/adults/adverts-hwp",
+   loadChildren:() => import("./adults/adverts-hwp/adverts-hwp.module").then(m => m.AdvertsHwpPageModule)
     // redirectTo: "/",
-    pathMatch: "full"
+   // pathMatch: "full"
   },
   {
     path: "adults",
