@@ -31705,6 +31705,21 @@ label.select_label:after
   color: #5d5d5d;
 }
 
+.tn_bv
+{
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 99;
+}
+
+.bg_bv
+{
+  background: none !important;
+}
+
 /* teenagers */
 .btn_intro_splash 
 {

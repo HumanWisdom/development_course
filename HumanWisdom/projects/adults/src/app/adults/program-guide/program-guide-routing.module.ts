@@ -35,6 +35,10 @@ import { S35009p8Page } from './s35009p8/s35009p8.page';
 import { S35009p9Page } from './s35009p9/s35009p9.page';
 import { S35009p10Page } from './s35009p10/s35009p10.page';
 import { S35009p11Page } from './s35009p11/s35009p11.page';
+import { S35009p12Page } from './s35009p12/s35009p12.page';
+import { S35009p13Page } from './s35009p13/s35009p13.page';
+import { S35009p14Page } from './s35009p14/s35009p14.page';
+import { S35009p15Page } from './s35009p15/s35009p15.page';
 import { S35010Page } from './s35010/s35010.page';
 import { S35011Page } from './s35011/s35011.page';
 import { S35011p0Page } from './s35011p0/s35011p0.page';
@@ -187,6 +191,22 @@ const routes: Routes = [
   {
     path: 's35009p11',
     component: S35009p11Page,
+  },
+  {
+    path: 's35009p12',
+    component: S35009p12Page,
+  },
+  {
+    path: 's35009p13',
+    component: S35009p13Page,
+  },
+  {
+    path: 's35009p14',
+    component: S35009p14Page,
+  },
+  {
+    path: 's35009p15',
+    component: S35009p15Page,
   },
   {
     path: 's35010',

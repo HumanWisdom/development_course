@@ -230,10 +230,10 @@ export class S35016Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/program-guide/s35017'])
+        this.router.navigate(['/adults/program-guide/s35018'])
       },
       () => {
-        this.router.navigate(['/adults/program-guide/s35017'])
+        this.router.navigate(['/adults/program-guide/s35018'])
       })
   }
 
