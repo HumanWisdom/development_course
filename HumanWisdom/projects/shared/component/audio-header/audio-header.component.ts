@@ -1,8 +1,8 @@
-import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
-import { Router,ActivatedRoute} from '@angular/router';
-import {AdultsService} from "../../../adults/src/app/adults/adults.service";
-import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from "@angular/cdk/platform";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgNavigatorShareService } from 'ng-navigator-share';
+import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 
 
 @Component({
@@ -14,54 +14,51 @@ export class AudioHeaderComponent implements OnInit {
   @Input() bookmark: boolean;
   @Input() bg_tn: string;
   @Input() bg: string;
-  @Input() path: string; //to go back to the course page from note 
+  @Input() path: string; //to go back to the course page from note
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() transcriptPage: string;
-  note:any
-  t=new Date()
-  minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  urlT:any 
-  shared=false
-  token=JSON.parse(localStorage.getItem("token"))
-  socialShare=false
-  address=this.router.url
-  progress:any
-  scrNumber:any
-
+  note: any
+  t = new Date()
+  minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  urlT: any
+  shared = false
+  token = JSON.parse(localStorage.getItem("token"))
+  socialShare = false
+  address = this.router.url
+  scrNumber: any
+  showheaderbar = true
+  progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
 
   @Output() sendBookmark = new EventEmitter<boolean>();
 
   constructor(private router: Router,
-    private service:AdultsService, public platform:Platform,
-    private ngNavigatorShareService: NgNavigatorShareService  ) { 
-      this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
-      this.ngNavigatorShareService = ngNavigatorShareService;
-    }
+    private service: AdultsService, public platform: Platform,
+    private ngNavigatorShareService: NgNavigatorShareService) {
+    this.urlT = this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
+    this.ngNavigatorShareService = ngNavigatorShareService;
+  }
 
   ngOnInit() {
-    
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    console.log(this.transcriptPage,this.toc,this.token)
+    this.showheaderbar = true;
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    console.log(this.transcriptPage, this.toc, this.token)
 
     var lastSlash = this.path.lastIndexOf("/");
-    this.scrNumber=this.path.substring(lastSlash+2);
+    this.scrNumber = this.path.substring(lastSlash + 2);
     console.log(this.scrNumber)
-   this.getProgress(this.scrNumber)
+    this.getProgress(this.scrNumber)
 
-    if (this.urlT)
-    {
-      this.shared=true
-      this.socialShare=true
+    if (this.urlT) {
+      this.shared = true
+      this.socialShare = true
     }
   }
-  toggleBookmark(){
-    this.bookmark=!this.bookmark
+  toggleBookmark() {
+    this.bookmark = !this.bookmark
     console.log(this.bookmark)
     this.sendBookmark.emit(this.bookmark)
   }
@@ -71,62 +68,60 @@ export class AudioHeaderComponent implements OnInit {
     }
     return i;
   }
-  addToken(){
-   // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
-   //history.replaceState(null, null,'course#'+this.address+`?t=${this.token}`);
-   /*history.replaceState(null, null,this.address+`?t=${this.token}`);
-    this.socialShare=true*/
-    this.socialShare=true
-   
-   if(this.urlT)
-   {
-     console.log("url")
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.urlT}`
+  addToken() {
+    // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
+    //history.replaceState(null, null,'course#'+this.address+`?t=${this.token}`);
+    /*history.replaceState(null, null,this.address+`?t=${this.token}`);
+     this.socialShare=true*/
+    this.socialShare = true
 
-   }
-   else{
-     console.log("local")
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.token}`
-   }
-   console.log(this.path)
-  }
-
-
-  courseNote(){
-    this.router.navigate(['/adults/coursenote',{path:this.path}])
-  }
-
-  goToToc(){
-    this.router.navigate(['/adults/'+this.toc])
-  }
-  goToDash(){
-    this.router.navigate(['/adults/adult-dashboard'])
-  }
-  goToTranscript(){
-    if (this.urlT)
-    {
-      this.router.navigate(['/adults/'+this.transcriptPage], {queryParams:{t:this.urlT}})
+    if (this.urlT) {
+      console.log("url")
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
 
     }
-      
-    else
-      this.router.navigate(['/adults/'+this.transcriptPage])
+    else {
+      console.log("local")
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+    }
+    console.log(this.path)
   }
-  addNote(){
-    this.service.submitJournal({
-      "JournalId":0,
-      "JDate":this.minDate,
-      "Title":"Module",
-      "Notes":this.note,
-      "UserId":this.userId
 
-    }).subscribe((res) => {},
-    error=>{
-      console.log(error)
-    },
-    ()=>{
-     
-    })
+
+  courseNote() {
+    this.router.navigate(['/adults/coursenote', { path: this.path }])
+  }
+
+  goToToc() {
+    this.router.navigate(['/adults/' + this.toc])
+  }
+  goToDash() {
+    this.router.navigate(['/adults/adult-dashboard'])
+  }
+  goToTranscript() {
+    if (this.urlT) {
+      this.router.navigate(['/adults/' + this.transcriptPage], { queryParams: { t: this.urlT } })
+
+    }
+
+    else
+      this.router.navigate(['/adults/' + this.transcriptPage])
+  }
+  addNote() {
+    this.service.submitJournal({
+      "JournalId": 0,
+      "JDate": this.minDate,
+      "Title": "Module",
+      "Notes": this.note,
+      "UserId": this.userId
+
+    }).subscribe((res) => { },
+      error => {
+        console.log(error)
+      },
+      () => {
+
+      })
   }
 
   share() {
@@ -134,38 +129,40 @@ export class AudioHeaderComponent implements OnInit {
       alert(`This service/api is not supported in your Browser`);
       return;
     } */
-    if(this.urlT)
-   {
-     console.log("url")
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.urlT}`
+    if (this.urlT) {
+      console.log("url")
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
 
-   }
-   else{
-     console.log("local")
-    this.path="https://humanwisdom.me/course/"+this.address+`?t=${this.token}`
-   }
- 
+    }
+    else {
+      console.log("local")
+      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+    }
+
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
       url: this.path
-    }).then( (response) => {
+    }).then((response) => {
       console.log(response);
     })
-    .catch( (error) => {
-      console.log(error);
-    });
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  getProgress(p)
-  {
+  getProgress(p) {
     this.service.screenProgress(p)
-    .subscribe(
-      r=>{
-        this.progress=parseFloat(r)
-        console.log(this.progress,"sessionProgress")
-      }
-    )
+      .subscribe(
+        r => {
+          this.progress = parseFloat(r)
+          console.log(this.progress, "sessionProgress")
+          localStorage.setItem("progressbarvalue", this.progress.toString())
+          setTimeout(() => {
+            this.showheaderbar = true;
+          }, 100)
+        }
+      )
 
   }
 
