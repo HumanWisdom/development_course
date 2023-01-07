@@ -11,6 +11,7 @@ export class CookiePolicyPage implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
+    window.history.pushState('', '', '/cookies-policy');
   }
 
   clickAgree(event){

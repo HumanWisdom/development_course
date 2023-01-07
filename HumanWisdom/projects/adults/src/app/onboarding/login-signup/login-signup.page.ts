@@ -130,6 +130,7 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
+    window.history.pushState('', '', '/log-in');
   }
   forbiddenNameValidator(
     control: AbstractControl

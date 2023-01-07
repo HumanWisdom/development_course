@@ -14,6 +14,7 @@ export class AdvertsStudentPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.history.pushState('', '', '/wisdom-for-students');
   }
 
   clickbanner(url = '') {
