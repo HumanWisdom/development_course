@@ -32,7 +32,8 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
   }
 
   ngOnInit() {
-    this.getCountry()
+    this.getCountry();
+    window.history.pushState('', '', '/give-the-gift-of-wisdom');
   }
 
   getCountry() {

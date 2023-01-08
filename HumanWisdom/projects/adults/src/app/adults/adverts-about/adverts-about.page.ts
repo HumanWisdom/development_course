@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
 import { Router } from '@angular/router';
 @Component({
@@ -14,6 +14,7 @@ export class AdvertsAboutPage implements OnInit {
   ) { }
 
   ngOnInit() {
+      window.history.pushState('', '', '/about-us');
   }
 
   clickbanner(url = '') {

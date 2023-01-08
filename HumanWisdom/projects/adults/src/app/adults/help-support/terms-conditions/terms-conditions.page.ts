@@ -10,6 +10,7 @@ export class TermsConditionsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.history.pushState('', '', '/terms-conditions');
   }
 
 }

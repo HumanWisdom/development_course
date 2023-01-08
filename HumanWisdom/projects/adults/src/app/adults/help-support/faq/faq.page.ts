@@ -10,6 +10,7 @@ export class FaqPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.history.pushState('', '', '/faqs');
   }
 
 }
