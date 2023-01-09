@@ -87,24 +87,28 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/relationships/s47004'])
-    this.service.submitProgressText({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime
-    }).subscribe(res=>
-      {
+    if (this.userId !== 563) { 
+      this.service.submitProgressText({
+        "ScrNumber":this.screenNumber,
+        "UserId":this.userId,
+        "BookMark":this.bookmark,
+        "ModuleId":this.moduleId,
+        "screenType":this.screenType,
+        "timeSpent":this.totalTime
+      }).subscribe(res=>
+        {
+          
+          this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+          localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+        },
+        error=>{console.log(error)},
+        ()=>{
+          //this.router.navigate(['/adults/conditioning/s2347003'])
+        })
         
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      },
-      error=>{console.log(error)},
-      ()=>{
-        //this.router.navigate(['/adults/conditioning/s2347003'])
-      })
-      
+
+    }
+   
     
 
   }
