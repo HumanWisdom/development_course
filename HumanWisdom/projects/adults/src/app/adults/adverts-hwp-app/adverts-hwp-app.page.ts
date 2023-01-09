@@ -14,6 +14,7 @@ export class AdvertsHwpAppPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.history.pushState('', '', '/applications');
   }
 
   clickbanner(url = '') {
