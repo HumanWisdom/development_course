@@ -35,7 +35,7 @@ export class PartnershipIndexPage implements OnInit {
       }, 200);    
     }
    }
-
+   window.history.pushState('', '', '/partnership-program');
   }
 
   scroll_to_obs(): void 

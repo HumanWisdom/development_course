@@ -10,6 +10,7 @@ export class PrivacyPolicyPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.history.pushState('', '', '/privacy-policy');
   }
 
 }

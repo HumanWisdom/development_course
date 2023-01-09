@@ -10,6 +10,7 @@ export class SupportPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.history.pushState('', '', '/contact-us');
   }
 
 }

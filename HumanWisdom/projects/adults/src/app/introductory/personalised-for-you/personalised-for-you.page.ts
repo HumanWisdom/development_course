@@ -2,8 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { LogEventService } from "src/app/log-event.service";
+import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 
 declare var $: any;
 @Component({
@@ -102,7 +102,7 @@ export class PersonalisedForYouPage implements OnInit {
         }
       } else {
         localStorage.setItem('personalisedlist', JSON.stringify(this.selectList));
-        this.router.navigate(['/intro/intro-carousel'])
+        this.router.navigate(['/onboarding/login'])
       }
     }
   }
