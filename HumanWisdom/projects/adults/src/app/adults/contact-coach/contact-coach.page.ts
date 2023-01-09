@@ -59,12 +59,25 @@ export class ContactCoachPage implements OnInit {
       this.initializeForm();
       this.phonecode='';
       this.code='';
-      alert("Contacted Successfully");
+      alert("Submitted Successfully");
     }
    });
   }
-
-   ValidateEmail(){
+  checkValidPhoneNo(){
+    this.form.ContactNo.length>12;
+  }
+   ValidateEmail(ischeck?){
+    if(ischeck){
+      if(this.form.EmailID!=''){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(this.form.EmailID) == false) 
+        {
+            return false;
+        }
+        return true;
+      }
+      return true;
+    }
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
     if (reg.test(this.form.EmailID) == false) 
