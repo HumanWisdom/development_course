@@ -64,7 +64,7 @@ export class ContactCoachPage implements OnInit {
    });
   }
   checkValidPhoneNo(){
-    this.form.ContactNo.length>12;
+    return this.form.ContactNo.length>7 || this.form.ContactNo.length>12;
   }
    ValidateEmail(ischeck?){
     if(ischeck){
