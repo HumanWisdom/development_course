@@ -111,12 +111,12 @@
                   </div>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-9 pr0px">
-                  <input type="number" maxlength="12" required="required" name="ContactNo" class="cfc10 feedback_left cfc10_fl_p" [(ngModel)]="form.ContactNo" placeholder="">
+                  <input type="text"  maxlength="12" required="required" name="ContactNo" class="cfc10 feedback_left cfc10_fl_p" [(ngModel)]="form.ContactNo" placeholder="">
                   <span id="phoneCode" [innerHTML]="phonecode" class="form-control-feedback left cfc10_fl" aria-hidden="true"></span>
                 </div>
                 <br><br>
                 <br><br>
-                <div *ngIf="form.ContactNo==null || checkValidPhoneNo()" class="white alert alert-danger w100">
+                <div *ngIf="form.ContactNo==null ||   checkValidPhoneNo()" class="white alert alert-danger w100">
                   Please Enter Valid Phone No.
                 </div>
               </div>

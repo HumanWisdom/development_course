@@ -27,7 +27,7 @@ export class ContactCoachPage implements OnInit {
       Name:'',
       Country:'0',
       EmailID:'',
-      ContactNo:'' 
+      ContactNo:''
     }
   }
 
@@ -64,8 +64,13 @@ export class ContactCoachPage implements OnInit {
    });
   }
   checkValidPhoneNo(){
-    return (this.form.ContactNo.length>7 || this.form.ContactNo.length>12);
-  }
+    if(this.form.ContactNo!=''){
+      if(isNaN(this.form.ContactNo)){
+        return true;
+      }
+      return (this.form.ContactNo.length<7 || this.form.ContactNo.length>12);
+    }
+    }
    ValidateEmail(ischeck?){
     if(ischeck){
       if(this.form.EmailID!=''){
