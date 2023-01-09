@@ -130,7 +130,10 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
-    window.history.pushState('', '', '/log-in');
+    if (!this.router.url.includes( '/log-in')) {
+      window.history.pushState('', '', '/log-in');
+    }
+
   }
   forbiddenNameValidator(
     control: AbstractControl
@@ -224,7 +227,7 @@ export class LoginSignupPage implements OnInit {
               "Code has been verified , Login with Your Credentials"
             );
             window.location.reload();
-            // this.router.navigate(['/onboarding/login'])
+            // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
@@ -842,5 +845,9 @@ export class LoginSignupPage implements OnInit {
 
   routedashboard() {
     this.router.navigate(['/adults/adult-dashboard'])
+  }
+
+  navigate(url){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
   }
 }
