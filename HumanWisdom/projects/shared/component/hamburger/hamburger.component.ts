@@ -199,10 +199,18 @@ export class HamburgerComponent implements OnInit {
 
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
+    
     if(params !='' && route !='') {
       this.router.navigate([route, params]);
     }else if(route !='') { 
+      if(route=='/adults/adverts-work' || route =='/adults/adverts-student'){
+        this.navigate(route);
+      }
       this.router.navigate([route]) 
       }
+    }
+
+    navigate(url){
+      this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
     }
 }

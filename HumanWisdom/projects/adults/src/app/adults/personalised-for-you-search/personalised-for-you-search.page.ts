@@ -221,7 +221,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.route.navigate(['/onboarding/login'])
+    this.route.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   googleLogin() {
