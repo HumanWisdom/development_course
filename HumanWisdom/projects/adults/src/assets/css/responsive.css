@@ -220,6 +220,11 @@
     {
         left: 5% !important;
     }
+    
+    .bg_adverts_hwp
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 768px)
