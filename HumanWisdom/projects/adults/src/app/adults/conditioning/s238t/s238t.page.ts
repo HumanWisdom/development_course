@@ -14,7 +14,7 @@ export class S238tPage implements OnInit {
   bg_cft="bg_pink_orange"
   bg="conditioning_w5"
   path=this.router.url
-  audioPage="/adults/conditioning/s238"
+  audioPage="/conditioning/s238"
   toc="/conditioning/s232"
   bookmark=0
 

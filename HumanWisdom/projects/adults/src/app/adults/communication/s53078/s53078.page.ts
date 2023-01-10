@@ -86,7 +86,7 @@ export class S53078Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r53078", JSON.stringify(e))
     this.r53078 = JSON.parse(sessionStorage.getItem("r53078"))
-
+    if (this.userId === 563) return;
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

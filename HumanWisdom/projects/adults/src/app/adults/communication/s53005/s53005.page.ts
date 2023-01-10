@@ -89,6 +89,8 @@ export class S53005Page implements OnInit {
     this.r53005 = JSON.parse(sessionStorage.getItem("r53005"))
 
     this.router.navigate(['/adults/communication/s53006'])
+
+    if (this.userId === 563) return;
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

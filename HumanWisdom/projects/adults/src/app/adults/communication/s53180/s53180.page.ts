@@ -86,6 +86,9 @@ export class S53180Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r53180", JSON.stringify(e))
     this.r53180 = JSON.parse(sessionStorage.getItem("r53180"))
+    this.router.navigate(['/adults/communication/s53181'])
+    if (this.userId === 563) return;
+
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -100,12 +103,12 @@ export class S53180Page implements OnInit {
 
     },
       error => {
-        console.log(error)
-        this.router.navigate(['/adults/communication/s53181'])
+       
+       
 
       },
       () => {
-        this.router.navigate(['/adults/communication/s53181'])
+       
       })
 
 
