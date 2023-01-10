@@ -30956,6 +30956,7 @@ svg path
 @keyframes fadeInRight {
   from {
     transform: translateX(300px);
+    animation-timing-function: linear;
   }
 }
 
@@ -30966,6 +30967,7 @@ svg path
 @keyframes fadeInLeft {
   from {
     transform: translateX(-300px);
+    animation-timing-function: linear;
   }
 }
 
