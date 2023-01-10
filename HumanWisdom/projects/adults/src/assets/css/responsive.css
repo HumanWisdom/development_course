@@ -999,3 +999,11 @@
         z-index: 99;
     }
 }
+
+@media (min-width: 1366px) and (max-width: 1367px)
+{
+    .session_title
+    {
+        font-size: 35px;
+    }
+}
