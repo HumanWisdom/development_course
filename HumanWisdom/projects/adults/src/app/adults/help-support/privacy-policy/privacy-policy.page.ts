@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'HumanWisdom-privacy-policy',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivacyPolicyPage implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit() {
-    window.history.pushState('', '', '/privacy-policy');
+    if (this.router.url=="/adults/help-support/privacy-policy") {
+      window.history.pushState('', '', '/privacy-policy');
+    }
   }
 
 }

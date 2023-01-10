@@ -35,7 +35,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
     if(issub && this.isloggedIn) {
       this.router.navigate(['/onboarding/add-to-cart'])
     }else {
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     }
   }
 

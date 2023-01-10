@@ -57,7 +57,7 @@ export class PersonalisedForYouPage implements OnInit {
     this.logeventservice.logEvent('click_unlock_signup');
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   getselect(value, ind) {

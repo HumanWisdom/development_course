@@ -46,7 +46,7 @@ export class ViewcartPage implements OnInit {
   
   constructor(private router: Router,private service:OnboardingService, private location:Location, public logeventservice: LogEventService) { 
     let res = localStorage.getItem("isloggedin")
-    if(res !== 'T') this.router.navigate(['/onboarding/login'])
+    if(res !== 'T') this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
     }else {
