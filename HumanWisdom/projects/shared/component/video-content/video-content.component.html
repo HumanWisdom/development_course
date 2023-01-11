@@ -1,14 +1,13 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div
-  [ngClass]="[pageaction === 'next' ? 'right_col mc_03 rtltext by_cyan' : pageaction === 'prev' ? 'right_col mc_03 ltrtext by_cyan' : 'right_col mc_03' ]"
-  #screen role="main">
+<div class="right_col mc_03 " #screen role="main">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex" [ngClass]="bg">
-        <div class="x_panel xpanel_01 p0">
+        <div
+          [ngClass]="[pageaction === 'next' ? 'x_panel xpanel_01 p0 rtltext' : pageaction === 'prev' ? 'x_panel xpanel_01 p0 ltrtext' : 'x_panel xpanel_01 p0' ]">
           <div class="x_content tcenter p0">
             <form>
 
