@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-support',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupportPage implements OnInit {
 
-  constructor() { }
+  constructor(public router :Router) { }
 
   ngOnInit() {
-    window.history.pushState('', '', '/contact-us');
+    if (!this.router.url.includes('/contact-us')) {
+      window.history.pushState('', '', '/contact-us');
+    }
   }
 
 }

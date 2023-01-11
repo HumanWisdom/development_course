@@ -70,15 +70,17 @@ export class TocTopnavComponent implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   giftwisdom() {
     localStorage.setItem('giftwisdom', 'T')
   }
-
+  navigate(url){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  }
 }

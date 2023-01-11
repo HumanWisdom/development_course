@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'HumanWisdom-terms-conditions',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermsConditionsPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
-    window.history.pushState('', '', '/terms-conditions');
+    if (!(this.router.url=='/terms-conditions')){
+      window.history.pushState('', '', '/terms-conditions');
+    }
+  
   }
 
 }

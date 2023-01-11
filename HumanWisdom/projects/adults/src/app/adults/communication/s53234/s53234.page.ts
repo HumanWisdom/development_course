@@ -284,6 +284,8 @@ createScreen(){
     this.totalTime = this.endTime - this.startTime;
 
     this.router.navigate(['/adults/communication/s53235'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

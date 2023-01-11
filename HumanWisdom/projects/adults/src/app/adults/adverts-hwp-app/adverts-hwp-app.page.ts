@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
 import { Router } from '@angular/router';
+import {Location } from '@angular/common';
 @Component({
   selector: 'HumanWisdom-adverts-hwp-app',
   templateUrl: './adverts-hwp-app.page.html',
@@ -10,11 +11,14 @@ export class AdvertsHwpAppPage implements OnInit {
 
   constructor(
     public platform: Platform,
-    private router: Router
+    private router: Router,
+    private location:Location
   ) { }
 
   ngOnInit() {
-    window.history.pushState('', '', '/applications');
+    if (!this.router.url.includes('/applications')) {
+      window.history.pushState('', '', '/applications');
+    }
   }
 
   clickbanner(url = '') {
@@ -32,5 +36,9 @@ export class AdvertsHwpAppPage implements OnInit {
   routedashboard() {
     this.router.navigate(['/adults/adult-dashboard'])
   }
-
+  
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+  
+  }
 }

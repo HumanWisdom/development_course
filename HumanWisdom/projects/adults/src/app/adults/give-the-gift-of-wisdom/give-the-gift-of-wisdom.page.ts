@@ -32,8 +32,12 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
   }
 
   ngOnInit() {
-    this.getCountry();
-    window.history.pushState('', '', '/give-the-gift-of-wisdom');
+
+    if (this.router.url=='/adults/give-the-gift-of-wisdom') {
+      window.history.pushState('', '', '/give-the-gift-of-wisdom');
+    }
+        this.getCountry();
+
   }
 
   getCountry() {
@@ -66,7 +70,7 @@ export class GiveTheGiftOfWisdomPage implements OnInit {
     if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T');
       localStorage.setItem('giftwisdom', 'T');
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     } else if (this.isLoggedIn) {
       this.router.navigate(["/onboarding/add-to-cart"]);
     }

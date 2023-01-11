@@ -90,7 +90,7 @@ export class BottomNavigationComponent implements OnInit {
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
       localStorage.setItem('btnclick', 'T')
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       // }
 
     }
