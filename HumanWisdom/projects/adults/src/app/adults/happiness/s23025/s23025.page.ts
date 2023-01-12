@@ -89,6 +89,8 @@ export class S23025Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/happiness/s23026'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
