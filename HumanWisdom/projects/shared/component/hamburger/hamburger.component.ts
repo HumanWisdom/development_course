@@ -107,13 +107,15 @@ export class HamburgerComponent implements OnInit {
         localStorage.setItem("guest", "T");
         localStorage.setItem("navigateToUpgradeToPremium", "false");
         localStorage.setItem("btnClickBecomePartner", "false");
-        this.router.navigate(["/onboarding/login"]);
+        this.router.navigate(["/onboarding/login"],  {replaceUrl:true,
+        skipLocationChange:true});
       }
     }
   }
 
   loginroute() {
-    this.router.navigate(["/onboarding/login"]);
+    this.router.navigate(["/onboarding/login"],{      replaceUrl:true,
+      skipLocationChange:true});
   }
 
   giftwisdom() {
@@ -142,10 +144,10 @@ export class HamburgerComponent implements OnInit {
 
   RouteToFaq() {
     this.logeventservice.logEvent('click_Partnership_FAQ_Hamburger')
+    localStorage.setItem('isPartnerFaq','true');
     this.router.navigate(["/adults/partnership-webpage/partnership-index/"], {
-      state: {
-        isPartnerFaq: true,
-      },
+      replaceUrl:true,
+      skipLocationChange:true
     });
   }
 
@@ -203,8 +205,14 @@ export class HamburgerComponent implements OnInit {
     if(params !='' && route !='') {
       this.router.navigate([route, params]);
     }else if(route !='') { 
-      if(route=='/adults/adverts-work' || route =='/adults/adverts-student'){
+      if(route=='/adults/adverts-work' || 
+      route =='/adults/adverts-student' || 
+      route =='/adults/adverts-about' ||
+      route == '/adults/help-support/faq'||
+      route =='/adults/help-support/terms-conditions' ||
+      route == '/adults/partnership-webpage/partnership-index/'){
         this.navigate(route);
+        return;
       }
       this.router.navigate([route]) 
       }
