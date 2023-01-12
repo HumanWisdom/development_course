@@ -30950,24 +30950,22 @@ svg path
 /* /adverts hamburger */
 
 .rtltext {
-  animation: fadeInRight ease-in-out;
+  animation: fadeInRight linear;
 }
 
 @keyframes fadeInRight {
   from {
     transform: translateX(300px);
-    animation-timing-function: linear;
   }
 }
 
 .ltrtext {
- animation: fadeInLeft;
+ animation: fadeInLeft linear;
 }
 
 @keyframes fadeInLeft {
   from {
     transform: translateX(-300px);
-    animation-timing-function: linear;
   }
 }
 
