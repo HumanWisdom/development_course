@@ -19,25 +19,24 @@ export class PartnershipIndexPage implements OnInit {
   isScroll=false;
 
   ngOnInit() {
-   
-    if(window.history.state && window.history.state.isPartnerFaq){
-      this.isPartnerFaq= window.history.state.isPartnerFaq;
-      if(this.isPartnerFaq==true){
+  this.isPartnerFaq=  localStorage.getItem('isPartnerFaq')=='true';
+    if(this.isPartnerFaq){
         this.scroll_to_Faq();
-      }
     }
     this.isPartner=localStorage.getItem('isPartner')=='1';
     if(window.history.state && window.history.state.isScroll){
     this.isScroll = window.history.state.isScroll;
     if(this.isScroll){
       setTimeout(() => {
-        this.scroll_to_Faq() 
+        this.scroll_to_Faq();
       }, 200);    
     }
    }
-   if (!this.router.url.includes( '/partnership-program')) {
-    window.history.pushState('', '', '/partnership-program');
-  }
+
+    if (!this.router.url.includes( '/partnership-program')) {
+      window.history.pushState('', '', '/partnership-program');
+   }
+ 
   }
 
   scroll_to_obs(): void 
@@ -105,6 +104,7 @@ export class PartnershipIndexPage implements OnInit {
   {
     this.isHowItWorks=true;
     this.isPartnerFaq=true;
+    localStorage.setItem('isPartnerFaq','false');
     setTimeout(() => {
       window.scrollTo({
         behavior: 'smooth',
