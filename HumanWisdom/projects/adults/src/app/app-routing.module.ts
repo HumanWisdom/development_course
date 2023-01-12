@@ -38,6 +38,11 @@ const routes: Routes = [
     //canActivate:[AuthGuard]
   },
   {
+    path: "course/adults",
+    redirectTo:"adults",
+    //canActivate:[AuthGuard]
+  },
+  {
     path: "onboarding",
     loadChildren: () => import("./onboarding/onboarding.module").then(m => m.OnboardingModule)    
   },
