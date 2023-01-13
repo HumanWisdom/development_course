@@ -118,7 +118,7 @@ export class S23166Page implements OnInit {
       
       },
       () => {
-        this.router.navigate(['/adults/happiness/s23167'])
+      
       })
 
   }

@@ -57,6 +57,16 @@ export class BlogArticlePage implements OnInit {
 
          this.title.setTitle(this.blogList['Title'])
 
+       if(this.meta.getTag("property='title'"))
+         this.meta.updateTag({ property: 'title', content: this.blogList['Title']})
+       else
+        this.meta.addTag({ property: 'title', content: this.blogList['Title']})
+
+        if(this.meta.getTag("property='description'"))
+        this.meta.updateTag({ property: 'description', content: this.blogList['Title']})
+      else
+       this.meta.addTag({ property: 'description', content: this.blogList['Title']})
+
         if(this.meta.getTag("property='og:type'"))
           this.meta.updateTag({ property: 'og:type', content: 'article'})
         else

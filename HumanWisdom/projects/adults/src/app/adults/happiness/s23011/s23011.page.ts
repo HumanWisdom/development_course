@@ -147,7 +147,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/meditation/s22024p2'])
-    if(this.userId === 563)return;
+    if (this.userId === 563) return;
 
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
