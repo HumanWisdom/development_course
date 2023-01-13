@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
@@ -22,7 +22,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   isloggedIn = false;
   searchinp = '';
   public user: any
-  public userId: any
+  public userId = 100
   public idToken: any
   public email: any;
   public showAlert = false
@@ -53,9 +53,44 @@ export class PersonalisedForYouSearchPage implements OnInit {
   mediaPercent: any
   freeScreens = []
   isWelcomePopup = false;
-  constructor(private route: Router, private aservice: AdultsService, public authService: SocialAuthService, public service: OnboardingService) {
-    this.getUserPreference();
-    this.getModuleList();
+  public isSubscribe = false
+  public modaldata = {}
+  public x = []
+  public text = 2
+  public question = 6
+  public reflection = 5
+  public feedbackSurvey = 7
+  public moduleId = 7
+  public bookmarks = []
+  public resume = []
+  public bookmarkLength: any
+
+  constructor(private route: Router, private aservice: AdultsService,
+    public authService: SocialAuthService, public service: OnboardingService,
+    public cd: ChangeDetectorRef
+  ) {
+    let authtoken = JSON.parse(localStorage.getItem("token"))
+    let app = localStorage.getItem("fromapp")
+    if (authtoken && app && app === 'T') {
+      localStorage.setItem('socialLogin', 'T');
+      localStorage.setItem('acceptcookie', 'T')
+      this.aservice.verifytoken(authtoken).subscribe((res) => {
+        if (res) {
+          localStorage.setItem("email", res['Email'])
+          localStorage.setItem("name", res['Name'])
+          localStorage.setItem("userId", res['UserId'])
+          let namedata = localStorage.getItem('name').split(' ')
+          this.userId = res['UserId']
+          this.loginadult(res)
+          localStorage.setItem("FnName", namedata[0])
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
+          localStorage.setItem("Subscriber", res['Subscriber'])
+          this.getUserPreference();
+          this.getModuleList();
+          this.getProgress()
+        }
+      })
+    }
   }
 
   ngOnInit() {
@@ -72,26 +107,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
         }, 1000);
       }
     }
-    let authtoken = JSON.parse(localStorage.getItem("token"))
-    let app = localStorage.getItem("fromapp")
-    if (authtoken && app && app === 'T') {
-      localStorage.setItem('socialLogin', 'T');
-      localStorage.setItem('acceptcookie', 'T')
-      this.aservice.verifytoken(authtoken).subscribe((res) => {
-        if (res) {
-          localStorage.setItem("email", res['Email'])
-          localStorage.setItem("name", res['Name'])
-          localStorage.setItem("userId", res['UserId'])
-          let namedata = localStorage.getItem('name').split(' ')
-          localStorage.setItem("FnName", namedata[0])
-          localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
-          localStorage.setItem("Subscriber", res['Subscriber'])
-        }
-      })
-    }
-
-    this.userId = JSON.parse(localStorage.getItem("userId"))
-    this.getProgress()
   }
 
   getModuleList(isLoad?) {
@@ -685,4 +700,101 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
   // /introduction
 
+  loginadult(res) {
+    this.loginResponse = res
+    this.userId = res.UserId
+    if (res.Subscriber === 0) {
+      this.isSubscribe = true;
+    }
+    let guest = localStorage.getItem('guest');
+    // if (guest === 'T') localStorage.setItem('guest', 'F')
+    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
+    else localStorage.setItem("guest", 'F')
+
+    sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+    localStorage.setItem("token", JSON.stringify(res.access_token))
+    localStorage.setItem("Subscriber", res.Subscriber)
+    localStorage.setItem("userId", JSON.stringify(this.userId))
+    localStorage.setItem("email", res['Email'])
+    localStorage.setItem("name", res.Name)
+    let nameupdate = localStorage.getItem(
+      "nameupdate"
+    );
+    let namedata = localStorage.getItem('name').split(' ')
+    this.modaldata['email'] = localStorage.getItem('email');
+    this.modaldata['firstname'] = namedata[0];
+    this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    this.freescreens();
+    localStorage.setItem("text", JSON.stringify(this.text))
+    localStorage.setItem("video", JSON.stringify(this.video))
+    localStorage.setItem("audio", JSON.stringify(this.audio))
+    localStorage.setItem("moduleId", JSON.stringify(this.moduleId))
+    localStorage.setItem("question", JSON.stringify(this.question))
+    localStorage.setItem("reflection", JSON.stringify(this.reflection))
+    localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.cd.detectChanges();
+    localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+    localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+    if (localStorage.getItem("token") && (this.saveUsername == true)) {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.userName = JSON.parse(localStorage.getItem("userName"))
+    }
+    else {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
+      this.userName = JSON.parse(sessionStorage.getItem("userName"))
+    }
+    this.getBookmarks()
+    if (res.UserId == 0) {
+    }
+    else {
+      this.userId = res.UserId
+      this.userName = res.Name
+      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+      localStorage.setItem("userId", JSON.stringify(this.userId))
+      localStorage.setItem("token", JSON.stringify(res.access_token))
+      if (this.saveUsername == true) {
+        localStorage.setItem("userId", JSON.stringify(this.userId))
+        localStorage.setItem("userEmail", JSON.stringify(res.Email))
+        localStorage.setItem("userName", JSON.stringify(this.userName))
+
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(this.userId))
+        sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
+        sessionStorage.setItem("userName", JSON.stringify(this.userName))
+      }
+    }
+  }
+
+
+  freescreens() {
+    this.aservice.freeScreens().subscribe(res => {
+      this.x = []
+      let result = res.map(a => a.FreeScrs);
+      let arr;
+      result = result.forEach(element => {
+        if (element && element.length !== 0) {
+          this.x.push(element.map(a => a.ScrNo))
+          arr = Array.prototype.concat.apply([], this.x);
+        }
+      })
+      localStorage.setItem("freeScreens", JSON.stringify(arr))
+    }
+
+
+
+    )
+  }
+
+  getBookmarks() {
+    this.aservice.getBookmarks(this.userId)
+      .subscribe(res => {
+        this.bookmarks = res
+        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+        localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
+
+      })
+
+  }
 }
