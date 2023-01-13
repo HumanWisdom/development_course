@@ -155,6 +155,7 @@ export class S23027Page implements OnInit {
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
 this.router.navigate(['/adults/happiness/s23028'])
+if (this.userId === 563) return;
 
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 

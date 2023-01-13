@@ -88,6 +88,8 @@ export class S53186Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
  
     this.router.navigate(['/adults/communication/s53187'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

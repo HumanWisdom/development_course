@@ -99,10 +99,10 @@ createScreen(){
       },
       error=>{
         console.log(error)
-        this.router.navigate(['/adults/criticism/s376'])
+      
       },
       ()=>{
-        this.router.navigate(['/adults/criticism/s376'])
+       
       })
     
  
@@ -114,8 +114,8 @@ createScreen(){
   }
  
   goNext(){
-  
- 
+    this.router.navigate(['/adults/criticism/s376'])
+    if (this.userId !== 563) this.submitProgress()
   }
  
   ngOnDestroy(){

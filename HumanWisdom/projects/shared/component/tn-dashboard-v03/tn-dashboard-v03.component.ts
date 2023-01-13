@@ -90,11 +90,11 @@ export class TnDashboardV03Component implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   giftwisdom() {

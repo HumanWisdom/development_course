@@ -27,4 +27,9 @@ export class FtAdvertComponent implements OnInit {
     this.service.isAdvert_hwp=true;
     this.router.navigate(['/onboarding/add-to-cart']);
   }
+
+  navigate(url){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  }
+
 }

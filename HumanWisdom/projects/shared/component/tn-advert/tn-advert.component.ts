@@ -28,7 +28,7 @@ export class TnAdvertComponent implements OnInit {
 
   routedashboard() {
     if (!this.isLoggedIn) {
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     } else {
       this.router.navigate(['/adults/adult-dashboard'])
     }
@@ -55,5 +55,7 @@ export class TnAdvertComponent implements OnInit {
       this.router.navigate(["/onboarding/login"]);
     }
   }
-
+  navigate(url){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  }
 }

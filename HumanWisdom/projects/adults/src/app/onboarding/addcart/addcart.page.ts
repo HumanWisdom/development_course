@@ -94,7 +94,7 @@ export class AddcartPage implements OnInit,OnDestroy {
     if(!this.userId)
     {
       console.log("login first")
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
 
     }
      

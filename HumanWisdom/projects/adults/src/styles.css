@@ -30950,7 +30950,7 @@ svg path
 /* /adverts hamburger */
 
 .rtltext {
-  animation: fadeInRight ease-in-out;
+  animation: fadeInRight linear;
 }
 
 @keyframes fadeInRight {
@@ -30960,7 +30960,7 @@ svg path
 }
 
 .ltrtext {
- animation: fadeInLeft;
+ animation: fadeInLeft linear;
 }
 
 @keyframes fadeInLeft {

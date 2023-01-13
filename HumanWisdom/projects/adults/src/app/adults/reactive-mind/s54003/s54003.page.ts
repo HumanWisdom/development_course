@@ -90,10 +90,12 @@ export class S54003Page implements OnInit, OnDestroy {
   }
 
   submitProgress() {
-
+    localStorage.setItem("totalTime54003", this.totalTime)
+    localStorage.setItem("avDuration54003", this.avDuration)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/reactive-mind/s54004'])
+    if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -118,8 +120,8 @@ export class S54003Page implements OnInit, OnDestroy {
 
   }
   ngOnDestroy() {
-    localStorage.setItem("totalTime54003", this.totalTime)
+   /*  localStorage.setItem("totalTime54003", this.totalTime)
     localStorage.setItem("avDuration54003", this.avDuration)
-    if (this.userId !== 563) this.submitProgress()
+    if (this.userId !== 563) this.submitProgress() */
   }
 }

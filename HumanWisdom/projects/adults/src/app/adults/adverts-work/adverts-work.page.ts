@@ -14,6 +14,9 @@ export class AdvertsWorkPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (!this.router.url.includes('/wisdom-for-work')) {
+      window.history.pushState('', '', '/wisdom-for-work');
+    }
   }
 
   clickbanner(url = '') {

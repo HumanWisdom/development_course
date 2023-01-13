@@ -82,7 +82,7 @@ export class S58009Page implements OnInit {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/work/s58010'])
+   
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -110,7 +110,7 @@ export class S58009Page implements OnInit {
 
 
   goNext() {
-    // this.router.navigate(['/adults/work/s58009'])
+    this.router.navigate(['/adults/work/s58010'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

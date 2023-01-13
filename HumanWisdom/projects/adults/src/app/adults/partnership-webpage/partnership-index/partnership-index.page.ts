@@ -19,23 +19,24 @@ export class PartnershipIndexPage implements OnInit {
   isScroll=false;
 
   ngOnInit() {
-   
-    if(window.history.state && window.history.state.isPartnerFaq){
-      this.isPartnerFaq= window.history.state.isPartnerFaq;
-      if(this.isPartnerFaq==true){
+  this.isPartnerFaq=  localStorage.getItem('isPartnerFaq')=='true';
+    if(this.isPartnerFaq){
         this.scroll_to_Faq();
-      }
     }
     this.isPartner=localStorage.getItem('isPartner')=='1';
     if(window.history.state && window.history.state.isScroll){
     this.isScroll = window.history.state.isScroll;
     if(this.isScroll){
       setTimeout(() => {
-        this.scroll_to_Faq() 
+        this.scroll_to_Faq();
       }, 200);    
     }
    }
 
+    if (!this.router.url.includes( '/partnership-program')) {
+      window.history.pushState('', '', '/partnership-program');
+   }
+ 
   }
 
   scroll_to_obs(): void 
@@ -96,13 +97,14 @@ export class PartnershipIndexPage implements OnInit {
     localStorage.setItem('btnClickBecomePartner','true');
     this.services.navigateToUpgradeToPremium=true;
     //localStorage.setItem("navigateToUpgradeToPremium","true")
-    this.router.navigate(['adults/partnership-app']);
+    this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
   }
 
   scroll_to_Faq(): void 
   {
     this.isHowItWorks=true;
     this.isPartnerFaq=true;
+    localStorage.setItem('isPartnerFaq','false');
     setTimeout(() => {
       window.scrollTo({
         behavior: 'smooth',

@@ -91,7 +91,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
 
     this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.getProgress()
+    this.getProgress()
   }
 
   getModuleList(isLoad?) {
@@ -221,7 +221,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.route.navigate(['/onboarding/login'])
+    this.route.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
   googleLogin() {
@@ -439,7 +439,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
       .subscribe(res => {
 
         this.goToPage = res.LastScrNo
-     
+        this.percentage = parseInt(res.overallPercentage)
+
         localStorage.setItem("overallPercentage", this.percentage)
         //resume section
         res.ModUserScrPc.filter(x => {
@@ -456,7 +457,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         })
 
         //static progress
-        
+
         this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
         this.guideP = res.ModUserScrPc.find(e => e.Module == "User Guide")?.Percentage
         this.identityP = res.ModUserScrPc.find(e => e.Module == "Identity")?.Percentage
@@ -470,7 +471,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
 
 
-  
+
   // introduction
   routeDiscoveringWisdom(cont: any = 1) {
     var discoveringWisdomResume
@@ -640,7 +641,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
             this.route.navigate([`/adults/key-ideas/s34001`])
           /*if(!this.goToPage)
           {
-            
+
             this.router.navigate([`/adults/key-ideas`])
           }
           else

@@ -156,6 +156,7 @@ export class S23167Page implements OnInit {
 this.totalTime = this.endTime - this.startTime;
 
 this.router.navigate(['/adults/happiness/s23178'])
+if (this.userId === 563) return;
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
     "ScrNumber":this.screenNumber,  

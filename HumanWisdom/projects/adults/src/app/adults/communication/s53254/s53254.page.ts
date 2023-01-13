@@ -210,7 +210,8 @@ export class S53254Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r53254", this.r53254)
     this.r53254 = sessionStorage.getItem("r53254")
-    console.log(this.r53254)
+    this.router.navigate(['/adults/communication/s53255'])
+    if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -225,11 +226,10 @@ export class S53254Page implements OnInit {
 
     },
       error => {
-        console.log(error)
-        this.router.navigate(['/adults/communication/s53255'])
+      
       },
       () => {
-        this.router.navigate(['/adults/communication/s53255'])
+       
       })
   }
 
