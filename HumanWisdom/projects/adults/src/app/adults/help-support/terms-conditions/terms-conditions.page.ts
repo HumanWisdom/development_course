@@ -11,8 +11,8 @@ export class TermsConditionsPage implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    if (!(this.router.url=='/terms-conditions')){
-      window.history.pushState('', '', '/terms-conditions');
+    if (!(this.router.url=='/terms-and-conditions')){
+      window.history.pushState('', '', '/terms-and-conditions');
     }
   
   }

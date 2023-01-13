@@ -189,13 +189,13 @@ export class HamburgerComponent implements OnInit {
       var retVal = confirm("To become a Partner you will need to Complete Registration and login?");
       if (retVal == true) {
         this.Onboardingservice.navigateToUpgradeToPremium = true;
-        this.router.navigate(["/adults/partnership-app"]);
+        this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
       } else {
         return false;
       }
     } else {
       this.Onboardingservice.navigateToUpgradeToPremium = true;
-      this.router.navigate(["/adults/partnership-app"]);
+      this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
     }
   }
 
@@ -210,6 +210,7 @@ export class HamburgerComponent implements OnInit {
       route =='/adults/adverts-about' ||
       route == '/adults/help-support/faq'||
       route =='/adults/help-support/terms-conditions' ||
+      route =='/adults/help-support/support' ||
       route == '/adults/partnership-webpage/partnership-index/'){
         this.navigate(route);
         return;
