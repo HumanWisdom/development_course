@@ -102,7 +102,7 @@ const routes: Routes = [
     loadChildren: () => import('./adults/help-support/support/support.module').then( m => m.SupportPageModule)
   },
   {
-    path: 'terms-conditions',
+    path: 'terms-and-conditions',
     loadChildren: () => import('./adults/help-support/terms-conditions/terms-conditions.module').then( m => m.TermsConditionsPageModule)
   },
   {
@@ -129,6 +129,11 @@ const routes: Routes = [
     path: 'log-in',
     canActivate: [authLoginGuard],
     loadChildren: () => import('./onboarding/login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
+  },
+  {
+    path: 'partnership-app',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./adults/partnership-app/partnership-app.module').then(m => m.PartnershipAppModule)
   },
 ];
 
