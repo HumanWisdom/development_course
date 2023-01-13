@@ -38,16 +38,43 @@ const routes: Routes = [
     //canActivate:[AuthGuard]
   },
   {
+    path: "course",
+    pathMatch:"full",
+    redirectTo:"",
+    //canActivate:[AuthGuard]
+  },
+  {
+    path: "course/adults",
+    redirectTo:"adults",
+    //canActivate:[AuthGuard]
+  },
+  {
+    path: "course/onboarding",
+    redirectTo:"onboarding"
+  },
+  {
     path: "onboarding",
     loadChildren: () => import("./onboarding/onboarding.module").then(m => m.OnboardingModule)    
+  },
+  {
+    path: "course/forum",
+    redirectTo:"forum"
   },
   {
     path: "forum",
     loadChildren: () => import("./forum/framework-v1.module").then(m => m.FrameworkV1Module)  
   },
   {
+    path: "course/coach",
+    redirectTo:"coach"
+  },
+  {
     path: "coach",
     loadChildren: () => import("./coach/coach.module").then(m => m.CoachModule)  
+  },
+  {
+    path: "course/intro",
+    redirectTo:"intro"
   },
   {
     path: "intro",
