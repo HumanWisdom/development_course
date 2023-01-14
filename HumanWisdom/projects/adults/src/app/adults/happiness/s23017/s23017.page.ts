@@ -98,6 +98,8 @@ export class S23017Page implements OnInit {
     this.r23017 = sessionStorage.getItem("r23017")
     console.log(this.r23017)
 
+    this.router.navigate(['/adults/happiness/s23018'])
+    if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -112,12 +114,12 @@ export class S23017Page implements OnInit {
 
     },
       error => {
-        console.log(error)
-        this.router.navigate(['/adults/happiness/s23018'])
+      
+      
 
       },
       () => {
-        this.router.navigate(['/adults/happiness/s23018'])
+       
       })
 
   }

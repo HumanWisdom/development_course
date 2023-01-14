@@ -92,12 +92,13 @@ export class S23162Page implements OnInit {
 
 
   submitProgress(e) {
-    console.log("returned response", e)
+  
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r23162", JSON.stringify(e))
     this.r23162 = sessionStorage.getItem("r23162")
-    console.log(this.r23162)
+    this.router.navigate(['/adults/happiness/s23163'])
+    if (this.userId === 563) return;
 
 
     this.service.submitProgressReflection({
@@ -114,11 +115,10 @@ export class S23162Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/happiness/s23163'])
-
+       
       },
       () => {
-        this.router.navigate(['/adults/happiness/s23163'])
+       
       })
 
   }

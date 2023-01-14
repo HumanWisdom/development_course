@@ -17,7 +17,7 @@ export class S238Page implements OnInit {
   //audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adults/conditioning/audios/con+1.1.mp3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/conditioning/audios/con+1.2.mp3'
-  transcriptPage="/adults/conditioning/s238t"
+  transcriptPage="/conditioning/s238t"
   title="Conditioning; the core of our identity"
   toc="conditioning/s232"
   

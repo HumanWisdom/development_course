@@ -95,6 +95,7 @@ createScreen(){
     this.totalTime = this.endTime - this.startTime;
 
     this.router.navigate(['/adults/communication/s53008'])
+    if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

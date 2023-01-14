@@ -16,7 +16,7 @@ export class S268tPage implements OnInit {
   bg="conditioning_w1"
   bookmark=0
   path=this.router.url
-  audioPage="/adults/conditioning/s268"
+  audioPage="/conditioning/s268"
   toc="/conditioning/s232"
 
   avDuration=localStorage.getItem("avDuration268")

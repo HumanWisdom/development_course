@@ -83,6 +83,8 @@ export class S53125Page implements OnInit,OnDestroy {
 
   submitProgress(){
     this.router.navigate(['/adults/communication/s53126'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
