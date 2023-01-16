@@ -38,16 +38,43 @@ const routes: Routes = [
     //canActivate:[AuthGuard]
   },
   {
+    path: "course",
+    pathMatch:"full",
+    redirectTo:"",
+    //canActivate:[AuthGuard]
+  },
+  {
+    path: "course/adults",
+    redirectTo:"adults",
+    //canActivate:[AuthGuard]
+  },
+  {
+    path: "course/onboarding",
+    redirectTo:"onboarding"
+  },
+  {
     path: "onboarding",
     loadChildren: () => import("./onboarding/onboarding.module").then(m => m.OnboardingModule)    
+  },
+  {
+    path: "course/forum",
+    redirectTo:"forum"
   },
   {
     path: "forum",
     loadChildren: () => import("./forum/framework-v1.module").then(m => m.FrameworkV1Module)  
   },
   {
+    path: "course/coach",
+    redirectTo:"coach"
+  },
+  {
     path: "coach",
     loadChildren: () => import("./coach/coach.module").then(m => m.CoachModule)  
+  },
+  {
+    path: "course/intro",
+    redirectTo:"intro"
   },
   {
     path: "intro",
@@ -75,7 +102,7 @@ const routes: Routes = [
     loadChildren: () => import('./adults/help-support/support/support.module').then( m => m.SupportPageModule)
   },
   {
-    path: 'terms-conditions',
+    path: 'terms-and-conditions',
     loadChildren: () => import('./adults/help-support/terms-conditions/terms-conditions.module').then( m => m.TermsConditionsPageModule)
   },
   {
@@ -102,6 +129,11 @@ const routes: Routes = [
     path: 'log-in',
     canActivate: [authLoginGuard],
     loadChildren: () => import('./onboarding/login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
+  },
+  {
+    path: 'partnership-app',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./adults/partnership-app/partnership-app.module').then(m => m.PartnershipAppModule)
   },
 ];
 

@@ -1,0 +1,57 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <a (click)="submitProgress()">
+        <h4 class="btn_back_white">Save</h4>
+      </a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->  
+
+<!-- page content -->
+<div class="right_col mc_01">				
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white">
+        <div class="x_panel p0">                                                
+          <div class="x_content p0">
+            <form>
+
+              <div class="row pb20px">                
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <input type="text" id="first-name" required="required" class="form-control cfc1 txt40 tleft" name="title" [(ngModel)]="title" placeholder="Title (optional)">
+                </div>
+              </div>
+
+              <div class="row pb20px">                
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea class="form-control txt41 cta1" rows="10" placeholder="Start writing..." name="notes" [(ngModel)]="notes"></textarea>
+                </div>
+              </div> 
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->  
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
+
+
+
+

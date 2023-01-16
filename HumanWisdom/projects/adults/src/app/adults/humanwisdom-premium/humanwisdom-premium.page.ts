@@ -14,7 +14,7 @@ export class HumanwisdomPremiumPage implements OnInit {
   }
   JoinHumanWisdom(){
     localStorage.setItem('btnClickBecomePartner','true');
-    this.router.navigate(['adults/partnership-app']);
+    this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
   }
   NotNow(){
     this.router.navigate(['/adults/adult-dashboard'])
