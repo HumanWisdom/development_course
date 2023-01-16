@@ -85,9 +85,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
           localStorage.setItem("Subscriber", res['Subscriber'])
-          this.getUserPreference();
-          this.getModuleList();
-          this.getProgress()
+          
         }
       })
     }
@@ -106,6 +104,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
           this.welcome.nativeElement.click();
         }, 1000);
       }
+      this.getUserPreference();
+          this.getModuleList();
+          this.getProgress()
     }
   }
 
