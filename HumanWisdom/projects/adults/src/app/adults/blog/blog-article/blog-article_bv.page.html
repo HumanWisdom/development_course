@@ -1,0 +1,359 @@
+<!-- top navigation -->
+<div class="bg_white_01 nav_search col-lg-4 col-md-6 col-sm-6 col-xs-12">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+        <a class="" (click)="goBack()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey_03.svg" alt=""
+            class="img-responsive">
+        </a>
+      </div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flexjc_end">
+        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright" (click)="likebtn()">
+          <a class="">
+            <img *ngIf="this.likecount !== 0"
+              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt=""
+              class="img-responsive">
+            <img *ngIf="this.likecount === 0"
+              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt=""
+              class="img-responsive">
+          </a>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright">
+          <a class="" (click)="commentbottom()">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue_01.svg" alt=""
+              class="img-responsive">
+          </a>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tright">
+          <a  id="btnShare" (click)="share()">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_01.svg" alt=""
+              class="img-responsive">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_white sc_01">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form *ngIf="blogList !== undefined">
+
+              <div class="row center_flex">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <img src="{{blogList['ImgPath']}}" alt="" class="img-responsive w100p br_blr_20px">
+                </div>
+              </div>
+
+              <div class="plr10px tleft">
+
+                <!-- <div class="row center_flex blog_title">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <h4 class="mtb0px fw_400 fs_30px lh_130p fc_000000">
+                      {{blogList['Title']}}
+                    </h4>
+                  </div>
+                </div> -->
+
+                <div class="row center_flex blog_title">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  flex_ai">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="mtb0px fw_400 fs_30px lh_130p fc_000000">
+                        {{blogList['Title']}}
+                      </h4>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter p0">
+                      <img *ngIf="this.likecount === 0"
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt=""
+                        class="img-responsive">
+                      <img *ngIf="this.likecount !== 0"
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg"
+                        alt="" class="img-responsive">
+                      <h4 class="fw_700 fs_12px lh_130p fc_adadad p0 tcenter like_count">
+                        {{blogList['LikeCnt']}}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  flex_ai">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="mtb0px fw_400 fs_12px lh_130p fc_5d5d5d">
+                        {{blogList['CreatedDate'] | date:'dd MMM y'}}
+                      </h4>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter p0">
+                      <img *ngIf="this.likecount === 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_01.svg" alt="" class="img-responsive">
+                      <img *ngIf="this.likecount !== 0" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_red_01_active.svg" alt="" class="img-responsive">
+                      <h4 class="mtb0px fw_700 fs_12px lh_130p fc_adadad like_count">
+                        {{blogList['LikeCnt']}}
+                      </h4>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <h4 class="mtb0px fw_300 fs_18px lh_150p fc_5d5d5d p0" [innerHTML]="getHtml(blogList['Blog'])">
+                    </h4>
+                  </div>
+                </div>
+
+                <!-- video -->
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <video controls playinline class="cvideo"
+                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video_01.svg"
+                      controlsList="nodownload">
+                      <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/email/videos/humanwisdom_launch.mp4"
+                        type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <!-- /video -->
+
+                <!-- desktop -->
+                <div class="row mt10px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
+                    <!-- desktop playstore -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0">
+                      <a
+                        (click)="clickbanner('https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dplaystore.svg"
+                          alt="" class="img-responsive">
+                      </a>
+                    </div>
+                    <!-- /desktop playstore -->
+
+                    <!-- desktop appstore -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0">
+                      <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/dappstore.svg"
+                          alt="" class="img-responsive">
+                      </a>
+                    </div>
+                    <!-- /desktop appstore -->
+                  </div>
+                </div>
+                <!-- /desktop -->
+
+                <!-- <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="mtb0px c3">This is a short video introduction to the HumanWisdom app - <a class="c4" href="https://staging.humanwisdom.me/course/adults/curated/youtubelink/GYbpYnkGJ0U">https://youtu.be/GYbpYnkGJ0U</a></h4>
+                  </div>
+                </div> -->
+
+                <!-- <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <h4 class="mtb0px fw_300 fs_12px lh_150p fc_5d5d5d">
+                      Tags
+                    </h4>
+                  </div>
+                </div> -->
+
+                <!-- <div class="row center_flex mt15px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <button type="button" class="btn btn-default btn-sm btn_blog_tags">
+                      eating disorder                   
+                    </button>
+              
+                    <button type="button" class="btn btn-default btn-sm btn_blog_tags">
+                      stress                
+                    </button>
+              
+                    <button type="button" class="btn btn-default btn-sm btn_blog_tags">
+                      body image             
+                    </button>
+              
+                    <button type="button" class="btn btn-default btn-sm btn_blog_tags">
+                      anorexia          
+                    </button>
+                  </div>
+                </div> -->
+
+                <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <hr class="hr_style_11 mtb30px">
+                  </div>
+                </div>
+
+                <div class="row center_flex blog_comment">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <h4 class="mtb0px fw_700 fs_14px lh_16px fc_5d5d5d p0">
+                      {{'Comments' + '(' + BlogCommentsLen + ')'}}
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row center_flex blog_comment_desc" *ngFor="let item of BlogCommentsList">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  flex_ai">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
+                      <img
+                        src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}"
+                        alt="" class="img-responsive w100p">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="mtb0px fw_400 fs_12px lh_14px fc_5d5d5d tleft">
+                        <span class="fw_700 fs_12px lh_14px fc_5d5d5d">
+                          {{item['UpdatedBy']}}
+                        </span>
+                        {{item['Comments']}}
+                        <span class="fw_500 fs_10px lh_12px fc_adadad">
+                          {{timeSince(item['UpdatedOn'])}}
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row center_flex blog_vac" *ngIf="BlogCommentsListabove.length !== 0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <!-- <h4 class="mtb0px fw_700 fs_14px lh_16px fc_4491a5">
+                      View all comments (47)
+                    </h4> -->
+                    <!-- accordion -->
+                    <div class="panel-group" id="accordion_blog">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                              href="#collapseOne">
+                              <h4 class="mtb0px fw_700 fs_14px lh_16px fc_4491a5">
+                                {{'View all comments' + '(' + BlogCommentsListabove.length + ')'}}
+                              </h4>
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row center_flex blog_comment_desc_01"
+                              *ngFor="let item of BlogCommentsListabove">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  flex_ai p0">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tcenter pl0">
+                                  <img
+                                    src="{{'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + getimg(item['ProfilePic'])}}"
+                                    alt="" class="img-responsive w100p">
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                  <h4 class="mtb0px fw_400 fs_12px lh_14px fc_5d5d5d tleft">
+                                    <span class="fw_700 fs_12px lh_14px fc_5d5d5d">
+                                      {{item['UpdatedBy']}}
+                                    </span>
+                                    {{item['Comments']}}
+                                    <span class="fw_500 fs_10px lh_12px fc_adadad">
+                                      {{timeSince(item['UpdatedOn'])}}
+                                    </span>
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /accordion -->
+                  </div>
+                </div>
+
+
+
+                <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <input type="text" class="form-control cfc4" [(ngModel)]="comment"
+                      [ngModelOptions]="{standalone: true}" placeholder="Leave a comment">
+                    <!-- <i class="fa fa-send-o" style="font-size:24px" (click)="postcomment()"></i> -->
+                  </div>
+                </div>
+
+                <div class="row center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tright mt5px">
+                    <button type="submit" class="btn btn-warning btn_post" (click)="postcomment()">
+                      <i class="fa fa-send-o fa_post_01" (click)="postcomment()"></i>
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class=""> -->
+                      Post
+                    </button>
+                  </div>
+                </div>
+
+                <!-- <div class="row center_flex mlr-10px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <hr class="hr_style_12">
+                  </div>
+                </div> -->
+
+                <!-- <div class="row center_flex blog_related_articles">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <h4 class="mtb0px fw_700 fs_14px lh_16px fc_5d5d5d">
+                      Related Articles
+                    </h4>
+                  </div>
+                </div> -->
+
+                <!-- <div class="row center_flex blog_related_articles">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
+                      <a href="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_02.svg" alt="" class="img-responsive img_blog_ra">
+                        <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
+                          An eating disorder
+                        </h4>
+                      </a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
+                      <a href="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_02.svg" alt="" class="img-responsive img_blog_ra">
+                        <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
+                          Angry Young Ryan
+                        </h4>
+                      </a>
+                    </div> -->
+
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
+                      <a href="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_03.svg" alt="" class="img-responsive img_blog_ra">
+                        <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
+                          Getting over bereavement
+                        </h4>
+                      </a>
+                    </div> -->
+
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 prelative mb10px">
+                      <a href="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/blog/blog_related_articles_04.svg" alt="" class="img-responsive img_blog_ra">
+                        <h4 class="mtb0px fw_500 fs_16px lh_19px fc_ffffff absolute_blog_ra_title tleft">
+                          Article Name
+                        </h4>
+                      </a>
+                    </div> -->
+                <!-- </div>
+                </div> -->
+
+                <div class="pagebreak"></div>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- content  -->
+<!-- /content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->

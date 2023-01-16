@@ -1,0 +1,99 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <a routerLink="/forum/forum-landing/">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="img-responsive">
+      </a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <a>
+        <h1 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+          New Thread
+        </h1>
+      </a>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+    </div>
+  </div>
+</div>
+<!-- /top navigation --> 
+
+<!-- page content -->
+<div class="right_col mc_01">				
+  <!-- Class -->
+  <div class="cw100p">    
+
+    <div class="row center_flex">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+          <div class="x_panel p0">
+            <div class="x_content p0">
+              <form> 
+
+                <div class="row forum_pt20px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 flex_ai">
+                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="{{'data:image/jpg;base64,' + userinfo.userimage}}" *ngIf="userinfo.userimage" alt="" class="w100 fimg_02">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/forum_09.svg" *ngIf="!userinfo.userimage"  alt="" class="p0">
+                    </div> -->
+                    <div class="col-md-6 col-sm-6 col-xs-6 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_000000 mtb0px">
+                        {{userinfo.username}}
+                      </h4>                      
+                    </div>                     
+                  </div>
+                </div>
+
+                <!-- <div class="row forum_pt20px">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <a href="">
+                      <h4 class="fw_500 fs_12px lh_14px fc_1092a7 mtb0px">
+                        + Add category (min. 1)
+                      </h4>
+                    </a>
+                  </div>
+                </div>                 -->
+
+                <div class="row forum_pt20px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 prelative">
+                    <div class="placeholder_odiv">
+                      <h4 class="fw_400 fs_16px lh_19px fc_adadad">
+                        Start a new thread
+                      </h4>
+                    </div>
+                    <textarea type="text" id="comment" name="thread" [(ngModel)]="thread" required="required" class="placeholder_idiv" placeholder="" maxlength="256"></textarea>
+                    <div class="placeholder_noc">
+                      <h4 class="fw_400 fs_10px lh_12px fc_adadad">
+                        {{thread.length}}/256
+                      </h4>
+                    </div>                    
+                  </div>
+                  <!-- <div class="col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" required="required" class="input_file" placeholder="Add image / audio / video / file">
+                  </div> -->
+                </div>
+
+                <div class="row forum_pt20px">                  
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button type="submit" class="btn btn-warning btn_fw_post w100" (click)="post()">                      
+                      Post
+                    </button>  
+                  </div>
+                </div>
+
+                <div class="pagebreak"></div>
+
+              </form>              
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation></app-bottom-navigation>
+<!-- /footer -->
