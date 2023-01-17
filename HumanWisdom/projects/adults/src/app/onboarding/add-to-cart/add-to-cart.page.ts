@@ -52,7 +52,7 @@ export class AddToCartPage implements OnInit, OnDestroy {
 
   constructor(private router: Router,private service:OnboardingService, private location:Location, private cd: ChangeDetectorRef) {
     if(localStorage.getItem('subscribepage') === 'T') {
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     }
     if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
@@ -118,7 +118,7 @@ setTimeout(() => {
 
   getActivationCode(){
     localStorage.setItem("activeCode", 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
  
@@ -277,7 +277,7 @@ submitcode(){
     if(!this.userId)
     {
       console.log("login first")
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
 
     }
      

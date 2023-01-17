@@ -97,7 +97,7 @@ export class S39002Page implements OnInit, OnDestroy {
       () => {
         //this.router.navigate(['/adults/conditioning/s3900234'])
       })
-    this.router.navigate(['/adults/awareness/s39003'])
+    
 
 
   }
@@ -108,7 +108,7 @@ export class S39002Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/adults/awareness/s39002'])
+    this.router.navigate(['/adults/awareness/s39003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

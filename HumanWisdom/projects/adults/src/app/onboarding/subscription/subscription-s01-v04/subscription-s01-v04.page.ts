@@ -61,9 +61,9 @@ export class SubscriptionS01V04Page implements OnInit {
   public showWarning=false
   constructor(private router: Router,public service:OnboardingService, public services:AdultsService, private location:Location, public logeventservice: LogEventService,  private cd: ChangeDetectorRef) {
     let res = localStorage.getItem("isloggedin")
-    if(res !== 'T') this.router.navigate(['/onboarding/login'])
+    if(res !== 'T') this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     if(localStorage.getItem('subscribepage') === 'T') {
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     }
     if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
@@ -136,7 +136,7 @@ setTimeout(() => {
 
   getActivationCode(){
     localStorage.setItem("activeCode", 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
  
@@ -150,7 +150,7 @@ setTimeout(() => {
   if(value === 'home') {
     this.router.navigate(['/adults/adult-dashboard'])
   }else {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 }
 
@@ -379,7 +379,7 @@ submitcode(){
     if(!this.userId)
     {
       console.log("login first")
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
 
     }
      

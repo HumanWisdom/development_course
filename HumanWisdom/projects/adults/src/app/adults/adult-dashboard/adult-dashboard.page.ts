@@ -44,6 +44,7 @@ export class AdultDashboardPage implements OnInit {
   public resume = []
   public bookmarkLength: any
   searchinp = '';
+  public dash = false;
   //static progress mapping
   public angerP: any
   public comparisonP: any
@@ -165,7 +166,7 @@ export class AdultDashboardPage implements OnInit {
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
     //   localStorage.setItem('guest', 'T')
-    //   this.router.navigate(['/onboarding/login'])
+    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
 
     this.logeventservice.logEvent('ga4sampletest');
@@ -198,7 +199,7 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
           localStorage.setItem('guest', 'T');
-          // this.router.navigate(['/onboarding/login'])
+          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
       }, error => {
         localStorage.setItem("email", 'guest@humanwisdom.me');
@@ -300,7 +301,7 @@ export class AdultDashboardPage implements OnInit {
     // $("#signuplogin").modal("hide");
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   getclcickevent(event) {
@@ -322,6 +323,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+    this.dash=this.router.url.includes('adult-dashboard');
     this.getuserDetail();
     setTimeout(() => {
       this.getUserPreference()
@@ -587,7 +589,7 @@ export class AdultDashboardPage implements OnInit {
   subscribenow() {
     // if(localStorage.getItem("email") === 'guest@humanwisdom.me'){
     //   localStorage.setItem("subscribepage", 'T')
-    //   this.router.navigate(['/onboarding/login'])
+    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // } else {
     //   this.router.navigate(['/onboarding/add-to-cart'])
     // }
@@ -1021,7 +1023,7 @@ export class AdultDashboardPage implements OnInit {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    this.router.navigate([]).then(() => { window.open('/adults/help-support/cookie-policy', '_blank'); });
+    this.router.navigate([]).then(() => { window.open('/cookies-policy', '_blank'); });
   }
 
   socialLogin() {
@@ -1434,7 +1436,7 @@ export class AdultDashboardPage implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   friendName(value) {

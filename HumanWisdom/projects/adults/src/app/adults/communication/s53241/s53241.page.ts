@@ -83,7 +83,8 @@ export class S53241Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/adults/communication/s53242'])
+   
+    
 
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
@@ -111,7 +112,7 @@ export class S53241Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/adults/communication/s2'])
+    this.router.navigate(['/adults/communication/s53242'])
 
 
     if (this.userId !== 563) this.submitProgress()

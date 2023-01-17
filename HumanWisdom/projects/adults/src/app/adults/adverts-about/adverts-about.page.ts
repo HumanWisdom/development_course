@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
 import { Router } from '@angular/router';
 @Component({
@@ -14,7 +14,11 @@ export class AdvertsAboutPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (!this.router.url.includes('/about-us')) {
+      window.history.pushState('', '', '/about-us');
+    }
   }
+
 
   clickbanner(url = '') {
     if (url === '') {
@@ -30,6 +34,11 @@ export class AdvertsAboutPage implements OnInit {
 
   routedashboard() {
     this.router.navigate(['/adults/adult-dashboard'])
+  }
+
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+
   }
 
 }

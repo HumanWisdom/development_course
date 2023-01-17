@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./bottom-navigation.component.scss'],
 })
 export class BottomNavigationComponent implements OnInit {
-  dash = false
+  @Input() dash = false;
   journal = false
   fourm = false
   profile = false
@@ -90,7 +90,7 @@ export class BottomNavigationComponent implements OnInit {
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
       localStorage.setItem('btnclick', 'T')
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       // }
 
     }
