@@ -8,12 +8,15 @@ import { ForgetPasswordPageRoutingModule } from './forget-password-routing.modul
 
 import { ForgetPasswordPage } from './forget-password.page';
 
+import { SharedModule } from '../../../../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ForgetPasswordPageRoutingModule
+    ForgetPasswordPageRoutingModule,
+    SharedModule
   ],
   declarations: [ForgetPasswordPage]
 })
