@@ -221,6 +221,7 @@
         left: 5% !important;
     }
     
+    #bgd_video > video,
     .bg_adverts_hwp
     {
         display: none;
