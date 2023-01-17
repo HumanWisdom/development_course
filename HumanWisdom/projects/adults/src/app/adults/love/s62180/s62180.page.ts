@@ -92,13 +92,13 @@ export class S62180Page implements OnInit {
 
 
   submitProgress(e) {
-    console.log("returned response", e)
+   
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r62180", JSON.stringify(e))
     this.r62180 = sessionStorage.getItem("r62180")
-    console.log(this.r62180)
-
+    this.router.navigate(['/adults/love/s62181'])
+    if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -114,11 +114,11 @@ export class S62180Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/love/s62181'])
+        
 
       },
       () => {
-        this.router.navigate(['/adults/love/s62181'])
+        
       })
 
 
