@@ -27,8 +27,6 @@
 </div> -->
 <!-- /google playstore -->
 
-<app-bg-video></app-bg-video>
-
 <!-- page content -->
 <div class="right_col dmain_container p0_important" role="main" [ngClass]="[enablebanner ? 'pt12rem' : 'pt6rem']">
   <!-- Class -->
@@ -1855,7 +1853,7 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
+<app-bottom-navigation (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 <!-- /footer -->
 
 <!-- popup modal -->
