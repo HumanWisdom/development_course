@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
 import { AdultsService } from '../adults.service';
 
 @Component({
@@ -11,11 +12,15 @@ export class ReferFriendPage implements OnInit {
   email = '';
   name = '';
 
-  constructor(private service: AdultsService, private location: Location) { }
+  constructor(private service: AdultsService, private location: Location, public platform: Platform) { }
 
   ngOnInit() {
   }
-
+  sharewhatsapp(){
+    var url ='https://api.whatsapp.com/send'
+   var text="Check out the HumanWisdom Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom";
+    window.open(url + '?text='+encodeURIComponent(text))
+  }
   keyname(value: any) {
     this.name = value.value
   }
