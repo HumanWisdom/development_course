@@ -107,7 +107,7 @@ export class S53050Page implements OnInit {
 
       },
       () => {
-        this.router.navigate(['/adults/communication/s53051'])
+        
       })
 
 
