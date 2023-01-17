@@ -83,7 +83,7 @@ export class S62124Page implements OnInit, OnDestroy {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    
+   
     
 
     this.service.submitProgressText({
