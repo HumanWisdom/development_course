@@ -65,6 +65,8 @@ export class S73004tPage implements OnInit {
   }
   submitProgress(){
     this.router.navigate(['/adults/money/s73005'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
