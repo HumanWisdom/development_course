@@ -353,6 +353,8 @@ export class S59166Page implements OnInit {
     this.router.navigate(['/adults/leadership/s59167'])
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
+    if (this.userId === 563) return;
+    
     this.service.submitProgressQuestion({
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
