@@ -93,6 +93,8 @@ export class S73060Page implements OnInit,OnDestroy {
     this.totalTime = this.endTime - this.startTime;
    
     this.router.navigate(['/adults/money/s73061'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

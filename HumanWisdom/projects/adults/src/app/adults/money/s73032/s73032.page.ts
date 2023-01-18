@@ -82,6 +82,9 @@ export class S73032Page implements OnInit, OnDestroy {
   }
   submitProgress() {
     this.router.navigate(['/adults/money/s73033'])
+    if (this.userId === 563) return;
+
+    
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
