@@ -172,7 +172,9 @@ export class S20070p2Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r20070p2", this.r20070p2)
     this.r20070p2 = sessionStorage.getItem("r20070p2")
-    console.log(this.r20070p2)
+    this.router.navigate(['/adults/pleasure/s20070p3'])
+    if (this.userId === 563) return;
+
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -188,10 +190,8 @@ export class S20070p2Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/pleasure/s20070p3'])
       },
       () => {
-        this.router.navigate(['/adults/pleasure/s20070p3'])
       })
   }
 

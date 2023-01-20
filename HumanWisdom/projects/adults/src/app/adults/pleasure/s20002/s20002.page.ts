@@ -87,6 +87,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/pleasure/s20003'])
+    if (this.userId === 563) return;
     this.service.submitProgressText({
      
       "ScrNumber":this.screenNumber,
@@ -110,10 +111,7 @@ createScreen(){
       
   }
 
-  goNext(){
   
-
-  }
 
   ngOnDestroy(){
     
