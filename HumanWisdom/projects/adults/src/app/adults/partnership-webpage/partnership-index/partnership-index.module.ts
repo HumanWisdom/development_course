@@ -8,12 +8,15 @@ import { PartnershipIndexPageRoutingModule } from './partnership-index-routing.m
 
 import { PartnershipIndexPage } from './partnership-index.page';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PartnershipIndexPageRoutingModule
+    PartnershipIndexPageRoutingModule,
+    SharedModule
   ],
   declarations: [PartnershipIndexPage]
 })

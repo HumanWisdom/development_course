@@ -52,6 +52,8 @@
 <app-tn-hwp-project></app-tn-hwp-project>
 <!-- /header -->
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_01">
     <!-- Class -->
@@ -210,21 +212,21 @@
 
                                             <ng-container *ngFor="let item of notmyprograms">
                                                 <div class="row spt10px center_flex" *ngIf="item['Email'] !== ''">
-                                                    <div class="col-md-6 col-sm-6 col-xs-8 center_flex">
+                                                    <div class="col-md-10 col-sm-10 col-xs-8 p0 center_flex">
                                                         <div class="col-md-2 col-sm-2 col-xs-2 p0">
                                                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/gift.svg"
                                                                 alt="" class="">
                                                         </div>
                                                         <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                                                            <h6 class="sfw_500 fs_18px lh_130p fc_5d5d5d tleft mtb0px">
+                                                            <h6 class="sfw_500 fs_18px lh_130p fc_5d5d5d tleft mtb0px ellipsis_01">
                                                                 {{item['Email']}}
                                                             </h6>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-6 col-sm-6 col-xs-4 tright"
+                                                    <div class="col-md-2 col-sm-2 col-xs-4 pr0px tright"
                                                         >
-                                                        <h6 class="fw_500 fs_12px lh_14px fc_b92f48 mtb0px fright">
+                                                        <h6 class="fw_500 fs_12px lh_14px fc_b92f48 mtb0px fright ws_nowrap">
                                                             Invite Sent
                                                         </h6>
                                                     </div>

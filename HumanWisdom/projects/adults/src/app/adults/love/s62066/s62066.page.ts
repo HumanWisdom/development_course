@@ -30,6 +30,8 @@ export class S62066Page implements OnInit {
   totalTime:any
   bookmark=0
   path=this.router.url
+ 
+
   
 
   
@@ -92,6 +94,8 @@ export class S62066Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/love/s62067'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
