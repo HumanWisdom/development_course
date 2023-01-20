@@ -63,6 +63,8 @@ export class S48097tPage implements OnInit {
   }
   submitProgress(){
     this.router.navigate(['/adults/success-failure/s48098'])
+    if (this.userId === 563) return;
+
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
