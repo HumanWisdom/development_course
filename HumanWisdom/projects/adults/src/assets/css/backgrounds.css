@@ -251,7 +251,8 @@
   min-height: 100vh; 
 }
 
-.bg_video
+.bg_video,
+.right_col
 {
   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/video/bg_video.svg) no-repeat center center!important;
   -webkit-background-size: cover;
@@ -262,4 +263,5 @@
   z-index: 0; 
   min-height: 100vh;
   transition: none;
+  background-color: none !important;
 }
