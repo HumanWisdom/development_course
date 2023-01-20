@@ -23,6 +23,7 @@ export class ProfilePage implements OnInit {
   fri = false
   sat = false
   email;
+  direction="up";
   paymentDetail;
   RoleID = 0
   url = ''
@@ -30,6 +31,7 @@ export class ProfilePage implements OnInit {
   enablepayment = true;
   isPartner=false;
   partnerOption = localStorage.getItem('PartnerOption');
+  score=0;
   constructor(private router: Router, private Onboardingservice: OnboardingService, 
               public platform: Platform, public logeventservice: LogEventService) {
     let userId = JSON.parse(localStorage.getItem("userId"))
@@ -43,6 +45,13 @@ export class ProfilePage implements OnInit {
     if (this.platform.IOS) {
       this.enablepayment = false;
     }
+    debugger;
+   this.score = (+this.loginResponse.hwScore)-(+this.loginResponse.hwPrevScore);
+   if(this.score>0){
+    this.direction = "up";
+   }else{
+    this.direction ="down";
+   }
   }
 
   ngOnInit() {
