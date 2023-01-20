@@ -92,6 +92,9 @@ export class S48075Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/success-failure/s48076'])
+    if (this.userId === 563) return;
+
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
