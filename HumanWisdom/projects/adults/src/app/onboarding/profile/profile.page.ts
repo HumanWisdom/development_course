@@ -45,11 +45,12 @@ export class ProfilePage implements OnInit {
     if (this.platform.IOS) {
       this.enablepayment = false;
     }
-    debugger;
    this.score = (+this.loginResponse.hwScore)-(+this.loginResponse.hwPrevScore);
-   if(this.score>0){
+  
+   if(this.score>0|| this.score==0){
     this.direction = "up";
    }else{
+    this.score=-(this.score);
     this.direction ="down";
    }
   }
