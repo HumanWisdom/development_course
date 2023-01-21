@@ -14,7 +14,6 @@ export class VideoContentComponent implements OnInit {
   @Input() title: string;
   @Input() poster: any;
   @Input() videoclass = '';
-  @Input() pageaction = '';
   @Input() wisdomshortsv = false;
 
   @Output() sendAvDuration = new EventEmitter<string>();
@@ -28,6 +27,7 @@ export class VideoContentComponent implements OnInit {
   scrId: any
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+  pageaction = localStorage.getItem("pageaction");
 
   @ViewChild('screen', { static: true }) screen: any;
 
@@ -50,16 +50,9 @@ export class VideoContentComponent implements OnInit {
     // var lastSlash = str.lastIndexOf("/");
     // str = str.substring(lastSlash + 2);
     //str = str.replace(/\D/g,'');
-      if (str.includes('next') || str.includes('prev')) {
-        let lastSlash: any = str.split("/");
-        let getsplit = lastSlash[lastSlash.length - 2]
-        this.scrId = getsplit.substring(1);
-      } else {
-        var lastSlash = str.lastIndexOf("/");
-        this.scrId = str.substring(lastSlash + 1);
-      }
-    
-      
+
+    var lastSlash = str.lastIndexOf("/");
+    this.scrId = str.substring(lastSlash + 1);
 
     //call api to geta percent
     this.service.mediaPercent(this.scrId).subscribe(res => {

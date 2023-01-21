@@ -110,8 +110,8 @@ export class S28006Page implements OnInit {
 
   }
   prev() {
-    this.router.navigate(['/adults/nature/s28005/prev'])
-
+    this.router.navigate(['/adults/nature/s28005'])
+    localStorage.setItem("pageaction", 'prev')
 
   }
   ngOnDestroy() {
