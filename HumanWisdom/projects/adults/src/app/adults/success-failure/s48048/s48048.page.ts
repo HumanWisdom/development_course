@@ -92,12 +92,12 @@ export class S48048Page implements OnInit {
 
 
   submitProgress(e) {
-    console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r48048", JSON.stringify(e))
     this.r48048 = sessionStorage.getItem("r48048")
-    console.log(this.r48048)
+    this.router.navigate(['/adults/success-failure/s48049'])
+    if (this.userId === 563) return;
 
 
     this.service.submitProgressReflection({
@@ -114,11 +114,9 @@ export class S48048Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/success-failure/s48049'])
 
       },
       () => {
-        this.router.navigate(['/adults/success-failure/s48049'])
       })
 
 

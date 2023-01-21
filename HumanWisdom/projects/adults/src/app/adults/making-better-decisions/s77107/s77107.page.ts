@@ -327,6 +327,8 @@ export class S77107Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/making-better-decisions/s77108'])
+    if (this.userId === 563) return;
+
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
     this.service.submitProgressQuestion({
