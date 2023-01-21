@@ -89,8 +89,8 @@ export class S28003Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/nature/s28004'])
     localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/nature/s28004'])
     this.service.submitProgressAv({
 
       "ScrNumber": this.screenNumber,

@@ -105,9 +105,9 @@ export class S28005Page implements OnInit {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/nature/s28004'])
 
-    localStorage.setItem("pageaction", 'prev')
   }
   ngOnDestroy() {
 
