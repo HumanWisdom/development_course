@@ -35,8 +35,6 @@ export class S28004Page implements OnInit {
   path = this.router.url
   avDuration: any
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
-  ispageright = ''
-
 
   constructor(
     private router: Router,
@@ -46,13 +44,6 @@ export class S28004Page implements OnInit {
   ngOnInit() {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    let m: any = window.location.href;
-    m = m.split('/')
-    if (m.at(-1) === 'next') {
-      this.ispageright = 'next';
-    } else if (m.at(-1) === 'prev') {
-      this.ispageright = 'prev';
-    }
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
@@ -95,7 +86,8 @@ export class S28004Page implements OnInit {
 
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/nature/s28005/next'])
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/nature/s28005'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -115,8 +107,8 @@ export class S28004Page implements OnInit {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/nature/s28003'])
-
 
   }
   ngOnDestroy() {
