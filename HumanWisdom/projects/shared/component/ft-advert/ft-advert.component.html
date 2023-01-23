@@ -42,7 +42,7 @@
 
                   <a class="" (click)="navigate('/adults/adverts-work')">
                     <li class="">
-                      HumanWisdom for Businesses
+                      HumanWisdom for Business
                     </li>
                   </a>
 
@@ -52,7 +52,7 @@
                     </li>
                   </a>
 
-                  <a class="" routerLink="/onboarding/add-to-cart">
+                  <a class="" routerLink="/onboarding/add-to-cart" *ngIf="!isSubscribe">
                     <li class="">
                       <!-- Subscribe to HumanWisdom Premium -->
                       Subscribe to Premium
