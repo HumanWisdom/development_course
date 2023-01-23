@@ -90,7 +90,12 @@ export class S28006Page implements OnInit {
 
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    
+
     this.router.navigate(['/adults/nature/s28007'])
+    localStorage.setItem("pageaction", 'next')
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -110,8 +115,9 @@ export class S28006Page implements OnInit {
 
   }
   prev() {
-    this.router.navigate(['/adults/nature/s28005'])
     localStorage.setItem("pageaction", 'prev')
+    this.router.navigate(['/adults/nature/s28005'])
+   
 
   }
   ngOnDestroy() {
