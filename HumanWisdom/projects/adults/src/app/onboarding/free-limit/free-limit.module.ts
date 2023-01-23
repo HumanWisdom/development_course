@@ -8,12 +8,15 @@ import { FreeLimitPageRoutingModule } from './free-limit-routing.module';
 
 import { FreeLimitPage } from './free-limit.page';
 
+import { SharedModule } from '../../../../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FreeLimitPageRoutingModule
+    FreeLimitPageRoutingModule,
+    SharedModule
   ],
   declarations: [FreeLimitPage]
 })
