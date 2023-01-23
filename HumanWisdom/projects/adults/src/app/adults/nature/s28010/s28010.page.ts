@@ -95,7 +95,8 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/nature/s28011'])
-
+    localStorage.setItem("pageaction", 'next')
+    if (this.userId === 563) return;
 
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -115,6 +116,7 @@ createScreen(){
    
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/nature/s28009'])
 
 

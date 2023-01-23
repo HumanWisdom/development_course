@@ -86,8 +86,9 @@ export class S28004Page implements OnInit {
 
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/nature/s28005'])
+    localStorage.setItem("pageaction", 'next')
+    if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
