@@ -26,7 +26,9 @@ export class BottomNavigationComponent implements OnInit {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
     }
-    if (this.router.url == "/adults/search" || this.router.url.includes('/adults/site-search/')) {
+    if (this.router.url == "/adults/search"
+      || this.router.url.includes('/adults/site-search/') ||
+      this.router.url.includes('/adults/search')) {
       this.dash = false
       this.journal = false
       this.profile = false
