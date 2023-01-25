@@ -22121,12 +22121,14 @@ ul.dh_ul li
 /* t&c */
 .bc_div
 {
-  height: 40px;
+  height: 60px;
   background-color: #f5f9fc;
   margin: 0 -20px;
   padding: 0 20px;
   display: flex;
   align-items: center;
+  z-index: 10;
+  box-shadow: 0px 2px 2px #adadad;
 }
 
 .cbc
