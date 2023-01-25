@@ -26,7 +26,9 @@ export class BottomNavigationComponent implements OnInit {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
     }
-    if (this.router.url == "/adults/search" || this.router.url.includes('/adults/site-search/')) {
+    if (this.router.url == "/adults/search"
+      || this.router.url.includes('/adults/site-search/') ||
+      this.router.url.includes('/adults/search')) {
       this.dash = false
       this.journal = false
       this.profile = false
@@ -55,7 +57,7 @@ export class BottomNavigationComponent implements OnInit {
     }
     if (this.router.url == "/onboarding/user-profile"
       || this.router.url.includes('/onboarding/payment-details') || this.router.url.includes('/profile-edit') ||
-      this.router.url.includes('/onboarding/myprogram') || this.router.url.includes('adults/refer-friend')) {
+      this.router.url.includes('/onboarding/myprogram')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
@@ -90,7 +92,7 @@ export class BottomNavigationComponent implements OnInit {
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
       localStorage.setItem('btnclick', 'T')
-      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
       // }
 
     }

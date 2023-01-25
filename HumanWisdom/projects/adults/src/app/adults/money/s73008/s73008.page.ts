@@ -193,7 +193,7 @@ export class S73008Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/money/s73009'])
-
+    if (this.userId === 563) return;
 
 
     var optionT = [this.s1]

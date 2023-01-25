@@ -88,6 +88,9 @@ export class S77009Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/making-better-decisions/s77010'])
+    if (this.userId === 563) return;
+
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

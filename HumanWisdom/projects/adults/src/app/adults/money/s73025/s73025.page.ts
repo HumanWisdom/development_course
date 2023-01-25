@@ -97,8 +97,8 @@ export class S73025Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r73025", JSON.stringify(e))
     this.r73025 = sessionStorage.getItem("r73025")
-    console.log(this.r73025)
-
+    this.router.navigate(['/adults/money/s73026'])
+    if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -114,11 +114,10 @@ export class S73025Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/money/s73026'])
-
+        
       },
       () => {
-        this.router.navigate(['/adults/money/s73026'])
+        
       })
 
 
