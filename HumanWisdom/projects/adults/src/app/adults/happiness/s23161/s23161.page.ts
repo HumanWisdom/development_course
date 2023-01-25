@@ -88,6 +88,7 @@ export class S23161Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/happiness/s23162'])
     if (this.userId === 563) return;
     
@@ -111,6 +112,7 @@ export class S23161Page implements OnInit,OnDestroy {
  
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23160'])
  
  

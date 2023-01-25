@@ -101,6 +101,7 @@ export class S62062Page implements OnInit,OnDestroy {
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/love/s62061'])
     
   }

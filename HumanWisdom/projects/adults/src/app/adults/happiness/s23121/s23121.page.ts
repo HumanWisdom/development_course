@@ -81,6 +81,7 @@ export class S23121Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/happiness/s23122'])
    
     if (this.userId === 563) return;
@@ -101,6 +102,7 @@ export class S23121Page implements OnInit,OnDestroy {
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23120'])
     
   }
