@@ -1495,7 +1495,7 @@ export class AdultDashboardPage implements OnInit {
         this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
         this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
         this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        this.guideP = res.ModUserScrPc.find(e => e.Module == "User Guide")?.Percentage
+        this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
         this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
         this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of Enquiry")?.Percentage
         this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
