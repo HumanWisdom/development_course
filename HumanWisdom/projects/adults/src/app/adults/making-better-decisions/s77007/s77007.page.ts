@@ -114,6 +114,7 @@ export class S77007Page implements OnInit {
 
   previous() 
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77006'])
   }
 

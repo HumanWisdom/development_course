@@ -104,12 +104,14 @@ export class S73032Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/money/s73031'])
 
   }
 
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/money/s73033'])
     if (this.userId !== 563) this.submitProgress()
 

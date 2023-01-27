@@ -78,6 +78,7 @@ export class S77044Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/making-better-decisions/s77045'])
     if (this.userId === 563) return;
 
