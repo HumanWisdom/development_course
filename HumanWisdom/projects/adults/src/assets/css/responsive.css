@@ -1013,12 +1013,3 @@
         font-size: 35px;
     }
 }
-
-@media (max-device-width: 767px)
-{
-    #bgd_video > video,
-    .bg_adverts_hwp
-    {
-        display: none;
-    }
-}
