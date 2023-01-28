@@ -350,6 +350,9 @@ export class S73102Page implements OnInit {
     this.router.navigate(['/adults/money/s73103'])
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
+    if (this.userId === 563) return;
+
+    
     this.service.submitProgressQuestion({
       "ModuleId": this.moduleId,
       "screenType": this.screenType,

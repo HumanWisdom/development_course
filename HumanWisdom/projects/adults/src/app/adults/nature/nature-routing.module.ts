@@ -39,12 +39,12 @@ const routes: Routes = [
     component: S28003Page,
   },
   {
-    path: 's28004/:action',
+    path: 's28004',
     canActivate: [ActiveGuard],
     component: S28004Page,
   },
   {
-    path: 's28005/:action',
+    path: 's28005',
     canActivate: [ActiveGuard],
     component: S28005Page,
   },

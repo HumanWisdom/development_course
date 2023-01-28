@@ -267,6 +267,8 @@ export class S77023Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/making-better-decisions/s77024'])
+    if (this.userId === 563) return;
+
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

@@ -174,7 +174,8 @@ export class S77109Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r77109", this.r77109)
     this.r77109 = sessionStorage.getItem("r77109")
-    console.log(this.r77109)
+    this.router.navigate(['/adults/making-better-decisions/s77110'])
+    if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -190,10 +191,9 @@ export class S77109Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/making-better-decisions/s77110'])
       },
       () => {
-        this.router.navigate(['/adults/making-better-decisions/s77110'])
+       
       })
   }
 

@@ -154,6 +154,9 @@ export class S48013Page implements OnInit {
 
   submitProgress(){
     this.router.navigate(['/adults/success-failure/s48014'])
+    if (this.userId === 563) return;
+
+    
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,

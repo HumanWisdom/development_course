@@ -1,8 +1,8 @@
+import { Platform } from "@angular/cdk/platform";
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-import {AdultsService} from "../../../adults/src/app/adults/adults.service"
-import { Platform } from "@angular/cdk/platform";
+import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -12,10 +12,9 @@ export class CourseHeaderComponent implements OnInit {
   @Input() bookmark: boolean;
   @Input() bg: string;
   @Input() bg_tn: string;
-  @Input() path: string; //to go back to the course page from note 
+  @Input() path: string; //to go back to the course page from note
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
-  @Input() pageaction = '';
   note: any
   t = new Date()
   minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
@@ -31,7 +30,7 @@ export class CourseHeaderComponent implements OnInit {
   modName: any
   scrNumber: any
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
-
+  pageaction = localStorage.getItem("pageaction");
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -53,16 +52,10 @@ export class CourseHeaderComponent implements OnInit {
     // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
 
-    if (this.path.includes('next') || this.path.includes('prev')) {
-      let lastSlash: any = this.path.split("/");
-      let getsplit = lastSlash[lastSlash.length - 2]
-      this.scrNumber = getsplit.substring(1);
-      this.getProgress(this.scrNumber)
-    } else {
-      var lastSlash = this.path.lastIndexOf("/");
-      this.scrNumber = this.path.substring(lastSlash + 2);
-      this.getProgress(this.scrNumber)
-    }
+    var lastSlash = this.path.lastIndexOf("/");
+    this.scrNumber = this.path.substring(lastSlash + 2);
+    this.getProgress(this.scrNumber)
+
     this.shared = false
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }

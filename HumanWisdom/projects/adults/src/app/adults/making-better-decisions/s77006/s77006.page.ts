@@ -74,7 +74,6 @@ export class S77006Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/making-better-decisions/s77007'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -100,7 +99,7 @@ export class S77006Page implements OnInit, OnDestroy {
 
   goNext() 
   {
-    // this.router.navigate(['/adults/making-better-decisions/s2'])
+    this.router.navigate(['/adults/making-better-decisions/s77007'])
     if (this.userId !== 563) this.submitProgress()
   }
 
