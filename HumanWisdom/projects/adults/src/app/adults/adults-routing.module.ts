@@ -413,9 +413,13 @@ const routes: Routes = [
     path: 'contact-coach',
     loadChildren: () => import('./contact-coach/contact-coach.module').then(m => m.ContactCoachPageModule)
   },
+  {
+    path:'gpay',
+    loadChildren:() =>import('./gpay/gpay.module').then(m=>m.GpayModule)
+  }
 ];
 
-@NgModule({
+ @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
