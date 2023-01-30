@@ -94,11 +94,13 @@ export class S77006Page implements OnInit, OnDestroy {
 
   prev() 
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77005'])
   }
 
   goNext() 
   {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/making-better-decisions/s77007'])
     if (this.userId !== 563) this.submitProgress()
   }

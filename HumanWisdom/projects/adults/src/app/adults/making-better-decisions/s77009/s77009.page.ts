@@ -87,6 +87,7 @@ export class S77009Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/making-better-decisions/s77010'])
     if (this.userId === 563) return;
 
@@ -108,6 +109,7 @@ export class S77009Page implements OnInit,OnDestroy {
 
   prev()
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77008'])
   }
 

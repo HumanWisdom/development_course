@@ -98,6 +98,7 @@ export class S48032Page implements OnInit, OnDestroy {
   }
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/success-failure/s48033'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;

@@ -350,6 +350,7 @@ export class S59166Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/leadership/s59167'])
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
@@ -370,6 +371,7 @@ export class S59166Page implements OnInit {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/leadership/s59165'])
 
   }

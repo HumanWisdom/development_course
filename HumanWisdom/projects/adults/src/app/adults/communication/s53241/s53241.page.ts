@@ -112,6 +112,7 @@ export class S53241Page implements OnInit, OnDestroy {
 
 
   goNext() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53242'])
 
 

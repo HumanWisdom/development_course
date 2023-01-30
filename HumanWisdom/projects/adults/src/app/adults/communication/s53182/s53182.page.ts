@@ -82,7 +82,7 @@ export class S53182Page implements OnInit, OnDestroy {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/communication/s53183'])
     if (this.userId === 563) return;
     
@@ -107,6 +107,7 @@ export class S53182Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53181'])
 
   }

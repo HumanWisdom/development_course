@@ -61,6 +61,7 @@ export class S53178tPage implements OnInit {
     sessionStorage.setItem("bookmark53178",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/communication/s53179'])
     if (this.userId === 563) return;
     
@@ -80,6 +81,7 @@ export class S53178tPage implements OnInit {
    
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53177'])
   }
 

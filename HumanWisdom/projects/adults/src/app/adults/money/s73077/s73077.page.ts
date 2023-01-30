@@ -99,6 +99,7 @@ export class S73077Page implements OnInit, OnDestroy {
   }
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/money/s73078'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;

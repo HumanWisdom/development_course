@@ -171,7 +171,9 @@ export class S20070p2Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r20070p2", this.r20070p2)
+
     this.r20070p2 = sessionStorage.getItem("r20070p2")
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/pleasure/s20070p3'])
     if (this.userId === 563) return;
 
@@ -197,6 +199,7 @@ export class S20070p2Page implements OnInit {
 
 
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/pleasure/s20070p1'])
 
   }

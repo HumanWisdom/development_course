@@ -81,6 +81,7 @@ export class S53126Page implements OnInit {
   }
 
   submitProgress(e) {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/communication/s53127'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -115,6 +116,7 @@ export class S53126Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53125'])
   }
 
