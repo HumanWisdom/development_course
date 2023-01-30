@@ -62,6 +62,7 @@ export class S48091tPage implements OnInit {
     sessionStorage.setItem("bookmark48091",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/success-failure/s48092'])
     if (this.userId === 563) return;
 
@@ -82,6 +83,7 @@ export class S48091tPage implements OnInit {
     
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/success-failure/s48090'])
   }
 
