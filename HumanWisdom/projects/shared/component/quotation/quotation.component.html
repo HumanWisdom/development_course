@@ -1,12 +1,13 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_02" #screen role="main">				
-  <!-- Class -->  
+<div class="right_col mc_02" #screen role="main">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02" [ngClass]="bg">
-        <div class="x_panel p0">  
+        <div
+          [ngClass]="[pageaction === 'next' ? 'x_panel p0 rtltext' : pageaction === 'prev' ? 'x_panel p0 ltrtext' : 'x_panel p0' ]">
           <div class="x_content p0">
             <ng-content></ng-content>
           </div>
@@ -14,6 +15,6 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
