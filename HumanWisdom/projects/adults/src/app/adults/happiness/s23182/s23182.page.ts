@@ -44,11 +44,13 @@ export class S23182Page implements OnInit {
   }
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
    // this.router.navigate(['/adults/happiness/s23183'])
    this.router.navigate(['/adults/happiness/s23183'])
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23181p4'])
 
   }

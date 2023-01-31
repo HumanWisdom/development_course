@@ -97,6 +97,7 @@ export class S48008Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r48008", JSON.stringify(e))
     this.r48008 = sessionStorage.getItem("r48008")
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/success-failure/s48009'])
     if (this.userId === 563) return;
 
@@ -126,6 +127,7 @@ export class S48008Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/success-failure/s48007'])
   }
 

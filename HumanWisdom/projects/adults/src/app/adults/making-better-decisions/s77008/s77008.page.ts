@@ -92,11 +92,13 @@ export class S77008Page implements OnInit {
 
   prev() 
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77007'])
   }
 
   goNext() 
   {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/making-better-decisions/s77009'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
