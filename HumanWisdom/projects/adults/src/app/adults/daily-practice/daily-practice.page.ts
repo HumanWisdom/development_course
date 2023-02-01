@@ -94,7 +94,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   subdailyques() {
-    this.logeventservice.logEvent('click_ add_to_Journal');
+    this.logeventservice.logEvent('click_add_answer_here');
     if(!this.isloggedIn || !this.isSubscribe){
       alert("Subscribe to activate your online journal");
     }else{
