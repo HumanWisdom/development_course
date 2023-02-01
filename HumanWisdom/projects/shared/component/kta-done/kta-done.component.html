@@ -15,9 +15,14 @@
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/lightbulb.svg" alt="" class="img_kta cmw">
                 </div>
               </div>
-            </div>  		
-            <ng-content></ng-content>
-            <div class="pagebreak"></div>
+            </div>  
+            <div
+            [ngClass]="[pageaction === 'next' ? 'x_panel xpanel_01 p0 rtltext' : pageaction === 'prev' ? 'x_panel xpanel_01 p0 ltrtext' : 'x_panel xpanel_01 p0' ]">
+            <div class="x_content p0">
+            <ng-content></ng-content> 
+          </div>
+        </div>
+            
           </div>
         </div>
       </div>

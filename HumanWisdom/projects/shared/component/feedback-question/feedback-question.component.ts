@@ -10,7 +10,7 @@ import {Router} from '@angular/router'
 export class FeedbackQuestionComponent implements OnInit {
   @Input() skipToPage:string
 
-
+  pageaction = localStorage.getItem("pageaction");
   constructor(public router: Router) { }
 
   ngOnInit() {
