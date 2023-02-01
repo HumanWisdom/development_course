@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AdultsService } from "../../adults.service";
+import { AdultsService } from '../../adults.service'; 
+import { LogEventService } from 'src/app/log-event.service';
 
 
 @Component({
@@ -83,6 +84,7 @@ export class WisdomScalePage implements OnInit {
   constructor(private router: Router,
     private service: AdultsService,
     private location: Location,
+    public logeventservice: LogEventService,
     private ac: ActivatedRoute) {
 
     this.ac.queryParams.subscribe(params => {
@@ -277,6 +279,8 @@ export class WisdomScalePage implements OnInit {
 
 
   submitProgress() {
+    this.logeventservice.logEvent('click_survey_submit');
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
