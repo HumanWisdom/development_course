@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 import { StartHereRoutingModule } from './start-here-routing.module';
 
@@ -57,6 +58,7 @@ import { S78023Page } from './s78023/s78023.page';
   imports: [
     CommonModule,
     IonicModule,
+    SharedModule,
     StartHereRoutingModule
   ]
 })

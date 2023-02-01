@@ -31736,6 +31736,12 @@ label.select_label:after
   background: rgba(255,255,255,0);
 }
 
+.oh_fcblue:hover,
+.oh_fcblue:focus
+{
+  color: royalblue !important;
+}
+
 /* teenagers */
 .btn_intro_splash
 {
