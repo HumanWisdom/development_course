@@ -153,6 +153,7 @@ export class S62109Page implements OnInit {
  
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/love/s62110'])
     if (this.userId === 563) return;
     
@@ -174,6 +175,7 @@ export class S62109Page implements OnInit {
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/love/s62108'])
 
 

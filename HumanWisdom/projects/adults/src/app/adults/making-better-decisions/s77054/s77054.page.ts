@@ -88,6 +88,7 @@ export class S77054Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r77054", JSON.stringify(e))
     this.r77054 = sessionStorage.getItem("r77054")
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/making-better-decisions/s77055'])
     if (this.userId === 563) return;
 
@@ -114,6 +115,7 @@ export class S77054Page implements OnInit {
 
   previous() 
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77053'])
   }
 

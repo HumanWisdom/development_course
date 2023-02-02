@@ -1,5 +1,5 @@
-import { Component, OnInit,Input,Output, EventEmitter,AfterViewInit,ViewChild } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
@@ -8,26 +8,27 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './quotation.component.html',
   styleUrls: ['./quotation.component.scss'],
 })
-export class QuotationComponent implements OnInit,AfterViewInit {
+export class QuotationComponent implements OnInit, AfterViewInit {
   @Input() bg: string
 
-  scrId:any
+  scrId: any
   @ViewChild('screen', { static: true }) screen: any;
+  pageaction = localStorage.getItem("pageaction");
 
   constructor(
-    private captureService:NgxCaptureService,
+    private captureService: NgxCaptureService,
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    
+
   }
 
-  ngAfterViewInit(){
-    
-  
-  
+  ngAfterViewInit() {
+
+
+
   }
 
 }

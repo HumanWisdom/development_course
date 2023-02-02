@@ -4,6 +4,7 @@ import { Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Platform } from "@angular/cdk/platform";
+import { LogEventService } from 'src/app/log-event.service';
 
 @Component({
   selector: 'app-podcast-toc',
@@ -19,11 +20,13 @@ export class PodcastTocPage implements OnInit {
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
     private activatedRoute:ActivatedRoute,
-    private location: Location,
+    private location: Location,    
+    public logeventservice: LogEventService,
     private sanitizer: DomSanitizer) {
      }
 
   ngOnInit() {
+    this.logeventservice.logEvent('view_humanwisdom_podcast');
   let routTag=   this.activatedRoute.snapshot.paramMap.get('tag');
   if(routTag && routTag!=null && routTag !='' && routTag =='sorrow'){
     this.tag=routTag;

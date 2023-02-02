@@ -237,6 +237,7 @@ export class S20070p4Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r20070p4", this.r20070p4)
     this.r20070p4 = sessionStorage.getItem("r20070p4")
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/pleasure/s20071'])
     if (this.userId === 563) return;
 
@@ -262,6 +263,7 @@ export class S20070p4Page implements OnInit {
 
 
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/pleasure/s20070p3'])
 
   }

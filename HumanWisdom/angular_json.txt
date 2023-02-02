@@ -1,0 +1,393 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "adults": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/adults",
+      "sourceRoot": "projects/adults/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "www",
+            "index": "projects/adults/src/index.html",
+            "main": "projects/adults/src/main.ts",
+            "polyfills": "projects/adults/src/polyfills.ts",
+            "tsConfig": "projects/adults/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/adults/src/assets",
+                "output": "assets"
+              },
+              "projects/adults/src/web.config",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              },
+              "projects/adults/src/manifest.webmanifest",
+              "projects/adults/src/manifest.webmanifest",
+              "projects/adults/src/.htaccess"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/font-awesome/css/font-awesome.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_arrows.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_circles.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_dots.min.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/styles/styles.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/css/backgrounds.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/css/wave.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/css/overlay.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.min.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/css/responsive.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/font/font_weight.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/font/font_size.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/font/font_colour.css",
+                "inject": true
+              },
+              {
+                "input": "projects/adults/src/assets/font/line_height.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ngx-sharebuttons/themes/circles/circles-dark-theme.scss",
+                "inject": true
+              }
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.js",
+              "node_modules/propellerkit-range-slider/node_modules/wnumb/wNumb.js",
+              "node_modules/html2canvas/dist/html2canvas.min.js",
+              "node_modules/bcswipe/dist/jquery.bcSwipe.min.js",
+              "node_modules/jspdf/dist/jspdf.umd.min.js"
+              
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/adults/src/environments/environment.ts",
+                  "with": "projects/adults/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/adults/src/environments/environment.ts",
+                  "with": "projects/adults/src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
+            "ci": {
+              "progress": false
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "adults:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "adults:build:production"
+            },
+            "ci": {
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "adults:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/adults/src/test.ts",
+            "polyfills": "projects/adults/src/polyfills.ts",
+            "tsConfig": "projects/adults/src/tsconfig.spec.json",
+            "karmaConfig": "projects/adults/src/karma.conf.js",
+            "styles": [],
+            "scripts": [],
+            "assets": [
+              {
+                "glob": "favicon.ico",
+                "input": "projects/adults/src/",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/adults/src/assets",
+                "output": "/assets"
+              }
+            ]
+          },
+          "configurations": {
+            "ci": {
+              "progress": false,
+              "watch": false
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "adults:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "adults:serve:production"
+            },
+            "ci": {
+              "devServerTarget": "adults:serve:ci"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "adults:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "adults:build:production"
+            }
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "adults:ionic-cordova-build",
+            "devServerTarget": "adults:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "adults:ionic-cordova-build:production",
+              "devServerTarget": "adults:serve:production"
+            }
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
+        }
+      }
+    },
+    "Teenager": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/teenager",
+      "sourceRoot": "projects/teenager/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "teenager",
+            "index": "projects/teenager/src/index.html",
+            "main": "projects/teenager/src/main.ts",
+            "polyfills": "projects/teenager/src/polyfills.ts",
+            "tsConfig": "projects/teenager/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/teenager/src/favicon.ico",
+              "projects/teenager/src/assets",
+              "projects/teenager/src/web.config"
+            ],
+            "styles": [
+              "projects/teenager/src/styles.scss",
+              {
+                "input": "projects/assets/styles/styles.css",
+                "inject": true
+              }
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/teenager/src/environments/environment.ts",
+                  "with": "projects/teenager/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "Teenager:build:production"
+            },
+            "development": {
+              "browserTarget": "Teenager:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Teenager:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/teenager/src/test.ts",
+            "polyfills": "projects/teenager/src/polyfills.ts",
+            "tsConfig": "projects/teenager/tsconfig.spec.json",
+            "karmaConfig": "projects/teenager/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/teenager/src/favicon.ico",
+              "projects/teenager/src/assets"
+            ],
+            "styles": [
+              "projects/teenager/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+  
+  },
+  "schematics": {
+    "@ionic/angular-toolkit:component": {
+      "styleext": "scss"
+    },
+    "@ionic/angular-toolkit:page": {
+      "styleext": "scss"
+    }
+  }
+}

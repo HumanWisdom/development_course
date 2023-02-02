@@ -347,6 +347,7 @@ export class S48103Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/success-failure/s48104'])
     if (this.userId === 563) return;
 
@@ -367,6 +368,7 @@ export class S48103Page implements OnInit {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/success-failure/s48102'])
 
   }

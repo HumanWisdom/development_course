@@ -105,6 +105,7 @@ export class S59041Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/leadership/s59040'])
 
   }

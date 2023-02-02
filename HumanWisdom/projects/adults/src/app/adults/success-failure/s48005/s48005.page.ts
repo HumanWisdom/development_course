@@ -103,6 +103,7 @@ export class S48005Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/success-failure/s48004'])
 
   }

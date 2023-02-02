@@ -350,6 +350,7 @@ export class S20070p1Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/pleasure/s20070p2'])
     if (this.userId === 563) return;
 
@@ -370,6 +371,7 @@ export class S20070p1Page implements OnInit {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/pleasure/s20070'])
 
   }
