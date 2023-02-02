@@ -44,9 +44,11 @@ export class S73042Page implements OnInit {
   }
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/money/s73043'])
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/money/s73041'])
 
   }

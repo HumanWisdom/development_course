@@ -111,6 +111,7 @@ createScreen(){
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/money/s73002'])
 
   }

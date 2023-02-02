@@ -97,7 +97,7 @@ export class S23051Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r23051", JSON.stringify(e))
     this.r23051 = sessionStorage.getItem("r23051")
-  
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/happiness/s23052'])
     if (this.userId === 563) return;
     this.service.submitProgressReflection({
@@ -124,6 +124,7 @@ export class S23051Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23050'])
   }
 

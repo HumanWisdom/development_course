@@ -124,6 +124,7 @@ export class S23180Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23179'])
   }
 

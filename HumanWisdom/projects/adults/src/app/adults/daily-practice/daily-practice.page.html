@@ -85,7 +85,7 @@
                               <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video>  -->
-                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" > 
+                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" onplay="Logevent('click_play_video_breathing_exercise')" > 
                                 <source [src]="videoLink" type="video/mp4" >                                               
                               </video> 
                             </div>

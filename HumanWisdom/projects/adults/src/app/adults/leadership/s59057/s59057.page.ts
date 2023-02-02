@@ -111,6 +111,7 @@ export class S59057Page implements OnInit, OnDestroy {
 
 
   goNext() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/leadership/s59058'])
 
     if (this.userId !== 563) this.submitProgress()

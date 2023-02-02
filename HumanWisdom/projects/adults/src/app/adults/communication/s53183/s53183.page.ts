@@ -117,6 +117,7 @@ export class S53183Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53182'])
   }
 

@@ -150,6 +150,7 @@ createScreen(){
   }
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/communication/s53111'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -182,6 +183,7 @@ createScreen(){
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53109'])
 
 

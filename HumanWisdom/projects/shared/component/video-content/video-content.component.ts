@@ -9,18 +9,19 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   styleUrls: ['./video-content.component.scss'],
 })
 export class VideoContentComponent implements OnInit {
+  @ViewChild('video') video;
+  @ViewChild('screen', { static: true }) screen: any;
+
   @Input() videoLink: any;
   @Input() bg: string;
   @Input() title: string;
   @Input() poster: any;
   @Input() videoclass = '';
   @Input() wisdomshortsv = false;
-
   @Output() sendAvDuration = new EventEmitter<string>();
+
   url: SafeResourceUrl;
   currentTime: any
-  @ViewChild('video') video;
-  //mediaPercent=JSON.parse(localStorage.getItem("mediaPercent"))
   mediaPercent: any
   pauseTime: any
   t: any
@@ -28,8 +29,6 @@ export class VideoContentComponent implements OnInit {
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
   pageaction = localStorage.getItem("pageaction");
-
-  @ViewChild('screen', { static: true }) screen: any;
 
   constructor(
     private captureService: NgxCaptureService,
@@ -44,28 +43,19 @@ export class VideoContentComponent implements OnInit {
 
   ngOnInit() {
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoLink);
-
-    //var str=this.router.getCurrentNavigation().finalUrl.root.children.primary.segments[1].path
     var str = this.router.url
-    // var lastSlash = str.lastIndexOf("/");
-    // str = str.substring(lastSlash + 2);
-    //str = str.replace(/\D/g,'');
-
     var lastSlash = str.lastIndexOf("/");
     this.scrId = str.substring(lastSlash + 1);
 
     //call api to geta percent
     this.service.mediaPercent(this.scrId).subscribe(res => {
-
       this.mediaPercent = res[0].MediaPrcnt
     })
 
   }
   getCurrentTime(data) {
-
     this.currentTime = data.target.currentTime;
     this.sendAvDuration.emit(JSON.parse(data.target.currentTime))
-
     if (this.loginResponse.Subscriber != 1) {
       if (!this.freeScreens.includes(parseInt(this.scrId))) {
         this.pauseTime = ((this.mediaPercent / 100) * data.target.duration)
@@ -74,10 +64,6 @@ export class VideoContentComponent implements OnInit {
           window.alert('You Have Reached Free Limit')
         }
       }
-      else {
-      }
-
     }
-
   }
 }

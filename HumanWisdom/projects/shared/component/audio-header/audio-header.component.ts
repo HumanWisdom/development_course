@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 
-
 @Component({
   selector: 'app-audio-header',
   templateUrl: './audio-header.component.html',
@@ -18,6 +17,7 @@ export class AudioHeaderComponent implements OnInit {
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() transcriptPage: string;
+  progUrl: string;
   note: any
   t = new Date()
   minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
@@ -42,14 +42,15 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
+    console.log("url="+ this.progUrl)
+
     this.showheaderbar = true;
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    console.log(this.transcriptPage, this.toc, this.token)
 
     var lastSlash = this.path.lastIndexOf("/");
     this.scrNumber = this.path.substring(lastSlash + 2);
-    console.log(this.scrNumber)
     this.getProgress(this.scrNumber)
 
     if (this.urlT) {
@@ -57,17 +58,19 @@ export class AudioHeaderComponent implements OnInit {
       this.socialShare = true
     }
   }
+
   toggleBookmark() {
     this.bookmark = !this.bookmark
-    console.log(this.bookmark)
     this.sendBookmark.emit(this.bookmark)
   }
+
   addZero(i) {
     if (i < 10) {
       i = "0" + i;
     }
     return i;
   }
+
   addToken() {
     // history.replaceState(null, null, 'Course#'+this.address+`?t=${this.token}`);
     //history.replaceState(null, null,'course#'+this.address+`?t=${this.token}`);
@@ -76,37 +79,36 @@ export class AudioHeaderComponent implements OnInit {
     this.socialShare = true
 
     if (this.urlT) {
-      console.log("url")
       this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
 
     }
     else {
-      console.log("local")
       this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
     }
-    console.log(this.path)
   }
-
 
   courseNote() {
     this.router.navigate(['/adults/coursenote', { path: this.path }])
   }
 
   goToToc() {
-    this.router.navigate(['/adults/' + this.toc])
+          // this.router.navigate(['/adults/' + this.toc])
+          this.router.navigate([this.progUrl + this.toc])
+         
   }
+
   goToDash() {
     this.router.navigate(['/adults/adult-dashboard'])
   }
+
   goToTranscript() {
     if (this.urlT) {
       this.router.navigate(['/adults/' + this.transcriptPage], { queryParams: { t: this.urlT } })
-
     }
-
     else
       this.router.navigate(['/adults/' + this.transcriptPage])
   }
+
   addNote() {
     this.service.submitJournal({
       "JournalId": 0,
@@ -130,12 +132,10 @@ export class AudioHeaderComponent implements OnInit {
       return;
     } */
     if (this.urlT) {
-      console.log("url")
       this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
 
     }
     else {
-      console.log("local")
       this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
     }
 
@@ -144,7 +144,6 @@ export class AudioHeaderComponent implements OnInit {
       text: 'Hey, check out the HumanWisdom Program',
       url: this.path
     }).then((response) => {
-      console.log(response);
     })
       .catch((error) => {
         console.log(error);
@@ -156,7 +155,6 @@ export class AudioHeaderComponent implements OnInit {
       .subscribe(
         r => {
           this.progress = parseFloat(r)
-          console.log(this.progress, "sessionProgress")
           localStorage.setItem("progressbarvalue", this.progress.toString())
           setTimeout(() => {
             this.showheaderbar = true;
@@ -165,6 +163,4 @@ export class AudioHeaderComponent implements OnInit {
       )
 
   }
-
-
 }

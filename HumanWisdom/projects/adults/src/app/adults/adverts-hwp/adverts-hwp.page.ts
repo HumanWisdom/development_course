@@ -647,8 +647,9 @@ export class AdvertsHwpPage implements OnInit {
     }
   }
 
-  navigate(url){
+  navigate(url, event){
     this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+    this.logeventservice.logEvent(event)
   }
 }
 
