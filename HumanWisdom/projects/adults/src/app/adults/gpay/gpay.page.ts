@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { UPIHandlerService } from '../upihandler.service';
 @Component({
   selector: 'app-gpay',
   templateUrl: './gpay.page.html',
@@ -12,23 +13,22 @@ export class GpayPage implements OnInit {
     
   }
 
-  constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.handleUPIResponse(event.url);
-      }
-    });
+  constructor(private router: Router,private upiHandler:UPIHandlerService) {
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     this.handleUPIResponse(event.url);
+    //   }
+    // });
+    this.initiateUPIPayment();
   }
 
 
   handleUPIResponse(url: string) {
-    const urlParams = new URLSearchParams(url.split('?')[1]);
-    this.paymentStatus = urlParams.get('payment_status');
+
   }
 
   initiateUPIPayment() {
-    const url = 'upi://pay?pa=9828173308@okbizaxis&pn=Kundan%20Steel%20And%20Hardware&am=1.00&tn=01022023&cu=INR';
-    window.location.href = url;
+    this.upiHandler.openUPIApp('9828173308@okbizaxis');
   }
 
 }
