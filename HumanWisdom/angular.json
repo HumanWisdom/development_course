@@ -60,19 +60,19 @@
                 "inject": true
               },
               {
-                "input": "projects/assets/styles/styles.css",
+                "input": "projects/assets/css/custom.css",
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/css/backgrounds.css",
+                "input": "projects/assets/css/backgrounds.css",
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/css/wave.css",
+                "input": "projects/assets/css/wave.css",
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/css/overlay.css",
+                "input": "projects/assets/css/overlay.css",
                 "inject": true
               },
               {
@@ -80,23 +80,23 @@
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/css/responsive.css",
+                "input": "projects/assets/css/responsive.css",
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/font/font_weight.css",
+                "input": "projects/assets/font/font_weight.css",
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/font/font_size.css",
+                "input": "projects/assets/font/font_size.css",
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/font/font_colour.css",
+                "input": "projects/assets/font/font_colour.css",
                 "inject": true
               },
               {
-                "input": "projects/adults/src/assets/font/line_height.css",
+                "input": "projects/assets/font/line_height.css",
                 "inject": true
               },
               {
@@ -113,7 +113,6 @@
               "node_modules/html2canvas/dist/html2canvas.min.js",
               "node_modules/bcswipe/dist/jquery.bcSwipe.min.js",
               "node_modules/jspdf/dist/jspdf.umd.min.js"
-              
             ],
             "aot": false,
             "vendorChunk": true,
@@ -299,13 +298,85 @@
               "projects/teenager/src/web.config"
             ],
             "styles": [
-              "projects/teenager/src/styles.scss",
               {
-                "input": "projects/assets/styles/styles.css",
+                "input": "node_modules/font-awesome/css/font-awesome.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_arrows.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_circles.min.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ng-wizard/themes/ng_wizard_theme_dots.min.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/css/custom.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/css/backgrounds.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/css/wave.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/css/overlay.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.min.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/css/responsive.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/font/font_weight.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/font/font_size.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/font/font_colour.css",
+                "inject": true
+              },
+              {
+                "input": "projects/assets/font/line_height.css",
+                "inject": true
+              },
+              {
+                "input": "node_modules/ngx-sharebuttons/themes/circles/circles-dark-theme.scss",
                 "inject": true
               }
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/propellerkit-range-slider/node_modules/nouislider/distribute/nouislider.js",
+              "node_modules/propellerkit-range-slider/node_modules/wnumb/wNumb.js",
+              "node_modules/html2canvas/dist/html2canvas.min.js",
+              "node_modules/bcswipe/dist/jquery.bcSwipe.min.js",
+              "node_modules/jspdf/dist/jspdf.umd.min.js"
+            ]
           },
           "configurations": {
             "production": {
