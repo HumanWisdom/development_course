@@ -67,6 +67,7 @@ export class S73008Page implements OnInit {
   rating1 = 0
   rating2 = 0
   rating3 = 0
+  pageaction = localStorage.getItem("pageaction");
 
 
   constructor(private router: Router,
