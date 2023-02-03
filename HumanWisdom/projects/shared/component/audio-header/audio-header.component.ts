@@ -17,6 +17,7 @@ export class AudioHeaderComponent implements OnInit {
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() transcriptPage: string;
+  progUrl: string;
   note: any
   t = new Date()
   minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
@@ -41,6 +42,9 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
+    console.log("url="+ this.progUrl)
+
     this.showheaderbar = true;
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
@@ -88,7 +92,9 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   goToToc() {
-    this.router.navigate(['/adults/' + this.toc])
+          // this.router.navigate(['/adults/' + this.toc])
+          this.router.navigate([this.progUrl + this.toc])
+         
   }
 
   goToDash() {
