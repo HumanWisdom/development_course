@@ -11,15 +11,15 @@ export class UPIHandlerService {
 
 openUPIApp(upiId:string){
 if(this.platform.is('ios')){
-  window.open('upi://pay?pa=${upiId}&pn=Kundan%20Steel%20And%20Hardware&am=1.00&cu=INR&url=http://staging.humanwisdom.me/','_system')
+  window.open('upi://pay?pa=9828173308@okbizaxis&pn=Kundan%20Steel%20And%20Hardware&am=1.00&tr=20230201&cu=INR&url=http://staging.humanwisdom.me/','_system')
 }else if(this.platform.is('android')){
   this.deeplinks.route({
     'upi://pay':{
-      pa:upiId,
-      pn:'KUNDAN STEEL AND HARDWARE',
+      pa:'9828173308@okbizaxis',
+      pn:'KUNDANSTEELANDHARDWARE',
       am:'1.00',
       cu:'INR',
-      tr:'tr20230102',
+      tr:'20230102',
       url:'http://staging.humanwisdom.me/'
     }
   }).subscribe((match)=>{
