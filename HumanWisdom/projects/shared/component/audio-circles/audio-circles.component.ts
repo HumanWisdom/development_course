@@ -39,7 +39,7 @@ export class AudioCirclesComponent implements OnInit, AfterViewInit {
       this.t = params['t'];
     })
   }
-
+  
   ngOnInit() {
     console.log(this.audioLink, this.mediaPercent, this.loginResponse)
     var str = this.router.url
