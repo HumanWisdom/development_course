@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
       </ion-toolbar>
     </ion-header>
 
-      <ion-button (click)="payWithGooglePay()">Pay with Google Pay</ion-button>
+      <button (click)="payWithGooglePay()">Pay with Google Pay</button>
   `
 })
 export class GpayPage {
