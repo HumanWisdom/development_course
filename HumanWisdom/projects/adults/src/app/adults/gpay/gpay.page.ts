@@ -3,14 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-gpay',
   template: `
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>
-          Google Pay Example
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-
       <button (click)="payWithGooglePay()">Pay with Google Pay</button>
   `
 })
