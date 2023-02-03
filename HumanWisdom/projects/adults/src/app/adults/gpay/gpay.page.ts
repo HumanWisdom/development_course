@@ -3,9 +3,7 @@ import { UPIHandlerService } from '../upihandler.service';
 
 @Component({
   selector: 'app-gpay',
-  template: `
-      <button (click)="payWithGooglePay()">Pay with Google Pay</button>
-  `
+  template: ``
 })
 export class GpayPage implements OnInit {
 
