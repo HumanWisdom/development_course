@@ -9,9 +9,8 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 export class JournalWeComponent implements OnInit {
 
   qrList = JSON.parse(localStorage.getItem("qrList"))
-
-  @Input()
-  journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
+   @Input()
+   journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
 
   @Input()
   rId = 854
