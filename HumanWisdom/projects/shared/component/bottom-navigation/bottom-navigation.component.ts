@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogEventService } from 'src/app/log-event.service';
+//import { LogEventService } from 'src/app/log-event.service';
 
 @Component({
   selector: 'app-bottom-navigation',
@@ -19,7 +19,7 @@ export class BottomNavigationComponent implements OnInit {
   @Input() isGuidedQuestion?: boolean = false;
   @Output() saveQuestion = new EventEmitter();
   @Output() journalclick = new EventEmitter();
-  constructor(private router: Router, public logeventservice: LogEventService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
@@ -72,12 +72,12 @@ export class BottomNavigationComponent implements OnInit {
 
   }
   routeDash() {
-    this.logeventservice.logEvent('click_home')
+    //this.logeventservice.logEvent('click_home')
     this.router.navigate(['/adults/adult-dashboard'])
 
   }
   routeJournal() {
-    this.logeventservice.logEvent('click_journal')
+    //this.logeventservice.logEvent('click_journal')
     if (this.isloggedIn) {
       this.router.navigate(['/adults/journal'])
     } else {
@@ -86,17 +86,17 @@ export class BottomNavigationComponent implements OnInit {
 
   }
   routeSearch() {
-    this.logeventservice.logEvent('click_for_you')
+    //this.logeventservice.logEvent('click_for_you')
     this.router.navigate(['/adults/search']);
   }
   profileclickevent() {
    
     if (localStorage.getItem('isloggedin') === 'T') {
-      this.logeventservice.logEvent('click_profile')
+      //this.logeventservice.logEvent('click_profile')
       this.router.navigate(['/onboarding/user-profile'])
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
-        this.logeventservice.logEvent('click_login')
+      //this.logeventservice.logEvent('click_login')
       localStorage.setItem('btnclick', 'T')
       this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
       // }
