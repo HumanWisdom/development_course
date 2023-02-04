@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
+import { LogEventService } from './../../log-event.service'; 
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -66,9 +67,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public bookmarkLength: any
 
   constructor(private route: Router, private aservice: AdultsService,
-    public authService: SocialAuthService, public service: OnboardingService,
+    public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
     public cd: ChangeDetectorRef
   ) {
+
+    this.logeventservice.logEvent('View_For_you');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
     if (authtoken && app && app === 'T') {
@@ -182,20 +185,28 @@ export class PersonalisedForYouSearchPage implements OnInit {
   clickbtn(name, val = '', event, ind, id) {
     if (val === '') {
       if (name === 'Manage your emotions') {
+        this.logeventservice.logEvent('click_emotions');
         this.route.navigate(['/adults/curated/manage-your-emotions'])
       } else if (name === 'Overcome stress and anxiety') {
+        this.logeventservice.logEvent('click_stress_anxiety');        
         this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
       } else if (name === 'Wisdom for the workplace') {
+        this.logeventservice.logEvent('click_workplace');
         this.route.navigate(['/adults/curated/wisdom-for-workplace'])
       } else if (name === 'Have fulfilling relationships') {
+        this.logeventservice.logEvent('click_relationships');
         this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
       } else if (name === 'Be happier') {
+        this.logeventservice.logEvent('click_be_happier');
         this.route.navigate(['/adults/curated/be-happier'])
       } else if (name === 'Change unhelpful habits') {
+        this.logeventservice.logEvent('click_be_happier');
         this.route.navigate(['/adults/curated/change-unhelpful-habits'])
       } else if (name === 'Deal with sorrow and loss') {
+        this.logeventservice.logEvent('click_sorrow_loss');
         this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
       } else if (name === 'Mindfulness') {
+        this.logeventservice.logEvent('click_calm_mind');
         this.route.navigate(['/adults/curated/have-calm-mind'])
       }
     } else {

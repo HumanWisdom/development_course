@@ -170,7 +170,7 @@ export class AdultDashboardPage implements OnInit {
     //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
 
-    this.logeventservice.logEvent('ga4sampletest');
+    this.logeventservice.logEvent('view_adult-dashboard');
 
     setTimeout(() => {
       this.getModuleList();
