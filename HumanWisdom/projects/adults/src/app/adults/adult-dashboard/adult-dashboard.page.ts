@@ -545,6 +545,11 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
+  }
+  
+
   // solving global problems
   solving_global_problems(url, id) {
     this.service.clickModule(id, this.userId)
