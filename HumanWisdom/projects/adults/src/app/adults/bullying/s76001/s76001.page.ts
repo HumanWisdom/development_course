@@ -158,4 +158,12 @@ export class S76001Page implements OnInit, OnDestroy {
     this.location.back()
   }
 
+  youtube(link) 
+  {
+    this.router.navigate(['/adults/curated/youtubelink', link],{
+    state: {
+      class: this.bg,
+    }})
+  }
+
 }
