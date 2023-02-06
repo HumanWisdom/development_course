@@ -107,6 +107,7 @@ export class S28003Page implements OnInit {
     })
   }
   prev() {
+    localStorage.setItem("pageaction",'prev')
     this.router.navigate(['/adults/nature/s28001'])
 
 

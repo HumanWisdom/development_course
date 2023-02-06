@@ -77,6 +77,7 @@ export class S77045tPage implements OnInit {
 
   prev()
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77044'])
   }
 

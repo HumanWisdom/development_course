@@ -98,6 +98,7 @@ export class S53194Page implements OnInit, OnDestroy {
   }
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/communication/s53195'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;

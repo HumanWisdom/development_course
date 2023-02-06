@@ -156,6 +156,7 @@ export class S77100Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/making-better-decisions/s77101'])
     if (this.userId === 563) return;
 
@@ -179,6 +180,7 @@ export class S77100Page implements OnInit {
 
   prev()
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77099'])
   }
 

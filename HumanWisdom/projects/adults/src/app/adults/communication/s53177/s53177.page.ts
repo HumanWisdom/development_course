@@ -105,12 +105,14 @@ export class S53177Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53176'])
 
   }
 
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/communication/s53178'])
     if (this.userId !== 563) this.submitProgress()
 

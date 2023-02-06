@@ -97,6 +97,7 @@ export class S59123Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r59123", JSON.stringify(e))
     this.r59123 = sessionStorage.getItem("r59123")
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/leadership/s59124'])
     if (this.userId === 563) return;
 
@@ -125,6 +126,7 @@ export class S59123Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/leadership/s59122'])
   }
 

@@ -98,7 +98,8 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_orange" [ngClass]="bg">
-        <div class="x_panel p0">
+        <div
+          [ngClass]="[pageaction === 'next' ? 'x_panel p0 rtltext' : pageaction === 'prev' ? 'x_panel p0 ltrtext' : 'x_panel p0' ]">
           <div class="x_content p0">
             <form>
               <!-- <h5 class="txt4 justified_center"> -->

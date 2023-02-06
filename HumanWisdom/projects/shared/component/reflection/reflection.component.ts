@@ -23,6 +23,7 @@ export class ReflectionComponent implements OnInit {
   scrNumber: any
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
   showheaderbar = true
+  pageaction = localStorage.getItem("pageaction");
 
   constructor(public router: Router, public service: AdultsService) { }
 
