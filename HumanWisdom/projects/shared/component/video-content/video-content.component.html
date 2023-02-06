@@ -50,7 +50,7 @@
 
                   <video controls playinline (timeupdate)="getCurrentTime($event)" [ngClass]="[videoclass, 'cvideo']"
                     #video [poster]="poster" controlsList="nodownload">
-                    <source [src]="videoLink" type="video/mp4">
+                    <source [src]="videoLink" type="video/mp4" *ngIf="enablevideo">
                   </video>
 
                 </div>
