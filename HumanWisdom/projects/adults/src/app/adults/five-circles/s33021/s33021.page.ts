@@ -54,10 +54,12 @@ export class S33021Page implements OnInit {
 
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/five-circles/s33022'])
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/five-circles/s33020'])
 
   }
