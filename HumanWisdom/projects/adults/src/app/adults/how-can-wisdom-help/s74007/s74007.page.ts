@@ -77,6 +77,7 @@ export class S74007Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/how-can-wisdom-help/s74008'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
@@ -95,6 +96,7 @@ export class S74007Page implements OnInit {
   }
 
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/how-can-wisdom-help/s74006'])
   }
 

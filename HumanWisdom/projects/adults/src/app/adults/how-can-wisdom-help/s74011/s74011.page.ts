@@ -51,6 +51,7 @@ export class S74011Page implements OnInit {
     this.router.navigate(['/adults/how-can-wisdom-help/s74012'])
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/how-can-wisdom-help/s74010'])
   }
 }
