@@ -61,6 +61,7 @@ export class S30002tPage implements OnInit {
     sessionStorage.setItem("bookmark30002",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/noticing-thoughts/s30003'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -78,6 +79,7 @@ export class S30002tPage implements OnInit {
    
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/noticing-thoughts/s30001'])
   }
 

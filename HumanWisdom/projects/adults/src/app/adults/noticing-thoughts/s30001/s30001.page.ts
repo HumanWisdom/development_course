@@ -97,6 +97,7 @@ export class S30001Page implements OnInit, OnDestroy {
   }
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/noticing-thoughts/s30002'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
