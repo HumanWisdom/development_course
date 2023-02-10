@@ -49,7 +49,7 @@ export class PodcastTocPage implements OnInit {
       alert(`This service/api is not supported in your Browser`);
       return;
     } */
-   let url="https://humanwisdom.me/course"+this.path;
+   let url="https://humanwisdom.me"+this.path;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
