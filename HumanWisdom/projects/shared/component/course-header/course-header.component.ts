@@ -86,12 +86,12 @@ export class CourseHeaderComponent implements OnInit {
 
     if (this.urlT) {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
 
     }
     else {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
     }
 
 
@@ -142,12 +142,12 @@ export class CourseHeaderComponent implements OnInit {
     } */
     if (this.urlT) {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
 
     }
     else {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
     }
 
     this.ngNavigatorShareService.share({

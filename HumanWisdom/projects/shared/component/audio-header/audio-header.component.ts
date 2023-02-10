@@ -79,11 +79,11 @@ export class AudioHeaderComponent implements OnInit {
     this.socialShare = true
 
     if (this.urlT) {
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
 
     }
     else {
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
     }
   }
 
@@ -132,11 +132,11 @@ export class AudioHeaderComponent implements OnInit {
       return;
     } */
     if (this.urlT) {
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
 
     }
     else {
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
     }
 
     this.ngNavigatorShareService.share({
