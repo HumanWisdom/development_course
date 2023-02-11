@@ -19,7 +19,7 @@ export class FeatureHeaderComponent implements OnInit {
   token=JSON.parse(localStorage.getItem("token"))
   socialShare=false
   address=this.router.url
-  path="https://humanwisdom.me/course/adults/wisdom-stories"
+  path="https://humanwisdom.me/adults/wisdom-stories"
 
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
