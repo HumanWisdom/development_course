@@ -1,13 +1,15 @@
-import { Component, HostListener } from '@angular/core';
 import {
   Platform
 } from '@angular/cdk/platform';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { slider } from './route.animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'],
+  animations: [slider]
 })
 export class AppComponent {
   @HostListener('window:beforeunload', ['$event'])
@@ -31,6 +33,10 @@ export class AppComponent {
       localStorage.setItem('acceptcookie', 'T')
     }
     this.initializeApp();
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
   }
 
   initializeApp() {

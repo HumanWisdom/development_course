@@ -6,6 +6,10 @@
 
 <!-- <div id="page-loader" class="fade" [ngClass]="[pageLoaded ? '' : 'show']"><span class="spinner"></span></div> -->
 
-<app-splash *ngIf="!pageLoaded"></app-splash>
+<!-- <app-splash *ngIf="!pageLoaded"></app-splash> -->
 
-<router-outlet *ngIf="pageLoaded"></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+
+<!-- <router-outlet *ngIf="pageLoaded"></router-outlet> -->
