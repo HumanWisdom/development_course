@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Change comes naturally from exploring and understanding ourselves, not from trying to change. This will feel like a very new idea, so please keep an open mind as we explore it.  When someone is jealous and you tell them not to be jealous, it doesn't work. In fact it can create more stress because you cannot achieve the goal you have set for yourself
+          </p>
+
+          <p>
+            If, instead, you accept your jealousy completely and explore what lies behind that feeling, without judging yourself as a bad person, you discover that the mind compares all the time. As you begin to observe and understand that fact, and how it causes jealousy, you find one day that the feeling has shifted, and you no longer feel jealous. Exploring the fact awakens your natural intelligence and change follows without effort. It’s quite amazing how this happens. Try it for yourself and see.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
