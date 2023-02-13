@@ -25,7 +25,7 @@ export class S46001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   foodResume=sessionStorage.getItem("foodResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/food.jpg"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/food_health.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
