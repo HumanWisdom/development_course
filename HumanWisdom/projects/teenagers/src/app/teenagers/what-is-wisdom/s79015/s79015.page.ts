@@ -14,7 +14,7 @@ export class S79015Page implements OnInit {
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w10"
-  toc="what-is-wisdom/s77001"
+  toc="what-is-wisdom/s79001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")

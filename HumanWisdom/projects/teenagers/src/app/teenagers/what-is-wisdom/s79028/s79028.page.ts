@@ -16,7 +16,7 @@ export class S79028Page implements OnInit {
   moduleLink="/adults/how-can-wisdom-help/"
   moduleName="How can wisdom help?"
   sectionName= "Introduction"
-  moduleId=74
+  moduleId=80
   
   constructor() { }
 
