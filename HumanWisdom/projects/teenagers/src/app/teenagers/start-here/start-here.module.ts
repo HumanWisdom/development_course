@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '../../../../../shared/shared.module';
-import { FormsModule } from '@angular/forms';
 
 import { StartHereRoutingModule } from './start-here-routing.module';
 
@@ -55,7 +55,6 @@ import { S78016Page } from './s78016/s78016.page';
 import { S78017Page } from './s78017/s78017.page';
 import { S78018Page } from './s78018/s78018.page';
 import { S78019Page } from './s78019/s78019.page';
-
 @NgModule({
   declarations: [
     S78001Page,
@@ -110,9 +109,9 @@ import { S78019Page } from './s78019/s78019.page';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     IonicModule,
     SharedModule,
-    FormsModule,
     StartHereRoutingModule
   ]
 })

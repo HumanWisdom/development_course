@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Let me introduce you to the five circles of wisdom. It’s a step-by-step approach we’ve designed to help you to understand yourself and then apply this understanding to meet your many challenges and live your best life.
+          </p>
+
+          <p>
+            The first circle begins with exercises to develop a quiet mind. A quiet mind is sensitive and has space to notice what’s going on in our thinking. In the second circle, we explore how we can understand ourselves. Just as the quality of a telescope determines what an astronomer sees in outer space, how we look at ourselves determines what we notice in our own mind. In the third circle, we explore the many hidden patterns of thinking that operate behind the scenes and shape our lives. We do this by asking why we think or feel a certain way. In the fourth circle, we explore our core emotions and what lies behind them. In the fifth circle, we apply this understanding to many aspects of our lives. As a result, many of our conflicts can end, and we can live with a sense of peace.
+          </p>
+
+          <p>
+            This journey of understanding yourself leads to wisdom. Nobody can take this journey for you but somebody can be a companion and walk with you or point out the way. Once you learn the basics of this process you will walk your own road, and make new discoveries all your life. You may feel this is difficult, but it isn’t really. It’s quite simple. As the poet Rumi said 800 years ago ‘once you start walking, the way opens.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
