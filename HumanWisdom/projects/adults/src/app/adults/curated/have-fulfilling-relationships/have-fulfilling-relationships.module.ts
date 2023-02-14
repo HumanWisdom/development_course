@@ -10,7 +10,7 @@ import { HaveFulfillingRelationshipsPage } from './have-fulfilling-relationships
 
 import { SharedModule } from '../../../../../../shared/shared.module';
 
-import { NgxCircularPlayerModule } from 'ngx-circular-player';
+import { NgxCircularPlayerModule } from '../../../../../../ngx-circular-player';
 
 @NgModule({
   imports: [
