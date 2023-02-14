@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {Location } from '@angular/common'
 import { Router } from '@angular/router';
+import { ActiveGuard } from 'src/app/active.guard';
 
 @Component({
   selector: 'app-free-limit',
@@ -13,7 +14,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
 
   isloggedIn = false;
 
-  constructor( private location:Location, private router: Router ) { }
+  constructor( private location:Location, private router: Router, private active:ActiveGuard ) { }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
@@ -27,7 +28,11 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
   }
 
   backClick(){
-   this.location.back()
+    this.closemodal.nativeElement.click()
+    if (this.active.canGoBack===false)
+      this.router.navigate(['/adults/adult-dashboard'])
+    else
+        this.location.back()
   }
 
   loginpage(issub = false) {
