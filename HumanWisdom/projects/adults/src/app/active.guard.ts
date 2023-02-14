@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { CanActivate, Router, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AdultsService } from './adults/adults.service'
+import { AdultsService } from '././adults/adults.service'
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,12 @@ export class ActiveGuard implements CanActivate, OnInit {
   t: any
   x = []
   scrId: any
+  public canGoBack: boolean;
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
   constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
     this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
+    this.canGoBack = !!(this.router.getCurrentNavigation()?.previousNavigation);
+     console.log("this.canGoBack", this.canGoBack)
    }
   ngOnInit() {
      
@@ -41,27 +44,66 @@ export class ActiveGuard implements CanActivate, OnInit {
     if (sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined ) {
       return true;
     }
-   else if(m[0].includes("view-stories") ===true  || m[0].includes("blog-article") ===true)
-    {  
-     if(sub==='1')    
-     {
-       return true;
-     }
-     else{
+    else if(m[0].includes("view-stories") ===true)
+    {
+     
+        let id = m[1].split("=")[1]
+        this.service.CheckStoryIsFree(id).subscribe(res=>
+          {
+            console.log(res)
+            if(res === true)
+            {  
+              /* localStorage.setItem("StoryType","Open")
+                console.log("res", res ) */
+                return true;
+            }
+            else
+            {
+              /* localStorage.setItem("StoryType","Locked")
+              console.log(res) */
+              this.router.navigate(['/onboarding/free-limit'],{replaceUrl:true,skipLocationChange:false})
+              return false;
+            }
+             
+          })
 
-       if ((m[1]==="sId=1" || m[1]==="sId=2" || m[1]==="sId=3")==false){
-         this.router.navigate(['/onboarding/free-limit'])
-         return false;
-       }
-       else{
-         return true;
-       }
-     }
-   
-   }
+        
+       
+      
+
+    }
+    else if(m[0].includes("wisdom-shorts") ===true)
+    {
+      let id= m[0].split("/")[3].split(".")[1]
+      
+      console.log(m[0])
+      console.log(id)
+      this.service.CheckShortsIsFree(id).subscribe(res=>
+        {
+          console.log(res)
+          if(res === true)
+          {  
+           /*  localStorage.setItem("ShortsType","Open")
+              console.log("res", res ) */
+              return true;
+          }
+          else
+          {
+        /*     localStorage.setItem("StoryType","Locked")
+            console.log(res) */
+            this.router.navigate(['/onboarding/free-limit'],{replaceUrl:true,skipLocationChange:false})
+            return false;
+          }
+           
+        })
+      
+
+
+    }
    else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
       return true;
-    } else {
+    } 
+    else {
       // window.alert('You Have Reached Free Limit')
       this.router.navigate(['/onboarding/free-limit'])
       return false
