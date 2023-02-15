@@ -40,7 +40,7 @@ export class AllStoriesPage implements OnInit {
           if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F' || localStorage.getItem("Subscriber")=='0' ) {
 
             res = new Array()
-            res = dateres.filter(p => p.ScenarioID >= 1 && p.ScenarioID <= 3)
+            res = dateres.filter(p => p.ExclFromChild === "True")
             res.forEach(element => {
               dateres.unshift(element)
             });

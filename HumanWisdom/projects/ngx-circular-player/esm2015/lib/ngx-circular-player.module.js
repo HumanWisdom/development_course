@@ -1,0 +1,17 @@
+import { __decorate } from "tslib";
+import { NgModule } from '@angular/core';
+import { NgxCircularPlayerComponent } from './ngx-circular-player.component';
+import { CommonModule } from '@angular/common';
+let NgxCircularPlayerModule = class NgxCircularPlayerModule {
+};
+NgxCircularPlayerModule = __decorate([
+    NgModule({
+        declarations: [NgxCircularPlayerComponent],
+        imports: [
+            CommonModule
+        ],
+        exports: [NgxCircularPlayerComponent]
+    })
+], NgxCircularPlayerModule);
+export { NgxCircularPlayerModule };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LWNpcmN1bGFyLXBsYXllci5tb2R1bGUuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9uZ3gtY2lyY3VsYXItcGxheWVyLyIsInNvdXJjZXMiOlsibGliL25neC1jaXJjdWxhci1wbGF5ZXIubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ3pDLE9BQU8sRUFBRSwwQkFBMEIsRUFBRSxNQUFNLGlDQUFpQyxDQUFDO0FBQzdFLE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQVcvQyxJQUFhLHVCQUF1QixHQUFwQyxNQUFhLHVCQUF1QjtDQUFJLENBQUE7QUFBM0IsdUJBQXVCO0lBUG5DLFFBQVEsQ0FBQztRQUNSLFlBQVksRUFBRSxDQUFDLDBCQUEwQixDQUFDO1FBQzFDLE9BQU8sRUFBRTtZQUNQLFlBQVk7U0FDYjtRQUNELE9BQU8sRUFBRSxDQUFDLDBCQUEwQixDQUFDO0tBQ3RDLENBQUM7R0FDVyx1QkFBdUIsQ0FBSTtTQUEzQix1QkFBdUIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZ01vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgTmd4Q2lyY3VsYXJQbGF5ZXJDb21wb25lbnQgfSBmcm9tICcuL25neC1jaXJjdWxhci1wbGF5ZXIuY29tcG9uZW50JztcbmltcG9ydCB7IENvbW1vbk1vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvbW1vbic7XG5cblxuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtOZ3hDaXJjdWxhclBsYXllckNvbXBvbmVudF0sXG4gIGltcG9ydHM6IFtcbiAgICBDb21tb25Nb2R1bGVcbiAgXSxcbiAgZXhwb3J0czogW05neENpcmN1bGFyUGxheWVyQ29tcG9uZW50XVxufSlcbmV4cG9ydCBjbGFzcyBOZ3hDaXJjdWxhclBsYXllck1vZHVsZSB7IH1cbiJdfQ==
