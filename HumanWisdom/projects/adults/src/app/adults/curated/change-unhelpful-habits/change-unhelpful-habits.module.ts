@@ -19,7 +19,7 @@ import { NgxCircularPlayerModule } from 'ngx-circular-player';
     IonicModule,
     ChangeUnhelpfulHabitsPageRoutingModule,
     SharedModule,
-    NgxCircularPlayerModule.forRoot()
+    NgxCircularPlayerModule
   ],
   declarations: [ChangeUnhelpfulHabitsPage]
 })

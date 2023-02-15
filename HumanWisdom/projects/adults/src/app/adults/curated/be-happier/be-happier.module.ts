@@ -19,8 +19,8 @@ import { NgxCaptureComponent } from 'ngx-capture';
     IonicModule,
     BeHappierPageRoutingModule,
     SharedModule,
-    NgxCircularPlayerModule.forRoot(),
+    NgxCircularPlayerModule,
   ],
-  declarations: [BeHappierPage,NgxCaptureComponent]
+  declarations: [BeHappierPage]
 })
 export class BeHappierPageModule {}
