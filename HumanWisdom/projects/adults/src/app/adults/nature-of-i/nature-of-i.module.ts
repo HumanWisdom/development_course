@@ -104,7 +104,7 @@ import { S57074Page } from './s57074/s57074.page'; 
 
 import { NatureOfIRoutingModule } from './nature-of-i-routing.module';
 
-import { NgxCircularPlayerModule } from '../../../../../ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   declarations: [

@@ -100,7 +100,7 @@ import { S63077Page } from './s63077/s63077.page';
 import { S63078Page } from './s63078/s63078.page';
 import { S63079Page } from './s63079/s63079.page';
 
-import { NgxCircularPlayerModule } from '../../../../../ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   declarations: [
