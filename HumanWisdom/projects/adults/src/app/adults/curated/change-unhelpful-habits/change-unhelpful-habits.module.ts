@@ -10,7 +10,7 @@ import { ChangeUnhelpfulHabitsPage } from './change-unhelpful-habits.page';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
 
-import { NgxCircularPlayerModule } from '../../../../../../ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { NgxCircularPlayerModule } from '../../../../../../ngx-circular-player';
     IonicModule,
     ChangeUnhelpfulHabitsPageRoutingModule,
     SharedModule,
-    NgxCircularPlayerModule.forRoot()
+    NgxCircularPlayerModule
   ],
   declarations: [ChangeUnhelpfulHabitsPage]
 })

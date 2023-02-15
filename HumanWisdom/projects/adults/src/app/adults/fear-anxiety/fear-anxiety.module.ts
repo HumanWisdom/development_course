@@ -195,7 +195,7 @@ import { S617Page } from './s617/s617.page';  
 import { S614p2Page } from './s614p2/s614p2.page';    
 
 import { FearAnxietyRoutingModule } from './fear-anxiety-routing.module';
-import { NgxCircularPlayerModule } from '../../../../../ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   declarations: [

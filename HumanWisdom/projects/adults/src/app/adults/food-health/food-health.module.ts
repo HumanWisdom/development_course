@@ -97,7 +97,7 @@ import { S46079Page } from './s46079/s46079.page'; 
 
 import { FoodHealthRoutingModule } from './food-health-routing.module';
 
-import { NgxCircularPlayerModule } from '../../../../../ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   declarations: [
