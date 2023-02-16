@@ -135,7 +135,7 @@ import { S231p2Page } from './s231p2/s231p2.page'; 
 
 import { AngerRoutingModule } from './anger-routing.module';
 
-import { NgxCircularPlayerModule } from '../../../../../ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   declarations: [
