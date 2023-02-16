@@ -1,3 +1,8 @@
 .circular-player-container {
     transform: rotate(-360deg) scaleX(-1);
   }
+
+.play{
+  transform: translate(-50%,-50%) rotate(-300deg) !important;
+}
+
