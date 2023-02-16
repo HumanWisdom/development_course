@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S27036Page implements OnInit {
   
   toc="discovering-wisdom/s27001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_can_wisdom_help.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/74.png"
   bg=""
   moduleLink="/adults/how-can-wisdom-help/"
   moduleName="How can wisdom help?"
