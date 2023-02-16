@@ -2,7 +2,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgxCircularPlayerModule } from '../../projects/ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 import { FtPrevNextComponent } from '../shared/component/ft-prev-next/ft-prev-next.component';
 import { FtPrevComponent } from '../shared/component/ft-prev/ft-prev.component';
 import { TnEditBookmarkShareComponent } from '../shared/component/tn-edit-bookmark-share/tn-edit-bookmark-share.component';

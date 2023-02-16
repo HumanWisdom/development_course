@@ -38,7 +38,7 @@ const routes: Routes = [
     path: 's28003',
     canActivate: [ActiveGuard],
     component: S28003Page,
-    data: { animation: 'isRight' }
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28004',
@@ -50,7 +50,7 @@ const routes: Routes = [
     path: 's28005',
     canActivate: [ActiveGuard],
     component: S28005Page,
-    data: { animation: 'isRight' }
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28006',

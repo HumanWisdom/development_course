@@ -9,7 +9,8 @@ import { BeHappierPageRoutingModule } from './be-happier-routing.module';
 import { BeHappierPage } from './be-happier.page';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
-import { NgxCircularPlayerModule } from '../../../../../../ngx-circular-player';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
+import { NgxCaptureComponent } from 'ngx-capture';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { NgxCircularPlayerModule } from '../../../../../../ngx-circular-player';
     IonicModule,
     BeHappierPageRoutingModule,
     SharedModule,
-    NgxCircularPlayerModule
+    NgxCircularPlayerModule,
   ],
   declarations: [BeHappierPage]
 })

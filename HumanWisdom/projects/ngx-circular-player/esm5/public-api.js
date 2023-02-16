@@ -1,6 +1,0 @@
-/*
- * Public API Surface of ngx-circular-player
- */
-export * from './lib/ngx-circular-player.component';
-export * from './lib/ngx-circular-player.module';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25neC1jaXJjdWxhci1wbGF5ZXIvIiwic291cmNlcyI6WyJwdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyxxQ0FBcUMsQ0FBQztBQUNwRCxjQUFjLGtDQUFrQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBuZ3gtY2lyY3VsYXItcGxheWVyXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9saWIvbmd4LWNpcmN1bGFyLXBsYXllci5jb21wb25lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvbmd4LWNpcmN1bGFyLXBsYXllci5tb2R1bGUnO1xuIl19
