@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S58088Page implements OnInit {
   
   toc="work/s58001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/59.png"
  
   bg=""
   moduleLink="/adults/leadership"
@@ -21,19 +21,19 @@ export class S58088Page implements OnInit {
   moduleList: any = [
     {
       name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png',
       link: '/happiness',
       id: 23
     },
     {
       name: 'Emotional Needs',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/26.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
       link: '/emotional-needs',
       id: 18
     },
     {
       name: 'Communication',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/43.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/53.png',
       link: '/communication',
       id: 53
   

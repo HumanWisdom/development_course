@@ -20,7 +20,7 @@ export class S73107Page implements OnInit {
   // sectionName= "Living with Wisdom - II";
   // moduleId=58
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/49.png"
   
   bg=""
   moduleLink="/adults/opinions-beliefs"
@@ -30,20 +30,20 @@ export class S73107Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
       id: 44
     },
     {
       name: 'Work',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/48.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/58.png',
       link: '/work',
       id: 58
  
     },
     {
       name: 'Pleasure',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/20.png',
       link: '/pleasure',
       id: 20
   

@@ -20,7 +20,7 @@ export class S64072Page implements OnInit {
   // sectionName= "Living with Wisdom - I";
   // moduleId=76
   
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
  
   bg=""
   moduleLink="/adults/stress"
@@ -30,7 +30,7 @@ export class S64072Page implements OnInit {
   moduleList: any = [
     {
       name: 'Sorrow and Loss',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/31.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/60.png',
       link: '/sorrow',
       id: 60
 
@@ -44,7 +44,7 @@ export class S64072Page implements OnInit {
     },
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
       link: '/breathing',
       id: 29
     },
