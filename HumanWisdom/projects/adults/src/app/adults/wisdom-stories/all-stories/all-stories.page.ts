@@ -42,6 +42,7 @@ export class AllStoriesPage implements OnInit {
             res = new Array()
             res = dateres.filter(p => p.ExclFromChild === "True")
             res.forEach(element => {
+              dateres.splice(dateres.indexOf(element),1)
               dateres.unshift(element)
             });
 

@@ -32,6 +32,7 @@ export class ActiveGuard implements CanActivate, OnInit {
 
 
     let str = next.routeConfig.path;
+    console.log("str",str)
     this.logeventservice.logEvent(str);
     this.scrId = str.substring(1, str.length + 1);
     if (this.scrId !== '29000') {

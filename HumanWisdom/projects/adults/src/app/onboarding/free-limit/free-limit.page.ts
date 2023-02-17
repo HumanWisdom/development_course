@@ -45,6 +45,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
       this.backroute(previousUrl);
     });
     this.location.back()
+    this.closemodal.nativeElement.click();
   }
 
   backroute(previousUrl) {
@@ -53,7 +54,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.router.navigate(['/adults/adult-dashboard'])
     }
-    this.closemodal.nativeElement.click();
+    
 
   }
 
