@@ -26,7 +26,7 @@ export class S29000Page implements OnInit,OnDestroy {
   bookmarkList=[]
   
   breathingR=sessionStorage.getItem("breathingR")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.png"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
   tocColor="grey"
   lastvisited = false;
   stories: any = []

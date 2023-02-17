@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S61113Page implements OnInit {
   
   toc="loneliness/s61001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/anger.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/14.png"
  
   bg=""
   moduleLink="/adults/anger"
@@ -21,20 +21,20 @@ export class S61113Page implements OnInit {
   moduleList: any = [
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
       id: 47
     },
     {
       name: 'The Nature of the ‘I’',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/28.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/57.png',
       link: '/nature-of-i',
       id: 57
  
     },
     {
       name: 'Sorrow and Loss',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/31.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/60.png',
       link: '/sorrow',
       id: 60
   
