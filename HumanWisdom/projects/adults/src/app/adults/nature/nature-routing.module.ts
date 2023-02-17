@@ -26,8 +26,7 @@ const routes: Routes = [
   {
     path: 's28001',
     canActivate: [ActiveGuard],
-    component: S28001Page,
-    data: { animation: 'isRight' }
+    component: S28001Page
   },
   {
     path: 's28002',
@@ -104,14 +103,12 @@ const routes: Routes = [
   {
     path: 's28014',
     canActivate: [ActiveGuard],
-    component: S28014Page,
-    data: { animation: 'isLeft' }
+    component: S28014Page
   },
   {
     path: 's28015',
     canActivate: [ActiveGuard],
-    component: S28015Page,
-    data: { animation: 'isRight' }
+    component: S28015Page
   },
 ];
 
