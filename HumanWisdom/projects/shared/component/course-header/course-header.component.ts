@@ -15,6 +15,7 @@ export class CourseHeaderComponent implements OnInit {
   @Input() path: string; //to go back to the course page from note
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
+  progUrl: string;
   note: any
   t = new Date()
   minDate = this.t.getFullYear() + "-" + this.addZero(this.t.getMonth() + 1) + "-" + this.addZero(this.t.getDate())
@@ -45,6 +46,7 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
     this.showheaderbar = true;
     // console.log(this.ac)
     // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
@@ -84,12 +86,12 @@ export class CourseHeaderComponent implements OnInit {
 
     if (this.urlT) {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
 
     }
     else {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
     }
 
 
@@ -108,7 +110,11 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   goToDash() {
-    this.router.navigate(['/adults/adult-dashboard'])
+    if(this.progUrl="/adults/")
+      this.router.navigate(['/adults/adult-dashboard'])
+    else
+        this.router.navigate([this.progUrl +  '/dashboard'])
+   
   }
 
   addNote() {
@@ -136,12 +142,12 @@ export class CourseHeaderComponent implements OnInit {
     } */
     if (this.urlT) {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.urlT}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
 
     }
     else {
 
-      this.path = "https://humanwisdom.me/course/" + this.address + `?t=${this.token}`
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
     }
 
     this.ngNavigatorShareService.share({

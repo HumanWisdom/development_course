@@ -17,6 +17,7 @@ export class CourseFooterComponent implements OnInit {
   @Input() bg: string;
   @Input() bg_cft: string;
   @Input() isUseCloseButton:boolean=false;
+  progUrl: string;
   urlT:any
   shared=false
   //@ViewChild('screen', { static: true }) screen: any;
@@ -34,6 +35,7 @@ export class CourseFooterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
     if(location.href.includes("t="))
     {
       this.shared=true
@@ -57,7 +59,11 @@ export class CourseFooterComponent implements OnInit {
 
   }
   routeDashboard(){
-    this.router.navigate(['/adults/adult-dashboard'])
+    // this.router.navigate(['/adults/adult-dashboard'])
+    if(this.progUrl="/adults/")
+       this.router.navigate(['/adults/adult-dashboard'])
+   else
+      this.router.navigate([this.progUrl +  '/dashboard'])
   }
 
 }

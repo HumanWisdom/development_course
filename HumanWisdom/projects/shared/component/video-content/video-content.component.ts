@@ -29,6 +29,7 @@ export class VideoContentComponent implements OnInit {
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
   pageaction = localStorage.getItem("pageaction");
+  public enablevideo = false;
 
   constructor(
     private captureService: NgxCaptureService,
@@ -51,6 +52,14 @@ export class VideoContentComponent implements OnInit {
     this.service.mediaPercent(this.scrId).subscribe(res => {
       this.mediaPercent = res[0].MediaPrcnt
     })
+
+    if (this.pageaction === 'next') {
+      setTimeout(() => {
+        this.enablevideo = true;
+      }, 1000)
+    } else {
+      this.enablevideo = true;
+    }
 
   }
   getCurrentTime(data) {

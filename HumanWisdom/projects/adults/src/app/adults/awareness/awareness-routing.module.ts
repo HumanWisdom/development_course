@@ -48,7 +48,6 @@ const routes: Routes = [
   },  
   {
     path: 's39000',
-     canActivate:[ActiveGuard],  
     component: S39000Page,
   },  
   {

@@ -32,7 +32,18 @@ export class WisdomShortsIndexPage implements OnInit {
   getwisdomshorts() {
     this.service.GetWisdomShorts().subscribe((res) => {
       if (res) {
+        // this.wisdomshorts = res;
+       let res1 = new Array()
+        res1 = res.filter(p => p.display === "1")
+
+        res1.forEach(element => { 
+          res.splice(res.indexOf(element),1)
+          res.unshift(element)
+        });
+
         this.wisdomshorts = res;
+
+
       }
     })
   }
@@ -46,7 +57,7 @@ export class WisdomShortsIndexPage implements OnInit {
        return;
      } */
     console.log("url")
-    this.path = "https://humanwisdom.me/course" + this.address;
+    this.path = "https://humanwisdom.me" + this.address;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',

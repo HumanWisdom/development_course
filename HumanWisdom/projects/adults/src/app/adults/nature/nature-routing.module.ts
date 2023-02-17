@@ -32,21 +32,25 @@ const routes: Routes = [
     path: 's28002',
     canActivate: [ActiveGuard],
     component: S28002Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28003',
     canActivate: [ActiveGuard],
     component: S28003Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28004',
     canActivate: [ActiveGuard],
     component: S28004Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28005',
     canActivate: [ActiveGuard],
     component: S28005Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28006',
