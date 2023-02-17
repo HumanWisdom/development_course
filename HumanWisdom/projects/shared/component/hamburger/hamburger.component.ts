@@ -50,6 +50,22 @@ export class HamburgerComponent implements OnInit {
     if (this.platform.IOS) {
       this.ios = true;
     }
+     if(localStorage.getItem("isPartner")!=null){
+           this.isPartner = localStorage.getItem("isPartner");
+     }
+     if(localStorage.getItem("PartnerOption")!=null){
+       this.partnerOption = localStorage.getItem("PartnerOption")?.toString();
+     }
+     if( localStorage.getItem("SubscriberType")!=null){
+      this.subscriberType = localStorage.getItem("SubscriberType");
+     }
+     if( localStorage.getItem("Subscriber")!=null){
+      let sub: any = localStorage.getItem("Subscriber");
+      if (sub === "1" || sub === 1) {
+       this.subscriber = true;
+     }
+    }
+
     setTimeout(() => {
       let sub: any = localStorage.getItem("Subscriber");
       this.roleid = JSON.parse(localStorage.getItem("RoleID"));
