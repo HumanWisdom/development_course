@@ -43,7 +43,7 @@ jobs:
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ng build --configuration=staging --project="teenagers" -- --base-href /
+        ng build --project="teenagers" -- --base-href /
     
      - name: Compress the build artifacts
        run: |
