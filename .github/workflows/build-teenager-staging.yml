@@ -88,5 +88,5 @@ jobs:
           rm -rf /var/www/html/teenager_backup
           cp -R /var/www/html/course/ /var/www/html/teenager_backup
           rm -rf /var/www/html/teenagers
-          mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/teenagers          
+          mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers          
           
