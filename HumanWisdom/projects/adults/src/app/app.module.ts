@@ -57,10 +57,6 @@ export class MyHammerConfig extends HammerGestureConfig {
         ActiveGuard,
         LogEventService,
         ReactiveFormsModule,
-            {
-                 provide: APP_BASE_HREF, 
-                 useValue: '/course/' 
-            },
         {
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptorService,
