@@ -24,6 +24,7 @@ import { LogEventService } from './log-event.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
 import * as Hammer from 'hammerjs';
+import { APP_BASE_HREF } from '@angular/common';
 
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
@@ -56,6 +57,10 @@ export class MyHammerConfig extends HammerGestureConfig {
         ActiveGuard,
         LogEventService,
         ReactiveFormsModule,
+            {
+                 provide: APP_BASE_HREF, 
+                 useValue: '/course/' 
+            },
         {
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptorService,
