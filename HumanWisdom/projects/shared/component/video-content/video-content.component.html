@@ -6,8 +6,7 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex" [ngClass]="bg">
-        <div
-          [ngClass]="[pageaction === 'next' ? 'x_panel xpanel_01 p0 rtltext' : pageaction === 'prev' ? 'x_panel xpanel_01 p0 ltrtext' : 'x_panel xpanel_01 p0' ]">
+        <div>
           <div class="x_content tcenter p0">
             <form>
 
@@ -50,7 +49,7 @@
 
                   <video controls playinline (timeupdate)="getCurrentTime($event)" [ngClass]="[videoclass, 'cvideo']"
                     #video [poster]="poster" controlsList="nodownload">
-                    <source [src]="videoLink" type="video/mp4">
+                    <source [src]="videoLink" type="video/mp4" *ngIf="enablevideo">
                   </video>
 
                 </div>

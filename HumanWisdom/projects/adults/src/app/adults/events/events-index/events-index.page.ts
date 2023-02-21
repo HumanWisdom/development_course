@@ -64,7 +64,7 @@ export class EventsIndexPage implements OnInit {
        return;
      } */
     console.log("url")
-    this.path = "https://humanwisdom.me/course" + this.address;
+    this.path = "https://humanwisdom.me" + this.address;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',

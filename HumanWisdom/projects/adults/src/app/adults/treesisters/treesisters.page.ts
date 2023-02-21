@@ -22,7 +22,7 @@ export class TreesistersPage implements OnInit {
     .share({
       title: "HumanWisdom Program",
       text:
-        "Hey, checkout HumanWisdom's Tree planting program – https://www.humanwisdom.me/course/adults/treesisters"
+        "Hey, checkout HumanWisdom's Tree planting program – https://www.humanwisdom.me/adults/treesisters"
     })
     .then((response) => {
       console.log(response);

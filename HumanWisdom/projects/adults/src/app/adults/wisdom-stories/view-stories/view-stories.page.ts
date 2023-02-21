@@ -32,14 +32,18 @@ export class ViewStoriesPage implements OnInit {
       this.route.queryParams.subscribe(params => {
         this.sId=params?.sId
     });
-      this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
+      //this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
      
 
      }
 
   ngOnInit() {
     this.userId=JSON.parse(sessionStorage.getItem("userId"))
-      this.getStories(this.sId)
+   /*  if(localStorage.getItem("StoryType")==="Locked")
+    return false
+    else */
+    this.getStories(this.sId)
+      
   }
   assignLinks(){
 

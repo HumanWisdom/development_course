@@ -17880,7 +17880,8 @@ textarea:focus
 }
 
 .arrow {
-	transform: rotate(30deg) skewX(-30deg) scale(1,.866);
+	/* transform: rotate(30deg) skewX(-30deg) scale(1,.866); */
+  transform: rotate(88deg) skewX(-30deg) scale(1,.866) translate(30%,20%);
 }
 .arrow:before {
 	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
@@ -31722,7 +31723,7 @@ label.select_label:after
   right: 0;
   left: 0;
   margin: 0 auto;
-  z-index: 99;
+  z-index: 9;
 }
 
 .bg_bv

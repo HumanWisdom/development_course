@@ -25,7 +25,7 @@ export class S41000Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   qakResume=sessionStorage.getItem("qakResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/questions_are_key.jpg"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/41.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []

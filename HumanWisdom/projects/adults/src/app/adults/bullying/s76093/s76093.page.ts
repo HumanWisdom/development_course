@@ -19,7 +19,7 @@ export class S76093Page implements OnInit {
   // sectionName= "Living with Wisdom - I";
   // moduleId=44
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/criticism.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/16.png"
   
   bg=""
   moduleLink="/adults/criticism"
@@ -29,19 +29,19 @@ export class S76093Page implements OnInit {
   moduleList: any = [
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
       id: 19
     },
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/conditioning',
       id: 15
     },
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
       id: 44
     },

@@ -26,77 +26,89 @@ const routes: Routes = [
   {
     path: 's28001',
     canActivate: [ActiveGuard],
-    component: S28001Page,
+    component: S28001Page
   },
   {
     path: 's28002',
     canActivate: [ActiveGuard],
     component: S28002Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28003',
     canActivate: [ActiveGuard],
     component: S28003Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28004',
     canActivate: [ActiveGuard],
     component: S28004Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28005',
     canActivate: [ActiveGuard],
     component: S28005Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28006',
     canActivate: [ActiveGuard],
     component: S28006Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28007',
     canActivate: [ActiveGuard],
     component: S28007Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28008',
     canActivate: [ActiveGuard],
     component: S28008Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28009',
     canActivate: [ActiveGuard],
     component: S28009Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28010',
     canActivate: [ActiveGuard],
     component: S28010Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28011',
     canActivate: [ActiveGuard],
     component: S28011Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28012',
     canActivate: [ActiveGuard],
     component: S28012Page,
+    data: { animation: 'isLeft' }
   },
   {
     path: 's28013',
     canActivate: [ActiveGuard],
     component: S28013Page,
+    data: { animation: 'isRight' }
   },
   {
     path: 's28014',
     canActivate: [ActiveGuard],
-    component: S28014Page,
+    component: S28014Page
   },
   {
     path: 's28015',
     canActivate: [ActiveGuard],
-    component: S28015Page,
+    component: S28015Page
   },
 ];
 

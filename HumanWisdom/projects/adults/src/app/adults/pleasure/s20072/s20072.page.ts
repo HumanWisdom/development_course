@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S20072Page implements OnInit {
   
   toc="pleasure/s20001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sorrow_loss.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/60.png"
  
   bg=""
   moduleLink="/adults/sorrow"
@@ -22,21 +22,21 @@ export class S20072Page implements OnInit {
   moduleList: any = [
     {
       name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png',
       link: '/happiness',
       id: 23
       
     },
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
       id: 44
  
     },
     {
       name: 'Inner Boredom',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/27.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/56.png',
       link: '/inner-boredom',
       id: 56
   

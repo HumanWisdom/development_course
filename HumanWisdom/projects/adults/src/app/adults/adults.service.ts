@@ -114,6 +114,15 @@ export class AdultsService {
   getScenarioswithId(data: any): Observable<any> {
     return this.http.get(this.path + `/Scenarios/${data}`)
   }
+  
+  CheckStoryIsFree(data: any): Observable<any> {
+    return this.http.get(this.path + `/CheckStoryIsFree/${data}`)
+  }
+
+  CheckShortsIsFree(data: any): Observable<any> {
+    return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
+  }
+
   readStories(): Observable<any> {
     return this.http.get(this.path + `/wisdomStories`)
   }

@@ -27,19 +27,19 @@ export class ModuleEndComponent implements OnInit {
   @Input() moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/07.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
       link: '/breathing',
       id: 29
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/08.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
       link: '/noticing-thoughts',
       id: 30
     },
     {
       name: 'Guided Audio Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/the_full_program/10.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
       link: '/guided-meditation',
       id: 51
     },
@@ -59,7 +59,7 @@ export class ModuleEndComponent implements OnInit {
 
   shareIndex() {
     this.socialShare = true
-    this.shareUrl = "https://humanwisdom.me/course/adults/" + this.toc + `?t=${this.token}`
+    this.shareUrl = "https://humanwisdom.me/adults/" + this.toc + `?t=${this.token}`
 
     /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
        alert(`This service/api is not supported in your Browser`);

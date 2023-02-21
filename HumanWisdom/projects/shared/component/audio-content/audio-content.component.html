@@ -7,7 +7,7 @@
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02" [ngClass]="bg">
         <div
-          [ngClass]="[pageaction === 'next' ? 'x_panel xpanel_01 p0 rtltext' : pageaction === 'prev' ? 'x_panel xpanel_01 p0 ltrtext' : 'x_panel xpanel_01 p0' ]">
+          [ngClass]="[pageaction === 'next' ? 'x_panel xpanel_01 p0' : pageaction === 'prev' ? 'x_panel xpanel_01 p0' : 'x_panel xpanel_01 p0' ]">
           <div class="x_content p0">
             <form>
 
@@ -28,9 +28,9 @@
               <ngx-circular-player id="aud1" [source]="audioLink" (click)="getTime()" #audio></ngx-circular-player>
               -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
+                <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container">
                   <!-- <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player> -->
-                  <ngx-circular-player id="aud1" [source]="audioLink" (click)="getTime()" #audio></ngx-circular-player>
+                  <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio></ngx-circular-player>
                 </div>
               </div>
               <!-- /angular audio player plugin  -->

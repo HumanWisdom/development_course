@@ -1,8 +1,10 @@
+
 import { Location } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-free-limit',
@@ -16,7 +18,9 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
 
   isloggedIn = false;
 
+
   constructor(private location: Location, private router: Router) { }
+
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
@@ -29,6 +33,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
     this.enableotpmodal.nativeElement.click()
   }
 
+
   backClick() {
     let previousUrl: string = null;
     let currentUrl: string = null;
@@ -40,6 +45,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
       this.backroute(previousUrl);
     });
     this.location.back()
+    this.closemodal.nativeElement.click();
   }
 
   backroute(previousUrl) {
@@ -48,7 +54,8 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.router.navigate(['/adults/adult-dashboard'])
     }
-    this.closemodal.nativeElement.click();
+    
+
   }
 
   loginpage(issub = false) {
