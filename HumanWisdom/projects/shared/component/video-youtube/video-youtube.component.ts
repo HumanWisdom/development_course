@@ -30,6 +30,7 @@ export class VideoYoutubeComponent implements OnInit {
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
   pageaction = localStorage.getItem("pageaction");
+  iframeSrc:any;
 
   constructor(
     private captureService: NgxCaptureService,
@@ -40,6 +41,7 @@ export class VideoYoutubeComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       this.t = params['t'];
     })
+    this.iframeSrc=this.sanitizer.bypassSecurityTrustUrl(this.videoLink);
   }
 
   ngOnInit() {

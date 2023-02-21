@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S43035Page implements OnInit {
   
   toc="obstacles-enquiry/s43000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_enquiry.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/26.png"
   
   bg=""
   moduleLink="/adults/benefits-of-enquiry/s26002"
@@ -21,23 +21,21 @@ export class S43035Page implements OnInit {
   moduleList: any = [
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
       id: 19
     },
     {
       name: 'No Judgement',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/16.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/40.png',
       link: '/no-judgement',
       id: 40
- 
     },
     {
       name: 'Key Ideas',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/introduction/04.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/34.png',
       link: '/key-ideas',
       id: 34
-  
     },
   ]
 

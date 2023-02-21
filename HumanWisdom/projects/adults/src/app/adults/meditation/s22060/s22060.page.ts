@@ -11,11 +11,11 @@ import { AdultsService } from '../../adults.service';
 export class S22060Page implements OnInit {
 
   toc="meditation/s22001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/nature.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
   
   bg=""
-  moduleLink="/adults/nature"
-  moduleName=" Nature"
+  moduleLink="/adults/guided-meditation"
+  moduleName=" Guided Audio Meditation"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=28
 

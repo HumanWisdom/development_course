@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S38020Page implements OnInit {
   
   toc="insight/s38000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/awareness.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/39.png"
   
   bg=""
   moduleLink="/adults/awareness/s39001"
@@ -21,20 +21,19 @@ export class S38020Page implements OnInit {
   moduleList: any = [
     {
       name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
       link: '/awareness',
       id:39
     },
     {
       name: 'Look without Language',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/18.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/42.png',
       link: '/without-language',
       id:42
- 
     },
     {
       name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/09.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
       link: '/meditation',
       id:22
     },

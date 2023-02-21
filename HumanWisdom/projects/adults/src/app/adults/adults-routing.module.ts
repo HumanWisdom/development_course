@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
+import { ActiveGuard } from '../active.guard';
 
 const routes: Routes = [
   {
@@ -334,6 +335,7 @@ const routes: Routes = [
   },
   {
     path: 'wisdom-shorts/:videolink',
+    canActivate:[ActiveGuard],
     component: S3VideoComponent
   },
   {

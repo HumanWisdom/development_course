@@ -8,7 +8,7 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
   styleUrls: ['./audio-content.component.scss'],
 })
 export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
-  // yellow="#FFC455"
+  yellow="#FFC455"
   @Input() bg: string;
   @Input() title: string;
   @Input() audioLink: string;

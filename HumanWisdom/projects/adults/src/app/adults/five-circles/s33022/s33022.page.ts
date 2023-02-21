@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S33022Page implements OnInit {
   
   toc="five-circles/s33001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/key_ideas.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/34.png"
   
   bg=""
   moduleLink="/adults/key-ideas/"

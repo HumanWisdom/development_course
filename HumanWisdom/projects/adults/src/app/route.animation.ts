@@ -4,9 +4,9 @@ import {
 
 export const slider =
   trigger('routeAnimations', [
-    transition('* => isLeft', slideTo('left')),
+    transition('* => isLeft', slideTo('right')),
     transition('* => isRight', slideTo('right')),
-    transition('isRight => *', slideTo('left')),
+    transition('isRight => *', slideTo('right')),
     transition('isLeft => *', slideTo('right'))
   ]);
 

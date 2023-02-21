@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'blog-article',
-    canActivate:[ActiveGuard],  
+    // canActivate:[ActiveGuard],  
     loadChildren: () => import('./blog-article/blog-article.module').then( m => m.BlogArticlePageModule),
   },
 ];

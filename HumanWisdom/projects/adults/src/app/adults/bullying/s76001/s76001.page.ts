@@ -27,7 +27,7 @@ export class S76001Page implements OnInit, OnDestroy {
   bookmarkList = []
   bullyingResume = sessionStorage.getItem("bullyingResume")
 
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/bullying.png"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.png"
   tocColor = "white"
   lastvisited = false;
   stories: any = []

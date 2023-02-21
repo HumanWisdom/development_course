@@ -12,7 +12,7 @@ export class S32015Page implements OnInit {
   
   toc="benefits-of-wisdom/s32001"
   bg="";
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/5circles_of_wisdom.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/33.png"
   moduleLink="/adults/five-circles/"
   moduleName="5 Circles of Wisdom"
   sectionName= "Introduction";

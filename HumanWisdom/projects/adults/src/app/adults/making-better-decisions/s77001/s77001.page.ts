@@ -27,7 +27,7 @@ export class S77001Page implements OnInit, OnDestroy {
   bookmarkList = []
   making_better_decisionsResume = sessionStorage.getItem("making_better_decisionsResume")
 
-  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/making_better_decisions.png"
+  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.png"
   tocColor = "white"
   lastvisited = false;
   stories: any = []

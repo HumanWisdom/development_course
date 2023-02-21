@@ -1,4 +1,4 @@
-name: build-HumanWisdom-staging
+name: build-Teenager-staging
 on:
   push:
     branches: [main]
@@ -39,17 +39,17 @@ jobs:
         cd HumanWisdom
         npm install --force
 
-     - name: Build the Adult project
+     - name: Build the Teenager project
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --configuration=staging --project="adults" -- --base-href /course/
-
+        ng build --configuration=staging --project="teenagers" --base-href /teenagers/
+    
      - name: Compress the build artifacts
        run: |
         cd HumanWisdom
         mkdir -p builds/compressed
-        tar -czf builds/compressed/program.tgz www/
+        tar -czf builds/compressed/program.tgz teenagers/
 
      - name: Upload artifact
        uses: actions/upload-artifact@v2
@@ -85,8 +85,8 @@ jobs:
           rm -rf builds/uncompressed/${{ github.run_id }}
           mkdir -p builds/uncompressed/${{ github.run_id }}
           tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          rm -rf /var/www/html/course_backup_1
-          cp -R /var/www/html/course/ /var/www/html/course_backup_1
-          rm -rf /var/www/html/course
-          mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
+          rm -rf /var/www/html/teenager_backup
+          cp -R /var/www/html/course/ /var/www/html/teenager_backup
+          rm -rf /var/www/html/teenagers
+          mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers          
           

@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S39029Page implements OnInit {
   
   toc="awareness/s39000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/no_judgement.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png"
   bg=""
   moduleLink="/adults/no-judgement/s40001"
   moduleName="No Judgement"
@@ -20,19 +20,19 @@ export class S39029Page implements OnInit {
   moduleList: any = [
     {
       name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/07.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
       link: '/breathing',
       id: 29
     },
     {
       name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/08.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
       link: '/noticing-thoughts',
       id: 30
     },
     {
       name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/09.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
       link: '/meditation',
       id: 22
     },

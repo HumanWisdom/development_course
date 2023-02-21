@@ -11,7 +11,7 @@ import {AdultsService} from "../../adults.service";
 export class S42022Page implements OnInit {
   
   toc="without-language/s42000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/obstacles_to_enquiry.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/43.png"
   
   bg=""
   moduleLink="/adults/obstacles-enquiry/s43001"
@@ -21,20 +21,20 @@ export class S42022Page implements OnInit {
   moduleList: any = [
     {
       name: 'Three Steps to Enquiry',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/13.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/37.png',
       link: '/three-steps-enquiry',
       id: 37
     },
     {
       name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
       link: '/awareness',
       id: 39
  
     },
     {
       name: 'Nature',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/06.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
       link: '/nature',
       id: 28
   

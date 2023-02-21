@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S231p2Page implements OnInit {
   
   toc="anger/s162p0"
-  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/fear_anxiety.jpg"
+  moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/19.png"
   moduleLink="/adults/fear-anxiety"
   moduleName="Fear & Anxiety "
   sectionName= "Understand Emotions";
@@ -20,19 +20,19 @@ export class S231p2Page implements OnInit {
   moduleList: any = [
     {
       name: 'Reactive mind',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/vectorless/22.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/54.png',
       link: '/reactive-mind',
       id: 54
     },
     {
       name: 'Stress',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/vectorless/34.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/44.png',
       link: '/stress',
       id: 44
     },
     {
       name: 'Relationships',
-      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/vectorless/35.png',
+      image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/47.png',
       link: '/relationships',
       id: 47
     },

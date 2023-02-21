@@ -19,7 +19,7 @@ export class S62209Page implements OnInit {
   // sectionName= "Living with Wisdom - I";
   // moduleId=16
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/bullying.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/76.png"
   
   bg=""
   moduleLink="/adults/bullying"
@@ -29,13 +29,13 @@ export class S62209Page implements OnInit {
   moduleList: any = [
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
       id: 47
     },
     {
       name: 'Living with Peace',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/40.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png',
       link: '/living-with-peace',
       id: 63
  
@@ -43,7 +43,7 @@ export class S62209Page implements OnInit {
     },
     {
       name: 'Self Interest',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/24.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/55.png',
       link: '/self-interest',
       id: 55
   

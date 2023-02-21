@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S37018Page implements OnInit {
   
   toc="three-steps-enquiry/s37000"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/insight.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/38.png"
   
   bg=""
   moduleLink="/adults/insight/s38000"
@@ -21,21 +21,20 @@ export class S37018Page implements OnInit {
   moduleList: any = [
     {
       name: 'Awareness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/15.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
       link: '/awareness',
       id: 39
     },
     {
       name: 'Questions are Key',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/17.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/41.png',
       link: '/questions-are-key',
       id: 41
  
     },
-    {
-      
+    { 
       name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/14.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/38.png',
       link: '/insight',
       id: 38
   
