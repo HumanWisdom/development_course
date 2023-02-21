@@ -291,7 +291,7 @@ export class PersonalisedForYouPage implements OnInit {
 
   signInWithApple() {
     const CLIENT_ID = "humanwisdom.web.service"
-    const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
+    const REDIRECT_API_URL = "https://humanwisdom.info/api/verifyAppleToken_html"
 
 
     window.open(
