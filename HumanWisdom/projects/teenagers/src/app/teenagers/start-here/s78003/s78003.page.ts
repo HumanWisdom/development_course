@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s78003',
@@ -86,18 +86,18 @@ export class S78003Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/teenagers/conditioning/s7800334'])
+        //this.router.navigate(['/conditioning/s7800334'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/teenagers/start-here/s78002'])
+    this.router.navigate(['/start-here/s78002'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/teenagers/start-here/s78004'])
+    this.router.navigate(['/start-here/s78004'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

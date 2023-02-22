@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -14,7 +14,7 @@ export class S82022Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/key_ideas.jpg"
   
   bg=""
-  moduleLink="/teenagers/key-ideas/"
+  moduleLink="/key-ideas/"
   moduleName=" Key Ideas"
   sectionName= "Introduction";
   moduleId=83

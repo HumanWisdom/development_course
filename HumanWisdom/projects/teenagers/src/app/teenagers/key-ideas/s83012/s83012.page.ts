@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -79,7 +79,7 @@ export class S83012Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/key-ideas/s83013'])
+    this.router.navigate(['/key-ideas/s83013'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -90,13 +90,13 @@ export class S83012Page implements OnInit,OnDestroy {
     }).subscribe(res=>{},
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/teenagers/conditioning/s234'])
+        //this.router.navigate(['/conditioning/s234'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/key-ideas/s83011'])
+    this.router.navigate(['/key-ideas/s83011'])
   }
  
   ngOnDestroy()
