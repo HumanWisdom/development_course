@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -245,7 +245,7 @@ export class S81012Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/teenagers/wisdom-brings-change/s81013'])
+    this.router.navigate(['/wisdom-brings-change/s81013'])
     if (this.userId === 563) return;
 
     this.service.submitProgressText({
@@ -262,14 +262,14 @@ export class S81012Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/teenagers/wisdom-brings-change/s81012'])
+        //this.router.navigate(['/wisdom-brings-change/s81012'])
       })
   }
 
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/wisdom-brings-change/s81011'])
+    this.router.navigate(['/wisdom-brings-change/s81011'])
   }
 
   ngOnDestroy()

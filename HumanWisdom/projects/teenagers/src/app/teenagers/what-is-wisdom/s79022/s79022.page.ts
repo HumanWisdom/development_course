@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as noUiSlider from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/nouislider/';
 import * as wNumb from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/wnumb/';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s79022',
@@ -327,7 +327,7 @@ export class S79022Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/what-is-wisdom/s79023'])
+    this.router.navigate(['/what-is-wisdom/s79023'])
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
     this.service.submitProgressQuestion({
@@ -344,7 +344,7 @@ export class S79022Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/teenagers/what-is-wisdom/s79021'])
+    this.router.navigate(['/what-is-wisdom/s79021'])
   }
 
   ngOnDestroy() {}

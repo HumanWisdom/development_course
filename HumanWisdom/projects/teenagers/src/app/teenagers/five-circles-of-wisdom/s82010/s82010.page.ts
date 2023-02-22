@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -106,17 +106,17 @@ export class S82010Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/five-circles-of-wisdom/s82011'])
+        this.router.navigate(['/five-circles-of-wisdom/s82011'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/five-circles-of-wisdom/s82011'])
+        this.router.navigate(['/five-circles-of-wisdom/s82011'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82009'])
+    this.router.navigate(['/five-circles-of-wisdom/s82009'])
   }
 
   ngOnDestroy() 

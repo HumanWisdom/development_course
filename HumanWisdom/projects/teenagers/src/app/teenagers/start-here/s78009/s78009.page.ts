@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 @Component({
@@ -19,7 +19,7 @@ export class S78009Page implements OnInit {
       "no":1,
       "heading":"Journal",
       "text":"A record of your reflections as you go through the program, either within a module, or just a thought you had. We also prompt you with questions for the day e.g. What are you grateful for?",
-      "link":"/teenagers/journal",
+      "link":"/journal",
       "linkText":"",
       "module-id":""
     },
@@ -27,7 +27,7 @@ export class S78009Page implements OnInit {
       "no":2,
       "heading":"Wisdom Survey",
       "text":"Keep track of your progress(wisdom score) as you do the program.",
-      "link":"/teenagers/wisdom-survey",
+      "link":"/wisdom-survey",
       "linkText":"",
       "module-id":""
     },
@@ -35,7 +35,7 @@ export class S78009Page implements OnInit {
       "no":3,
       "heading":"Bookmarks",
       "text":"Bookmark individual slides and see them in your dashboard.",
-      "link":"/teenagers/bookmarks",
+      "link":"/bookmarks",
       "linkText":"",
       "module-id":""
     },
@@ -43,7 +43,7 @@ export class S78009Page implements OnInit {
       "no":4,
       "heading":"Certificate",
       "text":"Get a certificate of completion of each module - you can share this with friends.",
-      "link":"/teenagers/certificates",
+      "link":"/certificates",
       "linkText":"",
       "module-id":""
     },
@@ -51,7 +51,7 @@ export class S78009Page implements OnInit {
       "no":5,
       "heading":"Wisdom Stories",
       "text":"Specially curated stories from around the world where wisdom was applied to address common life challenges. You can also contribute your own stories.",
-      "link":"/teenagers/wisdom-stories",
+      "link":"/wisdom-stories",
       "linkText":"",
       "module-id":""
     },
@@ -59,7 +59,7 @@ export class S78009Page implements OnInit {
       "no":6,
       "heading":"Wisdom Points",
       "text":"As you go through the program you accumulate wisdom points which can be exchanged for features and services.",
-      "link":"/teenagers/wisdom-points",
+      "link":"/wisdom-points",
       "linkText":"",
       "module-id":""
     },
@@ -157,7 +157,7 @@ export class S78009Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/teenagers/start-here/s78010'])
+    this.router.navigate(['/start-here/s78010'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -172,12 +172,12 @@ export class S78009Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/teenagers/conditioning/s7800934'])
+        //this.router.navigate(['/conditioning/s7800934'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/start-here/s78008'])
+    this.router.navigate(['/start-here/s78008'])
   }
 }

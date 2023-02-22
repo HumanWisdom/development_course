@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -134,7 +134,7 @@ export class S78001Page implements OnInit,OnDestroy {
   ngOnDestroy(){}
 
   routeJournal(){
-    this.router.navigate(['/teenagers/journal'])
+    this.router.navigate(['/journal'])
   }
 
   goBack(){
@@ -143,7 +143,7 @@ export class S78001Page implements OnInit,OnDestroy {
 
   youtube(link) 
   {
-    this.router.navigate(['/teenagers/curated/youtubelink', link],{
+    this.router.navigate(['/curated/youtubelink', link],{
     state: {
       class: this.bg,
     }})
