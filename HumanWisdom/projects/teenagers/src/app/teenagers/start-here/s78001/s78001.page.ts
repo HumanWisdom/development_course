@@ -3,7 +3,6 @@ import { TeenagersService } from "../../teenagers.service";
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-
 @Component({
   selector: 'app-s78001',
   templateUrl: './s78001.page.html',
@@ -26,9 +25,8 @@ export class S78001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/program_guide.jpg"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/35.png"
   tocColor="white"
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
   lastvisited = false;
@@ -91,15 +89,12 @@ export class S78001Page implements OnInit,OnDestroy {
     this.moduleId=localStorage.getItem("moduleId")
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
+    else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
   
     this.startTime = Date.now();
     this.createScreen()
-
-
-    
   }
 
   toggleBookmark(){
@@ -107,7 +102,6 @@ export class S78001Page implements OnInit,OnDestroy {
       this.bookmark=1
     else
       this.bookmark=0
-
   }
 
   createScreen(){
@@ -117,11 +111,9 @@ export class S78001Page implements OnInit,OnDestroy {
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
-      {
-        
-      })
-    
-
+    {
+      
+    })
   }
 
   submitProgress(){
@@ -133,21 +125,14 @@ export class S78001Page implements OnInit,OnDestroy {
       "screenType":this.screenType,
       "timeSpent":this.totalTime
     }).subscribe(res=>
-      {
-        
+      { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    
-
   }
 
-  ngOnDestroy(){
- 
+  ngOnDestroy(){}
 
-
-
-  }
   routeJournal(){
     this.router.navigate(['/teenagers/journal'])
   }
@@ -163,5 +148,4 @@ export class S78001Page implements OnInit,OnDestroy {
       class: this.bg,
     }})
   }
-
 }

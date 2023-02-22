@@ -13,7 +13,7 @@ export class S79020Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w3"
-  hint = ""
+  hint = "It could be stress, anxiety, relationship challenges, or just not feeling at ease with yourself."
   toc = "/what-is-wisdom/s79001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S79020Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1049
+  rId = 1092
   reflection: any
   reflectionA: any
   r79020 = JSON.parse(sessionStorage.getItem("r79020"))
