@@ -1,5 +1,7 @@
 {
   "name": "ionic-hwp-angular",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

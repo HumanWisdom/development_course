@@ -188,8 +188,7 @@
             "production": {
               "browserTarget": "adults:build:production"
             },
-            "ci": {
-            }
+            "ci": {}
           }
         },
         "extract-i18n": {
@@ -243,7 +242,7 @@
           }
         },
         "ionic-cordova-build": {
-          "builder": "@ionic/angular-toolkit:cordova-build",
+          "builder": "@ionic/cordova-builders:cordova-build",
           "options": {
             "browserTarget": "adults:build"
           },
@@ -254,7 +253,7 @@
           }
         },
         "ionic-cordova-serve": {
-          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "builder": "@ionic/cordova-builders:cordova-serve",
           "options": {
             "cordovaBuildTarget": "adults:ionic-cordova-build",
             "devServerTarget": "adults:serve"
