@@ -1,47 +1,57 @@
-<app-likert-scale skipToPage="/start-here/s78018">
-  <form>
-    <h2 class="mtb0px txt13">
-      Feedback Survey
-    </h2>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-    <h4 class="mt0px txt14">
-     Introduction Module
-    </h4>
+<app-bg-video></app-bg-video>
 
-   
-     <!-- multistep wizard -->
-     <div id="svg_wrap"></div>
-     <section>
-  
-    <app-progress-slider [q]="q1" r="1" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
-    <br>
-    <app-progress-slider3 [q]="q2" r="2" pFilter="Too long" nFilter="Too short"  (sendRating)="receiveRating($event)"></app-progress-slider3>
-    <br>
-   
-    <app-progress-slider [q]="q4" r="4" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
-    <br>
-    <app-progress-slider [q]="q5" r="5" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
-    <br>
-    <app-progress-slider [q]="q6" r="6" pFilter="Very Easy" nFilter="Difficult"  (sendRating)="receiveRating($event)"></app-progress-slider>
-    <br>
-  </section>
-    <section></section>
-    <section></section>
-    <section></section>
-    
-    
-    <!-- /multistep wizard -->     
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>              
+              <h5 class="txt1">
+                Program Features
+              </h5>
 
-            
+              <div class="clearfix"></div>
 
-   
-     
-                        
-      
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>              
 
-   
-  </form>
-</app-likert-scale>
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                     4. Certificate 
+                    </h4>
 
+                    <h4 class="txt45 tleft">
+                      Get a certificate of completion of each module - you can share this with friends.
+                    </h4>
+                  </div>
+                </div>
+              </section>
 
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <!-- /multistep wizard -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
