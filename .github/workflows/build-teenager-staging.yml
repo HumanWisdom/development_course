@@ -1,20 +1,13 @@
-name: build-humanwisdom-prod
-
+name: build-Teenager-staging
 on:
   push:
-    branches: [Production]
+    branches: [main]
     
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    steps:
     
-     - uses: trstringer/manual-approval@v1
-       with:
-        secret: ${{ github.TOKEN }}
-        approvers: HumanWisdomInfo
-
+    steps:
      - name: Checkout code
        uses: actions/checkout@v2
     
@@ -46,18 +39,18 @@ jobs:
         cd HumanWisdom
         npm install --force
 
-     - name: Build the project
+     - name: Build the Teenager project
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --configuration=staging --project="adults" -- --base-href /course/
-
+        ng build --configuration=staging --project="teenagers" --base-href /teenagers/
+    
      - name: Compress the build artifacts
        run: |
         cd HumanWisdom
         mkdir -p builds/compressed
-        tar -czf builds/compressed/program.tgz www/
- 
+        tar -czf builds/compressed/program.tgz teenagers/
+
      - name: Upload artifact
        uses: actions/upload-artifact@v2
        with:
@@ -76,25 +69,24 @@ jobs:
     - name: Copy the artifact to remote server
       uses: appleboy/scp-action@master
       with:
-        host: ${{ secrets.PRODUCTION_HOST }}
+        host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PRODUCTION_SSH_KEY }}
+        key: ${{ secrets.SSH_KEY }}
         source: "program.tgz"
         target: "builds/compressed/${{ github.run_id }}"
         
     - name: Setup the build on remote server
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.PRODUCTION_HOST }}
+        host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PRODUCTION_SSH_KEY }}
+        key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo rm -rf builds/uncompressed/${{ github.run_id }}
-          sudo mkdir -p builds/uncompressed/${{ github.run_id }}
-          sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          sudo rm -rf /var/www/html/course_backup_1
-          sudo cp -R /var/www/html/course/ /var/www/html/course_backup_1
-          sudo mkdir -p /var/www/html/course
-          sudo rm -rf /var/www/html/course
-          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course      
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
+          rm -rf /var/www/html/teenager_backup
+          cp -R /var/www/html/course/ /var/www/html/teenager_backup
+          rm -rf /var/www/html/teenagers
+          mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers          
           
