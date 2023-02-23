@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -13,7 +13,7 @@ export class S79028Page implements OnInit {
   toc="what-is-wisdom/s79001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_can_wisdom_help.png"
   bg=""
-  moduleLink="/adults/how-can-wisdom-help/"
+  moduleLink="/how-can-wisdom-help/"
   moduleName="How can wisdom help?"
   sectionName= "Introduction"
   moduleId=80

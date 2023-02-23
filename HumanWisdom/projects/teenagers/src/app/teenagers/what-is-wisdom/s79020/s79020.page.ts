@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -13,7 +13,7 @@ export class S79020Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w3"
-  hint = ""
+  hint = "It could be stress, anxiety, relationship challenges, or just not feeling at ease with yourself."
   toc = "/what-is-wisdom/s79001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S79020Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1049
+  rId = 1092
   reflection: any
   reflectionA: any
   r79020 = JSON.parse(sessionStorage.getItem("r79020"))
@@ -106,17 +106,17 @@ export class S79020Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/what-is-wisdom/s79021'])
+        this.router.navigate(['/what-is-wisdom/s79021'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/what-is-wisdom/s79021'])
+        this.router.navigate(['/what-is-wisdom/s79021'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/what-is-wisdom/s79019'])
+    this.router.navigate(['/what-is-wisdom/s79019'])
   }
 
   ngOnDestroy() 

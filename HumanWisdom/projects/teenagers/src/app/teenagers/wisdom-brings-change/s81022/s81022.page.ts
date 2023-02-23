@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -148,12 +148,12 @@ export class S81022Page implements OnInit {
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/teenagers/wisdom-brings-change/s81023'])
+    this.router.navigate(['/wisdom-brings-change/s81023'])
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/wisdom-brings-change/s81021'])
+    this.router.navigate(['/wisdom-brings-change/s81021'])
   }
 
   sessionFetch(id, divid)

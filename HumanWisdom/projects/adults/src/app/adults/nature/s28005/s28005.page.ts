@@ -13,7 +13,9 @@ export class S28005Page implements OnInit {
 
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
+
   bg = "green_yellow_w3"
+
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink = this.mediaVideo + '/nature/videos/1.3.mp4'
   title = " Nature meditation 3"
@@ -91,7 +93,7 @@ export class S28005Page implements OnInit {
     this.router.navigate(['/adults/nature/s28006'])
     localStorage.setItem("pageaction", 'next')
     if (this.userId === 563) return;
-    
+
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
