@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -20,7 +20,7 @@ export class S82014Page implements OnInit {
       "no":1,
       "heading":"Fear and anxiety",
       "text":"Fear is a natural human emotion that can impact our lives in some ways that are protective, and other ways that are harmful and can cause anxiety. We explore the nature of fear, how it can cause anxiety, and how we can respond with wisdom.",
-      "link":"/teenagers/fear-anxiety",
+      "link":"/fear-anxiety",
       "linkText":"",
       "module-id":""
     },
@@ -28,7 +28,7 @@ export class S82014Page implements OnInit {
       "no":2,
       "heading":"Pleasure",
       "text":"The need for pleasure, operates in the background and shapes our lives in many ways we are not aware of. It affects our relationships, shopping habits, our happiness, and can also lead to addiction. We explore its origins in our thinking and how we can respond with intelligence.",
-      "link":"/teenagers/pleasure",
+      "link":"/pleasure",
       "linkText":"",
       "module-id":""
     },
@@ -36,7 +36,7 @@ export class S82014Page implements OnInit {
       "no":3,
       "heading":"Sorrow and loss",
       "text":"All of us will lose things we value and the sorrow that follows can be intense. We explore the origins of that feeling in us, the impact it has, how we can prepare for it, and how we can meet it with acceptance and intelligence.",
-      "link":"/teenagers/sorrow-loss",
+      "link":"/sorrow-loss",
       "linkText":"",
       "module-id":""
     },
@@ -44,7 +44,7 @@ export class S82014Page implements OnInit {
       "no":4,
       "heading":"Loneliness",
       "text":"We can be lonely when we are alone, or with others. It's linked to the depth of connection we have, with ourselves and others. We explore the origins of that feeling in us, how it impacts us, what we can do about it, and how we can make our peace with being alone.",
-      "link":"/teenagers/loneliness",
+      "link":"/loneliness",
       "linkText":"",
       "module-id":""
     },
@@ -52,7 +52,7 @@ export class S82014Page implements OnInit {
       "no":5,
       "heading":"Anger",
       "text":"Anger can protect us from harm, but can also be harmful, to ourselves and others. We explore its origins, how it impacts our lives, and how we can respond with intelligence, so it has its rightful place in our lives.",
-      "link":"/teenagers/anger",
+      "link":"/anger",
       "linkText":"",
       "module-id":""
     },  
@@ -118,7 +118,7 @@ export class S82014Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82015'])
+    this.router.navigate(['/five-circles-of-wisdom/s82015'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -133,12 +133,12 @@ export class S82014Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/teenagers/conditioning/s8201434'])
+        //this.router.navigate(['/conditioning/s8201434'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82013'])
+    this.router.navigate(['/five-circles-of-wisdom/s82013'])
   }
 }
