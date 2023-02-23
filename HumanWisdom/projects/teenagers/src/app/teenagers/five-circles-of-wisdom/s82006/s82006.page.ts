@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -20,7 +20,7 @@ export class S82006Page implements OnInit {
       "no":1,
       "heading":"Nature",
       "text":"We have a series of 11 meditations in nature which can inspire your own journeys and help your mind quieten, and help you connect to nature in a new way. This brings many other benefits, including stress reduction.",
-      "link":"/teenagers/nature",
+      "link":"/nature",
       "linkText":"",
       "module-id":""
     },
@@ -28,7 +28,7 @@ export class S82006Page implements OnInit {
       "no":2,
       "heading":"Breathing",
       "text":"We have many different breathing exercises you can practise on your own. These can be done anywhere and are excellent at helping your mind quieten, as well as giving you that little bit of space in a stressful situation for your intelligence to respond.  ",
-      "link":"/teenagers/breathing",
+      "link":"/breathing",
       "linkText":"",
       "module-id":""
     },
@@ -36,7 +36,7 @@ export class S82006Page implements OnInit {
       "no":3,
       "heading":"Noticing Thoughts",
       "text":"In this exercise we write down every thought that arises in our thinking for 5-10 minutes. As we do so, the mind goes quiet.",
-      "link":"/teenagers/noticing-thoughts",
+      "link":"/noticing-thoughts",
       "linkText":"",
       "module-id":""
     },
@@ -44,7 +44,7 @@ export class S82006Page implements OnInit {
       "no":4,
       "heading":"Meditation",
       "text":"We will explore how silence comes to us, not as a result of wanting to be silent, but just by noticing every thought and feeling as it rises. This is a simple exercise, with a profound impact.",
-      "link":"/teenagers/meditation",
+      "link":"/meditation",
       "linkText":"",
       "module-id":""
     },
@@ -52,7 +52,7 @@ export class S82006Page implements OnInit {
       "no":5,
       "heading":"Listening",
       "text":"In this module we offer you some guided listening meditations you can practise anywhere.  ",
-      "link":"/teenagers/guided-meditation",
+      "link":"/guided-meditation",
       "linkText":"",
       "module-id":""
     },
@@ -118,7 +118,7 @@ export class S82006Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82007'])
+    this.router.navigate(['/five-circles-of-wisdom/s82007'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -133,12 +133,12 @@ export class S82006Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/teenagers/conditioning/s8200634'])
+        //this.router.navigate(['/conditioning/s8200634'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82005'])
+    this.router.navigate(['/five-circles-of-wisdom/s82005'])
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -59,7 +59,7 @@ export class S83011tPage implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/teenagers/key-ideas/s83012'])
+    this.router.navigate(['/key-ideas/s83012'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -76,7 +76,7 @@ export class S83011tPage implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/teenagers/key-ideas/s83010'])
+    this.router.navigate(['/key-ideas/s83010'])
   }
 
 }

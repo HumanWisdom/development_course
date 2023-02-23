@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s82002',
@@ -78,7 +78,7 @@ export class S82002Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82003'])
+    this.router.navigate(['/five-circles-of-wisdom/s82003'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -93,7 +93,7 @@ export class S82002Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        // this.router.navigate(['/teenagers/five-circles-of-wisdom/s82003'])        
+        // this.router.navigate(['/five-circles-of-wisdom/s82003'])        
       })
   }
 
