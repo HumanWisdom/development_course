@@ -74,7 +74,7 @@ export class SearchPopularItemsPage implements OnInit {
   viewblog(item){
     localStorage.setItem("blogdata",JSON.stringify(item))
     localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
-    this.router.navigate(['/blog/blog-article'],{ queryParams: {sId: `${item['BlogID']}`}})
+    this.router.navigate(['/blog/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}});
   }
   getSourceForPodBin(url) {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
