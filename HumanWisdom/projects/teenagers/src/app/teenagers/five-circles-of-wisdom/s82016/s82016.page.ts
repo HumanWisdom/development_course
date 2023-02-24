@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -20,7 +20,7 @@ export class S82016Page implements OnInit {
       "no":1,
       "heading":"Happiness",
       "text":"Wanting to be happy is the driver for what we do in the world, but often end up unhappy. We explore the many causes of unhappiness which arise in our thinking, and how with that understanding we can lead happier lives.",
-      "link":"/teenagers/happiness",
+      "link":"/happiness",
       "linkText":"",
       "module-id":""
     },
@@ -28,7 +28,7 @@ export class S82016Page implements OnInit {
       "no":2,
       "heading":"Relationships",
       "text":"We explore why so many of our relationships are unhappy, despite our best intentions, and what we can do about it. Successful relationships contribute to our happiness and our success in the world.",
-      "link":"/teenagers/relationships",
+      "link":"/relationships",
       "linkText":"",
       "module-id":""
     },
@@ -36,7 +36,7 @@ export class S82016Page implements OnInit {
       "no":3,
       "heading":"Addiction",
       "text":"We explore what makes our mind, which is otherwise so intelligent, develop its strong habits and addictions. Understanding this can help us avoid them, and more easily overcome them.",
-      "link":"/teenagers/addiction",
+      "link":"/addiction",
       "linkText":"",
       "module-id":""
     },
@@ -44,7 +44,7 @@ export class S82016Page implements OnInit {
       "no":4,
       "heading":"Communication",
       "text":"The art of listening deeply, speaking with wisdom and understanding the meaning beyond the words being spoken, is one we can all learn, and it can help us in all our relationships, at home and work. We explore this in depth.",
-      "link":"/teenagers/communication",
+      "link":"/communication",
       "linkText":"",
       "module-id":""
     },
@@ -52,7 +52,7 @@ export class S82016Page implements OnInit {
       "no":5,
       "heading":"Opinions and Beliefs",
       "text":"We explore where our opinions and beliefs come from, why we get attached to them, how they can be a cause of conflict, their benefits, and how we can respond with wisdom. This can also help us understand others.",
-      "link":"/teenagers/opinions-beliefs",
+      "link":"/opinions-beliefs",
       "linkText":"",
       "module-id":""
     },
@@ -60,7 +60,7 @@ export class S82016Page implements OnInit {
       "no":6,
       "heading":"Self-esteem",
       "text":"We explore the nature of self-esteem, what leads to low self-esteem and low self-confidence, and how this understanding can help us become comfortable in our own skin.",
-      "link":"/teenagers/self-esteem",
+      "link":"/self-esteem",
       "linkText":"",
       "module-id":""
     },
@@ -68,7 +68,7 @@ export class S82016Page implements OnInit {
       "no":7,
       "heading":"Stress",
       "text":"80% of people report being stressed. We explore the origins of stress in our thinking, and how we can respond to the challenges of life with calm.",
-      "link":"/teenagers/stress",
+      "link":"/stress",
       "linkText":"",
       "module-id":""
     },
@@ -76,7 +76,7 @@ export class S82016Page implements OnInit {
       "no":8,
       "heading":"Love",
       "text":"Love is a core human need, and something all of us thirst for. We explore the many facets of love, including romantic love, what gets in the way of loving another, and how we can live with compassion for others, and with wisdom.",
-      "link":"/teenagers/love",
+      "link":"/love",
       "linkText":"",
       "module-id":""
     },
@@ -84,7 +84,7 @@ export class S82016Page implements OnInit {
       "no":9,
       "heading":"Criticism",
       "text":"We explore why we find criticism so hard to take, what makes us critical of others, why we are often so self-critical, and how we can respond with wisdom. Regarding criticism as an opportunity for growth requires wisdom.",
-      "link":"/teenagers/criticism",
+      "link":"/criticism",
       "linkText":"",
       "module-id":""
     },
@@ -92,7 +92,7 @@ export class S82016Page implements OnInit {
       "no":10,
       "heading":"Success & Failure",
       "text":"We explore why we want to be successful, what it means beyond money and fame, the risks of chasing it, how we can be successful and how we can meet failure with wisdom.",
-      "link":"/teenagers/success-failure",
+      "link":"/success-failure",
       "linkText":"",
       "module-id":""
     },
@@ -100,7 +100,7 @@ export class S82016Page implements OnInit {
       "no":11,
       "heading":"Live with Peace",
       "text":"Each one of us wants to live with a sense of peace, but this eludes many of us, no matter how successful we may be in the world. We explore the many reasons for this, and how this understanding can help us discover this peace within ourselves.",
-      "link":"/teenagers/live-with-peace",
+      "link":"/live-with-peace",
       "linkText":"",
       "module-id":""
     },
@@ -108,7 +108,7 @@ export class S82016Page implements OnInit {
       "no":12,
       "heading":"Money",
       "text":"We explore the many relationships we have with money - to meet our basic needs, for pleasure, as a status symbol, for security and how a deeper understanding of these factors allows us to live with wisdom, so it has its rightful place in our lives.",
-      "link":"/teenagers/money",
+      "link":"/money",
       "linkText":"",
       "module-id":""
     },
@@ -116,7 +116,7 @@ export class S82016Page implements OnInit {
       "no":13,
       "heading":"Dealing with death",
       "text":"To be human is to experience the loss of loved ones. We explore the reasons behind the sorrow that follows bereavement and the many ways we can respond with wisdom.",
-      "link":"/teenagers/dealing-with-death",
+      "link":"/dealing-with-death",
       "linkText":"",
       "module-id":""
     },
@@ -124,7 +124,7 @@ export class S82016Page implements OnInit {
       "no":14,
       "heading":"Food and health",
       "text":"Obesity rates are 42% in some countries. This can cause heart disease, diabetes and many other health problems. Eating disorders are equally challenging. We explore the many hidden forces in our thinking that govern our relationship with food, and how a deeper understanding of them can help us live healthy lives.",
-      "link":"/teenagers/food-and-health",
+      "link":"/food-and-health",
       "linkText":"",
       "module-id":""
     },
@@ -132,7 +132,7 @@ export class S82016Page implements OnInit {
       "no":15,
       "heading":"Leadership",
       "text":"Enlightened leaders, who lead with wisdom, get the best out of their employees, create a great working culture, and contribute to the success of all organisations. We explore the many ways wisdom can help you do this, whatever your role may be.",
-      "link":"/teenagers/leadership",
+      "link":"/leadership",
       "linkText":"",
       "module-id":""
     },
@@ -140,7 +140,7 @@ export class S82016Page implements OnInit {
       "no":16,
       "heading":"Work",
       "text":"We spend so much of our time at work. We explore how we can use our wisdom to be happy at work, manage the challenges we face, have great relationships, and the difference a positive attitude can make.",
-      "link":"/teenagers/work",
+      "link":"/work",
       "linkText":"",
       "module-id":""
     },
@@ -206,7 +206,7 @@ export class S82016Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82017'])
+    this.router.navigate(['/five-circles-of-wisdom/s82017'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -221,12 +221,12 @@ export class S82016Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/teenagers/conditioning/s8201634'])
+        //this.router.navigate(['/conditioning/s8201634'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82015'])
+    this.router.navigate(['/five-circles-of-wisdom/s82015'])
   }
 }

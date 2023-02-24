@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import * as jQuery from 'jquery';
@@ -16,7 +16,7 @@ export class S78004Page implements OnInit,OnDestroy {
   bg="purple_blue_w2"
   title="How to use the program?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/start-here/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/start-here/audios/1.1.mp3'
 
   transcriptPage="start-here/s78004t"
   toc="start-here/s78001"
@@ -87,7 +87,7 @@ export class S78004Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/teenagers/start-here/s78005'])
+    this.router.navigate(['/start-here/s78005'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -105,7 +105,7 @@ export class S78004Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/teenagers/start-here/s78003'])
+    this.router.navigate(['/start-here/s78003'])
   }
 
   ngOnDestroy()
