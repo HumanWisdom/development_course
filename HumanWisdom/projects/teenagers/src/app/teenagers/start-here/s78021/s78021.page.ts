@@ -92,7 +92,7 @@ export class S78021Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/start-here/s78020'])
+    this.router.navigate(['/start-here/s78019'])
   }
 
   goNext() 

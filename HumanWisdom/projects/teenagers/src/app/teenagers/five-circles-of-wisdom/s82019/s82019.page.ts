@@ -13,7 +13,7 @@ export class S82019Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w5"
-  hint = ""
+  hint = "It could be subjects like stress, anxiety, or your relationships."
   toc = "/five-circles-of-wisdom/s82001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S82019Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 76004
+  rId = 1097
   reflection: any
   reflectionA: any
   r82019 = JSON.parse(sessionStorage.getItem("r82019"))
