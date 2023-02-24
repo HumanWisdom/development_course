@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AudioPlayerComponent implements OnInit {
 
+  yellow="#FFC455"
   @Input() audioLink: string;
 
   constructor() { }

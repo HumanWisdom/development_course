@@ -26,7 +26,7 @@ export class S81001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_wisdom.png"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/32.png"
   tocColor="white"
   tocAlt=""
   lastvisited = false;
