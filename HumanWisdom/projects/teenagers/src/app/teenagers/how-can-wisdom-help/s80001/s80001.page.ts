@@ -27,7 +27,7 @@ export class S80001Page implements OnInit,OnDestroy {
   bookmarkList=[]
   
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_can_wisdom_help.png"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/74.png"
   tocColor="white"
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
   lastvisited = false;

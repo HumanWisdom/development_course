@@ -13,7 +13,7 @@ export class S83006Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w4"
-  hint = ""
+  hint = "Probably not. Why do you think that is though?"
   toc = "/key-ideas/s83001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S83006Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 76004
+  rId = 1098
   reflection: any
   reflectionA: any
   r83006 = JSON.parse(sessionStorage.getItem("r83006"))
