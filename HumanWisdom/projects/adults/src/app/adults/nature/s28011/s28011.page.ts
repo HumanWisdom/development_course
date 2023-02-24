@@ -13,7 +13,7 @@ export class S28011Page implements OnInit {
 
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
-  bg="green_yellow_w1"
+  bg="green_yellow_w9"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/nature/videos/1.9.mp4'  
   title=" Nature meditation 9"

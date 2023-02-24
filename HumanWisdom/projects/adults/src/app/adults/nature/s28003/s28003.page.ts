@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
 
 
+
 @Component({
   selector: 'app-s28003',
   templateUrl: './s28003.page.html',
@@ -13,7 +14,7 @@ export class S28003Page implements OnInit {
 
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
-  bg = "green_yellow_w1"
+  bg = "green_yellow_w3"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink = this.mediaVideo + '/nature/videos/1.1.mp4'
   title = "Nature meditation 1"
@@ -107,7 +108,7 @@ export class S28003Page implements OnInit {
     })
   }
   prev() {
-    localStorage.setItem("pageaction",'prev')
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/nature/s28001'])
 
 
