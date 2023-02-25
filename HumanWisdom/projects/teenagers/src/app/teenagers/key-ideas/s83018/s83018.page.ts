@@ -13,7 +13,7 @@ export class S83018Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w3"
-  hint = ""
+  hint = "Most human beings share the same emotions, want more than they had yesterday, and seek pleasure…"
   toc = "/key-ideas/s83001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S83018Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 76004
+  rId = 1101
   reflection: any
   reflectionA: any
   r83018 = JSON.parse(sessionStorage.getItem("r83018"))
