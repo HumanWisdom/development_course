@@ -6,6 +6,7 @@ import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ForumService } from '../forum.service';
 import { Platform } from "@angular/cdk/platform";
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-forum-landing',
@@ -39,7 +40,9 @@ export class ForumLandingPage implements OnInit {
   }, {
     value: 3, label: 'Reflections'
   }];
-  constructor(private serivce: ForumService, public platform:Platform, private router: Router, private ngNavigatorShareService: NgNavigatorShareService, private location: Location) {
+  constructor(private serivce: ForumService, public platform:Platform, private router: Router, 
+    private ngNavigatorShareService: NgNavigatorShareService, private location: Location, 
+    private meta: Meta, private title: Title) {
     this.UserID = localStorage.getItem('userId');
     console.log(this.UserID);
     this.token = JSON.parse(localStorage.getItem("token"));
@@ -145,6 +148,18 @@ export class ForumLandingPage implements OnInit {
     this.getAllposts(e);
   }
   ngOnInit() {
+
+    this.title.setTitle('Online Community for Wisdom Exchange')
+    this.meta.updateTag({ property: 'title', content: 'Online Community for Wisdom Exchange' })
+    this.meta.updateTag({ property: 'description', content: 'Join our discussion forum for inspirational discussions and exchange of wisdom on personal growth and mental wellness. Find emotional support and engage in mindful conversations.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Online community,Discussion forum,Wisdom exchange,Inspirational discussions,Self-improvement forum,Personal growth community,Mental wellness community,Mindful conversations,Emotional support forum,Personal development discussions' })
+  
+  
+  
+
+
+
+
     this.selectthread = this.threadlist[0].value;
     this.getAllposts(0);
     fromEvent(this.threadsearch.nativeElement, 'keyup').pipe(
