@@ -4,10 +4,8 @@ import {
 
 export const slider =
   trigger('routeAnimations', [
-    transition('* => isLeft', slideTo('right')),
-    transition('* => isRight', slideTo('right')),
-    transition('isRight => *', slideTo('right')),
-    transition('isLeft => *', slideTo('right'))
+    transition(':increment', slideTo('right')),
+    transition(':decrement', slideTo('left')),
   ]);
 
 function slideTo(direction) {
@@ -26,10 +24,10 @@ function slideTo(direction) {
     ]),
     group([
       query(':leave', [
-        animate('600ms ease', style({ [direction]: '100%' }))
+        animate('300ms ease', style({ [direction]: '100%' }))
       ], optional),
       query(':enter', [
-        animate('600ms ease', style({ [direction]: '0%' }))
+        animate('300ms ease', style({ [direction]: '0%' }))
       ])
     ]),
   ];
