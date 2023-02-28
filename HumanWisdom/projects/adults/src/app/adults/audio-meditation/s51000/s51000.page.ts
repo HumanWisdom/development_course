@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-s51000',
@@ -35,7 +36,8 @@ export class S51000Page implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private service: AdultsService,
-    private location: Location
+    private location: Location,
+    private meta: Meta, private title: Title
   ) {
     this.getaudiomeditation()
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
@@ -65,7 +67,16 @@ export class S51000Page implements OnInit, OnDestroy {
     // this.stories = JSON.parse(this.stories)
   }
 
-  ngOnInit() {
+  ngOnInit() {  
+    
+  this.title.setTitle('Relaxation Meditations for Sleep and Calmness')
+  this.meta.updateTag({ property: 'title', content: 'Relaxation Meditations for Sleep and Calmness' })
+  this.meta.updateTag({ property: 'description', content: 'Enhance your sleep and find inner peace with our relaxation meditation sessions. Guided audio meditations for a calm mind and body.' })
+  this.meta.updateTag({ property: 'keywords', content: 'Audio Meditation,Guided Meditation,Mindfulness Meditation,Relaxation Meditation,Stress Relief Meditation,Sleep Meditation,Calmness Meditation,Peaceful Meditation,Focus Meditation' })
+
+
+
+
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if (last === 'T') {

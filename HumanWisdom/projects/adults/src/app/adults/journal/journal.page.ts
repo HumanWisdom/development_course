@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { AdultsService } from '../adults.service';
 import { LogEventService } from "src/app/log-event.service";
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-journal',
@@ -24,10 +25,19 @@ export class JournalPage implements OnInit {
   searchedText:any
 
   constructor(private router: Router, private location:Location,
-              private service: AdultsService, public logeventservice: LogEventService) { }
+              private service: AdultsService, public logeventservice: LogEventService,
+              private meta: Meta, private title: Title) { }
 
   ngOnInit() {
   
+
+    this.title.setTitle('Personal Growth Journal ')
+    this.meta.updateTag({ property: 'title', content: 'Personal Growth Journal '})
+    this.meta.updateTag({ property: 'description', content: 'Our journal provides a safe space to explore your thoughts and emotions. Connect with others and learn from their experiences to enhance your personal growth.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Personal growth journal,Mindfulness journaling,Personal relationship journal,Communication in relationships,Mindful relationships' })
+  
+
+
     if(this.saveUsername==false)
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
    else

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from "@angular/cdk/platform";
 import { AdultsService } from '../../adults.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'HumanWisdom-events-index',
@@ -20,7 +21,7 @@ export class EventsIndexPage implements OnInit {
   constructor(private location: Location, private router: Router,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
-    public adult: AdultsService) {
+    public adult: AdultsService, private meta: Meta, private title: Title) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
   }
@@ -42,6 +43,13 @@ export class EventsIndexPage implements OnInit {
   }
 
   ngOnInit() {
+
+    this.title.setTitle('Mindfulness Events - Learn to Live in the Present')
+    this.meta.updateTag({ property: 'title', content: 'Mindfulness Events - Learn to Live in the Present'})
+    this.meta.updateTag({ property: 'description', content: 'Experience the benefits of mindfulness and learn to live in the present. Join our mindfulness events for a chance to gain clarity and peace of mind.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Personal development events,Self-improvement events,Mindfulness events,Wisdom-based events,Inspirational events,Adult learning events,Life lessons events,Meditation events,Mental health events,Mindful events' })
+  
+
     this.adult.getAllEvents().subscribe(x => {
       this.eventList=x;
        this.backupList=JSON.parse(JSON.stringify(this.eventList));
