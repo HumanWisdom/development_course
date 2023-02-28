@@ -114,7 +114,7 @@ export class AdultsService {
   getScenarioswithId(data: any): Observable<any> {
     return this.http.get(this.path + `/Scenarios/${data}`)
   }
-  
+
   CheckStoryIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckStoryIsFree/${data}`)
   }
@@ -335,11 +335,19 @@ export class AdultsService {
   GetAudioMeditation(): Observable<any> {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
   }
-  contactForm(form:any){
-    return this.http.post(this.path + '/ContactCoach',form);
+  contactForm(form: any) {
+    return this.http.post(this.path + '/ContactCoach', form);
   }
 
-  getAllEvents(): Observable<any>{
+  getAllEvents(): Observable<any> {
     return this.http.get(this.path + '/Events');
+  }
+
+  getEventbyId(eventID): Observable<any> {
+    return this.http.get(this.path + `/Events/${eventID}`)
+  }
+
+  registerevent(data): Observable<any> {
+    return this.http.post(this.path + '/RegisterEvents', data);
   }
 }
