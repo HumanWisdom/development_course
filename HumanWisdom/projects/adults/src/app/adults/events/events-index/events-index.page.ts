@@ -14,6 +14,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export class EventsIndexPage implements OnInit {
   path: string;
   address: string;
+  futureeventList: any = [];
   eventList: any = [];
   searchinp="";
   backupList:any=[];
@@ -51,7 +52,9 @@ export class EventsIndexPage implements OnInit {
   
 
     this.adult.getAllEvents().subscribe(x => {
-      this.eventList=x;
+      console.log(x)
+      this.futureeventList= x.FutureEvents;
+      this.eventList=x.PastEvents;
        this.backupList=JSON.parse(JSON.stringify(this.eventList));
     });
   }

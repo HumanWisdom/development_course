@@ -340,6 +340,7 @@ export class AdultsService {
   }
 
   getAllEvents(): Observable<any>{
-    return this.http.get(this.path + '/Events');
+   // return this.http.get(this.path + '/Events');
+   return this.http.get(this.path + '/AllEvents');
   }
 }
