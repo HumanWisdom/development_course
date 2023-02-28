@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'start-here',
-    loadChildren: () => import('./teenagers//start-here/start-here.module').then(m => m.StartHereModule)
+    loadChildren: () => import('./teenagers/start-here/start-here.module').then(m => m.StartHereModule)
   },
   {
     path: 'what-is-wisdom',
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'how-can-wisdom-help',
-    loadChildren: () => import('./teenagers//how-can-wisdom-help/how-can-wisdom-help.module').then(m => m.HowCanWisdomHelpModule)
+    loadChildren: () => import('./teenagers/how-can-wisdom-help/how-can-wisdom-help.module').then(m => m.HowCanWisdomHelpModule)
   },
   {
     path: 'wisdom-brings-change',
@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'key-ideas',
     loadChildren: () => import('./teenagers/key-ideas/key-ideas.module').then(m => m.KeyIdeasModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./teenagers/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
 ];
 
