@@ -17,7 +17,7 @@ export class S178p2Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="1/4"
+  progressText=" 1/4"
   link="/adults/anger/s179"
   name="#2  The nature of anger"
   progressImg=""
