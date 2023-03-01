@@ -34,7 +34,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_white sc_01">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
-            <form>
+           
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group has-feedback p0 zi0 div_search">
@@ -86,7 +86,7 @@
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <ng-container *ngFor="let item of futureeventList">
                                   <!-- video row -->
-                                  <a routerLink="/events/e01/">
+                                  <a href="/events/event?eid={{item.RowID}}" >
                                     <div class="row box_01 bg_gallery p0">
                                       <div  
                                         class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img"
@@ -174,7 +174,7 @@
                 <div class="pagebreak"></div>
               </div>
 
-            </form>
+           
           </div>
         </div>
       </div>

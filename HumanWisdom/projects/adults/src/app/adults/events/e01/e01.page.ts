@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdultsService } from "../../adults.service";
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-e01',
@@ -8,13 +10,16 @@ import { AdultsService } from "../../adults.service";
 })
 export class E01Page implements OnInit {
 
-  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/artworks/01.png"
+  tocImage = ""
   tocColor = "white"
   eventData = [];
   name = '';
   email = '';
-
-  constructor(private service: AdultsService) {
+  eventID=0;
+  constructor(private service: AdultsService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.eventID = params?.eid
+    });
     this.getEventID();
   }
 
@@ -22,7 +27,7 @@ export class E01Page implements OnInit {
   }
 
   getEventID() {
-    this.service.getEventbyId('29').subscribe(res => {
+    this.service.getEventbyId(this.eventID).subscribe(res => {
       this.eventData = res[0];
       this.tocImage = this.eventData['ArtImgPath'];
     },
@@ -34,7 +39,7 @@ export class E01Page implements OnInit {
 
   registerEvent() {
     let obj = {
-      "EventsID": 29,
+      "EventsID": this.eventID,
       "Name": this.name,
       "EmailID": this.email
     }
