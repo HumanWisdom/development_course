@@ -339,8 +339,9 @@ export class AdultsService {
     return this.http.post(this.path + '/ContactCoach', form);
   }
 
-  getAllEvents(): Observable<any> {
-    return this.http.get(this.path + '/Events');
+  getAllEvents(): Observable<any>{
+   // return this.http.get(this.path + '/Events');
+   return this.http.get(this.path + '/AllEvents');
   }
 
   getEventbyId(eventID): Observable<any> {
