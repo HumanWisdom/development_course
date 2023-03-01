@@ -103,6 +103,7 @@ export class S35011Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/program-guide/s35009'])
 
   }

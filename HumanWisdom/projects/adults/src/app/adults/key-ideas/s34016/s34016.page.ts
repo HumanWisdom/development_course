@@ -133,6 +133,7 @@ export class S34016Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/key-ideas/s34015'])
   }
 

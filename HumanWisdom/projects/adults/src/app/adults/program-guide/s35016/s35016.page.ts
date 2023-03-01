@@ -239,6 +239,7 @@ export class S35016Page implements OnInit {
 
 
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/program-guide/s35015'])
 
   }

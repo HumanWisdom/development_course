@@ -133,6 +133,7 @@ export class S27014Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/discovering-wisdom/s27013'])
   }
 

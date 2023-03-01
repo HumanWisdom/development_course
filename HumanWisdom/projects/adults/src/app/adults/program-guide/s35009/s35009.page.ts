@@ -193,6 +193,7 @@ receiveBookmark(e)
 
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/program-guide/s35009p1'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -216,6 +217,7 @@ receiveBookmark(e)
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/program-guide/s35008'])
 
   }
