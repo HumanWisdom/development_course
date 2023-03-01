@@ -17,7 +17,7 @@ export class S198p2Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText=" 2/4"
+  progressText="2/4"
   link="/adults/anger/s199"
   name="#3  Responding to anger with wisdom"
   progressImg=""

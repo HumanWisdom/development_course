@@ -31743,6 +31743,47 @@ label.select_label:after
   color: royalblue !important;
 }
 
+/* event accordion  */
+#accordion_event .panel-default>.panel-heading
+{
+  background: transparent;
+  border: 0;
+  /* padding: 0 0 16px 0; */
+  padding: 0;
+}
+
+#accordion_event.panel-group .panel
+{
+  border: 0;
+  box-shadow: unset;
+}
+
+#accordion_event .panel-title > a:after
+{
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/accordion_down.svg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  bottom: 0;
+}
+
+#accordion_event .panel-title > a[aria-expanded="true"]:after {
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/accordion_up.svg);
+}
+
+#accordion_event .panel-body
+{
+  padding: 15px 0 0px 0 !important;
+}
+/* /event accordion  */
+
+.divider_03
+{
+  border: 1px solid #DADADA;
+  margin: 15px 0 15px 0;
+}
+
 /* teenagers */
 .btn_intro_splash
 {
