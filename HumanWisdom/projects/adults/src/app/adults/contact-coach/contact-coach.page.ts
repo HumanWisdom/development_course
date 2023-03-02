@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { AdultsService } from '../adults.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact-coach',
@@ -13,12 +14,19 @@ export class ContactCoachPage implements OnInit {
 
   code='';
   phonecode=''
-  constructor(private location:Location,private adultService:AdultsService) {
+  constructor(private location:Location,private adultService:AdultsService,
+    private meta: Meta, private title: Title) {
     this.initializeForm();
     this.getCountriesList();
    }
 
   ngOnInit() {
+
+    this.title.setTitle('Contact a Life Coach for Personal Growth')
+    this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth'})
+    this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
+    this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' })
+  
   }
 
   initializeForm(){

@@ -13,7 +13,7 @@ export class S82010Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w8"
-  hint = ""
+  hint = "ou could judge yourself as right or wrong, or good or bad"
   toc = "/five-circles-of-wisdom/s82001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S82010Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 76004
+  rId = 1096
   reflection: any
   reflectionA: any
   r82010 = JSON.parse(sessionStorage.getItem("r82010"))

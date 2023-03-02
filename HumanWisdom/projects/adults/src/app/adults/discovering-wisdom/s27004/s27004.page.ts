@@ -102,12 +102,14 @@ export class S27004Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/discovering-wisdom/s27003'])
 
   }
 
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/discovering-wisdom/s27004p1'])
     // this.router.navigate(['/adults/discovering-wisdom/s27004'])
     this.endTime = Date.now();

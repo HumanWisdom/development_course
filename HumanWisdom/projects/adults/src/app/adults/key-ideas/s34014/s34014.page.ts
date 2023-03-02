@@ -86,6 +86,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/key-ideas/s34015'])
 
     this.service.submitProgressText({
@@ -110,6 +111,7 @@ createScreen(){
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/key-ideas/s34013'])
 
   }

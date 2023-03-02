@@ -83,6 +83,7 @@ export class S22022Page implements OnInit, OnDestroy {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/meditation/s22023'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,

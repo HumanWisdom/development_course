@@ -130,6 +130,7 @@ export class S33019Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/five-circles/s33018'])
   }
 

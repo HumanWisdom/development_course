@@ -116,6 +116,7 @@ receiveBookmark(e)
 }
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/five-circles/s33007'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -139,6 +140,7 @@ receiveBookmark(e)
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/five-circles/s33005'])
 
   }

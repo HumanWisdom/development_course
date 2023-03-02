@@ -333,7 +333,7 @@ export class S78019Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/start-here/s78020'])
+    this.router.navigate(['/start-here/s78021'])
     if (this.userId === 563) return;
 
     this.service.submitProgressText({
