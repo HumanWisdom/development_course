@@ -1,48 +1,57 @@
-<app-feedback-question skipToPage="/start-here/s78018">
-  <form>
-    <h2 class="mtb0px txt13">
-      Feedback Survey
-    </h2>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-    <h4 class="mt0px txt14">
-     Introduction Module
-    </h4>
+<app-bg-video></app-bg-video>
 
-    <!-- multistep wizard -->
-    <div id="svg_wrap"></div>                 
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- Class -->  
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>              
+              <h5 class="txt1">
+                Program Features
+              </h5>
 
-  <section>
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a class="sb_anchor">
-          <div class="box textarea_box">
-            <h4 class="pt1rem txt15">
-             {{reflection}}
-            </h4>    
+              <div class="clearfix"></div>
 
-            <hr>
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>              
 
-            <textarea id="message" required="required" class="form-control b0 p0 txt19" name="message" rows="15" name="p1" placeholder="Write your answer here"></textarea>
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                     6. Wisdom Points 
+                    </h4>
 
-            <br>
+                    <h4 class="txt45 tleft">
+                      As you go through the program you accumulate wisdom points which can be exchanged for features and services.
+                    </h4>
+                  </div>
+                </div>
+              </section>
 
-          </div>                    
-        </a>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <!-- /multistep wizard -->
+            </form>
+          </div>
+        </div>
       </div>
-    </div>  
+    </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
 
-  </section>
-  <section> </section>
-  <section></section>
-  <section></section>
-                       
-
-     
-  </form>
-</app-feedback-question>
-
-<!-- feedback survey footer  -->
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
-<!-- /feedback survey footer -->
-           
-         
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

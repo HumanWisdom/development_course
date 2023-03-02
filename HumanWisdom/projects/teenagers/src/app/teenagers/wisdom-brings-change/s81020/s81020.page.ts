@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -13,7 +13,7 @@ export class S81020Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w6"
-  hint = ""
+  hint = "You could say it is the ability to understand oneself and others, to be able to live with compassion and a sense of peace."
   toc = "/wisdom-brings-change/s81001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S81020Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 76004
+  rId = 1094
   reflection: any
   reflectionA: any
   r81020 = JSON.parse(sessionStorage.getItem("r81020"))
@@ -106,17 +106,17 @@ export class S81020Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/wisdom-brings-change/s81021'])
+        this.router.navigate(['/wisdom-brings-change/s81021'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/wisdom-brings-change/s81021'])
+        this.router.navigate(['/wisdom-brings-change/s81021'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/wisdom-brings-change/s81019'])
+    this.router.navigate(['/wisdom-brings-change/s81019'])
   }
 
   ngOnDestroy() 

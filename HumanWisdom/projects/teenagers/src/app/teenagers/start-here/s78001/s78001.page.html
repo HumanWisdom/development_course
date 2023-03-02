@@ -1,27 +1,3 @@
-<!-- top navigation -->
-<!-- <div class="top_nav ml0 tcenter inav">
-  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/program_guide.jpg" alt="" class="img-responsive iw100">
-  <div class="nav_menu absolute_top p20px">
-      <nav>          
-          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
-            <li class="">                    
-                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
-                  <h4 class="btn_back_white">
-                    Back
-                  </h4> 
-                </a>                  
-            </li>   
-            
-            <li class="lishare">                    
-              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
-              </a>                  
-            </li>
-          </ul>
-      </nav>
-  </div>
-</div> -->
-<!-- /top navigation -->
 <title>User Guide | HumanWisdom</title>
 
 <app-toc-header [tocImage]="tocImage" [tocColor]="tocColor" [tocAlt]="tocAlt"></app-toc-header>
@@ -50,12 +26,9 @@
 
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
-        <a [routerLink]="['/teenagers/start-here', pgResume]" *ngIf="lastvisited">
+        <a [routerLink]="['/start-here', pgResume]" *ngIf="lastvisited">
           <button type="button" class="btn btn-success mb0 btn_begin_here bg_purple_blue" data-dismiss="modal">Continue where you left</button>
         </a>
-        <!-- <a routerLink="/teenagers/start-here/s78002">
-          <button type="button" class="btn btn_default mb0 txt_purple_blue" data-dismiss="modal">Start from the beginning</button>
-        </a> -->
       </div>
     </div>                    
 
@@ -124,6 +97,33 @@
     <!-- /video row -->
 
     <!-- video row -->
+    <a (click)="youtube('C0tXwOYTcIs')">
+      <div class="row box_01 bg_gallery p0">
+        <div  
+          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
+          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/start_here_05.svg);">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
+        </div>        
+
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
+              <h4 class="fw_500 fs_15px lh_18px fc_5d5d5d mtb0px">
+                Understand yourself
+              </h4>    
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">   
+              <h4 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px tright">
+                1 min
+              </h4>    
+            </div>
+          </div> 
+        </div>                        
+      </div>
+    </a> 
+    <!-- /video row -->
+
+    <!-- video row -->
     <a>
       <div class="row box_01 bg_gallery p0">
 
@@ -133,26 +133,6 @@
           style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/start_here_03.svg);">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
         </div>        
-
-        <!-- <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex mb5px">
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
-              <h4 class="fw_500 fs_15px lh_18px fc_5d5d5d mtb0px">
-                Ten ways to use the app
-              </h4>    
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 tright">   
-              <a href="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/program_guide/pdf/10+ways+to+use+the+HumanWisodm+app.pdf" download="newfilename">
-                <i class="fas fa-download cdownload"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h4 class="fw_400 fs_10px lh_12px fc_5d5d5d mtb0px tright">
-              2 min
-            </h4>
-          </div>
-        </div> -->
 
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
           <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -213,7 +193,7 @@
     </a> 
     <!-- /video row -->
 
-    <a routerLink="/teenagers/start-here/s78002">
+    <a routerLink="/start-here/s78002">
       <div class="row crow box bg_purple_blue">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <h6 class="session_no mtb0px">
@@ -241,5 +221,4 @@
 
 </app-index-content> 
 
-<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <app-index-footer></app-index-footer>

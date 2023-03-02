@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -13,7 +13,7 @@ export class S82010Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w8"
-  hint = ""
+  hint = "ou could judge yourself as right or wrong, or good or bad"
   toc = "/five-circles-of-wisdom/s82001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S82010Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 76004
+  rId = 1096
   reflection: any
   reflectionA: any
   r82010 = JSON.parse(sessionStorage.getItem("r82010"))
@@ -106,17 +106,17 @@ export class S82010Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/five-circles-of-wisdom/s82011'])
+        this.router.navigate(['/five-circles-of-wisdom/s82011'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/five-circles-of-wisdom/s82011'])
+        this.router.navigate(['/five-circles-of-wisdom/s82011'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/five-circles-of-wisdom/s82009'])
+    this.router.navigate(['/five-circles-of-wisdom/s82009'])
   }
 
   ngOnDestroy() 

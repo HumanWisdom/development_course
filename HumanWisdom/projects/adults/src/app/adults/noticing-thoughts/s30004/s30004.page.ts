@@ -11,7 +11,7 @@ export class S30004Page implements OnInit {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w2"
+  bg = "blue_w3"
   hint = ""
 
   toc = ""
@@ -100,6 +100,7 @@ export class S30004Page implements OnInit {
       })
   }
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/noticing-thoughts/s30003'])
   }
   ngOnDestroy() {

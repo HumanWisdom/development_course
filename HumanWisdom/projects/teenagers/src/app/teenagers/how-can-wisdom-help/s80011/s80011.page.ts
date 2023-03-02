@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -44,12 +44,12 @@ export class S80011Page implements OnInit {
 
   submitProgress()
   {
-    this.router.navigate(['/teenagers/how-can-wisdom-help/s80012'])
+    this.router.navigate(['/how-can-wisdom-help/s80012'])
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/how-can-wisdom-help/s80010'])
+    this.router.navigate(['/how-can-wisdom-help/s80010'])
   }
 
 }

@@ -103,12 +103,14 @@ export class S32003Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/benefits-of-wisdom/s32002'])
 
   }
 
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     // this.router.navigate(['/adults/discovering-wisdom/s32003'])
     this.router.navigate(['/adults/benefits-of-wisdom/s32004'])
     this.endTime = Date.now();

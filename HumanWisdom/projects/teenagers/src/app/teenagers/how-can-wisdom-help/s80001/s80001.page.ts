@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -27,7 +27,7 @@ export class S80001Page implements OnInit,OnDestroy {
   bookmarkList=[]
   
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/how_can_wisdom_help.png"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/74.png"
   tocColor="white"
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
   lastvisited = false;
@@ -148,7 +148,7 @@ export class S80001Page implements OnInit,OnDestroy {
 
   }
   routeJournal(){
-    this.router.navigate(['/teenagers/journal'])
+    this.router.navigate(['/journal'])
   }
 
   goBack(){
@@ -157,7 +157,7 @@ export class S80001Page implements OnInit,OnDestroy {
 
   youtube(link) 
   {
-    this.router.navigate(['/teenagers/curated/youtubelink', link],{
+    this.router.navigate(['/curated/youtubelink', link],{
     state: {
       class: this.bg,
     }})

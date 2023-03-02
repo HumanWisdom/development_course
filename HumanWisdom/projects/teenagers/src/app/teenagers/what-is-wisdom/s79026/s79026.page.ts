@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeenagersService } from "../../teenagers.service";
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -27,7 +27,7 @@ export class S79026Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1049
+  rId = 1093
   reflection: any
   reflectionA: any
   r79026 = JSON.parse(sessionStorage.getItem("r79026"))
@@ -106,17 +106,17 @@ export class S79026Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/what-is-wisdom/s79027'])
+        this.router.navigate(['/what-is-wisdom/s79027'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/what-is-wisdom/s79027'])
+        this.router.navigate(['/what-is-wisdom/s79027'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/what-is-wisdom/s79025'])
+    this.router.navigate(['/what-is-wisdom/s79025'])
   }
 
   ngOnDestroy() 

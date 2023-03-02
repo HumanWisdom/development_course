@@ -124,6 +124,7 @@ export class S22006Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/meditation/s22005'])
   }
 

@@ -28,11 +28,16 @@ export class BlogArticlePage implements OnInit {
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
-      this.getblog()
+      if(isNaN(+this.blogid)){
+        if(localStorage.getItem('blogId') && localStorage.getItem('blogId')!=null){
+          this.blogid=localStorage.getItem('blogId');
+          this.getblog();
+        }
+      }else{
+        this.getblog();
+      }
     });
     // this.blogid=JSON.parse(localStorage.getItem("blogId"))
-   
-  
   }
 
   ngOnInit() {
@@ -42,6 +47,7 @@ export class BlogArticlePage implements OnInit {
   }
 
   getblog() {
+    localStorage.setItem('blogId',this.blogid);
     this.service.getBlogId(this.blogid).subscribe(res => {
       if (res) {
         this.blogList = res
@@ -53,8 +59,9 @@ export class BlogArticlePage implements OnInit {
           this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3)
         }
         this.likecount = parseInt(this.blogList['LikeCnt'])
-      
-
+        debugger;
+        var url=this.blogList['Title'].replaceAll(" ","-");
+         window.history.pushState('', '', '/adults/blog/blog-article?sId='+url);
          this.title.setTitle(this.blogList['Title'])
 
        if(this.meta.getTag("property='title'"))
