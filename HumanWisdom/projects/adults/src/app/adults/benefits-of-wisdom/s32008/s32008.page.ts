@@ -98,7 +98,7 @@ export class S32008Page implements OnInit {
     sessionStorage.setItem("r32008", JSON.stringify(e))
     this.r32008 = sessionStorage.getItem("r32008")
     console.log(this.r32008)
-
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/benefits-of-wisdom/s32009'])
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -130,6 +130,7 @@ export class S32008Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/benefits-of-wisdom/s32007'])
   }
 

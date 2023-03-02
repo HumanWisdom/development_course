@@ -91,6 +91,7 @@ export class S22013Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/meditation/s22014'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -112,6 +113,7 @@ export class S22013Page implements OnInit {
  
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/meditation/s22012'])
  
  

@@ -98,6 +98,7 @@ export class S33002Page implements OnInit {
   }
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/five-circles/s33003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
