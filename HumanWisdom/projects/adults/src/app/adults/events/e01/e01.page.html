@@ -43,41 +43,42 @@
 
   <br>
 
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <h4 class="txt201 tleft">
-        Register Here
-      </h4>
+  <div *ngIf="enableRegister">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt201 tleft">
+          Register Here
+        </h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <hr class="hr_style_7">
+      </div>
+    </div>
+
+    <div class="row mt20px">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="name" placeholder="Name">
+      </div>
+    </div>
+
+    <div class="row mt10px">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="email" placeholder="E-mail">
+      </div>
+    </div>
+
+    <div class="row center_flex mt20px">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+        <a>
+          <button type="button" [disabled]="email === '' || name === ''"
+            class="btn btn-success mb0 btn_begin_here bg_green_yellow" (click)="registerEvent()">Register</button>
+        </a>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <hr class="hr_style_7">
-    </div>
-  </div>
-
-  <div class="row mt20px">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <input type="text" class="form-control cfc3 tleft" [(ngModel)]="name" placeholder="Name">
-    </div>
-  </div>
-
-  <div class="row mt10px">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <input type="text" class="form-control cfc3 tleft" [(ngModel)]="email" placeholder="E-mail">
-    </div>
-  </div>
-
-  <div class="row center_flex mt20px">
-    <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-      <a>
-        <button type="button" [disabled]="email === '' || name === ''"
-          class="btn btn-success mb0 btn_begin_here bg_green_yellow" (click)="registerEvent()">Register</button>
-      </a>
-    </div>
-  </div>
-
 
 </app-index-content>
 
