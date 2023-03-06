@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import * as moment from 'moment';
 import { AdultsService } from "../../adults.service";
-import { ActivatedRoute, Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-e01',
@@ -15,7 +15,9 @@ export class E01Page implements OnInit {
   eventData = [];
   name = '';
   email = '';
-  eventID=0;
+  eventID = 0;
+  enableRegister = false;
+
   constructor(private service: AdultsService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.eventID = params?.eid
@@ -29,6 +31,15 @@ export class E01Page implements OnInit {
   getEventID() {
     this.service.getEventbyId(this.eventID).subscribe(res => {
       this.eventData = res[0];
+      let split = res[0]['Event_Date'].replace('th', '');
+      let format = moment(split).format('YYYY, MM, DD');
+      let today = moment().format('YYYY, MM, DD');
+      var a = moment([format]);
+      var b = moment([today]);
+      let diff = a.diff(b, 'days');
+      if (diff > 0) {
+        this.enableRegister = true;
+      }
       this.tocImage = this.eventData['ArtImgPath'];
     },
       error => console.log(error),
