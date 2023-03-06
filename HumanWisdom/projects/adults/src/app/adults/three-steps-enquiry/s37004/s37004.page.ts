@@ -155,7 +155,7 @@ export class S37004Page implements OnInit {
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
 this.router.navigate(['/adults/three-steps-enquiry/s37005'])
-
+if (this.userId !== 563){
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
     "ScrNumber":this.screenNumber,  
@@ -165,7 +165,7 @@ this.router.navigate(['/adults/three-steps-enquiry/s37005'])
     "OptionIDs":this.sendOption.join()})
     .subscribe((res) => {});
 
-   
+}
 
 
 }
