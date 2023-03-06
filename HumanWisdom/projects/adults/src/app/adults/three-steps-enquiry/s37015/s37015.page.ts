@@ -81,7 +81,7 @@ export class S37015Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/three-steps-enquiry/s37016'])
+   
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -109,7 +109,7 @@ export class S37015Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/adults/three-steps-enquiry/s37015'])
+    this.router.navigate(['/adults/three-steps-enquiry/s37016'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
