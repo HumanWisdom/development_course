@@ -40,6 +40,7 @@ export class S433Page implements OnInit,OnDestroy {
     private location:Location,
     private url: ActivatedRoute
   ) { 
+    this.service.setmoduleID(17);
       this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
