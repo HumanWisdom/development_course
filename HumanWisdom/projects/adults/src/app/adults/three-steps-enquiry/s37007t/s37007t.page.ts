@@ -25,13 +25,15 @@ export class S37007tPage implements OnInit {
   screenNumber=37007
   startTime:any
   endTime:any
+  totalTime:any
+  
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
   
  
   
   avDuration=localStorage.getItem("avDuration37007")
-  totalTime=localStorage.getItem("totalTime37007")
+  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   constructor(private router: Router,
@@ -40,6 +42,7 @@ export class S37007tPage implements OnInit {
  
  
   ngOnInit() {
+    this.totalTime=localStorage.getItem("totalTime37007")
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
@@ -62,7 +65,10 @@ export class S37007tPage implements OnInit {
     sessionStorage.setItem("bookmark37007",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/three-steps-enquiry/s37008'])
+    if (this.userId !== 563){
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -75,7 +81,7 @@ export class S37007tPage implements OnInit {
       {
         
       })
- 
+    }
    
   }
   prev(){
