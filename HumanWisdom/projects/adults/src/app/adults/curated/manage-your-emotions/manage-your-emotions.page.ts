@@ -28,10 +28,10 @@ export class ManageYourEmotionsPage implements OnInit {
 
   ngOnInit() {
 
-    this.title.setTitle('Building Healthy Relationships')
-    this.meta.updateTag({ property: 'title', content: 'Building Healthy Relationships' })
-    this.meta.updateTag({ property: 'description', content: 'Learn how to build healthy, fulfilling relationships that last with these helpful tips.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Healthy Relationships,Building Trust in Relationships,Communication in Relationships,Overcoming Relationship Challenges,Developing Intimacy in Relationships,Nurturing Relationships,Maintaining Positive Relationships' })
+    this.title.setTitle('Managing Emotions with Mindfulness & Positive Psychology')
+    this.meta.updateTag({ property: 'title', content: 'Managing Emotions with Mindfulness & Positive Psychology' })
+    this.meta.updateTag({ property: 'description', content: 'Gain mastery over your emotions with our expert-guided coping strategies for anger management, stress management, and mood regulation. Learn how to practice emotional self-regulation and self-awareness techniques that promote mindfulness and positive psychology.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Emotional intelligence,Coping with emotions,Anger management,Emotional self-regulation,Self-awareness techniques,Mindfulness practices,Positive psychology,Mood regulation,Anger management,Self-control techniques,Stress management' })
 
 
     localStorage.setItem('curated', 'emotions');
