@@ -28,10 +28,10 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     private meta: Meta, private title: Title) { }
 
   ngOnInit() {
-    this.title.setTitle('Mindfulness Practices for a Calm Mind')
-    this.meta.updateTag({ property: 'title', content: 'Mindfulness Practices for a Calm Mind' })
-    this.meta.updateTag({ property: 'description', content: 'Learn effective mindfulness practices for calming the mind and reducing stress. Discover relaxation techniques and self-care tips for anxiety and mental clarity.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Mindfulness practices,Calming techniques,Mental clarity,Meditation for calmness,Stress-free living,Inner peace tips,Relaxation techniques' })
+    this.title.setTitle('Building Healthy Relationships')
+    this.meta.updateTag({ property: 'title', content: 'Building Healthy Relationships' })
+    this.meta.updateTag({ property: 'description', content: 'Learn how to build healthy, fulfilling relationships that last with these helpful tips.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Healthy Relationships,Building Trust in Relationships,Communication in Relationships,Overcoming Relationship Challenges,Developing Intimacy in Relationships,Nurturing Relationships,Maintaining Positive Relationships' })
 
     localStorage.setItem('curated', 'relationships');
     let rem = localStorage.getItem('remember');
