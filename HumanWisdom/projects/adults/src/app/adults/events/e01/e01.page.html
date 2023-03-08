@@ -2,82 +2,84 @@
 
 <app-index-content>
 
-  <form>                                
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Dealing with Depression
-        </h1>
-      </div>
-    </div>
 
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h1 class="module_title">
+        {{eventData['Title']}}
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h4 class="txt_comparison">
+        {{eventData['EventDesc']}}
+      </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft">
+        Date:
+        <span class="fw_700">
+          {{eventData['Event_Date']}}
+        </span>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row mt5px">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft">
+        Time:
+        <span class="fw_700">
+          {{eventData['EventTiming']}}
+        </span>
+      </h2>
+    </div>
+  </div>
+
+  <br>
+
+  <div *ngIf="enableRegister">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <h4 class="txt_comparison">
-          Depression affects 1 in 10 of us and causes so much suffering. Join us for this discussion on how we can support someone who is depressed, overcome it ourselves using our own wisdom, or avoid it in the future.
+        <h4 class="txt201 tleft">
+          Register Here
         </h4>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft"> 
-          Date: 
-          <span class="fw_700"> 
-            March 4, 2023
-          </span>
-        </h2>
-      </div>
-    </div>
-
-    <div class="row mt5px">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft"> 
-          Time: 
-          <span class="fw_700"> 
-            10am EST, 3pm UK, 8.30pm IST
-          </span>
-        </h2>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h4 class="txt201 tleft">
-          Register Here
-        </h4>  
-      </div>                
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
         <hr class="hr_style_7">
       </div>
-    </div>  
+    </div>
 
-    <div class="row mt20px">                    
+    <div class="row mt20px">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <input type="text" class="form-control cfc3 tleft" placeholder="Name">
+        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="name" placeholder="Name">
       </div>
     </div>
 
-    <div class="row mt10px">                    
+    <div class="row mt10px">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <input type="text" class="form-control cfc3 tleft" placeholder="E-mail">
+        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="email" placeholder="E-mail">
       </div>
     </div>
 
     <div class="row center_flex mt20px">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
         <a>
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_green_yellow">Register</button>
+          <button type="button" [disabled]="email === '' || name === ''"
+            class="btn btn-success mb0 btn_begin_here bg_green_yellow" (click)="registerEvent()">Register</button>
         </a>
       </div>
     </div>
-  </form>    
+  </div>
 
-</app-index-content> 
+</app-index-content>
 
 <app-index-footer></app-index-footer>

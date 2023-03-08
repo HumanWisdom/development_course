@@ -100,6 +100,7 @@ export class S30004Page implements OnInit {
       })
   }
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/noticing-thoughts/s30003'])
   }
   ngOnDestroy() {

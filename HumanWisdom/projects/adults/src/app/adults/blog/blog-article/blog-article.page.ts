@@ -14,7 +14,8 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./blog-article.page.scss'],
 })
 export class BlogArticlePage implements OnInit {
-  blogList: any;
+  list: any;
+  blogList;
   likecount = 0
   comment = ''
   blogid;
@@ -29,10 +30,8 @@ export class BlogArticlePage implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
       if(isNaN(+this.blogid)){
-        if(localStorage.getItem('blogId') && localStorage.getItem('blogId')!=null){
-          this.blogid=localStorage.getItem('blogId');
-          this.getblog();
-        }
+        var blogid=this.getBlogList(this.blogid);
+       
       }else{
         this.getblog();
       }
@@ -59,9 +58,9 @@ export class BlogArticlePage implements OnInit {
           this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3)
         }
         this.likecount = parseInt(this.blogList['LikeCnt'])
-      
-         window.history.pushState('', '', '/adults/blog/blog-article?sId='+this.blogList['Title']);
-         this.title.setTitle(this.blogList['Title'])
+        var url=this.blogList['Title'].replaceAll(" ","-");
+        window.history.pushState('', '', '/adults/blog/blog-article?sId='+url);
+        this.title.setTitle(this.blogList['Title'])
 
        if(this.meta.getTag("property='title'"))
          this.meta.updateTag({ property: 'title', content: this.blogList['Title']})
@@ -174,7 +173,21 @@ export class BlogArticlePage implements OnInit {
       window.open(url)
     }
   }
- 
-  
+
+  getBlogList(title){
+    this.service.getBlog().subscribe(res=>
+      {
+        if(res) {
+          this.list=res
+          let data =this.list.filter(resp=>resp.Title.toLocaleLowerCase().includes(title.toLocaleLowerCase().replaceAll("-"," ")))
+          this.blogid= data[0]['BlogID'];
+          this.getblog();
+        }
+      },
+      error=>console.log(error),
+      ()=>{
+      }
+    )
+  }  
 
 }

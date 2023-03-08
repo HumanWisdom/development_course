@@ -55,6 +55,7 @@ export class S33011tPage implements OnInit {
       this.bookmark=0
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/five-circles/s33012'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -72,6 +73,7 @@ export class S33011tPage implements OnInit {
     
   }
   previous(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/five-circles/s33010'])
   }
 

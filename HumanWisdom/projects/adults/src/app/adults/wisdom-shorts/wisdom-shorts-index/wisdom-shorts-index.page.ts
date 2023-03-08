@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from './../../adults.service';
+import { Meta, Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'HumanWisdom-wisdom-shorts-index',
@@ -20,13 +22,18 @@ export class WisdomShortsIndexPage implements OnInit {
   wisdomshorts = [];
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
-    private location: Location, private service: AdultsService) {
+    private location: Location, private service: AdultsService, private meta: Meta, private title: Title ) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
     this.getwisdomshorts()
   }
 
   ngOnInit() {
+    this.title.setTitle('Inspiring Shorts for Adults')
+    this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Adults'})
+    this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy adults who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
+  
   }
 
   getwisdomshorts() {

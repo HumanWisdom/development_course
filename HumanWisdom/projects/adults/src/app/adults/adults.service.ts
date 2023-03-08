@@ -48,6 +48,7 @@ export class AdultsService {
     }
   ]
 
+  public userId = 100;
 
   constructor(private http: HttpClient, handler: HttpBackend) { }
 
@@ -114,7 +115,7 @@ export class AdultsService {
   getScenarioswithId(data: any): Observable<any> {
     return this.http.get(this.path + `/Scenarios/${data}`)
   }
-  
+
   CheckStoryIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckStoryIsFree/${data}`)
   }
@@ -335,11 +336,42 @@ export class AdultsService {
   GetAudioMeditation(): Observable<any> {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
   }
-  contactForm(form:any){
-    return this.http.post(this.path + '/ContactCoach',form);
+  contactForm(form: any) {
+    return this.http.post(this.path + '/ContactCoach', form);
   }
 
-  getAllEvents(): Observable<any>{
-    return this.http.get(this.path + '/Events');
+  getAllEvents(): Observable<any> {
+    // return this.http.get(this.path + '/Events');
+    return this.http.get(this.path + '/AllEvents');
+  }
+
+  getEventbyId(eventID): Observable<any> {
+    return this.http.get(this.path + `/Events/${eventID}`)
+  }
+
+  registerevent(data): Observable<any> {
+    return this.http.post(this.path + '/RegisterEvents', data);
+  }
+
+  setmoduleID(id) {
+    let rem = localStorage.getItem('remember');
+    if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+    var discoveringWisdomResume;
+    var mediaPercent;
+    localStorage.setItem("moduleId", JSON.stringify(id))
+    this.clickModule(id, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        let qrList = res
+        discoveringWisdomResume = "s" + res.lastVisitedScreen
+        sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
+        mediaPercent = parseInt(res.MediaPercent);
+        let freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(qrList))
+      })
   }
 }

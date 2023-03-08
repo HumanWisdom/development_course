@@ -45,9 +45,11 @@ export class S30006Page implements OnInit {
   }
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/noticing-thoughts/s30007'])
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/noticing-thoughts/s30005'])
 
   }

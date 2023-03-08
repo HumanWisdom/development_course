@@ -54,10 +54,12 @@ export class S34032Page implements OnInit {
 
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/key-ideas/s34033'])
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/key-ideas/s34031'])
 
   }
