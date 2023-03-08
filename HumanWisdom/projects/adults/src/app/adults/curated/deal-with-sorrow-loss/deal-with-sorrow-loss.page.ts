@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'HumanWisdom-deal-with-sorrow-loss',
@@ -20,9 +21,16 @@ export class DealWithSorrowLossPage implements OnInit {
   withoutLanguageP:any
   breathingP:any
 
-  constructor(private service: AdultsService, private router: Router,private location:Location) { }
+  constructor(private service: AdultsService, private router: Router,private location:Location, private meta: Meta, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('Ways to Deal with Sorrow and Loss')
+    this.meta.updateTag({ property: 'title', content: 'Ways to Deal with Sorrow and Loss' })
+    this.meta.updateTag({ property: 'description', content: 'Explore effective ways to deal with sorrow and overcome the grief of losing a loved one. Find healing after loss with these helpful tips for self-care and coping with death.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Support for grief,Healing after loss,Comfort for bereavement,Coping with death,Overcoming sadness,Ways to deal with sorrow,Self-care during grieving,Loss and recovery' })
+
+   
+   
     localStorage.setItem('curated', 'sorrow');
     let rem = localStorage.getItem('remember');
     if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
