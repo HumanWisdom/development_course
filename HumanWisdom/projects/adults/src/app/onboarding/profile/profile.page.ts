@@ -1,8 +1,8 @@
 import { Platform } from '@angular/cdk/platform';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from './../onboarding.service';
 import { LogEventService } from "src/app/log-event.service";
+import { OnboardingService } from './../onboarding.service';
 
 @Component({
   selector: 'app-profile',
@@ -23,17 +23,19 @@ export class ProfilePage implements OnInit {
   fri = false
   sat = false
   email;
-  direction="up";
+  direction = "up";
   paymentDetail;
   RoleID = 0
   url = ''
   userData: any;
   enablepayment = true;
-  isPartner=false;
+  isPartner = false;
   partnerOption = localStorage.getItem('PartnerOption');
-  score=0;
-  constructor(private router: Router, private Onboardingservice: OnboardingService, 
-              public platform: Platform, public logeventservice: LogEventService) {
+  score = 0;
+  isSubscribe = false;
+
+  constructor(private router: Router, private Onboardingservice: OnboardingService,
+    public platform: Platform, public logeventservice: LogEventService) {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.RoleID = JSON.parse(localStorage.getItem("RoleID"))
     this.Onboardingservice.getpaymentdetail(userId).subscribe((res) => {
@@ -41,18 +43,18 @@ export class ProfilePage implements OnInit {
         this.paymentDetail = res[0]
       }
     })
-    this.isPartner=localStorage.getItem('IsPartner')=='1';
+    this.isPartner = localStorage.getItem('IsPartner') == '1';
     if (this.platform.IOS) {
       this.enablepayment = false;
     }
-   this.score = (+this.loginResponse.hwScore)-(+this.loginResponse.hwPrevScore);
-  
-   if(this.score>0|| this.score==0){
-    this.direction = "up";
-   }else{
-    this.score=-(this.score);
-    this.direction ="down";
-   }
+    this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
+
+    if (this.score > 0 || this.score == 0) {
+      this.direction = "up";
+    } else {
+      this.score = -(this.score);
+      this.direction = "down";
+    }
   }
 
   ngOnInit() {
@@ -86,6 +88,13 @@ export class ProfilePage implements OnInit {
     );
     if (nameupdate) {
       this.loginResponse['Name'] = nameupdate
+    }
+
+    let sub: any = localStorage.getItem('Subscriber');
+    if (sub === '0') {
+      this.isSubscribe = false;
+    } else {
+      this.isSubscribe = true;
     }
   }
 
@@ -140,11 +149,11 @@ export class ProfilePage implements OnInit {
 
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if(params !='' && route !='') {
+    if (params != '' && route != '') {
       this.router.navigate([route, params]);
-    }else if(route !='') { 
-      this.router.navigate([route]) 
-      }
+    } else if (route != '') {
+      this.router.navigate([route])
     }
+  }
 
 }
