@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { now } from '@ionic/core/dist/types/utils/helpers';
+
 import * as moment from 'moment';
 import { AdultsService } from "../../adults.service";
 
