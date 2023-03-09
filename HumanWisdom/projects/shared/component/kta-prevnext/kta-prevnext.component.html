@@ -1,7 +1,7 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01" #screen role="main">	
+<div class="right_col mc_01" #screen role="main">
   <!-- <div class="row pb3rem">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="tcenter">
@@ -13,30 +13,30 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_orange">
-        <div class="x_panel p0"> 
+        <div class="x_panel p0">
           <div class="x_content p0">
             <div class="row pb3rem">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="tcenter">
                   <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/body/keytakeaway.png" alt="" class="img_kta cmw"> -->
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/lightbulb.svg" alt="" class="img_kta cmw">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/lightbulb.svg" alt=""
+                    class="img_kta cmw">
                 </div>
               </div>
-            </div> 
-            <div
-            [ngClass]="[pageaction === 'next' ? 'x_panel xpanel_01 p0 rtltext' : pageaction === 'prev' ? 'x_panel xpanel_01 p0 ltrtext' : 'x_panel xpanel_01 p0' ]">
-            <div class="x_content p0">
-            <ng-content></ng-content> 
-            
-          </div>
-        </div> 		
-        <div class="pagebreak"></div>
+            </div>
+            <div class="x_panel xpanel_01 p0">
+              <div class="x_content p0">
+                <ng-content></ng-content>
+
+              </div>
+            </div>
+            <div class="pagebreak"></div>
 
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->

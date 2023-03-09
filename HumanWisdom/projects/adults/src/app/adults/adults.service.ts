@@ -48,7 +48,6 @@ export class AdultsService {
     }
   ]
 
-  public userId = 100;
 
   constructor(private http: HttpClient, handler: HttpBackend) { }
 
@@ -354,14 +353,11 @@ export class AdultsService {
   }
 
   setmoduleID(id) {
-    let rem = localStorage.getItem('remember');
-    if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-    }
-    var discoveringWisdomResume;
-    var mediaPercent;
+    let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
+    let discoveringWisdomResume;
+    let mediaPercent;
     localStorage.setItem("moduleId", JSON.stringify(id))
-    this.clickModule(id, this.userId)
+    this.clickModule(id, userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         let qrList = res
