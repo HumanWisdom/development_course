@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'HumanWisdom-have-calm-mind',
@@ -21,9 +22,15 @@ export class HaveCalmMindPage implements OnInit {
   meditationP:any
   withoutLanguageP:any
 
-  constructor(private service: AdultsService, private router: Router,private location:Location) { }
+  constructor(private service: AdultsService, private router: Router,private location:Location, private meta: Meta, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('Mindfulness Practices for a Calm Mind')
+    this.meta.updateTag({ property: 'title', content: 'Mindfulness Practices for a Calm Mind' })
+    this.meta.updateTag({ property: 'description', content: 'Learn effective mindfulness practices for calming the mind and reducing stress. Discover relaxation techniques and self-care tips for anxiety and mental clarity.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Mindfulness practices,Calming techniques,Mental clarity,Meditation for calmness,Stress-free living,Inner peace tips,Relaxation techniques' })
+
+
     localStorage.setItem('curated', 'mind');
     let rem = localStorage.getItem('remember');
     if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {

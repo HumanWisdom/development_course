@@ -16,7 +16,7 @@ export class ViewStoriesPage implements OnInit {
   links: Array<{id: number, module: string,route: string}> = []
   modules=[]
   socialShare=false
-  path="https://humanwisdom.me/course/wisdom-stories/view-stories"
+  path="https://humanwisdom.me/wisdom-stories/view-stories"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
