@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'HumanWisdom-overcome-stress-anxiety',
@@ -20,9 +21,15 @@ export class OvercomeStressAnxietyPage implements OnInit {
   lifestoriesList = []
   sId:any
 
-  constructor(private service: AdultsService, private router: Router,private location:Location) { }
+  constructor(private service: AdultsService, private router: Router,private location:Location,
+     private meta: Meta, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('Stress Relief Tips for Improved Mental Health')
+    this.meta.updateTag({ property: 'title', content: 'Stress Relief Tips for Improved Mental Health' })
+    this.meta.updateTag({ property: 'description', content: 'Learn practical stress relief tips that can help improve your mental health and well-being.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Overcoming stress,Anxiety management,Stress relief,Mental health tips,Mindfulness practices,Stress reduction,Positive mindset,Mindfulness practices,Mental health tips' })
+
     localStorage.setItem('curated', 'stress');
     let rem = localStorage.getItem('remember');
     if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
