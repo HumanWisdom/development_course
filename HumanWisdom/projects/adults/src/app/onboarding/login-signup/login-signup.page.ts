@@ -88,10 +88,10 @@ export class LoginSignupPage implements OnInit {
   // })
   registrationForm = this.fb.group(
     {
-      fullname: ["", [Validators.required, Validators.minLength(3)]],
+      fullname: ["", [Validators.required, Validators.minLength(6)]],
       email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required, Validators.minLength(3)]],
-      confirmPassword: ["", [Validators.required, Validators.minLength(3)]],
+      password: ["", [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
     },
     { validator: this.PasswordValidator }
   );
