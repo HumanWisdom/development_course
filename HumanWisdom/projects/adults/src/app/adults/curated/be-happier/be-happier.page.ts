@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'HumanWisdom-be-happier',
@@ -19,9 +20,16 @@ export class BeHappierPage implements OnInit {
   ibP:any
   comparisonP:any
 
-  constructor(private service: AdultsService, private router: Router,private location:Location) { }
+  constructor(private service: AdultsService, private router: Router,private location:Location,
+    private meta: Meta, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('Tips for Happiness: How to Live a Happier Life')
+    this.meta.updateTag({ property: 'title', content: 'Tips for Happiness: How to Live a Happier Life' })
+    this.meta.updateTag({ property: 'description', content: 'Discover simple, practical tips for living a happier life and find joy in everyday moments.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Tips for Happiness,Developing a Positive Mindset,Practices for Happiness,Overcoming Negativity,Building Resilience,Mindfulness for Happiness,Increasing Joy and Fulfillment,Pursuing Happiness,Finding Happiness in Life' })
+
+
     localStorage.setItem('curated', 'happier');
     let rem = localStorage.getItem('remember');
     if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
