@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import * as moment from 'moment';
 import { AdultsService } from "../../adults.service";
 
@@ -31,13 +32,18 @@ export class E01Page implements OnInit {
   getEventID() {
     this.service.getEventbyId(this.eventID).subscribe(res => {
       this.eventData = res[0];
-      let split = res[0]['Event_Date'].replace('th', '');
+      let split = new Date(res[0]['EventDt'])
+     
+      
+   /*    let split = res[0]['Event_Date'].replace('th', '');
       let format = moment(split).format('YYYY, MM, DD');
       let today = moment().format('YYYY, MM, DD');
       var a = moment([format]);
       var b = moment([today]);
-      let diff = a.diff(b, 'days');
-      if (diff > 0) {
+      let diff = a.diff(b, 'days'); */
+     
+      if(split >  new Date( new Date().getFullYear(),new Date().getMonth(), new Date().getDate() +1 )){
+     // if (diff > 0) {
         this.enableRegister = true;
       }
       this.tocImage = this.eventData['ArtImgPath'];
