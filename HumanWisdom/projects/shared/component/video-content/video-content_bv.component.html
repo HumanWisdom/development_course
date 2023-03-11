@@ -1,7 +1,5 @@
 <!-- page content -->
-<div
-  [ngClass]="[pageaction === 'next' ? 'right_col mc_03 rtltext' : pageaction === 'prev' ? 'right_col mc_03 ltrtext' : 'right_col mc_03' ]"
-  #screen role="main">
+<div class="right_col mc_03" #screen role="main">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -43,8 +41,8 @@
                         <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type='video/mp4'>
                       </video> -->
 
-                  <!-- <video controls class="cvideo">                        
-                        <source src="http://techslides.com/demos/sample-videos/small.mp4"  type="video/mp4">                                                
+                  <!-- <video controls class="cvideo">
+                        <source src="http://techslides.com/demos/sample-videos/small.mp4"  type="video/mp4">
                       </video> -->
 
                   <video controls playinline (timeupdate)="getCurrentTime($event)" [ngClass]="[videoclass, 'cvideo']"
