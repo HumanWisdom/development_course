@@ -87,11 +87,11 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full Name*</label>
-                        <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8"
+                        <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8" maxlength="20"
                           name="fullname" required />
                         <div *ngIf="fullname.invalid && fullname.touched">
                           <small *ngIf="fullname.errors?.required" class="text danger">Full Name is required</small>
-                          <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 3
+                          <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 6
                             characters</small>
                         </div>
                       </div>
@@ -100,7 +100,7 @@
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
-                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname" autocomplete="new-password" 
+                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname" maxlength="50" autocomplete="new-password" 
                           required />
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
                           <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email
@@ -114,31 +114,33 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
                         <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" 
-                          id="password" class="form-control cfc8" name="fullname" required />
-                        <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
+                          id="password" class="form-control cfc8" name="fullname" required  maxlength="15" />
+                        <!--   <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                           Password must be Minimum 6 Characters. No Spaces allowed
-                        </label>
-                      </div>
-                      <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
-                        <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
-                        <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 3
-                          characters</small>
-                      </div>
+                        </label> -->
+                      
+                        <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
+                          <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
+                          <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 6
+                            characters</small>
+                        </div>
+                    </div>
                     </div>
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat password*</label>
-                        <input type="password" formControlName="confirmPassword"
+                        <input type="password" formControlName="confirmPassword" maxlength="15"
                           (keydown.space)="$event.preventDefault();" id="repeatpassowrd" class="form-control cfc8"
                           name="fullname" required />
-                      </div>
-                      <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
-                        <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat
-                          password</small>
-                        <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must
-                          be at least 3 characters</small>
-                      </div>
+                     
+                        <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
+                          <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat
+                            password</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must
+                            be at least 6 characters</small>
+                        </div>
+                    </div>
                     </div>
 
                     <div class="row mt20px">
