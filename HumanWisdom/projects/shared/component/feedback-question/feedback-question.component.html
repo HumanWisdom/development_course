@@ -1,29 +1,29 @@
 <!-- top navigation -->
 <!-- <div class="top_nav ml0">
   <div class="nav_menu cnav_menu nav_menu_01">
-    <nav>          
+    <nav>
       <ul class="nav navbar-nav navbar-right cnav">
         <li class="">
-          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" (click)="goToPage()"> 
+          <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" (click)="goToPage()">
             <h6 class="txt18a">
               Skip
-            </h6>  
-          </a>                  
-        </li>              
+            </h6>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
 </div> -->
-<!-- /top navigation -->  
+<!-- /top navigation -->
 
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_fs">
-    <a *ngIf="skipToPage" class="" (click)="goToPage()"> 
+    <a *ngIf="skipToPage" class="" (click)="goToPage()">
       <h6 class="txt18a">
         Skip
-      </h6>  
-    </a> 
+      </h6>
+    </a>
   </div>
 </div>
 <!-- /top navigation -->
@@ -31,23 +31,22 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01" role="main">				
-  <!-- Class -->  
+<div class="right_col mc_01" role="main">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_light_gray">
-        <div
-        [ngClass]="[pageaction === 'next' ? 'x_panel xpanel_01 p0 rtltext' : pageaction === 'prev' ? 'x_panel xpanel_01 p0 ltrtext' : 'x_panel xpanel_01 p0' ]">
-        <div class="x_content p0">
-        <ng-content></ng-content> 
-      </div>
-    </div>
-    <div class="pagebreak"></div>
-   
-            
+        <div class="x_panel xpanel_01 p0">
+          <div class="x_content p0">
+            <ng-content></ng-content>
+          </div>
+        </div>
+        <div class="pagebreak"></div>
+
+
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
