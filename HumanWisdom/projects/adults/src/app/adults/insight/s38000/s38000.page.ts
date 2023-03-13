@@ -36,6 +36,7 @@ export class S38000Page  implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(38);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
