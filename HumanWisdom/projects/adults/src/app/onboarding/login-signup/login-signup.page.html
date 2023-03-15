@@ -107,7 +107,8 @@
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
                           <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email
                             address</small>
-                          <small *ngIf="emailvalid.errors?.email" class="text danger">Please enter a valid email</small>
+                          <small *ngIf="emailvalid.errors?.pattern" class="text danger">Please enter a valid
+                            email</small>
                         </div>
                       </div>
                     </div>
