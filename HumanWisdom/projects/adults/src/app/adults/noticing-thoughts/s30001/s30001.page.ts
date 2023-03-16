@@ -39,6 +39,7 @@ export class S30001Page implements OnInit, OnDestroy {
     private location: Location
   ) { }
   ngOnInit() {
+    this.service.setmoduleID(30);
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
 
