@@ -79,6 +79,9 @@ export class LoginSignupPage implements OnInit {
   get confirmpasswordvalid() {
     return this.registrationForm.get("confirmPassword");
   }
+  get passwordvalidation() {
+    return this.registrationForm.get("confirmPassword").value !== this.registrationForm.get("password").value;
+  }
   // registrationForm=new FormGroup({
   //   firstName:new FormControl(''),
   //   lastName:new FormControl(''),
@@ -89,7 +92,7 @@ export class LoginSignupPage implements OnInit {
   registrationForm = this.fb.group(
     {
       fullname: ["", [Validators.required, Validators.minLength(6)]],
-      email: ["", [Validators.required, Validators.email]],
+      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: ["", [Validators.required, Validators.minLength(6)]],
       confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
     },
@@ -130,7 +133,7 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
-    if (!this.router.url.includes( '/log-in')) {
+    if (!this.router.url.includes('/log-in')) {
       window.history.pushState('', '', '/log-in');
     }
 
@@ -651,7 +654,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.getItem("SubscriberType") == "Annual"
             ) {
               localStorage.setItem("btnClickBecomePartner", "false");
-              this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
+              this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
             }
           }
           let acceptCookie = localStorage.getItem("activeCode");
@@ -711,7 +714,7 @@ export class LoginSignupPage implements OnInit {
                     localStorage.getItem("SubscriberType") == "Annual"
                   ) {
                     localStorage.setItem("btnClickBecomePartner", "F");
-                    this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
+                    this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                   }
                 } else {
                   if (pers && persub && pers === "T") {
@@ -741,7 +744,7 @@ export class LoginSignupPage implements OnInit {
                       } else {
                         this.service.navigateToUpgradeToPremium = false;
                         // localStorage.setItem("navigateToUpgradeToPremium", "false");
-                        this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
+                        this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                       }
                     } else {
                       this.router.navigate(["/adults/search"], {
@@ -847,7 +850,7 @@ export class LoginSignupPage implements OnInit {
     this.router.navigate(['/adults/adult-dashboard'])
   }
 
-  navigate(url){
-    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  navigate(url) {
+    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
 }
