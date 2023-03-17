@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { AdultsService } from "../../adults.service";
 
 @Component({
   selector: 'HumanWisdom-s75001',
@@ -10,9 +11,10 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class S75001Page implements OnInit {
   path = this.router.url
   constructor(public ngNavigatorShareService: NgNavigatorShareService,
-    private router: Router,) { }
+    private router: Router,private service: AdultsService ) { }
  
   ngOnInit() {
+    this.service.setmoduleID(75);
   }
   share(){
     this.ngNavigatorShareService.share({
