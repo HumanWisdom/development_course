@@ -577,36 +577,6 @@ export class LoginSignupPage implements OnInit {
     }
     this.service.emailLogin(this.email, this.password).subscribe(
       (res) => {
-        //
-        this.loginResponse = res;
-        localStorage.setItem("socialLogin", "F");
-        localStorage.setItem("isloggedin", "T");
-        localStorage.setItem("guest", "F");
-        localStorage.setItem("btnclick", "F");
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
-        localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
-        sessionStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem("token", JSON.stringify(res.access_token));
-        localStorage.setItem("Subscriber", res.Subscriber);
-        localStorage.setItem("SubscriberType", res.SubscriberType);
-        localStorage.setItem("userId", JSON.stringify(this.userId));
-        localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-        localStorage.setItem("email", this.email);
-        localStorage.setItem("pswd", this.password);
-        localStorage.setItem("name", res.Name);
-        localStorage.setItem("first", "T");
-        localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
-        localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
-        localStorage.setItem("video", JSON.stringify(this.video));
-        localStorage.setItem("audio", JSON.stringify(this.audio));
-        localStorage.setItem("isPartner", res.IsPartner);
         if (res.UserId === 0) {
           this.showAlert = true;
           window.alert(
@@ -622,6 +592,35 @@ export class LoginSignupPage implements OnInit {
           this.email = "";
           this.password = "";
         } else {
+          this.loginResponse = res;
+          localStorage.setItem("socialLogin", "F");
+          localStorage.setItem("isloggedin", "T");
+          localStorage.setItem("guest", "F");
+          localStorage.setItem("btnclick", "F");
+          localStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
+          localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
+          sessionStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("token", JSON.stringify(res.access_token));
+          localStorage.setItem("Subscriber", res.Subscriber);
+          localStorage.setItem("SubscriberType", res.SubscriberType);
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+          localStorage.setItem("email", this.email);
+          localStorage.setItem("pswd", this.password);
+          localStorage.setItem("name", res.Name);
+          localStorage.setItem("first", "T");
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+          localStorage.setItem("video", JSON.stringify(this.video));
+          localStorage.setItem("audio", JSON.stringify(this.audio));
+          localStorage.setItem("isPartner", res.IsPartner);
           this.showAlert = false;
           this.userId = res.UserId;
           this.userName = res.Name;
