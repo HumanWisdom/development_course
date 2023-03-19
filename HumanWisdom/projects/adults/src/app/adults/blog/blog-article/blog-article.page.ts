@@ -1,12 +1,13 @@
 import { Platform } from '@angular/cdk/platform';
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
 import { Meta, Title } from '@angular/platform-browser'; 
+import {  Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'HumanWisdom-blog-article',
@@ -23,9 +24,9 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsList = 0;
   BlogCommentsListabove = []
   path = this.router.url
-
-  constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,
-    private router: Router, private ngNavigatorShareService: NgNavigatorShareService,
+  
+  constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2, 
+    private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
@@ -49,7 +50,13 @@ export class BlogArticlePage implements OnInit {
     localStorage.setItem('blogId',this.blogid);
     this.service.getBlogId(this.blogid).subscribe(res => {
       if (res) {
-        this.blogList = res
+     this.blogList = res
+     var tempEl = document.createElement('div');
+     tempEl.innerHTML = res.Blog;
+     for (let i = 0; i < tempEl.querySelectorAll('img').length; i++) {      
+     tempEl.querySelectorAll('img')[i].style.width='100%';
+     }
+     res.Blog=tempEl.innerHTML;
         this.BlogCommentsLen = this.blogList['BlogComments'].length
         if (this.BlogCommentsLen !== 0) {
           this.BlogCommentsList = this.blogList['BlogComments'].slice(0, 3)
@@ -98,7 +105,7 @@ export class BlogArticlePage implements OnInit {
 
           // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
 
-
+         
       }
     },
       error => console.log(error),
