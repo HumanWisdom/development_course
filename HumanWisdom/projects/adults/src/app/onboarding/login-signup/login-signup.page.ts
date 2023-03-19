@@ -79,6 +79,9 @@ export class LoginSignupPage implements OnInit {
   get confirmpasswordvalid() {
     return this.registrationForm.get("confirmPassword");
   }
+  get passwordvalidation() {
+    return this.registrationForm.get("confirmPassword").value !== this.registrationForm.get("password").value;
+  }
   // registrationForm=new FormGroup({
   //   firstName:new FormControl(''),
   //   lastName:new FormControl(''),
@@ -89,7 +92,7 @@ export class LoginSignupPage implements OnInit {
   registrationForm = this.fb.group(
     {
       fullname: ["", [Validators.required, Validators.minLength(6)]],
-      email: ["", [Validators.required, Validators.email]],
+      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: ["", [Validators.required, Validators.minLength(6)]],
       confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
     },
@@ -130,7 +133,7 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
-    if (!this.router.url.includes( '/log-in')) {
+    if (!this.router.url.includes('/log-in')) {
       window.history.pushState('', '', '/log-in');
     }
 
@@ -574,36 +577,6 @@ export class LoginSignupPage implements OnInit {
     }
     this.service.emailLogin(this.email, this.password).subscribe(
       (res) => {
-        //
-        this.loginResponse = res;
-        localStorage.setItem("socialLogin", "F");
-        localStorage.setItem("isloggedin", "T");
-        localStorage.setItem("guest", "F");
-        localStorage.setItem("btnclick", "F");
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
-        localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
-        sessionStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem("token", JSON.stringify(res.access_token));
-        localStorage.setItem("Subscriber", res.Subscriber);
-        localStorage.setItem("SubscriberType", res.SubscriberType);
-        localStorage.setItem("userId", JSON.stringify(this.userId));
-        localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-        localStorage.setItem("email", this.email);
-        localStorage.setItem("pswd", this.password);
-        localStorage.setItem("name", res.Name);
-        localStorage.setItem("first", "T");
-        localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
-        localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
-        localStorage.setItem("video", JSON.stringify(this.video));
-        localStorage.setItem("audio", JSON.stringify(this.audio));
-        localStorage.setItem("isPartner", res.IsPartner);
         if (res.UserId === 0) {
           this.showAlert = true;
           window.alert(
@@ -619,6 +592,35 @@ export class LoginSignupPage implements OnInit {
           this.email = "";
           this.password = "";
         } else {
+          this.loginResponse = res;
+          localStorage.setItem("socialLogin", "F");
+          localStorage.setItem("isloggedin", "T");
+          localStorage.setItem("guest", "F");
+          localStorage.setItem("btnclick", "F");
+          localStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
+          localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
+          sessionStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("token", JSON.stringify(res.access_token));
+          localStorage.setItem("Subscriber", res.Subscriber);
+          localStorage.setItem("SubscriberType", res.SubscriberType);
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+          localStorage.setItem("email", this.email);
+          localStorage.setItem("pswd", this.password);
+          localStorage.setItem("name", res.Name);
+          localStorage.setItem("first", "T");
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+          localStorage.setItem("video", JSON.stringify(this.video));
+          localStorage.setItem("audio", JSON.stringify(this.audio));
+          localStorage.setItem("isPartner", res.IsPartner);
           this.showAlert = false;
           this.userId = res.UserId;
           this.userName = res.Name;
@@ -651,7 +653,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.getItem("SubscriberType") == "Annual"
             ) {
               localStorage.setItem("btnClickBecomePartner", "false");
-              this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
+              this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
             }
           }
           let acceptCookie = localStorage.getItem("activeCode");
@@ -711,7 +713,7 @@ export class LoginSignupPage implements OnInit {
                     localStorage.getItem("SubscriberType") == "Annual"
                   ) {
                     localStorage.setItem("btnClickBecomePartner", "F");
-                    this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
+                    this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                   }
                 } else {
                   if (pers && persub && pers === "T") {
@@ -741,7 +743,7 @@ export class LoginSignupPage implements OnInit {
                       } else {
                         this.service.navigateToUpgradeToPremium = false;
                         // localStorage.setItem("navigateToUpgradeToPremium", "false");
-                        this.router.navigate(['adults/partnership-app'],{skipLocationChange:true,replaceUrl:true});
+                        this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                       }
                     } else {
                       this.router.navigate(["/adults/search"], {
@@ -847,7 +849,7 @@ export class LoginSignupPage implements OnInit {
     this.router.navigate(['/adults/adult-dashboard'])
   }
 
-  navigate(url){
-    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  navigate(url) {
+    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
 }

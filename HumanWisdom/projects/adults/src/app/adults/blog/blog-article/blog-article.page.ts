@@ -70,14 +70,14 @@ export class BlogArticlePage implements OnInit {
         this.title.setTitle(this.blogList['Title'])
 
        if(this.meta.getTag("property='title'"))
-         this.meta.updateTag({ property: 'title', content: this.blogList['Title']})
+         this.meta.updateTag({ property: 'title', content: this.blogList['MetaTitle']})
        else
-        this.meta.addTag({ property: 'title', content: this.blogList['Title']})
+        this.meta.addTag({ property: 'title', content: this.blogList['MetaTitle']})
 
         if(this.meta.getTag("property='description'"))
-        this.meta.updateTag({ property: 'description', content: this.blogList['Title']})
+        this.meta.updateTag({ property: 'description', content: this.blogList['MetaDesc']})
       else
-       this.meta.addTag({ property: 'description', content: this.blogList['Title']})
+       this.meta.addTag({ property: 'description', content: this.blogList['MetaDesc']})
 
         if(this.meta.getTag("property='og:type'"))
           this.meta.updateTag({ property: 'og:type', content: 'article'})
@@ -88,9 +88,9 @@ export class BlogArticlePage implements OnInit {
           console.log(this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom")
           
         if(this.meta.getTag("property='og:description'"))
-          this.meta.updateTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+          this.meta.updateTag({ property: 'og:description', content: this.blogList['MetaDesc']})
         else
-         this.meta.addTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+         this.meta.addTag({ property: 'og:description', content: this.blogList['MetaDesc']})
         
         if(this.meta.getTag("property='og:image'"))
          this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
@@ -98,9 +98,14 @@ export class BlogArticlePage implements OnInit {
          this.meta.addTag({ property: 'og:image', content: this.blogList['ImgPath']})
 
         if(this.meta.getTag("property='twitter:description'"))
-           this.meta.updateTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+           this.meta.updateTag({ property: 'twitter:description',content: this.blogList['MetaDesc']})
         else
-          this.meta.addTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+          this.meta.addTag({ property: 'twitter:description',content: this.blogList['MetaDesc']})
+
+    if(this.meta.getTag("property='keywords'"))
+          this.meta.updateTag({ property: 'keywords',content: this.blogList['MetaKeywords']})
+       else
+         this.meta.addTag({ property: 'keywords',content: this.blogList['MetaKeywords']})
 
 
           // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
