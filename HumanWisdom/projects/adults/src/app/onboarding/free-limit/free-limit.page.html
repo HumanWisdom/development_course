@@ -41,13 +41,13 @@
             </div>
 
             <div class="row mt40px center_flex">
-              <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="!this.Subscriber || this.Subscriber === '0'">
+              <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="!guest && isloggedIn && this.Subscriber === '0'">
                 <a id="liSubscribe" (click)="loginpage(true)">
                   <button type="button" class="btn btn-success btn_fl_sn_l w100">Subscribe now</button>
                 </a>
               </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="!isloggedIn">
+              <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="guest || !isloggedIn">
                 <a (click)="loginpage()">
                   <button type="button" class="btn btn-success btn_fl_sn_l w100">Login</button>
                 </a>

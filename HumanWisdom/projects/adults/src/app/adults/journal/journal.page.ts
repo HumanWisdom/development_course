@@ -23,29 +23,14 @@ export class JournalPage implements OnInit {
   jrList = []
   jrListC = []
   searchedText: any
-  isloggedIn = false
-  Subscriber: any;
+
 
   constructor(private router: Router, private location: Location,
     private service: AdultsService, public logeventservice: LogEventService,
     private meta: Meta, private title: Title) {
-    let userid = localStorage.getItem('isloggedin');
-    if (userid === 'T') {
-      this.isloggedIn = true
-      this.Subscriber = localStorage.getItem('Subscriber')
-    }
-    if (!this.isloggedIn) {
-      this.navigatefreelimit()
-    } else if (!this.Subscriber) {
-      this.navigatefreelimit()
-    } else if (this.Subscriber === '0') {
-      this.navigatefreelimit()
-    }
+
   }
 
-  navigatefreelimit() {
-    this.router.navigate(['/onboarding/free-limit']);
-  }
 
   ngOnInit() {
     this.title.setTitle('Personal Growth Journal ')

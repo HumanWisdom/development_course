@@ -18,9 +18,11 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
 
   isloggedIn = false;
   Subscriber: any;
+  guest = true;
 
-
-  constructor(private location: Location, private router: Router) { }
+  constructor(private location: Location, private router: Router) {
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+  }
 
 
   ngOnInit() {
