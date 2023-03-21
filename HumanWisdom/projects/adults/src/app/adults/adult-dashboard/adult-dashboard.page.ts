@@ -548,7 +548,7 @@ export class AdultDashboardPage implements OnInit {
   youtube(link) {
     this.router.navigate(['/adults/curated/youtubelink', link])
   }
-  
+
 
   // solving global problems
   solving_global_problems(url, id) {
@@ -3676,8 +3676,8 @@ export class AdultDashboardPage implements OnInit {
       }
       //Dynamic Scroll
       setTimeout(() => {
-        var editable = document.querySelector(".editable").getBoundingClientRect().x;
-        var wediv = document.querySelector(".wediv").getBoundingClientRect().x;
+        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+        var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
         document.querySelector(".wediv").scrollLeft = editable - wediv;
 
       }, 3000);
@@ -3700,7 +3700,18 @@ export class AdultDashboardPage implements OnInit {
 
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if (params != '' && route != '') {
+    if (evtName === 'click_journal') {
+      let guest = localStorage.getItem('guest');
+      if (this.isloggedIn && guest === 'F') {
+        if (!this.Subscriber || this.Subscriber === '0') {
+          this.router.navigate(['/onboarding/free-limit']);
+        } else {
+          this.router.navigate(['/adults/journal'])
+        }
+      } else {
+        this.journelsignuplogin.nativeElement.click();
+      }
+    } else if (params != '' && route != '') {
       this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
