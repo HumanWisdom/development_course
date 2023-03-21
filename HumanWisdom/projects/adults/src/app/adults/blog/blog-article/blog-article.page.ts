@@ -1,12 +1,13 @@
 import { Platform } from '@angular/cdk/platform';
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
 import { Meta, Title } from '@angular/platform-browser'; 
+import {  Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'HumanWisdom-blog-article',
@@ -23,9 +24,9 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsList = 0;
   BlogCommentsListabove = []
   path = this.router.url
-
-  constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,
-    private router: Router, private ngNavigatorShareService: NgNavigatorShareService,
+  
+  constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2, 
+    private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
@@ -49,7 +50,13 @@ export class BlogArticlePage implements OnInit {
     localStorage.setItem('blogId',this.blogid);
     this.service.getBlogId(this.blogid).subscribe(res => {
       if (res) {
-        this.blogList = res
+     this.blogList = res
+     var tempEl = document.createElement('div');
+     tempEl.innerHTML = res.Blog;
+     for (let i = 0; i < tempEl.querySelectorAll('img').length; i++) {      
+     tempEl.querySelectorAll('img')[i].style.width='100%';
+     }
+     res.Blog=tempEl.innerHTML;
         this.BlogCommentsLen = this.blogList['BlogComments'].length
         if (this.BlogCommentsLen !== 0) {
           this.BlogCommentsList = this.blogList['BlogComments'].slice(0, 3)
@@ -63,14 +70,14 @@ export class BlogArticlePage implements OnInit {
         this.title.setTitle(this.blogList['Title'])
 
        if(this.meta.getTag("property='title'"))
-         this.meta.updateTag({ property: 'title', content: this.blogList['Title']})
+         this.meta.updateTag({ property: 'title', content: this.blogList['MetaTitle']})
        else
-        this.meta.addTag({ property: 'title', content: this.blogList['Title']})
+        this.meta.addTag({ property: 'title', content: this.blogList['MetaTitle']})
 
         if(this.meta.getTag("property='description'"))
-        this.meta.updateTag({ property: 'description', content: this.blogList['Title']})
+        this.meta.updateTag({ property: 'description', content: this.blogList['MetaDesc']})
       else
-       this.meta.addTag({ property: 'description', content: this.blogList['Title']})
+       this.meta.addTag({ property: 'description', content: this.blogList['MetaDesc']})
 
         if(this.meta.getTag("property='og:type'"))
           this.meta.updateTag({ property: 'og:type', content: 'article'})
@@ -81,9 +88,9 @@ export class BlogArticlePage implements OnInit {
           console.log(this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom")
           
         if(this.meta.getTag("property='og:description'"))
-          this.meta.updateTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+          this.meta.updateTag({ property: 'og:description', content: this.blogList['MetaDesc']})
         else
-         this.meta.addTag({ property: 'og:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+         this.meta.addTag({ property: 'og:description', content: this.blogList['MetaDesc']})
         
         if(this.meta.getTag("property='og:image'"))
          this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
@@ -91,14 +98,19 @@ export class BlogArticlePage implements OnInit {
          this.meta.addTag({ property: 'og:image', content: this.blogList['ImgPath']})
 
         if(this.meta.getTag("property='twitter:description'"))
-           this.meta.updateTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+           this.meta.updateTag({ property: 'twitter:description',content: this.blogList['MetaDesc']})
         else
-          this.meta.addTag({ property: 'twitter:description', content: this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom"})
+          this.meta.addTag({ property: 'twitter:description',content: this.blogList['MetaDesc']})
+
+    if(this.meta.getTag("property='keywords'"))
+          this.meta.updateTag({ property: 'keywords',content: this.blogList['MetaKeywords']})
+       else
+         this.meta.addTag({ property: 'keywords',content: this.blogList['MetaKeywords']})
 
 
           // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
 
-
+         
       }
     },
       error => console.log(error),
