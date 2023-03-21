@@ -31343,7 +31343,3 @@ input[type="search"].hide_search::-webkit-search-cancel-button
   transform: rotate(-360deg) scaleX(-1);
 }
 
-.h-240
-{
-  height: 240px;
-}
