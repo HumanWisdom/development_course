@@ -17,15 +17,19 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
   navigationSubs = new Subscription();
 
   isloggedIn = false;
+  Subscriber: any;
+  guest = true;
 
-
-  constructor(private location: Location, private router: Router) { }
+  constructor(private location: Location, private router: Router) {
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+  }
 
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
     if (userid === 'T') {
-      this.isloggedIn = true
+      this.isloggedIn = true;
+      this.Subscriber = localStorage.getItem('Subscriber')
     }
   }
 
@@ -54,7 +58,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.router.navigate(['/adults/adult-dashboard'])
     }
-    
+
 
   }
 
