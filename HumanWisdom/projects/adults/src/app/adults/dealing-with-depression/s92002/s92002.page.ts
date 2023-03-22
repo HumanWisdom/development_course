@@ -32,7 +32,9 @@ export class S92002Page implements OnInit {
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
+  ) { 
+    this.service.setmoduleID(92);
+  }
 
   ngOnInit() 
   {
