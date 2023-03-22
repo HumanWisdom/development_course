@@ -13,7 +13,7 @@ export class S91014Page implements OnInit {
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_w12"
-  hint = ""
+  hint = "It could be expecting others to praise you, or have more likes for your post on social media"
   toc = "/external-approval/s91001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S91014Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 0
+  rId = 1164
   reflection: any
   reflectionA: any
   r91014 = JSON.parse(sessionStorage.getItem("r91014"))

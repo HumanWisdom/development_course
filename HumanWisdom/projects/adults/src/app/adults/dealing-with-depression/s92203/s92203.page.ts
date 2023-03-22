@@ -13,7 +13,7 @@ export class S92203Page implements OnInit {
   bg_tn = "bg_dark_blue"
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w3"
-  hint = ""
+  hint = "this is not easy, but can make the world of difference to your recovery"
   toc = "/dealing-with-depression/s92001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S92203Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 0
+  rId = 1133
   reflection: any
   reflectionA: any
   r92203 = JSON.parse(sessionStorage.getItem("r92203"))
