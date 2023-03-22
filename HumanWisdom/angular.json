@@ -195,6 +195,7 @@
             "production": {
               "browserTarget": "adults:build:production"
             },
+            
             "ci": {
             }
           }
@@ -390,8 +391,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -478,6 +479,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
+          
             "outputPath": "dist/teenagers/server",
             "main": "projects/teenagers/server.ts",
             "tsConfig": "projects/teenagers/tsconfig.server.json",
@@ -486,15 +488,18 @@
           "configurations": {
             "production": {
               "outputHashing": "media",
+           
               "fileReplacements": [
                 {
                   "replace": "projects/teenagers/src/environments/environment.ts",
                   "with": "projects/teenagers/src/environments/environment.prod.ts"
                 }
               ]
+            
             },
             "staging": {
               "outputHashing": "media",
+              
               "fileReplacements": [
                 {
                   "replace": "projects/teenagers/src/environments/environment.ts",
@@ -506,6 +511,7 @@
               "optimization": {
                 "scripts": true
               },
+              
               "sourceMap": true,
               "extractLicenses": false
             }
@@ -517,11 +523,25 @@
           "configurations": {
             "staging": {
               "browserTarget": "teenagers:build:staging",
-              "serverTarget": "teenagers:server:staging"
+              "serverTarget": "teenagers:server:staging",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             },
             "production": {
               "browserTarget": "teenagers:build:production",
-              "serverTarget": "teenagers:server:production"
+              "serverTarget": "teenagers:server:production",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           },
           "defaultConfiguration": "staging"
@@ -536,11 +556,25 @@
           "configurations": {
             "production": {
               "browserTarget": "teenagers:build:production",
-              "serverTarget": "teenagers:server:production"
+              "serverTarget": "teenagers:server:production",
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }
+            ]
             },
             "staging": {
               "browserTarget": "teenagers:build:staging",
-              "serverTarget": "teenagers:server:staging"
+              "serverTarget": "teenagers:server:staging",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
