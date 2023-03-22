@@ -1,9 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s92007</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      The most important thing you need to begin is to want to be better. Depression robs you of that motivation so you need to find your own reason. That is the first step to recovery
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
 
-</ion-content>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,9 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s92005</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      This module is useful if you are supporting someone with depression, are depressed yourself, or are just curious to find out more, so you can avoid it in the future. Almost everyone, at some point in their life, experiences feelings of intense sadness or depression
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
 
-</ion-content>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
