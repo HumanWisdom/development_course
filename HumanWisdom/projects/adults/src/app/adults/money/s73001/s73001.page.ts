@@ -41,7 +41,7 @@ export class S73001Page implements OnInit,OnDestroy {
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
-    if(story.length <= 2) 
+    if(story!=null && story?.length <= 2) 
     {
       story?.forEach((e) => 
       {

@@ -103,7 +103,7 @@ export class S62017Page implements OnInit,OnDestroy {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/love/s62016'])
+    this.router.navigate(['/adults/love/s62016p1'])
     
   }
 
