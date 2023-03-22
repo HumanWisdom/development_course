@@ -13,7 +13,7 @@ export class S91015Page implements OnInit {
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_w1"
-  hint = ""
+  hint = "we usually blame others"
   toc = "/external-approval/s91001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S91015Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 0
+  rId = 1165
   reflection: any
   reflectionA: any
   r91015 = JSON.parse(sessionStorage.getItem("r91015"))
