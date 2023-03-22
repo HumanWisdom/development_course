@@ -11,6 +11,10 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'app-certification',
+    loadChildren: () => import('./certification/certification.module').then(m => m.CertificationModule)
+  },
+  {
     path: 'adult-dashboard',
     loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then(m => m.AdultDashboardPageModule),
     canActivate: [AuthGuard]

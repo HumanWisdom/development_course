@@ -31845,3 +31845,205 @@ label.select_label:after
 {
   height: 240px;
 }
+
+/* certificate */
+.outer-rec {
+  position: absolute;
+  width: 100%;
+  height: 1350px;
+  background-repeat: no-repeat !important;
+  background-size: 100% 550px !important;
+  background: url(../images/outer-rec.png);
+  top: 9%;
+}
+
+.inner-rec {
+  margin-left: 40px;
+  position: absolute;
+  top: 2.9%;
+  width: 894px;
+  height: 1158px;
+  background: url(../images/inner-rec.png);
+  background-repeat: no-repeat !important;
+  background-size: 360px 475px !important;
+}
+
+.inner-icon {
+  position: absolute;
+  left: 16.82%;
+  top: 3.35%;
+  bottom: 71.4%;
+  height: 165px;
+  width: 156px;
+  background-size: 50px 55px !important;
+  background-repeat: no-repeat !important;
+  background: url(../images/inner-icon.png);
+}
+
+.cert-h1 {
+  font-family: "Merriweather";
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 51px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+  position: absolute;
+  left: 11.31%;
+  top: 7.86%;
+  bottom: 62.55%;
+}
+
+.vector-1 {
+  position: absolute;
+    left: 8.8%;
+    right: 85.98%;
+    top: 11.12%;
+    bottom: 58.88%;
+}
+
+.vector-2 {
+  position: absolute;
+  left: 26.8%;
+  right: 67.98%;
+  top: 11.12%;
+  bottom: 58.88%;
+}
+.cert-txt {
+    position: absolute;
+    left: 14.8%;
+    top: 12.1%;
+    bottom: 58.88%;
+    font-family: "Merriweather";
+    font-size: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cert-txt1 {
+    position: absolute;
+    left: 15.8%;
+    top: 16.6%;
+    bottom: 25.88%;
+    font-family: "Merriweather";
+    font-size: 9px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cert-txt2 {
+  position: absolute;
+  left: -33.91%;
+  right: 25%;
+  top: 18.59%;
+  bottom: 42.22%;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-size: 24px;
+  line-height: 65px;
+  text-align: center;
+  color: #FFC455;
+}
+
+.cert-txt3 {
+  position: absolute;
+  left: 7.13%;
+  right: 64.13%;
+  top: 24.3%;
+  bottom: 30.52%;
+  font-family: "Merriweather";
+  font-style: normal;
+  /* font-weight: 300; */
+  font-size: 14px;
+  line-height: 160%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cert-logo {
+  position: absolute;
+  left: 7.13%;
+  top: 31.87%;
+  bottom: 16.25%;
+  height: 398px;
+  width: 500px;
+  background-size: 60px 50px !important;
+  background-repeat: no-repeat !important;
+  background: url(../images/human-wisdom-icon.png);
+}
+
+.cert-txt4 {
+  position: absolute;
+  left: 0.09%;
+  right: 58.91%;
+  top: 32.4%;
+  bottom: 19.91%;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cert-txt5 {
+    position: absolute;
+    left: 9.09%;
+    right: 67.91%;
+    top: 34.3%;
+    bottom: 19.91%;
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 160%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cert-txt6 {
+    position: absolute;
+    left: 4.09%;
+    right: 62.91%;
+    top: 41.6%;
+    bottom: 19.91%;
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 160%;
+    text-align: center;
+    color: #FFC455;
+}
+
+.vector-3 {
+  position: absolute;
+  left: 8.0%;
+  top: 2.52%;
+  height: 201px;
+  width: 201px;
+  background-size: 60px 60px !important;
+  background-repeat: no-repeat !important;
+  background: url(../images/Vector-2.png);
+}
+
+.vector-4 {
+  position: absolute;
+  left: 79%;
+  top: 34.02%;
+  height: 201px;
+  width: 201px;
+  background-size: 60px 60px !important;
+  background-repeat: no-repeat !important;
+  background: url(../images/Vector-1.png);
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url(../font/Merriweather-Regular.ttf) format("opentype");
+}
+/* /certficate */
+
