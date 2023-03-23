@@ -43,13 +43,13 @@ jobs:
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ng build --configuration=staging --project="teenagers" --base-href /teenagers/
+        npm run build:ssr 
     
      - name: Compress the build artifacts
        run: |
         cd HumanWisdom
         mkdir -p builds/compressed
-        tar -czf builds/compressed/program.tgz teenagers/
+        tar -czf builds/compressed/program.tgz dist/teenagers/server
 
      - name: Upload artifact
        uses: actions/upload-artifact@v2

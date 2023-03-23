@@ -1,0 +1,14 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Begin with the Wisdom Exercises section in the app - click here [add link]
+      Away from your problem you will learn, in a gentle way, how to deepen your self-awareness and understand how your own mind works. Take your time over that.
+      You can also explore the section - How to Understand Yourself - click here [add link] - this explores the art of enquiry - or how to learn to look at ourselves
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
