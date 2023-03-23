@@ -1,0 +1,37 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext>
+  <form class="">
+
+    <h1 class="txt3">
+      Key takeaways – how can we respond with wisdom?
+    </h1>
+
+    <h1 class="txt21">
+      1. Accept we have this need for external validation, without judgement
+    </h1>
+
+    <h1 class="txt21">
+      2. Observe the many ways it operates in your life
+    </h1>
+
+    <h1 class="txt21">
+      3. Explore what is behind this need
+    </h1>
+
+    <h1 class="txt21">
+      4. Stay with the feeling of emptiness you feel, meeting it without language
+    </h1>
+
+    <h1 class="txt21">
+      5. Find your sense of self-worth from within yourself
+    </h1>
+
+    <h1 class="txt21">
+      6. Discover your own sense of peace
+    </h1>
+    
+  </form>
+</app-kta-prevnext>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

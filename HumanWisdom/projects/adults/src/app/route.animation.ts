@@ -11,7 +11,7 @@ export const slider =
 function slideTo(direction) {
   const optional = { optional: true };
   return [
-    query(':enter, :leave', [
+    query(':enter', [
       style({
         position: 'absolute',
         top: 0,
@@ -24,10 +24,10 @@ function slideTo(direction) {
     ]),
     group([
       query(':leave', [
-        animate('300ms ease', style({ [direction]: '100%' }))
+        animate('550ms ease-out', style({ [direction]: '100%', 'opacity': '0.6' }))
       ], optional),
       query(':enter', [
-        animate('300ms ease', style({ [direction]: '0%' }))
+        animate('550ms ease-in', style({ [direction]: '0%' }))
       ])
     ]),
   ];

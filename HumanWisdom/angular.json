@@ -155,7 +155,14 @@
                   "with": "projects/adults/src/environments/environment.staging.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                  },
+                "fonts": true
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
@@ -188,6 +195,7 @@
             "production": {
               "browserTarget": "adults:build:production"
             },
+            
             "ci": {
             }
           }
@@ -286,7 +294,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "teenagers",
+            "outputPath": "dist/teenagers/browser",
             "index": "projects/teenagers/src/index.html",
             "main": "projects/teenagers/src/main.ts",
             "polyfills": "projects/teenagers/src/polyfills.ts",
@@ -383,8 +391,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -467,6 +475,109 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+          
+            "outputPath": "dist/teenagers/server",
+            "main": "projects/teenagers/server.ts",
+            "tsConfig": "projects/teenagers/tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+           
+              "fileReplacements": [
+                {
+                  "replace": "projects/teenagers/src/environments/environment.ts",
+                  "with": "projects/teenagers/src/environments/environment.prod.ts"
+                }
+              ]
+            
+            },
+            "staging": {
+              "outputHashing": "media",
+              
+              "fileReplacements": [
+                {
+                  "replace": "projects/teenagers/src/environments/environment.ts",
+                  "with": "projects/teenagers/src/environments/environment.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": {
+                "scripts": true
+              },
+              
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "staging": {
+              "browserTarget": "teenagers:build:staging",
+              "serverTarget": "teenagers:server:staging",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "production": {
+              "browserTarget": "teenagers:build:production",
+              "serverTarget": "teenagers:server:production",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "staging"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "teenagers:build:production",
+              "serverTarget": "teenagers:server:production",
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }
+            ]
+            },
+            "staging": {
+              "browserTarget": "teenagers:build:staging",
+              "serverTarget": "teenagers:server:staging",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -418,7 +418,15 @@ const routes: Routes = [
   {
     path:'gpay',
     loadChildren:() =>import('./gpay/gpay.module').then(m=>m.GpayModule)
-  }
+  },
+  {
+    path: 'external-approval',
+    loadChildren: () => import('./external-approval/external-approval.module').then(m => m.ExternalApprovalModule)
+  },
+  {
+    path: 'dealing-with-depression',
+    loadChildren: () => import('./dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
+  },
 ];
 
  @NgModule({
