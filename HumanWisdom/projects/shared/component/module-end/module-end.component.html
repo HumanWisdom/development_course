@@ -70,22 +70,40 @@
                       </h1>   
                     </div>
                   </div>
-                </div>
-
-                <div class="row me_continue_msg">
+                </div> 
+                <h6 class="txt51 m-top10">
+                  Congratulations! You have completed this module.
+                </h6>
+              <div class="m-top10" [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">
+              
+               <app-certification></app-certification>
+              </div>
+                <!-- <div class="row">         
+                 
+  
+                   <h6 class="txt51 mtb0px mb10px">
+                    <h6 class="txt51">
+                    Congratulations! You have completed this module.
+                  </h6>
+                   </div>                
+                -->
+               
+                  <!-- <div class="row me_continue_msg">
                   <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">
-                    <h6 class="txt51 mtb0px mb10px">
-                      Congratulations! You have completed this module.
-                    </h6>
+                              
                     <h6 class="fw_400 fs_14px lh_16px fc_5d5d5d mtb0px">
                       Continue to the next module
                     </h6>
                   </div>
-                </div>
-                
-                <div class="row me_next_module center_flex safari_dblock">
+                </div> -->
+                <div [ngClass]="{'m-top':isModuleCompleted}">
+                  <h6 class="fw_400 fs_14px lh_16px fc_5d5d5d mtb0px">
+                    Continue to the next module
+                  </h6>
+                <div class="row me_next_module center_flex safari_dblock " >                  
                   <a (click)="proceed()">
-                    <div class="col-md-10 col-sm-10 col-xs-10 tcenter p0 prelative float_none">
+                    <div class="col-md-10 col-sm-10 col-xs-10 tcenter p0 prelative float_none" >
+                      
                       <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/module_end/00.png" alt=""> -->
                       <img [src]="moduleImg"  class="module_img w100" alt="">
                       <!-- <div class="me_overlay me_max_width"></div> -->
@@ -105,6 +123,7 @@
                     </div>
                   </a>
                 </div>
+              </div>
 
                 <div class="row me_orm">
                   <div class="col-md-12 col-sm-12 col-xs-12 tleft">

@@ -208,6 +208,16 @@
       left: 24.09%;
     }
   }
+
+  .m-top{
+    margin-top:58rem;
+  }
+  .m-top10{
+    margin-top:10%;
+  }
+  .p-bottom{
+    padding-bottom:2rem;
+  }
   
   /* /certficate */
   
