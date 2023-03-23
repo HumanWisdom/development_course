@@ -31784,6 +31784,11 @@ label.select_label:after
   margin: 15px 0 15px 0;
 }
 
+.lww_2r_5t
+{
+  grid-template-columns: repeat(5,30%);
+}
+
 /* teenagers */
 .btn_intro_splash
 {

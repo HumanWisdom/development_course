@@ -4,15 +4,15 @@ import {Location } from '@angular/common'
 import { AdultsService } from '../../adults.service';
 
 @Component({
-  selector: 'app-s91084',
-  templateUrl: './s91084.page.html',
-  styleUrls: ['./s91084.page.scss'],
+  selector: 'app-s55059',
+  templateUrl: './s55059.page.html',
+  styleUrls: ['./s55059.page.scss'],
 })
-export class S91084Page implements OnInit {
+export class S55059Page implements OnInit {
   
-  toc="external-approval/s91001"
+  toc="self-interest/s55001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/21.png"
-  
+ 
   bg=""
   moduleLink="/adults/identity"
   moduleName=" Identity"
@@ -43,6 +43,6 @@ export class S91084Page implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
-
+  ngOnInit() {
+  }
 }
