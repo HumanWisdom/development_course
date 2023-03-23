@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our mind makes assumptions of ourselves and others and we automatically attach a label.
+          </p>
+
+          <p>
+            We may believe we are useless, worthless or will never work again. Or we may think we are unattractive.
+          </p>
+
+          <p>
+            We also make assumptions of other people in our life - usually looking at them negatively - and thinking the worst of them - people are selfish, uncaring, or mean, for example.
+          </p>
+
+          <p>
+            Our assumptions are also binary - we label ourselves and others as good or bad, right or wrong - not realising that each person is a mix of many shades of gray - we are just human after all.
+          </p>
+
+          <p>
+            We repeat these assumptions and so they stick and we never question them. They keep us anchored in old ways of thinking that perpetuate our depression
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

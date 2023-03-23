@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            People are not perfect - and neither are you. People will sometimes behave badly and disappoint us and the pain of that can be intense and trigger depressive symptoms.
+          </p>
+
+          <p>
+            It could be that we were abused by someone, or a trust was betrayed, or someone did not do what they said they would, or our expectations of people we were close to were not met. Someone we love could have had an affair, or decided to leave us, or did something dishonest which affected us. There are so many ways people hurt other people.
+          </p>
+
+          <p>
+            We can carry the memory of that pain for years and it can trigger depression. We continue to suffer long after the event. Our mind hangs on to that hurt and it is like a cloud that blocks the sunshine from our life.
+          </p>
+
+          <p>
+            Forgiveness is the key to moving on. We forgive because we need peace, and can see clearly it is a gift we are going to give ourselves. 
+          </p>
+
+          <p>
+            Forgiveness is made simpler by realising that deep down we are all the same human being - we all act from our self-interest, our conditioning and our fear - if you are honest - so do you.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

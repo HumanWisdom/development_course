@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We have discovered that our need for external validation often arises because we are not at peace with ourselves and we need something from the outside to make us feel good on the inside. Once we have become aware of this in ourselves and seen the problems it can cause, the next logical step is to explore if we can live with a sense of peace within, and be comfortable being who we are, so our need for external validation reduces and does not drive our behaviour in ways that do not serve us.
+          </p>
+
+          <p>
+            The app has plenty of resources to help you do so. Find breathing exercises and a meditation practice in the Develop a Calm mind section, do the Wisdom Exercises one by one to learn how to understand yourself, and explore the Living with Peace module.
+          </p>
+
+          <p>
+            If you can find this peace within, you are a free person, to walk your own road in life and pursue your passion – not seeking praise nor hiding from it, acknowledging it and being grateful for it when it comes. Your heart remains full and your own wisdom lights the path you are walking on. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

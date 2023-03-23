@@ -1,0 +1,32 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            80% of people with depression report problems with sleep - not getting enough sleep at night, or sleeping excessively during the day. 
+            A lack of sleep is a risk factor for developing depression and 40% of people with insomnia complain of depressive symptoms.
+          </p>
+
+          <p>
+            What can you do to sleep better if you are depressed?
+          </p>
+
+          <p>
+            The first step is to realise its importance and make it a priority. Try to sleep at the same time every night and aim for 7-8 hours of sleep. Avoid electronic devices an hour before bed. A hot bath or shower, and a relaxing  breathing exercise before bed can help calm the mind and prepare you for sleep. Try and avoid sleeping during the day as much as possible - or limit your naps to 15 minutes. Regular exercise can help with your sleep at night, as can being outdoors for some time during the day. Avoid alcohol - as it just messes with your sleep cycle.
+            Avoid drinking alcohol in the evening as that can disrupt your sleep.
+          </p>
+
+          <p>
+            Implementing this regime sounds simple, but can be a challenge when you feel depressed. 
+            Take baby steps, keep a sleep diary, and every day try to get a little bit better
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
