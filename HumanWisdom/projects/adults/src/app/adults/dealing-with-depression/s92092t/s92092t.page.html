@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            It is not a question we ask ourselves if we are depressed because we are so focused on our own suffering - it is however important to do so.
+          </p>
+
+          <p>
+            Being open with children is the best way because once they know exactly what is happening they do not use their vivid imagination to conjure up even more scary scenarios. They are far more resilient and wise than we give them credit for.
+          </p>
+
+          <p>
+            When we are depressed we tend to withdraw from others - it is worth having an open conversation with other adults we have a relationship with - acknowledging that you are less emotionally available for them now, and that you are going to do your best to be there for everyone, but to ask for their understanding and support as you focus on getting better.
+          </p>
+
+          <p>
+            The same conversations could be had at work. Being open with people often brings out the best in them and you will be surprised by the amount of support you get 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
