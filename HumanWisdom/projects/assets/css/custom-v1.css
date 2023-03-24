@@ -210,7 +210,7 @@
   }
 
   .m-top{
-    margin-top:58rem;
+    margin-top:65rem;
   }
   .m-top10{
     margin-top:10%;
@@ -218,7 +218,9 @@
   .p-bottom{
     padding-bottom:2rem;
   }
-  
+  .p-bottom3{
+    padding-bottom:3rem;
+  }
   /* /certficate */
   
   
