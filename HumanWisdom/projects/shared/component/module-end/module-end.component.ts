@@ -11,6 +11,7 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 })
 
 export class ModuleEndComponent implements OnInit {
+  isModuleCompleted:boolean=false;
   @Input() moduleImg: string;
   @Input() moduleLink: string;
   @Input() moduleName: string;

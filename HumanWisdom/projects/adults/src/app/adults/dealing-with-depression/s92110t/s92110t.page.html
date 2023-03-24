@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes we may be afraid of how others in our life will be affected by how we feel, and how they will judge us - and that can stop us accepting that we may be depressed. Will they see us weak or ‘not trying hard enough’.
+          </p>
+
+          <p>
+            We could have partners or spouses and may worry how they will react. Will they be supportive, or withdraw because their emotional needs are not being met. We may be disappointed with the amount of support they are giving us and begin to feel distant from them.
+          </p>
+
+          <p>
+            We may have children and do not want them to see us like this, or to worry about us, so we put on a brave face and smile. Or, we may have parents and do not want to worry them.
+          </p>
+
+          <p>
+            We need to realize that acceptance is the first step to recovery. It is better to face the truth of things now and begin our journey to recovery, so we can get better as soon as possible.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

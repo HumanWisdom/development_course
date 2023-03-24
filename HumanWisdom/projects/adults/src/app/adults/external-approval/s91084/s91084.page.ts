@@ -11,7 +11,7 @@ import { AdultsService } from '../../adults.service';
 export class S91084Page implements OnInit {
   
   toc="external-approval/s91001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/16.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/21.png"
   
   bg=""
   moduleLink="/adults/identity"

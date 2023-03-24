@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When we don’t get something we expect, we experience the pain of suffering, and that goes for external validation as well. Sometimes the first thing we experience is the pain of not being recognised – in a meeting at work for example, or in a school when the teacher does not praise us for the work we have done. Our need for external approval often operates in the background, and we are not aware of it until it is not met. We do not see clearly that the need for external validation and the pleasure we experience is completely linked to our suffering when that expectation is not met. Pleasure and pain are two sides of the same coin. Our expectations are a product of our own thinking, and so our suffering is also a product of the same thinking process 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

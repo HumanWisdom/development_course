@@ -1,0 +1,34 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Let’s introduce you to a new idea. When you feel depressed - what do you think is the entity that gets depressed? so what is this ‘I’ that gets depressed? Where did it come from? If we go looking for it - where can we find it? 
+          </p>
+
+          <p>
+            Explore the module - the Nature of the I - in the app and that has more detail on this.
+          </p>
+
+          <p>
+            As you go deeper and explore the idea of the ‘I’ further you will see that it is an automatic creation of our thinking process but it's not easy to see that. If there was no ‘I’ - would you experience depression?
+            Probably not. 
+          </p>
+
+          <p>
+            If the I is a creation of our thinking, it follows that if our mind is completely silent, there is no I, and so our depression can dissolve. There is no ‘I’ present when we sleep - and therefore no depression either - as soon as we wake up though - it is there.
+          </p>
+
+          <p>
+            There are 3 ways you can connect with the silence within you - through breathing exercises, through meditation, and by being completely present in every moment. All 3 are discussed in other modules in the app - do have a look
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

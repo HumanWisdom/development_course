@@ -1,0 +1,38 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Here is a simple breathing exercise to try right now.
+          </p>
+
+          <p>
+            Sit with your back straight in a chair.
+          </p>
+
+          <p>
+            Close your eyes.
+            Take 3 deep breaths and let them out slowly.
+          </p>
+
+          <p>
+            Now breathe in slowly filling your lungs with air, till you can't take any more air in -  to a count of 4 - 1, 2, 3 4.
+          </p>
+
+          <p>
+            Now breathe out really really slowly to a count of 8 - 1…8. 
+          </p>
+
+          <p>
+            Continue doing this for 5 minutes, and then listen to the next audio, where we introduce another element to this exercise. Focus on the breath, and if thoughts come - just observe them, offering no resistance. Learn to detach yourself from your thoughts - just observing them from a short distance. You are your breath right now, not your thoughts.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
