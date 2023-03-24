@@ -1,0 +1,41 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The person who is depressed may be very self-critical. These negative thoughts keep repeating themselves in a loop in their mind and there seems to be no escape. These thoughts seem real so we believe them to be true - but they may not be - it is useful to remember that.
+          </p>
+
+          <p>
+            They may have many regrets about the past and how they behaved, and cannot forgive themselves.
+          </p>
+
+          <p>
+            Or they may have feelings of being worthless and less than others, and be critical of themselves for not making more of their life.
+          </p>
+
+          <p>
+            They may say things like:
+            I’m not good enough
+            I’ll never be able to feel better again
+          </p>
+
+          <p>
+            I will never be successful
+            I’m a failure
+            I always disappoint others
+          </p>
+
+          <p>
+            The first step is to identify these negative thoughts and write them down in your online journal on the app - in the next sessions we will explore how to tackle them
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

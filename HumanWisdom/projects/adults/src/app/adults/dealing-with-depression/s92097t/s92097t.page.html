@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this session. We have divided the process of getting better into 4 phases.
+          </p>
+
+          <p>
+            The first phase is acceptance - diagnosing and accepting the fact that you may be depressed. This is often not easy, but the sooner you can do so, the quicker you can do something about it.
+          </p>
+
+          <p>
+            In the second phase we practice self-care and learn how we can look after ourselves when we are depressed. This will include a variety of practical exercises including breathing, journaling and tapping. In this phase we try to calm the mind down, feel less distressed so we have the inner resources to go to phase 3.
+          </p>
+
+          <p>
+            In phase 3 we introduce practical life-style changes in a gradual way and begin taking steps to recovery. Here we include things like exercise, getting enough sleep, the right diet, scheduling activities, reconnecting with people and so on.
+          </p>
+
+          <p>
+            In phase 4 we examine our thoughts and the story we have told ourselves, and explore fresh ways of looking at ourselves, others, and the world. We explore self-awareness and having a more positive attitude. If we have suffered grief or emotional pain we talk about how we can deal with these feelings in ourselves. Acceptance of ourselves, others, our past, and an uncertain future is the key to a full recovery. There are a number of resources in the app that we will use in this process including the online journal, breathing exercises, wisdom exercises and various modules.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We know when we are praised or recognised we feel good inside. The question to explore is why our mind needs something from the outside to feel good on the inside? 
+          </p>
+
+          <p>
+            When you notice the thought which pushes you to seek this external validation from others, or feels bad if it is not met…pause… and observe the feeling behind that thought. Breathe into it – breathing in gently to a count of 4, and breathing out to a count of 4. Notice how it feels like an emptiness, or an ache inside you…its okay. Don’t give in to it or resist it – just breathe gently, staying with that feeling. If you come upon that feeling, regard it as a precious discovery, even though it may feel uncomfortable.
+          </p>
+
+          <p>
+            It is indeed difficult to stay with this feeling, so just play with it – noticing it and staying with it for as long as you can.
+          </p>
+
+          <p>
+            If you can stay with this feeling without naming it, without judging it or trying to change it, it transforms to a feeling of peace. Try it and see
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
