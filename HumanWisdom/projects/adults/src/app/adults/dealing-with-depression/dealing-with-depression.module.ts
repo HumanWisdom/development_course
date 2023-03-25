@@ -325,6 +325,7 @@ import { S92268Page } from './s92268/s92268.page';
     S92002Page,
     S92003Page,
     S92004Page,
+    S92204tPage,
     S92005Page,
     S92006Page,
     S92007Page,
