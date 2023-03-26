@@ -84,6 +84,7 @@ import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
 import { NewsletterComponent } from './component/newsletter/newsletter.component';
 import { BgVideoComponent } from './component/bg-video/bg-video.component';
 import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
+import { CertificationComponent } from './component/certification/certification.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -162,6 +163,7 @@ import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.c
     NewsletterComponent,
     BgVideoComponent,
     VideoYoutubeComponent,
+    CertificationComponent
   ],
   imports: [
     CommonModule,
@@ -217,6 +219,7 @@ import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.c
     TranscriptHeaderComponent,
     TranscriptContentComponent,
     PyramidContentComponent,
+    CertificationComponent,
     YesnoComponent,
     SingleSelectComponent,
     MultiSelectComponent,

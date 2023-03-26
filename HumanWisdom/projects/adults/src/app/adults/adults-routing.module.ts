@@ -260,10 +260,10 @@ const routes: Routes = [
     path: 'wisdom-shorts',
     loadChildren: () => import('./wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
   },
-  {
-    path: 'blog',
-    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-  },
+  // {
+  //   path: 'blog',
+  //   loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+  // },
   {
     path: 'treesisters',
     loadChildren: () => import('./treesisters/treesisters.module').then(m => m.TreesistersPageModule)
