@@ -138,7 +138,7 @@ const routes: Routes = [
     loadChildren: () => import('./adults/partnership-app/partnership-app.module').then(m => m.PartnershipAppModule)
   },
   {
-    path:'blog',
+    path:'blogs',
     component:BlogIndexPage
   },
   {
