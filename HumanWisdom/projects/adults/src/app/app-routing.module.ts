@@ -138,11 +138,11 @@ const routes: Routes = [
     loadChildren: () => import('./adults/partnership-app/partnership-app.module').then(m => m.PartnershipAppModule)
   },
   {
-    path:'adults/blog',
+    path:'blogs',
     component:BlogIndexPage
   },
   {
-    path: 'adults/blog/blog-article',
+    path: 'blog-article',
     // canActivate:[ActiveGuard],  
     component:BlogArticlePage
   },
