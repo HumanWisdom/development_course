@@ -4,30 +4,30 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s71005',
-  templateUrl: './s71005.page.html',
-  styleUrls: ['./s71005.page.scss'],
+  selector: 'app-s71006',
+  templateUrl: './s71006.page.html',
+  styleUrls: ['./s71006.page.scss'],
 })
-export class S71005Page implements OnInit,OnDestroy {
+export class S71006Page implements OnInit,OnDestroy {
 
-  bg="dark_blue_w5"
+  bg="dark_blue_w6"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/get-support-now/videos/1.5.mp4'  
-  title="Conflict in Relationships"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/get_support_now/get_support_now_05.jpg"
+  videoLink=this.mediaVideo+'/get-support-now/videos/1.6.mp4'  
+  title="First aid for emotional distress"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/get_support_now/get_support_now_06.jpg"
   toc=""
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
   screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=71005
+  screenNumber=71006
   startTime:any
   endTime:any
   totalTime:any  
  
   
-  // toc="/get-support-now/s71005"
+  // toc="/get-support-now/s71006"
   bookmark=0
   path=this.router.url
   avDuration:any
@@ -53,9 +53,9 @@ ngOnInit() {
   
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark71005"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark71006"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark71005"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark71006"))==1)
       this.bookmark=1
    
    
@@ -70,7 +70,7 @@ ngOnInit() {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark71005",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark71006",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -107,7 +107,7 @@ createScreen(){
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-    this.router.navigate(['/get-support-now/s71005p1'])
+    this.router.navigate(['/get-support-now/s71006p1'])
    
 
   }
@@ -122,4 +122,3 @@ createScreen(){
 
 
 }
-

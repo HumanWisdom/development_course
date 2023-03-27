@@ -85,6 +85,7 @@ import { NewsletterComponent } from './component/newsletter/newsletter.component
 import { BgVideoComponent } from './component/bg-video/bg-video.component';
 import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
 import { CertificationComponent } from './component/certification/certification.component';
+import { VideoContentCrossComponent } from './component/video-content-cross/video-content-cross.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -163,7 +164,8 @@ import { CertificationComponent } from './component/certification/certification.
     NewsletterComponent,
     BgVideoComponent,
     VideoYoutubeComponent,
-    CertificationComponent
+    CertificationComponent,
+    VideoContentCrossComponent
   ],
   imports: [
     CommonModule,
@@ -267,6 +269,7 @@ import { CertificationComponent } from './component/certification/certification.
     NewsletterComponent,
     BgVideoComponent,
     VideoYoutubeComponent,
+    VideoContentCrossComponent,
   ]
 })
 export class SharedModule { }
