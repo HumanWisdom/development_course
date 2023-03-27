@@ -1,4 +1,4 @@
-sudoimport { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { S71001Page } from './s71001/s71001.page';
