@@ -12,7 +12,6 @@ import { S71002p1Page } from './s71002p1/s71002p1.page';
 import { S71003p1Page } from './s71003p1/s71003p1.page';
 import { S71004p1Page } from './s71004p1/s71004p1.page';
 import { S71005p1Page } from './s71005p1/s71005p1.page';
-import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
