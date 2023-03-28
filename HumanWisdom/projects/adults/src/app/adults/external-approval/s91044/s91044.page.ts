@@ -15,7 +15,7 @@ export class S91044Page implements OnInit,OnDestroy {
   bg="blue_w8"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/external-approval/videos/1.3.mp4'  
-  title="What problems can our need for external approval cause?"
+  title="What problems can our need for Need for approval cause?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   
   userId:any
