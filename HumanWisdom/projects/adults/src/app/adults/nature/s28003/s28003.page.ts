@@ -61,6 +61,36 @@ export class S28003Page implements OnInit {
       this.bookmark = 1
 
 
+    var container = document.getElementById('n03');
+
+    container.addEventListener("touchstart", startTouch.bind(this), false);
+    container.addEventListener("touchmove", moveTouch.bind(this), false);
+
+    var initialX = null;
+
+    function startTouch(e) {
+      initialX = e.touches[0].clientX;
+    };
+
+    function moveTouch(e) {
+      if (initialX === null) {
+        return;
+      }
+
+      var currentX = e.touches[0].clientX;
+
+      var diffX = initialX - currentX;
+
+      if (diffX > 0) {
+        this.submitProgress();
+      } else {
+        this.prev()
+      }
+
+      initialX = null;
+
+      e.preventDefault();
+    };
 
 
 
