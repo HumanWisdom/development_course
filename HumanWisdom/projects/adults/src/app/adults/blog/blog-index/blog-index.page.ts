@@ -18,18 +18,17 @@ export class BlogIndexPage implements OnInit {
   
   constructor(private service: AdultsService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
-    private meta: Meta, private title: Title) { }
+    public meta: Meta, private title: Title) { }
 
   ngOnInit() {
-
     this.title.setTitle('Explore Your Inner World with Our Self-Discovery Blog')
-    this.meta.updateTag({ property: 'title', content: 'Explore Your Inner World with Our Self-Discovery Blog'})
-    this.meta.updateTag({ property: 'description', content: 'Discover your true self with our self-discovery blog. Explore your inner world and unlock your full potential with inspiring articles and wisdom.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Personal growth blog,Self-improvement blog,Inspirational blog,Life lessons blog,Mindfulness blog,Adult development blog,Wisdom-based blog,Personal development articles,Self-discovery blog,Reflection blog' })
-  
+    this.meta.addTag({ property: 'title', content: 'Explore Your Inner World with Our Self-Discovery Blog'})
+    this.meta.addTag({ property: 'description', content: 'Discover your true self with our self-discovery blog. Explore your inner world and unlock your full potential with inspiring articles and wisdom.' })
+    this.meta.addTag({ property: 'keywords', content: 'Personal growth blog,Self-improvement blog,Inspirational blog,Life lessons blog,Mindfulness blog,Adult development blog,Wisdom-based blog,Personal development articles,Self-discovery blog,Reflection blog' })
     this.getBlogs()
   }
 
+  
   getBlogs(){
     this.service.getBlog().subscribe(res=>
       {
