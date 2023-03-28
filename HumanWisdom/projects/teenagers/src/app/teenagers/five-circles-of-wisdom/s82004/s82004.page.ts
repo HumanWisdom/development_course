@@ -23,7 +23,7 @@ export class S82004Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "How the mind works",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="five-circles-of-wisdom/s82004t"

@@ -14,7 +14,7 @@ export class S91039Page implements OnInit,OnDestroy {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w3"
-  title="Our need for Need for approval can also result in anxiety"
+  title="Our need for  approval can also result in anxiety"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/external-approval/audios/1.7.mp3'
 

@@ -13,7 +13,7 @@ export class S82016Page implements OnInit {
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w2"
-  title="Living with wisdom - 15 modules"
+  title="Transform your life - 15 modules"
 
   content=[
     {
