@@ -31,6 +31,7 @@ export class S92001Page implements OnInit,OnDestroy {
   tocAlt=""
   lastvisited = false;
   stories = []
+  dealingwithdepressionResume=sessionStorage.getItem("dealingwithdepressionResume")
 
   constructor(
     private router: Router,
