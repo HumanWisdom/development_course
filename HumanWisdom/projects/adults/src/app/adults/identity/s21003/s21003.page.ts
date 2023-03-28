@@ -24,7 +24,7 @@ export class S21003Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "Identity",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="identity/s21003t"

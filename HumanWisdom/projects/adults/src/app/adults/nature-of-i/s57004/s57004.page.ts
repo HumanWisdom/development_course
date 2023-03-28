@@ -22,7 +22,7 @@ export class S57004Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "The Nature of the ‘I’",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="nature-of-i/s57004t"

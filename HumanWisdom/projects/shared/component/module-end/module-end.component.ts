@@ -1757,7 +1757,7 @@ export class ModuleEndComponent implements OnInit {
   }
   // /understand emotions
 
-  // living with wisdom 1
+  // transform your life 1
   routeStress(cont: any = 1) {
     var stressResume
     localStorage.setItem("moduleId", JSON.stringify(44))
@@ -2058,9 +2058,9 @@ export class ModuleEndComponent implements OnInit {
         })
   }
 
-  // /living with wisdom 1
+  // /transform your life 1
 
-  // living with wisdom 2
+  // transform your life 2
   routeHappiness(cont: any = 1) {
     var hR
     localStorage.setItem("moduleId", JSON.stringify(23))
@@ -2465,7 +2465,7 @@ export class ModuleEndComponent implements OnInit {
         })
 
   }
-  // /living with wisdom 2
+  // /transform your life 2
 
   goDashboard() {
     let cur = localStorage.getItem('curated');

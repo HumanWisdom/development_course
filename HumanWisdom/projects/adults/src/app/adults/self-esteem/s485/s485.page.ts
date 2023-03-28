@@ -16,14 +16,14 @@ export class S485Page implements OnInit {
   // bg=""
   // moduleLink="/adults/living-with-peace"
   // moduleName=" Living with Peace"
-  // sectionName= "Living with Wisdom - I";
+  // sectionName= "Transform your life - I";
   // moduleId=63
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/45.png"
  
   bg=""
   moduleLink="/adults/habit-addiction"
   moduleName=" Addiction"
-  sectionName= "Living with Wisdom - II";
+  sectionName= "Transform your life - II";
   moduleId=45
   moduleList: any = [
     {

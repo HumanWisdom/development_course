@@ -49,7 +49,7 @@ export class S29010Page implements OnInit {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
       this.moduleLink = "/adults/stress"
       this.moduleName = "stress"
-      this.sectionName = "Live with wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 44
     
     }
