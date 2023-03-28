@@ -31,6 +31,7 @@ export class S91001Page implements OnInit,OnDestroy {
   tocAlt=""
   lastvisited = false;
   stories = []
+  externalapprovalR=sessionStorage.getItem("externalapprovalR")
 
   constructor(
     private router: Router,

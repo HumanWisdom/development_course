@@ -60,6 +60,36 @@ export class S28006Page implements OnInit {
       this.bookmark = 1
 
 
+    var container = document.getElementById('n06');
+
+    container.addEventListener("touchstart", startTouch.bind(this), false);
+    container.addEventListener("touchmove", moveTouch.bind(this), false);
+
+    var initialX = null;
+
+    function startTouch(e) {
+      initialX = e.touches[0].clientX;
+    };
+
+    function moveTouch(e) {
+      if (initialX === null) {
+        return;
+      }
+
+      var currentX = e.touches[0].clientX;
+
+      var diffX = initialX - currentX;
+
+      if (diffX > 0) {
+        this.submitProgress();
+      } else {
+        this.prev()
+      }
+
+      initialX = null;
+
+      e.preventDefault();
+    };
 
 
 
@@ -90,12 +120,12 @@ export class S28006Page implements OnInit {
 
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    
+
 
     this.router.navigate(['/adults/nature/s28007'])
     localStorage.setItem("pageaction", 'next')
     if (this.userId === 563) return;
-    
+
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -117,7 +147,7 @@ export class S28006Page implements OnInit {
   prev() {
     localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/nature/s28005'])
-   
+
 
   }
   ngOnDestroy() {
