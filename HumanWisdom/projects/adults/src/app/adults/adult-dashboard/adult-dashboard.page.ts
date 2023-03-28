@@ -1786,11 +1786,11 @@ export class AdultDashboardPage implements OnInit {
         break
       }
       case "78": {
-        this.routeDealingWithDepression(1)
+        this.routeDealingWithDepression(92)
         break
       }
       case "79": {
-        this.routeExternalApproval(1)
+        this.routeExternalApproval(91)
         break
       }
     }
