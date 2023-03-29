@@ -16,7 +16,7 @@ export class S48108Page implements OnInit {
   // bg=""
   // moduleLink="/adults/habit-addiction"
   // moduleName=" Addiction"
-  // sectionName= "Living with Wisdom - II";
+  // sectionName= "Transform your life - II";
   // moduleId=45
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.png"
@@ -24,7 +24,7 @@ export class S48108Page implements OnInit {
   bg=""
   moduleLink="/adults/making-better-decisions"
   moduleName=" Making better decisions"
-  sectionName= "Living with Wisdom - I";
+  sectionName= "Transform your life - I";
   moduleId=77
   moduleList: any = [
     {
@@ -57,7 +57,7 @@ export class S48108Page implements OnInit {
      
       this.moduleLink = "/adults/relationships"
       this.moduleName = "Relationships"
-      this.sectionName = "Live with wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 47
     
     }

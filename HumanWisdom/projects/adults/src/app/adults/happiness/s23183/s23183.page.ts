@@ -16,7 +16,7 @@ export class S23183Page implements OnInit {
   // bg=""
   // moduleLink="/adults/communication"
   // moduleName="02. Communication"
-  // sectionName= "Living with Wisdom - II";
+  // sectionName= "Transform your life - II";
   // moduleId=53
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/62.png"
@@ -24,7 +24,7 @@ export class S23183Page implements OnInit {
   bg=""
   moduleLink="/adults/love/"
   moduleName=" Love"
-  sectionName= "Living with Wisdom - I";
+  sectionName= "Transform your life - I";
   moduleId=62
   moduleList: any = [
     {
@@ -56,7 +56,7 @@ export class S23183Page implements OnInit {
     
       this.moduleLink = "/adults/living-with-peace"
       this.moduleName = "Living with Peace"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 63
     
     }

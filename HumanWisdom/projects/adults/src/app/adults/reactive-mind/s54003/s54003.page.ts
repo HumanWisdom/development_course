@@ -21,7 +21,7 @@ export class S54003Page implements OnInit, OnDestroy {
     "Art of enquiry",
     "Reactive mind",
     "Understand emotions",
-    "Living with wisdom"
+    "Transform your life"
   ]
 
   transcriptPage = "reactive-mind/s54003t"
