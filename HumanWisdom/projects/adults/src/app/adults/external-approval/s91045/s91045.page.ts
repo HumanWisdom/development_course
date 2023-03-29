@@ -14,7 +14,7 @@ export class S91045Page implements OnInit,OnDestroy {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w9"
-  title="External approval becomes a determinant of our success"
+  title="Need for approval becomes a determinant of our success"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/external-approval/audios/1.9.mp3'
 

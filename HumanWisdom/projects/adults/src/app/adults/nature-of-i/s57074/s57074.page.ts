@@ -15,7 +15,7 @@ export class S57074Page implements OnInit {
  
   bg=""
   moduleLink="/adults/external-approval"
-  moduleName=" External Approval"
+  moduleName=" Need for approval"
   sectionName= "How the Mind Works";
   moduleId=91
   moduleList: any = [

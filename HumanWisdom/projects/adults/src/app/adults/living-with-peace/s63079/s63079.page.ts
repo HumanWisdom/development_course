@@ -16,7 +16,7 @@ export class S63079Page implements OnInit {
   bg=""
   moduleLink="/adults/dealing-with-death"
   moduleName=" Dealing with Death"
-  sectionName= "Living with Wisdom - I";
+  sectionName= "Transform your life - I";
   moduleId=64
   moduleList: any = [
     {

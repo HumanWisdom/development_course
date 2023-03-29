@@ -220,7 +220,7 @@ export class BookmarksPage implements OnInit {
         })
   }
 
-  // living with wisdom 2
+  // transform your life 2
   routeHappiness(cont: any = 1) {
     var hR
     localStorage.setItem("moduleId", JSON.stringify(23))

@@ -16,7 +16,7 @@ export class S45158Page implements OnInit {
   bg=""
   moduleLink="/adults/food-health"
   moduleName=" Food and Health"
-  sectionName= "Living with Wisdom - II";
+  sectionName= "Transform your life - II";
   moduleId=46
   moduleList: any = [
     {
@@ -69,7 +69,7 @@ export class S45158Page implements OnInit {
     //   this.bg = ""
     //   this.moduleLink = "/adults/communication"
     //   this.moduleName = "Communication"
-    //   this.sectionName = "Live with wisdom";
+    //   this.sectionName = "Transform your life";
     //   this.moduleId = 53
     
     // }

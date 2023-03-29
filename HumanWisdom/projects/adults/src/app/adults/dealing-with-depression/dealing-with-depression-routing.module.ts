@@ -1484,7 +1484,7 @@ const routes: Routes = [
     component: S92201Page,
   },
   {
-    path: 's920202',   
+    path: 's92202',   
     canActivate:[ActiveGuard],  
     component: S92202Page,
   },
