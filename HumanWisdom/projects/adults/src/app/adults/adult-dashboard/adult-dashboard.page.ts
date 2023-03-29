@@ -2953,7 +2953,7 @@ export class AdultDashboardPage implements OnInit {
   }
   // /understand emotions
 
-  // living with wisdom 1
+  // transform your life 1
   routeStress(cont: any = 1) {
     var stressResume
     localStorage.setItem("moduleId", JSON.stringify(44))
@@ -3249,9 +3249,9 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
-  // /living with wisdom 1
+  // /transform your life 1
 
-  // living with wisdom 2
+  // transform your life 2
   routeHappiness(cont: any = 1) {
     var hR
     localStorage.setItem("moduleId", JSON.stringify(23))
@@ -3539,7 +3539,7 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/leadership/s59001`])
         })
   }
-  // /living with wisdom 2
+  // /transform your life 2
 
   routeJournal() {
     this.router.navigate(['/adults/journal'])

@@ -16,14 +16,14 @@ export class S46079Page implements OnInit {
   // bg=""
   // moduleLink="/adults/money"
   // moduleName=" Money"
-  // sectionName= "Living with Wisdom - II";
+  // sectionName= "Transform your life - II";
   // moduleId=73
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/63.png"
  
   bg=""
   moduleLink="/adults/living-with-peace"
   moduleName=" Living with Peace"
-  sectionName= "Living with Wisdom - I";
+  sectionName= "Transform your life - I";
   moduleId=63
   moduleList: any = [
     {
@@ -54,7 +54,7 @@ export class S46079Page implements OnInit {
     
       this.moduleLink = "/adults/habit-addiction"
       this.moduleName = " Habit Addiction"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 45
     
     }

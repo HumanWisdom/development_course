@@ -16,7 +16,7 @@ export class S58088Page implements OnInit {
   bg=""
   moduleLink="/adults/leadership"
   moduleName="09. Leadership"
-  sectionName= "Living with Wisdom - II";
+  sectionName= "Transform your life - II";
   moduleId=59
   moduleList: any = [
     {
@@ -48,7 +48,7 @@ export class S58088Page implements OnInit {
      
       this.moduleLink = "/adults/leadership"
       this.moduleName = "Leadership"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 59
     
     }

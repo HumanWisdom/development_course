@@ -46,7 +46,7 @@ export class S60112Page implements OnInit {
     
       this.moduleLink = "/adults/dealing-with-deathe"
       this.moduleName = " Dealing with Death"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 64
     
     }

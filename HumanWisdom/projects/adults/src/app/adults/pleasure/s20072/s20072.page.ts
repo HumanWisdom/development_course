@@ -50,7 +50,7 @@ export class S20072Page implements OnInit {
      
       this.moduleLink = "/adults/habit-addiction"
       this.moduleName = "Addiction"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 45
     
     }
