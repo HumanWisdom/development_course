@@ -10,15 +10,55 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="facebook-domain-verification" content="zxnan2nc1tyzk3dayx6ef3iluoo8hy" />
+<script>
+  const urls = [
+  {
+    url: "https://staging.humanwisdom.me/adults/stress",
+    title: "Emotional Well-Being and Stress: Strategies for Life Balance",
+    description: "Balance your life and reduce stress with our comprehensive guide on resilience, self-care, and stress management. Read more on HumanWisdom.me.",
+    keywords:"Mindfulness for stress relief,Emotional well-being and stress, Resilience and stress management, Life balance and stress, Self care for stress management"
+  },
+  {
+    url: "https://staging.humanwisdom.me/adults/self-esteem",
+    title: "Overcoming Self-Doubt: Enhancing Self-Worth & Improving Self-Esteem",
+    description: "Discover strategies for overcoming self-doubt and enhancing your self-worth. Improve your self-esteem and mental health with HumanWisdom.me.",
+    keywords:"Self-esteem in adulthood, Boosting self-confidence, Building self-esteem, Positive self-image, Overcoming self-doubt, Enhancing self-worth, Improving self-esteem, Raising self-esteem, Self-esteem and mental health"
+  },
+  {
+    url: "https://staging.humanwisdom.me/adults/habit-addiction",
+    title: "Breaking the Cycle: Overcoming Habit",
+    description: "Discover practical strategies and resources to help you overcome habit addiction. Learn how to break addictive habits, find support and achieve a healthier and happier life.",
+    keywords:'habit addiction in adults,overcoming habit addiction as an adult,breaking habits and addictions in adulthood,human wisdom for habit addiction,habit addiction,overcoming habit addiction,addiction recovery,habits and addiction,addiction treatment,breaking habits and addictions,habit change,addiction support,addiction help,overcoming addiction habits,addiction counseling,addiction resources,overcoming addictive habits,addiction and habit change'
+  }
+];
 
-<!--
+for (let i = 0; i < urls.length; i++) {
+  const url = urls[i];
+  const metaTags = [
+    {name: "description", content: url.description},
+    {property: "og:url", content: url.url},
+    {property: "og:title", content: url.title},
+    {property: "og:description", content: url.description},
+    {property: "og:keywords", content: url.keywords},
+  ];
+  
+  for (let j = 0; j < metaTags.length; j++) {
+    const metaTag = document.createElement("meta");
+    for (let key in metaTags[j]) {
+      metaTag.setAttribute(key, metaTags[j][key]);
+    }
+    document.head.appendChild(metaTag);
+  }
+}
+</script>
+
+<!-- 
+  <meta property="og:title" id="tag1" content="HumanWisdom: Mental Well-being" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://staging.humanwisdom.me/course/" />
-   <meta property="og:title"  content="HumanWisdom: Mental Well-being" />
-
   <meta property="og:description" content="Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom" />
   <meta property="og:image"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent.png" />
-  <meta property="og:image:alt"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent.png" />
+  <meta property="og:image:alt"  content="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent.png" /> -->
 
   <!-- <meta property="og:image:width" content="768" />
 <meta property="og:image:height" content="432" /> -->
