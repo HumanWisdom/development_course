@@ -10,47 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="facebook-domain-verification" content="zxnan2nc1tyzk3dayx6ef3iluoo8hy" />
-<script>
-  const urls = [
-  {
-    url: "https://staging.humanwisdom.me/adults/stress",
-    title: "Emotional Well-Being and Stress: Strategies for Life Balance",
-    description: "Balance your life and reduce stress with our comprehensive guide on resilience, self-care, and stress management. Read more on HumanWisdom.me.",
-    keywords:"Mindfulness for stress relief,Emotional well-being and stress, Resilience and stress management, Life balance and stress, Self care for stress management"
-  },
-  {
-    url: "https://staging.humanwisdom.me/adults/self-esteem",
-    title: "Overcoming Self-Doubt: Enhancing Self-Worth & Improving Self-Esteem",
-    description: "Discover strategies for overcoming self-doubt and enhancing your self-worth. Improve your self-esteem and mental health with HumanWisdom.me.",
-    keywords:"Self-esteem in adulthood, Boosting self-confidence, Building self-esteem, Positive self-image, Overcoming self-doubt, Enhancing self-worth, Improving self-esteem, Raising self-esteem, Self-esteem and mental health"
-  },
-  {
-    url: "https://staging.humanwisdom.me/adults/habit-addiction",
-    title: "Breaking the Cycle: Overcoming Habit",
-    description: "Discover practical strategies and resources to help you overcome habit addiction. Learn how to break addictive habits, find support and achieve a healthier and happier life.",
-    keywords:'habit addiction in adults,overcoming habit addiction as an adult,breaking habits and addictions in adulthood,human wisdom for habit addiction,habit addiction,overcoming habit addiction,addiction recovery,habits and addiction,addiction treatment,breaking habits and addictions,habit change,addiction support,addiction help,overcoming addiction habits,addiction counseling,addiction resources,overcoming addictive habits,addiction and habit change'
-  }
-];
 
-for (let i = 0; i < urls.length; i++) {
-  const url = urls[i];
-  const metaTags = [
-    {name: "description", content: url.description},
-    {property: "og:url", content: url.url},
-    {property: "og:title", content: url.title},
-    {property: "og:description", content: url.description},
-    {property: "og:keywords", content: url.keywords},
-  ];
-  
-  for (let j = 0; j < metaTags.length; j++) {
-    const metaTag = document.createElement("meta");
-    for (let key in metaTags[j]) {
-      metaTag.setAttribute(key, metaTags[j][key]);
-    }
-    document.head.appendChild(metaTag);
-  }
-}
-</script>
 
 <!-- 
   <meta property="og:title" id="tag1" content="HumanWisdom: Mental Well-being" />
@@ -86,16 +46,95 @@ for (let i = 0; i < urls.length; i++) {
   <meta name="author" content="The Human Wisdom Team">
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover, user-scalable = no" />  -->
-	<!-- <script type="application/ld+json">
+	<script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "WebPage",
-      "url": "https://humanwisdom.me/adults/blog",
       "name": "Explore Your Inner World with Our Self-Discovery Blog",
       "description": "Discover your true self with our self-discovery blog. Explore your inner world and unlock your full potential with inspiring articles and wisdom.",
+      "url": "https://staging.humanwisdom.me/",
       "keywords": "Personal growth blog,Self-improvement blog,Inspirational blog,Life lessons blog,Mindfulness blog,Adult development blog,Wisdom-based blog,Personal development articles,Self-discovery blog,Reflection blog"
+      "module": {
+        "@type": "moduleList",
+        "moduleListElement": [
+          {
+            "@type": "ModuleName",
+            "position": 1,
+            "name": "stress",
+            "item": "https://staging.humanwisdom.me/adults/stress"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 2,
+            "name": "self-esteem",
+            "item": "https://staging.humanwisdom.me/adults/self-esteem"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 3,
+            "name": "habit-addiction",
+            "item": "https://staging.humanwisdom.me/adults/habit-addiction"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 4,
+            "name": "food-health",
+            "item": "https://staging.humanwisdom.me/adults/food-health"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 5,
+            "name": "living-with-peace",
+            "item": "https://staging.humanwisdom.me/adults/living-with-peace"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 6,
+            "name": "dealing-with-death",
+            "item": "https://staging.humanwisdom.me/adults/dealing-with-death"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 7,
+            "name": "relationships",
+            "item": "https://staging.humanwisdom.me/adults/relationships"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 8,
+            "name": "communication",
+            "item": "https://staging.humanwisdom.me/adults/communication"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 9,
+            "name": "happiness",
+            "item": "https://staging.humanwisdom.me/adults/happiness"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 10,
+            "name": "love",
+            "item": "https://staging.humanwisdom.me/adults/love"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 11,
+            "name": "bullying",
+            "item": "https://staging.humanwisdom.me/adults/bullying"
+          },
+          {
+            "@type": "ModuleName",
+            "position": 12,
+            "name": "criticism",
+            "item": "https://staging.humanwisdom.me/adults/criticism"
+          }
+        ]
+      }
     }
-	</script> -->
+    
+
+	</script>
 
   <link rel="apple-touch-startup-image" href="assets/images/splash.jpg" />
 

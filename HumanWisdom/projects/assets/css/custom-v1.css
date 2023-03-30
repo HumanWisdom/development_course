@@ -4,7 +4,7 @@
   width: 100%;
   height: 1350px;
   background-repeat: no-repeat !important;
-  background-size: 101% 550px !important;
+  background-size: 101% 46% !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/outer-rec.png); */
    background: url(../images/outer-rec.png);
   top: 9%;
@@ -13,13 +13,13 @@
 .inner-rec {
   margin-left: 9%;
   position: absolute;
-  top: 2.9%;
+  top: 3%;
   width: 82%;
   height: 90%;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/inner-rec.png); */
   background: url(../images/inner-rec.png);
   background-repeat: no-repeat !important;
-  background-size: 100% 39% !important;
+  background-size: 100% 44% !important;
 }
 
 .inner-icon {
@@ -41,7 +41,7 @@
     text-align: center;
     color: #FFFFFF;
     position: absolute;
-    top: 7.98%;
+    top: 8.98%;
 }
 
 .vector {
@@ -58,8 +58,7 @@
 
 .cert-txt1 {
   position: absolute;
-  /* left: 37.8%; */
-  top: 16.6%;
+  top: 17.6%;
   font-family: "Merriweather";
   font-size: 1rem;
   letter-spacing: 0em;
@@ -69,9 +68,7 @@
 
 .cert-txt2 {
     position: absolute;
-    /* left: 23.09%;
-    right: 25%; */
-    top: 18.59%;
+    top: 20.59%;
     font-family: "Merriweather";
     font-style: normal;
     font-size: 2.4rem;
@@ -81,34 +78,38 @@
 
 .cert-txt3 {
     position: absolute;
-    /* left: 14.13%;
-    right: 11.13%; */
-    top: 24.3%;
+    top: 27.3%;
     font-family: "Merriweather";
     font-style: normal;
     font-size: 1.3rem;
     text-align: center;
     color: #FFFFFF;
 }
+.cert-txt3-1 {
+  position: absolute;
+  top: 29.3%;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #FFFFFF;
+}
 
 .cert-logo {
   position: absolute;
-  left: 18.13%;
-  top: 30.87%;
+  left: 22.13%;
   height: 5%;
   width: 20%;
+  margin-top: -15px;
   background-size: 60px 50px !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/human-wisdom-icon.png);  */
   background: url(../images/human-wisdom-icon.png);
-  /* background: url(/projects/assets/images/human-wisdom-icon.png); */
 }
 
 .cert-txt4 {
     position: absolute;
-    left: 34.09%;
-    right: 58.91%;
-    top: 31.4%;
+    margin-left: 1.8rem;
     font-family: "Merriweather";
     font-style: normal;
     font-weight: 400;
@@ -118,9 +119,8 @@
 }
 
 .cert-txt5 {
-  position: absolute;
-  left: 34.09%;
-  top: 33.3%;
+  margin-top: 0.95rem;
+  margin-left: 3.2rem;
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
@@ -131,9 +131,7 @@
 
 .cert-txt6 {
   position: absolute;
-  left: 34.09%;
-  right: 62.91%;
-  top: 39.8%;
+  top: 44.99%;
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
@@ -157,49 +155,17 @@
 .vector-4 {
   position: absolute;
   left: 78.75%;
-  top: 34.12%;
+  top: 38.50%;
   height: 10%;
   width: 19.75%;
-  background-size: 70% 44% !important;
+  background-size: 70% 47% !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-1.png); */
   background: url(../images/Vector-1.png);
 }
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) 
-and (min-width : 0px) and (max-width : 767px){
-  .cert-txt4 {
-    left: 37.19%;
-  }
-  .cert-txt5 {
-    left: 36.09%;
-  }
-  .vector-4 {
-    left: 76.9%;
-  }
-}
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-  .vector-4 {
-    left: 78%;
-  }
-}
-
-/* For Mobile */
-@media screen and (max-width: 540px) {
-.cert-txt5 {
-  left:  37.09%;
-} 
-.vector-4 {
-  left: 78%;
-}
-}
 .m-top{
-  margin-top:65rem;
+  margin-top:73rem;
 }
 .m-top10{
   margin-top:10%;
@@ -210,16 +176,20 @@ and (max-device-width : 1024px) {
 .p-bottom3{
   padding-bottom:3rem;
 }
+.m-top26{
+  margin-top: 26rem;
+}
+
 .m-top13
 {
-  margin-top: 13rem;
+  margin-top: 15rem;
 }
 .m-left3
 {
-  margin-left: -3rem;
+  margin-left: -4.5rem;
 }
 .m-right3
 {
-  margin-right: -3rem;
+  margin-right: -4.5rem;
 }
 /* /certficate */
