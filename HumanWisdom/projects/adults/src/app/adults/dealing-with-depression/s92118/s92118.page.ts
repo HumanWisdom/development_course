@@ -12,11 +12,11 @@ export class S92118Page implements OnInit,OnDestroy {
 
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
-  bg="dark_blue_dark_blue_w3w1"
+  bg="dark_blue_w3"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/dealing-with-depression/videos/4.1.mp4'  
   title="How can we find the motivation to improve?"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
