@@ -1557,8 +1557,8 @@ export class AdultDashboardPage implements OnInit {
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
         this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
         this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
-        this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with depression")?.Percentage
-        this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "External Approval")?.Percentage
+        this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
+        this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
       })
 
   }
@@ -1785,12 +1785,12 @@ export class AdultDashboardPage implements OnInit {
         this.routeMakingBetterDecisions(1)
         break
       }
-      case "78": {
-        this.routeDealingWithDepression(92)
+      case "92": {
+        this.routeDealingWithDepression(1)
         break
       }
-      case "79": {
-        this.routeExternalApproval(91)
+      case "91": {
+        this.routeExternalApproval(1)
         break
       }
     }
@@ -2953,7 +2953,7 @@ export class AdultDashboardPage implements OnInit {
   }
   // /understand emotions
 
-  // living with wisdom 1
+  // transform your life 1
   routeStress(cont: any = 1) {
     var stressResume
     localStorage.setItem("moduleId", JSON.stringify(44))
@@ -3249,9 +3249,9 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
-  // /living with wisdom 1
+  // /transform your life 1
 
-  // living with wisdom 2
+  // transform your life 2
   routeHappiness(cont: any = 1) {
     var hR
     localStorage.setItem("moduleId", JSON.stringify(23))
@@ -3539,7 +3539,7 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/leadership/s59001`])
         })
   }
-  // /living with wisdom 2
+  // /transform your life 2
 
   routeJournal() {
     this.router.navigate(['/adults/journal'])

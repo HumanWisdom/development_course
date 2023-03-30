@@ -16,7 +16,7 @@ export class S92261Page implements OnInit,OnDestroy {
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/dealing-with-depression/videos/8.1.mp4'  
   title="Conversation with someone who has overcome depression"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/etc/06.jpg"
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

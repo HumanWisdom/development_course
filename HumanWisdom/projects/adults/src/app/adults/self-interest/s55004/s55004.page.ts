@@ -21,7 +21,7 @@ export class S55004Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "Self-interest",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="self-interest/s55004t"

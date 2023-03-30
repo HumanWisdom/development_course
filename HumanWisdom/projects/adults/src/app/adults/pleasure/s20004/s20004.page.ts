@@ -24,7 +24,7 @@ export class S20004Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "How the mind works",
         "Pleasure and Desire",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="pleasure/s20004t"

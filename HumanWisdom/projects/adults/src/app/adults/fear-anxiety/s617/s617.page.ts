@@ -11,13 +11,13 @@ import { AdultsService } from '../../adults.service';
 export class S617Page implements OnInit {
   
   toc="fear-anxiety/s486"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/20.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/92.png"
   
   bg=""
-  moduleLink="/adults/pleasure"
-  moduleName=" Pleasure"
-  sectionName= "How the Mind Works";
-  moduleId=20
+  moduleLink="/adults/dealing-with-depression"
+  moduleName=" Dealing with depression"
+  sectionName= "Manage your emotions";
+  moduleId=92
   moduleList: any = [
     {
       name: 'Stress',

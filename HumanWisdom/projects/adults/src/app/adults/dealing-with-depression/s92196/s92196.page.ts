@@ -14,7 +14,7 @@ export class S92196Page implements OnInit,OnDestroy {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w8"
-  title="#1. We become attached to our past"
+  title="#1. We become attached to our past because it becomes part of the me"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/dealing-with-depression/audios/6.2.mp3'
 

@@ -81,7 +81,7 @@ export class S78009Page implements OnInit {
     },
     {
       "no":9,
-      "heading":"Wisdom Shorts",
+      "heading":"Short videos",
       "text":"These are short videos - each with a nugget of wisdom",
       "link":"/adults/wisdom-shorts",
       "linkText":"",
