@@ -1,22 +1,18 @@
 <app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Difficult conversations can clear the air, bring people closer, and stop relationships drifting apart.
-      <br> They can be done well with some thoughtful preparation. It is a skill everyone can learn.
     </h1>
-      <!--<h1 class="txt3">
-      2. Long term stress can affect our mental and physical health
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      They can be done well with some thoughtful preparation. It is a skill everyone can learn.
     </h1>
-      <h1 class="txt3">
-      3. Exploring it in detail allows us to avoid it and manage it better
-    </h1>
-      <h1 class="txt3">
-      4. Preventing it is far easier than dealing with it
-    </h1>-->
+      
     <div class="clearfix"></div>
+
   </form>  
 </app-kta-prevnext>
 
