@@ -75,7 +75,7 @@
                   Congratulations! You have completed this module.
                 </h6>
               <div class="m-top10" [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">              
-               <app-certification></app-certification>
+               <app-certification [moduleName]="moduleName"></app-certification>
               </div>
                 <!-- <div class="row">      
                      <h6 class="txt51 mtb0px mb10px">
@@ -96,10 +96,10 @@
                 <div [ngClass]="{'m-top':isModuleCompleted}">
                   <div class="row me_next_module center_flex safari_dblock " [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                    <button type="button" class="btn btn-success mb0 btn_se me_module_btn" data-dismiss="modal">Download</button>
+                    <button type="button" (click)="saveAsPDF()"  class="btn btn-success mb0 btn_se me_module_btn" data-dismiss="modal">Download</button>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                      <button type="button" class="btn btn-success mb0 btn_se me_module_btn" data-dismiss="modal">Share</button>
+                      <button type="button" (click)="shareCertificate()" class="btn btn-success mb0 btn_se me_module_btn" data-dismiss="modal">Share</button>
                       </div>
                   </div>
                   <h6 class="fw_400 fs_14px lh_16px fc_5d5d5d mtb0px p-bottom3">
