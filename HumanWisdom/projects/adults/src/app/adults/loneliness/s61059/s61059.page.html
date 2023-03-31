@@ -1,13 +1,14 @@
 <app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Loneliness impacts our physical and mental health and the fear of it shapes our lives in many ways we are not aware of
+    </h1>
 
-     </h1>
     <div class="clearfix"></div>
+
   </form>  
 </app-kta-prevnext>
 
