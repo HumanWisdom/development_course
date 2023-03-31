@@ -1,4 +1,4 @@
-import { Component, OnInit,AfterViewInit,ViewChild } from '@angular/core';
+import { Component, OnInit,AfterViewInit,ViewChild, Input } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -10,6 +10,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 })
 export class KtaPrevnextComponent implements OnInit,AfterViewInit {
 
+  @Input() bg: string;
   scrId:any
   @ViewChild('screen', { static: true }) screen: any;
   pageaction = localStorage.getItem("pageaction");
