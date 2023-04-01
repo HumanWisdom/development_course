@@ -14,7 +14,7 @@ import  jsPDF from 'jspdf';
 })
 
 export class ModuleEndComponent implements OnInit,AfterViewInit {
-  isModuleCompleted:boolean=true;
+  isModuleCompleted:boolean=false;
   file:any;
   @Input() moduleImg: string;
   @Input() moduleLink: string;
@@ -29,6 +29,9 @@ export class ModuleEndComponent implements OnInit,AfterViewInit {
   shareUrl: any
   userId: any
   pdfBlob:any;
+  percentage:string;
+  currentModuleName:string;
+
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   @Input() moduleList: any = [
     {
@@ -61,9 +64,23 @@ export class ModuleEndComponent implements OnInit,AfterViewInit {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     console.log(this.toc)
-
+    this.getDataForCertificate();
 
  
+  }
+
+  getDataForCertificate() {
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+    let path= this.router.url.split("/");
+   let currentModuleName= path[path.length-2]
+    this.service.getPoints(this.userId).subscribe(res=>{
+     let data = res.ModUserScrPc.find(e=>e.Module.toLowerCase().includes(currentModuleName.replace("-"," ").toLowerCase()));
+      this.currentModuleName=data.Module;
+      this.percentage=data.Percentage;
+      if(this.percentage=="100.00"){
+        this.isModuleCompleted=true;
+      }
+    });
   }
 
   shareIndex() {
@@ -2518,12 +2535,18 @@ export class ModuleEndComponent implements OnInit,AfterViewInit {
     const div = document.getElementById('myDiv'); // replace with the ID of your div
     html2canvas(div).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdf =  new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: [210, 297] // A4 size in millimeters
+      });
+  
       const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save('myDiv.pdf'); // replace with your desired file name
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight,"SLOW");
+      pdf.setDisplayMode("original","single");
+      pdf.save(this.currentModuleName+' Certificate.pdf'); // replace with your desired file name
     });
   }
 
