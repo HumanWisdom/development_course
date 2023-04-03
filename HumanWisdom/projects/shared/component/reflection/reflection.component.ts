@@ -15,6 +15,7 @@ export class ReflectionComponent implements OnInit {
   @Input() bg_cft: string;
   @Input() reflectionResponse: string;
   @Input() toc: string;
+  @Input() rid: string;
   @Output() sendResponse = new EventEmitter<string>();
   @Output() goPrevious = new EventEmitter<string>();
   shared: any
@@ -25,8 +26,11 @@ export class ReflectionComponent implements OnInit {
   showheaderbar = true
   pageaction = localStorage.getItem("pageaction");
   enableReadonly = false;
+  userId: any;
 
-  constructor(public router: Router, public service: AdultsService) { }
+  constructor(public router: Router, public service: AdultsService) {
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+  }
 
   ngOnInit() {
     this.showheaderbar = true
@@ -41,8 +45,17 @@ export class ReflectionComponent implements OnInit {
   }
 
   confirmShare() {
-    this.confirmed = true
-    this.enableReadonly = true
+    let obj = {
+      'Post': this.reflectionResponse,
+      'ReflectionID': this.rid,
+      'UserId': this.userId
+    }
+    this.service.addUserRefPost(obj).subscribe((res) => {
+      if (res) {
+        this.confirmed = true;
+        this.enableReadonly = true;
+      }
+    })
   }
 
 
