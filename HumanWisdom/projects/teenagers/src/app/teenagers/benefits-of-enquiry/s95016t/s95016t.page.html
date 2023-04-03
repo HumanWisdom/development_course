@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If you have a fever and go to the doctor he may give you a tablet to bring the fever down, but a good doctor will investigate and treat the underlying cause of the fever because a fever can be caused by a simple virus or cancer.
+            <br>
+            Problems in our thinking are the same. We can treat the symptoms for short term relief, but the long term solution lies in understanding and addressing their root cause.
+          </p>
+
+          <p>
+            For example, when you are stressed, medication, mindfulness, and counseling can be very helpful for short term benefit, but understanding the root cause of it can bring lasting relief. To stop the patterns of stress repeating themselves in our lives, we have to go deeper to find their origins in our thinking.
+            For example, understanding that all pleasure is short-lived and will eventually fade, may allow us to make intelligent choices when we go shopping
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
