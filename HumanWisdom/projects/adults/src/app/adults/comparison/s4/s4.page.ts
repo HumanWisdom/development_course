@@ -2,8 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-
-
 @Component({
   selector: 'app-s4',
   templateUrl: './s4.page.html',
@@ -14,6 +12,7 @@ export class S4Page implements OnInit,OnDestroy {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="comparison_envy_w1"
+
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -22,72 +21,67 @@ export class S4Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
-  
   bookmark=0
   toc="comparison/s0"
   path=this.router.url
-  
-
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
-  
  
-  constructor(
+  constructor
+  (
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
-ngOnInit() {
+  ) 
+  { }
+
+  ngOnInit() 
+  {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
     
     if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.startTime = Date.now();
-  
     this.startTime = Date.now();
     
     if(JSON.parse(sessionStorage.getItem("bookmark4"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark4"))==1)
       this.bookmark=1
-   
-   
- 
- 
-    
   }
+
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
     sessionStorage.setItem("bookmark4",JSON.stringify(this.bookmark))
   }
-createScreen(){
+
+  createScreen()
+  {
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
-      {
-        
+      { 
       })
-    
- 
   }
- 
- 
 
-  submitProgress(){
+  submitProgress()
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     this.router.navigate(['/adults/comparison/s5'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -97,8 +91,7 @@ createScreen(){
       "screenType":this.screenType,
       "timeSpent":this.totalTime
     }).subscribe(res=>
-      {
-        
+      { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
@@ -106,25 +99,14 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-     
-    
-
   }
-  prev(){
+
+  prev()
+  {
     this.router.navigate(['/adults/comparison/s3'])
-
-  }
-  
-
-  
-
-  ngOnDestroy(){
-    
-
-
-
   }
 
- 
- 
+  ngOnDestroy()
+  {}
+
 }

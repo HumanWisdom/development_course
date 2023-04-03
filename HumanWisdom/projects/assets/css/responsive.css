@@ -232,6 +232,11 @@
         background-color: #000000 !important;
         background-image: none !important;
     }
+
+    .pfy_search
+    {
+        padding-left: 55px !important;
+    }
 }
 
 @media (min-width: 768px)

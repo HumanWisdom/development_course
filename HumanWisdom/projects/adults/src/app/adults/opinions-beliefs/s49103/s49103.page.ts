@@ -16,7 +16,7 @@ export class S49103Page implements OnInit {
   // bg=""
   // moduleLink="/adults/self-esteem"
   // moduleName=" Self Esteem"
-  // sectionName= "Living with Wisdom - II";
+  // sectionName= "Transform your life - II";
   // moduleId=17
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/48.png"
@@ -24,7 +24,7 @@ export class S49103Page implements OnInit {
   bg=""
   moduleLink="/adults/success-failure"
   moduleName=" Success and Failure"
-  sectionName= "Living with Wisdom - II";
+  sectionName= "Transform your life - II";
   moduleId=48
   moduleList: any = [
     {
@@ -56,7 +56,7 @@ export class S49103Page implements OnInit {
       
       this.moduleLink = "/adults/relationships"
       this.moduleName = "Relationships"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 47
     
     }

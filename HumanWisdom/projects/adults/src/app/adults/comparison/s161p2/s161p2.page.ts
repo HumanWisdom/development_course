@@ -57,7 +57,7 @@ export class S161p2Page implements OnInit {
      
       this.moduleLink = "/adults/happiness"
       this.moduleName = "Happiness"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 23
     
     }

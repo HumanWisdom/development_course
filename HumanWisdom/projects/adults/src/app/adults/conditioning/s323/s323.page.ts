@@ -56,7 +56,7 @@ export class S323Page implements OnInit {
      
       this.moduleLink = "/adults/stress"
       this.moduleName = "Stress"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 44
     
     }

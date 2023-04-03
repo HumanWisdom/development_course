@@ -1,16 +1,13 @@
 <app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
  
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Can we be aware of, and take responsibility for our emotional needs, because they come from within us? Can we express them as a need, rather than a demand?
-
-      
     </h1>
     
   </form>  
 </app-kta-prevnext>
  
-<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-	
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>	

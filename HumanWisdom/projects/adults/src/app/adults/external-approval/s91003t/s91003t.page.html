@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Hidden from our awareness our mind seeks approval from others in order to feel good about itself. This is not right or wrong, but just a fact that needs to be explored and understood.
+          </p>
+
+          <p>
+            It begins in childhood when we are praised by our teachers and parents for our achievements at school, and can influence our lives in a number of ways we are not aware of.  For example, it can cause feelings of low self-esteem if we do not get praised by others. Or, it can shape our behaviour so that we do things which will make us look good - for example posting pictures of ourselves on social media. We become conditioned to chase this Need for approval all our lives. The pleasure that generates lasts a little while, and then fades, and we need to chase that approval again.
+          </p>
+
+          <p>
+            In this module we will explore why our mind does that, the many different ways that it impacts our lives, and how we can respond with wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -7795,7 +7795,7 @@ legend {
     right: 13px
 }
 .form-control.has-feedback-left {
-    padding-left: 45px
+    padding-left: 55px
 }
 .form-control.has-feedback-right {
     padding-right: 45px
@@ -12158,7 +12158,6 @@ h1.module_title
   font-weight: 300;
   font-size: 30px;
   line-height: 35px;
-  /* text-align: center; */
   text-align: left;
   color: #243949;
 }
@@ -12455,7 +12454,6 @@ h1.module_title
   font-weight: 300;
   font-size: 24px;
   line-height: 35px;
-  /* text-align: center; */
   text-align: left;
   color: #243949;
 }
@@ -28900,7 +28898,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   /* background: #1D3D7A; */
   min-height: 100vh;
   /* padding: 20px 10px; */
-  /* padding: 20px 20px; */
+  padding: 20px 20px;
 }
 
 .sc_02
@@ -31784,6 +31782,19 @@ label.select_label:after
   margin: 15px 0 15px 0;
 }
 
+.lww_2r_5t
+{
+  grid-template-columns: repeat(5,42%);
+}
+
+@media (min-width: 1200px)
+{
+  .lww_2r_5t
+  {
+    grid-template-columns: repeat(5,30%);
+  }
+}
+
 /* teenagers */
 .btn_intro_splash
 {
@@ -31846,3 +31857,13 @@ label.select_label:after
   height: 240px;
 }
 
+.htxt:hover
+{
+  color: #ffc455;
+  filter: brightness(1.2);
+}
+
+.htxtspan:hover 
+{
+  cursor: auto !important;
+}

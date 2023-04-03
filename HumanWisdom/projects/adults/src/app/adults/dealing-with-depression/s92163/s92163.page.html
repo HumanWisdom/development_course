@@ -1,0 +1,12 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Meditation is simple. Sit down. Begin. Let go of any idea of attainment. Just observe your breath, and your thoughts and feelings, like clouds passing in the sky. Allow your mind to quieten. Watch the magic unfold
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

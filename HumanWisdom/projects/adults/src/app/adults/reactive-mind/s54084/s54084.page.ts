@@ -62,7 +62,7 @@ export class S54084Page implements OnInit {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
       this.moduleLink = "/adults/communication"
       this.moduleName = "Communication"
-      this.sectionName = "Live with wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 53
     
     }

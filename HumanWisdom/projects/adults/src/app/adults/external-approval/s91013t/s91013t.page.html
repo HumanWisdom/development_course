@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Mark is a good example of a mind that is seeking Need for approval to feel good about itself. This seems to be hard wired into our thinking – it is how our mind works – and something we regard as normal. We want others to praise us, recognise us, and this makes us feel good. If we don’t get this praise we can feel sad, angry and frustrated and blame others for how we feel.
+          </p>
+
+          <p>
+            We are usually not aware of this going on in the background and it impacts our behaviour in ways we are not aware of. It is neither right nor wrong – just a fact that needs to be understood. By making this unconscious process conscious we can be more aware and be able to respond with wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

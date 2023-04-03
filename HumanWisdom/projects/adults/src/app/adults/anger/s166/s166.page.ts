@@ -2,23 +2,20 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-
-
 @Component({
   selector: 'app-s166',
   templateUrl: './s166.page.html',
   styleUrls: ['./s166.page.scss'],
 })
-export class S166Page implements OnInit,OnDestroy {
 
+export class S166Page implements OnInit,OnDestroy 
+{
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="anger_overlay_footer"
-
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
-  
   moduleId=localStorage.getItem("moduleId")
   screenNumber=166
   startTime:any
@@ -28,44 +25,48 @@ export class S166Page implements OnInit,OnDestroy {
   toc="/anger/s162p0"
   path=this.router.url
   
-
-  constructor(
+  constructor
+  (
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
+  ) 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.createScreen()
-    
     if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.startTime = Date.now();
-  
     this.startTime = Date.now();
-   
-
-
-    
   }
+
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
   }
-  toggleBookmark(){
+
+  toggleBookmark()
+  {
     if(this.bookmark==0)
       this.bookmark=1
     else
       this.bookmark=0
-
   }
-  createScreen(){
+
+  createScreen()
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.service.createScreen({
@@ -73,16 +74,11 @@ export class S166Page implements OnInit,OnDestroy {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
-
+    }).subscribe(res=>{})
   }
 
-
-  submitProgress(){
+  submitProgress()
+  {
     this.router.navigate(['/adults/anger/s167'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -91,24 +87,16 @@ export class S166Page implements OnInit,OnDestroy {
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
       "timeSpent":this.totalTime
-    }).subscribe(res=>
-      {
-        
-      })
+    }).subscribe(res=>{})
     // this.router.navigate(['/adults/anger/s167'])
-    
-
   }
-  previous(){
+
+  previous()
+  {
     this.router.navigate(['/adults/anger/s165'])
-    
   }
 
-  ngOnDestroy(){
-   
-
-
-
-  }
+  ngOnDestroy()
+  {}
 
 }

@@ -16,6 +16,7 @@ export class BottomNavigationComponent implements OnInit {
   enableprofile = false
   search = false
   Subscriber: any;
+  guest: any;
   @Input() isGuidedQuestion?: boolean = false;
   @Output() saveQuestion = new EventEmitter();
   @Output() journalclick = new EventEmitter();
@@ -26,6 +27,7 @@ export class BottomNavigationComponent implements OnInit {
     if (userid === 'T') {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
+      this.guest = localStorage.getItem('guest')
     }
     if (this.router.url == "/adults/search"
       || this.router.url.includes('/adults/site-search/') ||
@@ -78,19 +80,22 @@ export class BottomNavigationComponent implements OnInit {
   }
   routeJournal() {
     //this.logeventservice.logEvent('click_journal')
-    if (this.isloggedIn) {
-      this.router.navigate(['/adults/journal'])
+    if (this.isloggedIn && this.guest === 'F') {
+      if (!this.Subscriber || this.Subscriber === '0') {
+        this.router.navigate(['/onboarding/free-limit']);
+      } else {
+        this.router.navigate(['/adults/journal'])
+      }
     } else {
       this.journalclick.emit('enablepopup');
     }
-
   }
   routeSearch() {
     //this.logeventservice.logEvent('click_for_you')
     this.router.navigate(['/adults/search']);
   }
   profileclickevent() {
-   
+
     if (localStorage.getItem('isloggedin') === 'T') {
       //this.logeventservice.logEvent('click_profile')
       this.router.navigate(['/onboarding/user-profile'])

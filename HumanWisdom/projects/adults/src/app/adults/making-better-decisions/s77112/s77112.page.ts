@@ -16,7 +16,7 @@ export class S77112Page implements OnInit {
   // bg=""
   // moduleLink="/adults/happiness"
   // moduleName=" Happiness"
-  // sectionName= "Living with Wisdom - II";
+  // sectionName= "Transform your life - II";
   // moduleId=23
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/58.png"
@@ -24,7 +24,7 @@ export class S77112Page implements OnInit {
   bg=""
   moduleLink="/adults/work/s58001"
   moduleName=" Work"
-  sectionName= "Living with Wisdom - II";
+  sectionName= "Transform your life - II";
   moduleId=58
   moduleList: any = [
     {
@@ -53,7 +53,7 @@ export class S77112Page implements OnInit {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg"
       this.moduleLink = "/adults/leadership"
       this.moduleName = "Leadership"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 59
     }
   }

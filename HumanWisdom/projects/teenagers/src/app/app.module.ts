@@ -12,7 +12,7 @@ import { TeenagersService } from './teenagers/teenagers.service';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule
   ],

@@ -1,17 +1,15 @@
 <app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Our inner emptiness is part of being human, and operates beyond our awareness shaping our lives in many ways. It isn’t wrong, but exploring it and understanding it may allow us to respond with wisdom.
-
     </h1>
       
     <div class="clearfix"></div>
+    
   </form>  
 </app-kta-prevnext>
 
 <app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-
-

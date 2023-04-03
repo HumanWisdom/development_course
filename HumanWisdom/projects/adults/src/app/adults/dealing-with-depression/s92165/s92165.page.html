@@ -1,0 +1,40 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Sleep tips:
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Aim for 8 hours of sleep a night
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Sleep at the same time and wake at the same time every day
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. Avoid daytime naps more than 15 minutes
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      04. Avoid drinking alcohol in the evenings
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      05. Have a hot bath or shower before bed
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      06. Do some breathing exercises before bed
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      07. Regular exercise can aid your sleep
+    </h3>
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

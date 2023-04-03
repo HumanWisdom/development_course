@@ -1,16 +1,15 @@
 <app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Exploring our self-interest without judgement allows us to live with integrity, communicate better, have loving relationships and live with compassion. We can continue with our inner journey, which leads to peace.
     </h1>
       
     <div class="clearfix"></div>
+
   </form>  
 </app-kta-prevnext>
 
 <app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-
-
