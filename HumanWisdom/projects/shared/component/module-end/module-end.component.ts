@@ -1,8 +1,11 @@
 import { Platform } from "@angular/cdk/platform";
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
+
 
 @Component({
   selector: 'app-module-end',
@@ -10,8 +13,9 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
   styleUrls: ['./module-end.component.scss'],
 })
 
-export class ModuleEndComponent implements OnInit {
-  isModuleCompleted:boolean=false;
+export class ModuleEndComponent implements OnInit, AfterViewInit {
+  isModuleCompleted: boolean = false;
+  file: any;
   @Input() moduleImg: string;
   @Input() moduleLink: string;
   @Input() moduleName: string;
@@ -24,6 +28,9 @@ export class ModuleEndComponent implements OnInit {
   socialShare = false
   shareUrl: any
   userId: any
+  pdfBlob: any;
+  percentage: string;
+  currentModuleName: string;
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   @Input() moduleList: any = [
     {
@@ -56,6 +63,23 @@ export class ModuleEndComponent implements OnInit {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     console.log(this.toc)
+    this.getDataForCertificate();
+
+
+  }
+
+  getDataForCertificate() {
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+    let path = this.router.url.split("/");
+    let currentModuleName = path[path.length - 2]
+    this.service.getPoints(this.userId).subscribe(res => {
+      let data = res.ModUserScrPc.find(e => e.Module.toLowerCase().includes(currentModuleName.replace("-", " ").toLowerCase()));
+      this.currentModuleName = data.Module;
+      this.percentage = data.Percentage;
+      if (this.percentage == "100.00") {
+        this.isModuleCompleted = true;
+      }
+    });
   }
 
   shareIndex() {
@@ -298,6 +322,9 @@ export class ModuleEndComponent implements OnInit {
       }
       case "77": {
         this.routeMakingBetterDecision(1)
+        break
+      } case "92": {
+        this.routeDealingWithDepression(1)
         break
       }
     }
@@ -2505,4 +2532,86 @@ export class ModuleEndComponent implements OnInit {
   routeForum() {
     this.router.navigate(['/forum'])
   }
+
+  public saveAsPDF() {
+    const div = document.getElementById('myDiv'); // replace with the ID of your div
+    html2canvas(div).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: [210, 297] // A4 size in millimeters
+      });
+
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+      pdf.setDisplayMode("original", "single");
+      pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
+    });
+  }
+
+  shareCertificate() {
+    //const url = URL.createObjectURL(this.pdfBlob.output('blob'));
+    if (this.ngNavigatorShareService.canShareFile) {
+      this.ngNavigatorShareService.share({
+        title: this.moduleName + " Certificate",
+        text: 'Certificate of Completion!',
+        files: [this.file]
+      }).then((response) => {
+        console.log(response);
+      })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const div = document.getElementById('myDiv'); // replace with the ID of your div
+      html2canvas(div).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        this.pdfBlob = new jsPDF('p', 'mm', 'a4');
+        const imgProps = this.pdfBlob.getImageProperties(imgData);
+        const pdfWidth = this.pdfBlob.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        this.pdfBlob.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        this.file = new File([this.pdfBlob.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
+      });
+    }, 2000);
+  }
+
+  routeDealingWithDepression(cont: any = 1) {
+    var dealingwithdepressionResume
+    localStorage.setItem("moduleId", JSON.stringify(92))
+    this.service.clickModule(92, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        dealingwithdepressionResume = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("dealingwithdepressionResume", dealingwithdepressionResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          // if (cont == "1") {
+          //   this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
+          // }
+          // else
+          this.router.navigate([`/adults/dealing-with-depression/s92001`])
+        })
+  }
+
 }
