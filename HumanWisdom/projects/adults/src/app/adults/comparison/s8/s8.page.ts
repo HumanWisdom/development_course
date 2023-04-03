@@ -2,8 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-
-
 @Component({
   selector: 'app-s8',
   templateUrl: './s8.page.html',
@@ -26,68 +24,61 @@ export class S8Page implements OnInit,OnDestroy {
   bookmark=0
   toc="comparison/s0"
   path=this.router.url
-  
-
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
-  
- 
-  constructor(
+
+  constructor
+  (
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
-ngOnInit() {
+  ) 
+  { }
+  
+  ngOnInit() 
+  {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    
     if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+      {
+        this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.startTime = Date.now();
-  
     this.startTime = Date.now();
     
     if(JSON.parse(sessionStorage.getItem("bookmark8"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark8"))==1)
       this.bookmark=1
-   
-   
- 
- 
-    
   }
+
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
     sessionStorage.setItem("bookmark8",JSON.stringify(this.bookmark))
   }
-createScreen(){
+
+  createScreen()
+  {
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
- 
+    }).subscribe(res=>{})
   }
- 
- 
 
-  submitProgress(){
+  submitProgress()
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     this.router.navigate(['/adults/comparison/s9'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -98,7 +89,6 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
@@ -106,23 +96,14 @@ createScreen(){
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-     
-    
-
   }
-  prev(){
+
+  prev()
+  {
     this.router.navigate(['/adults/comparison/s7'])
-
   }
-  
 
-  
-
-  ngOnDestroy(){
-    
-
-
-
-  }
+  ngOnDestroy()
+  {}
 
 }
