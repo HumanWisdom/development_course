@@ -24,6 +24,7 @@ export class ReflectionComponent implements OnInit {
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
   showheaderbar = true
   pageaction = localStorage.getItem("pageaction");
+  enableReadonly = false;
 
   constructor(public router: Router, public service: AdultsService) { }
 
@@ -41,6 +42,7 @@ export class ReflectionComponent implements OnInit {
 
   confirmShare() {
     this.confirmed = true
+    this.enableReadonly = true
   }
 
 
