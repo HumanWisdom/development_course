@@ -1,9 +1,9 @@
 <app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
  
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Pleasure is a beautiful thing if we can live with wisdom. Then it has its rightful place in our lives.
     </h1>
     
@@ -12,4 +12,3 @@
  
 <!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
 <app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-	

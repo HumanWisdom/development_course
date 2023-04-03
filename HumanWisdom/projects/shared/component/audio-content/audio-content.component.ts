@@ -8,7 +8,7 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
   styleUrls: ['./audio-content.component.scss'],
 })
 export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
-  yellow="#FFC455"
+  yellow = "#FFC455"
   @Input() bg: string;
   @Input() title: string;
   @Input() audioLink: string;
@@ -87,8 +87,8 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     this.pauseTime = ((this.mediaPercent / 100) * this.audio.audio.nativeElement.duration)
     console.log(this.pauseTime, "p")
     if (this.audio.audio.nativeElement.currentTime > this.pauseTime) {
-      this.audio.audio.nativeElement.pause()
-      window.alert('You Have Reached Free Limit')
+      this.audio.audio.nativeElement.pause();
+      this.router.navigate(['/onboarding/free-limit']);
     }
 
 

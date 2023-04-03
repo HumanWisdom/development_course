@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this session where we are going to focus on practical life-style changes that can help your recovery.
+          </p>
+
+          <p>
+            If your depression is severe, and you can't get out of bed, or can’t motivate yourself to do anything, this can feel like a challenge - but you can do it, as others before you have done. If your depression is mild or moderate, then these simple life-style tips can make a huge difference.
+          </p>
+
+          <p>
+            We are going to focus on exercise, meditation, diet, sleep, connecting with people, and creating a daily routine you can build on every day. We are going to take baby steps focusing on each of these 5 areas, and if you can incorporate them all into your life, you are going to feel much better, and then be prepared for the next phase 4, where you begin to examine your thinking. The most important thing you can do is to find a  ‘partner’ - someone you trust who can support you to attain the goals you set for yourself and help you to meet them. This is because when you are depressed your mind often does not have the motivation to do the things you know you need to do for yourself
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

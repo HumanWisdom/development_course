@@ -22,7 +22,7 @@ export class S235Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "Conditioning",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="conditioning/s235t"

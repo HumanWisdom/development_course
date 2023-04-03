@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When we are depressed we feel low and our mind is full of negative thoughts about our current state, our disappointments and feeling a lack of hope. We are caught in a loop of our own thinking.
+          </p>
+
+          <p>
+            In this situation it is useful to ground ourselves into the present and havening is a technique invented by Neuroscientist Dr Ronald Ruden. It involves a distinctive self-soothing motion with crossed arms, gently but noticeably stroking from shoulders to elbows. Its aim is to create a feeling of well-being and safety.
+          </p>
+
+          <p>
+            I explore this with Jondi Whitis, an EFT trainer and practitioner in the next video
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

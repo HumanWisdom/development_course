@@ -405,8 +405,8 @@ export class AdultsService {
     this.services.emailLogin(email, password)
       .subscribe(
         res => {
-          localStorage.setItem("isloggedin", 'T')
-          localStorage.setItem("remember", 'T')
+          // localStorage.setItem("isloggedin", 'T')
+          // localStorage.setItem("remember", 'T')
           loginResponse = res
           userId = res.UserId
           if (res.Subscriber === 0) {
@@ -502,5 +502,9 @@ export class AdultsService {
         localStorage.setItem("bookmarkList", JSON.stringify(bookmarks))
       })
 
+  }
+
+  addUserRefPost(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddUserRefPost', data)
   }
 }

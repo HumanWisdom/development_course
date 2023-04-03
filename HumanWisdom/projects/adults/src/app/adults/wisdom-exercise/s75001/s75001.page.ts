@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../adults.service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'HumanWisdom-s75001',
@@ -10,8 +11,12 @@ import { AdultsService } from "../../adults.service";
 })
 export class S75001Page implements OnInit {
   path = this.router.url
-  constructor(public ngNavigatorShareService: NgNavigatorShareService,
-    private router: Router,private service: AdultsService ) { }
+  constructor(
+    public ngNavigatorShareService: NgNavigatorShareService,
+    private router: Router,
+    private service: AdultsService,
+    private location: Location ) 
+    { }
  
   ngOnInit() {
     this.service.setmoduleID(75);
@@ -29,4 +34,7 @@ export class S75001Page implements OnInit {
     });
   }
 
+  goBack(){
+    this.location.back()
+  }
 }

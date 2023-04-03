@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The field of nutritional psychiatry studies the connection between diet and mental health problems, including depression. Scientists have found that what we eat has an important impact on our mental health.
+          </p>
+
+          <p>
+            Scientific studies suggest that a diet with a high intake of fruit, vegetables, whole grain, fish, olive oil, low-fat dairy,  antioxidant foods (Vegetables, red kidney beans), and low intakes of animal foods is associated with a decreased risk of depression. 
+          </p>
+
+          <p>
+            A Mediterranean diet is also good for depression.
+          </p>
+
+          <p>
+            Keep a diary of what you eat and see where you can make the changes needed to give you the best chance of recovery.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

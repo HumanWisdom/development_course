@@ -3,29 +3,22 @@ import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import * as jQuery from 'jquery';
-
 @Component({
   selector: 'app-s184',
   templateUrl: './s184.page.html',
   styleUrls: ['./s184.page.scss'],
 })
 
-export class S184Page implements OnInit,AfterViewInit {
+export class S184Page implements OnInit,AfterViewInit 
+{
 
-
-  //bg_tn="bg_red_pink"
-  // bg_cft="bg_red_pink"
-  // bg="anger_w4"
   title="Anger comes from conditioning"
   yellow="#FFC455"
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="anger_overlay_footer"
-
-
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/anger/audios/anger+2.3.mp3'
-  
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -34,65 +27,64 @@ export class S184Page implements OnInit,AfterViewInit {
   endTime:any
   totalTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-
-
   @ViewChild('playerContainer',{static:false})
-  
   public playerContainer:ElementRef
-
   toc="/anger/s162p0"
   transcriptPage="/anger/s184t"
   bookmark=0
   path=this.router.url
   avDuration:any
   
-  constructor(private router: Router,
+  constructor
+  (
+    private router: Router,
     private service:AdultsService,
-    private location:Location) { }
+    private location:Location
+  ) 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
     else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
-   this.startTime = Date.now();
-
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
+    this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
   }
 
-  createScreen(){
+  createScreen()
+  {
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
-
+    }).subscribe(res=>{})
   }
 
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
   }
-
  
-  receiveAvDuration(e){
+  receiveAvDuration(e)
+  {
     console.log(e)
     this.avDuration=e
-
   }
 
-  submitProgress(){
-   
+  submitProgress()
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/anger/s185'])
@@ -104,21 +96,15 @@ export class S184Page implements OnInit,AfterViewInit {
       "screenType":this.screenType,
       "timeSpent":this.totalTime,
       "avDuration":this.avDuration
-    }).subscribe(res=>
-      {
-        
-      })
-    
-    // this.router.navigate(['/adults/anger/s185'])
-   
-
+    }).subscribe(res=>{})
   }
-  previous(){
+
+  previous()
+  {
     this.router.navigate(['/adults/anger/s183'])
-
-
   }
-  ngAfterViewInit(){
 
-  }
+  ngAfterViewInit()
+  {}
+
 }

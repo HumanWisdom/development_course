@@ -1,0 +1,32 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      What do doctors who treat people with depression say about their patients:
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. There is no joy or pleasure in life
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Concentration, focus and decision making become very difficult
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. Sometimes it feels there is no way out
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      04. It can affect your sleep leading to a feeling of exhaustion and low energy
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      05. Sometimes it can be physically painful - body aches, muscle tension, and headaches
+    </h3>
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

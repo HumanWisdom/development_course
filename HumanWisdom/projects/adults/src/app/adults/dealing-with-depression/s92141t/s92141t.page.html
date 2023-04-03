@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Connecting with nature can help us get out of our head and can be calming and healing in many ways. The Japanese even have a word for it - Shirin-Yoku - or forest bathing.
+          </p>
+
+          <p>
+            Walking through a park or wood with your headphones is not going to help.
+          </p>
+
+          <p>
+            Start with a tree.
+          </p>
+
+          <p>
+            Go slowly, noticing everything in more detail, with fresh eyes, as if you are seeing that tree for the first time. Go closer and notice the detail of the bark. Look up at the tree and see the leaves and branches. Let your mind go quiet and just soak in the beauty of that tree. Don’t just look and move on. The more you look, the more you will notice, and the quieter your mind becomes. 
+          </p>
+
+          <p>
+            Connecting deeply with nature on a regular basis can be so helpful to your healing journey.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

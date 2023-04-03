@@ -159,7 +159,14 @@
                   "with": "projects/adults/src/environments/environment.staging.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                  },
+                "fonts": true
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
@@ -192,6 +199,7 @@
             "production": {
               "browserTarget": "adults:build:production"
             },
+            
             "ci": {
             }
           }
@@ -290,7 +298,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "teenagers",
+            "outputPath": "dist/teenagers/browser",
             "index": "projects/teenagers/src/index.html",
             "main": "projects/teenagers/src/main.ts",
             "polyfills": "projects/teenagers/src/polyfills.ts",
@@ -391,8 +399,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -476,6 +484,7 @@
             "scripts": []
           }
         }
+      
       }
     }
   },

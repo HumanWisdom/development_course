@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Life doesn't always turn out the way we want and the pain of that disappointment can sometimes result in depression. Behind every hurt is a disappointment and an expectation that has not been met.
+          </p>
+
+          <p>
+            All our expectations of how our life should be, how others should behave, and how the world around us should be - come from our unconscious conditioning influences - we are not aware we have them. The longer our list of expectations the more likely we are going to suffer when they are not met. We can regard our lives as a failure if we don’t achieve what we set out to do, or feel betrayed if others do not behave in the way we expect.
+          </p>
+
+          <p>
+            Expectations are not wrong, but need to be examined. How many of them can we examine and let go of? Can we accept ourselves as we are, others as they are, and our circumstances as they are? Acceptance does not mean we do not try to change things - but we do that with a calm mind. Acceptance can dissolve stress.
+          </p>
+
+          <p>
+            Our expectations come from our thinking, so we need to take ownership of them and if we want others to do something - we can express it as a request and not a demand.
+          </p>
+
+          <p>
+            How would you feel if others had expectations of you and did not communicate them in a kind way - but just became upset when they were not met?
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

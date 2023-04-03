@@ -1,0 +1,27 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      To explore this idea for yourself explore the modules on 
+      <a routerLink="/adults/breathing/" class="fw_400 italic fc_ffc455 htxt">
+        Breathing Exercises
+      </a>
+      , 
+      <a routerLink="/adults/meditation/" class="fw_400 italic fc_ffc455 htxt">
+        Meditation
+      </a>
+      , 
+      <a routerLink="/adults/without-language/" class="fw_400 italic fc_ffc455 htxt">
+        Looking without Language
+      </a>
+      , and 
+      <a routerLink="/adults/nature-of-i/" class="fw_400 italic fc_ffc455 htxt">
+        The Nature of the ‘I’
+      </a>
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
