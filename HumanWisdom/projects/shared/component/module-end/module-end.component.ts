@@ -2606,11 +2606,11 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           console.log(error)
         },
         () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
-          }
-          else
-            this.router.navigate([`/adults/dealing-with-depression/s92001`])
+          // if (cont == "1") {
+          //   this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
+          // }
+          // else
+          this.router.navigate([`/adults/dealing-with-depression/s92001`])
         })
   }
 
