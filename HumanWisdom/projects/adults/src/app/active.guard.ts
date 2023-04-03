@@ -32,7 +32,7 @@ export class ActiveGuard implements CanActivate, OnInit {
 
 
     let str = next.routeConfig.path;
-    console.log("str",str)
+    console.log("str", str)
     this.logeventservice.logEvent(str);
     this.scrId = str.substring(1, str.length + 1);
     if (this.scrId !== '29000') {
@@ -94,7 +94,7 @@ export class ActiveGuard implements CanActivate, OnInit {
 
 
     }
-    else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId)) {
+    else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId.replace('t', ''))) {
       return true;
     }
     else {

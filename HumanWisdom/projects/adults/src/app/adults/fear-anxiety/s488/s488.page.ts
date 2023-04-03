@@ -25,7 +25,7 @@ export class S488Page implements OnInit {
         "Art of enquiry",
         "How the mind works",
         "Fear and Anxiety",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
       userId:any

@@ -11,13 +11,13 @@ import { AdultsService } from '../../adults.service';
 export class S55059Page implements OnInit {
   
   toc="self-interest/s55001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/21.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
  
   bg=""
-  moduleLink="/adults/identity"
-  moduleName=" Identity"
+  moduleLink="/adults/conditioning"
+  moduleName=" Conditioning"
   sectionName= "How the Mind Works";
-  moduleId=21
+  moduleId=15
   moduleList: any = [
     {
       name: 'Love',

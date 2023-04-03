@@ -24,7 +24,7 @@ export class S164Page implements OnInit {
         "Art of enquiry",
         "How the mind works",
         "Anger",
-        "Living with wisdom"
+        "Transform your life"
       ]
   
 

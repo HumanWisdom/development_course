@@ -1,17 +1,17 @@
 <app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
  
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       1. When the pleasure of a new relationship wears off, you feel bored and think there is a problem with the relationship 
     </h1>
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       2. The need to escape from our inner boredom and conflict can lead to addiction
     </h1>
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       3. Too much pleasure dulls the mind
     </h1>
     
@@ -20,4 +20,3 @@
  
 <!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
 <app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-	

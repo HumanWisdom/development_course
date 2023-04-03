@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s92014</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Medical reatments available for depression:
+    </h1>
+    <div class="clearfix"></div>
 
-</ion-content>
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Medication
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Talking therapies
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      Speak to your doctor about the options available for you
+    </h3>
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

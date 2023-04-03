@@ -24,20 +24,33 @@ import { LogEventService } from './log-event.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
 import * as Hammer from 'hammerjs';
-import { APP_BASE_HREF } from '@angular/common';
-
+import{ SharedModule } from './../../../shared/shared.module'
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
+import { BlogIndexPage } from './adults/blog/blog-index/blog-index.page';
+import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
+// Import library module
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
     };
   }
 @NgModule({
-    declarations: [AppComponent],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+    declarations: [AppComponent,
+        BlogIndexPage,
+        BlogArticlePage],
+        exports:[
+            BlogIndexPage,
+            BlogArticlePage
+        ],
+    imports: [BrowserModule, 
+        CommonModule,
+        IonicModule.forRoot(), AppRoutingModule,
         AdultsModule,
         OnboardingModule,
         FormsModule,
         HammerModule,
+        SharedModule,
         HttpClientModule,
         SocialLoginModule,
         SplashPageModule,
@@ -47,7 +60,8 @@ export class MyHammerConfig extends HammerGestureConfig {
         BrowserAnimationsModule,
         PlatformModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFireAnalyticsModule
+        AngularFireAnalyticsModule,
+        NgxJsonLdModule
     ],
     providers: [
         StatusBar,

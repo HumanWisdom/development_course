@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Depression makes us want to withdraw from people because we do not want to be seen as we are, or because we may not be understood, or don’t want to be a burden on others.
+          </p>
+
+          <p>
+            This can increase our loneliness, which in turn can make our depression worse.
+          </p>
+
+          <p>
+            So it is important to break this cycle and reach out and connect with people. It may take an enormous effort to get over our apathy and do this, but it is so important to do.
+          </p>
+
+          <p>
+            Schedule a regular walk and chat with a friend, or join a group with a shared interest, or just reach out on the phone. Try and speak to at least one person a day. Let your friends and family know you need that support from them - you will be surprised how much people are willing to help. 
+          </p>
+
+          <p>
+            Remember depression makes you withdraw from people you are close to, and often push away people who are trying to help you - so do the opposite - reach out to others - and let people help you. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

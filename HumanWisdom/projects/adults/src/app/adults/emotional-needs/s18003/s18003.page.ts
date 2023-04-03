@@ -21,7 +21,7 @@ export class S18003Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "Our emotional needs",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="emotional-needs/s18003t"

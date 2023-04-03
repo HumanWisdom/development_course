@@ -24,7 +24,7 @@ export class S5Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "Comparison",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="comparison/s5t"

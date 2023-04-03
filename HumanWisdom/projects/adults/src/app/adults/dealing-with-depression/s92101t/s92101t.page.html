@@ -1,0 +1,41 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are many reasons why we may struggle to accept that we have a mental illness like depression.
+          </p>
+
+          <p>
+            It may be that we have good careers, feel strong and do not think this could happen to us. Depression happens to ‘other people’, not us.
+          </p>
+
+          <p>
+            We may feel we are managing our day to day lives, and everyone feels blue sometimes and we are no different . We don’t want to make a fuss and worry others.
+          </p>
+
+          <p>
+            Or, we may not like having the label depressed - even for ourselves. We like to think of ourselves as healthy - and do not like labels.
+          </p>
+
+          <p>
+            Or, we may worry what other people will think of us - especially at work and how our loved ones will react. Will they think less of us? Will they still support us and stay in our life, or leave us? 
+          </p>
+
+          <p>
+            We may be dealing with a major life event like divorce, bereavement or the loss of a job, and we are sure how we are feeling is related to the external event, and will soon pass.
+          </p>
+
+          <p>
+            Or, we are so overwhelmed with the emotions we just want to escape from them and numb the pain we feel with alcohol or drugs
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

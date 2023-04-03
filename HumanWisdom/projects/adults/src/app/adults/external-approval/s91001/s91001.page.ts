@@ -26,11 +26,12 @@ export class S91001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/00.png"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
   tocColor="white"
   tocAlt=""
   lastvisited = false;
   stories = []
+  externalapprovalR=sessionStorage.getItem("externalapprovalR")
 
   constructor(
     private router: Router,

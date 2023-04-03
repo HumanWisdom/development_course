@@ -21,7 +21,7 @@ export class S56003Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "Emptiness and Boredom",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="inner-boredom/s56003t"

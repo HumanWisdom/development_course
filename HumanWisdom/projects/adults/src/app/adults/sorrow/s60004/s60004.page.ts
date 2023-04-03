@@ -22,7 +22,7 @@ export class S60004Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "How the mind works",
         "Sorrow and loss",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="sorrow/s60004t"

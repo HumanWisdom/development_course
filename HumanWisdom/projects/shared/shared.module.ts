@@ -84,6 +84,8 @@ import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
 import { NewsletterComponent } from './component/newsletter/newsletter.component';
 import { BgVideoComponent } from './component/bg-video/bg-video.component';
 import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
+import { CertificationComponent } from './component/certification/certification.component';
+import { VideoContentCrossComponent } from './component/video-content-cross/video-content-cross.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -162,6 +164,8 @@ import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.c
     NewsletterComponent,
     BgVideoComponent,
     VideoYoutubeComponent,
+    CertificationComponent,
+    VideoContentCrossComponent
   ],
   imports: [
     CommonModule,
@@ -217,6 +221,7 @@ import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.c
     TranscriptHeaderComponent,
     TranscriptContentComponent,
     PyramidContentComponent,
+    CertificationComponent,
     YesnoComponent,
     SingleSelectComponent,
     MultiSelectComponent,
@@ -264,6 +269,7 @@ import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.c
     NewsletterComponent,
     BgVideoComponent,
     VideoYoutubeComponent,
+    VideoContentCrossComponent,
   ]
 })
 export class SharedModule { }

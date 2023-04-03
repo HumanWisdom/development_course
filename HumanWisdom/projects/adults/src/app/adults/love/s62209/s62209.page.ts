@@ -16,7 +16,7 @@ export class S62209Page implements OnInit {
   // bg=""
   // moduleLink="/adults/criticism"
   // moduleName=" Criticism"
-  // sectionName= "Living with Wisdom - I";
+  // sectionName= "Transform your life - I";
   // moduleId=16
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/76.png"
@@ -24,7 +24,7 @@ export class S62209Page implements OnInit {
   bg=""
   moduleLink="/adults/bullying"
   moduleName=" Bullying"
-  sectionName= "Living with Wisdom - I";
+  sectionName= "Transform your life - I";
   moduleId=76
   moduleList: any = [
     {
@@ -58,7 +58,7 @@ export class S62209Page implements OnInit {
       
       this.moduleLink = "/adults/opinions-beliefs"
       this.moduleName = "Opinions and Beliefs"
-      this.sectionName = "Live with Wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 49
     
     }

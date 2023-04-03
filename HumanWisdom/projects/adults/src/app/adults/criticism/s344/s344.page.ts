@@ -11,7 +11,7 @@ export class S344Page implements OnInit {
 
   bg_tn="bg_green"
   bg_cft="bg_green"
-  bg="bg_green"
+  bg="criticism_w6"
 
   toc="criticism/s324"
   userId:any
