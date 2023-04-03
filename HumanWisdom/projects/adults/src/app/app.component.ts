@@ -21,6 +21,12 @@ export class AppComponent {
   //static progress mapping
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
   mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
+  schema = {
+    '@context': 'http://schema.org',
+    '@type': 'WebSite',
+    name: 'Example Web Site HumanWisdom',
+    url: 'https://staging.humanwisdom.me/course'
+  };
 
   public pageLoaded = false;
 
@@ -244,8 +250,7 @@ export class AppComponent {
 
   initializeApp() {
 
-
-
+  
     let remember = localStorage.getItem("remember")
     let first = localStorage.getItem("firsttime")
     if (remember === 'F' && first === 'T') {

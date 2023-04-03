@@ -1,37 +1,33 @@
 <app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       Questions that may help you understand success
+    </h1>
 
-       </h1>
-
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       1. What does success mean to me?
     </h1>
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       2. How has my conditioning influenced my idea of success?
-
     </h1>
-    <h1 class="txt21">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       3. What role is fear playing in shaping what I want to do?
-
     </h1>
-    <h1 class="txt21">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       4. Can I also aspire to be a successful human being?
-
     </h1>
-    <h1 class="txt21">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       5. What does a balanced life mean to me?
-
-
     </h1>
     
   </form>  
-  
 </app-kta-prevnext>
 
 <!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->

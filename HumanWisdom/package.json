@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-  }, 
+  },
   "private": true,
   "dependencies": {
     "@angular-slider/ngx-slider": "^2.0.3",
@@ -38,6 +38,7 @@
     "@ionic/angular": "^5.0.0",
     "@ionic/cli": "^6.20.4",
     "@nguniversal/express-engine": "^15.2.0",
+    "@ngx-lite/json-ld": "^14.0.0",
     "@swimlane/ngx-charts": "^18.0.1",
     "@types/chart.js": "^2.9.34",
     "@types/html2canvas": "^1.0.0",

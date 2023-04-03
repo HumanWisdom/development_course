@@ -10,9 +10,9 @@ import { AdultsService } from "../../adults.service";
 })
 export class S252Page implements OnInit {
 
-  bg_tn = "bg_green"
-  bg_cft = "bg_green"
-  bg = "bg_green"
+  bg_tn = "bg_pink_orange"
+  bg_cft = "bg_pink_orange"
+  bg = "conditioning_w7"
   toc = "conditioning/s232"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
