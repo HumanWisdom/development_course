@@ -181,6 +181,9 @@ export class NotePage implements OnInit {
     return i;
   }
 
-  
+  goBack() 
+  {
+    this.location.back()
+  }
 
 }
