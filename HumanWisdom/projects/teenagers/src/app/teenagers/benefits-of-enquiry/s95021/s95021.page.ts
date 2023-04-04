@@ -10,9 +10,9 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S95021Page implements OnInit {
 
-  bg_tn = "bg_dark_blue"
-  bg_cft = "bg_dark_blue"
-  bg = "dark_blue_w7"
+  bg_tn = "bg_green_yellow"
+  bg_cft = "bg_green_yellow"
+  bg = "green_yellow_w5"
   hint = ""
 
   toc = "benefits-of-enquiry/s95001"

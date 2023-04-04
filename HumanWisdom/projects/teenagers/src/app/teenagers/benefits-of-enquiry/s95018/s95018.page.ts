@@ -12,9 +12,9 @@ import * as jQuery from 'jquery';
 })
 export class S95018Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_dark_blue"
-  bg_cft="bg_dark_blue"
-  bg="dark_blue_w4"
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
+  bg="green_yellow_w2"
   title="Understanding yourself helps you to understand others"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.6.mp3'

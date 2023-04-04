@@ -9,9 +9,9 @@ import { TeenagersService } from '../../teenagers.service';
   styleUrls: ['./s95014.page.scss'],
 })
 export class S95014Page implements OnInit {
-  bg_tn = "bg_dark_blue"
-  bg_cft = "bg_dark_blue"
-  bg = "dark_blue_w12"
+  bg_tn = "bg_green_yellow"
+  bg_cft = "bg_green_yellow"
+  bg = "green_yellow_w5"
   toc = "benefits-of-enquiry/s95001"
   path = this.router.url
   userId: any
