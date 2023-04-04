@@ -1,12 +1,15 @@
+import { Platform } from "@angular/cdk/platform";
 import { Location } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
+import { LogEventService } from "src/app/log-event.service";
+import { OnboardingService } from "src/app/onboarding/onboarding.service";
 import { ForumService } from '../forum.service';
-import { Platform } from "@angular/cdk/platform";
-import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-forum-landing',
@@ -14,6 +17,9 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./forum-landing.page.scss'],
 })
 export class ForumLandingPage implements OnInit {
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+  @ViewChild('closepopup') closepopup: ElementRef;
+
   @ViewChild('threadsearch', { static: true }) threadsearch: ElementRef;
   UserID = "107";
   activereply;
@@ -40,9 +46,58 @@ export class ForumLandingPage implements OnInit {
   }, {
     value: 3, label: 'Reflections'
   }];
-  constructor(private serivce: ForumService, public platform:Platform, private router: Router, 
-    private ngNavigatorShareService: NgNavigatorShareService, private location: Location, 
-    private meta: Meta, private title: Title) {
+
+  isloggedIn = false;
+  searchinp = '';
+  public user: any
+  public userId = 100
+  public idToken: any
+  public email: any;
+  public showAlert = false
+  public loginResponse: any
+  public socialFirstName: any
+  public socialLastName: any
+  public socialEmail: any
+  public userName: any
+  public video = 3
+  public audio = 4
+  public password: any
+  public saveUsername = false
+  public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
+  public moduleList = [];
+  public alertMsg: any
+  public qrList: any
+  public goToPage: any
+  public benefitsWisdomP: any
+  public discoveringP: any
+  public guideP: any
+  public identityP: any
+  public keyP: any
+  public fiveCirclesP: any
+  public hcwhP: any
+  public percentage: any
+
+  mediaPercent: any
+  freeScreens = []
+  isWelcomePopup = false;
+  public isSubscribe = false
+  public modaldata = {}
+  public x = []
+  public text = 2
+  public question = 6
+  public reflection = 5
+  public feedbackSurvey = 7
+  public moduleId = 7
+  public bookmarks = []
+  public resume = []
+  public bookmarkLength: any
+
+  constructor(private serivce: ForumService, public platform: Platform, private router: Router,
+    private ngNavigatorShareService: NgNavigatorShareService, private location: Location,
+    private meta: Meta, private title: Title, public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
+    public cd: ChangeDetectorRef) {
+
     this.UserID = localStorage.getItem('userId');
     console.log(this.UserID);
     this.token = JSON.parse(localStorage.getItem("token"));
@@ -153,9 +208,9 @@ export class ForumLandingPage implements OnInit {
     this.meta.updateTag({ property: 'title', content: 'Online Community for Wisdom Exchange' })
     this.meta.updateTag({ property: 'description', content: 'Join our discussion forum for inspirational discussions and exchange of wisdom on personal growth and mental wellness. Find emotional support and engage in mindful conversations.' })
     this.meta.updateTag({ property: 'keywords', content: 'Online community,Discussion forum,Wisdom exchange,Inspirational discussions,Self-improvement forum,Personal growth community,Mental wellness community,Mindful conversations,Emotional support forum,Personal development discussions' })
-  
-  
-  
+
+
+
 
 
 
@@ -174,7 +229,7 @@ export class ForumLandingPage implements OnInit {
       // Time in milliseconds between key events
       , debounceTime(1000)
 
-      // If previous query is diffent from current   
+      // If previous query is diffent from current
       , distinctUntilChanged()
 
       // subscription for response
@@ -195,10 +250,10 @@ export class ForumLandingPage implements OnInit {
 
   share() {
 
-   /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
-      alert(`This service/api is not supported in your Browser`);
-      return;
-    } */
+    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
+       alert(`This service/api is not supported in your Browser`);
+       return;
+     } */
     if (this.urlT) {
       console.log("url")
       this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
@@ -235,5 +290,204 @@ export class ForumLandingPage implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  fbLogin() {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.authService.authState.subscribe((user) => {
+      // this.user = user;
+      this.user = user;
+      this.idToken = user.authToken
+      this.socialFirstName = user.firstName
+      this.socialLastName = user.lastName
+      this.socialEmail = user.email
+      if (user.email !== undefined) {
+        this.service.verifyFb({
+          "TokenID": this.idToken,
+          "FName": this.socialFirstName,
+          "LName": this.socialLastName,
+          "Email": this.socialEmail,
+          "VCode": "",
+          "Pwd": ""
+        })
+          .subscribe(res => {
+            if (res) {
+              this.loginResponse = res
+              localStorage.setItem('socialLogin', 'T');
+              localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+              localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+              localStorage.setItem("video", JSON.stringify(this.video))
+              localStorage.setItem("audio", JSON.stringify(this.audio))
+              localStorage.setItem("remember", 'T')
+              localStorage.setItem('guest', 'F');
+              localStorage.setItem('btnclick', 'F')
+              localStorage.setItem("FnName", this.socialFirstName)
+              localStorage.setItem("LName", this.socialLastName)
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+              localStorage.setItem("email", this.socialEmail)
+              localStorage.setItem("pswd", '')
+              localStorage.setItem("name", this.loginResponse.Name)
+              localStorage.setItem("first", 'T')
+              if (parseInt(this.loginResponse.UserId) == 0) {
+                this.showAlert = true
+                window.alert('You have enetered wrong credentials. Please try again.')
+                this.email = ""
+                this.password = ""
+              }
+              else {
+                this.showAlert = false
+                this.userId = this.loginResponse.UserId
+                this.userName = this.loginResponse.Name
+                localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+                if (this.saveUsername == true) {
+                  localStorage.setItem("userId", JSON.stringify(this.userId))
+                  localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  localStorage.setItem("userName", JSON.stringify(this.userName))
+
+                }
+                else {
+                  sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                  sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                  sessionStorage.setItem("userName", JSON.stringify(this.userName))
+                }
+                let acceptCookie = localStorage.getItem('activeCode');
+                let subscribePage = localStorage.getItem('subscribepage');
+                if (acceptCookie === 'T' || subscribePage === 'T') {
+                  localStorage.setItem("isloggedin", 'T')
+                  if (acceptCookie === 'T') {
+                    localStorage.setItem("activeCode", 'F')
+                  }
+                  if (subscribePage === 'T') {
+                    localStorage.setItem("subscribepage", 'F')
+                  }
+                } else {
+                  localStorage.setItem("isloggedin", 'T')
+                }
+              }
+              window.location.reload();
+            }
+
+          })
+      } else {
+        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+      }
+    });
+  }
+
+  googleLogin() {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.idToken = user.idToken
+      this.socialFirstName = user.firstName
+      this.socialLastName = user.lastName
+      this.socialEmail = user.email
+      this.service.verifyGoogle({
+        "TokenID": this.idToken,
+        "FName": this.socialFirstName,
+        "LName": this.socialLastName,
+        "Email": this.socialEmail,
+        "VCode": "",
+        "Pwd": ""
+      })
+        .subscribe(res => {
+          if (res) {
+            this.loginResponse = res
+            localStorage.setItem('guest', 'F');
+            localStorage.setItem("remember", 'T')
+            localStorage.setItem('socialLogin', 'T');
+            localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
+            localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
+            localStorage.setItem("video", JSON.stringify(this.video))
+            localStorage.setItem("audio", JSON.stringify(this.audio))
+            localStorage.setItem('btnclick', 'F')
+            localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+            localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+            localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
+            localStorage.setItem("userId", JSON.stringify(this.userId))
+            localStorage.setItem("email", this.socialEmail)
+            localStorage.setItem("FnName", this.socialFirstName)
+            localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
+            localStorage.setItem("LName", this.socialLastName)
+            localStorage.setItem("pswd", '')
+            localStorage.setItem("name", this.loginResponse.Name)
+            localStorage.setItem("first", 'T')
+            if (parseInt(this.loginResponse.UserId) == 0) {
+              this.showAlert = true
+              window.alert('You have enetered wrong credentials. Please try again.')
+              this.email = ""
+              this.password = ""
+            }
+            else {
+              this.showAlert = false
+              this.userId = this.loginResponse.UserId
+              this.userName = this.loginResponse.Name
+              localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
+              localStorage.setItem("userId", JSON.stringify(this.userId))
+              localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token))
+              if (this.saveUsername == true) {
+                localStorage.setItem("userId", JSON.stringify(this.userId))
+                localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                localStorage.setItem("userName", JSON.stringify(this.userName))
+
+              }
+              else {
+                sessionStorage.setItem("userId", JSON.stringify(this.userId))
+                sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
+                sessionStorage.setItem("userName", JSON.stringify(this.userName))
+              }
+              let acceptCookie = localStorage.getItem('activeCode');
+              let subscribePage = localStorage.getItem('subscribepage');
+              if (acceptCookie === 'T' || subscribePage === 'T') {
+                localStorage.setItem("isloggedin", 'T')
+                if (acceptCookie === 'T') {
+                  localStorage.setItem("activeCode", 'F')
+                }
+                if (subscribePage === 'T') {
+                  localStorage.setItem("subscribepage", 'F')
+                }
+              } else {
+                localStorage.setItem("isloggedin", 'T')
+              }
+            }
+            window.location.reload();
+          }
+        })
+    },
+      error => console.log(error),
+      () => {
+      });
+  }
+
+  signInWithApple() {
+    const CLIENT_ID = "humanwisdom.web.service"
+    const REDIRECT_API_URL = "https://www.humanwisdom.info/api/verifyAppleToken_html"
+
+
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_API_URL)}&response_type=code id_token&scope=name email&response_mode=form_post`,
+      '_self'
+    );
+  }
+
+  loginpage() {
+    this.closepopup.nativeElement.click();
+    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 }
