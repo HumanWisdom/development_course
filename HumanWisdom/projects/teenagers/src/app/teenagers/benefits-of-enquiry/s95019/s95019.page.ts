@@ -12,9 +12,9 @@ import {Location } from '@angular/common'
 })
 export class S95019Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_dark_blue"
-  bg_cft="bg_dark_blue"
-  bg="dark_blue_w5"
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
+  bg="green_yellow_w4"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/benefits-of-enquiry/videos/1.2.mp4'  
   title="Wisdom awakens care and compassion"

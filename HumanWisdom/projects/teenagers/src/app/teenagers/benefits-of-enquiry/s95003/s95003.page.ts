@@ -12,9 +12,9 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S95003Page implements OnInit,OnDestroy {
 
-  bg_tn = "bg_dark_blue"
-  bg_cft = "bg_dark_blue"
-  bg = "dark_blue_w1"
+  bg_tn = "bg_green_yellow"
+  bg_cft = "bg_green_yellow"
+  bg = "green_yellow_w2"
   
   title="Welcome to the art of enquiry"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
