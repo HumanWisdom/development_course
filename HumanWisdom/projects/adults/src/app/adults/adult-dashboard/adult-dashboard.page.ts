@@ -21,7 +21,7 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('closecookiemodal') closecookiemodal: ElementRef;
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-  @ViewChild('journelsignuplogin') journelsignuplogin: ElementRef;
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   //get global settings here
   public text = 2
@@ -309,7 +309,7 @@ export class AdultDashboardPage implements OnInit {
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
-      this.journelsignuplogin.nativeElement.click();
+      this.enablepopup.nativeElement.click();
     }
   }
 
@@ -3785,7 +3785,7 @@ export class AdultDashboardPage implements OnInit {
           this.router.navigate(['/adults/journal'])
         }
       } else {
-        this.journelsignuplogin.nativeElement.click();
+        this.enablepopup.nativeElement.click();
       }
     } else if (params != '' && route != '') {
       this.router.navigate([route, params]);

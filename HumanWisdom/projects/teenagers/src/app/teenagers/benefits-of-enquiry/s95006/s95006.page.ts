@@ -12,9 +12,9 @@ import * as jQuery from 'jquery';
 })
 export class S95006Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_dark_blue"
-  bg_cft="bg_dark_blue"
-  bg="dark_blue_w4"
+  bg_tn="bg_green_yellow"
+  bg_cft="bg_green_yellow"
+  bg="green_yellow_w3"
   title="No one can tell you what water tastes like."
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.2.mp3'

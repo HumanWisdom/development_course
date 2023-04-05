@@ -10,9 +10,9 @@ import {Location } from '@angular/common'
   styleUrls: ['./s95005.page.scss'],
 })
 export class S95005Page implements OnInit,OnDestroy {
-  bg_tn = "bg_dark_blue"
-  bg_cft = "bg_dark_blue"
-  bg = "dark_blue_w3"
+  bg_tn = "bg_green_yellow"
+  bg_cft = "bg_green_yellow"
+  bg = "green_yellow_w4"
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
