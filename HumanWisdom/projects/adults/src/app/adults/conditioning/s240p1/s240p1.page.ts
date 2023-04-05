@@ -2,14 +2,14 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
-
 @Component({
   selector: 'app-s240p1',
   templateUrl: './s240p1.page.html',
   styleUrls: ['./s240p1.page.scss'],
 })
-export class S240p1Page implements OnInit {
 
+export class S240p1Page implements OnInit 
+{
   bg_tn = "bg_pink_orange"
   bg_cft = "bg_pink_orange"
   bg = "conditioning_w7"
@@ -25,32 +25,40 @@ export class S240p1Page implements OnInit {
   bookmark = 0
   path = this.router.url
 
-  constructor(private router: Router,
+  constructor
+  (
+    private router: Router,
     private service: AdultsService,
-    private location: Location) { }
+    private location: Location
+  ) 
+  { }
 
-  ngOnInit() {
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+  ngOnInit() 
+  {
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
     this.startTime = Date.now();
-
     this.startTime = Date.now();
     this.createScreen()
 
     // multistep wizard
-    $(document).ready(function () {
+    $(document).ready(function () 
+    {
       // var base_color = "rgb(230,230,230)";
       // var active_color = "rgb(237, 40, 70)";
       var base_color = "rgba(255,255,255,0.2)";
       var active_color = "#FFC455";
-
       var i;
-
       var child = 1;
       var length = $("section").length - 1;
       $("#prev").addClass("disabled");
       $("#submit").addClass("disabled");
-
       $("section").not("section:nth-of-type(1)").hide();
       $("section").not("section:nth-of-type(1)").css('transform', 'translateX(100px)');
 
@@ -61,13 +69,15 @@ export class S240p1Page implements OnInit {
         ' 24" xml:space="preserve"></svg>'
       );
 
-      function makeSVG(tag, attrs) {
+      function makeSVG(tag, attrs) 
+      {
         var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
         for (var k in attrs) el.setAttribute(k, attrs[k]);
         return el;
       }
 
-      for (i = 0; i < length; i++) {
+      for (i = 0; i < length; i++) 
+      {
         var positionX = 12 + i * 200;
         var rect = makeSVG("rect", { x: positionX + 12, y: 9, width: 176, height: 6 });
         document.getElementById("svg_form_time").appendChild(rect);
@@ -89,12 +99,12 @@ export class S240p1Page implements OnInit {
         width: positionX,
         height: 6
       });
+
       document.getElementById("svg_form_time").appendChild(circle);
 
       $('#svg_form_time rect').css('fill', base_color);
       $('#svg_form_time circle').css('fill', base_color);
       $("circle:nth-of-type(1)").css("fill", active_color);
-
 
       $(".mt_btn").click(function () {
         $("#svg_form_time rect").css("fill", active_color);
@@ -139,19 +149,19 @@ export class S240p1Page implements OnInit {
     });
     // /multistep wizard
   }
-  createScreen() {
+
+  createScreen() 
+  {
     this.service.createScreen({
       "ScrId": 0,
       "ModuleId": this.moduleId,
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
-
-
+    }).subscribe(res => {})
   }
-  receiveBookmark(e) {
+
+  receiveBookmark(e) 
+  {
     console.log(e)
     if (e == true)
       this.bookmark = 1
@@ -159,8 +169,8 @@ export class S240p1Page implements OnInit {
       this.bookmark = 0
   }
 
-
-  submitProgress() {
+  submitProgress() 
+  {
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -168,38 +178,25 @@ export class S240p1Page implements OnInit {
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
       "timeSpent": this.totalTime
-    }).subscribe(res => {
-
-    },
+    }).subscribe(res => {},
       error => { console.log(error) },
-      () => {
-        //this.router.navigate(['/adults/conditioning/s234'])
-      })
-
-
+      () => {})
   }
-  prev() {
+
+  prev() 
+  {
     this.router.navigate(['/adults/conditioning/s240'])
-
-
   }
 
-  goNext() {
+  goNext() 
+  {
     this.router.navigate(['/adults/conditioning/s240p2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     if (this.userId !== 563) this.submitProgress()
-
   }
 
-  ngOnDestroy() {
-
-
-
-
-  }
-
-
+  ngOnDestroy() 
+  {}
 
 }

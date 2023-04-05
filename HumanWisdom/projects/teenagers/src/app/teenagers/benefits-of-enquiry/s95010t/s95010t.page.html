@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our mind assumes all our problems come from the world outside, but though the trigger may be outside - like exams, the reaction of stress comes from within us - it is a reaction from our thinking. 
+          <br>
+          Similarly, we think stress, anxiety, conflict, addiction, low self-esteem, and lack of peace are separate problems, but they all have one common root - they first begin in our thinking, so their solution also lies in understanding ourselves and how our minds work. This understanding can help prevent these problems and more easily solve them. This approach can also help address global problems like war, racism and climate change because global problems are just individual problems multiplied 8 billion times. Living with wisdom is like learning to swim, so when the challenges of life arrive, we are ready, and can avoid them and swim right through them.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

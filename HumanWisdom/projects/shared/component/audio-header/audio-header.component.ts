@@ -17,6 +17,7 @@ export class AudioHeaderComponent implements OnInit {
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() transcriptPage: string;
+  @Input() moduleName : string;
   progUrl: string;
   note: any
   t = new Date()
@@ -102,11 +103,12 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   goToTranscript() {
+    let moduleNamePath = this.moduleName == "teenagers" ?  '/' : '/adults/';
     if (this.urlT) {
-      this.router.navigate(['/adults/' + this.transcriptPage], { queryParams: { t: this.urlT } })
+      this.router.navigate([moduleNamePath + this.transcriptPage], { queryParams: { t: this.urlT } })
     }
     else
-      this.router.navigate(['/adults/' + this.transcriptPage])
+      this.router.navigate([moduleNamePath + this.transcriptPage])
   }
 
   addNote() {

@@ -34,6 +34,13 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./teenagers/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  {
+    path: 'benefits-of-enquiry',
+    loadChildren: () => import('./teenagers/benefits-of-enquiry/benefits-of-enquiry.module').then( m => m.BenefitsOfEnquiryModule)
+  },
+  
+  
+
 ];
 
 @NgModule({

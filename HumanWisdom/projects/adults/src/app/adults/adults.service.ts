@@ -503,4 +503,8 @@ export class AdultsService {
       })
 
   }
+
+  addUserRefPost(data: any): Observable<any> {
+    return this.http.post(this.path + '/AddUserRefPost', data)
+  }
 }
