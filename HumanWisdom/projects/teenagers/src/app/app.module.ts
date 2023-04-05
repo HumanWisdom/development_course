@@ -6,6 +6,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeenagersService } from './teenagers/teenagers.service';
+import { TeenagerOnboardingService } from './teenagerOnboarding/teenager-onboarding.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { TeenagersService } from './teenagers/teenagers.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers:[TeenagersService,AdultsService],
+  providers:[TeenagersService,AdultsService,TeenagerOnboardingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

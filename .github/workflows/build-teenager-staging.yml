@@ -43,13 +43,13 @@ jobs:
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        npm run build:ssr 
+        ng build --configuration=staging --project="teenagers" --base-href /teenagers/
     
      - name: Compress the build artifacts
        run: |
         cd HumanWisdom
         mkdir -p builds/compressed
-        tar -czf builds/compressed/program.tgz dist/teenagers/server
+        tar -czf builds/compressed/program.tgz teenagers/
 
      - name: Upload artifact
        uses: actions/upload-artifact@v2
@@ -82,11 +82,11 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo rm -rf builds/uncompressed/${{ github.run_id }}
-          sudo mkdir -p builds/uncompressed/${{ github.run_id }}
-          sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          sudo rm -rf /var/www/html/teenager_backup
-          sudo cp -R /var/www/html/course/ /var/www/html/teenager_backup
-          sudo rm -rf /var/www/html/teenagers
-          sudo mv builds/uncompressed/${{ github.run_id }} /var/www/html/teenagers          
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
+          rm -rf /var/www/html/teenager_backup
+          cp -R /var/www/html/course/ /var/www/html/teenager_backup
+          rm -rf /var/www/html/teenagers
+          mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers          
           
