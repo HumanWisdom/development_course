@@ -193,3 +193,38 @@
   margin-right: -4.5rem;
 }
 /* /certficate */
+
+/* youtubeVideo */
+
+@media only screen and (min-width: 360px) and (max-height: 1180px) {
+  .evideo {
+    height: 255px;
+  }
+}
+
+
+@media only screen and (width: 540px) and (device-height: 720px) {
+  .evideo {
+    height: 300px;
+  }
+}
+
+@media only screen and (width: 360px) and (device-height: 740px) {
+  .evideo {
+    height: 245px;
+  }
+}
+
+@media only screen and (width: 1024px) and (device-height: 600px) {
+  .evideo {
+    height: 300px;
+  }
+}
+
+@media only screen and (width: 280px) and (device-height: 653px) {
+  .evideo {
+    height: 180px;
+  }
+}
+
+/* /youtubeVideo */

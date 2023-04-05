@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'benefits-of-enquiry',
     loadChildren: () => import('./teenagers/benefits-of-enquiry/benefits-of-enquiry.module').then( m => m.BenefitsOfEnquiryModule)
   },
+  {
+    path: 'how-to-begin',
+    loadChildren: () => import('./teenagers/how-to-begin/how-to-begin.module').then( m => m.HowToBeginModule)
+  },
   
   
 
