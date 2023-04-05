@@ -102,11 +102,11 @@ export class S95021Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/benefits-of-enquiry/s95022'])
+        this.router.navigate(['/benefits-of-enquiry/s95027'])
 
       },
       () => {
-        this.router.navigate(['/benefits-of-enquiry/s95022'])
+        this.router.navigate(['/benefits-of-enquiry/s95027'])
       })
 
 
