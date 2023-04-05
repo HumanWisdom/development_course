@@ -119,5 +119,10 @@ createScreen(){
  
   }
 
+  receiveAvDuration(e)
+  {
+    console.log(e)
+    this.avDuration=e
+  }
 
 }
