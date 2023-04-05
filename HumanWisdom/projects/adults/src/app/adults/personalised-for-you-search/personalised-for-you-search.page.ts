@@ -485,7 +485,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         //static progress
 
         this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        this.guideP = res.ModUserScrPc.find(e => e.Module == "User Guide")?.Percentage
+        this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
         this.identityP = res.ModUserScrPc.find(e => e.Module == "Identity")?.Percentage
         this.keyP = res.ModUserScrPc.find(e => e.Module == "Key Ideas")?.Percentage
         this.fiveCirclesP = res.ModUserScrPc.find(e => e.Module == "5 Circles of Wisdom")?.Percentage
