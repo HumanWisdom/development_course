@@ -73,11 +73,11 @@ const routes: Routes = [
     loadChildren: () => import('./manage-your-emotions-transcript/manage-your-emotions-transcript.module').then( m => m.ManageYourEmotionsTranscriptPageModule)
   },
   {
-    path: 'youtubelink/:videolink',
+    path: 'youtubelink/:videolink/:access',
     component: YoutubeContentComponent
   },
   {
-    path: 'audiopage/:audiolink/:title',
+    path: 'audiopage/:audiolink/:title/:RowId',
     component: SingleAudioContentComponent
   },
 

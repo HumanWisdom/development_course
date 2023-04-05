@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -10,10 +10,17 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class YoutubeContentComponent implements OnInit {
   public videoLink: any;
   public linkcode: any;
+  public access: string='free';
+
   @Input() bg: string;
   
-  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer) {
+  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router) {
     this.linkcode = this.route.snapshot.paramMap.get('videolink')
+    this.access = this.route.snapshot.paramMap.get('access')
+    let sub: any = localStorage.getItem("Subscriber")
+    if (sub==0 && this.access=='paid' )
+      this.router.navigate(['/onboarding/free-limit']);
+
     if(window.history.state.class)
     {
       this.bg=window.history.state.class;
