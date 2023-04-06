@@ -31871,7 +31871,6 @@ label.select_label:after
 .videowrapper 
 {
   position: relative;
-  width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
