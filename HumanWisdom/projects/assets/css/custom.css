@@ -31881,6 +31881,7 @@ label.select_label:after
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100% !important;
   height: 100%;
+  margin: 0 auto;
 }
