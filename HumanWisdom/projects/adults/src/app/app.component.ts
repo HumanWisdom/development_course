@@ -1,9 +1,11 @@
 import {
   Platform
 } from '@angular/cdk/platform';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { AdultsService } from './adults/adults.service';
 import { slider } from './route.animation';
 
@@ -13,7 +15,7 @@ import { slider } from './route.animation';
   styleUrls: ['app.component.scss'],
   animations: [slider]
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   @HostListener('window:beforeunload', ['$event'])
   beforeunloadHandler(event) {
     localStorage.setItem('adult', 'F')
@@ -29,6 +31,7 @@ export class AppComponent {
   };
 
   public pageLoaded = false;
+  navigationSubs = new Subscription();
 
   constructor(
     private platform: Platform,
@@ -51,6 +54,12 @@ export class AppComponent {
       }
     });
 
+    this.navigationSubs = this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.services.previousUrl = this.services.currentUrl;
+      this.services.currentUrl = event.url;
+    });
 
     this.initializeApp();
   }
@@ -250,7 +259,7 @@ export class AppComponent {
 
   initializeApp() {
 
-  
+
     let remember = localStorage.getItem("remember")
     let first = localStorage.getItem("firsttime")
     if (remember === 'F' && first === 'T') {
@@ -267,5 +276,10 @@ export class AppComponent {
         }, 2000)
       }
     });
+  }
+
+
+  ngOnDestroy(): void {
+    this.navigationSubs.unsubscribe();
   }
 }
