@@ -1,9 +1,8 @@
 
 import { Location } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdultsService } from 'src/app/adults/adults.service';
 
 
 @Component({
@@ -11,16 +10,15 @@ import { filter } from 'rxjs/operators';
   templateUrl: './free-limit.page.html',
   styleUrls: ['./free-limit.page.scss'],
 })
-export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
+export class FreeLimitPage implements OnInit, AfterViewInit {
   @ViewChild('enablebtn') enableotpmodal: ElementRef;
   @ViewChild('closemodal') closemodal: ElementRef;
-  navigationSubs = new Subscription();
 
   isloggedIn = false;
   Subscriber: any;
   guest = true;
 
-  constructor(private location: Location, private router: Router) {
+  constructor(private location: Location, private router: Router, private service: AdultsService) {
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
 
@@ -39,26 +37,15 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
 
 
   backClick() {
-    let previousUrl: string = null;
-    let currentUrl: string = null;
-    this.navigationSubs = this.router.events.pipe(
-      filter((event) => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      previousUrl = currentUrl;
-      currentUrl = event.url;
-      this.backroute(previousUrl);
-    });
-    this.location.back()
     this.closemodal.nativeElement.click();
-  }
-
-  backroute(previousUrl) {
-    if (previousUrl) {
+    if (this.service.previousUrl) {
       this.location.back()
     } else {
       this.router.navigate(['/adults/adult-dashboard'])
     }
+  }
 
+  backroute(previousUrl) {
 
   }
 
@@ -71,7 +58,4 @@ export class FreeLimitPage implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    this.navigationSubs.unsubscribe();
-  }
 }
