@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'HumanWisdom-single-audio-content',
@@ -7,15 +7,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-audio-content.component.scss'],
 })
 export class SingleAudioContentComponent implements OnInit {
-  yellow="#FFC455"
-  @Input() audioLink=""
+  yellow = "#FFC455"
+  @Input() audioLink = ""
   @Input() audioTitle = ''
 
-  constructor(private route: ActivatedRoute) {
+
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.audioLink = this.route.snapshot.paramMap.get('audiolink')
     this.audioTitle = this.route.snapshot.paramMap.get('title')
-   }
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }

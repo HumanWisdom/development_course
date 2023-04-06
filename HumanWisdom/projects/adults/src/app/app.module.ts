@@ -28,7 +28,8 @@ import{ SharedModule } from './../../../shared/shared.module'
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { BlogIndexPage } from './adults/blog/blog-index/blog-index.page';
 import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
-
+// Import library module
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -60,6 +61,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         PlatformModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAnalyticsModule,
+        NgxJsonLdModule
     ],
     providers: [
         StatusBar,

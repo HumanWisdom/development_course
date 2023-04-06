@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-
 @Component({
   selector: 'app-s26',
   templateUrl: './s26.page.html',
   styleUrls: ['./s26.page.scss'],
 })
-export class S26Page implements OnInit {
+
+export class S26Page implements OnInit 
+{
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bookmark=0
@@ -16,8 +17,7 @@ export class S26Page implements OnInit {
   path=this.router.url
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
- 
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
   screenType=JSON.parse(localStorage.getItem("question"))
@@ -25,7 +25,6 @@ export class S26Page implements OnInit {
   startTime:any
   endTime:any
   totalTime:any
-  
   questionA:any
   q0:any
   q1:any
@@ -43,19 +42,22 @@ export class S26Page implements OnInit {
   sendOptions=[]
   sessionOptions=JSON.parse(sessionStorage.getItem("sessionOptions"))
 
-  constructor(private router: Router,
+  constructor
+  (
+    private router: Router,
     private service:AdultsService,
-    private location:Location) { }
+    private location:Location
+  ) 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     console.log("sessionOptions",this.sessionOptions)
     this.createScreen()
     for(var i=0;i<this.qrList.ListOfQueOpts.length;i++)
     {
       this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
-
     }
-      
    
     this.questionA=this.qrList.ListOfQueOpts
     this.q0=this.findQuestion(34).Question
@@ -63,8 +65,6 @@ export class S26Page implements OnInit {
     this.q1=this.findQuestion(35).Question
     this.optionList1=this.findQuestion(35).optionList
     console.log(this.optionList0,this.q0)
-   
-  
     this.q2=this.findQuestion(37).Question
     this.optionList2=this.findQuestion(37).optionList
     this.q3=this.findQuestion(38).Question
@@ -79,29 +79,29 @@ export class S26Page implements OnInit {
     console.log(this.optionList3)
     console.log(this.optionList4)
     console.log(this.optionList5)
-   
 
     if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
     else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
   }
 
-  createScreen(){
+  createScreen()
+  {
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
-
+    }).subscribe(res=>{})
   }
 
-  findQuestion(q){
+  findQuestion(q)
+  {
     this.optionList=[]
     for(var i=0;i<this.questionA.length;i++)
     {
@@ -109,19 +109,17 @@ export class S26Page implements OnInit {
         this.questionA[i].CorrectAns=false
       else
         this.questionA[i].CorrectAns=true
-     
-
       if(q==this.questionA[i].QueId)
       {
         var question=this.questionA[i].Que
         this.optionList.push(this.questionA[i])
-        
       }  
     }
     return({"Question":question,"optionList":this.optionList})
   }
 
-  selectOption(id){
+  selectOption(id)
+  {
     console.log(id)
     for(var j=0;j<this.sendOptions.length;j++)
     {
@@ -138,8 +136,7 @@ export class S26Page implements OnInit {
           else if(this.sendOptions.indexOf(39)===-1)
           {
             this.sendOptions.push(id)
-          }
-            
+          } 
         }
         if(id==40)
         {
@@ -153,7 +150,6 @@ export class S26Page implements OnInit {
           {
             this.sendOptions.push(id)
           }
-            
         }
         if(id==41)
         {
@@ -166,10 +162,8 @@ export class S26Page implements OnInit {
           else if(this.sendOptions.indexOf(42)===-1)
           {
             this.sendOptions.push(id)
-          }
-            
+          } 
         }
-
         if(id==42)
         {
           if(this.sendOptions.includes(41))
@@ -269,40 +263,21 @@ export class S26Page implements OnInit {
           else
             this.sendOptions.push(id)
         }
-
       }
       else{
         console.log("exists")
-        
       }
     }
-
     this.sendOptions.push(id)
     this.sendOptions=[...new Set(this.sendOptions)]
     console.log(this.sendOptions)
     sessionStorage.setItem("sessionOptions",JSON.stringify(this.sendOptions))
-
-
-
-
-
   }
 
-  // submitProgress(){
-  //   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
-  //     "screenType":this.screenType, 
-  //     "ScrNumber":this.screenNumber,  
-  //     "Bookmark":this.bookmark, 
-  //     "UserId":this.userId, 
-  //     "timeSpent":this.totalTime,
-  //     "OptionIDs":this.sendOptions.join()})
-  //     .subscribe((res) => {},
-  // }
-
-  submitProgress(){
+  submitProgress()
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     this.router.navigate(['/adults/comparison/s27'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -313,7 +288,6 @@ export class S26Page implements OnInit {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
@@ -321,28 +295,23 @@ export class S26Page implements OnInit {
       ()=>{
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-     
   }
-  prev(){
+
+  prev()
+  {
     this.router.navigate(['/adults/comparison/s25'])
   }
 
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
   }
   
-  ngOnDestroy(){
-    
-  //this.endTime = Date.now();
-  //this.totalTime = this.endTime - this.startTime;
-  
-  
-  }
+  ngOnDestroy()
+  {}
 
- 
 }

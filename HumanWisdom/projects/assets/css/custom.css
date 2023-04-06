@@ -7795,7 +7795,7 @@ legend {
     right: 13px
 }
 .form-control.has-feedback-left {
-    padding-left: 45px
+    padding-left: 55px
 }
 .form-control.has-feedback-right {
     padding-right: 45px
@@ -12158,7 +12158,6 @@ h1.module_title
   font-weight: 300;
   font-size: 30px;
   line-height: 35px;
-  /* text-align: center; */
   text-align: left;
   color: #243949;
 }
@@ -12455,7 +12454,6 @@ h1.module_title
   font-weight: 300;
   font-size: 24px;
   line-height: 35px;
-  /* text-align: center; */
   text-align: left;
   color: #243949;
 }
@@ -31786,7 +31784,15 @@ label.select_label:after
 
 .lww_2r_5t
 {
-  grid-template-columns: repeat(5,30%);
+  grid-template-columns: repeat(5,42%);
+}
+
+@media (min-width: 1200px)
+{
+  .lww_2r_5t
+  {
+    grid-template-columns: repeat(5,30%);
+  }
 }
 
 /* teenagers */

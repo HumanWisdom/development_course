@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
-import { LogEventService } from './../../log-event.service'; 
+import { LogEventService } from './../../log-event.service';
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -14,7 +14,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('welcome') welcome: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-  @ViewChild('enablemodal') enablemodal: ElementRef;
 
   searchResult = [];
   personalisedforyou = []
@@ -188,7 +187,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.logeventservice.logEvent('click_emotions');
         this.route.navigate(['/adults/curated/manage-your-emotions'])
       } else if (name === 'Overcome stress and anxiety') {
-        this.logeventservice.logEvent('click_stress_anxiety');        
+        this.logeventservice.logEvent('click_stress_anxiety');
         this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
       } else if (name === 'Wisdom for the workplace') {
         this.logeventservice.logEvent('click_workplace');
@@ -486,7 +485,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         //static progress
 
         this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        this.guideP = res.ModUserScrPc.find(e => e.Module == "User Guide")?.Percentage
+        this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
         this.identityP = res.ModUserScrPc.find(e => e.Module == "Identity")?.Percentage
         this.keyP = res.ModUserScrPc.find(e => e.Module == "Key Ideas")?.Percentage
         this.fiveCirclesP = res.ModUserScrPc.find(e => e.Module == "5 Circles of Wisdom")?.Percentage
@@ -808,5 +807,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
       })
 
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
   }
 }

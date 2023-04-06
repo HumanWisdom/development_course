@@ -71,11 +71,11 @@
                     </div>
                   </div>
                 </div> 
-                <h6 class="txt51 m-top10">
+                <h6 class="txt51 m-top10" *ngIf="isModuleCompleted">
                   Congratulations! You have completed this module.
                 </h6>
               <div class="m-top10" [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">              
-               <app-certification [moduleName]="moduleName"></app-certification>
+               <app-certification [moduleName]="currentModuleName"></app-certification>
               </div>
                 <!-- <div class="row">      
                      <h6 class="txt51 mtb0px mb10px">

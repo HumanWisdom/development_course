@@ -1,20 +1,24 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a (click)="submitProgress()">
-        <h4 class="btn_back_white">Save</h4>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_index_tn center_flex">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <a (click)="goBack()" class="">
+        <img
+          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg"
+          alt=""
+          class="p0"
+        />
       </a>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="submitProgress()">
+        <h4 class="btn_back_white fs_16px">Save</h4>
+      </a>
     </div>
   </div>
 </div>
-<!-- /top navigation -->  
+<!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
 
@@ -36,7 +40,11 @@
 
               <div class="row pb20px">                
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <textarea class="form-control txt41 cta1" rows="10" placeholder="Start writing..." name="notes" [(ngModel)]="notes"></textarea>
+                  <textarea class="form-control txt41 cta1" rows="10" placeholder="Some ideas to inspire your writing -
+1. How was your day?
+2. What are you grateful for today?
+3. What is the kind thing you did today?
+4. What did you learn about yourself today?" name="notes" [(ngModel)]="notes"></textarea>
                 </div>
               </div> 
               

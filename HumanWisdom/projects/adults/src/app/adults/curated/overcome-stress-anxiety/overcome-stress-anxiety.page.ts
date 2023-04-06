@@ -20,6 +20,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
   rmP:any
   lifestoriesList = []
   sId:any
+  dealingwithdepressionP: any
+  externalapprovalP: any
 
   constructor(private service: AdultsService, private router: Router,private location:Location,
      private meta: Meta, private title: Title) { }
@@ -328,6 +330,70 @@ export class OvercomeStressAnxietyPage implements OnInit {
      
     }
 
+    routeDealingWithDepression(cont: any = 1) {
+      var dealingwithdepressionResume
+      localStorage.setItem("moduleId", JSON.stringify(92))
+      this.service.clickModule(92, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          dealingwithdepressionResume = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("dealingwithdepressionResume", dealingwithdepressionResume)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        },
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (cont == "1") {
+              this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
+            }
+            else
+              this.router.navigate([`/adults/dealing-with-depression/s92001`])
+          })
+    }
+
+    routeExternalApproval(cont: any = 1) {
+      var externalapprovalR
+      localStorage.setItem("moduleId", JSON.stringify(91))
+      this.service.clickModule(91, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          externalapprovalR = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem("externalapprovalR", externalapprovalR)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        },
+          error => {
+            console.log(error)
+          },
+          () => {
+            if (cont == "1") {
+              this.router.navigate([`/adults/external-approval/${externalapprovalR}`])
+            }
+            else
+              this.router.navigate([`/adults/external-approval/s91001`])
+          })
+    }
+
     getProgress(){
       this.service.getPoints(this.userId)
       .subscribe(res=>{
@@ -356,6 +422,8 @@ export class OvercomeStressAnxietyPage implements OnInit {
        this.natureP=res.ModUserScrPc.find(e=>e.Module=="Nature")?.Percentage
        this.breathingP=res.ModUserScrPc.find(e=>e.Module=="Breathing")?.Percentage
        this.rmP=res.ModUserScrPc.find(e=>e.Module=="Reactive Mind")?.Percentage   
+       this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
+      this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
       })
     }
   
