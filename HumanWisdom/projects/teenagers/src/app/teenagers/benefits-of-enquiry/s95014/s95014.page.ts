@@ -24,7 +24,7 @@ export class S95014Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark = 0
-  queId = 139
+  queId = 351
   question: any
   optionList = []
   questionA: any
