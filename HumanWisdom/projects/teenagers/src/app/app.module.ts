@@ -19,10 +19,15 @@ import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@a
     HttpClientModule
   ],
   providers:
-  [ TeenagersService,
+  [
+    {
+      provide: LocationStrategy,
+       useClass: HashLocationStrategy,
+    },
+    TeenagersService,
     AdultsService,
     TeenagerOnboardingService,
-    { provide: LocationStrategy, useClass: PathLocationStrategy }],
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
