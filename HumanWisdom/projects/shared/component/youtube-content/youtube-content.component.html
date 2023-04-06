@@ -18,9 +18,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="videoLink !== ''">
 
                       <div class="videowrapper">
-                        <!-- <iframe [src]="videoLink" width="560" height="315" frameborder="0"></iframe> -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Vbg81kc56FU" frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe [src]="videoLink" width="100" height="400" [ngClass]="['evideo']"></iframe>
                       </div>
 
                     </div>
