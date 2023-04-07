@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [moduleName]="moduleName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The third and perhaps most important step is to question what is going on in our mind to make us think and  feel this way?
+          </p>
+          <p>
+            Continuing with the previous example, once I had accepted ownership of my anger I asked myself what lay behind it.
+          </p>
+          <p>
+            I discovered that it was as a result of an expectation I was not aware of, that had come from my past influences. I had grown up with the expectation that people in close relationships had a duty to listen to each other. This discovery led to explore other expectations I carried from my conditioning and I learned so much.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

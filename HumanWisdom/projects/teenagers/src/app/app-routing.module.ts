@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'how-to-begin',
     loadChildren: () => import('./teenagers/how-to-begin/how-to-begin.module').then( m => m.HowToBeginModule)
   },
+  {
+    path: 'three-steps-enquiry',
+    loadChildren: () => import('./teenagers/three-steps-enquiry/three-steps-enquiry.module').then( m => m.ThreeStepsEnquiryModule)
+  },
   
   
 
