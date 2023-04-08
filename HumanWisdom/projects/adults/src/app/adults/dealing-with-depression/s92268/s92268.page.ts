@@ -44,12 +44,12 @@ export class S92268Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
      
-      this.moduleLink = "/adults/conditioning"
-      this.moduleName = "Conditioning"
+      this.moduleLink = "/adults/external-approval"
+      this.moduleName = "Need for approval"
       this.sectionName = "Explore How Your Mind Works";
-      this.moduleId = 15
+      this.moduleId = 91
     
     }
   }
