@@ -46,6 +46,10 @@ const routes: Routes = [
     path: 'three-steps-enquiry',
     loadChildren: () => import('./teenagers/three-steps-enquiry/three-steps-enquiry.module').then( m => m.ThreeStepsEnquiryModule)
   },
+  {
+    path: 'insight',
+    loadChildren: () => import('./teenagers/insight/insight.module').then( m => m.InsightModule)
+  },
   
   
 
