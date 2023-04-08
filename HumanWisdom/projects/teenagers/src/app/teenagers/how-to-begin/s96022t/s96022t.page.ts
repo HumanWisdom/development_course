@@ -19,7 +19,7 @@ export class S96022tPage implements OnInit {
   path=this.router.url
   audioPage="/how-to-begin/s96022"
   toc="how-to-begin/s96001"
-  moduleName="teenagers"
+  progName="teenagers"
   
   screenType=localStorage.getItem("audio")
   userId:any

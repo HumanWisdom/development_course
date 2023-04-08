@@ -26,7 +26,7 @@ export class S97008tPage implements OnInit {
   startTime:any
   endTime:any
   totalTime:any
-  moduleName="teenagers"
+  progName="teenagers"
 
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
