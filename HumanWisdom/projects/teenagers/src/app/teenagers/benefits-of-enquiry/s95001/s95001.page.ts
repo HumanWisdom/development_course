@@ -86,7 +86,7 @@ export class S95001Page implements OnInit, OnDestroy  {
       this.lastvisited = false;
     }    
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(35))
+    localStorage.setItem("moduleId",JSON.stringify(95))
     this.moduleId=localStorage.getItem("moduleId")
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
