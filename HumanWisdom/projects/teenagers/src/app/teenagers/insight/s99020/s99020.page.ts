@@ -34,7 +34,7 @@ export class S99020Page implements OnInit {
 
   sessionPoints(){
     this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"38002,38003,38004,38005,38006,38007,38008,38009,38010,38011,38012,38013,38014,38015,38016,38017,38018"})
+    "ScreenNos":"99002,99003,99004,99005,99006,99007,99008,99009,99010,99011,99012,99013,99014,99015,99016,99017,99018,99019"})
     .subscribe(res=>
       {console.log("points",res)
       this.points=res
@@ -48,7 +48,7 @@ export class S99020Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/insight/s99020p1'])
+    this.router.navigate(['/insight/s99021'])
 
   }
   prev(){

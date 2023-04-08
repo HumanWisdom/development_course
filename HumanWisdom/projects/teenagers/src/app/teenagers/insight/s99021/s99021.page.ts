@@ -17,7 +17,7 @@ export class S99021Page implements OnInit {
   moduleLink="/adults/awareness/s39001"
   moduleName=" Awareness"
   sectionName= "Art of Enquiry";
-  moduleId=39
+  moduleId=99
   moduleList: any = [
     {
       name: 'Awareness',
