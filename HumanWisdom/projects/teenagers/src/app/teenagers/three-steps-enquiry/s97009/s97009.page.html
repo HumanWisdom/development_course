@@ -1,0 +1,25 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-lengthy-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <!--<p class="mb0px fw_bold">#3</p>-->
+      If a friend forgets your birthday. The three steps to enquiry would be:
+    </h1>
+    <h1 class="txt1">
+      Step #1 – notice you are angry and blame them for how you feel.
+    </h1>
+    <h1 class="txt1">
+      Step #2 – accept the anger comes from your thinking. Take ownership.
+    </h1>
+    <h1 class="txt1">
+      Step #3 – question why you are angry. You realise it’s your own unmet expectation that is causing your pain.
+    </h1>
+
+  </form>
+</app-lengthy-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

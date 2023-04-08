@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [moduleName]="moduleName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this module we are going to introduce you to 3 simple steps you can follow, to help you begin this journey of enquiry. The first step is to notice what is happening in our own thinking. It’s easy to notice loud thoughts and feelings, like anger. But it’s the quieter and fleeting thoughts and feelings that are more difficult, but equally important. Like the feeling that makes you reach for the phone when you don't really need to, or the quiet anger that you feel when an expectation is unmet, or the subtle pleasure you feel when someone agrees with your opinion.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
