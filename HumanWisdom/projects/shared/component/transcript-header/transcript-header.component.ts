@@ -18,6 +18,7 @@ export class TranscriptHeaderComponent implements OnInit {
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() audioPage: string;
+  @Input() progName: string;
   @Output() sendBookmark = new EventEmitter<boolean>();
   note:any
   t=new Date()
@@ -103,15 +104,15 @@ export class TranscriptHeaderComponent implements OnInit {
     this.router.navigate(['/adults/adult-dashboard'])
   }
   goToAudio(){
-
+    let progNamePath = this.progName == "teenagers" ?  '/' : '/adults/';
     if (this.urlT)
     {
-      this.router.navigate(['/adults/'+this.audioPage], {queryParams:{t:this.urlT}})
+      this.router.navigate([progNamePath + this.audioPage], {queryParams:{t:this.urlT}})
 
     }
       
     else
-      this.router.navigate(['/adults/'+this.audioPage])
+      this.router.navigate([progNamePath + this.audioPage])
   }
   addNote(){
     this.service.submitJournal({

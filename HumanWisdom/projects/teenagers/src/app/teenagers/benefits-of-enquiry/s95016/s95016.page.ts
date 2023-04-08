@@ -32,7 +32,7 @@ export class S95016Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
-  moduleName="teenagers";
+  progName="teenagers";
   
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
