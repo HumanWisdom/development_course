@@ -18,7 +18,7 @@ export class S97004tPage implements OnInit {
   path=this.router.url
   audioPage="/three-steps-enquiry/s97004"
   toc="three-steps-enquiry/s97001"
-  moduleName="teenagers"
+  progName="teenagers"
   
   screenType=localStorage.getItem("audio")
   userId:any
