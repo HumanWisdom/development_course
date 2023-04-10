@@ -13,7 +13,7 @@ export class S95028Page implements OnInit {
   toc="benefits-of-enquiry/s95001"
   bg=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/36.png"
-  moduleLink="/adults/how-to-begin/s36001"
+  moduleLink="/how-to-begin/s96001"
   moduleName="How to begin?"
   sectionName= "Understand yourself";
   moduleId=95
@@ -22,7 +22,7 @@ export class S95028Page implements OnInit {
       name: 'Begin your journey',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/36.png',
       link: '/how-to-begin',
-      id: 36
+      id: 96
     },
     {
       name: 'Three Steps to Enquiry',

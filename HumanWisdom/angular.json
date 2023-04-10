@@ -339,6 +339,10 @@
                 "inject": true
               },
               {
+                "input": "projects/assets/css/custom-v1.css",
+                "inject": true
+              },
+              {
                 "input": "projects/assets/css/backgrounds.css",
                 "inject": true
               },

@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [progName]="progName" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Most people say "of course he was wrong to forget your birthday and your anger is justified'.
+          </p>
+          <p>
+            You see how the mind thinks - in terms of right and wrong and blame?
+          </p>
+          <p>
+            That prevents learning. If you put the rights and wrongs aside for a moment and just accept the feeling as yours, you can explore it further. I learned that I carried all sorts of expectations of others I wasn't aware of, and I was constantly getting disappointed and angry with my friends who were not meeting them. This understanding helped improve all my relationships. This does not mean that it's wrong for you to be hurt or right for your friend to forget - but just for the purpose of learning about ourselves we need to pause judgment and observe what is happening.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
