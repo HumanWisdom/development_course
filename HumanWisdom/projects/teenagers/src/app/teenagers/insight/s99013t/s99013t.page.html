@@ -1,0 +1,28 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Insight is not something the mind can acquire through effort, like running a marathon for example.
+          </p>
+          <p>
+            Instead all we have to do is set out on this journey of learning about ourselves with curiosity and passion and these insights will surprise you on a regular basis.
+          </p>
+          <p>
+            It’s like taking a road trip, and as you turn a corner you may be presented with the most wonderful sight that takes your breath away, it’s so beautiful.
+          </p>
+          <p>
+            Insight is similar, but it also brings transformation. You are changed by it, without realising how that happened. Another example for me was when I realised that I was a poor listener. That awareness itself made me a better listener.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
