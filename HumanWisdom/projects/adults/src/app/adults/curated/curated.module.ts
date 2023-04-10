@@ -12,3 +12,4 @@ import { CuratedRoutingModule } from './curated-routing.module';
   ]
 })
 export class CuratedModule { }
+
