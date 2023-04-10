@@ -21,15 +21,15 @@ export class S99019Page implements OnInit {
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("reflection")
-  screenNumber = 38018
+  screenNumber = 99019
   startTime: any
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 295
+  rId = 1193
   reflection: any
   reflectionA: any
-  r38018 = JSON.parse(sessionStorage.getItem("r38018"))
+  r99019 = JSON.parse(sessionStorage.getItem("r99019"))
 
   shared: any
   confirmed: any
@@ -40,7 +40,7 @@ export class S99019Page implements OnInit {
 
   ngOnInit() {
     this.createScreen()
-    console.log(this.r38018)
+    console.log(this.r99019)
 
 
 
@@ -85,8 +85,8 @@ export class S99019Page implements OnInit {
     console.log(e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r38018", JSON.stringify(e))
-    this.r38018 = JSON.parse(sessionStorage.getItem("r38018"))
+    sessionStorage.setItem("r99019", JSON.stringify(e))
+    this.r99019 = JSON.parse(sessionStorage.getItem("r99019"))
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -96,7 +96,7 @@ export class S99019Page implements OnInit {
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": JSON.parse(sessionStorage.getItem("r38018"))
+      "Resp": JSON.parse(sessionStorage.getItem("r99019"))
     }).subscribe(res => {
 
     },

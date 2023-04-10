@@ -1,0 +1,39 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our mind is constantly comparing what it sees to what it knows - to make sense of the world - this happens automatically and we are not aware of it. This occurs in layer 3, and is common to all human beings.
+          </p>
+          
+          <p>
+            It is this process that is responsible for my feeling jealous, not your holiday. I am comparing myself with you, and because I feel less than you, I feel jealous, and that makes me feel hurt and my hurt makes me angry with you. 
+          </p>
+
+          <p>
+            We usually have no control of the feeling of jealousy, and can't stop it, even if we want to.
+          </p>
+
+          <p>
+            Understanding that fact allows us to respond differently, with intelligence. I stop blaming you for a start, and can then explore that further.
+          </p>
+
+          <p>
+            In Layer 4 is the 'I' that is feeling 'jealous’, and thinking of ways to retaliate. We will explore the ‘Nature of the I’ later.
+          </p>
+
+          <p>
+            Please do not accept these ideas without checking them out yourself. It’s easy. Just look within.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

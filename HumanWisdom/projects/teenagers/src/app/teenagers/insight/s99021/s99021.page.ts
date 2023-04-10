@@ -14,7 +14,7 @@ export class S99021Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/39.png"
   
   bg=""
-  moduleLink="/adults/awareness/s39001"
+  moduleLink="/adults/awareness/s100001"
   moduleName=" Awareness"
   sectionName= "Art of Enquiry";
   moduleId=99
