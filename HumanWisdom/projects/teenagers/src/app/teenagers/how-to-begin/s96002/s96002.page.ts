@@ -29,7 +29,10 @@ export class S96002Page implements OnInit {
 
   constructor(private router: Router,
     private service: TeenagersService,
-    private location: Location) { }
+    private location: Location) 
+  {
+    this.service.setmoduleID(96);
+  }
 
   ngOnInit() {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
