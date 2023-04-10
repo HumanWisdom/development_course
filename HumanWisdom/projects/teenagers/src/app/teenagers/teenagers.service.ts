@@ -363,9 +363,13 @@ export class TeenagersService {
         discoveringWisdomResume = "s" + res.lastVisitedScreen
         sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
         mediaPercent = parseInt(res.MediaPercent);
-        let freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
         localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
-        localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
+        if(Number.isNaN(mediaPercent)){
+          localStorage.setItem("mediaPercent", JSON.parse("0"))
+        }else{
+          localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
+        }
         localStorage.setItem("qrList", JSON.stringify(qrList))
       })
   }
