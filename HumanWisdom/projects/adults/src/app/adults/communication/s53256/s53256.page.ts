@@ -16,34 +16,34 @@ export class S53256Page  implements OnInit {
   // bg=""
   // moduleLink="/adults/success-failure"
   // moduleName=" Success and Failure"
-  // sectionName= "Living with Wisdom - II";
+  // sectionName= "Transform your life - II";
   // moduleId=48
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/23.png"
  
   bg=""
   moduleLink="/adults/happiness"
   moduleName=" Happiness"
-  sectionName= "Living with Wisdom - II";
+  sectionName= "Transform your life - II";
   moduleId=23
 
   moduleList: any = [
     {
       name: 'Conditioning',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/20.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/conditioning',
       id: 15
  
     },
     {
       name: 'Reactive mind',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/22.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/54.png',
       link: '/reactive-mind',
       id: 54
     },
     {
       name: 'Relationships',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/35.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
       id: 47
     },
@@ -57,7 +57,7 @@ export class S53256Page  implements OnInit {
        
         this.moduleLink = "/adults/success-failure"
         this.moduleName = "Success and Failure"
-        this.sectionName = "Live with wisdom";
+        this.sectionName = "Transform your life";
         this.moduleId = 48
       
       }
@@ -66,7 +66,7 @@ export class S53256Page  implements OnInit {
        
         this.moduleLink = "/adults/love"
         this.moduleName = "Love"
-        this.sectionName = "Live with wisdom";
+        this.sectionName = "Transform your life";
         this.moduleId = 62
        
       }

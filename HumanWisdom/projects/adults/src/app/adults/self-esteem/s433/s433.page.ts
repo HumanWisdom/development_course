@@ -29,7 +29,7 @@ export class S433Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   sR=sessionStorage.getItem("sR")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_esteem.jpg"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/17.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
@@ -40,6 +40,7 @@ export class S433Page implements OnInit,OnDestroy {
     private location:Location,
     private url: ActivatedRoute
   ) { 
+    this.service.setmoduleID(17);
       this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })

@@ -1,5 +1,7 @@
 <app-feedback-question skipToPage="/comparison/s161p1">
+
   <form>
+
     <h2 class="mtb0px txt13">
       Feedback Survey
     </h2>
@@ -11,10 +13,6 @@
     <!-- multistep wizard -->
     <div id="svg_wrap"></div>   
     <section>
-
-               
-
-  
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
           <a class="sb_anchor">
@@ -32,27 +30,15 @@
             </div>                    
           </a>
         </div>
-      </div>                    
-
-      <!-- <div class="row center_flex pt41px">
-        <div class="col-md-3 col-sm-3 col-xs-12 tcenter p0">
-          <a>
-            <button (click)="submitProgress()"type="button" class="btn btn-success mb0 w100 btn_begin_here_orange mt_btn" id="next">Next</button>
-          </a>
-        </div>
-      </div>  
-                       -->
+      </div>        
     </section>
     <section></section>
     <section></section>
     <section></section>
-    
     <!-- /multistep wizard -->
+
   </form>
+
 </app-feedback-question>
 
-<!-- feedback survey footer  -->
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
-<!-- /feedback survey footer -->
-           
-         
+<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>         

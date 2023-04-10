@@ -82,6 +82,10 @@ import { FtWisdomExerciseComponent } from './component/ft-wisdom-exercise/ft-wis
 import { FtAdvertComponent } from './component/ft-advert/ft-advert.component';
 import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
 import { NewsletterComponent } from './component/newsletter/newsletter.component';
+import { BgVideoComponent } from './component/bg-video/bg-video.component';
+import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
+import { CertificationComponent } from './component/certification/certification.component';
+import { VideoContentCrossComponent } from './component/video-content-cross/video-content-cross.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -157,7 +161,11 @@ import { NewsletterComponent } from './component/newsletter/newsletter.component
     FtWisdomExerciseComponent,
     FtAdvertComponent,
     TnAdvertComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    BgVideoComponent,
+    VideoYoutubeComponent,
+    CertificationComponent,
+    VideoContentCrossComponent
   ],
   imports: [
     CommonModule,
@@ -213,6 +221,7 @@ import { NewsletterComponent } from './component/newsletter/newsletter.component
     TranscriptHeaderComponent,
     TranscriptContentComponent,
     PyramidContentComponent,
+    CertificationComponent,
     YesnoComponent,
     SingleSelectComponent,
     MultiSelectComponent,
@@ -257,7 +266,10 @@ import { NewsletterComponent } from './component/newsletter/newsletter.component
     FtWisdomExerciseComponent,
     FtAdvertComponent,
     TnAdvertComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    BgVideoComponent,
+    VideoYoutubeComponent,
+    VideoContentCrossComponent,
   ]
 })
 export class SharedModule { }

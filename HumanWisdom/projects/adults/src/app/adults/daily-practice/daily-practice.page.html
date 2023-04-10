@@ -20,6 +20,8 @@
 </div>
 <!-- /top navigation --> 
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_01">
   <!-- class -->
@@ -83,7 +85,7 @@
                               <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
                                 <source [src]="videoLink" type="video/mp4">                                              
                               </video>  -->
-                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" > 
+                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" onplay="Logevent('click_play_video_breathing_exercise')" > 
                                 <source [src]="videoLink" type="video/mp4" >                                               
                               </video> 
                             </div>
@@ -224,7 +226,7 @@
                           </div>
                           
                           <div class="row tcenter">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem" *ngIf="audioLink !== ''">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container" *ngIf="audioLink !== ''">
                               <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="Logevent('click_play_audio_meditation')" #audio ></ngx-circular-player>
                             </div>
                           </div>

@@ -46,6 +46,8 @@
 <!-- /onscrolled header -->
 <!-- /top navigation -->
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col safari mc_01">
   <!-- Class -->
@@ -76,7 +78,7 @@
 
                 <div class="row mt30px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-2 col-sm-3 col-xs-3">
+                    <div class="col-md-2 col-sm-3 col-xs-3 circular-player-container">
                       <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dm_play.svg" alt="" class="crimg"> -->
 
                       <ngx-circular-player id="aud3"  
@@ -109,7 +111,7 @@
                 </div>
               </div>
 
-              <!-- get help now -->
+              <!-- feel better now -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
                 <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
@@ -123,7 +125,7 @@
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="">
                                   <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
-                                    Get help now!
+                                    Feel better now!
                                   </h2>
                                 </div>
                               </div>
@@ -162,9 +164,9 @@
                 </div>
               </div>
               <!-- /accordion -->
-              <!-- /get help now -->
+              <!-- /feel better now -->
               
-              <!-- modules to explore -->
+              <!-- topics to explore -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
                 <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
@@ -178,7 +180,7 @@
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="">
                                   <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
-                                    Modules to explore
+                                    Topics to explore
                                   </h2>
                                 </div>
                               </div>
@@ -261,7 +263,7 @@
                 </div>
               </div>
               <!-- /accordion -->
-              <!-- /modules to explore -->
+              <!-- /topics to explore -->
               
               <!-- life stories -->
               <!-- accordion -->
@@ -534,7 +536,7 @@
               <!-- /accordion -->
               <!-- /guided questions -->
               
-              <!-- wisdom shorts -->
+              <!-- short videos -->
               <!-- accordion -->
               <div class="row mlr-10px_01 accordion_row">
                 <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
@@ -548,7 +550,7 @@
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
                                   <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
-                                    Wisdom shorts
+                                    Short videos
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
@@ -592,7 +594,7 @@
                 </div>
               </div>
               <!-- /accordion -->
-              <!-- /wisdom shorts -->
+              <!-- /short videos -->
 
               <!-- podcasts -->
               <!-- accordion -->
@@ -783,6 +785,107 @@
               </div>
               <!-- /accordion -->
               <!-- /guided meditation -->
+
+              <!-- blog -->
+              <!-- accordion -->
+              <div class="row mlr-10px_01 accordion_row ">
+                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
+                  <div class="panel-group dpanelgroup" id="accordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading p0">
+                        <h4 class="panel-title dpaneltitle">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_blogs" aria-expanded="true">
+
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
+                                    Blogs
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                  <a routerLink="/adults/blog" >
+                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                      View all
+                                    </h2>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="ca_blogs" class="panel-collapse collapse in">
+                        <div class="panel-body p0 m-1px">
+
+                          <div class="row cmr-10px">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv dinline_box">
+                              <!-- blog 1 -->
+                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
+                                <a class="center_flex" href="/blog/blog-article?sId=33">
+                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/24.jpg"  alt="" class="w100 c150px">
+                                  </div>
+                                  
+                                  <div class="col-md-9 col-sm-10 col-xs-9">
+                                    <div class="row">
+                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize">
+                                            Obesity is a dysfunction of thinking
+                                          </h6>
+                                        </div>
+                                      </div>
+
+                                      <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
+                                          Obesity is a mental state, brought on by boredom and disappointment’. CyrilConnolly.
+                                        </h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <!-- /blog 1 -->
+
+                              <!-- blog 2 -->
+                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
+                                <a class="center_flex" href="/blog/blog-article?sId=39">
+                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/30.jpg"  alt="" class="w100 c150px">
+                                  </div>
+                                  
+                                  <div class="col-md-9 col-sm-10 col-xs-9">
+                                    <div class="row">
+                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize">
+                                            Wisdom can prevent addiction
+                                          </h6>
+                                        </div>
+                                      </div>
+
+                                      <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
+                                          Addiction is a problem of thinking. Wisdom can prevent it, and save lives.
+                                        </h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <!-- /blog 2 -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /accordion -->
+              <!-- /blog -->
 
               <div class="row center_flex dm_eot">
                 <div class="col-md-12 col-sm-12 col-xs-12">

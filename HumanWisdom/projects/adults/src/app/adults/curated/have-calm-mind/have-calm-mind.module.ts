@@ -9,7 +9,6 @@ import { HaveCalmMindPageRoutingModule } from './have-calm-mind-routing.module';
 import { HaveCalmMindPage } from './have-calm-mind.page';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
-
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({

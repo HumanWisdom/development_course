@@ -154,8 +154,9 @@ export class S23167Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-
+localStorage.setItem("pageaction", 'next')
 this.router.navigate(['/adults/happiness/s23178'])
+if (this.userId === 563) return;
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
     "ScrNumber":this.screenNumber,  
@@ -170,6 +171,7 @@ this.router.navigate(['/adults/happiness/s23178'])
 
 }
 prev(){
+  localStorage.setItem("pageaction", 'prev')
   this.router.navigate(['/adults/happiness/s23166'])
 
 

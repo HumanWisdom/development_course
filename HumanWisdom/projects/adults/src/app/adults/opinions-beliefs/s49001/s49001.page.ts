@@ -25,7 +25,7 @@ export class S49001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   opinionsandbeliefsResume=sessionStorage.getItem("opinionsandbeliefsResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/49.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
@@ -36,6 +36,7 @@ export class S49001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(49);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

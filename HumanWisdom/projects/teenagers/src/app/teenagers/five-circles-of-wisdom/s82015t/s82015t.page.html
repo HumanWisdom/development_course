@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In living with wisdom, which is our last circle, we are going to apply our understanding to various aspects of our life, including subjects like happiness, stress, and relationships. With this wisdom, you can live with a sense of peace and have a rich inner life. You begin to change and this change occurs through a deeper understanding of yourself, and often without effort. It doesn’t mean you withdraw from the world - not at all - but just engage with it in a much more meaningful and happier way. In the next screen you can explore each of the 15 modules we have created to help you live with wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

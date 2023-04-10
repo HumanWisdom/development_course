@@ -1,0 +1,70 @@
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
+          What is Wisdom?
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          Being a teenager can be challenging at times. There are so many pressures to deal with - stress, anxiety, social media, school, exams, friendships, not being sure what the future holds, and sometimes dealing with parents who do not always understand you. You can meet all these challenges much more easily if you have a deeper understanding of yourself - which leads to wisdom.
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/what-is-wisdom']" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_purple_blue" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/what-is-wisdom/s79002">
+      <div class="row crow box bg_purple_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Discover wisdom, find peace
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              15 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>     
+    
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>

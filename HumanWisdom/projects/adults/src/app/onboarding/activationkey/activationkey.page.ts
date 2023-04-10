@@ -47,7 +47,7 @@ export class ActivationkeyPage implements OnInit {
   }
 
   goToLogin(){
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
   verifyActivationKey(){
     this.service.verifyActivationKey(this.activationCode,this.userId, 'IND')

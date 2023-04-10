@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-all-stories',
@@ -20,11 +21,17 @@ export class AllStoriesPage implements OnInit {
   
   constructor(private router: Router,
     private service:AdultsService,
-    private location:Location) { }
+    private location:Location,
+    private meta: Meta, private title: Title) { }
 
   ngOnInit() {
     this.getStories()
-  
+    this.title.setTitle('Transform Your Life with Wisdom Stories')
+    this.meta.updateTag({ property: 'title', content: 'Transform Your Life with Wisdom Stories' })
+    this.meta.updateTag({ property: 'description', content: 'Discover the transformative impact of wisdom through the real-life stories of adults and find ways to apply it in your life.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Wisdom stories for adults,Inspiring stories for adults,Life lessons from stories,Adult wisdom tales,Uplifting stories for adults,Motivational stories for grown-ups,Adult storytelling,Personal growth through stories,Life-changing stories for adults,Empowering adult stories' })
+
+
   }
   goBack(){
     this.location.back()
@@ -40,8 +47,9 @@ export class AllStoriesPage implements OnInit {
           if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F' || localStorage.getItem("Subscriber")=='0' ) {
 
             res = new Array()
-            res = dateres.filter(p => p.ScenarioID >= 1 && p.ScenarioID <= 3)
+            res = dateres.filter(p => p.ExclFromChild === "True")
             res.forEach(element => {
+              dateres.splice(dateres.indexOf(element),1)
               dateres.unshift(element)
             });
 

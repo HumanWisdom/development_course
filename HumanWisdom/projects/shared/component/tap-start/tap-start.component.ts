@@ -19,7 +19,7 @@ export class TapStartComponent implements OnInit,AfterViewInit {
   
   @ViewChild('screen', { static: true }) screen: any;
 
-
+  pageaction = localStorage.getItem("pageaction");
   constructor( private captureService:NgxCaptureService,
     private aservice:AdultsService,
     private router:Router) { 

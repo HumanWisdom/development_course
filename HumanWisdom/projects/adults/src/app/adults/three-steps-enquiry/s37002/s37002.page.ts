@@ -81,7 +81,7 @@ export class S37002Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/three-steps-enquiry/s37003'])
+   
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -112,7 +112,7 @@ export class S37002Page implements OnInit, OnDestroy {
     // this.router.navigate(['/adults/three-steps-enquiry/s37002'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
+    this.router.navigate(['/adults/three-steps-enquiry/s37003'])
     if (this.userId !== 563) this.submitProgress()
 
   }

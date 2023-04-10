@@ -11,9 +11,9 @@ import {Location } from '@angular/common'
 })
 export class S34014Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_green"
-  bg_cft="bg_green"
-  bg="bg_green"
+  bg_tn="bg_purple_blue"
+  bg_cft="bg_purple_blue"
+  bg="purple_blue_w2"
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -86,6 +86,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/key-ideas/s34015'])
 
     this.service.submitProgressText({
@@ -110,6 +111,7 @@ createScreen(){
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/key-ideas/s34013'])
 
   }

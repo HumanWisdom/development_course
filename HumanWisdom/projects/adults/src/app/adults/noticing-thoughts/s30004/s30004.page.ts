@@ -11,7 +11,7 @@ export class S30004Page implements OnInit {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w2"
+  bg = "blue_w3"
   hint = ""
 
   toc = ""
@@ -48,6 +48,38 @@ export class S30004Page implements OnInit {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
+
+    var container = document.getElementById('not04');
+
+    container.addEventListener("touchstart", startTouch.bind(this), false);
+    container.addEventListener("touchmove", moveTouch.bind(this), false);
+
+    var initialX = null;
+
+    function startTouch(e) {
+      initialX = e.touches[0].clientX;
+    };
+
+    function moveTouch(e) {
+      if (initialX === null) {
+        return;
+      }
+
+      var currentX = e.touches[0].clientX;
+
+      var diffX = initialX - currentX;
+
+      if (diffX > 0) {
+        this.submitProgress();
+      } else {
+        this.previous()
+      }
+
+      initialX = null;
+
+      e.preventDefault();
+    };
+
   }
 
   createScreen() {
@@ -71,7 +103,7 @@ export class S30004Page implements OnInit {
     console.log(this.reflection)
   }
 
-  submitProgress(e) {
+  submitProgress(e = '') {
     console.log(e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -100,6 +132,7 @@ export class S30004Page implements OnInit {
       })
   }
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/noticing-thoughts/s30003'])
   }
   ngOnDestroy() {

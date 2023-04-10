@@ -24,19 +24,18 @@ export class TnDashboardV03Component implements OnInit {
   roleid = 0
   url = '';
   subscriber = true;
-  isShowbookMark=false;
+  isShowbookMark = false;
   @Input()
   enableplaystore = false
   @Input()
   routeid = ''
   android = false;
   ios = false;
-  cardlist=[];
-  countryCode:any;
+  cardlist = [];
+  countryCode: any;
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
-    this.name = localStorage.getItem('name');
     if (userid === 'T') {
       this.isloggedIn = true
     }
@@ -46,20 +45,22 @@ export class TnDashboardV03Component implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       let sub: any = localStorage.getItem("Subscriber");
-      if(sub=='1'){
-         this.subscriber=true;
-         this.isShowbookMark=true;
-      }else{
-        this.subscriber=false;
-        this.isShowbookMark=false;
+      if (sub == '1') {
+        this.subscriber = true;
+        this.isShowbookMark = true;
+      } else {
+        this.subscriber = false;
+        this.isShowbookMark = false;
       }
       let userId = JSON.parse(localStorage.getItem("userId"))
 
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
         this.url = userdetail['UserImagePath'].split('\\')[1]
+        this.name = localStorage.getItem('name');
       })
-    }, 5000)
+
+    }, 9000)
     let ban = localStorage.getItem('enablebanner');
     if (ban === null || ban === 'T') {
       if (this.platform.IOS || this.platform.SAFARI) {
@@ -90,11 +91,11 @@ export class TnDashboardV03Component implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
   giftwisdom() {
@@ -107,7 +108,7 @@ export class TnDashboardV03Component implements OnInit {
     this.playstoreenable.emit(false);
   }
 
-  Subscribe(){
+  Subscribe() {
     this.router.navigate(['/onboarding/add-to-cart']);
   }
 

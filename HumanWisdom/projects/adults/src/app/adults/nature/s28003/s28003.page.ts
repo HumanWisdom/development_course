@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
 
 
+
 @Component({
   selector: 'app-s28003',
   templateUrl: './s28003.page.html',
@@ -13,7 +14,7 @@ export class S28003Page implements OnInit {
 
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
-  bg = "green_yellow_w1"
+  bg = "green_yellow_w3"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink = this.mediaVideo + '/nature/videos/1.1.mp4'
   title = "Nature meditation 1"
@@ -60,6 +61,36 @@ export class S28003Page implements OnInit {
       this.bookmark = 1
 
 
+    var container = document.getElementById('n03');
+
+    container.addEventListener("touchstart", startTouch.bind(this), false);
+    container.addEventListener("touchmove", moveTouch.bind(this), false);
+
+    var initialX = null;
+
+    function startTouch(e) {
+      initialX = e.touches[0].clientX;
+    };
+
+    function moveTouch(e) {
+      if (initialX === null) {
+        return;
+      }
+
+      var currentX = e.touches[0].clientX;
+
+      var diffX = initialX - currentX;
+
+      if (diffX > 0) {
+        this.submitProgress();
+      } else {
+        this.prev()
+      }
+
+      initialX = null;
+
+      e.preventDefault();
+    };
 
 
 
@@ -89,7 +120,8 @@ export class S28003Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/nature/s28004/next'])
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/nature/s28004'])
     this.service.submitProgressAv({
 
       "ScrNumber": this.screenNumber,
@@ -106,6 +138,7 @@ export class S28003Page implements OnInit {
     })
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/nature/s28001'])
 
 

@@ -220,6 +220,12 @@
     {
         left: 5% !important;
     }
+    
+    #bgd_video > video,
+    .bg_adverts_hwp
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 768px)
@@ -997,5 +1003,13 @@
         overflow: overlay;
         height: 75%;
         z-index: 99;
+    }
+}
+
+@media (min-width: 1366px) and (max-width: 1367px)
+{
+    .session_title
+    {
+        font-size: 35px;
     }
 }

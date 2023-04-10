@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            This is such a useful skill to learn because it can help you deal with negative emotions and thoughts that are unpleasant to bear.
+          </p>
+
+          <p>
+            It is based on a simple idea - that behind our negative feelings are negative thoughts. If we can meet a feeling without thinking - just observing it for what it is, without judging it, or even naming it, we can cut off its oxygen supply and we can feel calm straight away.
+          </p>
+
+          <p>
+            In the quietness that follows we can see more clearly and make sense of what is happening in our thinking.
+          </p>
+
+          <p>
+            It is simple, but needs practice so don’t get disheartened if you cannot master it straight away.
+          </p>
+
+          <p>
+            We have an entire module dedicated to it on the app. Do have a look. 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

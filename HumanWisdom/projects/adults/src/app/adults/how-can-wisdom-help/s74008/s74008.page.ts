@@ -14,7 +14,8 @@ export class S74008Page implements OnInit {
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w8"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink = this.mediaVideo + '/how_can_wisdom_help/videos/1.7.mp4'
+   videoLink = this.mediaVideo + '/how_can_wisdom_help/videos/1.7.mp4'
+  //videoLink = "https://www.youtube.com/embed/Qql7xTP3BF0"
   title = "Make the world better"
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_07.svg"
   userId: any
@@ -77,6 +78,7 @@ export class S74008Page implements OnInit {
   submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/how-can-wisdom-help/s74009'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
@@ -95,6 +97,7 @@ export class S74008Page implements OnInit {
   }
 
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/how-can-wisdom-help/s74007'])
   }
 

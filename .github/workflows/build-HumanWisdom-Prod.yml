@@ -21,7 +21,7 @@ jobs:
      - name: Setup nodejs
        uses: actions/setup-node@v2
        with:
-        node-version: '14'
+        node-version: '16'
 
      - name: Cache node modules
        id: cache-nodemodules
@@ -50,7 +50,7 @@ jobs:
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        ionic build --configuration=production --project="adults" -- --base-href /course/
+        ionic build --configuration=staging --project="adults" -- --base-href /course/
 
      - name: Compress the build artifacts
        run: |

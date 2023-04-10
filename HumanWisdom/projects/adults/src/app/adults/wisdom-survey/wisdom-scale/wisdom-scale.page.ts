@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AdultsService } from "../../adults.service";
+import { AdultsService } from '../../adults.service'; 
+import { LogEventService } from 'src/app/log-event.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -83,7 +85,9 @@ export class WisdomScalePage implements OnInit {
   constructor(private router: Router,
     private service: AdultsService,
     private location: Location,
-    private ac: ActivatedRoute) {
+    public logeventservice: LogEventService,
+    private ac: ActivatedRoute, 
+    private meta: Meta, private title: Title) {
 
     this.ac.queryParams.subscribe(params => {
       this.nextPath = params['page'];
@@ -96,6 +100,13 @@ export class WisdomScalePage implements OnInit {
   }
 
   ngOnInit() {
+
+    this.title.setTitle('Mindful Insights: Our Wisdom Survey for a More Fulfilling Life')
+    this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Wisdom Survey for a More Fulfilling Life'})
+    this.meta.updateTag({ property: 'description', content: 'Discover mindful insights with our wisdom survey. Share your thoughts on meditation, spirituality, and other topics related to a more fulfilling life.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Personal growth survey,Self-improvement survey,Mindfulness survey,Happiness survey,Success survey,Mental health survey,Life lessons survey,Positive mindset survey' })
+  
+
     this.createScreen()
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
@@ -277,6 +288,8 @@ export class WisdomScalePage implements OnInit {
 
 
   submitProgress() {
+    this.logeventservice.logEvent('click_survey_submit');
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

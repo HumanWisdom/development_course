@@ -155,7 +155,7 @@ export class S27016Page implements OnInit {
  submitProgress(){
   this.endTime = Date.now();
 this.totalTime = this.endTime - this.startTime;
-
+localStorage.setItem("pageaction", 'next')
 this.router.navigate(['/adults/discovering-wisdom/s27017'])
   this.service.submitProgressQuestion({"ModuleId":this.moduleId,
     "screenType":this.screenType, 
@@ -171,6 +171,7 @@ this.router.navigate(['/adults/discovering-wisdom/s27017'])
 
 }
 prev(){
+  localStorage.setItem("pageaction", 'prev')
   this.router.navigate(['/adults/discovering-wisdom/s27015'])
 
 

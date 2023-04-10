@@ -83,7 +83,8 @@ export class S53189Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    this.router.navigate(['/adults/communication/s53190'])
+    
+    
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -105,14 +106,15 @@ export class S53189Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53188'])
 
   }
 
 
   goNext() {
-    // this.router.navigate(['/adults/communication/s2'])
-
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/communication/s53190'])
 
     if (this.userId !== 563) this.submitProgress()
 

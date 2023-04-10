@@ -1,9 +1,11 @@
 <!-- <app-topnav></app-topnav> -->
 
 <!-- header -->
-<app-tn-hwp-project></app-tn-hwp-project>
+<app-tn-hwp-project [enablebookmark]="isSubscribe"></app-tn-hwp-project>
 <!-- <app-tn-dashboard-v03></app-tn-dashboard-v03> -->
 <!-- /header -->
+
+<app-bg-video></app-bg-video>
 
 <!-- page content -->
 <div class="right_col mc_01">
@@ -69,13 +71,13 @@
                       </h6>
                     </a>
                   </div> -->
-                  <a class=""  (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')" >
+                  <a class="" (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')">
                     <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
                       Edit Profile
                     </h6>
                   </a>
                   <hr class="vhr_01">
-                  <a class=""  (click)="Logevent('/onboarding/change-password', '', 'click_change_password')"   >
+                  <a class="" (click)="Logevent('/onboarding/change-password', '', 'click_change_password')">
                     <h6 class="fw_500 fs_12px lh_14px fc_ffc455 underline mtb0px">
                       Change Password
                     </h6>
@@ -218,7 +220,7 @@
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-9 p0 tleft">
                     <h4 class="fw_400 fs_12px lh_14px fc_5d5d5d">
-                      12% up since last survey
+                      {{score}}% {{direction}} since last survey
                     </h4>
                   </div>
                 </div>
@@ -387,24 +389,24 @@
                       <div class="col-md-6 col-sm-6 col-xs-6">
                         <h4 class="fw_700 fs_12px lh_14px fc_5d5d5d mtb0px">
                           Certificates
-                        </h4> 
+                        </h4>
                       </div>
                       <div class="col-md-6 col-sm-6 col-xs-6 tright">
                         <a>
                           <h4 class="fw_500 fs_12px lh_130p fc_c4c4c4 mtb0px">
                             <span class="pr5px">
                               Details
-                            </span>                        
+                            </span>
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/angle_right_blue.svg" alt="" class="p0">
-                          </h4>       
-                        </a>                        
+                          </h4>
+                        </a>
                       </div>
-                      
+
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_400 fs_12px lh_14px fc_adadad mt5b0px">
                         No certificates earned yet
-                      </h4> 
+                      </h4>
                     </div>
                   </div>
 
@@ -437,17 +439,17 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <hr class="hr_style_4">
                 </div>
-                
+
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <a (click)="deleteMyData()">
                     <h4 class="fw_500 fs_12px lh_130p fc_1092a7 dmd">
                       Delete my data
-                    </h4>       
-                  </a>   
+                    </h4>
+                  </a>
                   <!-- <button type="submit" class="btn btn-default" (click)="deleteMyData()">
                     <h4 class="fw_500 fs_12px lh_130p fc_1092a7 dmd">
                       Delete my data
-                    </h4>       
+                    </h4>
                   </button>  -->
                 </div>
 
@@ -456,7 +458,7 @@
                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                   delete my data modal
                 </button>
-                
+
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">

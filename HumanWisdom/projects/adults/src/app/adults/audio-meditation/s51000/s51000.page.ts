@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
 
@@ -35,7 +36,8 @@ export class S51000Page implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private service: AdultsService,
-    private location: Location
+    private location: Location,
+    private meta: Meta, private title: Title
   ) {
     this.getaudiomeditation()
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
@@ -66,7 +68,16 @@ export class S51000Page implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // continue where you left    
+
+    this.title.setTitle('Relaxation Meditations for Sleep and Calmness')
+    this.meta.updateTag({ property: 'title', content: 'Relaxation Meditations for Sleep and Calmness' })
+    this.meta.updateTag({ property: 'description', content: 'Enhance your sleep and find inner peace with our relaxation meditation sessions. Guided audio meditations for a calm mind and body.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Audio Meditation,Guided Meditation,Mindfulness Meditation,Relaxation Meditation,Stress Relief Meditation,Sleep Meditation,Calmness Meditation,Peaceful Meditation,Focus Meditation' })
+
+
+
+
+    // continue where you left
     let last = localStorage.getItem('lastvisited');
     if (last === 'T') {
       this.lastvisited = true;
@@ -143,13 +154,18 @@ export class S51000Page implements OnInit, OnDestroy {
     this.location.back()
   }
 
-  audiopage(audiofile, title) {
+  audiopage(audiofile, title, RowID) {
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title])
+    this.router.navigate(['/adults/curated/audiopage', audioLink, title, RowID])
   }
 
   audioevent(data) {
-    this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title']])
+    let sub: any = localStorage.getItem("Subscriber")
+    if (sub == 0 && data['RowID'] >= 4) {
+      this.router.navigate(['/onboarding/free-limit']);
+    } else {
+      this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
+    }
   }
 }

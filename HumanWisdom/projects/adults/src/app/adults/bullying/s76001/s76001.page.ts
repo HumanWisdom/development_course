@@ -27,7 +27,7 @@ export class S76001Page implements OnInit, OnDestroy {
   bookmarkList = []
   bullyingResume = sessionStorage.getItem("bullyingResume")
 
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/bullying.png"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.png"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
@@ -55,6 +55,7 @@ export class S76001Page implements OnInit, OnDestroy {
       this.stories = splitarr
     }
   */ {
+    this.service.setmoduleID(76);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -156,6 +157,14 @@ export class S76001Page implements OnInit, OnDestroy {
   }
   goBack() {
     this.location.back()
+  }
+
+  youtube(link) 
+  {
+    this.router.navigate(['/adults/curated/youtubelink', link],{
+    state: {
+      class: this.bg,
+    }})
   }
 
 }

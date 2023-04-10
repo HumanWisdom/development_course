@@ -1,10 +1,13 @@
 <app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-multi-select [bg]="bg">
+
   <form>
+
     <h4 class="txt4">
     {{question}}
     </h4>
+
     <div class="clearfix"></div>
 
     <h6 class="txt5 pb10p">
@@ -25,7 +28,7 @@
                   </svg>
                 </span>
                 <span class="txt46 cb_span">
-                 {{o.OptStr}}
+                  {{o.OptStr}}
                 </span>
               </label>
               <!--SVG Sprites-->
@@ -39,13 +42,13 @@
           </a>
         </div>
       </div>
-
       <br>
-
     </div>
   
     <div class="pagebreak"></div>
+
   </form>      
+
 </app-multi-select>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

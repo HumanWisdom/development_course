@@ -14639,7 +14639,6 @@ input[type="number"] {
   font-size: 16px;
   line-height: 19px;
   color: #243949;
-  transition: none !important;
   min-width: 0%;
   white-space: nowrap;
 }
@@ -30950,7 +30949,7 @@ svg path
 /* /adverts hamburger */
 
 .rtltext {
-  animation: fadeInRight ease-in-out;
+  animation: fadeInRight linear;
 }
 
 @keyframes fadeInRight {
@@ -30960,7 +30959,7 @@ svg path
 }
 
 .ltrtext {
- animation: fadeInLeft;
+ animation: fadeInLeft linear;
 }
 
 @keyframes fadeInLeft {
@@ -31340,3 +31339,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 {
   background: none !important;
 }
+.circular-player-container {
+  transform: rotate(-360deg) scaleX(-1);
+}
+

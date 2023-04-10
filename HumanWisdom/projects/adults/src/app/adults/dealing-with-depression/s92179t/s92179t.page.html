@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The most common type of depression often results from an automatic reaction from our thinking to an external event, our painful past, a feeling of emptiness or a disappointment with our own life - if it is too much to cope with, our nervous system responds by shutting down - it is a way of us protecting ourselves from even more emotional pain.
+          </p>
+
+          <p>
+            How we feel depends on how we think. Behind every feeling is a thought.
+          </p>
+
+          <p>
+            If we can change how we think, or see others, or the world around us, we can change how we feel. We have explored in session One how the mind is reactive and convinces us what we think and feel is true. Being able to question our certainties and initial perception can be the beginning of freedom.
+          </p>
+
+          <p>
+            As we recover from our depression we are often faced with the same realities that triggered our depression in the first place, and that can be painful. We will explore the power of acceptance in helping us recover and deal with those challenges.
+          </p>
+
+          <p>
+            Sometimes our pain is from unresolved trauma from our past - a bereavement perhaps, or a painful memory when someone disappointed us or treated us badly - we will explore how we can leave the past behind and live fully in the present.
+          </p>
+
+          <p>
+            This journey of learning about yourself and exploring different ways of thinking and being is not always easy - and needs curiosity, and an open mind. Begin gently, and keep going. Let’s get started.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

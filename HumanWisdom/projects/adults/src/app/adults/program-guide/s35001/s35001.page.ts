@@ -28,7 +28,7 @@ export class S35001Page implements OnInit,OnDestroy {
   bookmarkList=[]
   
   pgResume=sessionStorage.getItem("pgResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/program_guide.jpg"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/35.png"
   tocColor="white"
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
   lastvisited = false;
@@ -40,6 +40,7 @@ export class S35001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(35);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

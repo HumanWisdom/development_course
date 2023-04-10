@@ -1,5 +1,4 @@
-<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"
-  [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-single-select [bg]="bg">
 
@@ -22,6 +21,7 @@
     <div *ngFor="let o of optionList">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12  p0">
+
           <div *ngIf="!o.CorrectAns">
             <!-- <a class="sb_anchor" data-toggle="modal" [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" > -->
             <a class="sb_anchor" (click)="checkOption(o)" data-toggle="modal" data-target="#lab-slide-bottom-popup">
@@ -57,79 +57,9 @@
 
         </div>
       </div>
+      
       <br>
-      <!-- [attr.id]="'lab-slide-bottom-popup'+o.OptId"
-      [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" -->
-
-      <!-- <div class="modal fade" [attr.id]="'lab-slide-bottom-popup'+o.OptId" data-keyboard="false" data-backdrop="false">
-        <div class="row center_flex">
-          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ss_col">
-            <div class="lab-modal-body">    
-              <div class="row center_flex">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tright">
-                  <button type="button" class="btn btn-default btn_ssclose" data-dismiss="modal">
-                    <i class="fa fa-close"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h3 class="txt10">
-                    You have selected the wrong answer. Please try again.
-                  </h3>    
-                </div>
-              </div>                    
-  
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
-
-
-
-
-
-    <!-- <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a>
-          <div class="box select_box fleft">
-            <h3 class="txt9 ctxt9">
-              Hearing others tell you how good you are
-            </h3>    
-          </div>                    
-        </a>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a>
-          <div class="box select_box fleft">
-            <h3 class="txt9 ctxt9">
-              Comparing yourself to others who are better than you
-            </h3>    
-          </div>                    
-        </a>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a>
-          <div class="box select_box fleft">
-            <h3 class="txt9 ctxt9">
-              Being conscious of the unconscious process of comparison
-            </h3>    
-          </div>                    
-        </a>
-      </div>
-    </div> -->
 
     <!-- modal test -->
     <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
@@ -154,6 +84,7 @@
     <!-- /modal test -->
 
   </form>
+
 </app-single-select>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

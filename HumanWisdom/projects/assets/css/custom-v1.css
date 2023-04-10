@@ -1,0 +1,195 @@
+/* certificate */
+.outer-rec {
+  position: absolute;
+  width: 100%;
+  height: 1350px;
+  background-repeat: no-repeat !important;
+  background-size: 101% 46% !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/outer-rec.png); */
+   background: url(../images/outer-rec.png);
+  top: 9%;
+}
+
+.inner-rec {
+  margin-left: 9%;
+  position: absolute;
+  top: 3%;
+  width: 82%;
+  height: 90%;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/inner-rec.png); */
+  background: url(../images/inner-rec.png);
+  background-repeat: no-repeat !important;
+  background-size: 100% 44% !important;
+}
+
+.inner-icon {
+  position: absolute;
+  top: 3.35%;
+  height: 5%;
+  width: 15%;
+  background-size: 50px 55px !important;
+  background-repeat: no-repeat !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/inner-icon.png); */
+   background: url(../images/inner-icon.png);
+}
+
+.cert-h1 {
+    font-family: "Merriweather";
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+    position: absolute;
+    top: 8.98%;
+}
+
+.vector {
+  width: 3rem;
+}
+
+.cert-txt {
+  font-family: "Merriweather";
+  font-size: 1.17rem;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cert-txt1 {
+  position: absolute;
+  top: 17.6%;
+  font-family: "Merriweather";
+  font-size: 1rem;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cert-txt2 {
+    position: absolute;
+    top: 20.59%;
+    font-family: "Merriweather";
+    font-style: normal;
+    font-size: 2.4rem;
+    text-align: center;
+    color: #FFC455;
+}
+
+.cert-txt3 {
+    position: absolute;
+    top: 27.3%;
+    font-family: "Merriweather";
+    font-style: normal;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+.cert-txt3-1 {
+  position: absolute;
+  top: 29.3%;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cert-logo {
+  position: absolute;
+  left: 22.13%;
+  height: 5%;
+  width: 20%;
+  margin-top: -15px;
+  background-size: 60px 50px !important;
+  background-repeat: no-repeat !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/human-wisdom-icon.png);  */
+  background: url(../images/human-wisdom-icon.png);
+}
+
+.cert-txt4 {
+    position: absolute;
+    margin-left: 1.8rem;
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cert-txt5 {
+  margin-top: 0.95rem;
+  margin-left: 3.2rem;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.cert-txt6 {
+  position: absolute;
+  top: 44.99%;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: center;
+  color: #FFC455;
+}
+
+.vector-3 {
+  position: absolute;
+  left: 7.5%;
+  top: 2.35%;
+  height: 5%;
+  width: 17%;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-2.png); */
+   background: url(../images/Vector-2.png);
+}
+
+.vector-4 {
+  position: absolute;
+  left: 78.75%;
+  top: 38.50%;
+  height: 10%;
+  width: 19.75%;
+  background-size: 70% 47% !important;
+  background-repeat: no-repeat !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-1.png); */
+  background: url(../images/Vector-1.png);
+}
+
+.m-top{
+  margin-top:73rem;
+}
+.m-top10{
+  margin-top:10%;
+}
+.p-bottom{
+  padding-bottom:2rem;
+}
+.p-bottom3{
+  padding-bottom:3rem;
+}
+.m-top26{
+  margin-top: 26rem;
+}
+
+.m-top13
+{
+  margin-top: 15rem;
+}
+.m-left3
+{
+  margin-left: -4.5rem;
+}
+.m-right3
+{
+  margin-right: -4.5rem;
+}
+/* /certficate */

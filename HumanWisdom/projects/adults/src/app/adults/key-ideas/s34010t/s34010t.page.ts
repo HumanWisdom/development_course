@@ -62,6 +62,7 @@ export class S34010tPage implements OnInit {
     sessionStorage.setItem("bookmark34010",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/key-ideas/s34011'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -79,6 +80,7 @@ export class S34010tPage implements OnInit {
     
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/key-ideas/s34009'])
   }
 

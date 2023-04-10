@@ -13,7 +13,9 @@ export class S28005Page implements OnInit {
 
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
-  bg = "green_yellow_w1"
+
+  bg = "green_yellow_w3"
+
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink = this.mediaVideo + '/nature/videos/1.3.mp4'
   title = " Nature meditation 3"
@@ -36,8 +38,6 @@ export class S28005Page implements OnInit {
   avDuration: any
 
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
-  ispageright = ''
-
 
   constructor(
     private router: Router,
@@ -47,13 +47,6 @@ export class S28005Page implements OnInit {
   ngOnInit() {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    let m: any = window.location.href;
-    m = m.split('/')
-    if (m.at(-1) === 'next') {
-      this.ispageright = 'next';
-    } else if (m.at(-1) === 'prev') {
-      this.ispageright = 'prev';
-    }
 
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
@@ -67,6 +60,36 @@ export class S28005Page implements OnInit {
       this.bookmark = 1
 
 
+    var container = document.getElementById('n05');
+
+    container.addEventListener("touchstart", startTouch.bind(this), false);
+    container.addEventListener("touchmove", moveTouch.bind(this), false);
+
+    var initialX = null;
+
+    function startTouch(e) {
+      initialX = e.touches[0].clientX;
+    };
+
+    function moveTouch(e) {
+      if (initialX === null) {
+        return;
+      }
+
+      var currentX = e.touches[0].clientX;
+
+      var diffX = initialX - currentX;
+
+      if (diffX > 0) {
+        this.submitProgress();
+      } else {
+        this.prev()
+      }
+
+      initialX = null;
+
+      e.preventDefault();
+    };
 
 
 
@@ -98,6 +121,9 @@ export class S28005Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/nature/s28006'])
+    localStorage.setItem("pageaction", 'next')
+    if (this.userId === 563) return;
+
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -112,13 +138,10 @@ export class S28005Page implements OnInit {
       localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
     })
 
-
-
-
   }
   prev() {
-    this.router.navigate(['/adults/nature/s28004/prev'])
-
+    localStorage.setItem("pageaction", 'prev')
+    this.router.navigate(['/adults/nature/s28004'])
 
   }
   ngOnDestroy() {

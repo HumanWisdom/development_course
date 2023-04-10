@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'HumanWisdom-wisdom-for-workplace',
   templateUrl: './wisdom-for-workplace.page.html',
@@ -19,11 +21,20 @@ export class WisdomForWorkplacePage implements OnInit {
   successandfailureP:any
   relationshipsP:any
   bullyingP:any
-  making_better_decisionsP
+  making_better_decisionsP: any
+  criticismP: any
+  opinionsandbeliefsP: any
 
-  constructor(private service: AdultsService, private router: Router,private location:Location) { }
+  constructor(private service: AdultsService, private router: Router,private location:Location,
+     private meta: Meta, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('Wisdom at Work: Strategies for Career Growth and Development')
+    this.meta.updateTag({ property: 'title', content: 'Wisdom at Work: Strategies for Career Growth and Development' })
+    this.meta.updateTag({ property: 'description', content: 'Discover wisdom and insights for career growth and development. Find strategies for effective communication, time management, and more.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Professional development,Leadership skills,Effective communication,Time management techniques,Boosting productivity,Workplace wisdom,Wisdom at work,Workplace insights,Leadership tips' })
+
+
     localStorage.setItem('curated', 'workplace');
     let rem = localStorage.getItem('remember');
     if(!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
@@ -338,6 +349,70 @@ export class WisdomForWorkplacePage implements OnInit {
         })
   }
 
+  routeCriticism(cont: any = 1) {
+    var criticismResume
+    localStorage.setItem("moduleId", JSON.stringify(16))
+    this.service.clickModule(16, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        criticismResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("criticismResume", criticismResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/criticism/${criticismResume}`])
+          }
+          else
+            this.router.navigate([`/adults/criticism/s324`])
+        })
+  }
+
+  routeOpinionsAndBeliefs(cont: any = 1) {
+    var opinionsandbeliefsResume
+    localStorage.setItem("moduleId", JSON.stringify(49))
+    this.service.clickModule(49, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        opinionsandbeliefsResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("opinionsandbeliefsResume", opinionsandbeliefsResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/opinions-beliefs/${opinionsandbeliefsResume}`])
+          }
+          else
+            this.router.navigate([`/adults/opinions-beliefs/s49001`])
+        })
+  }
+
   getProgress(){
     this.service.getPoints(this.userId)
     .subscribe(res=>{
@@ -366,6 +441,8 @@ export class WisdomForWorkplacePage implements OnInit {
      this.relationshipsP=res.ModUserScrPc.find(e=>e.Module=="Relationships")?.Percentage
      this.bullyingP=res.ModUserScrPc.find(e=>e.Module=="Bullying")?.Percentage
      this.making_better_decisionsP=res.ModUserScrPc.find(e=>e.Module=="Making better decisions")?.Percentage
+     this.criticismP = res.ModUserScrPc.find(e => e.Module == "Criticism")?.Percentage
+     this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
     })
   }
 }

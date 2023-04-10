@@ -1,6 +1,7 @@
 import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { OnboardingService } from 'src/app/onboarding/onboarding.service';
@@ -20,7 +21,7 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('closecookiemodal') closecookiemodal: ElementRef;
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-  @ViewChild('journelsignuplogin') journelsignuplogin: ElementRef;
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   //get global settings here
   public text = 2
@@ -44,6 +45,7 @@ export class AdultDashboardPage implements OnInit {
   public resume = []
   public bookmarkLength: any
   searchinp = '';
+  public dash = false;
   //static progress mapping
   public angerP: any
   public comparisonP: any
@@ -135,10 +137,12 @@ export class AdultDashboardPage implements OnInit {
   hcwhP: any
   public moduleList = [];
   public exerciseNo: string = '';
-  public Title:string='';
+  public Title: string = '';
   public day: string = '';
   public bullyingP: any
   public making_better_decisionsP: any
+  public dealingwithdepressionP: any
+  public externalapprovalP: any
   //static progress mapping
   public wisdomExerciseList = [];
   mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
@@ -146,7 +150,7 @@ export class AdultDashboardPage implements OnInit {
   mediaPercent: any
   freeScreens = []
   currentList = [];
-  maxExceriseCount="12;"
+  maxExceriseCount = "12;"
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -159,16 +163,16 @@ export class AdultDashboardPage implements OnInit {
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
     public platform: Platform,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService, private meta: Meta, private title: Title
   ) {
     // let remem = localStorage.getItem("remember")
     // if (remem === null || remem === 'F') {
     //   localStorage.setItem('isloggedin', 'F')
     //   localStorage.setItem('guest', 'T')
-    //   this.router.navigate(['/onboarding/login'])
+    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
 
-    this.logeventservice.logEvent('ga4sampletest');
+    this.logeventservice.logEvent('view_adult-dashboard');
 
     setTimeout(() => {
       this.getModuleList();
@@ -198,7 +202,7 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
           localStorage.setItem('guest', 'T');
-          // this.router.navigate(['/onboarding/login'])
+          // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
       }, error => {
         localStorage.setItem("email", 'guest@humanwisdom.me');
@@ -300,12 +304,12 @@ export class AdultDashboardPage implements OnInit {
     // $("#signuplogin").modal("hide");
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
-      this.journelsignuplogin.nativeElement.click();
+      this.enablepopup.nativeElement.click();
     }
   }
 
@@ -322,6 +326,14 @@ export class AdultDashboardPage implements OnInit {
   }
 
   ngOnInit() {
+
+    this.title.setTitle('Human Wisdom App: Personal Growth & Self-Help')
+    this.meta.updateTag({ property: 'title', content: 'Human Wisdom App: Personal Growth & Self-Help' })
+    this.meta.updateTag({ property: 'description', content: 'Discover the ultimate tool for personal growth and self-help with the Human Wisdom app. Get daily inspiration, mindfulness practices, and effective techniques for managing anger and stress, building better relationships, improving self-esteem, overcoming addiction, thriving at work and in leadership, managing money and love, living with peace, dealing with death, handling criticism, navigating success and failure, making better decisions, and shaping opinions and beliefs.' })
+    this.meta.updateTag({ property: 'keywords', content: 'human wisdom, app, personal growth, self-help, daily inspiration, mindfulness practices, anger management, stress management, relationships, self-esteem, addiction, work, workplace, leadership, money, love, food and health, living with peace, dealing with death, criticism, success and failure, decision making, opinions and beliefs' })
+
+    this.logeventservice.logEvent('view_home_page');
+    this.dash = this.router.url.includes('adult-dashboard');
     this.getuserDetail();
     setTimeout(() => {
       this.getUserPreference()
@@ -428,7 +440,7 @@ export class AdultDashboardPage implements OnInit {
         }
       });
     }, 3000)
-
+    localStorage.setItem("pageaction", 'next')
   }
 
   curatedDash(name: any) {
@@ -535,6 +547,11 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
+  }
+
+
   // solving global problems
   solving_global_problems(url, id) {
     this.service.clickModule(id, this.userId)
@@ -587,7 +604,7 @@ export class AdultDashboardPage implements OnInit {
   subscribenow() {
     // if(localStorage.getItem("email") === 'guest@humanwisdom.me'){
     //   localStorage.setItem("subscribepage", 'T')
-    //   this.router.navigate(['/onboarding/login'])
+    //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // } else {
     //   this.router.navigate(['/onboarding/add-to-cart'])
     // }
@@ -721,7 +738,7 @@ export class AdultDashboardPage implements OnInit {
                 {
                   this.service.verifyUser(this.userId)
                   .subscribe(res=>{
-                    
+
                   })
                 }*/
 
@@ -866,7 +883,7 @@ export class AdultDashboardPage implements OnInit {
                   {
                     this.service.verifyUser(this.userId)
                     .subscribe(res=>{
-                      
+
                     })
                   }*/
 
@@ -1021,7 +1038,7 @@ export class AdultDashboardPage implements OnInit {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    this.router.navigate([]).then(() => { window.open('/adults/help-support/cookie-policy', '_blank'); });
+    this.router.navigate([]).then(() => { window.open('/cookies-policy', '_blank'); });
   }
 
   socialLogin() {
@@ -1132,7 +1149,7 @@ export class AdultDashboardPage implements OnInit {
       this.isSubscribe = true;
     }
     let guest = localStorage.getItem('guest');
-   // if (guest === 'T') localStorage.setItem('guest', 'F')
+    // if (guest === 'T') localStorage.setItem('guest', 'F')
     if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
     else localStorage.setItem("guest", 'F')
 
@@ -1225,7 +1242,7 @@ export class AdultDashboardPage implements OnInit {
             this.isSubscribe = true;
           }
           let guest = localStorage.getItem('guest');
-         // if (guest === 'T') localStorage.setItem('guest', 'F')
+          // if (guest === 'T') localStorage.setItem('guest', 'F')
           if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
           else localStorage.setItem("guest", 'F')
           sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
@@ -1250,8 +1267,8 @@ export class AdultDashboardPage implements OnInit {
           this.modaldata['email'] = localStorage.getItem('email');
           this.modaldata['firstname'] = namedata[0];
           this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-         // this.getProgress()
-         // this.freescreens();
+          // this.getProgress()
+          // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -1278,7 +1295,7 @@ export class AdultDashboardPage implements OnInit {
             this.getProgress()
             this.freescreens();
             this.getBookmarks()
-           }, 1000);
+          }, 1000);
 
           if (res.UserId == 0) {
 
@@ -1434,7 +1451,7 @@ export class AdultDashboardPage implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
 
   friendName(value) {
@@ -1493,7 +1510,7 @@ export class AdultDashboardPage implements OnInit {
         this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
         this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
         this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        this.guideP = res.ModUserScrPc.find(e => e.Module == "User Guide")?.Percentage
+        this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
         this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
         this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of Enquiry")?.Percentage
         this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
@@ -1540,6 +1557,8 @@ export class AdultDashboardPage implements OnInit {
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
         this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
         this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
+        this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
+        this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
       })
 
   }
@@ -1556,7 +1575,7 @@ export class AdultDashboardPage implements OnInit {
 
   }
   routeResume(r) {
-
+    localStorage.setItem("pageaction", 'next')
     switch (r.ModuleId.toString()) {
       case "07": {
         this.routeComparison(1)
@@ -1766,6 +1785,14 @@ export class AdultDashboardPage implements OnInit {
         this.routeMakingBetterDecisions(1)
         break
       }
+      case "92": {
+        this.routeDealingWithDepression(1)
+        break
+      }
+      case "91": {
+        this.routeExternalApproval(1)
+        break
+      }
     }
   }
 
@@ -1901,7 +1928,7 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/key-ideas/s34001`])
           /*if(!this.goToPage)
           {
-            
+
             this.router.navigate([`/adults/key-ideas`])
           }
           else
@@ -2692,6 +2719,38 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/nature-of-i/s57001`])
         })
   }
+
+  routeExternalApproval(cont: any = 1) {
+    var externalapprovalR
+    localStorage.setItem("moduleId", JSON.stringify(91))
+    this.service.clickModule(91, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        externalapprovalR = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("externalapprovalR", externalapprovalR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/external-approval/${externalapprovalR}`])
+          }
+          else
+            this.router.navigate([`/adults/external-approval/s91001`])
+        })
+  }
   // /how the mind works
 
   // understand emotions
@@ -2724,6 +2783,38 @@ export class AdultDashboardPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/fear-anxiety/s486`])
+        })
+  }
+
+  routeDealingWithDepression(cont: any = 1) {
+    var dealingwithdepressionResume
+    localStorage.setItem("moduleId", JSON.stringify(92))
+    this.service.clickModule(92, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        dealingwithdepressionResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("dealingwithdepressionResume", dealingwithdepressionResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
+          }
+          else
+            this.router.navigate([`/adults/dealing-with-depression/s92001`])
         })
   }
 
@@ -2862,7 +2953,7 @@ export class AdultDashboardPage implements OnInit {
   }
   // /understand emotions
 
-  // living with wisdom 1
+  // transform your life 1
   routeStress(cont: any = 1) {
     var stressResume
     localStorage.setItem("moduleId", JSON.stringify(44))
@@ -3158,9 +3249,9 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
-  // /living with wisdom 1
+  // /transform your life 1
 
-  // living with wisdom 2
+  // transform your life 2
   routeHappiness(cont: any = 1) {
     var hR
     localStorage.setItem("moduleId", JSON.stringify(23))
@@ -3448,7 +3539,7 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/leadership/s59001`])
         })
   }
-  // /living with wisdom 2 
+  // /transform your life 2
 
   routeJournal() {
     this.router.navigate(['/adults/journal'])
@@ -3503,7 +3594,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-  
+
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     if (userId != null) {
@@ -3515,41 +3606,41 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
- /*  routewisdomexercise(cont: any = 1) {
-    var weR = '75001'
-    localStorage.setItem("moduleId", JSON.stringify(75))
-    this.service.clickModule(75, this.userId)
-      .subscribe(res => {
-        console.log(res)
-        this.qrList = res
-        weR = "s" + res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("weR", weR)
-        this.mediaPercent = parseInt(res.MediaPercent)
-        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
-        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/wisdom-exercise/${weR}`])
-          }
-          else
-            this.router.navigate([`/adults/wisdom-exercise/s75001`])
-        })
-  }
- */
+  /*  routewisdomexercise(cont: any = 1) {
+     var weR = '75001'
+     localStorage.setItem("moduleId", JSON.stringify(75))
+     this.service.clickModule(75, this.userId)
+       .subscribe(res => {
+         console.log(res)
+         this.qrList = res
+         weR = "s" + res.lastVisitedScreen
+         // continue where you left
+         if (res.lastVisitedScreen === '') {
+           localStorage.setItem("lastvisited", 'F')
+         }
+         else {
+           localStorage.setItem("lastvisited", 'T')
+         }
+         // /continue where you left
+         sessionStorage.setItem("weR", weR)
+         this.mediaPercent = parseInt(res.MediaPercent)
+         this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+         localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+         localStorage.setItem("qrList", JSON.stringify(this.qrList))
+       },
+         error => {
+           console.log(error)
+         },
+         () => {
+           if (cont == "1") {
+             this.router.navigate([`/adults/wisdom-exercise/${weR}`])
+           }
+           else
+             this.router.navigate([`/adults/wisdom-exercise/s75001`])
+         })
+   }
+  */
 
   wisdomexercise() {
     this.router.navigate([`/adults/wisdom-exercise/s75001`])
@@ -3586,91 +3677,91 @@ export class AdultDashboardPage implements OnInit {
     this.getinp(module);
   }
 
- 
 
 
-  GetWisdomScreens(){
-     this.service.GetWisdomScreens().subscribe(res=>{
-     this.wisdomExerciseList=res;
-     var allCompletedScreen:boolean=false;
-     let data=this.wisdomExerciseList.filter(x=>x.completed=='1');
-     if( this.wisdomExerciseList.length==data.length){
-      allCompletedScreen=true;
-    }
-     console.log(data.length);
-     let exercise:any
-     let emptyList=false;
-     let increaseExcercise=false;
-     // Any of the exercise is not completed
-     if(data.length==0){
-       emptyList=true;
-      data=this.wisdomExerciseList;
-      exercise=data[0];
-     }
-     else{
-      var incomppletedExercise=this.wisdomExerciseList.filter(x=>x.completed=='0');
-      if(incomppletedExercise.length>0){
-        exercise=incomppletedExercise[0];
-      }else{
-        exercise= data[data.length-1];
-      }
-      // It contains data may be some exercise is completed 
-      var completed=this.wisdomExerciseList.filter(x=>x.SessionNo==exercise.SessionNo && x.completed=='0');
-      if(completed.length==0){
-        increaseExcercise=true;
-        emptyList=true;
-      }
-     }
-     //Setting final title and Exercise no
-     this.Title=exercise.Title; 
-    
-     this.exerciseNo=!increaseExcercise?exercise.SessionNo.substring(exercise.SessionNo.length-2)
-     :((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length-2)))+1).toString();
-   
-     if(allCompletedScreen){
-      this.exerciseNo="1";
-     }
-     if(this.exerciseNo=="13"){
-      this.exerciseNo="1";
-    }
-     //Checking the length if its less than 10  to append for current session number
-      if(this.exerciseNo.length==1){
-        this.exerciseNo="0"+this.exerciseNo;
-      }
-      if(incomppletedExercise && incomppletedExercise.length>0){
-        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))).toString():"0";
-      }else{
-        this.day =!emptyList? (parseInt(exercise.ScreenNo.substring(6,exercise.ScreenNo.length))+1).toString():"0";
-      }
-     var sessionNo=exercise.SessionNo.substring(0,exercise.SessionNo.length-2)+this.exerciseNo;
-    
 
-     //Pushing final list for display
-     for(let item of this.wisdomExerciseList.filter(x=>x.SessionNo==sessionNo)){
-            let obj={
-              " SessionNo": item.SessionNo,
-              "ScreenNo": item.ScreenNo,
-              "completed": item.completed,
-              "day": item.ScreenNo.substring(6, item.ScreenNo.length),
-              "Title":item.Title
-            }
-            this.currentList.push(obj);
+  GetWisdomScreens() {
+    this.service.GetWisdomScreens().subscribe(res => {
+      this.wisdomExerciseList = res;
+      var allCompletedScreen: boolean = false;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      if (this.wisdomExerciseList.length == data.length) {
+        allCompletedScreen = true;
       }
-     if(this.currentList.length>0){
-      this.Title=this.currentList[0].Title;
-     }
+      console.log(data.length);
+      let exercise: any
+      let emptyList = false;
+      let increaseExcercise = false;
+      // Any of the exercise is not completed
+      if (data.length == 0) {
+        emptyList = true;
+        data = this.wisdomExerciseList;
+        exercise = data[0];
+      }
+      else {
+        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+        if (incomppletedExercise.length > 0) {
+          exercise = incomppletedExercise[0];
+        } else {
+          exercise = data[data.length - 1];
+        }
+        // It contains data may be some exercise is completed
+        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+        if (completed.length == 0) {
+          increaseExcercise = true;
+          emptyList = true;
+        }
+      }
+      //Setting final title and Exercise no
+      this.Title = exercise.Title;
+
+      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+
+      if (allCompletedScreen) {
+        this.exerciseNo = "1";
+      }
+      if (this.exerciseNo == "13") {
+        this.exerciseNo = "1";
+      }
+      //Checking the length if its less than 10  to append for current session number
+      if (this.exerciseNo.length == 1) {
+        this.exerciseNo = "0" + this.exerciseNo;
+      }
+      if (incomppletedExercise && incomppletedExercise.length > 0) {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+      } else {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+      }
+      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+
+
+      //Pushing final list for display
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+        let obj = {
+          " SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+          "Title": item.Title
+        }
+        this.currentList.push(obj);
+      }
+      if (this.currentList.length > 0) {
+        this.Title = this.currentList[0].Title;
+      }
       //Dynamic Scroll
-        setTimeout(() => {
-          var editable=document.querySelector(".editable").getBoundingClientRect().x;
-          var wediv = document.querySelector(".wediv").getBoundingClientRect().x;
-          document.querySelector(".wediv").scrollLeft=editable-wediv;
-          
+      setTimeout(() => {
+        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+        var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
+        document.querySelector(".wediv").scrollLeft = editable - wediv;
+
       }, 3000);
-      
-        console.log(this.currentList);
-     })
-    }
- 
+
+      console.log(this.currentList);
+    })
+  }
+
 
   getWisdomClass(exercise) {
     if (exercise.completed == '1') {
@@ -3685,7 +3776,18 @@ export class AdultDashboardPage implements OnInit {
 
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-    if (params != '' && route != '') {
+    if (evtName === 'click_journal') {
+      let guest = localStorage.getItem('guest');
+      if (this.isloggedIn && guest === 'F') {
+        if (!this.Subscriber || this.Subscriber === '0') {
+          this.router.navigate(['/onboarding/free-limit']);
+        } else {
+          this.router.navigate(['/adults/journal'])
+        }
+      } else {
+        this.enablepopup.nativeElement.click();
+      }
+    } else if (params != '' && route != '') {
       this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
@@ -3693,38 +3795,40 @@ export class AdultDashboardPage implements OnInit {
   }
 
 
-    RouteToWisdomExercise(exercise){
-        var weR = exercise?.ScreenNo;
-      localStorage.setItem("moduleId", JSON.stringify(75))
-      this.service.clickModule(75, this.userId)
-        .subscribe(res => {
-          console.log(res)
-          this.qrList = res
-          weR = "s" + res.lastVisitedScreen
-          // continue where you left
-          if (res.lastVisitedScreen === '') {
-            localStorage.setItem("lastvisited", 'F')
-          }
-          else {
-            localStorage.setItem("lastvisited", 'T')
-          }
-          // /continue where you left
-          sessionStorage.setItem("weR", weR)
-          this.mediaPercent = parseInt(res.MediaPercent)
-          this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
-          localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
-          localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
-          localStorage.setItem("qrList", JSON.stringify(this.qrList))
-          if(exercise!=null){
-            this.router.navigate(['adults/wisdom-exercise/s'+exercise.ScreenNo.substring(0,exercise.ScreenNo.length-2)],{
-              state: {
-                day: exercise.day,
-              }});
-          }else{
-            this.router.navigate(['adults/wisdom-exercise/']);
-          }
-        },
-          error => {
-            console.log(error)
-          })}
+  RouteToWisdomExercise(exercise) {
+    var weR = exercise?.ScreenNo;
+    localStorage.setItem("moduleId", JSON.stringify(75))
+    this.service.clickModule(75, this.userId)
+      .subscribe(res => {
+        console.log(res)
+        this.qrList = res
+        weR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("weR", weR)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        if (exercise != null) {
+          this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+            state: {
+              day: exercise.day,
+            }
+          });
+        } else {
+          this.router.navigate(['adults/wisdom-exercise/']);
+        }
+      },
+        error => {
+          console.log(error)
+        })
   }
+}

@@ -54,10 +54,12 @@ export class S32014Page implements OnInit {
 
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/benefits-of-wisdom/s32015'])
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/benefits-of-wisdom/s32013'])
 
   }

@@ -225,7 +225,7 @@ export class AdvertsHwpPage implements OnInit {
   routedashboard(val = '') {
     if (val === 'free') {
       if (!this.isLoggedIn) {
-        this.router.navigate(['/onboarding/login'])
+        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
@@ -233,7 +233,7 @@ export class AdvertsHwpPage implements OnInit {
     else if (val === 'dashboard') {
       this.redeemsubscription.nativeElement.click()
       if (!this.isLoggedIn) {
-        this.router.navigate(['/onboarding/login'])
+        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
@@ -254,13 +254,13 @@ export class AdvertsHwpPage implements OnInit {
       }
     } else if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T')
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     } else if (this.isLoggedIn && !this.isSubscriber) {
       localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
       localStorage.setItem('personalised subscription', val);
       this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: val } })
     } else if (this.isGuestuser) {
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     }
   }
 
@@ -646,4 +646,11 @@ export class AdvertsHwpPage implements OnInit {
       this.router.navigate(["/onboarding/login"]);
     }
   }
+
+  navigate(url, event){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+    this.logeventservice.logEvent(event)
+  }
 }
+
+

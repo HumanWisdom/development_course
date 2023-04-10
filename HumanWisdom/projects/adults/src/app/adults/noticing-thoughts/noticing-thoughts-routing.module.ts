@@ -14,48 +14,55 @@ import { S30007Page } from './s30007/s30007.page';
 
 const routes: Routes = [
   {
-    path: '',    
-     component: S30001Page,
-  }, 
-  {
-    path: 's30001',    
-   canActivate:[ActiveGuard],  
+    path: '',
     component: S30001Page,
-  },  
+  },
+  {
+    path: 's30001',
+    canActivate: [ActiveGuard],
+    component: S30001Page,
+  },
   {
     path: 's30002',
-   canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S30002Page,
+    data: { animation: 0 }
   },
   {
     path: 's30002t',
-   canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S30002tPage,
+    data: { animation: 1 }
   },
   {
     path: 's30003',
-   canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S30003Page,
+    data: { animation: 2 }
   },
   {
     path: 's30004',
-   canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S30004Page,
+    data: { animation: 3 }
   },
   {
     path: 's30005',
-   canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S30005Page,
+    data: { animation: 4 }
   },
   {
     path: 's30006',
-   canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S30006Page,
+    data: { animation: 5 }
   },
   {
     path: 's30007',
-   canActivate:[ActiveGuard],  
+    canActivate: [ActiveGuard],
     component: S30007Page,
+    data: { animation: 6 }
   },
 
 ];

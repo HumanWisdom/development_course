@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to human wisdom. We human beings are amazing at meeting the challenges in the world around us - look at the miracle of modern medicine, the internet and how we feed 7 billion people on our planet. When it comes to challenges that come from inside us, we seem to have no answer - to problems like stress, anxiety, relationships conflict, addiction, violence and war. Why is that?
+            Perhaps it's because we do not know how to look at and understand the origin of these problems in our thinking.
+          </p>
+
+          <p>
+            The human wisdom program has been designed to address this imbalance, to enable everyone to understand themselves and how their minds work, so we can avoid and more easily solve all the problems which come from our thinking. This understanding awakens wisdom, which can help us live with a sense of peace.
+          </p>
+
+          <p>
+            In this introduction we are going to explore the benefits of wisdom, the key ideas and features of the program, and introduce you to the 5 circles of wisdom, which is a step-by-step approach to help you discover this wisdom for yourself. Wisdom comes naturally when you understand yourself deeply, and is not based on any ideology.
+          </p>
+
+          <p>
+            We all face many challenges in life and here’s an opportunity for you to explore how wisdom could help you be a successful human being and deal with the challenges we face in new ways.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

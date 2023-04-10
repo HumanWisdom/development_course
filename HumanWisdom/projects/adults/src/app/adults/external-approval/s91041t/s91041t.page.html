@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            This hidden need we have for Need for approval can influence our behaviour and can make us choose options in life where we will get praised or recognised. If I have been praised as a child for my academic achievements I can grow up seeking that from my work and my relationships – and if I don’t get it, I can get frustrated. We can manipulate others unknowingly – ‘How do I look’ is a common question, or say ‘I love you’ in the hope of having it said back to us. 
+          </p>
+
+          <p>
+            If I am a surgeon I may try and do a complex procedure rather than a simpler one, in the hope of getting recognition from my colleagues. Or, dedicate myself to writing research papers even though I hate research – for the same reason.
+          </p>
+
+          <p>
+            When studying, we might not actually enjoy the subject, but focus on the exams and the validation that may bring. Or as a musician, focus on the praise and recognition my performing brings, and stop enjoying playing the instrument for its own sake. 
+          </p>
+
+          <p>
+            Or we may flatter others to ‘butter them up’ in the hope of getting something from them.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

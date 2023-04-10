@@ -86,7 +86,10 @@ export class S53175Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r53175", JSON.stringify(e))
     this.r53175 = JSON.parse(sessionStorage.getItem("r53175"))
-
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/communication/s53176'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -101,11 +104,11 @@ export class S53175Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/communication/s53176'])
+      
 
       },
       () => {
-        this.router.navigate(['/adults/communication/s53176'])
+       
       })
 
 
@@ -115,6 +118,7 @@ export class S53175Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53174'])
   }
 

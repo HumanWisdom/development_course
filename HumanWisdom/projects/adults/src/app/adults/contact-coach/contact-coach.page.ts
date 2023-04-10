@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { AdultsService } from '../adults.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact-coach',
@@ -13,12 +14,19 @@ export class ContactCoachPage implements OnInit {
 
   code='';
   phonecode=''
-  constructor(private location:Location,private adultService:AdultsService) {
+  constructor(private location:Location,private adultService:AdultsService,
+    private meta: Meta, private title: Title) {
     this.initializeForm();
     this.getCountriesList();
    }
 
   ngOnInit() {
+
+    this.title.setTitle('Contact a Life Coach for Personal Growth')
+    this.meta.updateTag({ property: 'title', content: 'Contact a Life Coach for Personal Growth'})
+    this.meta.updateTag({ property: 'description', content: 'Find a professional coach to support your personal development' })
+    this.meta.updateTag({ property: 'keywords', content: 'Coach contact,Contact a coach,Connect with coach,Get in touch with coach,Find a coach,Personal coaching,Life coaching,Professional coaching,Coaching services,Contact coach form,Coach support' })
+  
   }
 
   initializeForm(){
@@ -27,7 +35,7 @@ export class ContactCoachPage implements OnInit {
       Name:'',
       Country:'0',
       EmailID:'',
-      ContactNo:'' 
+      ContactNo:''
     }
   }
 
@@ -59,12 +67,30 @@ export class ContactCoachPage implements OnInit {
       this.initializeForm();
       this.phonecode='';
       this.code='';
-      alert("Contacted Successfully");
+      alert("Submitted Successfully");
     }
    });
   }
-
-   ValidateEmail(){
+  checkValidPhoneNo(){
+    if(this.form.ContactNo!=''){
+      if(isNaN(this.form.ContactNo)){
+        return true;
+      }
+      return (this.form.ContactNo.length<7 || this.form.ContactNo.length>12);
+    }
+    }
+   ValidateEmail(ischeck?){
+    if(ischeck){
+      if(this.form.EmailID!=''){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(this.form.EmailID) == false) 
+        {
+            return false;
+        }
+        return true;
+      }
+      return true;
+    }
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
     if (reg.test(this.form.EmailID) == false) 
