@@ -179,7 +179,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
             this.router.navigate([`/adults/conditioning/s232`])
           /*if(!conditioningResume)
           {
-    
+
             this.router.navigate([`/adults/conditioning`])
           }
           else
@@ -218,7 +218,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
             this.router.navigate([`/adults/stress/s44001`])
           /* if(!this.goToPage)
            {
-     
+
              this.router.navigate([`/adults/stress`])
            }
            else
@@ -285,4 +285,9 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
       })
   }
 
+  viewblog(id) {
+    localStorage.setItem("blogdata", JSON.stringify(id))
+    localStorage.setItem("blogId", JSON.stringify(id))
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+  }
 }

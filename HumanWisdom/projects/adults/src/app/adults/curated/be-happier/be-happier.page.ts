@@ -111,7 +111,7 @@ export class BeHappierPage implements OnInit {
             this.router.navigate([`/adults/happiness/s23001`])
           /* if(!identityResume)
            {
-     
+
              this.router.navigate([`/adults/identity`])
            }
            else
@@ -150,7 +150,7 @@ export class BeHappierPage implements OnInit {
             this.router.navigate([`/adults/living-with-peace/s63001`])
           /* if(!lonelinessResume)
             {
-      
+
               this.router.navigate([`/adults/loneliness/s162p0`])
             }
             else
@@ -226,7 +226,7 @@ export class BeHappierPage implements OnInit {
 
           /*if(!sinR)
           {
-    
+
             this.router.navigate([`/adults/self-interest`])
           }
           else
@@ -294,6 +294,12 @@ export class BeHappierPage implements OnInit {
         this.ibP = res.ModUserScrPc.find(e => e.Module == "Inner Boredom")?.Percentage
         this.comparisonP = res.ModUserScrPc.find(e => e.Module == "Comparison")?.Percentage
       })
+  }
+
+  viewblog(id) {
+    localStorage.setItem("blogdata", JSON.stringify(id))
+    localStorage.setItem("blogId", JSON.stringify(id))
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
 }

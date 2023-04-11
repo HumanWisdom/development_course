@@ -404,4 +404,10 @@ export class OvercomeStressAnxietyPage implements OnInit {
       })
   }
 
+  viewblog(id) {
+    localStorage.setItem("blogdata", JSON.stringify(id))
+    localStorage.setItem("blogId", JSON.stringify(id))
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+  }
+
 }
