@@ -131,7 +131,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
 
           /*if(!relationshipResume)
             {
-      
+
               this.router.navigate([`/adults/relationships`])
             }
             else
@@ -172,7 +172,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
 
           /*if(!sinR)
           {
-    
+
             this.router.navigate([`/adults/self-interest`])
           }
           else
@@ -212,7 +212,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
             this.router.navigate([`/adults/reactive-mind/s54001`])
           /* if(!rmR)
            {
-     
+
              this.router.navigate([`/adults/reactive-mind`])
            }
            else
@@ -253,7 +253,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
 
           /* if(!communicationR)
            {
-    
+
              this.router.navigate([`/adults/communication`])
            }
            else
@@ -293,7 +293,7 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
             this.router.navigate([`/adults/love/s62001`])
           /* if(!lonelinessResume)
             {
-      
+
               this.router.navigate([`/adults/loneliness/s162p0`])
             }
             else
@@ -360,5 +360,11 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         this.loveP = res.ModUserScrPc.find(e => e.Module == "Love")?.Percentage
         this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions And Beliefs")?.Percentage
       })
+  }
+
+  viewblog(id) {
+    localStorage.setItem("blogdata", JSON.stringify(id))
+    localStorage.setItem("blogId", JSON.stringify(id))
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 }
