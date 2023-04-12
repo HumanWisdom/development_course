@@ -82,6 +82,7 @@ export class S100026Page implements OnInit, OnDestroy {
   }
   submitProgress() {
 
+    this.router.navigate(['/awareness/s100027'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -110,8 +111,6 @@ export class S100026Page implements OnInit, OnDestroy {
 
   goNext() {
     // this.router.navigate(['/awareness/s100026'])
-    this.router.navigate(['/awareness/s100027'])
-
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
@@ -127,6 +126,5 @@ export class S100026Page implements OnInit, OnDestroy {
   }
 
 }
-
 
 

@@ -14,10 +14,10 @@ export class S100016Page implements OnInit,OnDestroy {
 
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
-  bg="red_pink_w2"
-  title="Awareness exercise 1"
+  bg="red_pink_w3"
+  title="Awareness exercise 2"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/awareness/audios/1.7.mp3'
+  audioLink=this.mediaAudio+'/awareness/audios/1.8.mp3'
 
   transcriptPage="awareness/s100016t"
   toc="awareness/s100000"
@@ -33,7 +33,6 @@ export class S100016Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   progName="teenagers"
-  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   constructor(private router: Router,
@@ -90,9 +89,7 @@ export class S100016Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     this.router.navigate(['/awareness/s100017'])
- 
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,7 +105,7 @@ export class S100016Page implements OnInit,OnDestroy {
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
-   
+    
    
  
   }

@@ -1,11 +1,11 @@
 <app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-quotation [bg]="bg">
+
   <form>
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt=""> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
       </div>
     </div>
@@ -13,19 +13,17 @@
     <hr class="quotation_hr mt30px">
 
     <h1 class="quotation_txt">
-      Self-awareness allows you to self-correct
+      We cannot change what we are not aware of. Once we are aware, we cannot help but change
     </h1>
 
     <hr class="quotation_hr">
 
     <h1 class="quotation_writer">
-      Bill Hybells
+      Sheryl Sandberg
     </h1>
 
   </form>
+
 </app-quotation>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
-
-
-

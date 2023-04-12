@@ -97,7 +97,7 @@ export class S100018Page implements OnInit {
     $("circle:nth-of-type(1)").css("fill", active_color);
     
     
-   
+    
       
     
   });
@@ -167,7 +167,7 @@ createScreen(){
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-        
+       
        
      
       },

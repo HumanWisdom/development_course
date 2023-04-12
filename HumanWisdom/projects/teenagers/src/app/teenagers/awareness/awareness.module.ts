@@ -28,10 +28,10 @@ import { S100012tPage } from './s100012t/s100012t.page';
 import { S100013Page } from './s100013/s100013.page';
 import { S100014Page } from './s100014/s100014.page';
 import { S100015Page } from './s100015/s100015.page';
+import { S100015tPage } from './s100015t/s100015t.page';
 import { S100016Page } from './s100016/s100016.page';
 import { S100016tPage } from './s100016t/s100016t.page';
 import { S100017Page } from './s100017/s100017.page';
-import { S100017tPage } from './s100017t/s100017t.page';
 import { S100018Page } from './s100018/s100018.page';
 import { S100019Page } from './s100019/s100019.page';
 import { S100020Page } from './s100020/s100020.page';
@@ -43,7 +43,6 @@ import { S100025Page } from './s100025/s100025.page';
 import { S100026Page } from './s100026/s100026.page';
 import { S100027Page } from './s100027/s100027.page';
 import { S100028Page } from './s100028/s100028.page';
-import { S100029Page } from './s100029/s100029.page';
 import { TeenagersService } from '../teenagers.service';
 
 @NgModule({
@@ -69,10 +68,10 @@ import { TeenagersService } from '../teenagers.service';
     S100013Page,
     S100014Page,
     S100015Page,
+    S100015tPage,
     S100016Page,
     S100016tPage,
     S100017Page,
-    S100017tPage,
     S100018Page,
     S100019Page,
     S100020Page,
@@ -84,7 +83,6 @@ import { TeenagersService } from '../teenagers.service';
     S100026Page,
     S100027Page,
     S100028Page,
-    S100029Page,
   ],
   imports: [
     CommonModule,

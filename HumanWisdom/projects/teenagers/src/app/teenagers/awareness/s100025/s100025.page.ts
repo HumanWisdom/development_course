@@ -1,58 +1,73 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+
 
 @Component({
   selector: 'app-s100025',
   templateUrl: './s100025.page.html',
   styleUrls: ['./s100025.page.scss'],
 })
-export class S100025Page implements OnInit {
+export class S100025Page implements OnInit, OnDestroy {
 
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
-  bg = "red_pink_w8"
-  hint = ""
+  bg = "red_pink_w1"
 
-  toc = "awareness/s100000"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  qrList = JSON.parse(localStorage.getItem("qrList"))
+  screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenType = localStorage.getItem("reflection")
   screenNumber = 100025
   startTime: any
   endTime: any
   totalTime: any
-  bookmark: any
-  rId = 1196
-  reflection: any
-  reflectionA: any
-  r100025 = JSON.parse(sessionStorage.getItem("r100025"))
 
-  shared: any
-  confirmed: any
 
-  constructor(private router: Router,
+
+  bookmark = 0
+  toc = "awareness/s100000"
+  path = this.router.url
+
+
+  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+
+
+
+  constructor(
+    private router: Router,
     private service: TeenagersService,
-    private location: Location) { }
-
+    private location: Location
+  ) { }
   ngOnInit() {
+    //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    console.log(this.r100025)
 
-
-
-    this.reflectionA = this.qrList.ListOfReflection
-
-
-    this.findReflection()
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
-  }
 
+    this.startTime = Date.now();
+
+    if (JSON.parse(sessionStorage.getItem("bookmark100025")) == 0)
+      this.bookmark = 0
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark100025")) == 1)
+      this.bookmark = 1
+
+
+
+
+
+  }
+  receiveBookmark(e) {
+    console.log(e)
+    if (e == true)
+      this.bookmark = 1
+    else
+      this.bookmark = 0
+    sessionStorage.setItem("bookmark100025", JSON.stringify(this.bookmark))
+  }
   createScreen() {
     this.service.createScreen({
       "ScrId": 0,
@@ -65,63 +80,53 @@ export class S100025Page implements OnInit {
 
 
   }
+  submitProgress() {
 
-  findReflection() {
-    for (var i = 0; i < this.reflectionA.length; i++) {
-
-
-
-      if (this.rId == this.reflectionA[i].ReflectionId) {
-        this.reflection = this.reflectionA[i].Que
-        // this.optionList.push(this.questionA[i])
-      }
-
-    }
-    console.log(this.reflection)
-
-  }
-
-  submitProgress(e) {
-    console.log(e)
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r100025", JSON.stringify(e))
-    this.r100025 = JSON.parse(sessionStorage.getItem("r100025"))
-
-    this.service.submitProgressReflection({
+    this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
       "BookMark": this.bookmark,
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "ReflectionId": this.rId,
-      "Resp": JSON.parse(sessionStorage.getItem("r100025"))
+      "timeSpent": this.totalTime
     }).subscribe(res => {
 
+      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
     },
-      error => {
-        console.log(error)
-        this.router.navigate(['/awareness/s100026'])
-
-      },
+      error => { console.log(error) },
       () => {
-        this.router.navigate(['/awareness/s100026'])
+        //this.router.navigate(['/conditioning/s10002534'])
       })
 
 
 
-
+  }
+  prev() {
+    this.router.navigate(['/awareness/s100024'])
 
   }
 
-  previous() {
-    this.router.navigate(['/awareness/s100024'])
+
+  goNext() {
+    // this.router.navigate(['/awareness/s100025'])
+    this.router.navigate(['/awareness/s100026'])
+
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+
+    if (this.userId !== 563) this.submitProgress()
+
   }
 
   ngOnDestroy() {
 
 
+
+
   }
 
 }
+
+
+

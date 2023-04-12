@@ -1,32 +1,15 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<!-- <app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header> -->
 
-<app-quotation [bg]="bg">
-  <form>
+<app-sessionover-s1 [bg]="bg" [points]="points">
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt=""> -->
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
-      </div>
-    </div>
+  <!-- <a routerLink="/anger/s178p2">
+    <h1 class="txt17 tcenter c_white pt80px fw_500 blink_ttc">
+      TAP TO CONTINUE
+    </h1>           
+  </a>          -->
 
-    <hr class="quotation_hr mt30px">
+</app-sessionover-s1>
 
-    <h1 class="quotation_txt">
-      We cannot change what we are not aware of. Once we are aware, we cannot help but change
-    </h1>
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
 
-    <hr class="quotation_hr">
-
-    <h1 class="quotation_writer">
-      Sheryl Sandberg
-    </h1>
-
-  </form>
-</app-quotation>
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
-
-
-
-
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
