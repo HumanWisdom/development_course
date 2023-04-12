@@ -353,6 +353,10 @@ export class AdultsService {
     return this.http.post(this.path + '/RegisterEvents', data);
   }
 
+  getModules(id): Observable<any> {
+    return this.http.get(this.path + `/GetModules/` + id)
+  }
+
   setmoduleID(id) {
     if (localStorage.getItem("isloggedin") === 'T') {
       this.activateModule(id);

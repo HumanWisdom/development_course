@@ -105,7 +105,7 @@
                   <h6 class="fw_400 fs_14px lh_16px fc_5d5d5d mtb0px p-bottom3">
                     Continue to the next module
                   </h6>
-                <div class="row me_next_module center_flex safari_dblock " >                  
+                <div class="row me_next_module center_flex safari_dblock " *ngIf="9 == programType;else OtherModule">                  
                   <a (click)="proceed()">
                     <div class="col-md-10 col-sm-10 col-xs-10 tcenter p0 prelative float_none" >
                       
@@ -128,6 +128,28 @@
                     </div>
                   </a>
                 </div>
+                <ng-template #OtherModule>
+                  <div class="row me_next_module center_flex safari_dblock">                  
+                    <a (click)="ContinueToThisModule()">
+                      <div class="col-md-10 col-sm-10 col-xs-10 tcenter p0 prelative float_none" >
+                        <img [src]="moduleImg"  class="module_img w100" alt="">
+                        <div class="me_overlay"></div>
+    
+                        <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 me_module_title">
+                            {{sectionName}}
+                        </h6>
+    
+                        <h6 class="fw_500 fs_20px lh_130p fc_ffffff me_session_title">
+                            {{moduleName}}
+                        </h6>
+    
+                        <div>
+                          <button type="button" class="btn btn-success mb0 btn_se me_module_btn" data-dismiss="modal">Continue to this module</button>
+                        </div>                  
+                      </div>
+                    </a>
+                  </div>
+                </ng-template>
               </div>
 
                 <div class="row me_orm">

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import {Location } from '@angular/common'
-
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s95028',
@@ -16,7 +14,9 @@ export class S95028Page implements OnInit {
   moduleLink="/adults/how-to-begin/s36001"
   moduleName="How to begin?"
   sectionName= "Understand yourself";
-  moduleId=95
+  moduleId=95;
+  programType : ProgramType = ProgramType.Teenagers;
+
   moduleList: any = [
     {
       name: 'Begin your journey',

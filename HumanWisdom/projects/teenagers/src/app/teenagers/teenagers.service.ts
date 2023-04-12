@@ -341,6 +341,10 @@ export class TeenagersService {
   CheckShortsIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
+   
+  getModulebyId(id): Observable<any> {
+    return this.http.get(this.path + `/GetModule/${id}`)
+  }
 
   setmoduleID(id) {
     if (localStorage.getItem("isloggedin") === 'T') {
