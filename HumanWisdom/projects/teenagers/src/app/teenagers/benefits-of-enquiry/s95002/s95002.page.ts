@@ -34,7 +34,10 @@ export class S95002Page implements OnInit, OnDestroy {
     private router: Router,
     private service:TeenagersService,
     private location:Location
-  ) { }
+  ) 
+  { 
+    //this.service.setmoduleID(95);
+  }
 
   ngOnInit() 
   {

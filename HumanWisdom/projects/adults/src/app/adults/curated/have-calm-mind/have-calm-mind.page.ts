@@ -107,7 +107,7 @@ export class HaveCalmMindPage implements OnInit {
 
           /*if(!natureR)
            {
-     
+
              this.router.navigate([`/adults/nature`])
            }
            else
@@ -149,9 +149,9 @@ export class HaveCalmMindPage implements OnInit {
 
           /* if(!breathingR)
            {
-     
+
              this.router.navigate([`/adults/breathing`])
-     
+
            }
            else
              this.router.navigate([`/adults/breathing/s${breathingR}`])*/
@@ -191,7 +191,7 @@ export class HaveCalmMindPage implements OnInit {
             this.router.navigate([`/adults/noticing-thoughts/s30001`])
           /*if(!ntR)
           {
-    
+
             this.router.navigate([`/adults/noticing-thoughts`])
           }
           else
@@ -231,9 +231,9 @@ export class HaveCalmMindPage implements OnInit {
 
           /* if(!gamR)
            {
-     
+
              this.router.navigate([`/adults/guided-meditation`])
-     
+
            }
            else
              this.router.navigate([`/adults/guided-meditation/s${gamR}`])*/
@@ -271,7 +271,7 @@ export class HaveCalmMindPage implements OnInit {
             this.router.navigate([`/adults/meditation/s22001`])
           /*if(!meditationResume)
           {
-    
+
             this.router.navigate([`/adults/meditation`])
           }
           else
@@ -310,7 +310,7 @@ export class HaveCalmMindPage implements OnInit {
             this.router.navigate([`/adults/without-language/s42000`])
           /* if(!lwlResume)
            {
-     
+
              this.router.navigate([`/adults/without-language`])
            }
            else
@@ -344,6 +344,12 @@ export class HaveCalmMindPage implements OnInit {
         this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
         this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
       })
+  }
+
+  viewblog(id) {
+    localStorage.setItem("blogdata", JSON.stringify(id))
+    localStorage.setItem("blogId", JSON.stringify(id))
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
 }
