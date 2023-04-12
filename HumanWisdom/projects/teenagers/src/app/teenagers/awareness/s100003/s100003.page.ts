@@ -108,12 +108,10 @@ export class S100003Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    this.router.navigate(['/awareness/s100004'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     if (this.userId !== 563) this.submitProgress()
-
+    this.router.navigate(['/awareness/s100004'])
   }
 
   ngOnDestroy() {

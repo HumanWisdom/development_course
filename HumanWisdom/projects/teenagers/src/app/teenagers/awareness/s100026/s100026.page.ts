@@ -82,7 +82,6 @@ export class S100026Page implements OnInit, OnDestroy {
   }
   submitProgress() {
 
-    this.router.navigate(['/awareness/s100027'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -110,12 +109,10 @@ export class S100026Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/awareness/s100026'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     if (this.userId !== 563) this.submitProgress()
-
+    this.router.navigate(['/awareness/s100027'])
   }
 
   ngOnDestroy() {

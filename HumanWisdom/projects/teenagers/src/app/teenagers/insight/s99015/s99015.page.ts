@@ -82,7 +82,6 @@ export class S99015Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/insight/s99016'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -110,12 +109,10 @@ export class S99015Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/insight/s99015'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     if (this.userId !== 563) this.submitProgress()
-
+    this.router.navigate(['/insight/s99016'])
   }
 
   ngOnDestroy() {
