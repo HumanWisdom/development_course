@@ -12,7 +12,7 @@ export class S100013Page implements OnInit {
 
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
-  bg = "red_pink_w5"
+  bg = "red_pink_w11"
 
   toc = "awareness/s100000"
   userId: any

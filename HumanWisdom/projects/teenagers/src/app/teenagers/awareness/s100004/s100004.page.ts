@@ -13,7 +13,7 @@ export class S100004Page implements OnInit,OnDestroy {
 
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
-  bg="red_pink_w1"
+  bg="red_pink_w2"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")

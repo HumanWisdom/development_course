@@ -12,7 +12,7 @@ export class S100015tPage implements OnInit {
 
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
-  bg="red_pink_w2"
+  bg="red_pink_w1"
 
   bookmark=0
   path=this.router.url

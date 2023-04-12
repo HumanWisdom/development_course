@@ -12,7 +12,7 @@ export class S100014Page implements OnInit {
 
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
-  bg = "red_pink_w6"
+  bg = "red_pink_w12"
   hint = "You may realise that your mind is comparing all the time, and thats why you are feeling hurt, angry, and jealous."
 
   toc = "awareness/s100000"

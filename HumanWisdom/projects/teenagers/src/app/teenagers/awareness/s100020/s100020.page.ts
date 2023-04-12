@@ -12,7 +12,7 @@ export class S100020Page implements OnInit {
 
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
-  bg="red_pink_w4"
+  bg="red_pink_w3"
   toc="awareness/s100000"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,7 @@ export class S100016Page implements OnInit,OnDestroy {
 
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
-  bg="red_pink_w3"
+  bg="red_pink_w2"
   title="Awareness exercise 2"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/awareness/audios/1.8.mp3'
