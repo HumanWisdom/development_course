@@ -1,6 +1,7 @@
 <app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"  [progName]="progName"></app-transcript-header>
 
 <app-transcript-content [bg]="bg">
+
   <form>
                 
     <div class="row">
@@ -12,12 +13,13 @@
           </p>
           <p>
             What will motivate you to give your heart to this enquiry? It could be because you have a problem to solve, or you want to live a healthy and stress free life, or you want to have excellent relationships, or communicate better or because you want to be a successful human being.Whatever the driver, this enquiry will leave you changed.
-          </p>   
+          </p> 
         </h3>                
       </div>
     </div>
     
   </form>
+  
 </app-transcript-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
