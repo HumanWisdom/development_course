@@ -39,10 +39,11 @@ export class S83001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
-    this.service.getModulebyId(35).subscribe(res=>{
+    this.service.getModulebyId(83).subscribe(res=>{
       this.moduleData=res;
       this.pgResume="s"+this.moduleData.lastScreen;
      }); 
+    this.service.setmoduleID(83);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

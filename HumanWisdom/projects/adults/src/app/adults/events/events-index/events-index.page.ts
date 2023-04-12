@@ -67,10 +67,13 @@ export class EventsIndexPage implements OnInit {
     this.location.back()
   }
   youtube(link, RowID) {
-    let Access='free'
-    if(RowID>=4) Access='paid'
-console.log(Access)
-    this.router.navigate(['/adults/curated/youtubelink', link, Access])
+    let sub: any = localStorage.getItem("Subscriber")
+    if(RowID>=4 && sub==0) 
+       this.router.navigate(['/onboarding/free-limit']);
+    else if (RowID<=3)
+      this.router.navigate(['/adults/curated/youtubelink', link+"=rdtfghjhfdg"])
+    else
+       this.router.navigate(['/adults/curated/youtubelink', link+"=vncbxdfchgvxd"])
   }
   share() {
     /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {

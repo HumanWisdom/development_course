@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When we come across a new idea or point of view our typical response, which is unconscious, is to be resistant to it and find a way to be critical of it. 
+            Having a spirit of learning means that our mind is open and welcomes the opportunity to explore new ideas.
+          </p>
+          <p>
+            This does not mean that we accept the idea without questioning, but equally it means we do not reject the idea because it is unfamiliar or different. This spirit of learning is so important on this journey of learning about ourselves and its one that we need to develop, because it does not come to us easily or naturally
+          </p>   
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

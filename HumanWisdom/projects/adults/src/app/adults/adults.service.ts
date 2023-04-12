@@ -49,6 +49,9 @@ export class AdultsService {
     }
   ]
 
+  currentUrl: string = '';
+  previousUrl: string = '';
+
   constructor(private http: HttpClient, handler: HttpBackend, private services: OnboardingService) {
   }
 

@@ -396,8 +396,8 @@ export class TeenagersService {
     let moduleId = 7;
     let Subscriber;
     let userName;
-    let mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
-    let mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
+    let mediaAudio = "https://d1tenzemoxuh75.cloudfront.net/teenagers/modules"
+    let mediaVideo = "https://d1tenzemoxuh75.cloudfront.net/teenagers/modules"
     let saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
     this.services.emailLogin(email, password)
       .subscribe(
