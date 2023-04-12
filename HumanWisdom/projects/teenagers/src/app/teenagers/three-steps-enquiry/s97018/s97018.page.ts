@@ -34,7 +34,7 @@ export class S97018Page implements OnInit {
 
   sessionPoints(){
     this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"97003,97004,97005,97006,97007,97008,97009,97010,97011,97012,97013,97014,97015,97016,97017"})
+    "ScreenNos":"97002,97003,97004,97005,97006,97007,97008,97009,97010,97011,97012,97013,97014,97015,97016,97017"})
     .subscribe(res=>
       {console.log("points",res)
       this.points=res
