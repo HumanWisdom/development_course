@@ -5,6 +5,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
+import { ProgramModel, ProgramType } from "../../../shared/models/program-model";
 
 
 @Component({
@@ -31,7 +32,9 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   pdfBlob: any;
   percentage: string;
   currentModuleName: string;
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
+  @Input() programType :ProgramType = ProgramType.Adults;
+  moduleData:Array<ProgramModel>;
   @Input() moduleList: any = [
     {
       name: 'Breathing',
@@ -63,6 +66,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     console.log(this.toc)
+    this.GetModuleDataBasedOnProgramType();
     this.getDataForCertificate();
 
 
@@ -73,11 +77,13 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     let path = this.router.url.split("/");
     let currentModuleName = path[path.length - 2]
     this.service.getPoints(this.userId).subscribe(res => {
-      let data = res.ModUserScrPc.find(e => e.Module.toLowerCase().includes(currentModuleName.replace("-", " ").toLowerCase()));
-      this.currentModuleName = data.Module;
-      this.percentage = data.Percentage;
-      if (this.percentage == "100.00") {
-        this.isModuleCompleted = true;
+      let data = res?.ModUserScrPc?.find(e => e.Module.toLowerCase().includes(currentModuleName.replace("-", " ").toLowerCase()));
+      if(data && data != null){
+        this.currentModuleName = data.Module;
+        this.percentage = data.Percentage;
+        if (this.percentage == "100.00") {
+          this.isModuleCompleted = true;
+        }
       }
     });
   }
@@ -438,11 +444,6 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           console.log(error)
         },
         () => {
-          // if(cont=="1")
-          // {
-          //   this.router.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
-          // }
-          // else
           this.router.navigate([`/adults/benefits-of-wisdom/s32001`])
         })
   }
@@ -2614,4 +2615,51 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         })
   }
 
+    GetModuleDataBasedOnProgramType(){
+     this.moduleData= new Array<ProgramModel>();
+     this.service.getModules(+this.programType).subscribe(res=>{
+      this.moduleData=res;
+     });
+    }
+
+
+    ContinueToThisModule(){
+     let moduleData=this.moduleData.filter(x=>x.moduleId==this.moduleId);
+     if(moduleData && moduleData!=null && moduleData.length>0) {
+      this.RouteToModule(moduleData[0]);
+     }
+    }
+
+    RouteToModule(moduleData:ProgramModel) {
+      var addictionResume
+      localStorage.setItem("moduleId",moduleData.moduleId)
+      this.service.clickModule(+moduleData.moduleId, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          addictionResume = "s" + res.lastVisitedScreen
+  
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem(moduleData.moduleName.trim() , 's'+moduleData.lastScreen)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        },
+          error => {
+            console.log(error)
+          },
+          () => {
+            // const isLocalhost = window.location.hostname === 'localhost';
+            // if(isLocalhost){
+            //     moduleData.path=moduleData.path.replace('teenagers/#/','');
+            // }
+            moduleData.path=moduleData.path.replace('teenagers/#/','');
+            this.router.navigate([''+moduleData.path+'/s'+moduleData.firstScreen]);
+          })
+    }
 }
