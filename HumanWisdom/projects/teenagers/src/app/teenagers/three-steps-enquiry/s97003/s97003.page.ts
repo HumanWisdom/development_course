@@ -109,12 +109,10 @@ export class S97003Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/three-steps-enquiry/s97003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/three-steps-enquiry/s97004'])
     if (this.userId !== 563) this.submitProgress()
-
+    this.router.navigate(['/three-steps-enquiry/s97004'])
   }
 
   ngOnDestroy() {

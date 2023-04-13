@@ -28,7 +28,7 @@ export class S99016Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=38015
+  screenNumber=99016
   startTime:any
   endTime:any
   totalTime:any
@@ -49,9 +49,9 @@ export class S99016Page implements OnInit,OnDestroy {
  
     this.startTime = Date.now();
     this.createScreen()
-    if(JSON.parse(sessionStorage.getItem("bookmark38015"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark99016"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark38015"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark99016"))==1)
       this.bookmark=1
  
   }
@@ -77,7 +77,7 @@ export class S99016Page implements OnInit,OnDestroy {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark38015",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark99016",JSON.stringify(this.bookmark))
   }
  
   receiveAvDuration(e){
@@ -116,8 +116,8 @@ export class S99016Page implements OnInit,OnDestroy {
  
   }
   ngOnDestroy(){
-    localStorage.setItem("totalTime38015",this.totalTime)
-    localStorage.setItem("avDuration38015",this.avDuration)
+    localStorage.setItem("totalTime99016",this.totalTime)
+    localStorage.setItem("avDuration99016",this.avDuration)
  
   }
 }

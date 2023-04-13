@@ -22,7 +22,7 @@ export class S99008tPage implements OnInit {
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=38007
+  screenNumber=99008
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -30,8 +30,8 @@ export class S99008tPage implements OnInit {
   
  
   
-  avDuration=localStorage.getItem("avDuration38007")
-  totalTime=localStorage.getItem("totalTime38007")
+  avDuration=localStorage.getItem("avDuration99008")
+  totalTime=localStorage.getItem("totalTime99008")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   constructor(private router: Router,
@@ -45,9 +45,9 @@ export class S99008tPage implements OnInit {
     else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
  
-    if(JSON.parse(sessionStorage.getItem("bookmark38007"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark99008"))==0)
     this.bookmark=0
-  else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark38007"))==1)
+  else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark99008"))==1)
     this.bookmark=1
   
    
@@ -59,7 +59,7 @@ export class S99008tPage implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark38007",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark99008",JSON.stringify(this.bookmark))
   }
   submitProgress(){
     this.router.navigate(['/insight/s99009'])

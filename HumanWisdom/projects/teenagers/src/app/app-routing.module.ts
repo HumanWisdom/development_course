@@ -50,7 +50,10 @@ const routes: Routes = [
     path: 'insight',
     loadChildren: () => import('./teenagers/insight/insight.module').then( m => m.InsightModule)
   },
-  
+  {
+    path: 'awareness',
+    loadChildren: () => import('./teenagers/awareness/awareness.module').then( m => m.AwarenessModule)
+  } 
   
 
 ];

@@ -20,7 +20,7 @@ export class S99014Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=38013
+  screenNumber=99014
   startTime:any
   endTime:any
   totalTime:any
@@ -51,9 +51,9 @@ ngOnInit() {
   
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark38013"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark99014"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark38013"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark99014"))==1)
       this.bookmark=1
    
    
@@ -68,7 +68,7 @@ ngOnInit() {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark38013",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark99014",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -105,7 +105,7 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/conditioning/s2338013'])
+        //this.router.navigate(['/adults/conditioning/s2399014'])
       })
      
     
