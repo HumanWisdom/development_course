@@ -32,6 +32,7 @@ export class S83011Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
   
   constructor(private router: Router,
     private service:TeenagersService,
@@ -105,7 +106,7 @@ export class S83011Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/key-ideas/s83010'])
+    this.router.navigate(['/key-ideas/s83010p1'])
   }
 
   ngOnDestroy()

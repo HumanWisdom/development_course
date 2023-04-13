@@ -32,6 +32,7 @@ export class S83010Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
   
   constructor(private router: Router,
     private service:TeenagersService,
@@ -87,7 +88,7 @@ export class S83010Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/key-ideas/s83011'])
+    this.router.navigate(['/key-ideas/s83010p1'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
