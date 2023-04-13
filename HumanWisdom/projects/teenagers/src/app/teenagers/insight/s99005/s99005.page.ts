@@ -111,11 +111,10 @@ export class S99005Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    this.router.navigate(['/insight/s99006'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     if (this.userId !== 563) this.submitProgress()
+    this.router.navigate(['/insight/s99006'])
 
   }
 

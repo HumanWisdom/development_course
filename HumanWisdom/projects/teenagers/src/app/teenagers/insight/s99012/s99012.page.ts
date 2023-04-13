@@ -25,7 +25,7 @@ export class S99012Page implements OnInit,OnDestroy {
 
  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=38011
+  screenNumber=99012
   startTime:any
   endTime:any
   totalTime:any  
@@ -57,9 +57,9 @@ ngOnInit() {
   
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark38011"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark99012"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark38011"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark99012"))==1)
       this.bookmark=1
    
    
@@ -74,7 +74,7 @@ ngOnInit() {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark38011",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark99012",JSON.stringify(this.bookmark))
   }
   receiveAvDuration(e){
     this.avDuration=e

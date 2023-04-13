@@ -1,9 +1,13 @@
 <app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
 <app-oneline-text [bg]="bg">
+
   <form>
+
     <h1 class="txt8 fw_500 oneliner_txt_title">
       Examples of Insight to explore:
     </h1>
+
     <div class="clearfix"></div>
 
     <!-- <h3 class="txt8">
@@ -22,5 +26,7 @@
       03. Fear is linked to thinking, which magnifies the threats
     </h3>
   </form>          
+
 </app-oneline-text>
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>s
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

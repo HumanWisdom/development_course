@@ -1,0 +1,34 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Here is an exercise in awareness that you can do anywhere.Find somewhere to sit and watch the world, or in a garden.             
+          <p>
+            Notice the world around you. All the sights and sounds that come in through your senses. 
+          </p>
+          <p>
+            Notice your mind naming some of them. Then observe what you are thinking and feeling. Different thoughts will come and go. You are just watching and making no effort to intervene.
+          </p>
+          <p>
+            Then you may notice a deeper restlessness in you, an urge to go and do something. 
+            Lastly, you notice the 'you' observing and recording it all. Can your awareness take in all these 4 layers at once?           
+          </p>
+          <p>
+            Do this for 5 minutes, and then 10. You may observe your mind becoming really quiet. Do not worry if you get distracted. 
+            Just come back to observing the different layers of your own thinking.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
