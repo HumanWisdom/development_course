@@ -1,6 +1,7 @@
 <app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
 <app-transcript-content [bg]="bg">
+
   <form>
                 
     <div class="row">
@@ -19,12 +20,13 @@
             And lastly, did you notice yourself scanning the conversation for something interesting, otherwise you switched off and were only half-listening? 
             You could then continue and ask why we prefer to speak rather than listen.
             When we are curious and observant there is so much to learn about ourselves.         
-          </p>                  
+          </p> 
         </h3>                
       </div>
     </div>
     
   </form>
+  
 </app-transcript-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
