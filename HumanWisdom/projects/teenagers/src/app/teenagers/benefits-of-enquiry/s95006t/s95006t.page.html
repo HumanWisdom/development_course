@@ -1,6 +1,7 @@
 <app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
 <app-transcript-content [bg]="bg">
+
   <form>
                 
     <div class="row">
@@ -10,12 +11,12 @@
           <br>
           Understanding ourselves is also important because no one can give us this wisdom, even if they want to. For it to truly transform our life we have to discover it for ourselves. Knowledge can be passed from one person to another, like how to cook for example but wisdom is different, it has to be discovered by undertaking our own journey of enquiry. For example, to truly know what water tastes like and to quench our thirst, we have to drink it to find out. No book can do that for us.
           That is why the art of enquiry, or learning how to look at ourselves is so important.
-
         </h3>                
       </div>
     </div>
     
   </form>
+  
 </app-transcript-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
