@@ -14,7 +14,7 @@ export class S95028Page implements OnInit {
   moduleLink="/how-to-begin/s96001"
   moduleName="How to begin?"
   sectionName= "Understand yourself";
-  moduleId=95;
+  moduleId=96;
   programType : ProgramType = ProgramType.Teenagers;
 
   moduleList: any = [
