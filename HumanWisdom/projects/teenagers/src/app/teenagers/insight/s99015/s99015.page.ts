@@ -20,7 +20,7 @@ export class S99015Page implements OnInit, OnDestroy {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = 38014
+  screenNumber = 99015
   startTime: any
   endTime: any
   totalTime: any
@@ -51,9 +51,9 @@ export class S99015Page implements OnInit, OnDestroy {
 
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmark38014")) == 0)
+    if (JSON.parse(sessionStorage.getItem("bookmark99015")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark38014")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark99015")) == 1)
       this.bookmark = 1
 
 
@@ -67,7 +67,7 @@ export class S99015Page implements OnInit, OnDestroy {
       this.bookmark = 1
     else
       this.bookmark = 0
-    sessionStorage.setItem("bookmark38014", JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark99015", JSON.stringify(this.bookmark))
   }
   createScreen() {
     this.service.createScreen({
@@ -82,7 +82,6 @@ export class S99015Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/insight/s99016'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -110,12 +109,10 @@ export class S99015Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/insight/s99015'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     if (this.userId !== 563) this.submitProgress()
-
+    this.router.navigate(['/insight/s99016'])
   }
 
   ngOnDestroy() {
