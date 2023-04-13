@@ -31,7 +31,7 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/key-ideas/key-ideas.module').then(m => m.KeyIdeasModule)
   },
   {
-    path: 'dashboard',
+    path: 'teenager-dashboard',
     loadChildren: () => import('./teenagers/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
