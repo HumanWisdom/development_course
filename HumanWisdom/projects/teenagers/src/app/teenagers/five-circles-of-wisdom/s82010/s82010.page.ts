@@ -13,7 +13,7 @@ export class S82010Page implements OnInit {
   bg_tn = "bg_purple_blue"
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w8"
-  hint = "ou could judge yourself as right or wrong, or good or bad"
+  hint = "You could judge yourself as right or wrong, or good or bad"
   toc = "/five-circles-of-wisdom/s82001"
   path = this.router.url
 

@@ -40,6 +40,7 @@ export class S82005Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
   
   constructor(
     private router: Router,
