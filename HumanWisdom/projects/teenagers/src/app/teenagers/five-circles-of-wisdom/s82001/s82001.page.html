@@ -24,7 +24,7 @@
 
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
-        <a [routerLink]="['/five-circles-of-wisdom']" *ngIf="lastvisited">
+        <a [routerLink]="['/five-circles-of-wisdom',pgResume]" *ngIf="pgResume">
           <button type="button" class="btn btn-success mb0 btn_begin_here bg_purple_blue" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
