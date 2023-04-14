@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: 'awareness',
     loadChildren: () => import('./teenagers/awareness/awareness.module').then( m => m.AwarenessModule)
+  },
+  {
+    path: 'no-judgement',
+    loadChildren: () => import('./teenagers/no-judgement/no-judgement.module').then( m => m.NoJudgementModule)
   } 
   
 

@@ -5,15 +5,15 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 @Component({
-  selector: 'app-s100027',
-  templateUrl: './s100027.page.html',
-  styleUrls: ['./s100027.page.scss'],
+  selector: 'app-s101022',
+  templateUrl: './s101022.page.html',
+  styleUrls: ['./s101022.page.scss'],
 })
-export class S100027Page implements OnInit {
+export class S101022Page implements OnInit {
 
-  bg_tn="bg_red_pink"
-  bg_cft="bg_red_pink"
-  bg="red_pink_flat"
+  bg_tn = "bg_dark_blue"
+  bg_cft = "bg_dark_blue"
+  bg = "dark_blue_w8"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -35,7 +35,7 @@ export class S100027Page implements OnInit {
 
   sessionPoints(){
     this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"100002,100003,100004,100005,100007,100008,100009,100010,100010,100011,100012,100013,100014,100015,100015,100016,100017,100018,100019,100020,100021,100022,100023,100024,100025,100026,100027"})
+    "ScreenNos":"101002,101003,101004,101005,101007,101008,101009,101010,101010,101011,101012,101013,101014,101015,101015,101016,101017,101018,101019,101020,101021,101022"})
     .subscribe(res=>
       {console.log("points",res)
       this.points=res
@@ -49,11 +49,11 @@ export class S100027Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/awareness/s100028'])
+    this.router.navigate(['/no-judgement/s101023'])
 
   }
   prev(){
-    this.router.navigate(['/awareness/s100026'])
+    this.router.navigate(['/no-judgement/s101021'])
 
 
 

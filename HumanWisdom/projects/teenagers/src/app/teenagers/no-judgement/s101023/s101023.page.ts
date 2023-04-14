@@ -3,19 +3,19 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 @Component({
-  selector: 'app-s100028',
-  templateUrl: './s100028.page.html',
-  styleUrls: ['./s100028.page.scss'],
+  selector: 'app-s101023',
+  templateUrl: './s101023.page.html',
+  styleUrls: ['./s101023.page.scss'],
 })
-export class S100028Page implements OnInit {
+export class S101023Page implements OnInit {
   
-  toc="awareness/s100000"
+  toc="no-judgement//s100000"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png"
   bg=""
-  moduleLink="/no-judgement/s100001"
+  moduleLink="/no-judgement/s101001"
   moduleName="No Judgement"
   sectionName= "Understand yourself";
-  moduleId=100
+  moduleId=101
   moduleList: any = [
     {
       name: 'Breathing',
