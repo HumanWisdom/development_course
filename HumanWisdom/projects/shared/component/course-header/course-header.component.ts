@@ -122,7 +122,6 @@ export class CourseHeaderComponent implements OnInit {
     }
     else{
       console.log(this.programName +  '/teenager-dashboard');
-      alert(this.programName +  '/teenager-dashboard')
       this.router.navigate([this.programName +  '/teenager-dashboard'])
   }
 
