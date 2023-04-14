@@ -29,13 +29,18 @@ export class S100001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
-
+  moduleData:any;
   constructor(
     private router: Router,
     private service:TeenagersService,
     private location:Location
   )
   { 
+    this.service.getModulebyId(100).subscribe(res=>{
+      this.moduleData=res;
+      this.awarenessResume="s"+ res[0].lastScreen;
+      console.log(res[0].lastScreen)
+     });
     this.service.setmoduleID(100);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
