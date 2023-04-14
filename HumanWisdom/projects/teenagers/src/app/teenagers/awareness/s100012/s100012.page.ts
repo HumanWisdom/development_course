@@ -17,7 +17,7 @@ export class S100012Page implements OnInit {
   audioLink=this.mediaAudio+'/awareness/audios/1.6.mp3'
   title=""
 
-  toc="awareness/s100000"
+  toc="awareness/s100001"
   transcriptPage="awareness/s100012t"
 
   userId:any

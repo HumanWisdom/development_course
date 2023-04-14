@@ -379,10 +379,10 @@ export class TeenagersService {
   }
 
   emaillogin(id = '') {
-    // let email = 'guest@humanwisdom.me';
-    // let password = '12345';
-    let email = 'hwpuser3@humanwisdom.me';
-    let password = 'hwpuser';
+    let email = 'guest@humanwisdom.me';
+    let password = '12345';
+    // let email = 'hwpuser3@humanwisdom.me';
+    // let password = 'hwpuser';
 
     let userId;
     let loginResponse;
