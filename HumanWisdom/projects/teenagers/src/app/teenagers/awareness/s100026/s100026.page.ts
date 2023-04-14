@@ -27,7 +27,7 @@ export class S100026Page implements OnInit, OnDestroy {
 
 
   bookmark = 0
-  toc = "awareness/s100000"
+  toc = "awareness/s100001"
   path = this.router.url
 
 
