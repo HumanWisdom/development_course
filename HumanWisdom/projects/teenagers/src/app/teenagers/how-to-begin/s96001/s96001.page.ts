@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s96001',
@@ -23,6 +24,8 @@ export class S96001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+  pgResume=""
+  moduleData:ProgramModel;
   bookmarkList=[]
   beginResume=sessionStorage.getItem("beginResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/36.png"
@@ -36,6 +39,13 @@ export class S96001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(96);
+    this.service.getModulebyId(96).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume="s"+ res[0].lastScreen;
+      console.log(res[0].lastScreen)
+     });
+
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

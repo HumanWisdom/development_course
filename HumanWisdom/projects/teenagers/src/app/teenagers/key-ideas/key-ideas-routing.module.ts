@@ -13,6 +13,7 @@ import { S83008Page } from './s83008/s83008.page';
 import { S83009Page } from './s83009/s83009.page';
 import { S83010Page } from './s83010/s83010.page';
 import { S83010tPage } from './s83010t/s83010t.page';
+import { S83010p1Page } from './s83010p1/s83010p1.page';
 import { S83011Page } from './s83011/s83011.page';
 import { S83011tPage } from './s83011t/s83011t.page';
 import { S83012Page } from './s83012/s83012.page';
@@ -98,6 +99,10 @@ const routes: Routes = [
   {
     path: 's83010t',
     component: S83010tPage,
+  },
+  {
+    path: 's83010p1',
+    component: S83010p1Page,
   },
   {
     path: 's83011',
