@@ -17,7 +17,7 @@ export class S100007tPage implements OnInit {
   bookmark=0
   path=this.router.url
   audioPage="/awareness/s100007"
-  toc="awareness/s100000"
+  toc="awareness/s100001"
 
   avDuration=localStorage.getItem("avDuration100007")
   totalTime=localStorage.getItem("totalTime100007")
