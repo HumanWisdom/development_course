@@ -1,13 +1,12 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 @Component({
   selector: 'app-audio-content',
   templateUrl: './audio-content.component.html',
   styleUrls: ['./audio-content.component.scss'],
 })
-export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
+export class AudioContentComponent implements OnInit, OnDestroy {
   yellow = "#FFC455"
   @Input() bg: string;
   @Input() title: string;
@@ -32,7 +31,6 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   pageaction = localStorage.getItem("pageaction");
 
   constructor(
-    private captureService: NgxCaptureService,
     private service: AdultsService,
     private router: Router, private url: ActivatedRoute,
   ) {
@@ -47,53 +45,36 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     str = str.substring(lastSlash + 2);
     //str = str.replace(/\D/g,'');
     this.scrId = str
-    console.log("str", str, "id", this.scrId)
 
     //call api to geta percent
     this.service.mediaPercent(this.scrId).subscribe(res => {
-
       this.mediaPercent = res[0].MediaPrcnt
-      console.log("media duration", this.mediaPercent)
     })
-    console.log(this.audioLink, this.mediaPercent, this.loginResponse)
     var str = this.router.url
     var lastSlash = str.lastIndexOf("/");
     str = str.substring(lastSlash + 2);
     this.scrId = str
-    console.log("str", str, "id", this.scrId)
-
 
     if ((this.loginResponse.Subscriber != 1)) {
       if (!this.freeScreens.includes(parseInt(this.scrId))) {
-
         this.interval = setInterval(() => this.checkPauseTime(), 1000);
-
-
-
       }
     }
   }
 
   getTime() {
-    console.log(this.audio)
-    console.log(this.audio.audio.nativeElement.currentTime)
-    this.sendAvDuration.emit(JSON.parse(this.audio.audio.nativeElement.currentTime))
+    let aud: any = document.getElementById("aud1");
+    this.sendAvDuration.emit(JSON.parse(aud.currentTime))
   }
 
   checkPauseTime() {
-
-    console.log(this.loginResponse.Subscriber, "subs")
-    console.log("checking to pause")
-    this.pauseTime = ((this.mediaPercent / 100) * this.audio.audio.nativeElement.duration)
-    console.log(this.pauseTime, "p")
-    if (this.audio.audio.nativeElement.currentTime > this.pauseTime) {
-      this.audio.audio.nativeElement.pause();
+    let aud: any = document.getElementById("aud1");
+    console.log(aud.currentTime);
+    this.pauseTime = ((this.mediaPercent / 100) * aud.duration)
+    if (aud.currentTime > this.pauseTime) {
+      aud.pause();
       this.router.navigate(['/onboarding/free-limit']);
     }
-
-
-
-
   }
 
   ngOnDestroy() {
@@ -102,10 +83,4 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
   }
-
-  ngAfterViewInit() {
-
-
-  }
-
 }
