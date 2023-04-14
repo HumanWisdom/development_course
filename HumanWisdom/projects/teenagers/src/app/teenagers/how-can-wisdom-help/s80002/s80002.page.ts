@@ -13,9 +13,11 @@ export class S80002Page implements OnInit,OnDestroy {
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w2"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  //videoLink=this.mediaVideo+'/how-can-wisdom-help/videos/1.1.mp4'  
-  videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
+ // mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/'
+  videoLink=this.mediaVideo+'/how-can-wisdom-help/videos/1.1.mp4' 
+   
+  //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title="Anxiety"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_01.svg"
   

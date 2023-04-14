@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s83001',
@@ -31,13 +32,17 @@ export class S83001Page implements OnInit,OnDestroy {
   tocAlt=""
   lastvisited = false;
   stories = []
-
+  moduleData:ProgramModel;
   constructor(
     private router: Router,
     private service:TeenagersService,
     private location:Location
   )
   { 
+    this.service.getModulebyId(83).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume="s"+this.moduleData.lastScreen;
+     }); 
     this.service.setmoduleID(83);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)

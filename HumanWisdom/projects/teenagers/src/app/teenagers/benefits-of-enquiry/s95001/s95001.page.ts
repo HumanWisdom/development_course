@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 import { Location } from '@angular/common';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s95001',
@@ -30,15 +31,21 @@ export class S95001Page implements OnInit, OnDestroy  {
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
   lastvisited = false;
   stories = []
-  //resumeBenefitsEnquiry=sessionStorage.getItem("resumeBenefitsEnquiry");
-
+  resumeBenefitsEnquiry=sessionStorage.getItem("resumeBenefitsEnquiry");
+  moduleData:ProgramModel;
   constructor(
     private router: Router,
     private service:TeenagersService,
     private location:Location
   )
   { 
-    this.service.setmoduleID(95);
+   this.service.setmoduleID(95);
+    this.service.getModulebyId(95).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume="s"+ res[0].lastScreen;
+      console.log(res[0].lastScreen)
+     });
+
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

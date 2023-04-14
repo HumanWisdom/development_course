@@ -341,6 +341,10 @@ export class TeenagersService {
   CheckShortsIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
+   
+  getModulebyId(id): Observable<any> {
+    return this.http.get(this.path + `/GetModule/${id}`)
+  }
 
   setmoduleID(id) {
     if (localStorage.getItem("isloggedin") === 'T') {
@@ -375,8 +379,11 @@ export class TeenagersService {
   }
 
   emaillogin(id = '') {
-    let email = 'guest@humanwisdom.me';
-    let password = '12345';
+    // let email = 'guest@humanwisdom.me';
+    // let password = '12345';
+    let email = 'hwpuser3@humanwisdom.me';
+    let password = 'hwpuser';
+
     let userId;
     let loginResponse;
     let modaldata = {};
