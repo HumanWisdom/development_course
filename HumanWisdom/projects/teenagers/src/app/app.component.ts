@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../../../shared/services/shared.service';
+import { ProgramType } from '../../../shared/models/program-model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'teenagers';
+  constructor(){
+    SharedService.ProgramId=ProgramType.Teenagers;
+  }
 }

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardPage
+  },
+  {
+    path: 'teenager-dashboard',
+    component: DashboardPage
   }
 ];
 

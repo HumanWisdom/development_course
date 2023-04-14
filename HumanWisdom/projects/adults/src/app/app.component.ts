@@ -8,6 +8,8 @@ import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AdultsService } from './adults/adults.service';
 import { slider } from './route.animation';
+import { SharedService } from '../../../shared/services/shared.service';
+import { ProgramType } from '../../../shared/models/program-model';
 
 @Component({
   selector: 'app-root',
@@ -38,11 +40,12 @@ export class AppComponent implements OnDestroy {
     private router: Router,
     private meta: Meta,
     private title: Title,
-    private services: AdultsService
+    private services: AdultsService,
   ) {
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
+    SharedService.ProgramId=ProgramType.Adults;
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     if (this.platform.ANDROID || this.platform.IOS) {
