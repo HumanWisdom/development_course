@@ -15,7 +15,7 @@ export class S100014Page implements OnInit {
   bg = "red_pink_w12"
   hint = "You may realise that your mind is comparing all the time, and thats why you are feeling hurt, angry, and jealous."
 
-  toc = "awareness/s100000"
+  toc = "awareness/s100001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -14,7 +14,7 @@ export class S80006Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w6"
   //mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/'
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/how_can_wisdom_help/videos/1.5.mp4'  
   //videoLink = "https://www.youtube.com/embed/6GR-VMraIvY"
   title="Addiction"

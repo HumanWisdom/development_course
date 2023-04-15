@@ -15,7 +15,7 @@ export class S99011Page implements OnInit {
   bg = "dark_blue_w5"
   hint = "The moment you realise that, you could become a better listener"
 
-  toc = "insight/s99000"
+  toc = "insight/s99001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

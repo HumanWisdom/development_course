@@ -31,7 +31,7 @@ export class S99012Page implements OnInit,OnDestroy {
   totalTime:any  
  
   
-  toc="insight/s99000"
+  toc="insight/s99001"
   bookmark=0
   path=this.router.url
   avDuration:any
