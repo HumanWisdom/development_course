@@ -11,7 +11,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S99021Page implements OnInit {
   programType:ProgramType=ProgramType.Teenagers;
-  toc="insight/s99000"
+  toc="insight/s99001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/39.png"
   
   bg=""

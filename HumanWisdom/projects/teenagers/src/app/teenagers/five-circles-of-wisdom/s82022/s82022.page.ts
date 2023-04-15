@@ -15,7 +15,7 @@ export class S82022Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/key_ideas.jpg"
   
   bg=""
-  moduleLink="/key-ideas/"
+  moduleLink="/key-ideas/s83001"
   moduleName=" Key Ideas"
   sectionName= "Introduction";
   moduleId=83
