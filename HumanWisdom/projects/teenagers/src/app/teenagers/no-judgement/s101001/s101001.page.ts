@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s101001',
@@ -31,6 +32,8 @@ export class S101001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  pgResume=sessionStorage.getItem("pgResume")
+  moduleData:ProgramModel;
 
   constructor
   (
@@ -40,10 +43,13 @@ export class S101001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.service.setmoduleID(7);
-      this.url.queryParams.subscribe(params => {
-      this.t = params['t'];
-    })
+    
+    this.service.setmoduleID(101);
+    this.service.getModulebyId(101).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume="s"+ res[0].lastScreen;
+      console.log(res[0].lastScreen)
+     });
      
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)

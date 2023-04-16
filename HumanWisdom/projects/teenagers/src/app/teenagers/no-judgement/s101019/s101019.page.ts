@@ -23,7 +23,7 @@ export class S101019Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="comparison/s0"
+  toc="/no-judgement/s101001"
   path=this.router.url
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  

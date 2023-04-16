@@ -57,7 +57,12 @@ const routes: Routes = [
   {
     path: 'no-judgement',
     loadChildren: () => import('./teenagers/no-judgement/no-judgement.module').then( m => m.NoJudgementModule)
+  },
+  {
+    path: 'questions-are-key',
+    loadChildren: () => import('./teenagers/questions-are-key/questions-are-key.module').then( m => m.QuestionsAreKeyModule)
   } 
+   
   
 
 ];
