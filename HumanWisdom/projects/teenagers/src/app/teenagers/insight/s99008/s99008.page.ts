@@ -20,7 +20,7 @@ export class S99008Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/insight/audios/1.3.mp3'
 
   transcriptPage="insight/s99008t"
-  toc="insight/s99000"
+  toc="insight/s99001"
   bookmark=0
   path=this.router.url
   avDuration:any

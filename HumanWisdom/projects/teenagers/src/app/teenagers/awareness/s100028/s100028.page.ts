@@ -10,7 +10,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S100028Page implements OnInit {
   
-  toc="awareness/s100000"
+  toc="awareness/s100001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png"
   bg=""
   moduleLink="/no-judgement/s100001"

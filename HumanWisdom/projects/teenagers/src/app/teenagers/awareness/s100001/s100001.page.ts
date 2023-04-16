@@ -32,20 +32,15 @@ export class S100001Page implements OnInit,OnDestroy {
   stories: any = []
   moduleData:ProgramModel;
   pgResume=sessionStorage.getItem("pgResume")
+
   constructor(
     private router: Router,
     private service:TeenagersService,
     private location:Location
   )
   { 
-    this.service.setmoduleID(100);
-    this.service.getModulebyId(100).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume="s"+ res[0].lastScreen;
-      console.log(res[0].lastScreen)
-     });
-
-     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    this.getSetModuleData();
+    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
@@ -157,4 +152,13 @@ export class S100001Page implements OnInit,OnDestroy {
     this.location.back()
   }
 
+
+  getSetModuleData(){
+    this.service.setmoduleID(100);
+    this.service.getModulebyId(100).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
+  }
 }

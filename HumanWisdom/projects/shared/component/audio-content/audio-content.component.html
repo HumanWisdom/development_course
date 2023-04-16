@@ -29,7 +29,7 @@
               -->
               <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
-                  <audio id="aud1" controls controlsList="nodownload">
+                  <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
                   <!-- <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player> -->

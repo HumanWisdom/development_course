@@ -27,7 +27,7 @@ export class S80001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume=""
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/74.png"
   tocColor="white"
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
@@ -43,10 +43,8 @@ export class S80001Page implements OnInit,OnDestroy {
     this.service.setmoduleID(80);
     this.service.getModulebyId(80).subscribe(res=>{
       this.moduleData=res;
-      this.pgResume="s"+ res[0].lastScreen;
-      console.log(res[0].lastScreen)
-     });
-
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+     }); 
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

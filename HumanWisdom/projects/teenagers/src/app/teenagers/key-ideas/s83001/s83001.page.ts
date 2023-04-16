@@ -26,7 +26,7 @@ export class S83001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume=""
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/34.png"
   tocColor="white"
   tocAlt=""
@@ -39,11 +39,12 @@ export class S83001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(83);
     this.service.getModulebyId(83).subscribe(res=>{
       this.moduleData=res;
-      this.pgResume="s"+this.moduleData.lastScreen;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
      }); 
-    this.service.setmoduleID(83);
+    
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

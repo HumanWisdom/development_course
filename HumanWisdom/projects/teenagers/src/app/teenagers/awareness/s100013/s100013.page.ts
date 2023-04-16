@@ -14,7 +14,7 @@ export class S100013Page implements OnInit {
   bg_cft = "bg_red_pink"
   bg = "red_pink_w11"
 
-  toc = "awareness/s100000"
+  toc = "awareness/s100001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
