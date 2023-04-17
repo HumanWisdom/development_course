@@ -87,4 +87,9 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
   }
+
+  onChange(value) {
+    let aud: any = document.getElementById("aud1");
+    aud.playbackRate = Number(value);
+  }
 }
