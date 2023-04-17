@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>Perhaps we can begin by noticing that we judge ourselves as good or bad, right or wrong all the time. It's a pattern that repeats itself. Where does it come from?
+          We could then pause the judgement process and see ourselves as we are.
+          </p>
+
+          <p>It is in accepting ourselves as we are that there is peace and the freedom to then look at and understand what is going on.</p>
+       
+          <p>Every emotion we feel is the same as in all human beings, and that may also help us look at ourselves without judgement.</p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
