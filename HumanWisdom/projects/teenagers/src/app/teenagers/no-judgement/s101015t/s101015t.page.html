@@ -1,0 +1,40 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>Here is an exercise you can try.
+          </p>
+
+          <p>The next time you are critical of yourself, see if you can catch that moment and pause. Say you look at social media and see a friend's post has many more likes than anything you have posted.
+          </p>
+       
+          <p>Do one of the breathing exercises you learned in the section on nurturing a quiet mind.
+          </p>
+
+          <p>Just observe both the feeling of envy, and the thought, which is critical of yourself for not having enough followers.
+
+          </p>
+
+          <p>If you look carefully you may see the process of comparison at work in the background, which is responsible for your feeling of envy. Social media is just a trigger for that feeling.
+          </p>
+
+          <p>Now continue exploring the feeling of envy in yourself.
+          </p>
+
+          <p>You are the same human being as everyone else - that may make it easier.
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>Here is an exercise you can try.
+          </p>
+
+          <p>Say someone posts a picture of themselves on Social Media on holiday - showing them having a good time with some amazing pictures of the hotel and the beach and so on.
+          </p>
+       
+          <p>You immediately judge them for posting those pictures- you may think they are showing off, or deliberately trying to make you feel bad, or they are just posting fake pictures and they are not real.
+          </p>
+
+          <p>Do you notice this feeling of automatic judgement in yourself?
+          </p>
+
+          <p>Its not right or wrong - can you just become aware of the many times a day you judge others?
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
