@@ -18,7 +18,8 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   interval: any
   t: any
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+  localStorageFreeScreens = localStorage.getItem("freeScreens");
+  freeScreens = this.localStorageFreeScreens!= "undefined" ? JSON.parse(this.localStorageFreeScreens) : "";
   scrId: any
   @ViewChild('audio') audio;
   @ViewChild('screen', { static: true }) screen: any;
