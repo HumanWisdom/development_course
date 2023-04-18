@@ -92,7 +92,10 @@ jobs:
           
           
     - name: Set Success Flag
+      run: echo 'success=true' >> $GITHUB_ENV
       id: success_flag
-      run: echo "::set-output name=success::true"
+
+    outputs:
+      success: ${{ steps.success_flag.outputs.success }}
       
       
