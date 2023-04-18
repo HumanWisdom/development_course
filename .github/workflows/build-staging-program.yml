@@ -90,3 +90,7 @@ jobs:
           sudo rm -rf /var/www/html/course
           sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
           
+    - name: Set Success Flag
+      id: success_flag
+      run: echo ::set-output name=success::true   
+          
