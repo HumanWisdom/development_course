@@ -95,7 +95,7 @@ jobs:
 
   build-adults:
      runs-on: ubuntu-latest
-    
+     needs: deploy-teenagers
      steps:
      - name: Checkout code
        uses: actions/checkout@v2
