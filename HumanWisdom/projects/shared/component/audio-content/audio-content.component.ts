@@ -25,6 +25,7 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('screen', { static: true }) screen: any;
   pageaction = localStorage.getItem("pageaction");
   reachedLimit = false;
+  enableAlert = false;
 
   constructor(
     private service: AdultsService,
@@ -62,7 +63,8 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     this.audio.nativeElement.onplaying = (event) => {
       if (this.reachedLimit) {
         this.audio.nativeElement.pause();
-        window.alert('You have reached free limit')
+        this.enableAlert = true;
+        // window.alert('You have reached free limit')
       }
     };
   }
@@ -78,7 +80,8 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     if (aud.currentTime > this.pauseTime) {
       this.reachedLimit = true;
       aud.pause();
-      window.alert('You have reached free limit')
+      this.enableAlert = true;
+      // window.alert('You have reached free limit')
     }
   }
 
@@ -92,5 +95,9 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   onChange(value) {
     let aud: any = document.getElementById("aud1");
     aud.playbackRate = Number(value);
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
   }
 }

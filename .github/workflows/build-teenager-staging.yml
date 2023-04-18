@@ -1,12 +1,14 @@
 name: build-Teenager-staging
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: ["build-HumanWisdom-staging"]
+    types:
+      - completed
     
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    if: ${{ needs.adults.outputs.success == 'true' }}
     steps:
      - name: Checkout code
        uses: actions/checkout@v2
