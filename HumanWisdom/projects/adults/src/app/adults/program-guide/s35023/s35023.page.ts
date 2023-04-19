@@ -1,4 +1,4 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, ViewChild, EventEmitter } from '@angular/core';
 import { AdultsService } from "../../adults.service";
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -9,6 +9,16 @@ import { Location } from '@angular/common';
   styleUrls: ['./s35023.page.scss'],
 })
 export class S35023Page implements OnInit,OnDestroy {
+
+  @ViewChild('video') video;
+  @Output() sendAvDuration = new EventEmitter<string>();
+  currentTime: any
+  mediaPercent: any
+  pauseTime: any
+  scrId: any
+  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+  localStorageFreeScreens = localStorage.getItem("freeScreens");
+  freeScreens = this.localStorageFreeScreens!= "undefined" ? JSON.parse(this.localStorageFreeScreens) : "";
 
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
@@ -124,5 +134,18 @@ createScreen(){
 
   }
 
-
+  getCurrentTime(data) {
+    this.currentTime = data.target.currentTime;
+    this.sendAvDuration.emit(JSON.parse(data.target.currentTime))
+    if (this.loginResponse.Subscriber != 1) {
+      if (!this.freeScreens.includes(parseInt(this.scrId))) {
+        this.pauseTime = ((this.mediaPercent / 100) * data.target.duration)
+        if (this.currentTime > this.pauseTime) {
+          this.video.nativeElement.pause()
+          window.alert('You Have Reached Free Limit')
+        }
+      }
+    }
+  }
+  
 }
