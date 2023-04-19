@@ -26,7 +26,7 @@ export class S82001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume=""
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/33.png"
   tocColor="white"
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
@@ -39,11 +39,12 @@ export class S82001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(82);
     this.service.getModulebyId(82).subscribe(res=>{
       this.moduleData=res;
-      this.pgResume="s"+this.moduleData.lastScreen;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
      }); 
-    this.service.setmoduleID(82);
+    
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -92,7 +93,7 @@ export class S82001Page implements OnInit,OnDestroy {
       this.lastvisited = false;
     }    
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(35))
+    //localStorage.setItem("moduleId",JSON.stringify(35))
     this.moduleId=localStorage.getItem("moduleId")
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}

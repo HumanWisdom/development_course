@@ -15,7 +15,7 @@ export class S100024Page implements OnInit {
   bg = "red_pink_w4"
   hint = ""
 
-  toc = "awareness/s100000"
+  toc = "awareness/s100001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

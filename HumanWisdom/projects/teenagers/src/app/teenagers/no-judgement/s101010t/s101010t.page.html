@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+         <p>Lets take a simple example of someone who looks in the mirror and does not like how they look. They judge themselves and think others are better looking. They start feeling bad about themselves, having low self-esteem and confidence and become anxious about what other people think of them.
+          </p>
+
+          <p>If we asked why they feel bad - they may say because they think they are not as attractive as others and will have fewer friends.
+          </p>
+       
+          <p>If we asked where this feeling came from - they may realise that they have been influenced by social media and by others, to have an image of the ideal body shape - which they do not fit into.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

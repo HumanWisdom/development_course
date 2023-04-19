@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s100028',
@@ -9,13 +10,14 @@ import {Location } from '@angular/common'
 })
 export class S100028Page implements OnInit {
   
-  toc="awareness/s100000"
+  toc="awareness/s100001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png"
   bg=""
-  moduleLink="/no-judgement/s40001"
+  moduleLink="/no-judgement/s100001"
   moduleName="No Judgement"
   sectionName= "Understand yourself";
-  moduleId=40
+  moduleId=100
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Breathing',

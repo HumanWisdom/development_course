@@ -20,7 +20,7 @@ export class S100015Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/awareness/audios/1.7.mp3'
 
   transcriptPage="awareness/s100015t"
-  toc="awareness/s100000"
+  toc="awareness/s100001"
   bookmark=0
   path=this.router.url
   avDuration:any

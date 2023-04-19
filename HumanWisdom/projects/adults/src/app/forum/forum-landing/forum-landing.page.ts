@@ -121,7 +121,7 @@ export class ForumLandingPage implements OnInit {
       data.forEach(element => {
         temp.forEach((res) => {
           if (res.PostID === Number(element.ParentPOstID)) {
-            res.child.push(element);
+            // res.child.push(element);
             flag = true;
           }
         })

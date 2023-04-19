@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 
 @Component({
@@ -9,15 +10,15 @@ import {Location } from '@angular/common'
   styleUrls: ['./s99021.page.scss'],
 })
 export class S99021Page implements OnInit {
-  
-  toc="insight/s99000"
+  programType:ProgramType=ProgramType.Teenagers;
+  toc="insight/s99001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/39.png"
   
   bg=""
-  moduleLink="/adults/awareness/s100001"
+  moduleLink="/awareness/s100001"  
   moduleName=" Awareness"
-  sectionName= "Art of Enquiry";
-  moduleId=99
+  sectionName= "Art of Enquiry"; 
+  moduleId=100
   moduleList: any = [
     {
       name: 'Awareness',

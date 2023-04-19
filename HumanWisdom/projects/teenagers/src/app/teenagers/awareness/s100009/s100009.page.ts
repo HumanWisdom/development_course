@@ -24,7 +24,7 @@ export class S100009Page implements OnInit,OnDestroy {
   totalTime:any
   
   bookmark=0
-  toc="awareness/s100000"
+  toc="awareness/s100001"
   path=this.router.url
   
 
