@@ -17,7 +17,7 @@ export class S74006Page implements OnInit {
    videoLink = this.mediaVideo + '/how_can_wisdom_help/videos/1.5.mp4'
   //videoLink = "https://www.youtube.com/embed/6GR-VMraIvY"
   title = "Addiction"
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_05.svg"
+  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_05.png"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")
