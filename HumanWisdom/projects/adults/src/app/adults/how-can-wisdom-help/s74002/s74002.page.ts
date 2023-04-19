@@ -18,7 +18,7 @@ export class S74002Page implements OnInit {
   // videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   //videoLink = "https://www.youtube.com/embed/IElKbxV33Zs"
   title = "Anxiety"
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_01.svg"
+  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_01.png"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")

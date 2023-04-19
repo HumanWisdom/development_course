@@ -3,8 +3,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
-import { SharedService } from "../../services/shared.service";
 import { ProgramType } from "../../models/program-model";
+import { SharedService } from "../../services/shared.service";
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -32,9 +32,10 @@ export class CourseHeaderComponent implements OnInit {
   address = this.router.url
   modName: any
   scrNumber: any
-  programName:string;
+  programName: string;
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
   pageaction = localStorage.getItem("pageaction");
+  isLoggedIn = false
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -45,15 +46,21 @@ export class CourseHeaderComponent implements OnInit {
     if (this.router.getCurrentNavigation()) {
       this.urlT = this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t : ''
     }
-    this.programName= this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase();
-    if(this.programName=='teenagers'){
-      this.programName='';
+    this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase();
+    if (this.programName == 'teenagers') {
+      this.programName = '';
     }
     this.ngNavigatorShareService = ngNavigatorShareService;
+
+    let sub: any = localStorage.getItem('Subscriber')
+    let res = localStorage.getItem("isloggedin")
+    if (res && res === 'T' && sub && sub === '1') {
+      this.isLoggedIn = true;
+    }
   }
 
   ngOnInit() {
-    this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
+    this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
     this.showheaderbar = true;
     // console.log(this.ac)
     // var module=this.path.substr(0, this.path.lastIndexOf("/",this.path.lastIndexOf("/")+2));
@@ -109,22 +116,23 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   courseNote() {
-    this.router.navigate(['/'+this.programName+'/coursenote', { path: this.path }])
+    this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
 
   goToToc() {
-    this.router.navigate(['/'+this.programName+'/' + this.toc])
+    this.router.navigate(['/' + this.programName + '/' + this.toc])
   }
 
   goToDash() {
-    if(this.progUrl=="/adults/"){
+    if (this.progUrl == "/adults/") {
       this.router.navigate(['/adults/adult-dashboard'])
     }
-    else{
-      this.router.navigate([this.programName +  '/teenager-dashboard'])
-  }
+    else {
+      console.log(this.programName + '/teenager-dashboard');
+      this.router.navigate([this.programName + '/teenager-dashboard'])
+    }
 
-   
+
   }
 
   addNote() {
@@ -160,7 +168,7 @@ export class CourseHeaderComponent implements OnInit {
       alert(`This service/api is not supported in your Browser`);
       return;
     } */
-  
+
   }
 
   getProgress(p) {
@@ -177,12 +185,12 @@ export class CourseHeaderComponent implements OnInit {
 
   }
 
-   getProgramTypeName(value: number): string | undefined {
+  getProgramTypeName(value: number): string | undefined {
     const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
     return enumKey as string;
   }
 
-  shareUrl (programType) {
+  shareUrl(programType) {
     switch (programType) {
       case ProgramType.Adults:
         if (this.urlT) {
@@ -191,10 +199,10 @@ export class CourseHeaderComponent implements OnInit {
         else {
           this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.token}`
         }
-      break;
+        break;
       case ProgramType.Teenagers:
         this.path = SharedService.TeenagerBaseUrl + this.address + `?t=${this.token}`
-       break;
+        break;
       default:
         if (this.urlT) {
           this.path = SharedService.AdultsBaseUrl + this.address + `?t=${this.urlT}`
@@ -204,9 +212,9 @@ export class CourseHeaderComponent implements OnInit {
         }
     }
   }
-  
-  
-  
-  
-  
+
+
+
+
+
 }

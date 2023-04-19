@@ -53,7 +53,20 @@ const routes: Routes = [
   {
     path: 'awareness',
     loadChildren: () => import('./teenagers/awareness/awareness.module').then( m => m.AwarenessModule)
+  },
+  {
+    path: 'no-judgement',
+    loadChildren: () => import('./teenagers/no-judgement/no-judgement.module').then( m => m.NoJudgementModule)
+  },
+  {
+    path: 'questions-are-key',
+    loadChildren: () => import('./teenagers/questions-are-key/questions-are-key.module').then( m => m.QuestionsAreKeyModule)
+  },
+  {
+    path: 'without-language',
+    loadChildren: () => import('./teenagers/without-language/without-language.module').then( m => m.WithoutLanguageModule)
   } 
+   
   
 
 ];

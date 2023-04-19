@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 @Component({
@@ -6,7 +6,7 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
   templateUrl: './audio-content.component.html',
   styleUrls: ['./audio-content.component.scss'],
 })
-export class AudioContentComponent implements OnInit, OnDestroy {
+export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   yellow = "#FFC455"
   @Input() bg: string;
   @Input() title: string;
@@ -18,17 +18,14 @@ export class AudioContentComponent implements OnInit, OnDestroy {
   interval: any
   t: any
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+  localStorageFreeScreens = localStorage.getItem("freeScreens");
+  freeScreens = this.localStorageFreeScreens!= "undefined" ? JSON.parse(this.localStorageFreeScreens) : "";
   scrId: any
-  // @ViewChild('audio',{static:false})
-  // public audio:ElementRef
-
-
-
-  // @ViewChild('playerContainer') playerContainer:ElementRef ;
   @ViewChild('audio') audio;
   @ViewChild('screen', { static: true }) screen: any;
   pageaction = localStorage.getItem("pageaction");
+  reachedLimit = false;
+  enableAlert = false;
 
   constructor(
     private service: AdultsService,
@@ -57,9 +54,19 @@ export class AudioContentComponent implements OnInit, OnDestroy {
 
     if ((this.loginResponse.Subscriber != 1)) {
       if (!this.freeScreens.includes(parseInt(this.scrId))) {
-        this.interval = setInterval(() => this.checkPauseTime(), 1000);
+        this.interval = setInterval(() => this.reachedLimit ? null : this.checkPauseTime(), 1000);
       }
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.audio.nativeElement.onplaying = (event) => {
+      if (this.reachedLimit) {
+        this.audio.nativeElement.pause();
+        this.enableAlert = true;
+        // window.alert('You have reached free limit')
+      }
+    };
   }
 
   getTime() {
@@ -69,11 +76,12 @@ export class AudioContentComponent implements OnInit, OnDestroy {
 
   checkPauseTime() {
     let aud: any = document.getElementById("aud1");
-    console.log(aud.currentTime);
     this.pauseTime = ((this.mediaPercent / 100) * aud.duration)
     if (aud.currentTime > this.pauseTime) {
+      this.reachedLimit = true;
       aud.pause();
-      this.router.navigate(['/onboarding/free-limit']);
+      this.enableAlert = true;
+      // window.alert('You have reached free limit')
     }
   }
 
@@ -82,5 +90,14 @@ export class AudioContentComponent implements OnInit, OnDestroy {
       clearInterval(this.interval);
     }
 
+  }
+
+  onChange(value) {
+    let aud: any = document.getElementById("aud1");
+    aud.playbackRate = Number(value);
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
   }
 }

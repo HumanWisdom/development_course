@@ -27,7 +27,8 @@ export class VideoContentComponent implements OnInit {
   t: any
   scrId: any
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+  localStorageFreeScreens = localStorage.getItem("freeScreens");
+  freeScreens = this.localStorageFreeScreens!= "undefined" ? JSON.parse(this.localStorageFreeScreens) : "";
   pageaction = localStorage.getItem("pageaction");
   public enablevideo = false;
 
