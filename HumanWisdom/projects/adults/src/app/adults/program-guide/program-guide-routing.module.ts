@@ -50,6 +50,11 @@ import { S35016Page } from './s35016/s35016.page';
 import { S35017Page } from './s35017/s35017.page';
 import { S35018Page } from './s35018/s35018.page';
 import { S35019Page } from './s35019/s35019.page';
+import { S35020Page } from './s35020/s35020.page';
+import { S35021Page } from './s35021/s35021.page';
+import { S35022Page } from './s35022/s35022.page';
+import { S35023Page } from './s35023/s35023.page';
+import { S35024Page } from './s35024/s35024.page';
 
 const routes: Routes = [
   {
@@ -251,6 +256,26 @@ const routes: Routes = [
   {
     path: 's35019',
     component: S35019Page,
+  },
+  {
+    path: 's35020',
+    component: S35020Page,
+  },
+  {
+    path: 's35021',
+    component: S35021Page,
+  },
+  {
+    path: 's35022',
+    component: S35022Page,
+  },
+  {
+    path: 's35023',
+    component: S35023Page,
+  },
+  {
+    path: 's35024',
+    component: S35024Page,
   },
 ];
 
