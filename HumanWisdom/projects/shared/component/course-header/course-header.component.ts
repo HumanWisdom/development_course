@@ -124,8 +124,6 @@ export class CourseHeaderComponent implements OnInit {
       console.log(this.programName +  '/teenager-dashboard');
       this.router.navigate([this.programName +  '/teenager-dashboard'])
   }
-
-   
   }
 
   addNote() {
