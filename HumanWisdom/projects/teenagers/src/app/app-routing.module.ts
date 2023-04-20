@@ -61,6 +61,10 @@ const routes: Routes = [
   {
     path: 'questions-are-key',
     loadChildren: () => import('./teenagers/questions-are-key/questions-are-key.module').then( m => m.QuestionsAreKeyModule)
+  },
+  {
+    path: 'without-language',
+    loadChildren: () => import('./teenagers/without-language/without-language.module').then( m => m.WithoutLanguageModule)
   } 
    
   
