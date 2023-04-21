@@ -57,7 +57,11 @@ import { S35016Page } from './s35016/s35016.page';
 import { S35017Page } from './s35017/s35017.page';
 import { S35018Page } from './s35018/s35018.page';
 import { S35019Page } from './s35019/s35019.page';
-
+import { S35020Page } from './s35020/s35020.page';
+import { S35021Page } from './s35021/s35021.page';
+import { S35022Page } from './s35022/s35022.page';
+import { S35023Page } from './s35023/s35023.page';
+import { S35024Page } from './s35024/s35024.page';
 @NgModule({
   declarations: [
     S35001Page,
@@ -109,6 +113,11 @@ import { S35019Page } from './s35019/s35019.page';
     S35017Page,
     S35018Page,
     S35019Page,
+    S35020Page,
+    S35021Page,
+    S35022Page,
+    S35023Page,
+    S35024Page,
   ],
   imports: [
     CommonModule,

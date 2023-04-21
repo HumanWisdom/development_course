@@ -30,8 +30,8 @@ export class S100001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
-  pgResume="";
   moduleData:ProgramModel;
+  pgResume=sessionStorage.getItem("pgResume")
 
   constructor(
     private router: Router,

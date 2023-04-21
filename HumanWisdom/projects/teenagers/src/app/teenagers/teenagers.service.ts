@@ -362,6 +362,7 @@ export class TeenagersService {
     localStorage.setItem("moduleId", JSON.stringify(id))
     this.clickModule(id, userId)
       .subscribe(res => {
+        
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         let qrList = res
         discoveringWisdomResume = "s" + res.lastVisitedScreen
@@ -369,6 +370,8 @@ export class TeenagersService {
         mediaPercent = parseInt(res.MediaPercent);
         let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
         localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
+        localStorage.setItem("progressbarvalue", "0")
+
         if(Number.isNaN(mediaPercent)){
           localStorage.setItem("mediaPercent", JSON.parse("0"))
         }else{
@@ -379,10 +382,10 @@ export class TeenagersService {
   }
 
   emaillogin(id = '') {
-    let email = 'guest@humanwisdom.me';
-    let password = '12345';
-    // let email = 'hwpuser3@humanwisdom.me';
-    // let password = 'hwpuser';
+    // let email = 'guest@humanwisdom.me';
+    // let password = '12345';
+    let email = 'hwpuser3@humanwisdom.me';
+    let password = 'hwpuser';
 
     let userId;
     let loginResponse;

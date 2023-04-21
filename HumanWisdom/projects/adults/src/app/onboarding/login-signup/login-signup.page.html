@@ -451,22 +451,40 @@
 <!-- /popup modal -->
 <span #enablemodal data-toggle="modal" data-target="#modal_popup"></span>
 
-<div class="modal fade" id="enableotpmodal" tabindex="-1" role="dialog" data-backdrop="static"
-  aria-labelledby="otpModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<div class="modal fade" id="enableotpmodal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="otpModalLabel" aria-hidden="true">
+  <div class="modal-dialog center_flex" role="document">
+    <div class="modal-content popup_03">
       <div class="modal-body">
-        <span #closemodal data-dismiss="modal" aria-label="Close">
-        </span>
-        <div class="form-group">
-          <label>A one-time password has been sent to your email address (Check your spam folder too). Please enter it
-            below.</label>
-          <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
+        
+        <div class="row mb10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="fw_400 fs_14px lh_21px fc_000000 italici mtb0px">
+              <span class="mtb0px">
+                A one-time password has been sent to your email address
+              </span>
+              
+              <span class="fc_1092a7 fw_500">
+                (Check your spam folder too).
+              </span>
+
+              <br>
+              
+              <span class="mtb0px">
+                Please enter it below.
+              </span>
+            </h4>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
+          </div>
+        </div>
+        
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" [disabled]="!verificationCode"
-          (click)="verifyCode()">Submit</button>
+      <div class="modal-footer b0">
+        <button type="button" class="btn btn-primary" [disabled]="!verificationCode" (click)="verifyCode()">Submit</button>
       </div>
     </div>
   </div>
