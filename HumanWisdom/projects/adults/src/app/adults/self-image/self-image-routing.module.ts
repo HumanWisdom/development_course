@@ -64,7 +64,6 @@ const routes: Routes = [
   },
   {
     path: 's25001',   
-   canActivate:[ActiveGuard],  
     component: S25001Page,
   },
   {

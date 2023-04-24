@@ -9,7 +9,7 @@ export class ModalComponent implements OnInit {
   @ViewChild('enablecookiemodal') enablecookiemodal: ElementRef;
 
   @Input()
-  footerbuttonText = 'close'
+  okText = 'close'
 
   @Input()
   content = '';
@@ -20,6 +20,12 @@ export class ModalComponent implements OnInit {
   @Output()
   closeEvent = new EventEmitter<string>();
 
+  @Input()
+  cancelText = 'cancel'
+
+  @Input()
+  enableCancel = false
+
   constructor() { }
 
   ngOnInit() {
@@ -28,8 +34,8 @@ export class ModalComponent implements OnInit {
     }, 100)
   }
 
-  close() {
-    this.closeEvent.emit(this.footerbuttonText);
+  close(text) {
+    this.closeEvent.emit(text);
   }
 
 }
