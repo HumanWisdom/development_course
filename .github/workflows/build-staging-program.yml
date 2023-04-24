@@ -10,7 +10,7 @@ jobs:
      - name: github workflows queue
        uses: rpadaki/turnstyle@v1.1
        with:
-        poll-interval-seconds: 60
+        poll-interval-seconds: 300
         initial-wait-seconds: 2
     
   
