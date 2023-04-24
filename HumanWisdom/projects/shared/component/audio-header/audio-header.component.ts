@@ -3,6 +3,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
+import { ProgramType } from "../../models/program-model";
+import { SharedService } from "../../services/shared.service";
 
 @Component({
   selector: 'app-audio-header',
@@ -32,9 +34,9 @@ export class AudioHeaderComponent implements OnInit {
   scrNumber: any
   showheaderbar = true
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
-
+  baseUrl:string;
   @Output() sendBookmark = new EventEmitter<boolean>();
-
+  programName:string='';
   constructor(private router: Router,
     private service: AdultsService, public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService) {
@@ -49,7 +51,10 @@ export class AudioHeaderComponent implements OnInit {
     this.showheaderbar = true;
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-
+    this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
+    if(this.programName=='teenagers'){
+      this.programName='';
+    }
     var lastSlash = this.path.lastIndexOf("/");
     this.scrNumber = this.path.substring(lastSlash + 2);
     this.getProgress(this.scrNumber)
@@ -89,17 +94,21 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   courseNote() {
-    this.router.navigate(['/adults/coursenote', { path: this.path }])
+    this.router.navigate(['/'+this.programName+'/coursenote', { path: this.path }])
   }
 
   goToToc() {
-          // this.router.navigate(['/adults/' + this.toc])
-          this.router.navigate([this.progUrl + this.toc])
-         
+    this.router.navigate(['/'+this.programName+'/' + this.toc])
   }
 
   goToDash() {
-    this.router.navigate(['/adults/adult-dashboard'])
+    if(SharedService.ProgramId == ProgramType.Adults){
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+    else{
+      this.programName="";
+      this.router.navigate([this.programName +  '/teenager-dashboard'])
+  }
   }
 
   goToTranscript() {
@@ -133,14 +142,14 @@ export class AudioHeaderComponent implements OnInit {
       alert(`This service/api is not supported in your Browser`);
       return;
     } */
+    this.shareUrl(SharedService.ProgramId);
     if (this.urlT) {
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
+      this.path = this.baseUrl + this.address + `?t=${this.urlT}`
 
     }
     else {
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
+      this.path = this.baseUrl + this.address + `?t=${this.token}`
     }
-
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
@@ -150,6 +159,23 @@ export class AudioHeaderComponent implements OnInit {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  shareUrl (programType) {
+    switch (programType) {
+      case ProgramType.Adults:
+        this.baseUrl=SharedService.AdultsBaseUrl;
+      break;
+      case ProgramType.Teenagers:
+        this.baseUrl=SharedService.TeenagerBaseUrl;
+       break;
+      default:
+      this.baseUrl=SharedService.TeenagerBaseUrl;
+    }
+  }
+  getProgramTypeName(value: number): string  {
+    const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
+    return enumKey as string;
   }
 
   getProgress(p) {

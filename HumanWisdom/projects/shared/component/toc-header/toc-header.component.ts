@@ -16,6 +16,7 @@ export class TocHeaderComponent implements OnInit {
   @Input() tocAlt: string;
   path=this.router.url
   baseUrl:string;
+  programName:'';
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router ,
     private location: Location) { }
@@ -50,5 +51,15 @@ export class TocHeaderComponent implements OnInit {
       default:
       this.baseUrl=SharedService.TeenagerBaseUrl;
     }
+  }
+
+  goToDash() {
+    if(SharedService.ProgramId == ProgramType.Adults){
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+    else{
+      this.programName="";
+      this.router.navigate([this.programName +  '/teenager-dashboard'])
+  }
   }
 }
