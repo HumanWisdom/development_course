@@ -33,6 +33,7 @@ export class ProfilePage implements OnInit {
   partnerOption = localStorage.getItem('PartnerOption');
   score = 0;
   isSubscribe = false;
+  enableAlert = false;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     public platform: Platform, public logeventservice: LogEventService) {
@@ -113,6 +114,20 @@ export class ProfilePage implements OnInit {
   }
 
   deleteMyData() {
+    this.enableAlert = true;
+  }
+
+  Logevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if (params != '' && route != '') {
+      this.router.navigate([route, params]);
+    } else if (route != '') {
+      this.router.navigate([route])
+    }
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
     let isSubscribe
     var retVal;
     let sub: any = localStorage.getItem('Subscriber');
@@ -121,8 +136,7 @@ export class ProfilePage implements OnInit {
     } else {
       isSubscribe = false;
     }
-    retVal = confirm("Are you sure you want to delete your data?");
-    if (retVal == true) {
+    if (event === 'ok') {
       this.Onboardingservice.deleteMyData({
         UserID: localStorage.getItem("userId").toString(),
         Email: localStorage.getItem("email")
@@ -141,18 +155,6 @@ export class ProfilePage implements OnInit {
             }
           }
         )
-    } else {
-      return false;
-    }
-
-  }
-
-  Logevent(route, params, evtName) {
-    this.logeventservice.logEvent(evtName);
-    if (params != '' && route != '') {
-      this.router.navigate([route, params]);
-    } else if (route != '') {
-      this.router.navigate([route])
     }
   }
 

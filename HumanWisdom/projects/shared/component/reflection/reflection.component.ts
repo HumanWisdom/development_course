@@ -26,7 +26,11 @@ export class ReflectionComponent implements OnInit {
   showheaderbar = true
   pageaction = localStorage.getItem("pageaction");
   enableReadonly = false;
+  guest = false;
+  Subscriber = false;
+  textDisabled = false;
   userId: any;
+  placeholder = 'Write your answer here';
 
   constructor(public router: Router, public service: AdultsService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -38,6 +42,12 @@ export class ReflectionComponent implements OnInit {
     this.scrNumber = this.path.substring(lastSlash + 2);
     console.log(this.scrNumber)
     this.getProgress(this.scrNumber)
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    if (this.guest || !this.Subscriber) {
+      this.placeholder = 'Please subscribe to access your online journal'
+      this.textDisabled = true;
+    }
   }
   sharedForum(e) {
     console.log(e)
