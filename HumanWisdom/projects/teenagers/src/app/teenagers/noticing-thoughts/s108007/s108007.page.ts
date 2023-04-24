@@ -12,7 +12,6 @@ export class S108007Page implements OnInit {
   
   toc=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/22.png"
-  
   bg=""
   moduleLink="/meditation"
   moduleName="04. Meditation"
