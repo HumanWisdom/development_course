@@ -98,7 +98,7 @@ export class S101019Page implements OnInit,OnDestroy {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/conditioning/s23101019'])
+        //this.router.navigate(['/conditioning/s23101019'])
       })
   }
 
