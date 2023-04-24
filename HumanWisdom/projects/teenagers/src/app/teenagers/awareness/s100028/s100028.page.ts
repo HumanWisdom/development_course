@@ -13,10 +13,10 @@ export class S100028Page implements OnInit {
   toc="awareness/s100001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png"
   bg=""
-  moduleLink="/no-judgement/s100001"
+  moduleLink="/no-judgement/s101001"
   moduleName="No Judgement"
   sectionName= "Understand yourself";
-  moduleId=100
+  moduleId=101
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {

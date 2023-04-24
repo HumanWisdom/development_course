@@ -65,7 +65,11 @@ const routes: Routes = [
   {
     path: 'without-language',
     loadChildren: () => import('./teenagers/without-language/without-language.module').then( m => m.WithoutLanguageModule)
-  } 
+  },
+  {
+    path: 'obstacles-enquiry',
+    loadChildren: () => import('./teenagers/obstacles-enquiry/obstacles-enquiry.module').then( m => m.ObstaclesEnquiryModule)
+  }  
    
   
 

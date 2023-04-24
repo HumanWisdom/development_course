@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The 4th obstacle is if our expectations from this enquiry are not met. We all carry with us many hidden expectations we are not aware of. These are based on our hidden emotional needs, to not be lonely, or to be liked by others, for example. We may set out on this journey of learning about ourselves and get disappointed because we still feel unhappy. The real reason may be because our emotional needs are not met but we are not aware of that.
+          </p>   
+          <p>
+            The way through this is to be aware of these expectations, both obvious and hidden, and include that awareness as part of our journey of learning about ourselves. This enquiry is just like shining a torch when we are walking in the dark - so we can see where we are going. It is tempting to want to blame the enquiry for how we feel, and give up, but we then miss out on the life-changing wisdom that can be ours. That is why this journey of enquiry needs commitment.
+          </p>      
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
