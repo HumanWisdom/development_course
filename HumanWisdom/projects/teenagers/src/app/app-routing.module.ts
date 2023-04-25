@@ -65,7 +65,23 @@ const routes: Routes = [
   {
     path: 'without-language',
     loadChildren: () => import('./teenagers/without-language/without-language.module').then( m => m.WithoutLanguageModule)
-  } 
+  },
+  {
+    path: 'obstacles-enquiry',
+    loadChildren: () => import('./teenagers/obstacles-enquiry/obstacles-enquiry.module').then( m => m.ObstaclesEnquiryModule)
+  },
+  {
+    path: 'nature',
+    loadChildren: () => import('./teenagers/nature/nature.module').then( m => m.NatureModule)
+  },
+  {
+    path: 'breathing',
+    loadChildren: () => import('./teenagers/breathing/breathing.module').then( m => m.BreathingModule)
+  },
+  {
+    path: 'noticing-thoughts',
+    loadChildren: () => import('./teenagers/noticing-thoughts/noticing-thoughts.module').then( m => m.NoticingThoughtsModule)
+  }      
    
   
 

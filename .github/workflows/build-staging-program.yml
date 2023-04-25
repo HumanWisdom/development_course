@@ -4,8 +4,19 @@ on:
     branches: [main]
     
 jobs:
+  InProgress-Check:
+    runs-on: ubuntu-latest
+    steps:
+     - name: github workflows queue
+       uses: rpadaki/turnstyle@v1.1
+       with:
+        poll-interval-seconds: 300
+        initial-wait-seconds: 2
+    
+  
   build-teenagers:
     runs-on: ubuntu-latest
+    needs: InProgress-Check
     steps:
      - name: Checkout code
        uses: actions/checkout@v2

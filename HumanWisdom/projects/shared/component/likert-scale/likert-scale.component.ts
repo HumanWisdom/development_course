@@ -8,6 +8,7 @@ import {Router} from '@angular/router'
 })
 export class LikertScaleComponent implements OnInit {
   @Input() skipToPage:string
+  @Input() progName:string
 
   constructor(
     public router: Router
@@ -18,7 +19,8 @@ export class LikertScaleComponent implements OnInit {
   }
   goToPage(){
     console.log("in page")
-    this.router.navigate(["/adults"+this.skipToPage])
+    let progNamePath = this.progName == "teenagers" ? "":"/adults";
+    this.router.navigate([progNamePath+this.skipToPage])
   }
 
 }

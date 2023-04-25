@@ -4,12 +4,15 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
+  host: {
+    '(document:click)': 'emitFn($event)',
+  },
 })
 export class ModalComponent implements OnInit {
   @ViewChild('enablecookiemodal') enablecookiemodal: ElementRef;
 
   @Input()
-  footerbuttonText = 'close'
+  okText = 'close'
 
   @Input()
   content = '';
@@ -20,17 +23,34 @@ export class ModalComponent implements OnInit {
   @Output()
   closeEvent = new EventEmitter<string>();
 
+  @Input()
+  cancelText = 'cancel'
+
+  @Input()
+  enableCancel = false
+
+  modalopened = false;
+
   constructor() { }
 
   ngOnInit() {
     setTimeout(() => {
       this.enablecookiemodal.nativeElement.click();
-    }, 100)
+      this.modalopened = true;
+    }, 100);
   }
 
-  close() {
-    this.closeEvent.emit(this.footerbuttonText);
+  close(text) {
+    this.modalopened = false;
+    this.closeEvent.emit(text);
   }
 
+  emitFn(event) {
+    if (this.modalopened && !this.enablecookiemodal.nativeElement.contains(event.target)) {
+      setTimeout(() => {
+        this.closeEvent.emit('');
+      })
+    }
+  }
 }
 

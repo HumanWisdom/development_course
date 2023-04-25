@@ -98,7 +98,7 @@ export class S96009Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/adults/conditioning/s234'])
+        //this.router.navigate(['/conditioning/s234'])
       })
 
 

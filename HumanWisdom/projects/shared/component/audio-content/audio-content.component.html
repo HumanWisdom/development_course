@@ -55,5 +55,6 @@
 </div>
 <!-- /page content -->
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [footerbuttonText]="'Ok'"
-  [content]="'You have reached free limit'"></app-modal>
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'You have reached your free limit. Please subscribe to Premium to  unlock full access to the app'">
+</app-modal>
