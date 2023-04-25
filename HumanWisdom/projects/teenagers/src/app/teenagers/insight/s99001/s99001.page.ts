@@ -151,7 +151,7 @@ export class S99001Page  implements OnInit,OnDestroy {
   }
 
   routeJournal(){
-    this.router.navigate(['/adults/journal'])
+    this.router.navigate(['/journal'])
   }
   goBack(){
     this.location.back()

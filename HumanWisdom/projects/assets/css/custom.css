@@ -29140,7 +29140,7 @@ svg path
 
 .modal-backdrop.in
 {
-  z-index: 99;
+  z-index: 9;
   background: #000000;
   opacity: 0.6 !important;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%);
@@ -31863,19 +31863,19 @@ label.select_label:after
   filter: brightness(1.2);
 }
 
-.htxtspan:hover 
+.htxtspan:hover
 {
   cursor: auto !important;
 }
 
-.videowrapper 
+.videowrapper
 {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
 
-.videowrapper iframe 
+.videowrapper iframe
 {
   position: absolute;
   top: 0;
@@ -31900,7 +31900,7 @@ label.select_label:after
   padding: 0 15px 15px 15px;
 }
 
-.popup_02 .modal-footer 
+.popup_02 .modal-footer
 {
   position: absolute;
   right: 0;
@@ -31925,7 +31925,7 @@ label.select_label:after
   margin: 0 !important;
 }
 
-.popup_03 .modal-content 
+.popup_03 .modal-content
 {
   border: 0;
   box-shadow: unset;
