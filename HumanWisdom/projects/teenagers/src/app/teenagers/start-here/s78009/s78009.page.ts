@@ -67,7 +67,7 @@ export class S78009Page implements OnInit {
       "no":7,
       "heading":"Share with friends",
       "text":"If you come across something that particularly resonates with you, you can share that with friends",
-      "link":"/adults/share-with-friends",
+      "link":"/share-with-friends",
       "linkText":"",
       "module-id":""
     },
@@ -75,7 +75,7 @@ export class S78009Page implements OnInit {
       "no":8,
       "heading":"Podcasts",
       "text":"We record podcasts you may enjoy listening to - and you can do this through the app",
-      "link":"/adults/podcast/podcast-toc",
+      "link":"/podcast/podcast-toc",
       "linkText":"",
       "module-id":""
     },
@@ -83,7 +83,7 @@ export class S78009Page implements OnInit {
       "no":9,
       "heading":"Short videos",
       "text":"These are short videos - each with a nugget of wisdom",
-      "link":"/adults/wisdom-shorts",
+      "link":"/wisdom-shorts",
       "linkText":"",
       "module-id":""
     },
@@ -91,7 +91,7 @@ export class S78009Page implements OnInit {
       "no":10,
       "heading":"Blog",
       "text":"Longer articles on relevant subjects for you to read and comment on",
-      "link":"/adults/blog",
+      "link":"/blog",
       "linkText":"",
       "module-id":""
       },

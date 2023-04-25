@@ -90,7 +90,7 @@ export class S102013Page implements OnInit, OnDestroy {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/adults/conditioning/s234'])
+        //this.router.navigate(['/conditioning/s234'])
       })
   }
 
@@ -101,7 +101,7 @@ export class S102013Page implements OnInit, OnDestroy {
 
   goNext() 
   {
-    // this.router.navigate(['/adults/comparison/s2'])
+    // this.router.navigate(['/comparison/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
