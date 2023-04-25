@@ -50,19 +50,19 @@ export class S103026Page implements OnInit {
     if (cur && cur === 'mind') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/nature.jpg"
      
-      this.moduleLink = "/adults/nature"
+      this.moduleLink = "/nature"
       this.moduleName = "Nature"
       this.sectionName = "Develop a Calm Mind";
-      this.moduleId = 28
+      this.moduleId = 106
     
     }
     else if (cur && cur === 'sorrow') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
      
-      this.moduleLink = "/adults/breathing"
+      this.moduleLink = "/breathing"
       this.moduleName = "Breathing"
       this.sectionName = "Develop a Calm Mind";
-      this.moduleId = 29
+      this.moduleId = 107
     
     }
     
