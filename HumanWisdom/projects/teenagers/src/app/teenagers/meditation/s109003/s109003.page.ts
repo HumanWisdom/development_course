@@ -15,7 +15,7 @@ export class S109003Page implements OnInit,OnDestroy {
   bg_cft="bg_blue"
   bg="blue_w1"
   title="Exploring meditation"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/meditation/audios/meditation+1.1.mp3'
   colours=["btn_5circles_01"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
@@ -101,7 +101,7 @@ export class S109003Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/meditation/109004'])
+    this.router.navigate(['/meditation/s109004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -120,7 +120,7 @@ export class S109003Page implements OnInit,OnDestroy {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/meditation/109002'])
+    this.router.navigate(['/meditation/s109002'])
   }
 
   ngOnDestroy()

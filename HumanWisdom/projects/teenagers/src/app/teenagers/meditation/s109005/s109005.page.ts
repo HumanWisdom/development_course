@@ -13,7 +13,7 @@ export class S109005Page implements OnInit,OnDestroy {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w3"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/meditation/videos/1.1.mp4'  
   title="What is meditation?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/meditation/meditation_01.jpg"
@@ -84,7 +84,7 @@ export class S109005Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/meditation/109006'])
+    this.router.navigate(['/meditation/s109006'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,7 +102,7 @@ export class S109005Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/meditation/109004'])
+    this.router.navigate(['/meditation/s109004'])
   }
 
   ngOnDestroy()
