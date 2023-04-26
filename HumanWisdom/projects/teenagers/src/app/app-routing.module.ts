@@ -65,9 +65,11 @@ const routes: Routes = [
   {
     path: 'without-language',
     loadChildren: () => import('./teenagers/without-language/without-language.module').then( m => m.WithoutLanguageModule)
-  } 
-   
-  
+  }, 
+  {
+    path: 'conditioning',
+    loadChildren: () => import('./teenagers/conditioning/conditioning.module').then( m => m.ConditioningModule)
+  },
 
 ];
 
