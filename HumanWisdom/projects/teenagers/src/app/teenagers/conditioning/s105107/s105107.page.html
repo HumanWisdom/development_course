@@ -1,0 +1,17 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      If we want peace in the world we need to have the confidence to stand alone, and mix with people who are different to us. We need to act with compassion and not be cruel to others who are different - because deep down we are the same human being.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
