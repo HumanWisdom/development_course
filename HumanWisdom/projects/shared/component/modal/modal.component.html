@@ -31,14 +31,14 @@
           <!-- /modal content -->
         </div>
 
-        <div class="modal-footer b0" *ngIf="enableCancel">
-          <button type="button" (click)="close('cancel')" class="btn btn-warning mb0 btn_cookies_close"
-            data-dismiss="modal">{{cancelText}}</button>
-        </div>
-
         <div class="modal-footer b0">
-          <button type="button" (click)="close('ok')" class="btn btn-warning mb0 btn_cookies_close"
-            data-dismiss="modal">{{okText}}</button>
+          <button type="button" (click)="close('cancel')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal" *ngIf="enableCancel">
+            {{cancelText}}
+          </button>
+
+          <button type="button" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
+            {{okText}}
+          </button>
         </div>
 
       </div>
