@@ -101,7 +101,7 @@ jobs:
           sudo mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers  
           
     - name: Setting up Teenagers pipeline
-      run: sleep 0.9      
+      run: sleep 30      
           
 
   build-adults:
