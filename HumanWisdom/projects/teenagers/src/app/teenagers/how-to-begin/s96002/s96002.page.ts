@@ -76,7 +76,7 @@ export class S96002Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/adults/how-to-begin/s433'])
+        //this.router.navigate(['/how-to-begin/s433'])
       })
 
 

@@ -1,5 +1,5 @@
 /* Mixin */
-@mixin flexBox() 
+@mixin flexBox()
 {
     display: -ms-flexbox;
     display: -webkit-box;
@@ -7,27 +7,27 @@
     display: flex;
 }
 
-@mixin align-items($align) 
+@mixin align-items($align)
 {
     -webkit-align-items: $align;
     align-items: $align;
 }
 
-@mixin justify-content($justify) 
+@mixin justify-content($justify)
 {
     -webkit-justify-content: $justify;
     justify-content: $justify;
     -ms-flex-pack: $justify;
 }
 
-@mixin box-sizing($border-box) 
+@mixin box-sizing($border-box)
 {
     -webkit-box-sizing: $border-box;
     -moz-box-sizing: $border-box;
     box-sizing: $border-box;
 }
 
-@mixin transform($transforms) 
+@mixin transform($transforms)
 {
     -moz-transform: $transforms;
     -o-transform: $transforms;
@@ -36,12 +36,12 @@
     transform: $transforms;
 }
 
-@mixin translate ($x, $y) 
+@mixin translate ($x, $y)
 {
     @include transform(translate($x, $y));
 }
-  
-@mixin transition($transition...) 
+
+@mixin transition($transition...)
 {
     -moz-transition:    $transition;
     -o-transition:      $transition;
@@ -50,13 +50,13 @@
 }
 
 /* reset */
-* 
+*
 {
     // padding: 0;
     // margin: 0;
 }
 
-nav 
+nav
 {
     // background-color: #91cfa1;
     // height: 50px;
@@ -64,17 +64,17 @@ nav
     // @include flexBox();
     // @include align-items(center);
 
-    .m-menu__checkbox 
+    .m-menu__checkbox
     {
       display: none;
     }
 
-    label.m-menu__toggle 
+    label.m-menu__toggle
     {
       cursor: pointer;
     }
 
-    .m-menu 
+    .m-menu
     {
         position: fixed;
         top: 0;
@@ -84,13 +84,13 @@ nav
         height: 100%;
         @include transform(translate3d(450px, 0px,0px));
         @include transition(transform 0.35s);
-        z-index: 9999;
+        z-index: 99;
         overflow: hidden;
         //   background-color: #fff;
         background: linear-gradient( 180deg , #70C6BD 0%, #1092A7 100%);
         box-shadow: -2px 0px 4px rgb(0 0 0 / 25%);
 
-        &__overlay 
+        &__overlay
         {
             background-color: hsla(0,0%,40.4%,.5);
             position: fixed;
@@ -103,7 +103,7 @@ nav
             margin: 0 !important;
         }
 
-        &__header 
+        &__header
         {
             height: 120px;
             background: #70C6BD;
@@ -112,7 +112,7 @@ nav
             align-items: center;
             padding: 30px 20px;
 
-            span 
+            span
             {
                 font-size: 1.2rem;
                 font-weight: bold;
@@ -121,12 +121,12 @@ nav
             }
         }
 
-        .m-menu 
+        .m-menu
         {
             @include transform(translate3d(480px, 0, 0));
         }
 
-        ul.dh_ul 
+        ul.dh_ul
         {
             height: 100%;
             height: -webkit-fill-available;
@@ -137,11 +137,11 @@ nav
             padding: 30px 20px;
             text-align: left;
 
-            ul.dh_ul li 
+            ul.dh_ul li
             {
                 padding: 22px 0 0 0 !important;
 
-                a, label 
+                a, label
                 {
                     display: block;
                     text-align: left;
@@ -155,9 +155,9 @@ nav
                     position: relative;
                 }
 
-                label 
+                label
                 {
-                    &.a-label__chevron::after 
+                    &.a-label__chevron::after
                     {
                         content: '';
                         position: absolute;
@@ -174,7 +174,7 @@ nav
                     }
                 }
 
-                .-invisible 
+                .-invisible
                 {
                     border-bottom: 0;
                 }
@@ -183,7 +183,7 @@ nav
         }
     }
 
-    .m-menu .m-menu label.m-menu__toggle 
+    .m-menu .m-menu label.m-menu__toggle
     {
         // @include flexBox();
         // border-bottom: 0;
@@ -192,9 +192,9 @@ nav
     }
 
     /* fade in checked menu */
-    .m-menu__checkbox:checked 
+    .m-menu__checkbox:checked
     {
-        ~ .m-menu__overlay 
+        ~ .m-menu__overlay
         {
             display: block;
         }

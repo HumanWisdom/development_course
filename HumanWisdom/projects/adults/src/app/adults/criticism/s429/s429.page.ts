@@ -27,7 +27,8 @@ export class S429Page implements OnInit {
   rId = 148
   reflection: any
   reflectionA: any
-  r429 = (sessionStorage.getItem("r429"))
+  //r429 = (sessionStorage.getItem("r429"))
+  r429 = sessionStorage.getItem("r429") !== 'null' ? sessionStorage.getItem("r429") : '';
 
   shared: any
   confirmed: any

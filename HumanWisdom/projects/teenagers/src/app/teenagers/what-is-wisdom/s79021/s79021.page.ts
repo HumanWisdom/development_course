@@ -43,7 +43,7 @@ export class S79021Page implements OnInit,OnDestroy {
 
   routeSurvey()
   {
-    this.router.navigate(['/wisdom-survey/wisdom-scale'], { queryParams: { page: '/adults/what-is-wisdom/s79032' } })
+    this.router.navigate(['/wisdom-survey/wisdom-scale'], { queryParams: { page: '/what-is-wisdom/s79032' } })
   }
 
   ngOnDestroy()

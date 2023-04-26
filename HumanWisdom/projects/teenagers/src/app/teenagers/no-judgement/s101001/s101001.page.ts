@@ -15,7 +15,7 @@ export class S101001Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=10100
+  screenNumber=101001
   startTime:any
   endTime:any
   totalTime:any
@@ -44,6 +44,7 @@ export class S101001Page implements OnInit,OnDestroy {
   { 
     
     this.service.setmoduleID(101);
+    this.getSetModuleData(101);
     this.service.getModulebyId(101).subscribe(res=>{
       this.moduleData=res;
       this.pgResume="s"+ res[0].lastScreen;
@@ -161,5 +162,14 @@ export class S101001Page implements OnInit,OnDestroy {
   routeJournal()
   {
     this.router.navigate(['/journal'])
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 }

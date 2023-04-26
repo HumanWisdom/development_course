@@ -756,7 +756,7 @@
 
       <!-- multilayer li -->
       <!-- <li>
-        <label class="a-label__chevron" for="item-3">                            
+        <label class="a-label__chevron" for="item-3">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -926,3 +926,7 @@
   </div>
   <!-- /submenu -->
 </nav>
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'Are you sure you want to logout ?'">
+</app-modal>

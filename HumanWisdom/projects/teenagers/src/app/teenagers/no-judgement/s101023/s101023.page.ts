@@ -8,13 +8,13 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 })
 export class S101023Page implements OnInit {
   
-  toc="no-judgement//s100000"
+  toc="no-judgement//s100001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png"
   bg=""
-  moduleLink="/no-judgement/s101001"
-  moduleName="No Judgement"
+  moduleLink="/questions-are-key/s102001"
+  moduleName="Questions are key"
   sectionName= "Understand yourself";
-  moduleId=101
+  moduleId=102
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {

@@ -87,10 +87,9 @@ export class AdultsService {
     return this.http.get(this.path + `/clickModule/${data}/${userId}`)
   }
   getPoints(data: any): Observable<any> {
-    return this.http.get(this.path + `/UserScore/${data}${this.programId}`)
+    return this.http.get(this.path + `/UserScore/${data}/${this.programId}`)
   }
   viewJournal(data: any): Observable<any> {
-
     return this.http.get(this.path + `/viewJournalAndReflections/${data}`)
   }
   submitJournal(data: any): Observable<any> {
