@@ -27,8 +27,9 @@ export class S321p1Page implements OnInit {
   rId = 104
   reflection: any
   reflectionA: any
-  r321p1 = JSON.parse(sessionStorage.getItem("r321p1"))
+  //r321p1 = JSON.parse(sessionStorage.getItem("r321p1"))
   //r321p1:any
+  r321p1 = sessionStorage.getItem("r321p1") !== 'null' ? sessionStorage.getItem("r321p1") : '';
 
   shared: any
   confirmed: any
@@ -43,13 +44,12 @@ export class S321p1Page implements OnInit {
   ngOnInit() {
 
 
-    //if(!sessionStorage.getItem("r321p1"))
-    this.r321p1 = sessionStorage.getItem("r321p1")
+    
+    //this.r321p1 = sessionStorage.getItem("r321p1")
     console.log(this.r321p1)
 
 
-    //this.r321p1=JSON.parse(sessionStorage.getItem("r321p1"))
-
+    
 
     // multistep wizard
     $(document).ready(function () {
@@ -178,7 +178,7 @@ export class S321p1Page implements OnInit {
     console.log(this.r321p1)
     console.log(sessionStorage.getItem("r321p1"))
     if (sessionStorage.getItem("r321p1") == null) {
-      this.r321p1 = sessionStorage.getItem("r321p1")
+      
     }
 
 

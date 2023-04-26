@@ -27,7 +27,8 @@ export class S321p3Page implements OnInit {
   rId = 106
   reflection: any
   reflectionA: any
-  r321p3 = sessionStorage.getItem("r321p3")
+  //r321p3 = sessionStorage.getItem("r321p3")
+  r321p3 = sessionStorage.getItem("r321p3") !== 'null' ? sessionStorage.getItem("r321p3") : '';
 
   shared: any
   confirmed: any
