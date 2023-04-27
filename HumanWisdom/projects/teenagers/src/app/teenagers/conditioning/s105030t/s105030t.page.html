@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We are usually not aware we have been conditioned by the society we live in and all our experiences. This is how advertising works for example. We may see an advert for a new phone a few times, and before we know it we want that phone for ourselves. Or we may follow a celebrity and not realize that we have started dressing like them and adopting their behaviour. Or we may see a trend on social media to be a certain body shape, and without realizing it, it affects our eating habits. The prejudices of the people we grow up with can become our own, and this can happen without our awareness
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -28,7 +28,9 @@ export class S428Page implements OnInit {
   reflection: any
   reflectionA: any
   //r428=JSON.parse(sessionStorage.getItem("r428"))
-  r428: any
+  r428 = sessionStorage.getItem("r428") !== 'null' ? sessionStorage.getItem("r428") : '';
+
+  //r428: any
 
   shared: any
   confirmed: any

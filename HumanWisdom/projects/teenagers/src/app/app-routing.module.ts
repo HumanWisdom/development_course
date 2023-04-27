@@ -81,10 +81,11 @@ const routes: Routes = [
   {
     path: 'noticing-thoughts',
     loadChildren: () => import('./teenagers/noticing-thoughts/noticing-thoughts.module').then( m => m.NoticingThoughtsModule)
-  }      
-   
-  
-
+  },
+  {
+    path: 'conditioning',
+    loadChildren: () => import('./teenagers/conditioning/conditioning.module').then( m => m.ConditioningModule)
+  },
 ];
 
 @NgModule({
