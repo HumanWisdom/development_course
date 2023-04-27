@@ -1,7 +1,7 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { AdultsService } from "../../adults.service";
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-s3',
   templateUrl: './s3.page.html',

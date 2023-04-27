@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Life can be tough for many of us, and this may result in the burden of emotional pain.
+          <br>
+          We carry this pain around with us and this affects our personality, our behavior, and our future.
+          <br>
+          Or if we have been the victims of bullying, we may be afraid to go out. Is it possible to be free of this emotional pain we carry with us, so that we can live with joy and a sense of peace right now? We seem to have such little control over how we feel.
+          It is okay to feel whatever you are feeling. You can let the pain of your past go, and be free to live fully in the present.
+          <br>
+          When a memory arises, it may flood your mind with feelings. Just watch it, and allow it to fully express itself. Be still with it as we explored in the art of enquiry. Become aware that it’s just a thought from the past, which has triggered what you are feeling. Remind yourself that right now, you are okay. You are not your feelings. You do not have to intervene. These feelings will come and go and do not define who you are. Understanding how the process of conditioning operates in our life, starting with small things, loosens its unconscious hold on our lives and allows us to live in freedom.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

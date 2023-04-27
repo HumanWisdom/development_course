@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Conditioning is a fact of life for us human beings and is neither right nor wrong, but just something we need to understand. We may be conditioned by society to volunteer our time for charity, and that can only be a good thing for everyone concerned.  So conditioning can be very helpful in many ways - helping us know what is an accepted way of behaving with others. For example we may have been brought up to always say please and thank-you, and have good manners. There are other ways it can be a challenge and we will explore those in detail as well.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
