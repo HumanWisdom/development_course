@@ -112,17 +112,17 @@ export class S105129Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/conditioning/s105130'])
+        this.router.navigate(['/conditioning/s105130'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/conditioning/s105130'])
+        this.router.navigate(['/conditioning/s105130'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/conditioning/s105128'])
+    this.router.navigate(['/conditioning/s105128'])
   }
 
   ngOnDestroy() 

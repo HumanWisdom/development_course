@@ -154,12 +154,12 @@ export class S105112Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/teenagers/conditioning/s105113'])
+    this.router.navigate(['/conditioning/s105113'])
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/conditioning/s105111'])
+    this.router.navigate(['/conditioning/s105111'])
   }
 
   sessionFetch(id, divid)

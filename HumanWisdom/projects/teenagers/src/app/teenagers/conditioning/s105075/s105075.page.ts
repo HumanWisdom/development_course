@@ -18,7 +18,7 @@ export class S105075Page implements OnInit
   userName:any
   progressPercent:any
   progressText="2/4"
-  link="/teenagers/conditioning/s105076"
+  link="/conditioning/s105076"
   name="#3  Responding to conditioning with wisdom"
   progressImg=""
   toc="conditioning/s105001"
