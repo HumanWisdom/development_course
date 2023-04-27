@@ -27,7 +27,8 @@ export class S41019p6Page implements OnInit {
   rId = 787
   reflection: any
   reflectionA: any
-  r41019p6 = (sessionStorage.getItem("r41019p6"))
+  //r41019p6 = (sessionStorage.getItem("r41019p6"))
+  r41019p6 = sessionStorage.getItem("r41019p6") !== 'null' ? sessionStorage.getItem("r41019p6") : '';
 
   shared: any
   confirmed: any

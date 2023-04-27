@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We are influenced by our friends, family, social media, and the country we grow up in.  This shapes our choices in ways we are not aware of  - for example the music we like, or the clothes we wear, or the football club we support, or the religion we follow. These choices become part of our identity which we become attached to. Why do we get attached to these identities? This is part of the conditioning process and brings us a sense of comfort and a sense of belonging to a group. We then want to be with people who are like us and share our identity. This is how groups form. Having an identity seems important to us and answers the question ‘Who am I’. It is a complex process we will explore more fully later 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

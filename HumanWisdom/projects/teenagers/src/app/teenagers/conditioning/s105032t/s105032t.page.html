@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Not only are we not aware we are conditioned, but we become attached to our conditioning. This includes our opinions about ourselves and others, our beliefs, prejudices, national identity, the sports team we support, and so on. We are automatically critical of people who are different, want to defend our point of view if it is challenged, want to be with people who think like us, and want to convince others of our point of view. We are not aware of this process of attachment at work in the background, and it is the same in all human beings. This can help us understand ourselves and others better, and be able to respond with intelligence
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

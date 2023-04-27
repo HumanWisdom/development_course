@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Here is a personal example. When I first came to the UK from India 30 years ago I arrived with two strong ideas from all my time there.
+          <br>
+          The first is that I should look after my parents as they grew older, and the second, that women should do all the housework. I was critical of people who had different ideas, and if you challenged me, would give many reasons why I was right and you were wrong. It was only when I first realised that I was conditioned and began to question my conditioning that I decided that it made sense to look after my parents as they had looked after me, and I did, but it made no sense for women to do all the housework, and that just fell away, almost without effort. So you see, conditioning is not wrong. It just needs to be examined and understood.
+          Understanding awakens wisdom, and wisdom brings change, almost without effort.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

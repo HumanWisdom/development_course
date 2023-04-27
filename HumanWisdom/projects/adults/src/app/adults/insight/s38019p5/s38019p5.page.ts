@@ -27,8 +27,10 @@ export class S38019p5Page implements OnInit {
   rId = 789
   reflection: any
   reflectionA: any
-  r38019p5 = JSON.parse(sessionStorage.getItem("r38019p5"))
+  //r38019p5 = JSON.parse(sessionStorage.getItem("r38019p5"))
   //r38019p5:any
+  r38019p5 = sessionStorage.getItem("r38019p5") !== 'null' ? sessionStorage.getItem("r38019p5") : '';
+
 
   shared: any
   confirmed: any
@@ -44,7 +46,7 @@ export class S38019p5Page implements OnInit {
 
 
     //if(!sessionStorage.getItem("r38019p5"))
-    this.r38019p5 = sessionStorage.getItem("r38019p5")
+    //this.r38019p5 = sessionStorage.getItem("r38019p5")
     console.log(this.r38019p5)
 
 
