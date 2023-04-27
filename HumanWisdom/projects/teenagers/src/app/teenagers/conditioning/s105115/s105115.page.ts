@@ -18,7 +18,7 @@ export class S105115Page implements OnInit
   userName:any
   progressPercent:any
   progressText="3/4"
-  link="/teenagers/conditioning/s105116"
+  link="/conditioning/s105116"
   name="#4  Role play scenario"
   progressImg=""
   toc="conditioning/s105001"
