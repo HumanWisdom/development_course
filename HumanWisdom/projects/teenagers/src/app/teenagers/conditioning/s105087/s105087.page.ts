@@ -151,18 +151,18 @@ export class S105087Page implements OnInit
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/teenagers/conditioning/s234'])
+        //this.router.navigate(['/conditioning/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/teenagers/conditioning/s105086'])
+    this.router.navigate(['/conditioning/s105086'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/teenagers/conditioning/s105088'])
+    this.router.navigate(['/conditioning/s105088'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

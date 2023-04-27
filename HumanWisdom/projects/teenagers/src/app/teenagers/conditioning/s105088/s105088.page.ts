@@ -185,12 +185,12 @@ export class S105088Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/teenagers/conditioning/s105087'])
+    this.router.navigate(['/conditioning/s105087'])
   }
 
   goNext() 
   {
-    this.router.navigate(['/teenagers/conditioning/s105089'])
+    this.router.navigate(['/conditioning/s105089'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

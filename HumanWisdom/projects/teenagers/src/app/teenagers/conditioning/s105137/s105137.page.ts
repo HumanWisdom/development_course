@@ -15,7 +15,7 @@ export class S105137Page implements OnInit
   toc="conditioning/s105001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/07.png"
   bg=""
-  moduleLink="/teenagers/comparison"
+  moduleLink="/comparison"
   moduleName=" Comparison"
   sectionName= "Explore How Your Mind Works";
   moduleId=7
