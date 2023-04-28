@@ -225,7 +225,7 @@ export class S41019p5Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r41019p5", this.r41019p5)
-    this.r41019p5 = sessionStorage.getItem("r41019p5")
+   // this.r41019p5 = sessionStorage.getItem("r41019p5")
     console.log(this.r41019p5)
     if (this.r41019p5 != "undefined") {
 
