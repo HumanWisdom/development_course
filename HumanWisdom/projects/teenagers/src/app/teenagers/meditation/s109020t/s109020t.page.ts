@@ -16,7 +16,7 @@ export class S109020tPage implements OnInit {
   bookmark=0
   path=this.router.url
   audioPage="/meditation/s109020"
-  toc="meditation/s22001"  
+  toc="meditation/s109001"  
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -24,6 +24,7 @@ export class S109020tPage implements OnInit {
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  progName= "teenagers"
   
   avDuration=localStorage.getItem("avDuration109020")
   totalTime=localStorage.getItem("totalTime109020")

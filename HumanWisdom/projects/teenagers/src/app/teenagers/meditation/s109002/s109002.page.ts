@@ -104,7 +104,7 @@ export class S109002Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/mediation/s109003'])
+    this.router.navigate(['/meditation/s109003'])
   }
 
   ngOnDestroy() 

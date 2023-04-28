@@ -81,7 +81,15 @@ const routes: Routes = [
   {
     path: 'noticing-thoughts',
     loadChildren: () => import('./teenagers/noticing-thoughts/noticing-thoughts.module').then( m => m.NoticingThoughtsModule)
-  }      
+  },
+  {
+    path: 'meditation',
+    loadChildren: () => import('./teenagers/meditation/meditation.module').then( m => m.MeditationModule)
+  } ,
+  {
+    path: 'guided-meditation',
+    loadChildren: () => import('./teenagers/guided-meditation/guided-meditation.module').then( m => m.GuidedMeditationModule)
+  }       
    
   
 

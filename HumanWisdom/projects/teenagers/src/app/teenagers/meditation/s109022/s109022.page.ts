@@ -13,7 +13,7 @@ export class S109022Page implements OnInit,OnDestroy {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w4"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/meditation/videos/2.1.mp4'  
   title="The benefits of meditation"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/meditation/meditation_01.jpg"

@@ -88,7 +88,7 @@ export class S109007Page implements OnInit, OnDestroy {
       () => {
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-    this.router.navigate(['/adults/meditation/s109008'])
+    this.router.navigate(['/meditation/s109008'])
 
 
   }
