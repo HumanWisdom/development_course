@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We are conditioned by our parents, our teachers, the culture we grow up in, our education, our friends and family, the media, advertising, and all our experiences. In the age of social media it is so important to become more aware of how our mind is being conditioned by all the media we consume. We naturally become attached to our conditioning without being aware we are doing so, and it becomes our identity - the person we think we are and the person we grow up to become. This is not right or wrong, but just something that needs to be understood.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

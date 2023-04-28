@@ -31,12 +31,12 @@ export class ActiveGuard implements CanActivate, OnInit {
     let str = next.routeConfig.path;
     this.logeventservice.logEvent(str);
     this.scrId = str.substring(1, str.length + 1);
-    if (this.scrId !== '29000') {
+    /* if (this.scrId !== '29000') {
       let substrin = this.scrId.substring(0, 2)
       if (substrin === '29') {
         this.scrId = (parseInt(this.scrId) - 1).toString();
       }
-    }
+    } */
     if (sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
       return true;
     } else if (m[0].includes("view-stories") === true) {

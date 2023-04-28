@@ -27,7 +27,8 @@ export class S230p1Page implements OnInit {
   rId = 107
   reflection: any
   reflectionA: any
-  r230p1 = (sessionStorage.getItem("r230p1"))
+ // r230p1 = (sessionStorage.getItem("r230p1"))
+  r230p1 = sessionStorage.getItem("r230p1") !== 'null' ? sessionStorage.getItem("r230p1") : '';
 
   shared: any
   confirmed: any

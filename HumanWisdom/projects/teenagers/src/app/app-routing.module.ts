@@ -89,10 +89,11 @@ const routes: Routes = [
   {
     path: 'guided-meditation',
     loadChildren: () => import('./teenagers/guided-meditation/guided-meditation.module').then( m => m.GuidedMeditationModule)
-  }       
-   
-  
-
+  },      
+   {
+    path: 'conditioning',
+    loadChildren: () => import('./teenagers/conditioning/conditioning.module').then( m => m.ConditioningModule)
+  },
 ];
 
 @NgModule({

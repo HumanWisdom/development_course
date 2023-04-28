@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Once we realize that most of our thoughts and actions come from our conditioning, which we are not aware of, we can see the same process operate in others. So even if we meet someone who is behaving differently from the way we would or has a different opinion to ours, we can respond with compassion, rather than anger.
+          <br>
+          For example, if we meet someone who says their religion is the best, and is critical of all other religions, instead of reacting defensively and getting into an argument, we can respond with wisdom. We know what is going on in their thinking, even if they don’t. They are not aware they have been conditioned and are attached to their point of view. There is no point getting into an argument because that just strengthens their point of view even more. You can have compassion for others because you understand why they are acting in the way they are. 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

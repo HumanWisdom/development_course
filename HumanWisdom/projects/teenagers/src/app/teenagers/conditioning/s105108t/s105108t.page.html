@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our conditioning is also responsible for all our prejudices.
+          <br>
+          If we meet people who are different to us, it creates a disturbance in our thinking. That disturbance can make us feel threatened and challenge our assumptions of who we are.
+          Our fear can make us respond with aggression. One way for our mind to feel less disturbed is for those who are causing us to feel that way to change - and that can lead to intolerance of people with different opinions, or different sexual identities, or want people to leave - in case of immigrants of a different skin color or national identity to our own.
+          <br>
+          This prejudice takes many forms like racism, homophobia, sexism, anti-semitism and islamophobia. We are also conditioned by the prejudices of the people around us and we absorb them without thinking. That is why some prejudices, like anti-semitism and homophobia get handed down from generation to generation.
+          <br>
+          How are you going to respond to this understanding with your wisdom?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

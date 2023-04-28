@@ -28,7 +28,8 @@ export class S76089Page implements OnInit {
   rId = 1060
   reflection: any
   reflectionA: any
-  r76089 = sessionStorage.getItem("r76089")
+  //r76089 = sessionStorage.getItem("r76089")
+  r76089 = sessionStorage.getItem("r76089") !== 'null' ? sessionStorage.getItem("r76089") : '';
 
   constructor(private router: Router,
     private service: AdultsService,

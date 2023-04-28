@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The next time you are critical of someone, explore the role that conditioning plays in that. You compare your normal, which is your conditioning, with that of the other, and the difference prompts you to say something critical to them. This happens automatically without you realising it. Your criticism is just the difference between your conditioning and theirs. You are much more likely to be critical of someone who is smoking if you do not smoke. You will not be critical if you are a smoker yourself. This understanding may make you pause, and ask if they are just different, and if you can accept that they are just a product of their conditioning, which happens to be different from yours. When people are critical of you, you can now understand why they are doing it, and this allows you to step back and not take it personally and respond with wisdom
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

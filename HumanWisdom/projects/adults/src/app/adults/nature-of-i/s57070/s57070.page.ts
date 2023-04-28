@@ -29,7 +29,8 @@ export class S57070Page implements OnInit {
   rId = 593
   reflection: any
   reflectionA: any
-  r57070 = JSON.parse(sessionStorage.getItem("r57070"))
+  //r57070 = JSON.parse(sessionStorage.getItem("r57070"))
+  r57070 = sessionStorage.getItem("r57070") !== 'null' ? sessionStorage.getItem("r57070") : '';
 
   constructor(private router: Router,
     private service: AdultsService,

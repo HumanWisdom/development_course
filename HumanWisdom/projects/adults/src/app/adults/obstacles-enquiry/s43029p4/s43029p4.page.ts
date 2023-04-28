@@ -27,7 +27,7 @@ export class S43029p4Page implements OnInit {
   rId = 323
   reflection: any
   reflectionA: any
-  r43029p4 = (sessionStorage.getItem("r43029p4"))
+  r43029p4 = sessionStorage.getItem("r43029p4") !== 'null' ? sessionStorage.getItem("r43029p4") : '';
 
   shared: any
   confirmed: any
@@ -253,7 +253,7 @@ export class S43029p4Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r43029p4", this.r43029p4)
-    this.r43029p4 = sessionStorage.getItem("r43029p4")
+    //this.r43029p4 = sessionStorage.getItem("r43029p4")
     console.log(this.r43029p4)
 
 
