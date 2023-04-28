@@ -79,16 +79,18 @@ export class BottomNavigationComponent implements OnInit {
 
   }
   routeJournal() {
+    this.router.navigate(['/adults/journal'])
+
     //this.logeventservice.logEvent('click_journal')
-    if (this.isloggedIn && this.guest === 'F') {
-      if (!this.Subscriber || this.Subscriber === '0') {
-        this.router.navigate(['/onboarding/free-limit']);
-      } else {
-        this.router.navigate(['/adults/journal'])
-      }
-    } else {
-      this.journalclick.emit('enablepopup');
-    }
+    // if (this.isloggedIn && this.guest === 'F') {
+    //   if (!this.Subscriber || this.Subscriber === '0') {
+    //     this.router.navigate(['/onboarding/free-limit']);
+    //   } else {
+    //     this.router.navigate(['/adults/journal'])
+    //   }
+    // } else {
+    //   this.journalclick.emit('enablepopup');
+    // }
   }
   routeSearch() {
     //this.logeventservice.logEvent('click_for_you')
