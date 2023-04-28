@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-reflection',
   templateUrl: './reflection.component.html',
@@ -34,8 +36,8 @@ export class ReflectionComponent implements OnInit {
   textDisabled = false;
   userId: any;
   placeholder = 'Write your answer here';
-
-  constructor(public router: Router, public service: AdultsService) {
+  programName:string="";
+  constructor(public router: Router, public service: AdultsService, public sharedService:SharedService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
 
@@ -50,6 +52,10 @@ export class ReflectionComponent implements OnInit {
     if (this.guest || !this.Subscriber) {
       this.placeholder = 'Please subscribe to access your online journal'
       this.textDisabled = true;
+    }
+    this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
+    if(this.programName=='teenagers'){
+      this.programName='';
     }
   }
   sharedForum(e) {
@@ -101,11 +107,25 @@ export class ReflectionComponent implements OnInit {
       )
 
   }
-  goToToc() {
-    this.router.navigate(['/adults/' + this.toc])
-  }
-  goToDash() {
-    this.router.navigate(['/adults/adult-dashboard'])
-  }
 
+  getProgramTypeName(value: number): string {
+    const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
+    return enumKey as string;
+  }
+ 
+  goToToc() {
+    this.router.navigate(['/'+this.programName+'/' + this.toc])
+  }
+ 
+  goToDash() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+    else if(SharedService.ProgramId == ProgramType.Teenagers) {
+      this.programName = "";
+      this.router.navigate([this.programName + '/teenager-dashboard'])
+    }else{
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+  }
 }
