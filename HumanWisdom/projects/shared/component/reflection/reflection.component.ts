@@ -8,15 +8,18 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 })
 export class ReflectionComponent implements OnInit {
   //reflectionResponses:any
+  reflectionData = '';
   @Input() reflection: string;
   @Input() hint: string;
   @Input() bg: string;
   @Input() bg_tn: string;
   @Input() bg_cft: string;
-  @Input() reflectionResponse: string;
+  @Input() set reflectionResponse(data) {
+    this.reflectionData = data !== 'null' ? data : '';
+  };
   @Input() toc: string;
   @Input() rid: string;
-  @Output() sendResponse = new EventEmitter<string>();
+  @Output() sendResponse = new EventEmitter<any>();
   @Output() goPrevious = new EventEmitter<string>();
   shared: any
   confirmed: any
@@ -56,7 +59,7 @@ export class ReflectionComponent implements OnInit {
 
   confirmShare() {
     let obj = {
-      'Post': this.reflectionResponse,
+      'Post': this.reflectionData,
       'ReflectionID': this.rid,
       'UserId': this.userId
     }
@@ -70,8 +73,8 @@ export class ReflectionComponent implements OnInit {
 
 
   next() {
-    if (this.reflectionResponse)
-      this.sendResponse.emit(this.reflectionResponse)
+    if (this.reflectionData)
+      this.sendResponse.emit(this.reflectionData)
     else {
       this.sendResponse.emit(null)
     }
