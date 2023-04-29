@@ -154,7 +154,7 @@ export class S105111Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/conditioning/s105112'])
+    this.router.navigate(['/conditioning/s105113'])
   }
 
   prev()
