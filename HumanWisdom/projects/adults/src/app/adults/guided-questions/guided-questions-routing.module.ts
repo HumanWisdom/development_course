@@ -5,12 +5,12 @@ import { JournalGuard } from 'src/app/journal.guard';
 const routes: Routes = [
   {
     path: "",
-    canActivate: [JournalGuard],
+    // canActivate: [JournalGuard],
     loadChildren: () => import("./index/index.module").then(m => m.IndexPageModule)
   },
   {
     path: "journal",
-    canActivate: [JournalGuard],
+    // canActivate: [JournalGuard],
     loadChildren: () => import("./index/index.module").then(m => m.IndexPageModule)
   }
 

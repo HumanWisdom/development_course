@@ -9,7 +9,7 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S101023Page implements OnInit {
   
   toc="no-judgement//s100001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/41.png"
   bg=""
   moduleLink="/questions-are-key/s102001"
   moduleName="Questions are key"

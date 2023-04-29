@@ -25,6 +25,7 @@ export class NotePage implements OnInit {
   urlPid:any
   urlMid:any
   id=0
+  readOnly = false;
 
   constructor(
     private router: Router,
@@ -33,13 +34,13 @@ export class NotePage implements OnInit {
     private activate:ActivatedRoute,
     public logeventservice: LogEventService
   ) {
-   
-  
+
+
    }
 
   ngOnInit() {
 
-     
+
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
   else
@@ -54,18 +55,18 @@ export class NotePage implements OnInit {
     this.urlMid=this.activate.snapshot.paramMap.get('mId')
 
     console.log(this.urlNotes,this.urlTitle,this.urlId,this.urlType)
-    if(this.urlId!=0)
-    {
+    if(this.urlId!=0) {
       this.notes=this.urlNotes
       this.title=this.urlTitle
       this.id=this.urlId
+      this.readOnly = true
     }
-    
+
   }
 
   addNote(){
     console.log("adding journal")
-   
+
 
     this.service.submitJournal({
       "JournalId":0,
@@ -81,13 +82,13 @@ export class NotePage implements OnInit {
     ()=>{
       this.location.back()
     })
-   
+
 
   }
 
   editJournal(){
     console.log("editing journal")
-   
+
     this.service.submitJournal({
       "JournalId":this.urlId,
       "JDate":this.minDate,
@@ -102,22 +103,22 @@ export class NotePage implements OnInit {
     ()=>{
       this.location.back()
     })
-    
+
 
   }
 
-  
+
 
   editReflection(){
     console.log("editing refleciton")
-   
+
     this.service.addReflection({ "SubscriberID":this.userId,
     "ReflectionId":this.urlId,
     "Resp":this.notes
    })//check
     .subscribe(res=>
       {
-      
+
       },
       error=>{
         console.log(error)
@@ -125,17 +126,17 @@ export class NotePage implements OnInit {
       ()=>{
         this.location.back()
       }
-      
+
     )
-   
+
 
   }
 
- 
+
 
   editDq(){
     console.log("editing dq")
-   
+
     this.service.addDailyQuestion({"SubscriberID":this.userId,
     "ReflectionId":this.urlId,
     "Resp":this.notes})
@@ -147,7 +148,7 @@ export class NotePage implements OnInit {
       ()=>{
         this.location.back()
       })
-   
+
 
   }
 
@@ -156,7 +157,7 @@ export class NotePage implements OnInit {
     console.log("in progress")
       if(this.urlType=='dq')
         {
-          
+
          this.editDq()
         }
       else if(this.urlType=='Diary'|| this.urlType=='Diary')
@@ -172,7 +173,7 @@ export class NotePage implements OnInit {
           this.addNote()
         }
   }
-  
+
 
   addZero(i) {
     if (i < 10) {
@@ -181,7 +182,7 @@ export class NotePage implements OnInit {
     return i;
   }
 
-  goBack() 
+  goBack()
   {
     this.location.back()
   }
