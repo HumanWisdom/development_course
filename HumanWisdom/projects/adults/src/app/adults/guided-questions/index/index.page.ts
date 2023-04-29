@@ -12,7 +12,7 @@ import { LogEventService } from "src/app/log-event.service";
   templateUrl: "./index.page.html",
   styleUrls: ["./index.page.scss"],
 })
-export class IndexPage implements OnInit,AfterViewInit {
+export class IndexPage implements OnInit, AfterViewInit {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
   userId: any;
   journalList = [];
@@ -27,8 +27,11 @@ export class IndexPage implements OnInit,AfterViewInit {
   jrList = [];
   jrListC = [];
   topic = [];
-  searchedText :string;
-  isReloadList=true;
+  searchedText: string;
+  isReloadList = true;
+  enableAlert = false;
+  guest = false;
+  Subscriber = false;
 
   constructor(
     private router: Router,
@@ -36,13 +39,16 @@ export class IndexPage implements OnInit,AfterViewInit {
     public service: AdultsService,
     private location: Location,
     public logeventservice: LogEventService,
-    private elementRef:ElementRef
+    private elementRef: ElementRef
   ) {
-   
+
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
   }
 
   ngOnInit() {
- 
+
     if (this.saveUsername == false)
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
     else {
@@ -72,11 +78,23 @@ export class IndexPage implements OnInit,AfterViewInit {
   }
 
   goToNote(jId, jTitle, jNotes, type) {
-    this.logeventservice.logEvent('click_ journal_add_note');
-    this.router.navigate([
-      "/adults/note",
-      { title: jTitle, jId: jId, jNotes: jNotes, type: type },
-    ]);
+    if (type === 'note') {
+      if (this.guest || !this.Subscriber) {
+        this.enableAlert = true;
+      } else {
+        this.logeventservice.logEvent('click_ journal_add_note');
+        this.router.navigate([
+          "/adults/note",
+          { title: jTitle, jId: jId, jNotes: jNotes, type: type },
+        ]);
+      }
+    } else {
+      this.logeventservice.logEvent('click_ journal_add_note');
+      this.router.navigate([
+        "/adults/note",
+        { title: jTitle, jId: jId, jNotes: jNotes, type: type },
+      ]);
+    }
   }
   Note() {
     return false;
@@ -85,22 +103,27 @@ export class IndexPage implements OnInit,AfterViewInit {
     this.router.navigate(["/adults/note"]);
   }
 
-  ngAfterViewInit(){
-   var data= this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
-                                data[0].addEventListener('click', this.clearInput.bind(this));
+  ngAfterViewInit() {
+    var data = this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
+    data[0].addEventListener('click', this.clearInput.bind(this));
   }
-  
+
   RouteToToQuestions(item) {
-    let url = `/journal${item.Landing_URL}`;
-    this.router.navigate([url],{state:{"isBypass":true}});
+    if (this.guest && !this.Subscriber) {
+      this.enableAlert = true;
+    } else {
+      let url = `/journal${item.Landing_URL}`;
+      this.router.navigate([url], { state: { "isBypass": true } });
+    }
+
     // this.router.navigate(['/journal/introduction'],{state:{"data":JSON.stringify(item)}})
   }
 
- clearInput(){
-  this.searchedText='';
-  this.viewJournalAndReflections();
-  this.getDailyQuestion();
- }
+  clearInput() {
+    this.searchedText = '';
+    this.viewJournalAndReflections();
+    this.getDailyQuestion();
+  }
 
   getDailyQuestion() {
     this.service.getDailyQuestion(this.userId).subscribe(
@@ -129,7 +152,7 @@ export class IndexPage implements OnInit,AfterViewInit {
         Resp: this.dailyResponse,
       })
       .subscribe(
-        (res) => {},
+        (res) => { },
         (error) => {
           console.log(error);
         }
@@ -141,10 +164,14 @@ export class IndexPage implements OnInit,AfterViewInit {
     });
   }
   GoToQuestions(data) {
-    if (data.JrType == "Guided Questions") {
-      this.NavigateToQuestions(data);
+    if (this.guest && !this.Subscriber) {
+      this.enableAlert = true;
     } else {
-      this.goToNote(data.RowId, data.TitleQue, data.Response, data.JrType);
+      if (data.JrType == "Guided Questions") {
+        this.NavigateToQuestions(data);
+      } else {
+        this.goToNote(data.RowId, data.TitleQue, data.Response, data.JrType);
+      }
     }
   }
   YourDiary() {
@@ -153,9 +180,9 @@ export class IndexPage implements OnInit,AfterViewInit {
     this.isGuidedQueestionsTab = false;
     this.viewJournalAndReflections();
     this.getDailyQuestion();
-    var data= this.elementRef.nativeElement.getElementsByClassName('gqtns_search') as HTMLCollection;
+    var data = this.elementRef.nativeElement.getElementsByClassName('gqtns_search') as HTMLCollection;
     setTimeout(() => {
-      if(data!=null && data!=undefined && data.length>0){
+      if (data != null && data != undefined && data.length > 0) {
         data[0].addEventListener('click', this.clearInput.bind(this));
       }
     }, 200);
@@ -171,7 +198,7 @@ export class IndexPage implements OnInit,AfterViewInit {
     if ($event.target.value == "") {
       this.viewJournalAndReflections();
       this.getDailyQuestion();
-         
+
     } else if ($event.target.value != "") {
       this.jrList = this.jrListC.filter(
         (it) =>
@@ -203,6 +230,17 @@ export class IndexPage implements OnInit,AfterViewInit {
   }
   goBack() {
     this.location.back();
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if (event === 'ok') {
+      if (!this.guest && !this.Subscriber) {
+        this.router.navigate(["/onboarding/add-to-cart"]);
+      } else if (this.guest) {
+        this.router.navigate(["/onboarding/login"]);
+      }
+    }
   }
 
 }
