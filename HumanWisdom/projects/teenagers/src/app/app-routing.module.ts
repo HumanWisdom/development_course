@@ -86,6 +86,10 @@ const routes: Routes = [
     path: 'conditioning',
     loadChildren: () => import('./teenagers/conditioning/conditioning.module').then( m => m.ConditioningModule)
   },
+  {
+    path: 'comparison',
+    loadChildren: () => import('./teenagers/comparison/comparison.module').then( m => m.ComparisonModule)
+  },
 ];
 
 @NgModule({
