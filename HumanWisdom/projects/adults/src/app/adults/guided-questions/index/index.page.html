@@ -239,3 +239,8 @@
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+
+<app-modal *ngIf="enableAlert" [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'Please subscribe to activate this feature'">
+</app-modal>

@@ -30,6 +30,7 @@ import { BlogIndexPage } from './adults/blog/blog-index/blog-index.page';
 import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
 // Import library module
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
+import { SharedService } from '../../../shared/services/shared.service';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -71,6 +72,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         ActiveGuard,
         LogEventService,
         ReactiveFormsModule,
+        SharedService,
             { provide: APP_BASE_HREF, useValue: '/' } ,
         {
             provide: HTTP_INTERCEPTORS,

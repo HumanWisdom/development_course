@@ -194,7 +194,7 @@ export class S483p3Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r483p3", this.r483p3)
-    this.r483p3 = sessionStorage.getItem("r483p3")
+    //this.r483p3 = sessionStorage.getItem("r483p3")
     console.log(this.r483p3)
 
     this.service.submitProgressReflection({
