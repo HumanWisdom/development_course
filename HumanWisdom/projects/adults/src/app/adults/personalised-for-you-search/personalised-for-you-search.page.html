@@ -237,26 +237,33 @@
               </div> -->
 
               <ng-container *ngIf="personalisedforyou.length !== 0">
-                <div class="row mb15px" *ngFor="let item of personalisedforyou; let i = index">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <button class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']"
-                      (click)="clickbtn(item['name'], '', $event, i, item['id'])">
-                      <div class="row flex_ai">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                          <div class="col-md-10 col-sm-10 col-xs-10 p0 tleft">
-                            {{item['name']}}
+                <div class="row mb10px center_flex">
+                  <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-6 col-sm-6 col-xs-6 plrdiv" *ngFor="let item of personalisedforyou; let i = index">
+                      <button 
+                        class="btn btn_pfy_search" 
+                        [ngClass]="[item['active'] ? 'activebtn' : '']"
+                        (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
+                        <h4 class="fc_ffffff fw_500 fs_15px lh_130p mtb0px">
+                          {{item['name']}}
+                        </h4>
+                        <!-- <div class="row flex_ai">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-10 col-sm-10 col-xs-10 p0 tleft">
+                              {{item['name']}}
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 p0 tright"
+                              (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg"
+                                *ngIf="item['active']" class="img-responsive">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg"
+                                *ngIf="!item['active']" class="img-responsive">
+                            </div>
                           </div>
-                          <div class="col-md-2 col-sm-2 col-xs-2 p0 tright"
-                            (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg"
-                              *ngIf="item['active']" class="img-responsive">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg"
-                              *ngIf="!item['active']" class="img-responsive">
-                          </div>
-                        </div>
-                      </div>
-                    </button>
+                        </div> -->
+                      </button>
+                    </div>
                   </div>
                 </div>
               </ng-container>

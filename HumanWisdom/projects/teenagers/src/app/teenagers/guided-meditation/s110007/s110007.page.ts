@@ -13,7 +13,7 @@ export class S110007Page implements OnInit {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   title="Walk in nature"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/guided-meditation/audios/guided-meditation+1.5.mp3'
 
   transcriptPage=""

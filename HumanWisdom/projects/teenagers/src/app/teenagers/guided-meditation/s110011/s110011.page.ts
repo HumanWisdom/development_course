@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s110011',
@@ -17,6 +18,7 @@ export class S110011Page implements OnInit {
   moduleName="05. Nature"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=22
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Anger',

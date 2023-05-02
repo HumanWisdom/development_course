@@ -1,7 +1,5 @@
-<app-feedback-question skipToPage="/meditation/s109071">
-
+<app-feedback-question skipToPage="/meditation/s22059">
   <form>
-
     <h2 class="mtb0px txt13">
       Feedback Survey
     </h2>
@@ -11,34 +9,40 @@
     </h4>
 
     <!-- multistep wizard -->
-    <div id="svg_wrap"></div>   
-    <section>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <a class="sb_anchor">
-            <div class="box textarea_box">
-              <h4 class="pt1rem txt15">
-               {{reflection}}
-              </h4>    
+    <div id="svg_wrap"></div>                 
 
-              <hr>
+  <section>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <a class="sb_anchor">
+          <div class="box textarea_box">
+            <h4 class="pt1rem txt15">
+             {{reflection}}
+            </h4>    
 
-              <textarea id="message" required="required" class="form-control b0 p0 txt19" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r109070"></textarea>
+            <hr>
 
-              <br>
+            <textarea id="message" required="required" class="form-control b0 p0 txt19" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r109070"></textarea>
 
-            </div>                    
-          </a>
-        </div>
-      </div>        
-    </section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <!-- /multistep wizard -->
+            <br>
 
+          </div>                    
+        </a>
+      </div>
+    </div>  
+
+  </section>
+  <section> </section>
+  <section></section>
+  <section></section>
+                       
+
+     
   </form>
-
 </app-feedback-question>
 
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>         
+<!-- feedback survey footer  -->
+<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
+<!-- /feedback survey footer -->
+           
+         

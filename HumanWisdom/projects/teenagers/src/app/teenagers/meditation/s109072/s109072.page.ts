@@ -14,7 +14,7 @@ export class S109072Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
   
   bg=""
-  moduleLink="/guided-meditation"
+  moduleLink="/guided-meditation/s110001"
   moduleName=" Guided Audio Meditation"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=110

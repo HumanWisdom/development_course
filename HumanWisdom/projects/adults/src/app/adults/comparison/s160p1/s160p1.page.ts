@@ -27,7 +27,8 @@ export class S160p1Page implements OnInit
   rId = 47
   reflection: any
   reflectionA: any
-  r160p1 = JSON.parse(sessionStorage.getItem("r160p1"))
+  //r160p1 = JSON.parse(sessionStorage.getItem("r160p1"))
+  r160p1 = sessionStorage.getItem("r160p1") !== 'null' ? sessionStorage.getItem("r160p1") : '';
 
   constructor
   (

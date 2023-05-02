@@ -10,22 +10,23 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S109043Page implements OnInit {
 
+
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w6"
+  bg="blue_w2"
   toc="meditation/s109001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
+
   screenNumber=109043
   startTime:any
   endTime:any
   totalTime:any
   bookmark=0
   path=this.router.url
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
   
  
   constructor(
@@ -166,7 +167,7 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/meditation/s109043'])
+       // this.router.navigate(['/meditation/s109043p1'])
       })
     
 

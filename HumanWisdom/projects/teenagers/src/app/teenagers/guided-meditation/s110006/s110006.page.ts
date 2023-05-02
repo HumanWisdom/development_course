@@ -13,7 +13,7 @@ export class S110006Page implements OnInit {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   title="Voice Yoga"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/guided-meditation/audios/guided-meditation+1.4.mp3'
 
   transcriptPage=""

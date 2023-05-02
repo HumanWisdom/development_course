@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module. We are all influenced in ways we are not aware of by our surroundings, and all our experiences. We can call this our conditioning. Conditioning is at the heart of being human and influences our lives in subtle ways we are not aware of. Conditioning is not right or wrong, but just part of being human and a process that continues all our lives. In this module we are going to explore the many different ways we are conditioned, the different ways it impacts us, and others, and the many benefits of understanding this in ourselves. It can help us answer questions like 'Where do our opinions and beliefs come from, and why are we attached to them?' How can two people look at the same situation and have such completely different reactions to them? What is behind all the divisions we see in society? How do you decide what you want to do as a career?  How can we live with compassion and forgive others? Let’s get started.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

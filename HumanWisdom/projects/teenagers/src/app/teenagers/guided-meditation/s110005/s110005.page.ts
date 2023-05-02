@@ -13,7 +13,7 @@ export class S110005Page implements OnInit {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w4"
   title="Tuning in"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/guided-meditation/audios/guided-meditation+1.3.mp3'
 
   transcriptPage=""

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {AdultsService} from "../../adults.service"
-import { Router,ActivatedRoute } from '@angular/router';
-import {Location } from '@angular/common'
+import { AdultsService } from "../../adults.service";
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-s0',
   templateUrl: './s0.page.html',

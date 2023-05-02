@@ -2,13 +2,13 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+
 @Component({
   selector: 'app-s109069',
   templateUrl: './s109069.page.html',
   styleUrls: ['./s109069.page.scss'],
 })
-export class S109069Page implements OnInit 
-{
+export class S109069Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
@@ -19,7 +19,7 @@ export class S109069Page implements OnInit
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("feedbackSurvey")
-  screenNumber = "109069"
+  screenNumber = 109069
   startTime: any
   endTime: any
   totalTime: any
@@ -29,16 +29,11 @@ export class S109069Page implements OnInit
   reflectionA: any
   r109069 = JSON.parse(sessionStorage.getItem("r109069"))
 
-  constructor
-  (
-    private router: Router,
+  constructor(private router: Router,
     private service: TeenagersService,
-    private location: Location
-  ) 
-  { }
+    private location: Location) { }
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     console.log(this.r109069)
     this.createScreen()
     this.reflectionA = this.qrList.ListOfReflection
@@ -203,30 +198,32 @@ export class S109069Page implements OnInit
     sessionStorage.setItem("r109069", this.r109069)
     this.r109069 = sessionStorage.getItem("r109069")
     console.log(this.r109069)
-    if (this.r109069 != "undefined") 
-    {
-      this.service.submitProgressReflection({
-        "ScrNumber": this.screenNumber,
-        "UserId": this.userId,
-        "BookMark": this.bookmark,
-        "ModuleId": this.moduleId,
-        "screenType": this.screenType,
-        "timeSpent": this.totalTime,
-        "ReflectionId": this.rId,
-        "Resp": this.r109069
-      }).subscribe(res => {},
-        error => {
-          console.log(error)
-          this.router.navigate(['/meditation/s109070'])
-        },
-        () => {
-          this.router.navigate(['/meditation/s109070'])
-        })
-    }
-    else 
-    {
-      this.router.navigate(['/meditation/s109070'])
-    }
+
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r109069
+    }).subscribe(res => {
+
+    },
+      error => {
+        console.log(error)
+        this.router.navigate(['/meditation/s109070'])
+      },
+      () => {
+        this.router.navigate(['/meditation/s109070'])
+      })
+  }
+
+
+  prev() {
+    this.router.navigate(['/meditation/s109068'])
+
   }
 
   prev() 

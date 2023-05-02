@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common';
 import { AdultsService } from '../../adults.service';
 
 @Component({
@@ -8,7 +8,9 @@ import { AdultsService } from '../../adults.service';
   templateUrl: './s16p2.page.html',
   styleUrls: ['./s16p2.page.scss'],
 })
-export class S16p2Page implements OnInit {
+
+export class S16p2Page implements OnInit 
+{
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w10"
@@ -22,10 +24,16 @@ export class S16p2Page implements OnInit {
   progressImg=""
   toc="comparison/s0"
 
-  constructor(private router: Router, private location:Location,private service: AdultsService) { }
+  constructor
+  (
+    private router: Router, 
+    private location:Location,
+    private service: AdultsService
+  ) 
+  { }
 
-  ngOnInit() {
-   
+  ngOnInit() 
+  {
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -35,18 +43,16 @@ export class S16p2Page implements OnInit {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
       this.userName=JSON.parse(localStorage.getItem("userName"))
-  
     }
-      this.getProgress()
-  
+    this.getProgress()
   }
-  getProgress(){
+
+  getProgress()
+  {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-      
      this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Comparison & Envy").Percentage)
      console.log(this.progressPercent)
-    
     })
   }
 }

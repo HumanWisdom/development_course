@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our attachment to our identity can cause conflict with people who are attached to a different identity. If your country or religion is criticized you can feel defensive and react by being critical of the country or religion the other person belongs to - this process occurs because of our unconscious attachment to our own identity. The more we are attached to our identity, the greater the chance of conflict with others. If someone supports a different sports team to your own, like a football club, then that can also result in conflict. We judge ourselves as being good and the others as bad, or ourselves as right and the others as wrong, and that leads to conflict.  Can you think of another example? Understanding this allows us to respond with intelligence.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

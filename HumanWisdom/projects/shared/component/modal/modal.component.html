@@ -1,7 +1,7 @@
-<span #enablecookiemodal data-toggle="modal" data-target="#modal_cookie"></span>
+<span #enablecookiemodal data-toggle="modal" data-target="#modal-alert"></span>
 
 <!-- cookie modal  -->
-<div class="modal fade" id="modal_cookie" tabindex="-1" data-keyboard="false" role="dialog"
+<div class="modal fade" id="modal-alert" tabindex="-1" data-keyboard="false" role="dialog"
   aria-labelledby="modal_cookie_title" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered w100" role="document">
     <div class="row center_flex">
@@ -31,14 +31,14 @@
           <!-- /modal content -->
         </div>
 
-        <div class="modal-footer b0" *ngIf="enableCancel">
-          <button type="button" (click)="close('cancel')" class="btn btn-warning mb0 btn_cookies_close"
-            data-dismiss="modal">{{cancelText}}</button>
-        </div>
-
         <div class="modal-footer b0">
-          <button type="button" (click)="close('ok')" class="btn btn-warning mb0 btn_cookies_close"
-            data-dismiss="modal">{{okText}}</button>
+          <button type="button" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
+            {{okText}}
+          </button>
+
+          <button type="button" (click)="close('cancel')" class="btn btn-warning mb0pxi mr0pxi btn_cookies_close" data-dismiss="modal" *ngIf="enableCancel">
+            {{cancelText}}
+          </button>
         </div>
 
       </div>

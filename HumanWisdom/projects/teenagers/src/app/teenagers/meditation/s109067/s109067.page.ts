@@ -2,9 +2,11 @@ import { Options } from '@angular-slider/ngx-slider';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+//node_modules/propellerkit-range-slider/node_modules/nouislider/';
 import * as noUiSlider from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/nouislider/';
 import * as wNumb from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/wnumb/';
 import { TeenagersService } from '../../teenagers.service';
+
 @Component({
   selector: 'app-s109067',
   templateUrl: './s109067.page.html',
@@ -97,13 +99,9 @@ export class S109067Page implements OnInit
   rating5 = 0
   rating6 = 0
 
-  constructor
-  (
-    private router: Router,
+  constructor(private router: Router,
     private service: TeenagersService,
-    private location: Location
-  ) 
-  { }
+    private location: Location) { }
 
   ngOnInit() 
   {
@@ -122,7 +120,7 @@ export class S109067Page implements OnInit
 
     // multistep wizard
     $(document).ready(function () {
-      // var base_color = "rgb(160,160,160)";
+      // var base_color = "rgb(109067,109067,109067)";
       // var active_color = "rgb(237, 40, 70)";
       var base_color = "rgba(255,255,255,0.2)";
       var active_color = "#60A757";
@@ -346,7 +344,8 @@ export class S109067Page implements OnInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/comparison/s109067p1'])
+    this.router.navigate(['/meditation/s109068'])
+
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
     this.service.submitProgressQuestion({

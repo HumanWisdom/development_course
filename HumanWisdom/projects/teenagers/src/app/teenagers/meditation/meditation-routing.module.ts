@@ -63,6 +63,7 @@ import { S109054Page } from './s109054/s109054.page';
 import { S109055Page } from './s109055/s109055.page';
 import { S109056Page } from './s109056/s109056.page';
 import { S109057Page } from './s109057/s109057.page';
+import { S109057tPage } from './s109057t/s109057t.page';
 import { S109058Page } from './s109058/s109058.page';
 import { S109059Page } from './s109059/s109059.page';
 import { S109060Page } from './s109060/s109060.page';
@@ -210,7 +211,7 @@ const routes: Routes = [
     component: S109021Page,
   },
   {
-    path: 's1090022',
+    path: 's109022',
       
     component: S109022Page,
   },
@@ -393,6 +394,11 @@ const routes: Routes = [
     path: 's109057',
       
     component: S109057Page,
+  },
+  {
+    path: 's109057t',
+      
+    component: S109057tPage,
   },
   {
     path: 's109058',

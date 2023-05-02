@@ -1,0 +1,42 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      How does conditioning impact friendships?
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">01</p>
+      Our opinions of others are influenced by our conditioning
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">02</p>
+      We get attached to our own point of view
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">03</p>
+      We want others to think like us, and agree with us
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">04</p>
+      Or we want them to do what we are doing
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">05</p>
+      These expectations can cause conflict and strain a friendship
+    </h3>
+
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -69,6 +69,7 @@ import { S109054Page } from './s109054/s109054.page';
 import { S109055Page } from './s109055/s109055.page';
 import { S109056Page } from './s109056/s109056.page';
 import { S109057Page } from './s109057/s109057.page';
+import { S109057tPage } from './s109057t/s109057t.page';
 import { S109058Page } from './s109058/s109058.page';
 import { S109059Page } from './s109059/s109059.page';
 import { S109060Page } from './s109060/s109060.page';
@@ -151,6 +152,7 @@ import { TeenagersService } from '../teenagers.service';
     S109055Page,
     S109056Page,
     S109057Page,
+    S109057tPage,
     S109058Page,
     S109059Page,
     S109060Page,

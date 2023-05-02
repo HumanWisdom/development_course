@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s110001',
@@ -30,6 +31,8 @@ export class S110001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  pgResume=sessionStorage.getItem("pgResume")
+  moduleData:ProgramModel;
 
   constructor(
     private router: Router,
@@ -37,6 +40,8 @@ export class S110001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
+    this.service.setmoduleID(110);
+    this.getSetModuleData(110);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -152,6 +157,15 @@ export class S110001Page implements OnInit,OnDestroy {
     let mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink= mediaAudio+audiofile
     this.router.navigate(['/curated/audiopage', audioLink, title])
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }

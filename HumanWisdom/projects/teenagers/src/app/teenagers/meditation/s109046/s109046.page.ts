@@ -12,7 +12,7 @@ export class S109046Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w6"
+  bg="blue_w2"
   toc="meditation/s109001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -25,9 +25,7 @@ export class S109046Page implements OnInit {
   bookmark=0
   path=this.router.url
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
-  
- 
+
   constructor(
     private router: Router,
     private service:TeenagersService,
@@ -138,8 +136,6 @@ createScreen(){
       {
         
       })
-    
- 
   }
 
   submitProgress(){
