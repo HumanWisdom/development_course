@@ -506,6 +506,6 @@
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
-  [content]="'Are you sure you want to delete your data?'">
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="isCancel"
+  [content]="contentText">
 </app-modal>

@@ -202,7 +202,7 @@ export class S160p1Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r160p1", this.r160p1)
-    this.r160p1 = sessionStorage.getItem("r160p1")
+    //this.r160p1 = sessionStorage.getItem("r160p1")
     console.log(this.r160p1)
     if (this.r160p1 != "undefined") 
     {

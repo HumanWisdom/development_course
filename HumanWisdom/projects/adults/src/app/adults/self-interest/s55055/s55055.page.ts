@@ -172,7 +172,7 @@ export class S55055Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r55055", this.r55055)
-    this.r55055 = sessionStorage.getItem("r55055")
+    //this.r55055 = sessionStorage.getItem("r55055")
     console.log(this.r55055)
 
     this.service.submitProgressReflection({
