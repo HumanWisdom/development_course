@@ -248,5 +248,3 @@ export class S109070Page implements OnInit {
 
 
 }
-
-}

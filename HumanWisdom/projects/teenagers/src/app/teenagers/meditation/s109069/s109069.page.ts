@@ -220,12 +220,6 @@ export class S109069Page implements OnInit {
       })
   }
 
-
-  prev() {
-    this.router.navigate(['/meditation/s109068'])
-
-  }
-
   prev() 
   {
     this.router.navigate(['/meditation/s109068'])
