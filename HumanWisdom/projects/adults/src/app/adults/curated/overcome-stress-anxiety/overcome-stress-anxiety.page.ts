@@ -22,9 +22,15 @@ export class OvercomeStressAnxietyPage implements OnInit {
   sId: any
   dealingwithdepressionP: any
   externalapprovalP: any
+  enableAlert = false;
+  guest = false;
+  Subscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
-    private meta: Meta, private title: Title) { }
+    private meta: Meta, private title: Title) {
+      this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    }
 
   ngOnInit() {
     this.title.setTitle('Stress Relief Tips for Improved Mental Health')
@@ -410,4 +416,22 @@ export class OvercomeStressAnxietyPage implements OnInit {
     this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
   }
 
+  enableRoute(route) {
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    }else {
+      this.router.navigate([route]);
+    }
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if (event === 'ok') {
+      if (!this.guest && !this.Subscriber) {
+        this.router.navigate(["/onboarding/add-to-cart"]);
+      } else if (this.guest) {
+        this.router.navigate(["/onboarding/login"]);
+      }
+    }
+  }
 }
