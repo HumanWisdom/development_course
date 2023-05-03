@@ -47,7 +47,7 @@ export class S103001Page implements OnInit,OnDestroy {
   ) 
   { 
     this.getSetModuleData(103);
-    this.service.setmoduleID(103);
+    
       this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })

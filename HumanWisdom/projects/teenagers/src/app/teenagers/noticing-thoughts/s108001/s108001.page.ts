@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 import { TeenagersService } from '../../teenagers.service';
+
 @Component({
   selector: 'app-s108001',
   templateUrl: './s108001.page.html',
@@ -27,6 +29,8 @@ export class S108001Page implements OnInit, OnDestroy {
   path = this.router.url
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+  moduleData:ProgramModel;
+  pgResume=sessionStorage.getItem("pgResume")
 
   constructor
   (
@@ -34,7 +38,11 @@ export class S108001Page implements OnInit, OnDestroy {
     private service: TeenagersService,
     private location: Location
   ) 
-  { }
+  { 
+    this.getSetModuleData(108);
+
+
+  }
 
   ngOnInit() 
   {
@@ -109,5 +117,14 @@ export class S108001Page implements OnInit, OnDestroy {
 
   ngOnDestroy() 
   {}
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
+  }
 
 }
