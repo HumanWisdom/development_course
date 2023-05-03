@@ -20,8 +20,15 @@ export class DealWithSorrowLossPage implements OnInit {
   enP: any
   withoutLanguageP: any
   breathingP: any
+  enableAlert = false;
+  guest = false;
+  Subscriber = false;
 
-  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) { }
+
+  constructor(private service: AdultsService, private router: Router, private location: Location, private meta: Meta, private title: Title) {
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+  }
 
   ngOnInit() {
     this.title.setTitle('Ways to Deal with Sorrow and Loss')
@@ -177,7 +184,7 @@ export class DealWithSorrowLossPage implements OnInit {
 
           /*if(!sinR)
           {
-    
+
             this.router.navigate([`/adults/self-interest`])
           }
           else
@@ -216,7 +223,7 @@ export class DealWithSorrowLossPage implements OnInit {
             this.router.navigate([`/adults/without-language/s42000`])
           /* if(!lwlResume)
            {
-     
+
              this.router.navigate([`/adults/without-language`])
            }
            else
@@ -258,9 +265,9 @@ export class DealWithSorrowLossPage implements OnInit {
 
           /* if(!breathingR)
            {
-     
+
              this.router.navigate([`/adults/breathing`])
-     
+
            }
            else
              this.router.navigate([`/adults/breathing/s${breathingR}`])*/
@@ -292,6 +299,25 @@ export class DealWithSorrowLossPage implements OnInit {
         this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
         this.breathingP = res.ModUserScrPc.find(e => e.Module == "Breathing")?.Percentage
       })
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if (event === 'ok') {
+      if (!this.guest && !this.Subscriber) {
+        this.router.navigate(["/onboarding/add-to-cart"]);
+      } else if (this.guest) {
+        this.router.navigate(["/onboarding/login"]);
+      }
+    }
+  }
+
+  enableRoute(route) {
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    }else {
+      this.router.navigate([route]);
+    }
   }
 
 }
