@@ -110,8 +110,15 @@ export class S109043Page implements OnInit {
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
   
-   
+    this.startTime = Date.now();
 
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark109043"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109043"))==1)
+      this.bookmark=1
+
+   
 
   }
   receiveBookmark(e)

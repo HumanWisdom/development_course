@@ -24,7 +24,6 @@ export class S109044Page implements OnInit {
   totalTime:any
   bookmark=0
   path=this.router.url
-
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   

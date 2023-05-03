@@ -24,7 +24,6 @@ export class S109045Page implements OnInit {
   totalTime:any
   bookmark=0
   path=this.router.url
-
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   
@@ -94,27 +93,7 @@ export class S109045Page implements OnInit {
     $("circle:nth-of-type(1)").css("fill", active_color);
     
     
-   // second
-   $("#svg_form_time rect").css("fill", active_color);
-   $("#svg_form_time circle").css("fill", active_color);
-   $("#prev").removeClass("disabled");
-     if (child >= length) {
-       $(this).addClass("disabled");
-       $('#submit').removeClass("disabled");
-     }
-     if (child <= length) {
-       child++;
-     }
-   var circle_child = child + 1;
-   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-     "fill",
-     base_color
-   );
-   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-     "fill",
-     base_color
-   );
-         
+   
       
     
   });
@@ -166,6 +145,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/meditation/s109046'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
