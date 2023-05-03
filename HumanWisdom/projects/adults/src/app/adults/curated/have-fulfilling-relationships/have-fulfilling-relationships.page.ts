@@ -23,9 +23,15 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
   opinionsandbeliefsP: any
   lifestoriesList = []
   sId: any
+  enableAlert = false;
+  guest = false;
+  Subscriber = false;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
-    private meta: Meta, private title: Title) { }
+    private meta: Meta, private title: Title) {
+      this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+      this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+     }
 
   ngOnInit() {
     this.title.setTitle('Building Healthy Relationships')
@@ -366,5 +372,24 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
     this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if (event === 'ok') {
+      if (!this.guest && !this.Subscriber) {
+        this.router.navigate(["/onboarding/add-to-cart"]);
+      } else if (this.guest) {
+        this.router.navigate(["/onboarding/login"]);
+      }
+    }
+  }
+
+  enableRoute(route) {
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    }else {
+      this.router.navigate([route]);
+    }
   }
 }
