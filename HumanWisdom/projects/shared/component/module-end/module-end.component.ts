@@ -15,7 +15,7 @@ import { ProgramModel, ProgramType } from "../../../shared/models/program-model"
 })
 
 export class ModuleEndComponent implements OnInit, AfterViewInit {
-  isModuleCompleted: boolean = false;
+  isModuleCompleted: boolean = true;
   file: any;
   @Input() moduleImg: string;
   @Input() moduleLink: string;
@@ -2536,14 +2536,16 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   public saveAsPDF() {
     const div = document.getElementById('myDiv'); // replace with the ID of your div
-    html2canvas(div).then(canvas => {
+    html2canvas(div, {scale: 3}
+      ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
-        format: [210, 297] // A4 size in millimeters
+        format: 'a5',
+        compress:false,
+        putOnlyUsedFonts:true,
       });
-
       const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
@@ -2571,10 +2573,11 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      const div = document.getElementById('myDiv'); // replace with the ID of your div
-      html2canvas(div).then(canvas => {
+      let div:any;
+      div = document.getElementById('myDiv'); // replace with the ID of your div
+      html2canvas(div, {scale: 3}).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
-        this.pdfBlob = new jsPDF('p', 'mm', 'a4');
+        this.pdfBlob = new jsPDF('l', 'mm', 'a4');
         const imgProps = this.pdfBlob.getImageProperties(imgData);
         const pdfWidth = this.pdfBlob.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
