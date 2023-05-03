@@ -9,6 +9,7 @@ import { TeenagerOnboardingService } from './teenagerOnboarding/teenager-onboard
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { TokenInterceptorService } from './teenagerOnboarding/token-interceptor.service';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TokenInterceptorService } from './teenagerOnboarding/token-interceptor.
   },
     TeenagersService,
     AdultsService,
+    SharedService,
     TeenagerOnboardingService,
    ],
   bootstrap: [AppComponent]

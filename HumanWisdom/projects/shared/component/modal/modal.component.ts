@@ -24,7 +24,7 @@ export class ModalComponent implements OnInit {
   closeEvent = new EventEmitter<string>();
 
   @Input()
-  cancelText = 'cancel'
+  cancelText = 'Cancel'
 
   @Input()
   enableCancel = false
