@@ -17,7 +17,7 @@ export class S101015Page implements OnInit,OnDestroy {
   bg="dark_blue_w1"
   title="Exercise – Judging myself"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/no-judgement/audios/1.6.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/no-judgement/audios/1.6.mp3'
   transcriptPage="/no-judgement/s101015t"
   toc="/no-judgement/s101001"
   bookmark=0

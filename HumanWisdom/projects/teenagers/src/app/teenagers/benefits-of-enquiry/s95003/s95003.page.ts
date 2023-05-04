@@ -18,7 +18,7 @@ export class S95003Page implements OnInit,OnDestroy {
   
   title="Welcome to the art of enquiry"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/benefits-of-enquiry/audios/1.1.mp3'
 
   colours=["btn_5circles_01 disabled"," btn_5circles_02"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
@@ -52,7 +52,7 @@ export class S95003Page implements OnInit,OnDestroy {
     private location:Location) { }
  
   ngOnInit() {
-
+    console.log("mediaAudio",this.mediaAudio)
     console.log("bm5",JSON.parse(sessionStorage.getItem("bookmark95003")))
     console.log("audioLink",this.audioLink)
 
