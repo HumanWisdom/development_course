@@ -43,13 +43,8 @@ export class S104001Page implements OnInit,OnDestroy {
   ) 
   { 
     
-    this.service.setmoduleID(104);
-    this.service.getModulebyId(104).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume="s"+ res[0].lastScreen;
-      console.log(res[0].lastScreen)
-     });
-     
+    this.getSetModuleData(104);
+    
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -161,5 +156,14 @@ export class S104001Page implements OnInit,OnDestroy {
   routeJournal()
   {
     this.router.navigate(['/journal'])
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 }
