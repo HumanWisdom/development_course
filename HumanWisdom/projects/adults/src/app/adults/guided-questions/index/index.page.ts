@@ -78,23 +78,14 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   goToNote(jId, jTitle, jNotes, type) {
-    if (type === 'note') {
       if (this.guest || !this.Subscriber) {
         this.enableAlert = true;
       } else {
-        this.logeventservice.logEvent('click_ journal_add_note');
         this.router.navigate([
           "/adults/note",
           { title: jTitle, jId: jId, jNotes: jNotes, type: type },
         ]);
       }
-    } else {
-      this.logeventservice.logEvent('click_ journal_add_note');
-      this.router.navigate([
-        "/adults/note",
-        { title: jTitle, jId: jId, jNotes: jNotes, type: type },
-      ]);
-    }
   }
   Note() {
     return false;
