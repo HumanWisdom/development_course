@@ -28,11 +28,8 @@
               <ngx-circular-player id="aud1" [source]="audioLink" (click)="getTime()" #audio></ngx-circular-player>
               -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                   <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio>
-                    <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
-                  <!-- <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
                   <select id="playbackspeed" (change)="onChange($event.target.value)" class="playback">
@@ -41,7 +38,7 @@
                     <option value="1.25">1.25</option>
                     <option value="1.5">1.5</option>
                     <option value="2">2</option>
-                  </select> -->
+                  </select>
                   <!-- <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player> -->
                   <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio></ngx-circular-player> -->
                 </div>
