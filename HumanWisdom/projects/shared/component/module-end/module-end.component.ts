@@ -2554,7 +2554,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
        pdfWidth=pdfWidth;
        console.log("mobile")
       }else{
-        pdfHeight=pdfHeight+10;
+        pdfHeight=pdfHeight;
         pdfWidth=pdfWidth;
       }
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight+15, "SLOW");
