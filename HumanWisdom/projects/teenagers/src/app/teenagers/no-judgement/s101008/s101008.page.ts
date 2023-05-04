@@ -14,7 +14,7 @@ export class S101008Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/no-judgement/videos/1.2.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/no-judgement/videos/1.2.mp4'  
   title="Looking without judgment"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any

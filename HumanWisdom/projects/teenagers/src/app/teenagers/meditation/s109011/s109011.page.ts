@@ -17,7 +17,7 @@ export class S109011Page implements OnInit,OnDestroy {
   bg="blue_w9"
   title="Meditation is understanding oneself"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/meditation/audios/1.2'
+  audioLink=this.mediaAudio+'/meditation/audios//meditation+1.2'
   transcriptPage="meditation/s109011t"
   toc="meditation/s109001"
   bookmark=0
