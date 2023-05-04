@@ -2550,14 +2550,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       let pdfWidth = pdf.internal.pageSize.getWidth();
       let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
       if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-       pdfHeight=pdfHeight-50;
+       pdfHeight=pdfHeight-70;
        pdfWidth=pdfWidth;
        console.log("mobile")
       }else{
         pdfHeight=pdfHeight+10;
         pdfWidth=pdfWidth;
       }
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight+15, "SLOW");
       pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
@@ -2596,7 +2596,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       let pdfWidth = pdf.internal.pageSize.getWidth();
       let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
       if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-       pdfHeight=pdfHeight-50;
+       pdfHeight=pdfHeight-30;
        pdfWidth=pdfWidth;
        console.log("mobile")
       }else{
