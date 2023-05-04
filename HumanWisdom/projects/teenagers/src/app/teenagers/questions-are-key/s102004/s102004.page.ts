@@ -17,7 +17,7 @@ export class S102004Page implements OnInit,OnDestroy {
   bg="blue_pink_w2"
   title=" Why are questions important?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/questions-are-key/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/questions-are-key/audios/1.1.mp3'
   transcriptPage="questions-are-key/s102004t"
   toc="questions-are-key/s102001"
   bookmark=0

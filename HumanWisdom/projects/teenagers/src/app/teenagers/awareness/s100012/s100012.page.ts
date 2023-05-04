@@ -14,7 +14,7 @@ export class S100012Page implements OnInit {
   bg_cft="bg_red_pink"
   bg="red_pink_w10"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/awareness/audios/1.6.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.6.mp3'
   title=""
 
   toc="awareness/s100001"

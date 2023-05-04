@@ -15,7 +15,7 @@ export class S104021Page implements OnInit,OnDestroy {
   bg="teal_w7"
   title="#5 Taking ownership of our thoughts & feelings"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/art_of_enquiry/audios/9.7.mp3'
+  audioLink=this.mediaAudio+'/art_of_enquiry/audios/enquiry+9.7.mp3'
   transcriptPage="obstacles-enquiry/s104021t"
   toc="obstacles-enquiry/s104001"
   bookmark=0

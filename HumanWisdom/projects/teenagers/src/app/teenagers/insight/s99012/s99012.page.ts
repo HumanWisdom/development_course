@@ -16,7 +16,7 @@ export class S99012Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w10"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/insight/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/insight/videos/1.1.mp4'  
   title="The beauty of insight"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   
