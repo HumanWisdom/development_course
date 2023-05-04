@@ -42,12 +42,7 @@ export class S102001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.service.setmoduleID(102);
-    this.service.getModulebyId(102).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume="s"+ res[0].lastScreen;
-      console.log(res[0].lastScreen)
-     });
+    this.getSetModuleData(102);
 
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
@@ -160,6 +155,15 @@ export class S102001Page implements OnInit,OnDestroy {
   routeJournal()
   {
     this.router.navigate(['/journal'])
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }

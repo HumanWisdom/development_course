@@ -21,7 +21,8 @@ export class PyramidContentComponent implements OnInit,OnDestroy,AfterViewInit{
   interval:any
   t:any
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
-  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
   scrId:any
   
 

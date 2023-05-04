@@ -109,7 +109,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.getModuleList();
       this.getProgress()
     }
-    this.getUserPreference();
+     this.getUserPreference();
   }
 
   getModuleList(isLoad?) {
@@ -135,8 +135,20 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getUserPreference() {
-    this.aservice.getUserpreference().subscribe((res) => {
+    let perd = this.aservice.getperList();
+    perd.forEach((r) => {
+      let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
+      if (!find) {
+        r['active'] = false;
+        this.personalisedforyou.push(r);
+      }
+    })
+
+
+
+   /*  this.aservice.getUserpreference().subscribe((res) => {
       let perd = this.aservice.getperList();
+     // let perd = []
       this.personalisedforyou = []
       this.indList = []
       if (res && res !== "") {
@@ -167,7 +179,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           this.personalisedforyou.push(r);
         })
       }
-    })
+    }) */
   }
 
   getinp(event) {

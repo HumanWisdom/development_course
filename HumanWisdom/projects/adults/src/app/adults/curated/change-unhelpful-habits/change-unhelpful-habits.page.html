@@ -515,7 +515,7 @@
                       <div id="ca_guidedqtns" class="panel-collapse collapse in">
                         <div class="panel-body m0px">
 
-                          <a routerLink="/journal/changing-habits">
+                          <a (click)="enableRoute('/journal/changing-habits')">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
                                 <div class="col-md-10 col-sm-10 col-xs-10">
@@ -532,7 +532,7 @@
                             </div>
                           </a>
 
-                          <a routerLink="/journal/pleasure">
+                          <a (click)="enableRoute('/journal/pleasure')">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
                                 <div class="col-md-10 col-sm-10 col-xs-10">
@@ -549,7 +549,7 @@
                             </div>
                           </a>
 
-                          <a routerLink="/journal/stress">
+                          <a (click)="enableRoute('/journal/stress')">
                             <div class="row guidedqtns_row bg_gray">
                               <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
                                 <div class="col-md-10 col-sm-10 col-xs-10">
@@ -974,3 +974,8 @@
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'Please subscribe to access your online journal'">
+</app-modal>

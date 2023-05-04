@@ -34,6 +34,10 @@ export class DailyPracticePage implements OnInit {
   isloggedIn = false
   enablepopup=false;
   isSubscribe=false;
+  Subscriber: any;
+  guest = true;
+  placeholder = 'Answer here'
+
   constructor(
     private route: ActivatedRoute,
     private service: AdultsService,
@@ -41,6 +45,7 @@ export class DailyPracticePage implements OnInit {
     public logeventservice: LogEventService
   ) {
     this.getdailyquestion();
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
 
   ngOnInit() {
@@ -52,9 +57,14 @@ export class DailyPracticePage implements OnInit {
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let islogin = localStorage.getItem("isloggedin");
     if (islogin === 'T') {
-      this.isloggedIn = true
+      this.isloggedIn = true;
+      this.Subscriber = localStorage.getItem('Subscriber')
     };
     $('.carousel').bcSwipe({ threshold: 50 });
+
+    if(this.guest || !this.isloggedIn || this.Subscriber === '0') {
+      this.placeholder = 'Please subscribe to access your online journal';
+    }
   }
 
   getdailyquestion() {
@@ -111,7 +121,7 @@ export class DailyPracticePage implements OnInit {
     }
   }
 
- 
+
   Logevent(evtName) {
     console.log('hi')
     this.logeventservice.logEvent(evtName);
