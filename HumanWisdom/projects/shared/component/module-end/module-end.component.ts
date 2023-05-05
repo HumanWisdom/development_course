@@ -15,7 +15,7 @@ import { ProgramModel, ProgramType } from "../../../shared/models/program-model"
 })
 
 export class ModuleEndComponent implements OnInit, AfterViewInit {
-  isModuleCompleted: boolean = true;
+  isModuleCompleted: boolean = false;
   file: any;
   @Input() moduleImg: string;
   @Input() moduleLink: string;
@@ -2536,7 +2536,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   public saveAsPDF() {
     const div = document.getElementById('myDiv'); // replace with the ID of your div
-    html2canvas(div, {scale: 3}
+    html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
       ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({
@@ -2547,9 +2547,17 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         putOnlyUsedFonts:true,
       });
       const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+      let pdfWidth = pdf.internal.pageSize.getWidth();
+      let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+       pdfHeight=pdfHeight-70;
+       pdfWidth=pdfWidth;
+       console.log("mobile")
+      }else{
+        pdfHeight=pdfHeight;
+        pdfWidth=pdfWidth;
+      }
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight+15, "SLOW");
       pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
@@ -2573,16 +2581,31 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      let div:any;
-      div = document.getElementById('myDiv'); // replace with the ID of your div
-      html2canvas(div, {scale: 3}).then(canvas => {
-        const imgData = canvas.toDataURL('image/png');
-        this.pdfBlob = new jsPDF('l', 'mm', 'a4');
-        const imgProps = this.pdfBlob.getImageProperties(imgData);
-        const pdfWidth = this.pdfBlob.internal.pageSize.getWidth();
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-        this.pdfBlob.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        this.file = new File([this.pdfBlob.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
+     const div = document.getElementById('myDiv'); // replace with the ID of your div
+     html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
+      ).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a5',
+        compress:false,
+        putOnlyUsedFonts:true,
+      });
+      const imgProps = pdf.getImageProperties(imgData);
+      let pdfWidth = pdf.internal.pageSize.getWidth();
+      let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+       pdfHeight=pdfHeight-30;
+       pdfWidth=pdfWidth;
+       console.log("mobile")
+      }else{
+        pdfHeight=pdfHeight+10;
+        pdfWidth=pdfWidth;
+      }
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+      pdf.setDisplayMode("original", "single");
+        this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
       });
     }, 2000);
   }
