@@ -13,7 +13,7 @@ export class S102005Page implements OnInit {
   bg_cft="bg_blue_pink"
   bg="blue_pink_w3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/questions-are-key/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/questions-are-key/audios/1.2.mp3'
   title=""
   toc="questions-are-key/s102001"
   transcriptPage="questions-are-key/s102005t"

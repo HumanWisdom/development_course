@@ -17,7 +17,7 @@ export class S103019Page implements OnInit,OnDestroy {
   bg="purple_blue_w5"
   title="Look at a feeling without language"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/art_of_enquiry/audios/8.3.mp3'
+  audioLink=this.mediaAudio+'/art_of_enquiry/audios/enquiry+8.3.mp3'
   transcriptPage="without-language/s103019t"
   toc="without-language/s103001"
   bookmark=0

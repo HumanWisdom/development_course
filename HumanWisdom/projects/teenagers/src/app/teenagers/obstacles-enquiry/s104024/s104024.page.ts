@@ -15,7 +15,7 @@ export class S104024Page implements OnInit,OnDestroy {
   bg="teal_w10"
   title="#6 You memorised the book, and did not change."
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/art_of_enquiry/audios/9.8.mp3'
+  audioLink=this.mediaAudio+'/art_of_enquiry/audios/enquiry+9.8.mp3'
   transcriptPage="obstacles-enquiry/s104024t"
   toc="obstacles-enquiry/s104001"
   bookmark=0

@@ -12,7 +12,7 @@ export class S109060Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w1" 
+  bg="blue_w9" 
   
   toc="meditation/s109001"
   userId:any

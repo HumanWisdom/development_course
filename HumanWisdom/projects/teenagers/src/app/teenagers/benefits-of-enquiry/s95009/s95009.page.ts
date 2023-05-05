@@ -16,7 +16,7 @@ export class S95009Page implements OnInit,OnDestroy {
   bg_cft="bg_green_yellow"
   bg="green_yellow_w4"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/benefits-of-enquiry/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/benefits-of-enquiry/videos/1.1.mp4'  
   title="Can someone give me this wisdom?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   

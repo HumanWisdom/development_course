@@ -4,29 +4,29 @@ import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s109057t',
-  templateUrl: './s109057t.page.html',
-  styleUrls: ['./s109057t.page.scss'],
+  selector: 'app-s109061t',
+  templateUrl: './s109061t.page.html',
+  styleUrls: ['./s109061t.page.scss'],
 })
-export class S109057tPage implements OnInit {
+export class S109061tPage implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w10"
   bookmark=0
   path=this.router.url
-  audioPage="/meditation/s109057"
+  audioPage="/meditation/s109061"
   toc="meditation/s109001"  
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=109057
+  screenNumber=109061
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   progName="teenagers"
-  avDuration=localStorage.getItem("avDuration109057")
-  totalTime=localStorage.getItem("totalTime109057")
+  avDuration=localStorage.getItem("avDuration109061")
+  totalTime=localStorage.getItem("totalTime109061")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   constructor(private router: Router,
@@ -40,9 +40,9 @@ export class S109057tPage implements OnInit {
     else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
  
-    if(JSON.parse(sessionStorage.getItem("bookmark109057"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark109061"))==0)
     this.bookmark=0
-  else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109057"))==1)
+  else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109061"))==1)
     this.bookmark=1
   
    
@@ -54,11 +54,11 @@ export class S109057tPage implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark109057",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark109061",JSON.stringify(this.bookmark))
   }
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/meditation/s109058'])
+    this.router.navigate(['/meditation/s109062'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -76,7 +76,7 @@ export class S109057tPage implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/meditation/s109056'])
+    this.router.navigate(['/meditation/s109060'])
   }
 
 
