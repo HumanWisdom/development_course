@@ -45,7 +45,7 @@ export class S109001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
-    this.service.setmoduleID(109);
+   
     this.getSetModuleData(109);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)

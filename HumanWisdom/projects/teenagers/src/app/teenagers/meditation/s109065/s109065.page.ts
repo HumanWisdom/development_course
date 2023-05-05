@@ -12,7 +12,8 @@ export class S109065Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w6"
+  bg="blue_w1" 
+  
   toc="meditation/s109001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -23,9 +24,9 @@ export class S109065Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url 
+  path=this.router.url
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+ 
   constructor
   (
     private router: Router,
@@ -38,6 +39,7 @@ export class S109065Page implements OnInit {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -62,7 +64,7 @@ export class S109065Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark109065",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark109060",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -72,7 +74,9 @@ export class S109065Page implements OnInit {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+    }).subscribe(res=>
+      { 
+      })
   }
 
   submitProgress()
@@ -88,7 +92,7 @@ export class S109065Page implements OnInit {
       "screenType":this.screenType,
       "timeSpent":this.totalTime
     }).subscribe(res=>
-      {
+      { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },

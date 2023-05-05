@@ -15,7 +15,7 @@ export class S104013Page implements OnInit,OnDestroy {
   bg="teal_w1"
   title="#2 This enquiry challenges my opinions"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/obstacles-enquiry/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/obstacles-enquiry/audios/1.2.mp3'
   transcriptPage="obstacles-enquiry/s104013t"
   toc="obstacles-enquiry/s104001"
   bookmark=0

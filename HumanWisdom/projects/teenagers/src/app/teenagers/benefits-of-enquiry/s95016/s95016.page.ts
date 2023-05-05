@@ -17,7 +17,7 @@ export class S95016Page implements OnInit,OnDestroy {
   bg="green_yellow_w12"
   title="Treat the problem, not just the symptom"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/benefits-of-enquiry/audios/1.5.mp3'
 
   transcriptPage="benefits-of-enquiry/s95016t"
   toc="benefits-of-enquiry/s95001"
