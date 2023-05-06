@@ -50,6 +50,7 @@
 
 .vector {
   width: 3rem;
+  z-index: 99;
 }
 
 .cert-txt {
@@ -58,6 +59,7 @@
   letter-spacing: 0em;
   text-align: center;
   color: #FFFFFF;
+  z-index: 99;
 }
 
 .cert-txt1 {
@@ -118,6 +120,7 @@
   font-size: 1.4rem;
   color: #FFFFFF;
   text-align: initial;
+  z-index: 99;
 
 }
 
@@ -130,6 +133,7 @@
   position: absolute;
   margin-left: 4rem;
   margin-top: 5px;
+  z-index: 99;
 }
 
 .m-top-2{
@@ -161,11 +165,11 @@
 
 .vector-4 {
   position: absolute;
-  left: 76.2%;
-  top: 82.5%;
-  height: 26.4%;
-  width: 22.98%;
-  background-size: 70% 47% !important;
+  left: 75.2%;
+  top: 82.7%;
+  height: 12%;
+  width: 17%;
+  background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/certificate/Vector-1.png); */
   background: url(../images/Vector-1.png);
