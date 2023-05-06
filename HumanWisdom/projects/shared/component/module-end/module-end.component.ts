@@ -2536,29 +2536,18 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   public saveAsPDF() {
     const div = document.getElementById('myDiv'); // replace with the ID of your div
-    html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
+    html2canvas(div, {scale: 3}
       ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({
         orientation: 'portrait',
-        unit: 'mm',
         format: 'a5',
         compress:false,
-        putOnlyUsedFonts:true,
       });
-      const imgProps = pdf.getImageProperties(imgData);
       let pdfWidth = pdf.internal.pageSize.getWidth();
-      let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-       pdfHeight=pdfHeight-70;
-       pdfWidth=pdfWidth;
-       console.log("mobile")
-      }else{
-        pdfHeight=pdfHeight;
-        pdfWidth=pdfWidth;
-      }
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight+15, "SLOW");
-      pdf.setDisplayMode("original", "single");
+      let pdfHeight=pdf.internal.pageSize.getHeight();
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+      // pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
   }
@@ -2584,27 +2573,15 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
      const div = document.getElementById('myDiv'); // replace with the ID of your div
      html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
       ).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a5',
-        compress:false,
-        putOnlyUsedFonts:true,
-      });
-      const imgProps = pdf.getImageProperties(imgData);
-      let pdfWidth = pdf.internal.pageSize.getWidth();
-      let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-       pdfHeight=pdfHeight-30;
-       pdfWidth=pdfWidth;
-       console.log("mobile")
-      }else{
-        pdfHeight=pdfHeight+10;
-        pdfWidth=pdfWidth;
-      }
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
-      pdf.setDisplayMode("original", "single");
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          format: 'a5',
+          compress:false,
+        });
+        let pdfWidth = pdf.internal.pageSize.getWidth();
+        let pdfHeight=pdf.internal.pageSize.getHeight();
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
         this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
       });
     }, 2000);

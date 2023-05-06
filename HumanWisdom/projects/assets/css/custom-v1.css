@@ -50,7 +50,7 @@
 
 .vector {
   width: 3rem;
-  z-index: 99;
+  z-index: 999;
 }
 
 .cert-txt {
@@ -59,7 +59,8 @@
   letter-spacing: 0em;
   text-align: center;
   color: #FFFFFF;
-  z-index: 99;
+  z-index: 999;
+  position: absolute;
 }
 
 .cert-txt1 {
@@ -121,7 +122,7 @@
   color: #FFFFFF;
   text-align: initial;
   z-index: 99;
-
+  position: absolute;
 }
 
 .cert-txt5 {
@@ -148,7 +149,7 @@
   font-size: 11px;
   text-align: center;
   color: #FFC455;
-  margin-top: 10%;
+  margin-top: 25%;
 }
 
 .vector-3 {
@@ -202,7 +203,7 @@
 }
 .m-right3
 {
-  margin-right: -4.5rem;
+  margin-right: -17.5rem;
 }
 
 .ml{
@@ -211,6 +212,11 @@
 }
 .ml-top{
   margin-top: 25%;
+}
+
+.certificate-share-btn {
+margin-top: 8%;
+margin-bottom: 8%;
 }
 /* /certficate */
 
