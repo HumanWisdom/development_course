@@ -237,7 +237,7 @@ export class S44237Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r44237", this.r44237)
-    this.r44237 = sessionStorage.getItem("r44237")
+    //this.r44237 = sessionStorage.getItem("r44237")
     console.log(this.r44237)
 
 

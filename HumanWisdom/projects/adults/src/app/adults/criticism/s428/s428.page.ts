@@ -46,7 +46,7 @@ export class S428Page implements OnInit {
 
 
     //if(!sessionStorage.getItem("r428"))
-    this.r428 = sessionStorage.getItem("r428")
+   // this.r428 = sessionStorage.getItem("r428")
     console.log(this.r428)
 
 
@@ -226,7 +226,7 @@ export class S428Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r428", this.r428)
-    this.r428 = sessionStorage.getItem("r428")
+    //this.r428 = sessionStorage.getItem("r428")
     console.log(this.r428)
     if (this.r428 != "undefined") {
 

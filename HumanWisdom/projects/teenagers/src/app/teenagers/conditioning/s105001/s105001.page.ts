@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s105001',
@@ -32,6 +34,8 @@ export class S105001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  pgResume=sessionStorage.getItem("pgResume")
+  moduleData:ProgramModel;
 
   constructor
   (
@@ -41,7 +45,7 @@ export class S105001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.service.setmoduleID(105);
+    this.getSetModuleData(105);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
@@ -167,6 +171,15 @@ export class S105001Page implements OnInit,OnDestroy {
   routeJournal()
   {
     this.router.navigate(['/teenagers/journal'])
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }

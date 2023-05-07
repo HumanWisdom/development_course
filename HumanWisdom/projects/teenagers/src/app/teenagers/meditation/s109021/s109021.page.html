@@ -1,0 +1,60 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  
+  <form>
+
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      What are the benefits of meditation?
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Reduces stress
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      02. Help you to manage anxiety
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      03. Reduces depression
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. Reduces blood pressure
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      05. Results in greater self-awareness
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      06. Improves your attention span
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      07. Improves memory and mental quickness
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      08. Helps fight addiction - by making people more aware of triggers
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      09. Improves sleep
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      10. Helps control chronic pain
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      11. Improves kindness and compassion
+    </h3>
+
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

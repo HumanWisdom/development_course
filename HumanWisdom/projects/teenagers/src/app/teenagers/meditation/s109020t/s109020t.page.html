@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this section we are going to explore the many benefits of meditation and a few of its limitations. It originated in ancient India and the earliest evidence is from paintings from 5000 BCE. It was then adopted by Buddhism in the 6th century BCE and is now common practice across the world. If you haven’t as yet begun, this section may help inspire you to begin, because there are so many scientifically proven benefits of it. If you meditate regularly, we will explore some potential limitations of meditation to be watchful of, in your own practice.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

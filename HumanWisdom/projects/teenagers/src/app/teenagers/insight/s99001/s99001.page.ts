@@ -39,12 +39,7 @@ export class S99001Page  implements OnInit,OnDestroy {
     private location:Location
   )
   { 
-    this.service.setmoduleID(99);
-    this.service.getModulebyId(99).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume="s"+ res[0].lastScreen;
-      console.log(res[0].lastScreen)
-     });
+    this.getSetModuleData(99);  
 
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
@@ -155,6 +150,15 @@ export class S99001Page  implements OnInit,OnDestroy {
   }
   goBack(){
     this.location.back()
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }
