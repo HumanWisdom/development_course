@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-journal-we',
@@ -7,7 +8,6 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   styleUrls: ['./journal-we.component.scss'],
 })
 export class JournalWeComponent implements OnInit {
-
   qrList = JSON.parse(localStorage.getItem("qrList"))
    @Input()
    journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
@@ -15,8 +15,6 @@ export class JournalWeComponent implements OnInit {
   @Input()
   rId = 854
 
-  
-  
   enabletick = false;
   userId: any
   note = ''
@@ -27,8 +25,7 @@ export class JournalWeComponent implements OnInit {
   endTime: any
   totalTime: any
 
-
-  constructor(private service: AdultsService) { }
+  constructor(private service: AdultsService, private router: Router) { }
 
   ngOnInit() {
     this.userId = JSON.parse(sessionStorage.getItem("userId"))
@@ -81,5 +78,9 @@ export class JournalWeComponent implements OnInit {
       i = "0" + i;
     }
     return i;
+  }
+
+  routejournel(){
+    this.router.navigate(['/adults/journal'])
   }
 }
