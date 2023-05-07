@@ -166,7 +166,7 @@ export class S105001Page implements OnInit,OnDestroy {
 
   routeJournal()
   {
-    this.router.navigate(['/adults/journal'])
+    this.router.navigate(['/teenagers/journal'])
   }
 
 }

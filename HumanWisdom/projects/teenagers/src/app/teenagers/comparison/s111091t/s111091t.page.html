@@ -1,9 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111091t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Lets explore envy through this pyramid.. At the very top is the thing that is making us envious or jealous, it could be a friend who has been on a great holiday.
+          </p>
+
+          <p>
+            The second layer is to notice what we are thinking or feeling and we may notice that we blame the other person for our envy, or may feel guilty.
+          </p>
+
+          <p>
+            Then our awareness goes deeper and in the third layer, we notice the process of comparison at work in the background. This is not always easy to spot
+          </p>
+
+          <p>
+            The last layer of awareness is one we are going to explore in a separate module, which is to ask - who feels the pain of envy?
+          </p>
+
+          <p>
+            Though, for the sake of describing envy I've divided it into 4 sections, you can be aware of all four levels at once. The more you notice, the more you see, and the easier it gets.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

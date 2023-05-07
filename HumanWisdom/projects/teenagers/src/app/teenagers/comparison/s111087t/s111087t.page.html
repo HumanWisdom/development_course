@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111087t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Comparison or envy is not right, wrong, good, or bad. This is important to understand. The way your mind works is the same as in all human beings. The same process of comparison that brings pleasure and causes the ache of envy and sorrow operates in all of us. It is just a fact to be understood and you can’t do that if you judge it as right or wrong. It is not easy to put aside all our conditioning which says envy is bad or wrong. These are labels we have given that feeling. But to explore it in depth, we need to look at it without judgment.
+          </p>
+
+          <p>
+            To begin to look at ourselves, we need a mind that is calm and not agitated. It is worth therefore beginning with an exercise to quieten your mind. You can do that by exploring a simple breathing exercise.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

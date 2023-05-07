@@ -43,7 +43,7 @@ export class S101001Page implements OnInit,OnDestroy {
   ) 
   { 
     
-    this.service.setmoduleID(101);
+    // this.service.setmoduleID(101);
     this.getSetModuleData(101);
     this.service.getModulebyId(101).subscribe(res=>{
       this.moduleData=res;
