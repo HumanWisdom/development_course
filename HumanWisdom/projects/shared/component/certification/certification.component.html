@@ -1,50 +1,36 @@
-<!-- <app-sessionover-s1 [bg]="bg" [points]="points"></app-sessionover-s1> -->
 
-<!-- <app-bg-video></app-bg-video> -->
-
-<!-- page content -->
-<!-- <div class="right_col mc_03">				 -->
-  <!-- Class -->  
-  <div class="cw100p" style="position:relative">
-    <div class="center_flex">
-      <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex"> -->
-            <div class="outer-rec" id="myDiv">
-              <div class="vector-3"></div>
+            <div class="outer-rec" id="myDiv"  [ngStyle]="{'display': !isModuleCompleted? 'none' : ''}">
+              <div class="vector-3"></div>          
               <div class="vector-4"></div>
-
                 <div class="inner-rec">
                   <div class="row center_flex">
                     <div class="inner-icon"></div>
                   </div>
                   <div class="row center_flex"><span class="cert-h1 col-sm-12" >CERTIFICATE</span></div>
                   <div class="row center_flex m-top13">
-                  <hr class="vector col-sm-4  m-right3" >
-                  <span class="cert-txt col-sm-6">OF COMPLETION</span>
-                  <hr class="vector col-sm-4 m-left3">
+                  <hr class="vector col-xs-2 col-md-2 col-sm-2  m-right3" >
+                  <span class="cert-txt col-xs-8 col-md-6 col-sm-8">OF COMPLETION</span>
+                  <hr class="vector col-xs-2 col-md-2  col-sm-2 m-left3">
                   </div>
                   <div class="row center_flex"><span class="cert-txt1 col-sm-12 " >PRESENTED TO</span></div>
                   <div class="row center_flex"><span class="cert-txt2 col-sm-12" >{{userName}}</span></div>
                   <div class="row center_flex"><span class="cert-txt3 col-sm-12 " >for completing the {{moduleName}} </span></div>
                     <div class="row center_flex"><span class="cert-txt3-1 col-sm-12 ">module on HumanWisdom</span></div>
-                  <div class="row center_flex m-top26">                  
-                    
-                      <div class="row">
-                        <span class="cert-logo"></span>
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <span class="cert-txt4">HumanWisdom</span>
+                   
+                    <div class="row center_flex m-top23">                 
+                          <span class="cert-logo"></span>
+                        <div class="col-md-12 col-sm-12 col-xs-12 center_flex m-top-2">
+                          <span class="cert-txt4">&nbsp;HumanWisdom <br/><br/>
+                         </span>
+                                 <span class="cert-txt5">
+                            Wisdom for a happier life</span>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <span class="cert-txt5">Wisdom for a happier life</span>
-                        </div>  
-                      </div> 
+                     
                     </div>
+                  
                       <div class="row center_flex"><span class="cert-txt6 col-sm-12 ">humanwisdom.me</span></div>
                 </div>
+              
             </div>
             
-      <!-- </div> -->
-    </div>
-  </div>
-  <!--/Class --> 
-<!-- </div> -->
-<!-- /page content -->
+  

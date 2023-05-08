@@ -15,7 +15,7 @@ import { ProgramModel, ProgramType } from "../../../shared/models/program-model"
 })
 
 export class ModuleEndComponent implements OnInit, AfterViewInit {
-  isModuleCompleted: boolean = true;
+  isModuleCompleted: boolean = false;
   file: any;
   @Input() moduleImg: string;
   @Input() moduleLink: string;
@@ -2541,16 +2541,13 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({
         orientation: 'portrait',
-        unit: 'mm',
         format: 'a5',
         compress:false,
-        putOnlyUsedFonts:true,
       });
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      let pdfWidth = pdf.internal.pageSize.getWidth();
+      let pdfHeight=pdf.internal.pageSize.getHeight();
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
-      pdf.setDisplayMode("original", "single");
+      // pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
   }
@@ -2573,16 +2570,19 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      let div:any;
-      div = document.getElementById('myDiv'); // replace with the ID of your div
-      html2canvas(div, {scale: 3}).then(canvas => {
+     const div = document.getElementById('myDiv'); // replace with the ID of your div
+     html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
+      ).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
-        this.pdfBlob = new jsPDF('l', 'mm', 'a4');
-        const imgProps = this.pdfBlob.getImageProperties(imgData);
-        const pdfWidth = this.pdfBlob.internal.pageSize.getWidth();
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-        this.pdfBlob.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        this.file = new File([this.pdfBlob.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          format: 'a5',
+          compress:false,
+        });
+        let pdfWidth = pdf.internal.pageSize.getWidth();
+        let pdfHeight=pdf.internal.pageSize.getHeight();
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+        this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
       });
     }, 2000);
   }

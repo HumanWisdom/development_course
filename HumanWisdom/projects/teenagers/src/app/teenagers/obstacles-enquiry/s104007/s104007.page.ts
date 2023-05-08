@@ -17,7 +17,7 @@ export class S104007Page implements OnInit,OnDestroy {
   bg="teal_w6"
   title="The mountain in our mind is imaginary"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/obstacles-enquiry/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/obstacles-enquiry/audios/1.1.mp3'
   transcriptPage="obstacles-enquiry/s104007t"
   toc="obstacles-enquiry/s104001"
   bookmark=0

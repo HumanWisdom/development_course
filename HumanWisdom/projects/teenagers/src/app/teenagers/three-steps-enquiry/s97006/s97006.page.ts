@@ -17,7 +17,7 @@ export class S97006Page implements OnInit,OnDestroy {
   bg="pink_orange_w4"
   title="Step #2 - Accept the fact without judgement."
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/three-steps-enquiry/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/three-steps-enquiry/audios/1.2.mp3'
 
   transcriptPage="three-steps-enquiry/s97006t"
   toc="three-steps-enquiry/s97001"

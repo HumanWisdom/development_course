@@ -1,48 +1,18 @@
-<app-feedback-question skipToPage="/meditation/s22059">
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
   <form>
-    <h2 class="mtb0px txt13">
-      Feedback Survey
-    </h2>
 
-    <h4 class="mt0px txt14">
-     Meditation Module
-    </h4>
-
-    <!-- multistep wizard -->
-    <div id="svg_wrap"></div>                 
-
-  <section>
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a class="sb_anchor">
-          <div class="box textarea_box">
-            <h4 class="pt1rem txt15">
-             {{reflection}}
-            </h4>    
-
-            <hr>
-
-            <textarea id="message" required="required" class="form-control b0 p0 txt19" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r109068"></textarea>
-
-            <br>
-
-          </div>                    
-        </a>
-      </div>
-    </div>  
-
-  </section>
-  <section> </section>
-  <section></section>
-  <section></section>
-                       
-
-     
-  </form>
-</app-feedback-question>
-
-<!-- feedback survey footer  -->
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
-<!-- /feedback survey footer -->
-           
+    <h1 class="txt1">
+      Develop your own meditation practice. Keep it simple. It is just about looking and learning.
          
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

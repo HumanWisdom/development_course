@@ -1,35 +1,19 @@
-<app-begin-survey [bg]="bg">
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
 
   <form>
 
-    <div class="row center_flex flex_align">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">                    
-        <h4 class="txt11 txt11_lh">
-          Please take a moment to fill out this survey. It will help us actively improve our programs.
-        </h4>
-      </div>
-    </div>                    
+    <h1 class="txt1">
+      You can be aware of what you are thinking and feeling throughout the day, not just when you meditate
 
-    <br><br>
+          
+    </h1>
 
-    <div class="row center_flex flex_align">
-      <div class="col-md-3 col-sm-3 col-xs-12 tcenter p0">
-        <a routerLink="/meditation/s109067">
-          <button type="button" class="btn btn-success mb0 w100 btn_begin_here_orange" data-dismiss="modal">Begin here</button>
-        </a>
-      </div>
-    </div>                    
-
-    <br>
-
-    <div class="row center_flex flex_align">
-      <div class="col-md-3 col-sm-3 col-xs-12 tcenter p0">                    
-        <a routerLink="/meditation/s109071">
-          <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button>
-        </a>
-      </div>
-    </div> 
+    <div class="clearfix"></div>
 
   </form>
 
- </app-begin-survey>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
