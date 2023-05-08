@@ -104,7 +104,8 @@
 
 .cert-logo {
   position: absolute;
-  left: 24.13%;
+  top: 82%;
+  left: 23.13%;
   height: 10%;
   width: 17%;
   background-size: 98% 99% !important;
@@ -114,7 +115,7 @@
 }
 
 .cert-txt4 {
-  margin-left: 1.8rem;
+  /* margin-left: 1.8rem; */
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
@@ -123,6 +124,8 @@
   text-align: initial;
   z-index: 99;
   position: absolute;
+  top: 84%;
+  left: 40%;
 }
 
 .cert-txt5 {
@@ -132,9 +135,11 @@
   font-size: 1rem;
   color: #FFFFFF;
   position: absolute;
-  margin-left: 4rem;
-  margin-top: 5px;
+  /* margin-left: 4rem;
+  margin-top: 5px; */
   z-index: 99;
+  top: 88%;
+  left: 41%;
 }
 
 .m-top-2{
@@ -142,14 +147,16 @@
 }
 
 .cert-txt6 {
-  position: relative;
+  position: absolute;
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   text-align: center;
   color: #FFC455;
-  margin-top: 25%;
+  /* margin-top: 25%; */
+  top: 102%;
+  left: 40%;
 }
 
 .vector-3 {
