@@ -45,10 +45,11 @@
   text-align: center;
   color: #FFFFFF;
   position: absolute;
-  top: 25.98%;
+  top: 24.98%;
 }
 
 .vector {
+  position: absolute;
   width: 3rem;
   z-index: 999;
 }
@@ -65,7 +66,7 @@
 
 .cert-txt1 {
   position: absolute;
-  top: 47.6%;
+  top: 45.6%;
   font-family: "Merriweather";
   font-size: 1rem;
   letter-spacing: 0em;
@@ -121,7 +122,7 @@
   font-size: 1.4rem;
   color: #FFFFFF;
   text-align: initial;
-  z-index: 99;
+  z-index: 999;
   position: absolute;
 }
 
@@ -134,7 +135,7 @@
   position: absolute;
   margin-left: 4rem;
   margin-top: 5px;
-  z-index: 99;
+  z-index: 999;
 }
 
 .m-top-2{
@@ -142,14 +143,15 @@
 }
 
 .cert-txt6 {
-  position: relative;
+  position: absolute;
+  left: 0;
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   text-align: center;
   color: #FFC455;
-  margin-top: 25%;
+  top: 95%;
 }
 
 .vector-3 {
@@ -190,7 +192,7 @@
   padding-bottom:3rem;
 }
 .m-top23{
-  margin-top: 23rem;
+  margin-top: 27rem;
 }
 
 .m-top13
@@ -199,11 +201,11 @@
 }
 .m-left3
 {
-  margin-left: -4.5rem;
+  margin-left: -16.5rem;
 }
 .m-right3
 {
-  margin-right: -17.5rem;
+  margin-right: -16.5rem;
 }
 
 .ml{
