@@ -36,6 +36,9 @@ export class CourseHeaderComponent implements OnInit {
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
   pageaction = localStorage.getItem("pageaction");
   isLoggedIn = false
+  placeHolder = 'Type your note here...';
+  guest = false;
+  Subscriber = false;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -57,9 +60,16 @@ export class CourseHeaderComponent implements OnInit {
     if (res && res === 'T' && sub && sub === '1') {
       this.isLoggedIn = true;
     }
+
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
   }
 
   ngOnInit() {
+    if(this.guest || !this.Subscriber) {
+      this.placeHolder = "Please subscribe to access your online journal";
+    }
+
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
     this.showheaderbar = true;
     // console.log(this.ac)

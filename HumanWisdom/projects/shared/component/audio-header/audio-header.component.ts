@@ -37,14 +37,24 @@ export class AudioHeaderComponent implements OnInit {
   baseUrl:string;
   @Output() sendBookmark = new EventEmitter<boolean>();
   programName:string='';
+  placeHolder = 'Type your note here...';
+  guest = false;
+  Subscriber = false;
+
   constructor(private router: Router,
     private service: AdultsService, public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService) {
     this.urlT = this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
     this.ngNavigatorShareService = ngNavigatorShareService;
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
   }
 
   ngOnInit() {
+    if(this.guest || !this.Subscriber) {
+      this.placeHolder = "Please subscribe to access your online journal";
+    }
+
    this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
     console.log("url="+ this.progUrl)
 
