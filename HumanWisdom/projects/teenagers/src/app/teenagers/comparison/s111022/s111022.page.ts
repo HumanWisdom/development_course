@@ -93,22 +93,22 @@ export class S111022Page implements OnInit, OnDestroy
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/teenagers/conditioning/s234'])
+        //this.router.navigate(['/conditioning/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/teenagers/comparison/s111021'])
+    this.router.navigate(['/comparison/s111021'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/teenagers/comparison/s111022'])
+    // this.router.navigate(['/comparison/s111022'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/teenagers/comparison/s111023'])
+    this.router.navigate(['/comparison/s111023'])
   }
 
   ngOnDestroy() 
