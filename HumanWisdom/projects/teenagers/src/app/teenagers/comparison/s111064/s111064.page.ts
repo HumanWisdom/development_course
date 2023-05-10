@@ -14,7 +14,7 @@ export class S111064Page implements OnInit
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w7"
-  hint = "It's okay to be honest. Only you can see this. But then explore why, and is the process of comparison operating in the background"
+  hint = "It's okay to be honest. But then explore why, and is the process of comparison operating in the background"
   toc = "/comparison/s111001"
   path = this.router.url
   userId: any
@@ -27,7 +27,7 @@ export class S111064Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 5
+  rId = 1279
   reflection: any
   reflectionA: any
   r111064 = JSON.parse(sessionStorage.getItem("r111064"))
@@ -112,17 +112,17 @@ export class S111064Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/comparison/s111065'])
+        this.router.navigate(['/comparison/s111065'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/comparison/s111065'])
+        this.router.navigate(['/comparison/s111065'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/comparison/s111063'])
+    this.router.navigate(['/comparison/s111063'])
   }
 
   ngOnDestroy() 

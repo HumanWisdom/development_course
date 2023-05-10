@@ -58,8 +58,8 @@ export class S111012Page implements OnInit
       }
     }
     this.questionA=this.qrList?.ListOfQueOpts
-    this.question=this.findQuestion(41).Question
-    this.optionList=this.findQuestion(41).optionList
+    this.question=this.findQuestion(400).Question
+    this.optionList=this.findQuestion(400).optionList
     console.log(this.optionList,this.question)
 
     if(this.saveUsername==false)
@@ -154,12 +154,12 @@ export class S111012Page implements OnInit
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/teenagers/comparison/s111013'])
+    this.router.navigate(['/comparison/s111013'])
   }
 
   prev()
   {
-    this.router.navigate(['/teenagers/comparison/s111011'])
+    this.router.navigate(['/comparison/s111011'])
   }
 
   sessionFetch(id, divid)
