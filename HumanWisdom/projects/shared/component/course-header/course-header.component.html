@@ -173,3 +173,9 @@
   </div>
 </div>
 <!-- /add note modal -->
+
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'Please subscribe to activate this feature'">
+</app-modal>

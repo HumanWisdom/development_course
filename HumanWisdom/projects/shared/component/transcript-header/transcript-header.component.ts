@@ -35,6 +35,7 @@ export class TranscriptHeaderComponent implements OnInit {
   placeHolder = 'Type your note here...';
   guest = false;
   Subscriber = false;
+  enableAlert = false;
 
   constructor(private router: Router,
     private service:AdultsService,
@@ -96,9 +97,12 @@ export class TranscriptHeaderComponent implements OnInit {
 
 
   toggleBookmark(){
-    this.bookmark=!this.bookmark
-    console.log(this.bookmark)
-    this.sendBookmark.emit(this.bookmark)
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    } else {
+      this.bookmark=!this.bookmark
+      this.sendBookmark.emit(this.bookmark)
+    }
   }
 
   courseNote(){
@@ -180,6 +184,16 @@ export class TranscriptHeaderComponent implements OnInit {
   }
 
 
-
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if (event === 'ok') {
+      if (!this.guest && !this.Subscriber) {
+        this.router.navigate(["/onboarding/add-to-cart"]);
+      } else if (this.guest) {
+        localStorage.setItem("subscribepage", 'T');
+        this.router.navigate(["/onboarding/login"]);
+      }
+    }
+  }
 
 }
