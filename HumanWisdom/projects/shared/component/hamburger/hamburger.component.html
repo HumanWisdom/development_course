@@ -635,7 +635,7 @@
       </li>
       <!-- /multilayer li for help & support -->
 
-      <li id="liLogout" (click)="logout()" *ngIf="isloggedIn">
+      <li (click)="logout()" *ngIf="isloggedIn">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -927,6 +927,6 @@
   <!-- /submenu -->
 </nav>
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+<app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
   [content]="'Are you sure you want to logout ?'">
 </app-modal>
