@@ -28,7 +28,8 @@ export class S63075Page implements OnInit {
   rId = 661
   reflection: any
   reflectionA: any
-  r63075 = JSON.parse(sessionStorage.getItem("r63075"))
+  //r63075 = JSON.parse(sessionStorage.getItem("r63075"))
+  r63075 = sessionStorage.getItem("r63075") !== 'null' ? sessionStorage.getItem("r63075") : '';
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -171,7 +172,7 @@ export class S63075Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r63075", this.r63075)
-    this.r63075 = sessionStorage.getItem("r63075")
+    //this.r63075 = sessionStorage.getItem("r63075")
     console.log(this.r63075)
 
     this.service.submitProgressReflection({

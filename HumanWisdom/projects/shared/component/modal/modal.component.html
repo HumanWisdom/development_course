@@ -1,0 +1,48 @@
+<span #enablecookiemodal data-toggle="modal" data-target="#modal-alert"></span>
+
+<!-- cookie modal  -->
+<div class="modal fade" id="modal-alert" tabindex="-1" data-keyboard="false" role="dialog"
+  aria-labelledby="modal_cookie_title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered w100" role="document">
+    <div class="row center_flex">
+      <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12 popup_02 prelative">
+
+        <div class="modal-header b0">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <button type="button" class="btn_popup_close m0px" #closecookiemodal data-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body pt0px">
+          <!-- modal content -->
+          <div class="row center_flex">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+              <h4 class="fw_400 fs_18px lh_21px fc_ffffff boldi italici">
+                {{title}}
+              </h4>
+              <h4 class="fw_400 fs_18px lh_21px fc_ffffff italici">
+                {{content}}
+              </h4>
+            </div>
+          </div>
+          <!-- /modal content -->
+        </div>
+
+        <div class="modal-footer b0">
+          <button type="button" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
+            {{okText}}
+          </button>
+
+          <button type="button" (click)="close('cancel')" class="btn btn-warning mb0pxi mr0pxi btn_cookies_close" data-dismiss="modal" *ngIf="enableCancel">
+            {{cancelText}}
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /cookie modal -->

@@ -1,0 +1,47 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            These are some of the unconscious patterns of thinking that operate in the background, influencing our thoughts and actions. These are the same in all human beings. We are all conditioned and not aware of it, for example.             
+          <p>
+            Take a moment to look through this list and see how many you recognise in yourself. 
+          </p>
+          <p>
+            1. Conditioning
+          </p>
+          <p>
+            2. Comparison            
+          </p>
+          <p>
+            3. Our emotional needs            
+          </p>
+          <p>
+            4. Our self-interest            
+          </p>
+          <p>
+            5. Our need for power            
+          </p>
+          <p>
+            6. Our fears and insecurities            
+          </p>
+          <p>
+            7. Our images of ourselves            
+          </p>
+          <p>
+            8. Our inner boredom            
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 @Component({
   selector: 'app-audio-content',
@@ -19,20 +18,16 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   interval: any
   t: any
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+  localStorageFreeScreens = localStorage.getItem("freeScreens");
+  freeScreens = this.localStorageFreeScreens!= "undefined" ? JSON.parse(this.localStorageFreeScreens) : "";
   scrId: any
-  // @ViewChild('audio',{static:false})
-  // public audio:ElementRef
-
-
-
-  // @ViewChild('playerContainer') playerContainer:ElementRef ;
   @ViewChild('audio') audio;
   @ViewChild('screen', { static: true }) screen: any;
   pageaction = localStorage.getItem("pageaction");
+  reachedLimit = false;
+  enableAlert = false;
 
   constructor(
-    private captureService: NgxCaptureService,
     private service: AdultsService,
     private router: Router, private url: ActivatedRoute,
   ) {
@@ -47,53 +42,47 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
     str = str.substring(lastSlash + 2);
     //str = str.replace(/\D/g,'');
     this.scrId = str
-    console.log("str", str, "id", this.scrId)
 
     //call api to geta percent
     this.service.mediaPercent(this.scrId).subscribe(res => {
-
       this.mediaPercent = res[0].MediaPrcnt
-      console.log("media duration", this.mediaPercent)
     })
-    console.log(this.audioLink, this.mediaPercent, this.loginResponse)
     var str = this.router.url
     var lastSlash = str.lastIndexOf("/");
     str = str.substring(lastSlash + 2);
     this.scrId = str
-    console.log("str", str, "id", this.scrId)
-
 
     if ((this.loginResponse.Subscriber != 1)) {
       if (!this.freeScreens.includes(parseInt(this.scrId))) {
-
-        this.interval = setInterval(() => this.checkPauseTime(), 1000);
-
-
-
+        this.interval = setInterval(() => this.reachedLimit ? null : this.checkPauseTime(), 1000);
       }
     }
   }
 
+  ngAfterViewInit(): void {
+    this.audio.nativeElement.onplaying = (event) => {
+      if (this.reachedLimit) {
+        this.audio.nativeElement.pause();
+        this.enableAlert = true;
+        // window.alert('You have reached free limit')
+      }
+    };
+  }
+
   getTime() {
-    console.log(this.audio)
-    console.log(this.audio.audio.nativeElement.currentTime)
-    this.sendAvDuration.emit(JSON.parse(this.audio.audio.nativeElement.currentTime))
+    let aud: any = document.getElementById("aud1");
+    this.sendAvDuration.emit(JSON.parse(aud.currentTime))
   }
 
   checkPauseTime() {
-
-    console.log(this.loginResponse.Subscriber, "subs")
-    console.log("checking to pause")
-    this.pauseTime = ((this.mediaPercent / 100) * this.audio.audio.nativeElement.duration)
-    console.log(this.pauseTime, "p")
-    if (this.audio.audio.nativeElement.currentTime > this.pauseTime) {
-      this.audio.audio.nativeElement.pause();
-      this.router.navigate(['/onboarding/free-limit']);
+    let aud: any = document.getElementById("aud1");
+    this.pauseTime = ((this.mediaPercent / 100) * aud.duration)
+    if (aud.currentTime > this.pauseTime) {
+      this.reachedLimit = true;
+      aud.pause();
+      this.enableAlert = true;
+      // window.alert('You have reached free limit')
     }
-
-
-
-
   }
 
   ngOnDestroy() {
@@ -103,9 +92,12 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
-  ngAfterViewInit() {
-
-
+  onChange(value) {
+    let aud: any = document.getElementById("aud1");
+    aud.playbackRate = Number(value);
   }
 
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+  }
 }

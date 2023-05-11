@@ -5,6 +5,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
+import { ProgramModel, ProgramType } from "../../../shared/models/program-model";
 
 
 @Component({
@@ -31,7 +32,9 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   pdfBlob: any;
   percentage: string;
   currentModuleName: string;
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
+  @Input() programType :ProgramType = ProgramType.Adults;
+  moduleData:Array<ProgramModel>;
   @Input() moduleList: any = [
     {
       name: 'Breathing',
@@ -63,6 +66,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     console.log(this.toc)
+    this.GetModuleDataBasedOnProgramType();
     this.getDataForCertificate();
 
 
@@ -73,11 +77,13 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     let path = this.router.url.split("/");
     let currentModuleName = path[path.length - 2]
     this.service.getPoints(this.userId).subscribe(res => {
-      let data = res.ModUserScrPc.find(e => e.Module.toLowerCase().includes(currentModuleName.replace("-", " ").toLowerCase()));
-      this.currentModuleName = data.Module;
-      this.percentage = data.Percentage;
-      if (this.percentage == "100.00") {
-        this.isModuleCompleted = true;
+      let data = res?.ModUserScrPc?.find(e => e.Module.toLowerCase().includes(currentModuleName.replace("-", " ").toLowerCase()));
+      if(data && data != null){
+        this.currentModuleName = data.Module;
+        this.percentage = data.Percentage;
+        if (this.percentage == "100.00") {
+          this.isModuleCompleted = true;
+        }
       }
     });
   }
@@ -438,11 +444,6 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           console.log(error)
         },
         () => {
-          // if(cont=="1")
-          // {
-          //   this.router.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
-          // }
-          // else
           this.router.navigate([`/adults/benefits-of-wisdom/s32001`])
         })
   }
@@ -2535,19 +2536,18 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   public saveAsPDF() {
     const div = document.getElementById('myDiv'); // replace with the ID of your div
-    html2canvas(div).then(canvas => {
+    html2canvas(div, {scale: 3}
+      ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({
         orientation: 'portrait',
-        unit: 'mm',
-        format: [210, 297] // A4 size in millimeters
+        format: 'a5',
+        compress:false,
       });
-
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      let pdfWidth = pdf.internal.pageSize.getWidth();
+      let pdfHeight=pdf.internal.pageSize.getHeight();
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
-      pdf.setDisplayMode("original", "single");
+      // pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
   }
@@ -2570,15 +2570,19 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      const div = document.getElementById('myDiv'); // replace with the ID of your div
-      html2canvas(div).then(canvas => {
+     const div = document.getElementById('myDiv'); // replace with the ID of your div
+     html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
+      ).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
-        this.pdfBlob = new jsPDF('p', 'mm', 'a4');
-        const imgProps = this.pdfBlob.getImageProperties(imgData);
-        const pdfWidth = this.pdfBlob.internal.pageSize.getWidth();
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-        this.pdfBlob.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        this.file = new File([this.pdfBlob.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          format: 'a5',
+          compress:false,
+        });
+        let pdfWidth = pdf.internal.pageSize.getWidth();
+        let pdfHeight=pdf.internal.pageSize.getHeight();
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+        this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
       });
     }, 2000);
   }
@@ -2614,4 +2618,51 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         })
   }
 
+    GetModuleDataBasedOnProgramType(){
+     this.moduleData= new Array<ProgramModel>();
+     this.service.getModules(+this.programType).subscribe(res=>{
+      this.moduleData=res;
+     });
+    }
+
+
+    ContinueToThisModule(){
+     let moduleData=this.moduleData.filter(x=>x.moduleId==this.moduleId);
+     if(moduleData && moduleData!=null && moduleData.length>0) {
+      this.RouteToModule(moduleData[0]);
+     }
+    }
+
+    RouteToModule(moduleData:ProgramModel) {
+      var addictionResume
+      localStorage.setItem("moduleId",moduleData.moduleId)
+      this.service.clickModule(+moduleData.moduleId, this.userId)
+        .subscribe(res => {
+          localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+          this.qrList = res
+          addictionResume = "s" + res.lastVisitedScreen
+  
+          // continue where you left
+          if (res.lastVisitedScreen === '') {
+            localStorage.setItem("lastvisited", 'F')
+          }
+          else {
+            localStorage.setItem("lastvisited", 'T')
+          }
+          // /continue where you left
+          sessionStorage.setItem(moduleData.moduleName.trim() , 's'+moduleData.lastScreen)
+          localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        },
+          error => {
+            console.log(error)
+          },
+          () => {
+            // const isLocalhost = window.location.hostname === 'localhost';
+            // if(isLocalhost){
+            //     moduleData.path=moduleData.path.replace('teenagers/#/','');
+            // }
+            moduleData.path=moduleData.path.replace('teenagers/#/','');
+            this.router.navigate([''+moduleData.path+'/s'+moduleData.firstScreen]);
+          })
+    }
 }

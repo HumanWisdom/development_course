@@ -29,7 +29,8 @@ export class S483p3Page implements OnInit {
   rId = 584
   reflection: any
   reflectionA: any
-  r483p3 = JSON.parse(sessionStorage.getItem("r483p3"))
+  //r483p3 = JSON.parse(sessionStorage.getItem("r483p3"))
+  r483p3 = sessionStorage.getItem("r483p3") !== 'null' ? sessionStorage.getItem("r483p3") : '';
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -193,7 +194,7 @@ export class S483p3Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r483p3", this.r483p3)
-    this.r483p3 = sessionStorage.getItem("r483p3")
+    //this.r483p3 = sessionStorage.getItem("r483p3")
     console.log(this.r483p3)
 
     this.service.submitProgressReflection({

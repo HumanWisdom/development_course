@@ -28,6 +28,7 @@ export class S82004tPage implements OnInit {
   avDuration=localStorage.getItem("avDuration82004")
   totalTime=localStorage.getItem("totalTime82004")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName = "teenagers"
   
   constructor(
     private router: Router,

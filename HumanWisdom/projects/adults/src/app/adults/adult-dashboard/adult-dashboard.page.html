@@ -302,7 +302,7 @@
 
             <!-- pfy button -->
             <!-- accordion -->
-            <div class="row mlr-10px_01 accordion_row" *ngIf="personalisedList.length !== 0">
+            <!-- <div class="row mlr-10px_01 accordion_row" *ngIf="personalisedList.length !== 0">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
@@ -336,7 +336,7 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                            <!-- button 1 -->
+                         
                             <ng-container *ngFor="let item of personalisedList; let i=index">
                               <div class="row center_flex"
                                 *ngIf="i === 0 && item['active'] || i === 1 && item['active']">
@@ -348,7 +348,7 @@
                                 </div>
                               </div>
                             </ng-container>
-                            <!-- /button 1 -->
+                          
                           </div>
                         </div>
 
@@ -357,7 +357,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- /accordion -->
             <!-- /pfy button -->
 
@@ -513,7 +513,7 @@
                           <div class="col-md-12 col-sm-12 col-xs-12 ghn pr15px">
                             <div class="col-md-6 col-sm-7 col-xs-7 pl0pxi pr5px">
                               <a (click)="getsupport('/adults/get-support-now/s71001', 71)">
-                              <!-- <a (click)="youtube('X0xXqZf_RbU')"> -->
+                                <!-- <a (click)="youtube('X0xXqZf_RbU')"> -->
                                 <img
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/01.svg"
                                   alt="Stress Management" class="crimg">
@@ -524,7 +524,7 @@
                             </div>
                             <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                               <a (click)="getsupport('/adults/get-support-now/s71002', 71)">
-                              <!-- <a (click)="youtube('V8qnVfAbT4c')"> -->
+                                <!-- <a (click)="youtube('V8qnVfAbT4c')"> -->
                                 <img
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/02.svg"
                                   alt="Solution for Anxiety" class="crimg">
@@ -536,7 +536,7 @@
 
                             <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                               <a (click)="getsupport('/adults/get-support-now/s71003', 71)">
-                              <!-- <a (click)="youtube('Io7_OVh6Lj8')"> -->
+                                <!-- <a (click)="youtube('Io7_OVh6Lj8')"> -->
                                 <img
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/03.svg"
                                   alt="Anger Management" class="crimg">
@@ -548,7 +548,7 @@
 
                             <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                               <a (click)="getsupport('/adults/get-support-now/s71004', 71)">
-                              <!-- <a (click)="youtube('PrZFaFUN2gs')"> -->
+                                <!-- <a (click)="youtube('PrZFaFUN2gs')"> -->
                                 <img
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/04.svg"
                                   alt="" class="crimg">
@@ -560,7 +560,7 @@
 
                             <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                               <a (click)="getsupport('/adults/get-support-now/s71005', 71)">
-                              <!-- <a (click)="youtube('J8QsN_ibWas')"> -->
+                                <!-- <a (click)="youtube('J8QsN_ibWas')"> -->
                                 <img
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/05.svg"
                                   alt="" class="crimg">
@@ -572,7 +572,7 @@
 
                             <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
                               <a (click)="getsupport('/adults/get-support-now/s71006', 71)">
-                              <!-- <a (click)="youtube('2Vmn4rNIxrI')"> -->
+                                <!-- <a (click)="youtube('2Vmn4rNIxrI')"> -->
                                 <img
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/06.svg"
                                   alt="" class="crimg">
@@ -1362,8 +1362,9 @@
                                 </div>
                                 <h4 class="tcenter txt31 attitle">Dealing with depression</h4>
                                 <div class="progress dprogress">
-                                  <div class="progress-bar" role="progressbar" [style.width]="dealingwithdepressionP + '%'"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  <div class="progress-bar" role="progressbar"
+                                    [style.width]="dealingwithdepressionP + '%'" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
                                 </div>
                               </a>
                             </div>
@@ -2560,20 +2561,19 @@
 </div>
 <!-- /activate subscription modal -->
 
-<span #journelsignuplogin data-toggle="modal" data-target="#journelsignuplogin">
-</span>
+<span data-toggle="modal" #enablepopup data-target="#signuplogin"></span>
 
 <!-- signup_login modal -->
-<div class="modal fade" id="journelsignuplogin" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- modal-body -->
-  <div class="h100p" role="document">
+  <div class="" role="document">
     <!-- modal content -->
     <div class="row center_flex h100p">
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 modal_inner">
         <form>
           <div class="pfy_sl_modal">
 
-            <button type="button" class="btn_popup_close m0px" #actclosemodal data-dismiss="modal" aria-label="Close">
+            <button type="button" class="btn_popup_close m0px" #closepopup data-dismiss="modal" aria-label="Close">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
                 class="img-responsive fright">
             </button>
@@ -2596,7 +2596,6 @@
                 </h4>
               </div>
             </div>
-
 
             <div class="row pfy_ocw">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

@@ -14,25 +14,28 @@ export class TranscriptHeaderComponent implements OnInit {
   @Input() bookmark: boolean;
   @Input() bg: string;
   @Input() bg_tn: string;
-  @Input() path: string; //to go back to the course page from note 
+  @Input() path: string; //to go back to the course page from note
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() audioPage: string;
+  @Input() progName: string;
   @Output() sendBookmark = new EventEmitter<boolean>();
   note:any
   t=new Date()
   minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  urlT:any 
+  urlT:any
   shared=false
   token=JSON.parse(localStorage.getItem("token"))
   socialShare=false
   address=this.router.url
   scrNumber:any
   progress:any
-
-
+  placeHolder = 'Type your note here...';
+  guest = false;
+  Subscriber = false;
+  enableAlert = false;
 
   constructor(private router: Router,
     private service:AdultsService,
@@ -40,9 +43,16 @@ export class TranscriptHeaderComponent implements OnInit {
     private ngNavigatorShareService: NgNavigatorShareService ) {
     this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
     this.ngNavigatorShareService = ngNavigatorShareService;
+
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
    }
 
   ngOnInit() {
+    if(this.guest || !this.Subscriber) {
+      this.placeHolder = "Please subscribe to access your online journal";
+    }
+
     var lastSlash = this.path.lastIndexOf("/");
      this.scrNumber=this.path.substring(lastSlash+2);
      this.scrNumber = this.scrNumber.replace(/\D/g,'');
@@ -71,7 +81,7 @@ export class TranscriptHeaderComponent implements OnInit {
     /*history.replaceState(null, null,this.address+`?t=${this.token}`);
     this.socialShare=true*/
     this.socialShare=true
-   
+
    if(this.urlT)
    {
      console.log("url")
@@ -87,9 +97,12 @@ export class TranscriptHeaderComponent implements OnInit {
 
 
   toggleBookmark(){
-    this.bookmark=!this.bookmark
-    console.log(this.bookmark)
-    this.sendBookmark.emit(this.bookmark)
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    } else {
+      this.bookmark=!this.bookmark
+      this.sendBookmark.emit(this.bookmark)
+    }
   }
 
   courseNote(){
@@ -103,15 +116,15 @@ export class TranscriptHeaderComponent implements OnInit {
     this.router.navigate(['/adults/adult-dashboard'])
   }
   goToAudio(){
-
+    let progNamePath = this.progName == "teenagers" ?  '/' : '/adults/';
     if (this.urlT)
     {
-      this.router.navigate(['/adults/'+this.audioPage], {queryParams:{t:this.urlT}})
+      this.router.navigate([progNamePath + this.audioPage], {queryParams:{t:this.urlT}})
 
     }
-      
+
     else
-      this.router.navigate(['/adults/'+this.audioPage])
+      this.router.navigate([progNamePath + this.audioPage])
   }
   addNote(){
     this.service.submitJournal({
@@ -126,11 +139,11 @@ export class TranscriptHeaderComponent implements OnInit {
       console.log(error)
     },
     ()=>{
-     
+
     })
   }
   share() {
-    
+
    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
       alert(`This service/api is not supported in your Browser`);
       return;
@@ -145,7 +158,7 @@ export class TranscriptHeaderComponent implements OnInit {
      console.log("local")
     this.path="https://humanwisdom.me/"+this.address+`?t=${this.token}`
    }
- 
+
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',
@@ -170,7 +183,17 @@ export class TranscriptHeaderComponent implements OnInit {
 
   }
 
-  
 
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if (event === 'ok') {
+      if (!this.guest && !this.Subscriber) {
+        this.router.navigate(["/onboarding/add-to-cart"]);
+      } else if (this.guest) {
+        localStorage.setItem("subscribepage", 'T');
+        this.router.navigate(["/onboarding/login"]);
+      }
+    }
+  }
 
 }

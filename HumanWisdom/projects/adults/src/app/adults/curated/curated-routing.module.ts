@@ -77,7 +77,7 @@ const routes: Routes = [
     component: YoutubeContentComponent
   },
   {
-    path: 'audiopage/:audiolink/:title',
+    path: 'audiopage/:audiolink/:title/:RowId',
     component: SingleAudioContentComponent
   },
 

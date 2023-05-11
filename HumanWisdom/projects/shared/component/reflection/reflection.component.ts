@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-reflection',
   templateUrl: './reflection.component.html',
@@ -8,15 +10,18 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 })
 export class ReflectionComponent implements OnInit {
   //reflectionResponses:any
+  reflectionData = '';
   @Input() reflection: string;
   @Input() hint: string;
   @Input() bg: string;
   @Input() bg_tn: string;
   @Input() bg_cft: string;
-  @Input() reflectionResponse: string;
+  @Input() set reflectionResponse(data) {
+    this.reflectionData = data !== 'null' ? data : '';
+  };
   @Input() toc: string;
   @Input() rid: string;
-  @Output() sendResponse = new EventEmitter<string>();
+  @Output() sendResponse = new EventEmitter<any>();
   @Output() goPrevious = new EventEmitter<string>();
   shared: any
   confirmed: any
@@ -26,9 +31,13 @@ export class ReflectionComponent implements OnInit {
   showheaderbar = true
   pageaction = localStorage.getItem("pageaction");
   enableReadonly = false;
+  guest = false;
+  Subscriber = false;
+  textDisabled = false;
   userId: any;
-
-  constructor(public router: Router, public service: AdultsService) {
+  placeholder = 'Write your answer here';
+  programName:string="";
+  constructor(public router: Router, public service: AdultsService, public sharedService:SharedService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
 
@@ -38,6 +47,16 @@ export class ReflectionComponent implements OnInit {
     this.scrNumber = this.path.substring(lastSlash + 2);
     console.log(this.scrNumber)
     this.getProgress(this.scrNumber)
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    if (this.guest || !this.Subscriber) {
+      this.placeholder = 'Please subscribe to access your online journal'
+      this.textDisabled = true;
+    }
+    this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
+    if(this.programName=='teenagers'){
+      this.programName='';
+    }
   }
   sharedForum(e) {
     console.log(e)
@@ -46,7 +65,7 @@ export class ReflectionComponent implements OnInit {
 
   confirmShare() {
     let obj = {
-      'Post': this.reflectionResponse,
+      'Post': this.reflectionData,
       'ReflectionID': this.rid,
       'UserId': this.userId
     }
@@ -60,8 +79,8 @@ export class ReflectionComponent implements OnInit {
 
 
   next() {
-    if (this.reflectionResponse)
-      this.sendResponse.emit(this.reflectionResponse)
+    if (this.reflectionData)
+      this.sendResponse.emit(this.reflectionData)
     else {
       this.sendResponse.emit(null)
     }
@@ -88,11 +107,25 @@ export class ReflectionComponent implements OnInit {
       )
 
   }
-  goToToc() {
-    this.router.navigate(['/adults/' + this.toc])
-  }
-  goToDash() {
-    this.router.navigate(['/adults/adult-dashboard'])
-  }
 
+  getProgramTypeName(value: number): string {
+    const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
+    return enumKey as string;
+  }
+ 
+  goToToc() {
+    this.router.navigate(['/'+this.programName+'/' + this.toc])
+  }
+ 
+  goToDash() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+    else if(SharedService.ProgramId == ProgramType.Teenagers) {
+      this.programName = "";
+      this.router.navigate([this.programName + '/teenager-dashboard'])
+    }else{
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+  }
 }

@@ -14,10 +14,10 @@ export class S74010Page implements OnInit {
   bg_cft = "bg_purple_blue"
   bg = "purple_blue_w10"
   mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
-  // videoLink = this.mediaVideo + '/how_can_wisdom_help/videos/1.9.mp4'
-  videoLink = "https://www.youtube.com/embed/qBGZIKaAfDA"
+   videoLink = this.mediaVideo + '/how_can_wisdom_help/videos/1.9.mp4'
+  //videoLink = "https://www.youtube.com/embed/qBGZIKaAfDA"
   title = "Emotions"
-  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_09.svg"
+  poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/how_can_wisdom_help/hcwh_09.png"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("video")

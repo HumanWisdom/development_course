@@ -30,9 +30,12 @@
           <!-- angular audio player plugin  -->
           <!-- <ngx-circular-player></ngx-circular-player>   -->
           <div class="row tcenter">
-            <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container">
-              <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()"
-                #audio></ngx-circular-player>
+            <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt30px">
+              <audio id="aud1" controls controlsList="nodownload" #audio>
+                <source [src]="audioLink" type="audio/mpeg">
+              </audio>
+              <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()"
+                #audio></ngx-circular-player> -->
             </div>
           </div>
           <!-- /angular audio player plugin -->
@@ -47,3 +50,7 @@
 </div>
 <!--/Class -->
 <!-- /page content -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'You have reached your free limit. Please subscribe to Premium to  unlock full access to the app'">
+</app-modal>

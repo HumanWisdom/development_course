@@ -30,8 +30,8 @@ export class S22029Page implements OnInit {
   rId = 162
   reflection: any
   reflectionA: any
-  r22029 = JSON.parse(sessionStorage.getItem("r22029"))
-
+  //r22029 = JSON.parse(sessionStorage.getItem("r22029"))
+  r22029 = sessionStorage.getItem("r22029") !== 'null' ? sessionStorage.getItem("r22029") : ''
   shared: any
   confirmed: any
 
@@ -96,7 +96,7 @@ export class S22029Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r22029", JSON.stringify(e))
-    this.r22029 = sessionStorage.getItem("r22029")
+    //this.r22029 = sessionStorage.getItem("r22029")
     console.log(this.r22029)
 
 

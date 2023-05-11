@@ -31,8 +31,84 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/key-ideas/key-ideas.module').then(m => m.KeyIdeasModule)
   },
   {
-    path: 'dashboard',
+    path: 'teenager-dashboard',
     loadChildren: () => import('./teenagers/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'benefits-of-enquiry',
+    loadChildren: () => import('./teenagers/benefits-of-enquiry/benefits-of-enquiry.module').then( m => m.BenefitsOfEnquiryModule)
+  },
+  {
+    path: 'how-to-begin',
+    loadChildren: () => import('./teenagers/how-to-begin/how-to-begin.module').then( m => m.HowToBeginModule)
+  },
+  {
+    path: 'three-steps-enquiry',
+    loadChildren: () => import('./teenagers/three-steps-enquiry/three-steps-enquiry.module').then( m => m.ThreeStepsEnquiryModule)
+  },
+  {
+    path: 'insight',
+    loadChildren: () => import('./teenagers/insight/insight.module').then( m => m.InsightModule)
+  },
+  {
+    path: 'awareness',
+    loadChildren: () => import('./teenagers/awareness/awareness.module').then( m => m.AwarenessModule)
+  },
+  {
+    path: 'no-judgement',
+    loadChildren: () => import('./teenagers/no-judgement/no-judgement.module').then( m => m.NoJudgementModule)
+  },
+  {
+    path: 'questions-are-key',
+    loadChildren: () => import('./teenagers/questions-are-key/questions-are-key.module').then( m => m.QuestionsAreKeyModule)
+  },
+  {
+    path: 'without-language',
+    loadChildren: () => import('./teenagers/without-language/without-language.module').then( m => m.WithoutLanguageModule)
+  },
+  {
+    path: 'obstacles-enquiry',
+    loadChildren: () => import('./teenagers/obstacles-enquiry/obstacles-enquiry.module').then( m => m.ObstaclesEnquiryModule)
+  },
+  {
+    path: 'nature',
+    loadChildren: () => import('./teenagers/nature/nature.module').then( m => m.NatureModule)
+  },
+  {
+    path: 'breathing',
+    loadChildren: () => import('./teenagers/breathing/breathing.module').then( m => m.BreathingModule)
+  },
+  {
+    path: 'noticing-thoughts',
+    loadChildren: () => import('./teenagers/noticing-thoughts/noticing-thoughts.module').then( m => m.NoticingThoughtsModule)
+  },
+  {
+    path: 'meditation',
+    loadChildren: () => import('./teenagers/meditation/meditation.module').then( m => m.MeditationModule)
+  } ,
+  {
+    path: 'guided-meditation',
+    loadChildren: () => import('./teenagers/guided-meditation/guided-meditation.module').then( m => m.GuidedMeditationModule)
+  },      
+   {
+    path: 'conditioning',
+    loadChildren: () => import('./teenagers/conditioning/conditioning.module').then( m => m.ConditioningModule)
+  },
+  {
+    path: 'comparison',
+    loadChildren: () => import('./teenagers/comparison/comparison.module').then( m => m.ComparisonModule)
+  },
+  {
+    path: 'reactive-mind',
+    loadChildren: () => import('./teenagers/reactive-mind/reactive-mind.module').then( m => m.ReactiveMindModule)
+  },
+  {
+    path: 'self-image',
+    loadChildren: () => import('./teenagers/self-image/self-image.module').then( m => m.SelfImageModule)
+  },
+  {
+    path: 'self-interest',
+    loadChildren: () => import('./teenagers/self-interest/self-interest.module').then( m => m.SelfInterestModule)
   },
 ];
 

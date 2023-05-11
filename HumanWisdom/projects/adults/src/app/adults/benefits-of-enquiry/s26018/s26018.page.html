@@ -1,5 +1,4 @@
-<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path"
-  [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-single-select [bg]="bg">
 
@@ -21,22 +20,22 @@
 
     <div *ngFor="let o of optionList">
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12  p0">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+
           <div *ngIf="!o.CorrectAns">
-            <!-- <a class="sb_anchor" data-toggle="modal" [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" > -->
             <a class="sb_anchor">
               <div id="{{o.OptId}}" class="box select_box fleft" (click)="checkOption(o)" data-toggle="modal"
                 data-target="#lab-slide-bottom-popup">
                 <div>
                   <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}
-                    <!-- Having done something before and succeeded -->
                   </h3>
                 </div>
 
               </div>
             </a>
           </div>
+
           <div *ngIf="o.CorrectAns">
             <a class="sb_anchor">
               <div id="{{o.OptId}}" [ngStyle]="{'background-color': o.OptId==this.sessionOption ? '#FFC455' : ''}"
@@ -44,21 +43,16 @@
                 <div>
                   <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}
-                    <!-- Having done something before and succeeded -->
                   </h3>
-
                 </div>
-
               </div>
             </a>
-
           </div>
 
         </div>
       </div>
+
       <br>
-      <!-- [attr.id]="'lab-slide-bottom-popup'+o.OptId"
-      [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" -->
 
       <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
         <div class="row center_flex">
@@ -81,50 +75,6 @@
       </div>
     </div>
 
-
-
-
-
-    <!-- <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a>
-          <div class="box select_box fleft">
-            <h3 class="txt9 ctxt9">
-              Hearing others tell you how good you are
-            </h3>    
-          </div>                    
-        </a>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a>
-          <div class="box select_box fleft">
-            <h3 class="txt9 ctxt9">
-              Comparing yourself to others who are better than you
-            </h3>    
-          </div>                    
-        </a>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <a>
-          <div class="box select_box fleft">
-            <h3 class="txt9 ctxt9">
-              Being conscious of the unconscious process of comparison
-            </h3>    
-          </div>                    
-        </a>
-      </div>
-    </div> -->
-
     <!-- modal test -->
     <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
       <div class="lab-modal-body">
@@ -146,6 +96,7 @@
     <!-- /modal test -->
 
   </form>
+  
 </app-single-select>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

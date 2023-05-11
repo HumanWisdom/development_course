@@ -13,27 +13,30 @@
             <form>
               <!-- <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0"> -->
-                  <!-- audio  -->
+              <!-- audio  -->
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="fw_300 fs_30px lh_130p fc_000000 ww_break_word tcenter mtb0px" style="color: white;">
-                            {{audioTitle}}
-                          </h1>
-                        </div>
-                      </div>
-
-                      <div class="row tcenter">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container" *ngIf="audioLink !== ''">
-                          <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink"
-                            #audio></ngx-circular-player>
-                        </div>
-                      </div>
+                      <h1 class="fw_300 fs_30px lh_130p fc_000000 ww_break_word tcenter mtb0px" style="color: white;">
+                        {{audioTitle}}
+                      </h1>
                     </div>
                   </div>
-                  <!-- / -->
-                <!-- </div>
+
+                  <div class="row tcenter">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pt30px" *ngIf="audioLink !== ''">
+                      <audio controls controlsList="nodownload" #audio>
+                        <source [src]="audioLink" type="audio/mpeg">
+                      </audio>
+                      <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink"
+                            #audio></ngx-circular-player> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / -->
+              <!-- </div>
               </div> -->
 
             </form>

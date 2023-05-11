@@ -32,6 +32,7 @@ export class HamburgerComponent implements OnInit {
   ios = false;
   subscriberType = "";
   enableprofile = true;
+  enableAlert = false;
 
   constructor(
     private router: Router,
@@ -116,19 +117,7 @@ export class HamburgerComponent implements OnInit {
   }
 
   logout() {
-    this.logeventservice.logEvent('click_logout_Hamburger')
-    if (confirm("Are you sure you want to logout ?") === true) {
-      if (this.platform.isBrowser) {
-        localStorage.setItem("isloggedin", "F");
-        localStorage.setItem("guest", "T");
-        localStorage.setItem("navigateToUpgradeToPremium", "false");
-        localStorage.setItem("btnClickBecomePartner", "false");
-        this.router.navigate(["/onboarding/login"], {
-          replaceUrl: true,
-          skipLocationChange: true
-        });
-      }
-    }
+    this.enableAlert = true;
   }
 
   loginroute() {
@@ -241,5 +230,22 @@ export class HamburgerComponent implements OnInit {
 
   navigate(url) {
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if(event === 'ok') {
+      this.logeventservice.logEvent('click_logout_Hamburger');
+      if (this.platform.isBrowser) {
+        localStorage.setItem("isloggedin", "F");
+        localStorage.setItem("guest", "T");
+        localStorage.setItem("navigateToUpgradeToPremium", "false");
+        localStorage.setItem("btnClickBecomePartner", "false");
+        this.router.navigate(["/onboarding/login"], {
+          replaceUrl: true,
+          skipLocationChange: true
+        });
+      }
+    }
   }
 }

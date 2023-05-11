@@ -29,7 +29,8 @@ export class S615p2Page implements OnInit {
   rId = 247
   reflection: any
   reflectionA: any
-  r615p2 = JSON.parse(sessionStorage.getItem("r615p2"))
+  //r615p2 = JSON.parse(sessionStorage.getItem("r615p2"))
+  r615p2 = sessionStorage.getItem("r615p2") !== 'null' ? sessionStorage.getItem("r615p2") : '';
 
   constructor(private router: Router,
     private service: AdultsService,

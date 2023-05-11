@@ -110,9 +110,9 @@
 
               <div class="row pt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <textarea id="message" required="required" class="form-control txt19 p30_20px rtextarea"
-                    name="message" rows="12" placeholder="Write your answer here"
-                    [(ngModel)]="this.reflectionResponse" [readonly]="enableReadonly"></textarea>
+                  <textarea id="message" [disabled]="textDisabled" required="required"
+                    class="form-control txt19 p30_20px rtextarea" name="message" rows="12" [placeholder]="placeholder"
+                    [(ngModel)]="reflectionData" [readonly]="enableReadonly"></textarea>
                 </div>
               </div>
 
@@ -123,8 +123,8 @@
                     <a class="">
                       <div class="box tleft flex_left jbox1">
                         <!-- svg checkbox -->
-                        <input class="inp-cbx" id="cb1" type="checkbox" name="shared" [(ngModel)]="this.shared"
-                          (click)="sharedForum($event.target.checked)" />
+                        <input class="inp-cbx" id="cb1" [disabled]="textDisabled" type="checkbox" name="shared"
+                          [(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)" />
                         <label class="cbx mt0px" for="cb1">
                           <span>
                             <svg width="12px" height="10px">
@@ -162,8 +162,8 @@
 
                       <a class="">
                         <div class="box tleft flex_left jbox2 cbr1">
-                          <input class="inp-cbx" id="cb1" type="checkbox" name="shared" [(ngModel)]="this.shared"
-                            (click)="sharedForum($event.target.checked)" />
+                          <input class="inp-cbx" id="cb1" type="checkbox" [disabled]="textDisabled" name="shared"
+                            [(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)" />
                           <label class="cbx mt0px" for="cb1">
                             <span>
                               <svg width="12px" height="10px">
@@ -183,7 +183,8 @@
                       </a>
 
                       <span class="input-group-btn">
-                        <button type="button" (click)="confirmShare()" class="btn btn-warning igbtn1">Confirm?</button>
+                        <button type="button" (click)="confirmShare()" [disabled]="textDisabled || reflectionData === ''"
+                          class="btn btn-warning igbtn1">Confirm?</button>
                       </span>
                     </div>
 

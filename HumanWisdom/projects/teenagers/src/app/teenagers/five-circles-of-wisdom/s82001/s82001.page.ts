@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s82001',
@@ -25,19 +26,20 @@ export class S82001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume=""
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/33.png"
   tocColor="white"
   tocAlt="User Guide - HumanWisdom apps for mental health and wellbeing"
   lastvisited = false;
   stories = []
-
+  moduleData:ProgramModel;
   constructor(
     private router: Router,
     private service:TeenagersService,
     private location:Location
   )
   { 
+    this.getSetModuleData(82);        
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -69,6 +71,7 @@ export class S82001Page implements OnInit,OnDestroy {
       }
       this.stories = splitarr
     }
+  
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
   }
@@ -85,7 +88,7 @@ export class S82001Page implements OnInit,OnDestroy {
       this.lastvisited = false;
     }    
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(35))
+    //localStorage.setItem("moduleId",JSON.stringify(35))
     this.moduleId=localStorage.getItem("moduleId")
     if(this.saveUsername==false)
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
@@ -147,5 +150,14 @@ export class S82001Page implements OnInit,OnDestroy {
     state: {
       class: this.bg,
     }})
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 }

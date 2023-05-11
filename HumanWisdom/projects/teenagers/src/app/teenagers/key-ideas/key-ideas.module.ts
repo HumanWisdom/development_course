@@ -18,6 +18,7 @@ import { S83008Page } from './s83008/s83008.page';
 import { S83009Page } from './s83009/s83009.page';
 import { S83010Page } from './s83010/s83010.page';
 import { S83010tPage } from './s83010t/s83010t.page';
+import { S83010p1Page } from './s83010p1/s83010p1.page';
 import { S83011Page } from './s83011/s83011.page';
 import { S83011tPage } from './s83011t/s83011t.page';
 import { S83012Page } from './s83012/s83012.page';
@@ -65,6 +66,7 @@ import { S83037Page } from './s83037/s83037.page';
     S83009Page,
     S83010Page,
     S83010tPage,
+    S83010p1Page,
     S83011Page,
     S83011tPage,
     S83012Page,

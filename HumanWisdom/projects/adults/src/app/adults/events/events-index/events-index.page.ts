@@ -66,8 +66,14 @@ export class EventsIndexPage implements OnInit {
   goBack() {
     this.location.back()
   }
-  youtube(link) {
-    this.router.navigate(['/adults/curated/youtubelink', link])
+  youtube(link, RowID) {
+    let sub: any = localStorage.getItem("Subscriber")
+    if(RowID>=4 && sub==0) 
+       this.router.navigate(['/onboarding/free-limit']);
+    else if (RowID<=3)
+      this.router.navigate(['/adults/curated/youtubelink', link+"=rdtfghjhfdg"])
+    else
+       this.router.navigate(['/adults/curated/youtubelink', link+"=vncbxdfchgvxd"])
   }
   share() {
     /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {

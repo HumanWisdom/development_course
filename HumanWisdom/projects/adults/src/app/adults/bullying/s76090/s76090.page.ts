@@ -28,7 +28,8 @@ export class S76090Page implements OnInit {
   rId = 1061
   reflection: any
   reflectionA: any
-  r76090 = sessionStorage.getItem("r76090")
+  //r76090 = sessionStorage.getItem("r76090")
+  r76090 = sessionStorage.getItem("r76090") !== 'null' ? sessionStorage.getItem("r76090") : '';
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -170,7 +171,7 @@ export class S76090Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r76090", this.r76090)
-    this.r76090 = sessionStorage.getItem("r76090")
+    //this.r76090 = sessionStorage.getItem("r76090")
     console.log(this.r76090)
 
     this.service.submitProgressReflection({

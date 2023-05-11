@@ -33,6 +33,9 @@ export class ProfilePage implements OnInit {
   partnerOption = localStorage.getItem('PartnerOption');
   score = 0;
   isSubscribe = false;
+  enableAlert = false;
+  contentText = 'Are you sure you want to delete your data?';
+  isCancel = true;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     public platform: Platform, public logeventservice: LogEventService) {
@@ -113,6 +116,22 @@ export class ProfilePage implements OnInit {
   }
 
   deleteMyData() {
+    this.contentText = 'Are you sure you want to delete your data?';
+    this.isCancel = true;
+    this.enableAlert = true;
+  }
+
+  Logevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if (params != '' && route != '') {
+      this.router.navigate([route, params]);
+    } else if (route != '') {
+      this.router.navigate([route])
+    }
+  }
+
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
     let isSubscribe
     var retVal;
     let sub: any = localStorage.getItem('Subscriber');
@@ -121,8 +140,7 @@ export class ProfilePage implements OnInit {
     } else {
       isSubscribe = false;
     }
-    retVal = confirm("Are you sure you want to delete your data?");
-    if (retVal == true) {
+    if (event === 'ok' && this.contentText === 'Are you sure you want to delete your data?') {
       this.Onboardingservice.deleteMyData({
         UserID: localStorage.getItem("userId").toString(),
         Email: localStorage.getItem("email")
@@ -135,24 +153,16 @@ export class ProfilePage implements OnInit {
           },
           () => {
             if (!isSubscribe) {
-              alert("We will delete your data once your subscription period ends");
+              this.isCancel = false;
+              this.enableAlert = true;
+              this.contentText = "We will delete your data once your subscription period ends"
             } else {
-              alert("Your data will be deleted from our system within the next 7 days");
+              this.isCancel = false;
+              this.enableAlert = true;
+              this.contentText = "Your data will be deleted from our system within the next 7 days"
             }
           }
         )
-    } else {
-      return false;
-    }
-
-  }
-
-  Logevent(route, params, evtName) {
-    this.logeventservice.logEvent(evtName);
-    if (params != '' && route != '') {
-      this.router.navigate([route, params]);
-    } else if (route != '') {
-      this.router.navigate([route])
     }
   }
 

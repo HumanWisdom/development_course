@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from 'src/environments/environment';
 import { OnboardingService } from './../onboarding/onboarding.service';
+import { SharedService } from "../../../../shared/services/shared.service";
+import { ProgramType } from "../../../../shared/models/program-model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ import { OnboardingService } from './../onboarding/onboarding.service';
 export class AdultsService {
   //path="http://18.132.47.231/api";
   path = environment.apiURL;
+  programId=ProgramType.Adults;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
 
   personalisedforyoulist = [
@@ -49,7 +52,18 @@ export class AdultsService {
     }
   ]
 
-  constructor(private http: HttpClient, handler: HttpBackend, private services: OnboardingService) {
+  currentUrl: string = '';
+  previousUrl: string = '';
+
+  constructor(private http: HttpClient,
+     handler: HttpBackend,
+      private services: OnboardingService,
+     ) {
+        if(SharedService.ProgramId!=null){
+          this.programId=SharedService.ProgramId;
+        }else{
+          this.programId=ProgramType.Adults;
+        }
   }
 
   submitProgressText(data: any): Observable<any> {
@@ -73,10 +87,9 @@ export class AdultsService {
     return this.http.get(this.path + `/clickModule/${data}/${userId}`)
   }
   getPoints(data: any): Observable<any> {
-    return this.http.get(this.path + `/UserScore/${data}`)
+    return this.http.get(this.path + `/UserScore/${data}/${this.programId}`)
   }
   viewJournal(data: any): Observable<any> {
-
     return this.http.get(this.path + `/viewJournalAndReflections/${data}`)
   }
   submitJournal(data: any): Observable<any> {
@@ -351,6 +364,10 @@ export class AdultsService {
 
   registerevent(data): Observable<any> {
     return this.http.post(this.path + '/RegisterEvents', data);
+  }
+
+  getModules(id): Observable<any> {
+    return this.http.get(this.path + `/GetModules/` + id)
   }
 
   setmoduleID(id) {

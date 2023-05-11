@@ -29,7 +29,8 @@ export class S160p2Page implements OnInit {
   rId = 48
   reflection: any
   reflectionA: any
-  r160p2 = JSON.parse(sessionStorage.getItem("r160p2"))
+  //r160p2 = JSON.parse(sessionStorage.getItem("r160p2"))
+  r160p2 = sessionStorage.getItem("r160p2") !== 'null' ? sessionStorage.getItem("r160p2") : '';
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -230,7 +231,7 @@ export class S160p2Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r160p2", this.r160p2)
-    this.r160p2 = sessionStorage.getItem("r160p2")
+   // this.r160p2 = sessionStorage.getItem("r160p2")
     console.log(this.r160p2)
     if (this.r160p2 != "undefined") {
 

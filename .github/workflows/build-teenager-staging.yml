@@ -1,12 +1,14 @@
 name: build-Teenager-staging
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: ["build-HumanWisdom-staging"]
+    types:
+      - completed
     
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    if: ${{ needs.adults.outputs.success == 'true' }}
     steps:
      - name: Checkout code
        uses: actions/checkout@v2
@@ -14,7 +16,7 @@ jobs:
      - name: Setup nodejs
        uses: actions/setup-node@v2
        with:
-        node-version: '14'
+        node-version: '16'
 
      - name: Cache node modules
        id: cache-nodemodules
@@ -43,13 +45,13 @@ jobs:
        run: |
         cd HumanWisdom
         export NODE_OPTIONS=--max_old_space_size=8096
-        npm run build:ssr 
+        ng build --configuration=staging --project="teenagers" --base-href /teenagers/
     
      - name: Compress the build artifacts
        run: |
         cd HumanWisdom
         mkdir -p builds/compressed
-        tar -czf builds/compressed/program.tgz dist/teenagers/server
+        tar -czf builds/compressed/program.tgz teenagers/
 
      - name: Upload artifact
        uses: actions/upload-artifact@v2
@@ -88,5 +90,5 @@ jobs:
           sudo rm -rf /var/www/html/teenager_backup
           sudo cp -R /var/www/html/course/ /var/www/html/teenager_backup
           sudo rm -rf /var/www/html/teenagers
-          sudo mv builds/uncompressed/${{ github.run_id }} /var/www/html/teenagers          
+          sudo mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers          
           

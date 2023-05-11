@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            It may initially seem like a strange idea. When you look at a tree or a bird you don't need thinking. Thinking comes in only when you name it.
+          </p>
+
+          <p>
+            Similarly, can you look at this process of comparison by simply watching it, without a single thought coming in the way?
+          </p>
+
+          <p>
+            For example, if you are stressed or envious, just sit with it, allowing it to be, not escaping from it, or thinking about it, or trying to change it… just watching it - like a bird flying across the sky.
+          </p>
+
+          <p>
+            Notice how your mind goes quiet when you do this? Why is this important? Did you see how envy, stress, judgment involve the process of thinking? If you can meet them without thinking, you cut off their oxygen and the feelings just dissolve. Try it and see.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

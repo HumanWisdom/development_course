@@ -123,35 +123,35 @@
   <div class="modal-dialog modal-dialog-centered modal_note_journal" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        
+
         <form>
 
           <div class="row pt20px pb30px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
               <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your thoughts here(Your notes can only be seen by you)" [(ngModel)]="note"></textarea>
             </div>
-          </div>          
-          
+          </div>
+
           <div class="row center_flex flex_wrap">
-            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">                    
+            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">
               <a>
                 <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"data-dismiss="modal">Add Note to Journal</button>
               </a>
             </div>
-          </div>                    
+          </div>
 
           <br>
 
           <div class="row center_flex flex_wrap">
-            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">                    
+            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">
               <a>
                 <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button>
               </a>
             </div>
-          </div>                           
+          </div>
 
         </form>
-        
+
       </div>
     </div>
   </div>
@@ -199,14 +199,14 @@
             <div class="row pt20px pb30px">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12"
-                  placeholder="Type your note here..." [(ngModel)]="note"></textarea>
+                [disabled]="guest || !Subscriber" [placeholder]="placeHolder" [(ngModel)]="note"></textarea>
               </div>
             </div>
 
             <div class="row center_flex flex_wrap">
               <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                 <a>
-                  <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"
+                  <button type="button" [disabled]="guest || !Subscriber" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"
                     data-dismiss="modal">Add Note to Journal</button>
                 </a>
               </div>
@@ -232,3 +232,8 @@
   </div>
 </div>
 <!-- /add note modal -->
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'Please subscribe to activate this feature'">
+</app-modal>

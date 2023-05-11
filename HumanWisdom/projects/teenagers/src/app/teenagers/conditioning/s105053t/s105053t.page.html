@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our religious beliefs develop as a result of our past influences and usually depend on the country, culture, and family we are born into. We get attached to all our conditioning influences, and so also to our beliefs and feel threatened when they are challenged. The reason we get attached to them is because they become part of our identity, the ‘me,' and also because they meet so many of our emotional needs. We feel more comfortable being with people who share our opinions and beliefs and this is how different groups form. We identify with this group, and conflict can arise between different groups, each believing their view of the world is correct.  We do not see that the same process of conditioning and attachment operates in those with different beliefs. If we understood this deeply, much of the conflict between people of different faiths would end.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -27,7 +27,8 @@ export class S230p2Page implements OnInit {
   rId = 108
   reflection: any
   reflectionA: any
-  r230p2 = JSON.parse(sessionStorage.getItem("r230p2"))
+  //r230p2 = JSON.parse(sessionStorage.getItem("r230p2"))
+  r230p2 = sessionStorage.getItem("r230p2") !== 'null' ? sessionStorage.getItem("r230p2") : '';
 
   shared: any
   confirmed: any
