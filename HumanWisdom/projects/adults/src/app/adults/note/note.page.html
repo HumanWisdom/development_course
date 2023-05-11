@@ -40,7 +40,7 @@
                 </div>
               </div>
 
-              <div class="row pb20px">
+              <div class="row pb20px" *ngIf="urlType === 'note'">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <textarea class="form-control txt41 cta1" rows="10" placeholder="Some questions to write about..
 1. What habit could you change to make your life better?
@@ -48,6 +48,12 @@
 3. What was the highlight of your day?
 4. What did you learn about yourself today?
 5. What is the kind thing you did today?" name="notes" [(ngModel)]="notes"></textarea>
+                </div>
+              </div>
+
+              <div class="row pb20px" *ngIf="urlType !== 'note'">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea class="form-control txt41 cta1" rows="10" placeholder="Start writting" name="notes" [(ngModel)]="notes"></textarea>
                 </div>
               </div>
 

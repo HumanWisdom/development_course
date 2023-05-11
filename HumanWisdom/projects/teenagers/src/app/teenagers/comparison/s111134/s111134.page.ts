@@ -27,7 +27,7 @@ export class S111134Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 5
+  rId = 1294
   reflection: any
   reflectionA: any
   r111134 = JSON.parse(sessionStorage.getItem("r111134"))
@@ -112,17 +112,17 @@ export class S111134Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/teenagers/comparison/s111135'])
+        this.router.navigate(['/comparison/s111135'])
 
       },
       () => {
-        this.router.navigate(['/teenagers/comparison/s111135'])
+        this.router.navigate(['/comparison/s111135'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/teenagers/comparison/s111133'])
+    this.router.navigate(['/comparison/s111133'])
   }
 
   ngOnDestroy() 
