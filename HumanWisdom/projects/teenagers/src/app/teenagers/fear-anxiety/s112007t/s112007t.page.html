@@ -1,0 +1,18 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            1 in 3 teenagers suffer from anxiety. The main symptoms are a feeling of dread, racing thoughts, poor sleep and appetite, and  being irritable. It can also cause physical symptoms like a dry mouth, a tightness in the chest, sweating, fast breathing, tiredness, and dizziness. It can be quite traumatic and can lead to depression. Teenagers caught in its grasp struggle to find a way out. Trying not to be anxious does not work. Behind all anxiety is the process of fear. A deeper understanding of it allows us to avoid it and overcome it or manage it more easily
+          </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

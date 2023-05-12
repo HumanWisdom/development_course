@@ -1,0 +1,18 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            The causes of anxiety will keep changing as we go through life, but the nature of fear that is behind it remains unchanged, so it's worth exploring.Often there is a definite cause like exams, or our health. Sometimes there isn't. Childhood traumas can make us hyper-sensitive and hyper-vigilant resulting in anxiety. We can also get anxious about getting anxiety in the future. It can also be caused by excessive alcohol intake, use of drugs and having too much caffeine. Scientists say genetics also plays a role. Whatever the reason, since anxiety begins in our thinking, a deeper understanding of the nature of fear in our thinking can help us prevent it and allow us to overcome it 
+            </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

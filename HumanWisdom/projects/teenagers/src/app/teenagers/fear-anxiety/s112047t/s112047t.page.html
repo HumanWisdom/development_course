@@ -1,0 +1,24 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Bullies sometimes use fear to get others to do what they want, and this is also seen in gang culture. Sometimes even in our friendships we can use fear of exclusion to get friends to do as we want. There is no goodness or affection in this. It is tempting to use fear to get things done but this may not be the best way of dealing with people. Governments, employers and other organizations also use fear to fulfill their aims. As  someone at the receiving end of this how can we respond? Explore the module on Bullying to find out how to deal with them.
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
