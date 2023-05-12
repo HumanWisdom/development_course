@@ -1,5 +1,5 @@
 <app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
- 
+
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
@@ -7,18 +7,21 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">        
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
         <div class="x_panel p0">
-          <div class="x_content p0">            
+          <div class="x_content p0">
             <form>
- 
-              <!-- angular audio player plugin  -->               
+
+              <!-- angular audio player plugin  -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container">
-                  <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink"  #audio ></ngx-circular-player>
+                <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container" *ngIf="audioLink !== ''">
+                  <audio controls controlsList="nodownload" #audio>
+                    <source [src]="audioLink" type="audio/mpeg">
+                  </audio>
+                  <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink"  #audio ></ngx-circular-player> -->
                 </div>
               </div>
-              <!-- /angular audio player plugin  -->   
+              <!-- /angular audio player plugin  -->
 
               <div class="row pt30px">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -27,7 +30,7 @@
                   </h1>
                 </div>
               </div>
-          
+
               <div class="row pt20px">
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -37,9 +40,9 @@
                     <h6 class="txt104 tcenter">
                       Really rare
                     </h6>
-                  </div>        
+                  </div>
                 </div>
-          
+
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/fear_anxiety_bucket_02.svg" alt="">
@@ -48,9 +51,9 @@
                     <h6 class="txt104 tcenter">
                       Inevitable
                     </h6>
-                  </div>        
+                  </div>
                 </div>
-          
+
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/fear_anxiety_bucket_03.svg" alt="">
@@ -59,10 +62,10 @@
                     <h6 class="txt104 tcenter">
                       Possible
                     </h6>
-                  </div>        
+                  </div>
                 </div>
               </div>
-           
+
             </form>
           </div>
         </div>
@@ -72,5 +75,9 @@
   <!--/Class -->
 </div>
 <!-- /page content -->
- 
+
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'You have reached your free limit. Please subscribe to Premium to  unlock full access to the app'">
+</app-modal>

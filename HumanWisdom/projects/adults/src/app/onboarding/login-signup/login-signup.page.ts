@@ -367,7 +367,7 @@ export class LoginSignupPage implements OnInit {
                     }
                     if (giftwisdom === 'T') {
                       this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === '0') {
+                    } else if (this.loginResponse.Subscriber === 0) {
                       this.router.navigate(["/onboarding/add-to-cart"]);
                     } else {
                       this.router.navigate(["/onboarding/viewcart"])
@@ -531,7 +531,7 @@ export class LoginSignupPage implements OnInit {
                     }
                     if (giftwisdom === 'T') {
                       this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === '0') {
+                    } else if (this.loginResponse.Subscriber === 0) {
                       this.router.navigate(["/onboarding/add-to-cart"]);
                     } else {
                       this.router.navigate(["/onboarding/viewcart"])
@@ -691,7 +691,7 @@ export class LoginSignupPage implements OnInit {
                 }
                 if (giftwisdom === 'T') {
                   this.router.navigate(["/onboarding/add-to-cart"]);
-                } else if (this.loginResponse.Subscriber === '0') {
+                } else if (this.loginResponse.Subscriber === 0) {
                   this.router.navigate(["/onboarding/add-to-cart"]);
                 } else {
                   this.router.navigate(["/onboarding/viewcart"])

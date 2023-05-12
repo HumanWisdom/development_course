@@ -36,6 +36,10 @@ export class CourseHeaderComponent implements OnInit {
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
   pageaction = localStorage.getItem("pageaction");
   isLoggedIn = false
+  placeHolder = 'Type your note here...';
+  guest = false;
+  Subscriber = false;
+  enableAlert = false;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -57,9 +61,16 @@ export class CourseHeaderComponent implements OnInit {
     if (res && res === 'T' && sub && sub === '1') {
       this.isLoggedIn = true;
     }
+
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
+    this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
   }
 
   ngOnInit() {
+    if(this.guest || !this.Subscriber) {
+      this.placeHolder = "Please subscribe to access your online journal";
+    }
+
     this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
     this.showheaderbar = true;
     // console.log(this.ac)
@@ -82,10 +93,15 @@ export class CourseHeaderComponent implements OnInit {
     }
   }
   toggleBookmark() {
-    this.bookmark = !this.bookmark
-
-    this.sendBookmark.emit(this.bookmark)
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    } else {
+      this.bookmark = !this.bookmark
+      this.sendBookmark.emit(this.bookmark)
+    }
   }
+
+
   addZero(i) {
     if (i < 10) {
       i = "0" + i;
@@ -212,8 +228,15 @@ export class CourseHeaderComponent implements OnInit {
     }
   }
 
-
-
-
-
+  getAlertcloseEvent(event) {
+    this.enableAlert = false;
+    if (event === 'ok') {
+      if (!this.guest && !this.Subscriber) {
+        this.router.navigate(["/onboarding/add-to-cart"]);
+      } else if (this.guest) {
+        localStorage.setItem("subscribepage", 'T');
+        this.router.navigate(["/onboarding/login"]);
+      }
+    }
+  }
 }

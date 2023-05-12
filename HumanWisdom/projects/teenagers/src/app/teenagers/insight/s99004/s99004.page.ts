@@ -17,7 +17,7 @@ export class S99004Page implements OnInit,OnDestroy {
   bg="dark_blue_w2"
   title="Exploring the art of seeing clearly"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/insight/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/insight/audios/1.1.mp3'
 
   transcriptPage="insight/s99004t"
   toc="insight/s99001"

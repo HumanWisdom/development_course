@@ -17,7 +17,7 @@ export class S99007Page implements OnInit,OnDestroy {
   bg="dark_blue_w5"
   title="Stage #1 - An understanding after the event has occurred"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/insight/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/insight/audios/1.2.mp3'
 
   transcriptPage="insight/s99007t"
   toc="insight/s99001"

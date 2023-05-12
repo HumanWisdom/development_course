@@ -17,7 +17,7 @@ export class E01Page implements OnInit {
   email = '';
   eventID = 0;
   enableRegister = false;
-  emailElmtRegex = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
+  emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
 
   constructor(private service: AdultsService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {

@@ -183,7 +183,7 @@
                       </a>
 
                       <span class="input-group-btn">
-                        <button type="button" (click)="confirmShare()" [disabled]="textDisabled"
+                        <button type="button" (click)="confirmShare()" [disabled]="textDisabled || reflectionData === ''"
                           class="btn btn-warning igbtn1">Confirm?</button>
                       </span>
                     </div>

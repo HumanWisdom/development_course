@@ -23,6 +23,8 @@ t:any
 loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
 freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
 scrId:any
+reachedLimit = false;
+enableAlert = false;
 
 @ViewChild('audio') audio;
 @ViewChild('screen', { static: true }) screen: any;
@@ -32,7 +34,7 @@ constructor(
   private service: AdultsService,
   private router: Router,
   private url: ActivatedRoute
-) {  
+) {
   this.url.queryParams.subscribe(params => {
     this.t = params['t'];
   })
@@ -46,60 +48,47 @@ ngOnInit() {
      this.scrId=str
      console.log("str",str,"id",this.scrId)
 
-
-  if( (this.loginResponse.Subscriber!=1))
-  {
-    if(!this.freeScreens.includes(parseInt(this.scrId)))
-      {
-        if(this.t)
-        {
-          this.interval=setInterval(()=>this.checkPauseTime(), 1000);
-
-        }
-           
+     if ((this.loginResponse.Subscriber != 1)) {
+      if (!this.freeScreens.includes(parseInt(this.scrId))) {
+        this.interval = setInterval(() => this.reachedLimit ? null : this.checkPauseTime(), 1000);
       }
-  }
+    }
 }
 
 getTime(){
   console.log(this.audio)
   console.log(this.audio.audio.nativeElement.currentTime)
-  this.sendAvDuration.emit(JSON.parse(this.audio.audio.nativeElement.currentTime))    
+  this.sendAvDuration.emit(JSON.parse(this.audio.audio.nativeElement.currentTime))
 }
 
 checkPauseTime(){
-
-  console.log(this.loginResponse.Subscriber,"subs")
-  
-    if(this.t) 
-    {
-      console.log("checking to pause")
-      this.pauseTime=((this.mediaPercent/100)*this.audio.audio.nativeElement.duration)
-      console.log(this.pauseTime,"p")
-      if(this.audio.audio.nativeElement.currentTime>this.pauseTime)
-      {
-        this.audio.audio.nativeElement.pause()
-        
-      }
-
-    }
-    
-
-  
-
+  let aud: any = document.getElementById("aud1");
+  this.pauseTime = ((this.mediaPercent / 100) * aud.duration)
+  if (aud.currentTime > this.pauseTime) {
+    this.reachedLimit = true;
+    aud.pause();
+    this.enableAlert = true;
+    // window.alert('You have reached free limit')
+  }
 }
 
 ngOnDestroy(){
   if (this.interval) {
     clearInterval(this.interval);
  }
-
 }
 
 ngAfterViewInit(){
- 
-
-
+  this.audio.nativeElement.onplaying = (event) => {
+    if (this.reachedLimit) {
+      this.audio.nativeElement.pause();
+      this.enableAlert = true;
+      // window.alert('You have reached free limit')
+    }
+  };
 }
 
+getAlertcloseEvent(event) {
+  this.enableAlert = false;
+}
 }
