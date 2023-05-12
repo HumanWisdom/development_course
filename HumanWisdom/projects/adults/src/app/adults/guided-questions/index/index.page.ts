@@ -100,7 +100,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   RouteToToQuestions(item) {
-    if (this.guest && !this.Subscriber) {
+    if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
       let url = `/journal${item.Landing_URL}`;
@@ -155,7 +155,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     });
   }
   GoToQuestions(data) {
-    if (this.guest && !this.Subscriber) {
+    if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
       if (data.JrType == "Guided Questions") {
