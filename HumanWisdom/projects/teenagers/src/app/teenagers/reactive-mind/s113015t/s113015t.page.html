@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s113015t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"  [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          When our mind is reactive, we have little control over what we say and do.
+          Our reactions  just seem to happen. We assume our reactions are the other person’s fault or caused by the situation..  This is a normal part of being human and the way the mind works. When we are in the middle of a reaction it’s as if a mini explosion has occurred in our mind, and the disturbance can be intense. Its behind our feelings of anger or stress, and the loss of control may  cause problems for us - making us do things we may later regret.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

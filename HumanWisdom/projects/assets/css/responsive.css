@@ -1024,3 +1024,11 @@
         font-size: 35px;
     }
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) 
+{
+  .safari_dblock
+  {
+    display: block;
+  }
+}

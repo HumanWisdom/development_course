@@ -1,8 +1,9 @@
 import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { AdultsService } from "../../adults.service";
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common';
 import * as jQuery from 'jquery';
+
 @Component({
   selector: 'app-s33004-audio',
   templateUrl: './s33004.page.html',

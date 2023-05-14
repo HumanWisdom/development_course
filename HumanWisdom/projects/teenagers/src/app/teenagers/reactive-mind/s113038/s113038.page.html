@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s113038</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+ <app-simple-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+    <h1 class="txt1">
+      Your reactions can help you learn more about yourself and the deeper layers of your thinking, if you take the opportunity to do so.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
