@@ -13,10 +13,10 @@ export class S112045Page implements OnInit {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_w3"
-  toc="fear-anxiety/s486"
+  toc="fear-anxiety/s112001"
   title="#7 Parents pass their fears on to children"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.7.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.5.mp3'
   transcriptPage="/fear-anxiety/s112045t"  
 
   userId:any

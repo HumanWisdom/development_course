@@ -16,10 +16,8 @@ export class S112007Page implements OnInit {
   title="Symptoms of anxiety"
   toc="fear-anxiety/s112001"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.1.mp3'
   transcriptPage="/fear-anxiety/s112007t"
-  
-
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")

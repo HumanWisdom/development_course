@@ -16,7 +16,7 @@ export class S112036Page implements OnInit {
   toc="fear-anxiety/s112001"
   title="#3 Fear of losing people we love "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.4.mp3'
   transcriptPage="/fear-anxiety/s112036t"
   progName = "teenagers"
   userId:any

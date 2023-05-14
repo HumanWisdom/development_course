@@ -16,7 +16,7 @@ export class S112047Page implements OnInit {
   toc="fear-anxiety/s112001"
   title="#8 Fear as a way of controlling others"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.8.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.6.mp3'
   transcriptPage="/fear-anxiety/s112047t"  
 
   userId:any

@@ -15,7 +15,7 @@ export class S112032Page implements OnInit {
   bg="purple_red_w4"
   toc="fear-anxiety/s112001"
   title="How does fear shape our lives?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.1.mp3'
   transcriptPage="/fear-anxiety/s112032t" 
   userId:any

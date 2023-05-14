@@ -15,7 +15,7 @@ export class S112069Page implements OnInit {
   bg="purple_red_w10"
   title="Our mind magnifies threats"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.10.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.11.mp3'
   transcriptPage="/fear-anxiety/s112069t"
   toc="fear-anxiety/s112001"  
 
