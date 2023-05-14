@@ -1,0 +1,26 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Fear, like all strong emotions, makes us lose our ability to think clearly and that can result in irrational decisions. When we have done something wrong, the fear of being caught out can push us to tell a lie - and if we are caught it is not the mistake we made that others are critical of, but the lie we have told because that reflects our character.
+            Or, when faced with the pressure of exams, some people cannot think clearly and their anxiety is so severe that they cannot even come to school to give the exam. 
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+

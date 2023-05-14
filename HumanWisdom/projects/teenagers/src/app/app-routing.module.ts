@@ -98,6 +98,10 @@ const routes: Routes = [
     path: 'comparison',
     loadChildren: () => import('./teenagers/comparison/comparison.module').then( m => m.ComparisonModule)
   },
+  {
+    path: 'fear-anxiety',
+    loadChildren: () => import('./teenagers/fear-anxiety/fear-anxiety.module').then( m => m.FearAnxietyModule)
+  },
 ];
 
 @NgModule({

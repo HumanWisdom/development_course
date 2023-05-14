@@ -18,7 +18,7 @@ export class S112027Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/5"
-  link="/adults/fear-anxiety/s507"
+  link="/fear-anxiety/s112028"
   name="#2  10 ways fear shapes our lives"
   progressImg=""
   toc="fear-anxiety/s112001"

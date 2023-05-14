@@ -18,7 +18,7 @@ export class S112036Page implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.3.mp3'
   transcriptPage="/fear-anxiety/s112036t"
-  
+  progName = "teenagers"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")

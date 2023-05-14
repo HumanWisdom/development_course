@@ -17,7 +17,7 @@ export class S112044Page implements OnInit {
   videoLink=this.mediaVideo+'/fear_anxiety/videos/2.1.mp4'
   title="How do we react when we are afraid?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/fear_anxiety/fear_anxiety_02.jpg"
-  
+  progName="teenagers"
   toc="/fear-anxiety/s112001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

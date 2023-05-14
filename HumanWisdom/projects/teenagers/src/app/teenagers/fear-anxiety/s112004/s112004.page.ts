@@ -18,7 +18,7 @@ export class S112004Page implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+1.1.mp3'
   transcriptPage="/fear-anxiety/s112004t"
-
+  progName = "teenagers"
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04"," btn_5circles_05 disabled"]
   text=[
         "Nurture a quiet mind",

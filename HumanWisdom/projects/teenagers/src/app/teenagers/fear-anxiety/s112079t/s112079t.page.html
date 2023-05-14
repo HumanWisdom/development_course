@@ -1,0 +1,25 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            All fears are in the future. If the challenge is in front of us, we have to deal with it right now. Our fears have no solution because the problem has not yet occurred, and so the anxiety never goes away. We could ask ourselves what we can do now to avoid the problem in the future - but fear does not have to play a part in this, and common sense can work equally well. For example we brush our teeth every morning to stop our teeth decaying as we get older
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+

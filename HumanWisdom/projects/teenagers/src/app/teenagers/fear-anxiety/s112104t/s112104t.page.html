@@ -1,0 +1,18 @@
+<app-transcript-header (toc)="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Consider this pyramid which represents the layers of our thinking.  Say I am going to sit for an exam. I am anxious. Is my anxiety caused by the event, or by my reaction to it? Does everyone have the same degree of anxiety? What is going on in my thinking to make me feel this way? When I ask these questions I realise that my anxiety comes from my particular reaction to the exam - I may be worried what my parents will think, for example, if others will be better than me, about my future, and this is what is causing my reaction. It is not easy to accept that our fears come from our thinking. That acceptance allows us to explore the roots of it in our thinking so it does not unconsciously direct the course of our lives, and we can be free.
+            </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

@@ -1,0 +1,31 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      F - False
+      <br>
+      E - Evidence
+      <br>
+      A - Appearing
+      <br>
+      R - Real, or our ego can be equally painful, but can also be imaginary and paralyzing.
+    </h1>
+    
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+
+
+
+
+
