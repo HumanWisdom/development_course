@@ -88,22 +88,31 @@ export class S112033Page implements OnInit {
     }).subscribe(res => {})
   }
 
-  submitProgress() 
+  submitProgress(e) 
   {
-    this.service.submitProgressText({
+    console.log("returned response", e)
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    sessionStorage.setItem("r112033", JSON.stringify(e))
+    this.r112033 = sessionStorage.getItem("r112033")
+    console.log(this.r112033)
+    this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
       "BookMark": this.bookmark,
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
-      "timeSpent": this.totalTime
-    }).subscribe(res => {
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
-    },
-      error => { console.log(error) },
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r112033
+    }).subscribe(res => {},
+      error => {
+        console.log(error)
+        this.router.navigate(['/fear-anxiety/s112036'])
+
+      },
       () => {
-        //this.router.navigate(['/adults/conditioning/s234'])
+        this.router.navigate(['/fear-anxiety/s112036'])
       })
   }
 
@@ -112,16 +121,7 @@ export class S112033Page implements OnInit {
     this.router.navigate(['/fear-anxiety/s112032'])
   }
 
-  goNext() 
-  {
-    // this.router.navigate(['/adults/comparison/s2'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/fear-anxiety/s112034'])
-  }
-
-  ngOnDestroy() 
+   ngOnDestroy() 
   {}
 
 }

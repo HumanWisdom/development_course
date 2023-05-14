@@ -25,13 +25,12 @@ export class S112023tPage implements OnInit {
   screenNumber=112023
   startTime:any
   endTime:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-
-  
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))  
   
   avDuration=localStorage.getItem("avDuration112023")
   totalTime=localStorage.getItem("totalTime112023")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName="teenagers"
   
   constructor(private router: Router,
     private service:TeenagersService,

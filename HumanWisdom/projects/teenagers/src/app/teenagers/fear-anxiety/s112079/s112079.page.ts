@@ -14,8 +14,8 @@ export class S112079Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w8"
   title="Imaginary fears have no solution"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.10.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+3.5.mp3'
   transcriptPage="/fear-anxiety/s112079t"
   toc="fear-anxiety/s112001"  
 

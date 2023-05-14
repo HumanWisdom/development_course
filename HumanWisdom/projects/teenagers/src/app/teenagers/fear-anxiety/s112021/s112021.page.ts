@@ -14,12 +14,10 @@ export class S112021Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w1"
   title="The anxious mind"
-  toc="fear-anxiety/s486"
-
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  toc="fear-anxiety/s112001"
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+1.4.mp3'
-  transcriptPage="/fear-anxiety/s112021t"
-  
+  transcriptPage="/fear-anxiety/s112021t" 
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
