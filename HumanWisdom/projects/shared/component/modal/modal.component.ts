@@ -29,6 +29,9 @@ export class ModalComponent implements OnInit {
   @Input()
   enableCancel = false
 
+  @Input()
+  modalid = ''
+
   modalopened = false;
 
   constructor() { }

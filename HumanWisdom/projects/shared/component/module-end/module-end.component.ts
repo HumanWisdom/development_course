@@ -73,19 +73,37 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   getDataForCertificate() {
+   var currentModuleName:any;
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let path = this.router.url.split("/");
-    let currentModuleName = path[path.length - 2]
+     currentModuleName = path[path.length - 2];
     this.service.getPoints(this.userId).subscribe(res => {
-      let data = res?.ModUserScrPc?.find(e => e.Module.toLowerCase().includes(currentModuleName.replace("-", " ").toLowerCase()));
+      let data = res?.ModUserScrPc?.find(e => e.Module.toLowerCase().replace("&","").
+      replace(/\s+/g, '').
+      includes(currentModuleName.
+        replaceAll("-", " ").toLowerCase().
+        replace(/\s+/g, '')));
       if(data && data != null){
         this.currentModuleName = data.Module;
         this.percentage = data.Percentage;
         if (this.percentage == "100.00") {
           this.isModuleCompleted = true;
         }
+      }else{
+        this.checkforExceptionCases(res,currentModuleName);
       }
     });
+  }
+
+  private checkforExceptionCases(res,currentModuleName){
+    if(currentModuleName=='five-circles'){
+      var data = res?.ModUserScrPc?.find(e => e.Module=="5 Circles of Wisdom");
+      this.currentModuleName = data.Module;
+      this.percentage = data.Percentage;
+      if (this.percentage == "100.00") {
+        this.isModuleCompleted = true;
+      }
+    }
   }
 
   shareIndex() {

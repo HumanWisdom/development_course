@@ -23,7 +23,7 @@
             alt="">
         </a>
       </div>
-      <div class="p0 mlr20px" *ngIf="isLoggedIn">
+      <div class="p0 mlr20px" >
         <a *ngIf="!bookmark" href="javascript:;" (click)="toggleBookmark()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_course_01.svg"
             class="img-responsive" alt="">
@@ -140,14 +140,14 @@
             <div class="row pt20px pb30px">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12"
-                  placeholder="Type your note here..." [(ngModel)]="note"></textarea>
+                [disabled]="guest || !Subscriber" [placeholder]="placeHolder" [(ngModel)]="note"></textarea>
               </div>
             </div>
 
             <div class="row center_flex flex_wrap">
               <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                 <a>
-                  <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"
+                  <button type="button" [disabled]="guest || !Subscriber" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"
                     data-dismiss="modal">Add Note to Journal</button>
                 </a>
               </div>
@@ -173,3 +173,9 @@
   </div>
 </div>
 <!-- /add note modal -->
+
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'Please subscribe to activate this feature'">
+</app-modal>

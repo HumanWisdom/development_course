@@ -167,7 +167,7 @@ export class NotificationPage implements OnInit {
     }
 
     // 10. January 2017. at 10:20
-    return `${day}. ${month} ${year}.  ${hours}:${minutes}` + ampm;
+    return `${month} ${year}`;
   }
 
   NavigateToUrl(Url, NotificationId) {

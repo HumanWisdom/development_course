@@ -32,7 +32,11 @@
         </div>
 
         <div class="modal-footer b0">
-          <button type="button" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
+          <button type="button" *ngIf="modalid === ''" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
+            {{okText}}
+          </button>
+
+          <button type="button" *ngIf="modalid === 'logout'" id="liLogout" (click)="close('ok')" class="btn btn-warning mb0pxi btn_cookies_close" data-dismiss="modal">
             {{okText}}
           </button>
 

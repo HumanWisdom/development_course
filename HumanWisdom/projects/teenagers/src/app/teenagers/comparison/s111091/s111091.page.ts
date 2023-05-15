@@ -89,7 +89,7 @@ export class S111091Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/teenagers/comparison/s111092'])
+    this.router.navigate(['/comparison/s111092'])
     if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -109,7 +109,7 @@ export class S111091Page implements OnInit
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/teenagers/comparison/s111090'])
+    this.router.navigate(['/comparison/s111090'])
   }
 
   ngOnDestroy()

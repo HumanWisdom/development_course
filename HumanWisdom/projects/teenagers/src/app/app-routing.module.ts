@@ -101,6 +101,18 @@ const routes: Routes = [
   {
     path: 'fear-anxiety',
     loadChildren: () => import('./teenagers/fear-anxiety/fear-anxiety.module').then( m => m.FearAnxietyModule)
+   
+   },
+   { path: 'reactive-mind',
+    loadChildren: () => import('./teenagers/reactive-mind/reactive-mind.module').then( m => m.ReactiveMindModule)
+  },
+  {
+    path: 'self-image',
+    loadChildren: () => import('./teenagers/self-image/self-image.module').then( m => m.SelfImageModule)
+  },
+  {
+    path: 'self-interest',
+    loadChildren: () => import('./teenagers/self-interest/self-interest.module').then( m => m.SelfInterestModule)
   },
 ];
 

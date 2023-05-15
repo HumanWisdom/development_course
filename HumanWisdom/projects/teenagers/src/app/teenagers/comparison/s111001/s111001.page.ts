@@ -41,7 +41,7 @@ export class S111001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.service.setmoduleID(105);
+    this.service.setmoduleID(111);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
@@ -166,7 +166,7 @@ export class S111001Page implements OnInit,OnDestroy {
 
   routeJournal()
   {
-    this.router.navigate(['/teenagers/journal'])
+    this.router.navigate(['/journal'])
   }
 
 }

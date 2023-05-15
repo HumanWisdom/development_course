@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"  [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Of all the modules in the Human Wisdom Program, this is perhaps one of the most important.
+          If you can train your mind to be less reactive, and more responsive then there is the possibility to apply all your other learning to the situation you are in. That tiny gap between the trigger  and the reaction allows your intelligence a chance to step in and consider the many options open to you, including doing nothing. For example, when criticized, you could step back and ask if there is any truth to what is being said and learn something about yourself
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
