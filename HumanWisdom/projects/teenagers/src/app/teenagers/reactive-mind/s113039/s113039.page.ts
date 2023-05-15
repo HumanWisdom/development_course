@@ -27,7 +27,7 @@ export class S113039Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 5
+  rId = 1344
   reflection: any
   reflectionA: any
   r113039 = JSON.parse(sessionStorage.getItem("r113039"))
@@ -112,7 +112,7 @@ export class S113039Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/reactive-mind/s1130040'])
+        this.router.navigate(['/reactive-mind/s113040'])
 
       },
       () => {
