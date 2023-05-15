@@ -16,7 +16,7 @@ export class S112134tPage implements OnInit {
   
   bookmark=0
   path=this.router.url
-  audioPage="/fear-anxiety/s112126"
+  audioPage="/fear-anxiety/s112134"
   toc="/fear-anxiety/s112001"
   
   screenType=localStorage.getItem("audio")

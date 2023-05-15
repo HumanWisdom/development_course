@@ -16,7 +16,7 @@ export class S112045Page implements OnInit {
   toc="fear-anxiety/s112001"
   title="#7 Parents pass their fears on to children"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.5.mp3'
   transcriptPage="/fear-anxiety/s112045t"  
 
   userId:any

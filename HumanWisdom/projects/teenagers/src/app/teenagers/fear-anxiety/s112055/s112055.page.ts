@@ -15,7 +15,7 @@ export class S112055Page implements OnInit {
   bg="purple_red_w10"
   title="#12 Fear of failure"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.9.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.9.mp3'
   transcriptPage="/fear-anxiety/s112055t"
   toc="fear-anxiety/s112001"  
 

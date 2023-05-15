@@ -15,7 +15,7 @@ export class S112139Page implements OnInit {
   bg="purple_red_w4"
   title="Put your fears into one of 3 buckets  1.	Really rare  2.	Inevitable  3.	Possible  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.10.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.18.mp3'
   transcriptPage="/fear-anxiety/s112139t"
   toc="fear-anxiety/s112001"  
 

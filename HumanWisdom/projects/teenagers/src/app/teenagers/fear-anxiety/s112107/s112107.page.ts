@@ -14,8 +14,8 @@ export class S112107Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w10"
   title="What role does our conditioning play in fear?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.10.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+4.4.mp3'
   transcriptPage="/fear-anxiety/s112107t"
   toc="fear-anxiety/s112001"  
 

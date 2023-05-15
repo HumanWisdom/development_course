@@ -28,6 +28,8 @@ export class S112155Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
+  rId = 166
+  r112155= JSON.parse(sessionStorage.getItem("r112155"))
   x = []
   q1 = 111
   q2 = 112
@@ -347,24 +349,35 @@ export class S112155Page implements OnInit {
 
 
 
+
+
   submitProgress() {
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
-    this.option = optionT.join()
-    this.service.submitProgressQuestion({
+    sessionStorage.setItem("r112155", this.r112155)
+    this.r112155 = sessionStorage.getItem("r112155")
+    console.log(this.r112155)
+
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
-      "ScrNumber": this.screenNumber,
-      "Bookmark": this.bookmark,
-      "UserId": this.userId,
       "timeSpent": this.totalTime,
-      "OptionIDs": this.option
-    })
-      .subscribe((res) => { });
-    this.router.navigate(['/fear-anxiety/s112156'])
+      "ReflectionId": this.rId,
+      "Resp": this.r112155
+    }).subscribe(res => {
 
-
+    },
+      error => {
+        console.log(error)
+        this.router.navigate(['/fear-anxiety/s112156'])
+      },
+      () => {
+        this.router.navigate(['/fear-anxiety/s112156'])
+      })
   }
   prev() {
     this.router.navigate(['/fear-anxiety/s112154'])

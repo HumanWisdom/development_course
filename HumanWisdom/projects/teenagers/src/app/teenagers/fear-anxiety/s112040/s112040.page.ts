@@ -15,7 +15,7 @@ export class S112040Page implements OnInit {
   bg="purple_red_w11"
   toc="fear-anxiety/s112001"
   title="#5 Fear of being a nobody"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.5.mp3'
   transcriptPage="/fear-anxiety/s112040t"
 

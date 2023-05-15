@@ -16,7 +16,7 @@ export class S112023Page implements OnInit {
   toc="fear-anxiety/s112001"
   title="Chronic anxiety can damage our health"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.3.mp3'
   transcriptPage="/fear-anxiety/s112023t"
 
   userId:any

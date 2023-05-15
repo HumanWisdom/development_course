@@ -15,7 +15,7 @@ export class S112132Page implements OnInit {
   bg="purple_red_w9"
   title="#3 Can I accept whatever happens?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.10.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.16.mp3'
   transcriptPage="/fear-anxiety/s112132t"
   toc="fear-anxiety/s112001"  
 

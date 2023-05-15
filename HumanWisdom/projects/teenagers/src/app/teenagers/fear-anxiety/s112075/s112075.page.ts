@@ -15,7 +15,7 @@ export class S112075Page implements OnInit {
   bg="purple_red_w4"
   title="We can’t think clearly"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.12.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.12.mp3'
   transcriptPage="/fear-anxiety/s112075t"
   toc="fear-anxiety/s112001"  
 

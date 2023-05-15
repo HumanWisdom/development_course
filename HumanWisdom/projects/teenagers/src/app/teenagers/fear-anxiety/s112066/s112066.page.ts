@@ -15,7 +15,7 @@ export class S112066Page implements OnInit {
   bg="purple_red_w7"
   title="What is the nature of fear?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.10.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.10.mp3'
   transcriptPage="/fear-anxiety/s112066t"
   toc="fear-anxiety/s112001"  
 

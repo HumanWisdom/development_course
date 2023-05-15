@@ -16,7 +16,7 @@ export class S112049Page implements OnInit {
   toc="fear-anxiety/s112001"
   title="#9 Fear of the future and the unknown"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.7.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.7.mp3'
   transcriptPage="/fear-anxiety/s112049t" 
 
   userId:any

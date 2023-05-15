@@ -16,8 +16,8 @@ export class S112142Page implements OnInit {
   title="Who feels the fear?"
   toc="fear-anxiety/s486"
 
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+1.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+5.8.mp3'
   transcriptPage="/fear-anxiety/s112142t"
   
 

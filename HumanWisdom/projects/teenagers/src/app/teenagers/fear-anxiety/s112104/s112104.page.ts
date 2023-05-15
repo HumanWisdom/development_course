@@ -14,10 +14,10 @@ export class S112104Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w7"
   title="Is my fear caused by the event, or my reaction to it?"
-  toc="fear-anxiety/s486"
+  toc="fear-anxiety/s112001"
 
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+1.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+4.2.mp3'
   transcriptPage="/fear-anxiety/s112104t"
   
 

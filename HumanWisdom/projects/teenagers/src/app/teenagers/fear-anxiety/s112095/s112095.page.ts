@@ -14,10 +14,9 @@ export class S112095Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w10"
   title="What is the mechanism behind fear?"
-  toc="fear-anxiety/s486"
-
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+1.4.mp3'
+  toc="fear-anxiety/s112001"
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+4.1.mp3'
   transcriptPage="/fear-anxiety/s112095t"
   
 

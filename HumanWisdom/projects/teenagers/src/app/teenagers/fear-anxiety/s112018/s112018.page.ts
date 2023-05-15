@@ -16,7 +16,7 @@ export class S112018Page implements OnInit {
   title="Causes of fear"
   toc="fear-anxiety/s112001"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.2.mp3'
   transcriptPage="/fear-anxiety/s112018t"
   
   userId:any

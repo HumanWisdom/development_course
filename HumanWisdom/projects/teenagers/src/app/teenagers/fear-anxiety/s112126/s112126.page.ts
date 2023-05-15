@@ -14,8 +14,8 @@ export class S112126Page implements OnInit {
   bg_cft="bg_purple_red"
   bg="purple_red_w3"
   title="#1 Is it real?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+2.10.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/fear_anxiety/audios/fear+5.2.mp3'
   transcriptPage="/fear-anxiety/s112126t"
   toc="fear-anxiety/s112001"  
 
