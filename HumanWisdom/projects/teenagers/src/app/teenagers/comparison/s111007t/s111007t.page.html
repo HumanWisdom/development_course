@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111007t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Constant comparison can bring pleasure, if I am better than you at sports, for example, or cause envy if you have a new phone. It can, make us critical of others if they are different to us, or make us want to imitate others, for example dress like a pop star we follow. It can also,  lower our self-esteem if we think we are no good at maths for example,  – all this happens without our awareness or our consent. It isn’t right or wrong, just an unconscious automatic process in our thinking that needs to be explored and understood, because it can impact our life in so many ways. A deeper understanding of this process allows us to respond with wisdom and avoid many of the problems it can cause.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -47,7 +47,7 @@ export class VideoContentComponent implements OnInit {
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoLink);
     var str = this.router.url
     var lastSlash = str.lastIndexOf("/");
-    this.scrId = str.substring(lastSlash + 1);
+    this.scrId = str.substring(lastSlash + 2);
 
     //call api to geta percent
     this.service.mediaPercent(this.scrId).subscribe(res => {

@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CertificationComponent implements OnInit {
   @Input() moduleName: string;
   module:any
+  @Input() isModuleCompleted:boolean;
   public userName=localStorage.getItem('name');
   constructor(private router: Router
   ) {

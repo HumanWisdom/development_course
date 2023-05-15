@@ -1,0 +1,17 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext [bg]="bg">
+
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      The human mind is reactive. If we can learn to respond instead, we can live with intelligence, and our lives can be transformed.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>  
+
+</app-kta-prevnext>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

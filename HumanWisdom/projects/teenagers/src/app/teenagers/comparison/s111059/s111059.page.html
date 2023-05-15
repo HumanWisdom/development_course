@@ -1,9 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111059</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
 
-<ion-content>
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      Comparison in relationships can result in:
+    </h1>
 
-</ion-content>
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      01. Criticism
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      02. Conflict
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      03. Discontent
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

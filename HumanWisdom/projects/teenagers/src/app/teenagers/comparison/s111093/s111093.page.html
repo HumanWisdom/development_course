@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111093</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+ <app-simple-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+    <h1 class="txt1">
+      Understanding that my envy arises from the hidden process of comparison in my own thinking stops me blaming others for that feeling.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AdultsService } from "../../adults.service";
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-s4',
   templateUrl: './s4.page.html',

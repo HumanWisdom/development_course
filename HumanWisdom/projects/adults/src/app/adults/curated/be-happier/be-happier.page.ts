@@ -314,6 +314,7 @@ export class BeHappierPage implements OnInit {
       if (!this.guest && !this.Subscriber) {
         this.router.navigate(["/onboarding/add-to-cart"]);
       } else if (this.guest) {
+        localStorage.setItem("subscribepage", 'T');
         this.router.navigate(["/onboarding/login"]);
       }
     }
