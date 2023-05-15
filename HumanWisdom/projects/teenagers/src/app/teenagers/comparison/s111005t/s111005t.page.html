@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111005t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We are first going to understand the unconscious process of comparison, which operates in the background in all of us, look at ways that it is both essential in our life and the many problems it can cause, and explore how we can observe it without judgment and respond with wisdom. This understanding has many potential benefits, as we will explore.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

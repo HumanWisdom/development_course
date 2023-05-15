@@ -47,7 +47,7 @@
       <div class="progress progress-sm hprogress">
         <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
-    </div> 
+    </div>
   </div>
 </div>
 <!-- /top navigation -->
@@ -99,39 +99,39 @@
 <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal_note_journal" role="document">
     <div class="modal-content">
-      
+
       <div class="modal-body">
-        
+
         <form>
 
           <div class="row pt20px pb30px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
               <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Write your thoughts here(Your notes can only be seen by you)" [(ngModel)]="note"></textarea>
             </div>
-          </div>          
-          
+          </div>
+
           <div class="row center_flex flex_wrap">
-            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">                    
+            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">
               <a>
                 <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"data-dismiss="modal">Add Note to Journal</button>
               </a>
             </div>
-          </div>                    
+          </div>
 
           <br>
 
           <div class="row center_flex flex_wrap">
-            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">                    
+            <div class="col-md-3 col-sm-3 col-xs-12 tcenter">
               <a>
                 <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button>
               </a>
             </div>
-          </div>                           
+          </div>
 
         </form>
-        
+
       </div>
-      
+
     </div>
   </div>
 </div> -->
@@ -145,7 +145,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module bg_border_box">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
         </div>
-    
+
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 flex_ai">
         </div>
 
@@ -171,38 +171,44 @@
         </div> -->
         <div class="modal-body">
           <form>
-  
+
             <div class="row pt20px pb30px">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Type your note here..." [(ngModel)]="note"></textarea>
+                <textarea id="message" required="required" [disabled]="guest || !Subscriber" [placeholder]="placeHolder"
+                 class="form-control txt19 p30_20px" name="message" rows="12" placeholder="Type your note here..."
+                  [(ngModel)]="note"></textarea>
               </div>
-            </div>          
-            
+            </div>
+
             <div class="row center_flex flex_wrap">
-              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                 <a>
-                  <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"data-dismiss="modal">Add Note to Journal</button>
+                  <button type="button" [disabled]="guest || !Subscriber" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"data-dismiss="modal">Add Note to Journal</button>
                 </a>
               </div>
-            </div>                    
-  
+            </div>
+
             <br>
-  
+
             <div class="row center_flex flex_wrap">
-              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                 <a>
                   <!-- <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button> -->
                   <h4 class="mb0 w100 btn_skip txt5 fs16px tcenter" data-dismiss="modal">Skip</h4>
                 </a>
               </div>
-            </div>                           
-  
+            </div>
+
           </form>
         </div>
       </div>
     </div>
     <!-- /content -->
-    
+
   </div>
 </div>
 <!-- /add note modal -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'Please subscribe to activate this feature'">
+</app-modal>

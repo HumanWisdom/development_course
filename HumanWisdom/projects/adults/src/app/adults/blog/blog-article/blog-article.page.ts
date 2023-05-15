@@ -66,7 +66,7 @@ export class BlogArticlePage implements OnInit {
         }
         this.likecount = parseInt(this.blogList['LikeCnt'])
         var url=this.blogList['Title'].replaceAll(" ","-");
-        window.history.pushState('', '', '/adults/blog/blog-article?sId='+url);
+        window.history.pushState('', '', '/blog-article?sId='+url);
         this.title.setTitle(this.blogList['Title'])
 
        if(this.meta.getTag("property='title'"))

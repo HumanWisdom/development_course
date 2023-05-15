@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111124t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this last step we are going to ask a simple question. Is there a different way to see the same situation and a different way to respond? There almost always is. Your initial response may still be the correct one, but it’s worth exploring other perspectives first. For example my first reaction to you telling me about your new car may be envy and anger, but on exploring other ways of seeing the same situation, I may realise it is not your fault.
+          </p>
+
+          <p>
+            You won’t always be able to do this. That's okay. You've taken the first step. And that's the most important thing. Keep going. There is no goal, and no one is judging you.
+          </p>
+
+          <p>
+            It’s not an exam. We are just being curious, trying to understand the depths of our thinking, which can bring all the benefits we spoke of.
+          </p>
+
+          <p>
+            The more you do it, the more you learn, and the more you change.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

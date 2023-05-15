@@ -1,9 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s111041</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-lengthy-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Comparing ourselves with our ideal of who we want to be:
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">01</p>
+      Can make us self-critical
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">02</p>
+      Can result in low self esteem
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">03</p>
+      Can make us angry at ourselves
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">04</p>
+      Can make us anxious
+    </h3>
+
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

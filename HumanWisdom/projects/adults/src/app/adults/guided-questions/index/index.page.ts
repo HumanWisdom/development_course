@@ -78,23 +78,14 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   goToNote(jId, jTitle, jNotes, type) {
-    if (type === 'note') {
       if (this.guest || !this.Subscriber) {
         this.enableAlert = true;
       } else {
-        this.logeventservice.logEvent('click_ journal_add_note');
         this.router.navigate([
           "/adults/note",
           { title: jTitle, jId: jId, jNotes: jNotes, type: type },
         ]);
       }
-    } else {
-      this.logeventservice.logEvent('click_ journal_add_note');
-      this.router.navigate([
-        "/adults/note",
-        { title: jTitle, jId: jId, jNotes: jNotes, type: type },
-      ]);
-    }
   }
   Note() {
     return false;
@@ -109,7 +100,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   RouteToToQuestions(item) {
-    if (this.guest && !this.Subscriber) {
+    if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
       let url = `/journal${item.Landing_URL}`;
@@ -164,7 +155,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     });
   }
   GoToQuestions(data) {
-    if (this.guest && !this.Subscriber) {
+    if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
       if (data.JrType == "Guided Questions") {
@@ -238,6 +229,7 @@ export class IndexPage implements OnInit, AfterViewInit {
       if (!this.guest && !this.Subscriber) {
         this.router.navigate(["/onboarding/add-to-cart"]);
       } else if (this.guest) {
+        localStorage.setItem("subscribepage", 'T');
         this.router.navigate(["/onboarding/login"]);
       }
     }
