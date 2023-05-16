@@ -95,7 +95,7 @@ posttext='';
 
 
   onChangeComment(item){
-    this.isEditComment=false;
+    this.editCommentId ="";
     var model={
       "PostId":item.ReplyPostID, 
       "Post": item.ReplyPost,
