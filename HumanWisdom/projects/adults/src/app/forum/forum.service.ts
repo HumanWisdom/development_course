@@ -7,6 +7,7 @@ import {
   HttpParams
 } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +19,13 @@ export class ForumService {
  // path="https://staging.humanwisdom.info/api"
   
 postdata: any;
-
+public toastrService:ToastrService
 public postdataSource = new BehaviorSubject<any>([]);
   postdatavalue = this.postdataSource.asObservable();
 
-  constructor( private http: HttpClient,handler: HttpBackend) { }
+  constructor( private http: HttpClient,handler: HttpBackend,public toastr:ToastrService) {
+    this.toastrService=this.toastr;
+   }
   getposts(index:Number,searchText,uID):Observable<any>{
     let url='';
     console.log(index);
@@ -86,6 +89,8 @@ public postdataSource = new BehaviorSubject<any>([]);
   getUserDetail(data:string):Observable<any>{
     return this.http.get(this.path+`/Users/${data}`)
   }
-
+  UpdatePost(data:any){
+    return this.http.post(this.path+'/AddPost',data)
+  }
   
 }
