@@ -99,7 +99,11 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/comparison/comparison.module').then( m => m.ComparisonModule)
   },
   {
-    path: 'reactive-mind',
+    path: 'fear-anxiety',
+    loadChildren: () => import('./teenagers/fear-anxiety/fear-anxiety.module').then( m => m.FearAnxietyModule)
+   
+   },
+   { path: 'reactive-mind',
     loadChildren: () => import('./teenagers/reactive-mind/reactive-mind.module').then( m => m.ReactiveMindModule)
   },
   {
