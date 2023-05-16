@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+           Loneliness adds to the pain of our loss.  If we lose a pet, or a person we were close to, we may feel lonely. We feel a void or emptiness within that is painful. Being connected is a core human need and when that is not met, we feel the ache of loneliness. We are suddenly faced with being alone and  with ourselves and that feels unfamiliar and distressing. It is perhaps worth asking why we are not comfortable with ourselves, and what we can do about that? 
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
