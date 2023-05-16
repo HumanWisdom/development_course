@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s114036t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Once I have done the hard work of letting go of my various images and being authentic I can then begin to look at myself and explore the work I need to do to grow as a human being. I can’t do that if I am pretending to be someone else - to myself and others. The first step is to accept myself as a whole human being with a mix of light and shadow, like everyone else. I may see that I am not a good listener, or not really as loving as I thought and explore how I can change. Others see I am much more relaxed and open, and it gives them permission, and inspiration to do the same. People begin to like me for who I am, and not the image I was projecting earlier. That feels wonderful. Everyone can take this journey and be free.         
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

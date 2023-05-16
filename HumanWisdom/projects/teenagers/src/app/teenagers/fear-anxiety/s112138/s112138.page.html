@@ -1,0 +1,26 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      Our minds usually imagine the worst possible outcome in 
+      a situation. Ask yourself if there are other ways of seeing the same situation.
+    </h1>
+    
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+
+
+
+
+

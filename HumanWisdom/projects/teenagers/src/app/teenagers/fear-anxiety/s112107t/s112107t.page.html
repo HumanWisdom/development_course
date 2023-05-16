@@ -1,0 +1,25 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            If we have had painful experiences in our past, we may be afraid they will repeat themselves again, and that can cause anxiety. The more the pain, the greater the fear. My mind responds by being hyper-vigilant, constantly wondering what others are thinking, and imagining threats where they may not be any. We may become hyper-sensitive to criticism for example, if we have been criticized before, or suspicious of our partners if we have been hurt in previous relationships. How can we respond to this with intelligence, so a painful incident in our past does not shape our life for the future?
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+

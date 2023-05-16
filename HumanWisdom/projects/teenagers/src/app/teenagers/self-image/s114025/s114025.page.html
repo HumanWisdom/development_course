@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s114025</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+ <app-simple-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+    <h1 class="txt1">
+      I assume I know what you are thinking and am sure I am right. This contributes to my own anxiety, but what I assume may not be true.    
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

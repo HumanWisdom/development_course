@@ -1,0 +1,26 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  <form>               
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#2</p>
+      Our mind magnifies threats or imagines those that do not exist
+    </h1>
+    
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+
+
+
+
+

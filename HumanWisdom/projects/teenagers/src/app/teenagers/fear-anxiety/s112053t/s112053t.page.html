@@ -1,0 +1,25 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            As a teenager there is a real fear of not being accepted by others, or by a group of friends. This fear makes us change so we can fit in, and live with an anxiety that if we do something wrong we may be excluded from the group. This is quite common in gangs. Behind this fear is a fear of being alone. If we can make our peace with being alone, this fear can end, and allow us to be who we are at all times.
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+
