@@ -1,8 +1,9 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ForumService } from '../forum.service';
+import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-forum-thread',
@@ -10,14 +11,19 @@ import { ForumService } from '../forum.service';
   styleUrls: ['./forum-thread.page.scss'],
 })
 export class ForumThreadPage implements OnInit {
+  @ViewChild(ToastContainerDirective, { static: true }) toastContainer!: ToastContainerDirective;
+  @ViewChild('toastContainerRef', { static: true }) toastContainerRef!: ElementRef;
 list:any;
+editCommentId:string='';
 activereply;
 PostComment='';
 replyflag=false;
 commentflag=false;
 isLoggedIn=false;
 commenttext='';
+isEditPost=false;
 activecomment;
+isEditComment=false;
 sub: Subscription;
 userID='107';
 posttread={
@@ -30,12 +36,15 @@ posttread={
   UserImage:null,
   UserName:'',
   Followed:'0',
-  Liked:'0'
+  Liked:'0',
+  UserId:''
 }
 posttext='';
   constructor(private service: ForumService,private router: Router) {
     this.userID =localStorage.getItem('userId');
     this.isLoggedIn=localStorage.getItem('isloggedin') == 'T'?true:false;
+    this.service.toastrService.overlayContainer = this.toastContainer;
+
    }
   toggle(item){
     this.replyflag=!this.replyflag;
@@ -63,6 +72,52 @@ posttext='';
       });
     }
   }
+  onChange($event){
+    this.isEditPost=false;
+    var model={
+      "PostId":this.posttread.PostID, 
+      "Post": this.posttread.POST,
+      "UserId": this.posttread.UserId,
+      "ParentPostID": "0",
+      "ReflectionID": "0",
+      "TagIds": "0"
+    };
+    this.service.UpdatePost(model).subscribe(res=>{
+      if(res){
+        this.service.toastrService.success('','Updated Successfully');
+      }
+    });
+  }
+
+  editComment(ReplyPostID){
+    this.editCommentId = ReplyPostID;
+  }
+
+
+  onChangeComment(item){
+    this.editCommentId ="";
+    var model={
+      "PostId":item.ReplyPostID, 
+      "Post": item.ReplyPost,
+      "UserId":item.ReplyPostUserID,
+      "ReflectionID": "0",
+      "TagIds": "0"
+    };
+    this.service.UpdatePost(model).subscribe(res=>{
+      if(res){
+        this.service.toastrService.success('','Updated Successfully');
+      }
+    });
+  }
+
+  editPost(){
+    if(!this.isEditPost){
+      this.isEditPost=true;
+    }else{
+      this.isEditPost=false;    
+    }
+  }
+
 
   reploadpage(){
     this.sub = this.service.postdatavalue.subscribe(res=>{
@@ -70,9 +125,7 @@ posttext='';
         this.posttread=res;
         this.service.getPostDetail(res.PostID).subscribe(res=>{
           if(res){
-            ;            
             this.list =res;      
-           
           }
         })
       }
