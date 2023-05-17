@@ -1,9 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s115013</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-lengthy-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Self-interest in communication:
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">01</p>
+      We listen to reply
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">02</p>
+      We prefer to speak about ourselves
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">03</p>
+      If there is nothing stimulating, we switch off
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <p class="mb0px fw_500">04</p>
+      Our mind asks ‘What’s in it for me?’
+    </h3>
+
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
