@@ -31,6 +31,7 @@ import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
 // Import library module
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { SharedService } from '../../../shared/services/shared.service';
+import { ToastrModule } from 'ngx-toastr';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -62,7 +63,8 @@ export class MyHammerConfig extends HammerGestureConfig {
         PlatformModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAnalyticsModule,
-        NgxJsonLdModule
+        NgxJsonLdModule,
+        ToastrModule.forRoot()
     ],
     providers: [
         StatusBar,

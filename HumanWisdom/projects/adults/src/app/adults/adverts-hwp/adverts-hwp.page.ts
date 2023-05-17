@@ -61,6 +61,9 @@ export class AdvertsHwpPage implements OnInit {
     confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
   }, { validator: this.PasswordValidator })
 
+  enableAlert = false;
+  content = '';
+
   constructor(
     public platform: Platform,
     private router: Router,
@@ -116,7 +119,9 @@ export class AdvertsHwpPage implements OnInit {
     this.services.getPricing(this.countryCode).subscribe(res => {
       this.cardlist = res[0];
     }, (err) => {
-      window.alert(err.error['Message'])
+      this.content = err.error['Message'];
+      this.enableAlert = true;
+      // window.alert(err.error['Message'])
     }
     )
   }
@@ -316,7 +321,9 @@ export class AdvertsHwpPage implements OnInit {
         }
       },
         error => {
-          window.alert(error.error.Message)
+          this.content = error.error.Message;
+          this.enableAlert = true;
+          // window.alert(error.error.Message)
         },
         () => {
         }
@@ -346,7 +353,9 @@ export class AdvertsHwpPage implements OnInit {
           this.emaillogin('second')
         }
       }, (err) => {
-        window.alert(err.error['Message'])
+        this.content = err.error['Message'];
+        this.enableAlert = true;
+        // window.alert(err.error['Message'])
       })
   }
 
@@ -620,7 +629,9 @@ export class AdvertsHwpPage implements OnInit {
             }
           })
       } else {
-        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+        this.content = 'Please ensure that you use an email based authentication with your Auth provider or try another method';
+        this.enableAlert = true;
+        // window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
       }
     });
 
@@ -650,6 +661,11 @@ export class AdvertsHwpPage implements OnInit {
   navigate(url, event){
     this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
     this.logeventservice.logEvent(event)
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 }
 
