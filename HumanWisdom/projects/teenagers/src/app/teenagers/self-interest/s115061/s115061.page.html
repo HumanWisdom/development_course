@@ -1,9 +1,3 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s115061</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-sessionover-s1 [bg]="bg" [points]="points"></app-sessionover-s1>
 
-<ion-content>
-
-</ion-content>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
