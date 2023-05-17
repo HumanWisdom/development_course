@@ -138,7 +138,7 @@ posttext='';
 
   deletePost(){
     this.service.deletePost(this.posttread.PostID).subscribe(res=>{
-      if(res==null){
+      if(res){
         this.service.toastrService.success('','Deleted Successfully !');
         this.router.navigate(['/forum']);
       }
