@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s115031</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-kta-prevnext [bg]="bg">
 
-</ion-content>
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      Our self-interest often acts hidden from our awareness. It is part of the ‘I’ and at the core of being human. It shapes our lives in many ways and causes conflict in the world. Observing it without judgement awakens intelligence and allows us to respond with wisdom.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>  
+
+</app-kta-prevnext>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
