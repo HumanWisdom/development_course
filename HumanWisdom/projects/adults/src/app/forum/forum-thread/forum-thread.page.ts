@@ -14,6 +14,7 @@ export class ForumThreadPage implements OnInit {
   @ViewChild(ToastContainerDirective, { static: true }) toastContainer!: ToastContainerDirective;
   @ViewChild('toastContainerRef', { static: true }) toastContainerRef!: ElementRef;
 list:any;
+isPostEditable:boolean =true;
 editCommentId:string='';
 activereply;
 PostComment='';
@@ -105,7 +106,7 @@ posttext='';
     };
     this.service.UpdatePost(model).subscribe(res=>{
       if(res){
-        this.service.toastrService.success('','Updated Successfully');
+        this.service.toastrService.success('','Updated Successfully !');
       }
     });
   }
@@ -125,11 +126,23 @@ posttext='';
         this.posttread=res;
         this.service.getPostDetail(res.PostID).subscribe(res=>{
           if(res){
-            this.list =res;      
+            this.list =res; 
+            if(this.list.ReplyPost.length>0){
+              this.isPostEditable = false;
+            }     
           }
         })
       }
     })
+  }
+
+  deletePost(){
+    this.service.deletePost(this.posttread.PostID).subscribe(res=>{
+      if(res==null){
+        this.service.toastrService.success('','Deleted Successfully !');
+        this.router.navigate(['/forum']);
+      }
+    });
   }
 replyPost(){
   this.list.ReplyPost.sort(function (a, b) {
