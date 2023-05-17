@@ -1,0 +1,54 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 purple_w1">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>
+
+              <h5 class="txt1">
+                How do we respond to sorrow?
+              </h5>
+              
+              <div class="clearfix"></div>
+
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
+
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                      7. Suicide and self-harm
+                    </h4>
+
+                    <h4 class="txt45 tleft">
+                      Sometimes people are so desperately unhappy, they harm themselves physically as a way of countering their emotional pain. In rare cases people try to take their own lives because they feel they cannot cope with the pain they feel.
+                    </h4>
+                  </div>
+                </div>
+              </section>
+
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <!-- /multistep wizard -->       
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

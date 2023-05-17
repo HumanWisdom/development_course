@@ -5,37 +5,39 @@ import { TeenagersService } from '../../teenagers.service';
 
 
 @Component({
-  selector: 'app-s116007',
-  templateUrl: './s116007.page.html',
-  styleUrls: ['./s116007.page.scss'],
+  selector: 'app-s116039',
+  templateUrl: './s116039.page.html',
+  styleUrls: ['./s116039.page.scss'],
 })
-export class S116007Page implements OnInit,OnDestroy {
+export class S116039Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w5"
+  bg="purple_w12" 
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=116007
+  screenNumber=116039
   startTime:any
   endTime:any
   totalTime:any
   bookmark=0
-  toc="sorrow/s116001"
-  path=this.router.url  
-
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
+  toc="sorrow/s60001"
+  path=this.router.url
   
+
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  
+  
+ 
   constructor(
     private router: Router,
     private service:TeenagersService,
     private location:Location
   ) { }
-
- ngOnInit() {
+ngOnInit() {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
     
@@ -47,13 +49,16 @@ export class S116007Page implements OnInit,OnDestroy {
   
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark116007"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark116039"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark116007"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark116039"))==1)
       this.bookmark=1
+   
+   
+ 
+ 
     
   }
-
   receiveBookmark(e)
   {
     console.log(e)
@@ -61,7 +66,7 @@ export class S116007Page implements OnInit,OnDestroy {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark116007",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark116039",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -72,17 +77,18 @@ createScreen(){
     }).subscribe(res=>
       {
         
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
     
  
   }
  
- 
 
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/sorrow/s116008'])
+    this.router.navigate(['/adults/sorrow/s116040'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -93,22 +99,27 @@ createScreen(){
     }).subscribe(res=>
       {
         
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/sorrow/s234'])
-      })   
+        //this.router.navigate(['/adults/conditioning/s234'])
+      })
+     
+    
 
   }
   prev(){
-    this.router.navigate(['/sorrow/s116006'])
+    this.router.navigate(['/adults/sorrow/s116038'])
 
-  }  
+  }
+  
+
+  
 
   ngOnDestroy(){
     
+
+
 
   }
 
