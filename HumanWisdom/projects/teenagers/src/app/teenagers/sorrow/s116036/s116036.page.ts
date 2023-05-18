@@ -13,7 +13,7 @@ export class S116036Page implements OnInit,OnDestroy {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w9"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/sorrow-loss/videos/1.6.mp4'  
   title="Sorrow makes us self-absorbed "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/sorrow_loss/sorrow_loss_06.jpg"

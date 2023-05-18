@@ -18,7 +18,7 @@ export class S116090Page implements OnInit,OnDestroy {
   title="#9 Realise life is a gift, grieve fully, and move on."  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+3.10.mp3'
+  audioLink=this.mediaAudio+'/sorrow-loss/audios/1.6.mp3'
   transcriptPage="sorrow/s116090t"
   toc="sorrow/s116001"
   bookmark=0

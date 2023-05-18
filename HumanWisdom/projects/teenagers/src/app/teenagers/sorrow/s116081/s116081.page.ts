@@ -17,7 +17,7 @@ export class S116081Page implements OnInit,OnDestroy {
   bg="purple_w4"
   title="#5 Acceptance is the key"  
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+3.6.mp3'
   transcriptPage="sorrow/s116081t"
   toc="sorrow/s116001"

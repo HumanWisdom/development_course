@@ -15,7 +15,7 @@ export class S116048Page implements OnInit,OnDestroy {
   bg_cft="bg_purple"
   bg="purple_w5"
   title=" #1 Our emotional needs are no longer met  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+2.2.mp3'
   transcriptPage="sorrow/s116048t"
   toc="sorrow/s116001"

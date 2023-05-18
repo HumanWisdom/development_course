@@ -14,7 +14,7 @@ export class S116045Page implements OnInit,OnDestroy {
   bg_cft="bg_purple"
   bg="purple_w2"
   title="Introduction"    
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+2.1.mp3'
   transcriptPage="sorrow/s116045t"
   toc="sorrow/s116001"

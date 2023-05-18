@@ -15,7 +15,7 @@ export class S116057Page implements OnInit,OnDestroy {
   bg="purple_w1"
   title=" #2 Fear adds to our pain  "  
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+2.4.mp3'
   transcriptPage="sorrow/s116057t"
   toc="sorrow/s116001"

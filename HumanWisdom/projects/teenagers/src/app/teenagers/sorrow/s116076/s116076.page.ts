@@ -18,7 +18,7 @@ export class S116076Page implements OnInit,OnDestroy {
   title="#4 Offer no resistance. Do not escape."  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+3.5.mp3'
+  audioLink=this.mediaAudio+'/sorrow-loss/audios/1.2.mp3'
   transcriptPage="sorrow/s116076t"
   toc="sorrow/s116001"
   bookmark=0

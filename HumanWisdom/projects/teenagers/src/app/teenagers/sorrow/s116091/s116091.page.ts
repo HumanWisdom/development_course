@@ -16,7 +16,7 @@ export class S116091Page implements OnInit,OnDestroy {
   bg_cft="bg_purple"
   bg="purple_w1"
   title="#10 Be grateful " 
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/sorrow-loss/audios/sorrow-loss+3.11.mp3'
   transcriptPage="sorrow/s116091t"
   toc="sorrow/s116001"

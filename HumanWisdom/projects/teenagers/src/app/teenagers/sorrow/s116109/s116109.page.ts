@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TeenagersService } from '../../teenagers.service';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class S116109Page implements OnInit {
   r116109 = sessionStorage.getItem("r116109") !== 'null' ? sessionStorage.getItem("r116109") : '';
 
   constructor(private router: Router,
-    private service: AdultsService,
+    private service: TeenagersService,
     private location: Location) { }
 
   ngOnInit() {

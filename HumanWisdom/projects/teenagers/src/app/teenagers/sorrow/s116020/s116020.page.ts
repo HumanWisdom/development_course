@@ -27,7 +27,7 @@ export class S116020Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1230
+  rId = 1379
   reflection: any
   reflectionA: any
   r116020 = JSON.parse(sessionStorage.getItem("r116020"))

@@ -5,11 +5,11 @@ import { TeenagersService } from '../../teenagers.service';
 
 
 @Component({
-  selector: 'app-s116050',
-  templateUrl: './s116050.page.html',
-  styleUrls: ['./s116050.page.scss'],
+  selector: 'app-s116051',
+  templateUrl: './s116051.page.html',
+  styleUrls: ['./s116051.page.scss'],
 })
-export class S116050Page implements OnInit,OnDestroy {
+export class S116051Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
@@ -19,7 +19,7 @@ export class S116050Page implements OnInit,OnDestroy {
   localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=116050
+  screenNumber=116051
   startTime:any
   endTime:any
   totalTime:any

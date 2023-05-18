@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { S116062Page } from './s116062.page';
 
 describe('S116062Page', () => {
-  // let  canActivate:[ActiveGuard],  
+      
     let component:  S116062Page;
   let fixture: ComponentFixture<S116062Page>;
 
