@@ -17,7 +17,7 @@ export class S97008Page implements OnInit,OnDestroy {
   bg="pink_orange_w6"
   title="Step #3 - Question. Why do I think or feel this way?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/three-steps-enquiry/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/three-steps-enquiry/audios/1.3.mp3'
 
   transcriptPage="three-steps-enquiry/s97008t"
   toc="three-steps-enquiry/s97001"

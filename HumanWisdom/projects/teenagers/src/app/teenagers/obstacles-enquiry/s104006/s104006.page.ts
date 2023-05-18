@@ -13,7 +13,7 @@ export class S104006Page implements OnInit,OnDestroy {
   bg_cft="bg_teal"
   bg="teal_w5"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/teenagers/modules/obstacles-enquiry/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/obstacles-enquiry/videos/1.1.mp4'  
   title="I am anxious about looking at myself "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any

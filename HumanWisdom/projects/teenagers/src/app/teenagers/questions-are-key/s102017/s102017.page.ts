@@ -17,7 +17,7 @@ export class S102017Page implements OnInit,OnDestroy {
   bg="blue_pink_w3"
   title="Questioning our opinions keeps our mind fresh"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/questions-are-key/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/questions-are-key/audios/1.3.mp3'
   transcriptPage="questions-are-key/s102017t"
   toc="questions-are-key/s102001"
   bookmark=0

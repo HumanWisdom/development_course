@@ -16,7 +16,7 @@ export class S97014Page implements OnInit,OnDestroy {
   bg_cft="bg_pink_orange"
   bg="pink_orange_w12"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/teenagers/modules/three-steps-enquiry/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/three-steps-enquiry/videos/1.1.mp4'  
   title="3 steps to enquiry"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   

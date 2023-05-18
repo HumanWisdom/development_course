@@ -17,7 +17,7 @@ export class S99013Page implements OnInit,OnDestroy {
   bg="dark_blue_w11"
   title="Insight brings transformation"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/insight/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/insight/audios/1.5.mp3'
 
   transcriptPage="insight/s99013t"
   toc="insight/s99001"

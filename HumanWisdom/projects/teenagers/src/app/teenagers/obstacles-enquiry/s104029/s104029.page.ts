@@ -102,6 +102,7 @@ export class S104029Page implements OnInit,OnDestroy {
 
   }
   prev(){
+    debugger
     this.router.navigate(['/obstacles-enquiry/s104028'])
     
   }
