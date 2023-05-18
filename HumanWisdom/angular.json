@@ -60,6 +60,10 @@
                 "inject": true
               },
               {
+                "input": "node_modules/ngx-toastr/toastr.css",
+                "inject": true
+              },
+              {
                 "input": "projects/assets/css/custom.css",
                 "inject": true
               },

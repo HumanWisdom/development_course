@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s115052t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We cannot wish our self-interest away, even if we want to, because it is at the core of our consciousness, or the ME‘I’. Wherever the idea of ME exists, our self-interest is there. So what can we do, if we want to live with integrity, goodness, and have loving relationships? The first step is to become aware of it operating in the background, without judgement. We have to be sensitive and watchful because it can present in subtle ways. Once we are aware of it, we can then consciously put it to one side and do the intelligent thing. We do not have to follow it or do its bidding. We always have a choice. This can help us be loving, or listen deeply, or act with integrity, or not manipulate people for our own ends, and so on. The more we do this, the easier it becomes. Try it and see.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer> 
