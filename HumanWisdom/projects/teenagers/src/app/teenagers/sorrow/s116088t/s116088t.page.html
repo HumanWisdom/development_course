@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We know wherever our emotional needs are met, we get attached and this covers over this emptiness we feel. When we lose the thing that meets these needs, this void or emptiness is fully exposed and we feel the pain of that. The mind typically responds by trying to do something to distract itself - and that is fine, as long as the distraction does not cause more problems - for example if we take up drinking or drugs to numb our pain. Another way, which feels difficult, is to embrace that emptiness you feel. Embrace it like an old friend, who is part of you. If you can meet this feeling without language, it dissolves into one of peace.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
