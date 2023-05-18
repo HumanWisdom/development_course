@@ -89,8 +89,11 @@ public postdataSource = new BehaviorSubject<any>([]);
   getUserDetail(data:string):Observable<any>{
     return this.http.get(this.path+`/Users/${data}`)
   }
-  UpdatePost(data:any){
+  UpdatePost(data:any):Observable<any>{
     return this.http.post(this.path+'/AddPost',data)
+  }
+  deletePost(data:any):Observable<any>{
+    return this.http.post(this.path+`/DeletePost/${data}`,null);
   }
   
 }

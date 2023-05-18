@@ -1,0 +1,115 @@
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
+          Sorrow and Loss
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          To be human is to experience the pain of loss, whether its people, pets, jobs or possessions. We explore the many causes of sorrow, the hidden patterns of thinking that amplify it, how we can better prepare for it, and meet it with wisdom.
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/sorrow', pgResume]" *ngIf="pgResume">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_purple" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/sorrow/s116002">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Exploring sorrow and loss
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              25 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+
+    <a routerLink="/sorrow/s116044">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Why is loss so painful?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              12 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/sorrow/s116066">
+      <div class="row crow box bg_purple">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #3
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Meeting loss with wisdom
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              26 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>   
+    
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+
+  </form>    
+
+</app-index-content> 
+
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
+<app-index-footer></app-index-footer>

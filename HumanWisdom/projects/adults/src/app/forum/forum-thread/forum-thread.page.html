@@ -39,7 +39,7 @@
               </div>
 
               <div class="row forum_pt20px">
-                <div class="col-md-11 col-sm-11 col-xs-11">
+                <div class="col-md-10 col-sm-10 col-xs-10">
                   <h4 class="mtb0px">
                     <span  *ngIf="!isEditPost" class="fw_500 fs_14px lh_16px fc_000000">{{posttread.POST}} </span>  
                     <textarea *ngIf="isEditPost" (focusout)="onChange($event)" type="text"name="Post" id="Post" [(ngModel)]="posttread.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
@@ -47,9 +47,14 @@
                   </h4>
             
                 </div>
-                <div class="col-md-1 col-sm-1 col-xs-2">
+                <div class="col-md-1 col-sm-1 col-xs-2" *ngIf="isPostEditable">
                   <button type="submit" *ngIf="posttread.UserId==userID" [disabled]="!isLoggedIn" (click)="editPost()" class="btn btn_ficons">
                     <i class="fa fa-pencil"> </i>
+                  </button>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1" *ngIf="isPostEditable">
+                  <button type="submit" *ngIf="posttread.UserId==userID" [disabled]="!isLoggedIn" (click)="deletePost()" class="btn btn_ficons">
+                    <i class="fa fa-trash-o"> </i>
                   </button>
                 </div>
               </div>
