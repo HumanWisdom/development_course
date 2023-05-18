@@ -18,7 +18,7 @@ export class S116072Page implements OnInit,OnDestroy {
   title="#1 Breathe"  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/sorrow-loss/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/sorrow/audios/1.1.mp3'
   transcriptPage="sorrow/s116072t"
   toc="sorrow/s116001"
   bookmark=0

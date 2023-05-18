@@ -99,16 +99,16 @@ export class S116018Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/conditioning/s116017'])
+    this.router.navigate(['/sorrow/s116017'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/conditioning/s116018'])
+    // this.router.navigate(['/sorrow/s116018'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/conditioning/s116019'])
+    this.router.navigate(['/sorrow/s116019'])
   }
 
   ngOnDestroy() 

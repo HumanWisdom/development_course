@@ -7,7 +7,7 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s116004.page.html',
   styleUrls: ['./s116004.page.scss'],
 })
-export class S116004Page implements OnInit,OnDestroy {
+export class S116004Page implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"

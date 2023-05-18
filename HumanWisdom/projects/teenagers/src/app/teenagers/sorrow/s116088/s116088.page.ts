@@ -18,7 +18,7 @@ export class S116088Page implements OnInit,OnDestroy {
   title="#8 When you are ready, embrace the emptiness you feel. That brings peace."  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/sorrow-loss/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/sorrow/audios/1.5.mp3'
   transcriptPage="sorrow/s116088t"
   toc="sorrow/s116001"
   bookmark=0

@@ -93,22 +93,22 @@ export class S116037Page implements OnInit, OnDestroy
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/sorrow/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/conditioning/s116036'])
+    this.router.navigate(['/sorrow/s116036'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/conditioning/s116037'])
+    // this.router.navigate(['/sorrow/s116037'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/conditioning/s116038'])
+    this.router.navigate(['/sorrow/s116038'])
   }
 
   ngOnDestroy() 
