@@ -14,7 +14,7 @@ export class S112160Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/92.png"
   
   bg=""
-  moduleLink="/adults/dealing-with-depression"
+  moduleLink="/dealing-with-depression"
   moduleName=" Dealing with depression"
   sectionName= "Manage your emotions";
   moduleId=113
@@ -46,7 +46,7 @@ export class S112160Page implements OnInit {
     if (cur && cur === 'stress') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
      
-      this.moduleLink = "/adults/conditioning"
+      this.moduleLink = "/conditioning"
       this.moduleName = "Conditioning"
       this.sectionName = "Explore How Your Mind Works";
       this.moduleId = 15

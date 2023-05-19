@@ -16,7 +16,7 @@ export class S103014Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w9"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/teenagers/modules/without-language/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/without-language/videos/1.1.mp4'  
   title="The beauty of looking without language"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any

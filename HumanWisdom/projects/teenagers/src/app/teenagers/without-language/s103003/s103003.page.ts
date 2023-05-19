@@ -17,7 +17,7 @@ export class S103003Page implements OnInit,OnDestroy {
   bg="purple_blue_w1"
   title="Looking simply"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/without-language/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/without-language/audios/1.1.mp3'
   transcriptPage="without-language/s103003t"
   toc="without-language/s103001"
   bookmark=0
