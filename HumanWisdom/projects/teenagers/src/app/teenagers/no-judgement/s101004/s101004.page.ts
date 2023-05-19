@@ -17,7 +17,7 @@ export class S101004Page implements OnInit,OnDestroy {
   bg="dark_blue_w2"
   title="Why are we critical of ourselves?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/no-judgement/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/no-judgement/audios/1.1.mp3'
   transcriptPage="/no-judgement/s101004t"
   toc="/no-judgement/s101001"
   bookmark=0

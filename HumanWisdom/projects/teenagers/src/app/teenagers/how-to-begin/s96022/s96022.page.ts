@@ -18,7 +18,7 @@ export class S96022Page implements OnInit,OnDestroy {
   bg="teal_w8"
   title="Listening - what did you notice?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/how-to-begin/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/how-to-begin/audios/1.4.mp3'
 
   transcriptPage="how-to-begin/s96022t"
   toc="how-to-begin/s96001"
