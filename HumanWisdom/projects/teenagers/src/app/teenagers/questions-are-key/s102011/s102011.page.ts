@@ -16,7 +16,7 @@ export class S102011Page implements OnInit,OnDestroy {
   bg_cft = "bg_blue_pink"
   bg = "blue_pink_w9"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/teenagers/modules/questions-are-key/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/questions-are-key/videos/1.1.mp4'  
   title="Questions are the key to discovering wisdom"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any

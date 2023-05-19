@@ -99,7 +99,11 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/comparison/comparison.module').then( m => m.ComparisonModule)
   },
   {
-    path: 'reactive-mind',
+    path: 'fear-anxiety',
+    loadChildren: () => import('./teenagers/fear-anxiety/fear-anxiety.module').then( m => m.FearAnxietyModule)
+   
+   },
+   { path: 'reactive-mind',
     loadChildren: () => import('./teenagers/reactive-mind/reactive-mind.module').then( m => m.ReactiveMindModule)
   },
   {
@@ -109,6 +113,10 @@ const routes: Routes = [
   {
     path: 'self-interest',
     loadChildren: () => import('./teenagers/self-interest/self-interest.module').then( m => m.SelfInterestModule)
+  },
+  {
+    path: 'sorrow',
+    loadChildren: () => import('./teenagers/sorrow/sorrow.module').then(m => m.SorrowModule)
   },
 ];
 

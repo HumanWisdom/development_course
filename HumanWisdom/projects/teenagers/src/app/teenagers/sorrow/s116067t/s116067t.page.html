@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If we are human, we are going to lose people and things we value and this is going to be painful. We can be quickly overwhelmed by the number of emotions we are faced with, over which we have no control, and which can create an unbearable sadness.How can we use our wisdom to deal with this in a fresh way? Welcome to this session where we are going to apply everything we have learned so far to explore how we can meet loss with wisdom. This understanding can help us prepare for loss when it happens - and deal with it more effectively.  It's like learning to swim, so when the challenge arrives we can respond with wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
