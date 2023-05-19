@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If we lose a pet of someone we were close to and spent a lot of time with, we may feel lonely. The lack of connection may feel like a void that is very painful. Being connected is a core human need. We explore that more fully in the module on loneliness. We are suddenly faced with being alone and with ourselves and that feels unfamiliar and distressing. It is perhaps worth asking why we are not comfortable with ourselves, with being alone?
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

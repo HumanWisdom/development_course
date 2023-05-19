@@ -114,6 +114,10 @@ const routes: Routes = [
     path: 'self-interest',
     loadChildren: () => import('./teenagers/self-interest/self-interest.module').then( m => m.SelfInterestModule)
   },
+  {
+    path: 'sorrow',
+    loadChildren: () => import('./teenagers/sorrow/sorrow.module').then(m => m.SorrowModule)
+  },
 ];
 
 @NgModule({

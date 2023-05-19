@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The pain we feel from any loss is ultimately the difference between how things are and how we would like them to be. If the loss is irreversible, if we can accept it completely our pain can melt away. We have explored the cycles of grief and at the end of that is acceptance when most people are able to move on with their lives. Everyone reaches this point of acceptance in their own time, and it cannot be hurried. Take your time. Grief is normal. Just asking yourself ‘Can I accept things as they are’ and that question may open the door to exploring different ways of looking at the situation
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
