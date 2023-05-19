@@ -5,11 +5,11 @@ import { AdultsService } from "../../adults.service";
 
 
 @Component({
-  selector: 'app-s61050',
-  templateUrl: './s61050.page.html',
-  styleUrls: ['./s61050.page.scss'],
+  selector: 'app-s61170',
+  templateUrl: './s61170.page.html',
+  styleUrls: ['./s61170.page.scss'],
 })
-export class S61050Page implements OnInit, OnDestroy {
+export class S61170Page implements OnInit, OnDestroy {
 
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
@@ -19,7 +19,7 @@ export class S61050Page implements OnInit, OnDestroy {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = 61050
+  screenNumber = 61170
   startTime: any
   endTime: any
   totalTime: any
@@ -50,9 +50,9 @@ export class S61050Page implements OnInit, OnDestroy {
 
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmark61050")) == 0)
+    if (JSON.parse(sessionStorage.getItem("bookmark61170")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark61050")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark61170")) == 1)
       this.bookmark = 1
 
 
@@ -66,7 +66,7 @@ export class S61050Page implements OnInit, OnDestroy {
       this.bookmark = 1
     else
       this.bookmark = 0
-    sessionStorage.setItem("bookmark61050", JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark61170", JSON.stringify(this.bookmark))
   }
   createScreen() {
     this.service.createScreen({
@@ -81,7 +81,7 @@ export class S61050Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/loneliness/s61051'])
+    this.router.navigate(['/adults/loneliness/s61171'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -96,7 +96,7 @@ export class S61050Page implements OnInit, OnDestroy {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/adults/conditioning/s6105034'])
+        //this.router.navigate(['/adults/loneliness/s6117034'])
       })
 
 
@@ -109,7 +109,7 @@ export class S61050Page implements OnInit, OnDestroy {
 
 
   goNext() {
-    // this.router.navigate(['/adults/loneliness/s61050'])
+    // this.router.navigate(['/adults/loneliness/s61170'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

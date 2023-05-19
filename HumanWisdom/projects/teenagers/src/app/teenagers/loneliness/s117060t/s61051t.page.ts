@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 @Component({
-  selector: 'app-s61051t',
-  templateUrl: './s61051t.page.html',
-  styleUrls: ['./s61051t.page.scss'],
+  selector: 'app-s61171t',
+  templateUrl: './s61171t.page.html',
+  styleUrls: ['./s61171t.page.scss'],
 })
-export class S61051tPage implements OnInit {
+export class S61171tPage implements OnInit {
 
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
@@ -16,13 +16,13 @@ export class S61051tPage implements OnInit {
 
   bookmark=0
   path=this.router.url
-  audioPage="/loneliness/s61051"
+  audioPage="/loneliness/s61171"
   toc="/loneliness/s61001"
   
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=61051
+  screenNumber=61171
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -30,8 +30,8 @@ export class S61051tPage implements OnInit {
   
  
   
-  avDuration=localStorage.getItem("avDuration61051")
-  totalTime=localStorage.getItem("totalTime61051")
+  avDuration=localStorage.getItem("avDuration61171")
+  totalTime=localStorage.getItem("totalTime61171")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   constructor(private router: Router,
@@ -45,9 +45,9 @@ export class S61051tPage implements OnInit {
     else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
  
-    if(JSON.parse(sessionStorage.getItem("bookmark61051"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark61171"))==0)
     this.bookmark=0
-  else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61051"))==1)
+  else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61171"))==1)
     this.bookmark=1
   
    
@@ -59,10 +59,10 @@ export class S61051tPage implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark61051",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark61171",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/adults/loneliness/s61052'])
+    this.router.navigate(['/adults/loneliness/s61172'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -79,7 +79,7 @@ export class S61051tPage implements OnInit {
     
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61050'])
+    this.router.navigate(['/adults/loneliness/s61170'])
   }
 
 

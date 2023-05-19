@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 @Component({
-  selector: 'app-s61055',
-  templateUrl: './s61055.page.html',
-  styleUrls: ['./s61055.page.scss'],
+  selector: 'app-s61175',
+  templateUrl: './s61175.page.html',
+  styleUrls: ['./s61175.page.scss'],
 })
-export class S61055Page implements OnInit {
+export class S61175Page implements OnInit {
 
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
@@ -19,7 +19,7 @@ export class S61055Page implements OnInit {
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
 
-  screenNumber=61055
+  screenNumber=61175
   startTime:any
   endTime:any
   totalTime:any
@@ -137,9 +137,9 @@ export class S61055Page implements OnInit {
    
 
     
-    if(JSON.parse(sessionStorage.getItem("bookmark61055"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark61175"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61055"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61175"))==1)
       this.bookmark=1
 
    
@@ -156,7 +156,7 @@ export class S61055Page implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark61055",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark61175",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -175,7 +175,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/loneliness/s61056'])
+    this.router.navigate(['/adults/loneliness/s61176'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -195,13 +195,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/adults/loneliness/s61055'])
+       // this.router.navigate(['/adults/loneliness/s61175'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61054'])
+    this.router.navigate(['/adults/loneliness/s61174'])
 
 
   }

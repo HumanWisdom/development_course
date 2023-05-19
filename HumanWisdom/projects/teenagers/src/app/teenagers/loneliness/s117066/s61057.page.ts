@@ -6,11 +6,11 @@ import * as jQuery from 'jquery';
 
 
 @Component({
-  selector: 'app-s61057-audio',
-  templateUrl: './s61057.page.html',
-  styleUrls: ['./s61057.page.scss'],
+  selector: 'app-s61177-audio',
+  templateUrl: './s61177.page.html',
+  styleUrls: ['./s61177.page.scss'],
 })
-export class S61057Page implements OnInit,OnDestroy {
+export class S61177Page implements OnInit,OnDestroy {
 
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
@@ -21,7 +21,7 @@ export class S61057Page implements OnInit,OnDestroy {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/loneliness/audios/loneliness+2.4.mp3'
 
-  transcriptPage="loneliness/s61057t"
+  transcriptPage="loneliness/s61177t"
   toc="loneliness/s61001"
   bookmark=0
   path=this.router.url
@@ -30,7 +30,7 @@ export class S61057Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=61057
+  screenNumber=61177
   startTime:any
   endTime:any
   totalTime:any
@@ -50,9 +50,9 @@ export class S61057Page implements OnInit,OnDestroy {
  
     this.startTime = Date.now();
     this.createScreen()
-    if(JSON.parse(sessionStorage.getItem("bookmark61057"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark61177"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61057"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61177"))==1)
       this.bookmark=1
  
   }
@@ -78,7 +78,7 @@ export class S61057Page implements OnInit,OnDestroy {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark61057",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark61177",JSON.stringify(this.bookmark))
   }
  
   receiveAvDuration(e){
@@ -91,7 +91,7 @@ export class S61057Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/loneliness/s61058'])
+    this.router.navigate(['/adults/loneliness/s61178'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -112,13 +112,13 @@ export class S61057Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61056'])
+    this.router.navigate(['/adults/loneliness/s61176'])
  
  
   }
   ngOnDestroy(){
-    localStorage.setItem("totalTime61057",this.totalTime)
-    localStorage.setItem("avDuration61057",this.avDuration)
+    localStorage.setItem("totalTime61177",this.totalTime)
+    localStorage.setItem("avDuration61177",this.avDuration)
  
   }
 }

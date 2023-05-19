@@ -5,11 +5,11 @@ import {Location } from '@angular/common'
 
 
 @Component({
-  selector: 'app-s61058',
-  templateUrl: './s61058.page.html',
-  styleUrls: ['./s61058.page.scss'],
+  selector: 'app-s61178',
+  templateUrl: './s61178.page.html',
+  styleUrls: ['./s61178.page.scss'],
 })
-export class S61058Page implements OnInit,OnDestroy {
+export class S61178Page implements OnInit,OnDestroy {
 
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
@@ -18,7 +18,7 @@ export class S61058Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=61058
+  screenNumber=61178
   startTime:any
   endTime:any
   totalTime:any
@@ -49,9 +49,9 @@ ngOnInit() {
   
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark61058"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark61178"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61058"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61178"))==1)
       this.bookmark=1
    
    
@@ -66,7 +66,7 @@ ngOnInit() {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark61058",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark61178",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -87,7 +87,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/loneliness/s61059'])
+    this.router.navigate(['/adults/loneliness/s61179'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -103,14 +103,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/conditioning/s26105861058'])
+        //this.router.navigate(['/adults/loneliness/s26117861178'])
       })
      
     
 
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61057'])
+    this.router.navigate(['/adults/loneliness/s61177'])
 
   }
   

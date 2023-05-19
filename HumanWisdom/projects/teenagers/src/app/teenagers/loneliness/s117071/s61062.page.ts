@@ -91,7 +91,7 @@ export class S61062Page implements OnInit, OnDestroy {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/adults/conditioning/s234'])
+        //this.router.navigate(['/adults/loneliness/s234'])
       })
 
 

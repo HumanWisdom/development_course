@@ -102,14 +102,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/conditioning/s234'])
+        //this.router.navigate(['/adults/loneliness/s234'])
       })
      
     
 
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61105'])
+    this.router.navigate(['/adults/loneliness/s61117'])
 
   }
   

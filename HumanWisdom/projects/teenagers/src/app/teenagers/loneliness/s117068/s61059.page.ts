@@ -5,11 +5,11 @@ import {Location } from '@angular/common'
 
 
 @Component({
-  selector: 'app-s61059',
-  templateUrl: './s61059.page.html',
-  styleUrls: ['./s61059.page.scss'],
+  selector: 'app-s61179',
+  templateUrl: './s61179.page.html',
+  styleUrls: ['./s61179.page.scss'],
 })
-export class S61059Page implements OnInit,OnDestroy {
+export class S61179Page implements OnInit,OnDestroy {
 
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
@@ -19,7 +19,7 @@ export class S61059Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=61059
+  screenNumber=61179
   startTime:any
   endTime:any
   totalTime:any
@@ -49,9 +49,9 @@ ngOnInit() {
   
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark61059"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark61179"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61059"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61179"))==1)
       this.bookmark=1
    
    
@@ -66,7 +66,7 @@ ngOnInit() {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark61059",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark61179",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -102,14 +102,14 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/adults/conditioning/s234'])
+        //this.router.navigate(['/adults/loneliness/s234'])
       })
      
     
 
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61058'])
+    this.router.navigate(['/adults/loneliness/s61178'])
 
   }
   

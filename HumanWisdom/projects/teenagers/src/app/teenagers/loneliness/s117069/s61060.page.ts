@@ -34,7 +34,7 @@ export class S61060Page implements OnInit {
 
   sessionPoints(){
     this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"61035,61036,61037,61038,61039,61040,61041,61042,61043,61044,61045,61046,61047,61048,61049,61050,61051,61052,61053,61054,61055,61056,61057,61058,61059"})
+    "ScreenNos":"61035,61036,61037,61038,61039,61040,61041,61042,61043,61044,61045,61046,61047,61048,61049,61170,61171,61172,61173,61174,61175,61176,61177,61178,61179"})
     .subscribe(res=>
       {console.log("points",res)
       this.points=res
@@ -47,7 +47,7 @@ export class S61060Page implements OnInit {
     this.router.navigate(['/adults/loneliness/s61061'])
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61059'])
+    this.router.navigate(['/adults/loneliness/s61179'])
 
   }
 

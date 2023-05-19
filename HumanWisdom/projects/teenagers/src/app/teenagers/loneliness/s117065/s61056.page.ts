@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
 @Component({
-  selector: 'app-s61056',
-  templateUrl: './s61056.page.html',
-  styleUrls: ['./s61056.page.scss'],
+  selector: 'app-s61176',
+  templateUrl: './s61176.page.html',
+  styleUrls: ['./s61176.page.scss'],
 })
-export class S61056Page implements OnInit,OnDestroy {
+export class S61176Page implements OnInit,OnDestroy {
 
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
@@ -23,7 +23,7 @@ export class S61056Page implements OnInit,OnDestroy {
 
  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=61056
+  screenNumber=61176
   startTime:any
   endTime:any
   totalTime:any  
@@ -55,9 +55,9 @@ ngOnInit() {
   
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark61056"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark61176"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61056"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark61176"))==1)
       this.bookmark=1
    
    
@@ -72,7 +72,7 @@ ngOnInit() {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark61056",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark61176",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -93,7 +93,7 @@ createScreen(){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/loneliness/s61057'])
+    this.router.navigate(['/adults/loneliness/s61177'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -114,7 +114,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/adults/loneliness/s61055'])
+    this.router.navigate(['/adults/loneliness/s61175'])
 
 
   }
