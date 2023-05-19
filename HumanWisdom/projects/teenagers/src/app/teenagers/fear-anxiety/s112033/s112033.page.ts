@@ -112,7 +112,7 @@ export class S112033Page implements OnInit {
 
       },
       () => {
-        this.router.navigate(['/fear-anxiety/s112036'])
+        this.router.navigate(['/fear-anxiety/s112034'])
       })
   }
 
