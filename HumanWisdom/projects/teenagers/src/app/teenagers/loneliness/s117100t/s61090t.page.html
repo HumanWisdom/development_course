@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Just being with a lot of people, either on social media or in real life does not always help our loneliness, as we hoped it would. It is the depth of connection with ourselves and others that can make a difference. How can we do that? We have explored this in the communication module, but one way is to move from sharing your thoughts, ideas and opinions to sharing your feelings with others, including those feelings which make you feel more vulnerable, like your fears, and hopes. Peak communication is possible with only a select few, and that involves being able to share what you feel about each other, whether it's a brother or sister, or a child, or a friend or a partner. You could tell people you love them, for example, or if they did something that upset you. Our fear often holds us back from doing this, bu
+          the other side of that fear is a much richer deeper relationship, which can be a balm for our loneliness. 
+        </h3>
+         
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
