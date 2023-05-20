@@ -47,7 +47,7 @@
                   </h4>
             
                 </div>
-                <div class="col-md-1 col-sm-1 col-xs-2" *ngIf="isPostEditable">
+                <div class="col-md-1 col-sm-1 col-xs-1" *ngIf="isPostEditable">
                   <button type="submit" *ngIf="posttread.UserId==userID" [disabled]="!isLoggedIn" (click)="editPost()" class="btn btn_ficons">
                     <i class="fa fa-pencil"> </i>
                   </button>
@@ -162,7 +162,7 @@
                     </div> -->
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="col-md-11 col-sm-11 col-xs-11 p0">                      
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">                      
                         <h4 class="fw_500 fs_14px lh_16px fc_000000 commenter mtb0px">
                           {{item.ReplyPostUserName}}
                           <span class="fw_400 fs_10px fc_adadad">
@@ -176,11 +176,19 @@
                         
                         <textarea *ngIf="editCommentId == item.ReplyPostID" (focusout)="onChangeComment(item)" type="text"name="comment" id="comment" [(ngModel)]="item.ReplyPost" required="required" class="txtarea_fl_comment" placeholder="Edit Comment" rows="5"></textarea>           
                       </div> 
-                      <div class="col-md-1 col-sm-1 col-xs-1">
+                      <div class="col-md-1 col-sm-1 col-xs-1" >
                         <button type="submit" *ngIf="item.ReplyPostUserID==userID" [disabled]="!isLoggedIn" (click)="editComment(item.ReplyPostID)" class="btn btn_ficons">
                           <i class="fa fa-pencil"> </i>
                         </button>
-                      </div>                   
+                      </div> 
+                      
+                      <div class="col-md-1 col-sm-1 col-xs-1" >
+                        <button type="submit" *ngIf="posttread.UserId==userID" [disabled]="!isLoggedIn" (click)="deleteComment(item.ReplyPostID)" class="btn btn_ficons">
+                          <i class="fa fa-trash-o"> </i>
+                        </button>
+                      </div>
+
+
                     </div>
                   </div>
 
