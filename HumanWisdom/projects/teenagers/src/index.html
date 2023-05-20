@@ -374,7 +374,16 @@
             window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
           }
         });
-
+        
+        $(document).on('click', '#downloadFile', function () {
+        if (window.webkit) {
+          setTimeout(() => {
+            console.log(localStorage.getItem('fileName')+"---------------");
+          console.log(localstorage.getItem('myFileContent')+"-----------");
+          window.webkit.messageHandlers.nativeActionHandler.postMessage(localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
+          }, 200);
+        }
+      });
       });
 
 
