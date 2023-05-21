@@ -185,7 +185,7 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/adults/loneliness/s117079'])
+       // this.router.navigate(['/loneliness/s117079'])
       })
     
 

@@ -17,7 +17,7 @@ export class S117066Page implements OnInit,OnDestroy {
   bg="green_yellow_w1"
   title="The paradox of loneliness  "  
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/loneliness/audios/loneliness+2.4.mp3'
 
   transcriptPage="loneliness/s117066t"

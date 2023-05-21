@@ -24,7 +24,7 @@ export class S117059Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "loneliness/s61001"
+  toc = "loneliness/s117001"
   path = this.router.url
 
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
@@ -94,7 +94,7 @@ export class S117059Page implements OnInit, OnDestroy {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/adults/conditioning/s234'])
+        //this.router.navigate(['/loneliness/s234'])
       })
   }
 
@@ -105,7 +105,7 @@ export class S117059Page implements OnInit, OnDestroy {
 
   goNext() 
   {
-    // this.router.navigate(['/adults/comparison/s2'])
+    // this.router.navigate(['/comparison/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

@@ -13,7 +13,7 @@ export class S117028Page implements OnInit,OnDestroy {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w8"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/loneliness/videos/1.3.mp4'  
   title="When we are not understood, we can feel lonely  "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/loneliness/loneliness_03.jpg"

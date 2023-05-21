@@ -19,7 +19,7 @@ export class S117074Page implements OnInit,OnDestroy {
   
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.1.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/1.2.mp3'
 
   transcriptPage="loneliness/s117074t"
   toc="loneliness/s117001"

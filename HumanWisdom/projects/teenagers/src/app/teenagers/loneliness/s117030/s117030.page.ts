@@ -13,7 +13,7 @@ export class S117030Page implements OnInit {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w7"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/loneliness/audios/loneliness+2.3.mp3'
   title=" What is going on in our thinking, when we feel lonely?  "
 

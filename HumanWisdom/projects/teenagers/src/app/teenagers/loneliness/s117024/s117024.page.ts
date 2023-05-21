@@ -13,7 +13,7 @@ export class S117024Page implements OnInit,OnDestroy {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w4"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/loneliness/videos/1.2.mp4'  
   title="What is behind this feeling of loneliness?  "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/loneliness/loneliness_02.jpg"

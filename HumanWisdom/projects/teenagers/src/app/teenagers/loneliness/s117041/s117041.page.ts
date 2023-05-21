@@ -17,10 +17,10 @@ export class S117041Page implements OnInit,OnDestroy {
   bg="green_yellow_w1"
   title="Impact of loneliness  "  
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/loneliness/audios/loneliness+2.1.mp3'
   transcriptPage="loneliness/s117041t"
-  toc="loneliness/s61001"
+  toc="loneliness/s117001"
   bookmark=0
   path=this.router.url
   avDuration:any

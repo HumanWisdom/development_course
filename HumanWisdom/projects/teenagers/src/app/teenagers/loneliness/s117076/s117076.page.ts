@@ -18,9 +18,9 @@ export class S117076Page implements OnInit,OnDestroy {
   title=" Being comfortable with ourselves  "  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.2.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/1.3.mp3'
   transcriptPage="loneliness/s117076t"
-  toc="loneliness/s61001"
+  toc="loneliness/s117001"
   bookmark=0
   path=this.router.url
   avDuration:any

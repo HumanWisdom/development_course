@@ -17,7 +17,7 @@ export class S117053Page implements OnInit,OnDestroy {
   bg="green_yellow_w3"
   title="The fear of being alone  "  
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/loneliness/audios/loneliness+2.2.mp3'
 
   transcriptPage="loneliness/s117053t"

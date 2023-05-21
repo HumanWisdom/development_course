@@ -15,7 +15,7 @@ export class S117006Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w3"
   title="How can we explore loneliness?  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/loneliness/audios/loneliness+1.1.mp3'
   transcriptPage="loneliness/s117006t"
   toc="loneliness/s117001"
