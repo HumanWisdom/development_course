@@ -16,7 +16,7 @@ export class S117004Page implements OnInit {
   title="Introduction"
   
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness-loss/audios/loneliness+1.1.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04"," btn_5circles_05 disabled"]
   text=[
       "Nurture a quiet mind",
