@@ -99,6 +99,9 @@ export class LoginSignupPage implements OnInit {
     { validator: this.PasswordValidator }
   );
 
+  content = '';
+  enableAlert = false;
+
   constructor(
     private fb: UntypedFormBuilder,
     private router: Router,
@@ -180,7 +183,8 @@ export class LoginSignupPage implements OnInit {
       .subscribe(
         (res) => {
           if (res > 0) {
-            window.alert("An email has been sent to you");
+            this.content = "An email has been sent to you";
+            this.enableAlert = true;
             this.enableotpmodal.nativeElement.click();
             this.showMessage = true;
             this.signUser = res;
@@ -191,7 +195,8 @@ export class LoginSignupPage implements OnInit {
         (error) => {
           console.log(error.error.Message);
           this.message = error.error.Message;
-          window.alert(this.message);
+          this.content = this.message;
+          this.enableAlert = true;
           this.showWarning = true;
         },
         () => {
@@ -226,15 +231,15 @@ export class LoginSignupPage implements OnInit {
               "password",
               JSON.stringify(this.registrationForm.get("password").value)
             );
-            window.alert(
-              "Code has been verified , Login with Your Credentials"
-            );
+            this.content = "Code has been verified , Login with Your Credentials";
+            this.enableAlert = true;
             window.location.reload();
             // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
-          window.alert(err.error["Message"]);
+          this.content = err.error["Message"];
+          this.enableAlert = true;
         }
       );
   }
@@ -302,9 +307,8 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                window.alert(
-                  "You have enetered wrong credentials. Please try again."
-                );
+                this.content ="You have enetered wrong credentials. Please try again.";
+                this.enableAlert = true;
                 this.email = "";
                 this.password = "";
               } else {
@@ -466,9 +470,8 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                window.alert(
-                  "You have enetered wrong credentials. Please try again."
-                );
+                this.content ="You have enetered wrong credentials. Please try again.";
+                this.enableAlert = true;
                 this.email = "";
                 this.password = "";
               } else {
@@ -563,9 +566,8 @@ export class LoginSignupPage implements OnInit {
             }
           });
       } else {
-        window.alert(
-          "Please ensure that you use an email based authentication with your Auth provider or try another method"
-        );
+        this.content ="Please ensure that you use an email based authentication with your Auth provider or try another method";
+        this.enableAlert = true;
       }
     });
   }
@@ -579,16 +581,14 @@ export class LoginSignupPage implements OnInit {
       (res) => {
         if (res.UserId === 0) {
           this.showAlert = true;
-          window.alert(
-            "You have enetered wrong credentials. Please try again."
-          );
+          this.content = "You have enetered wrong credentials. Please try again.";
+          this.enableAlert = true;
           this.email = "";
           this.password = "";
         } else if (res.UserId === -1) {
           this.showAlert = true;
-          window.alert(
-            "Email was Not Verified. Please signup again with the same Email ID to verify it."
-          );
+          this.content =  "Email was Not Verified. Please signup again with the same Email ID to verify it.";
+          this.enableAlert = true;
           this.email = "";
           this.password = "";
         } else {
@@ -851,5 +851,10 @@ export class LoginSignupPage implements OnInit {
 
   navigate(url) {
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 }
