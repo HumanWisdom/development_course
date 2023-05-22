@@ -15,7 +15,7 @@ export class S111046Page implements OnInit,OnDestroy {
   bg="green_yellow_w4"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/comparison/videos/2.2.mp4'  
-  title="A conversation on envyThe impact of comparing children with each other"
+  title="The impact of comparing children with each other"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
