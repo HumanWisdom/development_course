@@ -50,6 +50,8 @@ export class S112033Page implements OnInit {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    this.reflectionA = this.qrList.ListOfReflection
+    this.findReflection()
 
     if (this.saveUsername == false) 
     { 
@@ -87,6 +89,20 @@ export class S112033Page implements OnInit {
       "ScreenNo": this.screenNumber
     }).subscribe(res => {})
   }
+
+  findReflection() 
+  {
+    for (var i = 0; i < this.reflectionA.length; i++) 
+    {
+      if (this.rId == this.reflectionA[i].ReflectionId) 
+      {
+        this.reflection = this.reflectionA[i].Que
+        // this.optionList.push(this.questionA[i])
+      }
+    }
+    console.log(this.reflection)
+  }
+
 
   submitProgress(e) 
   {
