@@ -13,7 +13,7 @@ declare var $: any;
   styleUrls: ['./daily-practice.page.scss'],
 })
 export class DailyPracticePage implements OnInit {
-
+  enableVideo = true;
   yellow = "#FFC455"
   title = "Exploring anger"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
@@ -127,4 +127,17 @@ export class DailyPracticePage implements OnInit {
     this.logeventservice.logEvent(evtName);
   }
 
+  next(){
+    this.enableVideo= false;
+  setTimeout(() => {
+    this.enableVideo =true; 
+  }, 200);
+  }
+
+  back(){
+    this.enableVideo= false;
+    setTimeout(() => {
+      this.enableVideo =true; 
+    }, 200);
+  }
 }
