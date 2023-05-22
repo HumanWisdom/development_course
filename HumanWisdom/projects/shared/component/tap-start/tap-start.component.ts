@@ -21,14 +21,27 @@ export class TapStartComponent implements OnInit,AfterViewInit {
 
   pageaction = localStorage.getItem("pageaction");
   bg_cft="bg_dark_blue"
+  shared = false;
+  urlT:any
 
   constructor( private captureService:NgxCaptureService,
     private aservice:AdultsService,
     private router:Router) {
-
+      if(this.router.getCurrentNavigation()) {
+        this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
+      }
     }
 
   ngOnInit() {
+    let progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
+    if(location.href.includes("t="))
+    {
+      this.shared=true
+    }
+    if (this.urlT)
+    {
+      this.shared=true
+    }
     this.path=this.router.url
     let str = this.path.replace(/\D/g,'');
     this.scrId = str;
