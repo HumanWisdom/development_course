@@ -455,20 +455,20 @@
   <div class="modal-dialog center_flex" role="document">
     <div class="modal-content popup_03">
       <div class="modal-body">
-        
+
         <div class="row mb10px">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
             <h4 class="fw_400 fs_14px lh_21px fc_000000 italici mtb0px">
               <span class="mtb0px">
                 A one-time password has been sent to your email address
               </span>
-              
+
               <span class="fc_1092a7 fw_500">
                 (Check your spam folder too).
               </span>
 
               <br>
-              
+
               <span class="mtb0px">
                 Please enter it below.
               </span>
@@ -481,7 +481,7 @@
             <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
           </div>
         </div>
-        
+
       </div>
       <div class="modal-footer b0">
         <button type="button" class="btn btn-primary" [disabled]="!verificationCode" (click)="verifyCode()">Submit</button>
@@ -491,3 +491,8 @@
 </div>
 
 <span #enableotpmodal data-toggle="modal" data-target="#enableotpmodal"></span>
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="content">
+</app-modal>
