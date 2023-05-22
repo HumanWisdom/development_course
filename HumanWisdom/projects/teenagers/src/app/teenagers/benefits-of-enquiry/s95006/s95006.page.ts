@@ -17,7 +17,7 @@ export class S95006Page implements OnInit,OnDestroy {
   bg="green_yellow_w3"
   title="No one can tell you what water tastes like."
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/benefits-of-enquiry/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.2.mp3'
 
   transcriptPage="benefits-of-enquiry/s95006t"
   toc="benefits-of-enquiry/s95001"

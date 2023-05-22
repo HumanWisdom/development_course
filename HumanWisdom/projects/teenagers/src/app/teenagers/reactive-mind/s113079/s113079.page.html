@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s113079</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+ <app-simple-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+    <h1 class="txt1">
+      Wisdom begins when you can ask yourself - What is going in me to make me react this way - and then go on a journey of learning about yourself.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

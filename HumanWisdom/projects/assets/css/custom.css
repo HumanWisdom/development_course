@@ -31970,3 +31970,29 @@ label.select_label:after
   border: 0;
   box-shadow: unset;
 }
+
+.popup_04
+{
+  background: linear-gradient(180deg, #1092A7 -1.41%, #70C6BD 100%);
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  min-height: 100px;
+  width: 315px;
+  transform: translate(0, 50%);
+  /* text-align: center; */
+}
+
+.popup_04 .modal-body
+{
+  padding: 0 15px 0 15px;
+}
+
+.popup_04 .modal-footer
+{
+  position: relative;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  bottom: 0;
+  /* text-align: center; */
+}

@@ -1,0 +1,21 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Fear of losing people we love can make us possessive of our friends, and we can feel threatened if they form new friendships with others. We do not see that this possessiveness comes from our own insecurity. Relationships are not a cage in which we can hold people captive, and unless there is freedom, and people are with us of their own will, there can be no love or goodness. What is the quality of a relationship if there is no love in it? Our possessiveness can eventually harm our relationships. Or we can live with a constant anxiety people will leave us, and we will be alone. The way through this is to accept that if we are alone we will be fine, because we have explored being alone, and made friends with ourselves, and other people will enter our lives.
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+

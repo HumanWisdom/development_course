@@ -17,7 +17,7 @@ export class S97010Page implements OnInit,OnDestroy {
   bg="pink_orange_w8"
   title="A friend forgets your birthday"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/three-steps-enquiry/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/three-steps-enquiry/audios/1.4.mp3'
 
   transcriptPage="three-steps-enquiry/s97010t"
   toc="three-steps-enquiry/s97001"

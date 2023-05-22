@@ -67,3 +67,7 @@
   <!--/Class -->
 </div>
 <!-- /page content -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'You have reached your free limit. Please subscribe to Premium to unlock full access to the app'">
+</app-modal>
