@@ -2553,7 +2553,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   public saveAsPDF() {
-    const div = document.getElementById('myDiv'); // replace with the ID of your div
+    const div = document.getElementById('myDiv'); 
+    const content = div.innerHTML;
+    const base64 = btoa(content);
+    localStorage.setItem("myFileContent", base64);
+    localStorage.setItem('fileName',this.currentModuleName);
+    const event = new CustomEvent('downloadButtonClicked');
+    window.dispatchEvent(event);
+    // replace with the ID of your div
     html2canvas(div, {scale: 3}
       ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
