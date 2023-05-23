@@ -144,6 +144,16 @@ posttext='';
       }
     });
   }
+
+  deleteComment(ReplyPostID){
+    this.service.deletePost(ReplyPostID).subscribe(res=>{
+      if(res){
+        this.service.toastrService.success('','Deleted Successfully !');
+        this.reploadpage();
+      }
+    });
+  }
+
 replyPost(){
   this.list.ReplyPost.sort(function (a, b) {
     return b.ReplyPostID - a.ReplyPostID;

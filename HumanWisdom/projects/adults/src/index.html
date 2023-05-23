@@ -463,17 +463,26 @@
             window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
           }
         }
-
-
-
-
       });
+
       $(document).on('click', '#liSubscribe', function () {
         if (window.webkit) {
           window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
         }
       });
 
+      window.addEventListener('downloadButtonClicked', function() {
+        console.log('fileName-----------------'+localStorage.getItem('myFileContent'));
+        if (window.webkit) {
+          console.log('fileName'+localStorage.getItem('myFileContent'));
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile",localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
+        }
+
+        if (window.AndroidHandler) {
+            window.AndroidHandler.DownloadFile(localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
+        }
+    // Perform the download action here
+   });
     });
 
 
