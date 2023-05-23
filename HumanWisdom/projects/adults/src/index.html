@@ -472,9 +472,9 @@
       });
 
       window.addEventListener('downloadButtonClicked', function() {
-        console.log('fileName-----------------'+localStorage.getItem('myFileContent'));
+        console.log('fileName'+myFileContentData);
         if (window.webkit) {
-          console.log('fileName'+localStorage.getItem('myFileContent'));
+          console.log('fileName'+myFileContentData);
           window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile",localStorage.getItem('fileName'), localStorage.getItem('myFileContent'));
         }
 
