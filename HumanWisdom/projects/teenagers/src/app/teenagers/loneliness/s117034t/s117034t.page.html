@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When we feel lonely it is natural to think it is because we are alone, or not connected with another person, but could our lack of connection with ourselves also play a role? Sometimes we do not like who we are, because we do not match up to our ideal of who we want to be. We have explored in more detail in the module on self-image. This results in an inner pain and we do not feel connected with ourselves and this can contribute to our loneliness. Our pain makes us focus on ourselves and that makes it more difficult to connect with others, which can also contribute to our loneliness.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

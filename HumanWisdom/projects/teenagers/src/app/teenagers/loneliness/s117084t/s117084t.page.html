@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored this pyramid before.
+          In layer 2 we feel lonely, and think the answer lies in being with people in layer 1, or feeling more connected with others. The origins of our loneliness are in layer 4 and an integral part of the ‘I’ which regards itself as separate and unique. Our activities of thinking in layer 3, including our relationships and our pleasures cover over this feeling of loneliness we have, and as long as they do so we don’t feel lonely. It follows that to get over our loneliness we can either travel inwards and make our peace with it in layer 4, or travel outwards, and have more nourishing relationships with a greater depth of connection. We have explored this in the relationship module
+          
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
