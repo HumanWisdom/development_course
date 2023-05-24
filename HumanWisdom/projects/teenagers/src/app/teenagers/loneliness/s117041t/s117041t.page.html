@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this section we are going to explore how loneliness shapes our lives. It can feel like a dull ache or at times an emptiness from which we cannot escape. Some people compensate and try and be the ‘life of the party’, but they too can feel lonely inside. Some people get terribly depressed. Isn’t it strange that with almost 8 billion people on our planet and the ability to connect with so many instantly, we still feel lonely?
+Long term loneliness can affect our health, our relationships and shape our lives in many ways we are not aware of. Understanding the many ways it does that allows us to respond with intelligence.
+
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

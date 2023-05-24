@@ -118,6 +118,10 @@ const routes: Routes = [
     path: 'sorrow',
     loadChildren: () => import('./teenagers/sorrow/sorrow.module').then(m => m.SorrowModule)
   },
+  {
+    path: 'loneliness',
+    loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
+  },
 ];
 
 @NgModule({

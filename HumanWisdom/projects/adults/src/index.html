@@ -474,7 +474,7 @@
       window.addEventListener('downloadButtonClicked', function() {
         console.log('fileName'+myFileContentData);
         if (window.webkit) {
-          window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile",myFileContentData);
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_"+localStorage.getItem('fileName').toString()+"_"+myFileContentData);
         }
 
         if (window.AndroidHandler) {
