@@ -126,9 +126,12 @@ posttext='';
         this.posttread=res;
         this.service.getPostDetail(res.PostID).subscribe(res=>{
           if(res){
+            this.list=[];
             this.list =res; 
             if(this.list.ReplyPost.length>0){
               this.isPostEditable = false;
+            }else{
+              this.isPostEditable = true;
             }     
           }
         })
@@ -138,18 +141,22 @@ posttext='';
 
   deletePost(){
     this.service.deletePost(this.posttread.PostID).subscribe(res=>{
-      if(res){
+      if(res==null){
         this.service.toastrService.success('','Deleted Successfully !');
         this.router.navigate(['/forum']);
+      }else{
+        this.service.toastrService.error('','Error!');
       }
     });
   }
 
   deleteComment(ReplyPostID){
     this.service.deletePost(ReplyPostID).subscribe(res=>{
-      if(res){
+      if(res==null){
         this.service.toastrService.success('','Deleted Successfully !');
         this.reploadpage();
+      }else{
+        this.service.toastrService.error('','Error!');
       }
     });
   }
