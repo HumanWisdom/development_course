@@ -474,7 +474,6 @@
       window.addEventListener('downloadButtonClicked', function() {
         console.log('fileName'+myFileContentData);
         if (window.webkit) {
-          console.log('fileName'+myFileContentData);
           window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile",myFileContentData);
         }
 
