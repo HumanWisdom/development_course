@@ -2555,15 +2555,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   public saveAsPDF() {
     const div = document.getElementById('myDiv'); 
     const content = div.innerHTML;
-    const base64 = btoa(content);
-    localStorage.setItem("myFileContent", base64);
-    localStorage.setItem('fileName',this.currentModuleName);
-    const event = new CustomEvent('downloadButtonClicked');
-    window.dispatchEvent(event);
+
     // replace with the ID of your div
     html2canvas(div, {scale: 3}
       ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
+      (window as any).myFileContentData = imgData;
+      const event = new CustomEvent('downloadButtonClicked');
+     window.dispatchEvent(event);
       const pdf = new jsPDF({
         orientation: 'portrait',
         format: 'a5',
@@ -2572,11 +2571,27 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       let pdfWidth = pdf.internal.pageSize.getWidth();
       let pdfHeight=pdf.internal.pageSize.getHeight();
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+      const blob = pdf.output('blob');
+    const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
+    //this.convertPdfToBase64(file);
+      localStorage.setItem('fileName',this.currentModuleName);
       // pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
   }
 
+  convertPdfToBase64(file: File) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string;
+     //localStorage.setItem('myFileContent',base64String);
+      console.log(base64String);
+    (window as any).myFileContentData = base64String;
+      const event = new CustomEvent('downloadButtonClicked');
+     window.dispatchEvent(event);
+    };
+    reader.readAsDataURL(file);
+  }
   shareCertificate() {
     //const url = URL.createObjectURL(this.pdfBlob.output('blob'));
     if (this.ngNavigatorShareService.canShareFile) {
@@ -2690,4 +2705,6 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
             this.router.navigate([''+moduleData.path+'/s'+moduleData.firstScreen]);
           })
     }
+
+
 }
