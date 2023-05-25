@@ -4,267 +4,267 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {SharedModule} from '../../../../../shared/shared.module'
-import {AdultsService} from '../adults.service';
 
-import { S162Page } from './s162/s162.page';  
-import { S162p0Page } from './s162p0/s162p0.page'; 
-import { S163Page } from './s163/s163.page'; 
-import { S164Page } from './s164/s164.page'; 
-import { S164tPage } from './s164t/s164t.page'; 
-import { S165Page } from './s165/s165.page'; 
-import { S166Page } from './s166/s166.page'; 
-import { S167Page } from './s167/s167.page'; 
-import { S168Page } from './s168/s168.page'; 
-import { S169Page } from './s169/s169.page'; 
-import { S169tPage } from './s169t/s169t.page'; 
-import { S170Page } from './s170/s170.page'; 
-import { S170tPage } from './s170t/s170t.page'; 
-import { S171Page } from './s171/s171.page'; 
-import { S171tPage } from './s171t/s171t.page'; 
-import { S172Page } from './s172/s172.page'; 
-import { S172tPage } from './s172t/s172t.page'; 
-import { S173Page } from './s173/s173.page'; 
-import { S174Page } from './s174/s174.page'; 
-import { S175Page } from './s175/s175.page'; 
-import { S176Page } from './s176/s176.page'; 
-import { S177Page } from './s177/s177.page'; 
-import { S178p1Page } from './s178p1/s178p1.page'; 
-import { S178p2Page } from './s178p2/s178p2.page'; 
-import { S179Page } from './s179/s179.page'; 
-import { S180Page } from './s180/s180.page'; 
-import { S181Page } from './s181/s181.page'; 
-import { S181tPage } from './s181t/s181t.page'; 
-import { S182Page } from './s182/s182.page'; 
-import { S183Page } from './s183/s183.page'; 
-import { S183tPage } from './s183t/s183t.page'; 
-import { S184Page } from './s184/s184.page'; 
-import { S184tPage } from './s184t/s184t.page'; 
-import { S185Page } from './s185/s185.page'; 
-import { S186Page } from './s186/s186.page'; 
-import { S187Page } from './s187/s187.page'; 
-import { S188Page } from './s188/s188.page'; 
-import { S188p0Page } from './s188p0/s188p0.page';
-import { S188p1Page } from './s188p1/s188p1.page';
-import { S188p2Page } from './s188p2/s188p2.page';
-import { S188p3Page } from './s188p3/s188p3.page';
-import { S188p4Page } from './s188p4/s188p4.page';
-import { S188p5Page } from './s188p5/s188p5.page';
-import { S188p6Page } from './s188p6/s188p6.page';
-import { S188p7Page } from './s188p7/s188p7.page';
-import { S188p8Page } from './s188p8/s188p8.page';
-import { S188tPage } from './s188t/s188t.page';
-import { S189Page } from './s189/s189.page'; 
-import { S189p0Page } from './s189p0/s189p0.page'; 
-import { S189p1Page } from './s189p1/s189p1.page'; 
-import { S189p2Page } from './s189p2/s189p2.page'; 
-import { S189p3Page } from './s189p3/s189p3.page'; 
-import { S189p4Page } from './s189p4/s189p4.page'; 
-import { S189p5Page } from './s189p5/s189p5.page'; 
-import { S189p6Page } from './s189p6/s189p6.page'; 
-import { S189tPage } from './s189t/s189t.page';
-import { S190Page } from './s190/s190.page'; 
-import { S191Page } from './s191/s191.page'; 
-import { S191tPage } from './s191t/s191t.page'; 
-import { S192Page } from './s192/s192.page'; 
-import { S193Page } from './s193/s193.page'; 
-import { S193tPage } from './s193t/s193t.page'; 
-import { S194Page } from './s194/s194.page'; 
-import { S195Page } from './s195/s195.page'; 
-import { S196Page } from './s196/s196.page'; 
-import { S196tPage } from './s196t/s196t.page'; 
-import { S197Page } from './s197/s197.page'; 
-import { S198p1Page } from './s198p1/s198p1.page'; 
-import { S198p2Page } from './s198p2/s198p2.page'; 
-import { S199Page } from './s199/s199.page'; 
-import { S200Page } from './s200/s200.page'; 
-import { S201Page } from './s201/s201.page';
-import { S201tPage } from './s201t/s201t.page';    
-import { S202Page } from './s202/s202.page';  
-import { S203Page } from './s203/s203.page';  
-import { S204Page } from './s204/s204.page';
-import { S204tPage } from './s204t/s204t.page';    
-import { S205Page } from './s205/s205.page';  
-import { S206Page } from './s206/s206.page';  
-import { S206tPage } from './s206t/s206t.page';  
-import { S207Page } from './s207/s207.page';  
-import { S208Page } from './s208/s208.page';  
-import { S209Page } from './s209/s209.page';  
-import { S209tPage } from './s209t/s209t.page';  
-import { S210Page } from './s210/s210.page';  
-import { S211Page } from './s211/s211.page'; 
-import { S211tPage } from './s211t/s211t.page'; 
-import { S212Page } from './s212/s212.page';  
-import { S213Page } from './s213/s213.page';  
-import { S214Page } from './s214/s214.page';  
-import { S215Page } from './s215/s215.page';  
-import { S216Page } from './s216/s216.page';
-import { S216p0Page } from './s216p0/s216p0.page';
-import { S216p1Page } from './s216p1/s216p1.page';
-import { S216p2Page } from './s216p2/s216p2.page';
-import { S216p3Page } from './s216p3/s216p3.page';
-import { S216p4Page } from './s216p4/s216p4.page';
-import { S216p5Page } from './s216p5/s216p5.page';
-import { S216p6Page } from './s216p6/s216p6.page';
-import { S216p7Page } from './s216p7/s216p7.page'; 
-import { S216tPage } from './s216t/s216t.page';
-import { S217Page } from './s217/s217.page';  
-import { S218Page } from './s218/s218.page'; 
-import { S218tPage } from './s218t/s218t.page';  
-import { S219Page } from './s219/s219.page';  
-import { S220Page } from './s220/s220.page';  
-import { S221Page } from './s221/s221.page';  
-import { S222Page } from './s222/s222.page';  
-import { S222tPage } from './s222t/s222t.page';  
-import { S223Page } from './s223/s223.page';  
-import { S224Page } from './s224/s224.page';  
-import { S225Page } from './s225/s225.page';  
-import { S226Page } from './s226/s226.page';  
-import { S227Page } from './s227/s227.page'; 
-import { S227tPage } from './s227t/s227t.page';  
-import { S228Page } from './s228/s228.page'; 
-import { S228p1Page } from './s228p1/s228p1.page'; 
-import { S228p2Page } from './s228p2/s228p2.page'; 
-import { S228p3Page } from './s228p3/s228p3.page';  
-import { S229Page } from './s229/s229.page';  
-import { S230Page } from './s230/s230.page';  
-import { S230p1Page } from './s230p1/s230p1.page'; 
-import { S230p2Page } from './s230p2/s230p2.page';  
-import { S230p3Page } from './s230p3/s230p3.page';  
-import { S231p1Page } from './s231p1/s231p1.page';  
-import { S231p2Page } from './s231p2/s231p2.page';  
+import { S118001Page } from './s118001/s118001.page';
+import { S118002Page } from './s118002/s118002.page';
+import { S118003Page } from './s118003/s118003.page';
+import { S118004Page } from './s118004/s118004.page';
+import { S118004tPage } from './s118004t/s118004t.page';
+import { S118005Page } from './s118005/s118005.page';
+import { S118006Page } from './s118006/s118006.page';
+import { S118007Page } from './s118007/s118007.page';
+import { S118008Page } from './s118008/s118008.page';
+import { S118009Page } from './s118009/s118009.page';
+import { S118009tPage } from './s118009t/s118009t.page';
+import { S118010Page } from './s118010/s118010.page';
+import { S118010tPage } from './s118010t/s118010t.page';
+import { S118011Page } from './s118011/s118011.page';
+import { S118011tPage } from './s118011t/s118011t.page';
+import { S118012Page } from './s118012/s118012.page';
+import { S118012tPage } from './s118012t/s118012t.page';
+import { S118013Page } from './s118013/s118013.page';
+import { S118014Page } from './s118014/s118014.page';
+import { S118015Page } from './s118015/s118015.page';
+import { S118016Page } from './s118016/s118016.page';
+import { S118017Page } from './s118017/s118017.page';
+import { S118018Page } from './s118018/s118018.page';
+import { S118019Page } from './s118019/s118019.page';
+import { S118020Page } from './s118020/s118020.page';
+import { S118021Page } from './s118021/s118021.page';
+import { S118022Page } from './s118022/s118022.page';
+import { S118022tPage } from './s118022t/s118022t.page';
+import { S118023Page } from './s118023/s118023.page';
+import { S118024Page } from './s118024/s118024.page';
+import { S118025Page } from './s118025/s118025.page';
+import { S118025tPage } from './s118025t/s118025t.page';
+import { S118026Page } from './s118026/s118026.page';
+import { S118026tPage } from './s118026t/s118026t.page';
+import { S118027Page } from './s118027/s118027.page';
+import { S118028Page } from './s118028/s118028.page';
+import { S118029Page } from './s118029/s118029.page';
+import { S118030Page } from './s118030/s118030.page';
+import { S118030tPage } from './s118030t/s118030t.page';
+import { S118031Page } from './s118031/s118031.page';
+import { S118032Page } from './s118032/s118032.page';
+import { S118033Page } from './s118033/s118033.page';
+import { S118034Page } from './s118034/s118034.page';
+import { S118035Page } from './s118035/s118035.page';
+import { S118036Page } from './s118036/s118036.page';
+import { S118037Page } from './s118037/s118037.page';
+import { S118038Page } from './s118038/s118038.page';
+import { S118039Page } from './s118039/s118039.page';
+import { S118040Page } from './s118040/s118040.page';
+import { S118040tPage } from './s118040t/s118040t.page';
+import { S118041Page } from './s118041/s118041.page';
+import { S118042Page } from './s118042/s118042.page';
+import { S118043Page } from './s118043/s118043.page';
+import { S118044Page } from './s118044/s118044.page';
+import { S118045Page } from './s118045/s118045.page';
+import { S118046Page } from './s118046/s118046.page';
+import { S118047Page } from './s118047/s118047.page';
+import { S118048Page } from './s118048/s118048.page';
+import { S118049Page } from './s118049/s118049.page';
+import { S118049tPage } from './s118049t/s118049t.page';
+import { S118050Page } from './s118050/s118050.page';
+import { S118051Page } from './s118051/s118051.page';
+import { S118051tPage } from './s118051t/s118051t.page';
+import { S118052Page } from './s118052/s118052.page';
+import { S118053Page } from './s118053/s118053.page';
+import { S118054Page } from './s118054/s118054.page';
+import { S118055Page } from './s118055/s118055.page';
+import { S118055tPage } from './s118055t/s118055t.page';
+import { S118056Page } from './s118056/s118056.page';
+import { S118057Page } from './s118057/s118057.page';
+import { S118058Page } from './s118058/s118058.page';
+import { S118059Page } from './s118059/s118059.page';
+import { S118060Page } from './s118060/s118060.page';
+import { S118061Page } from './s118061/s118061.page';
+import { S118061tPage } from './s118061t/s118061t.page';
+import { S118062Page } from './s118062/s118062.page';
+import { S118063Page } from './s118063/s118063.page';
+import { S118064Page } from './s118064/s118064.page';
+import { S118064tPage } from './s118064t/s118064t.page';
+import { S118065Page } from './s118065/s118065.page';
+import { S118066Page } from './s118066/s118066.page';
+import { S118067Page } from './s118067/s118067.page';
+import { S118067tPage } from './s118067t/s118067t.page';
+import { S118068Page } from './s118068/s118068.page';
+import { S118069Page } from './s118069/s118069.page';
+import { S118070Page } from './s118070/s118070.page';
+import { S118070tPage } from './s118070t/s118070t.page';
+import { S118071Page } from './s118071/s118071.page';
+import { S118072Page } from './s118072/s118072.page';
+import { S118072tPage } from './s118072t/s118072t.page';
+import { S118073Page } from './s118073/s118073.page';
+import { S118074Page } from './s118074/s118074.page';
+import { S118075Page } from './s118075/s118075.page';
+import { S118076Page } from './s118076/s118076.page';
+import { S118077Page } from './s118077/s118077.page';
+import { S118077tPage } from './s118077t/s118077t.page';
+import { S118078Page } from './s118078/s118078.page';
+import { S118079Page } from './s118079/s118079.page';
+import { S118080Page } from './s118080/s118080.page';
+import { S118081Page } from './s118081/s118081.page';
+import { S118082Page } from './s118082/s118082.page';
+import { S118083Page } from './s118083/s118083.page';
+import { S118084Page } from './s118084/s118084.page';
+import { S118085Page } from './s118085/s118085.page';
+import { S118086Page } from './s118086/s118086.page';
+import { S118087Page } from './s118087/s118087.page';
+import { S118087tPage } from './s118087t/s118087t.page';
+import { S118088Page } from './s118088/s118088.page';
+import { S118089Page } from './s118089/s118089.page';
+import { S118090Page } from './s118090/s118090.page';
+import { S118091Page } from './s118091/s118091.page';
+import { S118091tPage } from './s118091t/s118091t.page';
+import { S118092Page } from './s118092/s118092.page';
+import { S118093Page } from './s118093/s118093.page';
+import { S118094Page } from './s118094/s118094.page';
+import { S118095Page } from './s118095/s118095.page';
+import { S118096Page } from './s118096/s118096.page';
+import { S118096tPage } from './s118096t/s118096t.page';
+import { S118097Page } from './s118097/s118097.page';
+import { S118098Page } from './s118098/s118098.page';
+import { S118099Page } from './s118099/s118099.page';
+import { S118100Page } from './s118100/s118100.page';
+import { S118101Page } from './s118101/s118101.page';
+import { S118102Page } from './s118102/s118102.page';
+import { S118103Page } from './s118103/s118103.page';
+import { S118104Page } from './s118104/s118104.page';
 
 import { AngerRoutingModule } from './anger-routing.module';
 
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
+import { TeenagersService } from '../teenagers.service';
 
 @NgModule({
   declarations: [
-    S162Page, 
-    S162p0Page, 
-    S163Page, 
-    S164Page, 
-    S164tPage, 
-    S165Page, 
-    S166Page, 
-    S167Page, 
-    S168Page, 
-    S169Page, 
-    S169tPage, 
-    S170Page, 
-    S170tPage, 
-    S171Page, 
-    S171tPage, 
-    S172Page, 
-    S172tPage, 
-    S173Page, 
-    S174Page, 
-    S175Page, 
-    S176Page, 
-    S177Page, 
-    S178p1Page, 
-    S178p2Page, 
-    S179Page, 
-    S180Page, 
-    S181Page, 
-    S181tPage, 
-    S182Page, 
-    S183Page, 
-    S183tPage, 
-    S184Page, 
-    S184tPage, 
-    S185Page, 
-    S186Page, 
-    S187Page, 
-    S188Page, 
-    S188p0Page, 
-    S188p1Page, 
-    S188p2Page, 
-    S188p3Page, 
-    S188p4Page, 
-    S188p5Page, 
-    S188p6Page, 
-    S188p7Page, 
-    S188p8Page, 
-    S188tPage, 
-    S189Page, 
-    S189p0Page, 
-    S189p1Page, 
-    S189p2Page, 
-    S189p3Page, 
-    S189p4Page, 
-    S189p5Page, 
-    S189p6Page, 
-    S189tPage, 
-    S190Page, 
-    S191Page, 
-    S191tPage, 
-    S192Page, 
-    S193Page, 
-    S193tPage, 
-    S194Page, 
-    S195Page, 
-    S196Page, 
-    S196tPage, 
-    S197Page, 
-    S198p1Page, 
-    S198p2Page, 
-    S199Page, 
-    S200Page, 
-    S201Page, 
-    S201tPage, 
-    S202Page, 
-    S203Page, 
-    S204Page, 
-    S204tPage, 
-    S205Page, 
-    S206Page,
-    S206tPage,
-    S207Page, 
-    S208Page, 
-    S209Page, 
-    S209tPage, 
-    S210Page, 
-    S211Page, 
-    S211tPage, 
-    S212Page, 
-    S213Page, 
-    S214Page, 
-    S215Page, 
-    S216Page, 
-    S216p0Page, 
-    S216p1Page, 
-    S216p2Page, 
-    S216p3Page, 
-    S216p4Page, 
-    S216p5Page, 
-    S216p6Page, 
-    S216p7Page, 
-    S216tPage, 
-    S217Page, 
-    S218Page, 
-    S218tPage, 
-    S219Page, 
-    S220Page, 
-    S221Page, 
-    S222Page, 
-    S222tPage, 
-    S223Page, 
-    S224Page, 
-    S225Page, 
-    S226Page, 
-    S227Page,
-    S227tPage,
-    S228Page,
-    S228p1Page,
-    S228p2Page,
-    S228p3Page, 
-    S229Page,
-    S230Page,
-    S230p1Page,
-    S230p2Page,
-    S230p3Page,
-    S231p1Page,
-    S231p2Page,
+    S118001Page,
+    S118002Page,
+    S118003Page,
+    S118004Page,
+    S118004tPage,
+    S118005Page,
+    S118006Page,
+    S118007Page,
+    S118008Page,
+    S118009Page,
+    S118009tPage,
+    S118010Page,
+    S118010tPage,
+    S118011Page,
+    S118011tPage,
+    S118012Page,
+    S118012tPage,
+    S118013Page,
+    S118014Page,
+    S118015Page,
+    S118016Page,
+    S118017Page,
+    S118018Page,
+    S118019Page,
+    S118020Page,
+    S118021Page,
+    S118022Page,
+    S118022tPage,
+    S118023Page,
+    S118024Page,
+    S118025Page,
+    S118025tPage,
+    S118026Page,
+    S118026tPage,
+    S118027Page,
+    S118028Page,
+    S118029Page,
+    S118030Page,
+    S118030tPage,
+    S118031Page,
+    S118032Page,
+    S118033Page,
+    S118034Page,
+    S118035Page,
+    S118036Page,
+    S118037Page,
+    S118038Page,
+    S118039Page,
+    S118040Page,
+    S118040tPage,
+    S118041Page,
+    S118042Page,
+    S118043Page,
+    S118044Page,
+    S118045Page,
+    S118046Page,
+    S118047Page,
+    S118048Page,
+    S118049Page,
+    S118049tPage,
+    S118050Page,
+    S118051Page,
+    S118051tPage,
+    S118052Page,
+    S118053Page,
+    S118054Page,
+    S118055Page,
+    S118055tPage,
+    S118056Page,
+    S118057Page,
+    S118058Page,
+    S118059Page,
+    S118060Page,
+    S118061Page,
+    S118061tPage,
+    S118062Page,
+    S118063Page,
+    S118064Page,
+    S118064tPage,
+    S118065Page,
+    S118066Page,
+    S118067Page,
+    S118067tPage,
+    S118068Page,
+    S118069Page,
+    S118070Page,
+    S118070tPage,
+    S118071Page,
+    S118072Page,
+    S118072tPage,
+    S118073Page,
+    S118074Page,
+    S118075Page,
+    S118076Page,
+    S118077Page,
+    S118077tPage,
+    S118078Page,
+    S118079Page,
+    S118080Page,
+    S118081Page,
+    S118082Page,
+    S118083Page,
+    S118084Page,
+    S118085Page,
+    S118086Page,
+    S118087Page,
+    S118087tPage,
+    S118088Page,
+    S118089Page,
+    S118090Page,
+    S118091Page,
+    S118091tPage,
+    S118092Page,
+    S118093Page,
+    S118094Page,
+    S118095Page,
+    S118096Page,
+    S118096tPage,
+    S118097Page,
+    S118098Page,
+    S118099Page,
+    S118100Page,
+    S118101Page,
+    S118102Page,
+    S118103Page,
+    S118104Page,
   ],
   imports: [
     CommonModule,
@@ -275,7 +275,7 @@ import { NgxCircularPlayerModule } from 'ngx-circular-player';
     NgxCircularPlayerModule    
   ],
   providers:[
-    AdultsService
+    TeenagersService
   ]
 })
 export class AngerModule { }
