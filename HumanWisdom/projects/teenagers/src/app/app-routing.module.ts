@@ -121,16 +121,16 @@ const routes: Routes = [
   {
     path: 'loneliness',
     loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
-  },  {
-    path: 's119001',
-    loadChildren: () => import('./teenagers/s119001/s119001.module').then( m => m.S119001PageModule)
   },
+ 
   {
-    path: 's119002',
-    loadChildren: () => import('./teenagers/s119002/s119002.module').then( m => m.S119002PageModule)
+    path: 'identity',
+    loadChildren: () => import('./teenagers/identity/identity.module').then(m => m.IdentityModule)
   },
-
+ 
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

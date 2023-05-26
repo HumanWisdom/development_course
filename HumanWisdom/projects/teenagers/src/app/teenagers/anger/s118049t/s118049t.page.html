@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The extent of our anger reaction depends on how disturbed our mind is at that time, and our reaction can seem disproportionate to the event. If I have had a bad day at the office and am driving home and have a minor car accident, I can get out and get really angry. I may not have reacted in that way yesterday when I was happy.
+           </p>
+
+           <p>
+            Or, if we are in a relationship, and I am irritated with you generally, I can get angry about the smallest thing, like how the soap is always out of the soap dish.
+           </p>
+
+           <p>
+            Or if I am a member of a gang, and there is violence all around me and my life is hard, the smallest trigger, like someone making prolonged eye contact can elicit a violent response. This can help us understand the behaviour of others who are angry, and help us respond with intelligence.
+           </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

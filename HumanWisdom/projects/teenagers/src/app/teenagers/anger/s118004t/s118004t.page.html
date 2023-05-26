@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module on exploring anger. It’s a  human emotion which can protect us from harm, but can also impact our health, damage our relationships, and is a cause of so much violence in the world. Understanding its roots in our thinking allows us to understand others, and respond with wisdom. We are going to walk with you and show you how you can do this. 
+          <br>
+          Anger is a form of violence so needs to be used sparingly and with great care because its consequences can last for years, and create a chain reaction of escalating conflict.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
