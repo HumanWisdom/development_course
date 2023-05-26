@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            How do we respond when others are angry with us? We also get triggered, and usually get angry in return. We feel it as a form of violence against us and react accordingly. Our reaction may help us understand how others react to our anger because deep down we are the same human being. It takes great intelligence to remain calm when others are angry, but if we can, it can diffuse a situation which in some cases can lead to violence. Ofcourse, if there is the threat of real violence, we need to act to protect ourselves.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
