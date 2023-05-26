@@ -15,7 +15,7 @@ export class S114009Page implements OnInit,OnDestroy {
     mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
     videoLink=this.mediaVideo+'/self-image/videos/1.3.mp4'  
     title="How do our images of others form?"
-    poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/self-image/self-image_01.jpg"
+    poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/self_image/self_image_03.jpg"
     userId:any
     saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
     screenType=localStorage.getItem("video")

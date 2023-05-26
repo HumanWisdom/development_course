@@ -123,6 +123,15 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
   },
   {
+    path: 's119001',
+    loadChildren: () => import('./teenagers/s119001/s119001.module').then( m => m.S119001PageModule)
+  },
+  {
+    path: 's119002',
+    loadChildren: () => import('./teenagers/s119002/s119002.module').then( m => m.S119002PageModule)
+  },
+
+  {
     path: 'anger',
     loadChildren: () => import('./teenagers/anger/anger.module').then(m => m.AngerModule)
   },
