@@ -1,0 +1,34 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Once the acute anger reaction begins to settle down, you can explore the root cause of your anger, by asking a question: What is going on in my thinking to make me feel the way I do? What can I learn? This question takes you deeper to explore 3, which contains all the unconscious thinking patterns that operate behind the scenes.
+          </p>
+
+          <p>
+            As you explore Layer 3 you may come across the real reason for your anger - an unmet expectation, or if you feel attacked in some way, or if you encounter a situation or person very different to your norm, or if your emotional needs are not being met.
+          </p>
+
+          <p>
+            These can then be explored further. The more you explore, the greater the chances of finding the hidden cause of your anger. You can then stop the anger recurring each time and respond with intelligence.
+          </p>
+
+          <p>
+            This exploration also helps you to understand others when they are angry, and can awaken compassion because you realise that you are both the same human being.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
