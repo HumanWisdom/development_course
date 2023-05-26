@@ -2,7 +2,7 @@ import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Outpu
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { state } from '@angular/animations';
-
+import { Options } from '@angular-slider/ngx-slider';
 
 @Component({
   selector: 'app-audio-content',
@@ -10,10 +10,29 @@ import { state } from '@angular/animations';
   styleUrls: ['./audio-content.component.scss'],
 })
 export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
+
+  value: number = 0;
+  options: Options = {
+    floor: 0,
+    ceil: 100,
+    showSelectionBar: true,
+    getPointerColor: (value: number): string => {
+          return 'orange';
+    },
+    getSelectionBarColor: (value: number): string => {
+      if (value >= 1) {
+          return 'orange';
+      }
+      return '#2AE02A';
+    }
+  };
   yellow = "#FFC455"
   @Input() bg: string;
   @Input() title: string;
   @Input() audioLink: string;
+  audioElement: HTMLAudioElement | null = null;
+  currentTime: number = 0;
+  duration: number = 0;
   @Output() sendAvDuration = new EventEmitter<string>();
   myAudio: any
   pauseTime: any
@@ -37,8 +56,30 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
       this.t = params['t'];
     })
   }
+  handleTimeUpdate = () => {
+    this.currentTime = this.audioElement.currentTime;
+    this.getProgressPercentage();
+  }
+
+  handleMetadataLoaded = () => {
+    this.duration = this.audioElement.duration;
+  }
+
+  getProgressPercentage() {
+    this.value= ((this.currentTime / this.duration) * 100);
+  }
+
+  formatTime(time: number): string {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+
 
   ngOnInit() {
+    this.audioElement = document.getElementById('audioPlayer') as HTMLAudioElement;
+    this.audioElement.addEventListener('timeupdate', this.handleTimeUpdate);
+    this.audioElement.addEventListener('loadedmetadata', this.handleMetadataLoaded);
     const audio = document.querySelector('audio');
     const durationContainer = document.getElementById('duration');
     const seekSlider = document.getElementById('seek-slider');
