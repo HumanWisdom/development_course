@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s119007t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          You could say that our identity is just the sum of all our past conditioning influences and memories, and that becomes the ‘me’. In that database of all our memories are some that we have a stronger attachment to and we call that our identity. We identify with our experiences, our family, our country, our religion, our language, our skin colour, our ethnicity within our country, our profession, our possessions, our sexual orientation, and so on. We all have multiple identities. A person could be American, Hindu, Gujarati, vegetarian, gay, and an artist.  As our memories change over the years there are shifts in our identity too. Some people are much more attached to their identities than others. All these identities form unconsciously without our awareness or our consent.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -10,10 +10,10 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S119002Page implements OnInit, OnDestroy {
 
-  bg_tts = "bg_green_yellow"
-  bg_tn = "bg_green_yellow"
-  bg_cft = "bg_green_yellow"
-  bg = "green_yellow_flat"
+  bg_tts = "bg_dark_blue"
+  bg_tn="bg_dark_blue"
+  bg_cft="bg_dark_blue"
+  bg="dark_blue_flat"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

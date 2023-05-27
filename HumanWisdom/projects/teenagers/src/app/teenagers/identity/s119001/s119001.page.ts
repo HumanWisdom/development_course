@@ -10,11 +10,15 @@ import { Location } from '@angular/common';
 })
 export class S119001Page implements OnInit,OnDestroy {
 
+  bg_tn = "bg_dark_blue"
+  bg_cft = "bg_dark_blue"
+  bg = ""
+
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=0
+  screenNumber=119001
   startTime:any
   endTime:any
   totalTime:any
@@ -27,8 +31,8 @@ export class S119001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  comparisonResume=sessionStorage.getItem("comparisonResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/07.png"
+  identityResume=sessionStorage.getItem("identityResume")
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/21.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []

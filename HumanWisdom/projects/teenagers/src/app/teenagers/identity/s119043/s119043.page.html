@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s119043</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+ <app-simple-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+   
+    <h1 class="txt1">
+      All over the world, people vote for leaders with whom they share the same identity, believing that because of this, the leader will somehow favour them over others. 
+
+
+      </h1>
+
+
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
