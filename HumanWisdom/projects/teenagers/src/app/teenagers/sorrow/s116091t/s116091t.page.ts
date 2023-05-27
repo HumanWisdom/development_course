@@ -29,6 +29,7 @@ export class S116091tPage implements OnInit {
   avDuration=localStorage.getItem("avDuration116091")
   totalTime=localStorage.getItem("totalTime116091")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName="teenagers";
   
   constructor(private router: Router,
     private service:TeenagersService,
@@ -58,7 +59,7 @@ export class S116091tPage implements OnInit {
     sessionStorage.setItem("bookmark116091",JSON.stringify(this.bookmark))
   }
   submitProgress(){
-    this.router.navigate(['/sorrow/s60092'])
+    this.router.navigate(['/sorrow/s116092'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
