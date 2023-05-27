@@ -47,7 +47,7 @@ export class S116110Page implements OnInit {
     this.router.navigate(['/sorrow/s116111'])
   }
   prev(){
-    this.router.navigate(['/sorrow/s116009'])
+    this.router.navigate(['/sorrow/s116109'])
 
   }
 
