@@ -1,0 +1,21 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+   
+    <h1 class="txt1">
+      If I am attached to my identity, and you are attached to yours, can we ever feel connected?
+<br>Are our identities a wall which divide us from other human beings?
+  </h1>
+
+
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
