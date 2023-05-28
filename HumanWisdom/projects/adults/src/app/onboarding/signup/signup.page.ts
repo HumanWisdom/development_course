@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup,UntypedFormBuilder,Validators, AbstractControl} from '@angular/forms'
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-import {OnboardingService} from '../onboarding.service'
+import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 
 
 @Component({

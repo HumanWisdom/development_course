@@ -1,9 +1,9 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../onboarding.service';
+import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
 import {Location } from '@angular/common'
 import { AdultsService } from 'src/app/adults/adults.service';
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../../shared/services/log-event.service";
 
 
 @Component({

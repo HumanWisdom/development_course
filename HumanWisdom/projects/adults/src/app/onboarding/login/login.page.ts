@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy,HostListener, ViewChild, ElementRef } from '@angular/core';
 import { SocialAuthService } from "angularx-social-login";
-import {OnboardingService} from '../onboarding.service'
+import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
 import { Router,ActivatedRoute } from '@angular/router';

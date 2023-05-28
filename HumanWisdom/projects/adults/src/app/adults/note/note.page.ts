@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AdultsService} from "../adults.service"
 import {Location } from '@angular/common'
 import { Router,ActivatedRoute } from '@angular/router';
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 
 @Component({

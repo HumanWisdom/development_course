@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../../adults/src/app/onboarding/onboarding.service';
+import { OnboardingService } from '../../services/onboarding.service';
 @Component({
   selector: 'app-tn-hwp-project',
   templateUrl: './tn-hwp-project.component.html',

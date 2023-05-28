@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../shared/services/log-event.service";
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+
 
 @Component({
   selector: 'app-change-password',

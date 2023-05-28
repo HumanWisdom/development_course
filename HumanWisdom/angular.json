@@ -134,8 +134,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/adults/src/environments/environment.ts",
-                  "with": "projects/adults/src/environments/environment.prod.ts"
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -159,8 +159,8 @@
             "staging": {
               "fileReplacements": [
                 {
-                  "replace": "projects/adults/src/environments/environment.ts",
-                  "with": "projects/adults/src/environments/environment.staging.ts"
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.staging.ts"
                 }
               ],
               "optimization": {
@@ -414,8 +414,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "projects/teenagers/src/environments/environment.ts",
-                  "with": "projects/teenagers/src/environments/environment.prod.ts"
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -435,8 +435,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "projects/teenagers/src/environments/environment.ts",
-                  "with": "projects/teenagers/src/environments/environment.ts"
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.ts"
                 }
               ],
               "outputHashing": "all"

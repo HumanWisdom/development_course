@@ -122,6 +122,20 @@ const routes: Routes = [
     path: 'loneliness',
     loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
   },
+  {
+    path: 'journal',
+    loadChildren: () => import('./teenagers/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
+  },
+  {
+    path: "forum",
+    loadChildren: () => import("./teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)  
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./teenagers/personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule),
+   // canActivate: [AuthGu]
+  },
+
 ];
 
 @NgModule({

@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
-import { OnboardingService } from '../onboarding.service';
+import { environment } from '../../../../../environments/environment';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-duplicate-subscription-payment',
