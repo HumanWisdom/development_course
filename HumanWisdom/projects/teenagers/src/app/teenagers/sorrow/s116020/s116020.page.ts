@@ -14,7 +14,7 @@ export class S116020Page implements OnInit
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w12"
-  hint = "It could be you get into a new friendship quickly, or go into depression."
+  hint = "It could be that you withdraw and don’t want to talk to anyone"
   toc="sorrow/s116001"
   path = this.router.url
   userId: any

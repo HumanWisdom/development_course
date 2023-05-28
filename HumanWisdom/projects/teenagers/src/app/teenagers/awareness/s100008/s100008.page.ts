@@ -16,7 +16,7 @@ export class S100008Page implements OnInit,OnDestroy
   bg="red_pink_w6"
   title=""
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/awareness/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/awareness/audios/1.4.mp3'
   transcriptPage="awareness/s100008t"
   yellow="#FFC455"
   toc="awareness/s100001"
