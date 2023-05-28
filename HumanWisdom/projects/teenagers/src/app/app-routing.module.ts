@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -122,16 +121,12 @@ const routes: Routes = [
   {
     path: 'loneliness',
     loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
-  },
- 
+  }, 
   {
-    path: 'identity',
-    loadChildren: () => import('./teenagers/identity/identity.module').then(m => m.IdentityModule)
+    path: 'anger',
+    loadChildren: () => import('./teenagers/anger/anger.module').then(m => m.AngerModule)
   },
- 
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
@@ -140,4 +135,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
