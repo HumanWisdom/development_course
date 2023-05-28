@@ -111,7 +111,7 @@ export class S116088Page implements OnInit,OnDestroy {
  
   }
   prev(){
-    this.router.navigate(['/sorrow/s116088'])
+    this.router.navigate(['/sorrow/s116087'])
  
  
   }

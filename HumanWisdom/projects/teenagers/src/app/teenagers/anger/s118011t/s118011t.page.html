@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Consider another example. A father gets angry with his son because he is still in bed at 1pm. The son reacts back and theywe end up in an argument. The father is sure he is right and his son is wrong. They fall out.
+          </p>
+
+          <p>
+            The father pausesI and asks himself, what’s behind his anger. He discovers it’s his conditioning which says it’s not okay to sleep in so late, because that is the way he was brought up, and just a difference between him and his son. As soon as the father accepts this, his, my anger melts away. This does not mean there is no need for a discussion about his son’s sleeping habits, but it could be a friendly one, and not one laced with anger.
+          </p>
+         
+        </h3>                
+      </div>
+    </div> 
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

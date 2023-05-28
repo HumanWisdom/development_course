@@ -15,7 +15,7 @@ export class S114024Page implements OnInit,OnDestroy {
     mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
     videoLink=this.mediaVideo+'/self-image/videos/1.5.mp4'  
     title="What others think of us"
-    poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/self-image/self-image_01.jpg"
+    poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/self_image/self_image_02.jpg"
     userId:any
     saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
     screenType=localStorage.getItem("video")

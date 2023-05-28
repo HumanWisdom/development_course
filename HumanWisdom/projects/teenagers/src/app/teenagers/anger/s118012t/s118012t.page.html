@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes people get angry with themselves. The causes of this are complex and include previous trauma and not meeting their own expectations. They may have low self-esteem and feel bad about their behaviour which they can't seem to control. Or, they are generally unhappy and do not understand why. They can express this frustration through self-harm and its a growing problem in young people. We explore the roots of this negative self-talk in the modules on comparison and self-esteem. This understanding can bring freedom.
+          </p>
+        </h3>                
+      </div>
+    </div> 
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

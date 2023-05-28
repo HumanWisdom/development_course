@@ -95,6 +95,10 @@ input[type="range"]:active::-ms-thumb {
   transform: scale(1.2);
   background: #007db5;
 }
+.ngx-slider .ngx-slider-bar
+{
+  background: grey  !important;
+}
 
 </style>
 <app-bg-video></app-bg-video>
@@ -128,9 +132,22 @@ input[type="range"]:active::-ms-thumb {
               -->
               <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt30px">
-                 <!--  <audio id="aud1" controls controlsList="nodownload" #audio>
-                    <source [src]="audioLink" type="audio/mpeg">
-                  </audio> -->
+                  <div class="audio-player"style="width: 100%;">
+                    <audio id="audioPlayer" controls style="display: none;">
+                      <source [src]="audioLink" type="audio/mpeg">
+                    </audio>
+                    <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+
+                    <!-- <div class="progress-bar">
+                      <div class="progress-bar__fill" [style.width]="getProgressPercentage()"></div>
+                    </div> -->
+                  
+                    <div class="time-display">
+                      <span>{{ formatTime(currentTime) }}</span>
+                      <span>{{ formatTime(duration) }}</span>
+                    </div>
+                  </div>
+               
                   <!-- <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>-->

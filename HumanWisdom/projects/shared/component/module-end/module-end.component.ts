@@ -2560,6 +2560,9 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     html2canvas(div, {scale: 3}
       ).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
+      (window as any).myFileContentData = imgData;
+      const event = new CustomEvent('downloadButtonClicked');
+     window.dispatchEvent(event);
       const pdf = new jsPDF({
         orientation: 'portrait',
         format: 'a5',
@@ -2570,7 +2573,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
       const blob = pdf.output('blob');
     const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
-    this.convertPdfToBase64(file);
+    //this.convertPdfToBase64(file);
       localStorage.setItem('fileName',this.currentModuleName);
       // pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
