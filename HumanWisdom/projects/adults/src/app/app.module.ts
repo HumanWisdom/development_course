@@ -32,6 +32,7 @@ import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ToastrModule } from 'ngx-toastr';
+import { MoengageService } from './moengage.service';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -75,6 +76,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         LogEventService,
         ReactiveFormsModule,
         SharedService,
+        MoengageService,
             { provide: APP_BASE_HREF, useValue: '/' } ,
         {
             provide: HTTP_INTERCEPTORS,
