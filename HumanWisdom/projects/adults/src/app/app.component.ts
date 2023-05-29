@@ -44,7 +44,8 @@ export class AppComponent implements OnDestroy {
     private services: AdultsService,
     public moengageService:MoengageService
   ) {
-    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1});
+    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,enableSPA:11});
+    
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
