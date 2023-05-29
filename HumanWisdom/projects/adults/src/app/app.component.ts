@@ -44,7 +44,7 @@ export class AppComponent implements OnDestroy {
     private services: AdultsService,
     public moengageService:MoengageService
   ) {
-    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,enableSPA:11});
+    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,enableSPA:1});
     
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
@@ -155,6 +155,7 @@ export class AppComponent implements OnDestroy {
         this.meta.updateTag({ property: 'keywords', content: 'Relationships for adults,Building healthy relationships,Maintaining healthy relationships,Improving relationships,Building strong relationships,Healthy relationship tips,Stronger relationships,Relationships advice,Relationship building,Relationship skills' })
       }
     }
+    
     else if (PageUrl.includes('/adults/communication')) {
 
       if (this.title.getTitle() !== 'Improving Communication Skills') {
