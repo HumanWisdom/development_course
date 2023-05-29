@@ -121,6 +121,10 @@ const routes: Routes = [
   {
     path: 'loneliness',
     loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
+  }, 
+  {
+    path: 'anger',
+    loadChildren: () => import('./teenagers/anger/anger.module').then(m => m.AngerModule)
   },
   {
     path: 'journal',

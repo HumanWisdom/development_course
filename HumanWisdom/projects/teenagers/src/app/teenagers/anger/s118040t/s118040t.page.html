@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The extent of our anger varies, depending on the situation. When we are really angry we can start shouting, think of how to retaliate, or even get violent. If we grew up in a culture where it was normal to respond with violence, then we would respond in the same way.
+          </p>
+
+          <p>
+            Examples here include domestic violence, and gang violence.
+          </p>
+
+          <p>
+            When we are angry in a relationship, we can withdraw our affection and this can cause longer term problems. Sometimes we can internalise our anger, thinking the other person will not notice, but our anger is like a lighthouse - and can be spotted a mile away, even if we say nothing.
+          </p>
+
+          <p>
+            If countries get angry with each other, it leads to war.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            When you are angry, if you can accept things as they are, your anger can dissipate immediately. For example, if you accept that someone is perfectly entitled to walk away from your friendship, because it’s not a prison, or that it’s okay for others to have different opinions or beliefs than you.
+          </p>
+
+          <p>
+            When you are getting angry in an argument you can ask yourself if you need to say anything at all, and even if you do, ask how it is going to be received. What will it accomplish? Would it be better to speak later?
+          </p>
+
+          <p>
+            You can then say, for example, that you were hurt by what someone said. You might get a completely different response than if you shout at them.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
