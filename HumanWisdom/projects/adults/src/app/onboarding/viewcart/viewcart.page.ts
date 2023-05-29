@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-import {OnboardingService} from '../onboarding.service'
+import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 import * as $ from 'jquery' 
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../shared/services/log-event.service";
 
 @Component({
   selector: 'app-viewcart',

@@ -6,7 +6,7 @@ import {
 } from '@angular/cdk/platform';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../../adults/src/app/onboarding/onboarding.service';
+import { OnboardingService } from '../../services/onboarding.service';
 
 @Component({
   selector: 'app-tn-dashboard-v03',

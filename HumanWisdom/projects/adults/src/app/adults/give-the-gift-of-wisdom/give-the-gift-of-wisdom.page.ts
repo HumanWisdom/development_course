@@ -2,9 +2,9 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { Meta , Title} from '@angular/platform-browser';
-
+import { LogEventService } from "../../../../../shared/services/log-event.service";
 @Component({
   selector: 'app-give-the-gift-of-wisdom',
   templateUrl: './give-the-gift-of-wisdom.page.html',
