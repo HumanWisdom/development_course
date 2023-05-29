@@ -126,6 +126,10 @@ const routes: Routes = [
     path: 'anger',
     loadChildren: () => import('./teenagers/anger/anger.module').then(m => m.AngerModule)
   },
+  {
+    path: 'identity',
+    loadChildren: () => import('./teenagers/identity/identity.module').then(m => m.IdentityModule)
+  },
 ];
 
 @NgModule({
