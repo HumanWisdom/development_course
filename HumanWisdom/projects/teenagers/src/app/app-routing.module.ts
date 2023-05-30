@@ -139,7 +139,14 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule),
    // canActivate: [AuthGu]
   },
-
+  {
+    path: 'identity',
+    loadChildren: () => import('./teenagers/identity/identity.module').then(m => m.IdentityModule)
+  },
+  {
+    path: 'emotional-needs',
+    loadChildren: () => import('./teenagers/emotional-needs/emotional-needs.module').then(m => m.EmotionalNeedsModule)
+  },
 ];
 
 @NgModule({

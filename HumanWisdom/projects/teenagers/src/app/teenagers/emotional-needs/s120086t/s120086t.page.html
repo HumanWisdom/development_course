@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          When we are looking for love we dream of finding the perfect person we can fall in love with and who can love us for who we are. We rarely think of being the best version of ourselves that we can be, so that we are more lovable. What does it mean to be more lovable? That is up to you to answer, but it could mean being a better listener, being a happy person, being kind and thoughtful, not being automatically critical of others, not trying to exert power over others, communicating your expectations as a need rather than a demand, and so on. All these come naturally the more you understand yourself and that is the purpose of this program. We will explore this question more fully in the module on love. 
+           </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
