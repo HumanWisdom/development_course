@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s119023</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-kta-prevnext [bg]="bg">
 
-</ion-content>
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      Our identities meet our deepest needs: to not be lonely, to feel secure, to belong to a group, for pleasure and for power. We get get attached wherever these needs are met
+
+
+     </h1>
+
+    <div class="clearfix"></div>
+
+  </form>  
+
+</app-kta-prevnext>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
