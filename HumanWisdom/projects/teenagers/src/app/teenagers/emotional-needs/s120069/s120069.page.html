@@ -1,9 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s120069</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
+    
+  <form>
 
-</ion-content>
+    <h4 class="mtb0px comparison">
+      Comparison
+    </h4>
+
+    <div class="clearfix"></div>
+
+    <h5 class="mtb0px session">
+      Session #3
+    </h5>
+
+    <div class="clearfix"></div>
+
+    <br>
+  
+    <h1 class="session_title ">
+      Responding to emotional needs with wisdom
+
+
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-tap-start>

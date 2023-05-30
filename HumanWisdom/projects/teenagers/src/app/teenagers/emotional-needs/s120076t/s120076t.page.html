@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s120076t</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-</ion-content>
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Once we have observed these needs and taken ownership of them we can begin to ask questions to explore them further. Questions allow us to go deeper and explore our emotional needs which normally lie hidden from our awareness in layer 3, as you can see in this diagram, which represents the different layers of our thinking.. Asking questions opens the door to making new discoveries about ourselves and who we really are. That leads to wisdom.
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,37 +1,35 @@
-import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import * as jQuery from 'jquery';
 
 @Component({
-  selector: 'app-s120072',
-  templateUrl: './s120072.page.html',
-  styleUrls: ['./s120072.page.scss'],
+  selector: 'app-s120088',
+  templateUrl: './s120088.page.html',
+  styleUrls: ['./s120088.page.scss'],
 })
-export class S120072Page implements OnInit,OnDestroy 
-{
+export class S120088Page implements OnInit,OnDestroy {
+
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
-  bg="blue_pink_w3"
-  title="#1 Begin by becoming aware of our emotional needs  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/emotional-needs/audios/3.2.mp3'
-  transcriptPage="emotional-needs/s120072t"
-  toc="emotional-needs/s120001"
+  bg="blue_pink_w6"
+  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  videoLink=this.mediaVideo+'/emotional-needs/videos/3.1.mp4'  
+  title="Why do we want others to agree with us?  "
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/emotional-needs/emotional-needs_01.jpg"
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  screenType=localStorage.getItem("video")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=120088
+  startTime:any
+  endTime:any
+  totalTime:any  
+  toc="/emotional-needs/s120001"
   bookmark=0
   path=this.router.url
   avDuration:any
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("audio")
-  moduleId=localStorage.getItem("moduleId")
-  screenNumber=120072
-  startTime:any
-  endTime:any
-  totalTime:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  progName= "teenagers";
   
   constructor
   (
@@ -40,9 +38,11 @@ export class S120072Page implements OnInit,OnDestroy
     private location:Location
   ) 
   { }
- 
+
   ngOnInit() 
   {
+    //localStorage.removeItem("bookmarkList")
+    this.createScreen()
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -53,13 +53,23 @@ export class S120072Page implements OnInit,OnDestroy
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    this.createScreen()
-    if(JSON.parse(sessionStorage.getItem("bookmark120072"))==0)
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark120088"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark120072"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark120088"))==1)
       this.bookmark=1
   }
- 
+
+  receiveBookmark(e)
+  {
+    console.log(e)
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark120088",JSON.stringify(this.bookmark))
+  }
+
   createScreen()
   {
     this.service.createScreen({
@@ -69,28 +79,12 @@ export class S120072Page implements OnInit,OnDestroy
       "ScreenNo":this.screenNumber
     }).subscribe(res=>{})
   }
- 
-  receiveBookmark(e)
-  {
-    console.log(e)
-    if(e==true)
-      this.bookmark=1
-    else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark120072",JSON.stringify(this.bookmark))
-  }
- 
-  receiveAvDuration(e)
-  {
-    console.log(e)
-    this.avDuration=e
-  }
- 
+
   submitProgress()
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/emotional-needs/s120072'])
+    this.router.navigate(['/emotional-needs/s120089'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,13 +102,10 @@ export class S120072Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/emotional-needs/s120071'])
+    this.router.navigate(['/emotional-needs/s120087'])
   }
 
   ngOnDestroy()
-  {
-    localStorage.setItem("totalTime120072",this.totalTime)
-    localStorage.setItem("avDuration120072",this.avDuration)
-  }
+  {}
 
 }
