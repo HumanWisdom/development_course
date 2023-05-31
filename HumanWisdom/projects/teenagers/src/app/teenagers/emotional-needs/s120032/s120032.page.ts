@@ -113,11 +113,11 @@ export class S120032Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120032'])
+        this.router.navigate(['/emotional-needs/s120033'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120032'])
+        this.router.navigate(['/emotional-needs/s120033'])
       })
   }
 
