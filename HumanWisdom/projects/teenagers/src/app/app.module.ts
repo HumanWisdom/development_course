@@ -21,7 +21,6 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../../../environments/environment';
-import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   declarations: [
     AppComponent
@@ -34,7 +33,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     SocialLoginModule,
     NgxCaptureModule,
     BrowserAnimationsModule,
-    // ServiceWorkerModule.register('serviceworker.js'),
     PlatformModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,

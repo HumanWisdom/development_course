@@ -57,7 +57,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         HttpClientModule,
         SocialLoginModule,
         SplashPageModule,
-        // ServiceWorkerModule.register('serviceworker.js'),
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
         NgxCaptureModule,
         BrowserAnimationsModule,
