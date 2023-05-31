@@ -34,7 +34,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     SocialLoginModule,
     NgxCaptureModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('serviceworker.js'),
+    // ServiceWorkerModule.register('serviceworker.js'),
     PlatformModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
