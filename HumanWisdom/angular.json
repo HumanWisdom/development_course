@@ -26,6 +26,7 @@
               },
 
               "projects/adults/src/web.config",
+              "projects/adults/src/serviceworker.js",
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -230,6 +231,7 @@
                 "input": "projects/adults/src/",
                 "output": "/"
               },
+              "projects/adults/src/serviceworker.js",
               {
                 "glob": "**/*",
                 "input": "projects/adults/src/assets",
