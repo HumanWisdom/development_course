@@ -308,7 +308,7 @@
               "projects/teenagers/src/favicon.ico",
               "projects/teenagers/src/assets",
               "projects/teenagers/src/web.config",
-              "projects/serviceworker.js"
+              "projects/teenagers/src/serviceworker.js"
             ],
             "styles": [
               {
