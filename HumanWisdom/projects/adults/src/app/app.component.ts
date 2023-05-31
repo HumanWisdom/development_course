@@ -48,7 +48,8 @@ export class AppComponent implements OnDestroy {
     
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
-    
+    }
+
     // this.moengageService.requestWebPushPermission().then((permission) => {
     //   console.log('Web push permission:', permission);
     // });
