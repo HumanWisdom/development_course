@@ -44,17 +44,14 @@ export class AppComponent implements OnDestroy {
     private services: AdultsService,
     public moengageService:MoengageService
   ) {
-    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,enableSPA:1});
+    // moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,enableSPA:1});
     
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
-    }
-    navigator.serviceWorker.register('/serviceworker.js', {
-      scope: '/'
-  });
-    this.moengageService.requestWebPushPermission().then((permission) => {
-      console.log('Web push permission:', permission);
-    });
+    
+    // this.moengageService.requestWebPushPermission().then((permission) => {
+    //   console.log('Web push permission:', permission);
+    // });
     SharedService.ProgramId=ProgramType.Adults;
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
