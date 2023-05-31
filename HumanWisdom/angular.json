@@ -24,6 +24,7 @@
                 "input": "projects/adults/src/assets",
                 "output": "assets"
               },
+              "projects/adults/src/serviceworker.js",
               "projects/adults/src/web.config",
               {
                 "glob": "**/*.svg",
@@ -478,7 +479,7 @@
             "assets": [
               "projects/teenagers/src/favicon.ico",
               "projects/teenagers/src/assets",
-              "projects/serviceworker.js"
+              "projects/teenagers/src/serviceworker.js"
             ],
             "styles": [
               "projects/teenagers/src/styles.scss"
