@@ -101,7 +101,7 @@ export class S120003Page implements OnInit,OnDestroy
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/emotional-needs/s113004'])
+    this.router.navigate(['/emotional-needs/s120004'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

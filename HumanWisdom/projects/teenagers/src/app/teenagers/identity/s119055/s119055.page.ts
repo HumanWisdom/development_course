@@ -18,7 +18,7 @@ export class S119055Page implements OnInit
   userName:any
   progressPercent:any
   progressText="2/3"
-  link="/identity/s119055"
+  link="/identity/s119056"
   name="#2 Four ways identity impacts our life"
   progressImg=""
   toc="identity/s119001"

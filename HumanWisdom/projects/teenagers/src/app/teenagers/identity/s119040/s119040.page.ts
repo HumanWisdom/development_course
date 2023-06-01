@@ -122,7 +122,7 @@ export class S119040Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/identity/s119040'])
+    this.router.navigate(['/identity/s119039'])
   }
 
   ngOnDestroy() 
