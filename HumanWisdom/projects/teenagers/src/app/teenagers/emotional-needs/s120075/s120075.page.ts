@@ -98,7 +98,7 @@ export class S120075Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/emotional-needs/s120074'])
+    this.router.navigate(['/emotional-needs/s120074p1'])
   }
 
   goNext() 

@@ -4,18 +4,18 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s120093',
-  templateUrl: './s120093.page.html',
-  styleUrls: ['./s120093.page.scss'],
+  selector: "app-s120074p1",
+  templateUrl: './s120074p1.page.html',
+  styleUrls: ['./s120074p1.page.scss'],
 })
-export class S120093Page implements OnInit 
+export class S120074p1Page implements OnInit 
 {
 
   bg_tts = "bg_blue_pink"
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
-  hint = "   There may be less conflict, for example.  "
+  hint = "you could for example meet your need for peasure and stimulation by going for a walk or taking up a hobby"
   toc = "/emotional-needs/s120001"
   path = this.router.url
   userId: any
@@ -23,7 +23,7 @@ export class S120093Page implements OnInit
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("reflection")
-  screenNumber = 120093
+  screenNumber = "120074p1"
   startTime: any
   endTime: any
   totalTime: any
@@ -31,7 +31,7 @@ export class S120093Page implements OnInit
   rId = 1272
   reflection: any
   reflectionA: any
-  r120093 = JSON.parse(sessionStorage.getItem("r120093"))
+  r120074p1 = JSON.parse(sessionStorage.getItem("r120074p1"))
   shared: any
   confirmed: any
 
@@ -98,9 +98,9 @@ export class S120093Page implements OnInit
     console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r120093", JSON.stringify(e))
-    this.r120093 = sessionStorage.getItem("r120093")
-    console.log(this.r120093)
+    sessionStorage.setItem("r120074p1", JSON.stringify(e))
+    this.r120074p1 = sessionStorage.getItem("r120074p1")
+    console.log(this.r120074p1)
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -109,21 +109,21 @@ export class S120093Page implements OnInit
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": this.r120093
+      "Resp": this.r120074p1
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/emotional-needs/s120094'])
+        this.router.navigate(['/emotional-needs/s120075'])
 
       },
       () => {
-        this.router.navigate(['/emotional-needs/s120094'])
+        this.router.navigate(['/emotional-needs/s120075'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/emotional-needs/s120092p1'])
+    this.router.navigate(['/emotional-needs/s120074'])
   }
 
   ngOnDestroy() 

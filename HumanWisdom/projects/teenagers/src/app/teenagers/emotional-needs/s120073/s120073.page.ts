@@ -90,7 +90,7 @@ export class S120073Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/emotional-needs/s120074'])
+    this.router.navigate(['/emotional-needs/s120073p1'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -113,8 +113,8 @@ export class S120073Page implements OnInit,OnDestroy
 
   ngOnDestroy()
   {
-    localStorage.setItem("totalTime120073",this.totalTime)
-    localStorage.setItem("avDuration120073",this.avDuration)
+    localStorage.setItem("totalTime120073p1",this.totalTime)
+    localStorage.setItem("avDuration120073p1",this.avDuration)
   }
 
 }
