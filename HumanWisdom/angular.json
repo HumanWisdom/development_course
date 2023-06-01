@@ -154,9 +154,7 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ],
-              "serviceWorker": true,
-              "ngswConfigPath": "ngsw-config.json"
+              ]
             },
             "staging": {
               "fileReplacements": [
@@ -186,9 +184,7 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ],
-             "serviceWorker": true,
-             "ngswConfigPath": "ngsw-config.json"
+              ]
             },
             "ci": {
               "progress": false
