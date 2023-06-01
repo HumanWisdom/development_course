@@ -47,9 +47,9 @@ export class AppComponent implements OnDestroy {
     if(platform.isBrowser){
       moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
       swPath:'/course/serviceworker.js'});
-      this.moengageService.requestWebPushPermission().then((permission) => {
-        console.log('Web push permission:', permission);
-      });
+      // this.moengageService.requestWebPushPermission().then((permission) => {
+      //   console.log('Web push permission:', permission);
+      // });
     }
     
     if (localStorage.getItem("isloggedin") !== 'T') {
