@@ -11,6 +11,8 @@ export class AppComponent {
   title = 'teenagers';
   constructor(){
     SharedService.ProgramId=ProgramType.Teenagers;
-    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1});
+    moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
+    swPath:'/teenagers/serviceworker.js'
+    });
   }
 }

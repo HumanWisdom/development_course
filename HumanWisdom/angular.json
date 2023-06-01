@@ -24,7 +24,9 @@
                 "input": "projects/adults/src/assets",
                 "output": "assets"
               },
+
               "projects/adults/src/web.config",
+              "projects/adults/src/serviceworker.js",
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -185,8 +187,8 @@
                   "maximumError": "5mb"
                 }
               ],
-              "serviceWorker": true,
-              "ngswConfigPath": "ngsw-config.json"
+             "serviceWorker": true,
+             "ngswConfigPath": "ngsw-config.json"
             },
             "ci": {
               "progress": false
@@ -229,6 +231,7 @@
                 "input": "projects/adults/src/",
                 "output": "/"
               },
+              "projects/adults/src/serviceworker.js",
               {
                 "glob": "**/*",
                 "input": "projects/adults/src/assets",
@@ -311,7 +314,8 @@
             "assets": [
               "projects/teenagers/src/favicon.ico",
               "projects/teenagers/src/assets",
-              "projects/teenagers/src/web.config"
+              "projects/teenagers/src/web.config",
+              "projects/teenagers/src/serviceworker.js"
             ],
             "styles": [
               {
@@ -480,7 +484,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/teenagers/src/favicon.ico",
-              "projects/teenagers/src/assets"
+              "projects/teenagers/src/assets",
+              "projects/teenagers/src/serviceworker.js"
             ],
             "styles": [
               "projects/teenagers/src/styles.scss"

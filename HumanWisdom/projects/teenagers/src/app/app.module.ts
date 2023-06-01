@@ -21,7 +21,6 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../../../environments/environment';
-
 @NgModule({
   declarations: [
     AppComponent
