@@ -45,9 +45,9 @@ export class AppComponent implements OnDestroy {
     public moengageService:MoengageService
   ) {
     if(platform.isBrowser){
-    //   moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
-    //   swPath:'/course/serviceworker.js',
-    // });
+      moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',debug_logs:1,
+      swPath:'/adults/serviceworker.js',
+    });
       // this.moengageService.requestWebPushPermission().then((permission) => {
       //   console.log('Web push permission:', permission);
       // });
