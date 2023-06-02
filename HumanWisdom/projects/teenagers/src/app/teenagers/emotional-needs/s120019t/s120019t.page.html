@@ -1,0 +1,22 @@
+
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We begin with the 3 steps to enquiry - to first notice, then accept that our thoughts come from our own thinking, and then question why we think that way. 
+          <br>
+          In this example, say I meet you and you have a different opinion about the same political leader. I start arguing with you and the argument gets quite heated. We both try to convince each other we are right and our relationship gets strained. If I pause and ask why I think the way I do and what's behind the argument, it becomes clear that we have both been conditioned differently and are attached to our respective views. Then I can ask in which other way I've been conditioned, and discover so much more. As a result our argument ends. It all begins by taking ownership of what I am thinking and feeling and asking what's going on in my thinking to make me think this way.  Remember conditioning isn't wrong, but questioning it allows us to respond with intelligence
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

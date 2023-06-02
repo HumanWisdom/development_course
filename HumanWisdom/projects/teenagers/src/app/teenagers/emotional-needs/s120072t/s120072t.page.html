@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If we want to live with wisdom, we could begin by just observing how our emotional needs operate in the background without our awareness, and how they impact our life. We could notice our need to be listened to and understood, and how frustrated we feel if that need is not met. We could also notice how poorly we do listen, and ask why that is. Or we could notice our need for power which is quite subtle, and operates in the background, or our need to feel important, which brings pleasure. Just observing these needs operating in the background, then allows us to take the next step.
+           </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

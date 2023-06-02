@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
+
 
 @Component({
   selector: 'app-subscribed-unsubscribed',

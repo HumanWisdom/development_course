@@ -121,10 +121,31 @@ const routes: Routes = [
   {
     path: 'loneliness',
     loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
-  },
+  }, 
   {
     path: 'anger',
     loadChildren: () => import('./teenagers/anger/anger.module').then(m => m.AngerModule)
+  },
+  {
+    path: 'journal',
+    loadChildren: () => import('./teenagers/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
+  },
+  {
+    path: "forum",
+    loadChildren: () => import("./teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)  
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./teenagers/personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule),
+   // canActivate: [AuthGu]
+  },
+  {
+    path: 'identity',
+    loadChildren: () => import('./teenagers/identity/identity.module').then(m => m.IdentityModule)
+  },
+  {
+    path: 'emotional-needs',
+    loadChildren: () => import('./teenagers/emotional-needs/emotional-needs.module').then(m => m.EmotionalNeedsModule)
   },
   {
     path: 'pleasure',

@@ -6,7 +6,7 @@ import { NgModule } from "@angular/core";
 import { GpayRoutingModule } from "./gpay-routing.module";
 import { UPIHandlerService } from "../upihandler.service";
 import { Deeplinks } from "@ionic-native/deeplinks/ngx";
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../shared/services/log-event.service";
 @NgModule({
     imports: [ FormsModule, GooglePayButtonModule,
   GpayRoutingModule,

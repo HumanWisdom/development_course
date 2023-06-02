@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          As we begin our exploration of our identities we discover that we acquired them from our various conditioning influences without our awareness or consent. We could question if we still want to be identified as such, or be as attached to them. It is our attachment to our identity that gets in the way of connecting deeply with others who have a different identity, and make us critical of others. It is our attachment to our identity that sows the seeds of conflict in our own lives, and in the world.
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

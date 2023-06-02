@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {OnboardingService} from '../onboarding.service'
+import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 import { Router,ActivatedRoute } from '@angular/router';
 
 

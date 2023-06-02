@@ -1,4 +1,4 @@
-import { OnboardingService } from './../onboarding.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import {
   Component,
   AfterViewInit,

@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from '../../adults.service'; 
-import { LogEventService } from 'src/app/log-event.service';
+import { LogEventService } from '../../../../../../shared/services/log-event.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 
