@@ -1,13 +1,14 @@
-<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
 <app-transcript-content [bg]="bg">
+
   <form>
                 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h3 class="transcript_txt">
           <p>
-            The mind constantly and unconsciously seeks pleasure from all its activities and relationships are a major source of it. This can be a beautiful feeling, when two people fall in love, for example.
+            The mind seeks pleasure from all its activities and relationships are a major source of it. We are not aware of this. This can be a beautiful feeling, when you become close friends with someone, for example, or if you fall in love.
           </p>
           
           <p>
@@ -19,17 +20,18 @@
           </p>
 
           <p>
-            We know pleasure is fleeting in nature. When two people first fall in love they say 'I love you and really mean it. In a few weeks or months the pleasure begins to fade and the old inner boredom and emptiness returns. We then blame the relationships for how we are feeling and think we need a new relationship to feel that old thrill again.
+            We know pleasure is fleeting in nature. When you first meet a new person and start feeling close to them, the feeling is wonderful. As time passes the feeling of pleasure begins to fade and the old inner boredom and inner emptiness begin to return. We don’t see that though and may feel the person we were close to has become boring or we try and find some fault with them. 
           </p>
 
           <p>
-            This is inevitable. How are we going to respond when that happens?
+            This is going to happen. How are you going to respond when it does?
           </p>
         </h3>                
       </div>
     </div>
     
   </form>
+  
 </app-transcript-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

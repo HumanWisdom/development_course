@@ -1,6 +1,7 @@
-<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
 <app-transcript-content [bg]="bg">
+
   <form>
                 
     <div class="row">
@@ -17,12 +18,13 @@
           </p>  
           <p>
             As we discussed earlier, this is not about right and wrong, but following our curiosity to see what we can learn about ourselves and the unconscious processes that drive our behaviour. In that learning is the birth of wisdom. 
-          </p>         
+          </p> 
         </h3>                
       </div>
     </div>
     
   </form>
+  
 </app-transcript-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

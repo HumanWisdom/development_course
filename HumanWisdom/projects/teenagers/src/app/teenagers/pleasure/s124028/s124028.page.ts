@@ -1,106 +1,105 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdultsService } from "../../adults.service";
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s20026',
-  templateUrl: './s20026.page.html',
-  styleUrls: ['./s20026.page.scss'],
+  selector: 'app-s124028',
+  templateUrl: './s124028.page.html',
+  styleUrls: ['./s124028.page.scss'],
 })
-export class S20026Page implements OnInit {
+export class S124028Page implements OnInit 
+{
 
   bg_tn = "bg_pink_orange"
   bg_cft = "bg_pink_orange"
-  bg = "pink_orange_w8"
-  hint = ""
-  toc = "/pleasure/s20001"
+  bg = "pink_orange_w12"
+  hint = "For example if you did not get the grades you wanted"
+  toc = "/pleasure/s124001"
   path = this.router.url
-
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("reflection")
-  screenNumber = 20026
+  screenNumber = 124028
   startTime: any
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 154
+  rId = 1420
   reflection: any
   reflectionA: any
-  r20026 = JSON.parse(sessionStorage.getItem("r20026"))
-
+  r124028 = JSON.parse(sessionStorage.getItem("r124028"))
   shared: any
   confirmed: any
 
+  constructor
+  (
+    private router: Router,
+    private service: TeenagersService,
+    private location: Location
+  ) 
+  { }
 
-  constructor(private router: Router,
-    private service: AdultsService,
-    private location: Location) { }
-
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.createScreen()
-
-
     this.reflectionA = this.qrList.ListOfReflection
-
-
     this.findReflection()
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
     this.startTime = Date.now();
-
-
   }
-  sharedForum(e) {
+
+  sharedForum(e) 
+  {
     console.log(e)
     this.shared = e
   }
 
-  confirmShare() {
+  confirmShare() 
+  {
     this.confirmed = true
   }
-  createScreen() {
+
+  createScreen() 
+  {
     this.service.createScreen({
       "ScrId": 0,
       "ModuleId": this.moduleId,
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
-
-
+    }).subscribe(res => {})
   }
 
-  findReflection() {
-    for (var i = 0; i < this.reflectionA.length; i++) {
-
-
-
-      if (this.rId == this.reflectionA[i].ReflectionId) {
+  findReflection() 
+  {
+    for (var i = 0; i < this.reflectionA.length; i++) 
+    {
+      if (this.rId == this.reflectionA[i].ReflectionId) 
+      {
         this.reflection = this.reflectionA[i].Que
         // this.optionList.push(this.questionA[i])
       }
-
     }
     console.log(this.reflection)
-
   }
 
-
-  submitProgress(e) {
+  submitProgress(e) 
+  {
+    console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r20026", JSON.stringify(e))
-    this.r20026 = sessionStorage.getItem("r20026")
-    localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/pleasure/s20027'])
-    if (this.userId === 563) return;
-
-
+    sessionStorage.setItem("r124028", JSON.stringify(e))
+    this.r124028 = sessionStorage.getItem("r124028")
+    console.log(this.r124028)
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -109,29 +108,24 @@ export class S20026Page implements OnInit {
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": this.r20026
-    }).subscribe(res => {
-
-    },
+      "Resp": this.r124028
+    }).subscribe(res => {},
       error => {
         console.log(error)
+        this.router.navigate(['/pleasure/s124029'])
 
       },
       () => {
+        this.router.navigate(['/pleasure/s124029'])
       })
-
   }
 
-  previous() {
-    localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/pleasure/s20025'])
+  previous() 
+  {
+    this.router.navigate(['/pleasure/s124027'])
   }
 
-  ngOnDestroy() {
-
-
-
-  }
-
+  ngOnDestroy() 
+  {}
 
 }

@@ -1,17 +1,21 @@
-<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
 <app-transcript-content [bg]="bg">
+
   <form>
-              
+                
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h3 class="transcript_txt">
-          Welcome to this module exploring the nature of desire and pleasure. It is part of the 4th circle of wisdom which is understanding our emotions and the thought patterns behind them. It is connected to every other circle. Our mind constantly seeks pleasure whether its through buying things, our relationships, or feeling important.  Just like sunshine, it can be a beautiful thing, but pursuing it can also cause many problems including overconsumption, debt, boredom, addiction, and stress. At present it operates unconsciously in the background. But understanding it in depth allows us to respond with intelligence so it finds its rightful place in our lives.
+          <p>
+            Welcome to this module exploring the nature of desire and pleasure. It is part of the 4th circle of wisdom which is understanding our emotions and the thought patterns behind them. It is connected to every other circle. Our mind constantly seeks pleasure whether its through buying things, our relationships, or feeling important.  Just like sunshine, it can be a beautiful thing, but pursuing it can also cause many problems including overconsumption, debt, boredom, addiction, and stress. At present it operates unconsciously in the background. But understanding it in depth allows us to respond with intelligence so it finds its rightful place in our lives.
+          </p>
         </h3>                
       </div>
     </div>
     
   </form>
+  
 </app-transcript-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

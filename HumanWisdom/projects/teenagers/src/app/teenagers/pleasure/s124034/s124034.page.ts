@@ -1,56 +1,62 @@
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s20032',
-  templateUrl: './s20032.page.html',
-  styleUrls: ['./s20032.page.scss'],
+  selector: 'app-s124034',
+  templateUrl: './s124034.page.html',
+  styleUrls: ['./s124034.page.scss'],
 })
-export class S20032Page implements OnInit {
-
+export class S124034Page implements OnInit 
+{
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
-  bg="pink_orange_w2"
-
+  bg="pink_orange_flat"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   points:any
   overallPercentage:any
 
+  constructor
+  (
+    private router: Router,
+    private service:TeenagersService,
+    private location:Location
+  ) 
+  { }
 
-  constructor(private router: Router,
-    private service:AdultsService,
-    private location:Location) { }
-
-  ngOnInit() {
+  ngOnInit() 
+  {
     if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
     else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.sessionPoints()
   }
 
-  sessionPoints(){
+  sessionPoints()
+  {
     this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"20017,20018,20019,20020,20021,20022,20023,20024,20025,20026,20027,20028,20029,20030,20031"})
+    "ScreenNos":"124017,124018,124019,124020,124021,124022,124023,124024,124025,124026,124027,124028,124029,124030,124031,124032,124033"})
     .subscribe(res=>
-      {console.log("points",res)
+    {
+      console.log("points",res)
       this.points=res
     })
-   
-
   }
 
-  submitProgress(){
-    localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/pleasure/s20033'])
-  }
-  prev(){
-    localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/pleasure/s20031'])
-
+  submitProgress()
+  {
+    this.router.navigate(['/pleasure/s124035'])
   }
 
+  prev()
+  {
+    this.router.navigate(['/pleasure/s124033'])
+  }
 }

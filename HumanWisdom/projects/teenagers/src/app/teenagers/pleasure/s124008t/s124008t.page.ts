@@ -1,71 +1,72 @@
 import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s20008t',
-  templateUrl: './s20008t.page.html',
-  styleUrls: ['./s20008t.page.scss'],
+  selector: 'app-s124008t',
+  templateUrl: './s124008t.page.html',
+  styleUrls: ['./s124008t.page.scss'],
 })
-export class S20008tPage implements OnInit {
+export class S124008tPage implements OnInit 
+{
 
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
   bg="pink_orange_w6"
-
   bookmark=0
   path=this.router.url
-  audioPage="/pleasure/s20008"
-  toc="/pleasure/s20001"
-  
+  audioPage="/pleasure/s124008"
+  toc="/pleasure/s124001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=20008
+  screenNumber=124008
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-
-  
- 
-  
-  avDuration=localStorage.getItem("avDuration20008")
-  totalTime=localStorage.getItem("totalTime20008")
+  avDuration=localStorage.getItem("avDuration124008")
+  totalTime=localStorage.getItem("totalTime124008")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName = "teenagers"
   
-  constructor(private router: Router,
-    private service:AdultsService,
-    private location:Location) { }
+  constructor
+  (
+    private router: Router,
+    private service:TeenagersService,
+    private location:Location
+  ) 
+  { }
  
- 
-  ngOnInit() {
+  ngOnInit() 
+  {
     if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
     else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
- 
-    if(JSON.parse(sessionStorage.getItem("bookmark20008"))==0)
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
+    if(JSON.parse(sessionStorage.getItem("bookmark124008"))==0)
     this.bookmark=0
-  else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark20008"))==1)
-    this.bookmark=1
-  
-   
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark124008"))==1)
+      this.bookmark=1
   }
+
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark20008",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark124008",JSON.stringify(this.bookmark))
   }
-  submitProgress(){
-    localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/pleasure/s20009'])
-    if (this.userId === 563) return;
 
+  submitProgress()
+  {
+    this.router.navigate(['/pleasure/s124009'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -74,17 +75,12 @@ export class S20008tPage implements OnInit {
       "screenType":this.screenType,
       "timeSpent":this.totalTime,
       "avDuration":this.avDuration
-    }).subscribe(res=>
-      {
-        
-      })
- 
-    
-  }
-  prev(){
-    localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/pleasure/s20007'])
+    }).subscribe(res=>{})
   }
 
+  prev()
+  {
+    this.router.navigate(['/pleasure/s124007'])
+  }
 
 }

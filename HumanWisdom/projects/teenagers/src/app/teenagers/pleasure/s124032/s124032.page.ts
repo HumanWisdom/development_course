@@ -1,93 +1,85 @@
-import { Component, OnInit } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s20030',
-  templateUrl: './s20030.page.html',
-  styleUrls: ['./s20030.page.scss'],
+  selector: 'app-s124032',
+  templateUrl: './s124032.page.html',
+  styleUrls: ['./s124032.page.scss'],
 })
-export class S20030Page implements OnInit {
-
+export class S124032Page implements OnInit,OnDestroy 
+{
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
-  bg="pink_orange_w1"
-  toc="pleasure/s20001"
+  bg="pink_orange_w4"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=20030
+  screenNumber=124032
   startTime:any
   endTime:any
   totalTime:any
   bookmark=0
+  toc="pleasure/s124001"
   path=this.router.url
- 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
-  
  
-  constructor(
+  constructor
+  (
     private router: Router,
-    private service:AdultsService,
+    private service:TeenagersService,
     private location:Location
-  ) { }
-ngOnInit() {
+  ) 
+  { }
+
+  ngOnInit() 
+  {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    
     if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.startTime = Date.now();
-  
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark20030"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark124032"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark20030"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark124032"))==1)
       this.bookmark=1
-   
-   
- 
- 
-    
   }
+
   receiveBookmark(e)
   {
     console.log(e)
-   if(e==true)
-    this.bookmark=1
+    if(e==true)
+      this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark20030",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark124032",JSON.stringify(this.bookmark))
   }
-createScreen(){
+
+  createScreen()
+  {
     this.service.createScreen({
       "ScrId":0,
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
- 
+    }).subscribe(res=>{})
   }
- 
- 
 
-  submitProgress(){
+  submitProgress()
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/pleasure/s20031'])
-    if (this.userId === 563) return;
-
+    this.router.navigate(['/pleasure/s124033'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -97,29 +89,21 @@ createScreen(){
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       },
       error=>{console.log(error)},
       ()=>{
-        
+        //this.router.navigate(['/pleasure/s234'])
       })
-    
- 
   }
-  prev(){
-    localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/pleasure/s20029'])
- 
- 
+
+  prev()
+  {
+    this.router.navigate(['/pleasure/s124031'])
   }
- 
- 
- 
-  ngOnDestroy(){
-    
- 
- 
- 
-  }
-  
+
+  ngOnDestroy()
+  {}
+
 }

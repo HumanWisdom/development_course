@@ -1,17 +1,19 @@
-<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
 <app-transcript-content [bg]="bg">
+
   <form>
                 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h3 class="transcript_txt">
-          I invite you to consider this pyramid which represents the layers of our thinking. Deep down in layer 4, the ‘I’ feels restless, bored, empty. You only have to sit quietly with yourself to notice it. Pleasure offers an easy way for us to distract ourselves from it. All this happens unconsciously. I feel I need a new coat, go shopping, buy one and feel happy. Once I’ve bought it though, the stimulation ends and I feel restless again, so need to repeat it, and so shopping becomes a habit. That could be why the pursuit of pleasure becomes so important in our lives. Because my mind is constantly looking for stimulation, which is the new, it overlooks what it already has, and takes it for granted. It is not wrong - we are just exploring the way the mind works.
+          I invite you to consider this pyramid which represents the layers of our thinking. Deep down in layer 4, the ‘I’ feels restless, bored, empty. You only have to sit quietly with yourself to notice it. Pleasure offers an easy way for us to distract ourselves from it. All this happens without our awareness. I may feel I need a new coat, go shopping, buy one and feel happy. Once I’ve bought it though, the pleasure ends and I feel restless again, so I need to repeat it, and so shopping can become a habit. In the same way I get some pleasure from the number of likes on social media, so that can become a habit as well. That could be why the pursuit of pleasure becomes so important in our lives. Because my mind is constantly looking for pleasure and stimulation, which is the new, it overlooks what it already has, and takes it for granted. It is not wrong - we are just exploring the way the mind works.
         </h3>                
       </div>
     </div>
     
   </form>
+  
 </app-transcript-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,6 +1,7 @@
 <app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
- 
-<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="submitProgress()">  
+
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
+    
   <form>
     <h4 class="mtb0px comparison">
       Pleasure
@@ -19,4 +20,5 @@
     </h1>
     <div class="clearfix"></div>
   </form>
+
 </app-tap-start>
