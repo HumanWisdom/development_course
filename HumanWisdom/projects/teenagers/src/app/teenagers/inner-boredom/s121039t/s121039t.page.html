@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s121039t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Now you have noticed this emptiness in yourself, how can you explore it? It is not something you may have done before so it may feel a bit strange. Let's go step by step. The first step is not to escape from it, because you can see that it never goes away, and just gets covered over for a while. You don’t have to name the feeling. Just try and meet it without language. If you are not sure what this means see the module on looking without language in the Art of Enquiry. Be with it as you would look at a sunrise, just looking and noticing. Notice the feeling and the urge to escape from it. But don’t escape through some activity or distraction. If you can do this, an amazing thing happens. The ache disappears, and if you continue, it transforms to a nourishing silence.
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,9 +1,50 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s121051</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-oneline-text [bg]="bg">
 
-</ion-content>
+  <form>
+
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Benefits of understanding and making peace with this inner boredom:
+
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <!-- <h3 class="txt8">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/emoticons/sad.png" alt="">
+    </h3> -->
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. Be comfortable in your own company. Be content. 
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02.Avoid addiction
+
+
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Make better decisions in your life
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Be more creative and use your time better
+
+
+</h3>
+<h3 class="txt8 oneliner_txt_pointer">
+  You do not rely on external validation to feel good about yourself
+
+</h3>
+    
+    
+
+  </form>          
+
+</app-oneline-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s121029t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Sometimes, you may have everything you wanted to achieve. You live in a nice house, got the best grades in school, got into the perfect university and have wonderful friends. This is what you are conditioned to believe will make you happy, so you spendt your life chasing this dream. Why then, despite having everything, can you still feel incomplete, sad, and lacking somehow? No matter how much you achieve, you will always want more. The answer may lie in this inner emptiness which is usually hidden from our awareness and operates from behind the scenes. What you learn is that no matter how much you try and escape from it, it doesn't go away. In the next session we will explore how we can respond to this with our wisdom.
+
+           </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

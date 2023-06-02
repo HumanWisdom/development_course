@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s121007t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"  [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          Lets explore this pyramid which represents the different layers of our thinking. Let's start at the bottom. Layer 4 represents the ‘I’, which feels separate and unique, and also feels empty, restless and bored. It is here that our emptiness originates. Layer 3 represents the many hidden patterns of thinking. One of them is our need for pleasure. Layer 2 is what we think and feel - it is here we feel this ache which we cannot name, and cannot see, rising from our depths. It prompts us to go looking in the world for fulfilment through pleasure - which is layer 1 in this pyramid. We go shopping, or on holiday or keep occupied in some other way. We are not aware of this process in the background. Our awareness is only of layer 1 and 2.
+           </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

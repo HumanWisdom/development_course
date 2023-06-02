@@ -147,6 +147,10 @@ const routes: Routes = [
     path: 'emotional-needs',
     loadChildren: () => import('./teenagers/emotional-needs/emotional-needs.module').then(m => m.EmotionalNeedsModule)
   },
+  {
+    path: 'inner-boredom',
+    loadChildren: () => import('./teenagers/inner-boredom/inner-boredom.module').then(m => m.InnerBoredomModule)
+  },
 ];
 
 @NgModule({

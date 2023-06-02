@@ -1,9 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s121054</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-begin-survey [bg]="bg">
 
-<ion-content>
+  <form>
 
-</ion-content>
+    <div class="row center_flex flex_align">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">                    
+        <h4 class="txt11 txt11_lh">
+          Please take a moment to fill out this survey. It will help us actively improve our programs.
+        </h4>
+      </div>
+    </div>                    
+
+    <br><br>
+
+    <div class="row center_flex flex_align">
+      <div class="col-md-3 col-sm-3 col-xs-12 tcenter p0">
+        <a routerLink="/inner-boredom/s121055">
+          <button type="button" class="btn btn-success mb0 w100 btn_begin_here_orange" data-dismiss="modal">Begin here</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row center_flex flex_align">
+      <div class="col-md-3 col-sm-3 col-xs-12 tcenter p0">                    
+        <a routerLink="/inner-boredom/s121059">
+          <button type="button" class="btn btn-default mb0 w100 btn_skip txt5 tcenter" data-dismiss="modal">Skip</button>
+        </a>
+      </div>
+    </div> 
+
+  </form>
+
+ </app-begin-survey>

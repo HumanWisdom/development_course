@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s121017</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-</ion-content>
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      The answer to filling that void or emptiness we feel, does not lie out there, but in here.
+<br>If you can notice that feeling in yourself and stay with it, it goes away, and it leaves you feeling really calm.
+
+      
+        </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
