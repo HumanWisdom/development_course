@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Pleasure and emotional pain can be two sides of the same coin, but we are not immediately aware of that. There are 3 ways this can happen.  
+          </p>
+          
+          <p>
+            If we are chasing something we want and can't get, like buying a new pair of trainers, or getting  some likes on a social media post, or wanting to be part of a group,  we can get frustrated. If we do get what we want, the pleasure soon fades, and we can find ourselves feeling empty again. Or if we become attached to something that is a source of long-term pleasure, like a pet, and it dies, we can experience the sorrow of loss. These are all part of being human and not right or wrong. This understanding can help us live with wisdom
+          </p>
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

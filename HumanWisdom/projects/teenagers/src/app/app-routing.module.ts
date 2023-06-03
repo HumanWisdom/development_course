@@ -147,6 +147,10 @@ const routes: Routes = [
     path: 'emotional-needs',
     loadChildren: () => import('./teenagers/emotional-needs/emotional-needs.module').then(m => m.EmotionalNeedsModule)
   },
+  {
+    path: 'pleasure',
+    loadChildren: () => import('./teenagers/pleasure/pleasure.module').then(m => m.PleasureModule)
+  },
 ];
 
 @NgModule({

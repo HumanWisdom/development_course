@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The mind seeks pleasure from all its activities and relationships are a major source of it. We are not aware of this. This can be a beautiful feeling, when you become close friends with someone, for example, or if you fall in love.
+          </p>
+          
+          <p>
+            This feeling of being in love has moved poets and songwriters for centuries and is as old as the hills.
+          </p>
+
+          <p>
+            Understanding the nature of pleasure can however prepare us to avoid the many problems this can also present.
+          </p>
+
+          <p>
+            We know pleasure is fleeting in nature. When you first meet a new person and start feeling close to them, the feeling is wonderful. As time passes the feeling of pleasure begins to fade and the old inner boredom and inner emptiness begin to return. We don’t see that though and may feel the person we were close to has become boring or we try and find some fault with them. 
+          </p>
+
+          <p>
+            This is going to happen. How are you going to respond when it does?
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
