@@ -151,6 +151,10 @@ const routes: Routes = [
     path: 'pleasure',
     loadChildren: () => import('./teenagers/pleasure/pleasure.module').then(m => m.PleasureModule)
   },
+  {
+    path: 'inner-boredom',
+    loadChildren: () => import('./teenagers/inner-boredom/inner-boredom.module').then(m => m.InnerBoredomModule)
+  },
 ];
 
 @NgModule({

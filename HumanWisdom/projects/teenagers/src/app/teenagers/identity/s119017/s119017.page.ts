@@ -15,7 +15,7 @@ export class S119017Page implements OnInit,OnDestroy {
   bg="dark_blue_w6"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/identity/videos/2.1.mp4'  
-  title="A conversation on envy"
+  title="What are the benefits of having an identity?  "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/identity/identity_03.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
