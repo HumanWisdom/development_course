@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            As soon as we want something in the future, a desire is born. We think when we get what we want we will feel better than we do right now. The anticipation of it creates an excitement and a burst of pleasure. That pleasure is born along with the desire.
+          </p>
+
+          <p>
+            Desire gives us the energy to chase whatever it is we want - whether it is a new job, or more money, or a person, or buying something, or going on holiday. It’s behind falling in love, and common to all human beings. It is intimately linked with pleasure. It’s a beautiful thing, but can also cause many problems, so understanding it allows us to respond in an intelligent way.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -148,6 +148,10 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/emotional-needs/emotional-needs.module').then(m => m.EmotionalNeedsModule)
   },
   {
+    path: 'pleasure',
+    loadChildren: () => import('./teenagers/pleasure/pleasure.module').then(m => m.PleasureModule)
+  },
+  {
     path: 'inner-boredom',
     loadChildren: () => import('./teenagers/inner-boredom/inner-boredom.module').then(m => m.InnerBoredomModule)
   },

@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If you ask most people what makes them happy, it’s usually linked to some form of pleasure.
+          </p>
+          <p>
+            For children it’s presents, ice cream, holidays, and playing with friends.
+          </p>   
+          <p>
+            For adults it’s buying things, experiences, relationships, and when our ego is boosted, for example, when we are praised. We also get pleasure from food, alcohol, drugs, gambling and digital media. All of these create bursts of pleasant sensations in ourselves that we call happiness. Our need for pleasure drives so much of human behaviour. You may ask, 'What’s wrong with that?'
+          </p>  
+          <p>
+            As we discussed earlier, this is not about right and wrong, but following our curiosity to see what we can learn about ourselves and the unconscious processes that drive our behaviour. In that learning is the birth of wisdom. 
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
