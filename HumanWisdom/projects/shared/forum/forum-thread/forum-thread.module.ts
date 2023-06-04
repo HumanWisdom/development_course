@@ -8,6 +8,7 @@ import { ForumThreadPageRoutingModule } from './forum-thread-routing.module';
 
 import { ForumThreadPage } from './forum-thread.page';
 import { SharedModule } from '../../shared.module';
+import { ModalComponent } from '../../component/modal/modal.component';
 
 // import {SharedModule} from '../../../../../../shared/shared.module'
 @NgModule({
