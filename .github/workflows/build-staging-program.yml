@@ -70,7 +70,7 @@ jobs:
       with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.NEWSERVERKEY }}
         source: "program.tgz"
         target: "builds/compressed/${{ github.run_id }}"
         
@@ -79,7 +79,7 @@ jobs:
       with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.NEWSERVERKEY }}
         script: |
           sudo rm -rf builds/uncompressed/${{ github.run_id }}
           sudo mkdir -p builds/uncompressed/${{ github.run_id }}
