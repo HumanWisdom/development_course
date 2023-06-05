@@ -109,12 +109,12 @@
 
                       <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
                         <div class="col-md-3 col-sm-3 col-xs-4 p0 flex_ai"
-                          [ngStyle]="{'cursor': !isLoggedIn? 'not-allowed' : 'pointer'}">
+                          [ngStyle]="{'cursor':'pointer'}">
                           <!-- <img  [disabled]="!isLoggedIn" *ngIf="item.Liked=='1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue_active.svg" alt="" (click)="like(item,index)" >
                           <img [disabled]="!isLoggedIn" *ngIf="item.Liked=='0'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/like_blue.svg" alt="" (click)="like(item,index)" >
                           <span class="fw_400 fs_12px fc_1092a7 lcs" [innerText]="item.PostLikeCount"></span> -->
 
-                          <button [disabled]="!isLoggedIn" type="submit" class="btn btn_ficons jc_flexstart">
+                          <button type="submit" class="btn btn_ficons jc_flexstart">
                             <i *ngIf="item.Liked=='0'" (click)="like(item,index)" class="fa fa-heart-o">
                             </i>
 
@@ -124,7 +124,7 @@
                           </button>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-4 pl0 flex_ai"
-                          [ngStyle]="{'cursor': !isLoggedIn ? 'not-allowed' : 'cursor'}">
+                          [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}">
                           <!-- <img (click)="reportpost(item,'comment')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/comment_blue.svg" alt="">
                           <span class="fw_400 fs_12px fc_1092a7 lcs"  [innerText]="item.ReplyCount"></span> -->
 
@@ -132,7 +132,7 @@
                             class="btn btn_ficons jc_flexstart">
                             <i class="fa fa-reply">
                             </i>
-                            Comment
+                            Comment ({{item.ReplyCount}})
                             <!-- {{item.ReplyCount}} -->
                           </button>
                         </div>
@@ -142,7 +142,7 @@
                         </div> -->
                       </div>
 
-                      <div *ngIf="isLoggedIn" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai"
+                      <div  class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai"
                         (click)="reportpost(item,'report')">
                         <!-- <span class="fw_400 fs_10px lh_12px fc_1092a7 ws_nowrap">
                           Report post
@@ -154,7 +154,7 @@
                         </button>
                       </div>
 
-                      <div *ngIf="isLoggedIn" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai"
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 flex_ai"
                         (click)="follow(item,index)">
                         <!-- <span *ngIf="item.Followed=='1'" class="fw_400 fs_10px lh_12px fc_1092a7">
                           Following
@@ -232,7 +232,9 @@
                 <hr class="hr_style_2">
               </div>
               <!-- /section 1 -->
-
+              <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+              [content]="'Please register to use this feature'">
+             </app-modal>
               <div class="pagebreak"></div>
             </form>
           </div>
@@ -311,13 +313,14 @@
                 </div>
               </div>
             </div>
-
+     
           </div>
         </form>
       </div>
     </div>
     <!-- /modal content -->
   </div>
+
   <!-- /modal-body -->
 </div>
 <!-- /signup_login modal -->

@@ -68,6 +68,7 @@ export class ForumLandingPage implements OnInit {
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
   public alertMsg: any
+  public enableAlert:any=false;
   public qrList: any
   public goToPage: any
   public benefitsWisdomP: any
@@ -109,6 +110,8 @@ export class ForumLandingPage implements OnInit {
     this.token = JSON.parse(localStorage.getItem("token"));
 
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
+    
+    this.isloggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
   }
   like(item, index) {
     if (this.isLoggedIn) {
@@ -118,6 +121,8 @@ export class ForumLandingPage implements OnInit {
           this.posts[index].Liked = this.posts[index].Liked == "1" ? "0" : "1";
         }
       });
+    }else{
+      this.enableAlert = true;
     }
   }
   list(data) {
@@ -147,12 +152,16 @@ export class ForumLandingPage implements OnInit {
     }
   }
   reportpost(item, actionType) {
+    if(this.isLoggedIn){
     if (this.actionType == '' || this.actionType == actionType) {
       this.replyflag = !this.replyflag;
     }
     this.actionType = actionType;
     this.activereply = item;
     console.log(item);
+  } else{
+    this.enableAlert = true;
+  }
   }
 
 
@@ -187,11 +196,16 @@ export class ForumLandingPage implements OnInit {
     }
   }
   follow(item, index) {
-    this.serivce.followPost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
-      if (res == "1") {
-        this.posts[index].Followed = item.Followed == '1' ? '0' : '1';
-      }
-    });
+    if(this.isLoggedIn){
+      this.serivce.followPost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
+        if (res == "1") {
+          this.posts[index].Followed = item.Followed == '1' ? '0' : '1';
+        }
+      });
+    }
+    else{
+      this.enableAlert=true;
+    }
   }
   postnavigate(item) {
     this.serivce.postdataSource.next(item);
@@ -495,5 +509,13 @@ export class ForumLandingPage implements OnInit {
   loginpage() {
     this.closepopup.nativeElement.click();
     this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+  }
+  getAlertcloseEvent($event) {
+    if ($event == 'cancel') {
+      this.enableAlert = false;
+    } else {
+      this.enableAlert = false;
+      this.router.navigate(['/login'])
+    }
   }
 }
