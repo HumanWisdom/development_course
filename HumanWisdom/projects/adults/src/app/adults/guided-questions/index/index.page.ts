@@ -5,7 +5,7 @@ import { Location } from "@angular/common";
 import * as $ from 'jquery';
 import { BehaviorSubject, Subject } from "rxjs";
 import { addEventListener } from "@ionic/core/dist/types/utils/helpers";
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../../shared/services/log-event.service";
 
 @Component({
   selector: "app-index",

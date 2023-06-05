@@ -3,9 +3,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
-import { LogEventService } from 'src/app/log-event.service';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 @Component({
   selector: 'HumanWisdom-adverts-hwp',

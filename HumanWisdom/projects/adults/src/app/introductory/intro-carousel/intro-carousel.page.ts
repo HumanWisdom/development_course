@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import 'bcswipe';
 import { AdultsService } from 'src/app/adults/adults.service';
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../shared/services/log-event.service";
 
 
 declare var $: any;

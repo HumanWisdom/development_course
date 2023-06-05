@@ -1,0 +1,39 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            In this example, say, I go to a fast food restaurant.
+          </p>
+          
+          <p>
+            I remind myself that I am already overweight and need to be careful what I eat.
+          </p>
+
+          <p>
+            Once I am there, however, I seem to forget that, lose all self-control, over eat, feel guilty about it, and promise I'll do better next time. But the cycle continues.
+          </p>
+
+          <p>
+            What's going on?
+          </p>
+
+          <p>
+            Hidden from my awareness, food is a familiar source of pleasure for me.          </p>
+
+          <p>
+            My old patterns of pleasure override the thoughts that get in the way of its fulfillment, particularly when I am feeling a bit uneasy.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

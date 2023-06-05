@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
-import { OnboardingService } from './onboarding/onboarding.service';
+import { OnboardingService } from '../../../shared/services/onboarding.service';
 
 @Injectable({
   providedIn: 'root'

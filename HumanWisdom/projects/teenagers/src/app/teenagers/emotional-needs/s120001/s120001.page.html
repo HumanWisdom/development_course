@@ -1,0 +1,128 @@
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
+          Emotional-needs
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          
+We have many emotional needs that we are not aware of, like a need 
+to be listened to, loved and understood, for security, pleasure and to be important.
+They affect our relationships in many hidden ways. Understanding them
+allows us to have happier relationships and live with a sense of peace.
+
+          </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
+        <a [routerLink]="['/emotional-needs', emotionalneedsResume]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_green_yellow" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <!-- <a routerLink="/emotional-needs/s1">
+          <button type="button" class="btn btn_default mb0 txt_green_yellow" data-dismiss="modal">Start from the beginning</button>
+        </a> -->
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/emotional-needs/s120002">
+      <div class="row crow box bg_blue_pink">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Exploring Emotional Needs
+
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              20 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+
+    <a routerLink="/emotional-needs/s120038">
+      <div class="row crow box bg_blue_pink">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              How do Emotional Needs Impact our Life?
+
+
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              38 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/emotional-needs/s120069">
+      <div class="row crow box bg_blue_pink">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #3
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Responding To Emotional Needs With Wisdom
+
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              20 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+   
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>

@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          How does our unconscious need for pleasure express itself in our relationships?
+          We look to others for stimulation, which can come from physical affection, or being made to feel important and special, or sharing some common interests. PAll pleasure from any friendship fades with time, and then one can feel bored, and blame the friendship for how we are feeling, without realising that it's not the other person who has suddenly become boring, it is the nature of pleasure itself. We could then think another friendship will make us feel better, and the cycle can repeat itself with a new person. Understanding this allows us to respond with wisdom.
+          
+           </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

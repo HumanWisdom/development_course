@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
 import { AdultsService } from '../adults.service';
 import { Router } from '@angular/router';
-import { LogEventService } from './../../log-event.service';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 
 declare var $: any;
