@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../onboarding.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-subscription-s09-v02',

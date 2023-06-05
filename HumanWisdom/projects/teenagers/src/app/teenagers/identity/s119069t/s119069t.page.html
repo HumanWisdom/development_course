@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s119069t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Is it possible to be a human being, free of any fixed labels of identity? We rarely ask this question. Our mind automatically creates these identities for us without our awareness or consent, so letting them go requires great intelligence and an understanding of the process behind their creation. Why should we bother though? We have lived with these identities and they have brought us comfort. Sometimes even asking this question can make us feel anxious - as if someone is going to take something away from us. No one is doing that. This is just an invitation to explore the beauty of being simply human.
+ No words can convey the tremendous freedom one feels when one is simply a human being, without an attachment to any identity, able to feel connected to everyone without any barriers. There is a great feeling of lightness and beauty and peace - but you have to find out for yourself. How can you do this?
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

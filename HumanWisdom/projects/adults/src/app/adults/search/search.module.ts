@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SearchRoutingModule } from './search-routing.module';
 import { AdultsService } from '../adults.service';
-import { ForumService } from 'src/app/forum/forum.service';
+import { ForumService } from '../../../../../shared/forum/forum.service';
 
 
 @NgModule({

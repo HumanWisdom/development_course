@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import {Deeplinks} from '@ionic-native/deeplinks/ngx'
-import { LogEventService } from '../log-event.service';
+import { LogEventService } from '../../../../shared/services/log-event.service';
 @Injectable({
   providedIn: 'root'
 })

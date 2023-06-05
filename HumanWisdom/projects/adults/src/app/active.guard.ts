@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from '././adults/adults.service';
-import { LogEventService } from './log-event.service';
+import { LogEventService } from '../../../shared/services/log-event.service';
 
 @Injectable({
   providedIn: 'root'

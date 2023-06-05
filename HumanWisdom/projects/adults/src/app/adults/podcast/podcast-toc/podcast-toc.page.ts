@@ -4,8 +4,9 @@ import { Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Platform } from "@angular/cdk/platform";
-import { LogEventService } from 'src/app/log-event.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { LogEventService } from '../../../../../../shared/services/log-event.service';
+
 
 @Component({
   selector: 'app-podcast-toc',

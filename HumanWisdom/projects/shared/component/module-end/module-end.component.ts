@@ -6,6 +6,7 @@ import jsPDF from 'jspdf';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { ProgramModel, ProgramType } from "../../../shared/models/program-model";
+import { SharedService } from "../../services/shared.service";
 
 
 @Component({
@@ -133,223 +134,229 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeResume(r, link) {
-
-    switch (r.toString()) {
-      case "0": {
-        this.router.navigate([link])
-        break
+    if(ProgramType.Teenagers == this.programType){
+      let moduleData=this.moduleData.filter(x=>x.path.includes(link))
+      if(moduleData && moduleData!=null && moduleData.length>0) {
+       this.RouteToModule(moduleData[0]);
       }
-      case "7": {
-        this.routeComparison(1)
-        break
-      }
-      case "14": {
-        this.routeAnger(1)
-        break
-      }
-      case "15": {
-        this.routeConditioning(1)
-        break
-      }
-      case "16": {
-        this.routeCriticism(1)
-        break
-      }
-      case "17": {
-        this.routeSelfEsteem(1)
-        break
-      }
-      case "18": {
-        this.routeEmotionalNeeds(1)
-        break
-      }
-      case "19": {
-        this.routeFearAnxiety(1)
-        break
-      }
-      case "20": {
-        this.routePleasure(1)
-        break
-      }
-      case "21": {
-        this.routeIdentity(1)
-        break
-      }
-      case "22": {
-        this.routeMeditation(1)
-        break
-      }
-      case "23": {
-        this.routeHappiness(1)
-        break
-      }
-      case "25": {
-        this.routeSelfImage(1)
-        break
-      }
-      case "26": {
-        this.routeBenefitsEnquiry(1)
-        break
-      }
-      case "27": {
-        this.routeDiscoveringWisdom(1)
-        break
-      }
-      case "28": {
-        this.routeNature(1)
-        break
-      }
-      case "29": {
-        this.routeBreathing(1)
-        break
-      }
-      case "30": {
-        this.routeNoticingThoughts(1)
-        break
-      }
-      case "32": {
-        this.routeBenefits(1)
-        break
-      }
-      case "33": {
-        this.routeCircles(1)
-        break
-      }
-      case "34": {
-        this.routeIdeas(1)
-        break
-      }
-      case "35": {
-        this.routeGuide(1)
-        break
-      }
-      case "36": {
-        this.routeHowToBegin(1)
-        break
-      }
-      case "37": {
-        this.routeThreeSteps(1)
-        break
-      }
-      case "38": {
-        this.routeInsights(1)
-        break
-      }
-      case "39": {
-        this.routeAwareness(1)
-        break
-      }
-      case "40": {
-        this.routeNoJudgement(1)
-        break
-      }
-      case "41": {
-        this.routeQuestionsAreKey(1)
-        break
-      }
-      case "42": {
-        this.routeLookWithoutLanguage(1)
-        break
-      }
-      case "43": {
-        this.routeObstacles(1)
-        break
-      }
-      case "44": {
-        this.routeStress(1)
-        break
-      }
-      case "45": {
-        this.routeAddiction(1)
-        break
-      }
-      case "46": {
-        this.routeFood(1)
-        break
-      }
-      case "47": {
-        this.routeRelationships(1)
-        break
-      }
-      case "48": {
-        this.routeSuccessAndFailure(1)
-        break
-      }
-      case "49": {
-        this.routeOpinionsAndBeliefs(1)
-        break
-      }
-      case "51": {
-        this.routeGuidedMeditation(1)
-        break
-      }
-      case "53": {
-        this.routeCommunication(1)
-        break
-      }
-      case "54": {
-        this.routeReactiveMind(1)
-        break
-      }
-      case "55": {
-        this.routeSelfInterest(1)
-        break
-      }
-      case "56": {
-        this.routeInnerBoredom(1)
-        break
-      }
-      case "57": {
-        this.routeNatureOfI(1)
-        break
-      }
-      case "58": {
-        this.routeWork(1)
-        break
-      }
-      case "59": {
-        this.routeLeadership(1)
-        break
-      }
-      case "60": {
-        this.routeSorrowandLoss(1)
-        break
-      }
-      case "61": {
-        this.routeLoneliness(1)
-        break
-      }
-      case "62": {
-        this.routeLove(1)
-        break
-      }
-      case "63": {
-        this.routeLivingWithPeace(1)
-        break
-      }
-      case "64": {
-        this.routeDealingWithDeath(1)
-        break
-      }
-      case "73": {
-        this.routeMoney(1)
-        break
-      }
-      case "74": {
-        this.routeHowCanWisdomHelp(1)
-        break
-      }
-
-      case "76": {
-        this.routeBullying(1)
-        break
-      }
-      case "77": {
-        this.routeMakingBetterDecision(1)
-        break
-      } case "92": {
-        this.routeDealingWithDepression(1)
-        break
+    }else{
+      switch (r.toString()) {
+        case "0": {
+          this.router.navigate([link])
+          break
+        }
+        case "7": {
+          this.routeComparison(1)
+          break
+        }
+        case "14": {
+          this.routeAnger(1)
+          break
+        }
+        case "15": {
+          this.routeConditioning(1)
+          break
+        }
+        case "16": {
+          this.routeCriticism(1)
+          break
+        }
+        case "17": {
+          this.routeSelfEsteem(1)
+          break
+        }
+        case "18": {
+          this.routeEmotionalNeeds(1)
+          break
+        }
+        case "19": {
+          this.routeFearAnxiety(1)
+          break
+        }
+        case "20": {
+          this.routePleasure(1)
+          break
+        }
+        case "21": {
+          this.routeIdentity(1)
+          break
+        }
+        case "22": {
+          this.routeMeditation(1)
+          break
+        }
+        case "23": {
+          this.routeHappiness(1)
+          break
+        }
+        case "25": {
+          this.routeSelfImage(1)
+          break
+        }
+        case "26": {
+          this.routeBenefitsEnquiry(1)
+          break
+        }
+        case "27": {
+          this.routeDiscoveringWisdom(1)
+          break
+        }
+        case "28": {
+          this.routeNature(1)
+          break
+        }
+        case "29": {
+          this.routeBreathing(1)
+          break
+        }
+        case "30": {
+          this.routeNoticingThoughts(1)
+          break
+        }
+        case "32": {
+          this.routeBenefits(1)
+          break
+        }
+        case "33": {
+          this.routeCircles(1)
+          break
+        }
+        case "34": {
+          this.routeIdeas(1)
+          break
+        }
+        case "35": {
+          this.routeGuide(1)
+          break
+        }
+        case "36": {
+          this.routeHowToBegin(1)
+          break
+        }
+        case "37": {
+          this.routeThreeSteps(1)
+          break
+        }
+        case "38": {
+          this.routeInsights(1)
+          break
+        }
+        case "39": {
+          this.routeAwareness(1)
+          break
+        }
+        case "40": {
+          this.routeNoJudgement(1)
+          break
+        }
+        case "41": {
+          this.routeQuestionsAreKey(1)
+          break
+        }
+        case "42": {
+          this.routeLookWithoutLanguage(1)
+          break
+        }
+        case "43": {
+          this.routeObstacles(1)
+          break
+        }
+        case "44": {
+          this.routeStress(1)
+          break
+        }
+        case "45": {
+          this.routeAddiction(1)
+          break
+        }
+        case "46": {
+          this.routeFood(1)
+          break
+        }
+        case "47": {
+          this.routeRelationships(1)
+          break
+        }
+        case "48": {
+          this.routeSuccessAndFailure(1)
+          break
+        }
+        case "49": {
+          this.routeOpinionsAndBeliefs(1)
+          break
+        }
+        case "51": {
+          this.routeGuidedMeditation(1)
+          break
+        }
+        case "53": {
+          this.routeCommunication(1)
+          break
+        }
+        case "54": {
+          this.routeReactiveMind(1)
+          break
+        }
+        case "55": {
+          this.routeSelfInterest(1)
+          break
+        }
+        case "56": {
+          this.routeInnerBoredom(1)
+          break
+        }
+        case "57": {
+          this.routeNatureOfI(1)
+          break
+        }
+        case "58": {
+          this.routeWork(1)
+          break
+        }
+        case "59": {
+          this.routeLeadership(1)
+          break
+        }
+        case "60": {
+          this.routeSorrowandLoss(1)
+          break
+        }
+        case "61": {
+          this.routeLoneliness(1)
+          break
+        }
+        case "62": {
+          this.routeLove(1)
+          break
+        }
+        case "63": {
+          this.routeLivingWithPeace(1)
+          break
+        }
+        case "64": {
+          this.routeDealingWithDeath(1)
+          break
+        }
+        case "73": {
+          this.routeMoney(1)
+          break
+        }
+        case "74": {
+          this.routeHowCanWisdomHelp(1)
+          break
+        }
+  
+        case "76": {
+          this.routeBullying(1)
+          break
+        }
+        case "77": {
+          this.routeMakingBetterDecision(1)
+          break
+        } case "92": {
+          this.routeDealingWithDepression(1)
+          break
+        }
       }
     }
   }
@@ -2546,7 +2553,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   }
   routeJournal() {
-    this.router.navigate(['/adults/journal'])
+ 
+    if(ProgramType.Teenagers==this.programType || 
+         SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/journal/']);
+    }else{
+      this.router.navigate(['/adults/journal']);
+    }
+
   }
   routeForum() {
     this.router.navigate(['/forum'])

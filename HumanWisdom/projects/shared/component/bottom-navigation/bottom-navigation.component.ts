@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 //import { LogEventService } from 'src/app/log-event.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BottomNavigationComponent implements OnInit {
   @Input() dash = false;
+  @Input() programType :ProgramType = ProgramType.Adults;
   journal = false
   fourm = false
   profile = false
@@ -74,27 +77,32 @@ export class BottomNavigationComponent implements OnInit {
 
   }
   routeDash() {
+    if(ProgramType.Teenagers==this.programType || 
+      SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/teenager-dashboard/']);
+    }else{
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
     //this.logeventservice.logEvent('click_home')
-    this.router.navigate(['/adults/adult-dashboard'])
-
   }
+
   routeJournal() {
-    this.router.navigate(['/adults/journal'])
-
-    //this.logeventservice.logEvent('click_journal')
-    // if (this.isloggedIn && this.guest === 'F') {
-    //   if (!this.Subscriber || this.Subscriber === '0') {
-    //     this.router.navigate(['/onboarding/free-limit']);
-    //   } else {
-    //     this.router.navigate(['/adults/journal'])
-    //   }
-    // } else {
-    //   this.journalclick.emit('enablepopup');
-    // }
+    if(ProgramType.Teenagers==this.programType || 
+      SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/journal/']);
+    }else{
+      this.router.navigate(['/adults/journal']);
+    }
   }
+
   routeSearch() {
+    if(ProgramType.Teenagers==this.programType || 
+      SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/search/']);
+    }else{
+      this.router.navigate(['/adults/search']);
+    }
     //this.logeventservice.logEvent('click_for_you')
-    this.router.navigate(['/adults/search']);
   }
   profileclickevent() {
 
@@ -113,8 +121,7 @@ export class BottomNavigationComponent implements OnInit {
 
   routeForum() {
     // if(localStorage.getItem('isloggedin') === 'T')
-    this.router.navigate(['/forum'])
-
+    this.router.navigate(['/forum'],{ state: { programType: this.programType } })
   }
 
   saveQuestionButton() {
