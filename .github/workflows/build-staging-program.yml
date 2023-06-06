@@ -72,7 +72,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.NEWSERVERKEY }}
         source: "program.tgz"
-        target: "builds/compressed/"
+        target: "builds/compressed/${{ github.run_id }}"
         
     - name: Setup the build on remote server
       uses: appleboy/ssh-action@master
