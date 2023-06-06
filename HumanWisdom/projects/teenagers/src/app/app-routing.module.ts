@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'start-here',
     loadChildren: () => import('./teenagers/start-here/start-here.module').then(m => m.StartHereModule)
   },
+
+
+
+  
   //
   // {
   //   path: 'what-is-wisdom',
