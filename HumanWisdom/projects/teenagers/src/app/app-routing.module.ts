@@ -155,6 +155,7 @@ const routes: Routes = [
     path: 'inner-boredom',
     loadChildren: () => import('./teenagers/inner-boredom/inner-boredom.module').then(m => m.InnerBoredomModule)
   },
+
 ];
 
 @NgModule({

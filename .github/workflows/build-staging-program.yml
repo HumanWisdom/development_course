@@ -1,7 +1,7 @@
 name: build-HumanWisdom-staging
 on:
   push:
-    branches: [staging-test]
+    branches: [main]
     
 jobs:
   build-teenagers:
