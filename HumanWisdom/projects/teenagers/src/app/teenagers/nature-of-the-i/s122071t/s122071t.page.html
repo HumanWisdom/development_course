@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          You may begin by asking questions of life when faced with difficulty - like stress, anxiety or conflict in a relationship. That is a good place to begin. You wonder what is behind the feelings you have and that takes you deeper to discover the hidden layers of your thinking - you learn about how the mind works - your conditioning, self-interest, and so on. You then ask who feels this sorrow - and realise it is the ‘I’. You are curious and begin exploring what the ‘I’ is. That leads you to discover it is restless and feels empty. Normally you would escape from this feeling, but now you remain with it, observing it without language. In a sudden flash of insight, you discover that the ‘I’ is a creation of thinking, and not real. As it dissolves you discover the nameless, indescribable beauty of the sacred. It is up to you.
+
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
