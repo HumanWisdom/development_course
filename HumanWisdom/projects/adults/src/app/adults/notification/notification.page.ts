@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdultsService } from '../adults.service';
 import { NotificationModel } from '../../adults/notification/notification-model';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 

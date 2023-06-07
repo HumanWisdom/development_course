@@ -4,9 +4,9 @@ import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms'
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
-import { LogEventService } from './../../log-event.service';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-adult-dashboard',

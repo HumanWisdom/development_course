@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s119004t</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"  [progName]="progName"></app-transcript-header>
 
-<ion-content>
+<app-transcript-content [bg]="bg">
 
-</ion-content>
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module exploring the subject of identity. It is in the 3rd circle of wisdom, exploring how our mind works. This is similar in all human beings. It is related to all the other circles of wisdom. We explore the many ways our identities shape our lives. They form unconsciously, but why do we seem to get so attached to them? And why do they cause so much conflict between groups of people with different identities? Through history, hundreds of millions of people have died as a result. Identity is neither good nor bad, just a fact to be understood. Understanding it can help us live with an inner intelligence and wisdom, so it has its rightful place in our lives.
+           </p>
+
+         
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

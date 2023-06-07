@@ -3,7 +3,7 @@ import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { AdultsService } from 'src/app/adults/adults.service';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
 declare var $: any;
 

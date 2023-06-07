@@ -1,8 +1,8 @@
 import { Platform } from '@angular/cdk/platform';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogEventService } from "src/app/log-event.service";
-import { OnboardingService } from './../onboarding.service';
+import { LogEventService } from "../../../../../shared/services/log-event.service";
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-profile',
