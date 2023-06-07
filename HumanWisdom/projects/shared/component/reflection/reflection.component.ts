@@ -17,7 +17,7 @@ export class ReflectionComponent implements OnInit {
   @Input() bg_tn: string;
   @Input() bg_cft: string;
   @Input() set reflectionResponse(data) {
-    this.reflectionData = data !== 'null' ? data : '';
+    // this.reflectionData = data !== 'null' ? data : '';
   };
   @Input() toc: string;
   @Input() rid: string;
@@ -57,6 +57,8 @@ export class ReflectionComponent implements OnInit {
     if(this.programName=='teenagers'){
       this.programName='';
     }
+
+    this.reflectionData = this.reflection !== 'null' ? this.reflection : '';
   }
   sharedForum(e) {
     console.log(e)
@@ -112,11 +114,11 @@ export class ReflectionComponent implements OnInit {
     const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
     return enumKey as string;
   }
- 
+
   goToToc() {
     this.router.navigate(['/'+this.programName+'/' + this.toc])
   }
- 
+
   goToDash() {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.router.navigate(['/adults/adult-dashboard'])
