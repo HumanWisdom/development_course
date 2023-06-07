@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          A simple question can open the door to enquiry and wisdom. ‘What can I learn?’
+          We can do this once the initial reaction has died down and we are feeling a bit calmer.
+          It may be that there is nothing to learn, and that is fine too. But if we can learn something, we can prevent the pattern of stress from repeating itself.
+          For example if I realise that I always get stressed in a traffic jam, I could ask why that is? I could learn that patterns of reaction repeat themselves, and on exploring why that is, I may discover that I’m quite impatient and have difficulty accepting things as they are. It could be linked to an event in the past where being late for an important appointment caused a real problem. It may also help me understand others, when I see patterns of stress repeating themselves in their lives.
+          I could also ask myself if there is a different way to respond the next time I am in a traffic jam for example, so I don’t get stressed, since I know that is bad for me.
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If you can ask yourself this question, and train yourself to do so, then many other options open up for your consideration. If you don’t, then your mind reacts in the old pattern. If a friend doesn't call on your birthday your first reaction might be that he forgot, but it could be his phone battery died, or he himself is unwell and so on. Or if the boss sends you an email calling you to his office, instead of assuming you're in trouble you could consider that he needs you help with something - and so on. If your mind has a habit of being anxious, then you will react negatively and asking this question can help dissolve your initial stress reaction.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
