@@ -58,8 +58,8 @@ export class S120034Page implements OnInit
       }
     }
     this.questionA=this.qrList?.ListOfQueOpts
-    this.question=this.findQuestion(400).Question
-    this.optionList=this.findQuestion(400).optionList
+    this.question=this.findQuestion(486).Question
+    this.optionList=this.findQuestion(486).optionList
     console.log(this.optionList,this.question)
 
     if(this.saveUsername==false)

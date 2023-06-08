@@ -2,7 +2,6 @@ import { Options } from '@angular-slider/ngx-slider';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//node_modules/propellerkit-range-slider/node_modules/nouislider/';
 import * as noUiSlider from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/nouislider/';
 import * as wNumb from '../../../../../../../node_modules/propellerkit-range-slider/node_modules/wnumb/';
 import { TeenagersService } from '../../teenagers.service';
@@ -16,9 +15,9 @@ import { TeenagersService } from '../../teenagers.service';
 export class S109071Page implements OnInit 
 {
 
-  bg_tn="bg_blue"
-  bg_cft="bg_blue"
-  bg="blue_flat"
+  bg_tn = "bg_blue"
+  bg_cft = "bg_blue"
+  bg = "feedback_survey_footer"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -30,12 +29,12 @@ export class S109071Page implements OnInit
   totalTime: any
   bookmark: any
   x = []
-  q1 = 15
-  q2 = 56
-  q3 = 57
-  q4 = 59
-  q5 = 60
-  q6 = 61
+  q1 = 430
+  q2 = 431
+  q3 = 432
+  q4 = 433
+  q5 = 434
+  q6 = 0
   optionList1 = []
   optionList2 = []
   optionList3 = []
@@ -99,9 +98,13 @@ export class S109071Page implements OnInit
   rating5 = 0
   rating6 = 0
 
-  constructor(private router: Router,
+  constructor
+  (
+    private router: Router,
     private service: TeenagersService,
-    private location: Location) { }
+    private location: Location
+  ) 
+  { }
 
   ngOnInit() 
   {
@@ -225,18 +228,18 @@ export class S109071Page implements OnInit
     this.createScreen()
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
-    this.q1 = this.findQuestion(46).Question
-    this.optionList1 = this.findQuestion(46).optionList
-    this.q2 = this.findQuestion(81).Question
-    this.optionList2 = this.findQuestion(81).optionList
-    this.q3 = this.findQuestion(57).Question
-    this.optionList3 = this.findQuestion(57).optionList
-    this.q4 = this.findQuestion(59).Question
-    this.optionList4 = this.findQuestion(59).optionList
-    this.q5 = this.findQuestion(60).Question
-    this.optionList5 = this.findQuestion(60).optionList
-    this.q6 = this.findQuestion(61).Question
-    this.optionList6 = this.findQuestion(61).optionList
+    this.q1 = this.findQuestion(430).Question
+    this.optionList1 = this.findQuestion(430).optionList
+    this.q2 = this.findQuestion(431).Question
+    this.optionList2 = this.findQuestion(431).optionList
+    this.q3 = this.findQuestion(432).Question
+    this.optionList3 = this.findQuestion(432).optionList
+    this.q4 = this.findQuestion(433).Question
+    this.optionList4 = this.findQuestion(433).optionList
+    this.q5 = this.findQuestion(434).Question
+    this.optionList5 = this.findQuestion(434).optionList
+    this.q6 = this.findQuestion(0).Question
+    this.optionList6 = this.findQuestion(0).optionList
     console.log(this.q1, this.optionList1)
     console.log(this.q2, this.optionList2)
     console.log(this.q3, this.optionList3)
@@ -345,7 +348,6 @@ export class S109071Page implements OnInit
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/meditation/s109072'])
-
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6]
     this.option = optionT.join()
     this.service.submitProgressQuestion({
