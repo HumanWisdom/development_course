@@ -25,7 +25,7 @@ export class S121008Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="/inner-boredom/s111001"
+  toc="/inner-boredom/s121001"
   bookmark=0
   path=this.router.url
   avDuration:any
