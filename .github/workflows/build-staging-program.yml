@@ -171,11 +171,11 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.NEWSERVERKEY }}
         script: |
-          sudo rm -rf builds/uncompressed/${{ github.run_id }}
-          sudo mkdir -p builds/uncompressed/${{ github.run_id }}
-          sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          sudo rm -rf /var/www/html/course_backup_1
-          sudo cp -R /var/www/html/course/ /var/www/html/course_backup_1
-          sudo rm -rf /var/www/html/course
-          sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
+          rm -rf /var/www/html/course_backup_1
+          cp -R /var/www/html/course/ /var/www/html/course_backup_1
+          rm -rf /var/www/html/course
+          mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
     
