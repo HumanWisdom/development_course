@@ -84,8 +84,6 @@ jobs:
           rm -rf builds/uncompressed/${{ github.run_id }}
           mkdir -p builds/uncompressed/${{ github.run_id }}
           tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          rm -rf /var/www/html/teenager_backup
-          cp -R /var/www/html/course/ /var/www/html/teenager_backup
           rm -rf /var/www/html/teenagers
           mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers  
           
