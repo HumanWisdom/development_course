@@ -44,6 +44,22 @@ export class AppComponent implements OnDestroy {
     private services: AdultsService,
     public moengageService:MoengageService
   ) {
+
+    window.addEventListener('MOE_AUTOMATED_EVENTS', function (event:any) {
+      if (event.detail.name === 'MOE_ONSITE_MESSAGE_SHOWN' && event.detail.data && event.detail.data.length) {
+        //do some processing on event.detail.data
+      }
+    });
+    
+    const button = document.getElementById('your-button-id');
+
+// Add an event listener to the button
+    button.addEventListener('click', function() {
+  // This function will be executed when the button is clicked
+  console.log('Button clicked!');
+  // You can add your desired code here
+});
+
     if(platform.isBrowser){
     //   moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',
     //    debug_logs:1,
