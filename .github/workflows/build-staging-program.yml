@@ -84,8 +84,9 @@ jobs:
           rm -rf builds/uncompressed/${{ github.run_id }}
           mkdir -p builds/uncompressed/${{ github.run_id }}
           tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          rm -rf /var/www/html/teenagers
-          mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers  
+          sudo rm -rf /var/www/html/teenagers
+          sudo mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers  
+          sudo chown ubuntu:ubuntu /var/www/html/teenagers
           
     - name: Cleaning up Teenagers pipeline
       run: sleep 30      
