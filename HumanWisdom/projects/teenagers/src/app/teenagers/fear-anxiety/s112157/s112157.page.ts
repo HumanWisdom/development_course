@@ -9,12 +9,12 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s112157.page.html',
   styleUrls: ['./s112157.page.scss'],
 })
-export class S112157Page implements OnInit {
+export class S112157Page implements OnInit 
+{
 
   bg_tn = "bg_purple_red"
   bg_cft = "bg_purple_red"
-  bg = "purple_red_flat"
-
+  bg = "feedback_survey_footer"
   userId: any
   //saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -26,43 +26,40 @@ export class S112157Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 248
+  rId = 1433
   reflection: any
   reflectionA: any
-  //r112157 = JSON.parse(sessionStorage.getItem("r112157"))
-  r112157 = sessionStorage.getItem("r112157") !== 'null' ? sessionStorage.getItem("r112157") : '';
+  r112157 = JSON.parse(sessionStorage.getItem("r112157"))
 
-  constructor(private router: Router,
+  constructor
+  (
+    private router: Router,
     private service: TeenagersService,
-    private location: Location) { }
+    private location: Location
+  ) 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     console.log(this.r112157)
     this.createScreen()
-
-
     this.reflectionA = this.qrList.ListOfReflection
-
-
     this.findReflection()
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
 
-
+    // multistep wizard
     $(document).ready(function () {
       // var base_color = "rgb(230,230,230)";
       // var active_color = "rgb(237, 40, 70)";
       var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#FFC455";
-
+      var active_color = "#60A757";
       var i;
-
       var child = 1;
       var length = $("section").length - 1;
       $("#prev").addClass("disabled");
       $("#submit").addClass("disabled");
-
       $("section").not("section:nth-of-type(1)").hide();
       $("section").not("section:nth-of-type(1)").css('transform', 'translateX(100px)');
 
@@ -73,13 +70,15 @@ export class S112157Page implements OnInit {
         ' 24" xml:space="preserve"></svg>'
       );
 
-      function makeSVG(tag, attrs) {
+      function makeSVG(tag, attrs) 
+      {
         var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
         for (var k in attrs) el.setAttribute(k, attrs[k]);
         return el;
       }
 
-      for (i = 0; i < length; i++) {
+      for (i = 0; i < length; i++) 
+      {
         var positionX = 12 + i * 200;
         var rect = makeSVG("rect", { x: positionX + 12, y: 9, width: 176, height: 6 });
         document.getElementById("svg_form_time").appendChild(rect);
@@ -101,13 +100,58 @@ export class S112157Page implements OnInit {
         width: positionX,
         height: 6
       });
+
       document.getElementById("svg_form_time").appendChild(circle);
 
-      // $('#svg_form_time rect').css('fill',base_color);
-      // $('#svg_form_time circle').css('fill',base_color);
-      // $("circle:nth-of-type(1)").css("fill", active_color);
+      $('#svg_form_time rect').css('fill', base_color);
+      $('#svg_form_time circle').css('fill', base_color);
+      $("circle:nth-of-type(1)").css("fill", active_color);
 
-      // first
+
+      $(".mt_btn").click(function () 
+      {
+        $("#svg_form_time rect").css("fill", active_color);
+        $("#svg_form_time circle").css("fill", active_color);
+        var id = $(this).attr("id");
+        if (id == "next") {
+          $("#prev").removeClass("disabled");
+          if (child >= length) {
+            $(this).addClass("disabled");
+            $('#submit').removeClass("disabled");
+          }
+          if (child <= length) {
+            child++;
+          }
+        } 
+        else if (id == "prev") 
+        {
+          $("#next").removeClass("disabled");
+          $('#submit').addClass("disabled");
+          if (child <= 2) {
+            $(this).addClass("disabled");
+          }
+          if (child > 1) {
+            child--;
+          }
+        }
+        var circle_child = child + 1;
+        $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+          "fill",
+          base_color
+        );
+        $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+          "fill",
+          base_color
+        );
+        var currentSection = $("section:nth-of-type(" + child + ")");
+        currentSection.fadeIn();
+        currentSection.css('transform', 'translateX(0)');
+        currentSection.prevAll('section').css('transform', 'translateX(-100px)');
+        currentSection.nextAll('section').css('transform', 'translateX(100px)');
+        $('section').not(currentSection).hide();
+      });
+
+      // copied
       $("#svg_form_time rect").css("fill", active_color);
       $("#svg_form_time circle").css("fill", active_color);
       $("#prev").removeClass("disabled");
@@ -128,7 +172,7 @@ export class S112157Page implements OnInit {
         base_color
       );
 
-      // first
+      // copied
       $("#svg_form_time rect").css("fill", active_color);
       $("#svg_form_time circle").css("fill", active_color);
       $("#prev").removeClass("disabled");
@@ -148,89 +192,72 @@ export class S112157Page implements OnInit {
         "fill",
         base_color
       );
-
-
-
-
     });
-
-
-
-
     // /multistep wizard
-
   }
 
-
-
-
-  createScreen() {
+  createScreen() 
+  {
     this.service.createScreen({
       "ScrId": 0,
       "ModuleId": this.moduleId,
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
-
-
+    }).subscribe(res => {})
   }
 
-  findReflection() {
-    for (var i = 0; i < this.reflectionA.length; i++) {
-
-
-
-      if (this.rId == this.reflectionA[i].ReflectionId) {
+  findReflection() 
+  {
+    for (var i = 0; i < this.reflectionA.length; i++) 
+    {
+      if (this.rId == this.reflectionA[i].ReflectionId) 
+      {
         this.reflection = this.reflectionA[i].Que
         // this.optionList.push(this.questionA[i])
       }
-
     }
     console.log(this.reflection)
-
   }
 
-  submitProgress() {
-
+  submitProgress() 
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r112157", this.r112157)
     this.r112157 = sessionStorage.getItem("r112157")
     console.log(this.r112157)
-
-    this.service.submitProgressReflection({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "ReflectionId": this.rId,
-      "Resp": this.r112157
-    }).subscribe(res => {
-
-    },
-      error => {
-        console.log(error)
-        this.router.navigate(['/fear-anxiety/s112158'])
-      },
-      () => {
-        this.router.navigate(['/fear-anxiety/s112158'])
-      })
+    if (this.r112157 != "undefined") 
+    {
+      this.service.submitProgressReflection({
+        "ScrNumber": this.screenNumber,
+        "UserId": this.userId,
+        "BookMark": this.bookmark,
+        "ModuleId": this.moduleId,
+        "screenType": this.screenType,
+        "timeSpent": this.totalTime,
+        "ReflectionId": this.rId,
+        "Resp": this.r112157
+      }).subscribe(res => {},
+        error => {
+          console.log(error)
+          this.router.navigate(['/fear-anxiety/s112158'])
+        },
+        () => {
+          this.router.navigate(['/fear-anxiety/s112158'])
+        })
+    }
+    else 
+    {
+      this.router.navigate(['/fear-anxiety/s112158'])
+    }
   }
 
-
-  prev() {
+  prev() 
+  {
     this.router.navigate(['/fear-anxiety/s112156'])
-
-  }
-  ngOnDestroy() {
-
-
-
   }
 
+  ngOnDestroy() 
+  {}
 
 }
