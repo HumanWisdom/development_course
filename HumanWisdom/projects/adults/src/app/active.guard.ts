@@ -26,6 +26,7 @@ export class ActiveGuard implements CanActivate, OnInit {
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     let m: any = state.url;
+    let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
     m = m.split('?')
     let str = next.routeConfig.path;
@@ -50,7 +51,12 @@ export class ActiveGuard implements CanActivate, OnInit {
         }
       })
     } else if (m[0].includes("wisdom-shorts") === true) {
-      return true;
+      if(loggedin && loggedin === 'T' && sub && sub === '1') {
+        return true;
+      }else {
+        this.router.navigate(['/onboarding/free-limit'])
+        return false;
+      }
     } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId.replace('t', ''))) {
       return true;
     } else {
