@@ -155,6 +155,10 @@ const routes: Routes = [
     path: 'inner-boredom',
     loadChildren: () => import('./teenagers/inner-boredom/inner-boredom.module').then(m => m.InnerBoredomModule)
   },
+  {
+    path: 'nature-of-the-i',
+    loadChildren: () => import('./teenagers/nature-of-the-i/nature-of-the-i.module').then(m => m.NatureOfTheIModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,28 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Just as we study human anatomy with curiosity and objectivity (without judgement), because it’s the same in all human beings, we can study the nature of the ‘I’ in the same way, because it is also the same in all human beings. We all suffer, for example. Just as we have no control over how the heart works, we seem to have no control over how the ‘I’ functions. Understanding it though can help us respond with intelligence when needed. Here are some of the benefits of exploring how the ‘I’ works, and we will explore them one by one.<br>
+          Why is it important to explore the I?<br>
+         1. It helps us to understand ourselves and others <br>
+         2. Being aware of it allows us to respond with intelligence<br>
+         3. When the ‘I’ is stressed, it impacts our physical health<br>
+         4. It is the root cause of all our suffering and conflict in the world<br>
+         5. Exploring it can help us live in peace<br>
+         6. We are destroying our own habitat, and we can’t seem to stop ourselves
+          
+        
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

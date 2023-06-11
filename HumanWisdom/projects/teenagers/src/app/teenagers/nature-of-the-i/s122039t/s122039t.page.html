@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Have you noticed how little control you have over the ‘I’. You may decide you do not want to be stressed or anxious, or not be jealous, or be at peace, but try as you will you cannot get to your goal. This is because the engine of the I cannot be controlled by willpower. And that is because the anxiety, and the ‘I’ that wants to be less anxious for example, come from the same thinking process. This can be frustrating for us because we cannot achieve what we want, and we can blame ourselves for that. There is another way, a gentler way, which we will explore in the next session, and that is through looking, learning and understanding the many ways the ‘I’ operates. It requires no will power.
+
+
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

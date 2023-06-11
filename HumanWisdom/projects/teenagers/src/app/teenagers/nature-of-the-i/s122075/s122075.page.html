@@ -1,0 +1,40 @@
+<app-likert-scale skipToPage="/emotional-needs/s120100">
+
+  <form>
+
+    <h2 class="mtb0px txt13">
+      Feedback Survey
+    </h2>
+
+    <h4 class="mt0px txt14">
+      Emotional Needs Module
+    </h4>
+
+    <!-- multistep wizard -->
+    <div id="svg_wrap"></div>                
+
+    <section>
+      <app-progress-slider [q]="q1" r="1" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
+      <br>
+      <app-progress-slider3 [q]="q2" r="2" pFilter="Too long" nFilter="Too short"  (sendRating)="receiveRating($event)"></app-progress-slider3>
+      <br>
+      <app-progress-slider [q]="q3" r="3" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
+      <br>
+      <app-progress-slider [q]="q4" r="4" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
+      <br>
+      <app-progress-slider [q]="q5" r="5" pFilter="Excellent" nFilter="Not very Good"  (sendRating)="receiveRating($event)"></app-progress-slider>
+      <br>
+      <app-progress-slider [q]="q6" r="6" pFilter="Very Easy" nFilter="Difficult"  (sendRating)="receiveRating($event)"></app-progress-slider>
+      <br>
+    </section>
+      
+    <section></section>
+    <section></section>
+    <section></section>
+    <!-- /multistep wizard -->
+
+  </form>
+
+</app-likert-scale>
+
+<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>

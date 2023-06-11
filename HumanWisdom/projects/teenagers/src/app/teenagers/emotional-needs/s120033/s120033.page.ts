@@ -18,7 +18,7 @@ export class S120033Page implements OnInit,OnDestroy
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/emotional-needs/audios/1.1.mp3'
   transcriptPage="emotional-needs/s120033t"
-  toc="emotional-needs/s105001"
+  toc="emotional-needs/s120001"
   bookmark=0
   path=this.router.url
   avDuration:any
