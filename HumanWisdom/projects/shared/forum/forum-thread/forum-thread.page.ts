@@ -20,6 +20,7 @@ export class ForumThreadPage implements OnInit {
   editCommentId: string = '';
   activereply;
   PostComment = '';
+  UserName='';
   replyflag = false;
   programType: ProgramType.Adults;
   commentflag = false;
@@ -42,11 +43,12 @@ export class ForumThreadPage implements OnInit {
     UserName: '',
     Followed: '0',
     Liked: '0',
-    UserId: ''
+    UserId: '',
   }
   posttext = '';
   constructor(private service: ForumService, private router: Router) {
     this.userID = localStorage.getItem('userId');
+    this.UserName =localStorage.getItem('name');
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     this.service.toastrService.overlayContainer = this.toastContainer;
     this.router.events
@@ -161,7 +163,7 @@ export class ForumThreadPage implements OnInit {
 
   deletePost() {
     this.service.deletePost(this.posttread.PostID).subscribe(res => {
-      if (res == null) {
+      if (res == null || res == "1") {
         this.service.toastrService.success('', 'Deleted Successfully !');
         this.router.navigate(['/forum']);
       } else {
@@ -172,7 +174,7 @@ export class ForumThreadPage implements OnInit {
 
   deleteComment(ReplyPostID) {
     this.service.deletePost(ReplyPostID).subscribe(res => {
-      if (res == null) {
+      if (res == null || res == "1") {
         this.service.toastrService.success('', 'Deleted Successfully !');
         this.reploadpage();
       } else {
