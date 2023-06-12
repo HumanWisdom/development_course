@@ -48,12 +48,12 @@
             
                 </div>
                 <div class="col-md-1 col-sm-1 col-xs-1" *ngIf="isPostEditable">
-                  <button type="submit" *ngIf="posttread.UserId==userID"  (click)="editPost()" class="btn btn_ficons">
+                  <button type="submit" *ngIf="posttread.UserId==userID|| posttread.UserName == UserName"  (click)="editPost()" class="btn btn_ficons">
                     <i class="fa fa-pencil"> </i>
                   </button>
                 </div>
                 <div class="col-md-1 col-sm-1 col-xs-1" *ngIf="isPostEditable">
-                  <button type="submit" *ngIf="posttread.UserId==userID"  (click)="deletePost()" class="btn btn_ficons">
+                  <button type="submit" *ngIf="posttread.UserId==userID || posttread.UserName == UserName"  (click)="deletePost()" class="btn btn_ficons">
                     <i class="fa fa-trash-o"> </i>
                   </button>
                 </div>
@@ -183,7 +183,7 @@
                       </div> 
                       
                       <div class="col-md-1 col-sm-1 col-xs-1" >
-                        <button type="submit" *ngIf="posttread.UserId==userID" [disabled]="!isLoggedIn" (click)="deleteComment(item.ReplyPostID)" class="btn btn_ficons">
+                        <button type="submit" *ngIf="item.ReplyPostUserID==userID" [disabled]="!isLoggedIn" (click)="deleteComment(item.ReplyPostID)" class="btn btn_ficons">
                           <i class="fa fa-trash-o"> </i>
                         </button>
                       </div>
