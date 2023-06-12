@@ -28,12 +28,12 @@ export class S121055Page implements OnInit
   totalTime: any
   bookmark: any
   x = []
-  q1 = 402
-  q2 = 403
-  q3 = 404
-  q4 = 405
-  q5 = 406
-  q6 = 407
+  q1 = 470
+  q2 = 471
+  q3 = 472
+  q4 = 473
+  q5 = 474
+  q6 = 0
   optionList1 = []
   optionList2 = []
   optionList3 = []
@@ -227,18 +227,18 @@ export class S121055Page implements OnInit
     this.createScreen()
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
-    this.q1 = this.findQuestion(402).Question
-    this.optionList1 = this.findQuestion(402).optionList
-    this.q2 = this.findQuestion(403).Question
-    this.optionList2 = this.findQuestion(403).optionList
-    this.q3 = this.findQuestion(404).Question
-    this.optionList3 = this.findQuestion(404).optionList
-    this.q4 = this.findQuestion(405).Question
-    this.optionList4 = this.findQuestion(405).optionList
-    this.q5 = this.findQuestion(406).Question
-    this.optionList5 = this.findQuestion(406).optionList
-    this.q6 = this.findQuestion(407).Question
-    this.optionList6 = this.findQuestion(407).optionList
+    this.q1 = this.findQuestion(470).Question
+    this.optionList1 = this.findQuestion(470).optionList
+    this.q2 = this.findQuestion(471).Question
+    this.optionList2 = this.findQuestion(471).optionList
+    this.q3 = this.findQuestion(472).Question
+    this.optionList3 = this.findQuestion(472).optionList
+    this.q4 = this.findQuestion(473).Question
+    this.optionList4 = this.findQuestion(473).optionList
+    this.q5 = this.findQuestion(474).Question
+    this.optionList5 = this.findQuestion(474).optionList
+    this.q6 = this.findQuestion(0).Question
+    this.optionList6 = this.findQuestion(0).optionList
     console.log(this.q1, this.optionList1)
     console.log(this.q2, this.optionList2)
     console.log(this.q3, this.optionList3)
