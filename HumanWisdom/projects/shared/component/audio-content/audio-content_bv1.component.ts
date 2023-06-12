@@ -4,6 +4,7 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { state } from '@angular/animations';
 import { Options } from '@angular-slider/ngx-slider';
 
+
 @Component({
   selector: 'app-audio-content',
   templateUrl: './audio-content.component.html',
