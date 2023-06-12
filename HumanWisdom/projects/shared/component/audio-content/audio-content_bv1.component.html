@@ -1,3 +1,106 @@
+<style>
+
+input[type="range"] {
+  position: relative;
+  -webkit-appearance: none;
+  width: 48%;
+  margin: 0;
+  padding: 0;
+  height: 19px;
+  margin: 30px 2.5% 20px 2.5%;
+  float: left;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(0, 125, 181, 0.6) var(--buffered-width), rgba(0, 125, 181, 0.2) var(--buffered-width));
+}
+input[type="range"]::before {
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 0;
+  width: var(--seek-before-width);
+  height: 3px;
+  background-color: #007db5;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  border: 1px solid #007db5;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  margin: -7px 0 0 0;
+}
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background: #007db5;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(0, 125, 181, 0.6) var(--buffered-width), rgba(0, 125, 181, 0.2) var(--buffered-width));
+}
+input[type="range"]::-moz-range-progress {
+  background-color: #007db5;
+}
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+input[type="range"]::-moz-range-thumb {
+  box-sizing: content-box;
+  border: 1px solid #007db5;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+input[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.2);
+  background: #007db5;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border: solid transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background-color: #007db5;
+}
+input[type="range"]::-ms-fill-upper {
+  background: linear-gradient(to right, rgba(0, 125, 181, 0.6) var(--buffered-width), rgba(0, 125, 181, 0.2) var(--buffered-width));
+}
+input[type="range"]::-ms-thumb {
+  box-sizing: content-box;
+  border: 1px solid #007db5;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+input[type="range"]:active::-ms-thumb {
+  transform: scale(1.2);
+  background: #007db5;
+}
+.ngx-slider .ngx-slider-bar
+{
+  background: grey  !important;
+}
+
+</style>
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
@@ -29,22 +132,51 @@
               -->
               <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt30px">
-                  <audio id="aud1" controls controlsList="nodownload" #audio>
-                    <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
+                  <div class="audio-player"style="width: 100%;">
+                    <audio id="audioPlayer" controls style="display: none;">
+                      <source [src]="audioLink" type="audio/mpeg">
+                    </audio>
+                    <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+
+                    <!-- <div class="progress-bar">
+                      <div class="progress-bar__fill" [style.width]="getProgressPercentage()"></div>
+                    </div> -->
+                  
+                    <div class="time-display">
+                      <span>{{ formatTime(currentTime) }}</span>
+                      <span>{{ formatTime(duration) }}</span>
+                    </div>
+                  </div>
+               
                   <!-- <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
-                  <select id="playbackspeed" (change)="onChange($event.target.value)" class="playback">
-                    <option value="0.5">0.5x</option>
-                    <option value="0.75">0.75x</option>
-                    <option value="1.25">1.25x</option>
-                    <option value="1.5">1.5x</option>
-                    <option value="2">2x</option>
-                  </select> -->
+                  </audio>-->
+             
                   <!-- <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player> -->
                   <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio></ngx-circular-player> -->
                 </div>
+              </div>
+
+              <div id="audio-player-container">
+                <audio  [src]="audioLink" preload="metada" loop ></audio>
+                
+                <button id="play-icon">Play</button>
+                <span id="current-time" class="time">0:00</span>
+                <select id="playbackspeed" (change)="onChange($event.target.value)" class="playback">
+                  <option value="0.5">0.5x</option>
+                  <option value="0.75">0.75x</option>
+                  <option value="1">Normal</option>
+                  <option value="1.25">1.25x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2">2x</option>
+                </select> 
+                <span id="duration" class="time">0:00</span>
+                <input type="range" id="seek-slider" max="100" value="0">
+                <button id="volume-control"   >Volume</button>
+                <div id="divVolume" >                
+                <input type="range" id="volume-slider" max="100" value="100">                
+                <output id="volume-output">100</output>
+              </div>
               </div>
               <!-- /angular audio player plugin  -->
 
