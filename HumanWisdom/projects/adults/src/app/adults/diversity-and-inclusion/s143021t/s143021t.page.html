@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            Women are on average 30 percent less likely to be called for a job interview than men with the same characteristics. These are the conclusions revealed in a study by María González, and colleagues from Barcelona.
+          </p>
+
+          <p>
+            The research consisted of sending fictitious resumes of people between 37 and 39 years of age for 1,372 real job offers in Madrid and Barcelona. The CVs were sent in response to offers in 18 varied occupations.
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

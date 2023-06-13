@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            Welcome to this module where we will explore the subject of diversity and inclusion which impact the productivity of all organizations.
+          </p>
+
+          <p>
+            We will also explore the linked subjects of our various prejudices, where they come from, the impact they have on our lives, and others, and what we can do about them.
+          </p>
+
+          <p>
+            The key to exploring this subject is to suspend judgment of ourselves as good or bad, but just be curious, and be open to learning about ourselves. That process of learning brings its own transformation
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
