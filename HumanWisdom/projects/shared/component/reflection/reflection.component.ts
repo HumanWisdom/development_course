@@ -37,6 +37,9 @@ export class ReflectionComponent implements OnInit {
   userId: any;
   placeholder = 'Write your answer here';
   programName:string="";
+  reflectionA: any
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+
   constructor(public router: Router, public service: AdultsService, public sharedService:SharedService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
@@ -58,11 +61,22 @@ export class ReflectionComponent implements OnInit {
       this.programName='';
     }
 
-    this.reflectionData = this.reflection !== 'null' ? this.reflection : '';
+    this.reflectionA = this.qrList.ListOfReflection;
+    this.findReflection();
+
   }
   sharedForum(e) {
     console.log(e)
     this.shared = e
+  }
+
+  findReflection() {
+    for (var i = 0; i < this.reflectionA.length; i++) {
+      if (this.rid == this.reflectionA[i].ReflectionId) {
+        this.reflection = this.reflectionA[i].Que;
+        this.reflectionData = this.reflectionA[i].Response !== 'null' ? this.reflectionA[i].Response : '';
+      }
+    }
   }
 
   confirmShare() {
