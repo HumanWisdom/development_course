@@ -79,12 +79,18 @@ export class WisdomShortsIndexPage implements OnInit {
 
   wisdoshortsevent(val, video, title) {
     localStorage.setItem('wisdomvideotitle', title);
+    let loggedin = localStorage.getItem("isloggedin")
+    let sub: any = localStorage.getItem("Subscriber")
     let id = video.split("/")[3].split(".")[1]
     this.service.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
         this.router.navigate([video])
       } else {
-        this.router.navigate(['/onboarding/free-limit'], { replaceUrl: true, skipLocationChange: false })
+        if(loggedin && loggedin === 'T' && sub && sub === '1') {
+          this.router.navigate([video])
+        }else {
+          this.router.navigate(['/onboarding/free-limit'])
+        }
       }
     })
   }
