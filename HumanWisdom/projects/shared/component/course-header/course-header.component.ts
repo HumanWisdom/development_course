@@ -140,7 +140,7 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   goToDash() {
-    if (this.progUrl == "/adults/") {
+    if (this.progUrl == "/adults/" || this.programName == 'adults') {
       this.router.navigate(['/adults/adult-dashboard'])
     }
     else {

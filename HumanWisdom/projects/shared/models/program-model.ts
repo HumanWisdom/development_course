@@ -9,6 +9,7 @@ firstScreen:string;
 
 
 export enum ProgramType {
+None=0,
 Adults=9,
 Children=10,
 Teenagers=11,
