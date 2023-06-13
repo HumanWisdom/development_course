@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            Our mind automatically compares what we see with what we know. It's an essential process to make sense of the world. We are usually not aware of this process going on in the background. It can also lead to envy and  low self-esteem if we think others are better than us, and can also reinforce our prejudices.
+          </p>
+
+          <p>
+            If for example at work we see a person from a different ethnic group behaving in a way we wouldn’t,  our mind compares what we are seeing with what we know - which is our conditioning - and if it is different to our norm, this creates a disturbance in our thinking and from that we act - to be critical, or fearful. It could even be subtle things like how people dress, or behave, or speak - our mind is constantly judging others based on our idea of normal - and we are not aware of this process. Waking up to it is the beginning of freedom.
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
