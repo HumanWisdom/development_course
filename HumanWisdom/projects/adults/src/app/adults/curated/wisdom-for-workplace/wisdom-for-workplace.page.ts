@@ -24,6 +24,7 @@ export class WisdomForWorkplacePage implements OnInit {
   making_better_decisionsP: any
   criticismP: any
   opinionsandbeliefsP: any
+  diversity_and_inclusionP: any
   enableAlert = false;
   guest = false;
   Subscriber = false;
@@ -398,6 +399,39 @@ export class WisdomForWorkplacePage implements OnInit {
         })
   }
 
+  routeDiversityandInclusion(cont: any = 1) {
+    var diversity_and_inclusionResume
+    localStorage.setItem("moduleId", JSON.stringify(143))
+    this.service.clickModule(143, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        diversity_and_inclusionResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("diversity_and_inclusionResume", diversity_and_inclusionResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/diversity-and-inclusion/${diversity_and_inclusionResume}`])
+          }
+          else
+            this.router.navigate([`/adults/diversity-and-inclusion/s143001`])
+
+        })
+  }
+
   getProgress() {
     this.service.getPoints(this.userId)
       .subscribe(res => {
@@ -426,6 +460,7 @@ export class WisdomForWorkplacePage implements OnInit {
         this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
         this.criticismP = res.ModUserScrPc.find(e => e.Module == "Criticism")?.Percentage
         this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
+        this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
       })
   }
 
