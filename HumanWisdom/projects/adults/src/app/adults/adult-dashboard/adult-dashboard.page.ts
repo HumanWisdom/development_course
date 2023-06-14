@@ -141,6 +141,7 @@ export class AdultDashboardPage implements OnInit {
   public day: string = '';
   public bullyingP: any
   public making_better_decisionsP: any
+  public diversity_and_inclusionP: any
   public dealingwithdepressionP: any
   public externalapprovalP: any
   //static progress mapping
@@ -1557,6 +1558,7 @@ export class AdultDashboardPage implements OnInit {
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
         this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
         this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
+        this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
         this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
         this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
       })
@@ -3245,6 +3247,39 @@ export class AdultDashboardPage implements OnInit {
           }
           else
             this.router.navigate([`/adults/making-better-decisions/s77001`])
+
+        })
+  }
+
+  routeDiversityandInclusion(cont: any = 1) {
+    var diversity_and_inclusionResume
+    localStorage.setItem("moduleId", JSON.stringify(143))
+    this.service.clickModule(143, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        diversity_and_inclusionResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("diversity_and_inclusionResume", diversity_and_inclusionResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/diversity-and-inclusion/${diversity_and_inclusionResume}`])
+          }
+          else
+            this.router.navigate([`/adults/diversity-and-inclusion/s143001`])
 
         })
   }
