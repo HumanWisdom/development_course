@@ -427,6 +427,10 @@ const routes: Routes = [
     path: 'dealing-with-depression',
     loadChildren: () => import('./dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
   },
+  {
+    path: 'diversity-and-inclusion',
+    loadChildren: () => import('./diversity-and-inclusion/diversity-and-inclusion.module').then(m=>m.DiversityAndInclusionModule)
+  },
 ];
 
  @NgModule({

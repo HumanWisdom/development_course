@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            Most people are comfortable with their opinions, beliefs, and prejudices. We don’t like them to be challenged, and certainly if an organization we work for says we must, then we can feel an internal resistance - thinking it's just political correctness, or we may think prejudice is a bad thing, but it certainly does not apply to me because I am not prejudiced.
+          </p>
+
+          <p>
+            But there are so many benefits of examining our own prejudices. We can avoid being disturbed every time we meet someone who is different, build bridges with and learn new things from people who are different, and contribute to a fairer and more equitable world.
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
