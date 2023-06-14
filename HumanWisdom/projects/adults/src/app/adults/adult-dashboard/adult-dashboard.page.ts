@@ -3628,40 +3628,6 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
-  routeDiversityandInclusion(cont: any = 1) {
-    var diversity_and_inclusionResume
-    localStorage.setItem("moduleId", JSON.stringify(143))
-    this.service.clickModule(143, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        diversity_and_inclusionResume = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("diversity_and_inclusionResume", diversity_and_inclusionResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/diversity-and-inclusion/${diversity_and_inclusionResume}`])
-          }
-          else
-            this.router.navigate([`/adults/diversity-and-inclusion/s143001`])
-
-        })
-  }
-
-
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     if (userId != null) {
