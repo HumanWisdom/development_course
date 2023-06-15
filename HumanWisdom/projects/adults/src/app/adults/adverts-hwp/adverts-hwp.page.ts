@@ -63,6 +63,7 @@ export class AdvertsHwpPage implements OnInit {
 
   enableAlert = false;
   content = '';
+  enablecancel = false;
 
   constructor(
     public platform: Platform,
@@ -643,16 +644,9 @@ export class AdvertsHwpPage implements OnInit {
 
   Logevent() {
     if (this.login === 'Logout') {
-      if (confirm("Are you sure you want to logout ?") === true) {
-        this.logeventservice.logEvent('click_logout_Hamburger')
-        if (this.platform.isBrowser) {
-          localStorage.setItem("isloggedin", "F");
-          localStorage.setItem("guest", "T");
-          localStorage.setItem("navigateToUpgradeToPremium", "false");
-          localStorage.setItem("btnClickBecomePartner", "false");
-          this.router.navigate(["/onboarding/login"]);
-        }
-      }
+      this.enablecancel = true;
+      this.content = "Are you sure you want to logout ?";
+      this.enableAlert = true;
     } else {
       this.router.navigate(["/onboarding/login"]);
     }
@@ -665,7 +659,18 @@ export class AdvertsHwpPage implements OnInit {
 
   getAlertcloseEvent(event) {
     this.content = '';
+    this.enablecancel = false;
     this.enableAlert = false;
+    if(event === 'ok') {
+      this.logeventservice.logEvent('click_logout_Hamburger')
+        if (this.platform.isBrowser) {
+          localStorage.setItem("isloggedin", "F");
+          localStorage.setItem("guest", "T");
+          localStorage.setItem("navigateToUpgradeToPremium", "false");
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(["/onboarding/login"]);
+        }
+    }
   }
 }
 
