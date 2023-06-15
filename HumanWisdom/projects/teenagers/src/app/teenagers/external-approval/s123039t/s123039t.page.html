@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If I am a performer – a musician, an actor or a public speaker, and my sense of self-worth is determined by the applause or praise I get, then every time I perform I experience severe anxiety because I am worried about what others will think. It seems so hard-wired into my system that I cannot control it or do anything about it. 
+Performance anxiety is common among musicians and actors, but also affects people in other professions. It can also affect students who are sitting exams in a similar way. 
+This feeling of anxiety is heightened if we have experienced this praise before. Many performers take drugs to calm themselves down. 
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

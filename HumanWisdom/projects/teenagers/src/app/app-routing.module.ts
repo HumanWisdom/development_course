@@ -159,6 +159,10 @@ const routes: Routes = [
     path: 'nature-of-the-i',
     loadChildren: () => import('./teenagers/nature-of-the-i/nature-of-the-i.module').then(m => m.NatureOfTheIModule)
   },
+  {
+    path: 'external-approval',
+    loadChildren: () => import('./teenagers/external-approval/external-approval.module').then(m => m.ExternalApprovalModule)
+  },
 ];
 
 @NgModule({
