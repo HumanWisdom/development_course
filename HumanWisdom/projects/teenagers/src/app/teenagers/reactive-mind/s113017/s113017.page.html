@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>s113017</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<ion-content>
+<app-kta-prevnext [bg]="bg">
 
-</ion-content>
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      A reactive mind, in the moment, has poor control over its actions, and cannot act with intelligence
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>  
+
+</app-kta-prevnext>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

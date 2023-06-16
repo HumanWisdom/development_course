@@ -99,7 +99,11 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/comparison/comparison.module').then( m => m.ComparisonModule)
   },
   {
-    path: 'reactive-mind',
+    path: 'fear-anxiety',
+    loadChildren: () => import('./teenagers/fear-anxiety/fear-anxiety.module').then( m => m.FearAnxietyModule)
+   
+   },
+   { path: 'reactive-mind',
     loadChildren: () => import('./teenagers/reactive-mind/reactive-mind.module').then( m => m.ReactiveMindModule)
   },
   {
@@ -109,6 +113,51 @@ const routes: Routes = [
   {
     path: 'self-interest',
     loadChildren: () => import('./teenagers/self-interest/self-interest.module').then( m => m.SelfInterestModule)
+  },
+  {
+    path: 'sorrow',
+    loadChildren: () => import('./teenagers/sorrow/sorrow.module').then(m => m.SorrowModule)
+  },
+  {
+    path: 'loneliness',
+    loadChildren: () => import('./teenagers/loneliness/loneliness.module').then(m => m.LonelinessModule)
+  }, 
+  {
+    path: 'anger',
+    loadChildren: () => import('./teenagers/anger/anger.module').then(m => m.AngerModule)
+  },
+  {
+    path: 'journal',
+    loadChildren: () => import('./teenagers/guided-questions/guided-questions.module').then(m => m.GuidedQuestionsModule)
+  },
+  {
+    path: "forum",
+    loadChildren: () => import("./teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)  
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./teenagers/personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule),
+   // canActivate: [AuthGu]
+  },
+  {
+    path: 'identity',
+    loadChildren: () => import('./teenagers/identity/identity.module').then(m => m.IdentityModule)
+  },
+  {
+    path: 'emotional-needs',
+    loadChildren: () => import('./teenagers/emotional-needs/emotional-needs.module').then(m => m.EmotionalNeedsModule)
+  },
+  {
+    path: 'pleasure',
+    loadChildren: () => import('./teenagers/pleasure/pleasure.module').then(m => m.PleasureModule)
+  },
+  {
+    path: 'inner-boredom',
+    loadChildren: () => import('./teenagers/inner-boredom/inner-boredom.module').then(m => m.InnerBoredomModule)
+  },
+  {
+    path: 'nature-of-the-i',
+    loadChildren: () => import('./teenagers/nature-of-the-i/nature-of-the-i.module').then(m => m.NatureOfTheIModule)
   },
 ];
 

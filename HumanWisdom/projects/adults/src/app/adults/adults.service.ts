@@ -3,8 +3,8 @@ import {
 } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { environment } from 'src/environments/environment';
-import { OnboardingService } from './../onboarding/onboarding.service';
+import { environment} from '../../../../environments/environment'
+import { OnboardingService } from '../../../../shared/services/onboarding.service';
 import { SharedService } from "../../../../shared/services/shared.service";
 import { ProgramType } from "../../../../shared/models/program-model";
 

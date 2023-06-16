@@ -1,0 +1,35 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      What can we learn from our sorrow?
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      01. We have hidden reserves of strength and resilience
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      02. We develop a compassion for the suffering of others
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      03. We learn about our emotional needs
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      04. We learn about the emptiness with us
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      05. If we stay with that emptiness, we can discover peace
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

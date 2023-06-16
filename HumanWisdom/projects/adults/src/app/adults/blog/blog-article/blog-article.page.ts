@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
-import { Meta, Title } from '@angular/platform-browser'; 
+import { Meta, Title } from '@angular/platform-browser';
 import {  Renderer2 } from '@angular/core';
 
 @Component({
@@ -24,15 +24,17 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsList = 0;
   BlogCommentsListabove = []
   path = this.router.url
-  
-  constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2, 
+  content = '';
+  enableAlert = false;
+
+  constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
       if(isNaN(+this.blogid)){
         var blogid=this.getBlogList(this.blogid);
-       
+
       }else{
         this.getblog();
       }
@@ -41,9 +43,9 @@ export class BlogArticlePage implements OnInit {
   }
 
   ngOnInit() {
-   
-  
-   
+
+
+
   }
 
   getblog() {
@@ -53,7 +55,7 @@ export class BlogArticlePage implements OnInit {
      this.blogList = res
      var tempEl = document.createElement('div');
      tempEl.innerHTML = res.Blog;
-     for (let i = 0; i < tempEl.querySelectorAll('img').length; i++) {      
+     for (let i = 0; i < tempEl.querySelectorAll('img').length; i++) {
      tempEl.querySelectorAll('img')[i].style.width='100%';
      }
      res.Blog=tempEl.innerHTML;
@@ -86,12 +88,12 @@ export class BlogArticlePage implements OnInit {
 
           //this.meta.updateTag({ property: 'og:url', content: "https://staging.humanwisdom.me/course/"+ this.path})
           console.log(this.blogList['Title']+ "|" + "Best Mental Health Apps for Stress, Anger & Depression Management|HumanWisdom")
-          
+
         if(this.meta.getTag("property='og:description'"))
           this.meta.updateTag({ property: 'og:description', content: this.blogList['MetaDesc']})
         else
          this.meta.addTag({ property: 'og:description', content: this.blogList['MetaDesc']})
-        
+
         if(this.meta.getTag("property='og:image'"))
          this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
         else
@@ -110,7 +112,7 @@ export class BlogArticlePage implements OnInit {
 
           // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
 
-         
+
       }
     },
       error => console.log(error),
@@ -131,7 +133,8 @@ export class BlogArticlePage implements OnInit {
         this.getblog()
       }
     }, error => {
-      window.alert(error['error']['Message'])
+      this.content = error['error']['Message'];
+      this.enableAlert = true;
     },
     )
   }
@@ -200,6 +203,11 @@ export class BlogArticlePage implements OnInit {
       ()=>{
       }
     )
-  }  
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
+  }
 
 }

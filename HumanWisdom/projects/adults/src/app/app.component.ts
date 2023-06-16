@@ -10,7 +10,8 @@ import { AdultsService } from './adults/adults.service';
 import { slider } from './route.animation';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
-
+import moengage from "@moengage/web-sdk";
+import { MoengageService } from './moengage.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -41,10 +42,22 @@ export class AppComponent implements OnDestroy {
     private meta: Meta,
     private title: Title,
     private services: AdultsService,
+    public moengageService:MoengageService
   ) {
+    if(platform.isBrowser){
+    //   moengage.initialize({app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1',
+    //    debug_logs:1,
+    //   // swPath:'/course/serviceworker.js',
+    // });
+      // this.moengageService.requestWebPushPermission().then((permission) => {
+      //   console.log('Web push permission:', permission);
+      // });
+    }
+    
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
+  
     SharedService.ProgramId=ProgramType.Adults;
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
@@ -145,6 +158,7 @@ export class AppComponent implements OnDestroy {
         this.meta.updateTag({ property: 'keywords', content: 'Relationships for adults,Building healthy relationships,Maintaining healthy relationships,Improving relationships,Building strong relationships,Healthy relationship tips,Stronger relationships,Relationships advice,Relationship building,Relationship skills' })
       }
     }
+    
     else if (PageUrl.includes('/adults/communication')) {
 
       if (this.title.getTitle() !== 'Improving Communication Skills') {

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The word selfishness blocks us from observing our own self-interest. When we call others selfish we think they are operating from their self-interest, that it is a bad thing, and we are different, and better in some way. Or we may say someone has a big ego, and mean the same thing. The fact is that all human beings operate from self-interest, to varying degrees and are usually not aware of it. Even when we are doing so-called charitable work, we do it because it makes us feel good, or less lonely, or because we want to earn brownie points so we will go to heaven. Our self-interest is an integral part of the ‘I’’ or human consciousness as it is. Being aware of it allows us to respond with intelligence, and opens the door to change.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -30,6 +30,7 @@ export class S111092Page implements OnInit
   path=this.router.url
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
   
   constructor
   (

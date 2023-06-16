@@ -12,7 +12,7 @@ import { IonicModule } from '@ionic/angular';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { NgxCaptureModule } from 'ngx-capture';
 import { StripeModule } from "stripe-angular";
-import { environment } from '../environments/environment';
+import { environment } from '../../../environments/environment';
 import { ActiveGuard } from './active.guard';
 import { AdultsModule } from './adults/adults.module';
 import { SplashPageModule } from './adults/splash/splash.module';
@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { authLoginGuard } from './auth-login.guard';
 import { AuthGuard } from './auth.guard';
-import { LogEventService } from './log-event.service';
+import { LogEventService } from '../../../shared/services/log-event.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptorService } from './token-interceptor.service';
 import * as Hammer from 'hammerjs';
@@ -31,6 +31,8 @@ import { BlogArticlePage } from './adults/blog/blog-article/blog-article.page';
 // Import library module
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { SharedService } from '../../../shared/services/shared.service';
+import { ToastrModule } from 'ngx-toastr';
+import { MoengageService } from './moengage.service';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -55,14 +57,14 @@ export class MyHammerConfig extends HammerGestureConfig {
         HttpClientModule,
         SocialLoginModule,
         SplashPageModule,
-        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
         NgxCaptureModule,
         BrowserAnimationsModule,
         PlatformModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAnalyticsModule,
-        NgxJsonLdModule
+        NgxJsonLdModule,
+        ToastrModule.forRoot()
     ],
     providers: [
         StatusBar,
@@ -73,6 +75,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         LogEventService,
         ReactiveFormsModule,
         SharedService,
+        MoengageService,
             { provide: APP_BASE_HREF, useValue: '/' } ,
         {
             provide: HTTP_INTERCEPTORS,

@@ -1,0 +1,42 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      What causes the ‘I’ to feel hurt?
+       </h1>
+    <h1 class="txt1">
+      01. Criticism
+
+    </h1>
+    <h1 class="txt1">
+      02. Unmet expectations
+    </h1>
+    <h1 class="txt1">
+      03. Loss of something we value
+    </h1>
+    <h1 class="txt1">
+      04. Not feeling loved or valued
+    </h1>
+    <h1 class="txt1">
+      05. If someone is angry with us
+
+    </h1>
+    <h1 class="txt1">
+      06. Failure
+
+    </h1>
+       <h1 class="txt1">
+      07. Not feeling understood
+
+    </h1>
+   
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   
+
+

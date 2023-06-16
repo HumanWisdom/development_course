@@ -14,9 +14,9 @@ export class S104026Page implements OnInit,OnDestroy {
   bg_cft="bg_teal"
   bg="teal_w12"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/teenagers/modules/obstacles-enquiry/videos/1.3.mp4'  
+  videoLink=this.mediaVideo+'/obstacles-enquiry/videos/1.3.mp4'  
   title="The obstacles to enquiry"
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/reactive_mind/reactive_mind_01.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")

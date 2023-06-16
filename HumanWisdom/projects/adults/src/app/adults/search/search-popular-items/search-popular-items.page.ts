@@ -2,9 +2,9 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ForumService } from 'src/app/forum/forum.service';
 import { SearchDataModel } from '../../../../../../shared/models/search-data-model';
 import { AdultsService } from '../../adults.service';
+import { ForumService } from '../../../../../../shared/forum/forum.service';
 
 @Component({
   selector: 'app-search-popular-items',

@@ -24,7 +24,7 @@
 </div>
 <!-- /page content -->
 
-<div class="row tcenter absolute_bottom">
+<div class="row tcenter absolute_bottom" *ngIf="!shared">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <a class="pulse-button" (click)="next()">
       <!-- <i class="fa fa-check"></i> -->
@@ -46,4 +46,8 @@
       Tap to Start
     </h6>
   </div>
+
+
 </div>
+
+<app-course-footer [bg_cft]="bg_cft" *ngIf="shared"></app-course-footer>

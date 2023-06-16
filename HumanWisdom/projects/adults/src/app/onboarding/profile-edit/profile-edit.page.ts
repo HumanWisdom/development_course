@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../onboarding.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-profile-edit',
@@ -16,6 +16,8 @@ export class ProfileEditPage implements OnInit {
   email = 'test';
   userdetail = 'tset';
   imageupload;
+  content = '';
+  enableAlert = false;
 
   constructor(private onboardingService: OnboardingService, private router: Router) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -91,8 +93,14 @@ export class ProfileEditPage implements OnInit {
           "nameupdate",
           this.fullname
         );
-        window.alert('User profile updated successfully')
+        this.content = 'User profile updated successfully';
+        this.enableAlert = true;
       }
     })
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 }

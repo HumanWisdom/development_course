@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../../adults/src/app/onboarding/onboarding.service';
+import { LogEventService } from "./../../services/log-event.service";
+import { OnboardingService } from "../../services/onboarding.service";
 
 @Component({
   selector: 'app-ft-advert',

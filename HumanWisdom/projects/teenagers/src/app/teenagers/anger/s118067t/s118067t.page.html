@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Anger feels like a fire in the brain, and as with any fire our urgent need is to escape. Expressing our anger feels like a release. How can you interrupt the anger reaction, which is faster than a bullet coming out of a gun? You could take a deep breath, become grounded in the present, and do one of the breathing exercises you learned in the section on nurturing a quiet mind.
+          </p>
+
+          <p>
+            You need to practice these exercises regularly, even when there is no problem, so when the anger storm comes, you are ready and can slip into a breathing exercise more easily.
+          </p>
+
+          <p>
+            You can also walk away.
+          </p>
+
+          <p>
+            If you are in an argument, and see a trigger beginning to cause an anger reaction. you can just say, “can we talk about this later?”
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,38 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Why bother exploring the ‘I’ and trying to change?
+
+       </h1>
+    <h1 class="txt1">
+      01. So we can live in peace with ourselves, each other and the earth
+
+
+    </h1>
+    <h1 class="txt1">
+      02. So we we can live with wisdom, and be happy
+    </h1>
+    <h1 class="txt1">
+      03. So we can be physically and mentally healthy
+
+    </h1>
+    <h1 class="txt1">
+      04. So we become less attached to our opinions and beliefs 
+    </h1>
+    <h1 class="txt1">
+      05. So we can understand ourselves and others better
+
+    </h1>
+    
+   
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   
+
+

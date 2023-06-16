@@ -5,7 +5,7 @@ import { Location } from "@angular/common";
 import * as $ from 'jquery';
 import { BehaviorSubject, Subject } from "rxjs";
 import { addEventListener } from "@ionic/core/dist/types/utils/helpers";
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../../shared/services/log-event.service";
 
 @Component({
   selector: "app-index",
@@ -100,7 +100,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   RouteToToQuestions(item) {
-    if (this.guest && !this.Subscriber) {
+    if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
       let url = `/journal${item.Landing_URL}`;
@@ -155,7 +155,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     });
   }
   GoToQuestions(data) {
-    if (this.guest && !this.Subscriber) {
+    if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
       if (data.JrType == "Guided Questions") {

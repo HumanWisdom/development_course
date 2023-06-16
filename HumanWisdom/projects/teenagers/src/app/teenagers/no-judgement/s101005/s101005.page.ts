@@ -16,7 +16,7 @@ export class S101005Page implements OnInit,OnDestroy {
   bg_cft="bg_dark_blue"
   bg="dark_blue_w3"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/teenagers/modules/no-judgement/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/no-judgement/videos/1.1.mp4'  
   title="Why are we self-critical?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any

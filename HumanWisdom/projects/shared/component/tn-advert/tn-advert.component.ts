@@ -1,7 +1,7 @@
 import { Platform } from "@angular/cdk/platform";
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogEventService } from '../../../adults/src/app/log-event.service';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-tn-advert',

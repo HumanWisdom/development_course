@@ -4,9 +4,9 @@ import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms'
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
-import { LogEventService } from './../../log-event.service';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -141,6 +141,7 @@ export class AdultDashboardPage implements OnInit {
   public day: string = '';
   public bullyingP: any
   public making_better_decisionsP: any
+  public diversity_and_inclusionP: any
   public dealingwithdepressionP: any
   public externalapprovalP: any
   //static progress mapping
@@ -1557,6 +1558,7 @@ export class AdultDashboardPage implements OnInit {
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
         this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
         this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
+        this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
         this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
         this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
       })
@@ -3249,6 +3251,39 @@ export class AdultDashboardPage implements OnInit {
         })
   }
 
+  routeDiversityandInclusion(cont: any = 1) {
+    var diversity_and_inclusionResume
+    localStorage.setItem("moduleId", JSON.stringify(143))
+    this.service.clickModule(143, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        diversity_and_inclusionResume = "s" + res.lastVisitedScreen
+        this.goToPage = res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("diversity_and_inclusionResume", diversity_and_inclusionResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/diversity-and-inclusion/${diversity_and_inclusionResume}`])
+          }
+          else
+            this.router.navigate([`/adults/diversity-and-inclusion/s143001`])
+
+        })
+  }
+
   // /transform your life 1
 
   // transform your life 2
@@ -3592,8 +3627,6 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
-
-
 
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
