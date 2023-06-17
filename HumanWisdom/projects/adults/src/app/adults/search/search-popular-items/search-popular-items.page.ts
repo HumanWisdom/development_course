@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchDataModel } from '../../../../../../shared/models/search-data-model';
 import { AdultsService } from '../../adults.service';
+import { ForumService } from '../../../../../../shared/forum/forum.service';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -26,13 +27,22 @@ export class SearchPopularItemsPage implements OnInit {
   public qrList: any
   public userId = 100
 
-  constructor(
+  constructor(private adultService: AdultsService,
+    private sanitizer: DomSanitizer,
+    private serivce: ForumService,
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,) { }
 
   ngOnInit() {
-  
+    this.search = this.route.snapshot.paramMap.get('word')
+    this.UserID = localStorage.getItem('userId');
+    this.initializeSearchObject();
+    this.getSearchData();
+    let rem = localStorage.getItem('remember');
+    if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
   }
   initializeSearchObject() {
     this.searchData = {
@@ -67,15 +77,15 @@ export class SearchPopularItemsPage implements OnInit {
     this.router.navigate(['/blog/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}});
   }
   getSourceForPodBin(url) {
-    //return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
+    return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
   }
   getSearchData() {
-    // this.adultService.getSearchDataForSearchSite(this.search).subscribe(res => {
-    //   if (res) {
-    //     this.searchData = res;
-    //   }
-    // });
-    // this.getForumSearchData();
+    this.adultService.getSearchDataForSearchSite(this.search).subscribe(res => {
+      if (res) {
+        this.searchData = res;
+      }
+    });
+    this.getForumSearchData();
   }
   getTotalRecords() {
     return this.searchData.ModuleRes.length +
@@ -94,30 +104,30 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   follow(item, index) {
-    // if (this.UserID) {
-    //   this.serivce.followPost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
-    //     if (res == "1") {
-    //       this.post[index].Followed = item.Followed == '1' ? '0' : '1';
-    //     }
-    //   });
-    // }
+    if (this.UserID) {
+      this.serivce.followPost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
+        if (res == "1") {
+          this.post[index].Followed = item.Followed == '1' ? '0' : '1';
+        }
+      });
+    }
   }
   getForumSearchData() {
-    // this.adultService.getForumSearchDataSite(this.search).subscribe(res => {
-    //   if (res) {
-    //     this.list(res);
-    //   }
-    // });
+    this.adultService.getForumSearchDataSite(this.search).subscribe(res => {
+      if (res) {
+        this.list(res);
+      }
+    });
   }
   like(item, index) {
-    // if (this.UserID) {
-    //   this.serivce.likePost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
-    //     if (res) {
-    //       this.post[index].PostLikeCount = res;
-    //       this.post[index].Liked = this.post[index].Liked == "1" ? "0" : "1";
-    //     }
-    //   });
-    // }
+    if (this.UserID) {
+      this.serivce.likePost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
+        if (res) {
+          this.post[index].PostLikeCount = res;
+          this.post[index].Liked = this.post[index].Liked == "1" ? "0" : "1";
+        }
+      });
+    }
   }
   getOrderbyLatestPost(childs) {
     childs.sort(function (a, b) {
@@ -167,12 +177,12 @@ export class SearchPopularItemsPage implements OnInit {
     if (this.UserID) {
       console.log(item);
       this.replyflag = !this.replyflag;
-      // this.serivce.submitPost({ POST: this.PostComment, UserId: this.UserID, ParentPostID: item.PostID }).subscribe(res => {
-      //   if (res) {
-      //     this.getForumSearchData();
-      //     this.PostComment = '';
-      //   }
-      // })
+      this.serivce.submitPost({ POST: this.PostComment, UserId: this.UserID, ParentPostID: item.PostID }).subscribe(res => {
+        if (res) {
+          this.getForumSearchData();
+          this.PostComment = '';
+        }
+      })
     }
   }
   reportpost(item) {
@@ -193,19 +203,19 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   routemodule(res) {
-    // localStorage.setItem("moduleId", JSON.stringify(res['ModuleId']))
-    // this.adultService.clickModule(res['ModuleId'], this.userId)
-    //   .subscribe(res => {
-    //     localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-    //     this.qrList = res
-    //     if (res.lastVisitedScreen === '') {
-    //       localStorage.setItem("lastvisited", 'F')
-    //     }else {
-    //       localStorage.setItem("lastvisited", 'T')
-    //     }
-    //     localStorage.setItem("qrList", JSON.stringify(this.qrList))
-    //   })
-    // this.router.navigate([res['ModuleUrl']]);
+    localStorage.setItem("moduleId", JSON.stringify(res['ModuleId']))
+    this.adultService.clickModule(res['ModuleId'], this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      })
+    this.router.navigate([res['ModuleUrl']]);
   }
 
 }

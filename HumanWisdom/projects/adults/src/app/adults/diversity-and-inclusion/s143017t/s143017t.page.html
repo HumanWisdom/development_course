@@ -1,0 +1,41 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There are many challenges in creating a more diverse working environment.
+
+          <ul>
+            <li>
+              Would you hire a person who is less qualified than another, just to improve the diversity of your organization?
+            </li>
+
+            <li>
+              Can this create resentment?
+            </li>
+
+            <li>
+              Or, should we hire based on diversity, but offer the people we hire extra support and training if they need it?
+            </li>
+
+            <li>
+              Are we aware of our own unconscious biases when screening CV’s, especially when we feel nobody is watching us.
+            </li>
+
+            <li>
+              There are no easy answers to these questions, but being aware of our unconscious biases and the need for diversity can guide people to make the right decisions
+            </li>
+          </ul>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

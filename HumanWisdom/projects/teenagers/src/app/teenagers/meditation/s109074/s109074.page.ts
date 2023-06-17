@@ -26,7 +26,7 @@ export class S109074Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 168
+  rId = 1431
   reflection: any
   reflectionA: any
   r109074 = JSON.parse(sessionStorage.getItem("r109074"))
@@ -54,7 +54,7 @@ export class S109074Page implements OnInit {
       // var base_color = "rgb(230,230,230)";
       // var active_color = "rgb(237, 40, 70)";
       var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#FFC455";
+      var active_color = "#60A757";
 
       var i;
 

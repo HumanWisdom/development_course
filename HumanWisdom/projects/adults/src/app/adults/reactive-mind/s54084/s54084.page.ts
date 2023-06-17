@@ -51,7 +51,7 @@ export class S54084Page implements OnInit {
     
     }
    else if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
       this.moduleLink = "/adults/breathing"
       this.moduleName = "Breathing"
       this.sectionName = "Develop a calm mind";

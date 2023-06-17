@@ -1,0 +1,20 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+
+      Just as all rivers lead to the sea, all our journeys of enquiry lead us to this question - ‘Who suffers?’, ‘Who feels stressed, anxious and lonely?’, ‘Who or What am I?’ 
+
+
+      </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

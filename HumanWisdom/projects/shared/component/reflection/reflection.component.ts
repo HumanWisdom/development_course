@@ -17,7 +17,7 @@ export class ReflectionComponent implements OnInit {
   @Input() bg_tn: string;
   @Input() bg_cft: string;
   @Input() set reflectionResponse(data) {
-    this.reflectionData = data !== 'null' ? data : '';
+    // this.reflectionData = data !== 'null' ? data : '';
   };
   @Input() toc: string;
   @Input() rid: string;
@@ -37,6 +37,9 @@ export class ReflectionComponent implements OnInit {
   userId: any;
   placeholder = 'Write your answer here';
   programName:string="";
+  reflectionA: any
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+
   constructor(public router: Router, public service: AdultsService, public sharedService:SharedService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
@@ -57,10 +60,23 @@ export class ReflectionComponent implements OnInit {
     if(this.programName=='teenagers'){
       this.programName='';
     }
+
+    this.reflectionA = this.qrList.ListOfReflection;
+    this.findReflection();
+
   }
   sharedForum(e) {
     console.log(e)
     this.shared = e
+  }
+
+  findReflection() {
+    for (var i = 0; i < this.reflectionA.length; i++) {
+      if (this.rid == this.reflectionA[i].ReflectionId) {
+        this.reflection = this.reflectionA[i].Que;
+        this.reflectionData = this.reflectionA[i].Response !== 'null' ? this.reflectionA[i].Response : '';
+      }
+    }
   }
 
   confirmShare() {
@@ -112,11 +128,11 @@ export class ReflectionComponent implements OnInit {
     const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
     return enumKey as string;
   }
- 
+
   goToToc() {
     this.router.navigate(['/'+this.programName+'/' + this.toc])
   }
- 
+
   goToDash() {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.router.navigate(['/adults/adult-dashboard'])

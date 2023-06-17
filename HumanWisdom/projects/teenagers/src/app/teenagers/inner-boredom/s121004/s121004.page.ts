@@ -21,7 +21,7 @@ export class S121004Page implements OnInit,OnDestroy
   text=[
         "Nurture a quiet mind",
         "Art of enquiry",
-        " Inner Boredom",
+        "Emptiness and Boredom",
         "Understand emotions",
         "Living with wisdom"
       ]

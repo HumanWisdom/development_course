@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+
+          <p>
+            Our mind has a tendency to generalize. If the people behind a terrorist bombing say they were muslims, then it does not take long for us to regard all muslims as terrorists or sympathizers. As an example, the hate crimes against muslims increased after the 9/11 twin towers attack. Or, if I read about a crime being committed by an immigrant, to regard all immigrants as dangerous, and so on.
+          </p>
+
+          <p>
+            We are usually certain of our conclusions and will defend them against people who challenge them. Noticing this tendency in ourselves is not easy, but the beginning of freedom from all prejudice.
+          </p>
+
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

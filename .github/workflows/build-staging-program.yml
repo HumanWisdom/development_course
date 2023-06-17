@@ -70,7 +70,7 @@ jobs:
       with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.NEWSERVERKEY }}
         source: "program.tgz"
         target: "builds/compressed/${{ github.run_id }}"
         
@@ -79,20 +79,18 @@ jobs:
       with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.NEWSERVERKEY }}
         script: |
-          sudo rm -rf builds/uncompressed/${{ github.run_id }}
-          sudo mkdir -p builds/uncompressed/${{ github.run_id }}
-          sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          sudo rm -rf /var/www/html/teenager_backup
-          sudo cp -R /var/www/html/course/ /var/www/html/teenager_backup
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/teenagers
           sudo mv builds/uncompressed/${{ github.run_id }}/teenagers /var/www/html/teenagers  
+          sudo chown ubuntu:ubuntu /var/www/html/teenagers
           
     - name: Cleaning up Teenagers pipeline
       run: sleep 30      
           
-
   build-adults:
      runs-on: ubuntu-latest
      needs: deploy-teenagers
@@ -160,7 +158,7 @@ jobs:
        with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.NEWSERVERKEY }}
         source: "program.tgz"
         target: "builds/compressed/${{ github.run_id }}"
         
@@ -169,13 +167,11 @@ jobs:
        with:
         host: ${{ secrets.STAGING_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.NEWSERVERKEY }}
         script: |
-          sudo rm -rf builds/uncompressed/${{ github.run_id }}
-          sudo mkdir -p builds/uncompressed/${{ github.run_id }}
-          sudo tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
-          sudo rm -rf /var/www/html/course_backup_1
-          sudo cp -R /var/www/html/course/ /var/www/html/course_backup_1
+          rm -rf builds/uncompressed/${{ github.run_id }}
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/program.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/course
           sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course          
-    
+          sudo chown ubuntu:ubuntu /var/www/html/course
