@@ -11,9 +11,9 @@ import { AdultsService } from "../../adults.service";
 export class S143042Page implements OnInit 
 {
 
-  bg_tn = "bg_pink_orange"
-  bg_cft = "bg_pink_orange"
-  bg = "pink_orange_w9"
+  bg_tn = "bg_292d56"
+  bg_cft = "bg_292d56"
+  bg = "bg_292d56"
   hint = "Whenever you say - All people of a certain type are…you are generalizing"
   toc = "/diversity-and-inclusion/s143001"
   path = this.router.url

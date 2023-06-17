@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S143017Page implements OnInit,OnDestroy 
 {
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
-  bg="pink_orange_w3"
+  bg_tn="bg_292d56"
+  bg_cft="bg_292d56"
+  bg="bg_292d56"
   title="What are the hiring challenges in creating a diverse environment?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/diversity-and-inclusion/audios/1.4.mp3'

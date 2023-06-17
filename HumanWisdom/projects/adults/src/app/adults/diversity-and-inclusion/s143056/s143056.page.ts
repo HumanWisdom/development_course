@@ -11,9 +11,9 @@ import { AdultsService } from "../../adults.service";
 export class S143056Page implements OnInit, OnDestroy 
 {
 
-  bg_tn = "bg_pink_orange"
-  bg_cft = "bg_pink_orange"
-  bg = "pink_orange_w10"
+  bg_tn = "bg_292d56"
+  bg_cft = "bg_292d56"
+  bg = "bg_292d56"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
