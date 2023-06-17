@@ -78,7 +78,7 @@ jobs:
       with:
         host: ${{ secrets.NEW_PRODUCTION_HOST }}
         username: ${{ secrets.New_PRODUCTION_USERNAME }}
-        key: ${{ secrets.NEW_PRODUCTION_SSH_KEY }}
+        key: ${{ secrets.PRODUCTION_SSH_KEY }}
         source: "program.tgz"
         target: "builds/compressed/${{ github.run_id }}"
         
