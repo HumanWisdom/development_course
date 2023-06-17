@@ -1,0 +1,18 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+    
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#11 Have a positive attitude. </p>
+      I can get through this’. A positive attitude makes the biggest difference to how you will cope with stress. A ‘can do’ attitude gives you the energy to get through the challenges you face. You have met challenges before, and you will meet this one as well.
+    </h1>
+    
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

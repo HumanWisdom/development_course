@@ -1,0 +1,23 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-image-text base="stress_base2" overlay="stress_overlay2">
+
+  <form>
+
+    <h1 class="txt1 tcenter">
+     
+    </h1>           
+
+    <!-- angular audio player plugin  -->                 
+      <div class="row tcenter">
+        <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container">         
+          <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" #audio ></ngx-circular-player>
+        </div>
+      </div>
+    <!-- /angular audio player plugin  -->   
+
+  </form>
+
+</app-image-text>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>
