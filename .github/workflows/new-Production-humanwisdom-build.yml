@@ -87,7 +87,7 @@ jobs:
       with:
         host: ${{ secrets.NEW_PRODUCTION_HOST }}
         username: ${{ secrets.New_PRODUCTION_USERNAME }}
-        key: ${{ secrets.NEW_PRODUCTION_SSH_KEY }}
+        key: ${{ secrets.PRODUCTION_SSH_KEY }}
         script: |
           sudo rm -rf builds/uncompressed/${{ github.run_id }}
           sudo mkdir -p builds/uncompressed/${{ github.run_id }}
