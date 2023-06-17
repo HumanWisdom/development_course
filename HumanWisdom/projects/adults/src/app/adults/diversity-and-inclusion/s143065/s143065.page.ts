@@ -14,7 +14,7 @@ export class S143065Page implements OnInit
   bg_tn = "bg_pink_orange"
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w7"
-  hint = ""
+  hint = "It could be you want to decide where to go on holiday, or when making a decision you first consider how it is going to help you personally."
   toc = "/diversity-and-inclusion/s143001"
   path = this.router.url
   userId: any

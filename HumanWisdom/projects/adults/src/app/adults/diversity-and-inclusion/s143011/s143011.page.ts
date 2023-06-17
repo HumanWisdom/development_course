@@ -14,7 +14,7 @@ export class S143011Page implements OnInit
   bg_tn = "bg_pink_orange"
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w9"
-  hint = ""
+  hint = "Is it just to treat people fairly, or does it also improve retention?"
   toc = "/diversity-and-inclusion/s143001"
   path = this.router.url
   userId: any
