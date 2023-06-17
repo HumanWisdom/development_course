@@ -28,8 +28,8 @@ export class S143001Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   diversityinclusionR=sessionStorage.getItem("diversityinclusionR")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/07.png"
-  tocColor="white"
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/143.png"
+  tocColor="grey"
   lastvisited = false;
   stories: any = []
 
