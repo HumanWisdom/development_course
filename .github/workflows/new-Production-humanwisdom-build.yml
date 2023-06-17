@@ -97,8 +97,8 @@ jobs:
           sudo mkdir -p /var/www/html/course
           sudo rm -rf /var/www/html/course
           sudo mv builds/uncompressed/${{ github.run_id }}/www /var/www/html/course
-          sudo chown ubuntu:ubuntu course
-          sudo chown ubuntu:ubuntu course_backup_1
+          sudo chown ubuntu:ubuntu /var/www/html/course
+          sudo chown ubuntu:ubuntu /var/www/html/course_backup_1
           
           
           
