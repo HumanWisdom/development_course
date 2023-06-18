@@ -15,7 +15,7 @@ export class S125088Page implements OnInit,OnDestroy
   bg="dark_blue_w9"
   title="External causes of stress"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+4.1.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.6.mp3'
   transcriptPage="stress/s125088t"
   toc="stress/s125001"
   bookmark=0

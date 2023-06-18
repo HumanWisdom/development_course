@@ -15,7 +15,7 @@ export class S125067Page implements OnInit,OnDestroy
   bg="dark_blue_w2"
   title="#2 We zoom in and lose perspective"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+3.3.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.3.mp3'
   transcriptPage="stress/s125067t"
   toc="stress/s125001"
   bookmark=0

@@ -18,7 +18,7 @@ export class S125047Page implements OnInit,AfterViewInit
   bg_cft="bg_dark_blue"
   bg="stress_overlay3"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+2.2.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.2.mp3'
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
@@ -34,6 +34,7 @@ export class S125047Page implements OnInit,AfterViewInit
   bookmark=0
   path=this.router.url
   avDuration:any
+  progName= "teenagers";
   
   constructor
   (

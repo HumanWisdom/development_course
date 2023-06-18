@@ -14,7 +14,7 @@ export class S125179Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w9"
   title="#7 Make peace with your inner boredom"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+6.8.mp3'
   transcriptPage="stress/s125179t"
   toc="stress/s125001"

@@ -1176,6 +1176,11 @@ const routes: Routes = [
     component: S125143Page,
   }, 
   {
+    path: 's125143t',   
+       
+    component: S125143tPage,
+  }, 
+  {
     path: 's125144',   
        
     component: S125144Page,
@@ -1296,6 +1301,11 @@ const routes: Routes = [
     path: 's125161t',   
        
     component: S125161tPage,
+  },
+  {
+    path: 's125162t',   
+       
+    component: S125162tPage,
   },
   {
     path: 's125162',   
@@ -1431,6 +1441,11 @@ const routes: Routes = [
     path: 's125182',   
        
     component: S125182Page,
+  },
+  {
+    path: 's125182t',   
+       
+    component: S125182tPage,
   },
   {
     path: 's125183',   
@@ -1731,6 +1746,11 @@ const routes: Routes = [
     path: 's125229',   
        
     component: S125229Page,
+  },
+  {
+    path: 's125229t',   
+       
+    component: S125229tPage,
   },
   {
     path: 's125230',   

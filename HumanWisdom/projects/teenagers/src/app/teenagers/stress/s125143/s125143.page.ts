@@ -15,9 +15,9 @@ export class S125143Page implements OnInit,OnDestroy
   bg="dark_blue_w2"
   title="#1 We try to fix the problem"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+5.1.mp3'
-  transcriptPage="stress/s125143t"
-  toc="stress/s125001"
+  audioLink=this.mediaAudio+'/stress/audios/1.15.mp3'
+  transcriptPage="/stress/s125143t"
+  toc="/stress/s125001"
   bookmark=0
   path=this.router.url
   avDuration:any

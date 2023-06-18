@@ -14,7 +14,7 @@ export class S125172Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2"
   title="#4 Invest in your friendships"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+6.5.mp3'
   transcriptPage="stress/s125172t"
   toc="stress/s125001"

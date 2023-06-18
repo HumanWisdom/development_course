@@ -15,22 +15,22 @@ export class S125248Page implements OnInit
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/17.png"
   
   bg=""
-  moduleLink="/self-esteem"
-  moduleName=" Self Esteem"
+  moduleLink="/self-esteem/s126001"
+  moduleName="Self Esteem"
   sectionName= "Transform your life - II";
   moduleId=17
   moduleList: any = [
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
-      link: '/conditioning',
-      id: 15
+      link: '/conditioning/s105001',
+      id: 105
     },
     {
       name: 'Comparison & Envy',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/07.png',
-      link: '/comparison',
-      id: 7
+      link: '/comparison/s11101',
+      id: 111
  
     },
     {

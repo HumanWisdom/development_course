@@ -15,7 +15,7 @@ export class S125185Page implements OnInit,OnDestroy
   bg="dark_blue_w3"
   title="#9 Accept yourself for who you are"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+6.10.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.21.mp3'
   transcriptPage="stress/s125185t"
   toc="stress/s125001"
   bookmark=0

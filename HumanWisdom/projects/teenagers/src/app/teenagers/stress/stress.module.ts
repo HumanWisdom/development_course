@@ -315,6 +315,7 @@ import { S125248Page } from './s125248/s125248.page';
 
 import { StressRoutingModule } from './stress-routing.module';
 import { TeenagersService } from '../teenagers.service';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   declarations: [
@@ -630,7 +631,8 @@ S125248Page 
     FormsModule,
     IonicModule,
     SharedModule,
-    StressRoutingModule
+    StressRoutingModule,
+    NgxCircularPlayerModule 
   ],
   providers:[
     TeenagersService

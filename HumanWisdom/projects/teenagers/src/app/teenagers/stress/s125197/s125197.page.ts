@@ -14,7 +14,7 @@ export class S125197Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
   title="#2 Zoom Out. Regain perspective."
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+7.3.mp3'
   transcriptPage="stress/s125197t"
   toc="stress/s125001"

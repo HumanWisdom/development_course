@@ -14,7 +14,7 @@ export class S125236Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w4"
   title="#14 Don’t allow stress to condition you, and shape your future"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+7.15.mp3'
   transcriptPage="stress/s125236t"
   toc="stress/s125001"

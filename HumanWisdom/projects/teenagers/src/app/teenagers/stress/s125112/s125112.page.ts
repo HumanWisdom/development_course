@@ -14,7 +14,7 @@ export class S125112Page implements OnInit
   bg_tn = "bg_dark_blue"
   bg_cft = "bg_dark_blue"
   bg = "dark_blue_w9"
-  hint = "For example, I may not like myself for who I am as a person. The root of that could be an ideal I have of who I should be, and that comes from my unconscious stress."
+  hint = "For example, I may not like myself for who I am as a person. The root of that could be an ideal I have of who I should be, and that comes from my unconscious conditioning."
   toc = "/stress/s125001"
   path = this.router.url
   userId: any
@@ -27,7 +27,7 @@ export class S125112Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1273
+  rId = 1513
   reflection: any
   reflectionA: any
   r125112 = JSON.parse(sessionStorage.getItem("r125112"))

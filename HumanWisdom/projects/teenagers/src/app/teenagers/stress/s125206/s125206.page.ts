@@ -15,7 +15,7 @@ export class S125206Page implements OnInit,OnDestroy
   bg="dark_blue_w10"
   title="#5 Acceptance can dissolve stress"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+7.6.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.22.mp3'
   transcriptPage="stress/s125206t"
   toc="stress/s125001"
   bookmark=0

@@ -14,7 +14,7 @@ export class S125232Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w12"
   title="#13 Explore forgiveness and compassion"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+7.14.mp3'
   transcriptPage="stress/s125232t"
   toc="stress/s125001"

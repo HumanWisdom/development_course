@@ -104,7 +104,7 @@ export class S125015Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/stress/s125014'])
+    this.router.navigate(['/stress/s125013'])
   }
 
   ngOnDestroy()

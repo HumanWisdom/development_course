@@ -27,7 +27,7 @@ export class S125238Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1273
+  rId = 1547
   reflection: any
   reflectionA: any
   r125238 = JSON.parse(sessionStorage.getItem("r125238"))
@@ -112,11 +112,11 @@ export class S125238Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/stress/s125239'])
+        this.router.navigate(['/stress/s125241'])
 
       },
       () => {
-        this.router.navigate(['/stress/s125200'])
+        this.router.navigate(['/stress/s125241'])
       })
   }
 

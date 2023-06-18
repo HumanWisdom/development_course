@@ -14,7 +14,7 @@ export class S125216Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w8"
   title="#8 Take ownership of your feelings"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+7.9.mp3'
   transcriptPage="stress/s125216t"
   toc="stress/s125001"

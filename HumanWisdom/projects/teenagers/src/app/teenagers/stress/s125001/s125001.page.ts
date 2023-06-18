@@ -30,7 +30,7 @@ export class S125001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  angerResume=sessionStorage.getItem("angerResume")
+  stressResume=sessionStorage.getItem("stressResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
   tocColor="white"
   lastvisited = false;

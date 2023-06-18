@@ -13,7 +13,7 @@ export class S125053Page implements OnInit,OnDestroy {
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   videoLink=this.mediaVideo+'/stress/videos/2.2.mp4'  
   title="In this video we explore the mechanism behind stress"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/stress/stress_02.jpg"

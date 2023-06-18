@@ -14,7 +14,7 @@ export class S125113Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w10"
   title="#8 Anger"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+4.10.mp3'
   transcriptPage="stress/s125113t"
   toc="stress/s125001"

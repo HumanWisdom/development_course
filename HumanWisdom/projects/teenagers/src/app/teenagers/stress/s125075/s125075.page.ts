@@ -15,7 +15,7 @@ export class S125075Page implements OnInit,OnDestroy
   bg="dark_blue_w10"
   title="#5 Patterns of stress repeat themselves"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+3.6.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.5.mp3'
   transcriptPage="stress/s125075t"
   toc="stress/s125001"
   bookmark=0

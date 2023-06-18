@@ -13,8 +13,8 @@ export class S125092Page implements OnInit,OnDestroy
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
-  title="#1 stress"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  title="#1 Conditioning"
+  mediaAudio="https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   audioLink=this.mediaAudio+'/stress/audios/stress+4.3.mp3'
   transcriptPage="stress/s125092t"
   toc="stress/s125001"

@@ -15,7 +15,7 @@ export class S125072Page implements OnInit,OnDestroy
   bg="dark_blue_w7"
   title="#4 We can’t think clearly"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+3.5.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.4.mp3'
   transcriptPage="stress/s125072t"
   toc="stress/s125001"
   bookmark=0

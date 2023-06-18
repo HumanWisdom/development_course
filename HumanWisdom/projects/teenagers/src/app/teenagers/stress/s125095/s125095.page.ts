@@ -15,7 +15,7 @@ export class S125095Page implements OnInit,OnDestroy
   bg="dark_blue_w4"
   title="#2 Comparison"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/stress+4.4.mp3'
+  audioLink=this.mediaAudio+'/stress/audios/1.7.mp3'
   transcriptPage="stress/s125095t"
   toc="stress/s125001"
   bookmark=0

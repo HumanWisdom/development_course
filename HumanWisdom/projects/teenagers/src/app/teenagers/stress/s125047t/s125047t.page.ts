@@ -18,7 +18,7 @@ export class S125047tPage implements OnInit {
   path=this.router.url
   audioPage="/stress/s125047"
   toc="/stress/s125001"
-  
+  progName= "teenagers";
   screenType=localStorage.getItem("audio")
 avDuration:any
   userId:any
