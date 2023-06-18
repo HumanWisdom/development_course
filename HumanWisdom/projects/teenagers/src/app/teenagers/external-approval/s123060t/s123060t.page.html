@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Use the online journal. Write in it daily. Observe the many small ways your mind seeks eternal validation – the burst of pleasure you feel when you are praised, the ache you feel when an expectation is not met, the anxiety you may feel when performing, the way you judge others on how important they are, and how your mind seeks this validation in different ways. Notice it in the conversations you have – how you exaggerate some facts so others can think better of you, how you talk about yourself and your achievements, or praise those who are famous.
+See if you can observe this without trying to change it. Go deeper and figure out why.
+ This needs honesty and sensitivity.
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

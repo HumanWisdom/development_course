@@ -1,0 +1,26 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This is so important – but how can we train our mind to do this?
+          Firstly, realise that seeking validation from outside to create one’s sense of self-worth leads to suffering when that is not available. Learn to value yourself for the person you are, separate from any of your achievements in the world.
+          What are the elements of your character you value – your honesty and integrity perhaps, your curiosity about the world and yourself, your sensitivity to natural beauty which fills your heart with joy, or your generosity?
+          Cultivate wonder. Be grateful for all that you have. Your health for example, or your job, however humble it may be, or your relationships. Be grateful to be alive in this amazing world. Remember you are part of the universe and deep down are the same as every other human being.
+          Nurture your relationships. Find ever new ways of giving of yourself to others – your time, your ear, or doing small things for people. Build your community of people who care for each other. 
+          Develop a regular breathing and meditation practice. Connect with your own inner silence and give your heart to discovering your own inner sense of peace.
+          Realise that no amount of fame, and wealth can give you this sense of peace .
+          
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
