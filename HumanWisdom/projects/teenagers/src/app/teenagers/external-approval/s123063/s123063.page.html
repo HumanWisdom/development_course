@@ -1,0 +1,19 @@
+
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      #3 Behind this need for external validation is a feeling of emptiness, an ache that demands to be addressed, a feeling of restlessness. Stay with that feeling without naming it. Just breathe into it.
+
+          </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

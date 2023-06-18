@@ -1,0 +1,56 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      On this journey of learning about yourself, keep in mind some basic principles:
+
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+     
+      We need a mind that is open to learning about itself
+
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+     
+      01. Avoid suffering 
+
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      
+     02. Avoid the anxiety of performing
+
+
+    </h3>
+    <h3 class="txt2 lengthy_txt_pointer">
+     
+      03. Not judge our lives based on what others think
+
+
+
+    </h3>
+   
+    <h3 class="txt2 lengthy_txt_pointer">
+      
+      04. Not manipulate or harm others
+
+
+    </h3>
+    <h3 class="txt2 lengthy_txt_pointer">
+      
+      05. Be free to choose a path that makes our heart sing
+
+    </h3>
+
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

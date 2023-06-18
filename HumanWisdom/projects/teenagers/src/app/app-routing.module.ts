@@ -160,6 +160,10 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/nature-of-the-i/nature-of-the-i.module').then(m => m.NatureOfTheIModule)
   },
   {
+    path: 'external-approval',
+    loadChildren: () => import('./teenagers/external-approval/external-approval.module').then(m => m.ExternalApprovalModule)
+  },
+  {
     path: 'stress',
     loadChildren: () => import('./teenagers/stress/stress.module').then(m => m.StressModule)
   },
