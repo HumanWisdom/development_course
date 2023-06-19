@@ -26,6 +26,7 @@ export class ActiveGuard implements CanActivate, OnInit {
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     let m: any = state.url;
+    let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
     m = m.split('?')
     let str = next.routeConfig.path;
@@ -37,7 +38,7 @@ export class ActiveGuard implements CanActivate, OnInit {
         this.scrId = (parseInt(this.scrId) - 1).toString();
       }
     } */
-    if (sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
+    if (!(m[0].includes("wisdom-shorts")) && sub === '1' || m[1]?.slice(0, 2) === 't=' || this.t !== undefined) {
       return true;
     } else if (m[0].includes("view-stories") === true) {
       let id = m[1].split("=")[1]
@@ -50,7 +51,19 @@ export class ActiveGuard implements CanActivate, OnInit {
         }
       })
     } else if (m[0].includes("wisdom-shorts") === true) {
-      return true;
+      let id = m[0].split("/")[3].split(".")[1]
+      this.service.CheckShortsIsFree(id).subscribe(res => {
+        if (res === true) {
+          return true;
+        } else {
+          if(loggedin && loggedin === 'T' && sub && sub === '1') {
+            return true;
+          }else {
+            this.router.navigate(['/onboarding/free-limit'])
+            return false;
+          }
+        }
+      })
     } else if (this.freeScreens !== null && this.freeScreens.includes(this.scrId.replace('t', ''))) {
       return true;
     } else {

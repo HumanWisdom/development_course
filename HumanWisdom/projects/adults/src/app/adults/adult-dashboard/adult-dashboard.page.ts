@@ -1561,6 +1561,7 @@ export class AdultDashboardPage implements OnInit {
         this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
         this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
         this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+      
       })
 
   }
@@ -1795,6 +1796,11 @@ export class AdultDashboardPage implements OnInit {
         this.routeExternalApproval(1)
         break
       }
+      case "143": {
+        this.routeDiversityandInclusion(1)
+        break
+      }
+
     }
   }
 
@@ -3627,8 +3633,6 @@ export class AdultDashboardPage implements OnInit {
             this.router.navigate([`/adults/how-can-wisdom-help/s74001`])
         })
   }
-
-
 
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
