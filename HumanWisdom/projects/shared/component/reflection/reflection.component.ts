@@ -87,6 +87,13 @@ export class ReflectionComponent implements OnInit {
     }
     this.service.addUserRefPost(obj).subscribe((res) => {
       if (res) {
+        for (var i = 0; i < this.reflectionA.length; i++) {
+          if (this.rid == this.reflectionA[i].ReflectionId) {
+            this.reflectionA[i].Response = this.reflectionData;
+          }
+        }
+        this.qrList.ListOfReflection = this.reflectionA;
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
         this.confirmed = true;
         this.enableReadonly = true;
       }
