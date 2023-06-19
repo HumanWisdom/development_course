@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The first step is always the most difficult – which is to explore the fact without judgement. What’s wrong with trying to be famous you ask? Nothing.
+          Our mind is always judging what it sees as good or bad, right or wrong. If you regard the need to be important and famous as a great thing, you will resist exploring this further. If you regard it as a bad thing you will try and do the opposite and practice humility – neither of which deepen your understanding of what is going on in our thinking.
+          Your mind functions in the same way as everyone else – so you are not alone. Begin with an open mind that is curious and open to learning about itself. So many amazing discoveries await/
+          
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

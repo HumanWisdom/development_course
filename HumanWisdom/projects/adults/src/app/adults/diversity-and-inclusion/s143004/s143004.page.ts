@@ -11,10 +11,10 @@ import { AdultsService } from "../../adults.service";
 export class S143004Page implements OnInit 
 {
 
-  bg_tn = "bg_pink_orange"
-  bg_cft = "bg_pink_orange"
-  bg = "pink_orange_w2"
-  hint = ""
+  bg_tn = "bg_292d56"
+  bg_cft = "bg_292d56"
+  bg = "bg_292d56"
+  hint = "Is it having people with different identities in the same organization?"
   toc = "/diversity-and-inclusion/s143001"
   path = this.router.url
   userId: any

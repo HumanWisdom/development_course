@@ -31,29 +31,29 @@ export class S63067Page implements OnInit,OnDestroy {
   screenNumber=63067
   startTime:any
   endTime:any
-  totalTime:any  
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+  totalTime:any
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"));
+
   constructor(private router: Router,
     private service:AdultsService,
     private location:Location) { }
- 
+
   ngOnInit() {
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
    this.startTime = Date.now();
- 
+
     this.startTime = Date.now();
     this.createScreen()
     if(JSON.parse(sessionStorage.getItem("bookmark63067"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark63067"))==1)
       this.bookmark=1
- 
+
   }
- 
+
   createScreen(){
     this.service.createScreen({
       "ScrId":0,
@@ -62,12 +62,12 @@ export class S63067Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        
+
       })
-    
- 
+
+
   }
- 
+
   receiveBookmark(e)
   {
     console.log(e)
@@ -77,19 +77,19 @@ export class S63067Page implements OnInit,OnDestroy {
       this.bookmark=0
     sessionStorage.setItem("bookmark63067",JSON.stringify(this.bookmark))
   }
- 
+
   receiveAvDuration(e){
     console.log(e)
     this.avDuration=e
- 
+
   }
 
   getTime(){
-      
+
   }
- 
+
   submitProgress(){
-   
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/living-with-peace/s63068'])
@@ -103,23 +103,24 @@ export class S63067Page implements OnInit,OnDestroy {
       "avDuration":this.avDuration
     }).subscribe(res=>
       {
-        
+
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    
-   
-   
- 
+
+
+
+
   }
   prev(){
     this.router.navigate(['/adults/living-with-peace/s63066'])
- 
- 
+
+
   }
+
   ngOnDestroy(){
     localStorage.setItem("totalTime63067",this.totalTime)
     localStorage.setItem("avDuration63067",this.avDuration)
- 
+
   }
 }

@@ -11,6 +11,8 @@ import { AdultsService } from '../adults.service';
 export class ReferFriendPage implements OnInit {
   email = '';
   name = '';
+  content = '';
+  enableAlert = false;
 
   constructor(private service: AdultsService, private location: Location, public platform: Platform) { }
 
@@ -52,7 +54,13 @@ export class ReferFriendPage implements OnInit {
         }
       })
     } else {
-      window.alert('Please enter complete details')
+      this.content = 'Please enter complete details';
+      this.enableAlert = true;
     }
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 }
