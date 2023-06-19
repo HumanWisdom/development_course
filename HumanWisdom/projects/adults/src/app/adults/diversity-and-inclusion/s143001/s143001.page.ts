@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./s143001.page.scss'],
 })
 export class S143001Page implements OnInit,OnDestroy {
-
+  pgResume=sessionStorage.getItem("pgResume")
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")

@@ -353,8 +353,17 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         case "77": {
           this.routeMakingBetterDecision(1)
           break
-        } case "92": {
+        }
+        case "91": {
+          this.routeExternalApproval(1)
+          break
+        }        
+        case "92": {
           this.routeDealingWithDepression(1)
+          break
+        }
+        case "143": {
+          // this.routeDiversityandInclusion(1)
           break
         }
       }
@@ -2639,6 +2648,39 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
       });
     }, 2000);
+  }
+
+  routeExternalApproval(cont: any = 1) {
+    var externalapprovalR
+    localStorage.setItem("moduleId", JSON.stringify(91))
+    this.service.clickModule(91, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        externalapprovalR = "s" + res.lastVisitedScreen
+      
+
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("externalapprovalR", externalapprovalR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          if (cont == "1") {
+            this.router.navigate([`/adults/external-approval/${externalapprovalR}`])
+          }
+          else
+            this.router.navigate([`/adults/external-approval/s91001`])
+        })
   }
 
   routeDealingWithDepression(cont: any = 1) {
