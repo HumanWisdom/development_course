@@ -1,3 +1,4 @@
+#/var/www/html/course/.htaccess
 RewriteEngine On
 
 # Serve existing files and directories directly
@@ -10,4 +11,4 @@ RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^course/index\.html - [L]
 
 # Redirect all requests within the "course" project to index.html
-RewriteRule ^(.*)$ /course/index.html [NC,L,QSA]
+RewriteRule ^(.*)$ /course/index.html [NC,L,QSA]
