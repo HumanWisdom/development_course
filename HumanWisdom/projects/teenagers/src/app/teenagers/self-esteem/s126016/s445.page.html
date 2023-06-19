@@ -1,0 +1,23 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+  
+  <form>
+    <h1 class="txt1">
+      Why does our mind always look for approval and appreciation from the outside to feel good on the inside? The more we do this, the more likely we are to be disappointed. Everything we need is within us. Observe this habit. Let it go. 
+      <span class="highligted_span">
+        (See modules on nurturing a quiet mind)
+      </span>      
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
