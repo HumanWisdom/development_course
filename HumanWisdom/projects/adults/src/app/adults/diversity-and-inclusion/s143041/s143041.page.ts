@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S143041Page implements OnInit,OnDestroy 
 {
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
-  bg="pink_orange_w8"
+  bg_tn="bg_292d56"
+  bg_cft="bg_292d56"
+  bg="bg_292d56"
   title="Our tendency to generalize"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/diversity-and-inclusion/audios/1.8.mp3'
