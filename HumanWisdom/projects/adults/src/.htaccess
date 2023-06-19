@@ -1,4 +1,3 @@
-<IfModule mod_rewrite.c>
 RewriteEngine On
 
 # Serve existing files and directories directly
@@ -8,4 +7,3 @@ RewriteRule ^ - [L]
 
 # Redirect all requests within the "course" project to index.html
 RewriteRule ^(.*)$ /course/index.html [NC,L]
-</IfModule>
