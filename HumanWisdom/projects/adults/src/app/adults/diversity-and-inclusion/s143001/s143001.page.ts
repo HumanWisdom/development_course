@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   templateUrl: './s143001.page.html',
   styleUrls: ['./s143001.page.scss'],
 })
-export class S143001Page implements OnInit,OnDestroy,OnChanges {
+export class S143001Page implements OnInit,OnDestroy {
   pgResume=sessionStorage.getItem("pgResume")
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -78,6 +78,13 @@ export class S143001Page implements OnInit,OnDestroy,OnChanges {
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
   }
+
+continue(){
+  if(sessionStorage.getItem('pgResume')!= null){
+    this.pgResume=sessionStorage.getItem("pgResume")
+  }
+  this.router.navigate(['/adults/diversity-and-inclusion/'+this.pgResume]);
+}
 
   ngOnInit() 
   {
@@ -170,10 +177,6 @@ export class S143001Page implements OnInit,OnDestroy,OnChanges {
     this.router.navigate(['/adults/journal'])
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    if(sessionStorage.getItem('pgResume')!= null){
-      this.pgResume=sessionStorage.getItem("pgResume")
-    }
-  }
+
 
 }
