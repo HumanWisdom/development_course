@@ -52,7 +52,7 @@ export class S323Page implements OnInit {
     
     }
     else if (cur && cur === 'habits') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
      
       this.moduleLink = "/adults/stress"
       this.moduleName = "Stress"

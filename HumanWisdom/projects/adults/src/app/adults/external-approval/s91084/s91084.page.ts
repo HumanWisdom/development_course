@@ -39,9 +39,21 @@ export class S91084Page implements OnInit {
       id: 18
   
     },
+    
   ]
 
-  constructor() { }
+  constructor() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'stress') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
+      this.moduleLink = "/adults/breathing"
+      this.moduleName = "Breathing"
+      this.sectionName = "Develop a calm mind";
+      this.moduleId = 29
+    
+    }
+
+   }
 
   ngOnInit() { }
 
