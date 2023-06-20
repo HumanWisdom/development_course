@@ -102,14 +102,18 @@ export class ReflectionComponent implements OnInit {
 
 
   next() {
-    if (this.reflectionData)
+    if (this.reflectionData){
+      for (var i = 0; i < this.reflectionA.length; i++) {
+        if (this.rid == this.reflectionA[i].ReflectionId) {
+          this.reflectionA[i].Response = this.reflectionData;
+        }
+      }
+      this.qrList.ListOfReflection = this.reflectionA;
+      localStorage.setItem("qrList", JSON.stringify(this.qrList));
       this.sendResponse.emit(this.reflectionData)
-    else {
+    }else {
       this.sendResponse.emit(null)
     }
-
-
-
   }
 
   previous() {
