@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { AdultsService } from "../../adults.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   templateUrl: './s143001.page.html',
   styleUrls: ['./s143001.page.scss'],
 })
-export class S143001Page implements OnInit,OnDestroy {
+export class S143001Page implements OnInit,OnDestroy,OnChanges {
   pgResume=sessionStorage.getItem("pgResume")
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -81,6 +81,7 @@ export class S143001Page implements OnInit,OnDestroy {
 
   ngOnInit() 
   {
+    this.pgResume=sessionStorage.getItem("pgResume");
     // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if(last === 'T') 
@@ -167,6 +168,12 @@ export class S143001Page implements OnInit,OnDestroy {
   routeJournal()
   {
     this.router.navigate(['/adults/journal'])
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    if(sessionStorage.getItem('pgResume')!= null){
+      this.pgResume=sessionStorage.getItem("pgResume")
+    }
   }
 
 }
