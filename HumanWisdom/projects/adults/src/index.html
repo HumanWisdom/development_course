@@ -473,13 +473,14 @@
       });
 
       window.addEventListener('downloadButtonClicked', function () {
-        console.log('fileName' + myFileContentData);
+        console.log('fileName1:' + localStorage.getItem('fileName'));
+        console.log('fileName2:'+ localStorage.getItem('fileName').toString() + myFileContentData);
         if (window.webkit) {
           window.webkit.messageHandlers.nativeActionHandler.postMessage("DownloadFile_" + localStorage.getItem('fileName').toString() + "_" + myFileContentData);
         }
-
+       
         if (window.AndroidHandler) {
-          window.AndroidHandler.DownloadFile("CertificateOfCompletion", myFileContentData);
+          window.AndroidHandler.DownloadFile(localStorage.getItem('fileName').toString(), myFileContentData);
         }
         // Perform the download action here
       });
