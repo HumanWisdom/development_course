@@ -381,20 +381,21 @@ export class AdultsService {
 
   activateModule(id) {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
-    let discoveringWisdomResume;
+    let pgResume;
     let mediaPercent;
     localStorage.setItem("moduleId", JSON.stringify(id))
     this.clickModule(id, userId)
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         let qrList = res
-        discoveringWisdomResume = "s" + res.lastVisitedScreen
-        sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
+        pgResume = "s" + res.lastVisitedScreen
+        sessionStorage.setItem("pgResume", pgResume)
         mediaPercent = parseInt(res.MediaPercent);
         let freeScreens = res.FreeScrs.map(a => a.ScrNo);
         localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(qrList))
+        console.log(qrList)
       })
   }
 

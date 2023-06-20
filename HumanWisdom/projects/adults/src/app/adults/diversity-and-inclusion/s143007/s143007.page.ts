@@ -11,10 +11,10 @@ import { AdultsService } from "../../adults.service";
 export class S143007Page implements OnInit 
 {
 
-  bg_tn = "bg_pink_orange"
-  bg_cft = "bg_pink_orange"
-  bg = "pink_orange_w5"
-  hint = ""
+  bg_tn = "bg_292d56"
+  bg_cft = "bg_292d56"
+  bg = "bg_292d56"
+  hint = "Does it mean everyone feels a sense of belonging?"
   toc = "/diversity-and-inclusion/s143001"
   path = this.router.url
   userId: any
@@ -108,7 +108,7 @@ export class S143007Page implements OnInit
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": this.r143007
+      "Resp": JSON.parse(this.r143007)
     }).subscribe(res => {},
       error => {
         console.log(error)

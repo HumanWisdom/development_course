@@ -1,5 +1,5 @@
 import { Platform } from '@angular/cdk/platform';
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-
+var window: any;
 @Component({
   selector: 'app-adult-dashboard',
   templateUrl: './adult-dashboard.page.html',
@@ -1561,6 +1561,7 @@ export class AdultDashboardPage implements OnInit {
         this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
         this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
         this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+      
       })
 
   }
@@ -1795,6 +1796,11 @@ export class AdultDashboardPage implements OnInit {
         this.routeExternalApproval(1)
         break
       }
+      case "143": {
+        this.routeDiversityandInclusion(1)
+        break
+      }
+
     }
   }
 
@@ -3631,11 +3637,14 @@ export class AdultDashboardPage implements OnInit {
   getuserDetail() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     if (userId != null) {
-      this.services.getuser(userId).subscribe((res) => {
+      this.services.getuser(userId).subscribe((res: any) => {
+
+
+
         localStorage.setItem("isPartner", res[0].IsPartner);
         localStorage.setItem('PartnerOption', res[0].PartnerOption);
         localStorage.setItem("SubscriberType", res[0].SubscriberType)
-      })
+      });
     }
   }
 
@@ -3812,16 +3821,16 @@ export class AdultDashboardPage implements OnInit {
     if (evtName === 'click_journal') {
       this.router.navigate(['/adults/journal'])
 
-    //   let guest = localStorage.getItem('guest');
-    //   if (this.isloggedIn && guest === 'F') {
-    //     if (!this.Subscriber || this.Subscriber === '0') {
-    //       this.router.navigate(['/onboarding/free-limit']);
-    //     } else {
-    //       this.router.navigate(['/adults/journal'])
-    //     }
-    //   } else {
-    //     this.enablepopup.nativeElement.click();
-    //   }
+      //   let guest = localStorage.getItem('guest');
+      //   if (this.isloggedIn && guest === 'F') {
+      //     if (!this.Subscriber || this.Subscriber === '0') {
+      //       this.router.navigate(['/onboarding/free-limit']);
+      //     } else {
+      //       this.router.navigate(['/adults/journal'])
+      //     }
+      //   } else {
+      //     this.enablepopup.nativeElement.click();
+      //   }
     } else if (params != '' && route != '') {
       this.router.navigate([route, params]);
     } else if (route != '') {

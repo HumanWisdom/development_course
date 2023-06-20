@@ -22,5 +22,15 @@ export class LogEventService {
         this.analytics.logEvent(eventname, { UserName: name });
         this.analytics.logEvent(eventname, { DeviceOS: device_info.os });
         this.analytics.logEvent(eventname, { DeviceBrowser: device_info.browser });
+         setTimeout(() => {
+            const accessObj:any = window;
+            (accessObj)?.Moengage.track_event(eventname, {
+                "UserName": name, // string value
+                "deviceOS": device_info.os, // numeric value
+                "DeviceBrowser":device_info.browser, // numeric value
+                "Date": new Date(), // datetime value. Example value represents 31 January, 2017.
+                });
+         }, 5000);
+        
     }
 }
