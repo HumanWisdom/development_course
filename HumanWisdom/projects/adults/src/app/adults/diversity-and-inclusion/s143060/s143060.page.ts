@@ -108,7 +108,7 @@ export class S143060Page implements OnInit
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": this.r143060
+      "Resp": JSON.parse(this.r143060)
     }).subscribe(res => {},
       error => {
         console.log(error)
