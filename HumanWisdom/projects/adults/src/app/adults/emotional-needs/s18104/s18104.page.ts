@@ -35,7 +35,7 @@ export class S18104Page implements OnInit {
     },
     {
       name: 'No Judgement',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/40.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/40.png',
       link: '/no-judgement',
       id: 40
   
@@ -54,7 +54,7 @@ export class S18104Page implements OnInit {
     
     }
     else if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/look_without_language.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/42.png"
      
       this.moduleLink = "/adults/without-language"
       this.moduleName = "Look Without Language"

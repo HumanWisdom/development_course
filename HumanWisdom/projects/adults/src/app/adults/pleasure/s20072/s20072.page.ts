@@ -55,7 +55,7 @@ export class S20072Page implements OnInit {
     
     }
    else if (cur && cur === 'habits') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
       
       this.moduleLink = "/adults/conditioning"
       this.moduleName = "Conditioning"
