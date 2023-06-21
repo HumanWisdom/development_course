@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We have explored how the human mind constantly seeks pleasure through buying things, and, seeking new experiences. This happens hidden from our awareness and is not right or wrong. Desire is wanting something and pursuing it, because we think it will make us happy. If we want something we cannot get we can become stressed. We may not be able to afford something we want for example, or don’t get the grades we were expecting. So our own unmet expectations can cause our own stress. The longer the list of our expectations, the greater the chance of stress. 
+          </p>
+          <p>
+            Understanding this allows us to respond with wisdom.
+          </p>
+        </h3>                 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
