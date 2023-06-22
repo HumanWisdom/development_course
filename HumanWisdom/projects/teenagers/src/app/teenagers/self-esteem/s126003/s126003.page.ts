@@ -24,8 +24,8 @@ export class S126003Page implements OnInit {
         "Understand emotions",
         "Self-esteem"
       ]
-      transcriptPage="self-esteem/s435t"
-      toc="self-esteem/s433"
+      transcriptPage="self-esteem/s126003t"
+      toc="self-esteem/s126001"
       progName = "teenagers";
       userId:any
       saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

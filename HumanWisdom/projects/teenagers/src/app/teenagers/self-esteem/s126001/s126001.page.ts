@@ -30,8 +30,8 @@ export class S126001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  self-esteemResume=sessionStorage.getItem("self-esteemResume")
-  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
+  sR=sessionStorage.getItem("sR")
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/17.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
