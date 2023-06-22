@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          A short burst of anger usually doesn't cause long term stress, but can impact our relationships. <br>But if we carry our anger with us for a long time, perhaps due to a hurt that we cannot forget, that can cause stress. If we can learn to forgive and forget, it is a gift we can give ourselves, for preserving our own long term health. Behind much of our anger is a feeling of being disappointed or hurt, or a feeling of injustice. This is an automatic reaction and understanding the roots of anger in our thinking allows us to respond in the most appropriate way.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

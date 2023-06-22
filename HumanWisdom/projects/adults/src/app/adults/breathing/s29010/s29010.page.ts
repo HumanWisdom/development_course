@@ -46,7 +46,7 @@ export class S29010Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png"
       this.moduleLink = "/adults/stress"
       this.moduleName = "stress"
       this.sectionName = "Transform your life";
