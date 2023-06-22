@@ -51,11 +51,11 @@ export class S54084Page implements OnInit {
     
     }
    else if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
-      this.moduleLink = "/adults/breathing"
-      this.moduleName = "Breathing"
-      this.sectionName = "Develop a calm mind";
-      this.moduleId = 29
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/92.png"
+      this.moduleLink = "/adults/dealing-with-depression"
+      this.moduleName = "Dealing with depression"
+      this.sectionName = "Manage your emotions";
+      this.moduleId = 92
      
     }
     else if (cur && cur === 'relationships') {

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          In the cool light of day when we are calm we may think that forgiving others is a good thing to do and admire those who can. When we feel wronged it is the last thing on our minds, and we want to retaliate and can carry the pain of the event for years. Even if we want to, we don’t know how to forgive. The pain we feel inside makes it hard to do. The first step is to realise that forgiveness follows compassion and is a gift we give ourselves which can end our own stress. Through self-enquiry forgiveness becomes easier because we understand that deep down the people who have hurt us are the same as us - they also operate from their self-interest and their unconscious conditioning like we do, and are not aware they are doing so.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -65,7 +65,7 @@ export class S143021tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/adults/diversity-and-inclusion/s143022'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143107'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

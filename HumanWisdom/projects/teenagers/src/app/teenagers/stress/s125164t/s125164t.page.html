@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          An entire section of the app is dedicated to this with good reason. There are simple exercises you can do everyday, and during your school day, which help your mind go quiet. This quietness allows you space to notice what is happening in your own thinking, as well as pause a stressful reaction when it occurs, and in that moment consider what is the best way to respond. <br>This may not be something you have done before and it can feel unfamiliar, but this can enhance your life in many ways. You can begin with just 10 minutes a day
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

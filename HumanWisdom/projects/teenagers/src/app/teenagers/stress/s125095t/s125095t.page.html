@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our minds unconsciously compare what is happening in the world with what we know and this happens in the background. This is essential for life in many ways but can also be a cause of stress, as we have explored in a separate module. Social media is one example, or comparing our test results with others is another. This process can cause the ache of envy and jealousy which can lead to low self-esteem and a difficulty in accepting ourselves as we are. Waking up to this process occurring in the background and just observing it as it happens without judgement, loosens its hold on our thinking, and we can live with freedom from envy and accept ourselves as we are. It's very liberating. Try it and see.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
