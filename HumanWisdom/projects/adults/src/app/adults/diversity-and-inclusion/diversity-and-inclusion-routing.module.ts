@@ -353,8 +353,13 @@ const routes: Routes = [
     canActivate:[ActiveGuard],  
     component: S143037Page,
   }, 
+  // {
+  //   path: 's143038',   
+  //   canActivate:[ActiveGuard],  
+  //   component: S143038Page,
+  // },  
   {
-    path: 's143038',   
+    path: 's143028p1',   
     canActivate:[ActiveGuard],  
     component: S143038Page,
   },  
@@ -768,8 +773,13 @@ const routes: Routes = [
     canActivate:[ActiveGuard],  
     component: S143106Page,
   },
+  // {
+  //   path: 's143107',   
+  //   canActivate:[ActiveGuard],  
+  //   component: S143107Page,
+  // },
   {
-    path: 's143107',   
+    path: 's143021p1',   
     canActivate:[ActiveGuard],  
     component: S143107Page,
   },
