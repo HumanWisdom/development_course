@@ -63,7 +63,7 @@ export class S47371Page implements OnInit {
     
     }
    else if (cur && cur === 'relationships') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/emotional_needs.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/18.png"
      
       this.moduleLink = "/adults/emotional-needs"
       this.moduleName = "Emotional Needs"
