@@ -4,155 +4,169 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {SharedModule} from '../../../../../shared/shared.module'
-import {AdultsService} from '../adults.service';
 
 import { SelfEsteemRoutingModule } from './self-esteem-routing.module';
+import { TeenagersService } from '../teenagers.service';
 
-import { S433Page } from './s433/s433.page';
-import { S434Page } from './s434/s434.page';
-import { S435Page } from './s435/s435.page';
-import { S435tPage } from './s435t/s435t.page';
-import { S436Page } from './s436/s436.page';
-import { S437Page } from './s437/s437.page';
-import { S438Page } from './s438/s438.page';
-import { S439Page } from './s439/s439.page';
-import { S440Page } from './s440/s440.page';
-import { S441Page } from './s441/s441.page';
-import { S441tPage } from './s441t/s441t.page';
-import { S442Page } from './s442/s442.page';
-import { S443Page } from './s443/s443.page';
-import { S444Page } from './s444/s444.page';
-import { S445Page } from './s445/s445.page';
-import { S446Page } from './s446/s446.page';
-import { S447Page } from './s447/s447.page';
-import { S448Page } from './s448/s448.page';
-import { S448p1Page } from './s448p1/s448p1.page';
-import { S448p2Page } from './s448p2/s448p2.page';
-import { S448p3Page } from './s448p3/s448p3.page';
-import { S448p4Page } from './s448p4/s448p4.page';
-import { S448p5Page } from './s448p5/s448p5.page';
-import { S448p6Page } from './s448p6/s448p6.page';
-import { S449Page } from './s449/s449.page';
-import { S450Page } from './s450/s450.page';
-import { S451Page } from './s451/s451.page';
-import { S452Page } from './s452/s452.page';
-import { S453Page } from './s453/s453.page';
-import { S454Page } from './s454/s454.page';
-import { S455Page } from './s455/s455.page';
-import { S456Page } from './s456/s456.page';
-import { S457Page } from './s457/s457.page';
-import { S457tPage } from './s457t/s457t.page';
-import { S458Page } from './s458/s458.page';
-import { S459Page } from './s459/s459.page';
-import { S460Page } from './s460/s460.page';
-import { S461Page } from './s461/s461.page';
-import { S462Page } from './s462/s462.page';
-import { S463Page } from './s463/s463.page';
-import { S464Page } from './s464/s464.page';
-import { S465Page } from './s465/s465.page';
-import { S466Page } from './s466/s466.page';
-import { S467Page } from './s467/s467.page';
-import { S468Page } from './s468/s468.page';
-import { S469Page } from './s469/s469.page';
-import { S470Page } from './s470/s470.page';
-import { S471Page } from './s471/s471.page';
-import { S472Page } from './s472/s472.page';
-import { S473Page } from './s473/s473.page';
-import { S474Page } from './s474/s474.page';
-import { S475Page } from './s475/s475.page';
-import { S476Page } from './s476/s476.page';
-import { S477Page } from './s477/s477.page';
-import { S478Page } from './s478/s478.page';
-import { S479Page } from './s479/s479.page';
-import { S480Page } from './s480/s480.page';
-import { S481Page } from './s481/s481.page';
-import { S482Page } from './s482/s482.page';
-import { S483Page } from './s483/s483.page';
-import { S483p1Page } from './s483p1/s483p1.page';
-import { S483p2Page } from './s483p2/s483p2.page';
-import { S483p3Page } from './s483p3/s483p3.page';
-import { S483p4Page } from './s483p4/s483p4.page';
-import { S484Page } from './s484/s484.page';
-import { S485Page } from './s485/s485.page';
+import { S126001Page } from './s126001/s126001.page';
+import { S126002Page } from './s126002/s126002.page';
+import { S126003Page } from './s126003/s126003.page';
+import { S126003tPage } from './s126003t/s126003t.page';
+import { S126004Page } from './s126004/s126004.page';
+import { S126005Page } from './s126005/s126005.page';
+import { S126006Page } from './s126006/s126006.page';
+import { S126007Page } from './s126007/s126007.page';
+import { S126008Page } from './s126008/s126008.page';
+import { S126009Page } from './s126009/s126009.page';
+import { S126010Page } from './s126010/s126010.page';
+import { S126011Page } from './s126011/s126011.page';
+import { S126012Page } from './s126012/s126012.page';
+import { S126012tPage } from './s126012t/s126012t.page';
+import { S126013Page } from './s126013/s126013.page';
+import { S126014Page } from './s126014/s126014.page';
+import { S126015Page } from './s126015/s126015.page';
+import { S126016Page } from './s126016/s126016.page';
+import { S126017Page } from './s126017/s126017.page';
+import { S126018Page } from './s126018/s126018.page';
+import { S126019Page } from './s126019/s126019.page';
+import { S126020Page } from './s126020/s126020.page';
+import { S126021Page } from './s126021/s126021.page';
+import { S126022Page } from './s126022/s126022.page';
+import { S126023Page } from './s126023/s126023.page';
+import { S126024Page } from './s126024/s126024.page';
+import { S126025Page } from './s126025/s126025.page';
+import { S126026Page } from './s126026/s126026.page';
+import { S126027Page } from './s126027/s126027.page';
+import { S126028Page } from './s126028/s126028.page';
+import { S126029Page } from './s126029/s126029.page';
+import { S126030Page } from './s126030/s126030.page';
+import { S126031Page } from './s126031/s126031.page';
+import { S126032Page } from './s126032/s126032.page';
+import { S126033Page } from './s126033/s126033.page';
+import { S126034Page } from './s126034/s126034.page';
+import { S126035Page } from './s126035/s126035.page';
+import { S126035tPage } from './s126035t/s126035t.page';
+import { S126036Page } from './s126036/s126036.page';
+import { S126037Page } from './s126037/s126037.page';
+import { S126038Page } from './s126038/s126038.page';
+import { S126039Page } from './s126039/s126039.page';
+import { S126040Page } from './s126040/s126040.page';
+import { S126041Page } from './s126041/s126041.page';
+import { S126042Page } from './s126042/s126042.page';
+import { S126043Page } from './s126043/s126043.page';
+import { S126044Page } from './s126044/s126044.page';
+import { S126045Page } from './s126045/s126045.page';
+import { S126046Page } from './s126046/s126046.page';
+import { S126047Page } from './s126047/s126047.page';
+import { S126048Page } from './s126048/s126048.page';
+import { S126049Page } from './s126049/s126049.page';
+import { S126050Page } from './s126050/s126050.page';
+import { S126051Page } from './s126051/s126051.page';
+import { S126052Page } from './s126052/s126052.page';
+import { S126053Page } from './s126053/s126053.page';
+import { S126054Page } from './s126054/s126054.page';
+import { S126055Page } from './s126055/s126055.page';
+import { S126056Page } from './s126056/s126056.page';
+import { S126057Page } from './s126057/s126057.page';
+import { S126058Page } from './s126058/s126058.page';
+import { S126059Page } from './s126059/s126059.page';
+import { S126060Page } from './s126060/s126060.page';
+import { S126061Page } from './s126061/s126061.page';
+import { S126062Page } from './s126062/s126062.page';
+import { S126063Page } from './s126063/s126063.page';
+import { S126064Page } from './s126064/s126064.page';
+import { S126065Page } from './s126065/s126065.page';
+import { S126066Page } from './s126066/s126066.page';
+import { S126067Page } from './s126067/s126067.page';
+import { S126068Page } from './s126068/s126068.page';
+import { S126069Page } from './s126069/s126069.page';
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
   declarations: [
-    S433Page,
-    S434Page,
-    S435Page,
-    S435tPage,
-    S436Page,
-    S437Page,
-    S438Page,
-    S439Page,
-    S440Page,
-    S441Page,
-    S441tPage,
-    S442Page,
-    S443Page,
-    S444Page,
-    S445Page,
-    S446Page,
-    S447Page,
-    S448Page,
-    S448p1Page,
-    S448p2Page,
-    S448p3Page,
-    S448p4Page,
-    S448p5Page,
-    S448p6Page,
-    S449Page,
-    S450Page,
-    S451Page,
-    S452Page,
-    S453Page,
-    S454Page,
-    S455Page,
-    S456Page,
-    S457Page,
-    S457tPage,
-    S458Page,
-    S459Page,
-    S460Page,
-    S461Page,
-    S462Page,
-    S463Page,
-    S464Page,
-    S465Page,
-    S466Page,
-    S467Page,
-    S468Page,
-    S469Page,
-    S470Page,
-    S471Page,
-    S472Page,
-    S473Page,
-    S474Page,
-    S475Page,
-    S476Page,
-    S477Page,
-    S478Page,
-    S479Page,
-    S480Page,
-    S481Page,
-    S482Page,
-    S483Page,
-    S483p1Page,
-    S483p2Page,
-    S483p3Page,
-    S483p4Page,
-    S484Page,
-    S485Page,
+S126001Page, 
+S126002Page,
+S126003Page,
+S126003tPage,
+S126004Page,
+S126005Page,
+S126006Page,
+S126007Page,
+S126008Page,
+S126009Page,
+S126010Page,
+S126011Page,
+S126012Page,
+S126012tPage,
+S126013Page,
+S126014Page,
+S126015Page,
+S126016Page,
+S126017Page,
+S126018Page,
+S126019Page,
+S126020Page,
+S126021Page,
+S126022Page,
+S126023Page,
+S126024Page,
+S126025Page,
+S126026Page,
+S126027Page,
+S126028Page,
+S126029Page,
+S126030Page,
+S126031Page,
+S126032Page,
+S126033Page,
+S126034Page,
+S126035Page,
+S126035tPage,
+S126036Page,
+S126037Page,
+S126038Page,
+S126039Page,
+S126040Page,
+S126041Page,
+S126042Page,
+S126043Page,
+S126044Page,
+S126045Page,
+S126046Page,
+S126047Page,
+S126048Page,
+S126049Page,
+S126050Page,
+S126051Page,
+S126052Page,
+S126053Page,
+S126054Page,
+S126055Page,
+S126056Page,
+S126057Page,
+S126058Page,
+S126059Page,
+S126060Page,
+S126061Page,
+S126062Page,
+S126063Page,
+S126064Page,
+S126065Page,
+S126066Page,
+S126067Page,
+S126068Page,
+S126069Page,
   ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
-    SelfEsteemRoutingModule
+    SelfEsteemRoutingModule,
+    NgxCircularPlayerModule
   ],
   providers:[
-    AdultsService
+    TeenagersService
   ]
 })
 export class SelfEsteemModule { }

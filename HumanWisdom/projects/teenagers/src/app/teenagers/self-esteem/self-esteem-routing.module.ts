@@ -1,410 +1,373 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ActiveGuard } from 'src/app/active.guard';
 
-import { S433Page } from './s433/s433.page';
-import { S434Page } from './s434/s434.page';
-import { S435Page } from './s435/s435.page';
-import { S435tPage } from './s435t/s435t.page';
-import { S436Page } from './s436/s436.page';
-import { S437Page } from './s437/s437.page';
-import { S438Page } from './s438/s438.page';
-import { S439Page } from './s439/s439.page';
-import { S440Page } from './s440/s440.page';
-import { S441Page } from './s441/s441.page';
-import { S441tPage } from './s441t/s441t.page';
-import { S442Page } from './s442/s442.page';
-import { S443Page } from './s443/s443.page';
-import { S444Page } from './s444/s444.page';
-import { S445Page } from './s445/s445.page';
-import { S446Page } from './s446/s446.page';
-import { S447Page } from './s447/s447.page';
-import { S448Page } from './s448/s448.page';
-import { S448p1Page } from './s448p1/s448p1.page';
-import { S448p2Page } from './s448p2/s448p2.page';
-import { S448p3Page } from './s448p3/s448p3.page';
-import { S448p4Page } from './s448p4/s448p4.page';
-import { S448p5Page } from './s448p5/s448p5.page';
-import { S448p6Page } from './s448p6/s448p6.page';
-import { S449Page } from './s449/s449.page';
-import { S450Page } from './s450/s450.page';
-import { S451Page } from './s451/s451.page';
-import { S452Page } from './s452/s452.page';
-import { S453Page } from './s453/s453.page';
-import { S454Page } from './s454/s454.page';
-import { S455Page } from './s455/s455.page';
-import { S456Page } from './s456/s456.page';
-import { S457Page } from './s457/s457.page';
-import { S457tPage } from './s457t/s457t.page';
-import { S458Page } from './s458/s458.page';
-import { S459Page } from './s459/s459.page';
-import { S460Page } from './s460/s460.page';
-import { S461Page } from './s461/s461.page';
-import { S462Page } from './s462/s462.page';
-import { S463Page } from './s463/s463.page';
-import { S464Page } from './s464/s464.page';
-import { S465Page } from './s465/s465.page';
-import { S466Page } from './s466/s466.page';
-import { S467Page } from './s467/s467.page';
-import { S468Page } from './s468/s468.page';
-import { S469Page } from './s469/s469.page';
-import { S470Page } from './s470/s470.page';
-import { S471Page } from './s471/s471.page';
-import { S472Page } from './s472/s472.page';
-import { S473Page } from './s473/s473.page';
-import { S474Page } from './s474/s474.page';
-import { S475Page } from './s475/s475.page';
-import { S476Page } from './s476/s476.page';
-import { S477Page } from './s477/s477.page';
-import { S478Page } from './s478/s478.page';
-import { S479Page } from './s479/s479.page';
-import { S480Page } from './s480/s480.page';
-import { S481Page } from './s481/s481.page';
-import { S482Page } from './s482/s482.page';
-import { S483Page } from './s483/s483.page';
-import { S483p1Page } from './s483p1/s483p1.page';
-import { S483p2Page } from './s483p2/s483p2.page';
-import { S483p3Page } from './s483p3/s483p3.page';
-import { S483p4Page } from './s483p4/s483p4.page';
-import { S484Page } from './s484/s484.page';
-import { S485Page } from './s485/s485.page';
+import { S126001Page } from './s126001/s126001.page';
+import { S126002Page } from './s126002/s126002.page';
+import { S126003Page } from './s126003/s126003.page';
+import { S126003tPage } from './s126003t/s126003t.page';
+import { S126004Page } from './s126004/s126004.page';
+import { S126005Page } from './s126005/s126005.page';
+import { S126006Page } from './s126006/s126006.page';
+import { S126007Page } from './s126007/s126007.page';
+import { S126008Page } from './s126008/s126008.page';
+import { S126009Page } from './s126009/s126009.page';
+import { S126010Page } from './s126010/s126010.page';
+import { S126011Page } from './s126011/s126011.page';
+import { S126012Page } from './s126012/s126012.page';
+import { S126012tPage } from './s126012t/s126012t.page';
+import { S126013Page } from './s126013/s126013.page';
+import { S126014Page } from './s126014/s126014.page';
+import { S126015Page } from './s126015/s126015.page';
+import { S126016Page } from './s126016/s126016.page';
+import { S126017Page } from './s126017/s126017.page';
+import { S126018Page } from './s126018/s126018.page';
+import { S126019Page } from './s126019/s126019.page';
+import { S126020Page } from './s126020/s126020.page';
+import { S126021Page } from './s126021/s126021.page';
+import { S126022Page } from './s126022/s126022.page';
+import { S126023Page } from './s126023/s126023.page';
+import { S126024Page } from './s126024/s126024.page';
+import { S126025Page } from './s126025/s126025.page';
+import { S126026Page } from './s126026/s126026.page';
+import { S126027Page } from './s126027/s126027.page';
+import { S126028Page } from './s126028/s126028.page';
+import { S126029Page } from './s126029/s126029.page';
+import { S126030Page } from './s126030/s126030.page';
+import { S126031Page } from './s126031/s126031.page';
+import { S126032Page } from './s126032/s126032.page';
+import { S126033Page } from './s126033/s126033.page';
+import { S126034Page } from './s126034/s126034.page';
+import { S126035Page } from './s126035/s126035.page';
+import { S126035tPage } from './s126035t/s126035t.page';
+import { S126036Page } from './s126036/s126036.page';
+import { S126037Page } from './s126037/s126037.page';
+import { S126038Page } from './s126038/s126038.page';
+import { S126039Page } from './s126039/s126039.page';
+import { S126040Page } from './s126040/s126040.page';
+import { S126041Page } from './s126041/s126041.page';
+import { S126042Page } from './s126042/s126042.page';
+import { S126043Page } from './s126043/s126043.page';
+import { S126044Page } from './s126044/s126044.page';
+import { S126045Page } from './s126045/s126045.page';
+import { S126046Page } from './s126046/s126046.page';
+import { S126047Page } from './s126047/s126047.page';
+import { S126048Page } from './s126048/s126048.page';
+import { S126049Page } from './s126049/s126049.page';
+import { S126050Page } from './s126050/s126050.page';
+import { S126051Page } from './s126051/s126051.page';
+import { S126052Page } from './s126052/s126052.page';
+import { S126053Page } from './s126053/s126053.page';
+import { S126054Page } from './s126054/s126054.page';
+import { S126055Page } from './s126055/s126055.page';
+import { S126056Page } from './s126056/s126056.page';
+import { S126057Page } from './s126057/s126057.page';
+import { S126058Page } from './s126058/s126058.page';
+import { S126059Page } from './s126059/s126059.page';
+import { S126060Page } from './s126060/s126060.page';
+import { S126061Page } from './s126061/s126061.page';
+import { S126062Page } from './s126062/s126062.page';
+import { S126063Page } from './s126063/s126063.page';
+import { S126064Page } from './s126064/s126064.page';
+import { S126065Page } from './s126065/s126065.page';
+import { S126066Page } from './s126066/s126066.page';
+import { S126067Page } from './s126067/s126067.page';
+import { S126068Page } from './s126068/s126068.page';
+import { S126069Page } from './s126069/s126069.page';
 
 const routes: Routes = [
+  
   {
-    path: '',
-     component: S433Page,
+    path: '',    
+    component: S126001Page,
   },  
   {
-    path: 's433',
-    canActivate:[ActiveGuard],  
-    component: S433Page,
-  },  
-  {
-    path: 's434',
-    canActivate:[ActiveGuard],  
-    component: S434Page,
+    path: 's126001',
+    component: S126001Page,
   },
   {
-    path: 's435',
-    canActivate:[ActiveGuard],  
-    component: S435Page,
+    path: 's126002',
+    component: S126002Page,
   },
   {
-    path: 's435t',
-    canActivate:[ActiveGuard],  
-    component: S435tPage,
+    path: 's126003',
+    component: S126003Page,
   },
   {
-    path: 's436',
-    canActivate:[ActiveGuard],  
-    component: S436Page,
+    path: 's126003t',
+    component: S126003tPage,
   },
   {
-    path: 's437',
-    canActivate:[ActiveGuard],  
-    component: S437Page,
+    path: 's126004',
+    component: S126004Page,
   },
   {
-    path: 's438',
-    canActivate:[ActiveGuard],  
-    component: S438Page,
+    path: 's126005',
+    component: S126005Page,
   },
   {
-    path: 's439',
-    canActivate:[ActiveGuard],  
-    component: S439Page,
+    path: 's126006',
+    component: S126006Page,
   },
   {
-    path: 's440',
-    canActivate:[ActiveGuard],  
-    component: S440Page,
+    path: 's126007',
+    component: S126007Page,
   },
   {
-    path: 's441',
-    canActivate:[ActiveGuard],  
-    component: S441Page,
+    path: 's126008',
+    component: S126008Page,
   },
   {
-    path: 's441t',
-    canActivate:[ActiveGuard],  
-    component: S441tPage,
+    path: 's126009',
+    component: S126009Page,
   },
   {
-    path: 's442',
-    canActivate:[ActiveGuard],  
-    component: S442Page,
+    path: 's126010',
+    component: S126010Page,
   },
   {
-    path: 's443',
-    canActivate:[ActiveGuard],  
-    component: S443Page,
+    path: 's126011',
+    component: S126011Page,
   },
   {
-    path: 's444',
-    canActivate:[ActiveGuard],  
-    component: S444Page,
+    path: 's126012',
+    component: S126012Page,
   },
   {
-    path: 's445',
-    canActivate:[ActiveGuard],  
-    component: S445Page,
+    path: 's126012t',
+    component: S126012tPage,
   },
   {
-    path: 's446',
-    canActivate:[ActiveGuard],  
-    component: S446Page,
+    path: 's126013',
+    component: S126013Page,
   },
   {
-    path: 's447',
-    canActivate:[ActiveGuard],  
-    component: S447Page,
+    path: 's126014',
+    component: S126014Page,
   },
   {
-    path: 's448',
-    canActivate:[ActiveGuard],  
-    component: S448Page,
+    path: 's126015',
+    component: S126015Page,
   },
   {
-    path: 's448p1',
-    canActivate:[ActiveGuard],  
-    component: S448p1Page,
+    path: 's126016',
+    component: S126016Page,
   },
   {
-    path: 's448p2',
-    canActivate:[ActiveGuard],  
-    component: S448p2Page,
+    path: 's126017',
+    component: S126017Page,
   },
   {
-    path: 's448p3',
-    canActivate:[ActiveGuard],  
-    component: S448p3Page,
+    path: 's126018',
+    component: S126018Page,
   },
   {
-    path: 's448p4',
-    canActivate:[ActiveGuard],  
-    component: S448p4Page,
+    path: 's126019',
+    component: S126019Page,
   },
   {
-    path: 's448p5',
-    canActivate:[ActiveGuard],  
-    component: S448p5Page,
+    path: 's126020',
+    component: S126020Page,
   },
   {
-    path: 's448p6',
-    canActivate:[ActiveGuard],  
-    component: S448p6Page,
+    path: 's126021',
+    component: S126021Page,
   },
   {
-    path: 's449',
-    canActivate:[ActiveGuard],  
-    component: S449Page,
+    path: 's126022',
+    component: S126022Page,
   },
   {
-    path: 's450',
-    canActivate:[ActiveGuard],  
-    component: S450Page,
+    path: 's126023',
+    component: S126023Page,
   },
   {
-    path: 's451',
-    canActivate:[ActiveGuard],  
-    component: S451Page,
+    path: 's126024',
+    component: S126024Page,
   },
   {
-    path: 's452',
-    canActivate:[ActiveGuard],  
-    component: S452Page,
+    path: 's126025',
+    component: S126025Page,
   },
   {
-    path: 's453',
-    canActivate:[ActiveGuard],  
-    component: S453Page,
+    path: 's126026',
+    component: S126026Page,
   },
   {
-    path: 's454',
-    canActivate:[ActiveGuard],  
-    component: S454Page,
+    path: 's126027',
+    component: S126027Page,
   },
   {
-    path: 's455',
-    canActivate:[ActiveGuard],  
-    component: S455Page,
+    path: 's126028',
+    component: S126028Page,
   },
   {
-    path: 's456',
-    canActivate:[ActiveGuard],  
-    component: S456Page,
+    path: 's126029',
+    component: S126029Page,
   },
   {
-    path: 's457',
-    canActivate:[ActiveGuard],  
-    component: S457Page,
+    path: 's126030',
+    component: S126030Page,
   },
   {
-    path: 's457t',
-    canActivate:[ActiveGuard],  
-    component: S457tPage,
+    path: 's126031',
+    component: S126031Page,
   },
   {
-    path: 's458',
-    canActivate:[ActiveGuard],  
-    component: S458Page,
+    path: 's126032',
+    component: S126032Page,
   },
   {
-    path: 's459',
-    canActivate:[ActiveGuard],  
-    component: S459Page,
+    path: 's126033',
+    component: S126033Page,
   },
   {
-    path: 's460',
-    canActivate:[ActiveGuard],  
-    component: S460Page,
+    path: 's126034',
+    component: S126034Page,
   },
   {
-    path: 's461',
-    canActivate:[ActiveGuard],  
-    component: S461Page,
+    path: 's126035',
+    component: S126035Page,
   },
   {
-    path: 's462',
-    canActivate:[ActiveGuard],  
-    component: S462Page,
+    path: 's126035t',
+    component: S126035tPage,
   },
   {
-    path: 's463',
-    canActivate:[ActiveGuard],  
-    component: S463Page,
+    path: 's126036',
+    component: S126036Page,
   },
   {
-    path: 's464',
-    canActivate:[ActiveGuard],  
-    component: S464Page,
+    path: 's126037',
+    component: S126037Page,
   },
   {
-    path: 's465',
-    canActivate:[ActiveGuard],  
-    component: S465Page,
+    path: 's126038',
+    component: S126038Page,
   },
   {
-    path: 's466',
-    canActivate:[ActiveGuard],  
-    component: S466Page,
+    path: 's126039',
+    component: S126039Page,
   },
   {
-    path: 's467',
-    canActivate:[ActiveGuard],  
-    component: S467Page,
+    path: 's126040',
+    component: S126040Page,
   },
   {
-    path: 's468',
-    canActivate:[ActiveGuard],  
-    component: S468Page,
+    path: 's126041',
+    component: S126041Page,
   },
   {
-    path: 's469',
-    canActivate:[ActiveGuard],  
-    component: S469Page,
+    path: 's126042',
+    component: S126042Page,
   },
   {
-    path: 's470',
-    canActivate:[ActiveGuard],  
-    component: S470Page,
+    path: 's126043',
+    component: S126043Page,
   },
   {
-    path: 's471',
-    canActivate:[ActiveGuard],  
-    component: S471Page,
+    path: 's126044',
+    component: S126044Page,
   },
   {
-    path: 's472',
-    canActivate:[ActiveGuard],  
-    component: S472Page,
+    path: 's126045',
+    component: S126045Page,
   },
   {
-    path: 's473',
-    canActivate:[ActiveGuard],  
-    component: S473Page,
+    path: 's126046',
+    component: S126046Page,
   },
   {
-    path: 's474',
-    canActivate:[ActiveGuard],  
-    component: S474Page,
+    path: 's126047',
+    component: S126047Page,
   },
   {
-    path: 's475',
-    canActivate:[ActiveGuard],  
-    component: S475Page,
+    path: 's126048',
+    component: S126048Page,
   },
   {
-    path: 's476',
-    canActivate:[ActiveGuard],  
-    component: S476Page,
+    path: 's126049',
+    component: S126049Page,
   },
   {
-    path: 's477',
-    canActivate:[ActiveGuard],  
-    component: S477Page,
+    path: 's126050',
+    component: S126050Page,
   },
   {
-    path: 's478',
-    canActivate:[ActiveGuard],  
-    component: S478Page,
+    path: 's126051',
+    component: S126051Page,
   },
   {
-    path: 's479',
-    canActivate:[ActiveGuard],  
-    component: S479Page,
-  },   
-  {
-    path: 's480',
-    canActivate:[ActiveGuard],  
-    component: S480Page,
+    path: 's126052',
+    component: S126052Page,
   },
   {
-    path: 's481',
-    canActivate:[ActiveGuard],  
-    component: S481Page,
+    path: 's126053',
+    component: S126053Page,
   },
   {
-    path: 's482',
-    canActivate:[ActiveGuard],  
-    component: S482Page,
+    path: 's126054',
+    component: S126054Page,
   },
   {
-    path: 's483',
-    canActivate:[ActiveGuard],  
-    component: S483Page,
+    path: 's126055',
+    component: S126055Page,
   },
   {
-    path: 's483p1',
-    canActivate:[ActiveGuard],  
-    component: S483p1Page,
+    path: 's126056',
+    component: S126056Page,
   },
   {
-    path: 's483p2',
-    canActivate:[ActiveGuard],  
-    component: S483p2Page,
+    path: 's126057',
+    component: S126057Page,
   },
   {
-    path: 's483p3',
-    canActivate:[ActiveGuard],  
-    component: S483p3Page,
+    path: 's126058',
+    component: S126058Page,
   },
   {
-    path: 's483p4',
-    canActivate:[ActiveGuard],  
-    component: S483p4Page,
+    path: 's126059',
+    component: S126059Page,
   },
   {
-    path: 's484',
-    canActivate:[ActiveGuard],  
-    component: S484Page,
+    path: 's126060',
+    component: S126060Page,
   },
   {
-    path: 's485',
-    canActivate:[ActiveGuard],  
-    component: S485Page,
-  }, 
- 
+    path: 's126061',
+    component: S126061Page,
+  },
+  {
+    path: 's126062',
+    component: S126062Page,
+  },
+  {
+    path: 's126063',
+    component: S126063Page,
+  },
+  {
+    path: 's126064',
+    component: S126064Page,
+  },
+  {
+    path: 's126065',
+    component: S126065Page,
+  },
+  {
+    path: 's126066',
+    component: S126066Page,
+  },
+  {
+    path: 's126067',
+    component: S126067Page,
+  },
+  {
+    path: 's126068',
+    component: S126068Page,
+  },
+  {
+    path: 's126069',
+    component: S126069Page,
+  }
 ];
 
 @NgModule({
