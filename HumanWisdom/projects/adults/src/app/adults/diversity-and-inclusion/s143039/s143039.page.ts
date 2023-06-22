@@ -104,7 +104,7 @@ export class S143039Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/adults/diversity-and-inclusion/s143038'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143037'])
   }
 
   ngOnDestroy()
