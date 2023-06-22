@@ -1,0 +1,14 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+    <h1 class="txt1">
+      At the end of this module you will gain a better understanding of the impact of stress, the common causes, and how it can be prevented and more easily overcome so you can meet the challenges of life with a calm mind. This is a skill that is very useful in life.
+      </h1>
+        <div class="clearfix"></div>
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

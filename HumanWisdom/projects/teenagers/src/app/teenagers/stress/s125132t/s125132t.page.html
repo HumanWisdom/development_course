@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Many of us worry about what others are thinking of us, and that can cause a lot of stress. It is impossible to get inside other people’s minds and know what they are thinking, but we do that anyway, even though we are often wrong. Why do we do that? I asked this question to a group of 10 year olds, otherwise we would be alone they said. We are therefore constantly adjusting who we are so we can be liked and stay in the group. It occurs in the background, beyond our awareness and causes anxiety. If we  can make our peace with who we are, and with being alone sometimes, and the anxiety of this fades. It's also worth noting that others are too busy thinking of themselves to pay that much attention to us, and what we are thinking may not be true..
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

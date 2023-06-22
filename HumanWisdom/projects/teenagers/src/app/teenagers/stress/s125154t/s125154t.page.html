@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Everyone responds differently to the same stressful situation. How we respond depends on how stressed we are feeling at the time and does not depend as much on the triggering event. If you have had a tough time at school and are already upset, a small accident can tip you over the edge - for example if you come home and your parents are critical of you. Or in some cities where the smallest argument between gang members can result in violence. This helps us to understand the behaviour of others whose reaction may feel much more than the triggering event. It can also stop us over-reacting to a stressful event.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -60,6 +60,16 @@ export class S49103Page implements OnInit {
       this.moduleId = 47
     
     }
+    else if (cur && cur === 'workplace') {
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/143.png"
+      
+      this.moduleLink = "/adults/diversity-and-inclusion"
+      console.log(this.moduleLink)
+      this.moduleName = "Diversity and Inclusion"
+      this.sectionName = "Transform your life";
+      this.moduleId = 143
+
+    }
    }
 
   ngOnInit() {
