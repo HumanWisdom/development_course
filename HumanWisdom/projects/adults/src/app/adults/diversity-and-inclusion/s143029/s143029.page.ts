@@ -157,7 +157,7 @@ export class S143029Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/adults/diversity-and-inclusion/s143038'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143028p1'])
   }
 
   goNext() 
