@@ -1234,7 +1234,7 @@ table.display thead th:active, table.display thead td:active {
 }
 
 .dataTables_scrollBody {
-  *margin-top: -1px;
+  margin-top: -1px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -6978,7 +6978,7 @@ table.display thead td:active {
     clear: both
 }
 .dataTables_scrollBody {
-    *margin-top: -1px;
+    margin-top: -1px;
     -webkit-overflow-scrolling: touch
 }
 .top .dataTables_info {
@@ -12084,7 +12084,7 @@ h1.module_title
   /* identical to box height */
   /* text-align: center; */
   text-align: left;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   border-radius: 5px;
   /* width: 139px;
   height: 50px; */
@@ -28948,7 +28948,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   align-items: center;
   text-align: center;
   min-height: calc(100vh - 125px) !important;
-  background: #1D3D7A !important;
+  background: #1D3D7A;
   padding: 20px 20px;
 }
 

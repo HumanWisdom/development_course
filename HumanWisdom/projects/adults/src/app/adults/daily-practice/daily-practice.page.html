@@ -228,8 +228,10 @@
                           </div>
 
                           <div class="row tcenter">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container" *ngIf="audioLink !== '' && enableVideo ">
-                              <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="Logevent('click_play_audio_meditation')" #audio ></ngx-circular-player>
+                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem" *ngIf="audioLink !== '' && enableVideo ">
+                              <audio controls controlsList="nodownload" #audio (click)="Logevent('click_play_audio_meditation')">
+                                <source [src]="audioLink" type="audio/mpeg">
+                              </audio>
                             </div>
                           </div>
                         </div>

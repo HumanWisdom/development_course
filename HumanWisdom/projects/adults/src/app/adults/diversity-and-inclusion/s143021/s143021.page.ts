@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S143021Page implements OnInit,OnDestroy 
 {
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
-  bg="pink_orange_w7"
+  bg_tn="bg_292d56"
+  bg_cft="bg_292d56"
+  bg="bg_292d56"
   title="Discrimination against women is common"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/diversity-and-inclusion/audios/1.7.mp3'
@@ -89,7 +89,7 @@ export class S143021Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/diversity-and-inclusion/s143022'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143021p1'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

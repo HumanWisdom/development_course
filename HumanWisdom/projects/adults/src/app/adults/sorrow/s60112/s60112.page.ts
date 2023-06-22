@@ -42,10 +42,10 @@ export class S60112Page implements OnInit {
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'sorrow') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/dealing_with_death.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/64.png"
     
-      this.moduleLink = "/adults/dealing-with-deathe"
-      this.moduleName = " Dealing with Death"
+      this.moduleLink = "/adults/dealing-with-death"
+      this.moduleName = "Fear of Death"
       this.sectionName = "Transform your life";
       this.moduleId = 64
     

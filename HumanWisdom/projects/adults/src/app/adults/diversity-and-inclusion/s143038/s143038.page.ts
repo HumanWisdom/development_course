@@ -10,9 +10,9 @@ import { Location } from '@angular/common';
 })
 export class S143038Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
-  bg="pink_orange_w5"
+  bg_tn="bg_292d56"
+  bg_cft="bg_292d56"
+  bg="bg_292d56"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -83,7 +83,7 @@ export class S143038Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/diversity-and-inclusion/s143039'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143029'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,7 +104,7 @@ export class S143038Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/adults/diversity-and-inclusion/s143037'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143028'])
   }
 
   ngOnDestroy()

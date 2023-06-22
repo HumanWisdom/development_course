@@ -126,6 +126,7 @@ import { S143103Page } from './s143103/s143103.page';
 import { S143104Page } from './s143104/s143104.page';
 import { S143105Page } from './s143105/s143105.page';
 import { S143106Page } from './s143106/s143106.page';
+import { S143107Page } from './s143107/s143107.page';
 
 const routes: Routes = [
   {
@@ -352,8 +353,13 @@ const routes: Routes = [
     canActivate:[ActiveGuard],  
     component: S143037Page,
   }, 
+  // {
+  //   path: 's143038',   
+  //   canActivate:[ActiveGuard],  
+  //   component: S143038Page,
+  // },  
   {
-    path: 's143038',   
+    path: 's143028p1',   
     canActivate:[ActiveGuard],  
     component: S143038Page,
   },  
@@ -766,6 +772,16 @@ const routes: Routes = [
     path: 's143106',   
     canActivate:[ActiveGuard],  
     component: S143106Page,
+  },
+  // {
+  //   path: 's143107',   
+  //   canActivate:[ActiveGuard],  
+  //   component: S143107Page,
+  // },
+  {
+    path: 's143021p1',   
+    canActivate:[ActiveGuard],  
+    component: S143107Page,
   },
 ];
 

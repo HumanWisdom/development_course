@@ -11,9 +11,9 @@ import { Location } from '@angular/common';
 export class S143021tPage implements OnInit 
 {
 
-  bg_tn="bg_pink_orange"
-  bg_cft="bg_pink_orange"
-  bg="pink_orange_w7"
+  bg_tn="bg_292d56"
+  bg_cft="bg_292d56"
+  bg="bg_292d56"
   bookmark=0
   path=this.router.url
   audioPage="/diversity-and-inclusion/s143021"
@@ -65,7 +65,7 @@ export class S143021tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/adults/diversity-and-inclusion/s143022'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143107'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
