@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are many unconscious patterns of thinking that govern our feeling of self-esteem. If we have a painful past where we were not loved or appreciated, that conditioning can impact our self-esteem - we cannot change that past, but can learn to respond with intelligence. Our mind unconsciously compares itself with others all the time, and if we feel others are better than us, that can impact our self-esteem. We also compare ourselves with our ideals of who we would like to be and if come short, that can make us feel bad. Our mind also looks for external validation - whether it is to be liked and loved by others, or praised and there is always potential for disappointment there. Lastly, it is based on how important or how capable we think we are, and how good we are at something we do. Most of these factors operate unconsciously. Understanding them allows us to change them, and respond with intelligence.
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
