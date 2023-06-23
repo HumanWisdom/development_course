@@ -26,10 +26,18 @@ export class BlogArticlePage implements OnInit {
   path = this.router.url
   content = '';
   enableAlert = false;
+  enablecancel = false;
+  public isLoggedIn = false
 
   constructor(private sanitizer: DomSanitizer, private service: AdultsService, private location: Location,private renderer: Renderer2,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform ) {
+      let login: any = localStorage.getItem("isloggedin");
+      if (login && login === 'T') {
+        this.isLoggedIn = true;
+      } else {
+        this.isLoggedIn = false;
+      }
     this.route.queryParams.subscribe(params => {
       this.blogid = params?.sId
       if(isNaN(+this.blogid)){
@@ -140,16 +148,22 @@ export class BlogArticlePage implements OnInit {
   }
 
   postcomment() {
-    let obj = {
-      "BlogId": this.blogList['BlogID'],
-      "Comment": this.comment
-    }
-    this.service.commentblog(obj).subscribe((res) => {
-      if (res) {
-        this.comment = '';
-        this.getblog()
+    if(!this.isLoggedIn) {
+      this.enablecancel = true;
+      this.content = "Please Register to activate this feature";
+      this.enableAlert = true;
+    } else {
+      let obj = {
+        "BlogId": this.blogList['BlogID'],
+        "Comment": this.comment
       }
-    })
+      this.service.commentblog(obj).subscribe((res) => {
+        if (res) {
+          this.comment = '';
+          this.getblog()
+        }
+      })
+    }
   }
 
   getimg(data) {
@@ -208,6 +222,16 @@ export class BlogArticlePage implements OnInit {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+    if(event === 'ok' && this.enablecancel) {
+      this.enablecancel = false;
+        if (this.platform.isBrowser) {
+          localStorage.setItem("isloggedin", "F");
+          localStorage.setItem("guest", "T");
+          localStorage.setItem("navigateToUpgradeToPremium", "false");
+          localStorage.setItem("btnClickBecomePartner", "false");
+          this.router.navigate(["/onboarding/login"]);
+        }
+    }
   }
 
 }
