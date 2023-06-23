@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If you ask yourself a simple question, what can I learn, every stressful event is an opportunity for learning. Where does your stress reaction come from? That opens the door to enquiry and to learn something new about yourself and others. For example you may learn that behind the feeling of envy is the process of comparison, or behind anger is a feeling of being hurt, or behind your opinions is the unconscious process of conditioning. In relationships especially, this approach is likely to stop us getting angry with the other person, because so much of our stress arises from our own unconscious thinking patterns. I could learn for example that I am attached to my point of view and can explore what lies behind that attachment.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

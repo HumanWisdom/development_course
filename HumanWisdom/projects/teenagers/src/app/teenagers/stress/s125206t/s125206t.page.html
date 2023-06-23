@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Stress is just the difference between how things are and how we want them to be - whether in the world outside or within ourselves. It follows that if we can accept situations, other people, and ourselves as we are, our stress can end. We cannot help our initial stress reaction, but if we can breathe, pause, and zoom out we can ask ourselves a simple question: Can I accept things as they are?  you can accept, your stress dissolves.
+          </p>
+          <p>
+            For example if your mobile phone falls accidentally and gets damaged, you could get very stressed. As soon as you accept it has happened your stress can end.
+          </p>
+          <p>
+            Of course, it is not always possible to accept and sometimes we need to change things and that's okay too
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

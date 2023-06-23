@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Without being aware of it we become attached to our opinions and beliefs and when they are challenged, we can react with stress and anger, and blame the other person for being responsible. If I am strongly attached to a particular religious ideology and someone comes along criticising the head of that religion, I can feel personally attacked. Or if I have a strong attachment to a political party and someone challenges my core opinions I can get very stressed indeed. One only has to look around the world to see this in action. We have explored this as separate modules but our attachment to our opinions and beliefs occurs because they somehow meet our deepest emotional needs, and we are not aware of this going on in the background. Understanding this process at work brings freedom from the stress this can cause. Is it possible to let go of our attachment to our opinions and beliefs?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

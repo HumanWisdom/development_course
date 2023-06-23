@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There are many challenges in our lives and sometimes we just cannot help getting stressed. As we have explored it is an unconscious, automatic reaction from our thinking. We have little control on what life throws at us, but we do have choices when it comes to our reaction and in this session we are going to explore different ways we can respond to stress with intelligence. To do that we are going to refer to all that we have learned so far in our journey of exploring stress together.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Long term stress can damage our health in many ways we may not be aware of.
+          This occurs partly through the effects of the hormone cortisol released by the adrenal glands when we are stressed and through a direct effect on our mental health. It can also diminish our immune system making us more prone to infections.
+ <br>Research has shown that chronic stress reduces the length of caps called telomeres, which are present at the end of a DNA molecule. They are similar to the plastic caps at the end of shoelaces. Shorter telomeres are associated with earlier death, and increased risk of cancer, heart disease, and diabetes. The good news is that these changes are reversible.
+<br>Let's go on now to explore the many different ways that long term stress can impact our health.
+
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
