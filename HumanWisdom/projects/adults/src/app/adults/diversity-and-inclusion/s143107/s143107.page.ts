@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s143039',
-  templateUrl: './s143039.page.html',
-  styleUrls: ['./s143039.page.scss'],
+  selector: 'app-s143107',
+  templateUrl: './s143107.page.html',
+  styleUrls: ['./s143107.page.scss'],
 })
-export class S143039Page implements OnInit,OnDestroy {
+export class S143107Page implements OnInit,OnDestroy {
 
   bg_tn="bg_292d56"
   bg_cft="bg_292d56"
@@ -18,7 +18,7 @@ export class S143039Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=143039
+  screenNumber=143107
   startTime:any
   endTime:any
   totalTime:any
@@ -51,9 +51,9 @@ export class S143039Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark143039"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark143107"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark143039"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark143107"))==1)
       this.bookmark=1
   }
 
@@ -64,7 +64,7 @@ export class S143039Page implements OnInit,OnDestroy {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark143039",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark143107",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -83,7 +83,7 @@ export class S143039Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/diversity-and-inclusion/s143040'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143022'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,7 +104,7 @@ export class S143039Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/adults/diversity-and-inclusion/s143037'])
+    this.router.navigate(['/adults/diversity-and-inclusion/s143021'])
   }
 
   ngOnDestroy()

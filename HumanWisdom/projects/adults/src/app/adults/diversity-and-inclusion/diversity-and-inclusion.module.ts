@@ -130,6 +130,7 @@ import { S143103Page } from './s143103/s143103.page';
 import { S143104Page } from './s143104/s143104.page';
 import { S143105Page } from './s143105/s143105.page';
 import { S143106Page } from './s143106/s143106.page';
+import { S143107Page } from './s143107/s143107.page';
 
 import { DiversityAndInclusionRoutingModule } from './diversity-and-inclusion-routing.module';
 
@@ -259,6 +260,7 @@ import { DiversityAndInclusionRoutingModule } from './diversity-and-inclusion-ro
     S143104Page,
     S143105Page,
     S143106Page,
+    S143107Page,
   ],
   imports: [
     CommonModule,
