@@ -1,0 +1,21 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#2</p>
+      First observe, and then let go of all the ideals of who you want to be or should be. Where do these ideals come from anyway? You are enough. If you value yourself for who you are, others will value you too.
+      <span class="highligted_span">
+        (See self-image module)
+      </span>
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
