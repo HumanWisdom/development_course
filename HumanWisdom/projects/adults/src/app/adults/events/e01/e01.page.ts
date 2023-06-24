@@ -42,8 +42,10 @@ export class E01Page implements OnInit {
          var b = moment([today]);
          let diff = a.diff(b, 'days'); */
 
-      if (split > new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1)) {
+      //if (split > new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1)) {
         // if (diff > 0) {
+      if (this.eventData['futureEvent']==1){
+
         this.enableRegister = true;
       }
       this.tocImage = this.eventData['ArtImgPath'];
