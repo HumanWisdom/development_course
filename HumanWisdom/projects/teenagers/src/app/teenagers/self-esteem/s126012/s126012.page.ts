@@ -14,7 +14,7 @@ export class S126012Page implements OnInit,OnDestroy
   bg_cft="bg_teal"
   bg="teal_w10"
   title="What is behind self-esteem?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/self-esteem/audios/self-esteem+1.2.mp3'
   transcriptPage="self-esteem/s126012t"
   toc="self-esteem/s126001"
