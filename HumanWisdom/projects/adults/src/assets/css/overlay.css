@@ -554,7 +554,7 @@
 
 .stress_overlay3
 { 
-  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_03.jpg');
+  background: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/overlay/stress/stress_03.jpg') no-repeat center center fixed !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
