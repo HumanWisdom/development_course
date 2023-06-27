@@ -43,7 +43,7 @@ export class S30007Page implements OnInit {
 
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation.jpg"
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
       
       this.moduleLink = "/adults/guided-meditation"
       this.moduleName = "Guided Meditation"

@@ -112,11 +112,11 @@ export class S143037Page implements OnInit
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/adults/diversity-and-inclusion/s143038'])
+        this.router.navigate(['/adults/diversity-and-inclusion/s143039'])
 
       },
       () => {
-        this.router.navigate(['/adults/diversity-and-inclusion/s143038'])
+        this.router.navigate(['/adults/diversity-and-inclusion/s143039'])
       })
   }
 

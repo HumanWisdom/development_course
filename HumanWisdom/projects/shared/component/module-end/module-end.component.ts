@@ -363,7 +363,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           break
         }
         case "143": {
-          // this.routeDiversityandInclusion(1)
+           this.routeDiversityandInclusion(1)
           break
         }
       }
@@ -2527,6 +2527,95 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         })
 
   }
+
+
+  routeExternalApproval(cont: any = 1) {
+    var externalapprovalR
+    localStorage.setItem("moduleId", JSON.stringify(91))
+    this.service.clickModule(91, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        externalapprovalR = "s" + res.lastVisitedScreen
+      
+
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("externalapprovalR", externalapprovalR)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+             this.router.navigate([`/adults/external-approval/s91001`])
+        })
+  }
+
+  routeDealingWithDepression(cont: any = 1) {
+    var dealingwithdepressionResume
+    localStorage.setItem("moduleId", JSON.stringify(92))
+    this.service.clickModule(92, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        dealingwithdepressionResume = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("dealingwithdepressionResume", dealingwithdepressionResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+          // if (cont == "1") {
+          //   this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
+          // }
+          // else
+          this.router.navigate([`/adults/dealing-with-depression/s92001`])
+        })
+  }
+
+  routeDiversityandInclusion (cont: any = 1) {
+    var pgResume
+    localStorage.setItem("moduleId", JSON.stringify(143))
+    this.service.clickModule(143, this.userId)
+      .subscribe(res => {
+        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+        this.qrList = res
+        pgResume = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("pgResume", pgResume)
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+      },
+        error => {
+          console.log(error)
+        },
+        () => {
+           this.router.navigate([`/adults/diversity-and-inclusion`])
+        })
+  }
+
   // /transform your life 2
 
   goDashboard() {
@@ -2651,69 +2740,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     }, 2000);
   }
 
-  routeExternalApproval(cont: any = 1) {
-    var externalapprovalR
-    localStorage.setItem("moduleId", JSON.stringify(91))
-    this.service.clickModule(91, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        externalapprovalR = "s" + res.lastVisitedScreen
-      
+ 
 
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("externalapprovalR", externalapprovalR)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/external-approval/${externalapprovalR}`])
-          }
-          else
-            this.router.navigate([`/adults/external-approval/s91001`])
-        })
-  }
-
-  routeDealingWithDepression(cont: any = 1) {
-    var dealingwithdepressionResume
-    localStorage.setItem("moduleId", JSON.stringify(92))
-    this.service.clickModule(92, this.userId)
-      .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        this.qrList = res
-        dealingwithdepressionResume = "s" + res.lastVisitedScreen
-        // continue where you left
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited", 'T')
-        }
-        // /continue where you left
-        sessionStorage.setItem("dealingwithdepressionResume", dealingwithdepressionResume)
-        localStorage.setItem("qrList", JSON.stringify(this.qrList))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
-          // if (cont == "1") {
-          //   this.router.navigate([`/adults/dealing-with-depression/${dealingwithdepressionResume}`])
-          // }
-          // else
-          this.router.navigate([`/adults/dealing-with-depression/s92001`])
-        })
-  }
 
     GetModuleDataBasedOnProgramType(){
      this.moduleData= new Array<ProgramModel>();

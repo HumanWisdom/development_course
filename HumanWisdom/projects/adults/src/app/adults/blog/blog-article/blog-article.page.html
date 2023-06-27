@@ -165,19 +165,19 @@
                 <!-- <div class="row center_flex mt15px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <button type="button" class="btn btn-default btn-sm btn_blog_tags">
-                      eating disorder                   
+                      eating disorder
                     </button>
-              
+
                     <button type="button" class="btn btn-default btn-sm btn_blog_tags">
-                      stress                
+                      stress
                     </button>
-              
+
                     <button type="button" class="btn btn-default btn-sm btn_blog_tags">
-                      body image             
+                      body image
                     </button>
-              
+
                     <button type="button" class="btn btn-default btn-sm btn_blog_tags">
-                      anorexia          
+                      anorexia
                     </button>
                   </div>
                 </div> -->
@@ -361,6 +361,6 @@
 <!-- /footer -->
 
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+<app-modal *ngIf="enableAlert" [enableCancel]="enablecancel" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
   [content]="content">
 </app-modal>
