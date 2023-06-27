@@ -4,22 +4,22 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s119046',
-  templateUrl: './s119046.page.html',
-  styleUrls: ['./s119046.page.scss'],
+  selector: 'app-s128041',
+  templateUrl: './s128041.page.html',
+  styleUrls: ['./s128041.page.scss'],
 })
-export class S119046Page implements OnInit {
+export class S128041Page implements OnInit {
 
   bg_tn="bg_green"
   bg_cft="bg_green"
-  bg="green_w6"
-  toc="identity/s128001"
+  bg="green_w2"
+  toc="food-health/s128001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
 
-  screenNumber="119046"
+  screenNumber="128041"
   startTime:any
   endTime:any
   totalTime:any
@@ -113,9 +113,9 @@ export class S119046Page implements OnInit {
     this.startTime = Date.now();
 
     
-    if(JSON.parse(sessionStorage.getItem("bookmark119046"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark128041"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark119046"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark128041"))==1)
       this.bookmark=1
 
    
@@ -132,7 +132,7 @@ export class S119046Page implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark119046",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark128041",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -151,7 +151,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/identity/s119047'])
+    this.router.navigate(['/food-health/s128042'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -171,13 +171,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/adults/identity/s119046p1'])
+       // this.router.navigate(['/adults/food-health/s128041p1'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/identity/s119045'])
+    this.router.navigate(['/food-health/s128040'])
 
 
   }

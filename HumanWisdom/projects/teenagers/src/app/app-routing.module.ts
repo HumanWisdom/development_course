@@ -167,6 +167,10 @@ const routes: Routes = [
     path: 'stress',
     loadChildren: () => import('./teenagers/stress/stress.module').then(m => m.StressModule)
   },
+  {
+    path: 'food-health',
+    loadChildren: () => import('./teenagers/food-health/food-health.module').then(m => m.FoodHealthModule)
+  },
 ];
 
 @NgModule({
