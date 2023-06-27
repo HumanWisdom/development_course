@@ -14,7 +14,7 @@ export class S126035Page implements OnInit,OnDestroy
   bg_cft="bg_teal"
   bg="teal_w12"
   title="Introduction"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/self-esteem/audios/self-esteem+2.1.mp3'
   transcriptPage="self-esteem/s126035t"
   toc="self-esteem/s126001"
