@@ -2674,7 +2674,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       const imgData = canvas.toDataURL('image/png');
       (window as any).myFileContentData = imgData;
       const event = new CustomEvent('downloadButtonClicked');
-     window.dispatchEvent(event);
+   
       const pdf = new jsPDF({
         orientation: 'portrait',
         format: 'a5',
@@ -2687,6 +2687,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
     //this.convertPdfToBase64(file);
       localStorage.setItem('fileName',this.currentModuleName);
+      window.dispatchEvent(event);
       // pdf.setDisplayMode("original", "single");
       pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
