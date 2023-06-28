@@ -171,6 +171,10 @@ const routes: Routes = [
     path: 'self-esteem',
     loadChildren: () => import('./teenagers/self-esteem/self-esteem.module').then(m => m.SelfEsteemModule)
   },
+  {
+    path: 'habit-addiction',
+    loadChildren: () => import('./teenagers/habit-addiction/habit-addiction.module').then(m => m.HabitAddictionModule)
+  },
 ];
 
 @NgModule({

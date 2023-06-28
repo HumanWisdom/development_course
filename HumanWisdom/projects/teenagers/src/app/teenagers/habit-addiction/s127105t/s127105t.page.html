@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored this before in the art of enquiry section and in the module on stress. If we accept that all our emotional pain is a reaction from our thinking, it follows that if we can meet it without thinking, you can cut off its oxygen supply, and it dissolves. This is simple, but not easy and it may feel like a strange idea to understand at first. Begin with nature. If you look at a tree with complete attention, without a single thought arising, your mind quietens down. Now start noticing people in that way, then simple feelings. You can also look at your pain in the same way and it can end.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
