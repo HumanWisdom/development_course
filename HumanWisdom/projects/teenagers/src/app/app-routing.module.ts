@@ -168,10 +168,16 @@ const routes: Routes = [
     loadChildren: () => import('./teenagers/stress/stress.module').then(m => m.StressModule)
   },
   {
+
     path: 'self-esteem',
     loadChildren: () => import('./teenagers/self-esteem/self-esteem.module').then(m => m.SelfEsteemModule)
+
   },
   {
+  path: 'food-health',
+    loadChildren: () => import('./teenagers/food-health/food-health.module').then(m => m.FoodHealthModule)
+  },
+    {
     path: 'habit-addiction',
     loadChildren: () => import('./teenagers/habit-addiction/habit-addiction.module').then(m => m.HabitAddictionModule)
   },

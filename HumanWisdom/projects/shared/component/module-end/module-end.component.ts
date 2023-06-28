@@ -2527,128 +2527,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         })
 
   }
-  // /transform your life 2
 
-  goDashboard() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'emotions') {
-      this.router.navigate(['/adults/curated/manage-your-emotions'])
-    }
-    else if (cur && cur === 'stress') {
-      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
-    }
-    else if (cur && cur === 'happier') {
-      this.router.navigate(['/adults/curated/be-happier'])
-    }
-    else if (cur && cur === 'habits') {
-      this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    }
-    else if (cur && cur === 'workplace') {
-      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-    }
-    else if (cur && cur === 'relationships') {
-      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
-    }
-    else if (cur && cur === 'sorrow') {
-      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
-    }
-    else if (cur && cur === 'mind') {
-      this.router.navigate(['/adults/curated/have-calm-mind'])
-    }
-    else {
-      this.router.navigate(['/adults/adult-dashboard'])
-    }
-
-
-  }
-  routeJournal() {
- 
-    if(ProgramType.Teenagers==this.programType || 
-         SharedService.ProgramId == ProgramType.Teenagers){
-      this.router.navigate(['/journal/']);
-    }else{
-      this.router.navigate(['/adults/journal']);
-    }
-
-  }
-  routeForum() {
-    this.router.navigate(['/forum'])
-  }
-
-  public saveAsPDF() {
-    const div = document.getElementById('myDiv'); 
-    const content = div.innerHTML;
-
-    // replace with the ID of your div
-    html2canvas(div, {scale: 3}
-      ).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      (window as any).myFileContentData = imgData;
-      const event = new CustomEvent('downloadButtonClicked');
-     window.dispatchEvent(event);
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        format: 'a5',
-        compress:false,
-      });
-      let pdfWidth = pdf.internal.pageSize.getWidth();
-      let pdfHeight=pdf.internal.pageSize.getHeight();
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
-      const blob = pdf.output('blob');
-    const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
-    //this.convertPdfToBase64(file);
-      localStorage.setItem('fileName',this.currentModuleName);
-      // pdf.setDisplayMode("original", "single");
-      pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
-    });
-  }
-
-  convertPdfToBase64(file: File) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64String = reader.result as string;
-     //localStorage.setItem('myFileContent',base64String);
-      console.log(base64String);
-    (window as any).myFileContentData = base64String;
-      const event = new CustomEvent('downloadButtonClicked');
-     window.dispatchEvent(event);
-    };
-    reader.readAsDataURL(file);
-  }
-  shareCertificate() {
-    //const url = URL.createObjectURL(this.pdfBlob.output('blob'));
-    if (this.ngNavigatorShareService.canShareFile) {
-      this.ngNavigatorShareService.share({
-        title: this.moduleName + " Certificate",
-        text: 'Certificate of Completion!',
-        files: [this.file]
-      }).then((response) => {
-        console.log(response);
-      })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }
-
-  ngAfterViewInit() {
-    setTimeout(() => {
-     const div = document.getElementById('myDiv'); // replace with the ID of your div
-     html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
-      ).then(canvas => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF({
-          orientation: 'portrait',
-          format: 'a5',
-          compress:false,
-        });
-        let pdfWidth = pdf.internal.pageSize.getWidth();
-        let pdfHeight=pdf.internal.pageSize.getHeight();
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
-        this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
-      });
-    }, 2000);
-  }
 
   routeExternalApproval(cont: any = 1) {
     var externalapprovalR
@@ -2675,11 +2554,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           console.log(error)
         },
         () => {
-          if (cont == "1") {
-            this.router.navigate([`/adults/external-approval/${externalapprovalR}`])
-          }
-          else
-            this.router.navigate([`/adults/external-approval/s91001`])
+             this.router.navigate([`/adults/external-approval/s91001`])
         })
   }
 
@@ -2740,6 +2615,132 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
            this.router.navigate([`/adults/diversity-and-inclusion`])
         })
   }
+
+  // /transform your life 2
+
+  goDashboard() {
+    let cur = localStorage.getItem('curated');
+    if (cur && cur === 'emotions') {
+      this.router.navigate(['/adults/curated/manage-your-emotions'])
+    }
+    else if (cur && cur === 'stress') {
+      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+    }
+    else if (cur && cur === 'happier') {
+      this.router.navigate(['/adults/curated/be-happier'])
+    }
+    else if (cur && cur === 'habits') {
+      this.router.navigate(['/adults/curated/change-unhelpful-habits'])
+    }
+    else if (cur && cur === 'workplace') {
+      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
+    }
+    else if (cur && cur === 'relationships') {
+      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
+    }
+    else if (cur && cur === 'sorrow') {
+      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
+    }
+    else if (cur && cur === 'mind') {
+      this.router.navigate(['/adults/curated/have-calm-mind'])
+    }
+    else {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+
+
+  }
+  routeJournal() {
+ 
+    if(ProgramType.Teenagers==this.programType || 
+         SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/journal/']);
+    }else{
+      this.router.navigate(['/adults/journal']);
+    }
+
+  }
+  routeForum() {
+    this.router.navigate(['/forum'])
+  }
+
+  public saveAsPDF() {
+    const div = document.getElementById('myDiv'); 
+    const content = div.innerHTML;
+
+    // replace with the ID of your div
+    html2canvas(div, {scale: 3}
+      ).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      (window as any).myFileContentData = imgData;
+      const event = new CustomEvent('downloadButtonClicked');
+   
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        format: 'a5',
+        compress:false,
+      });
+      let pdfWidth = pdf.internal.pageSize.getWidth();
+      let pdfHeight=pdf.internal.pageSize.getHeight();
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+      const blob = pdf.output('blob');
+    const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
+    //this.convertPdfToBase64(file);
+      localStorage.setItem('fileName',this.currentModuleName);
+      window.dispatchEvent(event);
+      // pdf.setDisplayMode("original", "single");
+      pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
+    });
+  }
+
+  convertPdfToBase64(file: File) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string;
+     //localStorage.setItem('myFileContent',base64String);
+      console.log(base64String);
+    (window as any).myFileContentData = base64String;
+      const event = new CustomEvent('downloadButtonClicked');
+     window.dispatchEvent(event);
+    };
+    reader.readAsDataURL(file);
+  }
+  shareCertificate() {
+    //const url = URL.createObjectURL(this.pdfBlob.output('blob'));
+    if (this.ngNavigatorShareService.canShareFile) {
+      this.ngNavigatorShareService.share({
+        title: this.moduleName + " Certificate",
+        text: 'Certificate of Completion!',
+        files: [this.file]
+      }).then((response) => {
+        console.log(response);
+      })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+     const div = document.getElementById('myDiv'); // replace with the ID of your div
+     html2canvas(div, {scale: 3,y: 0,  scrollY: 0}
+      ).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          format: 'a5',
+          compress:false,
+        });
+        let pdfWidth = pdf.internal.pageSize.getWidth();
+        let pdfHeight=pdf.internal.pageSize.getHeight();
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, "SLOW");
+        this.file = new File([pdf.output('blob')], 'Certificate.pdf', { type: 'application/pdf' });
+      });
+    }, 2000);
+  }
+
+ 
 
 
     GetModuleDataBasedOnProgramType(){

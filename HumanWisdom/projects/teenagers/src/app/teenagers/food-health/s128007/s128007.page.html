@@ -1,0 +1,44 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      What health problems can obesity cause?
+
+
+       </h1>
+    <h1 class="txt1">
+      01.Heart disease
+
+    </h1>
+    <h1 class="txt1">
+      02. Stroke
+    </h1>
+    <h1 class="txt1">
+      03. Diabetes
+
+    </h1>
+    <h1 class="txt1">
+      04.Increased risk of some cancers
+    </h1>
+    <h1 class="txt1">
+      05. Increased risk of arthritis
+
+    </h1>
+    <h1 class="txt1">
+      06. Gallbladder disease
+    </h1>
+    <h1 class="txt1">
+      07. Increased risk of death
+
+    </h1>
+    
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   
+
+

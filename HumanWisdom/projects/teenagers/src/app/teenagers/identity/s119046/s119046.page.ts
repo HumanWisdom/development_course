@@ -10,10 +10,10 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S119046Page implements OnInit {
 
-  bg_tn="bg_dark_blue"
-  bg_cft="bg_dark_blue"
-  bg="dark_blue_w6"
-  toc="identity/s119001"
+  bg_tn="bg_green"
+  bg_cft="bg_green"
+  bg="green_w6"
+  toc="identity/s128001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")

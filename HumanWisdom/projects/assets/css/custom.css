@@ -20706,8 +20706,12 @@ and (orientation : portrait)
 
 .ia_below_content
 {
+  /* position: absolute;
+  top: -10px; */
   position: absolute;
-  top: -10px;
+  top: 10px;
+  right: 0;
+  left: 0;
 }
 
 .pt15px

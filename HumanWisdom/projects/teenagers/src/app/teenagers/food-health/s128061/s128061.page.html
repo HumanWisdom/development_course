@@ -1,0 +1,45 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Questions to ask while eating:
+
+
+
+       </h1>
+    <h1 class="txt1">
+      01.Am I hungry?
+      
+      </h1>
+    <h1 class="txt1">
+      02. Am I thirsty?
+    </h1>
+    <h1 class="txt1">
+      03.Am I bored?
+
+    </h1>
+    <h1 class="txt1">
+      04. Am I stressed?
+    </h1>
+    <h1 class="txt1">
+      05. Am I eating consciously?
+
+    </h1>
+    <h1 class="txt1">
+      06.  How much do I need to eat?
+    </h1>
+    <h1 class="txt1">
+      07.  Can I stop eating when still slightly hungry?
+
+    </h1>
+    
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+                     
+   
+
+
