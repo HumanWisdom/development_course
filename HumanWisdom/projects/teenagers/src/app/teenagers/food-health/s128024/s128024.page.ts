@@ -4,22 +4,22 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s119046',
-  templateUrl: './s119046.page.html',
-  styleUrls: ['./s119046.page.scss'],
+  selector: 'app-s128024',
+  templateUrl: './s128024.page.html',
+  styleUrls: ['./s128024.page.scss'],
 })
-export class S119046Page implements OnInit {
+export class S128024Page implements OnInit {
 
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  toc="identity/s128001"
+  toc="food-health/s128001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
 
-  screenNumber="119046"
+  screenNumber="128024"
   startTime:any
   endTime:any
   totalTime:any
@@ -96,6 +96,27 @@ export class S119046Page implements OnInit {
     $('#svg_form_time circle').css('fill',base_color);
     $("circle:nth-of-type(1)").css("fill", active_color);
     
+     // to be copied
+     $("#svg_form_time rect").css("fill", active_color);
+     $("#svg_form_time circle").css("fill", active_color);
+     $("#prev").removeClass("disabled");
+     if (child >= length) {
+       $(this).addClass("disabled");
+       $('#submit').removeClass("disabled");
+     }
+     if (child <= length) {
+       child++;
+     }
+     var circle_child = child + 1;
+     $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+       "fill",
+       base_color
+     );
+     $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+       "fill",
+       base_color
+     );
+     // /to be copied
     
     
   });
@@ -113,9 +134,9 @@ export class S119046Page implements OnInit {
     this.startTime = Date.now();
 
     
-    if(JSON.parse(sessionStorage.getItem("bookmark119046"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark128024"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark119046"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark128024"))==1)
       this.bookmark=1
 
    
@@ -132,7 +153,7 @@ export class S119046Page implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark119046",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark128024",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -151,7 +172,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/identity/s119047'])
+    this.router.navigate(['/food-health/s128025'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -171,13 +192,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/adults/identity/s119046p1'])
+       // this.router.navigate(['/adults/food-health/s128024p1'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/identity/s119045'])
+    this.router.navigate(['/food-health/s128023'])
 
 
   }
