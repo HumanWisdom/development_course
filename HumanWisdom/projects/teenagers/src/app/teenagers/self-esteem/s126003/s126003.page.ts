@@ -14,7 +14,7 @@ export class S126003Page implements OnInit {
   bg_cft="bg_teal"
   bg="teal_w1"
   title="Introduction"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/self-esteem/audios/self-esteem+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05"]
   text=[

@@ -86,7 +86,12 @@
                         <a (click)="routemodule(item)">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex mb20px">
                             <div class="col-lg-3 col-md-5 col-sm-5 col-xs-5">
-                              <img
+                              <ng-container *ngIf="item.ModuleId<10">
+                                <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/0{{item.ModuleId}}.png"
+                                alt="" class="img-responsive">
+                              </ng-container>
+                              <img *ngIf="item.ModuleId>10"
                                 src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/{{item.ModuleId}}.png"
                                 alt="" class="img-responsive">
                             </div>

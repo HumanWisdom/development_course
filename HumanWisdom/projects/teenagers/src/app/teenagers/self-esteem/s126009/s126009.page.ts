@@ -13,7 +13,7 @@ export class S126009Page implements OnInit,OnDestroy {
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg="teal_w7"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/self-esteem/videos/1.2.mp4'  
   title="What causes low self-esteem?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/self_esteem/self_esteem_02.jpg"
