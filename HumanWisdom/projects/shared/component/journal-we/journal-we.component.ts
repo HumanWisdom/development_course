@@ -44,7 +44,7 @@ export class JournalWeComponent implements OnInit {
   }
 
   addjournal() {
-    if(localStorage.getItem('guest')== 'T'){
+    if(localStorage.getItem('guest')!= 'T'){
       if (!this.enabletick) {
         /* this.service.addJournal({
           "JournalId": 0,
