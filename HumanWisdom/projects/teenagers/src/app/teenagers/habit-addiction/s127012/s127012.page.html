@@ -1,0 +1,44 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Some examples of bad habits:
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      01. Eating too quickly
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      02. Browsing the phone
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      03. Not doing enough exercise
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      04. Binge eating
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      05. Assuming what others are thinking
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      06. Picking on people who are different
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      07. Having a negative attitude
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      08. Getting angry easily
+    </h3>
+     </form>          
+</app-oneline-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
