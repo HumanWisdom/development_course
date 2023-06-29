@@ -485,12 +485,24 @@
         }
        
         if (window.AndroidHandler) {
+          var fileName='Completion';
+          if(localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() !=null ){
+          this.fileName=localStorage.getItem('fileName').toString();
+          console.log('fileName2:'+ localStorage.getItem('fileName').toString() + myFileContentData);
+          }
           window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
         }
         // Perform the download action here
       });
     });
 
+    window.addEventListener('ShareEvent', function () {
+      console.log(this.fileName);
+      console.log(myFileContentData);
+      if (window.AndroidHandler) {
+          window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
+        }
+    })
 
 
     // $(document).on('click', '#rm_01', function(){
