@@ -44,33 +44,38 @@ export class JournalWeComponent implements OnInit {
   }
 
   addjournal() {
-    if (!this.enabletick) {
-      /* this.service.addJournal({
-        "JournalId": 0,
-        "JDate": "2022-09-08",
-        "Title": "Todays Tasks",
-        "Notes": this.note,
-        "UserId": this.userId
-      }) */
-      this.endTime = Date.now();
-      this.totalTime = this.endTime - this.startTime;
-
-      this.service.submitProgressReflection({
-        "ScrNumber": "",
-        "UserId": this.userId,
-        "BookMark": 0,
-        "ModuleId": 75,
-        "screenType": 8,
-        "timeSpent": this.totalTime,
-        "ReflectionId": this.rId,
-        "Resp":  this.note
-      }).subscribe(res => {
-        this.enabletick = true;
-        this.btnText = 'Added to journal';
-      }, error => {
-        console.log(error)
-      })
+    if(localStorage.getItem('guest')== 'T'){
+      if (!this.enabletick) {
+        /* this.service.addJournal({
+          "JournalId": 0,
+          "JDate": "2022-09-08",
+          "Title": "Todays Tasks",
+          "Notes": this.note,
+          "UserId": this.userId
+        }) */
+        this.endTime = Date.now();
+        this.totalTime = this.endTime - this.startTime;
+  
+        this.service.submitProgressReflection({
+          "ScrNumber": "",
+          "UserId": this.userId,
+          "BookMark": 0,
+          "ModuleId": 75,
+          "screenType": 8,
+          "timeSpent": this.totalTime,
+          "ReflectionId": this.rId,
+          "Resp":  this.note
+        }).subscribe(res => {
+          this.enabletick = true;
+          this.btnText = 'Added to journal';
+        }, error => {
+          console.log(error)
+        })
+      }
+    }else{
+      alert("Please subscribe to activate the Journal");
     }
+    
   }
 
   addZero(i) {
