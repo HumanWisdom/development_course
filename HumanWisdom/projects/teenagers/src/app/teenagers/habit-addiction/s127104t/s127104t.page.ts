@@ -13,7 +13,7 @@ export class S127104tPage implements OnInit
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w7"
+  bg="purple_w8"
   bookmark=0
   path=this.router.url
   audioPage="/habit-addiction/s127104"
@@ -66,7 +66,7 @@ export class S127104tPage implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/habit-addiction/s127105'])
+    this.router.navigate(['/habit-addiction/s127106'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

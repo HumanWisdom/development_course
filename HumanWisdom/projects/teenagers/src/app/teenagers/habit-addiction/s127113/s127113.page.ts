@@ -8,12 +8,12 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s127113.page.html',
   styleUrls: ['./s127113.page.scss'],
 })
-export class S127113Page implements OnInit, OnDestroy {
+export class S127113Page implements OnInit, OnDestroy 
+{
 
-  bg_tts = "bg_purple"
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_flat"
+  bg = "purple_w5"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -24,9 +24,8 @@ export class S127113Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "habit-addiction/s127112"
+  toc = "habit-addiction/s127001"
   path = this.router.url
-  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
   constructor
@@ -41,6 +40,7 @@ export class S127113Page implements OnInit, OnDestroy {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+
     if (this.saveUsername == false) 
     { 
       this.userId = JSON.parse(sessionStorage.getItem("userId")) 
@@ -49,7 +49,7 @@ export class S127113Page implements OnInit, OnDestroy {
     { 
       this.userId = JSON.parse(localStorage.getItem("userId")) 
     }
-
+    this.startTime = Date.now();
     this.startTime = Date.now();
 
     if (JSON.parse(sessionStorage.getItem("bookmark127113")) == 0)
@@ -75,9 +75,7 @@ export class S127113Page implements OnInit, OnDestroy {
       "ModuleId": this.moduleId,
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
+    }).subscribe(res => {})
   }
 
   submitProgress() 
@@ -93,15 +91,20 @@ export class S127113Page implements OnInit, OnDestroy {
       this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
       localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
     },
-    error => { console.log(error) },
-    () => {
-      //this.router.navigate(['/habit-addiction/s234'])
-    })
+      error => { console.log(error) },
+      () => {
+        //this.router.navigate(['/habit-addiction/s234'])
+      })
+  }
+
+  prev() 
+  {
+    this.router.navigate(['/habit-addiction/s127112'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/habit-addiction/s2'])
+    // this.router.navigate(['/habit-addiction/s127113'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()

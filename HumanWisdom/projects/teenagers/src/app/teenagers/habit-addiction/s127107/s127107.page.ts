@@ -13,9 +13,9 @@ export class S127107Page implements OnInit,OnDestroy
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w11"
-  title="#7 Nurture a quiet mind  "
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+3.7.mp3'
+  title="#4 Meet the feeling fully, without resistance  "
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/habit-addiction/audios/1.4.mp3'
   transcriptPage="habit-addiction/s127107t"
   toc="habit-addiction/s127001"
   bookmark=0

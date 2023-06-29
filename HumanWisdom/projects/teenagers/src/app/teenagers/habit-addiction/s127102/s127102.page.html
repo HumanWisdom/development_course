@@ -1,5 +1,18 @@
-<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)></app-audio-content>
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      How can we respond to emotional pain, whatever the cause, with our own wisdom?<br>
+      Instead of running from the fire, we need to walk towards it, be bold firefighters and put out the fire in our own thinking. Let's explore how we can do this, step-by-step.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

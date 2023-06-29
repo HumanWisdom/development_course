@@ -1,131 +1,113 @@
-import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-s127091',
   templateUrl: './s127091.page.html',
   styleUrls: ['./s127091.page.scss'],
 })
-export class S127091Page implements OnInit 
-{
+export class S127091Page implements OnInit,OnDestroy {
 
-  bg_tn = "bg_purple"
-  bg_cft = "bg_purple"
-  bg = "purple_w2"
-  hint = ""
-  toc = "/habit-addiction/s127001"
-  path = this.router.url
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  qrList = JSON.parse(localStorage.getItem("qrList"))
-  moduleId = localStorage.getItem("moduleId")
-  screenType = localStorage.getItem("reflection")
-  screenNumber = 127091
-  startTime: any
-  endTime: any
-  totalTime: any
-  bookmark: any
-  rId = 1576
-  reflection: any
-  reflectionA: any
-  r127091 = JSON.parse(sessionStorage.getItem("r127091"))
-  shared: any
-  confirmed: any
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
+  bg="purple_w2"
 
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  screenType=localStorage.getItem("text")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=127091
+  startTime:any
+  endTime:any
+  totalTime:any
+  bookmark=0
+  toc="habit-addiction/s127001"
+  path=this.router.url
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+ 
   constructor
   (
     private router: Router,
-    private service: TeenagersService,
-    private location: Location
+    private service:TeenagersService,
+    private location:Location
   ) 
   { }
 
   ngOnInit() 
   {
+    //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    this.reflectionA = this.qrList.ListOfReflection
-    this.findReflection()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
     }
     this.startTime = Date.now();
+    this.startTime = Date.now();
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark127091"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark127091"))==1)
+      this.bookmark=1
   }
 
-  sharedForum(e) 
+  receiveBookmark(e)
   {
     console.log(e)
-    this.shared = e
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark127091",JSON.stringify(this.bookmark))
   }
 
-  confirmShare() 
-  {
-    this.confirmed = true
-  }
-
-  createScreen() 
+  createScreen()
   {
     this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {})
-  }
-
-  findReflection() 
-  {
-    for (var i = 0; i < this.reflectionA.length; i++) 
-    {
-      if (this.rId == this.reflectionA[i].ReflectionId) 
-      {
-        this.reflection = this.reflectionA[i].Que
-        // this.optionList.push(this.questionA[i])
-      }
-    }
-    console.log(this.reflection)
-  }
-
-  submitProgress(e) 
-  {
-    console.log("returned response", e)
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r127091", JSON.stringify(e))
-    this.r127091 = sessionStorage.getItem("r127091")
-    console.log(this.r127091)
-    this.service.submitProgressReflection({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "ReflectionId": this.rId,
-      "Resp": this.r127091
-    }).subscribe(res => {},
-      error => {
-        console.log(error)
-        this.router.navigate(['/habit-addiction/s127092'])
-
-      },
-      () => {
-        this.router.navigate(['/habit-addiction/s127092'])
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>
+      { 
       })
   }
 
-  previous() 
+  submitProgress()
+  {
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/habit-addiction/s127092'])
+    this.service.submitProgressText({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+        //this.router.navigate(['/habit-addiction/s234'])
+      })
+  }
+
+  prev()
   {
     this.router.navigate(['/habit-addiction/s127090'])
   }
 
-  ngOnDestroy() 
+  ngOnDestroy()
   {}
 
 }

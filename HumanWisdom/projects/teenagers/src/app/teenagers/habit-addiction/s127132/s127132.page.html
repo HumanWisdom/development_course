@@ -1,57 +1,29 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-bg-video></app-bg-video>
+<app-quotation [bg]="bg">
 
-<!-- page content -->
-<div class="right_col mc_01">
-  <div class="cw100p">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 purple_w11">
-        <div class="x_panel p0">                        
-          <div class="x_content p0">
-            <form>
+  <form>
 
-              <h5 class="txt1">
-                If you have an addiction, you need professional help, but these ideas may help:
-              </h5>
-              
-              <div class="clearfix"></div>
-
-              <!-- multistep wizard -->
-              <div id="svg_wrap"></div>
-
-              <section>
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="txt44 tleft">
-                      #3.
-                    </h4>
-
-                    <h4 class="txt45 tleft">
-                      Take responsibility for all your actions. Don’t allow yourself to feel like a victim. That takes away your own strength you need to change.
-                    </h4>
-                  </div>
-                </div>
-              </section>
-
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>  
-              <section></section>
-              <section></section> 
-              <section></section>
-              <section></section>  
-              <!-- /multistep wizard -->       
-
-            </form>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
       </div>
     </div>
-  </div>
-</div>
-<!-- /page content -->
+
+    <hr class="quotation_hr mt30px">
+
+    <h1 class="quotation_txt">
+      The secret of change is to focus your energy not on fighting the old, but on building the new
+    </h1>
+
+    <hr class="quotation_hr">
+
+    <h1 class="quotation_writer">
+      Socrates
+    </h1>
+
+  </form>
+
+</app-quotation>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

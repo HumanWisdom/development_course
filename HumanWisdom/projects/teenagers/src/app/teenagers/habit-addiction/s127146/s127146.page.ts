@@ -13,8 +13,8 @@ export class S127146Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w6"
-  hint = ""
+  bg = "purple_w5"
+  hint = "For me, it's my health, the love of friends, and my love for poetry."
   toc = "/habit-addiction/s127001"
   path = this.router.url
   userId: any
@@ -27,7 +27,7 @@ export class S127146Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1582
+  rId = 1580
   reflection: any
   reflectionA: any
   r127146 = JSON.parse(sessionStorage.getItem("r127146"))

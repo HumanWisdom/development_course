@@ -1,62 +1,86 @@
-import { Component, OnInit } from '@angular/core';
-import { TeenagersService } from '../../teenagers.service';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s127158',
   templateUrl: './s127158.page.html',
   styleUrls: ['./s127158.page.scss'],
 })
-export class S127158Page implements OnInit 
+export class S127158Page implements OnInit, OnDestroy 
 {
-  bg_tn="bg_purple"
-  bg_cft="bg_purple"
-  bg="purple_flat"
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
+  bg_tn = "bg_purple"
+  bg_cft = "bg_purple"
+  bg = "purple_flat"
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  screenType = localStorage.getItem("text")
+  moduleId = localStorage.getItem("moduleId")
+  screenNumber = 127158
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
 
   constructor
   (
     private router: Router,
-    private service:TeenagersService,
-    private location:Location
+    private service: TeenagersService,
+    private location: Location
   ) 
   { }
 
   ngOnInit() 
   {
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
     }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
+    this.startTime = Date.now();
+    this.startTime = Date.now();
+    this.createScreen()
+  }
+
+  toggleBookmark() 
+  {
+    if (this.bookmark == 0)
+      this.bookmark = 1
     else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
-    this.sessionPoints()
+      this.bookmark = 0
   }
 
-  sessionPoints()
+  createScreen() 
   {
-    this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"127152,127153,127154,127155,127156,127157"})
-    .subscribe(res=>
-    {
-      console.log("points",res)
-      this.points=res
-    })
+    this.service.createScreen({
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {})
   }
 
-  submitProgress()
+  submitProgress() 
   {
-    this.router.navigate(['/habit-addiction/s127159'])
+    this.service.submitProgressText({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime
+    }).subscribe(res => {})
   }
 
-  prev()
+  ngOnDestroy() 
   {
-    this.router.navigate(['/habit-addiction/s127157'])
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    if (this.userId !== 563) this.submitProgress()
   }
+
 }

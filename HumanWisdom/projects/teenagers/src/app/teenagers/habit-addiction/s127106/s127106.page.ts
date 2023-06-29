@@ -13,9 +13,9 @@ export class S127106Page implements OnInit,OnDestroy
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w10"
-  title="#6 Understand the deeper layers of your thinking  "
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+3.6.mp3'
+  title="#3 Realise that emotional pain is a reaction from our thinking (see Stress Module)  "
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/habit-addiction/audios/1.3.mp3'
   transcriptPage="habit-addiction/s127106t"
   toc="habit-addiction/s127001"
   bookmark=0

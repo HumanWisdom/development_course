@@ -13,9 +13,9 @@ export class S127104Page implements OnInit,OnDestroy
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w8"
-  title="#4 Meet the feeling fully, without resistance  "
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+3.4.mp3'
+  title="#2 Accept what you cannot change  "
+  mediaAudio= JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/habit-addiction/audios/1.2.mp3'
   transcriptPage="habit-addiction/s127104t"
   toc="habit-addiction/s127001"
   bookmark=0
@@ -89,7 +89,7 @@ export class S127104Page implements OnInit,OnDestroy
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/habit-addiction/s127105'])
+    this.router.navigate(['/habit-addiction/s127106'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

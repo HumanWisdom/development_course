@@ -1,114 +1,62 @@
-import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-s127088',
   templateUrl: './s127088.page.html',
   styleUrls: ['./s127088.page.scss'],
 })
-export class S127088Page implements OnInit, OnDestroy {
-
-  bg_tts = "bg_purple"
-  bg_tn = "bg_purple"
-  bg_cft = "bg_purple"
-  bg = "purple_flat"
-
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  screenType = localStorage.getItem("text")
-  moduleId = localStorage.getItem("moduleId")
-  screenNumber = 127088
-  startTime: any
-  endTime: any
-  totalTime: any
-  bookmark = 0
-  toc = "habit-addiction/s127087"
-  path = this.router.url
-  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+export class S127088Page implements OnInit 
+{
+  bg_tn="bg_purple"
+  bg_cft="bg_purple"
+  bg="purple_flat"
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
+  overallPercentage:any
 
   constructor
   (
     private router: Router,
-    private service: TeenagersService,
-    private location: Location
+    private service:TeenagersService,
+    private location:Location
   ) 
   { }
 
   ngOnInit() 
   {
-    //localStorage.removeItem("bookmarkList")
-    this.createScreen()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
-    }
-
-    this.startTime = Date.now();
-
-    if (JSON.parse(sessionStorage.getItem("bookmark127088")) == 0)
-      this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark127088")) == 1)
-      this.bookmark = 1
-  }
-
-  receiveBookmark(e) 
-  {
-    console.log(e)
-    if (e == true)
-      this.bookmark = 1
     else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmark127088", JSON.stringify(this.bookmark))
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
+    this.sessionPoints()
   }
 
-  createScreen() 
+  sessionPoints()
   {
-    this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
+    this.service.sessionPoints({"UserId":this.userId,
+    "ScreenNos":"127056,127057,127058,127059,127060,127061,127062,127063,127064,127065,127066,127067,127068,127069,127070,127071,127072,127073,127074,127075,127076,127077,127078,127079,127080,127081,127082,127083,127086,127087"})
+    .subscribe(res=>
+    {
+      console.log("points",res)
+      this.points=res
     })
   }
 
-  submitProgress() 
+  submitProgress()
   {
-    this.service.submitProgressText({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime
-    }).subscribe(res => {
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
-    },
-    error => { console.log(error) },
-    () => {
-      //this.router.navigate(['/habit-addiction/s234'])
-    })
-  }
-
-  goNext() 
-  {
-    // this.router.navigate(['/habit-addiction/s2'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
     this.router.navigate(['/habit-addiction/s127089'])
   }
 
-  ngOnDestroy() 
-  {}
-
+  prev()
+  {
+    this.router.navigate(['/habit-addiction/s127087'])
+  }
 }

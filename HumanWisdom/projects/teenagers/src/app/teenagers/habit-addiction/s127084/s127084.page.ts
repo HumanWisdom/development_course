@@ -8,12 +8,12 @@ import { Location } from '@angular/common';
   templateUrl: './s127084.page.html',
   styleUrls: ['./s127084.page.scss'],
 })
-export class S127084Page implements OnInit,OnDestroy 
-{
+export class S127084Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w9" 
+  bg="purple_w9"
+
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -26,7 +26,7 @@ export class S127084Page implements OnInit,OnDestroy
   toc="habit-addiction/s127001"
   path=this.router.url
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+ 
   constructor
   (
     private router: Router,
@@ -39,6 +39,7 @@ export class S127084Page implements OnInit,OnDestroy
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -49,6 +50,7 @@ export class S127084Page implements OnInit,OnDestroy
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
+    
     if(JSON.parse(sessionStorage.getItem("bookmark127084"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark127084"))==1)
@@ -74,8 +76,6 @@ export class S127084Page implements OnInit,OnDestroy
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       { 
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
   }
 
@@ -91,10 +91,14 @@ export class S127084Page implements OnInit,OnDestroy
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
       "timeSpent":this.totalTime
-    }).subscribe(res=>{},
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/conditioning/s234'])
+        //this.router.navigate(['/habit-addictions234'])
       })
   }
 

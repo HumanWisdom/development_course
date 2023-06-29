@@ -13,9 +13,9 @@ export class S127108Page implements OnInit,OnDestroy
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w12"
-  title="#8 Live with compassion. Let it go.   "
+  title="#5 Meet the feeling without language (Explore the module of Looking without language)"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+3.8.mp3'
+  audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+3.5.mp3'
   transcriptPage="habit-addiction/s127108t"
   toc="habit-addiction/s127001"
   bookmark=0

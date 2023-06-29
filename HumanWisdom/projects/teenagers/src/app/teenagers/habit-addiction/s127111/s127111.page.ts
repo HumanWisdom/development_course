@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -8,16 +8,30 @@ import { Location } from '@angular/common';
   templateUrl: './s127111.page.html',
   styleUrls: ['./s127111.page.scss'],
 })
-export class S127111Page implements OnInit 
+export class S127111Page implements OnInit,OnDestroy 
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_flat"
+  bg="purple_w3"
+  title="#8 Live with compassion. Let it go.   "
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+3.8.mp3'
+  transcriptPage="habit-addiction/s127111t"
+  toc="habit-addiction/s127001"
+  bookmark=0
+  path=this.router.url
+  avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
-
+  screenType=localStorage.getItem("audio")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=127111
+  startTime:any
+  endTime:any
+  totalTime:any
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
+  
   constructor
   (
     private router: Router,
@@ -25,7 +39,7 @@ export class S127111Page implements OnInit
     private location:Location
   ) 
   { }
-
+ 
   ngOnInit() 
   {
     if(this.saveUsername==false)
@@ -36,27 +50,70 @@ export class S127111Page implements OnInit
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
-    this.sessionPoints()
+    this.startTime = Date.now();
+    this.startTime = Date.now();
+    this.createScreen()
+    if(JSON.parse(sessionStorage.getItem("bookmark127111"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark127111"))==1)
+      this.bookmark=1
   }
-
-  sessionPoints()
+ 
+  createScreen()
   {
-    this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"127088,127089,127090,127091,127092,127093,127094,127095,127096,127097,127098,127099,127100,127101,127102,127103,127104,127105,127106,127107,127108,127109,127110"})
-    .subscribe(res=>
-    {
-      console.log("points",res)
-      this.points=res
-    })
+    this.service.createScreen({
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>{})
   }
-
+ 
+  receiveBookmark(e)
+  {
+    console.log(e)
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark127111",JSON.stringify(this.bookmark))
+  }
+ 
+  receiveAvDuration(e)
+  {
+    console.log(e)
+    this.avDuration=e
+  }
+ 
   submitProgress()
   {
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/habit-addiction/s127112'])
+    this.service.submitProgressAv({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      })
   }
 
   prev()
   {
     this.router.navigate(['/habit-addiction/s127110'])
   }
+
+  ngOnDestroy()
+  {
+    localStorage.setItem("totalTime127111",this.totalTime)
+    localStorage.setItem("avDuration127111",this.avDuration)
+  }
+
 }

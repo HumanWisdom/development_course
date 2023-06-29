@@ -1,5 +1,17 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-video-content [title]="title" [poster]="poster" [bg]="bg" [videoLink]="videoLink"></app-video-content>
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      If you travel inwards and explore the deeper layers of your thinking you can discover for yourself the spring of peace that is in you. Then everything has its rightful place in our lives.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

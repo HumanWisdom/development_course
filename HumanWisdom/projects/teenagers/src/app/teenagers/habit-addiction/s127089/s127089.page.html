@@ -1,17 +1,9 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
-
- <app-simple-text [bg]="bg">
-
-  <form>
-
-    <h1 class="txt1">
-      So much addiction is driven by an urgent desire to escape from, and numb our emotional pain
-    </h1>
-
-    <div class="clearfix"></div>
-
-  </form>
-
-</app-simple-text> 
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-session-end 
+  [bg]="bg" 
+  [progressText]="progressText" 
+  [progressImg]="progressImg" 
+  [progressPercent]="progressPercent"
+  [link]="link" 
+  [name]="name" 
+  [toc]="toc">  
+</app-session-end>

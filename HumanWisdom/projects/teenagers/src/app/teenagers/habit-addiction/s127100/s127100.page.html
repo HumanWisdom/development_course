@@ -1,18 +1,54 @@
 <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
+<app-bg-video></app-bg-video>
 
-  <form>
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 purple_w3">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>
 
-    <h1 class="txt1">
-      How can we respond to emotional pain, whatever the cause, with wisdom?<br>
-      Instead of running from the fire, we need to walk towards it, be firefighters and put out the fire in our own thinking. Let's explore how, step-by-step.
-    </h1>
+              <h5 class="txt1">
+                 Some examples of emotional pain we escape from
+              </h5>
+              
+              <div class="clearfix"></div>
 
-    <div class="clearfix"></div>
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
 
-  </form>
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                     6. Anxiety:
+                    </h4>
 
-</app-simple-text> 
+                    <h4 class="txt45 tleft">
+                      You may be one of the 5 teenagers who suffers from anxiety. In some cases it can be severe and people sometimes depend on alcohol or drugs to help them relax. There may be a general feeling of dread, as if something bad is going to happen.
+                    </h4>
+                  </div>
+                </div>
+              </section>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section> 
+              <section></section> 
+              <!-- /multistep wizard -->       
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

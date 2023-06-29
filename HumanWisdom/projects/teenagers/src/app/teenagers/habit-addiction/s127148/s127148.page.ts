@@ -1,57 +1,119 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s127148',
   templateUrl: './s127148.page.html',
   styleUrls: ['./s127148.page.scss'],
 })
-export class S127148Page implements OnInit 
+export class S127148Page implements OnInit,OnDestroy 
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w7"
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  userId:any
-  userName:any
-  progressPercent:any
-  progressText="4/6"
-  link="/habit-addiction/s127149"
-  name="#5  Dialogue with a university student on addiction"
-  progressImg=""
+  title="Discovering peace  "
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/habit-addiction/audios/habit-addiction+4.1.mp3'
+  transcriptPage="habit-addiction/s127148t"
   toc="habit-addiction/s127001"
-
+  bookmark=0
+  path=this.router.url
+  avDuration:any
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  screenType=localStorage.getItem("audio")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=127148
+  startTime:any
+  endTime:any
+  totalTime:any
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
+  
   constructor
   (
-    private router: Router, 
-    private location:Location,
-    private service: TeenagersService
+    private router: Router,
+    private service:TeenagersService,
+    private location:Location
   ) 
   { }
-
+ 
   ngOnInit() 
   {
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
-      this.userName=JSON.parse(sessionStorage.getItem("userName"))
     }
     else
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
-      this.userName=JSON.parse(localStorage.getItem("userName"))
     }
-    this.getProgress()
+    this.startTime = Date.now();
+    this.startTime = Date.now();
+    this.createScreen()
+    if(JSON.parse(sessionStorage.getItem("bookmark127148"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark127148"))==1)
+      this.bookmark=1
+  }
+ 
+  createScreen()
+  {
+    this.service.createScreen({
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>{})
+  }
+ 
+  receiveBookmark(e)
+  {
+    console.log(e)
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark127148",JSON.stringify(this.bookmark))
+  }
+ 
+  receiveAvDuration(e)
+  {
+    console.log(e)
+    this.avDuration=e
+  }
+ 
+  submitProgress()
+  {
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/habit-addiction/s127149'])
+    this.service.submitProgressAv({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      })
   }
 
-  getProgress()
+  prev()
   {
-    this.service.getPoints(this.userId)
-    .subscribe(res=>{
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="habit-addiction").Percentage)
-     console.log(this.progressPercent)
-    })
+    this.router.navigate(['/habit-addiction/s127147'])
   }
+
+  ngOnDestroy()
+  {
+    localStorage.setItem("totalTime127148",this.totalTime)
+    localStorage.setItem("avDuration127148",this.avDuration)
+  }
+
 }

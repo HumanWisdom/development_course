@@ -1,5 +1,54 @@
-<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)></app-audio-content>
+<app-bg-video></app-bg-video>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 purple_w3">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>
+
+              <h5 class="txt1">
+                 Some examples of emotional pain we escape from
+              </h5>
+              
+              <div class="clearfix"></div>
+
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
+
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                     7. Relationship conflict:
+                    </h4>
+
+                    <h4 class="txt45 tleft">
+                       We may find ourselves in relationships which have regular conflict, and we feel there is no escape from them.
+                    </h4>
+                  </div>
+                </div>
+              </section>
+
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section> 
+              <section></section> 
+              <!-- /multistep wizard -->       
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

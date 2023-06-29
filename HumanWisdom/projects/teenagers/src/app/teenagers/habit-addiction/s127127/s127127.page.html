@@ -1,17 +1,55 @@
 <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
+<app-bg-video></app-bg-video>
 
-  <form>
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 purple_w9">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>
 
-    <h1 class="txt1">
-      If you want to change a habit, begin now. If you don’t, you will still be thinking about changing in a year's time. Don’t think about it. Just do it. Take the first step.
-    </h1>
+              <h5 class="txt1">
+                How can we overcome a habit? Here are some tips:
+              </h5>
+              
+              <div class="clearfix"></div>
 
-    <div class="clearfix"></div>
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
 
-  </form>
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                      #7.
+                    </h4>
 
-</app-simple-text> 
+                    <h4 class="txt45 tleft">
+                      Set small daily goals. Tell others about it. Keep a diary. Don’t give yourself a hard time if you fail. Get up, and go again. Stay positive. Don’t give up if you don’t succeed at first.
+                    </h4>
+                  </div>
+                </div>
+              </section>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section> 
+              <section></section> 
+              <section></section> 
+              <!-- /multistep wizard -->       
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

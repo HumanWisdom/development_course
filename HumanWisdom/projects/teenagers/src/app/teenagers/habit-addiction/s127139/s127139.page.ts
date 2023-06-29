@@ -12,13 +12,13 @@ export class S127139Page implements OnInit
 {
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w11"
+  bg = "purple_w3"
   toc = "habit-addiction/s127001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = "127036"
+  screenNumber = "127034"
   startTime: any
   endTime: any
   totalTime: any
@@ -172,72 +172,6 @@ export class S127139Page implements OnInit
       );
       // /to be copied
 
-       // to be copied
-       $("#svg_form_time rect").css("fill", active_color);
-       $("#svg_form_time circle").css("fill", active_color);
-       $("#prev").removeClass("disabled");
-       if (child >= length) {
-         $(this).addClass("disabled");
-         $('#submit').removeClass("disabled");
-       }
-       if (child <= length) {
-         child++;
-       }
-       var circle_child = child + 1;
-       $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-         "fill",
-         base_color
-       );
-       $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-         "fill",
-         base_color
-       );
-       // /to be copied
-
-        // to be copied
-      $("#svg_form_time rect").css("fill", active_color);
-      $("#svg_form_time circle").css("fill", active_color);
-      $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-      var circle_child = child + 1;
-      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-        "fill",
-        base_color
-      );
-      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-        "fill",
-        base_color
-      );
-      // /to be copied
-
-       // to be copied
-       $("#svg_form_time rect").css("fill", active_color);
-       $("#svg_form_time circle").css("fill", active_color);
-       $("#prev").removeClass("disabled");
-       if (child >= length) {
-         $(this).addClass("disabled");
-         $('#submit').removeClass("disabled");
-       }
-       if (child <= length) {
-         child++;
-       }
-       var circle_child = child + 1;
-       $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-         "fill",
-         base_color
-       );
-       $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-         "fill",
-         base_color
-       );
-       // /to be copied
-
       // to be copied
       $("#svg_form_time rect").css("fill", active_color);
       $("#svg_form_time circle").css("fill", active_color);
@@ -281,28 +215,6 @@ export class S127139Page implements OnInit
         base_color
       );
       // /to be copied
-      
-       // to be copied
-       $("#svg_form_time rect").css("fill", active_color);
-       $("#svg_form_time circle").css("fill", active_color);
-       $("#prev").removeClass("disabled");
-       if (child >= length) {
-         $(this).addClass("disabled");
-         $('#submit').removeClass("disabled");
-       }
-       if (child <= length) {
-         child++;
-       }
-       var circle_child = child + 1;
-       $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-         "fill",
-         base_color
-       );
-       $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-         "fill",
-         base_color
-       );
-       // /to be copied
     });
     // /multistep wizard
 

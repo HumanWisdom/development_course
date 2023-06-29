@@ -1,17 +1,29 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
-
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
+    
   <form>
 
-    <h1 class="txt1">
-      If we could find a way of dealing with our emotional pain, without escaping from it, we could avoid the jaws of addiction. How can we do that?
+    <h4 class="mtb0px comparison">
+      Habit and Addiction
+    </h4>
+
+    <div class="clearfix"></div>
+
+    <h5 class="mtb0px session">
+      Session #3
+    </h5>
+
+    <div class="clearfix"></div>
+
+    <br>
+  
+    <h1 class="session_title ">
+      Dealing With Emotional Pain
     </h1>
 
     <div class="clearfix"></div>
 
   </form>
 
-</app-simple-text> 
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+</app-tap-start>
