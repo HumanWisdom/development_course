@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module on habits and addictions. It is in the fifth circle of wisdom, where we apply our understanding gained in exploring the other 4 circles, to explore how we can avoid and more easily overcome our habits and addictions.. It is a subject that causes so much misery around the world, damages our health and relationships, is responsible for much of the crime and violence on our streets, and which seems to defy a solution. In this module we are going to explore the hidden thinking patterns behind them, how they subvert our thinking and then explore how we can prevent them, and overcome them using our intelligence. Imagine the suffering that can be avoided if everyone could live with this intelligence?
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

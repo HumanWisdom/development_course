@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Obesity and our mental health are closely linked. We overeat if we are not at peace with ourselves, if we are lonely, stressed or just sad. This seems to bring us some comfort. Being obese comes with its own challenges in relation to body-image and feeling unattractive. It can lead to feelings of low self-esteem, and the stress this causes can make us overeat in turn, and then feel bad for having done so. It can become a loop of thinking and behaviour which leads to more obesity. Obese people can feel stigmatised in society because there is a perception that obesity is somehow their fault. Navigating this requires wisdom, and a deeper understanding of ourselves. 
+
+              </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

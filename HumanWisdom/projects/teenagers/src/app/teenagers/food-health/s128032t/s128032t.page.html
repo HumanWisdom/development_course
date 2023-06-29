@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"  [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We live in a society where we are exposed to so many influences which tell us what an ideal body shape should be. For boys it may be that they have to be ‘muscular and have a six pack’ and for girls it may be that they have to be slim.
+
+If we do not conform to this ideal body shape we can suffer inside and this can impact our mental health and our behavior. How can we accept ourselves as we are and be comfortable in our own skin?
+
+The first step is to become aware we are being conditioned by our influences, and begin to question them, and ask ourselves if that is what we really want for our lives.
+
+            </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
