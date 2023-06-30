@@ -182,6 +182,12 @@ const routes: Routes = [
     path: 'habit-addiction',
     loadChildren: () => import('./teenagers/habit-addiction/habit-addiction.module').then(m => m.HabitAddictionModule)
   },
+  {
+   
+    path: 'living-with-peace',
+    loadChildren: () => import('./teenagers/living-with-peace/living-with-peace.module').then(m => m.LivingWithPeaceModule)
+  },
+
  
 ];
   
