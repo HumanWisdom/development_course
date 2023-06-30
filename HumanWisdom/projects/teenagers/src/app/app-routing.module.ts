@@ -177,7 +177,11 @@ const routes: Routes = [
   path: 'food-health',
     loadChildren: () => import('./teenagers/food-health/food-health.module').then(m => m.FoodHealthModule)
   },
-  ];
+  {
+    path: 'habit-addiction',
+    loadChildren: () => import('./teenagers/habit-addiction/habit-addiction.module').then(m => m.HabitAddictionModule)
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

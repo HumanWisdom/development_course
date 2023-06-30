@@ -2664,7 +2664,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/forum'])
   }
 
-  public saveAsPDF() {
+  public saveAsPDF(isShare:boolean =false) {
     const div = document.getElementById('myDiv'); 
     const content = div.innerHTML;
 
@@ -2674,7 +2674,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       const imgData = canvas.toDataURL('image/png');
       (window as any).myFileContentData = imgData;
       const event = new CustomEvent('downloadButtonClicked');
-   
+      const shareEvent = new CustomEvent("ShareEvent");
       const pdf = new jsPDF({
         orientation: 'portrait',
         format: 'a5',
@@ -2687,9 +2687,16 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
     //this.convertPdfToBase64(file);
       localStorage.setItem('fileName',this.currentModuleName);
-      window.dispatchEvent(event);
+      
+      if(!isShare){
+        window.dispatchEvent(event);
+        pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
+       }
+       else{
+        this.shareCertificate();
+        window.dispatchEvent(shareEvent);
+       }
       // pdf.setDisplayMode("original", "single");
-      pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
   }
 
