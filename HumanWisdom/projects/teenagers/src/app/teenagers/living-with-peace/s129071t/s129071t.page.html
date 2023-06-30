@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          So much of our lack of peace comes from the way our mind automatically reacts to people and situations around us. We seem to have no control over our reactions. 
+<br>The first thing to realise is that we do not have to react to other people’s behavor - we can observe it, and realise we have the option to not react to it. The next step is to work at developing a mind that is calm, by doing some breathing exercises. A calm mind has some space between the trigger and the reaction and you can then choose how to respond. Just becasue others are disturbed does not mean we have to be. Seeing this clearly can bring freedom, and peace. Explore the module on a Reactive mind in the app as well.
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
