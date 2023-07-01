@@ -35,6 +35,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   currentModuleName: string;
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
   @Input() programType :ProgramType = ProgramType.Adults;
+  isShowDownload=false;
   moduleData:Array<ProgramModel>;
   @Input() moduleList: any = [
     {
@@ -89,6 +90,9 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         this.percentage = data.Percentage;
         if (this.percentage == "100.00") {
           this.isModuleCompleted = true;
+          setTimeout(() => {
+            this.isShowDownload=true;
+          }, 500);
         }
       }else{
         this.checkforExceptionCases(res,currentModuleName);
@@ -103,6 +107,9 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       this.percentage = data.Percentage;
       if (this.percentage == "100.00") {
         this.isModuleCompleted = true;
+        setTimeout(() => {
+          this.isShowDownload =true;
+        }, 500);
       }
     }
   }
