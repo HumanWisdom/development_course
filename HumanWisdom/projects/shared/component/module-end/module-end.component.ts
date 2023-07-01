@@ -2693,8 +2693,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
        }
        else{
-        this.shareCertificate();
         window.dispatchEvent(shareEvent);
+        this.shareCertificate();
        }
       // pdf.setDisplayMode("original", "single");
     });

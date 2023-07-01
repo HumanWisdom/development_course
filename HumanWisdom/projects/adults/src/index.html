@@ -485,7 +485,7 @@
         }
        
         if (window.AndroidHandler) {
-          var fileName='Completion';
+          var fileName='Completion Certificate';
           if(localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() !=null ){
           this.fileName=localStorage.getItem('fileName').toString();
           console.log('fileName2:'+ localStorage.getItem('fileName').toString() + myFileContentData);
@@ -497,9 +497,13 @@
     });
 
     window.addEventListener('ShareEvent', function () {
-      console.log(this.fileName);
-      console.log(myFileContentData);
-      if (window.AndroidHandler) {
+      var fileName='Completion Certificate' ;
+          if(localStorage.getItem('fileName') && localStorage.getItem('fileName').toString() !=null ){
+          this.fileName=localStorage.getItem('fileName').toString();
+          }
+         console.log(myFileContentData);
+         console.log(this.fileName);
+         if (window.AndroidHandler) {
           window.AndroidHandler.ShareFile(this.fileName, myFileContentData);
         }
     })

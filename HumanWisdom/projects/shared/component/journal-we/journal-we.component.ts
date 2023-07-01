@@ -73,7 +73,12 @@ export class JournalWeComponent implements OnInit {
         })
       }
     }else{
-      alert("Please subscribe to activate the Journal");
+      let retVal = confirm("Please subscribe to activate the Journal");
+      if( retVal == true ) {
+        this.router.navigate(['/log-in']);
+      } else {
+        return false;
+      }
     }
     
   }
