@@ -388,7 +388,7 @@ export class S75002Page implements OnInit, AfterViewInit {
         }
       );
   }
-  guestEvent(){
+  guestEvent($event){
     this.enableAlert = true;
   }
   getAlertcloseEvent(event) {
