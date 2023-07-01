@@ -649,7 +649,7 @@ export class S75005Page implements OnInit {
       this.isShowAudio = false;
     }
   }
-  guestEvent(){
+  guestEvent($event){
     this.enableAlert = true;
   }
   getAlertcloseEvent(event) {

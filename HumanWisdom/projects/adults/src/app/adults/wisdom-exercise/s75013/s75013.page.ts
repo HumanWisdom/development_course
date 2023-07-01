@@ -407,7 +407,7 @@ export class S75013Page implements OnInit {
       $('#mdp_carousel').carousel('next');
     }
   }
-  guestEvent(){
+  guestEvent($event){
     this.enableAlert = true;
   }
   getAlertcloseEvent(event) {
