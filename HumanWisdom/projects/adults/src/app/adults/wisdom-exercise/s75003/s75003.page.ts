@@ -384,7 +384,7 @@ export class S75003Page implements OnInit {
       this.isShowAudio = false;
     }
   }
-  guestEvent($event){
+  guestEvent(){
     this.enableAlert = true;
   }
   getAlertcloseEvent(event) {

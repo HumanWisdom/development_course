@@ -432,7 +432,7 @@ export class S75011Page implements OnInit {
     }
   }
 
-  guestEvent($event){
+  guestEvent(){
     this.enableAlert = true;
   }
   getAlertcloseEvent(event) {
