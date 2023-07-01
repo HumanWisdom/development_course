@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { Router } from '@angular/router';
 
@@ -11,10 +11,10 @@ export class JournalWeComponent implements OnInit {
   qrList = JSON.parse(localStorage.getItem("qrList"))
    @Input()
    journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
-
+  @Output() guestEvent=new EventEmitter<any>();
   @Input()
   rId = 854
-
+  enableAlert=false;
   enabletick = false;
   userId: any
   note = ''
@@ -73,14 +73,23 @@ export class JournalWeComponent implements OnInit {
         })
       }
     }else{
-      let retVal = confirm("Please subscribe to activate the Journal");
-      if( retVal == true ) {
-        this.router.navigate(['/log-in']);
-      } else {
-        return false;
-      }
+      this.guestEvent.emit(true);
+      // let retVal = confirm("Please subscribe to activate the Journal");
+      // if( retVal == true ) {
+      //   this.router.navigate(['/log-in']);
+      // } else {
+      //   return false;
+      // }
     }
     
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
+    }
   }
 
   addZero(i) {
