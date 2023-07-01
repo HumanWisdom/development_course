@@ -181,6 +181,10 @@ const routes: Routes = [
     path: 'habit-addiction',
     loadChildren: () => import('./teenagers/habit-addiction/habit-addiction.module').then(m => m.HabitAddictionModule)
   },
+  {
+    path: 'dealing-with-death',
+    loadChildren: () => import('./teenagers/dealing-with-death/dealing-with-death.module').then(m => m.DealingWithDeathModule)
+  },
 ];
 
 @NgModule({

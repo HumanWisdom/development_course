@@ -1,0 +1,44 @@
+<app-feedback-question skipToPage="/dealing-with-death/s130069">
+
+  <form>
+
+    <h2 class="mtb0px txt13">
+      Feedback Survey
+    </h2>
+
+    <h4 class="mt0px txt14">
+      Dealing with Death Module
+    </h4>
+
+    <!-- multistep wizard -->
+    <div id="svg_wrap"></div>   
+    <section>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+          <a class="sb_anchor">
+            <div class="box textarea_box">
+              <h4 class="pt1rem txt15">
+               {{reflection}}
+              </h4>    
+
+              <hr>
+
+              <textarea id="message" required="required" class="form-control b0 p0 txt19" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r130068"></textarea>
+
+              <br>
+
+            </div>                    
+          </a>
+        </div>
+      </div>        
+    </section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <!-- /multistep wizard -->
+
+  </form>
+
+</app-feedback-question>
+
+<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>         
