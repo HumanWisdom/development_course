@@ -174,7 +174,6 @@ export class AdultDashboardPage implements OnInit {
     // }
 
     this.logeventservice.logEvent('view_adult-dashboard');
-
     setTimeout(() => {
       this.getModuleList();
       this.GetWisdomScreens();
@@ -186,6 +185,7 @@ export class AdultDashboardPage implements OnInit {
     if (this.platform.IOS) {
       localStorage.setItem('acceptcookie', 'T')
     }
+    localStorage.setItem('curatedurl', 'F');
     localStorage.setItem('curated', 'F');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     if (authtoken) {
@@ -1561,7 +1561,7 @@ export class AdultDashboardPage implements OnInit {
         this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
         this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
         this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
-      
+
       })
 
   }
