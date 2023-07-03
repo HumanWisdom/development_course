@@ -20,6 +20,7 @@ export class S75003Page implements OnInit {
   enableday4 = false;
   enableday5 = false;
   enableday6 = false;
+  enableAlert = false;
   vistedScreens: any[] = [];
   currentDay: number = 0;
   nextDay: number = null;
@@ -383,5 +384,15 @@ export class S75003Page implements OnInit {
       this.isShowAudio = false;
     }
   }
-
+  guestEvent($event){
+    this.enableAlert = true;
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
+    }
+  }
 }

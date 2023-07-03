@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import {AdultsService} from "../../../adults/src/app/adults/adults.service"
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from "@angular/cdk/platform";
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 
 @Component({
@@ -20,6 +22,7 @@ export class TranscriptHeaderComponent implements OnInit {
   @Input() audioPage: string;
   @Input() progName: string;
   @Output() sendBookmark = new EventEmitter<boolean>();
+  progUrl: string;
   note:any
   t=new Date()
   minDate=this.t.getFullYear()+"-"+this.addZero(this.t.getMonth()+1)+"-"+this.addZero(this.t.getDate())
@@ -36,14 +39,14 @@ export class TranscriptHeaderComponent implements OnInit {
   guest = false;
   Subscriber = false;
   enableAlert = false;
-
+  programName:string="adults";
   constructor(private router: Router,
     private service:AdultsService,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService ) {
     this.urlT=this.router.getCurrentNavigation().extractedUrl.queryParams.t
     this.ngNavigatorShareService = ngNavigatorShareService;
-
+    this.progUrl = this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1);
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
    }
@@ -58,7 +61,10 @@ export class TranscriptHeaderComponent implements OnInit {
      this.scrNumber = this.scrNumber.replace(/\D/g,'');
      console.log(this.scrNumber)
     this.getProgress(this.scrNumber)
-
+    this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase();
+    if (this.programName == 'teenagers') {
+      this.programName = '';
+    }
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
@@ -109,12 +115,20 @@ export class TranscriptHeaderComponent implements OnInit {
     this.router.navigate(['/adults/coursenote',{path:this.path}])
   }
 
-  goToToc(){
-    this.router.navigate(['/adults/'+this.toc])
+  goToToc() {
+    this.router.navigate(['/' + this.programName + '/' + this.toc])
   }
-  goToDash(){
-    this.router.navigate(['/adults/adult-dashboard'])
+
+  goToDash() {
+    if (this.progUrl == "/adults/" || this.programName == 'adults') {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+    else {
+      console.log(this.programName + '/teenager-dashboard');
+      this.router.navigate([this.programName + '/teenager-dashboard'])
+    }
   }
+  
   goToAudio(){
     let progNamePath = this.progName == "teenagers" ?  '/' : '/adults/';
     if (this.urlT)
@@ -183,7 +197,10 @@ export class TranscriptHeaderComponent implements OnInit {
 
   }
 
-
+  getProgramTypeName(value: number): string | undefined {
+    const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
+    return enumKey as string;
+  }
   getAlertcloseEvent(event) {
     this.enableAlert = false;
     if (event === 'ok') {

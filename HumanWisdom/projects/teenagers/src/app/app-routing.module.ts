@@ -167,7 +167,34 @@ const routes: Routes = [
     path: 'stress',
     loadChildren: () => import('./teenagers/stress/stress.module').then(m => m.StressModule)
   },
+  {
+
+    path: 'self-esteem',
+    loadChildren: () => import('./teenagers/self-esteem/self-esteem.module').then(m => m.SelfEsteemModule)
+
+  },
+  {
+  path: 'food-health',
+    loadChildren: () => import('./teenagers/food-health/food-health.module').then(m => m.FoodHealthModule)
+  },
+  {
+   
+    path: 'habit-addiction',
+    loadChildren: () => import('./teenagers/habit-addiction/habit-addiction.module').then(m => m.HabitAddictionModule)
+  },
+  {
+   
+    path: 'living-with-peace',
+    loadChildren: () => import('./teenagers/living-with-peace/living-with-peace.module').then(m => m.LivingWithPeaceModule)
+  },
+  {
+    path: 'dealing-with-death',
+    loadChildren: () => import('./teenagers/dealing-with-death/dealing-with-death.module').then(m => m.DealingWithDeathModule)
+  },
 ];
+  
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

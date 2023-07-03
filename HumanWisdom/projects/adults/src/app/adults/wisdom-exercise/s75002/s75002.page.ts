@@ -5,7 +5,6 @@ import { AdultsService } from "../../adults.service";
 import "hammerjs";
 declare var $: any;
 var moveleft = false;
-
 @Component({
   selector: "HumanWisdom-s75002",
   templateUrl: "./s75002.page.html",
@@ -13,6 +12,7 @@ var moveleft = false;
 })
 export class S75002Page implements OnInit, AfterViewInit {
   dayclass = "intro";
+  enableAlert =false;
   isShowTranscript = false;
   isShowAudio = true;
   enableintro = true;
@@ -387,5 +387,16 @@ export class S75002Page implements OnInit, AfterViewInit {
           //this.router.navigate(['/adults/conditioning/s234'])
         }
       );
+  }
+  guestEvent($event){
+    this.enableAlert = true;
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
+    }
   }
 }
