@@ -24,10 +24,11 @@ export class JournalWeComponent implements OnInit {
   startTime: any
   endTime: any
   totalTime: any
-
+  isGuest:boolean = false;
   constructor(private service: AdultsService, private router: Router) { }
 
   ngOnInit() {
+    this.isGuest = localStorage.getItem('guest') =='T';
     this.userId = JSON.parse(sessionStorage.getItem("userId"))
     this.findReflection()
     this.startTime = Date.now();
