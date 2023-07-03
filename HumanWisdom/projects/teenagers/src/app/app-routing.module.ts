@@ -187,8 +187,10 @@ const routes: Routes = [
     path: 'living-with-peace',
     loadChildren: () => import('./teenagers/living-with-peace/living-with-peace.module').then(m => m.LivingWithPeaceModule)
   },
-
- 
+  {
+    path: 'dealing-with-death',
+    loadChildren: () => import('./teenagers/dealing-with-death/dealing-with-death.module').then(m => m.DealingWithDeathModule)
+  },
 ];
   
 
