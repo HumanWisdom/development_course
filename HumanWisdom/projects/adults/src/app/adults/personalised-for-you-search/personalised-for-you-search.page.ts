@@ -196,39 +196,31 @@ export class PersonalisedForYouSearchPage implements OnInit {
   clickbtn(name, val = '', event, ind, id) {
     if (val === '') {
       if (name === 'Manage your emotions') {
-        localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');
         this.route.navigate(['/adults/curated/manage-your-emotions'])
-      } else if (name === 'Overcome stress and anxiety') {
-        localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
+      } else if (name === 'Mental Health') {
         this.logeventservice.logEvent('click_stress_anxiety');
         this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
-      } else if (name === 'Wisdom for the workplace') {
-        localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
+      } else if (name === 'Work and Leadership') {
         this.logeventservice.logEvent('click_workplace');
         this.route.navigate(['/adults/curated/wisdom-for-workplace'])
       } else if (name === 'Have fulfilling relationships') {
-        localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
         this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
       } else if (name === 'Be happier') {
-        localStorage.setItem('curatedurl', '/adults/curated/be-happier');
         this.logeventservice.logEvent('click_be_happier');
         this.route.navigate(['/adults/curated/be-happier'])
-      } else if (name === 'Change unhelpful habits') {
-        localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
+      } else if (name === 'Habits and Addiction') {
         this.logeventservice.logEvent('click_be_happier');
         this.route.navigate(['/adults/curated/change-unhelpful-habits'])
       } else if (name === 'Deal with sorrow and loss') {
-        localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
         this.logeventservice.logEvent('click_sorrow_loss');
         this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
-      } else if (name === 'Mindfulness') {
-        localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
+      } else if (name === 'Meditation') {
         this.logeventservice.logEvent('click_calm_mind');
         this.route.navigate(['/adults/curated/have-calm-mind'])
       }
-    } else {
+    }else {
       if (this.isloggedIn) {
         let fill = this.personalisedforyou.filter((d) => d['name'] === name);
         const index = this.indList.indexOf(id);

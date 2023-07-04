@@ -20,11 +20,11 @@ export class AdultsService {
   personalisedforyoulist = [
     {
       id: "1",
-      name: 'Wisdom for the workplace'
+      name: 'Work and Leadership'
     },
     {
       id: "2",
-      name: 'Overcome stress and anxiety'
+      name: 'Mental Health'
     },
     {
       id: "3",
@@ -36,7 +36,7 @@ export class AdultsService {
     },
     {
       id: "5",
-      name: 'Change unhelpful habits'
+      name: 'Habits and Addiction'
     },
     {
       id: "6",
@@ -44,7 +44,7 @@ export class AdultsService {
     },
     {
       id: "7",
-      name: 'Mindfulness',
+      name: 'Meditation',
     },
     {
       id: "8",
