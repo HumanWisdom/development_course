@@ -35,6 +35,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   currentModuleName: string;
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
   @Input() programType :ProgramType = ProgramType.Adults;
+  isShowDownload=false;
   moduleData:Array<ProgramModel>;
   @Input() moduleList: any = [
     {
@@ -89,6 +90,9 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         this.percentage = data.Percentage;
         if (this.percentage == "100.00") {
           this.isModuleCompleted = true;
+          setTimeout(() => {
+            this.isShowDownload=true;
+          }, 500);
         }
       }else{
         this.checkforExceptionCases(res,currentModuleName);
@@ -103,6 +107,9 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       this.percentage = data.Percentage;
       if (this.percentage == "100.00") {
         this.isModuleCompleted = true;
+        setTimeout(() => {
+          this.isShowDownload =true;
+        }, 500);
       }
     }
   }
@@ -2664,7 +2671,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/forum'])
   }
 
-  public saveAsPDF() {
+  public saveAsPDF(isShare:boolean =false) {
     const div = document.getElementById('myDiv'); 
     const content = div.innerHTML;
 
@@ -2674,7 +2681,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       const imgData = canvas.toDataURL('image/png');
       (window as any).myFileContentData = imgData;
       const event = new CustomEvent('downloadButtonClicked');
-     window.dispatchEvent(event);
+      const shareEvent = new CustomEvent("ShareEvent");
       const pdf = new jsPDF({
         orientation: 'portrait',
         format: 'a5',
@@ -2687,8 +2694,16 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
     //this.convertPdfToBase64(file);
       localStorage.setItem('fileName',this.currentModuleName);
+      
+      if(!isShare){
+        window.dispatchEvent(event);
+        pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
+       }
+       else{
+        window.dispatchEvent(shareEvent);
+        this.shareCertificate();
+       }
       // pdf.setDisplayMode("original", "single");
-      pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
     });
   }
 

@@ -136,15 +136,21 @@ export class BlogArticlePage implements OnInit {
   }
 
   likebtn() {
-    this.service.likeblog(this.blogList['BlogID']).subscribe((res) => {
-      if (res) {
-        this.getblog()
-      }
-    }, error => {
-      this.content = error['error']['Message'];
+    if(!this.isLoggedIn) {
+      this.enablecancel = true;
+      this.content = "Please Register to activate this feature";
       this.enableAlert = true;
-    },
-    )
+    } else {
+      this.service.likeblog(this.blogList['BlogID']).subscribe((res) => {
+        if (res) {
+          this.getblog()
+        }
+      }, error => {
+        this.content = error['error']['Message'];
+        this.enableAlert = true;
+      },
+      )
+    }
   }
 
   postcomment() {
@@ -188,7 +194,13 @@ export class BlogArticlePage implements OnInit {
   }
 
   commentbottom() {
-    window.scrollTo(0, document.body.scrollHeight);
+    if(!this.isLoggedIn) {
+      this.enablecancel = true;
+      this.content = "Please Register to activate this feature";
+      this.enableAlert = true;
+    } else {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
   }
 
   clickbanner(url = '') {

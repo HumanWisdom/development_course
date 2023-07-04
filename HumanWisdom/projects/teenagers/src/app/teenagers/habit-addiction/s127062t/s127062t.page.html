@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This pyramid represents the different layers of our thinking. Let’s start from the bottom - which is layer 4, which is the nature of the ‘I’. It feels restless, lonely, empty and bored and we constantly try to escape from it through pleasure. This is also the ‘I’ that feels the emotional pain from all of life’s challenges. In layer 3 are the hidden patterns of thinking like conditioning, the process of comparison, our emotional needs and our need for pleasure. We are not aware of this. Layer 2 represents the thoughts and feelings we are aware of. Here we may feel a deep emotional pain, or a feeling of not being good enough, and can’t understand it or cope with it. The world outside, in layer 1 offers us many escapes to numb our pain and here is where we may use alcohol, or drugs or one of the other many escapes on offer. We look to the outside world to escape from a pain that resides within us. The escape causes more problems in turn, and the cycle of addiction has begun.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -39,8 +39,11 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
   backClick() {
     this.closemodal.nativeElement.click();
     if (this.service.previousUrl) {
-      if (this.service.previousUrl.includes("wisdom-shorts")) {
+      let curatedurl = localStorage.getItem('curatedurl');
+      if (curatedurl === 'F' && this.service.previousUrl.includes("wisdom-shorts")) {
         this.router.navigate(['/adults/wisdom-shorts'])
+      } else if(curatedurl && curatedurl !== 'F'){
+        this.router.navigate([curatedurl])
       } else {
         this.location.back()
       }

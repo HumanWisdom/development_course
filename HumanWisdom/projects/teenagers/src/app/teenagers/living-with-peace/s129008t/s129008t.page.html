@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We assume all the conflict in our lives comes from the world outside, and in some cases it does, for example if I am caught in a war, or there is no food to eat, or no money to buy medicines. But in many cases our lack of peace comes from within and addressing that in ourselves is certainly within our grasp. I’ve spoken widely to children and adults and whenever I ask them what they want from their life, invariably they say they want to be happy. On probing further it becomes clear what they really mean is they want to feel at peace, because you can’t go on holiday or chase pleasure all the time. In fact our need for pleasure may come from not feeling at peace in ourselves. In exploring why we don’t feel at peace, perhaps we can discover that peace for ourselves.
+            </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -21,6 +21,7 @@ export class S75011Page implements OnInit {
   enableday6 = false;
   enableday7 = false;
   enableday8 = false;
+  enableAlert = false;
   lastClick = 0;
   delay = 20;
   methodSTartTime: any;
@@ -428,6 +429,18 @@ export class S75011Page implements OnInit {
     else{
       this.next();
       $('#mdp_carousel').carousel('next');
+    }
+  }
+
+  guestEvent($event){
+    this.enableAlert = true;
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
     }
   }
 }
