@@ -1,0 +1,15 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      Living without a fear of death is liberating and brings peace. Living with an acceptance of it allows us to make the most of each day and live fully in the present. It also makes us focus our energy on what is important.
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

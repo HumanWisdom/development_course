@@ -41,6 +41,7 @@ export class S75009Page implements OnInit {
   bookmark: number = 0;
   screenType: string = "8";
   DaysWithIntro=11;
+  enableAlert= false;
   userId: any = localStorage.getItem('userId');
   totaldays=10;
   constructor(private elementRef: ElementRef,
@@ -489,6 +490,19 @@ export class S75009Page implements OnInit {
     else{
       this.next();
       $('#mdp_carousel').carousel('next');
+    }
+  }
+
+  
+  guestEvent($event){
+    this.enableAlert = true;
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
     }
   }
 }

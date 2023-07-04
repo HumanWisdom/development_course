@@ -220,7 +220,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.logeventservice.logEvent('click_calm_mind');
         this.route.navigate(['/adults/curated/have-calm-mind'])
       }
-    } else {
+    }else {
       if (this.isloggedIn) {
         let fill = this.personalisedforyou.filter((d) => d['name'] === name);
         const index = this.indList.indexOf(id);

@@ -11,6 +11,7 @@ export class S75008Page implements OnInit {
   // active_color = "#FFC455";
   // base_color = "rgba(255,255,255,0.2)";
   // child =1;
+  enableAlert = false;
   lastClick = 0;
   delay = 20;
   methodSTartTime: any;
@@ -442,4 +443,16 @@ export class S75008Page implements OnInit {
     }
   }
 
+
+  guestEvent($event){
+    this.enableAlert = true;
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
+    }
+  }
 }

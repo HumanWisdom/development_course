@@ -9,6 +9,7 @@ declare var $: any;
 })
 export class S75004Page implements OnInit {
   dayclass = 'intro'
+  enableAlert = false;
   isShowTranscript = false;
   isShowAudio = false;
   enableintro = true;
@@ -462,5 +463,15 @@ export class S75004Page implements OnInit {
       this.isShowAudio = false;
     }
   }
-
+  guestEvent($event){
+    this.enableAlert = true;
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
+    }
+  }
 }

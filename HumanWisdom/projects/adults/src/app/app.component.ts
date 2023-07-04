@@ -53,11 +53,11 @@ export class AppComponent implements OnDestroy {
       //   console.log('Web push permission:', permission);
       // });
     }
-    
+
     if (localStorage.getItem("isloggedin") !== 'T') {
       this.services.emaillogin();
     }
-  
+    localStorage.setItem('curatedurl', 'F');
     SharedService.ProgramId=ProgramType.Adults;
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
@@ -158,7 +158,7 @@ export class AppComponent implements OnDestroy {
         this.meta.updateTag({ property: 'keywords', content: 'Relationships for adults,Building healthy relationships,Maintaining healthy relationships,Improving relationships,Building strong relationships,Healthy relationship tips,Stronger relationships,Relationships advice,Relationship building,Relationship skills' })
       }
     }
-    
+
     else if (PageUrl.includes('/adults/communication')) {
 
       if (this.title.getTitle() !== 'Improving Communication Skills') {
