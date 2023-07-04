@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Many people fear death, and that is part of being human. Survival is a primal instinct in us all and we will do whatever it takes to stay alive. Just see how far modern medicine will go to keep people alive, and the amount of research that goes into helping people live a bit longer if they have cancer, for example. But the fear of dying is another matter. All fears are irrational. If my mind is full of fear, I cannot be happy. It is a paradox, but the fear of dying can rob us of the joy of living right now. What exactly are we afraid of? And what can we do to get over that fear, so we can live more fully in the present?
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
