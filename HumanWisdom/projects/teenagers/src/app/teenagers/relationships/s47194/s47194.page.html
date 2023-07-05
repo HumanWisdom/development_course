@@ -1,0 +1,16 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext [bg]="bg">
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      When we feel hurt, the intelligent response may be to resist the instinct to withdraw or react with anger, and instead remain engaged and begin a conversation and resolve the issue. It's not easy, but can strengthen the relationship and help you grow as a person.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
