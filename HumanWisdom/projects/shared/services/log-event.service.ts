@@ -2,7 +2,7 @@ import { AngularFireAnalytics } from '@angular/fire/analytics';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Injectable } from '@angular/core';
 declare const gtag: Function;
-
+declare const fbq;
 @Injectable({
     providedIn: 'root'
 })
@@ -22,6 +22,11 @@ export class LogEventService {
         this.analytics.logEvent(eventname, { UserName: name });
         this.analytics.logEvent(eventname, { DeviceOS: device_info.os });
         this.analytics.logEvent(eventname, { DeviceBrowser: device_info.browser });
+        if (typeof fbq === 'undefined'){}
+        else{ 
+                fbq('track', eventname);
+        }
+
          setTimeout(() => {
             const accessObj:any = window;
             (accessObj)?.Moengage.track_event(eventname, {
