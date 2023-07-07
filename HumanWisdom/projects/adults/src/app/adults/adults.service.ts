@@ -442,7 +442,8 @@ export class AdultsService {
           localStorage.setItem("userId", JSON.stringify(userId))
           localStorage.setItem("email", email)
           localStorage.setItem("pswd", password)
-          localStorage.setItem("name", res.Name)
+          localStorage.setItem("name", res.Name);
+          this.freescreens();
           let nameupdate = localStorage.getItem(
             "nameupdate"
           );
@@ -478,7 +479,6 @@ export class AdultsService {
           //this.getBookmarks()
           setTimeout(() => {
             // this.getProgress()
-            // this.freescreens();
             this.getBookmark(userId)
           }, 1000);
 
@@ -521,6 +521,24 @@ export class AdultsService {
       })
 
   }
+
+
+  freescreens(){
+    console.log("freeScreens");
+    let x=[];
+    this.freeScreens().subscribe(res=>
+      {
+          let result = res.map(a => a.FreeScrs);
+          let arr;
+          result=result.forEach(element => {
+          x.push(element?.map(a=>a.ScrNo))
+          arr = Array.prototype.concat.apply([], x);
+          })
+          localStorage.setItem("freeScreens",JSON.stringify(arr))
+        }
+      )
+  }
+
 
   addUserRefPost(data: any): Observable<any> {
     return this.http.post(this.path + '/AddUserRefPost', data)

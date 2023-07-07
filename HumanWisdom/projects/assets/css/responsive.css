@@ -387,13 +387,20 @@
     .odiv::-webkit-scrollbar-track,
     .ghn::-webkit-scrollbar-track
     {
-        margin: 0 0 0 1rem;
+        /* margin: 0 0 0 1rem; */
         /* margin: 0 0 0 0.2rem; */
+        margin: 0 20px 0 20px;
     }
 
     .wediv::-webkit-scrollbar-track
     {
         margin: 0 0 0 0 !important;
+    }
+
+    .oxdiv::-webkit-scrollbar-track,
+    .oxdiv_ae::-webkit-scrollbar-track
+    {
+        margin: 0 0 0 20px !important;
     }
 
     .cp0_01
@@ -416,10 +423,10 @@
         margin: 0;
     }
 
-    .dpanel_01 .panel-body
+    /* .dpanel_01 .panel-body
     {
         margin-right: -10px;
-    }
+    } */
 
     .cp20px
     {
@@ -622,6 +629,11 @@
     .ad_search_icon
     {
         left: 7% !important;
+    }
+
+    .odiv_user > [class^="col-"]
+    {
+        width: 60%;
     }
 }
 
@@ -1031,4 +1043,12 @@
   {
     display: block;
   }
+}
+
+@media (min-width: 1281px)
+{
+    .box_v3_03 
+    {
+        height: 430px;
+    }
 }
