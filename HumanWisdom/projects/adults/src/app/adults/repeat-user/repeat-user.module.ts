@@ -8,11 +8,14 @@ import { RepeatUserPageRoutingModule } from './repeat-user-routing.module';
 
 import { RepeatUserPage } from './repeat-user.page';
 
+import { SharedModule } from '../../../../../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RepeatUserPageRoutingModule
   ],
   declarations: [RepeatUserPage]
