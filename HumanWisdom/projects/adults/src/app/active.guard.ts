@@ -24,7 +24,8 @@ export class ActiveGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    let freeScreens = JSON.parse(localStorage.getItem("freeScreens"))
+    let screens= localStorage.getItem("freeScreens");
+    let freeScreens = screens != 'undefined' ? JSON.parse(screens):null;
     let m: any = state.url;
     let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
