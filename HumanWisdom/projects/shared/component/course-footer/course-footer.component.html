@@ -1,18 +1,23 @@
 <!-- footer  -->
 <div  *ngIf="!shared"  class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray" [ngClass]="bg_cft">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_292d56" [ngClass]="bg_cft">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
         <a (click)="previous()">
-          <button type="button" class="btn w100 mb0 btn_prev">Previous</button>
+          <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff">
+            <i class="fa fa-angle-left fs_16px mr10px"></i>
+            Previous
+          </button>
         </a>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 p0">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0"></div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
         <a (click)="next()">
-          <button type="button" class="btn btn-default w100 mb0 btn_next">Next</button>
+          <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+            Next
+            <i class="fa fa-angle-right fs_16px ml10px"></i>
+          </button>
         </a>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       </div>
     </div>
   </div>
@@ -24,6 +29,7 @@
   <div class="row lh5rem">
     <div class="col-md-12 col-sm-12 col-xs-12 tcenter center_flex">
       <a (click)="routeDashboard()" class="width_inherit">
+        <i class="fa fa-angle-right fs_16px fc_e58d82"></i>
         <button type="button" class="btn btn-default iw100 mb0 btn_next">Continue to Dashboard</button>
       </a>
     </div>
