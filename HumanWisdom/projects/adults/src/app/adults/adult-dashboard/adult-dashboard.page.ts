@@ -7,7 +7,6 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-var window: any;
 @Component({
   selector: 'app-adult-dashboard',
   templateUrl: './adult-dashboard.page.html',
@@ -1039,7 +1038,7 @@ export class AdultDashboardPage implements OnInit {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    this.router.navigate([]).then(() => { window.open('/cookies-policy', '_blank'); });
+     window.open('/cookies-policy', '_blank');
   }
 
   socialLogin() {
