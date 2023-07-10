@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Have you noticed how we are always trying to change the people we are in a relationship with -for example getting someone to play a game we want, or change their opinion to agree with us? Just imagine if someone came along and tried to change you, through persuasion or criticism, how would you react? Well, others are going to be equally resistant and conflict will follow. . Once we become aware of  this, we can understand others who do this as well, and respond with intelligence
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
