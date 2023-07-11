@@ -32,30 +32,11 @@ export class RepeatUserPage implements OnInit {
   }
 
   getProgress() {
-    this.service.getPoints(this.userId)
+    this.service.GetLastVisitedScreen(this.userId)
       .subscribe(res => {
-        this.points = parseInt(res.PointsScored)
-        this.goToPage = res.LastScrNo
-        this.daysVisited = res.noOfDaysVisited
-        this.percentage = parseInt(res.overallPercentage)
-        this.resume = []
-        localStorage.setItem("overallPercentage", this.percentage)
-        //resume section
-        res.ModUserScrPc.filter(x => {
-          if (parseFloat(x.Percentage) < 100) {
-            if (x.ModuleId != 71 && x.ModuleId != 72 && x.ModuleId != 75) {
-              if (x.ModuleId < 10) {
-                x.ModuleId = "0" + x.ModuleId
-              }
-              x.imgPath = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
-              this.resume.push(x)
-              this.resume.sort((val1, val2) => { return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn) })
-            }
-          }
-        })
-
+        this.resume = res;
       });
-    }
+  }
 
     getBookmarks() {
       this.service.getBookmarks(this.userId)

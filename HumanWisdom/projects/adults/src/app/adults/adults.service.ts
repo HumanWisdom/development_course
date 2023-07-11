@@ -379,6 +379,10 @@ export class AdultsService {
 
   }
 
+  GetLastVisitedScreen(data: any): Observable<any> {
+    return this.http.get(this.path + `/GetLastVisitedScreen/${data}/${this.programId}`)
+  }
+
   activateModule(id) {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
     let pgResume;
