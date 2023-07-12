@@ -19,9 +19,11 @@ export class RepeatUserPage implements OnInit {
   public goToPage: any
   public points: any
   public daysVisited: any
+  public name;
 
   constructor(public service: AdultsService, public router: Router) {
     if (localStorage.getItem("isloggedin") === 'T') {
+      this.name = localStorage.getItem("name");
       this.userId = JSON.parse(localStorage.getItem("userId"))
       this.getProgress();
       this.getBookmarks();
@@ -48,9 +50,9 @@ export class RepeatUserPage implements OnInit {
     }
 
    routeResume() {
-    let r = this.resume[0];
+    let r = this.resume[0]['screenno'].substring(0, 2);
     localStorage.setItem("pageaction", 'next')
-    switch (r.ModuleId.toString()) {
+    switch (r.toString()) {
       case "07": {
         this.routeComparison(1)
         break
