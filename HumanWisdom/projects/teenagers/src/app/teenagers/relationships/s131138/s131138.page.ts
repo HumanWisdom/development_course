@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s131137',
-  templateUrl: './s131137.page.html',
-  styleUrls: ['./s131137.page.scss'],
+  selector: 'app-s131138',
+  templateUrl: './s131138.page.html',
+  styleUrls: ['./s131138.page.scss'],
 })
-export class S131137Page implements OnInit 
+export class S131138Page implements OnInit 
 {
 
   bg_tn = "bg_purple"
@@ -22,7 +22,7 @@ export class S131137Page implements OnInit
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("reflection")
-  screenNumber = 131137
+  screenNumber = 131138
   startTime: any
   endTime: any
   totalTime: any
@@ -30,7 +30,7 @@ export class S131137Page implements OnInit
   rId = 1567
   reflection: any
   reflectionA: any
-  r131137 = JSON.parse(sessionStorage.getItem("r131137"))
+  r131138 = JSON.parse(sessionStorage.getItem("r131138"))
   shared: any
   confirmed: any
 
@@ -97,9 +97,9 @@ export class S131137Page implements OnInit
     console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r131137", JSON.stringify(e))
-    this.r131137 = sessionStorage.getItem("r131137")
-    console.log(this.r131137)
+    sessionStorage.setItem("r131138", JSON.stringify(e))
+    this.r131138 = sessionStorage.getItem("r131138")
+    console.log(this.r131138)
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -108,7 +108,7 @@ export class S131137Page implements OnInit
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": this.r131137
+      "Resp": this.r131138
     }).subscribe(res => {},
       error => {
         console.log(error)
@@ -122,7 +122,7 @@ export class S131137Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/relationships/s131137'])
+    this.router.navigate(['/relationships/s131138'])
   }
 
   ngOnDestroy() 
