@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   templateUrl: './s131003.page.html',
   styleUrls: ['./s131003.page.scss'],
 })
-export class S131003Page implements OnInit,OnDestroy {
+export class S131003Page implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"

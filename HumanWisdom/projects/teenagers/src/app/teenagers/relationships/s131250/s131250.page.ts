@@ -12,7 +12,7 @@ export class S131250Page implements OnInit {
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
   bg = "purple_w11"
-  hint = ""
+  hint = "Perhaps listen without interrupting?"
 
   toc = "relationships/s131001"
   userId: any
@@ -25,7 +25,7 @@ export class S131250Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 424
+  rId = 1635
   reflection: any
   reflectionA: any
   r131250 = JSON.parse(sessionStorage.getItem("r131250"))
