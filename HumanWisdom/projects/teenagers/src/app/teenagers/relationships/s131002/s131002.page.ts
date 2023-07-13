@@ -97,13 +97,11 @@ export class S131002Page implements OnInit, OnDestroy {
     },
     error => { console.log(error) },
     () => {
-      //this.router.navigate(['/dealing-with-death/s234'])
     })
   }
 
   goNext() 
   {
-    // this.router.navigate(['/dealing-with-death/s2'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
