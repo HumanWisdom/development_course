@@ -34,7 +34,7 @@
                         Continue where you left
                       </h4>
                       <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff" *ngIf="resume.length !== 0">
-                        Module : {{resume[0]['Module']}} • Session #{{resume[0]['ModuleId']}} : {{resume[0]['Module']}}
+                        Module : {{resume[0]['ModuleName']}} • Session #{{resume[0]['screenno'].substring(0, 2)}} : {{resume[0]['SessionName']}}
                       </h4>
                       <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff" *ngIf="resume.length === 0">
                         Module : Stress • Session #6 : Avoiding Stress
