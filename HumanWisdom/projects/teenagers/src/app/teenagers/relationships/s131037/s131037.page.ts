@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common';
 
 @Component({
   selector: 'app-s131037',
@@ -15,7 +16,7 @@ export class S131037Page implements OnInit {
 
   title="What relationship do you have with your teachers?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+2.3.mp3'
+  audioLink=this.mediaAudio+'/relationships/audios/2.2.mp3'
 
   transcriptPage="relationships/s131037t"
   toc="relationships/s131001"

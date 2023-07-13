@@ -11,7 +11,7 @@ import { TeenagersService } from '../../teenagers.service';
 export class S131284Page implements OnInit {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w12"
+  bg="purple_w4"
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   userId:any
   userName:any

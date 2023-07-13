@@ -11,10 +11,10 @@ export class S131272Page implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w3"
+  bg="purple_w5"
 
   title="How can we forgive and forget our hurts?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+8.8.mp3'
 
   transcriptPage="relationships/s131272t"

@@ -14,7 +14,7 @@ export class S131226Page implements OnInit,OnDestroy
   bg_cft="bg_purple"
   bg="purple_w8"
   title="What relationship do we have with our body?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+7.3.mp3'
   transcriptPage="relationships/s131226t"
   toc="relationships/s131001"

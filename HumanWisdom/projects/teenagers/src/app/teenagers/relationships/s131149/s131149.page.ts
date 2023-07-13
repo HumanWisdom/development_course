@@ -15,7 +15,7 @@ export class S131149Page implements OnInit,OnDestroy
   bg="purple_w12"
   title="Our memories of feeling hurt"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+5.6.mp3'
+  audioLink=this.mediaAudio+'/relationships/audios/5.5.mp3'
   transcriptPage="relationships/s131149t"
   toc="relationships/s131001"
   bookmark=0

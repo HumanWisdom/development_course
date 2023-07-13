@@ -11,9 +11,9 @@ export class S131236Page implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w3"
+  bg="purple_w4"
   title="The importance of kindness"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+8.2.mp3'
 
   transcriptPage="relationships/s131236t"

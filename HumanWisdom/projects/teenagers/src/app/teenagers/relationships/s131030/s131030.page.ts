@@ -17,7 +17,7 @@ export class S131030Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/10"
-  link="/relationships/s47031"
+  link="/relationships/s131031"
   name="#2  Different types of relationships"
   progressImg=""
   toc="relationships/s131001"

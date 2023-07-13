@@ -12,9 +12,9 @@ export class S131281Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w9"
+  bg="purple_w2"
 
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/8.1.mp4'  
   title="Secrets of happy relationships"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/relationships/relationships_01.jpg"

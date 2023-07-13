@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common';
 
 @Component({
   selector: 'app-s131051',
@@ -14,7 +15,7 @@ export class S131051Page implements OnInit {
   bg="purple_w3"
   title="What relationship do we have with nature?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+2.5.mp3'
+  audioLink=this.mediaAudio+'/relationships/audios/2.4.mp3'
 
   transcriptPage="relationships/s131051t"
   toc="relationships/s131001"

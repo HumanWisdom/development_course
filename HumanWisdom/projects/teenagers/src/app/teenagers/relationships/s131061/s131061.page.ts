@@ -13,7 +13,7 @@ export class S131061Page implements OnInit
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w9"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+3.1.mp3'
   title="Introduction"  
   toc="/relationships/s131001"

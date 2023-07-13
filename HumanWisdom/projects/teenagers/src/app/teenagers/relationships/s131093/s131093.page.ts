@@ -14,7 +14,7 @@ export class S131093Page implements OnInit,OnDestroy
   bg_cft="bg_purple"
   bg="purple_w10"
   title="Pleasure and relationships"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+3.5.mp3'
   transcriptPage="relationships/s131093t"
   toc="relationships/s131001"

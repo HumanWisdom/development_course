@@ -11,7 +11,7 @@ export class S131278Page implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w5"
+  bg = "purple_w11"
   hint = "It could be someone wanting their own way, or pushing you to do something you did not want to do."
 
   toc = "relationships/s131001"

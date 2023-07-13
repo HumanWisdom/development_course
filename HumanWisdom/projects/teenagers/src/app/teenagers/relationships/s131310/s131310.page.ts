@@ -11,7 +11,7 @@ export class S131310Page implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w5"
+  bg = "purple_w3"
   hint = "You could take care of each other's feelings for a start.. And not add more fuel to the fire of pain that already exists"
 
   toc = "relationships/s131001"

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common';
 
 @Component({
   selector: 'app-s131032',
@@ -13,7 +14,7 @@ export class S131032Page implements OnInit {
   bg_cft="bg_purple"
   bg="purple_w1"
   title="Different relationships"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+2.1.mp3'
 
   transcriptPage="relationships/s131032t"

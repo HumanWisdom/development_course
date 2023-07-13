@@ -14,7 +14,7 @@ export class S131207Page implements OnInit,OnDestroy
   bg_cft="bg_purple"
   bg="purple_w11"
   title="Why are we critical of ourselves?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+7.2.mp3'
   transcriptPage="relationships/s131207t"
   toc="relationships/s131001"

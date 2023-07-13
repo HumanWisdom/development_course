@@ -11,10 +11,10 @@ export class S131321Page implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w5"
+  bg="purple_w9"
 
   title="Meeting sorrow without language"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+9.3.mp3'
 
   transcriptPage="relationships/s131321t"

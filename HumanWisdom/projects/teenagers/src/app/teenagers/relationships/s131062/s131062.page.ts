@@ -15,7 +15,7 @@ export class S131062Page implements OnInit,OnDestroy
   bg="purple_w10"
   title="Exploring conditioning"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+3.2.mp3'
+  audioLink=this.mediaAudio+'/relationships/audios/3.1.mp3'
   transcriptPage="relationships/s131062t"
   toc="relationships/s131001"
   bookmark=0

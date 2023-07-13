@@ -15,7 +15,7 @@ export class S131146Page implements OnInit,OnDestroy
   bg="purple_w9"
   title="Arguments"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+5.5.mp3'
+  audioLink=this.mediaAudio+'/relationships/audios/5.4.mp3'
   transcriptPage="relationships/s131146t"
   toc="relationships/s131001"
   bookmark=0

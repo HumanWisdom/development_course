@@ -11,7 +11,7 @@ export class S131267Page implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w5"
+  bg = "purple_w12"
   hint = "This is not easy to answer because we often think of ourselves as ‘self-less’, but seeing the fact awakens our own intelligence"
 
   toc = "relationships/s131001"

@@ -1,6 +1,6 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class S131014Page implements OnInit,OnDestroy {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w11"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/1.1.mp4'  
   title="Why are relationships important?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/relationships/relationships_01.jpg"
@@ -88,7 +88,7 @@ export class S131014Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s130015'])
+    this.router.navigate(['/relationships/s131015'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -106,7 +106,7 @@ export class S131014Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/relationships/s130013'])
+    this.router.navigate(['/relationships/s131013'])
   }
 
   ngOnDestroy()

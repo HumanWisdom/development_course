@@ -15,7 +15,7 @@ export class S131081Page implements OnInit,OnDestroy
   bg="purple_w6"
   title="How does self-interest affect relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+3.4.mp3'
+  audioLink=this.mediaAudio+'/relationships/audios/3.3.mp3'
   transcriptPage="relationships/s131081t"
   toc="relationships/s131001"
   bookmark=0

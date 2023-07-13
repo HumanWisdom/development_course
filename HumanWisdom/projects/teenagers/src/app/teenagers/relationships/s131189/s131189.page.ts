@@ -13,7 +13,7 @@ export class S131189Page implements OnInit,OnDestroy {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w7"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/6.2.mp4'  
   title="How do we respond when we feel hurt?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/relationships/relationships_02.jpg"
@@ -25,7 +25,7 @@ export class S131189Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any  
-  toc="/habit-addiction/s131001"
+  toc="/relationships/s131001"
   bookmark=0
   path=this.router.url
   avDuration:any
@@ -84,7 +84,7 @@ export class S131189Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/habit-addiction/s131190'])
+    this.router.navigate(['/relationships/s131190'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -102,7 +102,7 @@ export class S131189Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/habit-addiction/s131188'])
+    this.router.navigate(['/relationships/s131188'])
   }
 
   ngOnDestroy()

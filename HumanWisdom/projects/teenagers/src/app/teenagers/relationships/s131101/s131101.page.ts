@@ -15,7 +15,7 @@ export class S131101Page implements OnInit,OnDestroy
   bg="purple_w2"
   title="How does fear impact relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+3.6.mp3'
+  audioLink=this.mediaAudio+'/relationships/audios/3.4.mp3'
   transcriptPage="relationships/s131101t"
   toc="relationships/s131001"
   bookmark=0

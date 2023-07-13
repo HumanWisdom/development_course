@@ -1,6 +1,7 @@
 import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-s131003-audio',
@@ -13,7 +14,7 @@ export class S131003Page implements OnInit,OnDestroy {
   bg_cft="bg_purple"
   bg="purple_w1"
   title="Introduction"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05"]
   text=[

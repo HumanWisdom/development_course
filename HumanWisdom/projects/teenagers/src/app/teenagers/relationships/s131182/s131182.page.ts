@@ -14,7 +14,7 @@ export class S131182Page implements OnInit,OnDestroy
   bg_cft="bg_purple"
   bg="purple_w4"
   title="How do you respond to someone who is having a reaction?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+6.2.mp3'
   transcriptPage="relationships/s131182t"
   toc="relationships/s131001"

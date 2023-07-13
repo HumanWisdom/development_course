@@ -11,7 +11,7 @@ export class S131255tPage implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w2"
+  bg="purple_w4"
 
   bookmark=0
   path=this.router.url
