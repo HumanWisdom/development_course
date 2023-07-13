@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s131037',
-  templateUrl: './s131037.page.html',
-  styleUrls: ['./s131037.page.scss'],
+  selector: 'app-s131037t',
+  templateUrl: './s131037t.page.html',
+  styleUrls: ['./s131037t.page.scss'],
 })
-export class S131037Page implements OnInit {
+export class S131037tPage implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"

@@ -19,7 +19,7 @@ export class S131175Page implements OnInit
   progressPercent:any
   progressText="5/10"
   link="/relationships/s131176"
-  nname="#6  Feeling hurt. Responding with intelligence."
+  name="#6  Feeling hurt. Responding with intelligence."
   progressImg=""
   toc="relationships/s131001"
 
