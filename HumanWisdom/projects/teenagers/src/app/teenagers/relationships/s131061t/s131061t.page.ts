@@ -10,26 +10,23 @@ import { Location } from '@angular/common';
 })
 export class S131061tPage implements OnInit 
 {
+
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_w9"
-
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/relationships+3.1.mp3'
-  title="Introduction"  
+  bookmark=0
+  path=this.router.url
+  audioPage="/relationships/s131061"
   toc="/relationships/s131001"
-  transcriptPage="relationships/131061t"
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
+  userId:any
   moduleId=localStorage.getItem("moduleId")
   screenNumber=131061
   startTime:any
   endTime:any
-  totalTime:any
-  bookmark=0
-  path=this.router.url
-  avDuration:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  avDuration=localStorage.getItem("avDuration131061")
+  totalTime=localStorage.getItem("totalTime131061")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers"
   
@@ -51,25 +48,12 @@ export class S131061tPage implements OnInit
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
-    this.startTime = Date.now();
-    this.startTime = Date.now();
-    this.createScreen()
-    if(JSON.parse(sessionStorage.getItem("bookmark131061t"))==0)
-      this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark131061t"))==1)
+    if(JSON.parse(sessionStorage.getItem("bookmark131061"))==0)
+    this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark131061"))==1)
       this.bookmark=1
   }
- 
-  createScreen()
-  {
-    this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
-  }
- 
+
   receiveBookmark(e)
   {
     console.log(e)
@@ -77,22 +61,12 @@ export class S131061tPage implements OnInit
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark131061t",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark131061",JSON.stringify(this.bookmark))
   }
- 
-  receiveAvDuration(e)
-  {
-    console.log(e)
-    this.avDuration=e
-  }
- 
+
   submitProgress()
   {
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/relationships/s131062'])
-    if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -101,23 +75,12 @@ export class S131061tPage implements OnInit
       "screenType":this.screenType,
       "timeSpent":this.totalTime,
       "avDuration":this.avDuration
-    }).subscribe(res=>
-      {
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      })
+    }).subscribe(res=>{})
   }
 
   prev()
   {
-    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/relationships/s131060'])
   }
 
-  ngOnDestroy()
-  {
-    localStorage.setItem("totalTime131061t",this.totalTime)
-    localStorage.setItem("avDuration131061t",this.avDuration)
-  }
-  
 }

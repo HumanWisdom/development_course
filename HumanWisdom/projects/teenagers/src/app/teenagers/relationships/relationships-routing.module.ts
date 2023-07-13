@@ -183,7 +183,7 @@ import { S131158Page } from './s131158/s131158.page'; 
 import { S131159Page } from './s131159/s131159.page';  
 import { S131160Page } from './s131160/s131160.page';  
 import { S131161Page } from './s131161/s131161.page';  
-import { S131162Page } from './s131162/s131162.page';  
+import { S131162Page } from './s131162/s131162.page';
 import { S131163Page } from './s131163/s131163.page';  
 import { S131164Page } from './s131164/s131164.page';  
 import { S131165Page } from './s131165/s131165.page';  
@@ -590,6 +590,10 @@ const routes: Routes = [
   {
     path: 's131046',   
     component: S131046Page,
+  },
+  {
+    path: 's131047',   
+    component: S131047Page,
   },
   {
     path: 's131048',   
@@ -1461,6 +1465,10 @@ const routes: Routes = [
   {
     path: 's131246',   
     component: S131246Page,
+  },
+  {
+    path: 's131247',   
+    component: S131247Page,
   },
   {
     path: 's131248',   

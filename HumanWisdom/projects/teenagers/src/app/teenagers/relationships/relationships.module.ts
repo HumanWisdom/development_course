@@ -75,6 +75,7 @@ import { S131058Page } from './s131058/s131058.page'; 
 import { S131059Page } from './s131059/s131059.page';  
 import { S131060Page } from './s131060/s131060.page';  
 import { S131061Page } from './s131061/s131061.page';  
+import { S131061tPage } from './s131061t/s131061t.page';
 import { S131062Page } from './s131062/s131062.page';  
 import { S131062tPage } from './s131062t/s131062t.page';
 import { S131063Page } from './s131063/s131063.page';  
@@ -447,6 +448,7 @@ import { TeenagersService } from '../teenagers.service';
     S131059Page ,
     S131060Page ,
     S131061Page ,
+    S131061tPage ,
     S131062Page ,
     S131062tPage ,
     S131063Page ,
@@ -649,6 +651,7 @@ import { TeenagersService } from '../teenagers.service';
     S131244Page ,
     S131245Page ,
     S131246Page ,
+    S131247Page ,
     S131248Page ,
     S131249Page ,
     S131250Page ,
