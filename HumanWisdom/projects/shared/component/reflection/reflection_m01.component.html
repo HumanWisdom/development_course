@@ -1,6 +1,6 @@
 <!-- top navigation - with hint -->
 <div *ngIf="hint" class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01 bg_292d56" [ngClass]="bg_tn">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01" [ngClass]="bg_tn">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 flex_ai">
       <div class="p0 mr20px">
         <a class="" (click)="goToDash()">
@@ -43,7 +43,7 @@
 
 <!-- top navigation - without hint -->
 <div *ngIf="!hint" class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01 bg_292d56" [ngClass]="bg_tn">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module_01" [ngClass]="bg_tn">
     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 flex_ai">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
         <a class="" (click)="goToDash()">
@@ -97,7 +97,7 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
         <div [ngClass]="[pageaction === 'next' ? 'x_panel p0' : pageaction === 'prev' ? 'x_panel p0' : 'x_panel p0' ]">
           <div class="x_content p0">
             <form>
@@ -253,7 +253,7 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<!-- <div class="mfooter">
+<div class="mfooter">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex fctray" [ngClass]="bg_cft">
       <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">
@@ -266,7 +266,5 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 <!-- /footer -->
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>
