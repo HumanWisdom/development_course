@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s131250',
@@ -111,11 +112,11 @@ export class S131250Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/relationships/s131250'])
+        this.router.navigate(['/relationships/s131251'])
 
       },
       () => {
-        this.router.navigate(['/relationships/s131250'])
+        this.router.navigate(['/relationships/s131251'])
       })
   }
 

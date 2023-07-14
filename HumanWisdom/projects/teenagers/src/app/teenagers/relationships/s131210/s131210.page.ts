@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s131222',
-  templateUrl: './s131222.page.html',
-  styleUrls: ['./s131222.page.scss'],
+  selector: 'app-s131210',
+  templateUrl: './s131210.page.html',
+  styleUrls: ['./s131210.page.scss'],
 })
-export class S131222Page implements OnInit,OnDestroy {
+export class S131210Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
@@ -18,7 +18,7 @@ export class S131222Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=131222
+  screenNumber=131210
   startTime:any
   endTime:any
   totalTime:any
@@ -51,9 +51,9 @@ export class S131222Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark131222"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark131210"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark131222"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark131210"))==1)
       this.bookmark=1
   }
 
@@ -64,7 +64,7 @@ export class S131222Page implements OnInit,OnDestroy {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark131222",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark131210",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -83,7 +83,7 @@ export class S131222Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s131223'])
+    this.router.navigate(['/relationships/s131211'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,7 +104,7 @@ export class S131222Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/relationships/s131221'])
+    this.router.navigate(['/relationships/s131209'])
   }
 
   ngOnDestroy()

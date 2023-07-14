@@ -168,6 +168,7 @@ import { S131144tPage } from './s131144t/s131144t.page'; 
 import { S131145Page } from './s131145/s131145.page';  
 import { S131146Page } from './s131146/s131146.page'; 
 import { S131146tPage } from './s131146t/s131146t.page';
+import { S131147Page } from './s131147/s131147.page'; 
 import { S131148Page } from './s131148/s131148.page';  
 import { S131149Page } from './s131149/s131149.page';  
 import { S131149tPage } from './s131149t/s131149t.page';
@@ -235,7 +236,8 @@ import { S131206Page } from './s131206/s131206.page'; 
 import { S131207Page } from './s131207/s131207.page';
 import { S131207tPage } from './s131207t/s131207t.page';
 import { S131208Page } from './s131208/s131208.page';  
-import { S131209Page } from './s131209/s131209.page';  
+import { S131209Page } from './s131209/s131209.page'; 
+import { S131210Page } from './s131210/s131210.page'; 
 import { S131211Page } from './s131211/s131211.page';  
 import { S131212Page } from './s131212/s131212.page';  
 import { S131213Page } from './s131213/s131213.page'; 
@@ -1047,6 +1049,10 @@ const routes: Routes = [
     component: S131146tPage,
   }, 
   {
+    path: 's131147',   
+    component: S131147Page,
+  }, 
+  {
     path: 's131148',   
     component: S131148Page,
   },  
@@ -1319,6 +1325,10 @@ const routes: Routes = [
     component: S131209Page,
   },
   {
+    path: 's131210',   
+    component: S131210Page,
+  },
+  {
     path: 's131211',   
     component: S131211Page,
   },
@@ -1399,8 +1409,16 @@ const routes: Routes = [
     component: S131229Page,
   },
   {
+    path: 's131230',   
+    component: S131230Page,
+  },
+  {
     path: 's131231',   
     component: S131231Page,
+  },
+  {
+    path: 's131232',   
+    component: S131232Page,
   },
   {
     path: 's131233',   

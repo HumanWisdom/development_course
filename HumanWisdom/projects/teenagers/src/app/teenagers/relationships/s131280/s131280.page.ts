@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s131280',

@@ -215,6 +215,28 @@ export class S131160Page implements OnInit
         base_color
       );
       // /to be copied
+
+      // to be copied
+      $("#svg_form_time rect").css("fill", active_color);
+      $("#svg_form_time circle").css("fill", active_color);
+      $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+      var circle_child = child + 1;
+      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+        "fill",
+        base_color
+      );
+      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+        "fill",
+        base_color
+      );
+      // /to be copied
       
        // to be copied
        $("#svg_form_time rect").css("fill", active_color);

@@ -12,7 +12,7 @@ export class S131178Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_12"
+  bg="purple_w12"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/6.1.mp4'  
   title="Why do we get hurt?"
