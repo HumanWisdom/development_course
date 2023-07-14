@@ -9,29 +9,21 @@ import {Location } from '@angular/common'
 })
 export class S131327Page implements OnInit {
   
-  toc="relationships/s47000"
-  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/love.jpg"
-  
-  // bg=""
-  // moduleLink="/adults/love/"
-  // moduleName=" Love"
-  // sectionName= "Transform your life - I";
-  // moduleId=62
-
+  toc="relationships/s131001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/53.png"
   
   bg=""
   moduleLink="/communication"
   moduleName="02. Communication"
   sectionName= "Transform your life - II";
-  moduleId=53
+  moduleId=132
 
   moduleList: any = [
     {
       name: 'Communication',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/53.png',
       link: '/communication',
-      id: 53
+      id: 132
     },
     {
       name: 'Emotional Needs',
