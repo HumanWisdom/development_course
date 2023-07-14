@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Most of us are sensitive to criticism and this can cause conflict. If people have been hurt or severely criticised before, they may be sensitive to even implied criticism. When we come across something that is different to what we regard as ‘normal’, which is our conditioning, we can be automatically critical without realising it, and if we are not watchful this can become a habit and undermine our relationship. If we want people to change, criticism is probably the least effective way of doing that. We explore this more fully in a separate module on criticism. How to give and receive criticism effectively is an art that requires great insight and intelligence.
+            <br>
+            We can also be very critical of ourselves, because we somehow do not match our own expectations that we have of ourselves.
+          </p> 
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

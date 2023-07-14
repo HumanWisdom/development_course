@@ -1,0 +1,15 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      To develop a healthy relationship with ourselves we need a vibrant self-awareness and an understanding of the many hidden patterns of thinking that can come in the way. This allows us to live in harmony with who we are and look after ourselves.
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
