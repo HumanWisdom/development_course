@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+         <p>
+          When we are speaking, it is often an automatic process. We hear something, compare it to the database of our memory and then respond without thinking. We think we are in control, but are we? You can see this when people say the same thing in the same context each time - like their favourite golfing story, or when having an argument.
+         </p>
+         <p>
+          The brain automates this process, trying to make our lives easier. It is useful in some cases, but in many others, it does not allow space for our intelligence to step in and consider what may be the most appropriate response in that situation. It is worth therefore asking ourselves if we are speaking from our intelligence or from our unconscious conditioning. The question itself awakens intelligence.
+         </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

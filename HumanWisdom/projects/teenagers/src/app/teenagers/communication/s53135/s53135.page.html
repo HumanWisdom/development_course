@@ -1,0 +1,22 @@
+<app-course-header [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-kta-prevnext [bg]="bg">
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      There is so much to learn about ourselves just from noticing what happens when we speak. 
+    </h1>
+     
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      This understanding allows us to live with wisdom, be genuine, and speak with compassion and intelligence. It also helps us pick the situations where it's wise to say nothing at all.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>  
+</app-kta-prevnext>
+
+<!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+

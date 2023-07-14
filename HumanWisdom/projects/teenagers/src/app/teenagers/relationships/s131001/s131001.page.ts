@@ -20,7 +20,6 @@ export class S131001Page implements OnInit,OnDestroy {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId:any
-  //moduleId=localStorage.getItem("moduleId")
   screenNumber="131001"
   startTime:any
   endTime:any
