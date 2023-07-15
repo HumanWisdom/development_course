@@ -1,0 +1,15 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      Everything in the universe has a life-span. Stars do, we do, and so do our relationships. People will come and go from our lives. Accepting this allows us to live in peace.
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
