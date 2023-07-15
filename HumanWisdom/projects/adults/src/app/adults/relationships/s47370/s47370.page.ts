@@ -44,7 +44,7 @@ export class S47370Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/adults/relationships/s47371'])
+    this.router.navigate(['/adults/relationships/s47370p1'])
   }
   prev(){
     this.router.navigate(['/adults/relationships/s47369'])
