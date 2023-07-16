@@ -138,9 +138,9 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
-    if (!this.router.url.includes('/log-in')) {
-      window.history.pushState('', '', '/log-in');
-    }
+    // if (!this.router.url.includes('/log-in')) {
+    //   window.history.pushState('', '', '/log-in');
+    // }
 
   }
   forbiddenNameValidator(
