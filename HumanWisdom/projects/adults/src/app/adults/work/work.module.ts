@@ -103,6 +103,9 @@ import { S58084Page } from './s58084/s58084.page'; 
 import { S58085Page } from './s58085/s58085.page';  
 import { S58086Page } from './s58086/s58086.page';  
 import { S58087Page } from './s58087/s58087.page';  
+import { S58087p1Page } from './s58087p1/s58087p1.page'; 
+import { S58087p2Page } from './s58087p2/s58087p2.page'; 
+import { S58087p3Page } from './s58087p3/s58087p3.page';  
 import { S58088Page } from './s58088/s58088.page';  
 import { S58081p1Page } from './s58081p1/s58081p1.page';    
 import { S58081p2Page } from './s58081p2/s58081p2.page';    
@@ -212,6 +215,9 @@ import { WorkRoutingModule } from './work-routing.module';
     S58085Page ,
     S58086Page ,
     S58087Page ,
+    S58087p1Page ,
+    S58087p2Page ,
+    S58087p3Page ,
     S58088Page , 
     S58081p1Page,   
     S58081p2Page,   
