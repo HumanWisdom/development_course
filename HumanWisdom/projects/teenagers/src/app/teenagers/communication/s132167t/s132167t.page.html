@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored in the section on how the mind works, the many hidden patterns of thinking that operate in the background, and how they impact our lives in various ways. In this session we will explore how they affect our ability to listen, speak and understand others. It's a two way process of learning. Understanding conditioning for example, may make you a better listener, but listening with depth also allows you to learn about your conditioning operating in the background. Either way, this learning helps us along our journey to wisdom. Let's get started.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

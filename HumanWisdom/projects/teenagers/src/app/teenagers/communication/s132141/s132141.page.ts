@@ -3,21 +3,22 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s132018',
-  templateUrl: './s132018.page.html',
-  styleUrls: ['./s132018.page.scss'],
+  selector: 'app-s132141',
+  templateUrl: './s132141.page.html',
+  styleUrls: ['./s132141.page.scss'],
 })
-export class S132018Page implements OnInit {
+export class S132141Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w8"
   
-  title="Have relationships with depth"
+  title="Introduction"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/communication/audios/communication+1.2.mp3'
+  audioLink=this.mediaAudio+'/communication/audios/communication+4.1.mp3'
 
-  transcriptPage="communication/s132018t"
+
+  transcriptPage="communication/s132141t"
   toc="communication/s132001"
   bookmark=0
   path=this.router.url
@@ -26,7 +27,7 @@ export class S132018Page implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=132018
+  screenNumber=132141
   startTime:any
   endTime:any
   totalTime:any
@@ -47,9 +48,9 @@ export class S132018Page implements OnInit {
      
         this.startTime = Date.now();
         this.createScreen()
-        if(JSON.parse(sessionStorage.getItem("bookmark132018"))==0)
+        if(JSON.parse(sessionStorage.getItem("bookmark132141"))==0)
           this.bookmark=0
-        else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132018"))==1)
+        else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132141"))==1)
           this.bookmark=1
      
       }
@@ -75,7 +76,7 @@ export class S132018Page implements OnInit {
         this.bookmark=1
         else
           this.bookmark=0
-        sessionStorage.setItem("bookmark132018",JSON.stringify(this.bookmark))
+        sessionStorage.setItem("bookmark132141",JSON.stringify(this.bookmark))
       }
      
       receiveAvDuration(e){
@@ -89,7 +90,7 @@ export class S132018Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/relationships/s132019'])
+        this.router.navigate(['/relationships/s132142'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -110,13 +111,13 @@ export class S132018Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/relationships/s132017'])
+        this.router.navigate(['/relationships/s132140'])
      
      
       }
       ngOnDestroy(){
-        localStorage.setItem("totalTime132018",this.totalTime)
-        localStorage.setItem("avDuration132018",this.avDuration)
+        localStorage.setItem("totalTime132141",this.totalTime)
+        localStorage.setItem("avDuration132141",this.avDuration)
       }
     }
     
