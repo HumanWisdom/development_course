@@ -5,7 +5,7 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
         <div [ngClass]="[pageaction === 'next' ? 'x_panel p0' : pageaction === 'prev' ? 'x_panel p0' : 'x_panel p0' ]">
           <div class="x_content p0">
             <ng-content></ng-content>
@@ -15,7 +15,7 @@
           <div class="x_content p0"> -->
         <form class="p0">
 
-          <h1 class="txt1 tcenter">
+          <h1 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
             {{title}}
           </h1>
 
@@ -30,7 +30,7 @@
           <!-- angular audio player plugin  -->
           <!-- <ngx-circular-player></ngx-circular-player>   -->
           <div class="row tcenter">
-            <div class="col-md-12 col-sm-12 col-xs-12 center_flex cpt10px pb20px">
+            <div class="col-md-12 col-sm-12 col-xs-12 center_flex mtb30px">
               <audio id="aud1" controls controlsList="nodownload" #audio>
                 <source [src]="audioLink" type="audio/mpeg">
               </audio>
