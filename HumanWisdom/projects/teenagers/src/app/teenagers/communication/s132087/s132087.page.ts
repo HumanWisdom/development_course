@@ -13,7 +13,7 @@ export class S132087Page implements OnInit {
   bg_cft="bg_blue"
   bg="blue_w12"
   title="An example of deep listening"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+2.4.mp3'
 
   transcriptPage="communication/s132087t"

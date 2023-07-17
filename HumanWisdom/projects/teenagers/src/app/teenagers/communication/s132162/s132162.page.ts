@@ -14,7 +14,7 @@ export class S132162Page implements OnInit {
   bg="blue_w9"
   
   title="Understanding ourselves leads to wisdom"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+4.4.mp3'
 
   transcriptPage="communication/s132162t"

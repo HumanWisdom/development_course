@@ -14,7 +14,7 @@ export class S132082Page implements OnInit {
   bg="blue_w7"
 
   title="Listening with generosity"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+2.3.mp3'
 
   transcriptPage="communication/s132082t"

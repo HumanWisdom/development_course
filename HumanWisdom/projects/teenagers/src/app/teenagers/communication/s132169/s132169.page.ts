@@ -14,7 +14,7 @@ export class S132169Page implements OnInit {
   bg="blue_w2"
   
   title="#1 Impact of our conditioning"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+5.2.mp3'
   imageLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/diagram/communication/diagram_01.svg"
 

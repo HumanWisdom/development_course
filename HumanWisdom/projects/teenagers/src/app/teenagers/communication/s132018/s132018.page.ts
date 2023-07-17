@@ -14,7 +14,7 @@ export class S132018Page implements OnInit {
   bg="blue_w8"
   
   title="Have relationships with depth"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+1.2.mp3'
 
   transcriptPage="communication/s132018t"

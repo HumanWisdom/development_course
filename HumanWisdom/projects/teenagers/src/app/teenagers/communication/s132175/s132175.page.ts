@@ -14,7 +14,7 @@ export class S132175Page implements OnInit {
   bg="blue_w8"
   
   title="#3 How does fear impact communication?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+5.4.mp3'
 
   transcriptPage="communication/s132175t"
