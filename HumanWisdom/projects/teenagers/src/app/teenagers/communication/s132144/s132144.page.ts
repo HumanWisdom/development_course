@@ -14,7 +14,7 @@ export class S132144Page implements OnInit {
   bg="blue_w11"
   
   title="Conditioning is a barrier to understanding"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+4.2.mp3'
 
 

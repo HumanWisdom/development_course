@@ -14,7 +14,7 @@ export class S132173Page implements OnInit {
   bg="blue_w6"
   
   title="#2 Impact of Comparison"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+5.3.mp3'
 
   transcriptPage="communication/s132173t"

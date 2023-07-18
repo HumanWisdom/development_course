@@ -14,7 +14,7 @@ export class S132167Page implements OnInit {
   bg="blue_w12"
   
   title="How do our hidden thought patterns impact communication?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+5.1.mp3'
 
   transcriptPage="communication/s132167t"

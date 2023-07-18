@@ -13,7 +13,7 @@ export class S132121Page implements OnInit {
   bg_cft="bg_blue"
   bg="blue_w9"
   title="Speaking the truth in the face of injustice"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+3.6.mp3'
 
   transcriptPage="communication/s132121t"

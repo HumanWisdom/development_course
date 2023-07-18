@@ -13,7 +13,7 @@ export class S132098Page implements OnInit {
   bg_cft="bg_blue"
   bg="blue_w4"
   title="The urge to speak"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+3.2.mp3'
 
   transcriptPage="communication/s132098t"

@@ -14,7 +14,7 @@ export class S132156Page implements OnInit {
   bg="blue_w3"
   
   title="Understanding makes forgiveness easier"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+4.3.mp3'
 
   transcriptPage="communication/s132156t"

@@ -14,7 +14,7 @@ export class S132038Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w7"
   title="An example"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/communication/audios/communication+1.5.mp3'
   transcriptPage="communication/s132038t"
   toc="communication/s132001"
