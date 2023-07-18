@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          We have explored the different levels of communication and how peak communication or communication with depth involves being able to share your feelings about problems in the relationship as well. It is so important in all close relationships to clear the air, and stop problems driving people apart. If we have these difficult conversations with people we are close to, it can bring us together, because intimacy comes from depth of communication and this is what can make relationships special. We just need to overcome our fear to do this but it is well worth it in the long term
+        </h3>                  
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
