@@ -98,7 +98,10 @@ import { S58083Page } from './s58083/s58083.page'; 
 import { S58084Page } from './s58084/s58084.page';  
 import { S58085Page } from './s58085/s58085.page';  
 import { S58086Page } from './s58086/s58086.page';  
-import { S58087Page } from './s58087/s58087.page';  
+import { S58087Page } from './s58087/s58087.page'; 
+import { S58087p1Page } from './s58087p1/s58087p1.page'; 
+import { S58087p2Page } from './s58087p2/s58087p2.page'; 
+import { S58087p3Page } from './s58087p3/s58087p3.page';  
 import { S58088Page } from './s58088/s58088.page';  
 import { S58081p1Page } from './s58081p1/s58081p1.page';    
 import { S58081p2Page } from './s58081p2/s58081p2.page';    
@@ -598,6 +601,21 @@ const routes: Routes = [
     component: S58087Page,
   },
   {
+    path: 's58087p1',   
+    canActivate:[ActiveGuard],  
+    component: S58087p1Page,
+  },
+  {
+    path: 's58087p2',   
+    canActivate:[ActiveGuard],  
+    component: S58087p2Page,
+  },
+  {
+    path: 's58087p3',   
+    canActivate:[ActiveGuard],  
+    component: S58087p3Page,
+  },
+  {
     path: 's58088',   
     canActivate:[ActiveGuard],  
     component: S58088Page,
@@ -632,6 +650,7 @@ const routes: Routes = [
     canActivate:[ActiveGuard],  
     component: S58081p6Page,
   },
+  
 
 ];
 

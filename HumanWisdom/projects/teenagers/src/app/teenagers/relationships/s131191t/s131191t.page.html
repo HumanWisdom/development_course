@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our first instinct when we get hurt in any situation is either want to withdraw or get angry or want to retaliate in some way. It’s an instinctive way our mind reacts thinking its in danger, but it may not always be the most intelligent response. The other person may not know we have been hurt and respond to our coolness by withdrawing their own affection, or get upset. If we get angry, then a chain reaction can begin, while the issue we got angry about remains unresolved.
+          This may be one reason why relationships break up, because at that moment we feel hurt we may feel like leaving. How can we respond to this with intelligence?          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
