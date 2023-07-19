@@ -10,7 +10,7 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mt80px mb15px fw_400 fs_24px lh_140p fc_ffffff">
-                  Welcome back, Nidhi!
+                  Welcome back, {{name}}!
                 </h4>
               </div>
             </div>
@@ -27,21 +27,24 @@
 
               <a>
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex" (click)="routeResume()">
+
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
                         Continue where you left
                       </h4>
-                      <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff">
+                      <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff" *ngIf="resume.length !== 0">
+                        Module : {{resume[0]['ModuleName']}} • Session #{{resume[0]['SessionCnt']}} : {{resume[0]['SessionName']}}
+                      </h4>
+                      <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff" *ngIf="resume.length === 0">
                         Module : Stress • Session #6 : Avoiding Stress
                       </h4>
                     </div>
-    
+
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                       <i class="fa fa-angle-right"></i>
                     </div>
-    
+
                   </div>
                 </div>
               </a>
@@ -49,7 +52,7 @@
               <a>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    
+
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
                         Feel better now
@@ -58,11 +61,11 @@
                         Quick tips to help you feel better right now
                       </h4>
                     </div>
-    
+
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                       <i class="fa fa-angle-right"></i>
                     </div>
-    
+
                   </div>
                 </div>
               </a>
@@ -70,7 +73,7 @@
               <a>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    
+
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
                         Select a topic to explore
@@ -79,11 +82,11 @@
                         Select from 8 in-depth topics covering every aspect of life
                       </h4>
                     </div>
-    
+
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                       <i class="fa fa-angle-right"></i>
                     </div>
-    
+
                   </div>
                 </div>
               </a>
@@ -91,7 +94,7 @@
               <a>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    
+
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
                         PATHWAY
@@ -100,11 +103,11 @@
                         A 5-step guided program to flourish in life
                       </h4>
                     </div>
-    
+
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                       <i class="fa fa-angle-right"></i>
                     </div>
-    
+
                   </div>
                 </div>
               </a>
@@ -112,7 +115,7 @@
               <a>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    
+
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
                         Find inspiration
@@ -121,11 +124,11 @@
                         Life stories, blogs, podcasts and a lot more
                       </h4>
                     </div>
-    
+
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                       <i class="fa fa-angle-right"></i>
                     </div>
-    
+
                   </div>
                 </div>
               </a>

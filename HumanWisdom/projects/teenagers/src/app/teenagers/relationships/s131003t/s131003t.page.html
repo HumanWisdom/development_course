@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Welcome to this module on relationships. It is part of the 5th circle of wisdom, where we apply whatever we have learned in the other circles to the subject of relationships.
+          To be human is to be in a relationship and it is a skill we can learn like any other. We are social beings. Throughout history human beings have gathered together. Relationships can be a source of great happiness and are essential for our health, but conversely can also be a source of great misery. In this module we are going to explore the subject in depth. A deeper understanding of the subject can allow us to have successful relationships and avoid the many problems they can cause. Successful relationships allow us to be happy and do much better at work.       
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

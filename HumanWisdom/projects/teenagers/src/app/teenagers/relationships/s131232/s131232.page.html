@@ -1,0 +1,12 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-image-text base="relationships_base1" overlay="relationships_overlay1_mobile" class="mshowhide">
+  <form>
+    <h1 class="txt1">
+      The art of successful relationships is perhaps the most difficult,and the most rewarding, of all the things to learn in life.
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-image-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

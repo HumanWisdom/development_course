@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">        
+          When two people get together and begin a relationship they feel wonderful and say they love each other. We have explored why, despite our best intentions, relationships do not work out. It's mainly linked to the way our mind works. When a relationship breaks down, for whatever reason, this love can turn to hate very quickly. Was it love in the first place? Or when I said ‘I love you’, did I really mean ‘I love the way you make me feel?’ Though I said I loved YOU, it was all about me and how I was feeling all along. If we really loved people would we ever hurt them, even if they said they wanted to leave us?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -10485,9 +10485,9 @@ body,
   color: white;
   /* border: 10px solid #94C48E; */
   border-radius: 50%;
-  background: #fff;
+  background: #E58D82;
   cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(#5a99d4, .5);
+  box-shadow: 0 0 0 0 rgba(229,141,130,0.5);
   animation: pulse 2s infinite;
 }
 .pulse-button:hover {
@@ -10498,16 +10498,19 @@ body,
   0% {
     transform: scale(.9);
     /* box-shadow: 0 0 0 30px rgba(204,169,44, 0.4); */
-    box-shadow: 0 0 0 30px rgba(148,196,142, 0.4);
+    /* box-shadow: 0 0 0 30px rgba(148,196,142, 0.4); */
+    box-shadow: 0 0 0 30px rgba(229,141,130, 0.4);
   }
   70% {
     transform: scale(1);
     /* box-shadow: 0 0 0 500px rgba(#5a99d4, 0); */
-    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    /* box-shadow: 0 0 0 10px rgba(204,169,44, 0); */
+    box-shadow: 0 0 0 30px rgba(229,141,130, 0);
   }
     100% {
     transform: scale(.9);
-    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    /* box-shadow: 0 0 0 0 rgba(204,169,44, 0); */
+    box-shadow: 0 0 0 30px rgba(229,141,130, 0);
   }
 }
 /* /pulse btn */
@@ -11556,7 +11559,7 @@ margin-top:0;
   margin: 0;
   transform: translate(0%, 5%);
   text-transform: capitalize;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -11822,7 +11825,7 @@ margin-top:0;
 .footer_index p
 {
   padding-top: .5rem;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -11854,13 +11857,13 @@ margin-top:0;
 
 .rnormal
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-weight: 400;
 }
 
 .btn_back_white
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -11871,7 +11874,7 @@ margin-top:0;
 
 .btn_back_grey
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -11882,7 +11885,7 @@ margin-top:0;
 
 .module_title
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   /* font-weight: normal; */
   font-weight: 300;
@@ -11898,32 +11901,29 @@ h1.module_title
 
 .txt_comparison
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 300 !important;
-  font-size: 18px !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
   line-height: 140%;
-  color: #5D5D5D;
-
+  color: #ffffff;
+  margin: 0;
 }
 
 .btn_begin_here
 {
-  /* width: 343px; */
   width: 100%;
-  height: 60px;
-  background: #63A858;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  /* letter-spacing: 0.1rem; */
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
+  height: 32px;
+  background: #ffffff;
+  box-shadow: unset;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
   text-align: center;
-  color: #FFFFFF;
+  color: #E58D82;
   border: 0;
+  margin: 40px 0 0 0;
 }
 
 .btn_begin_here_orange
@@ -11931,7 +11931,7 @@ h1.module_title
   background: #FFC455;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -11944,22 +11944,23 @@ h1.module_title
 
 .title_content
 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal !important;
+  /* font-family: Roboto; */
+  /* font-style: normal; */
+  font-weight: 400 !important;
   font-size: 12px !important;
-  line-height: 14px;
-  color: #5D5D5D;
-  opacity: 0.75;
+  line-height: 140%;
+  color: #ffffff;
+  /* opacity: 0.75; */
+  margin-top: 40px;
 }
 
 .session_no,
 .session_time
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal !important;
-  font-size: 10px !important;
+  font-size: 12px !important;
   line-height: 12px;
   display: flex;
   align-items: center;
@@ -11978,7 +11979,7 @@ h1.module_title
 
 .session_name
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500 !important;
   font-size: 15px !important;
@@ -11997,9 +11998,9 @@ h1.module_title
 
 .comparison
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   font-size: 15px !important;
   line-height: 130%;
   /* or 19px */
@@ -12009,9 +12010,9 @@ h1.module_title
 
 .session
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
-  font-weight: normal !important;
+  font-weight: 400 !important;
   font-size: 12px !important;
   line-height: 130%;
   /* or 16px */
@@ -12021,10 +12022,10 @@ h1.module_title
 
 .session_title
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 300;
-  font-size: 51px;
+  font-weight: 400;
+  font-size: 48px;
   line-height: 130%;
   color: #FFFFFF;
   /* text-transform: capitalize; */
@@ -12036,7 +12037,7 @@ h1.module_title
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   /* Button Text */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -12058,7 +12059,7 @@ h1.module_title
 
 .btn_prev
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   /* font-size: 12px; */
@@ -12081,7 +12082,7 @@ h1.module_title
 
 .quotation_txt
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: italic;
   font-weight: 300;
   font-size: 30px;
@@ -12094,7 +12095,7 @@ h1.module_title
 
 .quotation_writer
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -12111,7 +12112,7 @@ h1.module_title
 
 .txt1
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -12125,7 +12126,7 @@ h1.module_title
 
 .txt2
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -12138,7 +12139,7 @@ h1.module_title
 
 .txt3
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -12149,7 +12150,7 @@ h1.module_title
 
 .txt4
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
@@ -12161,7 +12162,7 @@ h1.module_title
 
 .txt5
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   /* font-size: 12px; */
@@ -12175,7 +12176,7 @@ h1.module_title
 
 .txt6
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -12188,7 +12189,7 @@ h1.module_title
 
 .txt7
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   /* font-size: 12px; */
@@ -12202,7 +12203,7 @@ h1.module_title
 
 .txt8
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -12215,7 +12216,7 @@ h1.module_title
 
 .txt9
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -12228,7 +12229,7 @@ h1.module_title
 
 .txt10
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: italic;
   font-weight: 300;
   font-size: 24px;
@@ -12242,7 +12243,7 @@ h1.module_title
 
 .txt11
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
@@ -12255,7 +12256,7 @@ h1.module_title
 
 .txt12
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -12271,7 +12272,7 @@ h1.module_title
 {
   background-color: #FFC455;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -12296,7 +12297,7 @@ h1.module_title
   box-shadow: unset !important;
   /* color: #000; */
   filter: unset !important;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -12306,7 +12307,7 @@ h1.module_title
 .selected_objective{
   background-color: #FFC455;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -12323,7 +12324,7 @@ h1.module_title
   border: 0;
   /* color: #5d5d5d; */
   box-shadow: unset !important;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -12335,7 +12336,7 @@ h1.module_title
 
 .txt13
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
@@ -12345,7 +12346,7 @@ h1.module_title
 
 .txt14
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
@@ -12355,7 +12356,7 @@ h1.module_title
 
 .txt15
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
@@ -12365,7 +12366,7 @@ h1.module_title
 
 .txt16
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -12376,7 +12377,7 @@ h1.module_title
 
 .txt17
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -12388,7 +12389,7 @@ h1.module_title
 
 .txt18
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -12400,7 +12401,7 @@ h1.module_title
 
 .txt18a
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -12412,7 +12413,7 @@ h1.module_title
 
 .txt19
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -12422,7 +12423,7 @@ h1.module_title
 
 .txt20
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -12434,7 +12435,7 @@ h1.module_title
 
 .txt21
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
@@ -12455,7 +12456,7 @@ h1.module_title
 
 .transcript_txt
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: italic;
   font-weight: 300;
   font-size: 24px;
@@ -12474,7 +12475,7 @@ h1.module_title
   width: 139px;
   margin-right: 0;
   margin-bottom: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -13608,7 +13609,7 @@ and (orientation : portrait)
 
 .ob_txt1
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -13619,7 +13620,7 @@ and (orientation : portrait)
 
 .ob_txt2
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -13631,7 +13632,7 @@ and (orientation : portrait)
 
 .ob_txt3
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -13645,7 +13646,7 @@ and (orientation : portrait)
 {
   background: #F5F4F4;
   border-radius: 4px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -13667,7 +13668,7 @@ and (orientation : portrait)
 
 .ob_txt4
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -13681,7 +13682,7 @@ and (orientation : portrait)
 
 .ob_txt8
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -13756,7 +13757,7 @@ label > input[type="radio"]:checked + *::before {
 
 .ob_txt5
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -13780,7 +13781,7 @@ label > input[type="radio"]:checked + *::before {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
   height: 22px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -13948,7 +13949,7 @@ a {
   margin-right: -32px;
   margin-left: -32px;
   background: rgba(19, 147, 168, 0.17);
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -13969,7 +13970,7 @@ a {
 {
   background: #F5F4F4;
   border-radius: 4px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -14010,7 +14011,7 @@ label > input[type="checkbox"]:checked + *::before {
 
 .ob_txt6
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
@@ -14055,7 +14056,7 @@ label > input[type="checkbox"]:checked + *::before {
 {
   background: #FFFFFF;
   border-radius: 4px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -14086,7 +14087,7 @@ label > input[type="checkbox"]:checked + *::before {
 {
   background: #1393A8;
   border-radius: 4px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
@@ -14142,7 +14143,7 @@ label > input[type="checkbox"]:checked + *::before {
 
 .ob_txt7
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -14407,7 +14408,7 @@ input[type="number"] {
 
 .ptext
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -14424,7 +14425,7 @@ input[type="number"] {
 
 .pno
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -14499,7 +14500,7 @@ input[type="number"] {
   background: #FFC455;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -14532,7 +14533,7 @@ input[type="number"] {
 
 .txt22
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -14543,7 +14544,7 @@ input[type="number"] {
 
 .txt23
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -14555,7 +14556,7 @@ input[type="number"] {
 
 .txt24
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -14567,7 +14568,7 @@ input[type="number"] {
 
 .txt25
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -14591,7 +14592,7 @@ input[type="number"] {
   border: 1px solid #5D5D5D;
   box-sizing: border-box;
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -14641,7 +14642,7 @@ input[type="number"] {
   align-items: center;
   padding: 0 10px;
   /* label */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -14970,7 +14971,7 @@ input[type="number"] {
 
 .txt26
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -14981,7 +14982,7 @@ input[type="number"] {
 
 .txt27
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -15079,7 +15080,7 @@ input[type="number"] {
 
 .txt28
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -15091,7 +15092,7 @@ input[type="number"] {
 
 .txt29
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -15101,7 +15102,7 @@ input[type="number"] {
 
 .txt30
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 10px;
@@ -15115,7 +15116,7 @@ input[type="number"] {
 
 .txt31
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -15125,7 +15126,7 @@ input[type="number"] {
 
 .txt31c
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -15231,7 +15232,7 @@ input[type="number"] {
 
 .txt32
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -15266,7 +15267,7 @@ input[type="number"] {
 
 .txt33
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -15429,7 +15430,7 @@ and (orientation : portrait)
 
 .txt34
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -15548,7 +15549,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .txt35
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -15571,7 +15572,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .searchtxt::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -15592,7 +15593,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .cptitle .panel-title
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -15614,7 +15615,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   border: 0;
   box-shadow: unset;
   /* textstyle */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -15625,7 +15626,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .txt36
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -15636,7 +15637,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .txt37
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -15647,7 +15648,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .txt38
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -15663,7 +15664,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   top: 0;
   background: #FFC455 !important;
   border-radius: 0px 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -15674,7 +15675,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .absolute_ptitle .panel-title
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -15686,7 +15687,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .txt39
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   /* font-size: 12px; */
@@ -15901,7 +15902,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .txt40
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -15912,7 +15913,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .txt41
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -16010,7 +16011,7 @@ span.ctag
   height: 22px;
   background: #FFC455;
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -16058,7 +16059,7 @@ span.ctag
 
 .txt42
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -16083,7 +16084,7 @@ span.ctag
   background: #FFC455;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -16109,7 +16110,7 @@ span.ctag
 {
   height: 60px;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -16214,7 +16215,7 @@ span.ctag
 
 .txt43
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -16332,7 +16333,7 @@ textarea:focus
 
 .txt44
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -16343,7 +16344,7 @@ textarea:focus
 
 .txt45
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
@@ -17128,7 +17129,7 @@ textarea:focus
 
 .txt46
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -17184,7 +17185,7 @@ textarea:focus
 
 .txt47
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -17224,7 +17225,7 @@ textarea:focus
 
 .txt48
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -17277,7 +17278,7 @@ textarea:focus
   background: #FFC455;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -17934,7 +17935,7 @@ ngx-circular-player svg
 
 .txt49
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -17948,7 +17949,7 @@ ngx-circular-player svg
   /* width: 100%; */
   border: 0;
   box-shadow: unset;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -17963,7 +17964,7 @@ ngx-circular-player svg
 .acurrency
 {
   padding: 0 8px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -17986,7 +17987,7 @@ ngx-circular-player svg
 
 .discount_txt
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -18002,7 +18003,7 @@ ngx-circular-player svg
 
 .txt50
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -18012,7 +18013,7 @@ ngx-circular-player svg
 
 .txt51
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -18022,7 +18023,7 @@ ngx-circular-player svg
 
 .txt52
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -18039,7 +18040,7 @@ ngx-circular-player svg
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   /* letter-spacing: 0.1rem; */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -18053,7 +18054,7 @@ ngx-circular-player svg
 
 .txt53
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -18068,7 +18069,7 @@ ngx-circular-player svg
   background: #FFC455;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -18084,7 +18085,7 @@ ngx-circular-player svg
 {
   background: #EBEBEB;
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -18097,7 +18098,7 @@ ngx-circular-player svg
 
 .txt54
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -18111,7 +18112,7 @@ ngx-circular-player svg
   background: #1092A7;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -18456,7 +18457,8 @@ ngx-circular-player svg
   height: 124px;
   background: #FFFFFF;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  border: 6px solid #E59B5A;
+  /* border: 6px solid #E59B5A; */
+  border: 0;
   border-radius: 50%;
   overflow: auto;
   white-space: pre-line;
@@ -18469,7 +18471,8 @@ ngx-circular-player svg
   height: 124px;
   background: #FFFFFF;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  border: 6px solid #B92F48;
+  /* border: 6px solid #B92F48; */
+  border: 0;
   border-radius: 50%;
   overflow: auto;
   white-space: pre-line;
@@ -18482,7 +18485,8 @@ ngx-circular-player svg
   height: 124px;
   background: #FFFFFF;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  border: 6px solid #60A757;
+  /* border: 6px solid #60A757; */
+  border: 0;
   border-radius: 50%;
   overflow: auto;
   white-space: pre-line;
@@ -18495,7 +18499,8 @@ ngx-circular-player svg
   height: 124px;
   background: #FFFFFF;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  border: 6px solid #F55858;
+  /* border: 6px solid #F55858; */
+  border: 0;
   border-radius: 50%;
   overflow: auto;
   white-space: pre-line;
@@ -18508,7 +18513,8 @@ ngx-circular-player svg
   height: 124px;
   background: #FFFFFF;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  border: 6px solid #1092A7;
+  /* border: 6px solid #1092A7; */
+  border: 0;
   border-radius: 50%;
   overflow: auto;
   white-space: pre-line;
@@ -18517,7 +18523,7 @@ ngx-circular-player svg
 
 .btn_5circles_txt1
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -18528,12 +18534,15 @@ ngx-circular-player svg
 
 .btn_5circles_txt2
 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
+  /* font-family: Roboto; */
+  /* font-style: normal; */
+  /* font-weight: normal; */
   /* font-size: 16px; */
-  font-size: 15px;
-  line-height: 19px;
+  /* font-size: 15px;
+  line-height: 19px; */
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 130%;
   text-align: center;
   color: #000000;
   word-break: break-word;
@@ -18541,13 +18550,36 @@ ngx-circular-player svg
 
 .circle-container .btn.disabled
 {
-  background: #FFFFFF;
-  border: 6px solid #c4c4c4;
+  /* background: #FFFFFF;
+  border: 6px solid #c4c4c4; */
+  background: rgba(255,255,255,0.1);
+  border: 0;
 }
 
 .circle-container .btn.disabled h6
 {
-  color: #C4C4C4;
+  /* color: #C4C4C4; */
+  color: rgba(255,255,255,0.50);
+}
+
+.circle-container .btn h6
+{
+  color: #292D56;
+  font-weight: 600;
+}
+
+.circle-container .btn:hover,
+.circle-container .btn:focus
+{
+  background: #ffffff;
+  filter: unset;
+  opacity: 1;
+}
+
+.circle-container .btn:hover h6,
+.circle-container .btn:focus h6 
+{
+  color: #292D56;
 }
 /* /circular btns */
 
@@ -18897,7 +18929,7 @@ ngx-circular-player svg
   background: #EBEBEB;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -19043,7 +19075,7 @@ ngx-circular-player svg
   width: 100%;
   margin-right: 0;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -19280,7 +19312,7 @@ share-buttons button
   margin: 0;
   border: 0;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -19520,7 +19552,7 @@ input{
 {
   background: #EBEBEB;
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -19593,7 +19625,7 @@ input{
   background: #EBEBEB;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -19610,7 +19642,7 @@ input{
   background: #EBEBEB;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -19627,7 +19659,7 @@ input{
   background: #EBEBEB;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -19646,7 +19678,7 @@ input{
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -19709,7 +19741,7 @@ input{
   background: #DADADA;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -19726,7 +19758,7 @@ input{
   background: #FFC455;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -19748,7 +19780,7 @@ input{
   background: #FFC455;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -19765,7 +19797,7 @@ input{
   background: #DADADA;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -19874,7 +19906,7 @@ input{
 {
   height: 50px;
   background: #C4C4C4;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -19971,7 +20003,7 @@ input{
   background: #EBEBEB;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -20014,7 +20046,7 @@ input{
 {
   background: #FFC455;
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -20079,7 +20111,7 @@ input{
   text-align: left;
   padding: 25px 15px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -20111,7 +20143,7 @@ input{
   border-radius: 0 0 5px 5px;
   box-shadow: unset;
   width: 100%;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -20126,7 +20158,7 @@ input{
 
 .input_file::placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -20140,7 +20172,7 @@ input{
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -20225,7 +20257,7 @@ input{
   border-radius: 5px;
   margin: 0;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -20242,7 +20274,7 @@ input{
   border: 1px solid #E69B5A !important;
   box-sizing: border-box;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   color: #000000 !important;
@@ -20263,7 +20295,7 @@ input{
   background: #DADADA !important;
   box-sizing: border-box;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   color: #000000 !important;
@@ -20285,7 +20317,7 @@ input{
   border: 1px solid #DADADA;
   box-sizing: border-box;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   color: #C4C4C4;
@@ -20582,7 +20614,8 @@ and (orientation : portrait)
 
 .hprogressdiv .progress-bar
 {
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
+  background: #E58D82;
   box-shadow: unset;
 }
 
@@ -20678,14 +20711,14 @@ and (orientation : portrait)
   /* align-items: center; */
   justify-content: center;
   padding: 0 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 130%;
   text-align: center;
   color: #000000;
-  overflow: auto;
+  overflow: overlay;
 }
 
 .highligted_span
@@ -20709,8 +20742,12 @@ and (orientation : portrait)
 
 .ia_below_content
 {
+  /* position: absolute;
+  top: -10px; */
   position: absolute;
-  top: -10px;
+  top: 10px;
+  right: 0;
+  left: 0;
 }
 
 .pt15px
@@ -20733,7 +20770,7 @@ and (orientation : portrait)
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -20753,7 +20790,7 @@ and (orientation : portrait)
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -21066,7 +21103,7 @@ and (orientation : portrait)
   background: #1092A7;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -21253,7 +21290,7 @@ and (orientation : portrait)
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -21276,7 +21313,7 @@ and (orientation : portrait)
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -21305,7 +21342,7 @@ and (orientation : portrait)
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -21380,7 +21417,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   background: #ffffff;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -21460,7 +21497,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -21506,7 +21543,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   justify-content: center;
   align-items: center;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -21565,7 +21602,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
 
 .cptitle_01 .panel-title
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -21595,7 +21632,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   border: 0;
   box-shadow: unset;
   /* textstyle */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -21709,7 +21746,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -21728,7 +21765,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -21873,7 +21910,7 @@ ul.dh_ul li
   background-color: transparent;
   border: 0;
   border-bottom: 3px solid #fff;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 28px;
@@ -21892,7 +21929,7 @@ ul.dh_ul li
   position: relative;
   display: block;
   padding: 13px 15px 12px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -22002,7 +22039,7 @@ ul.dh_ul li
   border-bottom: 1px solid #fff;
   text-align: left;
   padding: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -22028,7 +22065,7 @@ ul.dh_ul li
   background: #FFFFFF;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -22262,7 +22299,7 @@ ul.dh_ul li
   border-radius: 5px;
   width: 100%;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -22283,7 +22320,7 @@ ul.dh_ul li
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -22303,7 +22340,7 @@ ul.dh_ul li
   box-shadow: unset;
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -22498,7 +22535,7 @@ ul.dh_ul li
   background: #1092A7;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -22515,7 +22552,7 @@ ul.dh_ul li
   background: #FFFFFF;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -22632,7 +22669,7 @@ ul.dh_ul li
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -22709,7 +22746,7 @@ ul.dh_ul li
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -22728,7 +22765,7 @@ ul.dh_ul li
   border-radius: 5px;
   width: 100%;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -22748,7 +22785,7 @@ ul.dh_ul li
   width: 15%;
   margin: 12px 0 !important;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -22767,7 +22804,7 @@ ul.dh_ul li
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -23105,7 +23142,7 @@ ul.dh_ul li
   box-sizing: border-box;
   border-radius: 5px;
   /* letter-spacing: 0.1rem; */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -23130,7 +23167,7 @@ ul.dh_ul li
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -23162,7 +23199,7 @@ ul.dh_ul li
   background: #1092A7;
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -23224,7 +23261,7 @@ ul.dh_ul li
   background: #EBEBEB;
   border-radius: 5px 0px 0px 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -23246,7 +23283,7 @@ ul.dh_ul li
   background: #EBEBEB;
   border-radius: 0px 5px 5px 0px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -23464,7 +23501,7 @@ a
 {
   background: #EBEBEB;
   /* opacity: 0.5; */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -23476,7 +23513,7 @@ a
 
 #searchtxt_01::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -23604,7 +23641,7 @@ a
 {
   background: #EBEBEB;
   /* opacity: 0.5; */
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -23616,7 +23653,7 @@ a
 
 #searchtxt_02::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -23718,7 +23755,7 @@ a
   background: #EBEBEB;
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -23871,7 +23908,7 @@ a
 
 .cfc11::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal !important;
   font-size: 12px;
@@ -23892,7 +23929,7 @@ a
   border-radius: 5px;
   width: 100%;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -23913,7 +23950,7 @@ a
   border-radius: 5px;
   width: 100%;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -23945,7 +23982,7 @@ a
   width: 90px;
   background: #FFC455;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -24055,7 +24092,7 @@ a
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -24339,7 +24376,7 @@ a
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -24360,7 +24397,7 @@ a
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -24380,7 +24417,7 @@ a
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -24457,7 +24494,7 @@ a
 
 .cfc13::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal !important;
   font-size: 12px;
@@ -24478,7 +24515,7 @@ a
   border-radius: 5px;
   width: 100%;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -24503,7 +24540,7 @@ a
 
 .index_rwst_title
 {
-  margin: 34px 0 37px 0;
+  margin: 0px 0 25px 0;
 }
 
 .index_rwst
@@ -24664,7 +24701,7 @@ a
 
 .cfc14::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal !important;
   font-size: 12px;
@@ -24685,7 +24722,7 @@ a
   border-radius: 5px;
   width: 100%;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -24704,7 +24741,7 @@ a
 
 .cfc14:disabled::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -25110,7 +25147,7 @@ a
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -25147,7 +25184,7 @@ a
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -25173,7 +25210,7 @@ a
 
 .coach_fc::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -25278,7 +25315,7 @@ input:checked + .slider:before {
 {
   margin: 0;
   padding: 2px 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -25326,7 +25363,7 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -25344,7 +25381,7 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -25362,7 +25399,7 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -25384,7 +25421,7 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -25452,7 +25489,7 @@ input:checked + .slider:before {
   box-sizing: border-box;
   border-radius: 15px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -25485,7 +25522,7 @@ input:checked + .slider:before {
   border-radius: 5px;
   border: 0;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -25505,7 +25542,7 @@ input:checked + .slider:before {
   border-radius: 5px;
   border: 0;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -25539,7 +25576,7 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -25562,7 +25599,7 @@ input:checked + .slider:before {
 
 .coach_fc_01::-webkit-input-placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -25578,7 +25615,7 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -25597,7 +25634,7 @@ input:checked + .slider:before {
   width: 15%;
   margin: 12px 0 !important;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -25641,7 +25678,7 @@ input:checked + .slider:before {
   background: #ADADAD;
   box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -25687,7 +25724,7 @@ input:checked + .slider:before {
   margin: 0;
   background: #EBEBEB;
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -25819,7 +25856,7 @@ input:checked + .slider:before {
   text-align: left;
   padding: 25px 15px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -25862,7 +25899,7 @@ h1
   border: 1px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 25px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -25931,7 +25968,7 @@ h1
   border: 1px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -25956,7 +25993,7 @@ h1
   background: #FFC455 !important;
   border-radius: 2px;
   border: 0;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -26099,7 +26136,7 @@ h1
   background: #40ACB2;
   border-radius: 10px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -26118,7 +26155,7 @@ h1
   background: #FFFFFF;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -27923,7 +27960,7 @@ body
 
 .btn_ficons
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -27956,7 +27993,7 @@ body
   background: #EBEBEB;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -28488,7 +28525,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   background: #FFFFFF;
   border-radius: 10px;
   border: 1px solid #ADADAD;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 400;
   font-weight: normal;
@@ -28964,7 +29001,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   align-items: center;
   text-align: center;
   min-height: calc(100vh - 125px) !important;
-  background: #1D3D7A !important;
+  /* background: #1D3D7A !important; */
   padding: 20px 20px;
 }
 
@@ -29023,10 +29060,12 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 
 .fctray
 {
-  padding: 1rem 20px;
+  /* padding: 1rem 20px; */
+  padding: 30px 20px;
   bottom: 0;
   /* background: #1D3D7A; */
-  box-shadow: 0px -1px 2px rgb(0 0 0 / 20%);
+  /* box-shadow: 0px -1px 2px rgb(0 0 0 / 20%); */
+  box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.10);
 }
 /* /black background customisation */
 
@@ -29868,7 +29907,7 @@ svg path
 
 .fcinput3::placeholder
 {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -30408,7 +30447,7 @@ svg path
   background: #FFFFFF;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%);
   border-radius: 10px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -30442,7 +30481,7 @@ svg path
   background: #40ACB2;
   border-radius: 10px;
 
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -32019,9 +32058,9 @@ label.select_label:after
 
 /* version - 03 */
 
-body * 
-{ 
-  font-family: 'Poppins', sans-serif !important; 
+body *
+{
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .nav_v3
@@ -32095,7 +32134,7 @@ body *
   width: 75%;
 }
 
-.box_v3_03 
+.box_v3_03
 {
   height: 412px;
   background: #120F40;
@@ -32106,7 +32145,7 @@ body *
   white-space: normal;
 }
 
-.box_v3_03 h4 
+.box_v3_03 h4
 {
   overflow: hidden;
   display: -webkit-box;
@@ -32115,7 +32154,7 @@ body *
   word-break: break-word;
 }
 
-.ls_0_1em 
+.ls_0_1em
 {
   letter-spacing: 0.1em;
 }
@@ -32125,7 +32164,7 @@ body *
   white-space: normal;
 }
 
-.panel-default>.panel-heading+.panel-collapse>.panel-body.aepanel 
+.panel-default>.panel-heading+.panel-collapse>.panel-body.aepanel
 {
   background: #120F40;
   border: 1px solid #384079;
@@ -32134,7 +32173,7 @@ body *
   margin: 0 20px;
 }
 
-.v3_btn_subscribe_premium 
+.v3_btn_subscribe_premium
 {
   background: #120F40;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -32151,7 +32190,7 @@ body *
   border-radius: 5px 0 0 5px;
 }
 
-.pt1 .ttxt 
+.pt1 .ttxt
 {
   overflow: hidden;
   display: -webkit-box;
@@ -32165,7 +32204,7 @@ body *
   padding-top: 10px;
 }
 
-.fa 
+.fa
 {
   font-family: "Font Awesome 6 Free" !important;
   font-weight: var(--fa-style,900) !important;
@@ -32483,13 +32522,13 @@ body *
   white-space: pre-line;
 }
 
-.pimgrow 
+.pimgrow
 {
   display: flex;
   gap: 10px
 }
 
-.pimgrow a 
+.pimgrow a
 {
   width: 20%;
 }
@@ -32499,7 +32538,12 @@ body *
   width: 100%;
 }
 
-.box_v3_04 
+.pimgrow a img.active 
+{
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.box_v3_04
 {
   height: 210px;
   background: #120F40;
@@ -32510,11 +32554,12 @@ body *
   white-space: normal;
 }
 
-.box_v3_04 img 
+.box_v3_04 img,
+.box_v3_04a img
 {
   width: 100%;
   height: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   border-radius: 6px;
 }
 
@@ -32563,7 +32608,7 @@ body *
   padding: 0 0 10px 0;
 }
 
-.odiv_wfgi > [class^="col-"] 
+.odiv_wfgi > [class^="col-"]
 {
   width: 95%;
 }
@@ -32578,7 +32623,7 @@ body *
   padding-right: 20px !important;
 }
 
-.img_absolute_01 
+.img_absolute_01
 {
   position: absolute;
   top: 0;
@@ -32591,12 +32636,12 @@ body *
   justify-content: center;
 }
 
-.ls_1_2px 
+.ls_1_2px
 {
   letter-spacing: 1.2px;
 }
 
-.box_v3_06 
+.box_v3_06
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -32628,7 +32673,7 @@ body *
   background: #120F40;
 }
 
-.box_v3_07 .div_gm 
+.box_v3_07 .div_gm
 {
   padding: 15px 15px 15px 15px;
 }
@@ -32647,7 +32692,8 @@ body *
   margin: 0;
 }
 
-.msrow > [class^="col-"]:last-child .box_v3_04
+.msrow > [class^="col-"]:last-child .box_v3_04,
+.msrow > [class^="col-"]:last-child .box_v3_04a
 {
   margin-bottom: 0;
 }
@@ -32657,7 +32703,7 @@ body *
   margin-bottom: 0;
 }
 
-.fas_box 
+.fas_box
 {
   border-radius: 12px;
   /* background: #CB6171; */
@@ -32677,5 +32723,128 @@ body *
 .fas_div a:nth-child(2) .fas_box
 {
   background: #E8A880;
+}
+
+.hr_style_v3_05
+{
+  border: 1px solid #FFFFFF;
+  opacity: 0.25;
+}
+
+.sc_02_v3
+{
+  text-align: left;
+  min-height: calc(100vh - 125px) !important;
+  padding: 20px 20px;
+}
+
+.btn_prev_v3
+{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.btn_next_v3
+{
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.btn_prev_v3:hover 
+{
+  color: #ffffff;
+}
+
+.toc_nvmenu_v3 
+{
+  /* height: 80px;
+  background: #292D56;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  position: fixed; */
+  height: 80px;
+  background: #292D56;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.w30pi
+{
+	width:30% !important;
+}
+
+.tn_ctitle
+{
+  list-style-type: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+.mc_01_v3 
+{
+  padding: 8rem 0 0 0 !important;
+}
+
+.toc_adiv a .row 
+{
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #120F40;
+  min-height: 88px;
+  margin-bottom: 10px;
+  padding: 20px;
+  /* margin: 0 10px 10px 10px; */
+}
+
+.box_v3_04a
+{
+  height: 173px;
+  background: #120F40;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 15px !important;
+  margin-bottom: 10px;
+  white-space: normal;
+}
+
+.pl20pxi 
+{
+  padding-left: 20px !important;
+}
+
+.session_img
+{
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.session_img_play
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
 }
 /* /version - 03 */
