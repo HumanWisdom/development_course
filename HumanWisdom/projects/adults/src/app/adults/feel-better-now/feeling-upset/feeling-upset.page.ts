@@ -1,7 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-feeling-upset',
@@ -9,10 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./feeling-upset.page.scss'],
 })
 export class FeelingUpsetPage implements OnInit {
-
   audioData:any;
-
-  constructor(private router: Router, private sanitizer: DomSanitizer,) { }
+  constructor(private router: Router) { 
+    this.audioData={
+      url:'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.22.mp3'
+    }
+  }
 
   ngOnInit() {
     this.audioData={

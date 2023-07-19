@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SorrowAndLossPage implements OnInit {
   audioData:any;
-  constructor(private router: Router, private sanitizer: DomSanitizer,) { }
+  constructor(private router: Router){}
 
   ngOnInit() {
     this.audioData={
