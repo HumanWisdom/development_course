@@ -17,6 +17,6 @@ export class SorrowAndLossPage implements OnInit {
     }
   }
   audioevent(url) {
-      this.router.navigate(['feel-better-now/sorrow-and-loss/audiopage/', url ,"SorrowAndLoss",Math.random() ])
+      this.router.navigate(['feel-better-now/sorrow-and-loss/audiopage/', url ,"Responding to grief",Math.random() ])
   }
 }
