@@ -12,7 +12,7 @@ export class S131189Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w7"
+  bg="purple_w9"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/6.2.mp4'  
   title="How do we respond when we feel hurt?"

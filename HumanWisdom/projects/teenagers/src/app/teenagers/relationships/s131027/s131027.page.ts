@@ -13,7 +13,7 @@ export class S131027Page implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w5"
+  bg = "purple_w12"
   hint = "It could be that you have high expectations, or get easily angry, or that you listen well."
 
   toc = "relationships/s131001"

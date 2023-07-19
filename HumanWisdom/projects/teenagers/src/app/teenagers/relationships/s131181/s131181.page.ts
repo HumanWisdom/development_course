@@ -13,7 +13,7 @@ export class S131181Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w3"
+  bg = "purple_w5"
   hint = "This is a difficult question because we always think the other person is responsible for our hurt? Could the real reason lie in the hidden way our mind works?"
   toc = "/relationships/s131001"
   path = this.router.url

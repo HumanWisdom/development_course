@@ -12,7 +12,7 @@ export class S131013Page implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w9"
+  bg="purple_w10"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -24,7 +24,7 @@ export class S131013Page implements OnInit {
   totalTime:any 
   
   bookmark=0
-  toc="relationships/s47000"
+  toc="relationships/s131001"
   path=this.router.url 
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
@@ -100,7 +100,7 @@ export class S131013Page implements OnInit {
 
   prev() 
   {
-    this.router.navigate(['/relationships/s131013'])
+    this.router.navigate(['/relationships/s131012'])
   }
 
   goNext() 

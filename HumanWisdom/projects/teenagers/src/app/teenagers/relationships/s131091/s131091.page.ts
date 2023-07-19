@@ -13,7 +13,7 @@ export class S131091Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w8"
+  bg = "purple_w12"
   hint = " It's okay. It's human. Being aware of it without justifying it or condemning it is the beginning of wisdom."
   toc = "/relationships/s131001"
   path = this.router.url
