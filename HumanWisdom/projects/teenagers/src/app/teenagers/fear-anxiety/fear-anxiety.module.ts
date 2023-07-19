@@ -205,6 +205,7 @@ import { S112157Page } from './s112157/s112157.page';
 import { S112158Page } from './s112158/s112158.page';
 import { S112159Page } from './s112159/s112159.page';
 import { S112159p1Page } from './s112159p1/s112159p1.page';
+import { S112159p2Page } from './s112159p2/s112159p2.page';
 import { S112160Page } from './s112160/s112160.page'; 
 
 import { FearAnxietyRoutingModule } from './fear-anxiety-routing.module';
@@ -413,6 +414,7 @@ S112157Page,
 S112158Page,
 S112159Page,
 S112159p1Page,
+S112159p2Page,
 S112160Page,
   ],
   imports: [
