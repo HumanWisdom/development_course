@@ -28,6 +28,7 @@ import { S97015Page } from './s97015/s97015.page';
 import { S97016Page } from './s97016/s97016.page';
 import { S97017Page } from './s97017/s97017.page';
 import { S97018Page } from './s97018/s97018.page';
+import { S97018p1Page } from './s97018p1/s97018p1.page';
 import { S97019Page } from './s97019/s97019.page';
 import { TeenagersService } from '../teenagers.service';
 
@@ -55,6 +56,7 @@ import { TeenagersService } from '../teenagers.service';
     S97016Page,
     S97017Page,
     S97018Page,
+    S97018p1Page,
     S97019Page,
   ],
   imports: [
