@@ -7,9 +7,13 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./feeling-upset.page.scss'],
 })
 export class FeelingUpsetPage implements OnInit {
+
   @ViewChild('enablepopup') enablepopup: ElementRef;
+
   mediaUrl: any;
-  constructor(private router: Router) {
+
+  constructor(private router: Router) 
+  {
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.22.mp3',
       youtubeUrl: 'b5PZ6fFCL3g'
