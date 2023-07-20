@@ -80,7 +80,7 @@ export class S58087p3Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/work/s58088'])
+    this.router.navigate(['/adults/work/s58087p4'])
     this.service.submitProgressAv({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

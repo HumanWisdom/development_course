@@ -127,6 +127,7 @@ import { S230p1Page } from './s230p1/s230p1.page'; 
 import { S230p2Page } from './s230p2/s230p2.page';  
 import { S230p3Page } from './s230p3/s230p3.page';  
 import { S231p1Page } from './s231p1/s231p1.page';  
+import { S231p0Page } from './s231p0/s231p0.page';  
 import { S231p2Page } from './s231p2/s231p2.page';  
 
 const routes: Routes = [
@@ -758,10 +759,17 @@ canActivate:[ActiveGuard],
     component: S231p1Page,
   },
   {
+    path: 's231p0',   
+    canActivate:[ActiveGuard],
+    component: S231p0Page,
+  },
+  {
     path: 's231p2',   
     canActivate:[ActiveGuard],
     component: S231p2Page,
   },
+  
+
 ];
 
 @NgModule({

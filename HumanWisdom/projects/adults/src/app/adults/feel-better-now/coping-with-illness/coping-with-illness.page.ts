@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./coping-with-illness.page.scss'],
 })
 export class CopingWithIllnessPage implements OnInit {
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+
   audioData:any;
+  
   constructor(private router: Router, private sanitizer: DomSanitizer,) { }
 
   ngOnInit() {
@@ -18,5 +22,11 @@ export class CopingWithIllnessPage implements OnInit {
   }
   audioevent(url) {
       this.router.navigate(['feel-better-now/coping-with-illness/audiopage/', url ,"Dealing with an illness",Math.random() ])
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
   }
 }

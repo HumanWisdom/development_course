@@ -159,6 +159,7 @@ import { S105133Page } from './s105133/s105133.page';
 import { S105134Page } from './s105134/s105134.page';
 import { S105135Page } from './s105135/s105135.page';
 import { S105136Page } from './s105136/s105136.page';
+import { S105136p1Page } from './s105136p1/s105136p1.page';
 import { S105137Page } from './s105137/s105137.page';
 
 @NgModule({
@@ -316,6 +317,7 @@ import { S105137Page } from './s105137/s105137.page';
     S105134Page,
     S105135Page,
     S105136Page,
+    S105136p1Page,
     S105137Page,
   ],
   imports: [

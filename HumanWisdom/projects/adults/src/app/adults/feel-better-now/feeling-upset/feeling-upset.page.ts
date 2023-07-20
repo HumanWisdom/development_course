@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-feeling-upset',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feeling-upset.page.scss'],
 })
 export class FeelingUpsetPage implements OnInit {
+  @ViewChild('enablepopup') enablepopup: ElementRef;
   mediaUrl: any;
   constructor(private router: Router) {
     this.mediaUrl = {
@@ -24,5 +25,11 @@ export class FeelingUpsetPage implements OnInit {
 
   routeToYoutube(url) {
     this.router.navigate(['feel-better-now/feeling-upset/youtubelink/',url]);
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
   }
 }

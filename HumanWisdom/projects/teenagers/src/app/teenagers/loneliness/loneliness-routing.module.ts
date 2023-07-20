@@ -142,6 +142,7 @@ import { S117121Page } from './s117121/s117121.page';
 import { S117120Page } from './s117120/s117120.page';
 import { S117122Page } from './s117122/s117122.page';
 import { S117123Page } from './s117123/s117123.page';
+import { S117123p1Page } from './s117123p1/s117123p1.page';
 import { S117124Page } from './s117124/s117124.page';
 
 const routes: Routes = [
@@ -857,10 +858,17 @@ const routes: Routes = [
     component: S117123Page,
   },  
   {
+    path: 's117123p1',   
+     
+    component: S117123p1Page,
+  },  
+  {
     path: 's117124',   
      
     component: S117124Page,
   },
+  
+
 ];
 
 @NgModule({
