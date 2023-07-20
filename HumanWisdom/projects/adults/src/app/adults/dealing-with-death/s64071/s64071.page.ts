@@ -44,7 +44,7 @@ export class S64071Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/adults/dealing-with-death/s64072'])
+    this.router.navigate(['/adults/dealing-with-death/s64071p1'])
   }
   prev(){
     this.router.navigate(['/adults/dealing-with-death/s64070'])

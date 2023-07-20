@@ -129,6 +129,7 @@ import { S48104Page } from './s48104/s48104.page';
 import { S48105Page } from './s48105/s48105.page';
 import { S48106Page } from './s48106/s48106.page';
 import { S48107Page } from './s48107/s48107.page';
+import { S48107p1Page } from './s48107p1/s48107p1.page';
 import { S48108Page } from './s48108/s48108.page';
 
 const routes: Routes = [
@@ -772,10 +773,16 @@ const routes: Routes = [
     component: S48107Page,
   },
   {
+    path: 's48107p1',
+    canActivate:[ActiveGuard],  
+    component: S48107p1Page,
+  },
+  {
     path: 's48108',
     canActivate:[ActiveGuard],  
     component: S48108Page,
   },  
+ 
 ];
 
 @NgModule({

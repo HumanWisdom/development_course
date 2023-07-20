@@ -24,6 +24,7 @@ import { S37014Page } from './s37014/s37014.page';
 import { S37015Page } from './s37015/s37015.page';
 import { S37016Page } from './s37016/s37016.page';
 import { S37017Page } from './s37017/s37017.page';
+import { S37017p1Page } from './s37017p1/s37017p1.page';
 import { S37018Page } from './s37018/s37018.page';
 
 const routes: Routes = [
@@ -142,10 +143,17 @@ const routes: Routes = [
     component: S37017Page,
   },
   {
+    path: 's37017p1',
+   canActivate:[ActiveGuard],  
+    component: S37017p1Page,
+  },
+  {
     path: 's37018',
    canActivate:[ActiveGuard],  
     component: S37018Page,
   },
+ 
+
 
 ];
 
