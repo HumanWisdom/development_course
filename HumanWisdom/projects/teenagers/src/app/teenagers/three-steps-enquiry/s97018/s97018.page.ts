@@ -48,7 +48,7 @@ export class S97018Page implements OnInit {
 
   }
   submitProgress(){
-    this.router.navigate(['/three-steps-enquiry/s97019'])
+    this.router.navigate(['/three-steps-enquiry/s97018p1'])
 
   }
   prev(){

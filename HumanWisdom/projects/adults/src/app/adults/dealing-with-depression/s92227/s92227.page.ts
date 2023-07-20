@@ -116,7 +116,7 @@ export class S92227Page implements OnInit {
 
   previous() 
   {
-    this.router.navigate(['/adults/dealing-with-depression/s920226'])
+    this.router.navigate(['/adults/dealing-with-depression/s92226'])
   }
 
   ngOnDestroy() 

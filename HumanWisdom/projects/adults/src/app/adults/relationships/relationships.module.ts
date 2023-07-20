@@ -417,6 +417,9 @@ import { S47367Page } from './s47367/s47367.page';  
 import { S47368Page } from './s47368/s47368.page';  
 import { S47369Page } from './s47369/s47369.page';  
 import { S47370Page } from './s47370/s47370.page';  
+import { S47370p1Page } from './s47370p1/s47370p1.page';  
+import { S47370p2Page } from './s47370p2/s47370p2.page';  
+import { S47370p3Page } from './s47370p3/s47370p3.page';  
 import { S47371Page } from './s47371/s47371.page';  
 
 import { RelationshipsRoutingModule } from './relationships-routing.module';
@@ -833,7 +836,10 @@ import { RelationshipsRoutingModule } from './relationships-routing.module';
      S47367Page , 
      S47368Page , 
      S47369Page , 
-     S47370Page , 
+     S47370Page ,
+    S47370p1Page ,
+    S47370p2Page ,
+    S47370p3Page , 
      S47371Page , 
  ],
   imports: [

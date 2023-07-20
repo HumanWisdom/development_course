@@ -49,7 +49,7 @@ export class S91080Page implements OnInit {
       // var base_color = "rgb(230,230,230)";
       // var active_color = "rgb(237, 40, 70)";
       var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#FFC455";
+      var active_color = "#60A757";
       var i;
       var child = 1;
       var length = $("section").length - 1;

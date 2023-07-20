@@ -56,7 +56,7 @@ export class JournalWeComponent implements OnInit {
         }) */
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
-  
+
         this.service.submitProgressReflection({
           "ScrNumber": "",
           "UserId": this.userId,
@@ -82,12 +82,15 @@ export class JournalWeComponent implements OnInit {
       //   return false;
       // }
     }
-    
+
   }
   getAlertcloseEvent(event) {
     if(event=='ok'){
       this.enableAlert = false;
-      this.router.navigate(['/log-in']);
+      this.router.navigate(["/onboarding/login"], {
+        replaceUrl: true,
+        skipLocationChange: true
+      });
     }else{
       this.enableAlert = false;
     }
