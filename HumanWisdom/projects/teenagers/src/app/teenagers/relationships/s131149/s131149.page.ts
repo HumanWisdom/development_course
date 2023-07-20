@@ -12,7 +12,7 @@ export class S131149Page implements OnInit,OnDestroy
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w12"
+  bg="purple_w3"
   title="Our memories of feeling hurt"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/relationships/audios/5.5.mp3'

@@ -431,6 +431,14 @@ const routes: Routes = [
     path: 'diversity-and-inclusion',
     loadChildren: () => import('./diversity-and-inclusion/diversity-and-inclusion.module').then(m=>m.DiversityAndInclusionModule)
   },
+  {
+    path: 'repeat-user',
+    loadChildren: () => import('./repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule)
+  },
+  {
+    path: 'feel-better-now',
+    loadChildren: () => import('./feel-better-now/feel-better-now.module').then( m => m.FeelBetterNowModule)
+  },
 ];
 
  @NgModule({

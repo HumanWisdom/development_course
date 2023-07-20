@@ -315,9 +315,9 @@ import { S131275Page } from './s131275/s131275.page'; 
 import { S131276Page } from './s131276/s131276.page';  
 import { S131277Page } from './s131277/s131277.page';  
 import { S131278Page } from './s131278/s131278.page';  
-import { S131279Page } from './s131279/s131279.page';  
+import { S131279Page } from './s131279/s131279.page'; 
+import { S131279tPage } from './s131279t/s131279t.page';   
 import { S131280Page } from './s131280/s131280.page';  
-import { S131280tPage } from './s131280t/s131280t.page';  
 import { S131281Page } from './s131281/s131281.page';  
 import { S131282Page } from './s131282/s131282.page';  
 import { S131283Page } from './s131283/s131283.page';  
@@ -366,7 +366,9 @@ import { S131322Page } from './s131322/s131322.page';  
 import { S131323Page } from './s131323/s131323.page';  
 import { S131324Page } from './s131324/s131324.page';  
 import { S131325Page } from './s131325/s131325.page';  
-import { S131326Page } from './s131326/s131326.page';  
+import { S131326Page } from './s131326/s131326.page';
+import { S131326p1Page } from './s131326p1/s131326p1.page';  
+import { S131326p2Page } from './s131326p2/s131326p2.page';  
 import { S131327Page } from './s131327/s131327.page'; 
 
 const routes: Routes = [
@@ -1641,12 +1643,12 @@ const routes: Routes = [
     component: S131279Page,
   },  
   {
-    path: 's131280',   
-    component: S131280Page,
+    path: 's131279t',   
+    component: S131279tPage,
   },
   {
-    path: 's131280t',   
-    component: S131280tPage,
+    path: 's131280',   
+    component: S131280Page,
   },
   {
     path: 's131281',   
@@ -1845,10 +1847,18 @@ const routes: Routes = [
     component: S131326Page,
   },
   {
+    path: 's131326p1',   
+    component: S131326p1Page,
+  },
+  {
+    path: 's131326p2',   
+    component: S131326p2Page,
+  },
+  {
     path: 's131327',   
     component: S131327Page,
-  }
-  
+  },
+ 
 ];
 
 @NgModule({

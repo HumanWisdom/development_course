@@ -352,7 +352,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           this.routeHowCanWisdomHelp(1)
           break
         }
-  
+
         case "76": {
           this.routeBullying(1)
           break
@@ -364,7 +364,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         case "91": {
           this.routeExternalApproval(1)
           break
-        }        
+        }
         case "92": {
           this.routeDealingWithDepression(1)
           break
@@ -2544,7 +2544,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
         externalapprovalR = "s" + res.lastVisitedScreen
-      
+
 
         // continue where you left
         if (res.lastVisitedScreen === '') {
@@ -2628,27 +2628,35 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   goDashboard() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'emotions') {
+      localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
       this.router.navigate(['/adults/curated/manage-your-emotions'])
     }
     else if (cur && cur === 'stress') {
+      localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
       this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
     }
     else if (cur && cur === 'happier') {
+      localStorage.setItem('curatedurl', '/adults/curated/be-happier');
       this.router.navigate(['/adults/curated/be-happier'])
     }
     else if (cur && cur === 'habits') {
+      localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
       this.router.navigate(['/adults/curated/change-unhelpful-habits'])
     }
     else if (cur && cur === 'workplace') {
+      localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
       this.router.navigate(['/adults/curated/wisdom-for-workplace'])
     }
     else if (cur && cur === 'relationships') {
+      localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
       this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
     }
     else if (cur && cur === 'sorrow') {
+      localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
       this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
     }
     else if (cur && cur === 'mind') {
+      localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
       this.router.navigate(['/adults/curated/have-calm-mind'])
     }
     else {
@@ -2658,8 +2666,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   }
   routeJournal() {
- 
-    if(ProgramType.Teenagers==this.programType || 
+
+    if(ProgramType.Teenagers==this.programType ||
          SharedService.ProgramId == ProgramType.Teenagers){
       this.router.navigate(['/journal/']);
     }else{
@@ -2672,7 +2680,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   public saveAsPDF(isShare:boolean =false) {
-    const div = document.getElementById('myDiv'); 
+    const div = document.getElementById('myDiv');
     const content = div.innerHTML;
 
     // replace with the ID of your div
@@ -2694,7 +2702,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     const file = new File([blob], 'converted.pdf', { type: 'application/pdf' });
     //this.convertPdfToBase64(file);
       localStorage.setItem('fileName',this.currentModuleName);
-      
+
       if(!isShare){
         window.dispatchEvent(event);
         pdf.save(this.currentModuleName + ' Certificate.pdf'); // replace with your desired file name
@@ -2754,7 +2762,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     }, 2000);
   }
 
- 
+
 
 
     GetModuleDataBasedOnProgramType(){
@@ -2780,7 +2788,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
           localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
           this.qrList = res
           addictionResume = "s" + res.lastVisitedScreen
-  
+
           // continue where you left
           if (res.lastVisitedScreen === '') {
             localStorage.setItem("lastvisited", 'F')

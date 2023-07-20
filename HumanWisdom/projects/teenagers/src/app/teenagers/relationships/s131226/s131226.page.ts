@@ -12,7 +12,7 @@ export class S131226Page implements OnInit,OnDestroy
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w8"
+  bg="purple_w10"
   title="What relationship do we have with our body?"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+7.3.mp3'

@@ -13,7 +13,7 @@ export class S131094Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w11"
+  bg = "purple_w3"
   hint = " It could be to meet and have fun with friends, or seek physical intimacy."
   toc = "/relationships/s131001"
   path = this.router.url

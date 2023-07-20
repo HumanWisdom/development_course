@@ -12,7 +12,7 @@ export class S131135Page implements OnInit,OnDestroy
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w10"
+  bg="purple_w1"
   title="Introduction"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+5.1.mp3'

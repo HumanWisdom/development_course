@@ -53,7 +53,7 @@ export class S105136Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/conditioning/s105137'])
+    this.router.navigate(['/conditioning/s105136p1'])
   }
 
   prev()

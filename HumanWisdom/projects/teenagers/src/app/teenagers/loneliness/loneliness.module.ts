@@ -146,6 +146,7 @@ import { S117121Page } from './s117121/s117121.page';
 import { S117120Page } from './s117120/s117120.page';
 import { S117122Page } from './s117122/s117122.page';
 import { S117123Page } from './s117123/s117123.page';
+import { S117123p1Page } from './s117123p1/s117123p1.page';
 import { S117124Page } from './s117124/s117124.page';
 
 import { LonelinessRoutingModule } from './loneliness-routing.module';
@@ -294,6 +295,7 @@ import { TeenagersService } from '../teenagers.service';
     S117121Page ,
     S117122Page ,
     S117123Page ,
+    S117123p1Page ,
     S117124Page ,
   ],
   imports: [

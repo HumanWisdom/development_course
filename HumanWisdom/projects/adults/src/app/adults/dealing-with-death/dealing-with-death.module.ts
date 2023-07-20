@@ -85,6 +85,7 @@ import { S64068Page } from './s64068/s64068.page';
 import { S64069Page } from './s64069/s64069.page';
 import { S64070Page } from './s64070/s64070.page';
 import { S64071Page } from './s64071/s64071.page';
+import { S64071p1Page } from './s64071p1/s64071p1.page';
 import { S64072Page } from './s64072/s64072.page';
 
 
@@ -167,6 +168,7 @@ import { S64072Page } from './s64072/s64072.page';
     S64069Page,
     S64070Page,
     S64071Page,
+    S64071p1Page,
     S64072Page,
   ],
   imports: [

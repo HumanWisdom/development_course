@@ -7,7 +7,6 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
-var window: any;
 @Component({
   selector: 'app-adult-dashboard',
   templateUrl: './adult-dashboard.page.html',
@@ -446,20 +445,28 @@ export class AdultDashboardPage implements OnInit {
 
   curatedDash(name: any) {
     if (name === 'Manage your emotions') {
+      localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
       this.router.navigate(['/adults/curated/manage-your-emotions'])
     } else if (name === 'Overcome stress and anxiety') {
+      localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
       this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
     } else if (name === 'Wisdom for the workplace') {
+      localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
       this.router.navigate(['/adults/curated/wisdom-for-workplace'])
     } else if (name === 'Have fulfilling relationships') {
+      localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
       this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
     } else if (name === 'Be happier') {
+      localStorage.setItem('curatedurl', '/adults/curated/be-happier');
       this.router.navigate(['/adults/curated/be-happier'])
     } else if (name === 'Change unhelpful habits') {
+      localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
       this.router.navigate(['/adults/curated/change-unhelpful-habits'])
     } else if (name === 'Deal with sorrow and loss') {
+      localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
       this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
     } else if (name === 'Mindfulness') {
+      localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
       this.router.navigate(['/adults/curated/have-calm-mind'])
     }
   }
@@ -1039,7 +1046,7 @@ export class AdultDashboardPage implements OnInit {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    this.router.navigate([]).then(() => { window.open('/cookies-policy', '_blank'); });
+     window.open('/cookies-policy', '_blank');
   }
 
   socialLogin() {

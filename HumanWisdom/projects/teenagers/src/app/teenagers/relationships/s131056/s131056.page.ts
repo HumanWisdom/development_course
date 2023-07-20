@@ -13,7 +13,7 @@ export class S131056Page implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w7"
+  bg = "purple_w8"
   hint = "Perhaps we would consume less, not kill animals for fun, or not cut down trees unless we absolutely had to"
 
   toc = "relationships/s131001"

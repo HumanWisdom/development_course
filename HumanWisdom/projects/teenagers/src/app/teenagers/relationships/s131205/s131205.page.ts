@@ -12,7 +12,7 @@ export class S131205Page implements OnInit,OnDestroy
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w9"
+  bg="purple_w1"
   title="What is my relationship with myself?"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/relationships/audios/relationships+7.1.mp3'

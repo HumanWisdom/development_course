@@ -13,7 +13,7 @@ export class S131138Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w1"
+  bg = "purple_w4"
   hint = " It could be that you wanted someone to do something for you and they didn’t."
   toc = "/relationships/s131001"
   path = this.router.url
@@ -122,7 +122,7 @@ export class S131138Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/relationships/s131138'])
+    this.router.navigate(['/relationships/s131137'])
   }
 
   ngOnDestroy() 

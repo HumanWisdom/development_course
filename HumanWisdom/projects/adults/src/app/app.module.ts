@@ -1,6 +1,6 @@
 import { PlatformModule } from '@angular/cdk/platform';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,6 +33,8 @@ import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ToastrModule } from 'ngx-toastr';
 import { MoengageService } from './moengage.service';
+import { AdultsService } from './adults/adults.service';
+import { initDependency } from './initdependency';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -46,7 +48,7 @@ export class MyHammerConfig extends HammerGestureConfig {
             BlogIndexPage,
             BlogArticlePage
         ],
-    imports: [BrowserModule, 
+    imports: [BrowserModule,
         CommonModule,
         IonicModule.forRoot(), AppRoutingModule,
         AdultsModule,
@@ -102,7 +104,13 @@ export class MyHammerConfig extends HammerGestureConfig {
                     }
                 ]
             } as SocialAuthServiceConfig,
-        }
+        },
+        {
+          provide: APP_INITIALIZER,
+          useFactory: initDependency,
+          deps: [AdultsService],
+          multi: true,
+        },
     ],
     bootstrap: [AppComponent]
 })

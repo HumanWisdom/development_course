@@ -13,7 +13,7 @@ export class S131151Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w2"
+  bg = "purple_w5"
   hint = "You could talk about what has happened, share how you feel, say sorry, or try and understand how the other person feels."
   toc = "/relationships/s131001"
   path = this.router.url

@@ -75,7 +75,7 @@ export class S91007Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/external-approval/s91008'])
+    this.router.navigate(['adults/external-approval/s91008'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -96,7 +96,7 @@ export class S91007Page implements OnInit, OnDestroy {
 
   prev() 
   {
-    this.router.navigate(['/external-approval/s91006'])
+    this.router.navigate(['adults/external-approval/s91006'])
   }
 
   goNext() 

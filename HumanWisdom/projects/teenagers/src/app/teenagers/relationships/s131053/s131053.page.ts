@@ -12,7 +12,7 @@ export class S131053Page implements OnInit {
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w4"
+  bg = "purple_w5"
   hint = ""
 
   toc = "relationships/s131001"

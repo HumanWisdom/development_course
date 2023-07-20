@@ -120,7 +120,7 @@ export class LoginSignupPage implements OnInit {
       this.urlPassword = params["pwd"];
       let res = localStorage.getItem("isloggedin");
       if (res === "T") {
-        this.router.navigate(["/adults/adult-dashboard"]);
+        this.routedashboard();
       } else {
         this.enableLogin = true;
       }
@@ -138,9 +138,9 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
-    if (!this.router.url.includes('/log-in')) {
-      window.history.pushState('', '', '/log-in');
-    }
+    // if (!this.router.url.includes('/log-in')) {
+    //   window.history.pushState('', '', '/log-in');
+    // }
 
   }
   forbiddenNameValidator(
@@ -235,6 +235,10 @@ export class LoginSignupPage implements OnInit {
             );
             this.content = "Code has been verified , Login with Your Credentials";
             this.enableAlert = true;
+            localStorage.setItem(
+              "signupfirst",
+              'T'
+            );
             window.location.reload();
             // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
@@ -385,11 +389,21 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      let signup = localStorage.getItem(
+                        "signupfirst"
+                      );
+                      if(signup === 'T') {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/search"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -548,11 +562,21 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      let signup = localStorage.getItem(
+                        "signupfirst"
+                      );
+                      if(signup === 'T') {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/search"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -748,11 +772,21 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                       }
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      let signup = localStorage.getItem(
+                        "signupfirst"
+                      );
+                      if(signup === 'T') {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/search"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }

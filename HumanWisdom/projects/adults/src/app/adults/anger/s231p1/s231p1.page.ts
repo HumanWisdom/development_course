@@ -54,7 +54,7 @@ path=this.router.url
 
   }
   submitProgress(){
-    this.router.navigate(['/adults/anger/s231p2'])
+    this.router.navigate(['/adults/anger/s231p0'])
 
   }
   previous(){

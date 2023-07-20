@@ -18,7 +18,7 @@ export class S131236Page implements OnInit {
   audioLink=this.mediaAudio+'/relationships/audios/relationships+8.2.mp3'
 
   transcriptPage="relationships/s131236t"
-  toc="relationships/s47000"
+  toc="relationships/s131001"
   bookmark=0
   path=this.router.url
   avDuration:any
@@ -109,7 +109,7 @@ export class S131236Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/relationships/s131235d'])
+    this.router.navigate(['/relationships/s131235'])
   }
 
   ngOnDestroy()

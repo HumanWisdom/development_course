@@ -12,7 +12,7 @@ export class S131287Page implements OnInit {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w6"
+  bg="purple_w2"
   title="Introduction"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/relationships/audios/9.1.mp3'
