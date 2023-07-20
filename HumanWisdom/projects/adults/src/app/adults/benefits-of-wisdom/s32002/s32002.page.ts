@@ -98,6 +98,7 @@ export class S32002Page implements OnInit {
   }
 
   goNext() {
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/benefits-of-wisdom/s32003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;

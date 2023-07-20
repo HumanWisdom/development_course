@@ -1,0 +1,17 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-image-text base="stress_base1" overlay="stress_overlay1_mobile">
+
+  <form>
+
+    <h1 class="txt1">
+      Is stress caused by this traffic jam or our reaction to it?
+    </h1>
+    
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-image-text>
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

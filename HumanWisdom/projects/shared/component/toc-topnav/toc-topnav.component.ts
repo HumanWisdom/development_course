@@ -6,7 +6,7 @@ import {
 } from '@angular/cdk/platform';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../../adults/src/app/onboarding/onboarding.service';
+import { OnboardingService } from '../../services/onboarding.service';
 
 @Component({
   selector: 'app-toc-topnav',
@@ -70,15 +70,17 @@ export class TocTopnavComponent implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   loginroute() {
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
   giftwisdom() {
     localStorage.setItem('giftwisdom', 'T')
   }
-
+  navigate(url){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  }
 }

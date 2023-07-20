@@ -1,7 +1,7 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-import {OnboardingService} from '../onboarding.service'
+import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 import { AdultsModule } from 'src/app/adults/adults.module';
 
 @Component({
@@ -94,7 +94,7 @@ export class AddcartPage implements OnInit,OnDestroy {
     if(!this.userId)
     {
       console.log("login first")
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
 
     }
      

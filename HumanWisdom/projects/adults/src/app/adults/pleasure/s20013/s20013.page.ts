@@ -10,9 +10,9 @@ import {Location } from '@angular/common'
 })
 export class S20013Page implements OnInit {
 
-  bg_tn="bg_green"
-  bg_cft="bg_green"
-  bg="bg_green"
+  bg_tn="bg_pink_orange"
+  bg_cft="bg_pink_orange"
+  bg="pink_orange_w11"
   toc="pleasure/s20001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -84,7 +84,10 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/pleasure/s20014'])
+    if (this.userId === 563) return;
+
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,6 +107,7 @@ createScreen(){
  
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/pleasure/s20012'])
  
  

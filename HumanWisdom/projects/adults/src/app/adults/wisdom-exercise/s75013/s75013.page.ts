@@ -12,6 +12,7 @@ declare var $: any;
 export class S75013Page implements OnInit {
   dayclass = 'intro'
   isShowTranscript = false;
+  enableAlert = false;
   isShowAudio = false;
   enableintro = true;
   enableday1 = false;
@@ -404,6 +405,17 @@ export class S75013Page implements OnInit {
     else{
       this.next();
       $('#mdp_carousel').carousel('next');
+    }
+  }
+  guestEvent($event){
+    this.enableAlert = true;
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(['/log-in']);
+    }else{
+      this.enableAlert = false;
     }
   }
 }

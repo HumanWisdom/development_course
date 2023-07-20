@@ -1,42 +1,56 @@
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
-<div class="right_col mc_01" #screen role="main">				
-  <!-- Class -->  
+<div class="right_col mc_01" #screen role="main">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
-        <div class="x_panel p0">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+        <div [ngClass]="[pageaction === 'next' ? 'x_panel p0' : pageaction === 'prev' ? 'x_panel p0' : 'x_panel p0' ]">
           <div class="x_content p0">
-            <form class="p0">
+            <ng-content></ng-content>
+          </div>
+        </div>
+        <!-- <div class="x_panel p0">
+          <div class="x_content p0"> -->
+        <form class="p0">
 
-              <h1 class="txt1 tcenter">
-                {{title}}
-              </h1>             
+          <h1 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+            {{title}}
+          </h1>
 
-              <!-- jquery audio player plugin  -->
-              <!-- <div class="row tcenter">
+          <!-- jquery audio player plugin  -->
+          <!-- <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <div #playerContainer id="playerContainer" class=""></div>
                 </div>
               </div> -->
-              <!-- /jquery audio player plugin -->
+          <!-- /jquery audio player plugin -->
 
-              <!-- angular audio player plugin  -->                
-              <!-- <ngx-circular-player></ngx-circular-player>   -->
-              <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
-                  <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                  
-                </div>
-              </div>
-              <!-- /angular audio player plugin -->     
-
-              <ng-content></ng-content>
-
-            </form>            
+          <!-- angular audio player plugin  -->
+          <!-- <ngx-circular-player></ngx-circular-player>   -->
+          <div class="row tcenter">
+            <div class="col-md-12 col-sm-12 col-xs-12 center_flex mtb30px">
+              <audio id="aud1" controls controlsList="nodownload" #audio>
+                <source [src]="audioLink" type="audio/mpeg">
+              </audio>
+              <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()"
+                #audio></ngx-circular-player> -->
+            </div>
           </div>
-        </div>
+          <!-- /angular audio player plugin -->
+
+          <ng-content></ng-content>
+
+          <div class="pagebreak"></div>
+        </form>
       </div>
     </div>
   </div>
-  <!--/Class --> 
 </div>
+<!--/Class -->
 <!-- /page content -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'You have reached your free limit. Please subscribe to Premium to  unlock full access to the app'">
+</app-modal>

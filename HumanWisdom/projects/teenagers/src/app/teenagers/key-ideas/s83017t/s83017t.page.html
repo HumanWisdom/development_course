@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            On this journey through the human wisdom program, we are going to be two friends walking together and sharing our understanding of what we learn when we look at ourselves. It is like looking at the moon together and sharing what we see. I may point something out and say, “hey have you noticed that?” As you start looking, you might observe something that I haven’t seen and share that with me. So, we can learn together. No one invented or owns the moon.  It also means that anything in this app s only true if you see it for yourself because you can double check that straight away by just observing how your own mind functions. This is so important to understand. We are so used to an expert telling us what to think and what to do - but it is so much more important to be your own teacher - because if you see something clearly yourself - it changes you.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

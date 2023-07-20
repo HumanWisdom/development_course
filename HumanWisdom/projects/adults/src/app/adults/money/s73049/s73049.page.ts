@@ -81,7 +81,7 @@ export class S73049Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/money/s73050'])
+    
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -103,13 +103,15 @@ export class S73049Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/money/s73048'])
 
   }
 
 
   goNext() {
-    // this.router.navigate(['/adults/money/s73049'])
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/money/s73050'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

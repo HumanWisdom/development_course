@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          If the stress is long-term we can focus on the pain inside us, making us less sensitive to the people in our lives and their emotional needs. This happens without our awareness. It can affect our relationships. Afterall, if there is a fire in our mind, it takes all our focus and energy and we have little space for anything or anyone else. It can make us withdraw into ourselves and that can lead to depression. This awareness can make us more actively engage with others, even if we are stressed.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

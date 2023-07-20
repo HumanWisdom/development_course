@@ -1,0 +1,24 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      1. Stress is a difference between how things are and how we want them to be, or
+    </h1>
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      2. A difference between who we are and who we want to be.
+    </h1>
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      3. To avoid stress we can either change the situation, or our reaction to it.
+    </h1>
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      4. Stress is an opportunity to learn about ourselves.
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

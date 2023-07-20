@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          You will notice how we like to be with people who are like us. Just look around the playground and you will see each person trying to find a group to join in. Why is that? And what are the implications of that for our lives?
+          <br>
+          Being in a group makes us feel safe, wanted, and less lonely. We want to be with people where we do not feel disturbed or challenged. In joining a group we look for people who look like us, who share the same interests, and think like us. This is how tribes form. Suspicion between different groups can develop and conflict can begin. The conflict between different gangs in cities has its roots in this process. In a group there is no one to challenge our views and they can go unchecked. We naturally begin to think we are right and others are wrong. A group can exclude anyone who does not agree with its views, or who is different in any way, and the fear of being excluded makes people conform. Sometimes people can be cruel to each other, and compassion is lost. This can also make people bully others just because they are different. Do you see that in the playground?
+          <br>
+          How are you going to respond with wisdom?
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

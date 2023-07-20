@@ -98,8 +98,9 @@ export class S23090Page implements OnInit {
     sessionStorage.setItem("r23090", JSON.stringify(e))
     this.r23090 = sessionStorage.getItem("r23090")
     console.log(this.r23090)
-
-
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/happiness/s23091'])
+    if (this.userId === 563) return;
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -114,16 +115,17 @@ export class S23090Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/happiness/s23091'])
+        
 
       },
       () => {
-        this.router.navigate(['/adults/happiness/s23091'])
+        
       })
 
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23089'])
   }
 

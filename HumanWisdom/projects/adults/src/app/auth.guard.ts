@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
-import { OnboardingService } from './onboarding/onboarding.service';
+import { OnboardingService } from '../../../shared/services/onboarding.service';
 
 @Injectable({
   providedIn: 'root'
@@ -101,8 +101,8 @@ export class AuthGuard implements CanActivate, OnInit {
     } else if (adult === 'T' && rem !== 'T') {
       return true;
     } else if (btnclick !== null && btnclick === 'T') {
-      // this.router.navigate(['/onboarding/login'])
-      this.router.navigate(['/onboarding/login'])
+      // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       return false
     } else {
       if (this.onboarding.navigateToUpgradeToPremium
@@ -110,7 +110,7 @@ export class AuthGuard implements CanActivate, OnInit {
       ) {
         localStorage.setItem('btnclick', 'F');
         localStorage.setItem('guest', 'T');
-        this.router.navigate(['/onboarding/login'])
+        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         return false;
       }
       // localStorage.clear()

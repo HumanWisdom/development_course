@@ -8,4 +8,9 @@
 
 <app-splash *ngIf="!pageLoaded"></app-splash>
 
-<router-outlet *ngIf="pageLoaded"></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)">
+  <ngx-json-ld [json]="schema"></ngx-json-ld>
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+
+<!-- <router-outlet *ngIf="pageLoaded"></router-outlet> -->

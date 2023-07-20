@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module exploring loneliness. It is part of the 4th circle of wisdom, where we understand emotions, and it is connected to all the other circles. Loneliness is a core human emotion, and follows us like a shadow all our lives. We have evolved to be social animals and need good quality relationships for our physical and emotional well-being. Loneliness feels unpleasant so we put a lot of energy into avoiding it and escaping from it, but it never really goes away. In this module we are going to explore how it shapes our lives, the health problems it can cause,
+            what is the root cause of it, and how we can meet it with intelligence and wisdom
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

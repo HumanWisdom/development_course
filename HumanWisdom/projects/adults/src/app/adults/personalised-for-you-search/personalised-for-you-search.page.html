@@ -2,6 +2,8 @@
 <app-tn-dashboard-v03 [enableplaystore]="false" [routeid]="'search'"></app-tn-dashboard-v03>
 <!-- /top navigation -->
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_01">
   <!-- class -->
@@ -10,7 +12,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white p0">
         <div class="x_panel p0">
           <div class="x_content p0">
-           
+
             <!-- <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <a routerLink="/adult-dashboard/" class="">
@@ -26,18 +28,22 @@
 
             <div class="row mt30px prelative">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px tsp">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search mb0px" name="search-list" [(ngModel)]="searchinp"
-                  (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" 
-                  (focusout)="onFocusOutEvent ()"
-                  (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search mb0px"
+                  name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)"
+                  autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()"
+                  (keyup.enter)="getinp($event.target.value)"
+                  [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
+                <span *ngIf=" searchinp!=''" (click)="clearSearch()"
+                  class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                  aria-hidden="true"></span>
               </div>
 
               <div class="row adsearch">
                 <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                   <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
-                    <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
+                    <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                      class="is-search list-group-item">{{item.ModuleName}}</li>
                   </ul>
                 </div>
               </div>
@@ -80,7 +86,8 @@
                                     alt="User Guide" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">Start Here</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -92,7 +99,8 @@
                                     alt="Discovering Wisdom" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">What is Wisdom?</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="discoveringP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="discoveringP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -104,7 +112,8 @@
                                     alt="How can wisdom help?" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">How can wisdom help?</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="hcwhP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="hcwhP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -116,7 +125,8 @@
                                     alt="Benefits of Wisdom" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">Wisdom brings change</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="benefitsWisdomP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="benefitsWisdomP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -128,7 +138,8 @@
                                     alt="5 Circles of Wisdom" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">5 Circles of Wisdom</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="fiveCirclesP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="fiveCirclesP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -140,7 +151,8 @@
                                     alt="Key Ideas" class="ctimg">
                                   <h4 class="tcenter txt31 attitle">Key Ideas</h4>
                                   <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="keyP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" [style.width]="keyP + '%'"
+                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
                                 </a>
                               </div>
@@ -171,7 +183,7 @@
                   </a>
                 </div>
               </div> -->
-            
+
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback zi0">
                   <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
@@ -225,25 +237,33 @@
               </div> -->
 
               <ng-container *ngIf="personalisedforyou.length !== 0">
-                <div class="row mb15px" *ngFor="let item of personalisedforyou; let i = index">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <button class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']"
-                      (click)="clickbtn(item['name'], '', $event, i, item['id'])">
-                      <div class="row flex_ai">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                          <div class="col-md-10 col-sm-10 col-xs-10 p0 tleft">
-                            {{item['name']}}
+                <div class="row mb10px center_flex">
+                  <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-6 col-sm-6 col-xs-6 plrdiv" *ngFor="let item of personalisedforyou; let i = index">
+                      <button 
+                        class="btn btn_pfy_search" 
+                        [ngClass]="[item['active'] ? 'activebtn' : '']"
+                        (click)="clickbtn(item['name'], '', $event, i, item['id']);">
+                        <h4 class="fc_ffffff fw_500 fs_15px lh_130p mtb0px">
+                          {{item['name']}}
+                        </h4>
+                        <!-- <div class="row flex_ai">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-10 col-sm-10 col-xs-10 p0 tleft">
+                              {{item['name']}}
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 p0 tright"
+                              (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg"
+                                *ngIf="item['active']" class="img-responsive">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg"
+                                *ngIf="!item['active']" class="img-responsive">
+                            </div>
                           </div>
-                          <div class="col-md-2 col-sm-2 col-xs-2 p0 tright"
-                            (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg"
-                              *ngIf="item['active']" class="img-responsive">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg"
-                              *ngIf="!item['active']" class="img-responsive">
-                          </div>
-                        </div>
-                      </div>
-                    </button>
+                        </div> -->
+                      </button>
+                    </div>
                   </div>
                 </div>
               </ng-container>
@@ -264,16 +284,17 @@
 
             <div class="row mt60px mb60px">
               <a routerLink="/adult-dashboard/">
-                <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">                  
+                <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">
                   <h6 class="fw_500 fs_16px lh_19px fc_1092a7 mtb0px center_flex">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/home_blue_circle.svg" alt="">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/home_blue_circle.svg"
+                      alt="">
                     <span class="pl5px pt5px underline">
                       View full dashboard
                     </span>
                   </h6>
                 </div>
               </a>
-            </div>   
+            </div>
 
             <!-- welcome popup button -->
             <span #welcome data-toggle="modal" data-target="#modal_popup"></span>
@@ -291,7 +312,7 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<app-bottom-navigation (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 <!-- /footer -->
 
 <span data-toggle="modal" #enablepopup data-target="#signuplogin"></span>
@@ -327,7 +348,7 @@
 
             <div class="row pfy_ocw">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px">
+                <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
                   OR CONNECT WITH
                 </h4>
               </div>

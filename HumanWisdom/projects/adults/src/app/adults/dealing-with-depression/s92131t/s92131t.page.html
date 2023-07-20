@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Use the online journal in the app to jot down your thoughts. It's private to you. 
+            It is useful to get your thoughts out of your head and into a journal.
+          </p>
+
+          <p>
+            Try this exercise - for 10 minutes sit and write down every thought that comes into your head. Don’t think about it, or censor it or judge it - just write it down. At the end of that notice your own thinking. You may find that you feel calmer. 
+          </p>
+
+          <p>
+            At this stage do not try to make sense of what you have written. We will use the journal in a more structured way in a later session to challenge our own narratives about our life.
+          </p>
+
+          <p>
+            Whenever we pay complete attention to something, the mind quietens
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

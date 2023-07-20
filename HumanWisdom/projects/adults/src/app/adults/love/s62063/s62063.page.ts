@@ -97,7 +97,9 @@ export class S62063Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r62063", JSON.stringify(e))
     this.r62063 = sessionStorage.getItem("r62063")
-    console.log(this.r62063)
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/love/s62064'])
+    if (this.userId === 563) return;
 
 
     this.service.submitProgressReflection({
@@ -114,17 +116,19 @@ export class S62063Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/love/s62064'])
+      
+
 
       },
       () => {
-        this.router.navigate(['/adults/love/s62064'])
+       
       })
 
 
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/love/s62062'])
   }
 

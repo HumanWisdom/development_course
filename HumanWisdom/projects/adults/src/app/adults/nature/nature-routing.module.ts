@@ -25,78 +25,90 @@ const routes: Routes = [
   },
   {
     path: 's28001',
-    canActivate: [ActiveGuard],
-    component: S28001Page,
+    component: S28001Page
   },
   {
     path: 's28002',
     canActivate: [ActiveGuard],
-    component: S28002Page,
+    component: S28002Page
   },
   {
     path: 's28003',
     canActivate: [ActiveGuard],
     component: S28003Page,
+    data: { animation: 0 }
   },
   {
-    path: 's28004/:action',
+    path: 's28004',
     canActivate: [ActiveGuard],
     component: S28004Page,
+    data: { animation: 1 }
   },
   {
-    path: 's28005/:action',
+    path: 's28005',
     canActivate: [ActiveGuard],
     component: S28005Page,
+    data: { animation: 2 }
   },
   {
     path: 's28006',
     canActivate: [ActiveGuard],
     component: S28006Page,
+    data: { animation: 3 }
   },
   {
     path: 's28007',
     canActivate: [ActiveGuard],
     component: S28007Page,
+    data: { animation: 4 }
   },
   {
     path: 's28008',
     canActivate: [ActiveGuard],
     component: S28008Page,
+    data: { animation: 5 }
   },
   {
     path: 's28009',
     canActivate: [ActiveGuard],
     component: S28009Page,
+    data: { animation: 6 }
   },
   {
     path: 's28010',
     canActivate: [ActiveGuard],
     component: S28010Page,
+    data: { animation: 7 }
   },
   {
     path: 's28011',
     canActivate: [ActiveGuard],
     component: S28011Page,
+    data: { animation: 8 }
   },
   {
     path: 's28012',
     canActivate: [ActiveGuard],
     component: S28012Page,
+    data: { animation: 9 }
   },
   {
     path: 's28013',
     canActivate: [ActiveGuard],
     component: S28013Page,
+    data: { animation: 10 }
   },
   {
     path: 's28014',
     canActivate: [ActiveGuard],
     component: S28014Page,
+    data: { animation: 11 }
   },
   {
     path: 's28015',
     canActivate: [ActiveGuard],
     component: S28015Page,
+    data: { animation: 12 }
   },
 ];
 

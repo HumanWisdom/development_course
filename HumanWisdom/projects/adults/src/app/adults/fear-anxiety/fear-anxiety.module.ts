@@ -191,11 +191,11 @@ import { S615p2Page } from './s615p2/s615p2.page'; 
 import { S615p3Page } from './s615p3/s615p3.page'; 
 import { S615p4Page } from './s615p4/s615p4.page'; 
 import { S616Page } from './s616/s616.page'; 
+import { S616p1Page } from './s616p1/s616p1.page'; 
 import { S617Page } from './s617/s617.page';  
 import { S614p2Page } from './s614p2/s614p2.page';    
 
 import { FearAnxietyRoutingModule } from './fear-anxiety-routing.module';
-
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 
 @NgModule({
@@ -386,6 +386,7 @@ import { NgxCircularPlayerModule } from 'ngx-circular-player';
     S615p3Page,
     S615p4Page,    
     S616Page,
+    S616p1Page,
     S617Page,    
     S614p2Page 
   ],

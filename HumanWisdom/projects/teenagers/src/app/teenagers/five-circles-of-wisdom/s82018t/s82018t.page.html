@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We have created a section called Get support now, to help you deal with acute challenges you may face like a stressful event, anxiety, relationships stress, anger or the sorrow of a sudden loss. When we are faced with these challenges our mind goes into a fog, and we don’t know what to do. We have created 10 minutes long videos for each subject, which guide the user through all options available to them. Once you have dealt with the acute event, you can explore the subject in more depth, later in the program, so it does not reoccur.  The video on stress for example, offers 14 ways to deal with acute stress
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

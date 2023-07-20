@@ -13,15 +13,15 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
         </div> -->
-  
+
         <!-- hamburger -->
         <nav class="navbar navbar-default navbar-static-top">
-  
+
           <div class="row dtn_default flex_ai">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-  
+
               <div class="mcflex_advertsh">
-  
+
                 <button type="button" class="navbar-toggle collapsed m0px" data-toggle="collapse" data-target="#navbar"
                   aria-expanded="false" aria-controls="navbar">
                   <span class="sr-only">Toggle navigation</span>
@@ -29,45 +29,45 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-  
+
                 <button type="button" class="btn m0px mr20pxi fright btn_htry_free" (click)="routedashboard('free')">
                   {{isLoggedIn ? 'Go to App' : 'Try for free'}}
                 </button>
-  
+
                 <a class="" (click)="route_adverts_hwp()">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_01.svg"
                     alt="HumanWisdom" class="img-responsive">
                 </a>
-  
+
               </div>
-  
+
             </div>
           </div>
-  
+
           <div id="navbar" class="collapse">
             <ul class="nav navbar-nav fw_400 fs_18px lh_21px fc_000000">
               <li class="active">
-                <a routerLink="/adults/adverts-about/">
+                <a  (click) ="navigate('/adults/adverts-about/','click_Our_Story')">
                   Our Story
                 </a>
               </li>
               <li>
-                <a routerLink="/adults/give-the-gift-of-wisdom">
+                <a (click)="navigate('/adults/give-the-gift-of-wisdom', 'click_give_the_gift_wisdom')">
                   Give the gift of Wisdom
                 </a>
               </li>
               <li>
-                <a routerLink="/adults/adverts-hwp-app/">
+                <a  (click)="navigate('/adults/adverts-hwp-app','click_HumanWisdom_App' )">
                   The HumanWisdom App
                 </a>
               </li>
               <li>
-                <a routerLink="/adults/adverts-work/">
-                  HumanWisdom for Businesses
+                <a  (click)="navigate('/adults/adverts-work/', 'click_HumanWisdom_for_Business')">
+                  HumanWisdom for Business
                 </a>
               </li>
               <li>
-                <a routerLink="/adults/adverts-student/">
+                <a (click)="navigate('/adults/adverts-student/',  'click_HumanWisdom_for_Education')">
                   HumanWisdom for Education
                 </a>
               </li>
@@ -76,25 +76,27 @@
                   {{login}}
                 </a>
               </li>
-  
+
             </ul>
           </div>
-  
+
         </nav>
         <!-- /hamburger -->
-  
+
       </div>
     </div>
     <!-- /top navigation -->
-  
+
   </div>
   <!-- /top navigation -->
 
-  <video autoplay loop preload="true" class="bg_adverts_hwp" controlsList="nodownload">
+  <!-- <video autoplay loop preload="true" class="bg_adverts_hwp" controlsList="nodownload">
     <source
       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/adverts/videos/02.mp4"
       type="video/mp4">
-  </video>
+  </video> -->
+
+  <app-bg-video></app-bg-video>
 
   <!-- <div class="video-container bg_adverts_hwp">
     <iframe src="https://www.youtube.com/embed/Yj2iELI6OeI?&autoplay=1&mute=1&playsinline=1"></iframe>
@@ -594,13 +596,13 @@
                       </div>
                     </div>
 
-                    <!-- <div class="row center_flex mt20px mb10px">                    
+                    <!-- <div class="row center_flex mt20px mb10px">
                       <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                         <input type="text" class="form-control cfc3 tleft" placeholder="Your name">
                       </div>
                     </div>
 
-                    <div class="row center_flex">                    
+                    <div class="row center_flex">
                       <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                         <input type="text" class="form-control cfc3 tleft" placeholder="Your e-mail address">
                       </div>
@@ -652,7 +654,7 @@
                           </a>
                         </div>
                         <!-- /desktop playstore -->
-    
+
                         <!-- desktop appstore -->
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <a (click)="clickbanner('https://apps.apple.com/in/app/humanwisdom/id1588535567')">
@@ -680,28 +682,28 @@
                               class="">
                           </div>
                         </a>
-    
+
                         <a href="https://twitter.com/HumanWisdom_me">
                           <div class="col-md-2 col-sm-2 col-xs-2">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/twitter_01.svg"
                               class="">
                           </div>
                         </a>
-    
+
                         <a href="https://www.instagram.com/humanwisdom.me/">
                           <div class="col-md-2 col-sm-2 col-xs-2">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/instagram_01.svg"
                               class="">
                           </div>
                         </a>
-    
+
                         <a href="https://www.linkedin.com/company/humanwisdom">
                           <div class="col-md-2 col-sm-2 col-xs-2">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/linkedin_01.svg"
                               class="">
                           </div>
                         </a>
-    
+
                         <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA">
                           <div class="col-md-2 col-sm-2 col-xs-2">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/youtube_01.svg"
@@ -710,7 +712,7 @@
                         </a>
                       </div>
                     </div>
-    
+
                     <div class="row mt20px">
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <h4 class="fw_400 fs_14px lh_130p fc_59595b mtb0px tcenter">
@@ -847,7 +849,7 @@
                       (click)="googleLogin()" class="img-responsive">
                   </button>
                 </div>
-                <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
+                <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
                 </button>
@@ -1194,7 +1196,7 @@
                     (click)="googleLogin()" class="img-responsive">
                 </button>
               </div>
-              <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter"> 
+              <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
                 <button type="button" class="btn btn-default btn_as_sl">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg" class="img-responsive">
                 </button>
@@ -1293,3 +1295,8 @@
   <!-- /modal-body -->
 </div>
 <!-- /activate subscription modal -->
+
+
+<app-modal *ngIf="enableAlert" [enableCancel]="enablecancel" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="content">
+</app-modal>

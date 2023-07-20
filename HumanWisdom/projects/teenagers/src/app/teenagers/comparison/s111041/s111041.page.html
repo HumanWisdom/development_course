@@ -1,0 +1,37 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Comparing ourselves with our ideal of who we want to be:
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <!-- <p class="mb0px fw_500">01</p> -->
+      01. Can make us self-critical
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <!-- <p class="mb0px fw_500">02</p> -->
+      02. Can result in low self esteem
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <!-- <p class="mb0px fw_500">03</p> -->
+      03. Can make us angry at ourselves
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      <!-- <p class="mb0px fw_500">04</p> -->
+      04. Can make us anxious
+    </h3>
+
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

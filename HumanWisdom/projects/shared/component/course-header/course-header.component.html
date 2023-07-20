@@ -1,6 +1,6 @@
 <!-- top navigation -->
 <div class="row center_flex" *ngIf="!shared">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module" [ngClass]="bg_tn">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module bg_292d56" [ngClass]="bg_tn">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
       <div class="p0 mr20px">
         <a class="" href="javascript:;" (click)="goToDash()">
@@ -23,7 +23,7 @@
             alt="">
         </a>
       </div>
-      <div class="p0 mlr20px">
+      <div class="p0 mlr20px" >
         <a *ngIf="!bookmark" href="javascript:;" (click)="toggleBookmark()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_course_01.svg"
             class="img-responsive" alt="">
@@ -44,8 +44,8 @@
     <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
       <div class="progress progress-sm hprogress" [ngStyle]="{'visibility': !showheaderbar ? 'hidden' : 'visible'}">
         <div class="progress-bar" role="progressbar"
-          [ngStyle]="{'visibility': !showheaderbar ? 'hidden' : 'visible' ,'min-width': progress + '%', 'max-width': progress + '%', 'width': progress + '%'}"
-          aria-valuemax="100"></div>
+          [ngStyle]="{'min-width': progress + '%',
+           'max-width': progress + '%', 'width': progress + '%', 'transition':'width 0.5s, max-width 0.5s, min-width 0.5s'}" aria-valuemax="100"></div>
       </div>
     </div>
   </div>
@@ -54,16 +54,16 @@
 
 <!-- top navigation -->
 <div class="row center_flex" *ngIf="shared">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module" [ngClass]="bg_tn">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module bg_292d56" [ngClass]="bg_tn">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-        <a class="" href="#">
+        <a class="" href="javascript:;" (click)="goToDash()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dashboard.svg"
             class="img-responsive" alt="HumanWisdom">
         </a>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-        <a class="" href="#">
+        <a class="" href="javascript:;" *ngIf="toc" (click)="goToToc()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive"
             alt="HumanWisdom">
         </a>
@@ -73,19 +73,19 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
       <div
         class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
-        <a>
+        <a data-toggle="modal" data-target="#exampleModalCenter">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive"
             alt="">
         </a>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-        <a>
+        <a *ngIf="!bookmark" href="javascript:;" (click)="toggleBookmark()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/bookmark_course_01.svg"
             class="img-responsive" alt="">
         </a>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-        <a>
+        <a href="javascript:;" (click)="share()" id="btnShare">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_opaque.svg"
             class="img-responsive" alt="">
         </a>
@@ -140,14 +140,14 @@
             <div class="row pt20px pb30px">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <textarea id="message" required="required" class="form-control txt19 p30_20px" name="message" rows="12"
-                  placeholder="Type your note here..." [(ngModel)]="note"></textarea>
+                [disabled]="guest || !Subscriber" [placeholder]="placeHolder" [(ngModel)]="note"></textarea>
               </div>
             </div>
 
             <div class="row center_flex flex_wrap">
               <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                 <a>
-                  <button type="button" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"
+                  <button type="button" [disabled]="guest || !Subscriber" class="btn btn-success mb0 btn_add_note_journal" (click)="addNote()"
                     data-dismiss="modal">Add Note to Journal</button>
                 </a>
               </div>
@@ -173,3 +173,9 @@
   </div>
 </div>
 <!-- /add note modal -->
+
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="'Please subscribe to activate this feature'">
+</app-modal>

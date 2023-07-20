@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our mind is always labeling what it finds as good or bad, right or wrong. The many emotions we feel and the hidden patterns of thinking behind them are the same in you and me and in all human beings. Our emotions are powerful and we are certain we are right and others are wrong. Sometimes we are critical of ourselves. Pausing judgement allows us to look at ourselves without being critical or justifying the way we are. It also allows us to accept ourselves as we are and increases our empathy for others
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

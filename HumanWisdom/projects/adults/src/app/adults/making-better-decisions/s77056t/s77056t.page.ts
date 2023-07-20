@@ -59,6 +59,8 @@ export class S77056tPage implements OnInit {
   submitProgress()
   {
     this.router.navigate(['/adults/making-better-decisions/s77057'])
+    if (this.userId === 563) return;
+
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -75,6 +77,7 @@ export class S77056tPage implements OnInit {
 
   prev()
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77055'])
   }
 

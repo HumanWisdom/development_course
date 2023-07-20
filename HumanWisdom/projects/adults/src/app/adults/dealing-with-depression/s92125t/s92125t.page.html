@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Now let’s introduce another element to this exercise.
+          </p>
+
+          <p>
+            Try this only if you have mastered step 1 and 2 and are comfortable with it. This third step is not always easy - so try it - and if it doesn’t feel comfortable right now, come back to it later.
+          </p>
+
+          <p>
+            As you breathe in, at the end of your breath, hold it for a count of 2 before you begin to breathe out. As you breathe out, at the end of your breath hold it to a count of 2 before you breathe in again.
+          </p>
+
+          <p>
+            As you get better at this increase the breath holding count to 4.
+          </p>
+
+          <p>
+            Being able to control your breath in this way is good for your immune system, and also helps you to control your automatic reactions to your thoughts or external events.
+          </p>
+
+          <p>
+            Do this for 5 minutes
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

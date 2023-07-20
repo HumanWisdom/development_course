@@ -2,13 +2,14 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
-
 @Component({
   selector: 'app-s26018',
   templateUrl: './s26018.page.html',
   styleUrls: ['./s26018.page.scss'],
 })
-export class S26018Page implements OnInit {
+
+export class S26018Page implements OnInit 
+{
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w5"
@@ -36,12 +37,16 @@ export class S26018Page implements OnInit {
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
 
-
-  constructor(private router: Router,
+  constructor
+  (
+    private router: Router,
     private service: AdultsService,
-    private location: Location) { }
+    private location: Location
+  ) 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.createScreen()
     if (JSON.parse(sessionStorage.getItem("bookmar26020")) == 0)
       this.bookmark = 0
@@ -50,30 +55,24 @@ export class S26018Page implements OnInit {
     console.log(this.qrList, "Qrlist")
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
-
-
     this.findQuestion()
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
-
-
-
   }
 
-  createScreen() {
+  createScreen() 
+  {
     this.service.createScreen({
       "ScrId": 0,
       "ModuleId": this.moduleId,
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
-
-
+    }).subscribe(res => {})
   }
-  receiveBookmark(e) {
+
+  receiveBookmark(e) 
+  {
     console.log(e)
     if (e == true)
       this.bookmark = 1
@@ -82,60 +81,66 @@ export class S26018Page implements OnInit {
     sessionStorage.setItem("bookmark26018", JSON.stringify(this.bookmark))
   }
 
-  findQuestion() {
-    for (var i = 0; i < this.questionA.length; i++) {
+  findQuestion() 
+  {
+    for (var i = 0; i < this.questionA.length; i++) 
+    {
       if (this.questionA[i].CorrectAns == "0")
         this.questionA[i].CorrectAns = false
       else
         this.questionA[i].CorrectAns = true
 
-
-      if (this.queId == this.questionA[i].QueId) {
+      if (this.queId == this.questionA[i].QueId) 
+      {
         this.question = this.questionA[i].Que
         this.optionList.push(this.questionA[i])
       }
-
     }
     console.log(this.question, this.optionList)
-
   }
 
-  checkOption(opt) {
+  checkOption(opt) 
+  {
     this.sessionOption = []
-    if (opt.CorrectAns) {
+    if (opt.CorrectAns) 
+    {
       this.option = opt.OptId
       sessionStorage.setItem("sessionOptions26018", JSON.stringify(this.option))
       document.getElementById(opt.OptId).style.background = '#FFC455';
-      if (this.falseans !== '') {
+      if (this.falseans !== '') 
+      {
         document.getElementById(this.falseans).style.background = '#FFFFFF';
         document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
-      } else {
+      } 
+      else 
+      {
         this.falseans = opt.OptId
       }
-    } else {
-      if (this.falseans !== '') {
+    } 
+    else 
+    {
+      if (this.falseans !== '') 
+      {
         document.getElementById(this.falseans).style.background = '#FFFFFF';
         document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
-      } else {
+      } 
+      else 
+      {
         this.falseans = opt.OptId
       }
       document.getElementById(opt.OptId).style.background = '#5D5D5D';
       document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
-    //this.option.push(optId)
-
-    //this.sendOption.push(this.option[this.option.length-1])
   }
 
-
-  submitProgress() {
+  submitProgress() 
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     this.router.navigate(['/adults/benefits-of-enquiry/s26020'])
     this.service.submitProgressQuestion({
       "ModuleId": this.moduleId,
@@ -147,20 +152,14 @@ export class S26018Page implements OnInit {
       "OptionIDs": this.option
     })
       .subscribe((res) => { });
-
-
-
   }
-  prev() {
+
+  prev() 
+  {
     this.router.navigate(['/adults/benefits-of-enquiry/s26016'])
   }
 
-  ngOnDestroy() {
-
-
-
-  }
-
-
+  ngOnDestroy() 
+  {}
 
 }

@@ -30,8 +30,8 @@ export class S34006Page implements OnInit {
   rId = 255
   reflection: any
   reflectionA: any
-  r34006 = JSON.parse(sessionStorage.getItem("r34006"))
-
+  //r34006 = JSON.parse(sessionStorage.getItem("r34006"))
+  r34006 = sessionStorage.getItem("r34006") !== 'null' ? sessionStorage.getItem("r34006") : ''
   shared: any
   confirmed: any
 
@@ -96,7 +96,7 @@ export class S34006Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r34006", JSON.stringify(e))
-    this.r34006 = sessionStorage.getItem("r34006")
+    //this.r34006 = sessionStorage.getItem("r34006")
     console.log(this.r34006)
     if (this.r34006 != "undefined") {
 
@@ -133,6 +133,7 @@ export class S34006Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/key-ideas/s34005'])
   }
 

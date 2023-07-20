@@ -24,7 +24,7 @@ export class S26003Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "How the mind works",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="benefits-of-enquiry/s26003t"

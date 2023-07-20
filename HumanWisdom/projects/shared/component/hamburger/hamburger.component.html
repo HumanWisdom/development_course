@@ -300,7 +300,7 @@
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
-                  HumanWisdom for Businesses
+                  HumanWisdom for Business
                 </h4>
               </div>
             </div>
@@ -441,6 +441,25 @@
                 </div>
               </a>
             </li>
+
+           <!--  <li>
+              <a (click)="Logevent('/adults/gpay', '', 'gpay')"  class="p0 b0px">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/12.svg"
+                        alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                      <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
+                      GPAY
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li> -->
+
           </ul>
         </div>
       </li>
@@ -577,7 +596,7 @@
             </li>
 
             <li>
-              <a routerLink="/adults/help-support/privacy-policy" class="p0 b0px">
+              <a  (click)="navigate('/adults/help-support/privacy-policy')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -595,7 +614,7 @@
             </li>
 
             <li>
-              <a routerLink="/adults/help-support/cookie-policy" class="p0 b0px">
+              <a (click)="navigate('/adults/help-support/cookie-policy')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -616,7 +635,7 @@
       </li>
       <!-- /multilayer li for help & support -->
 
-      <li id="liLogout" (click)="logout()" *ngIf="isloggedIn">
+      <li (click)="logout()" *ngIf="isloggedIn">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
             <div class="col-md-2 col-sm-2 col-xs-2">
@@ -737,7 +756,7 @@
 
       <!-- multilayer li -->
       <!-- <li>
-        <label class="a-label__chevron" for="item-3">                            
+        <label class="a-label__chevron" for="item-3">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-2 col-sm-2 col-xs-2">
@@ -884,7 +903,7 @@
 
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0">
-          <a class="" href="https://www.facebook.com/humanwisdomguide" target="_blank">
+          <a class="" href="https://www.facebook.com/humanwisdomguide" target="_top">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/facebook.svg" alt="" class="img-responsive">
           </a>
           <a class="" href="https://twitter.com/HumanWisdom_me" target="_blank">
@@ -907,3 +926,7 @@
   </div>
   <!-- /submenu -->
 </nav>
+
+<app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+  [content]="content">
+</app-modal>

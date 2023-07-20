@@ -24,7 +24,7 @@ export class S33005Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "How the mind works",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="five-circles/s33005t"
@@ -100,6 +100,7 @@ export class S33005Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/five-circles/s33006'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -121,6 +122,7 @@ export class S33005Page implements OnInit,OnDestroy {
  
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/five-circles/s33004'])
  
  

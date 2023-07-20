@@ -1,32 +1,9 @@
-<!-- top navigation -->
-<!-- <div class="top_nav ml0 tcenter inav">
-  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/anger.png" alt="" class="img-responsive iw100">
-  <div class="nav_menu absolute_top p20px">
-      <nav>          
-          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
-            <li class="">                    
-                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
-                  <h4 class="btn_back_white">
-                    Back
-                  </h4> 
-                </a>                  
-            </li>   
-            
-            <li class="lishare">                    
-              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/share_white.svg" alt="" class="p0">
-              </a>                  
-            </li>
-          </ul>
-      </nav>
-  </div>
-</div> -->
-<!-- /top navigation -->
 <app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
-  <form>                                
+  <form>
+
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h1 class="module_title">
@@ -162,6 +139,37 @@
         </div>                        
       </div>
     </a> 
+    <a routerLink="/adults/anger/s231p0">
+      <div class="row box_01 bg_red_pink p0">
+        <div  
+          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
+          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/13.svg);">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
+        </div>        
+
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h6 class="session_no mtb0px">
+              Session #5
+            </h6>                    
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
+              <h4 class="session_name mtb0px">
+                Understand and manage your anger
+              </h4>    
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+              <h4 class="session_time mtb0px">
+                45:05 min
+              </h4>    
+            </div>
+          </div>   
+        </div>                        
+      </div>
+    </a> 
+
     <!-- /audio row -->
 
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
@@ -170,5 +178,4 @@
 
 </app-index-content> 
 
-<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <app-index-footer></app-index-footer>

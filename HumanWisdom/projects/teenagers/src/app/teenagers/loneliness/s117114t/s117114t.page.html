@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          There are times in life we find ourselves alone. A relationship may have ended, or we may have moved to a new city. We may not be naturally outgoing and may feel caught between our loneliness which makes us want to connect with people, and our social anxiety and a fear we may not be accepted. Do remember that this loneliness affects everyone equally, and so you are not alone. We explore fear in a separate module, so have a look at that. If you turn around, face your fear and reach out to people anyway, you may realise that it's not as difficult as you thought. The modern world offers so many opportunities to connect with people. Seize them. Our fear can also prevent us from sharing our feelings with others, so our relationships can remain superficial. 
+          Fear gets in the way of having relationships with depth. What can you do to overcome it?
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

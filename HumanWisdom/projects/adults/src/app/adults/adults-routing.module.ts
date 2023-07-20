@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
+import { ActiveGuard } from '../active.guard';
 
 const routes: Routes = [
   {
@@ -259,10 +260,10 @@ const routes: Routes = [
     path: 'wisdom-shorts',
     loadChildren: () => import('./wisdom-shorts/wisdom-shorts.module').then(m => m.WisdomShortsModule)
   },
-  {
-    path: 'blog',
-    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-  },
+  // {
+  //   path: 'blog',
+  //   loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+  // },
   {
     path: 'treesisters',
     loadChildren: () => import('./treesisters/treesisters.module').then(m => m.TreesistersPageModule)
@@ -334,6 +335,7 @@ const routes: Routes = [
   },
   {
     path: 'wisdom-shorts/:videolink',
+    canActivate:[ActiveGuard],
     component: S3VideoComponent
   },
   {
@@ -413,9 +415,33 @@ const routes: Routes = [
     path: 'contact-coach',
     loadChildren: () => import('./contact-coach/contact-coach.module').then(m => m.ContactCoachPageModule)
   },
+  {
+    path:'gpay',
+    loadChildren:() =>import('./gpay/gpay.module').then(m=>m.GpayModule)
+  },
+  {
+    path: 'external-approval',
+    loadChildren: () => import('./external-approval/external-approval.module').then(m => m.ExternalApprovalModule)
+  },
+  {
+    path: 'dealing-with-depression',
+    loadChildren: () => import('./dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
+  },
+  {
+    path: 'diversity-and-inclusion',
+    loadChildren: () => import('./diversity-and-inclusion/diversity-and-inclusion.module').then(m=>m.DiversityAndInclusionModule)
+  },
+  {
+    path: 'repeat-user',
+    loadChildren: () => import('./repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule)
+  },
+  {
+    path: 'feel-better-now',
+    loadChildren: () => import('./feel-better-now/feel-better-now.module').then( m => m.FeelBetterNowModule)
+  },
 ];
 
-@NgModule({
+ @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })

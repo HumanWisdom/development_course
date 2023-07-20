@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          One of the reasons for our loneliness may be that we do not know how to look after our existing relationships, especially as we get busy in our work and family commitments and like a plant that we do not water, they can wither away. Or we may get disappointed with people and hurt and withdraw our affections. That is a natural instinct, but one that can leave without any friendships. We need to understand that people are always imperfect, just as we are. In the end if we regard relationships as important, we will invest our time and look after them, and they can flourish. If we take people for granted, get easily hurt and walk away from people, we should not 
+          be surprised if we end up feeling lonely. We explore all this in more depth in the relationship module.
+           </h3>
+
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

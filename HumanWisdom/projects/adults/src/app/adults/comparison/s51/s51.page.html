@@ -1,26 +1,26 @@
 <app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
  
-<app-kta-prevnext>
+<app-kta-prevnext [bg]="bg">
   
   <form class="">
 
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       Comparison is essential for life and brings pleasure but can also: 
     </h1>
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       01. Cause envy
     </h1>
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       02. Make us critical of others and ourselves 
     </h1>
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       03. Make us stressed 
     </h1>
 
-    <h1 class="txt21">
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
       04. Cause distress to children
     </h1>
       
@@ -28,8 +28,4 @@
          
 </app-kta-prevnext>
  
-<!-- <app-kta-footer [bg_cft]="bg_cft" (prev)="prev()"></app-kta-footer> -->
 <app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-			
-
-    

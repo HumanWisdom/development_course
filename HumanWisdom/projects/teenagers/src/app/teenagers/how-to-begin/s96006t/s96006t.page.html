@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The first thing we need is a sense of curiosity, which we once had as very young children. See how theychildren spend time looking at something, asking questions, and trying to understand it. We need the same curiosity to understand ourselves deeply.
+          </p>
+          <p>
+            I love this quote from Einstein. We just need to bring the same curiosity to learning about ourselves.
+          </p>   
+          <p>
+            If we have a thought or feeling we can notice it and be curious about what lies behind it.
+          </p>  
+          <p>
+            Why do I lose interest in things I buy, almost as soon as I have bought them, for example.
+          </p>         
+          <p>
+            That then leads to a deeper understanding of the nature of pleasure, which helps me understand so many other things about my life.
+
+          </p>
+          <p>
+            Or, why does criticism of how we look feel so painful? That leads me to a deeper understanding of the images I have of myself.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

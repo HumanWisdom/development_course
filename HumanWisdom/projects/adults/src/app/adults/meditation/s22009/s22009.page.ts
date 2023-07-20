@@ -99,6 +99,7 @@ receiveAvDuration(e){
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/meditation/s22010'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
@@ -120,6 +121,7 @@ receiveAvDuration(e){
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/meditation/s22008'])
 
 

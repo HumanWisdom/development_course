@@ -25,6 +25,8 @@
 </div>
 <!-- /top navigation -->
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_01">
   <!-- class -->
@@ -346,13 +348,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="947"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="947"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="948"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="948"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -416,7 +418,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="949"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="949"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -529,7 +531,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="950"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="950"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -599,7 +601,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="951"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="951"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -725,7 +727,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="952"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="952"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -775,7 +777,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="953"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="953"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -875,7 +877,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="954"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="954"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -984,7 +986,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="955"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="955"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1127,7 +1129,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="956"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="956"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1322,7 +1324,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="957"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="957"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1429,7 +1431,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="958"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="958"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1622,7 +1624,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we [rId]="959"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="959"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1832,4 +1834,7 @@
     </div>
   </div>
 </div>
+<app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
+[content]="'Please subscribe to access your online Journal'">
+</app-modal>
 <!-- /footer -->

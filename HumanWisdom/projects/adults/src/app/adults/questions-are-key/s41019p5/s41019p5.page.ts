@@ -27,8 +27,9 @@ export class S41019p5Page implements OnInit {
   rId = 786
   reflection: any
   reflectionA: any
-  r41019p5 = JSON.parse(sessionStorage.getItem("r41019p5"))
+  //r41019p5 = JSON.parse(sessionStorage.getItem("r41019p5"))
   //r41019p5:any
+  r41019p5 = sessionStorage.getItem("r41019p5") !== 'null' ? sessionStorage.getItem("r41019p5") : '';
 
   shared: any
   confirmed: any
@@ -44,7 +45,7 @@ export class S41019p5Page implements OnInit {
 
 
     //if(!sessionStorage.getItem("r41019p5"))
-    this.r41019p5 = sessionStorage.getItem("r41019p5")
+    //this.r41019p5 = sessionStorage.getItem("r41019p5")
     console.log(this.r41019p5)
 
 
@@ -224,7 +225,7 @@ export class S41019p5Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r41019p5", this.r41019p5)
-    this.r41019p5 = sessionStorage.getItem("r41019p5")
+   // this.r41019p5 = sessionStorage.getItem("r41019p5")
     console.log(this.r41019p5)
     if (this.r41019p5 != "undefined") {
 

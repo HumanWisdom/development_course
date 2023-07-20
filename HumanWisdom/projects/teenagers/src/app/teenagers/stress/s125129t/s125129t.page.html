@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We all feel lonely sometimes. It's a normal human emotion. The human mind is naturally restless and wants to be occupied all the time and we have a need to feel connected and understood, and  when it cannot be, it can result in the ache of loneliness.
+          </p>
+          <p>
+            We can feel lonely if we are alone for a long time, or even in a friendship if we do not feel understood. How can we deepen our connection with others, and with ourselves? We also need to explore how we can make our peace with being alone - and that can turn the ache of loneliness into the peace of solitude.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

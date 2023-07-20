@@ -10,9 +10,9 @@ import { AdultsService } from "../../adults.service";
 })
 export class S276Page implements OnInit {
 
-  bg_tn = "bg_green"
-  bg_cft = "bg_green"
-  bg = "bg_green"
+  bg_tn = "bg_pink_orange"
+  bg_cft = "bg_pink_orange"
+  bg = "conditioning_w9"
   toc = "conditioning/s232"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -83,7 +83,7 @@ export class S276Page implements OnInit {
   }
 
   goNext() {
-    this.router.navigate(['/adults/conditioning/s253'])
+    this.router.navigate(['/adults/conditioning/s277'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

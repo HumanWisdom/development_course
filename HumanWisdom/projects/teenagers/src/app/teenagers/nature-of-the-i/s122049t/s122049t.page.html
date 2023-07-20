@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          In the last session we have explored the nature of the ‘I’, or the human operating system if you like. It’s common to all human beings and we are not fully aware of it. We have also explored the many problems it can cause. The more we study it, the more we realise it is not intelligent, and we need to change. Does it make sense for example to want more and more and never be satisfied, or to not be able to control how much we eat even if we want to, or to live in such a way that we are destroying the earth we call home. It makes no sense for us to kill other human beings, and to think its okay if its called war, but not okay if its called murder. So what can we do? We begin gently, with kindness and compassion towards ourselves, and start exploring the roots of this ‘I’ in our thinking. As we look, learn and understand change follows naturally and is accompanied by wisdom. Lets begin.
+
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

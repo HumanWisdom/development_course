@@ -1,3 +1,5 @@
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_03">
   <!-- Class -->
@@ -84,12 +86,13 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full Name*</label>
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Full
+                          Name*</label>
                         <input type="text" formControlName="fullname" id="fullname" class="form-control cfc8"
-                          name="fullname" required />
+                          maxlength="20" name="fullname" required />
                         <div *ngIf="fullname.invalid && fullname.touched">
                           <small *ngIf="fullname.errors?.required" class="text danger">Full Name is required</small>
-                          <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 3
+                          <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 6
                             characters</small>
                         </div>
                       </div>
@@ -97,45 +100,58 @@
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
-                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname" autocomplete="new-password" 
-                          required />
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email
+                          address*</label>
+                        <input type="email" formControlName="email" id="email" class="form-control cfc8" name="fullname"
+                          maxlength="50" autocomplete="new-password" required />
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
                           <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email
                             address</small>
-                          <small *ngIf="emailvalid.errors?.email" class="text danger">Please enter a valid email</small>
+                          <small *ngIf="emailvalid.errors?.pattern" class="text danger">Please enter a valid
+                            email</small>
                         </div>
                       </div>
                     </div>
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
-                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();" autocomplete="new-password" 
-                          id="password" class="form-control cfc8" name="fullname" required />
-                        <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
+                        <label for="fullname"
+                          class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
+                        <input type="password" formControlName="password" (keydown.space)="$event.preventDefault();"
+                          autocomplete="new-password" id="password" class="form-control cfc8" name="fullname" required
+                          maxlength="15" />
+                        <!--   <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                           Password must be Minimum 6 Characters. No Spaces allowed
-                        </label>
-                      </div>
-                      <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
-                        <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
-                        <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 3
-                          characters</small>
+                        </label> -->
+
+                        <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
+                          <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter
+                            password</small>
+                          <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 6
+                            characters</small>
+                        </div>
                       </div>
                     </div>
 
                     <div class="row mt15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat password*</label>
-                        <input type="password" formControlName="confirmPassword"
+                        <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Repeat
+                          password*</label>
+                        <input type="password" formControlName="confirmPassword" maxlength="15"
                           (keydown.space)="$event.preventDefault();" id="repeatpassowrd" class="form-control cfc8"
                           name="fullname" required />
-                      </div>
-                      <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
-                        <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat
-                          password</small>
-                        <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must
-                          be at least 3 characters</small>
+
+                        <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
+                          <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat
+                            password</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must
+                            be at least 6 characters</small>
+                        </div>
+                        <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
+                          <small *ngIf="passwordvalidation" class="text danger">Password and Repeat
+                            password must
+                            be same</small>
+                        </div>
                       </div>
                     </div>
 
@@ -143,12 +159,23 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
                           By continuing, you agree to our
-                          <a routerLink="/adults/help-support/terms-conditions">
+                          <a (click)="navigate('/adults/help-support/terms-conditions')">
                             <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Terms of Use</span>
                           </a>
                           &nbsp;and&nbsp;
-                          <a routerLink="/adults/help-support/privacy-policy">
+                          <a (click)="navigate('/adults/help-support/privacy-policy')">
                             <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">Privacy Policy </span>
+                          </a>
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row mt10px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="fw_400 fs_12px lh_14px fc_ffffff m0px pl8px">
+                          If you have a problem with registration please email
+                          <a href="mailto:support@humanwisdom.me" target="_top">
+                            <span class="fw_400 fs_12px lh_14px fc_ffffff bold underline">support@humanwisdom.me</span>
                           </a>
                         </h4>
                       </div>
@@ -196,18 +223,20 @@
                               Already a user?
                             </span>
 
-                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline"  onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')" data-toggle="tab" href="#tab2" >
-                              Login here 
+                            <a class="fw_700 fs_12px lh_140p fc_ffffff underline"
+                              onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')"
+                              data-toggle="tab" href="#tab2">
+                              Login here
                             </a>
                           </span>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" (click)="routedashboard()" >
+                          <a class="fw_700 fs_12px lh_140p fc_ffffff underline" (click)="routedashboard()">
                             Continue as Guest
                           </a>
                         </div>
-                        
+
                       </div>
                     </div>
 
@@ -217,7 +246,7 @@
 
                 <!-- login -->
                 <div id="tab2" class="tab-pane fade">
-                  
+
                   <div class="row ls_connect_with">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
@@ -261,17 +290,18 @@
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email address*</label>
-                      <input type="email" id="email2" [(ngModel)]="this.email" class="form-control cfc8" name="fullname" autocomplete="new-password"
-                        required />
+                      <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Email
+                        address*</label>
+                      <input type="email" id="email2" [(ngModel)]="this.email" class="form-control cfc8" name="fullname"
+                        autocomplete="new-password" required />
                     </div>
                   </div>
 
                   <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <label for="fullname" class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5 mt0px">Password*</label>
-                      <input type="password" id="password2" [(ngModel)]="this.password" class="form-control cfc8"  autocomplete="new-password"
-                        name="fullname" required />
+                      <input type="password" id="password2" [(ngModel)]="this.password" class="form-control cfc8"
+                        autocomplete="new-password" name="fullname" required />
                       <label class="fw_400 fs_12px lh_14px fc_ffffff opacity_pt5">
                         Password must be Minimum 6 Characters. No Spaces allowed
                       </label>
@@ -323,7 +353,7 @@
                           Continue as Guest
                         </a>
                       </div>
-                      
+
                     </div>
                   </div>
 
@@ -432,25 +462,48 @@
 <!-- /popup modal -->
 <span #enablemodal data-toggle="modal" data-target="#modal_popup"></span>
 
-<div class="modal fade" id="enableotpmodal" tabindex="-1" role="dialog" data-backdrop="static"
-  aria-labelledby="otpModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<div class="modal fade" id="enableotpmodal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="otpModalLabel" aria-hidden="true">
+  <div class="modal-dialog center_flex" role="document">
+    <div class="modal-content popup_03">
       <div class="modal-body">
-        <span #closemodal data-dismiss="modal" aria-label="Close">
-        </span>
-        <div class="form-group">
-          <label>A one-time password has been sent to your email address (Check your spam folder too). Please enter it
-            below.</label>
-          <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
+
+        <div class="row mb10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="fw_400 fs_14px lh_21px fc_000000 italici mtb0px">
+              <span class="mtb0px">
+                A one-time password has been sent to your email address
+              </span>
+
+              <span class="fc_1092a7 fw_500">
+                (Check your spam folder too).
+              </span>
+
+              <br>
+
+              <span class="mtb0px">
+                Please enter it below.
+              </span>
+            </h4>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <input type="text" class="form-control" [(ngModel)]="verificationCode" id="recipient-name">
+          </div>
+        </div>
+
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" [disabled]="!verificationCode"
-          (click)="verifyCode()">Submit</button>
+      <div class="modal-footer b0">
+        <button type="button" class="btn btn-primary" [disabled]="!verificationCode" (click)="verifyCode()">Submit</button>
       </div>
     </div>
   </div>
 </div>
 
 <span #enableotpmodal data-toggle="modal" data-target="#enableotpmodal"></span>
+
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="content">
+</app-modal>

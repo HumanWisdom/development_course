@@ -1,36 +1,14 @@
-<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-kta-done>
+<app-kta-prevnext [bg]="bg">
   <form class="">
 
-    <!-- <div class="row pb3rem">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="tcenter">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/body/keytakeaway.png" alt="" class="img_kta cmw">
-        </div>
-      </div>
-    </div> -->
-
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Continue to observe the many ways that conditioning operates in your life. It is not wrong, but understanding it allows you to make informed choices and live with wisdom.
     </h1>
     <div class="clearfix"></div>
+  </form>  
+</app-kta-prevnext>
 
-    <!-- <br><br><br><br><br> -->
-
-    <div class="row tcenter ptkta">
-      <div class="col-md-12 col-sm-12 col-xs-12">                    
-        <!-- <a class="btn_pulse_next_done" routerLink="/adults/comparison/m1s1-p15"> -->
-        <a class="kta_done_pulse_button" routerLink="/adults/conditioning/s303" (click)="goNext()">
-          <!-- <i class="fa fa-check"></i> -->
-          <h6 class="kta_done_pulse_button_label">
-            Done
-          </h6>
-        </a>
-      </div>
-    </div>
-    
-  </form>        
-</app-kta-done>
-
-<app-kta-footer [bg_cft]="bg_cft" (previousEmitter)="prev()"></app-kta-footer>
+<!-- <app-kta-footer [fbg]="bg" (prev)="prev()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

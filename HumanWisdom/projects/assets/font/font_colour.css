@@ -1,0 +1,91 @@
+/* font colour */
+.fc_ffffff
+{
+    color: #FFFFFF;
+}
+
+.fc_000000 
+{
+    color: #000000;
+}
+
+.fc_5d5d5d
+{
+    color: #5D5D5D;
+}
+
+.fc_adadad
+{
+    color: #ADADAD;
+}
+
+.fc_59595b
+{
+    color: #59595B;
+}
+
+.fc_1092a7
+{
+    color: #1092A7;
+}
+
+.fc_b92f48
+{
+    color: #B92F48;
+}
+
+.fc_ffc455
+{
+    color: #FFC455;
+}
+
+.fc_243949
+{
+    color: #243949;
+}
+
+.fc_f55858
+{
+    color: #F55858;
+}
+
+.fc_c4c4c4
+{
+    color: #C4C4C4;
+}
+
+.fc_acacac
+{
+    color: #ACACAC;
+}
+
+.fc_4491a5
+{
+    color: #4491A5;
+}
+
+.fc_5097a4
+{
+    color: #5097A4;
+}
+
+.fc_cb6171
+{
+    color: #CB6171;
+}
+
+.fc_64688e
+{
+    color: #64688E;
+}
+
+.fc_e58d82
+{
+    color: #E58D82;
+}
+/* /font colour */
+
+.fc_ffffff_0_5
+{
+    color: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            It is always useful, but not easy, to pause, and consider the consequences of your anger, for yourself and others, even though it is bursting to express itself. It is a form of violence and may have many unintended effects. It may set up a chain reaction of escalating conflict, or banish all goodwill and affection in a relationship, or damage your own health. It prevents you from learning about the root cause of it in your thinking, because you think it is justified and caused by external events. If you use anger as a means of controlling others, ask yourself if you are aware you do that and why, and if there is any goodness in that. You may get what you want, but you lose affection and goodwill, which may be more of a loss than you realize. If there is no goodness there is no love, and without love, your heart remains empty, and you cannot be at peace.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+    
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

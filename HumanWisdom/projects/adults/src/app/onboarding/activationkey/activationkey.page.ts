@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-import {OnboardingService} from '../onboarding.service'
+import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 
 @Component({
   selector: 'app-activationkey',
@@ -47,7 +47,7 @@ export class ActivationkeyPage implements OnInit {
   }
 
   goToLogin(){
-    this.router.navigate(['/onboarding/login'])
+    this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
   verifyActivationKey(){
     this.service.verifyActivationKey(this.activationCode,this.userId, 'IND')

@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
+//import { LogEventService } from 'src/app/log-event.service';
 
 @Component({
   selector: 'app-bottom-navigation',
@@ -7,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./bottom-navigation.component.scss'],
 })
 export class BottomNavigationComponent implements OnInit {
-  dash = false
+  @Input() dash = false;
+  @Input() programType :ProgramType = ProgramType.Adults;
   journal = false
   fourm = false
   profile = false
@@ -15,6 +19,7 @@ export class BottomNavigationComponent implements OnInit {
   enableprofile = false
   search = false
   Subscriber: any;
+  guest: any;
   @Input() isGuidedQuestion?: boolean = false;
   @Output() saveQuestion = new EventEmitter();
   @Output() journalclick = new EventEmitter();
@@ -25,8 +30,11 @@ export class BottomNavigationComponent implements OnInit {
     if (userid === 'T') {
       this.isloggedIn = true
       this.Subscriber = localStorage.getItem('Subscriber')
+      this.guest = localStorage.getItem('guest')
     }
-    if (this.router.url == "/adults/search" || this.router.url.includes('/adults/site-search/')) {
+    if (this.router.url == "/adults/search"
+      || this.router.url.includes('/adults/site-search/') ||
+      this.router.url.includes('/adults/search')) {
       this.dash = false
       this.journal = false
       this.profile = false
@@ -55,7 +63,7 @@ export class BottomNavigationComponent implements OnInit {
     }
     if (this.router.url == "/onboarding/user-profile"
       || this.router.url.includes('/onboarding/payment-details') || this.router.url.includes('/profile-edit') ||
-      this.router.url.includes('/onboarding/myprogram') || this.router.url.includes('adults/refer-friend')) {
+      this.router.url.includes('/onboarding/myprogram')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
@@ -69,28 +77,43 @@ export class BottomNavigationComponent implements OnInit {
 
   }
   routeDash() {
-    this.router.navigate(['/adults/adult-dashboard'])
-
-  }
-  routeJournal() {
-    // if(localStorage.getItem('isloggedin') === 'T')
-    if (this.isloggedIn) {
-      this.router.navigate(['/adults/journal'])
-    } else {
-      this.journalclick.emit('enablepopup');
+    if(ProgramType.Teenagers==this.programType || 
+      SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/teenager-dashboard/']);
+    }else{
+      this.router.navigate(['/adults/adult-dashboard'])
     }
-
+    //this.logeventservice.logEvent('click_home')
   }
+
+  routeJournal() {
+    if(ProgramType.Teenagers==this.programType || 
+      SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/journal/']);
+    }else{
+      this.router.navigate(['/adults/journal']);
+    }
+  }
+
   routeSearch() {
-    this.router.navigate(['/adults/search']);
+    if(ProgramType.Teenagers==this.programType || 
+      SharedService.ProgramId == ProgramType.Teenagers){
+      this.router.navigate(['/search/']);
+    }else{
+      this.router.navigate(['/adults/search']);
+    }
+    //this.logeventservice.logEvent('click_for_you')
   }
   profileclickevent() {
+
     if (localStorage.getItem('isloggedin') === 'T') {
+      //this.logeventservice.logEvent('click_profile')
       this.router.navigate(['/onboarding/user-profile'])
     } else {
       // if(localStorage.getItem('acceptcookie') !== null)  {
+      //this.logeventservice.logEvent('click_login')
       localStorage.setItem('btnclick', 'T')
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
       // }
 
     }
@@ -98,8 +121,7 @@ export class BottomNavigationComponent implements OnInit {
 
   routeForum() {
     // if(localStorage.getItem('isloggedin') === 'T')
-    this.router.navigate(['/forum'])
-
+    this.router.navigate(['/forum'],{ state: { programType: this.programType } })
   }
 
   saveQuestionButton() {

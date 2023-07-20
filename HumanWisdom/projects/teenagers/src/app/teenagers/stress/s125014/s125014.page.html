@@ -1,0 +1,88 @@
+<!-- <app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [bg_tn]="bg_tn"></app-course-header> -->
+
+<!-- page content -->
+<div class="right_col ml0 stress_w1" role="main">
+  <!-- Class -->
+  <div class="cw100p cabsolute">
+    <div class="row center_flex">
+      <div class="col-md-6 col-sm-8 col-xs-12 p0">      
+        <div class="x_panel dflexblock_assessment_start">
+          <div class="x_content c_white fwunset tleft mt0px">
+
+            <form>
+              
+              <h6 class="txt4">
+                Please list your 3 common causes of stress and how much each bothers you.
+              </h6>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
+                    <div class="box textarea_box p0_important">                      
+                      
+                      <div class="form-group pt20px">                        
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input type="text" id="cause_of_stress" required="required" class="as_form_control"  name="c1" (input)="printCause1($event.target.value)" [(ngModel)]="cause1">
+                        </div>
+                      </div>
+
+                      <app-only-slider  r="1" id="1" pFilter="Excellent" nFilter="Not very Good" (sendRating)="receiveRating($event)"></app-only-slider>
+                      
+                    </div>                    
+                  </a>
+                </div>
+
+              </div> 
+
+              <br>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
+                    <div class="box textarea_box p0_important">                      
+                      
+                      <div class="form-group pt20px">                        
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input type="text" id="cause_of_stress" required="required" class="as_form_control" placeholder="Cause of Stress" name="c2" (input)="printCause2($event.target.value)" [(ngModel)]="cause2">
+                        </div>
+                      </div>
+
+                      <app-only-slider  r="2" id="2" pFilter="Excellent" nFilter="Not very Good" (sendRating)="receiveRating($event)"></app-only-slider>
+                      
+                    </div>                    
+                  </a>
+                </div>
+                
+              </div> 
+              <br>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
+                    <div class="box textarea_box p0_important">                      
+                      
+                      <div class="form-group pt20px">                        
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input type="text" id="cause_of_stress" required="required" class="as_form_control" name="c3" placeholder="Cause of Stress" (input)="printCause3($event.target.value)" [(ngModel)]="cause3">
+                        </div>
+                      </div>
+
+                      <app-only-slider  r="3" id="3" pFilter="Excellent" nFilter="Not very Good" (sendRating)="receiveRating($event)" ></app-only-slider>
+                      
+                    </div>                    
+                  </a>
+                </div>
+                
+              </div> 
+
+              
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/Class -->
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer> 

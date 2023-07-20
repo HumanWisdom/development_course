@@ -18,7 +18,7 @@ export class S73004tPage implements OnInit {
   bookmark=0
   path=this.router.url
   audioPage="/money/s73004"
-  toc="/money/s61001"
+  toc="/money/s73001"
   
   screenType=localStorage.getItem("audio")
   userId:any
@@ -64,7 +64,10 @@ export class S73004tPage implements OnInit {
     sessionStorage.setItem("bookmark73004",JSON.stringify(this.bookmark))
   }
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/money/s73005'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -81,6 +84,7 @@ export class S73004tPage implements OnInit {
     
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
    
     this.router.navigate(['/adults/money/s73003'])
   }

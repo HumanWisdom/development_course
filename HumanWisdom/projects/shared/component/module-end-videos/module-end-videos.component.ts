@@ -78,7 +78,7 @@ else
 
   shareIndex(){
     this.socialShare=true
-    this.shareUrl="https://humanwisdom.me/course/adults/"+this.toc+`?t=${this.token}`
+    this.shareUrl="https://humanwisdom.me/adults/"+this.toc+`?t=${this.token}`
   }
 
   proceed(){

@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We know pleasure makes us feel good. This is normal. We also know it does not last long, no matter how intense the feeling. The great feeling you get from coming first in an exam or a race quickly fades away.
+          </p>
+
+          <p>
+            The dopamine released in the brain eventually gets absorbed and the pleasure ends. When it ends we know it leaves us feeling empty, or a sense of an inner boredom. This emptiness was probably there all along, but the pleasure just covers it up.
+          </p>
+
+          <p>
+            That inner boredom then demands to be fulfilled, and this time we need a bigger and better pleasure to chase after. The old one won't do. If we can’t find something suitable we can get frustrated, and some people take to drugs or alcohol to experience the same feeling again.
+          </p>
+
+          <p>
+            All this happens in the background, without our awareness. Becoming aware of this process allows us to respond with wisdom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

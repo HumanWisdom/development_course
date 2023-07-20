@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 export class S74012Page implements OnInit {
 
   toc="how-can-wisdom-help/s74001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/benefits_of_wisdom.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/32.png"
   bg=""
   moduleLink="/adults/benefits-of-wisdom/"
   moduleName=" Wisdom brings change"

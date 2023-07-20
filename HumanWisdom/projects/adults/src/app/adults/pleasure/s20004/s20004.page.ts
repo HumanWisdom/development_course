@@ -24,7 +24,7 @@ export class S20004Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "How the mind works",
         "Pleasure and Desire",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="pleasure/s20004t"
@@ -100,7 +100,9 @@ export class S20004Page implements OnInit,OnDestroy {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/pleasure/s20005'])
+    if (this.userId === 563) return;
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -121,6 +123,7 @@ export class S20004Page implements OnInit,OnDestroy {
  
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/pleasure/s20003'])
  
  

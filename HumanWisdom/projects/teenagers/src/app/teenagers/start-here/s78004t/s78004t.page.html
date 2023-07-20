@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The Human Wisdom Program is designed to help you learn about yourself and how your mind works, and apply this understanding to your life, so you can live with wisdom, joy and a sense of peace. If one is new to all this, how does one begin?
+          </p>
+
+          <p>
+            Begin with introduction modules which help you understand the key ideas and the five circles of wisdom. Then do the daily awareness exercises. You could then follow your interest - explore our many features - read a story, listen to a podcast, watch a short video or read a blog.
+          </p>
+
+          <p>
+            Get a notebook - call it your wisdom journal where you will record your reflections. Write the question that is being asked, and then your answer.
+          </p>
+
+          <p>
+            The entire program is inter-connected so you could follow your interest and begin with a subject or section that interests you - like stress, or relationships, or communication.
+          </p>
+
+          <p>
+            The key is to observe your own thinking and apply what you are learning to your life. Discussing what you are learning with others will help your own understanding.
+          </p>
+
+          <p>
+            All you need to bring to the program is your curiosity, enthusiasm, and a mind that is open to learning. The more time and commitment you put in, the more you will get out. That understanding awakens wisdom, which can be life-changing.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

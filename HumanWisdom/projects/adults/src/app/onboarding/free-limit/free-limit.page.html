@@ -1,15 +1,19 @@
+<app-bg-video></app-bg-video>
+
 <!-- modal -->
-<div class="modal fade" id="free_limt" tabindex="-1" data-backdrop="true" data-keyboard="false" role="dialog" aria-labelledby="free_limt" aria-hidden="true">
+<div class="modal fade" id="free_limt" tabindex="-1" data-backdrop="false" data-keyboard="false" role="dialog"
+  aria-labelledby="free_limt" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered mfree_limit" role="document">
-    <div class="row center_flex bg_black">
+    <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 teal_w4">
         <span #closemodal data-dismiss="modal" aria-label="Close"></span>
         <!-- top navigation -->
         <div class="row center_flex">
           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 fl_back plr20px">
-            <a (click)="backClick()" class="" data-dismiss="modal">                        
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white.svg" alt="" class="">
-            </a>   
+            <a (click)="backClick()" class="">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white.svg" alt=""
+                class="">
+            </a>
           </div>
         </div>
         <!-- /top navigation -->
@@ -25,24 +29,25 @@
                 </h4>
               </div>
             </div>
-            
+
             <div class="row center_flex">
               <div class="col-md-9 col-sm-9 col-xs-9">
                 <h4 class="fw_400 fs_18px lh_130p fc_ffffff tcenter">
                   <!-- To continue exploring the benefits of living with wisdom, please subscribe to the HumanWisdom App, or login below. -->
-                  To continue exploring the benefits of living with wisdom, please subscribe to HumanWisdom Premium, or login below.
+                  To continue exploring the benefits of living with wisdom, please subscribe to HumanWisdom Premium, or
+                  login below.
                 </h4>
               </div>
             </div>
 
             <div class="row mt40px center_flex">
-              <div class="col-md-6 col-sm-6 col-xs-6">
+              <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="!guest && isloggedIn && this.Subscriber === '0'">
                 <a id="liSubscribe" (click)="loginpage(true)">
                   <button type="button" class="btn btn-success btn_fl_sn_l w100">Subscribe now</button>
                 </a>
               </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="!isloggedIn">
+              <div class="col-md-6 col-sm-6 col-xs-6" *ngIf="guest || !isloggedIn">
                 <a (click)="loginpage()">
                   <button type="button" class="btn btn-success btn_fl_sn_l w100">Login</button>
                 </a>
@@ -59,15 +64,15 @@
 <!-- /modal -->
 
 <!-- page content -->
-<!-- <div class="right_col ml0 cright_col mh100vh green_yellow_w1" role="main">				
+<!-- <div class="right_col ml0 cright_col mh100vh green_yellow_w1" role="main">
   <div class="cw100p cabsolute">
     <div class="row center_flex">
       <div class="col-md-6 col-sm-8 col-xs-12 p0">
-        <div class="x_panel cxpanel center_flex">            
+        <div class="x_panel cxpanel center_flex">
           <div class="x_content c_white fwunset tcenter p0">
             <form>
               <h1 class="txt1">
-                Enjoy your own life without comparing it with that of another.                  
+                Enjoy your own life without comparing it with that of another.
               </h1>
               <div class="clearfix"></div>
 
@@ -83,6 +88,7 @@
 </div> -->
 <!-- /page content -->
 
-<button type="button" #enablebtn class="btn btn-primary" data-toggle="modal" data-target="#free_limt" style="display: none;">
+<button type="button" #enablebtn class="btn btn-primary" data-toggle="modal" data-target="#free_limt"
+  style="display: none;">
   Free Limit Modal
 </button>

@@ -12,7 +12,7 @@ export class S54084Page implements OnInit {
 
   toc = "reactive-mind/s54001"
   bg="";
-  moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_image.jpg"
+  moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/25.png"
   moduleLink = "/adults/self-image"
   moduleName = "Self Image"
   sectionName = "How the Mind Works";
@@ -20,20 +20,20 @@ export class S54084Page implements OnInit {
   moduleList: any = [
     {
       name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/34.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/adults/stress',
       id: 44
     },
     {
       name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/33.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
       link: '/adults/anger',
       id: 14
 
     },
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/29.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/adults/fear-anxiety',
       id: 19
 
@@ -51,18 +51,18 @@ export class S54084Page implements OnInit {
     
     }
    else if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing.jpg"
-      this.moduleLink = "/adults/breathing"
-      this.moduleName = "Breathing"
-      this.sectionName = "Develop a calm mind";
-      this.moduleId = 29
+      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/92.png"
+      this.moduleLink = "/adults/dealing-with-depression"
+      this.moduleName = "Dealing with depression"
+      this.sectionName = "Manage your emotions";
+      this.moduleId = 92
      
     }
     else if (cur && cur === 'relationships') {
       this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/communication.jpg"
       this.moduleLink = "/adults/communication"
       this.moduleName = "Communication"
-      this.sectionName = "Live with wisdom";
+      this.sectionName = "Transform your life";
       this.moduleId = 53
     
     }

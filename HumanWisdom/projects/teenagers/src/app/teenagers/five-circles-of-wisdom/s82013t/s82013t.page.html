@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There is so much to learn about each of our emotions and by exploring them in detail we can learn to respond with wisdom. Again, they are not right or wrong, or good or bad, but just need to be understood. For example, by understanding the root of fear in our thinking we can become free of anxiety. Understanding the nature of pleasure may help us avoid addiction. Understanding the nature of anger can bring freedom from violence. In the next screen we describe each of the 5 modules we are going to explore in this section. You can click on any one to find out more
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

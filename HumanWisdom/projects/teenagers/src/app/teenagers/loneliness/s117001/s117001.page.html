@@ -1,0 +1,148 @@
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="module_title">
+          Loneliness
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          Loneliness is an integral part of being human. It can impact our mental and physical health
+          And shapes our lives in many ways we are not aware of. Exploring it in depth allows us to meet it with intelligence and wisdom, and discover the origins of it in our thinking.
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
+        <a [routerLink]="['/loneliness', lonelinessResume]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_green_yellow" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <!-- <a routerLink="/loneliness/s1">
+          <button type="button" class="btn btn_default mb0 txt_green_yellow" data-dismiss="modal">Start from the beginning</button>
+        </a> -->
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/loneliness/s117002">
+      <div class="row crow box bg_green_yellow">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Exploring loneliness
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              16 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+
+    <a routerLink="/loneliness/s117040">
+      <div class="row crow box bg_green_yellow">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              How does loneliness affect us?
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              9 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/loneliness/s117071">
+      <div class="row crow box bg_green_yellow">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #3
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Responding to loneliness with wisdom
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              28 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+    <a routerLink="/loneliness/s117123p1">
+      <div class="row box_01 bg_green_yellow p0">
+        <div  
+          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
+          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/40.svg);">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
+        </div>        
+
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <h6 class="session_no mtb0px">
+              Session #4
+            </h6>                    
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
+              <h4 class="session_name mtb0px">
+                How can we overcome loneliness
+              </h4>    
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+              <h4 class="session_time mtb0px">
+                30:20 min
+              </h4>    
+            </div>
+          </div>   
+        </div>                        
+      </div>
+    </a> 
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>

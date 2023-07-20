@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Sometimes we assume that others think and feel the same as we do, but this may not be the case at all. If I don’t like someone, I can assume it's because they do not like me, when that may not be true. Sometimes these projections onto others are thoughts and feelings we have difficulty accepting in ourselves. Just waking up to the fact that other people may not think in the way we do, and being able to question our assumptions about others, allows us to avoid these problems and live with wisdom.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

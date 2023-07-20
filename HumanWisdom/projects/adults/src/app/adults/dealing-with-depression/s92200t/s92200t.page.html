@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Whatever the reason for our emotional distress, our mind often assumes it is mostly to do with what has happened to us. This is the normal way it responds.
+          </p>
+
+          <p>
+            Taking ownership of our feelings comes from realising that in our hands is the key to our own recovery. We do not want to give that key to others. How we feel is an automatic reaction from our unconscious conditioning to what has happened, because no two people react in the same way to the same circumstances. The advantage of doing this is so we can then be curious as to why our mind has reacted as it has and to explore other ways of seeing and being. It puts us in charge of doing something about it ourselves - and not depend on others or our circumstances to change.
+          </p>
+
+          <p>
+            It does need us to do two difficult things though:
+          </p>
+
+          <p>
+            The first is to suspend judgement - we need to stop blaming someone else, or our circumstances for how we feel. We also need to stop blaming ourselves for what we may have done. This does not mean that we are letting people off the hook - but it does mean we are going to focus on understanding ourselves, and our own recovery, because we want to feel better.
+          </p>
+
+          <p>
+            The second thing we need to do is to stop feeling like a victim of our circumstances - even though there may be great comfort in feeling that way. Feeling like a victim steals from us the energy we need to get better using our own intelligence - and letting go of that feeling is an important step in our recovery - so we can let the light into our lives and take charge of our own recovery.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -21,6 +21,8 @@
 </div>
 <!-- /top navigation -->
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_01">
   <!-- Class -->
@@ -95,16 +97,30 @@
                   [show]="4"
                   [size]="1"
                   [url]="'https://humanwisdom.me/'"
-                  [description]="'Check out the HumanWisdom Program: the Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom'"
+                  [description]="'Check out the HumanWisdom Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom'"
                   [autoSetMeta]="false"
                  ></share-buttons>
+
+
+                 <!-- <a  target="_blank"  href="whatsapp://send?text=https://humanwisdom.me/
+                 Check out the HumanWisdom Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom"  data-action="share/whatsapp/share" > -->
+                  <!-- <div class="col-md-2 col-sm-2 col-xs-2" (click)="sharewhatsapp()">
+                    <img style="width:50px" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/whatsapp.png"
+                      class="">
+                  </div> -->
+                <!-- </a> -->
+
+
                   <!-- <a  href="https://web.whatsapp.com/" action="whatsapp://send" >
 
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/whatsapp.png"
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/whatsapp.png"
                       class="">
+
+
+
                   </a>
-                  
-                   <a href="https://www.instagram.com/humanwisdom.me/">
+
+                  <a href="https://www.instagram.com/humanwisdom.me/">
                     <div class="col-md-2 col-sm-2 col-xs-2">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/instagram.png"
                         class="">
@@ -142,3 +158,7 @@
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
+
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="content">
+</app-modal>

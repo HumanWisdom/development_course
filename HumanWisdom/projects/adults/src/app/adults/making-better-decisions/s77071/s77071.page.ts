@@ -137,6 +137,10 @@ export class S77071Page implements OnInit {
 
   submitProgress()
   {
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/making-better-decisions/s77072'])
+    if (this.userId === 563) return;
+
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -148,11 +152,12 @@ export class S77071Page implements OnInit {
       "OptionIDs":this.sendOption.join()})
       .subscribe((res) => {});
     }
-    this.router.navigate(['/adults/making-better-decisions/s77072'])
+   
   }
 
   prev()
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77070'])
   }
 

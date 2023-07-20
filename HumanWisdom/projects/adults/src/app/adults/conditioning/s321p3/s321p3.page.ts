@@ -27,7 +27,8 @@ export class S321p3Page implements OnInit {
   rId = 106
   reflection: any
   reflectionA: any
-  r321p3 = sessionStorage.getItem("r321p3")
+  //r321p3 = sessionStorage.getItem("r321p3")
+  r321p3 = sessionStorage.getItem("r321p3") !== 'null' ? sessionStorage.getItem("r321p3") : '';
 
   shared: any
   confirmed: any
@@ -253,7 +254,7 @@ export class S321p3Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r321p3", this.r321p3)
-    this.r321p3 = sessionStorage.getItem("r321p3")
+   // this.r321p3 = sessionStorage.getItem("r321p3")
     console.log(this.r321p3)
     if (this.r321p3 != "undefined") {
 

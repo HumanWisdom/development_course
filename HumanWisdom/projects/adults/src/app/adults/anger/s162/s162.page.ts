@@ -36,7 +36,9 @@ export class S162Page implements OnInit,OnDestroy {
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) { }
+  ) {
+    this.service.setmoduleID(14);
+   }
 
   ngOnInit() {
     //localStorage.removeItem("bookmarkList")

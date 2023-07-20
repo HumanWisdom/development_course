@@ -27,7 +27,8 @@ export class S44236Page implements OnInit {
   rId = 379
   reflection: any
   reflectionA: any
-  r44236 = (sessionStorage.getItem("r44236"))
+  //r44236 = (sessionStorage.getItem("r44236"))
+  r44236 = sessionStorage.getItem("r44236") !== 'null' ? sessionStorage.getItem("r44236") : '';
 
   shared: any
   confirmed: any
@@ -215,7 +216,7 @@ export class S44236Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r44236", this.r44236)
-    this.r44236 = sessionStorage.getItem("r44236")
+   // this.r44236 = sessionStorage.getItem("r44236")
     console.log(this.r44236)
 
 

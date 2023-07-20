@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          I was speaking to a group of students in a secondary school and we had been exploring how our mind compares all the time - for example if I come first in a race I feel great. If my friend comes first and I come last, I feel rubbish. Or, I compare the likes I get on my social media vs my friends.  I asked them at the end what they had learned and how it could impact their life. A girl at the back said, ‘if we could understand the hidden process of comparison in our thinking , and be aware of it  of it, we could be free.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

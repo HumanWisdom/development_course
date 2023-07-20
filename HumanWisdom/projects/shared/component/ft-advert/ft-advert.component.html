@@ -27,7 +27,7 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <ul class="advert_ft_ul">
-                  <a class="" routerLink="/adults/give-the-gift-of-wisdom">
+                  <a class="" (click)="navigate('/adults/give-the-gift-of-wisdom')">
                     <li class="">
                       <!-- Send a gift -->
                       Give the gift of Wisdom
@@ -40,19 +40,19 @@
                     </li>
                   </a> -->
 
-                  <a class="" routerLink="/adults/adverts-work">
+                  <a class="" (click)="navigate('/adults/adverts-work')">
                     <li class="">
-                      HumanWisdom for Businesses
+                      HumanWisdom for Business
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/adverts-student">
+                  <a class="" (click)="navigate('/adults/adverts-student')">
                     <li class="">
                       HumanWisdom for Education
                     </li>
                   </a>
 
-                  <a class="" routerLink="/onboarding/add-to-cart">
+                  <a class="" routerLink="/onboarding/add-to-cart" *ngIf="!isSubscribe">
                     <li class="">
                       <!-- Subscribe to HumanWisdom Premium -->
                       Subscribe to Premium
@@ -97,33 +97,33 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <ul class="advert_ft_ul">
-                  <a class="" routerLink="/adults/adverts-about">
+                  <a class="" (click)="navigate('/adults/adverts-about')">
                     <li class="">
                       <!-- About HumanWisdom -->
                       Our story
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/adverts-hwp-app">
+                  <a class="" (click)="navigate('/adults/adverts-hwp-app')">
                     <li class="">
                       <!-- About the app -->
                       HumanWisdom app
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/testimonials">
+                  <a class="" (click)="router.navigate(['/adults/testimonials'])">
                     <li class="">
                       Testimonials
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/blog">
+                  <a class="" routerLink="/blogs">
                     <li class="">
                       Blog
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/partnership-webpage/partnership-index">
+                  <a class="" (click)="navigate('/adults/partnership-webpage/partnership-index')">
                     <li class="">
                       Partnership Program
                     </li>
@@ -160,32 +160,32 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <ul class="advert_ft_ul">
-                  <a class="" routerLink="/adults/help-support/faq">
+                  <a class="" (click)="navigate('/adults/help-support/faq')">
                     <li class="">
                       <!-- Help -->
                       FAQ
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/help-support/support">
+                  <a class="" (click)="navigate('/adults/help-support/support')">
                     <li class="">
                       Contact us
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/help-support/terms-conditions">
+                  <a class="" (click)="navigate('/adults/help-support/terms-conditions')">
                     <li class="">
                       Terms & Conditions
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/help-support/privacy-policy">
+                  <a class="" (click)="navigate('/adults/help-support/privacy-policy')">
                     <li class="">
                       Privacy Policy
                     </li>
                   </a>
 
-                  <a class="" routerLink="/adults/help-support/cookie-policy">
+                  <a class="" (click)="navigate('/adults/help-support/cookie-policy')">
                     <li class="">
                       Cookie Policy
                     </li>

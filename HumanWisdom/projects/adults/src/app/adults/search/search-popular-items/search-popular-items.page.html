@@ -36,6 +36,8 @@
 </div> -->
 <!-- /top navigation -->
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_01">
   <!-- Class -->
@@ -84,7 +86,12 @@
                         <a (click)="routemodule(item)">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex mb20px">
                             <div class="col-lg-3 col-md-5 col-sm-5 col-xs-5">
-                              <img
+                              <ng-container *ngIf="item.ModuleId<10">
+                                <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/0{{item.ModuleId}}.png"
+                                alt="" class="img-responsive">
+                              </ng-container>
+                              <img *ngIf="item.ModuleId>10"
                                 src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/{{item.ModuleId}}.png"
                                 alt="" class="img-responsive">
                             </div>
@@ -162,7 +169,7 @@
                       <ng-container *ngFor="let item of searchData.WisdomStoriesRes">
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
-                            <a href="https://humanwisdom.me/course/wisdom-stories/view-stories?sId={{item.ScenarioID}}"
+                            <a href="https://humanwisdom.me/wisdom-stories/view-stories?sId={{item.ScenarioID}}"
                               class="center_flex swisdom_stories">
                               <div class="col-md-2 col-sm-2 col-xs-3 p0">
                                 <img alt="" class="w100 c150px" [src]="item.ImgUrl">
@@ -199,10 +206,10 @@
                       </div>
                     </div>
 
-                    <!-- wisdom shorts -->
+                    <!-- short videos -->
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                        <h4>Wisdom Shorts</h4>
+                        <h4>Short videos</h4>
                       </div>
                     </div>
 
@@ -241,7 +248,7 @@
                         <span>No Record Found</span>
                       </div>
                     </div>
-                    <!-- /wisdom shorts -->
+                    <!-- /short videos -->
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">

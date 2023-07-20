@@ -1,8 +1,10 @@
 <app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
 
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->  
+<div class="right_col mc_01">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  sc_01" [ngClass]="bg">
@@ -11,25 +13,28 @@
             <form class="">
               <h1 class="txt1 tcenter pb0px mb0px">
                 #6 What can my emotional  pain teach me about myself?
-              </h1>  
+              </h1>
 
-              <!-- angular audio player plugin  -->                                            
+              <!-- angular audio player plugin  -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
-                  <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>
+                <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container" *ngIf="audioLink !== ''">
+                  <audio controls controlsList="nodownload" #audio>
+                    <source [src]="audioLink" type="audio/mpeg">
+                  </audio>
+                  <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player> -->
                 </div>
               </div>
-              <!-- /angular audio player plugin -->  
+              <!-- /angular audio player plugin -->
 
               <div class="prelative">
-                <div class="row">
+                <div class="row ia_below_content">
                   <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/inward_arrow_short.svg" class="img-responsive inward_arrow">
                   </div>
                 </div>
 
                 <div class="center_flex">
-                  <div class="ia_below_content">
+                  <div class="">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="col-md-6 col-sm-6 col-xs-6 center_flex">
@@ -47,12 +52,12 @@
                           </div>
                         </div>
                       </div>
-                    </div>   
-      
+                    </div>
+
                     <div class="row pt5px">
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="col-md-6 col-sm-6 col-xs-6 noi_left">
-                          <div class="prelative">                      
+                          <div class="prelative">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/white_man_02.png" class="img-responsive img_man">
                             <h6 class="noi_left_right_txt">
                               A physical pain in my body calls my attention to an issue that I need to address. E.g. a toothache
@@ -68,8 +73,8 @@
                           </div>
                         </div>
                       </div>
-                    </div> 
-                    
+                    </div>
+
                     <div class="row pt15px">
                       <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/inward_arrow_long.svg" class="img-responsive">
@@ -78,14 +83,14 @@
                   </div>
                 </div>
               </div>
-            </form>    
-            <div class="pagebreak"></div>        
+            </form>
+            <div class="pagebreak"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
 

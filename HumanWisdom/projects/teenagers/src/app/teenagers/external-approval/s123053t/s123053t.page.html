@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          So much of our suffering comes from this need we have for external validation, and it can be avoided if we lived with a deeper understanding of it. We would no longer depend on what others think to feel good about ourselves and not suffer from low self-esteem. We would stop judging the success of our lives based on what others thought of us. Perhaps we could get over the anxiety we feel when performing – giving our heart to the performance as its own reward. We would stop manipulating others to make us feel important and stop flattering people without sincerity. We could live our lives in freedom, and choose a path that makes our heart sing, rather than one which tries to fill its emptiness.
+
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

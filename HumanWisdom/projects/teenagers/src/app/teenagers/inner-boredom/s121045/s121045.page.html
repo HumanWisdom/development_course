@@ -1,0 +1,22 @@
+
+
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      When you feel bored, allow yourself to be bored, and stay with that feeling inside you. It can fire up your imagination, and also help you feel calm, and at peace. Like a toothache, dealing with the root cause, by staying with that feeling, makes the ache of emptiness go away. 
+
+
+
+       </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

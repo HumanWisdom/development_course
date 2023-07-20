@@ -18,7 +18,9 @@
     </div>
   </div>
 </div>
-<!-- /top navigation --> 
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
 
 <!-- page content -->
 <div class="right_col mc_01">
@@ -33,7 +35,7 @@
               <!-- carousel -->
               <div class="container">
                 <div id="mdp_carousel" class="carousel slide" data-ride="carousel" data-interval="3000000">
-                 
+
                   <div class="row center_flex">
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 we_ci ci_ft_01">
                       <ol class="carousel-indicators">
@@ -42,14 +44,14 @@
                         <li data-target="#mdp_carousel" data-slide-to="2" [ngClass]="[dailyid === '2' ? 'active' : '']"></li>
                         <li data-target="#mdp_carousel" data-slide-to="3" [ngClass]="[dailyid === '3' ? 'active' : '']"></li>
                         <li data-target="#mdp_carousel" data-slide-to="4" [ngClass]="[dailyid === '4' ? 'active' : '']"></li>
-    
+
                         <a class="left carousel-control jc_flexstart flex_ai">
-                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" data-slide="prev">
+                          <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px" href="#mdp_carousel" (click)="back()" data-slide="prev">
                             Back
                           </h4>
                           <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" data-slide="next">
+                        <a class="right carousel-control jc_flexend flex_ai" href="#mdp_carousel" (click)="next()" data-slide="next">
                           <h4 class="fw_400 fs_15px lh_18px fc_5d5d5d mtb0px">
                             Next
                           </h4>
@@ -58,7 +60,7 @@
                       </ol>
                     </div>
                   </div>
-                  
+
                   <div class="carousel-inner">
                     <!-- video -->
                     <div class="item" [ngClass]="[dailyid === '0' ? 'active' : '']">
@@ -67,7 +69,7 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video.svg" alt="" class="img-responsive">
                         </div>
                       </div>
-        
+
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
@@ -79,13 +81,13 @@
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                           <div class="row tcenter">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== ''">
-                              <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">                                                
-                                <source [src]="videoLink" type="video/mp4">                                              
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="videoLink !== '' && enableVideo">
+                              <!-- <video controls playinline class="cvideo" #video [poster]="poster" controlsList="nodownload">
+                                <source [src]="videoLink" type="video/mp4">
                               </video>  -->
-                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" > 
-                                <source [src]="videoLink" type="video/mp4" >                                               
-                              </video> 
+                              <video controls playinline class="cvideo" #video controlsList="nodownload" preload="metadata" onplay="Logevent('click_play_video_breathing_exercise')" >
+                                <source [src]="videoLink" type="video/mp4" >
+                              </video>
                             </div>
                           </div>
 
@@ -100,7 +102,7 @@
                       </div>
                     </div>
                     <!-- /video -->
-              
+
                     <!-- journal -->
                     <div class="item" [ngClass]="[dailyid === '1' ? 'active' : '']">
                       <div class="row mdp_icon">
@@ -108,7 +110,7 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal.svg" alt="" class="img-responsive">
                         </div>
                       </div>
-        
+
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
@@ -127,15 +129,17 @@
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <textarea type="text" id="comment" name="thread" [(ngModel)]="questext" required="required" class="mdp_answer_here" placeholder="Answer here" maxlength="256"></textarea>
+                          <textarea type="text" id="comment" name="thread" [disabled]="guest || !isloggedIn || this.Subscriber === '0'"
+                           [(ngModel)]="questext" required="required" class="mdp_answer_here"
+                           [placeholder]="placeholder" maxlength="256"></textarea>
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6 float_none">
-                          <button type="submit" (click)="subdailyques()" class="btn btn-default mdp_add_to_journal">
+                          <button type="submit" (click)="subdailyques()" [disabled]="guest || !isloggedIn || this.Subscriber === '0'" class="btn btn-default mdp_add_to_journal">
                             Add to journal
-                          </button> 
+                          </button>
                         </div>
                       </div>
 
@@ -150,7 +154,7 @@
                       <div class="pagebreak"></div>
                     </div>
                     <!-- /journal -->
-                  
+
                     <!-- quotation -->
                     <div class="item" [ngClass]="[dailyid === '2' ? 'active' : '']">
                       <div class="row mdp_icon">
@@ -158,7 +162,7 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation.svg" alt="" class="img-responsive">
                         </div>
                       </div>
-        
+
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
@@ -186,14 +190,14 @@
                           <hr class="mdp_hr">
                         </div>
                       </div>
-                      
+
                       <div class="row mdp_author">
                         <div class="col-md-12 col-sm-12 col-xs-7 float_none">
                           <h4 class="fw_400 fs_18px lh_140p fc_000000 ls_pt1em mtb0px">
-                           {{dailyinsAuthor}} 
+                           {{dailyinsAuthor}}
                           </h4>
                         </div>
-                      </div> 
+                      </div>
                     </div>
                     <!-- /quotation -->
 
@@ -222,10 +226,12 @@
                               </h1>
                             </div>
                           </div>
-                          
+
                           <div class="row tcenter">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem" *ngIf="audioLink !== ''">
-                              <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="Logevent('click_play_audio_meditation')" #audio ></ngx-circular-player>
+                            <div class="col-md-12 col-sm-12 col-xs-12 p7rem" *ngIf="audioLink !== '' && enableVideo ">
+                              <audio controls controlsList="nodownload" #audio (click)="Logevent('click_play_audio_meditation')">
+                                <source [src]="audioLink" type="audio/mpeg">
+                              </audio>
                             </div>
                           </div>
                         </div>
@@ -240,7 +246,7 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_exercise.svg" alt="" class="img-responsive">
                         </div>
                       </div>
-        
+
                       <div class="row mdp_audio">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
@@ -259,7 +265,7 @@
                     </div>
                     <!-- /exercise -->
                   </div>
-                  
+
                   <!-- <a class="left carousel-control" href="#mdp_carousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="sr-only">Previous</span>
@@ -268,7 +274,7 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                   </a> -->
-                  
+
                 </div>
               </div>
               <!-- /carousel -->

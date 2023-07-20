@@ -1,4 +1,4 @@
-<div class="dtn">
+<div class="dtn bg_nonei">
 
   <!-- google playstore -->
   <div class="row center_flex" *ngIf="enableplaystore" [ngClass]="[enableplaystore ? '' : 'mt0px']">
@@ -61,10 +61,10 @@
 
   <!-- top navigation -->
   <div class="row center_flex" [ngClass]="[enableplaystore ? '' : 'mt0px']">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px onscrollbg">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
         <a (click)="routedashboard()">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_01.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/logo/hwp_logo_v3.svg"
             class="img-responsive" alt="HumanWisdom">
         </a>
       </div>
@@ -72,7 +72,6 @@
       <!-- unlogged -->
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="!isloggedIn">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
-
           <div class="mr20px">
             <a (click)="loginroute()">
               <button type="button" class="btn_login">
@@ -81,23 +80,19 @@
             </a>
           </div>
 
-     
-
           <div>
             <app-hamburger></app-hamburger>
           </div>
-
         </div>
-        
       </div>
       <!-- /unlogged -->
 
       <!-- logged in  -->
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="isloggedIn">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
-          <div class="mr20px"  *ngIf="!subscriber" >
-            <a (click)="Subscribe()">
-              <button type="button" class="btn_login">
+          <div class=""  *ngIf="!subscriber" >
+            <a  id="liSubscribe" (click)="Subscribe()" class="">
+              <button type="button" class="btn_login center_flex">
                 Subscribe
               </button>
             </a>

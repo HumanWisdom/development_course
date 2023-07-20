@@ -2,7 +2,6 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
-
 @Component({
   selector: 'app-s11',
   templateUrl: './s11.page.html',
@@ -37,11 +36,16 @@ export class S11Page implements OnInit {
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
 
-  constructor(private router: Router,
+  constructor
+  (
+    private router: Router,
     private service: AdultsService,
-    private location: Location) { }
+    private location: Location
+  ) 
+  { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     if (JSON.parse(sessionStorage.getItem("bookmark115")) == 0)
       this.bookmark = 0
     else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark115")) == 1)
@@ -50,51 +54,51 @@ export class S11Page implements OnInit {
     console.log(this.qrList, "Qrlist")
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
-
-
     this.findQuestion()
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
     this.startTime = Date.now();
-
-
-
   }
 
-  createScreen() {
+  createScreen() 
+  {
     this.service.createScreen({
       "ScrId": 0,
       "ModuleId": this.moduleId,
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
-
-
+    }).subscribe(res => {})
   }
 
-  findQuestion() {
-    for (var i = 0; i < this.questionA.length; i++) {
+  findQuestion() 
+  {
+    for (var i = 0; i < this.questionA.length; i++) 
+    {
       if (this.questionA[i].CorrectAns == "0")
         this.questionA[i].CorrectAns = false
       else
         this.questionA[i].CorrectAns = true
 
-
-      if (this.queId == this.questionA[i].QueId) {
+      if (this.queId == this.questionA[i].QueId) 
+      {
         this.question = this.questionA[i].Que
         this.optionList.push(this.questionA[i])
       }
-
     }
     console.log(this.question, this.optionList)
-
   }
 
-  checkOption(opt) {
+  checkOption(opt) 
+  {
     this.sessionOption = []
-    if (opt.CorrectAns) {
+    if (opt.CorrectAns) 
+    {
       this.option = opt.OptId
       sessionStorage.setItem("sessionOptions11", JSON.stringify(this.option))
       document.getElementById(opt.OptId).style.background = '#FFC455';
@@ -103,16 +107,23 @@ export class S11Page implements OnInit {
         document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
-      } else {
+      } 
+      else 
+      {
         this.falseans = opt.OptId
       }
-    } else {
-      if (this.falseans !== '') {
+    } 
+    else 
+    {
+      if (this.falseans !== '') 
+      {
         document.getElementById(this.falseans).style.background = '#FFFFFF';
         document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
-      } else {
+      } 
+      else 
+      {
         this.falseans = opt.OptId
       }
       document.getElementById(opt.OptId).style.background = '#5D5D5D';
@@ -120,11 +131,10 @@ export class S11Page implements OnInit {
     }
   }
 
-
-  submitProgress() {
+  submitProgress() 
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
     this.router.navigate(['/adults/comparison/s13'])
     this.service.submitProgressQuestion({
       "ModuleId": this.moduleId,
@@ -136,29 +146,24 @@ export class S11Page implements OnInit {
       "OptionIDs": this.option
     })
       .subscribe((res) => { });
-
-
-
   }
-  receiveBookmark(e) {
+
+  receiveBookmark(e) 
+  {
     console.log(e)
     if (e == true)
       this.bookmark = 1
     else
       this.bookmark = 0
     sessionStorage.setItem("bookmark11", JSON.stringify(this.bookmark))
-
   }
-  prev() {
+
+  prev() 
+  {
     this.router.navigate(['/adults/comparison/s10'])
   }
 
-  ngOnDestroy() {
-
-
-
-  }
-
-
+  ngOnDestroy() 
+  {}
 
 }

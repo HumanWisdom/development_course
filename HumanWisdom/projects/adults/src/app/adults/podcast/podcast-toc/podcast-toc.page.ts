@@ -4,6 +4,9 @@ import { Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Platform } from "@angular/cdk/platform";
+import { Meta, Title } from '@angular/platform-browser';
+import { LogEventService } from '../../../../../../shared/services/log-event.service';
+
 
 @Component({
   selector: 'app-podcast-toc',
@@ -19,11 +22,20 @@ export class PodcastTocPage implements OnInit {
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
     private activatedRoute:ActivatedRoute,
-    private location: Location,
-    private sanitizer: DomSanitizer) {
+    private location: Location,    
+    public logeventservice: LogEventService,
+    private sanitizer: DomSanitizer,
+    private meta: Meta, private title: Title) {
      }
 
   ngOnInit() {
+
+    this.title.setTitle('Inspiring Your Best Life: Our Motivational Podcast')
+    this.meta.updateTag({ property: 'title', content: 'Inspiring Your Best Life: Our Motivational Podcast'})
+    this.meta.updateTag({ property: 'description', content: 'Get motivated with our inspiring podcast. Our experts share tips on positive mindset, motivation, and more to help you unlock your full potential.' })
+    this.meta.updateTag({ property: 'keywords', content: 'Wisdom podcast,Personal growth podcast,Self-improvement podcast,Mindfulness podcast,Inspirational podcast,Motivational podcast,Self-help podcast,Life lessons podcast,Philosophy podcast,Happiness podcast,Success podcast,Mental health podcast,Emotional intelligence podcast,Spiritual growth podcast,Life coaching podcast,Positive mindset podcast' })
+  
+    this.logeventservice.logEvent('view_humanwisdom_podcast');
   let routTag=   this.activatedRoute.snapshot.paramMap.get('tag');
   if(routTag && routTag!=null && routTag !='' && routTag =='sorrow'){
     this.tag=routTag;
@@ -46,7 +58,7 @@ export class PodcastTocPage implements OnInit {
       alert(`This service/api is not supported in your Browser`);
       return;
     } */
-   let url="https://humanwisdom.me/course"+this.path;
+   let url="https://humanwisdom.me"+this.path;
     this.ngNavigatorShareService.share({
       title: 'HumanWisdom Program',
       text: 'Hey, check out the HumanWisdom Program',

@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We rarely ask ourselves this question. They just seem to appear, fully formed in our minds. We never question them and are certain that our view is the only way to see the world. These opinions are the product of all our conditioning influences including our culture, and the media we read and watch and we are keen to defend them. It’s interesting how we use the word defend in this case, to imply that someone challenging our opinion is as good as attacking us. People can get very upset with those that have different view to them and this can lead to violence. If we realised we are attached to opinions that are not originally ours anyway, we may be less attached to them and more able to connect with those who are different to us.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

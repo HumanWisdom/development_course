@@ -1,28 +1,15 @@
-<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="toc"[bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-kta-done>
+<app-kta-prevnext [bg]="bg">
   <form class="">
-    
-    <h1 class="txt3">
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
       Waking up to and exploring the process of anger in our thinking can allow us to respond with wisdom, and also help us understand others
     </h1>
-    <div class="clearfix"></div>
 
-    <!-- <br><br><br><br><br> -->
+    <div class="clearfix"></div>                   
 
-    <div class="row tcenter ptkta">
-      <div class="col-md-12 col-sm-12 col-xs-12">                    
-        <!-- <a class="btn_pulse_next_done" routerLink="/adults/comparison/m1s1-p15"> -->
-        <a class="btn_pulse_next_done" (click)="submitProgress()">
-          <!-- <i class="fa fa-check"></i> -->
-          <h6 class="btn_pulse_next_done_txt">
-            Done
-          </h6>
-        </a>
-      </div>
-    </div>
-    
-  </form>       
-</app-kta-done>
+  </form> 
+</app-kta-prevnext>
 
-<app-kta-footer [bg_cft]="bg_cft" (previousEmitter)="previous()"></app-kta-footer>
+<!-- <app-kta-footer [fbg]="bg" (previousEmitter)="previous()"></app-kta-footer> -->
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

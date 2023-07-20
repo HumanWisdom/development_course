@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The first circle of wisdom is to nurture a quiet mind and we have 5 different techniques to share with you. A quiet mind allows us to be more sensitive to the thoughts and feelings we have. Try and do at least 1 of these exercises every day so it becomes as regular a part of your day as brushing your teeth. You don’t have to sit in a quiet room for most of them, you can do them anywhere through the day. They are also a great way to deal with acute emotions we all feel like stress, anxiety, and anger.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,54 +1,73 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a (click)="submitProgress()">
-        <h4 class="btn_back_white">Save</h4>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_index_tn center_flex">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <a (click)="goBack()" class="">
+        <img
+          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg"
+          alt=""
+          class="p0"
+        />
       </a>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="submitProgress()">
+        <h4 class="btn_back_white fs_16px">Save</h4>
+      </a>
     </div>
   </div>
 </div>
-<!-- /top navigation -->  
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->  
+<div class="right_col mc_01">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white">
-        <div class="x_panel p0">                                                
+        <div class="x_panel p0">
           <div class="x_content p0">
             <form>
 
-              <div class="row pb20px">                
+              <div class="row pb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <input type="text" id="first-name" required="required" class="form-control cfc1 txt40 tleft" name="title" [(ngModel)]="title" placeholder="Title (optional)">
+                  <input type="text" id="first-name" required="required"
+                   [ngStyle]="{'background-color': readOnly ? 'white' : '#eee', 'color': readOnly ? 'black' : '#ADADAD' }"
+                   [readonly]="readOnly" class="form-control cfc1 txt40 tleft" name="title" [(ngModel)]="title" placeholder="Title">
                 </div>
               </div>
 
-              <div class="row pb20px">                
+              <div class="row pb20px" *ngIf="urlType === 'note'">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <textarea class="form-control txt41 cta1" rows="10" placeholder="Some questions to write about..
+1. What habit could you change to make your life better?
+2. What are you grateful for today?
+3. What was the highlight of your day?
+4. What did you learn about yourself today?
+5. What is the kind thing you did today?" name="notes" [(ngModel)]="notes"></textarea>
+                </div>
+              </div>
+
+              <div class="row pb20px" *ngIf="urlType !== 'note'">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <textarea class="form-control txt41 cta1" rows="10" placeholder="Start writing..." name="notes" [(ngModel)]="notes"></textarea>
                 </div>
-              </div> 
-              
+              </div>
+
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
 
-<!-- footer  -->  
+<!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
 

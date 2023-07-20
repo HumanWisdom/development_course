@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from '../../adults.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,11 +16,20 @@ export class BlogIndexPage implements OnInit {
   searchedTitle:any;
   path='#' + this.router.url
   
-  constructor(private service: AdultsService, private router: Router, private ngNavigatorShareService: NgNavigatorShareService) { }
+  constructor(private service: AdultsService, private router: Router, 
+    private ngNavigatorShareService: NgNavigatorShareService,
+    public meta: Meta, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('Explore Your Inner World with Our Self-Discovery Blog')
+    this.meta.addTag({ property: 'title', content: 'Explore Your Inner World with Our Self-Discovery Blog'})
+    this.meta.addTag({ property: 'description', content: 'Discover your true self with our self-discovery blog. Explore your inner world and unlock your full potential with inspiring articles and wisdom.' })
+    this.meta.addTag({ property: 'keywords', content: 'Personal growth blog,Self-improvement blog,Inspirational blog,Life lessons blog,Mindfulness blog,Adult development blog,Wisdom-based blog,Personal development articles,Self-discovery blog,Reflection blog' })
+    this.meta.addTag({ property: 'url', content: 'http://staging.humanwisdom.me/adults/blogs' });
+   
     this.getBlogs()
   }
+
 
   getBlogs(){
     this.service.getBlog().subscribe(res=>
@@ -41,7 +51,7 @@ export class BlogIndexPage implements OnInit {
   viewblog(item){
     localStorage.setItem("blogdata",JSON.stringify(item))
     localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
-    this.router.navigate(['/blog/blog-article'],{ queryParams: {sId: `${item['BlogID']}`}})
+    this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
   }
 
   searchTitle(){

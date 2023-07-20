@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          When someone we have loved dies, it is normal to experience sorrow, depending on how attached we were to that person, and what impact that will have on our life going forwards. Instead of grieving for our loss, we could be grateful for the time we did have with them, and the many joys they brought us. This can lessen the sorrow we feel. 
+<br>The same approach could apply if someone we have loved decides to leave us. It is their choice, and instead of being angry, we could be grateful for the happy times we had together.
+
+         </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

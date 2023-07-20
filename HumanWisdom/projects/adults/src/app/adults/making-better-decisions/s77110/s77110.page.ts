@@ -28,7 +28,8 @@ export class S77110Page implements OnInit {
   rId = 1090
   reflection: any
   reflectionA: any
-  r77110 = sessionStorage.getItem("r77110")
+  //r77110 = sessionStorage.getItem("r77110")
+  r77110 = sessionStorage.getItem("r77110") !== 'null' ? sessionStorage.getItem("r77110") : '';
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -196,7 +197,9 @@ export class S77110Page implements OnInit {
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r77110", this.r77110)
     this.r77110 = sessionStorage.getItem("r77110")
-    console.log(this.r77110)
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/making-better-decisions/s77111'])
+    if (this.userId === 563) return;
 
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
@@ -212,15 +215,14 @@ export class S77110Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/making-better-decisions/s77111'])
       },
       () => {
-        this.router.navigate(['/adults/making-better-decisions/s77111'])
       })
   }
 
   prev() 
   {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/making-better-decisions/s77109'])
   }
 

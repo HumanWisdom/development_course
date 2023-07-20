@@ -1,0 +1,45 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Skills you will learn
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Learn how to be calm
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Understand how your mind works
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. Understand and manage your emotions
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. Communicate well
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      05. Have a healthy relationship with food
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      06. Critical thinking - learn to question how you think
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      07. Understand and manage your emotions
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      08. Learn to deal with stress and anxiety
+    </h3>
+
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

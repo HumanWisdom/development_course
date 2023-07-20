@@ -1,0 +1,25 @@
+<app-transcript-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>              
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12"> 
+        <h3 class="transcript_txt">
+          <p>
+            Our mind tends to focus on the negative - it's just the way it has evolved. This can be useful sometimes if one is walking in an unsafe neighbourhood., If you are a teenager and want to tell a girl you find her attractive, your mind imagines the worst possible outcome - that she will reject you, or make fun of you, or tell all her friends about you - rather than also thinking of the positive outcomes - that she may like you back and become a friend. This causes so much unnecessary inner turmoil most of the time. There are many innocent explanations for many of the anxieties we have, if only we paused to ask ourselves if there was another way to see things, and another way to respond, rather than rushing to conclude that our fears are valid
+             </p>          
+        </h3>                
+      </div>
+    </div>    
+  </form>  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+
+
+
+
+
+
+
+

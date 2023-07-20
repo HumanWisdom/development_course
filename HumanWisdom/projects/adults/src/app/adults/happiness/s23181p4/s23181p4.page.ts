@@ -29,7 +29,8 @@ export class S23181p4Page implements OnInit {
   rId = 217
   reflection: any
   reflectionA: any
-  r23181p4 = JSON.parse(sessionStorage.getItem("r23181p4"))
+  //r23181p4 = JSON.parse(sessionStorage.getItem("r23181p4"))
+  r23181p4 = sessionStorage.getItem("r23181p4") !== 'null' ? sessionStorage.getItem("r23181p4") : '';
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -214,7 +215,7 @@ export class S23181p4Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r23181p4", this.r23181p4)
-    this.r23181p4 = sessionStorage.getItem("r23181p4")
+    //this.r23181p4 = sessionStorage.getItem("r23181p4")
     console.log(this.r23181p4)
 
     this.service.submitProgressReflection({
@@ -240,6 +241,7 @@ export class S23181p4Page implements OnInit {
 
 
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23181p3'])
 
   }

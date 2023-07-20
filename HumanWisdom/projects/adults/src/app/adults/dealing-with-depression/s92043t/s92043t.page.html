@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes depressive symptoms are not linked to any obvious external event. We may be well-off, have a good job, have a loving family, and still feel sad and depressed. We may feel guilty for feeling depressed because there is no obvious cause for it.
+          </p>
+
+          <p>
+            One possible reason is that we have been conditioned to think that the more successful we are on the outside - the better we will feel on the inside - but that is not always the case - and when that does not happen we can feel disappointed and lost.
+          </p>
+
+          <p>
+            The emptiness or inner boredom we feel on the inside, which is uncomfortable, was there all along, but all our external activities kept us distracted, or we had small wins which made us feel good for a while, and then we chased the next one. When faced with it, and with no escape in sight, we can get depressed.
+          </p>
+
+          <p>
+            To deal with this we need to go on a journey of learning about ourselves and how our minds work - self-knowledge is the key to making peace with our inner boredom.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

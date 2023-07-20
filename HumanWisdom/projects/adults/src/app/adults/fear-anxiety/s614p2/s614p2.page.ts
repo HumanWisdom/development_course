@@ -12,7 +12,7 @@ export class S614p2Page implements OnInit {
 
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
-  bg="bg_green" 
+  bg="purple_red_w8" 
   toc="fear-anxiety/s486"
   
   userId:any

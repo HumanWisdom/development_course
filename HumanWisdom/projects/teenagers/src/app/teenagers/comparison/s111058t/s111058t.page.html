@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our friendships can be affected by comparison in a number of ways.
+          </p>          
+
+          <p>
+            I may compare you to my ideal of what I think a good friend is, and try and change you to meet my expectations, or you try and change me, and that results in conflict. It is the same process in both people.
+          </p>
+
+          <p>
+            Or, I compare you with someone who is better than you in some way, and that makes me feel dissatisfied with you as a friend.
+          </p>
+
+          <p>
+            I may be constantly critical of you if you are thinking or acting in a way that is different to what I regard as normal. What I regard as normal of course comes from my hidden conditioning. This happens automatically without my awareness.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

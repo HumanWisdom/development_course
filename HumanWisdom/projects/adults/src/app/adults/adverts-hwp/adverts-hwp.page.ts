@@ -3,9 +3,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
-import { LogEventService } from 'src/app/log-event.service';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
 import { AdultsService } from '../adults.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 @Component({
   selector: 'HumanWisdom-adverts-hwp',
@@ -60,6 +60,10 @@ export class AdvertsHwpPage implements OnInit {
     password: ['', [Validators.required, Validators.minLength(3)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
   }, { validator: this.PasswordValidator })
+
+  enableAlert = false;
+  content = '';
+  enablecancel = false;
 
   constructor(
     public platform: Platform,
@@ -116,7 +120,9 @@ export class AdvertsHwpPage implements OnInit {
     this.services.getPricing(this.countryCode).subscribe(res => {
       this.cardlist = res[0];
     }, (err) => {
-      window.alert(err.error['Message'])
+      this.content = err.error['Message'];
+      this.enableAlert = true;
+      // window.alert(err.error['Message'])
     }
     )
   }
@@ -225,7 +231,7 @@ export class AdvertsHwpPage implements OnInit {
   routedashboard(val = '') {
     if (val === 'free') {
       if (!this.isLoggedIn) {
-        this.router.navigate(['/onboarding/login'])
+        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
@@ -233,7 +239,7 @@ export class AdvertsHwpPage implements OnInit {
     else if (val === 'dashboard') {
       this.redeemsubscription.nativeElement.click()
       if (!this.isLoggedIn) {
-        this.router.navigate(['/onboarding/login'])
+        this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
@@ -254,13 +260,13 @@ export class AdvertsHwpPage implements OnInit {
       }
     } else if (!this.isLoggedIn) {
       localStorage.setItem("subscribepage", 'T')
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     } else if (this.isLoggedIn && !this.isSubscriber) {
       localStorage.setItem('cartlist', JSON.stringify(this.cardlist));
       localStorage.setItem('personalised subscription', val);
       this.router.navigate(['/onboarding/viewcart'], { state: { quan: '1', plan: val } })
     } else if (this.isGuestuser) {
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     }
   }
 
@@ -316,7 +322,9 @@ export class AdvertsHwpPage implements OnInit {
         }
       },
         error => {
-          window.alert(error.error.Message)
+          this.content = error.error.Message;
+          this.enableAlert = true;
+          // window.alert(error.error.Message)
         },
         () => {
         }
@@ -346,7 +354,9 @@ export class AdvertsHwpPage implements OnInit {
           this.emaillogin('second')
         }
       }, (err) => {
-        window.alert(err.error['Message'])
+        this.content = err.error['Message'];
+        this.enableAlert = true;
+        // window.alert(err.error['Message'])
       })
   }
 
@@ -620,7 +630,9 @@ export class AdvertsHwpPage implements OnInit {
             }
           })
       } else {
-        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+        this.content = 'Please ensure that you use an email based authentication with your Auth provider or try another method';
+        this.enableAlert = true;
+        // window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
       }
     });
 
@@ -632,8 +644,25 @@ export class AdvertsHwpPage implements OnInit {
 
   Logevent() {
     if (this.login === 'Logout') {
-      if (confirm("Are you sure you want to logout ?") === true) {
-        this.logeventservice.logEvent('click_logout_Hamburger')
+      this.enablecancel = true;
+      this.content = "Are you sure you want to logout ?";
+      this.enableAlert = true;
+    } else {
+      this.router.navigate(["/onboarding/login"]);
+    }
+  }
+
+  navigate(url, event){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+    this.logeventservice.logEvent(event)
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enablecancel = false;
+    this.enableAlert = false;
+    if(event === 'ok') {
+      this.logeventservice.logEvent('click_logout_Hamburger')
         if (this.platform.isBrowser) {
           localStorage.setItem("isloggedin", "F");
           localStorage.setItem("guest", "T");
@@ -641,9 +670,8 @@ export class AdvertsHwpPage implements OnInit {
           localStorage.setItem("btnClickBecomePartner", "false");
           this.router.navigate(["/onboarding/login"]);
         }
-      }
-    } else {
-      this.router.navigate(["/onboarding/login"]);
     }
   }
 }
+
+

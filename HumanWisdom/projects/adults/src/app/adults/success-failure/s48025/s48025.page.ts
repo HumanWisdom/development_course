@@ -153,7 +153,11 @@ export class S48025Page implements OnInit {
  
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/success-failure/s48026'])
+    if (this.userId === 563) return;
+
+    
     //if(this.sendOption!=null)
     {
       this.service.submitProgressQuestion({"ModuleId":this.moduleId,
@@ -172,6 +176,7 @@ export class S48025Page implements OnInit {
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/success-failure/s48024'])
 
 

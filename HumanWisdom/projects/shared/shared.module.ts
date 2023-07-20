@@ -28,6 +28,7 @@ import { KtaFooterComponent } from './component/kta-footer/kta-footer.component'
 import { KtaPrevnextComponent } from './component/kta-prevnext/kta-prevnext.component';
 import { LengthyTextComponent } from './component/lengthy-text/lengthy-text.component';
 import { LikertScaleComponent } from './component/likert-scale/likert-scale.component';
+import { ModalComponent } from './component/modal/modal.component';
 import { MultiSelectComponent } from './component/multi-select/multi-select.component';
 import { OnelineTextComponent } from './component/oneline-text/oneline-text.component';
 import { ProgressSliderComponent } from './component/progress-slider/progress-slider.component';
@@ -62,26 +63,30 @@ import { AudioBulletComponent } from './component/audio-bullet/audio-bullet.comp
 import { AudioDiagramComponent } from './component/audio-diagram/audio-diagram.component';
 import { AudioImageOverlayComponent } from './component/audio-image-overlay/audio-image-overlay.component';
 import { AudioPlayerComponent } from './component/audio-player/audio-player.component';
+import { BgVideoComponent } from './component/bg-video/bg-video.component';
+import { CertificationComponent } from './component/certification/certification.component';
 import { EndHeaderComponent } from './component/end-header/end-header.component';
 import { FeatureHeaderComponent } from './component/feature-header/feature-header.component';
+import { FtAdvertComponent } from './component/ft-advert/ft-advert.component';
+import { FtWisdomExerciseComponent } from './component/ft-wisdom-exercise/ft-wisdom-exercise.component';
 import { HamburgerComponent } from './component/hamburger/hamburger.component';
 import { JournalWeComponent } from './component/journal-we/journal-we.component';
 import { ModuleEndVideosComponent } from './component/module-end-videos/module-end-videos.component';
 import { ModuleEndComponent } from './component/module-end/module-end.component';
+import { NewsletterComponent } from './component/newsletter/newsletter.component';
 import { OnlySliderComponent } from './component/only-slider/only-slider.component';
 import { ProgramContentComponent } from './component/program-content/program-content.component';
 import { S3VideoComponent } from './component/s3-video/s3-video.component';
 import { SessionEndComponent } from './component/session-end/session-end.component';
+import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
 import { TnCloseComponent } from './component/tn-close/tn-close.component';
 import { TnDashboardV03Component } from './component/tn-dashboard-v03/tn-dashboard-v03.component';
 import { TnHwpProjectComponent } from './component/tn-hwp-project/tn-hwp-project.component';
 import { TnPartnershipAppComponent } from './component/tn-partnership-app/tn-partnership-app.component';
 import { TxtOverlayTopComponent } from './component/txt-overlay-top/txt-overlay-top.component';
+import { VideoContentCrossComponent } from './component/video-content-cross/video-content-cross.component';
+import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
-import { FtWisdomExerciseComponent } from './component/ft-wisdom-exercise/ft-wisdom-exercise.component';
-import { FtAdvertComponent } from './component/ft-advert/ft-advert.component';
-import { TnAdvertComponent } from './component/tn-advert/tn-advert.component';
-import { NewsletterComponent } from './component/newsletter/newsletter.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -157,7 +162,12 @@ import { NewsletterComponent } from './component/newsletter/newsletter.component
     FtWisdomExerciseComponent,
     FtAdvertComponent,
     TnAdvertComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    BgVideoComponent,
+    VideoYoutubeComponent,
+    CertificationComponent,
+    VideoContentCrossComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -213,6 +223,7 @@ import { NewsletterComponent } from './component/newsletter/newsletter.component
     TranscriptHeaderComponent,
     TranscriptContentComponent,
     PyramidContentComponent,
+    CertificationComponent,
     YesnoComponent,
     SingleSelectComponent,
     MultiSelectComponent,
@@ -257,7 +268,11 @@ import { NewsletterComponent } from './component/newsletter/newsletter.component
     FtWisdomExerciseComponent,
     FtAdvertComponent,
     TnAdvertComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    BgVideoComponent,
+    VideoYoutubeComponent,
+    VideoContentCrossComponent,
+    ModalComponent
   ]
 })
 export class SharedModule { }

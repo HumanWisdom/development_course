@@ -1,10 +1,13 @@
 <app-tn-close></app-tn-close>
+
+<app-bg-video></app-bg-video>
+
 <!-- page content -->
 <div class="right_col mc_03" role="main">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex" [ngClass]="bg">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex bg_292d56">
         <div class="x_panel xpanel_01 p0">
           <div class="x_content tcenter p0">
             <form>
@@ -14,8 +17,9 @@
                   <div class="row tcenter">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="videoLink !== ''">
 
-                      <iframe [src]="videoLink" width="100" height="400" [ngClass]="['evideo']">
-                      </iframe>
+                      <div class="videowrapper">
+                        <iframe [src]="videoLink" frameborder="0"></iframe>
+                      </div>
 
                     </div>
                   </div>

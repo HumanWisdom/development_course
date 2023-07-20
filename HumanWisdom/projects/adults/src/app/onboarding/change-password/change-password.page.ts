@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
-import { OnboardingService } from 'src/app/onboarding/onboarding.service';
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../shared/services/log-event.service";
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+
 
 @Component({
   selector: 'app-change-password',
@@ -26,6 +27,8 @@ export class ChangePasswordPage implements OnInit {
   socialEmail: any
   urlKey: any
   user: any
+  content = '';
+  enableAlert = false;
 
   constructor(private router: Router,
     private service: OnboardingService,
@@ -46,12 +49,15 @@ export class ChangePasswordPage implements OnInit {
     this.logeventservice.logEvent('click_submit_change_password');
     this.showWarning = false
     if (!this.password && !this.confirmPassword && !this.oldpassword) {
-      window.alert('Please enter all the password fields')
+      this.content = 'Please enter all the password fields';
+      this.enableAlert = true;
     } else if (this.password != this.confirmPassword || this.oldpassword != localStorage.getItem("pswd")) {
       if (this.oldpassword != localStorage.getItem("pswd")) {
-        window.alert('Old password you have entered is incorrect')
+        this.content = 'Old password you have entered is incorrect';
+        this.enableAlert = true;
       } else {
-        window.alert('Confirm & New Password do not match')
+        this.content = 'Confirm & New Password do not match';
+        this.enableAlert = true;
       }
     } else {
       let userId = JSON.parse(localStorage.getItem("userId"))
@@ -76,9 +82,8 @@ export class ChangePasswordPage implements OnInit {
                 sessionStorage.setItem("successPassword", JSON.stringify(this.successPassword))
                 this.router.navigate(["/onboarding/login"]);
               }
-
-              window.alert('Your password has been reset.')
-
+              this.content = 'Your password has been reset.';
+              this.enableAlert = true;
             }
 
 
@@ -132,7 +137,8 @@ export class ChangePasswordPage implements OnInit {
                   localStorage.setItem("first", 'T')
                   if (parseInt(loginResponse.UserId) == 0) {
                     this.showAlert = true
-                    window.alert('You have entered wrong credentials. Please try again.')
+                    this.content = 'You have entered wrong credentials. Please try again.';
+                    this.enableAlert = true;
                     this.email = ""
                     this.password = ""
 
@@ -185,7 +191,7 @@ export class ChangePasswordPage implements OnInit {
                       {
                         this.service.verifyUser(this.userId)
                         .subscribe(res=>{
-                          
+
                         })
                       }*/
 
@@ -251,7 +257,8 @@ export class ChangePasswordPage implements OnInit {
                     localStorage.setItem("first", 'T')
                     if (parseInt(loginResponse.UserId) == 0) {
                       this.showAlert = true
-                      window.alert('You have entered wrong credentials. Please try again.')
+                      this.content = 'You have entered wrong credentials. Please try again.';
+                      this.enableAlert = true;
                       this.email = ""
                       this.password = ""
 
@@ -316,7 +323,7 @@ export class ChangePasswordPage implements OnInit {
                       {
                         this.service.verifyUser(this.userId)
                         .subscribe(res=>{
-                          
+
                         })
                       }*/
 
@@ -327,12 +334,17 @@ export class ChangePasswordPage implements OnInit {
             }
           })
       } else {
-        window.alert('Please ensure that you use an email based authentication with your Auth provider or try another method')
+        this.content = 'Please ensure that you use an email based authentication with your Auth provider or try another method';
+        this.enableAlert = true;
       }
     });
 
   }
 
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
+  }
 
 }
 

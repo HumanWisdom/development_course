@@ -81,7 +81,6 @@ export class S48064Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-    this.router.navigate(['/adults/success-failure/s48065'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -103,13 +102,15 @@ export class S48064Page implements OnInit, OnDestroy {
 
   }
   prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/success-failure/s48063'])
 
   }
 
 
   goNext() {
-    // this.router.navigate(['/adults/success-failure/s48064'])
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/success-failure/s48065'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

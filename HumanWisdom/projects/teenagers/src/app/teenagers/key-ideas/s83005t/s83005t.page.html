@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Questions are a vital part of the Human Wisdom Program - sometimes more important than the answer. Just as Isaac Newton saw an apple fall from a tree, asked why, and discovered gravity, we are going to explore the mind we all share by asking questions, and then exploring them together. Questions take us deeper and can open the door to discovery and wisdom. Questions like, why does my mind compare itself with others all the time, or what is the root of fear, or why despite all our best intentions are so many of our relationships unhappy.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

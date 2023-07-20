@@ -86,8 +86,11 @@ export class S53124Page implements OnInit {
    
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
- 
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/communication/s53125'])
+
+    if (this.userId === 563) return;
+    
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -108,6 +111,7 @@ export class S53124Page implements OnInit {
  
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/communication/s53123'])
  
  

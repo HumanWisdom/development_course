@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored this in a separate module. It may sound strange because it is unfamiliar but if you keep an open mind and explore this, you could discover a new way of dealing with stress. We have explored how stress is a reaction from our thinking process, which is our conditioning, and so if you can meet it without thinking, you can cut of its oxygen supply, and it can dissolve. Meeting it without thinking means not blaming ourselves or others, or ruminating over it, but just being with that feeling without moving from it. Doing some regular mediation can also help. It can completely transform the way you deal with it. The space and silence that follows also enables you to understand the root causes of that stress and prevent that pattern from repeating itself
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

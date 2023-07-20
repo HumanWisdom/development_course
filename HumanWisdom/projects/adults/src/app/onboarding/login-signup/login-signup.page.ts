@@ -7,7 +7,9 @@ import {
   SocialAuthService
 } from "angularx-social-login";
 import { AdultsService } from "src/app/adults/adults.service";
-import { OnboardingService } from "src/app/onboarding/onboarding.service";
+import { LogEventService } from "../../../../../shared/services/log-event.service";
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+
 
 @Component({
   selector: "app-login-signup",
@@ -79,6 +81,9 @@ export class LoginSignupPage implements OnInit {
   get confirmpasswordvalid() {
     return this.registrationForm.get("confirmPassword");
   }
+  get passwordvalidation() {
+    return this.registrationForm.get("confirmPassword").value !== this.registrationForm.get("password").value;
+  }
   // registrationForm=new FormGroup({
   //   firstName:new FormControl(''),
   //   lastName:new FormControl(''),
@@ -88,13 +93,16 @@ export class LoginSignupPage implements OnInit {
   // })
   registrationForm = this.fb.group(
     {
-      fullname: ["", [Validators.required, Validators.minLength(3)]],
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required, Validators.minLength(3)]],
-      confirmPassword: ["", [Validators.required, Validators.minLength(3)]],
+      fullname: ["", [Validators.required, Validators.minLength(6)]],
+      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      password: ["", [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
     },
     { validator: this.PasswordValidator }
   );
+
+  content = '';
+  enableAlert = false;
 
   constructor(
     private fb: UntypedFormBuilder,
@@ -112,7 +120,7 @@ export class LoginSignupPage implements OnInit {
       this.urlPassword = params["pwd"];
       let res = localStorage.getItem("isloggedin");
       if (res === "T") {
-        this.router.navigate(["/adults/adult-dashboard"]);
+        this.routedashboard();
       } else {
         this.enableLogin = true;
       }
@@ -130,6 +138,10 @@ export class LoginSignupPage implements OnInit {
         this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
+    // if (!this.router.url.includes('/log-in')) {
+    //   window.history.pushState('', '', '/log-in');
+    // }
+
   }
   forbiddenNameValidator(
     control: AbstractControl
@@ -173,7 +185,8 @@ export class LoginSignupPage implements OnInit {
       .subscribe(
         (res) => {
           if (res > 0) {
-            window.alert("An email has been sent to you");
+            this.content = "An email has been sent to you";
+            this.enableAlert = true;
             this.enableotpmodal.nativeElement.click();
             this.showMessage = true;
             this.signUser = res;
@@ -184,7 +197,8 @@ export class LoginSignupPage implements OnInit {
         (error) => {
           console.log(error.error.Message);
           this.message = error.error.Message;
-          window.alert(this.message);
+          this.content = this.message;
+          this.enableAlert = true;
           this.showWarning = true;
         },
         () => {
@@ -219,15 +233,19 @@ export class LoginSignupPage implements OnInit {
               "password",
               JSON.stringify(this.registrationForm.get("password").value)
             );
-            window.alert(
-              "Code has been verified , Login with Your Credentials"
+            this.content = "Code has been verified , Login with Your Credentials";
+            this.enableAlert = true;
+            localStorage.setItem(
+              "signupfirst",
+              'T'
             );
             window.location.reload();
-            // this.router.navigate(['/onboarding/login'])
+            // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
-          window.alert(err.error["Message"]);
+          this.content = err.error["Message"];
+          this.enableAlert = true;
         }
       );
   }
@@ -295,9 +313,8 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                window.alert(
-                  "You have enetered wrong credentials. Please try again."
-                );
+                this.content ="You have enetered wrong credentials. Please try again.";
+                this.enableAlert = true;
                 this.email = "";
                 this.password = "";
               } else {
@@ -360,7 +377,7 @@ export class LoginSignupPage implements OnInit {
                     }
                     if (giftwisdom === 'T') {
                       this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === '0') {
+                    } else if (this.loginResponse.Subscriber === 0) {
                       this.router.navigate(["/onboarding/add-to-cart"]);
                     } else {
                       this.router.navigate(["/onboarding/viewcart"])
@@ -372,11 +389,21 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      let signup = localStorage.getItem(
+                        "signupfirst"
+                      );
+                      if(signup === 'T') {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/search"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -459,9 +486,8 @@ export class LoginSignupPage implements OnInit {
               localStorage.setItem("first", "T");
               if (parseInt(this.loginResponse.UserId) == 0) {
                 this.showAlert = true;
-                window.alert(
-                  "You have enetered wrong credentials. Please try again."
-                );
+                this.content ="You have enetered wrong credentials. Please try again.";
+                this.enableAlert = true;
                 this.email = "";
                 this.password = "";
               } else {
@@ -524,7 +550,7 @@ export class LoginSignupPage implements OnInit {
                     }
                     if (giftwisdom === 'T') {
                       this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === '0') {
+                    } else if (this.loginResponse.Subscriber === 0) {
                       this.router.navigate(["/onboarding/add-to-cart"]);
                     } else {
                       this.router.navigate(["/onboarding/viewcart"])
@@ -536,11 +562,21 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      let signup = localStorage.getItem(
+                        "signupfirst"
+                      );
+                      if(signup === 'T') {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/search"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -556,9 +592,8 @@ export class LoginSignupPage implements OnInit {
             }
           });
       } else {
-        window.alert(
-          "Please ensure that you use an email based authentication with your Auth provider or try another method"
-        );
+        this.content ="Please ensure that you use an email based authentication with your Auth provider or try another method";
+        this.enableAlert = true;
       }
     });
   }
@@ -570,51 +605,48 @@ export class LoginSignupPage implements OnInit {
     }
     this.service.emailLogin(this.email, this.password).subscribe(
       (res) => {
-        //
-        this.loginResponse = res;
-        localStorage.setItem("socialLogin", "F");
-        localStorage.setItem("isloggedin", "T");
-        localStorage.setItem("guest", "F");
-        localStorage.setItem("btnclick", "F");
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
-        localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
-        sessionStorage.setItem(
-          "loginResponse",
-          JSON.stringify(this.loginResponse)
-        );
-        localStorage.setItem("token", JSON.stringify(res.access_token));
-        localStorage.setItem("Subscriber", res.Subscriber);
-        localStorage.setItem("SubscriberType", res.SubscriberType);
-        localStorage.setItem("userId", JSON.stringify(this.userId));
-        localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-        localStorage.setItem("email", this.email);
-        localStorage.setItem("pswd", this.password);
-        localStorage.setItem("name", res.Name);
-        localStorage.setItem("first", "T");
-        localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
-        localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
-        localStorage.setItem("video", JSON.stringify(this.video));
-        localStorage.setItem("audio", JSON.stringify(this.audio));
-        localStorage.setItem("isPartner", res.IsPartner);
         if (res.UserId === 0) {
           this.showAlert = true;
-          window.alert(
-            "You have enetered wrong credentials. Please try again."
-          );
+          this.content = "You have enetered wrong credentials. Please try again.";
+          this.enableAlert = true;
           this.email = "";
           this.password = "";
         } else if (res.UserId === -1) {
           this.showAlert = true;
-          window.alert(
-            "Email was Not Verified. Please signup again with the same Email ID to verify it."
-          );
+          this.content =  "Email was Not Verified. Please signup again with the same Email ID to verify it.";
+          this.enableAlert = true;
           this.email = "";
           this.password = "";
         } else {
+          this.loginResponse = res;
+          localStorage.setItem("socialLogin", "F");
+          localStorage.setItem("isloggedin", "T");
+          localStorage.setItem("guest", "F");
+          localStorage.setItem("btnclick", "F");
+          localStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
+          localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
+          sessionStorage.setItem(
+            "loginResponse",
+            JSON.stringify(this.loginResponse)
+          );
+          localStorage.setItem("token", JSON.stringify(res.access_token));
+          localStorage.setItem("Subscriber", res.Subscriber);
+          localStorage.setItem("SubscriberType", res.SubscriberType);
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+          localStorage.setItem("email", this.email);
+          localStorage.setItem("pswd", this.password);
+          localStorage.setItem("name", res.Name);
+          localStorage.setItem("first", "T");
+          localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+          localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+          localStorage.setItem("video", JSON.stringify(this.video));
+          localStorage.setItem("audio", JSON.stringify(this.audio));
+          localStorage.setItem("isPartner", res.IsPartner);
           this.showAlert = false;
           this.userId = res.UserId;
           this.userName = res.Name;
@@ -647,7 +679,7 @@ export class LoginSignupPage implements OnInit {
               localStorage.getItem("SubscriberType") == "Annual"
             ) {
               localStorage.setItem("btnClickBecomePartner", "false");
-              this.router.navigate(["adults/partnership-app"]);
+              this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
             }
           }
           let acceptCookie = localStorage.getItem("activeCode");
@@ -685,7 +717,7 @@ export class LoginSignupPage implements OnInit {
                 }
                 if (giftwisdom === 'T') {
                   this.router.navigate(["/onboarding/add-to-cart"]);
-                } else if (this.loginResponse.Subscriber === '0') {
+                } else if (this.loginResponse.Subscriber === 0) {
                   this.router.navigate(["/onboarding/add-to-cart"]);
                 } else {
                   this.router.navigate(["/onboarding/viewcart"])
@@ -707,7 +739,7 @@ export class LoginSignupPage implements OnInit {
                     localStorage.getItem("SubscriberType") == "Annual"
                   ) {
                     localStorage.setItem("btnClickBecomePartner", "F");
-                    this.router.navigate(["adults/partnership-app"]);
+                    this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                   }
                 } else {
                   if (pers && persub && pers === "T") {
@@ -737,14 +769,24 @@ export class LoginSignupPage implements OnInit {
                       } else {
                         this.service.navigateToUpgradeToPremium = false;
                         // localStorage.setItem("navigateToUpgradeToPremium", "false");
-                        this.router.navigate(["/adults/partnership-app"]);
+                        this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                       }
                     } else {
-                      this.router.navigate(["/adults/search"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      let signup = localStorage.getItem(
+                        "signupfirst"
+                      );
+                      if(signup === 'T') {
+                        localStorage.setItem(
+                          "signupfirst", 'F'
+                        );
+                        this.router.navigate(["/adults/search"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }else {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }
                     }
                   }
                 }
@@ -841,5 +883,14 @@ export class LoginSignupPage implements OnInit {
 
   routedashboard() {
     this.router.navigate(['/adults/adult-dashboard'])
+  }
+
+  navigate(url) {
+    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 }

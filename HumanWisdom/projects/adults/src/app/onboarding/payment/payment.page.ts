@@ -1,4 +1,4 @@
-import { OnboardingService } from './../onboarding.service';
+import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import {
   Component,
   AfterViewInit,
@@ -119,7 +119,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
           const btn = document.querySelector('#btnsubmit');
           btn.addEventListener('click', async (e) => {
             e.preventDefault();
-    
+            this.logeventservice.logEvent('click_confirm_payment')
             // Create payment method and confirm payment intent.
             stripe.confirmCardPayment(this.stripeId, {
               payment_method: {

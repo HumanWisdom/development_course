@@ -21,7 +21,7 @@ export class S25003Page implements OnInit,OnDestroy {
         "Art of enquiry",
         "Self-Image",
         "Understand emotions",
-        "Living with wisdom"
+        "Transform your life"
       ]
 
   transcriptPage="self-image/s25003t"

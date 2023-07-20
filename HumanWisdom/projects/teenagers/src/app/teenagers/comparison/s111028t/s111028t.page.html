@@ -1,0 +1,41 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Have you ever asked yourself why you want to be better than others, and thought about the impact of that? To explore this question we have to stop thinking it is justified or that it is wrong - but just explore it.
+          </p>
+
+          <p>
+            One reason is that being better than others makes us feel good inside - if we get more marks in an exam, or come first in a race.
+          </p>
+
+          <p>
+            The other reason could be fear - we worry that if we don’t get the best grades we won’t get into University, or if we don’t come first in the race, we won’t be selected for the school team.
+          </p>
+
+          <p>
+            While coming first brings pleasure, if we don’t succeed we can feel hurt, disappointed and want to give up.
+          </p>
+
+          <p>
+            Many young people will stop trying to do well in a subject or a sport if they feel they won’t do really well in it.
+          </p>
+
+          <p>
+            How does this apply to you?
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

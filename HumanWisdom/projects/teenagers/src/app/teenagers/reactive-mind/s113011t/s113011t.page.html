@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"  [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          The amygdala is a collection of cells in a part of the brain called the temporal lobe.. It controls how we process emotional memories, strong emotions like pleasure and fear, and activates the fight or flight response. When it is active it disables a part of our brain called the  frontal cortex where rational decision making can occur. In some people it is hyper-active, for example in a post-traumatic stress disorder, and this results in strong fear and anxiety responses.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

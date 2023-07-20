@@ -44,9 +44,11 @@ export class S48107Page implements OnInit {
   }
 
   submitProgress(){
-    this.router.navigate(['/adults/success-failure/s48108'])
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/success-failure/s48107p1'])
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/success-failure/s48106'])
 
   }

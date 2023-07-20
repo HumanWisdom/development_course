@@ -75,9 +75,7 @@ export class S53002Page implements OnInit, OnDestroy {
 
   }
   submitProgress() {
-
-    this.router.navigate(['/adults/communication/s53003'])
-    this.service.submitProgressText({
+       this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
       "BookMark": this.bookmark,
@@ -93,13 +91,11 @@ export class S53002Page implements OnInit, OnDestroy {
       () => {
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-
-
-
-  }
+    }
 
   goNext() {
-    // this.router.navigate(['/adults/communication/s2'])
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/communication/s53003'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

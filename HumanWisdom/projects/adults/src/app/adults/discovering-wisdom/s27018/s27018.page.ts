@@ -30,8 +30,8 @@ export class S27018Page implements OnInit {
   rId = 252
   reflection: any
   reflectionA: any
-  r27018 = JSON.parse(sessionStorage.getItem("r27018"))
-
+  //r27018 = JSON.parse(sessionStorage.getItem("r27018"))
+  r27018 = sessionStorage.getItem("r27018") !== 'null' ? sessionStorage.getItem("r27018") : ''
   shared: any
   confirmed: any
 
@@ -96,7 +96,7 @@ export class S27018Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r27018", JSON.stringify(e))
-    this.r27018 = sessionStorage.getItem("r27018")
+   // this.r27018 = sessionStorage.getItem("r27018")
     console.log(this.r27018)
     if (this.r27018 != "undefined") {
 
@@ -133,6 +133,7 @@ export class S27018Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/discovering-wisdom/s27017'])
   }
 

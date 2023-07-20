@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {AdultsService} from "../../../adults/src/app/adults/adults.service";
 import { NgxCaptureService } from 'ngx-capture';
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 
 
 
@@ -17,14 +19,17 @@ export class CourseFooterComponent implements OnInit {
   @Input() bg: string;
   @Input() bg_cft: string;
   @Input() isUseCloseButton:boolean=false;
+  progUrl: string;
   urlT:any
-  shared=false
+  shared=false;
+  programName="";
   //@ViewChild('screen', { static: true }) screen: any;
 
   constructor(
     private router: Router,
     private service:AdultsService,
     private ac:ActivatedRoute,
+    private sharedService:SharedService
     //private captureService:NgxCaptureService
 
   ) { 
@@ -34,6 +39,7 @@ export class CourseFooterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
     if(location.href.includes("t="))
     {
       this.shared=true
@@ -57,7 +63,28 @@ export class CourseFooterComponent implements OnInit {
 
   }
   routeDashboard(){
-    this.router.navigate(['/adults/adult-dashboard'])
+    this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
+    if(this.programName=='teenagers'){
+      this.programName='';
+    }
+   this.goToDash();
+  }
+  
+  goToDash() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+    else if(SharedService.ProgramId == ProgramType.Teenagers) {
+      this.programName = "";
+      this.router.navigate([this.programName + '/teenager-dashboard'])
+    }else{
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
+  }
+  
+  getProgramTypeName(value: number): string {
+    const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
+    return enumKey as string;
   }
 
 }

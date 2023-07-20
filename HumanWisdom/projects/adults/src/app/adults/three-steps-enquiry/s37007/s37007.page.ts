@@ -90,6 +90,7 @@ export class S37007Page implements OnInit,OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/adults/three-steps-enquiry/s37008'])
+    if (this.userId !== 563){
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,7 +105,7 @@ export class S37007Page implements OnInit,OnDestroy {
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    
+    }
     
    
  

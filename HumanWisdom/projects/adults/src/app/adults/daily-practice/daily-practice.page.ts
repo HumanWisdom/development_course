@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import 'bcswipe';
 import { AdultsService } from '../adults.service';
 import { Router } from '@angular/router';
-import { LogEventService } from './../../log-event.service';
+import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 
 declare var $: any;
@@ -13,7 +13,7 @@ declare var $: any;
   styleUrls: ['./daily-practice.page.scss'],
 })
 export class DailyPracticePage implements OnInit {
-
+  enableVideo = true;
   yellow = "#FFC455"
   title = "Exploring anger"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
@@ -34,6 +34,10 @@ export class DailyPracticePage implements OnInit {
   isloggedIn = false
   enablepopup=false;
   isSubscribe=false;
+  Subscriber: any;
+  guest = true;
+  placeholder = 'Answer here'
+
   constructor(
     private route: ActivatedRoute,
     private service: AdultsService,
@@ -41,6 +45,7 @@ export class DailyPracticePage implements OnInit {
     public logeventservice: LogEventService
   ) {
     this.getdailyquestion();
+    this.guest = localStorage.getItem('guest') === 'T' ? true : false;
   }
 
   ngOnInit() {
@@ -52,9 +57,14 @@ export class DailyPracticePage implements OnInit {
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let islogin = localStorage.getItem("isloggedin");
     if (islogin === 'T') {
-      this.isloggedIn = true
+      this.isloggedIn = true;
+      this.Subscriber = localStorage.getItem('Subscriber')
     };
     $('.carousel').bcSwipe({ threshold: 50 });
+
+    if(this.guest || !this.isloggedIn || this.Subscriber === '0') {
+      this.placeholder = 'Please subscribe to access your online journal';
+    }
   }
 
   getdailyquestion() {
@@ -94,7 +104,7 @@ export class DailyPracticePage implements OnInit {
   }
 
   subdailyques() {
-    this.logeventservice.logEvent('click_ add_to_Journal');
+    this.logeventservice.logEvent('click_add_answer_here');
     if(!this.isloggedIn || !this.isSubscribe){
       alert("Subscribe to activate your online journal");
     }else{
@@ -111,10 +121,23 @@ export class DailyPracticePage implements OnInit {
     }
   }
 
- 
+
   Logevent(evtName) {
     console.log('hi')
     this.logeventservice.logEvent(evtName);
   }
 
+  next(){
+    this.enableVideo= false;
+  setTimeout(() => {
+    this.enableVideo =true; 
+  }, 200);
+  }
+
+  back(){
+    this.enableVideo= false;
+    setTimeout(() => {
+      this.enableVideo =true; 
+    }, 200);
+  }
 }

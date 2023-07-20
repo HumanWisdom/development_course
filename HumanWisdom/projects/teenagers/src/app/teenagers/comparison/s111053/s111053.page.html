@@ -1,0 +1,35 @@
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      Comparison is essential for life and part of being human but can also:
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      01. Cause envy
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      02. Create our prejudices
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      03. Make us critical of others and ourselves 
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      04. Make us stressed
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      05. Cause distress to children
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -131,6 +131,9 @@ import { S60108Page } from './s60108/s60108.page'; 
 import { S60109Page } from './s60109/s60109.page';  
 import { S60110Page } from './s60110/s60110.page';  
 import { S60111Page } from './s60111/s60111.page';  
+import { S60111p1Page } from './s60111p1/s60111p1.page';  
+import { S60111p2Page } from './s60111p2/s60111p2.page'; 
+import { S60111p3Page } from './s60111p3/s60111p3.page'; 
 import { S60112Page } from './s60112/s60112.page';  
 
 const routes: Routes = [
@@ -140,7 +143,6 @@ const routes: Routes = [
   },
   {
     path: 's60001',   
-   canActivate:[ActiveGuard],  
     component: S60001Page,
   },
   {
@@ -787,10 +789,28 @@ const routes: Routes = [
     component: S60111Page,
   },
   {
+    path: 's60111p1',   
+   canActivate:[ActiveGuard],  
+    component: S60111p1Page,
+  },
+  {
+    path: 's60111p2',   
+   canActivate:[ActiveGuard],  
+    component: S60111p2Page,
+  },
+  {
+    path: 's60111p3',   
+   canActivate:[ActiveGuard],  
+    component: S60111p3Page,
+  },
+  {
     path: 's60112',   
    canActivate:[ActiveGuard],  
     component: S60112Page,
   },
+ 
+ 
+
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

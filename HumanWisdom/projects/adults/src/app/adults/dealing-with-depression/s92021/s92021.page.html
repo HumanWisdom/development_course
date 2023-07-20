@@ -1,0 +1,44 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      Common causes of depression:
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Life events
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Childhood trauma 
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. Genetic factors
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      04. Drugs, alcohol and medications
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      05. Giving birth
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      06. Loneliness
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      07. Physical illness e.g chronic pain
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      08. Long-term, chronic stress
+    </h3>
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

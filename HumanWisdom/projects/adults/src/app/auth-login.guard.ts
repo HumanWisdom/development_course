@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from './adults/adults.service';
-import { OnboardingService } from './onboarding/onboarding.service';
+import { OnboardingService } from '../../../shared/services/onboarding.service';
 
 @Injectable({
   providedIn: 'root'
@@ -86,10 +86,10 @@ export class authLoginGuard implements CanActivate, OnInit {
       localStorage.setItem('personalisedlist', persdata);
       localStorage.setItem('cartlist', cartdata);
     }
-    if (!pers) {
-      this.router.navigate(['/intro/intro-carousel'])
-      return false;
-    }
+    // if (!pers) {
+    //   this.router.navigate(['/intro/intro-carousel'])
+    //   return false;
+    // }
     if (res === null || res === 'F' || rem === 'F') {
       if (m[1] !== undefined) {
         m = m[1].replace('=', '')

@@ -30,8 +30,8 @@ export class S33019Page implements OnInit {
   rId = 276
   reflection: any
   reflectionA: any
-  r33019 = JSON.parse(sessionStorage.getItem("r33019"))
-
+  //r33019 = JSON.parse(sessionStorage.getItem("r33019"))
+  r33019 = sessionStorage.getItem("r33019") !== 'null' ? sessionStorage.getItem("r33019") : ''
   shared: any
   confirmed: any
 
@@ -96,7 +96,7 @@ export class S33019Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r33019", JSON.stringify(e))
-    this.r33019 = sessionStorage.getItem("r33019")
+    //this.r33019 = sessionStorage.getItem("r33019")
     console.log(this.r33019)
 
 
@@ -130,6 +130,7 @@ export class S33019Page implements OnInit {
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/five-circles/s33018'])
   }
 

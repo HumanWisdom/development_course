@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our mind is by default comparing ourselves with others, and looking for similarities and differences with them. The differences create a disturbance, and we can be critical of others, or try and change them. This creates conflict. Understanding this process at work in the background allows us to respond with intelligence and acceptance, because we see that the differences are mainly due to our different unconscious conditioning influences, which most of us are not aware of. This understanding also allows us to accept people as they are, and embrace our differences with them. This is not easy but can transform all our relationships. When we feel accepted for who we are, we feel loved, and others do the same.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

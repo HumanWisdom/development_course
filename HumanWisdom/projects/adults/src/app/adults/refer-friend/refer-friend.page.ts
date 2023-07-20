@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
 import { AdultsService } from '../adults.service';
 
 @Component({
@@ -10,12 +11,18 @@ import { AdultsService } from '../adults.service';
 export class ReferFriendPage implements OnInit {
   email = '';
   name = '';
+  content = '';
+  enableAlert = false;
 
-  constructor(private service: AdultsService, private location: Location) { }
+  constructor(private service: AdultsService, private location: Location, public platform: Platform) { }
 
   ngOnInit() {
   }
-
+  sharewhatsapp(){
+    var url ='https://api.whatsapp.com/send'
+   var text="Check out the HumanWisdom Program: The Best Mental Health App for Stress, Anger & Depression Management|HumanWisdom";
+    window.open(url + '?text='+encodeURIComponent(text))
+  }
   keyname(value: any) {
     this.name = value.value
   }
@@ -47,7 +54,13 @@ export class ReferFriendPage implements OnInit {
         }
       })
     } else {
-      window.alert('Please enter complete details')
+      this.content = 'Please enter complete details';
+      this.enableAlert = true;
     }
+  }
+
+  getAlertcloseEvent(event) {
+    this.content = '';
+    this.enableAlert = false;
   }
 }

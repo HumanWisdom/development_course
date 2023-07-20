@@ -39,6 +39,7 @@ export class S30001Page implements OnInit, OnDestroy {
     private location: Location
   ) { }
   ngOnInit() {
+    this.service.setmoduleID(30);
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
 
@@ -91,13 +92,14 @@ export class S30001Page implements OnInit, OnDestroy {
       () => {
         //this.router.navigate(['/adults/conditioning/s234'])
       })
-    this.router.navigate(['/adults/noticing-thoughts/s30002'])
+   
 
 
   }
 
   goNext() {
-    // this.router.navigate(['/adults/noticing-thoughts/s2'])
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/noticing-thoughts/s30002'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 

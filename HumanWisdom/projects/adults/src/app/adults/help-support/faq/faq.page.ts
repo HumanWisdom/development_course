@@ -1,4 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'HumanWisdom-faq',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqPage implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router, private location: Location) { }
 
   ngOnInit() {
+    if (!this.router.url.includes('/faqs')) {
+      window.history.pushState('', '', '/faqs');
+    }
+  }
+
+  goBack() {
+    this.location.back()
   }
 
 }

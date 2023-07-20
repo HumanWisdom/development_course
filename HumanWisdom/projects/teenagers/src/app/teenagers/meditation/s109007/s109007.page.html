@@ -1,0 +1,48 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      What are the different types of meditation?
+    </h1>
+
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. Vipassana - guided silent retreats. Buddhist in origin.
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      02. Transcendental meditation - you chant a mantra repeatedly
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      03. Mindfulness - become aware of your thoughts and actions without judgement
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. Loving-Kindness - think loving thoughts of people, and the world
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      05. Guided - using a recording by a teacher
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      06. Self-enquiry - understanding the nature of the Self
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      07. Spiritual - as part of prayer
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      08. Body-scan - slowly tightening and relaxing your muscles
+    </h3>
+
+  </form>
+
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

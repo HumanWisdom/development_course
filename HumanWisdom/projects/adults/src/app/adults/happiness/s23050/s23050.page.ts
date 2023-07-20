@@ -92,12 +92,14 @@ export class S23050Page implements OnInit {
 
 
   submitProgress(e) {
-    console.log("returned response", e)
+   
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r23050", JSON.stringify(e))
     this.r23050 = sessionStorage.getItem("r23050")
-    console.log(this.r23050)
+    localStorage.setItem("pageaction", 'next')
+     this.router.navigate(['/adults/happiness/s23051'])
+    if (this.userId === 563) return;
 
 
     this.service.submitProgressReflection({
@@ -113,17 +115,18 @@ export class S23050Page implements OnInit {
 
     },
       error => {
-        console.log(error)
-        this.router.navigate(['/adults/happiness/s23051'])
+      
+       
 
       },
       () => {
-        this.router.navigate(['/adults/happiness/s23051'])
+      
       })
 
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23049'])
   }
 

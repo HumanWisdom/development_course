@@ -1,0 +1,33 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Trying not to be envious does not work. This is a really difficult idea to grasp because all our conditioning says that our thoughts  can control our feelings.
+          </p>
+
+          <p>
+            But trying not to be envious does not work. Try it and see. Our mind cannot fix a problem that comes from our own thinking. The hidden  process of comparison is automatic and so strong that  it overrides our will power which says we don't want to be envious. It can make us feel guilty because we are unable to change how we feel.
+          </p>
+
+          <p>
+            While trying not to be envious does not work, just observing and understanding the process of comparison at work from moment to moment has the potential to bring radical change.
+          </p>
+
+          <p>
+            The same applies to stress. If we can make the process of comparison conscious, it loses its power to shape our lives, and we can respond with our wisdom, and be free of stress.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

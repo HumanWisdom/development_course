@@ -16,7 +16,7 @@ export class ViewStoriesPage implements OnInit {
   links: Array<{id: number, module: string,route: string}> = []
   modules=[]
   socialShare=false
-  path="https://humanwisdom.me/course/wisdom-stories/view-stories"
+  path="https://humanwisdom.me/wisdom-stories/view-stories"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -32,14 +32,18 @@ export class ViewStoriesPage implements OnInit {
       this.route.queryParams.subscribe(params => {
         this.sId=params?.sId
     });
-      this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
+      //this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
      
 
      }
 
   ngOnInit() {
     this.userId=JSON.parse(sessionStorage.getItem("userId"))
-      this.getStories(this.sId)
+   /*  if(localStorage.getItem("StoryType")==="Locked")
+    return false
+    else */
+    this.getStories(this.sId)
+      
   }
   assignLinks(){
 

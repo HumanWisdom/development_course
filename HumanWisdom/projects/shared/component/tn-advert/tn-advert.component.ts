@@ -1,7 +1,7 @@
 import { Platform } from "@angular/cdk/platform";
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogEventService } from '../../../adults/src/app/log-event.service';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-tn-advert',
@@ -28,7 +28,7 @@ export class TnAdvertComponent implements OnInit {
 
   routedashboard() {
     if (!this.isLoggedIn) {
-      this.router.navigate(['/onboarding/login'])
+      this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     } else {
       this.router.navigate(['/adults/adult-dashboard'])
     }
@@ -55,5 +55,7 @@ export class TnAdvertComponent implements OnInit {
       this.router.navigate(["/onboarding/login"]);
     }
   }
-
+  navigate(url){
+    this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
+  }
 }

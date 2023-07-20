@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            As you go through you can record your reflections in your own journal. Writing taps into different parts of our brain and is a great way to explore  these questions. Keep track of your progress by doing the wisdom survey at regular intervals. You can bookmark slides that you like and view them all in one place on the dashboard.
+          </p>
+
+          <p>
+            At the end of each module we will offer you a certificate of completion which you can share with others. As you go through the program, you will accumulate wisdom points which you can exchange for some of our features.
+          </p>
+
+          <p>
+            We have many features in the app for you to explore.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

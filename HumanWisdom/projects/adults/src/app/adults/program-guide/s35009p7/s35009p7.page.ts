@@ -273,6 +273,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/program-guide/s35009p8'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
@@ -299,6 +300,7 @@ createScreen(){
 
   }
   prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/program-guide/s35009p6'])
 
 

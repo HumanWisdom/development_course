@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
-import {OnboardingService} from '../onboarding.service'
+import {OnboardingService} from '../../../../../shared/services/onboarding.service'
 import * as $ from 'jquery' 
-import { LogEventService } from "src/app/log-event.service";
+import { LogEventService } from "../../../../../shared/services/log-event.service";
 
 @Component({
   selector: 'app-viewcart',
@@ -46,7 +46,7 @@ export class ViewcartPage implements OnInit {
   
   constructor(private router: Router,private service:OnboardingService, private location:Location, public logeventservice: LogEventService) { 
     let res = localStorage.getItem("isloggedin")
-    if(res !== 'T') this.router.navigate(['/onboarding/login'])
+    if(res !== 'T') this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
       this.enableLoginSubscriber = true;
     }else {

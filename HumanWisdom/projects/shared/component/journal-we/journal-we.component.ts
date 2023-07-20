@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-journal-we',
@@ -7,17 +8,13 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   styleUrls: ['./journal-we.component.scss'],
 })
 export class JournalWeComponent implements OnInit {
-
   qrList = JSON.parse(localStorage.getItem("qrList"))
-
-  @Input()
-  journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
-
+   @Input()
+   journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
+  @Output() guestEvent=new EventEmitter<any>();
   @Input()
   rId = 854
-
-  
-  
+  enableAlert=false;
   enabletick = false;
   userId: any
   note = ''
@@ -27,11 +24,11 @@ export class JournalWeComponent implements OnInit {
   startTime: any
   endTime: any
   totalTime: any
-
-
-  constructor(private service: AdultsService) { }
+  isGuest:boolean = false;
+  constructor(private service: AdultsService, private router: Router) { }
 
   ngOnInit() {
+    this.isGuest = localStorage.getItem('guest') =='T';
     this.userId = JSON.parse(sessionStorage.getItem("userId"))
     this.findReflection()
     this.startTime = Date.now();
@@ -48,32 +45,54 @@ export class JournalWeComponent implements OnInit {
   }
 
   addjournal() {
-    if (!this.enabletick) {
-      /* this.service.addJournal({
-        "JournalId": 0,
-        "JDate": "2022-09-08",
-        "Title": "Todays Tasks",
-        "Notes": this.note,
-        "UserId": this.userId
-      }) */
-      this.endTime = Date.now();
-      this.totalTime = this.endTime - this.startTime;
+    if(localStorage.getItem('guest')!= 'T'){
+      if (!this.enabletick) {
+        /* this.service.addJournal({
+          "JournalId": 0,
+          "JDate": "2022-09-08",
+          "Title": "Todays Tasks",
+          "Notes": this.note,
+          "UserId": this.userId
+        }) */
+        this.endTime = Date.now();
+        this.totalTime = this.endTime - this.startTime;
 
-      this.service.submitProgressReflection({
-        "ScrNumber": "",
-        "UserId": this.userId,
-        "BookMark": 0,
-        "ModuleId": 75,
-        "screenType": 8,
-        "timeSpent": this.totalTime,
-        "ReflectionId": this.rId,
-        "Resp":  this.note
-      }).subscribe(res => {
-        this.enabletick = true;
-        this.btnText = 'Added to journal';
-      }, error => {
-        console.log(error)
-      })
+        this.service.submitProgressReflection({
+          "ScrNumber": "",
+          "UserId": this.userId,
+          "BookMark": 0,
+          "ModuleId": 75,
+          "screenType": 8,
+          "timeSpent": this.totalTime,
+          "ReflectionId": this.rId,
+          "Resp":  this.note
+        }).subscribe(res => {
+          this.enabletick = true;
+          this.btnText = 'Added to journal';
+        }, error => {
+          console.log(error)
+        })
+      }
+    }else{
+      this.guestEvent.emit(true);
+      // let retVal = confirm("Please subscribe to activate the Journal");
+      // if( retVal == true ) {
+      //   this.router.navigate(['/log-in']);
+      // } else {
+      //   return false;
+      // }
+    }
+
+  }
+  getAlertcloseEvent(event) {
+    if(event=='ok'){
+      this.enableAlert = false;
+      this.router.navigate(["/onboarding/login"], {
+        replaceUrl: true,
+        skipLocationChange: true
+      });
+    }else{
+      this.enableAlert = false;
     }
   }
 
@@ -82,5 +101,9 @@ export class JournalWeComponent implements OnInit {
       i = "0" + i;
     }
     return i;
+  }
+
+  routejournel(){
+    this.router.navigate(['/adults/journal'])
   }
 }

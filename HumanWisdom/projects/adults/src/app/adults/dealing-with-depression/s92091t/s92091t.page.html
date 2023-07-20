@@ -1,0 +1,29 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            One feels the weight of their despair. The person who is severely depressed often loses the ability to do something about it themselves and needs help.
+          </p>
+
+          <p>
+            It is an extreme form of stress or sadness and we withdraw from life because our reality is too much for us to face up to. Often there is a feeling there is no hope. You have to realise that it is your depression talking, and not your real voice. 
+          </p>
+
+          <p>
+            Each person’s experience is unique to them and all the symptoms of depression may not be present. If it is mild or moderate in its severity people manage to continue functioning and working, and others may not guess that something is wrong.
+          </p>
+
+          <p>
+            With the right help depression can be prevented and overcome, as we will explore in the next few sessions
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

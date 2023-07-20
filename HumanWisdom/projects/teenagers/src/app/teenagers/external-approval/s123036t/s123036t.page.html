@@ -1,0 +1,23 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Sometimes we feel we need to be loved and appreciated by others before we can love and appreciate ourselves – though we may not be aware of this happening in the background. We live in a culture where achievement is praised and we see people around us celebrating their wins on social media. 
+If I do not have an achievement I can be recognised for, or people in my life who love me and appreciate me for who I am, I can begin to feel unworthy and bad about myself. Or, if I have not reached the goals I set myself, and see others doing better than me, that can trigger the same feeling. 
+Social media has exacerbated this phenomenon because there is always someone with more likes and who is more popular.
+If my feeling of self-worth comes from what others think of me, and my achievements, there is a risk that I will end up depressed with feelings of low self-esteem. I am not aware of the process going on in the background.
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

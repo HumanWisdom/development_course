@@ -42,6 +42,10 @@ import { S35009p8Page } from './s35009p8/s35009p8.page';
 import { S35009p9Page } from './s35009p9/s35009p9.page';
 import { S35009p10Page } from './s35009p10/s35009p10.page';
 import { S35009p11Page } from './s35009p11/s35009p11.page';
+import { S35009p12Page } from './s35009p12/s35009p12.page';
+import { S35009p13Page } from './s35009p13/s35009p13.page';
+import { S35009p14Page } from './s35009p14/s35009p14.page';
+import { S35009p15Page } from './s35009p15/s35009p15.page';
 import { S35010Page } from './s35010/s35010.page';
 import { S35011Page } from './s35011/s35011.page';
 import { S35011p0Page } from './s35011p0/s35011p0.page';
@@ -53,7 +57,11 @@ import { S35016Page } from './s35016/s35016.page';
 import { S35017Page } from './s35017/s35017.page';
 import { S35018Page } from './s35018/s35018.page';
 import { S35019Page } from './s35019/s35019.page';
-
+import { S35020Page } from './s35020/s35020.page';
+import { S35021Page } from './s35021/s35021.page';
+import { S35022Page } from './s35022/s35022.page';
+import { S35023Page } from './s35023/s35023.page';
+import { S35024Page } from './s35024/s35024.page';
 @NgModule({
   declarations: [
     S35001Page,
@@ -90,6 +98,10 @@ import { S35019Page } from './s35019/s35019.page';
     S35009p9Page,
     S35009p10Page,
     S35009p11Page,
+    S35009p12Page,
+    S35009p13Page,
+    S35009p14Page,
+    S35009p15Page,
     S35010Page,
     S35011Page,
     S35011p0Page,
@@ -101,6 +113,11 @@ import { S35019Page } from './s35019/s35019.page';
     S35017Page,
     S35018Page,
     S35019Page,
+    S35020Page,
+    S35021Page,
+    S35022Page,
+    S35023Page,
+    S35024Page,
   ],
   imports: [
     CommonModule,

@@ -82,7 +82,10 @@ export class S62017Page implements OnInit,OnDestroy {
 
 
   submitProgress(){
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/adults/love/s62018'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -99,7 +102,8 @@ export class S62017Page implements OnInit,OnDestroy {
 
   }
   prev(){
-    this.router.navigate(['/adults/love/s62016'])
+    localStorage.setItem("pageaction", 'prev')
+    this.router.navigate(['/adults/love/s62016p1'])
     
   }
 

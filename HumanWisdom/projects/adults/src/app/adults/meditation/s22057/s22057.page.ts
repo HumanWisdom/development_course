@@ -29,8 +29,8 @@ export class S22057Page implements OnInit {
   rId = 167
   reflection: any
   reflectionA: any
-  r22057 = JSON.parse(sessionStorage.getItem("r22057"))
-
+  //r22057 = JSON.parse(sessionStorage.getItem("r22057"))
+  r22057 = sessionStorage.getItem("r22057") !== 'null' ? sessionStorage.getItem("r22057") : ''
   constructor(private router: Router,
     private service: AdultsService,
     private location: Location) { }
@@ -192,7 +192,7 @@ export class S22057Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r22057", this.r22057)
-    this.r22057 = sessionStorage.getItem("r22057")
+    //this.r22057 = sessionStorage.getItem("r22057")
     console.log(this.r22057)
 
     this.service.submitProgressReflection({

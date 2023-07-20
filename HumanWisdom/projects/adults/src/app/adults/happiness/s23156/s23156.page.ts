@@ -92,12 +92,14 @@ export class S23156Page implements OnInit {
 
 
   submitProgress(e) {
-    console.log("returned response", e)
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     sessionStorage.setItem("r23156", JSON.stringify(e))
     this.r23156 = sessionStorage.getItem("r23156")
-    console.log(this.r23156)
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/adults/happiness/s23157'])
+    if (this.userId === 563) return;
 
 
     this.service.submitProgressReflection({
@@ -114,16 +116,17 @@ export class S23156Page implements OnInit {
     },
       error => {
         console.log(error)
-        this.router.navigate(['/adults/happiness/s23157'])
+       
 
       },
       () => {
-        this.router.navigate(['/adults/happiness/s23157'])
+      
       })
 
   }
 
   previous() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/adults/happiness/s23155'])
   }
 

@@ -1,0 +1,91 @@
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h1 class="module_title">
+        {{eventData['Title']}}
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h4 class="txt_comparison">
+        {{eventData['EventDesc']}}
+      </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft">
+        Date:
+        <span class="fw_700">
+          {{eventData['Event_Date']}}
+        </span>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row mt5px">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft">
+        Time:
+        <span class="fw_700">
+          {{eventData['EventTiming']}}
+        </span>
+      </h2>
+    </div>
+  </div>
+
+  <br>
+
+  <div *ngIf="enableRegister">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt201 tleft">
+          Register Here
+        </h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <hr class="hr_style_7">
+      </div>
+    </div>
+
+    <div class="row mt20px">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="name" placeholder="Name" required>
+      </div>
+    </div>
+
+    <small class="text danger ml-10">{{namevalidation()}}</small>
+
+    <div class="row mt10px">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="email" placeholder="E-mail" required>
+      </div>
+    </div>
+
+    <small class="text danger ml-10">{{emailvalidation()}}</small>
+
+    <div class="row center_flex mt20px">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+        <a>
+          <button type="button" [disabled]="disabled()" class="btn btn-success mb0 btn_begin_here bg_green_yellow"
+            (click)="registerEvent()">Register</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagebreak"></div>
+
+</app-index-content>
+
+<app-index-footer></app-index-footer>
