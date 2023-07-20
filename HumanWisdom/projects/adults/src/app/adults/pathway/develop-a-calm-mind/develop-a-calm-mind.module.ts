@@ -6,17 +6,18 @@ import { IonicModule } from '@ionic/angular';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
 
-import { IndexPageRoutingModule } from './index-routing.module';
+import { DevelopACalmMindPageRoutingModule } from './develop-a-calm-mind-routing.module';
 
-import { IndexPage } from './index.page';
+import { DevelopACalmMindPage } from './develop-a-calm-mind.page';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
-    IndexPageRoutingModule
+    DevelopACalmMindPageRoutingModule
   ],
-  declarations: [IndexPage]
+  declarations: [DevelopACalmMindPage]
 })
-export class IndexPageModule {}
+export class DevelopACalmMindPageModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexPage implements OnInit {
 
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
   }
 
 }

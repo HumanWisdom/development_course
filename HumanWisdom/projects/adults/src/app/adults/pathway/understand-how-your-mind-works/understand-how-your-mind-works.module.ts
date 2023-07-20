@@ -6,17 +6,18 @@ import { IonicModule } from '@ionic/angular';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
 
-import { IndexPageRoutingModule } from './index-routing.module';
+import { UnderstandHowYourMindWorksPageRoutingModule } from './understand-how-your-mind-works-routing.module';
 
-import { IndexPage } from './index.page';
+import { UnderstandHowYourMindWorksPage } from './understand-how-your-mind-works.page';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
-    IndexPageRoutingModule
+    UnderstandHowYourMindWorksPageRoutingModule
   ],
-  declarations: [IndexPage]
+  declarations: [UnderstandHowYourMindWorksPage]
 })
-export class IndexPageModule {}
+export class UnderstandHowYourMindWorksPageModule {}

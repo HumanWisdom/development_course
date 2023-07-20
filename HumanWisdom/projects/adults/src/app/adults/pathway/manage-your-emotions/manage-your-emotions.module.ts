@@ -6,17 +6,18 @@ import { IonicModule } from '@ionic/angular';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
 
-import { IndexPageRoutingModule } from './index-routing.module';
+import { ManageYourEmotionsPageRoutingModule } from './manage-your-emotions-routing.module';
 
-import { IndexPage } from './index.page';
+import { ManageYourEmotionsPage } from './manage-your-emotions.page';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
-    IndexPageRoutingModule
+    ManageYourEmotionsPageRoutingModule
   ],
-  declarations: [IndexPage]
+  declarations: [ManageYourEmotionsPage]
 })
-export class IndexPageModule {}
+export class ManageYourEmotionsPageModule {}

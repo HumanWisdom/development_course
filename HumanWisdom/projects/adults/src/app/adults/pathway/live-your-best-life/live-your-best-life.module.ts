@@ -6,17 +6,18 @@ import { IonicModule } from '@ionic/angular';
 
 import { SharedModule } from '../../../../../../shared/shared.module';
 
-import { IndexPageRoutingModule } from './index-routing.module';
+import { LiveYourBestLifePageRoutingModule } from './live-your-best-life-routing.module';
 
-import { IndexPage } from './index.page';
+import { LiveYourBestLifePage } from './live-your-best-life.page';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
-    IndexPageRoutingModule
+    LiveYourBestLifePageRoutingModule
   ],
-  declarations: [IndexPage]
+  declarations: [LiveYourBestLifePage]
 })
-export class IndexPageModule {}
+export class LiveYourBestLifePageModule {}
