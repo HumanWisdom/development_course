@@ -1,11 +1,11 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.page.html',
-  styleUrls: ['./index.page.scss'],
+  selector: 'app-understand-how-your-mind-works',
+  templateUrl: './understand-how-your-mind-works.page.html',
+  styleUrls: ['./understand-how-your-mind-works.page.scss'],
 })
-export class IndexPage implements OnInit {
+export class UnderstandHowYourMindWorksPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
