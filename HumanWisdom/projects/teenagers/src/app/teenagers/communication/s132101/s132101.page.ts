@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132101',
@@ -11,10 +12,10 @@ export class S132101Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w7"
-  title="The importance of tone"
+  bg="blue_w4"
+  title="The urge to speak"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/communication/audios/communication+3.3.mp3'
+  audioLink=this.mediaAudio+'/communication/audios/communication+3.2.mp3'
 
   transcriptPage="communication/s132101t"
   toc="communication/s132001"

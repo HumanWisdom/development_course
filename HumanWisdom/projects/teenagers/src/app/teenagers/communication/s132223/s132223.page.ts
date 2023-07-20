@@ -1,6 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -10,47 +10,122 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S132223Page implements OnInit {
 
-  bg_tn="bg_blue"
-  bg_cft="bg_blue"
-  bg="blue_w5"
+  bg_tn = "bg_blue"
+  bg_cft = "bg_blue"
+  bg = "blue_w3"
+  hint = ""
 
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
+  toc = "communication/s132001"
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+  moduleId = localStorage.getItem("moduleId")
+  screenType = localStorage.getItem("reflection")
+  screenNumber = 132223
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
+  rId = 1676
+  reflection: any
+  reflectionA: any
+  r132223 = JSON.parse(sessionStorage.getItem("r132223"))
 
+  shared: any
+  confirmed: any
 
-  constructor(private router: Router,
-    private service:TeenagersService,
-    private location:Location) { }
+  constructor
+  (
+    private router: Router,
+    private service: TeenagersService,
+    private location: Location
+  ) 
+  { }
 
-  ngOnInit() {
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    this.sessionPoints()
+  ngOnInit() 
+  {
+    this.createScreen()
+    this.reflectionA = this.qrList.ListOfReflection
+    this.findReflection()
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
+    this.startTime = Date.now();
   }
 
-  sessionPoints(){
-    this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"132194,132195,132196,132197,132198,132199,132200,132201,132202,132203,132204,132205,132206,132207,132208,132209,132210,132211,132212,132213,132214,132215,132216,132217,132218,132219,132220,132221,132222"})
-    .subscribe(res=>
-      {console.log("points",res)
-      this.points=res
-    })
-   
-
+  sharedForum(e) 
+  {
+    console.log(e)
+    this.shared = e
   }
 
-  submitProgress(){
-    localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/communication/s132224'])
+  confirmShare() 
+  {
+    this.confirmed = true
   }
-  prev(){
-    localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/communication/s132222'])
 
+  createScreen() 
+  {
+    this.service.createScreen({
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {})
   }
+
+  findReflection() 
+  {
+    for (var i = 0; i < this.reflectionA.length; i++) 
+    {
+      if (this.rId == this.reflectionA[i].ReflectionId) 
+      {
+        this.reflection = this.reflectionA[i].Que
+        // this.optionList.push(this.questionA[i])
+      }
+    }
+    console.log(this.reflection)
+  }
+
+  submitProgress(e) 
+  {
+    console.log("returned response", e)
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    sessionStorage.setItem("r132223", JSON.stringify(e))
+    this.r132223 = sessionStorage.getItem("r132223")
+    console.log(this.r132223)
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r132223
+    }).subscribe(res => {},
+      error => {
+        console.log(error)
+        this.router.navigate(['/communication/s132224'])
+
+      },
+      () => {
+        this.router.navigate(['/communication/s132224'])
+      })
+  }
+
+  previous() 
+  {
+    this.router.navigate(['/communication/s132221'])
+  }
+
+  ngOnDestroy() 
+  {}
 
 }

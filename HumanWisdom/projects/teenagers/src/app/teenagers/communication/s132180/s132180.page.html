@@ -1,18 +1,29 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
+<app-quotation [bg]="bg">
 
   <form>
-    <h1 class="txt1">
-      <p class="mb0px fw_bold">#4</p>
-      Our memories of pain block effective communication. Understanding this can help us build connections with people who may have hurt us in the past. Connecting deeply with others heals our wounds and allows us to live with wisdom.
-       </h1>
-    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
+      </div>
+    </div>
+
+    <hr class="quotation_hr mt30px">
+
+    <h1 class="quotation_txt">
+      Death is the number two fear people have, and public speaking is the first
+    </h1>
+
+    <hr class="quotation_hr">
+
+    <h1 class="quotation_writer">
+      Sidney Sheldon
+    </h1>
 
   </form>
 
-</app-simple-text> 
+</app-quotation>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-
-
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

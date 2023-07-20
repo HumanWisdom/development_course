@@ -13,8 +13,8 @@ export class S132046Page implements OnInit
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w3"
-  hint = ""
+  bg = "blue_w2"
+  hint = "Maybe someone used an inappropriate word to refer to a person from a particular ethnic background, but did not mean any disrespect or harm, for example."
   toc = "/communication/s132001"
   path = this.router.url
   userId: any
@@ -27,7 +27,7 @@ export class S132046Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1654
+  rId = 1653
   reflection: any
   reflectionA: any
   r132046 = JSON.parse(sessionStorage.getItem("r132046"))

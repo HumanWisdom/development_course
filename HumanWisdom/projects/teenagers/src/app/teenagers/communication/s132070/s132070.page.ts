@@ -173,13 +173,14 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
+       // this.router.navigate(['/132070/s132070'])
       })
     
 
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/communication/s132069'])
+    this.router.navigate(['/communication/s53066'])
 
 
   }

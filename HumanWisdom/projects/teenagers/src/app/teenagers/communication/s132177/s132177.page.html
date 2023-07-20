@@ -1,29 +1,14 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-quotation [bg]="bg">
+ <app-simple-text [bg]="bg">
+  <form>               
 
-  <form>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
-      </div>
-    </div>
-
-    <hr class="quotation_hr mt30px">
-
-    <h1 class="quotation_txt">
-      Death is the number two fear people have, and public speaking is the first
-    </h1>
-
-    <hr class="quotation_hr">
-
-    <h1 class="quotation_writer">
-      Sidney Sheldon
-    </h1>
+    <h1 class="txt1">
+      <p class="mb0px fw_bold">#2</p>
+      Our mind compares itself with others and we are not aware of this. Understanding this helps us be better listeners and be happy for others who may be better than us, or have more than us. We could pay the other person a compliment, instead of being jealous of them, for example.
+      </h1>
 
   </form>
+</app-simple-text> 
 
-</app-quotation>
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

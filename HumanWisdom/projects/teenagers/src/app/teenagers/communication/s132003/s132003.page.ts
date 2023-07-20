@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -94,13 +94,13 @@ export class S132003Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/relationships/s234'])
+        //this.router.navigate(['/communication/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/relationships/s132002'])
+    this.router.navigate(['/communication/s132002'])
   }
 
   goNext() 
@@ -108,7 +108,7 @@ export class S132003Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/relationships/s132004'])
+    this.router.navigate(['/communication/s132004'])
   }
 
   ngOnDestroy() 

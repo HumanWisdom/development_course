@@ -1,6 +1,7 @@
 import { Component, OnInit ,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132101t',
@@ -11,7 +12,7 @@ export class S132101tPage implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w7"
+  bg="blue_w4"
 
   bookmark=0
   path=this.router.url
@@ -28,8 +29,8 @@ export class S132101tPage implements OnInit {
   
   avDuration=localStorage.getItem("avDuration132101")
   totalTime=localStorage.getItem("totalTime132101")
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))  
+   
   progName = "teenagers"
   
   constructor

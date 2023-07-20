@@ -1,13 +1,55 @@
 <app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-simple-text [bg]="bg">
- <form>
-   <h1 class="txt1">
-    Understanding the meaning, and the feeling, beyond the words being spoken is the key to connecting with the other person. That makes people feel loved.
-     </h1>
-   <div class="clearfix"></div>
- </form>
-</app-simple-text> 
+<app-bg-video></app-bg-video>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 blue_w12">
+        <div class="x_panel p0">                        
+          <div class="x_content p0">
+            <form>
 
+              <h5 class="txt1">
+                #8  Steps to better understanding
+              </h5>
+              
+              <div class="clearfix"></div>
+
+              <!-- multistep wizard -->
+              <div id="svg_wrap"></div>
+
+              <section>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="txt44 tleft">
+                      6.
+                    </h4>
+
+                    <h4 class="txt45 tleft">
+                      What is the person feeling, behind all the words being spoken? Asking the question to ourselves makes us look carefully, and often discover something we initially overlooked.
+                    </h4>
+                  </div>
+                </div>
+              </section>
+
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <section></section>
+              <!-- /multistep wizard -->       
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

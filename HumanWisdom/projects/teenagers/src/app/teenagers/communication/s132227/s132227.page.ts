@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -9,107 +10,47 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S132227Page implements OnInit {
 
-  bg_tn = "bg_blue"
-  bg_cft = "bg_blue"
-  bg = "blue_w2"
-  title = "Introduction"
-  mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink = this.mediaAudio + '/communication/audios/communication+7.1.mp3'
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
+  bg="blue_w5"
 
-  transcriptPage = "communication/s132227t"
-  toc = "communication/s132001"
-  bookmark = 0
-  path = this.router.url
-  avDuration: any
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  screenType = localStorage.getItem("audio")
-  moduleId = localStorage.getItem("moduleId")
-  screenNumber = 132227
-  startTime: any
-  endTime: any
-  totalTime: any
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
+  overallPercentage:any
 
-  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
-
-  progName = "teenagers";
 
   constructor(private router: Router,
-    private service: TeenagersService,
-    private location: Location) { }
+    private service:TeenagersService,
+    private location:Location) { }
 
   ngOnInit() {
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    this.startTime = Date.now();
-
-    this.startTime = Date.now();
-    this.createScreen()
-    if (JSON.parse(sessionStorage.getItem("bookmark132227")) == 0)
-      this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark132227")) == 1)
-      this.bookmark = 1
-
-  }
-
-  createScreen() {
-    this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
-
-
-  }
-
-  receiveBookmark(e) {
-    console.log(e)
-    if (e == true)
-      this.bookmark = 1
+    if(this.saveUsername==false)
+    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmark132227", JSON.stringify(this.bookmark))
+      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    this.sessionPoints()
   }
 
-  receiveAvDuration(e) {
-    console.log(e)
-    this.avDuration = e
-
-  }
-
-  submitProgress() {
-
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-
-    this.router.navigate(['/communication/s132228'])
-    this.service.submitProgressAv({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "avDuration": this.avDuration
-    }).subscribe(res => {
-
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+  sessionPoints(){
+    this.service.sessionPoints({"UserId":this.userId,
+    "ScreenNos":"132194,132195,132196,132197,132198,132199,132200,132201,132202,132203,132204,132205,132206,132207,132208,132209,132210,132211,132212,132213,132214,132215,132216,132217,132218,132219,132220,132221,132222"})
+    .subscribe(res=>
+      {console.log("points",res)
+      this.points=res
     })
+   
 
   }
-  prev() {
+
+  submitProgress(){
+    localStorage.setItem("pageaction", 'next')
+    this.router.navigate(['/communication/s132228'])
+  }
+  prev(){
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/communication/s132226'])
 
+  }
 
-  }
-  ngOnDestroy() {
-    localStorage.setItem("totalTime132227", this.totalTime)
-    localStorage.setItem("avDuration132227", this.avDuration)
-  }
 }
-
-

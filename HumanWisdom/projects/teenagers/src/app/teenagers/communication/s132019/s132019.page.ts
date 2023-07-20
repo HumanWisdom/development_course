@@ -84,7 +84,7 @@ export class S132019Page implements OnInit {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s132020'])
+    this.router.navigate(['/communication/s132020'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -99,13 +99,13 @@ export class S132019Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/relationships/s234'])
+        //this.router.navigate(['/communication/s234'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/relationships/s132018'])
+    this.router.navigate(['/communication/s132018'])
   }
 
   ngOnDestroy()

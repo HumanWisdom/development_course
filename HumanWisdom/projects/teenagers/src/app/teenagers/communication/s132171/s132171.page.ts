@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
@@ -8,31 +8,25 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s132171.page.html',
   styleUrls: ['./s132171.page.scss'],
 })
-export class S132171Page implements OnInit 
+export class S132171Page implements OnInit, OnDestroy 
 {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w4"
-  hint = "For example, if you are conditioned to prefer right wing politics, you will struggle to listen to someone with a left wing point of view."
-  toc = "/communication/s132001"
-  path = this.router.url
+  bg = "blue_w1"
+
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  qrList = JSON.parse(localStorage.getItem("qrList"))
+  screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenType = localStorage.getItem("reflection")
   screenNumber = 132171
   startTime: any
   endTime: any
   totalTime: any
-  bookmark: any
-  rId = 1669
-  reflection: any
-  reflectionA: any
-  r132171 = JSON.parse(sessionStorage.getItem("r132171"))
-  shared: any
-  confirmed: any
+  bookmark = 0
+  toc = "communication/s132001"
+  path = this.router.url
+  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
   constructor
   (
@@ -44,9 +38,9 @@ export class S132171Page implements OnInit
 
   ngOnInit() 
   {
+    //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    this.reflectionA = this.qrList.ListOfReflection
-    this.findReflection()
+
     if (this.saveUsername == false) 
     { 
       this.userId = JSON.parse(sessionStorage.getItem("userId")) 
@@ -56,17 +50,22 @@ export class S132171Page implements OnInit
       this.userId = JSON.parse(localStorage.getItem("userId")) 
     }
     this.startTime = Date.now();
+    this.startTime = Date.now();
+
+    if (JSON.parse(sessionStorage.getItem("bookmark132171")) == 0)
+      this.bookmark = 0
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark132171")) == 1)
+      this.bookmark = 1
   }
 
-  sharedForum(e) 
+  receiveBookmark(e) 
   {
     console.log(e)
-    this.shared = e
-  }
-
-  confirmShare() 
-  {
-    this.confirmed = true
+    if (e == true)
+      this.bookmark = 1
+    else
+      this.bookmark = 0
+    sessionStorage.setItem("bookmark132171", JSON.stringify(this.bookmark))
   }
 
   createScreen() 
@@ -79,50 +78,37 @@ export class S132171Page implements OnInit
     }).subscribe(res => {})
   }
 
-  findReflection() 
+  submitProgress() 
   {
-    for (var i = 0; i < this.reflectionA.length; i++) 
-    {
-      if (this.rId == this.reflectionA[i].ReflectionId) 
-      {
-        this.reflection = this.reflectionA[i].Que
-        // this.optionList.push(this.questionA[i])
-      }
-    }
-    console.log(this.reflection)
-  }
-
-  submitProgress(e) 
-  {
-    console.log("returned response", e)
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r132171", JSON.stringify(e))
-    this.r132171 = sessionStorage.getItem("r132171")
-    console.log(this.r132171)
-    this.service.submitProgressReflection({
+    this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
       "BookMark": this.bookmark,
       "ModuleId": this.moduleId,
       "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "ReflectionId": this.rId,
-      "Resp": this.r132171
-    }).subscribe(res => {},
-      error => {
-        console.log(error)
-        this.router.navigate(['/communication/s132172'])
-
-      },
+      "timeSpent": this.totalTime
+    }).subscribe(res => {
+      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+    },
+      error => { console.log(error) },
       () => {
-        this.router.navigate(['/communication/s132172'])
+        //this.router.navigate(['/communication/s234'])
       })
   }
 
-  previous() 
+  prev() 
   {
     this.router.navigate(['/communication/s132170'])
+  }
+
+  goNext() 
+  {
+    // this.router.navigate(['/communication/s132171'])
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    if (this.userId !== 563) this.submitProgress()
+    this.router.navigate(['/communication/s132172'])
   }
 
   ngOnDestroy() 

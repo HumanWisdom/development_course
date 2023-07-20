@@ -1,31 +1,29 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-quotation [bg]="bg">
-
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
+    
   <form>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
-      </div>
-    </div>
+    <h4 class="mtb0px comparison">
+      Communication
+    </h4>
 
-    <hr class="quotation_hr mt30px">
+    <div class="clearfix"></div>
 
-    <h1 class="quotation_txt">
-      ‘Most people do not listen with the intent to understand.
-      <br>
-      They listen with the intent to reply
+    <h5 class="mtb0px session">
+      Session #2
+    </h5>
+
+    <div class="clearfix"></div>
+
+    <br>
+  
+    <h1 class="session_title ">
+      The Art Of Listening
     </h1>
 
-    <hr class="quotation_hr">
-
-    <h1 class="quotation_writer">
-      Stephen R Covey 
-    </h1>
+    <div class="clearfix"></div>
 
   </form>
 
-</app-quotation>
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
+</app-tap-start>

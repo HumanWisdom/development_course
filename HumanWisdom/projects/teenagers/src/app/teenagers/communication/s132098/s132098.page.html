@@ -1,5 +1,29 @@
-<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)></app-audio-content>
+<app-quotation [bg]="bg">
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+  <form>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
+      </div>
+    </div>
+
+    <hr class="quotation_hr mt30px">
+
+    <h1 class="quotation_txt">
+      Be impeccable with your word. <br>Speak with Integrity. <br>Say only what you mean
+    </h1>
+
+    <hr class="quotation_hr">
+
+    <h1 class="quotation_writer">
+      Don Miguel Ruiz
+    </h1>
+
+  </form>
+
+</app-quotation>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

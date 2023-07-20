@@ -21,8 +21,8 @@ export class S132202Page implements OnInit {
   screenNumber=132202
   startTime:any
   endTime:any
-  totalTime:any  
-
+  totalTime:any
+  
   bookmark=0
   toc="communication/s132001"
   path=this.router.url  

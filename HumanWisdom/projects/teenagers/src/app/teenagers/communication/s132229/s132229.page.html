@@ -1,71 +1,22 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-bg-video></app-bg-video>
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">  
+  <form>
+    <h4 class="mtb0px comparison">
+      Communication
+    </h4>
+    <div class="clearfix"></div>
 
-<!-- page content -->
-<div class="right_col mc_01">
-  <!-- Class -->  
-  <div class="cw100p">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 blue_w3">
-        <div class="x_panel p0">                        
-          <div class="x_content p0">
-            <form>
-              <!-- <h5 class="txt4 justified_center"> -->
-              <h5 class="txt1">
-                #10  Common problems in communication.
-                </h5>
-              <div class="clearfix"></div>
+    <h5 class="mtb0px session">
+      Session #7
+    </h5>
+    <div class="clearfix"></div>
 
-              <!-- multistep wizard -->
-              <div id="svg_wrap"></div>
-
-              <section>
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="txt44 tleft">
-                      1. 
-                    </h4>
-
-                    <h4 class="txt45 tleft">
-                      We are afraid of saying what we really feel. We do not want to feel vulnerable, so we talk about superficial things instead. We say we are ‘fine’, when we are clearly not.
-                     </h4>
-                  </div>
-                </div>
-              </section>
-
-              
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-                          
-                                    
-
-              <!-- /multistep wizard -->       
-
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                 
-                </div>
-              </div>
-              
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--/Class --> 
-</div>
-<!-- /page content -->
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-
-
+    <br>
+  
+    <h1 class="session_title ">
+      Problems in Communication
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-tap-start>

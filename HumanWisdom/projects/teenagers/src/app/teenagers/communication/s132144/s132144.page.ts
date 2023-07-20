@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132144',
@@ -11,11 +12,11 @@ export class S132144Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w11"
+  bg="blue_w8"
   
-  title="Conditioning is a barrier to understanding"
+  title="Introduction"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/communication/audios/communication+4.2.mp3'
+  audioLink=this.mediaAudio+'/communication/audios/communication+4.1.mp3'
 
 
   transcriptPage="communication/s132144t"

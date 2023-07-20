@@ -1,29 +1,17 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-quotation [bg]="bg">
+ <app-simple-text [bg]="bg">
 
   <form>
+    <h1 class="txt1">
+      Realise that deep down you are the same human being as the other. You both act from your unconscious conditioning and your hidden self-interest. This understanding awakens compassion, and makes it easier to forgive others.
+       </h1>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
-      </div>
-    </div>
-
-    <hr class="quotation_hr mt30px">
-
-    <h1 class="quotation_txt">
-      Wisdom is when someone hurts you and you try and understand their situation instead of hurting them back
-    </h1>
-
-    <hr class="quotation_hr">
-
-    <h1 class="quotation_writer">
-      Anon
-    </h1>
+    <div class="clearfix"></div>
 
   </form>
 
-</app-quotation>
+</app-simple-text> 
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

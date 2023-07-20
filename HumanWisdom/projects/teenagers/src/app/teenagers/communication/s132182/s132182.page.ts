@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132182',
@@ -11,10 +12,11 @@ export class S132182Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w3"
-  title="#5 Our self-interest"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/communication/audios/communication+5.6.mp3'
+  bg="blue_w12"
+  
+  title="#4 Our memories of hurt"
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/communication/audios/communication+5.5.mp3'
 
   transcriptPage="communication/s132182t"
   toc="communication/s132001"
@@ -103,7 +105,10 @@ export class S132182Page implements OnInit {
             this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
             localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
           })
-             
+        
+       
+       
+     
       }
       prev(){
         this.router.navigate(['/communication/s132181'])

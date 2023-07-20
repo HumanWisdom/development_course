@@ -12,7 +12,7 @@ export class S132186Page implements OnInit, OnDestroy {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w7"
+  bg = "blue_w4"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -26,89 +26,107 @@ export class S132186Page implements OnInit, OnDestroy {
   toc = "communication/s132001"
   path = this.router.url
 
+
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
-  constructor
-  (
-    private router: Router,
-    private service:TeenagersService,
-    private location:Location
-  ) 
-  { }
 
-  ngOnInit() 
-  {
+
+  constructor(
+    private router: Router,
+    private service: TeenagersService,
+    private location: Location
+  ) { }
+  ngOnInit() {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
-    this.startTime = Date.now();
-    this.startTime = Date.now();
-    
-    if(JSON.parse(sessionStorage.getItem("bookmark132186"))==0)
-      this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132186"))==1)
-      this.bookmark=1
-  }
 
-  receiveBookmark(e)
-  {
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    this.startTime = Date.now();
+
+    this.startTime = Date.now();
+
+    if (JSON.parse(sessionStorage.getItem("bookmark132186")) == 0)
+      this.bookmark = 0
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark132186")) == 1)
+      this.bookmark = 1
+
+
+
+
+
+  }
+  receiveBookmark(e) {
     console.log(e)
-    if(e==true)
-      this.bookmark=1
+    if (e == true)
+      this.bookmark = 1
     else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark132186",JSON.stringify(this.bookmark))
+      this.bookmark = 0
+    sessionStorage.setItem("bookmark132186", JSON.stringify(this.bookmark))
   }
-
-  createScreen()
-  {
+  createScreen() {
     this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      { 
-      })
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {
+
+    })
+
+
   }
 
-  submitProgress()
-  {
+
+
+  submitProgress() {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
+    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/communication/s132187'])
+    if (this.userId === 563) return;
+    
     this.service.submitProgressText({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime
-    }).subscribe(res=>
-      { 
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      },
-      error=>{console.log(error)},
-      ()=>{
-        //this.router.navigate(['/communication/s234'])
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime
+    }).subscribe(res => {
+
+      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+    },
+      error => { console.log(error) },
+      () => {
+        //this.router.navigate(['/conditioning/s234'])
       })
-  }
 
-  prev()
-  {
+
+
+  }
+  prev() {
+    localStorage.setItem("pageaction", 'prev')
     this.router.navigate(['/communication/s132185'])
+
   }
 
-  ngOnDestroy()
-  {}
+
+  goNext() {
+    // this.router.navigate(['/communication/s2'])
+
+
+    if (this.userId !== 563) this.submitProgress()
+
+  }
+
+  ngOnDestroy() {
+
+
+
+
+  }
+
 
 }

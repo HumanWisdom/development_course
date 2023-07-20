@@ -1,1 +1,30 @@
-<app-reflection  [rid]="rId" [bg_tn]="bg_tn" [bg_cft]="bg_cft" [toc]="toc" [hint]="hint" [bg]="bg" [reflection]="reflection" [reflectionResponse]="r132097" (sendResponse)="submitProgress($event)" (goPrevious)="previous()"></app-reflection>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
+    
+  <form>
+
+    <h4 class="mtb0px comparison">
+      Communication
+    </h4>
+
+    <div class="clearfix"></div>
+
+    <h5 class="mtb0px session">
+      Session #3
+    </h5>
+
+    <div class="clearfix"></div>
+
+    <br>
+  
+    <h1 class="session_title ">
+      Speaking with Intelligence
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-tap-start>
+

@@ -1,29 +1,17 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-quotation [bg]="bg">
+ <app-simple-text [bg]="bg">
 
   <form>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
-      </div>
-    </div>
-
-    <hr class="quotation_hr mt30px">
-
-    <h1 class="quotation_txt">
-      We sometimes contradict an opinion for no other reason than we do not like the tone in which it is expressed
+    <h1 class="txt1">
+      The tone of our voice can convey many emotions, including anger, fear, warmth and sarcasm. People react to our tone, sometimes more than to the words we are saying. Discussing difficult issues in a calm tone increases the possibility of finding a solution.
     </h1>
 
-    <hr class="quotation_hr">
-
-    <h1 class="quotation_writer">
-      Nietzsche
-    </h1>
+    <div class="clearfix"></div>
 
   </form>
 
-</app-quotation>
+</app-simple-text> 
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

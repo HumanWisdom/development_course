@@ -1,3 +1,19 @@
-<app-sessionover-s1 [bg]="bg" [points]="points"></app-sessionover-s1>
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
+  
+  <form class="">
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      Effective communication can give our lives purpose, depth and meaning. Improving our communication with others can enhance the connection we feel, which is our core human need.
+    </h1>
+
+    <h1 class="fw_300 fs_24px lh_35px fc_ffffff tleft">
+      Watch out for the limitations of language and look for the meaning and intention beyond the words being spoken.
+    </h1>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

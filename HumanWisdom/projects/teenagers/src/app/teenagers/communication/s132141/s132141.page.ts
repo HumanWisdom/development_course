@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -8,118 +9,45 @@ import { TeenagersService } from '../../teenagers.service';
   styleUrls: ['./s132141.page.scss'],
 })
 export class S132141Page implements OnInit {
-
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w8"
-  
-  title="Introduction"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/communication/audios/communication+4.1.mp3'
+  bg="blue_w7"
 
-
-  transcriptPage="communication/s132141t"
-  toc="communication/s132001"
-  bookmark=0
-  path=this.router.url
-  avDuration:any
-  userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("audio")
-  moduleId=localStorage.getItem("moduleId")
-  screenNumber=132141
-  startTime:any
-  endTime:any
-  totalTime:any
-  
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  progName = "teenagers";
-      
-      constructor(private router: Router,
-        private service:TeenagersService,
-        private location:Location) { }
-     
-      ngOnInit() {
-        if(this.saveUsername==false)
-        {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-        else
-        {this.userId=JSON.parse(localStorage.getItem("userId"))}
-       this.startTime = Date.now();
-     
-        this.startTime = Date.now();
-        this.createScreen()
-        if(JSON.parse(sessionStorage.getItem("bookmark132141"))==0)
-          this.bookmark=0
-        else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132141"))==1)
-          this.bookmark=1
-     
-      }
-     
-      createScreen(){
-        this.service.createScreen({
-          "ScrId":0,
-          "ModuleId":this.moduleId,
-          "GSetID":this.screenType,
-          "ScreenNo":this.screenNumber
-        }).subscribe(res=>
-          {
-            
-          })
-        
-     
-      }
-     
-      receiveBookmark(e)
-      {
-        console.log(e)
-       if(e==true)
-        this.bookmark=1
-        else
-          this.bookmark=0
-        sessionStorage.setItem("bookmark132141",JSON.stringify(this.bookmark))
-      }
-     
-      receiveAvDuration(e){
-        console.log(e)
-        this.avDuration=e
-     
-      }
-     
-      submitProgress(){
-       
-        this.endTime = Date.now();
-        this.totalTime = this.endTime - this.startTime;
-     
-        this.router.navigate(['/communication/s132142'])
-        this.service.submitProgressAv({
-          "ScrNumber":this.screenNumber,
-          "UserId":this.userId,
-          "BookMark":this.bookmark,
-          "ModuleId":this.moduleId,
-          "screenType":this.screenType,
-          "timeSpent":this.totalTime,
-          "avDuration":this.avDuration
-        }).subscribe(res=>
-          {
-            
-            this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-            localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-          })
-        
-       
-       
-     
-      }
-      prev(){
-        this.router.navigate(['/communication/s132140'])
-     
-     
-      }
-      ngOnDestroy(){
-        localStorage.setItem("totalTime132141",this.totalTime)
-        localStorage.setItem("avDuration132141",this.avDuration)
-      }
+  userId:any
+  userName:any
+  progressPercent:any
+  progressText="3/7"
+  link="/communication/s132142"
+  name="#4  The gift of understanding"
+  progressImg=""
+  toc="communication/s132001"
+
+  constructor(private router: Router, private location:Location,private service: TeenagersService) { }
+
+  ngOnInit() {
+   
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.userName=JSON.parse(sessionStorage.getItem("userName"))
     }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.userName=JSON.parse(localStorage.getItem("userName"))
+  
+    }
+      this.getProgress()
+  
+  }
+  getProgress(){
+    this.service.getPoints(this.userId)
+    .subscribe(res=>{
+      
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Communication").Percentage)
+     console.log(this.progressPercent)
     
-    
-    
+    })
+  }
+}

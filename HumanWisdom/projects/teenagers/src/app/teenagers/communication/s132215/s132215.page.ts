@@ -26,8 +26,8 @@ export class S132215Page implements OnInit {
 
   path=this.router.url
 
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))  
- 
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+   
   constructor(
     private router: Router,
     private service:TeenagersService,
@@ -158,72 +158,6 @@ export class S132215Page implements OnInit {
     base_color
   );
  // /tb copied mul;tiple times
-
- // tb copied mul;tiple times
- $("#svg_form_time rect").css("fill", active_color);
- $("#svg_form_time circle").css("fill", active_color);
- $("#prev").removeClass("disabled");
-   if (child >= length) {
-     $(this).addClass("disabled");
-     $('#submit').removeClass("disabled");
-   }
-   if (child <= length) {
-     child++;
-   }
- var circle_child = child + 1;
- $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-   "fill",
-   base_color
- );
- $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-   "fill",
-   base_color
- );
-// /tb copied mul;tiple times
-
-// tb copied mul;tiple times
-$("#svg_form_time rect").css("fill", active_color);
-$("#svg_form_time circle").css("fill", active_color);
-$("#prev").removeClass("disabled");
-  if (child >= length) {
-    $(this).addClass("disabled");
-    $('#submit').removeClass("disabled");
-  }
-  if (child <= length) {
-    child++;
-  }
-var circle_child = child + 1;
-$("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-  "fill",
-  base_color
-);
-$("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-  "fill",
-  base_color
-);
-// /tb copied mul;tiple times
-
-// tb copied mul;tiple times
-$("#svg_form_time rect").css("fill", active_color);
-$("#svg_form_time circle").css("fill", active_color);
-$("#prev").removeClass("disabled");
-  if (child >= length) {
-    $(this).addClass("disabled");
-    $('#submit').removeClass("disabled");
-  }
-  if (child <= length) {
-    child++;
-  }
-var circle_child = child + 1;
-$("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-  "fill",
-  base_color
-);
-$("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-  "fill",
-  base_color
-);
-// /tb copied mul;tiple times
     
       
     
@@ -283,7 +217,7 @@ createScreen(){
     localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/communication/s132216'])
     if (this.userId === 563) return;
-
+    
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,

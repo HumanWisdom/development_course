@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132018',
@@ -89,7 +90,7 @@ export class S132018Page implements OnInit {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/relationships/s132019'])
+        this.router.navigate(['/communication/s132019'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -110,7 +111,7 @@ export class S132018Page implements OnInit {
      
       }
       prev(){
-        this.router.navigate(['/relationships/s132017'])
+        this.router.navigate(['/communication/s132017'])
      
      
       }

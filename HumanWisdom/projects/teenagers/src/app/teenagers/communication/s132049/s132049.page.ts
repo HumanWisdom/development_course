@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s132049',
@@ -12,22 +12,17 @@ export class S132049Page implements OnInit
 {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w5"
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  bg="blue_flat"
   userId:any
-  userName:any
-  progressPercent:any
-  progressText="1/7"
-  link="/communication/s132050"
-  name="#2  The art of listening"
-  progressImg=""
-  toc="communication/s132001"
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
+  overallPercentage:any
 
   constructor
   (
-    private router: Router, 
-    private location:Location,
-    private service: TeenagersService
+    private router: Router,
+    private service:TeenagersService,
+    private location:Location
   ) 
   { }
 
@@ -36,22 +31,32 @@ export class S132049Page implements OnInit
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
-      this.userName=JSON.parse(sessionStorage.getItem("userName"))
     }
     else
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
-      this.userName=JSON.parse(localStorage.getItem("userName"))
     }
-    this.getProgress()
+    this.sessionPoints()
   }
 
-  getProgress()
+  sessionPoints()
   {
-    this.service.getPoints(this.userId)
-    .subscribe(res=>{
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="communication").Percentage)
-     console.log(this.progressPercent)
+    this.service.sessionPoints({"UserId":this.userId,
+    "ScreenNos":"132002,132003,132004,132005,132006,132007,132008,132009,132010,132011,132012,132013,132014,132015,132016,132017,132018,132019,132020,132021,132022,132023,132024,132025,132026,132027,132028,132029,132030,132031,132032,132033,132034,132035,132036,132037,132038,132039,132040,132041,132042,132043,132044,132045,132046"})
+    .subscribe(res=>
+    {
+      console.log("points",res)
+      this.points=res
     })
+  }
+
+  submitProgress()
+  {
+    this.router.navigate(['/communication/s132050'])
+  }
+
+  prev()
+  {
+    this.router.navigate(['/communication/s132048'])
   }
 }
