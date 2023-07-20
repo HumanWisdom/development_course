@@ -32503,7 +32503,8 @@ body *
 
 .odiv_pathway > [class^="col-"]:last-child
 {
-  margin: 0 20px 0 0 !important;
+  /* margin: 0 20px 0 0 !important; */
+  margin: 0 0px 0 0 !important;
 }
 
 .mr-20pxi
@@ -32543,7 +32544,8 @@ body *
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.box_v3_04
+.box_v3_04,
+.box_v3_04b
 {
   height: 210px;
   background: #120F40;
@@ -32560,6 +32562,14 @@ body *
   width: 100%;
   height: 100px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
+  border-radius: 6px;
+}
+
+.box_v3_04b img
+{
+  width: 100%;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 6px;
 }
 
@@ -32693,7 +32703,8 @@ body *
 }
 
 .msrow > [class^="col-"]:last-child .box_v3_04,
-.msrow > [class^="col-"]:last-child .box_v3_04a
+.msrow > [class^="col-"]:last-child .box_v3_04a,
+.msrow > [class^="col-"]:last-child .box_v3_04b
 {
   margin-bottom: 0;
 }
