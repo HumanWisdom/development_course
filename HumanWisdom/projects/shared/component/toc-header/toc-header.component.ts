@@ -14,6 +14,7 @@ export class TocHeaderComponent implements OnInit {
   @Input() tocImage: string;
   @Input() tocColor: string;
   @Input() tocAlt: string;
+  @Input() moduleName = 'Stress';
   path=this.router.url
   baseUrl:string;
   programName:'';
