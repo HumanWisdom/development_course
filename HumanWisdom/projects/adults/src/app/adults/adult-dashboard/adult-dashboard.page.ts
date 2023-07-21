@@ -42,6 +42,8 @@ export class AdultDashboardPage implements OnInit {
   public percentage: any
   public bookmarks = []
   public resume = []
+  public resumeLastvisited = [];
+  public dashboardFeature = [];
   public bookmarkLength: any
   searchinp = '';
   public dash = false;
@@ -275,9 +277,10 @@ export class AdultDashboardPage implements OnInit {
       }
       let app = localStorage.getItem("fromapp")
       if (!app || app === 'F') {
-        if (localStorage.getItem('socialLogin') === 'T') return null;
-        else this.emaillogin()
-      } else {
+        if (localStorage.getItem('socialLogin') !== 'T') {
+          this.emaillogin()
+        };
+      } else if(app && app === 'T') {
         let authtoken = JSON.parse(localStorage.getItem("token"))
         this.fromapplogin(authtoken);
       }
@@ -286,8 +289,11 @@ export class AdultDashboardPage implements OnInit {
 
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.getProgress()
+      this.getProgress();
     }
+
+    this.getLastvisitedScr();
+    this.GetDashboardFeatures();
 
     if (localStorage.getItem("Affreftoken") !== null) {
       let token = localStorage.getItem("Affreftoken");
@@ -305,6 +311,21 @@ export class AdultDashboardPage implements OnInit {
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
     this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+  }
+
+  getLastvisitedScr() {
+    this.service.GetLastVisitedScreen(this.userId)
+      .subscribe(res => {
+        this.resumeLastvisited = res;
+      });
+  }
+
+  GetDashboardFeatures() {
+    this.service.GetDashboardFeature('1')
+      .subscribe(res => {
+        console.log(res);
+        this.dashboardFeature = res;
+      });
   }
 
   getclcickevent(event) {
@@ -1584,9 +1605,15 @@ export class AdultDashboardPage implements OnInit {
       })
 
   }
-  routeResume(r) {
-    localStorage.setItem("pageaction", 'next')
-    switch (r.ModuleId.toString()) {
+  routeResume(r, enableLastVisited = false) {
+    let id = '';
+    if(enableLastVisited) {
+      id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['screenno'].substring(0, 2) : '23';
+    }else {
+      id = r.ModuleId.toString();
+    }
+    localStorage.setItem("pageaction", 'next');
+    switch (id) {
       case "07": {
         this.routeComparison(1)
         break
@@ -3307,13 +3334,12 @@ export class AdultDashboardPage implements OnInit {
       .subscribe(res => {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         this.qrList = res
-        hR = "s" + res.lastVisitedScreen
-        this.goToPage = res.lastVisitedScreen
         // continue where you left
         if (res.lastVisitedScreen === '') {
           localStorage.setItem("lastvisited", 'F')
-        }
-        else {
+        } else {
+          hR = "s" + res.lastVisitedScreen
+          this.goToPage = res.lastVisitedScreen
           localStorage.setItem("lastvisited", 'T')
         }
         // /continue where you left
@@ -3324,7 +3350,7 @@ export class AdultDashboardPage implements OnInit {
           console.log(error)
         },
         () => {
-          if (cont == "1") {
+          if (cont === 1 && hR) {
             this.router.navigate([`/adults/happiness/${hR}`])
           }
           else
@@ -3803,7 +3829,9 @@ export class AdultDashboardPage implements OnInit {
       setTimeout(() => {
         var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
         var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
-        document.querySelector(".wediv").scrollLeft = editable - wediv;
+        if(document.querySelector(".wediv")) {
+          document.querySelector(".wediv").scrollLeft = editable - wediv;
+        }
 
       }, 3000);
 
@@ -3881,5 +3909,9 @@ export class AdultDashboardPage implements OnInit {
         error => {
           console.log(error)
         })
+  }
+
+  routeForUser(res) {
+   this.router.navigate([res['url']]);
   }
 }
