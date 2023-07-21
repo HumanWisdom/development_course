@@ -1,12 +1,8 @@
-<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [moduleName]="'Noticing Thoughts'"  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
 <app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">  
   <form>
-    <h4 class="mtb0px comparison">
-      Noticing thoughts
-    </h4>
-    <div class="clearfix"></div>
-
+   
     <h5 class="mtb0px session">
       Session #1
     </h5>
