@@ -1,6 +1,5 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-loneliness',
@@ -11,18 +10,24 @@ export class LonelinessPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  audioData:any;
+  mediaUrl: any;
 
-  constructor(private router: Router, private sanitizer: DomSanitizer,) { }
-
-  ngOnInit() {
-    this.audioData={
-      url:'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.29.mp3'
+  constructor(private router: Router) 
+  {
+    this.mediaUrl = {
+      url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.29.mp3',
+      youtubeUrl: 'xF3TdgBx6ts'
     }
   }
+
+  ngOnInit() {}
   
   audioevent(url) {
       this.router.navigate(['feel-better-now/loneliness/audiopage/', url ,"Dealing with loneliness",Math.random() ])
+  }
+
+  routeToYoutube(url) {
+    this.router.navigate(['feel-better-now/feeling-upset/youtubelink/',url]);
   }
 
   getclcickevent(event) {

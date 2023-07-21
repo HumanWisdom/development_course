@@ -12,7 +12,7 @@ export class S131073Page implements OnInit,OnDestroy
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w2"
+  bg="purple_w6"
   title="How does comparison affect relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/relationships/audios/3.2.mp3'

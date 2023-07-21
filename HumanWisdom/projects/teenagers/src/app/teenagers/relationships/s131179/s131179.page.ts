@@ -12,7 +12,7 @@ export class S131179Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w11"
+  bg="purple_w3"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
