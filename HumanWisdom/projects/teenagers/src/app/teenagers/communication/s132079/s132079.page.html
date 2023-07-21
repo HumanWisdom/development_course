@@ -1,17 +1,29 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
+<app-quotation [bg]="bg">
 
   <form>
 
-    <h1 class="txt1">
-      60-90% of communication is non-verbal and includes our gestures, facial expressions, body language, and the tone of our voice. It's a skill we can all learn.
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="">
+      </div>
+    </div>
+
+    <hr class="quotation_hr mt30px">
+
+    <h1 class="quotation_txt">
+      Most of the successful people I have known are the ones who do more listening than talking
     </h1>
 
-    <div class="clearfix"></div>
+    <hr class="quotation_hr">
+
+    <h1 class="quotation_writer">
+      Bernard Baruch
+    </h1>
 
   </form>
 
-</app-simple-text> 
+</app-quotation>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="goNext()" (previousEmitter)="prev()"></app-course-footer>

@@ -94,22 +94,22 @@ export class S132017Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/relationships/s234'])
+        //this.router.navigate(['/communication/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/relationships/s131016'])
+    this.router.navigate(['/communication/s132016'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/relationships/s132017'])
+    // this.router.navigate(['/communication/s132017'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/relationships/s131018'])
+    this.router.navigate(['/communication/s132018'])
   }
 
   ngOnDestroy() 

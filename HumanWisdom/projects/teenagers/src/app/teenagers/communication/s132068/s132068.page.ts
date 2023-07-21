@@ -1,6 +1,6 @@
-import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -8,122 +8,109 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s132068.page.html',
   styleUrls: ['./s132068.page.scss'],
 })
-export class S132068Page implements OnInit, OnDestroy {
+export class S132068Page implements OnInit,OnDestroy {
 
-  bg_tn = "bg_blue"
-  bg_cft = "bg_blue"
-  bg = "blue_w11"
+  bg_tn="bg_blue"
+  bg_cft="bg_blue"
+  bg="blue_w10"
 
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  screenType = localStorage.getItem("text")
-  moduleId = localStorage.getItem("moduleId")
-  screenNumber = 132068
-  startTime: any
-  endTime: any
-  totalTime: any
-  bookmark = 0
-  toc = "communication/s132001"
-  path = this.router.url
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/communication/videos/2.2.mp4'  
+  title="The importance of being curious and asking a question"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/communication/communication_01.jpg"
+  
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
+  screenType=localStorage.getItem("video")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=132068
+  startTime:any
+  endTime:any
+  totalTime:any  
+  
+  toc="/communication/s132001"
+  bookmark=0
+  path=this.router.url
+  avDuration:any
 
-  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
-
-
-
-  constructor(
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  
+  constructor
+  (
     private router: Router,
-    private service: TeenagersService,
-    private location: Location
-  ) { }
-  ngOnInit() {
+    private service:TeenagersService,
+    private location:Location
+  ) 
+  { }
+
+  ngOnInit() 
+  {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    this.startTime = Date.now();
-
-    this.startTime = Date.now();
-
-    if (JSON.parse(sessionStorage.getItem("bookmark132068")) == 0)
-      this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark132068")) == 1)
-      this.bookmark = 1
-
-
-
-
-
-  }
-  receiveBookmark(e) {
-    console.log(e)
-    if (e == true)
-      this.bookmark = 1
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
     else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmark132068", JSON.stringify(this.bookmark))
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
+    this.startTime = Date.now();
+    this.startTime = Date.now();
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark132068"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132068"))==1)
+      this.bookmark=1
   }
-  createScreen() {
+
+  receiveBookmark(e)
+  {
+    console.log(e)
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark132068",JSON.stringify(this.bookmark))
+  }
+
+  createScreen()
+  {
     this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {
-
-    })
-
-
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>{})
   }
 
-
-
-  submitProgress() {
+  submitProgress()
+  {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    localStorage.setItem("pageaction", 'next')
     this.router.navigate(['/communication/s132069'])
-    if (this.userId === 563) return;
-    
-    this.service.submitProgressText({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime
-    }).subscribe(res => {
-
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
-    },
-      error => { console.log(error) },
-      () => {
+    this.service.submitProgressAv({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-
-
-
   }
-  prev() {
-    localStorage.setItem("pageaction", 'prev')
+
+  prev()
+  {
     this.router.navigate(['/communication/s132067'])
-
   }
 
-
-  goNext() {
-
-    if (this.userId !== 563) this.submitProgress()
-
-  }
-
-  ngOnDestroy() {
-
-
-
-
-  }
-
+  ngOnDestroy()
+  {}
 
 }

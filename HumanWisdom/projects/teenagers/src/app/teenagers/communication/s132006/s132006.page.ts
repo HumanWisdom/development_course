@@ -94,13 +94,13 @@ export class S132006Page implements OnInit {
     },
       error => { console.log(error) },
       () => {
-        //this.router.navigate(['/relationships/s234'])
+        //this.router.navigate(['/communication/s234'])
       })
   }
 
   prev() 
   {
-    this.router.navigate(['/relationships/s132005'])
+    this.router.navigate(['/communication/s132005'])
   }
 
   goNext() 
@@ -108,7 +108,7 @@ export class S132006Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/relationships/s132007'])
+    this.router.navigate(['/communication/s132007'])
   }
 
   ngOnDestroy() 

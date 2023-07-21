@@ -1,6 +1,7 @@
 import { Component, OnInit ,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132182t',
@@ -11,7 +12,7 @@ export class S132182tPage implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w3"
+  bg="blue_w12"
 
   bookmark=0
   path=this.router.url
@@ -25,11 +26,10 @@ export class S132182tPage implements OnInit {
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-
+  
   avDuration=localStorage.getItem("avDuration132182")
   totalTime=localStorage.getItem("totalTime132182")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
- 
   progName="teenagers"
   
   constructor
@@ -50,9 +50,9 @@ export class S132182tPage implements OnInit {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
-    if(JSON.parse(sessionStorage.getItem("bookmark132182"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark131003"))==0)
     this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132182"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark131003"))==1)
       this.bookmark=1
   }
 
@@ -63,7 +63,7 @@ export class S132182tPage implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark132182",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark131003",JSON.stringify(this.bookmark))
   }
 
   submitProgress()

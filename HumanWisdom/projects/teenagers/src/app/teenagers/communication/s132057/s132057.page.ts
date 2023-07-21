@@ -61,8 +61,8 @@ export class S132057Page implements OnInit
       $("#submit").addClass("disabled");
       $("section").not("section:nth-of-type(1)").hide();
       $("section").not("section:nth-of-type(1)").css('transform', 'translateX(100px)');
-      var svgWidth = length * 200 + 24;
 
+      var svgWidth = length * 200 + 24;
       $("#svg_wrap").html(
         '<svg version="1.1" id="svg_form_time" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ' +
         svgWidth +
@@ -106,30 +106,48 @@ export class S132057Page implements OnInit
       $('#svg_form_time circle').css('fill', base_color);
       $("circle:nth-of-type(1)").css("fill", active_color);
 
-      // to be copied
-      $("#svg_form_time rect").css("fill", active_color);
-      $("#svg_form_time circle").css("fill", active_color);
-      $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-      var circle_child = child + 1;
-      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-        "fill",
-        base_color
-      );
-      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-        "fill",
-        base_color
-      );
-      // /to be copied
+      $(".mt_btn").click(function () {
+        $("#svg_form_time rect").css("fill", active_color);
+        $("#svg_form_time circle").css("fill", active_color);
+        var id = $(this).attr("id");
+        if (id == "next") {
+          $("#prev").removeClass("disabled");
+          if (child >= length) {
+            $(this).addClass("disabled");
+            $('#submit').removeClass("disabled");
+          }
+          if (child <= length) {
+            child++;
+          }
+        } else if (id == "prev") {
+          $("#next").removeClass("disabled");
+          $('#submit').addClass("disabled");
+          if (child <= 2) {
+            $(this).addClass("disabled");
+          }
+          if (child > 1) {
+            child--;
+          }
+        }
+        var circle_child = child + 1;
+        $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+          "fill",
+          base_color
+        );
+        $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+          "fill",
+          base_color
+        );
+        var currentSection = $("section:nth-of-type(" + child + ")");
+        currentSection.fadeIn();
+        currentSection.css('transform', 'translateX(0)');
+        currentSection.prevAll('section').css('transform', 'translateX(-100px)');
+        currentSection.nextAll('section').css('transform', 'translateX(100px)');
+        $('section').not(currentSection).hide();
+      });
+
     });
     // /multistep wizard
-
   }
 
   createScreen() 

@@ -12,8 +12,7 @@ export class S132191Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w12"
-  
+  bg="blue_w9"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -22,6 +21,7 @@ export class S132191Page implements OnInit {
   startTime:any
   endTime:any
   totalTime:any
+  
   bookmark=0
   toc="communication/s132001"
   path=this.router.url  
@@ -40,6 +40,7 @@ export class S132191Page implements OnInit {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -50,6 +51,7 @@ export class S132191Page implements OnInit {
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
+    
     if(JSON.parse(sessionStorage.getItem("bookmark132191"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132191"))==1)
@@ -75,8 +77,6 @@ export class S132191Page implements OnInit {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       { 
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
   }
 
@@ -92,7 +92,11 @@ export class S132191Page implements OnInit {
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
       "timeSpent":this.totalTime
-    }).subscribe(res=>{},
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
       error=>{console.log(error)},
       ()=>{
         //this.router.navigate(['/communication/s234'])

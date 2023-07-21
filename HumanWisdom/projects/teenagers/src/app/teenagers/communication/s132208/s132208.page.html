@@ -1,56 +1,49 @@
-<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-audio-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [transcriptPage]="transcriptPage"></app-audio-header>
 
+<app-pyramid-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)="receiveAvDuration($event)"> 
 
-<app-bg-video></app-bg-video>
+  <div class="row p0 mlr-20px">
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_1.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_t1 mtb0px pno pno1">
+        01
+      </h6>
+      <h6 class="icenter_t1 mtb0px ptext">
+        The kitchen is messy
+      </h6>
+    </div>
 
-<!-- page content -->
-<div class="right_col mc_01">
-  <!-- Class -->  
-  <div class="cw100p">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 blue_w1">
-        <div class="x_panel p0">                        
-          <div class="x_content p0">
-            <form>              
-              <h5 class="txt1">
-                #10 Tips for difficult conversations
-              </h5>
-              <div class="clearfix"></div>
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">                  
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_2.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_tn mtb0px pno pnotn">
+        02
+      </h6>
+      <h6 class="icenter_tn mtb0px ptext">
+        You are irritated and tell him to tidy up.
+      </h6>        
+    </div>
 
-              <!-- multistep wizard -->
-              <div id="svg_wrap"></div>              
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_3.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_tn mtb0px pno pnotn">
+        03
+      </h6>
+      <h6 class="icenter_tn mtb0px ptext">
+        He reacts to your tone and gets angry
+      </h6>                
+    </div>
 
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-              <section></section>
-                           
-              
-
-              <!-- /multistep wizard -->  
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                 
-                </div>
-              </div>
-              
-            </form>
-          </div>
-        </div>
-      </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/pyramid/4l_4.png" alt="" class="img-responsive w100">
+      <h6 class="icenter_tn mtb0px pno pnotn">
+        04
+      </h6>
+      <h6 class="icenter_tn mtb0px ptext">
+        The sense of ‘I’ feels threatened, and it escalates
+      </h6>                
     </div>
   </div>
-  <!--/Class --> 
-</div>
-<!-- /page content -->
+  
+</app-pyramid-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-
-

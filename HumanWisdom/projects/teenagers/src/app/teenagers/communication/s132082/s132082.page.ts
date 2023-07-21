@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
@@ -9,113 +10,122 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S132082Page implements OnInit {
 
-  bg_tn="bg_blue"
-  bg_cft="bg_blue"
-  bg="blue_w7"
+  bg_tn = "bg_blue"
+  bg_cft = "bg_blue"
+  bg = "blue_w3"
+  hint = " This happens all the time when we are having an argument, for example "
 
-  title="Listening with generosity"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/communication/audios/communication+2.3.mp3'
+  toc = "communication/s132001"
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  qrList = JSON.parse(localStorage.getItem("qrList"))
+  moduleId = localStorage.getItem("moduleId")
+  screenType = localStorage.getItem("reflection")
+  screenNumber = 132082
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
+  rId = 1657
+  reflection: any
+  reflectionA: any
+  r132082 = JSON.parse(sessionStorage.getItem("r132082"))
 
-  transcriptPage="communication/s132082t"
-  toc="communication/s132001"
-  bookmark=0
-  path=this.router.url
-  avDuration:any
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("audio")
-  moduleId=localStorage.getItem("moduleId")
-  screenNumber=132082
-  startTime:any
-  endTime:any
-  totalTime:any
-  
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  progName= "teenagers";
-  
+  shared: any
+  confirmed: any
+
   constructor
   (
     private router: Router,
-    private service:TeenagersService,
-    private location:Location
+    private service: TeenagersService,
+    private location: Location
   ) 
   { }
- 
+
   ngOnInit() 
   {
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
-    this.startTime = Date.now();
-    this.startTime = Date.now();
     this.createScreen()
-    if(JSON.parse(sessionStorage.getItem("bookmark132082"))==0)
-      this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132082"))==1)
-      this.bookmark=1
+    this.reflectionA = this.qrList.ListOfReflection
+    this.findReflection()
+    if (this.saveUsername == false) 
+    { 
+      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    }
+    else 
+    { 
+      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    }
+    this.startTime = Date.now();
   }
- 
-  createScreen()
+
+  sharedForum(e) 
+  {
+    console.log(e)
+    this.shared = e
+  }
+
+  confirmShare() 
+  {
+    this.confirmed = true
+  }
+
+  createScreen() 
   {
     this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {})
   }
- 
-  receiveBookmark(e)
+
+  findReflection() 
   {
-    console.log(e)
-    if(e==true)
-      this.bookmark=1
-    else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark132082",JSON.stringify(this.bookmark))
+    for (var i = 0; i < this.reflectionA.length; i++) 
+    {
+      if (this.rId == this.reflectionA[i].ReflectionId) 
+      {
+        this.reflection = this.reflectionA[i].Que
+        // this.optionList.push(this.questionA[i])
+      }
+    }
+    console.log(this.reflection)
   }
- 
-  receiveAvDuration(e)
+
+  submitProgress(e) 
   {
-    console.log(e)
-    this.avDuration=e
-  }
- 
-  submitProgress()
-  {
+    console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/communication/s132083'])
-    this.service.submitProgressAv({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
-    }).subscribe(res=>
-      { 
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+    sessionStorage.setItem("r132082", JSON.stringify(e))
+    this.r132082 = sessionStorage.getItem("r132082")
+    console.log(this.r132082)
+    this.service.submitProgressReflection({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime,
+      "ReflectionId": this.rId,
+      "Resp": this.r132082
+    }).subscribe(res => {},
+      error => {
+        console.log(error)
+        this.router.navigate(['/communication/s132083'])
+
+      },
+      () => {
+        this.router.navigate(['/communication/s132083'])
       })
   }
 
-  prev()
+  previous() 
   {
     this.router.navigate(['/communication/s132081'])
   }
 
-  ngOnDestroy()
-  {
-    localStorage.setItem("totalTime132082",this.totalTime)
-    localStorage.setItem("avDuration132082",this.avDuration)
-  }
+  ngOnDestroy() 
+  {}
 
 }

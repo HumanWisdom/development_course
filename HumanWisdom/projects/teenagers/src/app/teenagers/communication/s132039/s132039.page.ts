@@ -12,10 +12,10 @@ export class S132039Page implements OnInit,OnDestroy
 {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w5"
-  title="Language is limited"
+  bg="blue_w7"
+  title="An example"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/communication/audios/communication+1.6.mp3'
+  audioLink=this.mediaAudio+'/communication/audios/communication+1.5.mp3'
   transcriptPage="communication/s132039t"
   toc="communication/s132001"
   bookmark=0

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132109',
@@ -11,10 +12,10 @@ export class S132109Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w3"
-  title="We like to be critical"
+  bg="blue_w12"
+  title="Do we speak from our unconscious conditioning, or our intelligence?"
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/communication/audios/communication+3.5.mp3'
+  audioLink=this.mediaAudio+'/communication/audios/communication+3.4.mp3'
 
   transcriptPage="communication/s132109t"
   toc="communication/s132001"

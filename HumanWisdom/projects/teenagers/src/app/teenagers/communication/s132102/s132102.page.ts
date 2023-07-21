@@ -25,11 +25,10 @@ export class S132102Page implements OnInit {
   
   bookmark=0
   toc="communication/s132001"
-  path=this.router.url
-  
+  path=this.router.url  
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-
+  
   constructor
   (
     private router: Router,

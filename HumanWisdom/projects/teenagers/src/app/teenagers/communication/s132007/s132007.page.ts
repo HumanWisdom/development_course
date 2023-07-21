@@ -14,7 +14,7 @@ export class S132007Page implements OnInit,OnDestroy {
   bg_cft="bg_blue"
   bg="blue_w5"
 
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/communication/videos/1.1.mp4'  
   title="The importance of communication"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/communication/communication_01.jpg"
@@ -89,7 +89,7 @@ export class S132007Page implements OnInit,OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/relationships/s132008'])
+    this.router.navigate(['/communication/s132008'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -107,7 +107,7 @@ export class S132007Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/relationships/s132006'])
+    this.router.navigate(['/communication/s132006'])
   }
 
   ngOnDestroy()

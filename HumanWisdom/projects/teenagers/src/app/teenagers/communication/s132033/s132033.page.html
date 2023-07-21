@@ -1,17 +1,17 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
+<app-image-text base="communication_base1" overlay="communication_overlay1_mobile">
 
   <form>
 
     <h1 class="txt1">
-      Social media posts, comments and likes bring us attention, but no connection, and inside we can remain lonely. Making real connections in the world with real people is so important.
+      People are starved for connection, not attention.
     </h1>
-
+    
     <div class="clearfix"></div>
 
   </form>
 
-</app-simple-text> 
+</app-image-text>
 
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>

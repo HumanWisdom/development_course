@@ -1,1 +1,17 @@
-<app-reflection  [rid]="rId" [bg_tn]="bg_tn" [bg_cft]="bg_cft" [toc]="toc" [hint]="hint" [bg]="bg" [reflection]="reflection" [reflectionResponse]="r132103" (sendResponse)="submitProgress($event)" (goPrevious)="previous()"></app-reflection>
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      Try holding your question or comment till the person has finished speaking. You could then say ‘Is it okay if I make a comment?’, or ‘Is it okay if I ask a question?’, or something to acknowledge you have listened completely.
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

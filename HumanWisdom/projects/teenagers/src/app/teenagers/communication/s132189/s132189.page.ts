@@ -12,7 +12,7 @@ export class S132189Page implements OnInit, OnDestroy {
 
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
-  bg = "blue_w10"
+  bg = "blue_w7"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
@@ -84,7 +84,7 @@ export class S132189Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/communication/s1321900'])
+    this.router.navigate(['/communication/s132190'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -99,7 +99,7 @@ export class S132189Page implements OnInit, OnDestroy {
       },
       error=>{console.log(error)},
       ()=>{
-        //this.router.navigate(['/relationships/s234'])
+        //this.router.navigate(['/communication/s234'])
       })
   }
 

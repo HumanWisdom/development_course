@@ -1,6 +1,7 @@
 import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import {Location } from '@angular/common'
 
 @Component({
   selector: 'app-s132004',
@@ -98,7 +99,7 @@ export class S132004Page implements OnInit,OnDestroy {
         this.endTime = Date.now();
         this.totalTime = this.endTime - this.startTime;
      
-        this.router.navigate(['/relationships/s131005'])
+        this.router.navigate(['/communication/s132005'])
         this.service.submitProgressAv({
           "ScrNumber":this.screenNumber,
           "UserId":this.userId,
@@ -119,7 +120,7 @@ export class S132004Page implements OnInit,OnDestroy {
      
       }
       prev(){
-        this.router.navigate(['/relationships/s130003'])
+        this.router.navigate(['/communication/s132003'])
      
      
       }

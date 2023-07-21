@@ -1,17 +1,29 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
- <app-simple-text [bg]="bg">
-
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
+    
   <form>
 
-      <h1 class="txt1">
-       When we are deeply understood we feel connected to the other person and no longer feel alone. This is a core human need, and the foundation of close relationships.
-       </h1>
+    <h4 class="mtb0px comparison">
+      Communication
+    </h4>
+
+    <div class="clearfix"></div>
+
+    <h5 class="mtb0px session">
+      Session #4
+    </h5>
+
+    <div class="clearfix"></div>
+
+    <br>
+  
+    <h1 class="session_title ">
+      The Gift Of Understanding
+    </h1>
 
     <div class="clearfix"></div>
 
   </form>
 
-</app-simple-text> 
-
-<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+</app-tap-start>

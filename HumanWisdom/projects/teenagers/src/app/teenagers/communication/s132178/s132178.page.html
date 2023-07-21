@@ -1,19 +1,5 @@
-<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
 
- <app-simple-text [bg]="bg">
-
-  <form>
-    <h1 class="txt1">
-      <p class="mb0px fw_bold">#3</p>
-      The simplest way to overcome fear in communication is to accept completely what may happen. It matters much less than we imagine.
-       </h1>
-
-    <div class="clearfix"></div>
-
-  </form>
-
-</app-simple-text> 
+<app-audio-content [title]="title" [bg]="bg" [audioLink]="audioLink" (sendAvDuration)=receiveAvDuration($event)></app-audio-content>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
-
-

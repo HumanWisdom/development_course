@@ -439,6 +439,10 @@ const routes: Routes = [
     path: 'feel-better-now',
     loadChildren: () => import('./feel-better-now/feel-better-now.module').then( m => m.FeelBetterNowModule)
   },
+  {
+    path: 'pathway',
+    loadChildren: () => import('./pathway/pathway.module').then( m => m.PathwayModule)
+  },
 ];
 
  @NgModule({

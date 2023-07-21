@@ -1,14 +1,13 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { S132155Page } from './s132155.page';
 
 describe('S132155Page', () => {
-  // let  canActivate:[ActiveGuard],  
-    let component:  S132155Page;
+  let component: S132155Page;
   let fixture: ComponentFixture<S132155Page>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ S132155Page ],
       imports: [IonicModule.forRoot()]

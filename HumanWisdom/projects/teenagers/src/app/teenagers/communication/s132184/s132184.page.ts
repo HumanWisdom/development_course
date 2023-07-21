@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+
 @Component({
   selector: 'app-s132184',
   templateUrl: './s132184.page.html',
@@ -12,9 +13,9 @@ export class S132184Page implements OnInit {
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_w3"
-  hint = " It may make you scan the conversation for something interesting, and stop listening if there isn’t anything stimulating there."
+  hint = "The person you are meeting may have changed. Or you see that the relationship is more important than your differences"
 
-  toc = "communication/s132001"
+  toc = "communication/s132184"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
@@ -25,7 +26,7 @@ export class S132184Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 470
+  rId = 1671
   reflection: any
   reflectionA: any
   r132184 = JSON.parse(sessionStorage.getItem("r132184"))

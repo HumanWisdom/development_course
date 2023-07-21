@@ -12,7 +12,7 @@ export class S132105Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w1"
+  bg="blue_w9"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -21,20 +21,20 @@ export class S132105Page implements OnInit {
   screenNumber=132105
   startTime:any
   endTime:any
-  totalTime:any  
-
+  totalTime:any
+  
   bookmark=0
   toc="communication/s132001"
   path=this.router.url
   
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
- constructor
+
+  constructor
   (
     private router: Router,
-    private service: TeenagersService,
-    private location: Location
+    private service:TeenagersService,
+    private location:Location
   ) 
   { }
 
@@ -42,78 +42,74 @@ export class S132105Page implements OnInit {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-
-    if (JSON.parse(sessionStorage.getItem("bookmark132105")) == 0)
-      this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark132105")) == 1)
-      this.bookmark = 1
+    
+    if(JSON.parse(sessionStorage.getItem("bookmark132105"))==0)
+      this.bookmark=0
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132105"))==1)
+      this.bookmark=1
   }
 
-  receiveBookmark(e) 
+  receiveBookmark(e)
   {
     console.log(e)
-    if (e == true)
-      this.bookmark = 1
+    if(e==true)
+      this.bookmark=1
     else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmark132105", JSON.stringify(this.bookmark))
+      this.bookmark=0
+    sessionStorage.setItem("bookmark132105",JSON.stringify(this.bookmark))
   }
 
-  createScreen() 
+  createScreen()
   {
     this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {})
-  }
-
-  submitProgress() 
-  {
-    this.service.submitProgressText({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime
-    }).subscribe(res => {
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
-    },
-      error => { console.log(error) },
-      () => {
-        //this.router.navigate(['/communication/s234'])
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>
+      { 
       })
   }
 
-  prev() 
+  submitProgress()
+  {
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+    this.router.navigate(['/communication/s132106'])
+    this.service.submitProgressText({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+      })
+  }
+
+  prev()
   {
     this.router.navigate(['/communication/s132104'])
   }
 
-  goNext() 
-  {
-    // this.router.navigate(['/communication/s132105'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-    if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/communication/s132106'])
-  }
-
-  ngOnDestroy() 
+  ngOnDestroy()
   {}
 
 }

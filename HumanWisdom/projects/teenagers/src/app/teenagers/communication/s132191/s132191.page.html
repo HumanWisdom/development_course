@@ -1,16 +1,14 @@
-<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
- 
-<app-kta-prevnext [bg]="bg">
-  
-  <form class="">
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
+ <app-simple-text [bg]="bg">
+  <form>               
 
-    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
-      Our hidden patterns of thinking get in the way of effective communication. Observing them operating in the background allows us to respond with wisdom, and connect with others in a meaningful way.
-    </h1>
-      
-  </form> 
-         
-</app-kta-prevnext>
- 
-<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+    <h1 class="txt1">
+      We can recognise signals from our own body to realise we are beginning to react to the other person. We may feel tense, our tone of voice changes, we start speaking over the other person.
+      </h1>
+
+  </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

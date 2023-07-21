@@ -13,6 +13,7 @@ export class S132065Page implements OnInit {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w9"
+  
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -25,7 +26,7 @@ export class S132065Page implements OnInit {
   bookmark=0
   toc="communication/s132001"
   path=this.router.url
-  
+
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  
   constructor
@@ -52,9 +53,9 @@ export class S132065Page implements OnInit {
     this.startTime = Date.now();
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark132065"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark132033"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132065"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132033"))==1)
       this.bookmark=1
   }
 
@@ -65,7 +66,7 @@ export class S132065Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark132065",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark132033",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -99,6 +100,7 @@ export class S132065Page implements OnInit {
       },
       error=>{console.log(error)},
       ()=>{
+        //this.router.navigate(['/communication/s234'])
       })
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
@@ -8,27 +8,34 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s132064.page.html',
   styleUrls: ['./s132064.page.scss'],
 })
-export class S132064Page implements OnInit {
+export class S132064Page implements OnInit,OnDestroy {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w9"
+  bg="blue_w6"
+
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/communication/videos/2.1.mp4'  
+  title="What happens when we listen?"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/communication/communication_04.jpg"
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("text")
+
+  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=132064
   startTime:any
   endTime:any
-  totalTime:any
+  totalTime:any   
   
+  toc="/communication/s132001"
   bookmark=0
-  toc="communication/s132001"
   path=this.router.url
+  avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
- 
+  
   constructor
   (
     private router: Router,
@@ -41,7 +48,6 @@ export class S132064Page implements OnInit {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -53,9 +59,9 @@ export class S132064Page implements OnInit {
     this.startTime = Date.now();
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark132033"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark132064"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132033"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132064"))==1)
       this.bookmark=1
   }
 
@@ -66,7 +72,7 @@ export class S132064Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark132033",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark132064",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -76,9 +82,7 @@ export class S132064Page implements OnInit {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      { 
-      })
+    }).subscribe(res=>{})
   }
 
   submitProgress()
@@ -86,21 +90,18 @@ export class S132064Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/communication/s132065'])
-    this.service.submitProgressText({
+    this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
     }).subscribe(res=>
       { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      },
-      error=>{console.log(error)},
-      ()=>{
-        //this.router.navigate(['/communication/s234'])
       })
   }
 

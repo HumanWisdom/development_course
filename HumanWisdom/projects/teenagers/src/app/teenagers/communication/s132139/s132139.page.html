@@ -1,29 +1,20 @@
-<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
-
-<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
-    
-  <form>
-
-    <h4 class="mtb0px comparison">
-      Communication
-    </h4>
-
-    <div class="clearfix"></div>
-
-    <h5 class="mtb0px session">
-      Session #4
-    </h5>
-
-    <div class="clearfix"></div>
-
-    <br>
+<app-course-header [toc]="toc" [bg]="bg" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+<app-kta-prevnext [bg]="bg">
   
-    <h1 class="session_title ">
-      The Gift Of Understanding
+  <form class="">
+
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      There is so much to learn about ourselves just from noticing what happens when we speak. 
+    </h1>
+     
+    <h1 class="fw_300 fs_30px lh_35px fc_ffffff tleft">
+      This understanding allows us to live with wisdom, be genuine, and speak with compassion and intelligence. It also helps us pick the situations where it's wise to say nothing at all.
     </h1>
 
-    <div class="clearfix"></div>
-
-  </form>
-
-</app-tap-start>
+      
+  </form> 
+         
+</app-kta-prevnext>
+ 
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
