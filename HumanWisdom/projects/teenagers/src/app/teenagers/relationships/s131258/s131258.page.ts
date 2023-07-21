@@ -172,7 +172,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/relationships/s131258'])
+    this.router.navigate(['/relationships/s131257'])
 
 
   }

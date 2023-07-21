@@ -12,7 +12,7 @@ export class S131192Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w10"
+  bg="purple_w12"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/6.3.mp4'  
   title="The urge to withdraw when hurt"

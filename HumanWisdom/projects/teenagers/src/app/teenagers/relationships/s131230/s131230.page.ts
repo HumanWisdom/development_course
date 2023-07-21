@@ -12,7 +12,7 @@ export class S131230Page implements OnInit
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w11"
+  bg="purple_w1"
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   userId:any
   userName:any

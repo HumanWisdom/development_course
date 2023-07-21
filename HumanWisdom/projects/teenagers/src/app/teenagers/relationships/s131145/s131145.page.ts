@@ -13,7 +13,7 @@ export class S131145Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w8"
+  bg = "purple_w11"
   hint = " It may have been as simple as persuading them to play a game you wanted to play."
   toc = "/relationships/s131001"
   path = this.router.url

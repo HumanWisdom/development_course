@@ -12,7 +12,7 @@ export class S131223Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w5"
+  bg="purple_w7"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/7.1.mp4'  
   title="Our relationship with ourselves"
