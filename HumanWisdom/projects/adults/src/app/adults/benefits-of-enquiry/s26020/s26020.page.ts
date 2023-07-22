@@ -15,7 +15,7 @@ export class S26020Page implements OnInit,OnDestroy {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w12"
-  title="Treat the problem, not just the symptom"
+  title="Treat the root cause, not just the symptom"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/art_of_enquiry/audios/enquiry+1.5.mp3'
 
