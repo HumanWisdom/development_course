@@ -1,0 +1,13 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+ <form>
+   <h1 class="txt1">
+    If you use your power to ‘win’ an argument it is a hollow victory. The other person feels resentful,  you may lose your friendship, and you may have missed an opportunity to learn something new.
+     </h1>
+   <div class="clearfix"></div>
+ </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

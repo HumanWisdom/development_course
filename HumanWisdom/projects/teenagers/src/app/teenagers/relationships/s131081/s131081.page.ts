@@ -12,7 +12,7 @@ export class S131081Page implements OnInit,OnDestroy
 {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w6"
+  bg="purple_w10"
   title="How does self-interest affect relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/relationships/audios/3.3.mp3'
