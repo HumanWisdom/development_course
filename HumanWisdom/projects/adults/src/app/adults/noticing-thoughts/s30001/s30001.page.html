@@ -1,11 +1,7 @@
-<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">  
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">
   <form>
-    <h4 class="mtb0px comparison">
-      Noticing thoughts
-    </h4>
-    <div class="clearfix"></div>
 
     <h5 class="mtb0px session">
       Session #1
@@ -13,7 +9,7 @@
     <div class="clearfix"></div>
 
     <br>
-  
+
     <h1 class="session_title ">
       An exercise in noticing thoughts, to nurture a quiet mind
     </h1>

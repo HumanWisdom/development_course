@@ -6,7 +6,7 @@ import { S131279Page } from './s131279.page';
 describe('S131279Page', () => {
   // let  canActivate:[ActiveGuard],  
     let component:  S131279Page;
-    let fixture: ComponentFixture<S131279Page>;
+  let fixture: ComponentFixture<S131279Page>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({

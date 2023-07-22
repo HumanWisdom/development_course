@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdultsService } from '../../adults.service';
 
 @Component({
   selector: 'app-develop-a-calm-mind',
@@ -9,7 +11,7 @@ export class DevelopACalmMindPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor() { }
+  constructor(public router: Router, public service: AdultsService) { }
 
   ngOnInit() {
   }
@@ -19,5 +21,4 @@ export class DevelopACalmMindPage implements OnInit {
       this.enablepopup.nativeElement.click();
     }
   }
-
 }

@@ -39,6 +39,7 @@ export class S51000Page implements OnInit, OnDestroy {
     private location: Location,
     private meta: Meta, private title: Title
   ) {
+    this.service.setmoduleID(51);
     this.getaudiomeditation()
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)

@@ -18,7 +18,7 @@ export class S131306Page implements OnInit {
   audioLink=this.mediaAudio+'/relationships/audios/relationships+9.2.mp3'
 
   transcriptPage="relationships/s131306t"
-  toc="relationships/s47000"
+  toc="relationships/s131001"
   bookmark=0
   path=this.router.url
   avDuration:any

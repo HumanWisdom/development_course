@@ -195,6 +195,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   clickbtn(name, val = '', event, ind, id) {
     if (val === '') {
+      localStorage.setItem('storyNumber', id);
       if (name === 'Manage your emotions') {
         localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');

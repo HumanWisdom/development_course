@@ -12,7 +12,7 @@ export class S131129Page implements OnInit,OnDestroy {
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w6"
+  bg="purple_w1"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/relationships/videos/4.1.mp4'  
   title="Dealing with emotional needs"

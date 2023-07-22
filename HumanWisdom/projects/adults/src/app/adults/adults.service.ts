@@ -383,6 +383,10 @@ export class AdultsService {
     return this.http.get(this.path + `/GetLastVisitedScreen/${data}/${this.programId}`)
   }
 
+  GetDashboardFeature(data: any): Observable<any> {
+    return this.http.get(this.path + `/GetDashboard_Features/${data}`)
+  }
+
   activateModule(id) {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
     let pgResume;

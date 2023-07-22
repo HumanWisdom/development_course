@@ -13,7 +13,7 @@ export class S131073tPage implements OnInit
 
   bg_tn="bg_purple"
   bg_cft="bg_purple"
-  bg="purple_w2"
+  bg="purple_w6"
   bookmark=0
   path=this.router.url
   audioPage="/relationships/s131073"
