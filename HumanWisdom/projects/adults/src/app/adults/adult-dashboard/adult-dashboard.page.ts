@@ -3919,7 +3919,7 @@ export class AdultDashboardPage implements OnInit {
     let sid = '';
     if(res['FeatureType'] === "BLOG") {
       sid = res['Url'].split('sId=')[1];
-      this.router.navigate(['/blog/blog-article'], { queryParams: { sId: `${sid}` } })
+      this.router.navigate(['/blog-article'], { queryParams: { sId: `${sid}` } })
     }else if(res['FeatureType'] === "LIFE STORY") {
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
