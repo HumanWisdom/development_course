@@ -15,7 +15,7 @@ export class S43035Page implements OnInit {
   
   bg=""
   moduleLink="/adults/benefits-of-enquiry/s26002"
-  moduleName="01. Benefits of Enquiry"
+  moduleName="01. Benefits of self-awareness"
   sectionName= "Art of Enquiry";
   moduleId=26
   moduleList: any = [
