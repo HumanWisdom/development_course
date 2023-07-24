@@ -287,8 +287,11 @@ export class AdultDashboardPage implements OnInit {
 
     }
 
-    if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
+    if(localStorage.getItem("userId")) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+
+    if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.getProgress();
     }
 
@@ -321,7 +324,8 @@ export class AdultDashboardPage implements OnInit {
   }
 
   GetDashboardFeatures() {
-    this.service.GetDashboardFeature('1')
+    let id = localStorage.getItem('storyNumber') ? localStorage.getItem('storyNumber') : '1';
+    this.service.GetDashboardFeature(id)
       .subscribe(res => {
         console.log(res);
         this.dashboardFeature = res;
@@ -3912,6 +3916,15 @@ export class AdultDashboardPage implements OnInit {
   }
 
   routeForUser(res) {
-   this.router.navigate([res['url']]);
+    let sid = '';
+    if(res['FeatureType'] === "BLOG") {
+      sid = res['Url'].split('sId=')[1];
+      this.router.navigate(['/blog/blog-article'], { queryParams: { sId: `${sid}` } })
+    }else if(res['FeatureType'] === "LIFE STORY") {
+      sid = res['Url'].split('sId=')[1];
+      this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
+    }else {
+      this.router.navigate([res['Url']]);
+    }
   }
 }
