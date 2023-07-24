@@ -9,12 +9,15 @@ import { SharedModule } from '../../../../../../shared/shared.module';
 import { IndexPageRoutingModule } from './index-routing.module';
 
 import { IndexPage } from './index.page';
+
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
+    NgxCircularPlayerModule,
     IndexPageRoutingModule
   ],
   declarations: [IndexPage]

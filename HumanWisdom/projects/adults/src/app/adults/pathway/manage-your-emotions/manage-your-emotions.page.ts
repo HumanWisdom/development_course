@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-manage-your-emotions',
@@ -9,7 +10,7 @@ export class ManageYourEmotionsPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
@@ -18,6 +19,10 @@ export class ManageYourEmotionsPage implements OnInit {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
     }
+  }
+
+  goBack() {
+    this.location.back()
   }
 
 }

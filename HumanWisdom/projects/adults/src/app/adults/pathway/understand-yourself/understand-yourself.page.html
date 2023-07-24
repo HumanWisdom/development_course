@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="">                          
+      <a class="" (click)="goBack()">                          
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>  
     </div>
@@ -32,30 +32,53 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 pimgrow">
-                  <a>
+                  <a routerLink="/adults/pathway/develop-a-calm-mind">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/pathway_01_inactive.svg" class="img-responsive">
                   </a>
 
-                  <a>
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/pathway_02_inactive.svg" class="img-responsive">
+                  <a routerLink="/adults/pathway/understand-yourself">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/pathway_02_active.svg" class="img-responsive">
                   </a>
 
-                  <a>
+                  <a routerLink="/adults/pathway/understand-how-your-mind-works">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/pathway_03_inactive.svg" class="img-responsive">
                   </a>
-                  <a>
+
+                  <a routerLink="/adults/pathway/manage-your-emotions">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/pathway_04_inactive.svg" class="img-responsive">
                   </a>
-                  <a>
+
+                  <a routerLink="/adults/pathway/live-your-best-life">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/pathway_05_inactive.svg" class="img-responsive">
                   </a>
                 </div>
               </div>
             
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <!-- five dots -->
+              <div class="row mt30px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 phbtns">
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn active"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
                 </div>
               </div>
+              <!-- /five dots -->
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
@@ -81,10 +104,38 @@
               </div>
               <!-- /hr -->
 
+              <!-- audio player -->
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+
+                  <div class="col-md-2 col-sm-2 col-xs-2 circular-player-container">
+                    <ngx-circular-player 
+                      id="aud4" 
+                      strokeColor="#FFFFFF"
+                      source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/stress_anxiety.mp3"
+                      progressStrokeColor=rgba(229,141,130,1)>
+                    </ngx-circular-player>
+                  </div>
+                  
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
+                        01:23
+                      </h4>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
+                    <a routerLink="/adults/curated/overcome-stress-anxiety-transcript">
+                      <button class="btn flex_ai btn_pn">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" class="img-responsive">
+                      </button>
+                    </a>
+                  </div>
+
                 </div>
               </div>
+              <!-- /audio player -->
 
               <div class="row mt40px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
