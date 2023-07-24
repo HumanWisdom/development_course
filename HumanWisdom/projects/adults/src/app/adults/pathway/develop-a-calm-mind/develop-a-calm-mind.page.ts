@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-develop-a-calm-mind',
@@ -11,7 +12,7 @@ export class DevelopACalmMindPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(public router: Router, public service: AdultsService) { }
+  constructor(public router: Router, public service: AdultsService, private location: Location) { }
 
   ngOnInit() {
   }
@@ -20,5 +21,9 @@ export class DevelopACalmMindPage implements OnInit {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
     }
+  }
+
+  goBack() {
+    this.location.back()
   }
 }

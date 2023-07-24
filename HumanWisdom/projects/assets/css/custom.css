@@ -28383,6 +28383,65 @@ video::-webkit-media-controls-panel
   height: 25.2857px !important;
   left: calc(45% + 10px) !important;
 }
+
+#aud4 
+{
+  position: absolute;
+  left: 35%;
+}
+
+#aud4 svg
+{
+  width: 40px !important;
+}
+
+#aud4 .play,
+#aud4 .pause
+{
+  background: #E58D82 !important;
+  width: 33px !important;
+  height: 33px !important;
+  left: 50% !important;
+}
+
+#aud4 .pause .before,
+#aud4 .pause .after
+{
+  background-color: #FFFFFF !important;
+}
+
+#aud4 .arrow
+{
+  left: 45%;
+  margin: 0 !important;
+  /* transform: rotate(150deg) skewX(-30deg) scale(1,.866) translate(50%,0%); */
+  transform: rotate(30deg) skewX(-30deg) scale(1,.866) translate(0%,10%);
+}
+
+#aud4 .arrow,
+#aud4 .arrow:before,
+#aud4 .arrow:after
+{
+  width: 0.7em!important;
+  height: 0.7em!important;
+  border-top-right-radius: 30%;
+  background: #FFFFFF !important;
+}
+
+#aud4 .pause .before
+{
+  width: 4px !important;
+  height: 15.2857px !important;
+  /* left: calc(50% - 10px); */
+  left: 36% !important;
+}
+
+#aud4 .pause .after
+{
+  width: 4px !important;
+  height: 15.2857px !important;
+  left: calc(45% + 5px) !important;
+}
 /* /ngx audio plugin-custom */
 
 .header_dmodule_transcript
@@ -32615,7 +32674,8 @@ body *
 
 .odiv_wfgi
 {
-  padding: 0 0 10px 0;
+  /* padding: 0 0 10px 0; */
+  padding: 0 8px 10px 0;
 }
 
 .odiv_wfgi > [class^="col-"]
@@ -32630,7 +32690,8 @@ body *
 
 .odiv_wfgi > [class^="col-"]:last-child
 {
-  padding-right: 20px !important;
+  /* padding-right: 20px !important; */
+  padding-right: 0;
 }
 
 .img_absolute_01
@@ -32858,4 +32919,73 @@ body *
   left: 0;
   margin: auto;
 }
+
+/* v3 - five dots */
+.phbtns 
+{
+  position: relative;
+  height: 25px;
+}
+
+.phbtns a .btn
+{
+  border-radius: 50%;
+  height: 7px;
+  width: 7px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent;
+}
+
+.phbtns a .btn.active
+{
+  background: #FFFFFF;
+}
+
+.phbtns a:nth-child(1) .btn
+{
+  position: absolute;
+  /* top: 0;
+  left: 4.1%; */
+  top: 0;
+  left: 2.1%;
+}
+
+.phbtns a:nth-child(2) .btn
+{
+  position: absolute;
+  /* top: 6%;
+  left: 2%; */
+  top: 25%;
+  left: 0%;
+}
+
+.phbtns a:nth-child(3) .btn
+{
+  position: absolute;
+  /* top: 6%;
+  left: 6%; */
+  top: 25%;
+  left: 4%;
+}
+
+.phbtns a:nth-child(4) .btn
+{
+  position: absolute;
+  /* top: 15%;
+  left: 5.3%; */
+  top: 60%;
+  left: 3.4%;
+}
+
+.phbtns a:nth-child(5) .btn
+{
+  position: absolute;
+  /* top: 15%;
+  left: 2.7%; */
+  top: 60%;
+  left: 0.7%;
+}
+/* /v3 - five dots */
 /* /version - 03 */
