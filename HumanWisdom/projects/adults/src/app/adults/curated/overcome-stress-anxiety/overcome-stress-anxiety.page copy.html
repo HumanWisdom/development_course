@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" (click)="goBack()">                          
+      <a class="">                          
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>  
     </div>
@@ -91,7 +91,7 @@
                         <div class="panel-body">
 
                           <div class="div_fbn">
-                            <a routerLink="/feel-better-now/stress">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
@@ -109,7 +109,7 @@
                               </div>
                             </a>
               
-                            <a routerLink="/feel-better-now/anxiety">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
@@ -127,13 +127,13 @@
                               </div>
                             </a>
               
-                            <a routerLink="/feel-better-now/feeling-upset">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
                                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                                     <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
-                                      Feeling upset
+                                      Anger
                                     </h4>
                                   </div>
                   
@@ -189,7 +189,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
                   
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="routeBreathing(0)">
+                    <a>
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
@@ -221,7 +221,7 @@
                   </div>
   
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="routeStress(0)">
+                    <a>
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
@@ -253,7 +253,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="routeFearAnxiety(0)">
+                    <a>
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
@@ -285,7 +285,7 @@
                   </div>
   
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="routeConditioning(0)">
+                    <a>
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
@@ -317,7 +317,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="routeReactiveMind(0)">
+                    <a>
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
@@ -349,7 +349,7 @@
                   </div>
   
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="routeDealingWithDepression(0)">
+                    <a>
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
@@ -381,7 +381,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="routeExternalApproval(0)">
+                    <a>
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
   
@@ -417,7 +417,7 @@
               <!-- /pathway -->
 
               <!-- go to pathway -->
-              <a routerLink="/pathway">
+              <a>
                 <div class="row mt30px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
@@ -453,7 +453,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/wisdom-stories">
+                                  <a>
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -468,21 +468,62 @@
                         <div class="panel-body">
                           
                           <div class="ls">
-                            <a *ngFor="let item of lifestoriesList" (click)="toRead(item)">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
                                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                                    <img src="{{item['Img']}}" class="img-responsive w100">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_01.svg" class="img-responsive w100">
                                   </div>
                   
                                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                                     <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff">
-                                      {{item['Title']}}
+                                      The well-being of an alcoholic
                                     </h4>
-
                                     <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
-                                      {{item['Story']}}
+                                      When I was just 3 years old my parents, Elliot and Josep...
+                                    </h4>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+                
+                            <a>
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
+                                  
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_02.svg" class="img-responsive w100">
+                                  </div>
+                  
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                                    <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                      My step-mother humiliated me
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      Jeff does not know the full story behind what happene...
+                                    </h4>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+  
+                            <a>
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
+                                  
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_03.svg" class="img-responsive w100">
+                                  </div>
+                  
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                                    <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                      An apple a day is an eating disorder
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      I’m sure there were losses before, but one of the earlie...
                                     </h4>
                                   </div>
                   
@@ -525,7 +566,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a (click)="routeGuided()">
+                                  <a>
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -540,7 +581,7 @@
                         <div class="panel-body">
 
                           <div class="div_fbn">
-                            <a (click)="enableRoute('/journal/stress')">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
@@ -558,7 +599,7 @@
                               </div>
                             </a>
               
-                            <a (click)="enableRoute('/journal/anxiety')">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                   
@@ -611,7 +652,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/wisdom-shorts">
+                                  <a>
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -629,7 +670,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
   
                               <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.16.mp4')">
+                                <a class="">
                                   <div class="prelative">
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -663,11 +704,11 @@
                               </div>
   
                               <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.1.mp4')">
+                                <a class="">
                                   <div class="prelative">
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/02.svg" class="img-responsive w100">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/sv_01.svg" class="img-responsive w100">
                                       </div>
                                     </div>
     
@@ -682,7 +723,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                                         <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Access your own wisdom
+                                          3 ways to deal with stress
                                         </h4>
                                       </div>
 
@@ -695,347 +736,7 @@
                                   </div>
                                 </a>
                               </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.17.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/03.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Dangers of social media
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.18.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/04.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Don't compare
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.19.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/05.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          How does envy impact you
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.20.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/06.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Let your stress go
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.6.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/07.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Overcome anxiety
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.21.1.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/08.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Overcome fear
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.7.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/09.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Overcome stress
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.22.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/10.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Root cause of stress
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.23.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/11.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Self-criticism
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="s3video('1.24.mp4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/12.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          You are enough
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
+  
                             </div>
                           </div>
 
@@ -1073,7 +774,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/podcast">
+                                  <a>
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1206,7 +907,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/events">
+                                  <a>
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1224,11 +925,11 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
   
                               <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="youtube('Pot852qY8vM')">
+                                <a class="">
                                   <div class="prelative">
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/01.svg" class="img-responsive w100">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/sv_01.svg" class="img-responsive w100">
                                       </div>
                                     </div>
     
@@ -1249,7 +950,7 @@
 
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                         <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
+                                          00:19
                                         </h4>
                                       </div>
                                     </div>
@@ -1258,11 +959,11 @@
                               </div>
   
                               <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="youtube('HXnw_QKJUfQ')">
+                                <a class="">
                                   <div class="prelative">
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/02.svg" class="img-responsive w100">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/sv_01.svg" class="img-responsive w100">
                                       </div>
                                     </div>
     
@@ -1277,149 +978,13 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                                         <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Stress in education
+                                          A talk on stress
                                         </h4>
                                       </div>
 
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                         <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="youtube('SXGJwovt-4s')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/03.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Wisdom, prejudice, and racism
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-  
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="youtube('vUZE3meQws4')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/04.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Overcoming anxiety using wisdom
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="youtube('229G2xDyEzE')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/22.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          Five ways to prevent stress?
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
-                                        </h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-  
-                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                                <a class="" (click)="youtube('Ibs6KV4yreo')">
-                                  <div class="prelative">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/30.svg" class="img-responsive w100">
-                                      </div>
-                                    </div>
-    
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
-                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
-                                          How can we be more resilient?
-                                        </h4>
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
-                                          00:00
+                                          00:19
                                         </h4>
                                       </div>
                                     </div>
@@ -1464,7 +1029,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/guided-meditation">
+                                  <a>
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1479,7 +1044,7 @@
                         <div class="panel-body">
 
                           <div class="box_v3_07">
-                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.7.mp3', 'Releasing Fear', '1')">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1502,7 +1067,7 @@
 
                             <hr class="hr_style_v3_03">
 
-                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.13.mp3', '3 ways to overcome stress', '2')">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
                                   
@@ -1558,7 +1123,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="blogs">
+                                  <a>
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -1573,7 +1138,7 @@
                         <div class="panel-body">
 
                           <div class="ls">
-                            <a (click)="viewblog('32')">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
@@ -1594,7 +1159,7 @@
                               </div>
                             </a>
                 
-                            <a (click)="viewblog('20')">
+                            <a>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
                                   
@@ -1634,7 +1199,7 @@
               <!-- /hr -->
 
               <!-- explore other topics -->
-              <a routerLink="/adults/search">
+              <a>
                 <div class="row mt60px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
                     <h4 class="mtb0px fs_15px lh_140p fc_ffffff tcenter underline">
