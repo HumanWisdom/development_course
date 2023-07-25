@@ -2,9 +2,9 @@
   transform: rotate(-360deg) scaleX(-1);
 }
 
-audio::-webkit-media-controls-panel {
-  background-color:#ffcd9cf7
-}
+// audio::-webkit-media-controls-panel {
+//   background-color:#ffcd9cf7
+// }
 
 audio::-webkit-media-controls-play-button {
   background-color: #178da8 !important;
@@ -93,4 +93,8 @@ left: 50%;
 transform: translate(-50%, -50%);
 font-size: 22px;
 color: white; /* Set the color of the pause icon */
+}
+
+audio::-webkit-media-controls-enclosure {
+  background: rgb(18, 15, 64);
 }

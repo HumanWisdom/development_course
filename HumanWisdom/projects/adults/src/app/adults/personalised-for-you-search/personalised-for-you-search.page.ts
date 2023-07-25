@@ -4,6 +4,7 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -67,7 +68,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   constructor(private route: Router, private aservice: AdultsService,
     public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
-    public cd: ChangeDetectorRef
+    public cd: ChangeDetectorRef,
+    private location: Location,
+    private router: Router,
   ) {
 
     this.logeventservice.logEvent('View_For_you');
@@ -834,5 +837,33 @@ export class PersonalisedForYouSearchPage implements OnInit {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
     }
+  }
+
+  goBack() {
+    this.location.back()
+  }
+
+  Logevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+
+    if (params != '' && route != '') {
+      this.router.navigate([route, params]);
+    } else if (route != '') {
+      if (route == '/adults/adverts-work' ||
+        route == '/adults/adverts-student' ||
+        route == '/adults/adverts-about' ||
+        route == '/adults/help-support/faq' ||
+        route == '/adults/help-support/terms-conditions' ||
+        route == '/adults/help-support/support' ||
+        route == '/adults/partnership-webpage/partnership-index/') {
+        this.navigate(route);
+        return;
+      }
+      this.router.navigate([route])
+    }
+  }
+
+  navigate(url) {
+    this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
 }

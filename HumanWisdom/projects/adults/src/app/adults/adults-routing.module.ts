@@ -443,6 +443,14 @@ const routes: Routes = [
     path: 'pathway',
     loadChildren: () => import('./pathway/pathway.module').then( m => m.PathwayModule)
   },
+  {
+    path: 'select-a-topic-to-explore',
+    loadChildren: () => import('./select-a-topic-to-explore/select-a-topic-to-explore.module').then( m => m.SelectATopicToExplorePageModule)
+  },
+  {
+    path: 'find-inspiration',
+    loadChildren: () => import('./find-inspiration/find-inspiration.module').then( m => m.FindInspirationPageModule)
+  },
 ];
 
  @NgModule({
