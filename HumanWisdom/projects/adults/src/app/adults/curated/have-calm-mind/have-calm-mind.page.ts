@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
@@ -11,6 +11,8 @@ import { AdultsService } from '../../adults.service';
 })
 
 export class HaveCalmMindPage implements OnInit {
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   userId = 100
   qrList: any
@@ -350,6 +352,12 @@ export class HaveCalmMindPage implements OnInit {
     localStorage.setItem("blogdata", JSON.stringify(id))
     localStorage.setItem("blogId", JSON.stringify(id))
     this.router.navigate(['blog-article'], { replaceUrl: true, skipLocationChange: true, queryParams: { sId: `${id}` } })
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
   }
 
 }
