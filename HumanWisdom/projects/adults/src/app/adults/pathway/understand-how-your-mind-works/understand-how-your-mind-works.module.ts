@@ -10,12 +10,15 @@ import { UnderstandHowYourMindWorksPageRoutingModule } from './understand-how-yo
 
 import { UnderstandHowYourMindWorksPage } from './understand-how-your-mind-works.page';
 
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
+    NgxCircularPlayerModule,
     UnderstandHowYourMindWorksPageRoutingModule
   ],
   declarations: [UnderstandHowYourMindWorksPage]

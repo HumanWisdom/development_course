@@ -10,12 +10,15 @@ import { LiveYourBestLifePageRoutingModule } from './live-your-best-life-routing
 
 import { LiveYourBestLifePage } from './live-your-best-life.page';
 
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
+    NgxCircularPlayerModule,
     LiveYourBestLifePageRoutingModule
   ],
   declarations: [LiveYourBestLifePage]
