@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdultsService } from '../../adults.service';
 import { Location } from '@angular/common';
 
 @Component({
@@ -10,7 +12,7 @@ export class UnderstandHowYourMindWorksPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location) { }
+  constructor(public router: Router, public service: AdultsService, private location: Location) { }
 
   ngOnInit() {
   }
