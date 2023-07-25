@@ -54,10 +54,38 @@
               </div>
               <!-- /hr -->
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <!-- audio player -->
+              <div class="row mb60px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <ngx-circular-player 
+                      id="aud4" 
+                      strokeColor="#FFFFFF"
+                      source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/stress_anxiety.mp3"
+                      progressStrokeColor=rgba(229,141,130,1)>
+                    </ngx-circular-player>
+                  </div>
+                  
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
+                        01:23
+                      </h4>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
+                    <a routerLink="/adults/curated/overcome-stress-anxiety-transcript">
+                      <button class="btn flex_ai btn_pn">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" class="img-responsive">
+                      </button>
+                    </a>
+                  </div>
+
                 </div>
               </div>
+              <!-- /audio player -->
 
               <!-- feel better now -->
               <!-- accordion -->
@@ -76,7 +104,7 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a>
+                                  <a routerLink="/adults/feel-better-now/">
                                     <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
@@ -164,10 +192,31 @@
               <!-- /hr -->
 
               <!-- pathway -->
+              <!-- five dots -->
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 phbtns">
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
                 </div>
               </div>
+              <!-- /five dots -->
   
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px mb15px">

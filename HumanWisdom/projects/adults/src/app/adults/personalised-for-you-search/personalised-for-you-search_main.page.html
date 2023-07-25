@@ -240,8 +240,10 @@
                 <div class="row mb10px center_flex">
                   <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-md-6 col-sm-6 col-xs-6 plrdiv" *ngFor="let item of personalisedforyou; let i = index">
-                      <button class="btn btn_pfy_search" [ngClass]="[item['active'] ? 'activebtn' : '']"
-                        (click)="clickbtn(item['name'], '', $event, i, item['id'])">
+                      <button 
+                        class="btn btn_pfy_search" 
+                        [ngClass]="[item['active'] ? 'activebtn' : '']"
+                        (click)="clickbtn(item['name'], '', $event, i, item['id']);">
                         <h4 class="fc_ffffff fw_500 fs_15px lh_130p mtb0px">
                           {{item['name']}}
                         </h4>

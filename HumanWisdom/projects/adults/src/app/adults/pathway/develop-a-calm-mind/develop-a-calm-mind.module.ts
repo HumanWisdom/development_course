@@ -10,12 +10,15 @@ import { DevelopACalmMindPageRoutingModule } from './develop-a-calm-mind-routing
 
 import { DevelopACalmMindPage } from './develop-a-calm-mind.page';
 
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
+    NgxCircularPlayerModule,
     DevelopACalmMindPageRoutingModule
   ],
   declarations: [DevelopACalmMindPage]
