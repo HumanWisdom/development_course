@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
@@ -10,6 +10,8 @@ import { AdultsService } from '../../adults.service';
   styleUrls: ['./be-happier.page.scss'],
 })
 export class BeHappierPage implements OnInit {
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   userId = 100
   qrList: any
@@ -325,6 +327,12 @@ export class BeHappierPage implements OnInit {
       this.enableAlert = true;
     }else {
       this.router.navigate([route]);
+    }
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
     }
   }
 }
