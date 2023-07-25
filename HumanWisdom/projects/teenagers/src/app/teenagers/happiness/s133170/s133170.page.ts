@@ -13,7 +13,7 @@ export class S133170Page implements OnInit {
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
   bg = "red_pink_w2"
-  hint = ""
+  hint = " It could be from friends, or teachers or your family"
   toc = "/happiness/s133001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S133170Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 210
+  rId = 1709
   reflection: any
   reflectionA: any
   r133170 = JSON.parse(sessionStorage.getItem("r133170"))

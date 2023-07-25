@@ -15,7 +15,7 @@ export class S133020Page implements OnInit,OnDestroy {
   bg_cft="bg_red_pink"
   bg="red_pink_w1"
   title="Is happiness joy?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/happiness/audios/happiness+1.3.mp3'
 
   transcriptPage="happiness/s133020t"

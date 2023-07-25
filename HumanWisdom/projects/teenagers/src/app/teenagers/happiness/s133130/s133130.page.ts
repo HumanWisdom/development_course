@@ -15,7 +15,7 @@ export class S133130Page implements OnInit,OnDestroy
   bg="red_pink_w6"
   title="Letting go of our images"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/happiness/audios/happiness+4.1.mp3'
+  audioLink=this.mediaAudio+'/happiness/audios/4.1.mp3'
   transcriptPage="happiness/s133130t"
   toc="happiness/s133001"
   bookmark=0

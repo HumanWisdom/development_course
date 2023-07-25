@@ -14,7 +14,7 @@ export class S133140Page implements OnInit {
   bg_cft="bg_red_pink"
   bg="red_pink_w4"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/happiness/audios/happiness+4.4.mp3'
+  audioLink=this.mediaAudio+'/happiness/audios/4.4.mp3'
   title="How can I make peace with my inner boredom?"
 
   toc="/happiness/s133001"

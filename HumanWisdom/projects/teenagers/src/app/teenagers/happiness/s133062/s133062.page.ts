@@ -14,7 +14,7 @@ export class S133062Page implements OnInit
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w12"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/happiness/audios/happiness+2.4.mp3'
   title="Why does the mind seek pleasure?"
   toc="/happiness/s133001"

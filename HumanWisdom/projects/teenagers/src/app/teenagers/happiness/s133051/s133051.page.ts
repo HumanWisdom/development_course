@@ -16,7 +16,7 @@ export class S133051Page implements OnInit,OnDestroy {
   bg="red_pink_w7"
   title="What do you want from your life?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/happiness/audios/happiness+2.3.mp3'
+  audioLink=this.mediaAudio+'/happiness/audios/2.3.mp3'
 
   transcriptPage="happiness/s133051t"
   toc="/happiness/s133001"
