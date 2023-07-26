@@ -26,6 +26,7 @@ export class S133062tPage implements OnInit {
   userId:any
   moduleId=localStorage.getItem("moduleId")
   screenNumber=133062
+  progName="teenagers"
  
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

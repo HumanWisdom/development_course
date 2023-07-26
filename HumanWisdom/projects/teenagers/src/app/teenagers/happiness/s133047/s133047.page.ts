@@ -30,7 +30,6 @@ export class S133047Page implements OnInit {
   reflection: any
   reflectionA: any
   r133047 = JSON.parse(sessionStorage.getItem("r133047"))
-
   shared: any
   confirmed: any
 

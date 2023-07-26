@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {SharedModule} from '../../../../../shared/shared.module'
 
-import {AdultsService} from '../adults.service';
 
 import { S133001Page } from './s133001/s133001.page';  
 import { S133002Page } from './s133002/s133002.page';  
@@ -202,7 +201,6 @@ import { S133172Page } from './s133172/s133172.page'; 
 import { S133173Page } from './s133173/s133173.page'; 
 import { S133174Page } from './s133174/s133174.page'; 
 import { S133175Page } from './s133175/s133175.page';  
-import { S133175tPage } from './s133175t/s133175t.page';  
 import { S133176Page } from './s133176/s133176.page';
 import { S133176tPage } from './s133176t/s133176t.page';   
 import { S133177Page } from './s133177/s133177.page';  
@@ -417,7 +415,6 @@ import { TeenagersService } from '../teenagers.service';
     S133173Page, 
     S133174Page, 
     S133175Page, 
-    S133175tPage,
     S133176Page, 
     S133176tPage,
     S133177Page, 
