@@ -13,7 +13,8 @@ export class S133013Page implements OnInit,OnDestroy {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w6"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/happiness/videos/1.1.mp4'  
   title="Why do we want to be happy?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/happiness/happiness_01.jpg"
