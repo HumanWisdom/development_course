@@ -10,12 +10,15 @@ import { UnderstandYourselfPageRoutingModule } from './understand-yourself-routi
 
 import { UnderstandYourselfPage } from './understand-yourself.page';
 
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
+    NgxCircularPlayerModule,
     UnderstandYourselfPageRoutingModule
   ],
   declarations: [UnderstandYourselfPage]

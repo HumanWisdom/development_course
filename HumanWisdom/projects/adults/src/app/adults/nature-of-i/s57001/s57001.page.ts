@@ -12,7 +12,7 @@ export class S57001Page implements OnInit,OnDestroy {
 
   bg_tn="bg_green"
   bg_cft="bg_green"
-  bg="anger_w1"  
+  bg="anger_w1"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -28,22 +28,23 @@ export class S57001Page implements OnInit,OnDestroy {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/57.png"
   tocColor="white"
   lastvisited = false;
-  stories: any = []
+  stories: any = [];
+  modulename = "The Nature of the 'I'";
 
   constructor(
     private router: Router,
     private service:AdultsService,
     private location:Location
   )
-  { 
+  {
     this.service.setmoduleID(57);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
-    if(story?.length <= 2) 
+    if(story?.length <= 2)
     {
-      story.forEach((e) => 
+      story.forEach((e) =>
       {
         arraythree.push(e)
       })
@@ -51,13 +52,13 @@ export class S57001Page implements OnInit,OnDestroy {
     }
     else
     {
-      story?.forEach((e) => 
+      story?.forEach((e) =>
       {
-        if(arraythree.length < 2) 
+        if(arraythree.length < 2)
         {
           arraythree.push(e)
         }
-        else 
+        else
         {
           splitarr.push(arraythree)
           arraythree = []
@@ -71,16 +72,16 @@ export class S57001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
-    // continue where you left    
+    // continue where you left
     let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
+    if(last === 'T')
     {
       this.lastvisited = true;
     }
-    else 
+    else
     {
       this.lastvisited = false;
-    }    
+    }
     // /continue where you left
     localStorage.setItem("moduleId",JSON.stringify(57))
     this.moduleId=localStorage.getItem("moduleId")
@@ -89,12 +90,12 @@ export class S57001Page implements OnInit,OnDestroy {
   else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
-  
+
     this.startTime = Date.now();
     this.createScreen()
 
 
-    
+
   }
   toggleBookmark(){
     if(this.bookmark==0)
@@ -111,9 +112,9 @@ export class S57001Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>
       {
-        
+
       })
-    
+
 
   }
 
@@ -128,15 +129,15 @@ export class S57001Page implements OnInit,OnDestroy {
       "timeSpent":this.totalTime
     }).subscribe(res=>
       {
-        
+
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
-    
+
 
   }
   ngOnDestroy(){
-   
+
 
 
 

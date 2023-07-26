@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-anxiety',
   templateUrl: './anxiety.page.html',
@@ -9,7 +9,7 @@ export class AnxietyPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
@@ -18,6 +18,10 @@ export class AnxietyPage implements OnInit {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
     }
+  }
+
+  goBack() {
+    this.location.back()
   }
 
 }

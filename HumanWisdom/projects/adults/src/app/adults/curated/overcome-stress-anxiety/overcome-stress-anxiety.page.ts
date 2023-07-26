@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  ElementRef, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
@@ -25,6 +25,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
   enableAlert = false;
   guest = false;
   Subscriber = false;
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
@@ -433,6 +434,12 @@ export class OvercomeStressAnxietyPage implements OnInit {
         localStorage.setItem("subscribepage", 'T');
         this.router.navigate(["/onboarding/login"]);
       }
+    }
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
     }
   }
 }

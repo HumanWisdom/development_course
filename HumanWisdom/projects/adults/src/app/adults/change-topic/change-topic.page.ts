@@ -1,0 +1,28 @@
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
+
+@Component({
+  selector: 'app-change-topic',
+  templateUrl: './change-topic.page.html',
+  styleUrls: ['./change-topic.page.scss'],
+})
+export class ChangeTopicPage implements OnInit {
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+
+  constructor(private location: Location) { }
+
+  ngOnInit() {
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+}

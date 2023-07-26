@@ -13,7 +13,7 @@ export class S133163Page implements OnInit,OnDestroy {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w7"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/happiness/videos/5.1.mp4'  
   title="Our relationships impact our long-term happiness"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/happiness/happiness_02.jpg"

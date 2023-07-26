@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-sorrow-and-loss',
@@ -13,7 +14,7 @@ export class SorrowAndLossPage implements OnInit {
 
   audioData:any;
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private location: Location){}
 
   ngOnInit() {
     this.audioData={
@@ -29,5 +30,9 @@ export class SorrowAndLossPage implements OnInit {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
     }
+  }
+
+  goBack() {
+    this.location.back()
   }
 }
