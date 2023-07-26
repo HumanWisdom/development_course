@@ -27,6 +27,7 @@ export class S133010Page implements OnInit {
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
+
   constructor(
     private router: Router,
     private service:TeenagersService,
@@ -111,6 +112,7 @@ export class S133010Page implements OnInit {
        "fill",
        base_color
      );
+
       // tb copied mul;tiple times
     $("#svg_form_time rect").css("fill", active_color);
     $("#svg_form_time circle").css("fill", active_color);
@@ -131,26 +133,7 @@ export class S133010Page implements OnInit {
       "fill",
       base_color
     );
-     // tb copied mul;tiple times
-     $("#svg_form_time rect").css("fill", active_color);
-     $("#svg_form_time circle").css("fill", active_color);
-     $("#prev").removeClass("disabled");
-       if (child >= length) {
-         $(this).addClass("disabled");
-         $('#submit').removeClass("disabled");
-       }
-       if (child <= length) {
-         child++;
-       }
-     var circle_child = child + 1;
-     $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-       "fill",
-       base_color
-     );
-     $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-       "fill",
-       base_color
-     );
+    
    
       
     
@@ -222,7 +205,7 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-        
+       
       })
     
 
