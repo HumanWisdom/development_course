@@ -46,12 +46,12 @@ export class S133185Page implements OnInit {
   submitProgress(){
     localStorage.setItem("pageaction", 'next')
    // this.router.navigate(['/adults/happiness/s133183'])
-   this.router.navigate(['/adults/happiness/s133183'])
+   this.router.navigate(['/happiness/s133186'])
 
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/happiness/s133181p4'])
+    this.router.navigate(['/happiness/s133184'])
 
   }
 
