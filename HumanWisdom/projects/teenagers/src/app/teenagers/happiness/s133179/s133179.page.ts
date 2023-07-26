@@ -1,6 +1,7 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit ,ViewChild,  ElementRef, AfterViewInit,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import * as jQuery from 'jquery';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -12,29 +13,28 @@ export class S133179Page implements OnInit,OnDestroy {
 
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
-  bg="red_pink_w11"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/happiness/videos/5.5.mp4'  
-  title="Living simply."
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/happiness/happiness_01.jpg"
-  
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  bg="red_pink_w10"
+  title="The benefits of living simply"
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/happiness/audios/happiness+5.4.mp3'
 
-  screenType=localStorage.getItem("video")
-  moduleId=localStorage.getItem("moduleId")
-  screenNumber=133179
-  startTime:any
-  endTime:any
-  totalTime:any  
-  
+  transcriptPage="happiness/s133179t"
   toc="/happiness/s133001"
   bookmark=0
   path=this.router.url
   avDuration:any
-
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  screenType=localStorage.getItem("audio")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=133179
+  startTime:any
+  endTime:any
+  totalTime:any
+  
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-      
+  progName= "teenagers";
+  
   constructor
   (
     private router: Router,
@@ -42,11 +42,9 @@ export class S133179Page implements OnInit,OnDestroy {
     private location:Location
   ) 
   { }
-
+ 
   ngOnInit() 
   {
-    //localStorage.removeItem("bookmarkList")
-    this.createScreen()
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -57,23 +55,13 @@ export class S133179Page implements OnInit,OnDestroy {
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    
+    this.createScreen()
     if(JSON.parse(sessionStorage.getItem("bookmark133179"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark133179"))==1)
       this.bookmark=1
   }
-
-  receiveBookmark(e)
-  {
-    console.log(e)
-    if(e==true)
-      this.bookmark=1
-    else
-      this.bookmark=0
-    sessionStorage.setItem("bookmark133179",JSON.stringify(this.bookmark))
-  }
-
+ 
   createScreen()
   {
     this.service.createScreen({
@@ -83,7 +71,23 @@ export class S133179Page implements OnInit,OnDestroy {
       "ScreenNo":this.screenNumber
     }).subscribe(res=>{})
   }
-
+ 
+  receiveBookmark(e)
+  {
+    console.log(e)
+    if(e==true)
+      this.bookmark=1
+    else
+      this.bookmark=0
+    sessionStorage.setItem("bookmark133179",JSON.stringify(this.bookmark))
+  }
+ 
+  receiveAvDuration(e)
+  {
+    console.log(e)
+    this.avDuration=e
+  }
+ 
   submitProgress()
   {
     this.endTime = Date.now();
@@ -110,6 +114,9 @@ export class S133179Page implements OnInit,OnDestroy {
   }
 
   ngOnDestroy()
-  {}
+  {
+    localStorage.setItem("totalTime133179",this.totalTime)
+    localStorage.setItem("avDuration133179",this.avDuration)
+  }
 
 }

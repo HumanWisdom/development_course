@@ -15,7 +15,7 @@ export class S133136Page implements OnInit,OnDestroy
   bg="red_pink_w12"
   title="How much is enough?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/happiness/audios/happiness+4.3.mp3'
+  audioLink=this.mediaAudio+'/happiness/audios/4.3.mp3'
   transcriptPage="happiness/s133136t"
   toc="happiness/s133001"
   bookmark=0

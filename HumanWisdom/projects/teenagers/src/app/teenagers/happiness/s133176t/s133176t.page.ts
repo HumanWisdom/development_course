@@ -4,11 +4,11 @@ import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s133175t',
-  templateUrl: './s133175t.page.html',
-  styleUrls: ['./s133175t.page.scss'],
+  selector: 'app-s133176t',
+  templateUrl: './s133176t.page.html',
+  styleUrls: ['./s133176t.page.scss'],
 })
-export class S133175tPage implements OnInit {
+export class S133176tPage implements OnInit {
 
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
@@ -16,19 +16,19 @@ export class S133175tPage implements OnInit {
 
   bookmark=0
   path=this.router.url
-  audioPage="/happiness/s133175"
+  audioPage="/happiness/s133176"
   toc="/happiness/s133001"
   
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=133175
+  screenNumber=133176
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
-  avDuration=localStorage.getItem("avDuration133175")
-  totalTime=localStorage.getItem("totalTime133175")
+  avDuration=localStorage.getItem("avDuration133176")
+  totalTime=localStorage.getItem("totalTime133176")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
 
   progName = "teenagers"
@@ -51,9 +51,9 @@ export class S133175tPage implements OnInit {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
-    if(JSON.parse(sessionStorage.getItem("bookmark133175"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark133176"))==0)
     this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark133175"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark133176"))==1)
       this.bookmark=1
   }
 
@@ -64,7 +64,7 @@ export class S133175tPage implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark133175",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark133176",JSON.stringify(this.bookmark))
   }
 
   submitProgress()

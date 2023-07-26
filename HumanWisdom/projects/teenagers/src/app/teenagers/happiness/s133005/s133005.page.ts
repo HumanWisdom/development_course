@@ -16,7 +16,7 @@ export class S133005Page implements OnInit, OnDestroy {
   bg = "red_pink_w3"
 
   title = "What is happiness?"
-  mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink = this.mediaAudio + '/happiness/audios/happiness+1.1.mp3'
   colours = ["btn_5circles_01 disabled", " btn_5circles_02 disabled", " btn_5circles_03 disabled", " btn_5circles_04 disabled", " btn_5circles_05"]
   text = [

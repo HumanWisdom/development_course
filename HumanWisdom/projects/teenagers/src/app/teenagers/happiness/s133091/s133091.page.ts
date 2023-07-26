@@ -13,7 +13,7 @@ export class S133091Page implements OnInit
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w5"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/happiness/audios/happiness+3.2.mp3'
   title="Why do we take what we already have for granted?"
   toc="/happiness/s133001"

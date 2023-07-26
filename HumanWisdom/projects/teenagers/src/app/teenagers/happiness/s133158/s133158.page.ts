@@ -15,7 +15,7 @@ export class S133158Page implements OnInit,OnDestroy {
   bg_cft="bg_red_pink"
   bg="red_pink_w2"
   title="What can we do to be happier?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/happiness/audios/happiness+5.1.mp3'
 
   transcriptPage="happiness/s133158t"
