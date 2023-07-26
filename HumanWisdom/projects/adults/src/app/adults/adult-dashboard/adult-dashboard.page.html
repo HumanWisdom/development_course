@@ -160,7 +160,7 @@
             <!-- /daily practice -->
 
             <!-- your topic of choice -->
-            <div class="row">
+            <div class="row" *ngIf="isloggedIn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
                 <a class="prelative">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
@@ -187,7 +187,7 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row">
+            <div class="row" *ngIf="isloggedIn">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
                   Change your topic of choice
@@ -231,7 +231,7 @@
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_user">
 
-                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
+                            <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn">
                               <a (click)="routeResume('23', true)" class="prelative">
                                 <div class="prelative">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_01.svg" alt="Happiness" class="ctimg">
@@ -278,15 +278,15 @@
                               <a (click)="routeForUser(res)" class="prelative">
                                 <div class="prelative">
                                   <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg">
-                                  <div class="progress dprogress">
+                                  <!-- <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
+                                  </div> -->
                                 </div>
 
                                 <div class="row mtb15px">
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                     <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_life_story.svg" class="img-responsive w100">
+                                      <img src="{{res['IconUrl']}}" class="img-responsive w100">
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                       <h4 class="fw_700 fs_12px lh_140p fc_ffffff mtb0px ttuppercase ls_0_1em">
