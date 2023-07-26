@@ -13,32 +13,28 @@ export class S133007Page implements OnInit {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w5"
-
   toc="happiness/s133001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-
-  screenNumber=133007
+  screenNumber=22024
   startTime:any
   endTime:any
   totalTime:any
   bookmark=0
-
   path=this.router.url
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+
   constructor(
     private router: Router,
     private service:TeenagersService,
     private location:Location
   ) { }
  ngOnInit() {
-
-  // multistep wizard
-  $( document ).ready(function() {
+   // multistep wizard
+   $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
     var base_color = "rgba(255,255,255,0.2)";
@@ -101,7 +97,6 @@ export class S133007Page implements OnInit {
     
   });
   // /multistep wizard
-
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
     
@@ -112,19 +107,16 @@ export class S133007Page implements OnInit {
     this.startTime = Date.now();
   
     this.startTime = Date.now();
-
     
     if(JSON.parse(sessionStorage.getItem("bookmark133007"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark133007"))==1)
       this.bookmark=1
-
    
    
  
  
     
-
   }
   receiveBookmark(e)
   {
@@ -153,9 +145,9 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/happiness/s133008'])
+    this.router.navigate(['/happiness/s133006'])
     if (this.userId === 563) return;
-    
+
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -168,20 +160,17 @@ createScreen(){
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-       
-       
-     
       },
       error=>{console.log(error)},
       ()=>{
-      
+        
       })
     
 
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/happiness/s133006'])
+    this.router.navigate(['/happiness/s133008'])
 
 
   }
@@ -197,5 +186,5 @@ createScreen(){
 
   
 
- 
 }
+

@@ -19,11 +19,13 @@ export class S133008Page implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
+
   screenNumber=133008
   startTime:any
   endTime:any
   totalTime:any
   bookmark=0
+
   path=this.router.url
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
@@ -34,8 +36,9 @@ export class S133008Page implements OnInit {
     private location:Location
   ) { }
  ngOnInit() {
-   // multistep wizard
-   $( document ).ready(function() {
+
+  // multistep wizard
+  $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
     var base_color = "rgba(255,255,255,0.2)";
@@ -93,30 +96,12 @@ export class S133008Page implements OnInit {
     $("circle:nth-of-type(1)").css("fill", active_color);
     
     
-    // tb copied mul;tiple times
-    $("#svg_form_time rect").css("fill", active_color);
-    $("#svg_form_time circle").css("fill", active_color);
-    $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-    var circle_child = child + 1;
-    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-      "fill",
-      base_color
-    );
-    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-      "fill",
-      base_color
-    );
+   
       
     
   });
   // /multistep wizard
+
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
     
@@ -127,16 +112,19 @@ export class S133008Page implements OnInit {
     this.startTime = Date.now();
   
     this.startTime = Date.now();
+
     
     if(JSON.parse(sessionStorage.getItem("bookmark133008"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark133008"))==1)
       this.bookmark=1
+
    
    
  
  
     
+
   }
   receiveBookmark(e)
   {
@@ -180,10 +168,13 @@ createScreen(){
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+       
+       
+     
       },
       error=>{console.log(error)},
       ()=>{
-        
+      
       })
     
 
@@ -195,9 +186,7 @@ createScreen(){
 
   }
 
-  goNext(){
-   
-  }
+  
 
   ngOnDestroy(){
     
@@ -208,5 +197,5 @@ createScreen(){
 
   
 
+ 
 }
-
