@@ -10,12 +10,15 @@ import { ManageYourEmotionsPageRoutingModule } from './manage-your-emotions-rout
 
 import { ManageYourEmotionsPage } from './manage-your-emotions.page';
 
+import { NgxCircularPlayerModule } from 'ngx-circular-player';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     SharedModule,
+    NgxCircularPlayerModule,
     ManageYourEmotionsPageRoutingModule
   ],
   declarations: [ManageYourEmotionsPage]
