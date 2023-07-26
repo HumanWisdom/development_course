@@ -5,11 +5,11 @@ import { ProgramModel } from '../../../../../../shared/models/program-model';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s23001',
-  templateUrl: './s23001.page.html',
-  styleUrls: ['./s23001.page.scss'],
+  selector: 'app-s133001',
+  templateUrl: './s133001.page.html',
+  styleUrls: ['./s133001.page.scss'],
 })
-export class S23001Page implements OnInit,OnDestroy {
+export class S133001Page implements OnInit,OnDestroy {
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
