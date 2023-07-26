@@ -144,7 +144,7 @@ export class S133028Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/happiness/s133028'])
+    this.router.navigate(['/happiness/s133029'])
     if (this.userId === 563) return;
 
     this.service.submitProgressQuestion({
