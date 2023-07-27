@@ -199,6 +199,10 @@ const routes: Routes = [
     path: 'communication',
     loadChildren: () => import('./teenagers/communication/communication.module').then(m => m.CommunicationModule)
   },
+  {
+    path: 'happiness',
+    loadChildren: () => import('./teenagers/happiness/happiness.module').then(m => m.HappinessModule)
+  },
 ];
   
 

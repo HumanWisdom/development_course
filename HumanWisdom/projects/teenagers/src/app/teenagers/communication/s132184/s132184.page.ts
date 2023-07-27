@@ -15,7 +15,7 @@ export class S132184Page implements OnInit {
   bg = "blue_w3"
   hint = "The person you are meeting may have changed. Or you see that the relationship is more important than your differences"
 
-  toc = "communication/s132184"
+  toc = "communication/s132001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
