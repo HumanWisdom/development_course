@@ -451,6 +451,14 @@ const routes: Routes = [
     path: 'find-inspiration',
     loadChildren: () => import('./find-inspiration/find-inspiration.module').then( m => m.FindInspirationPageModule)
   },
+  {
+    path: 'change-topic',
+    loadChildren: () => import('./change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
+  },
+  {
+    path: 'find-answers',
+    loadChildren: () => import('./find-answers/find-answers.module').then( m => m.FindAnswersModule)
+  },
 ];
 
  @NgModule({
