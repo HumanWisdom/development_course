@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            The more you understand yourself and how your mind works, the more you realize that deep down others are very similar. Just as your thoughts and actions are determined by your unconscious conditioning influences and your self-interest, so are the other person’s. As you understand this you develop compassion for others and can accept them as they are. The foundation of love is acceptance. This understanding also allows us to accept ourselves as we are, and so much pain in us eases if we can do that. For me, self-understanding is the key to compassion and it has been life-changing 
+           </p>
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -38,6 +38,8 @@ export class S162p0Page implements OnInit, OnDestroy
     private location: Location
   )
   {
+    this.service.setmoduleID(14);
+    
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
