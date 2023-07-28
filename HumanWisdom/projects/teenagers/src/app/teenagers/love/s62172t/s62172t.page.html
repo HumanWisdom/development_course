@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Our memories of suffering and emotional pain become part of our identity, and  can continue to cause pain in the present and stop us being at peace. What can we do to let them go? The first step is to realise that it is the past. Right now we are okay. Then we need to let go of our attachment to them and stop feeling like victims. You may need to forgive yourself or others for this to happen. When a painful memory is triggered, and floods your mind and body, just stop still, observing it. Let it rise and fall away, like a wave. Gradually these memories lose their power over you. You have 2000 thoughts in an hour and focus on only some of them. You can choose to ignore the memories of pai and live at peace in the present. 
+
+
+          </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

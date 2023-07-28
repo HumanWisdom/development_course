@@ -1,0 +1,18 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Most of us are not aware we have these emotional needs that operate in the background, demanding to be met. Our mind tries to meet them in different ways, and being in love is powerful and meets them all, which is why finding love is so important for us. When these needs are all met, we feel wonderful, overjoyed, and in love. If only some of them are met we may try and change the other person to meet them, or look elsewhere. When they stop being met we can fall out of love with the other person, and conflict follows. These needs are not right or wrong, but part of being human, and how the mind functions. We have explored where these needs come from in a separate module on emotional needs
+            </h3>
+
+      </div>
+    </div>
+    
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
