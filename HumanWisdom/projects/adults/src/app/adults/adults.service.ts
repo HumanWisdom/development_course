@@ -551,4 +551,8 @@ export class AdultsService {
   addUserRefPost(data: any): Observable<any> {
     return this.http.post(this.path + '/AddUserRefPost', data)
   }
+
+  AddUserPreference(data:any): Observable<any>{
+    return this.http.post(this.path + `/AddUserPreference/${data}`, null)
+  }
 }

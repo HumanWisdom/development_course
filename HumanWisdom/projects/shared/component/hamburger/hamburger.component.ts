@@ -236,6 +236,8 @@ export class HamburgerComponent implements OnInit {
     this.enableAlert = false;
     this.content = '';
     if(event === 'ok') {
+      const accessObj:any = window;
+      (accessObj)?.Moengage?.destroy_session();
       if(this.enablebecomepartner) {
         let res = localStorage.getItem("isloggedin");
         if(!res || res === 'F') {
