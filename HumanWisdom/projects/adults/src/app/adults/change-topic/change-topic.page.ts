@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { AdultsService } from '../adults.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-topic',
@@ -9,10 +11,14 @@ import { Location } from '@angular/common';
 export class ChangeTopicPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
-
-  constructor(private location: Location) { }
+  url: any;
+  changeTopicList:any;
+  isSelected : boolean =false;
+  selectedId:any="0";
+  constructor(private location: Location, private service: AdultsService, public router: Router, public activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.changeTopicList = this.service.personalisedforyoulist;
   }
 
   getclcickevent(event) {
@@ -25,4 +31,19 @@ export class ChangeTopicPage implements OnInit {
     this.location.back();
   }
 
+  update() {
+    this.service.AddUserPreference(this.selectedId).subscribe(res => {
+      if (res) {
+        this.url = this.activatedRoute.snapshot.paramMap.get('url');
+        this.router.navigate([this.url]);
+      }
+    });
+  }
+
+  updateList(id){
+    this.selectedId = id;
+    if(parseInt(id)>0){
+      this.isSelected = true;
+    }
+  }
 }

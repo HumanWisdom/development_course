@@ -22,6 +22,7 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
+  public dasboardUrl = 'adult-dashboard';
   //get global settings here
   public text = 2
   public video = 3
@@ -280,14 +281,14 @@ export class AdultDashboardPage implements OnInit {
         if (localStorage.getItem('socialLogin') !== 'T') {
           this.emaillogin()
         };
-      } else if(app && app === 'T') {
+      } else if (app && app === 'T') {
         let authtoken = JSON.parse(localStorage.getItem("token"))
         this.fromapplogin(authtoken);
       }
 
     }
 
-    if(localStorage.getItem("userId")) {
+    if (localStorage.getItem("userId")) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
 
@@ -1071,7 +1072,7 @@ export class AdultDashboardPage implements OnInit {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-     window.open('/cookies-policy', '_blank');
+    window.open('/cookies-policy', '_blank');
   }
 
   socialLogin() {
@@ -1611,9 +1612,9 @@ export class AdultDashboardPage implements OnInit {
   }
   routeResume(r, enableLastVisited = false) {
     let id = '';
-    if(enableLastVisited) {
+    if (enableLastVisited) {
       id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['screenno'].substring(0, 2) : '23';
-    }else {
+    } else {
       id = r.ModuleId.toString();
     }
     localStorage.setItem("pageaction", 'next');
@@ -3833,7 +3834,7 @@ export class AdultDashboardPage implements OnInit {
       setTimeout(() => {
         var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
         var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
-        if(document.querySelector(".wediv")) {
+        if (document.querySelector(".wediv")) {
           document.querySelector(".wediv").scrollLeft = editable - wediv;
         }
 
@@ -3917,14 +3918,17 @@ export class AdultDashboardPage implements OnInit {
 
   routeForUser(res) {
     let sid = '';
-    if(res['FeatureType'] === "BLOG") {
+    if (res['FeatureType'] === "BLOG") {
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/blog-article'], { queryParams: { sId: `${sid}` } })
-    }else if(res['FeatureType'] === "LIFE STORY") {
+    } else if (res['FeatureType'] === "LIFE STORY") {
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
-    }else {
+    } else {
       this.router.navigate([res['Url']]);
     }
+  }
+  changeTopic() {
+    this.router.navigate(['/change-topic/'+this.dasboardUrl]);
   }
 }
