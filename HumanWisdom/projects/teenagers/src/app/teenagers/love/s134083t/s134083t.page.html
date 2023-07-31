@@ -1,0 +1,24 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            For thousands of years love has set pulses racing and hearts on fire. It is as old as the hills, 
+          and something everyone yearns for. It has inspired poets, songs and novels. Finding someone compatible to love and be loved by is difficult enough, but holding on to that feeling of love is even harder. There are so many relationships where people live together, but where the fragrance of 
+          love has gone. In this session we are going to explore different aspects of romantic love, the many illusions related to it, and how we can sustain a loving 
+          relationship
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
