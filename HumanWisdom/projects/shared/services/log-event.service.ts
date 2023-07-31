@@ -29,6 +29,13 @@ export class LogEventService {
 
          setTimeout(() => {
             const accessObj:any = window;
+            if(localStorage.getItem('isloggedin') == 'T'){
+                var userId=JSON.parse(localStorage.getItem("userId"));
+                if(userId != null) {
+                    debugger;
+                    accessObj?.Moengage.update_unique_user_id(userId.toString());
+                }
+             }
             (accessObj)?.Moengage.track_event(eventname, {
                 "UserName": name, // string value
                 "deviceOS": device_info.os, // numeric value
