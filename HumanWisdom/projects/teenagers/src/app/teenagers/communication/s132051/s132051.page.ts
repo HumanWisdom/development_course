@@ -24,7 +24,7 @@ export class S132051Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "communication/s132050"
+  toc = "communication/s132001"
   path = this.router.url
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))

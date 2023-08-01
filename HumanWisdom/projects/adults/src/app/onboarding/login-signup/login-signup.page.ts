@@ -618,6 +618,11 @@ export class LoginSignupPage implements OnInit {
           this.email = "";
           this.password = "";
         } else {
+          const accessObj:any = window;
+            (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
+            (accessObj)?.Moengage.add_email(this.email);
+            (accessObj)?.Moengage.add_first_name(res.Name);
+          })
           this.loginResponse = res;
           localStorage.setItem("socialLogin", "F");
           localStorage.setItem("isloggedin", "T");

@@ -121,7 +121,7 @@ export class S132201Page implements OnInit {
 
   previous() 
   {
-    this.router.navigate(['/communication/s132201'])
+    this.router.navigate(['/communication/s132200'])
   }
 
   ngOnDestroy() 

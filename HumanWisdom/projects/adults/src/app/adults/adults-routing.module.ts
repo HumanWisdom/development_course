@@ -459,6 +459,10 @@ const routes: Routes = [
     path: 'find-answers',
     loadChildren: () => import('./find-answers/find-answers.module').then( m => m.FindAnswersModule)
   },
+  {
+    path:'change-topic/:url',
+    loadChildren: () => import('./change-topic/change-topic.module').then(m=>m.ChangeTopicPageModule)
+  }
 ];
 
  @NgModule({
