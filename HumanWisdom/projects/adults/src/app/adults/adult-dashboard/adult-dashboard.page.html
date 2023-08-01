@@ -160,7 +160,7 @@
             <!-- /daily practice -->
 
             <!-- your topic of choice -->
-            <div class="row" *ngIf="isloggedIn">
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt30px">
                 <a class="prelative">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
@@ -172,7 +172,7 @@
                         </h4>
 
                         <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                          Be happier
+                          {{YourTopicofChoice[0]['name']}}
                         </h4>
                       </div>
 
@@ -187,7 +187,7 @@
             <!-- /your topic of choice -->
 
             <!-- change your topic of choice -->
-            <div class="row" *ngIf="isloggedIn" routerLink="/change-topic">
+            <div class="row" *ngIf="isloggedIn && YourTopicofChoice.length !== 0" routerLink="/change-topic">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px pt10px">
                 <button type="button" (click)="changeTopic()" class="m0px fw_600 fs_15px lh_22px fc_cb6171 btn_cytoc">
                   Change your topic of choice
