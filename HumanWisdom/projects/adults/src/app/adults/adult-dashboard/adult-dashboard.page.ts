@@ -3929,6 +3929,7 @@ export class AdultDashboardPage implements OnInit {
     }
   }
   changeTopic() {
-    this.router.navigate(['/change-topic/'+this.dasboardUrl]);
+    localStorage.setItem('lastRoute',this.dasboardUrl);
+    this.router.navigate(['/change-topic/']);
   }
 }
