@@ -174,7 +174,7 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
-
+    this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     setTimeout(() => {
       this.getModuleList();
@@ -297,7 +297,6 @@ export class AdultDashboardPage implements OnInit {
     }
 
     this.getLastvisitedScr();
-    this.GetDashboardFeatures();
 
     if (localStorage.getItem("Affreftoken") !== null) {
       let token = localStorage.getItem("Affreftoken");
@@ -325,7 +324,7 @@ export class AdultDashboardPage implements OnInit {
   }
 
   GetDashboardFeatures() {
-    let id = localStorage.getItem('storyNumber') ? localStorage.getItem('storyNumber') : '1';
+    let id = localStorage.getItem('userPreference') ? localStorage.getItem('userPreference') : '1';
     this.service.GetDashboardFeature(id)
       .subscribe(res => {
         console.log(res);
@@ -362,9 +361,9 @@ export class AdultDashboardPage implements OnInit {
     this.dash = this.router.url.includes('adult-dashboard');
     this.getuserDetail();
     setTimeout(() => {
-      this.getUserPreference()
       this.getUsershorts()
       this.getUserstories()
+      this.GetDashboardFeatures();
     }, 1000)
 
     if (localStorage.getItem('acceptcookie') === null) {
@@ -506,6 +505,7 @@ export class AdultDashboardPage implements OnInit {
       let perd = this.service.getperList();
       this.personalisedList = []
       if (res) {
+        localStorage.setItem('userPreference', res);
         let arr = res.split('').filter((d) => d !== ',');
         arr.forEach((d) => {
           perd.forEach((r) => {
