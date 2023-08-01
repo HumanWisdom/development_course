@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our minds sometimes carry the burden of all our previous hurts. This happens automatically and unconsciously, perhaps as a way of protecting us. Our pain also becomes a burden that stops us making the most of today, and comes in the way of loving others and being loved. Forgiveness is a gift we give ourselves, so our hearts can be lighter, less cynical and more loving. Forgiving others feels difficult, but is made easier the more we understand ourselves, because we realise that deep down, all our minds function in similar ways. Once you forgive, you realize your mind lets go of the painful memory, leaving you able to love again.
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
