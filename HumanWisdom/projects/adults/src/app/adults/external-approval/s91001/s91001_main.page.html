@@ -1,0 +1,86 @@
+<app-toc-header [moduleName]="'Need for approval'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+    
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          Our mind is wired to seek approval to feel good about itself. In this module we explore why that is, how it brings us pleasure, but is also responsible for our suffering, and how we can respond with wisdom so it has its rightful place in our lives.
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/external-approval',externalapprovalR]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_purple_blue" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/external-approval/s91002">
+      <div class="row crow box bg_purple_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Seeking approval from others
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              15 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+    
+    <a routerLink="/external-approval/s91050">
+      <div class="row crow box bg_purple_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Responding with wisdom
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              15 mins
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+    
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>
