@@ -3932,4 +3932,10 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem('lastRoute',this.dasboardUrl);
     this.router.navigate(['/change-topic/']);
   }
+
+  routeToFindAnswer(param){
+    localStorage.setItem('lastRoute',param);
+    this.router.navigate(['/find-answers/'+param]);
+  }
+
 }
