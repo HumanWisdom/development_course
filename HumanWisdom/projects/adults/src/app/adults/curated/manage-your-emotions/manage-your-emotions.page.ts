@@ -27,12 +27,36 @@ export class ManageYourEmotionsPage implements OnInit {
   enableAlert = false;
   guest = false;
   Subscriber = false;
+  mediaUrl: any;
 
 
   constructor(private service: AdultsService, private router: Router, private location: Location,
     private meta: Meta, private title: Title) {
       this.guest = localStorage.getItem('guest') === 'T' ? true : false;
       this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+      this.mediaUrl = {
+        pc01: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
+          title: 'The art (and benefits) of understanding our own ego.'
+        },
+        pc02: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
+          title: 'The Art of Living and Dying: Lessons from HumanWisdom'
+        },
+        pc03: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/37.mp3',
+          title: 'Stress-Free Living: Five Practices for Greater Well-Being'
+        },
+        pc04: 
+        {
+          url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/31.mp3',
+          title: 'Cultivating Calm: Using Your Own Wisdom to Tame Anger'
+        }
+      }
      }
 
   ngOnInit() {
@@ -381,6 +405,10 @@ export class ManageYourEmotionsPage implements OnInit {
     if (event === 'enablepopup') {
       this.enablepopup.nativeElement.click();
     }
+  }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/curated/audiopage/', audioContent.url,audioContent.title, Math.random()])
   }
 
 }
