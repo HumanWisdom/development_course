@@ -1,8 +1,10 @@
-import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { AdultsService } from "../../adults.service"
 import { Router } from '@angular/router';
-import { AdultsService } from "../../adults.service";
+import { Location } from '@angular/common';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { NgNavigatorShareService } from 'ng-navigator-share';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s51000',
@@ -25,22 +27,25 @@ export class S51000Page implements OnInit, OnDestroy {
   totalTime: any
   bookmark: any
   bookmarkList = []
-  audiomeditation = []
 
-  gamR = sessionStorage.getItem("gamR")
-  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation_01.png"
+  gamR = sessionStorage.getItem("pgResume")
+  tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
+  baseUrl: string;
+  path = this.router.url
+  mediaUrl: any;
 
   constructor(
     private router: Router,
     private service: AdultsService,
     private location: Location,
-    private meta: Meta, private title: Title
+    private ngNavigatorShareService: NgNavigatorShareService,
   ) {
+
     this.service.setmoduleID(51);
-    this.getaudiomeditation()
+
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -66,19 +71,23 @@ export class S51000Page implements OnInit, OnDestroy {
     this.stories = splitarr
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
+
+    this.mediaUrl = {
+      bodyscanAudioContent: {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.1.mp3',
+        title: 'Body Scan'
+      },
+      notificingthoughtsAudioContent: {
+        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.2.mp3',
+        title: 'Noticing Thoughts'
+      }
+
+
+    }
   }
 
   ngOnInit() {
-
-    this.title.setTitle('Relaxation Meditations for Sleep and Calmness')
-    this.meta.updateTag({ property: 'title', content: 'Relaxation Meditations for Sleep and Calmness' })
-    this.meta.updateTag({ property: 'description', content: 'Enhance your sleep and find inner peace with our relaxation meditation sessions. Guided audio meditations for a calm mind and body.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Audio Meditation,Guided Meditation,Mindfulness Meditation,Relaxation Meditation,Stress Relief Meditation,Sleep Meditation,Calmness Meditation,Peaceful Meditation,Focus Meditation' })
-
-
-
-
-    // continue where you left
+    // continue where you left    
     let last = localStorage.getItem('lastvisited');
     if (last === 'T') {
       this.lastvisited = true;
@@ -95,16 +104,10 @@ export class S51000Page implements OnInit, OnDestroy {
 
     this.startTime = Date.now();
     this.createScreen()
-  }
 
-  getaudiomeditation() {
-    this.service.GetAudioMeditation().subscribe((res) => {
-      if (res) {
-        this.audiomeditation = res;
-      }
-    })
-  }
 
+
+  }
   toggleBookmark() {
     if (this.bookmark == 0)
       this.bookmark = 1
@@ -155,19 +158,41 @@ export class S51000Page implements OnInit, OnDestroy {
     this.location.back()
   }
 
-  audiopage(audiofile, title, RowID) {
+  audiopage(audiofile, title) {
     let mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
     let audioLink = mediaAudio + audiofile
-    this.router.navigate(['/adults/curated/audiopage', audioLink, title, RowID])
+    this.router.navigate(['/adults/curated/audiopage', audioLink, title])
   }
 
-  audioevent(data) {
-    let sub: any = localStorage.getItem("Subscriber")
-    if (sub == 0 && data['RowID'] >= 4) {
-      this.router.navigate(['/onboarding/free-limit']);
-    } else {
-      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      this.router.navigate(['adults/guided-meditation/audiopage/', data['Text_URL'], data['Title'], data['RowID']])
+  share() {
+    this.shareUrl(SharedService.ProgramId);
+    this.ngNavigatorShareService.share({
+      title: 'HumanWisdom Program',
+      text: 'Hey, check out the HumanWisdom Program',
+      url: this.baseUrl + this.path
+    }).then((response) => {
+      console.log(response);
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  shareUrl(programType) {
+    switch (programType) {
+      case ProgramType.Adults:
+        this.baseUrl = SharedService.AdultsBaseUrl;
+        break;
+      case ProgramType.Teenagers:
+        this.baseUrl = SharedService.TeenagerBaseUrl;
+        break;
+      default:
+        this.baseUrl = SharedService.TeenagerBaseUrl;
     }
   }
+
+  audioevent(audioContent) {
+    this.router.navigate(['adults/guided-meditation/audiopage/', audioContent.url,audioContent.title, Math.random()])
+  }
+
 }

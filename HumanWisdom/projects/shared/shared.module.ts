@@ -87,6 +87,7 @@ import { TxtOverlayTopComponent } from './component/txt-overlay-top/txt-overlay-
 import { VideoContentCrossComponent } from './component/video-content-cross/video-content-cross.component';
 import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
+import { AdultsAudioMeditationComponent } from './component/adults-audio-meditation/adults-audio-meditation.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -167,7 +168,8 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     VideoYoutubeComponent,
     CertificationComponent,
     VideoContentCrossComponent,
-    ModalComponent
+    ModalComponent,
+    AdultsAudioMeditationComponent
   ],
   imports: [
     CommonModule,
@@ -272,7 +274,8 @@ import { YoutubeContentComponent } from './component/youtube-content/youtube-con
     BgVideoComponent,
     VideoYoutubeComponent,
     VideoContentCrossComponent,
-    ModalComponent
+    ModalComponent,
+    AdultsAudioMeditationComponent,
   ]
 })
 export class SharedModule { }

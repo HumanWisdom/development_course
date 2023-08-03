@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActiveGuard } from 'src/app/active.guard';
+import { AdultsAudioMeditationComponent } from '../../../../../shared/component/adults-audio-meditation/adults-audio-meditation.component';
 
 import { S51000Page } from './s51000/s51000.page';
 import { S51001Page } from './s51001/s51001.page';
@@ -103,6 +104,10 @@ const routes: Routes = [
     path: 's51006p7',
     canActivate:[ActiveGuard],  
     component: S51006p7Page,
+  },
+  {
+    path: 'audiopage/:audiolink/:title/:RowId',
+    component: AdultsAudioMeditationComponent
   },
   
 ];
