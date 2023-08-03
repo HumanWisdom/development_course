@@ -153,7 +153,9 @@ export class AdultDashboardPage implements OnInit {
   mediaPercent: any
   freeScreens = []
   currentList = [];
-  maxExceriseCount = "12;"
+  maxExceriseCount = "12;";
+  public YourTopicofChoice = [];
+
   public registrationForm = this.fb.group({
     fname: ['', [Validators.required, Validators.minLength(3)]],
     lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -522,6 +524,7 @@ export class AdultDashboardPage implements OnInit {
             this.personalisedList.push(r);
           }
         })
+      this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
       }
     })
   }
@@ -3929,6 +3932,7 @@ export class AdultDashboardPage implements OnInit {
     }
   }
   changeTopic() {
-    this.router.navigate(['/change-topic/'+this.dasboardUrl]);
+    localStorage.setItem('lastRoute',this.dasboardUrl);
+    this.router.navigate(['/change-topic/']);
   }
 }
