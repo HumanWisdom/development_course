@@ -12,13 +12,22 @@ export class ChangeTopicPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   url: any;
-  changeTopicList:any;
-  isSelected : boolean =false;
-  selectedId:any="0";
+  changeTopicList: any;
+  isSelected: boolean = false;
+  selectedId: any = "0";
   constructor(private location: Location, private service: AdultsService, public router: Router, public activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.changeTopicList = this.service.personalisedforyoulist;
+    this.getUserPreferenceMapping();
+  }
+
+  getUserPreferenceMapping() {
+    this.service.getUserpreference().subscribe(res => {
+      if (res) {
+        this.selectedId = res;
+      }
+    })
   }
 
   getclcickevent(event) {
@@ -34,15 +43,19 @@ export class ChangeTopicPage implements OnInit {
   update() {
     this.service.AddUserPreference(this.selectedId).subscribe(res => {
       if (res) {
-        this.url = this.activatedRoute.snapshot.paramMap.get('url');
+        this.url = localStorage.getItem('lastRoute')?.toString();
+        if(this.url==null){
+          this.url ='/adult-dashboard';
+        }
+        localStorage.setItem('lastRoute',null);
         this.router.navigate([this.url]);
       }
     });
   }
 
-  updateList(id){
+  updateList(id) {
     this.selectedId = id;
-    if(parseInt(id)>0){
+    if (parseInt(id) > 0) {
       this.isSelected = true;
     }
   }

@@ -32,7 +32,6 @@ export class LogEventService {
             if(localStorage.getItem('isloggedin') == 'T'){
                 var userId=JSON.parse(localStorage.getItem("userId"));
                 if(userId != null) {
-                    debugger;
                     accessObj?.Moengage.update_unique_user_id(userId.toString());
                 }
              }
