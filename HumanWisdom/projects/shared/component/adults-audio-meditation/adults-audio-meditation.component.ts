@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'adults-audio-meditation',
+  selector: 'app-adults-audio-meditation',
   templateUrl: './adults-audio-meditation.component.html',
   styleUrls: ['./adults-audio-meditation.component.scss'],
 })
