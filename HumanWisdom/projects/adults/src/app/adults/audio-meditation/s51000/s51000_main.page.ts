@@ -3,9 +3,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AdultsService } from "../../adults.service";
-import { SharedService } from '../../../../../../shared/services/shared.service';
-import { NgNavigatorShareService } from 'ng-navigator-share';
-import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s51000',
@@ -36,14 +33,11 @@ export class S51000Page implements OnInit, OnDestroy {
   lastvisited = false;
   stories: any = []
 
-  baseUrl:string;
-  path=this.router.url
-
   constructor(
     private router: Router,
     private service: AdultsService,
     private location: Location,
-    private meta: Meta, private title: Title, private ngNavigatorShareService: NgNavigatorShareService,
+    private meta: Meta, private title: Title
   ) {
     this.service.setmoduleID(51);
     this.getaudiomeditation()
@@ -172,35 +166,7 @@ export class S51000Page implements OnInit, OnDestroy {
     if (sub == 0 && data['RowID'] >= 4) {
       this.router.navigate(['/onboarding/free-limit']);
     } else {
-      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      this.router.navigate(['adults/guided-meditation/audiopage/', data['Text_URL'], data['Title'], data['RowID']])
-    }
-  }
-
-  share(){
-    this.shareUrl(SharedService.ProgramId);
-    this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
-      url: this.baseUrl+this.path
-    }).then( (response) => {
-      console.log(response);
-    })
-    .catch( (error) => {
-      console.log(error);
-    });
-  }
-
-  shareUrl (programType) {
-    switch (programType) {
-      case ProgramType.Adults:
-        this.baseUrl=SharedService.AdultsBaseUrl;
-      break;
-      case ProgramType.Teenagers:
-        this.baseUrl=SharedService.TeenagerBaseUrl;
-       break;
-      default:
-      this.baseUrl=SharedService.TeenagerBaseUrl;
+      this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
     }
   }
 }

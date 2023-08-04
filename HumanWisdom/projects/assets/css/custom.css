@@ -32455,9 +32455,9 @@ body *
 .div_sate .col-lg-6:last-child,
 .div_fi_a .col-lg-6:nth-last-child(2),
 .div_fi_a .col-lg-6:last-child,
-.div_fi_a .col-lg-6:nth-last-child(2),
-.div_fi_b .col-lg-6:last-child,
-.div_fi_b .col-lg-6:nth-last-child(2)
+.div_fi_a .col-lg-6:nth-last-child(2)
+/* .div_fi_b .col-lg-6:last-child,
+.div_fi_b .col-lg-6:nth-last-child(2) */
 {
   padding-bottom: 0;
 }
