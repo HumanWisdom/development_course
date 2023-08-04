@@ -47,6 +47,7 @@ export class ChangeTopicPage implements OnInit {
         if(this.url==null){
           this.url ='/adult-dashboard';
         }
+        localStorage.setItem('lastRoute',null);
         this.router.navigate([this.url]);
       }
     });
