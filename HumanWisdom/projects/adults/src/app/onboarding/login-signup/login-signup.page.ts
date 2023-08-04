@@ -25,6 +25,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild("closemodal") closemodal: ElementRef;
   @ViewChild("enabletab") enabletab: ElementRef;
   @ViewChild("enableotpmodal") enableotpmodal: ElementRef;
+  @ViewChild("closeotpmodal") closeotpmodal: ElementRef;
 
   user: any;
   userId: any;
@@ -239,8 +240,8 @@ export class LoginSignupPage implements OnInit {
               "signupfirst",
               'T'
             );
-            window.location.reload();
-            // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+            this.closeotpmodal.nativeElement.click();
+           this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
@@ -396,12 +397,12 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/search"], {
+                        this.router.navigate(["/adults/change-topic"], {
                           state: {
                             routedFromLogin: true,
                           }
                         });
-                      }else {
+                      } else {
                         this.router.navigate(["/adults/repeat-user"]);
                       }
                     }
@@ -569,7 +570,7 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/search"], {
+                        this.router.navigate(["/adults/change-topic"], {
                           state: {
                             routedFromLogin: true,
                           }
@@ -784,7 +785,7 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/search"], {
+                        this.router.navigate(["/adults/change-topic"], {
                           state: {
                             routedFromLogin: true,
                           }
