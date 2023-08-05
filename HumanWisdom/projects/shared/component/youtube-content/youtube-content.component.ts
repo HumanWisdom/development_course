@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'HumanWisdom-youtube-content',
@@ -14,7 +15,7 @@ export class YoutubeContentComponent implements OnInit {
 
   @Input() bg: string;
   
-  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router) {
+  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router, private location: Location) {
     this.linkcode = this.route.snapshot.paramMap.get('videolink')
    
     let accesscode = 'rdtfghjhfdg'
@@ -54,13 +55,20 @@ export class YoutubeContentComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     let code = `https://www.youtube.com/embed/${this.linkcode}`;
     this.videoLink = this.getSafeUrl(code);
   }
 
-  getSafeUrl(url) {
+  getSafeUrl(url) 
+  {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url)
-}
+  }
+
+  goBack() 
+  {
+    this.location.back()
+  }
 
 }
