@@ -75,7 +75,7 @@
     "ng2-charts": "^2.2.3",
     "ngx-device-detector": "^4.0.1",
     "ngx-sharebuttons": "^8.1.0",
-    "ngx-social-share": "^1.0.0",
+   
     "ngx-toastr": "^12.0.1",
     "nouislider": "^14.6.3",
     "popper.js": "^1.14.3",
