@@ -13,7 +13,6 @@
   },
   "private": true,
   "dependencies": {
-    "@abacritt/angularx-social-login": "^2.1.0",
     "@angular-slider/ngx-slider": "^2.0.3",
     "@angular/animations": "^14.2.8",
     "@angular/cdk": "^14.2.7",
