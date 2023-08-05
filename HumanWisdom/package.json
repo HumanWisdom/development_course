@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "^2.1.0",
     "@angular-slider/ngx-slider": "^2.0.3",
     "@angular/animations": "^14.2.8",
     "@angular/cdk": "^14.2.7",
@@ -26,7 +27,7 @@
     "@angular/router": "^14.2.8",
     "@angular/service-worker": "^14.2.8",
     "@fireflysemantics/angular-stripe-service": "^1.0.0",
-    "@fortawesome/angular-fontawesome": "^0.8.2",
+    "@fortawesome/angular-fontawesome": "^0.13.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
