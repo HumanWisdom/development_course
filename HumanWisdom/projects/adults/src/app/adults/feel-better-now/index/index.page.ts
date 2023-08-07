@@ -30,16 +30,8 @@ export class IndexPage implements OnInit {
     this.location.back()
   }
 
-  enableRoute(url, free = false) {
-    if(free) {
-      this.router.navigate([url])
-    }else {
-      if(this.isSubscriber && this.isLoggedIn){
-        this.router.navigate([url])
-      }else {
-        this.router.navigate(['/onboarding/free-limit'])
-      }
-    }
+  enableRoute(url) {
+    this.router.navigate([url])
   }
 
 }
