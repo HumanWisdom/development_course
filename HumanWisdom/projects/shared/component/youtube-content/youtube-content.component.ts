@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
@@ -11,7 +11,8 @@ import { Location } from '@angular/common';
 export class YoutubeContentComponent implements OnInit {
   public videoLink: any;
   public linkcode: any;
- 
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   @Input() bg: string;
   
@@ -69,6 +70,12 @@ export class YoutubeContentComponent implements OnInit {
   goBack() 
   {
     this.location.back()
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
   }
 
 }
