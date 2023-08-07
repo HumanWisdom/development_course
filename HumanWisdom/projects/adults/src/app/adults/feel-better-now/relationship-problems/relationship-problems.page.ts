@@ -11,20 +11,16 @@ import { Location } from '@angular/common';
 export class RelationshipProblemsPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
-  audioData:any;
+
 
   constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location) { }
 
   ngOnInit() {
-    this.audioData={
-      url:'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.20.mp3'
-    }
+   
   }
   
-  audioevent(url) {
-      this.router.navigate(['feel-better-now/relationship-problems/audiopage/', url ,"Taking people for granted",Math.random() ])
-  }
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
@@ -35,4 +31,13 @@ export class RelationshipProblemsPage implements OnInit {
   goBack() {
     this.location.back()
   }
+
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url])
+    }else{
+     let concat = this.mediaAudio+url;
+     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+    }
+ }
 }

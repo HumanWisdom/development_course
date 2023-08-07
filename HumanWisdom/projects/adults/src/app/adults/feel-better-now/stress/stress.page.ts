@@ -32,7 +32,7 @@ export class StressPage implements OnInit {
       this.router.navigate([url])
      }else{
       let concat = this.mediaAudio+url;
-      this.router.navigate(['adults/guided-meditation/audiopage/', concat, title, '1'])
+      this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
      }
   }
 
