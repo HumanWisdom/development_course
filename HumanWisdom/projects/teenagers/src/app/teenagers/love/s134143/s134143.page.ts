@@ -15,7 +15,7 @@ export class S134143Page implements OnInit,OnDestroy
   bg="blue_pink_w1"
   title="#6 Forgive, forgive and forget  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/love/audios/love+4.7.mp3'
+  audioLink=this.mediaAudio+'/love/audios/4.2.mp3'
   transcriptPage="love/s134143t"
   toc="love/s134001"
   bookmark=0

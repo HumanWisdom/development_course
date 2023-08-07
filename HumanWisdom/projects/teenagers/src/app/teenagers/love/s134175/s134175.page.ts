@@ -17,7 +17,7 @@ export class S134175Page implements OnInit,OnDestroy {
   bg="blue_pink_w8"
   title=" #5 Let go of painful memories  "
     
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+5.6.mp3'
 
   transcriptPage="love/s134175t"

@@ -14,7 +14,7 @@ export class S134134Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w4"
   title="#3 Pay attention. Nurture a quiet mind.  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+4.4.mp3'
   transcriptPage="love/s134134t"
   toc="love/s134001"

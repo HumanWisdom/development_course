@@ -14,7 +14,7 @@ export class S134139Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w9"
   title="#5 Surprise others with small acts of kindness  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+4.6.mp3'
   transcriptPage="love/s134139t"
   toc="love/s134001"

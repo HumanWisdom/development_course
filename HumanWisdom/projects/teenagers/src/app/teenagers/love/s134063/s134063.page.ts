@@ -17,7 +17,7 @@ export class S134063Page implements OnInit,OnDestroy {
   title="We are not aware of our emotional needs.  "
   
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+1.1.mp3'
 
   transcriptPage="love/s134063t"

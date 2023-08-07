@@ -18,7 +18,7 @@ export class S134173Page implements OnInit,OnDestroy {
   title=" #4 Let go of the need for external approval  "
     
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/love/audios/love+5.5.mp3'
+  audioLink=this.mediaAudio+'/love/audios/5.1.mp3'
 
   transcriptPage="love/s134173t"
   toc="love/s134001"

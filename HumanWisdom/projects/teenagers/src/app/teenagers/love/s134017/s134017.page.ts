@@ -14,7 +14,7 @@ export class S134017Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w11"
   title="The word ‘love’, is not love  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+1.1.mp3'
   transcriptPage="love/s134017t"
   toc="love/s134001"

@@ -14,7 +14,7 @@ export class S134083Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w3"
   title="Looking for Romantic Love"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+3.1.mp3'
   transcriptPage="love/s134083t"
   toc="love/s134001"

@@ -14,7 +14,7 @@ export class S134130Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w12"
   title="#2 Understand your emotional needs  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+4.3.mp3'
   transcriptPage="love/s134130t"
   toc="love/s134001"

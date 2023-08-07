@@ -18,7 +18,7 @@ export class S134162Page implements OnInit,OnDestroy {
   title="#1 Stop comparing  "
   
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+5.2.mp3'
 
   transcriptPage="love/s134162t"

@@ -17,7 +17,7 @@ export class S134169Page implements OnInit,OnDestroy {
   bg="blue_pink_w2"
   title=" #3 Forgive yourself. You're only human.  "  
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+5.4.mp3'
 
   transcriptPage="love/s134169t"

@@ -18,7 +18,7 @@ export class S134166Page implements OnInit,OnDestroy {
   title="#2 Understand your conditioning. Let go of who you ‘should’ be.  "
   
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+5.3.mp3'
 
   transcriptPage="love/s134166t"

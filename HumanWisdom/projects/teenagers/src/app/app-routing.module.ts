@@ -203,6 +203,10 @@ const routes: Routes = [
     path: 'happiness',
     loadChildren: () => import('./teenagers/happiness/happiness.module').then(m => m.HappinessModule)
   },
+  {
+    path: 'love',
+    loadChildren: () => import('./teenagers/love/love.module').then(m => m.LoveModule)
+  },
 ];
   
 

@@ -15,7 +15,7 @@ export class S134126Page implements OnInit,OnDestroy
   bg="blue_pink_w8"
   title="#1 Become aware of your self-interest  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/love/audios/love+4.2.mp3'
+  audioLink=this.mediaAudio+'/love/audios/4.1.mp3'
   transcriptPage="love/s134126t"
   toc="love/s134001"
   bookmark=0

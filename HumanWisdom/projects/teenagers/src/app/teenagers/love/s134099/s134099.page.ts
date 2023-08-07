@@ -14,7 +14,7 @@ export class S134099Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w10"
   title="Listen to your inner voice  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+3.2.mp3'
   transcriptPage="love/s134099t"
   toc="love/s134001"

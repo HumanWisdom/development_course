@@ -17,7 +17,7 @@ export class S134197Page implements OnInit,OnDestroy {
   bg="blue_pink_w1"
   title="Changing habits  "  
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+6.3.mp3'
 
   transcriptPage="love/s134197t"

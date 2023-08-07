@@ -17,7 +17,7 @@ export class S134188Page implements OnInit,OnDestroy {
   bg="blue_pink_w5"
   title=" Do we love the earth that is our home?  "
   
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+6.1.mp3'
 
   transcriptPage="love/s134188t"

@@ -17,7 +17,7 @@ export class S134191Page implements OnInit,OnDestroy {
   bg="blue_pink_w7"
   title="Connecting with the earth.  "
 
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/love/audios/love+6.2.mp3'
 
   transcriptPage="love/s134191t"
