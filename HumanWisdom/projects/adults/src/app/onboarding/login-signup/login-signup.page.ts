@@ -241,7 +241,8 @@ export class LoginSignupPage implements OnInit {
               'T'
             );
             this.closeotpmodal.nativeElement.click();
-           this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+            window.location.reload();
+          //  this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
