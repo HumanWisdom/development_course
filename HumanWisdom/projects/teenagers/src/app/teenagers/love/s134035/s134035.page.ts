@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s134009',
-  templateUrl: './s134009.page.html',
-  styleUrls: ['./s134009.page.scss'],
+  selector: 'app-s134035',
+  templateUrl: './s134035.page.html',
+  styleUrls: ['./s134035.page.scss'],
 })
-export class S134009Page implements OnInit 
+export class S134035Page implements OnInit 
 {
   bg_tn = "bg_blue_pink"
   bg_cft = "bg_blue_pink"
@@ -18,7 +18,7 @@ export class S134009Page implements OnInit
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = "134009"
+  screenNumber = "134035"
   startTime: any
   endTime: any
   totalTime: any

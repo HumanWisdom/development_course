@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          We have explored in the comparison module how our mind automatically and unconsciously compares ourselves with others. There is always going to be someone better than us. If you compare yourself with others you are going to either be miserable or vain. The first step is to become aware of this hidden process in your thinking and realise it's not intelligent. As you keep observing this in yourself, your intelligence takes over, and it stops.  It's a huge relief, and allows you to be happy with who you are, what you have, and what you do. The peace that follows is worth more than all the gold in the world.
+          </h3>             
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

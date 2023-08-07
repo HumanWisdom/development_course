@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s134006',
-  templateUrl: './s134006.page.html',
-  styleUrls: ['./s134006.page.scss'],
+  selector: 'app-s134032',
+  templateUrl: './s134032.page.html',
+  styleUrls: ['./s134032.page.scss'],
 })
-export class S134006Page implements OnInit 
+export class S134032Page implements OnInit 
 {
 
   bg_tn = "bg_blue_pink"
@@ -19,7 +19,7 @@ export class S134006Page implements OnInit
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = 134006
+  screenNumber = 134032
   startTime: any
   endTime: any
   totalTime: any
@@ -110,9 +110,9 @@ export class S134006Page implements OnInit
     this.startTime = Date.now();
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmark134006")) == 0)
+    if (JSON.parse(sessionStorage.getItem("bookmark134032")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark134006")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark134032")) == 1)
       this.bookmark = 1
   }
 
@@ -123,7 +123,7 @@ export class S134006Page implements OnInit
       this.bookmark = 1
     else
       this.bookmark = 0
-    sessionStorage.setItem("bookmark134006", JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark134032", JSON.stringify(this.bookmark))
   }
 
   createScreen() 
