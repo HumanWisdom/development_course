@@ -18,50 +18,50 @@ const routes: Routes = [
   },
   {
     path: 's108001',
-    
+
     component: S108001Page,
   },
   {
     path: 's108002',
-    
+
     component: S108002Page,
-    data: { animation: 0 }
+    // data: { animation: 0 }
   },
   {
     path: 's108002t',
-    
+
     component: S108002tPage,
-    data: { animation: 1 }
+    // data: { animation: 1 }
   },
   {
     path: 's108003',
-    
+
     component: S108003Page,
-    data: { animation: 2 }
+    // data: { animation: 2 }
   },
   {
     path: 's108004',
-    
+
     component: S108004Page,
-    data: { animation: 3 }
+    // data: { animation: 3 }
   },
   {
     path: 's108005',
-    
+
     component: S108005Page,
-    data: { animation: 4 }
+    // data: { animation: 4 }
   },
   {
     path: 's108006',
-    
+
     component: S108006Page,
-    data: { animation: 5 }
+    // data: { animation: 5 }
   },
   {
     path: 's108007',
-    
+
     component: S108007Page,
-    data: { animation: 6 }
+    // data: { animation: 6 }
   },
 
 ];

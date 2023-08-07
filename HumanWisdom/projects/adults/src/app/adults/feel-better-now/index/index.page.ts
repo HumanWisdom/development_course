@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -7,12 +8,16 @@ import { Location } from '@angular/common';
   styleUrls: ['./index.page.scss'],
 })
 export class IndexPage implements OnInit {
+  public isSubscriber = false;
+  public isLoggedIn = false;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private router: Router) { }
 
   ngOnInit() {
+    this.isSubscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    this.isLoggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
   }
 
   getclcickevent(event) {
@@ -23,6 +28,18 @@ export class IndexPage implements OnInit {
 
   goBack() {
     this.location.back()
+  }
+
+  enableRoute(url, free = false) {
+    if(free) {
+      this.router.navigate([url])
+    }else {
+      if(this.isSubscriber && this.isLoggedIn){
+        this.router.navigate([url])
+      }else {
+        this.router.navigate(['/onboarding/free-limit'])
+      }
+    }
   }
 
 }
