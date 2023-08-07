@@ -2,17 +2,17 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" routerLink="/feel-better-now/index/">                          
+      <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
-      </a>  
+      </a>
     </div>
-    
+
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
         Stress
-      </h1>  
+      </h1>
     </div>
-    
+
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
     </div>
   </div>
@@ -31,7 +31,7 @@
             <div class="fbns">
 
               <!-- breathing exercise -->
-              <a class="" routerLink="/adults/breathing/s29006">
+              <a class="" (click)="routeVideoaudio('video','/adults/videopage/breathing-videos-1.5.mp4')">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06">
 
@@ -41,14 +41,14 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_01.svg" class="img-responsive w100">
                         </div>
                       </div>
-      
+
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-2 col-sm-2 col-xs-2 p0">
@@ -61,7 +61,7 @@
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
@@ -69,7 +69,7 @@
                         </h4>
                       </div>
                     </div>
-      
+
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
@@ -84,7 +84,7 @@
               <!-- /breathing exercise -->
 
               <!-- audio meditation -->
-              <a class="" routerLink="/adults/guided-meditation/s51005">
+              <a class="" (click)="routeVideoaudio('audio','/guided-meditation/audios/guided-meditation+1.4.mp3','Voice Yoga')">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06">
 
@@ -94,14 +94,14 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_02.svg" class="img-responsive w100">
                         </div>
                       </div>
-      
+
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio.svg" class="img-responsive">
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-2 col-sm-2 col-xs-2 p0">
@@ -114,7 +114,7 @@
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
@@ -122,7 +122,7 @@
                         </h4>
                       </div>
                     </div>
-      
+
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
@@ -147,14 +147,14 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_03.svg" class="img-responsive w100">
                         </div>
                       </div>
-      
+
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-2 col-sm-2 col-xs-2 p0">
@@ -167,7 +167,7 @@
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
@@ -175,7 +175,7 @@
                         </h4>
                       </div>
                     </div>
-      
+
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
@@ -200,14 +200,14 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_04.svg" class="img-responsive w100">
                         </div>
                       </div>
-      
+
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-2 col-sm-2 col-xs-2 p0">
@@ -220,7 +220,7 @@
                         </div>
                       </div>
                     </div>
-      
+
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
@@ -228,7 +228,7 @@
                         </h4>
                       </div>
                     </div>
-      
+
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
@@ -276,7 +276,7 @@
 
             <div class="row mt40px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
-                
+
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                   <a routerLink="/adults/stress/s44001">
                     <div class="row box_v3_04">
@@ -286,23 +286,23 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/pathway/44.png" class="img-responsive">
                           </div>
-                        </div>  
-    
+                        </div>
+
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
                               Stress
                             </h4>
                           </div>
-                        </div>  
-    
+                        </div>
+
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
                               8 sessions
                             </h4>
                           </div>
-                        </div> 
+                        </div>
 
                       </div>
                     </div>
@@ -318,23 +318,23 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/pathway/15.png" class="img-responsive">
                           </div>
-                        </div>  
-    
+                        </div>
+
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
                               Conditioning
                             </h4>
                           </div>
-                        </div>  
-    
+                        </div>
+
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
                               4 sessions
                             </h4>
                           </div>
-                        </div> 
+                        </div>
 
                       </div>
                     </div>

@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" routerLink="/feel-better-now/index/">                          
+      <a class="" (click)="goBack()">                          
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>  
     </div>
@@ -84,7 +84,7 @@
               <!-- /breathing exercise -->
 
               <!-- audio meditation -->
-              <a class="" (click)="audioevent(audioData.url)">
+              <a class="" (click)="audioevent(mediaUrl.url)">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06">
 
@@ -391,7 +391,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
                 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <a>
+                  <a (click)="routeToYoutube(mediaUrl.youtubeUrl)">
                     <div class="row box_v3_04b">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 

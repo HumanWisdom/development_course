@@ -2,41 +2,21 @@
 <app-tn-dashboard-v03 [enableplaystore]="false" [routeid]="'search'"></app-tn-dashboard-v03>
 <!-- /top navigation -->
 
-<app-bg-video></app-bg-video>
-
 <!-- page content -->
 <div class="right_col mc_01">
   <!-- class -->
   <div class="cw100p">
-    <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_white p0">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
         <div class="x_panel p0">
           <div class="x_content p0">
 
-            <!-- <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <a routerLink="/adult-dashboard/" class="">
-                  <h4 class="fw_400 fs_14px lh_16px fc_1092a7 flex_ai mtb0px">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/arrow_left.svg" class="img-responsive" alt="">
-                    <span class="ml5px lh0px underline">
-                      Continue to Dashboard
-                    </span>
-                  </h4>
-                </a>
-              </div>
-            </div> -->
-
-            <div class="row mt30px prelative">
-              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px tsp">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search mb0px"
-                  name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)"
-                  autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()"
-                  (keyup.enter)="getinp($event.target.value)"
-                  [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
+            <!-- search -->
+            <div class="row mt30px mb30px prelative">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search for a topic">
                 <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                <span *ngIf=" searchinp!=''" (click)="clearSearch()"
-                  class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
-                  aria-hidden="true"></span>
+                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
               </div>
 
               <div class="row adsearch">
@@ -48,257 +28,831 @@
                 </div>
               </div>
             </div>
+            <!-- /search -->
 
-            <div class="cp0_02">
-              <!-- introduction -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_i" aria-expanded="true">
+            <!-- pathway -->
+            <div class="row box_v3_05">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <!-- five dots -->
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 phbtns">
+                    <a>
+                      <button type="button" class="btn"></button>
+                    </a>
 
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                                    <!-- Hi, {{name}} ! Begin here -->
-                                    Introduction to HumanWisdom
-                                  </h2>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
+                    <a>
+                      <button type="button" class="btn"></button>
+                    </a>
+
+                    <a>
+                      <button type="button" class="btn"></button>
+                    </a>
+
+                    <a>
+                      <button type="button" class="btn"></button>
+                    </a>
+
+                    <a>
+                      <button type="button" class="btn"></button>
+                    </a>
+                  </div>
+                </div>
+                <!-- /five dots -->
+  
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
+                    <h4 class="mtb0px fw_700 fs_24px lh_140p fc_ffffff">
+                      PATHWAY
+                    </h4>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                      Explore our 5-step guided program to learn about yourself, grow as a person, and lead a happier life.
+                    </h4>
+                  </div>
+                </div>
+  
+                <!-- hr -->
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <hr class="hr_style_v3_01 mtb10pxi">
+                  </div>
+                </div>
+                <!-- /hr -->
+  
+                <!-- audio player -->
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+
+                    <div class="col-md-2 col-sm-2 col-xs-2 circular-player-container">
+                      <ngx-circular-player 
+                        id="aud4" 
+                        strokeColor="#FFFFFF"
+                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/stress_anxiety.mp3"
+                        progressStrokeColor=rgba(229,141,130,1)>
+                      </ngx-circular-player>
+                    </div>
+                    
+                    <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
+                          01:30
                         </h4>
                       </div>
-                      <div id="ca_i" class="panel-collapse collapse in">
-                        <div class="panel-body p0">
+                    </div>
+                    
+                    <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <a routerLink="/adults/curated/overcome-stress-anxiety-transcript">
+                        <button class="btn flex_ai btn_pn">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" class="img-responsive">
+                        </button>
+                      </a>
+                    </div>
 
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeGuide(0)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/05.png"
-                                    alt="User Guide" class="ctimg">
-                                  <h4 class="tcenter txt31 attitle">Start Here</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeDiscoveringWisdom(0)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/01.png"
-                                    alt="Discovering Wisdom" class="ctimg">
-                                  <h4 class="tcenter txt31 attitle">What is Wisdom?</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="discoveringP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routehowcanwisdomhelp(0)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/50.png"
-                                    alt="How can wisdom help?" class="ctimg">
-                                  <h4 class="tcenter txt31 attitle">How can wisdom help?</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="hcwhP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeBenefits(0)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/51.png"
-                                    alt="Benefits of Wisdom" class="ctimg">
-                                  <h4 class="tcenter txt31 attitle">Wisdom brings change</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="benefitsWisdomP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeCircles(0)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/03.png"
-                                    alt="5 Circles of Wisdom" class="ctimg">
-                                  <h4 class="tcenter txt31 attitle">5 Circles of Wisdom</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="fiveCirclesP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeIdeas(0)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/04.png"
-                                    alt="Key Ideas" class="ctimg">
-                                  <h4 class="tcenter txt31 attitle">Key Ideas</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="keyP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                            </div>
+                  </div>
+                </div>
+                <!-- /audio player -->
+  
+                <div class="row mr-20pxi mt40px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
+  
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" routerLink="/adults/pathway/develop-a-calm-mind">
+                        <div class="prelative">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_01.svg" alt="Happiness" class="ctimg">
+                          
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            01
+                          </h4>
+                          
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            5 modules
+                          </h4>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Develop a calm mind
+                            </h4>
                           </div>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Breathing • Nature • Meditation
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+  
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" routerLink="/adults/pathway/understand-yourself">
+                        <div class="prelative">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_02.svg" alt="Happiness" class="ctimg">
+                          
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            02
+                          </h4>
+                          
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            9 modules
+                          </h4>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Understand yourself
+                            </h4>
+                          </div>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Enquiry • Insight • Awareness
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
 
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" routerLink="/adults/pathway/understand-how-your-mind-works">
+                        <div class="prelative">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_03.svg" alt="Happiness" class="ctimg">
+                          
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            03
+                          </h4>
+                          
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            10 modules
+                          </h4>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Understand how your mind works
+                            </h4>
+                          </div>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Conditioning • Comparison & envy • Awareness
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" routerLink="/adults/pathway/manage-your-emotions">
+                        <div class="prelative">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_04.svg" alt="Happiness" class="ctimg">
+                          
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            04
+                          </h4>
+                          
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            6 modules
+                          </h4>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Manage your emotions
+                            </h4>
+                          </div>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Anger • Loneliness • Pleasure
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-6 prelative">
+                      <a class="prelative" routerLink="/adults/pathway/live-your-best-life">
+                        <div class="prelative">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_05.svg" alt="Happiness" class="ctimg">
+                          
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                            05
+                          </h4>
+                          
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                            18 modules
+                          </h4>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
+                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                              Live your best life
+                            </h4>
+                          </div>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
+                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                              Happiness • Relationships • Stress
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /pathway -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- explore a topic of interest -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a class="prelative">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/backgrounds/topics_v3_01.svg" class="img-responsive w100">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                          Explore a topic of interest
+                        </h4>
+                      </div>
+      
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                        <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /explore a topic of interest -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- get more out of HumanWisdom -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                  Get more out of HumanWisdom
+                </h4>
+              </div>
+            </div>
+
+            <div class="mt30px div_fi_b">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/journal">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_journal.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Journal
+                          </h4>
                         </div>
                       </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/forum">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_forum.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Forum
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/wisdom-survey">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_wisdom_score.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Wisdom score
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/contact-coach">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_contact_a_coach.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Contact a coach
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- /get more out of HumanWisdom -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- find inspiration -->
+            <div class="div_fi_a">
+            
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/wisdom-stories">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_life_stories.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Life stories
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/audio-meditation">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_audio_meditation.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Audio meditation
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/blogs">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_blog.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Blog
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/podcast">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_podcast.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Podcast
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/wisdom-shorts">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_short_videos.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Short videos
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="" routerLink="/adults/events">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <h4 class="mtb0px tcenter">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fi_events.svg" class="img-responsive">
+                          </h4>
+
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            Events
+                          </h4>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+              
+            </div>
+            <!-- /find inspiration -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- subscribe to premium -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <button type="button" class="v3_btn_subscribe_premium" (click)="Logevent('/onboarding/add-to-cart', '', 'click_Subscribe')">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_subscribe_premium.svg" class="v3_subscribe_premium">
+                      </div>
+
+                      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 tleft">
+                        <h4 class="mtb0px fw_400 fs_18px lh_140p fc_ffffff">
+                          Subscribe to Premium
+                        </h4>
+
+                        <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff">
+                          £4.20/month, billed annually
+                        </h4>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </button>
               </div>
-              <!-- /accordion -->
-              <!-- /introduction -->
             </div>
+            <!-- /subscribe to premium -->
 
-            <div class="plr20px">
-              <!-- <div class="row mb10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <a routerLink="/adult-dashboard/" class="">
-                    <h4 class="fw_400 fs_14px lh_16px fc_1092a7 flex_ai">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/arrow_left.svg" class="img-responsive" alt="">
-                      <span class="ml5px lh0px underline">
-                        Continue to Dashboard
-                      </span>
-                    </h4>
-                  </a>
-                </div>
-              </div> -->
-
-              <!-- <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback zi0">
-                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
-                    (keyup)="getAutoCompleteList($event.target.value)"
-                    autocomplete="off"
-                    (focus)="onFocus()" 
-                    (focusout)="onFocusOutEvent ()"
-                    (keyup.enter)="getinp($event.target.value)" placeholder="Search">
-                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                  <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon" aria-hidden="true"></span>
-                </div>
-                <ul class="list-group autocomplete-list" *ngIf="searchResult.length>0">
-                  <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
-                </ul>
-              </div> -->
-
-              <!-- <div class="row mt30px prelative">
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0">
-                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp"
-                    (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" 
-                    (focusout)="onFocusOutEvent ()"
-                    (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search">
-                  <span class="fa fa-search form-control-feedback left pfy_search_icon pfy_search_icon_ext" aria-hidden="true"></span>
-                  <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
-                </div>
-
-                <div class="row adsearch">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
-                      <li  *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">{{item.ModuleName}}</li>
-                    </ul>
-                  </div>
-                </div>
-              </div> -->
-
-              <div class="row mt40px mb30px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="fw_500 fs_20px lh_23px fc_000000 mtb0px">
-                    <!-- Personalised for you! -->
-                    Select a topic to explore
-                  </h4>
-                </div>
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
               </div>
+            </div>
+            <!-- /hr -->
 
-              <!-- <div class="row pfys_desc">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="fw_400 fs_15px lh_18px fc_000000 mtb0px">
-                    Select a topic to explore. Find all related content in one place
-                  </h4>
-                </div>
-              </div> -->
-
-              <ng-container *ngIf="personalisedforyou.length !== 0">
-                <div class="row mb10px center_flex">
-                  <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 p0">
-                    <div class="col-md-6 col-sm-6 col-xs-6 plrdiv" *ngFor="let item of personalisedforyou; let i = index">
-                      <button 
-                        class="btn btn_pfy_search" 
-                        [ngClass]="[item['active'] ? 'activebtn' : '']"
-                        (click)="clickbtn(item['name'], '', $event, i, item['id']);">
-                        <h4 class="fc_ffffff fw_500 fs_15px lh_130p mtb0px">
-                          {{item['name']}}
-                        </h4>
-                        <!-- <div class="row flex_ai">
-                          <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="col-md-10 col-sm-10 col-xs-10 p0 tleft">
-                              {{item['name']}}
-                            </div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 p0 tright"
-                              (click)="clickbtn(item['name'], 'heart', $event, i, item['id']); $event.stopPropagation()">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_active.svg"
-                                *ngIf="item['active']" class="img-responsive">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/pfy_inactive.svg"
-                                *ngIf="!item['active']" class="img-responsive">
+            <!-- wisdom for global impact -->
+            <!-- accordion -->
+            <div class="row accordion_row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default cpanel">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#ca_wfgi" aria-expanded="true">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="">
+                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  Wisdom for global impact
+                                </h2>
+                              </div>
                             </div>
                           </div>
-                        </div> -->
-                      </button>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="ca_wfgi" class="panel-collapse collapse in">
+                      <div class="panel-body">
+
+                        <div class="row cmr-20pxi">
+                          <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
+
+                            <!-- <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a>
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/01.svg"
+                                  alt="Stress Management" class="crimg">
+                                <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
+                                  Tackling racism
+                                </h4>
+                              </a>
+                            </div> -->
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" routerLink="/adults/solving-global-problems/s72002">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/02a.svg" class="img-responsive w100">
+                                    </div>
+                                  </div>
+  
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Climate change
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        06:27
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" routerLink="/adults/solving-global-problems/s72001">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/01a.svg" class="img-responsive w100">
+                                    </div>
+                                  </div>
+  
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Tackling racism 
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        10:17
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" routerLink="/adults/solving-global-problems/s72006">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/06a.svg" class="img-responsive w100">
+                                    </div>
+                                  </div>
+  
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Root cause of climate change 
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        02:01
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" routerLink="/adults/solving-global-problems/s72003">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/03a.svg" class="img-responsive w100">
+                                    </div>
+                                  </div>
+  
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Global health challenges 
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        07:19
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" routerLink="/adults/solving-global-problems/s72004">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/04a.svg" class="img-responsive w100">
+                                    </div>
+                                  </div>
+  
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Ending conflict 
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        12:15
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" routerLink="/adults/solving-global-problems/s72005">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/05a.svg" class="img-responsive w100">
+                                    </div>
+                                  </div>
+  
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Transforming education 
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        10:23
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                              <a class="" routerLink="/adults/solving-global-problems/s72007">
+                                <div class="prelative">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/make_the_world_better_place/07a.svg" class="img-responsive w100">
+                                    </div>
+                                  </div>
+  
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                        Wisdom to prevent war 
+                                      </h4>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                        01:01:39
+                                      </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
                 </div>
-              </ng-container>
-
-              <!-- <div class="row mb0px mt20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <a routerLink="/adult-dashboard/" class="">
-                    <h4 class="fw_400 fs_14px lh_16px fc_1092a7 flex_ai mtb0px">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/arrow_left.svg" class="img-responsive" alt="">
-                      <span class="ml5px lh0px underline">
-                        Continue to Dashboard
-                      </span>
-                    </h4>
-                  </a>
-                </div>
-              </div> -->
+              </div>
             </div>
-
-            <div class="row mt60px mb60px">
-              <a routerLink="/adult-dashboard/">
-                <div class="col-md-12 col-sm-12 col-xs-12 tcenter p0">
-                  <h6 class="fw_500 fs_16px lh_19px fc_1092a7 mtb0px center_flex">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/home_blue_circle.svg"
-                      alt="">
-                    <span class="pl5px pt5px underline">
-                      View full dashboard
-                    </span>
-                  </h6>
-                </div>
-              </a>
-            </div>
-
-            <!-- welcome popup button -->
-            <span #welcome data-toggle="modal" data-target="#modal_popup"></span>
-            <!-- /welcome popup button -->
+            <!-- /accordion -->
+            <!-- /wisdom for global impact -->
 
             <div class="pagebreak"></div>
 
@@ -314,122 +868,3 @@
 <!-- footer  -->
 <app-bottom-navigation (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 <!-- /footer -->
-
-<span data-toggle="modal" #enablepopup data-target="#signuplogin"></span>
-
-<!-- signup_login modal -->
-<div class="modal fade" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true">
-  <!-- modal-body -->
-  <div class="" role="document">
-    <!-- modal content -->
-    <div class="row center_flex h100p">
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 modal_inner">
-        <form>
-          <div class="pfy_sl_modal">
-
-            <div class="row dpfys_login_signup">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <button type="submit" class="btn btn_pfys_login_signup bpfys_01" (click)="loginpage()">
-                  Sign up to unlock this feature
-                </button>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="fw_400 fs_12px lh_140p fc_ffffff tcenter mtb0px">
-                  Already a user?
-                  <a class="fw_700 fs_12px lh_140p fc_ffffff underline" (click)="loginpage()">
-                    Login here
-                  </a>
-                </h4>
-              </div>
-            </div>
-
-            <div class="row pfy_ocw">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4 class="fw_700 fs_12px lh_14px fc_ffffff ls_pt12em mtb0px tcenter">
-                  OR CONNECT WITH
-                </h4>
-              </div>
-            </div>
-
-            <span #closepopup data-dismiss="modal"></span>
-
-            <div class="row center_flex">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl0 tcenter">
-                  <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/facebook_as.svg"
-                      (click)="fbLogin()" class="img-responsive">
-                  </button>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
-                  <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/google_as.svg"
-                      (click)="googleLogin()" class="img-responsive">
-                  </button>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0 tcenter">
-                  <button type="button" class="btn btn-default btn_as_sl">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/apple_as.svg"
-                      (click)="signInWithApple()" class="img-responsive">
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- /modal content -->
-  </div>
-  <!-- /modal-body -->
-</div>
-<!-- /signup_login modal -->
-
-<!-- welcome popup -->
-<div class="modal fade" id="modal_popup" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered center_flex" role="document">
-    <div class="modal-content popup_01">
-      <div class="modal-header b0">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <button type="button" #closemodal class="btn_popup_close m0px" data-dismiss="modal" aria-label="Close"
-              style="cursor:pointer;">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white_01.svg" alt=""
-                class="img-responsive fright">
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="modal-body">
-        <!-- modal content -->
-        <!-- <div class="row mt6px">
-          <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/logo/logo_favicon_01.svg" alt=""
-              class="img-responsive">
-          </div>
-        </div> -->
-        <div class="row mt24px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h4 class="fw_700 fs_24px lh_28px fc_ffffff tcenter mt0px">
-              Welcome!
-            </h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h4 class="fw_400 fs_14px lh_16px fc_ffffff tcenter">
-              {{alertMsg}}
-              <!-- Begin with the free introduction modules and then follow your interest. Read a story, listen to a podcast, watch a video, or read a blog. Discover how wisdom can help you be successful - as a person, and in the world. -->
-            </h4>
-          </div>
-        </div>
-        <!-- /modal content -->
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /welcome popup -->

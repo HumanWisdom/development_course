@@ -1,0 +1,591 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Find answers
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+            <div class="mt30px">
+
+              <ul class="nav nav-tabs fqant flex_ai mt30px">
+                <li  [ngClass]="getActiveClass('why-do-i')">
+                  <a (click)="routeToTab('why-do-i')">
+                    Why do I ... ?
+                  </a>
+                </li>
+                <li  [ngClass]="getActiveClass('how-can-i')">
+                  <a (click)="routeToTab('how-can-i')">
+                    How can I ... ?
+                  </a>
+                </li>                  
+              </ul>
+
+              <div class="tab-content mt30px">
+                <div class="tab-pane fade" [ngClass]="{'in' :  (defaultUrl == 'why-do-i'),'active' :  (defaultUrl == 'why-do-i') }">
+                  <div class="div_fq">
+                    <div class="row mt40px mb40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                          Many of our thoughts and feelings arise spontaneously, or as an automatic reaction to what is happening around us. By understanding why we think or feel the way we do, we can think clearly, understand others better, and be happier.
+                        </h4>
+                      </div>
+                    </div>
+      
+                    <a routerLink="why-do-i-a01">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do we have different opinions about the same fact?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a02">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I feel envious?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a03">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I get angry and struggle to control my anger?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a04">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I feel bad when someone criticizes my country or religion?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a05">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why am I critical of myself?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a06">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why are people selfish?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a07">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I feel the need to feel listened to and be important?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a08">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do we drink alcohol, smoke, or take drugs?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a09">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I want something, and lose interest as soon as I get it?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a10">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do we feel sad when a pet or a person we are close to dies?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a11">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I feel lonely?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a12">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I worry about what others think of me?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="why-do-i-a13">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Why do I feel bored?
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div id="tab2" class="tab-pane fade " [ngClass]="{'in' :  (defaultUrl == 'how-can-i') ,'active' :  (defaultUrl == 'how-can-i')}">
+                  <div class="div_fq">
+                    <div class="row mt40px mb40px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                          Life is full of challenges and sometimes we can struggle to cope. Explore fresh ways of overcoming these challenges with a calm mind. 
+                        </h4>
+                      </div>
+                    </div>
+      
+                    <a routerLink="how-can-i-a01">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Be less stressed
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a02">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Be happier
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a03">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Learn to listen and speak better
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a04">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Have happier relationships
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a05">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Accept criticism without getting hurt.
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a06">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Feel good about myself
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a07">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Be successful, and meet failure
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a08">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Feel calm
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a09">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Have a healthy relationship with food
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a10">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Deal with bullying
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a11">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Deal with an unhelpful habit or addiction
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a12">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Be less anxious
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a13">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Overcome the fear of dying
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a14">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              Be a better leader
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+
+                    <a routerLink="how-can-i-a15" (click)="youtube('nPhY6kiBL8c')">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                            <h4 class="mtb0px fw_400 fs_15px lh_150p fc_e58d82 ellipsis">
+                              How can I learn to forgive others
+                            </h4>
+                          </div>
+          
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="pagebreak"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
+<!-- /footer -->

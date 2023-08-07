@@ -1,19 +1,11 @@
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [moduleName]="'Breathing Exercises'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
   <form>                                
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Breathing Exercises
-        </h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
           Follow Olivia Preye as she demonstrates some simple breathing exercises.They can  calm your mind, and are an anchor to prevent you getting lost in the sea of your thoughts and feelings
         </h4>
@@ -23,249 +15,257 @@
     <br>
 
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
         <a [routerLink]="['/adults/breathing', breathingR]" *ngIf="lastvisited">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_teal" data-dismiss="modal">Continue where you left</button>
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
-        <!-- <a routerLink="/adults/breathing/s29002">
-          <button type="button" class="btn btn_default mb0 txt_teal" data-dismiss="modal">Start from the beginning</button>
-        </a> -->
       </div>
     </div>                    
 
     <br>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="title_content">
           CONTENTS
         </h4>
       </div>
     </div>
 
-    <!-- video row -->
-    <a routerLink="/adults/breathing/s29002">
-      <div class="row crow box bg_teal p0">
-        <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_01.png" alt="" class="p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-        </div>        
+    <div class="toc_adiv">
 
-        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Exercise #1
-            </h6>                    
-          </div>  
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h4 class="session_name mtb0px">
-                Introduction
-              </h4>    
+      <!-- video row -->
+      <a routerLink="/adults/breathing/s29002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_01.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Exercise #1
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Introduction
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  02:00
+                </h4>
+              </div>
+              
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                2 mins
-              </h4>    
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
-          </div>   
-        </div>                        
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/breathing/s29003">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_02.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Exercise #2
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Notice the Temperature
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  02:00
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/breathing/s29004">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_03.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Exercise #3
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Smooth, Slow Exhale
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  02:00
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/breathing/s29005">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_04.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Exercise #4
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Alternate Nostril Breathing
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  05:00
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/breathing/s29006">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_05.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Exercise #5
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Humming Bee
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  03:00
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/breathing/s29007">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_06.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Exercise #6
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Hand on Chest & Abdomen
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  02:00
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/breathing/s29008">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_07.png" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Exercise #7
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Balancing
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  02:00
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
       </div>
-    </a> 
-    <!-- /video row -->
-
-    <!-- video row -->
-    <a routerLink="/adults/breathing/s29003">
-      <div class="row crow box bg_teal p0">
-        <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_02.png" alt="" class="p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-        </div>        
-
-        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Exercise #2
-            </h6>                    
-          </div>  
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h4 class="session_name mtb0px">
-                Notice the Temperature
-              </h4>    
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                2 mins
-              </h4>    
-            </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
-    <!-- /video row -->
-
-    <!-- video row -->
-    <a routerLink="/adults/breathing/s29004">
-      <div class="row crow box bg_teal p0">
-        <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_03.png" alt="" class="p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-        </div>        
-
-        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Exercise #3
-            </h6>                    
-          </div>  
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h4 class="session_name mtb0px">
-                Smooth, Slow Exhale
-              </h4>    
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                2 mins
-              </h4>    
-            </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
-    <!-- /video row -->
-
-    <!-- video row -->
-    <a routerLink="/adults/breathing/s29005">
-      <div class="row crow box bg_teal p0">
-        <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_04.png" alt="" class="p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-        </div>        
-
-        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Exercise #4
-            </h6>                    
-          </div>  
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h4 class="session_name mtb0px">
-                Alternate Nostril Breathing
-              </h4>    
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                5 mins
-              </h4>    
-            </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
-    <!-- /video row -->
-
-    <!-- video row -->
-    <a routerLink="/adults/breathing/s29006">
-      <div class="row crow box bg_teal p0">
-        <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_05.png" alt="" class="p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-        </div>        
-
-        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Exercise #5
-            </h6>                    
-          </div>  
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h4 class="session_name mtb0px">
-                Humming Bee
-              </h4>    
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                3 mins
-              </h4>    
-            </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
-    <!-- /video row -->
-
-    <!-- video row -->
-    <a routerLink="/adults/breathing/s29007">
-      <div class="row crow box bg_teal p0">
-        <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_06.png" alt="" class="p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-        </div>        
-
-        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Exercise #6
-            </h6>                    
-          </div>  
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h4 class="session_name mtb0px">
-                Hand on Chest & Abdomen
-              </h4>    
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                2 mins
-              </h4>    
-            </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
-    <!-- /video row -->
-
-    <!-- video row -->
-    <a routerLink="/adults/breathing/s29008">
-      <div class="row crow box bg_teal p0">
-        <div class="col-md-3 col-sm-3 col-xs-3 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/breathing_exercises_07.png" alt="" class="p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 absolute_center_lt_video">
-        </div>        
-
-        <div class="col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Exercise #7
-            </h6>                    
-          </div>  
-          
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">                    
-              <h4 class="session_name mtb0px">
-                Balancing
-              </h4>    
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                2 mins
-              </h4>    
-            </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
-    <!-- /video row -->
+    </div>
+    <!-- /hr -->
 
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
     

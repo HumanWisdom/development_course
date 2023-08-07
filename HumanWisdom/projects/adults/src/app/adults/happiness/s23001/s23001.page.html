@@ -1,43 +1,11 @@
-<!-- top navigation -->
-<!-- <div class="top_nav ml0 tcenter inav">
-  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg" alt="" class="img-responsive iw100">
-  <div class="nav_menu absolute_top p20px">
-      <nav>          
-          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
-            <li class="">                    
-                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
-                  <h4 class="btn_back_white">
-                    Back
-                  </h4> 
-                </a>                  
-            </li>
-            
-            <li class="lishare">
-              <a  href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
-              </a>
-             
-            </li>
-          </ul>
-      </nav>
-  </div>
-</div> -->
-<!-- /top navigation -->
 <app-toc-header [moduleName]="'Happiness'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
-  <form>                                
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Happiness
-        </h1>
-      </div>
-    </div>
+  <form>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
           Happiness is the one thing all of us want, and drives so many of our actions.
           <br>
@@ -47,138 +15,151 @@
       </div>
     </div>
 
-    <br>
-
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                        
         <a [routerLink]="['/adults/happiness', hR]" *ngIf="lastvisited">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_red_pink" data-dismiss="modal">Continue where you left</button>
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
-        <!-- <a routerLink="/adults/happiness/s23002">
-          <button type="button" class="btn btn_default mb0 txt_red_pink" data-dismiss="modal">Start from the beginning</button>
-        </a> -->
       </div>
-    </div>                    
-
-    <br>
+    </div>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="title_content">
           CONTENTS
         </h4>
       </div>
     </div>
 
-    <a routerLink="/adults/happiness/s23002">
-      <div class="row crow box bg_red_pink">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #1
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              What is happiness?
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              15 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>                
+    <div class="toc_adiv">
+      <a routerLink="/adults/happiness/s23002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                What is happiness?
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                15:00
+              </h4>
+            </div>
 
-    <a routerLink="/adults/happiness/s23031">
-      <div class="row crow box bg_red_pink">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #2
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Exploring happiness and pleasure
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              12 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
 
-    <a routerLink="/adults/happiness/s23079">
-      <div class="row crow box bg_red_pink">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #3
-          </h6>                    
+          </div>
         </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              What makes us unhappy?
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              13 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>
+      </a>
 
-    <a routerLink="/adults/happiness/s23106">
-      <div class="row crow box bg_red_pink">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #4
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Exploring contentment and joy
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              12 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>
+      <a routerLink="/adults/happiness/s23031">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #2
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Exploring happiness and pleasure
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                12:00
+              </h4>
+            </div>
 
-    <a routerLink="/adults/happiness/s23142">
-      <div class="row crow box bg_red_pink">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #5
-          </h6>                    
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
         </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              What can we do to be happier?
-            </h4>    
+      </a>
+
+      <a routerLink="/adults/happiness/s23079">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #3
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                What makes us unhappy?
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                13:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
           </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              27 mins
-            </h4>    
+        </div>
+      </a>
+
+      <a routerLink="/adults/happiness/s23106">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #4
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Exploring contentment and joy
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                12:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
           </div>
-        </div>                    
+        </div>
+      </a>
+
+      <a routerLink="/adults/happiness/s23142">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #5
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                What can we do to be happier?
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                27:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
       </div>
-    </a>
+    </div>
+    <!-- /hr -->
 
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
     
@@ -186,5 +167,4 @@
 
 </app-index-content> 
 
-<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <app-index-footer></app-index-footer>

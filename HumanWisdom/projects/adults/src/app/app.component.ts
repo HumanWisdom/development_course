@@ -78,6 +78,7 @@ export class AppComponent implements OnDestroy {
     });
 
     this.initializeApp();
+    this.getFreeScreens();
   }
 
   prepareRoute(outlet: RouterOutlet) {
@@ -298,5 +299,24 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.navigationSubs.unsubscribe();
+  }
+
+  getFreeScreens(){
+    if(localStorage.getItem("freeScreens") == null ||  localStorage.getItem("freeScreens") == 'undefined'  || localStorage.getItem("freeScreens") == undefined ){
+       this.services.freeScreens().subscribe((res)=>{
+        if(res){
+          let x = []
+          let result = res.map(a => a.FreeScrs);
+          let arr;
+          result = result.forEach(element => {
+            if (element && element.length !== 0) {
+               x.push(element.map(a => a.ScrNo))
+              arr = Array.prototype.concat.apply([], x);
+            }
+          })
+          localStorage.setItem("freeScreens", JSON.stringify(arr))
+        }
+       });
+    }
   }
 }

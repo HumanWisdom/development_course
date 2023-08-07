@@ -439,6 +439,34 @@ const routes: Routes = [
     path: 'feel-better-now',
     loadChildren: () => import('./feel-better-now/feel-better-now.module').then( m => m.FeelBetterNowModule)
   },
+  {
+    path: 'pathway',
+    loadChildren: () => import('./pathway/pathway.module').then( m => m.PathwayModule)
+  },
+  {
+    path: 'select-a-topic-to-explore',
+    loadChildren: () => import('./select-a-topic-to-explore/select-a-topic-to-explore.module').then( m => m.SelectATopicToExplorePageModule)
+  },
+  {
+    path: 'find-inspiration',
+    loadChildren: () => import('./find-inspiration/find-inspiration.module').then( m => m.FindInspirationPageModule)
+  },
+  {
+    path: 'change-topic',
+    loadChildren: () => import('./change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
+  },
+  {
+    path: 'find-answers/:url',
+    loadChildren: () => import('./find-answers/find-answers.module').then( m => m.FindAnswersModule)
+  },
+  {
+    path:'change-topic',
+    loadChildren: () => import('./change-topic/change-topic.module').then(m=>m.ChangeTopicPageModule)
+  },
+  {
+    path: 'videopage/:videolink',
+    component: S3VideoComponent
+  }
 ];
 
  @NgModule({

@@ -1,243 +1,226 @@
-<!-- top navigation -->
-<!-- <div class="top_nav ml0 tcenter inav">
-  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/leadership.jpg" alt="" class="img-responsive iw100">
-  <div class="nav_menu absolute_top p20px">
-      <nav>          
-          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
-            <li class="">                    
-                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
-                  <h4 class="btn_back_white">
-                    Back
-                  </h4> 
-                </a>                  
-            </li>   
-            
-            <li class="lishare">                    
-              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
-              </a>                  
-            </li>
-          </ul>
-      </nav>
-  </div>
-</div> -->
-<!-- /top navigation -->
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [moduleName]="'Leadership'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
-  <form>                                
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Leadership
-        </h1>
-      </div>
-    </div>
+  <form> 
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
           Great leaders are made, not born. Leadership skills can be developed, and are a byproduct of wisdom. The quality of leadership determines the success of countries and organisations. Great leaders can transform organisations, and poor leadership can destroy them. In this module we explore how to develop your leadership skills, how to meet common challenges, and how to be a great leader who leads with wisdom and compassion.
         </h4>
       </div>
     </div>
 
-    <br>
-
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
         <a [routerLink]="['/adults/leadership', lR]" *ngIf="lastvisited">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_blue" data-dismiss="modal">Continue where you left</button>
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
-        <!-- <a routerLink="/adults/leadership/s59002">
-          <button type="button" class="btn btn_default mb0 txt_blue" data-dismiss="modal">Start from the beginning</button>
-        </a> -->
       </div>
-    </div>                    
-
-    <br>
+    </div>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="title_content">
           CONTENTS
         </h4>
       </div>
     </div>
 
-    <a routerLink="/adults/leadership/s59002">
-      <div class="row crow box bg_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #1
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              What is wisdom leadership?
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              13 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>                
-
-    <a routerLink="/adults/leadership/s59037">
-      <div class="row crow box bg_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #2
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Developing leadership skills - Part 1
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              19 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>
-
-    <a routerLink="/adults/leadership/s59063">
-      <div class="row crow box bg_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #3
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Developing leadership skills - Part 2
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              14 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>  
-    
-    <a routerLink="/adults/leadership/s59087">
-      <div class="row crow box bg_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #4
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Common leadership challenges
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              18 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>  
-
-    <a routerLink="/adults/leadership/s59115">
-      <div class="row crow box bg_blue">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #5
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Being a great leader
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              30 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>  
-    <a routerLink="/adults/leadership/s59170p1">
-      <div class="row box_01 bg_blue p0">
-        <div  
-          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
-          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/09.svg);">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
-        </div>        
-
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <h6 class="session_no mtb0px">
-              Session #6
-            </h6>                    
-          </div>
-
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
-              <h4 class="session_name mtb0px">
-                Leadership with wisdom
-              </h4>    
+    <div class="toc_adiv">
+      <a routerLink="/adults/leadership/s59002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                What is wisdom leadership?
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                13:00
+              </h4>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                35:25 min
-              </h4>    
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
 
-    <a routerLink="/adults/leadership/s59170p2">
-      <div class="row box_01 bg_blue p0">
-        <div  
-          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
-          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/36.svg);">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
-        </div>        
-
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <h6 class="session_no mtb0px">
-              Session #7
-            </h6>                    
           </div>
+        </div>
+      </a>
 
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
-              <h4 class="session_name mtb0px">
-                To be a better leader, understand your ego.
-              </h4>    
+      <a routerLink="/adults/leadership/s59037">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #2
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Developing leadership skills - Part 1
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                19:00
+              </h4>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                55:15 min
-              </h4>    
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
-          </div>   
-        </div>                        
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/leadership/s59063">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #3
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Developing leadership skills - Part 2
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                14:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/leadership/s59087">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #4
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Common leadership challenges
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                18:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/leadership/s59115">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #5
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Being a great leader
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                30:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <!-- video row -->
+      <a routerLink="/adults/leadership/s59170p1">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/09.svg" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #6
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Leadership with wisdom
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  35:25
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/leadership/s59170p2">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/36.svg" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #7
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  To be a better leader, understand your ego.
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  55:15
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
       </div>
-    </a> 
-
-
+    </div>
+    <!-- /hr -->
 
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
 
@@ -245,5 +228,4 @@
 
 </app-index-content> 
 
-<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <app-index-footer></app-index-footer>

@@ -25,7 +25,7 @@
 
             <div class="div_ru">
 
-              <a>
+              <a *ngIf="resume.length !== 0">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex" (click)="routeResume()">
 
@@ -49,7 +49,7 @@
                 </div>
               </a>
 
-              <a>
+              <a routerLink="/adults/feel-better-now">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -70,16 +70,16 @@
                 </div>
               </a>
 
-              <a>
+              <a routerLink="/adults/select-a-topic-to-explore">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
-                        Select a topic to explore
+                        Explore a topic in depth
                       </h4>
                       <h4 class="mtb0px fw_400 fs_12px lh_140p fc_ffffff">
-                        Select from 8 in-depth topics covering every aspect of life
+                        Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
                       </h4>
                     </div>
 
@@ -91,7 +91,7 @@
                 </div>
               </a>
 
-              <a>
+              <a routerLink="/adults/pathway">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -112,7 +112,7 @@
                 </div>
               </a>
 
-              <a>
+              <a routerLink="/adults/find-inspiration">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -137,7 +137,7 @@
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <a class="">
+                <a class="" routerLink="/adults/adult-dashboard">
                   <h4 class="mtb0px fw_400 fs_15px lh_130p fc_ffffff tcenter underline">
                     Go to my dashboard
                   </h4>

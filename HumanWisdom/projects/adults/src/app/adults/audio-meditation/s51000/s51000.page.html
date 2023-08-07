@@ -1,107 +1,132 @@
 <!-- top navigation -->
-<!-- <div class="top_nav ml0 tcenter inav">
-  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/guided_audio_meditation.jpg" alt="" class="img-responsive iw100">
-  <div class="nav_menu absolute_top p20px">
-      <nav>          
-          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
-            <li class="">                    
-                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
-                  <h4 class="btn_back_white">
-                    Back
-                  </h4> 
-                </a>                  
-            </li>   
-            
-            <li class="lishare">                    
-              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
-              </a>                  
-            </li>
-          </ul>
-      </nav>
+<div class="tn_bv">
+
+  <div class="row center_flex bg_bv">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png" alt="" class="img-responsive w100">
+    </div>
   </div>
-</div> -->
-<!-- /top navigation -->
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
-<app-index-content>
-
-  <form>
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          Audio Meditations
-        </h1>
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 toc_nvmenu_v3">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
+        <a (click)="goBack()" class="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0">
+        </a>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h4 class="txt_comparison">
-          <!-- In this module you will find a series of audio meditations. You can listen to them anywhere. -->
-          Listen to this ever expanding list of meditations covering a wide variety of subjects. They help you feel better now and then take you deeper to explore the root cause of problems for lasting benefit.
-        </h4>
+  
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+        <a class="">
+          <h4 class="mtb0px fs_18px fw_600 lh_130p fc_ffffff tcenter">
+            Audio meditation
+          </h4>
+        </a>
       </div>
-    </div>
-
-    <br>
-
-    <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-        <a [routerLink]="['/adults/audio-meditation', gamR]" *ngIf="lastvisited">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_dark_blue" data-dismiss="modal">Continue
-            where you left</button>
+  
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+        <a id="btnShare" (click)="share()" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                       
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_round.svg" alt="" class="p0">
         </a>
       </div>
     </div>
+  </div>
+</div>
+<!-- /top navigation -->
 
-    <br>
+<!-- <app-toc-header [moduleName]="'Guided Audio Meditation'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header> -->
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h4 class="title_content">
-          CONTENTS
-        </h4>
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col imain_container mc_03">				
+  <!-- Class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 bg_292d56 sc_01">
+        <div class="x_panel p0 c_zambezi ">
+          <div class="x_content p0 tleft">
+
+            <form> 
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mt0px mb15px fs_18px fw_600 lh_150p fc_ffffff">
+                    Audio Meditation
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="txt_comparison">
+                    In this module you will find a series of guided audio meditations. You can listen to them anywhere.
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row center_flex">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
+                  <a [routerLink]="['/adults/guided-meditation', gamR]" *ngIf="lastvisited">
+                    <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+                  </a>
+                </div>
+              </div> 
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="title_content">
+                    CONTENTS
+                  </h4>
+                </div>
+              </div>
+              
+              <div class="toc_adiv">
+                <!-- audio row -->
+                <a *ngFor="let data of audiomeditation; let i=index" (click)="audioevent(data)">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      
+                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                          Meditation #{{data['RowID']}}
+                        </h4>
+                        <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                          {{data['Title']}}
+                        </h4>
+                        <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                          {{data['Timing']}} mins
+                        </h4>
+                      </div>
+          
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+          
+                    </div>
+                  </div>
+                </a>
+                <!-- /audio row -->
+              </div>
+
+              <!-- hr -->
+              <!-- <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div> -->
+              <!-- /hr -->
+
+              <!-- <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles> -->
+
+            </form>    
+
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+  <!--/Class --> 
+</div>
+<!-- /page content -->
 
-    <!-- audio row -->
-    <a *ngFor="let data of audiomeditation; let i=index" (click)="audioevent(data)">
-      <div class="row crow box bg_dark_blue p0">
-        <div class="col-md-2 col-sm-2 col-xs-2 p0 landing_tile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg" alt=""
-            class="p0 absolute_center_lt_audio">
-        </div>
-
-        <div class="col-md-10 col-sm-10 col-xs-10 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h6 class="session_no mtb0px">
-              Meditation #{{data['RowID']}}
-            </h6>
-          </div>
-
-          <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10">
-              <h4 class="session_name mtb0px">
-                {{data['Title']}}
-              </h4>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">
-              <h4 class="session_time mtb0px">
-                {{data['Timing']}} mins
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
-    <!-- /audio row -->
-
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
-
-  </form>
-
-</app-index-content>
-
-<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <app-index-footer></app-index-footer>

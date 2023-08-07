@@ -1,0 +1,13 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+ <form>
+   <h1 class="txt1">
+    The fear of being hurt makes us keep our relationships superficial, and our innermost thoughts to ourselves. That is like blocking out the sun, and we do not experience the beauty of feeling close to another person
+     </h1>
+   <div class="clearfix"></div>
+ </form>
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
+

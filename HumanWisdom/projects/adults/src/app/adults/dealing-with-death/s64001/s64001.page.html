@@ -1,146 +1,122 @@
-<!-- top navigation -->
-<!-- <div class="top_nav ml0 tcenter inav">
-  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/dealing_with_death.jpg" alt="" class="img-responsive iw100">
-  <div class="nav_menu absolute_top p20px">
-      <nav>          
-          <ul class="nav navbar-nav navbar_left cnav inavbar flex_align">
-            <li class="">                    
-                <a (click)="goBack()" class="cuser-profile dropdown-toggle c_silver_chalice " data-toggle="dropdown" aria-expanded="false">                        
-                  <h4 class="btn_back_white">
-                    Back
-                  </h4> 
-                </a>                  
-            </li>   
-            
-            <li class="lishare">                    
-              <a href="javascript:;" class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">                                        
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white.svg" alt="" class="p0">
-              </a>                  
-            </li>
-          </ul>
-      </nav>
-  </div>
-</div> -->
-<!-- /top navigation -->
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [moduleName]="'Fear of Death'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <app-index-content>
 
-  <form>                                
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 class="module_title">
-          <!-- Dealing with Death -->
-          Fear of Death
-        </h1>
-      </div>
-    </div>
+  <form>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
           Most of us fear death. We don’t want to talk about it. The fear of death can rob us of the joy of living. We explore how we can overcome our fear of dying and in doing so can live fully in the present, so our lives are rich and without regret. How would you live if you knew your time on earth was limited?
         </h4>
       </div>
     </div>
 
-    <br>
-
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
         <a [routerLink]="['/adults/dealing-with-death', dealingwithdeathResume]" *ngIf="lastvisited">
-          <button type="button" class="btn btn-success mb0 btn_begin_here bg_teal" data-dismiss="modal">Continue where you left</button>
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
-        <!-- <a routerLink="/adults/dealing-with-death/s64002">
-          <button type="button" class="btn btn_default mb0 txt_teal" data-dismiss="modal">Start from the beginning</button>
-        </a> -->
       </div>
-    </div>                    
-
-    <br>
+    </div>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="title_content">
           CONTENTS
         </h4>
       </div>
     </div>
 
-    <a routerLink="/adults/dealing-with-death/s64002">
-      <div class="row crow box bg_teal">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #1
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Overcoming the fear of dying
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              25 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>                
-
-    <a routerLink="/adults/dealing-with-death/s64040">
-      <div class="row crow box bg_teal">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <h6 class="session_no mtb0px">
-            Session #2
-          </h6>                    
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <div class="col-md-10 col-sm-10 col-xs-10">                    
-            <h4 class="session_name mtb0px">
-              Living with an awareness of death, helps us celebrate life
-            </h4>    
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-            <h4 class="session_time mtb0px">
-              16 mins
-            </h4>    
-          </div>
-        </div>                    
-      </div>
-    </a>
-    <a routerLink="/adults/dealing-with-death/s64071p1">
-      <div class="row box_01 bg_teal p0">
-        <div  
-          class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 eindex_img" 
-          style="background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/27.svg);">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_video.svg" alt="" class="p0 eindex_img_playicon">
-        </div>        
-
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10px">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <h6 class="session_no mtb0px">
-              Session #3
-            </h6>                    
-          </div>
-
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-md-10 col-sm-10 col-xs-10 p0">                    
-              <h4 class="session_name mtb0px">
-                Exploring death, for a richer life
-              </h4>    
+    <div class="toc_adiv">
+      <a routerLink="/adults/dealing-with-death/s64002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Overcoming the fear of dying
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                25:00
+              </h4>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 p0">   
-              <h4 class="session_time mtb0px">
-                42:58 min
-              </h4>    
-            </div>
-          </div>   
-        </div>                        
-      </div>
-    </a> 
 
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/dealing-with-death/s64040">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #2
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+                Living with an awareness of death, helps us celebrate life
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                16:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <!-- video row -->
+      <a routerLink="/adults/dealing-with-death/s64071p1">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/27.svg" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #3
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Exploring death, for a richer life
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  42:58
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
 
     <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
     
@@ -148,5 +124,4 @@
 
 </app-index-content> 
 
-<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <app-index-footer></app-index-footer>

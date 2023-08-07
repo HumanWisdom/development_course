@@ -8,11 +8,11 @@ import {Location } from '@angular/common'
   styleUrls: ['./s29000.page.scss'],
 })
 
-export class S29000Page implements OnInit,OnDestroy 
+export class S29000Page implements OnInit,OnDestroy
 {
   bg_tn="bg_teal"
   bg_cft="bg_teal"
-  bg="anger_w1"  
+  bg="anger_w1"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -23,8 +23,8 @@ export class S29000Page implements OnInit,OnDestroy
   endTime:any
   totalTime:any
   bookmark:any
-  bookmarkList=[] 
-  breathingR=sessionStorage.getItem("breathingR")
+  bookmarkList=[]
+  breathingR=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/29.png"
   tocColor="grey"
   lastvisited = false;
@@ -35,15 +35,16 @@ export class S29000Page implements OnInit,OnDestroy
     private router: Router,
     private service:AdultsService,
     private location:Location
-  ) 
-  { 
+  )
+  {
+    this.service.setmoduleID(29);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
     let arraythree = []
-    if(story?.length <= 2) 
+    if(story?.length <= 2)
     {
-      story.forEach((e) => 
+      story.forEach((e) =>
       {
         arraythree.push(e)
       })
@@ -51,13 +52,13 @@ export class S29000Page implements OnInit,OnDestroy
     }
     else
     {
-      story?.forEach((e) => 
+      story?.forEach((e) =>
       {
-        if(arraythree.length < 2) 
+        if(arraythree.length < 2)
         {
           arraythree.push(e)
         }
-        else 
+        else
         {
           splitarr.push(arraythree)
           arraythree = []
@@ -70,18 +71,18 @@ export class S29000Page implements OnInit,OnDestroy
     // this.stories = JSON.parse(this.stories)
   }
 
-  ngOnInit() 
+  ngOnInit()
   {
-    // continue where you left    
+    // continue where you left
     let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
+    if(last === 'T')
     {
       this.lastvisited = true;
     }
-    else 
+    else
     {
       this.lastvisited = false;
-    }    
+    }
     // /continue where you left
     localStorage.setItem("moduleId",JSON.stringify(29))
     this.moduleId=localStorage.getItem("moduleId")
@@ -126,7 +127,7 @@ export class S29000Page implements OnInit,OnDestroy
       "screenType":this.screenType,
       "timeSpent":this.totalTime
     }).subscribe(res=>
-      { 
+      {
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })

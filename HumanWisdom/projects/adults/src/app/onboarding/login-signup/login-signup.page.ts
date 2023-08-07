@@ -25,6 +25,7 @@ export class LoginSignupPage implements OnInit {
   @ViewChild("closemodal") closemodal: ElementRef;
   @ViewChild("enabletab") enabletab: ElementRef;
   @ViewChild("enableotpmodal") enableotpmodal: ElementRef;
+  @ViewChild("closeotpmodal") closeotpmodal: ElementRef;
 
   user: any;
   userId: any;
@@ -239,8 +240,9 @@ export class LoginSignupPage implements OnInit {
               "signupfirst",
               'T'
             );
+            this.closeotpmodal.nativeElement.click();
             window.location.reload();
-            // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+          //  this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
@@ -396,12 +398,12 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/search"], {
+                        this.router.navigate(["/adults/change-topic"], {
                           state: {
                             routedFromLogin: true,
                           }
                         });
-                      }else {
+                      } else {
                         this.router.navigate(["/adults/repeat-user"]);
                       }
                     }
@@ -569,7 +571,7 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/search"], {
+                        this.router.navigate(["/adults/change-topic"], {
                           state: {
                             routedFromLogin: true,
                           }
@@ -618,6 +620,11 @@ export class LoginSignupPage implements OnInit {
           this.email = "";
           this.password = "";
         } else {
+          const accessObj:any = window;
+            (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
+            (accessObj)?.Moengage.add_email(this.email);
+            (accessObj)?.Moengage.add_first_name(res.Name);
+          })
           this.loginResponse = res;
           localStorage.setItem("socialLogin", "F");
           localStorage.setItem("isloggedin", "T");
@@ -779,7 +786,7 @@ export class LoginSignupPage implements OnInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        this.router.navigate(["/adults/search"], {
+                        this.router.navigate(["/adults/change-topic"], {
                           state: {
                             routedFromLogin: true,
                           }

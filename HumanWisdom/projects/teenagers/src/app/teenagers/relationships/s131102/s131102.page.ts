@@ -13,7 +13,7 @@ export class S131102Page implements OnInit
 
   bg_tn = "bg_purple"
   bg_cft = "bg_purple"
-  bg = "purple_w3"
+  bg = "purple_w7"
   hint = ""
   toc = "/relationships/s131001"
   path = this.router.url

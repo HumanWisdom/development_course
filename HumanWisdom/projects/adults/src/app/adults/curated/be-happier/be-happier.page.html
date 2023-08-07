@@ -1,167 +1,159 @@
 <!-- top navigation -->
-<!-- unscrolled header -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 flex_ai mdp_header onscrollbg unscroll">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a (click)="goBack()" class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt=""
-          class="p0">
-      </a>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">                          
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>  
     </div>
-
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-      <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <h1 class="fw_500 fs_16px lh_19px fc_ffffff tcenter mtb0px">
-          Personalised for you
-        </h1>
-      </a>
+    
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter ws_pre">
+        Be happier
+      </h1>  
     </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
     </div>
   </div>
 </div>
-<!-- /unscrolled header -->
-
-<!-- onscrolled header -->
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 flex_ai mdp_header onscrollbg scroll">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a (click)="goBack()" class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="p0">
-      </a>
-    </div>
-
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-      <a class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <h1 class="fw_500 fs_16px lh_19px fc_5d5d5d mtb0px tcenter">
-          Be happier
-        </h1>
-      </a>
-    </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    </div>
-  </div>
-</div>
-<!-- /onscrolled header -->
 <!-- /top navigation -->
 
-<app-bg-video></app-bg-video>
-
 <!-- page content -->
-<div class="right_col safari mc_01">
-  <!-- Class -->
+<div class="right_col mc_01">
+  <!-- class -->
   <div class="cw100p">
-
-    <div class="row center_flex safari_dflex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 dm sc_01">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form>
 
-              <div class="dm_title">
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_700 fs_24px lh_30px fc_5d5d5d mtb0px">
-                      Be happier
-                    </h4>
-                  </div>
-                </div>
+            <div class="mt40px">
 
-                <div class="row dm_desc">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="fw_400 fs_16px lh_130p fc_5d5d5d mtb0px">
-                      We all want to be happy and at peace, but often find that difficult. We cannot control external
-                      events or other people, but can control how we respond. Living with wisdom allows us to explore
-                      what gets in the way of being happy now.
-                    </h4>
-                  </div>
-                </div>
-
-                <div class="row mt30px">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-2 col-sm-3 col-xs-3 circular-player-container">
-                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dm_play.svg" alt="" class="crimg"> -->
-
-                      <ngx-circular-player id="aud3" strokeColor="#FFC455"
-                        source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/be_happier.mp3"
-                        progressStrokeColor=rgba(173,173,173,0.25)>
-                      </ngx-circular-player>
-                    </div>
-                    <div class="col-md-8 col-sm-6 col-xs-6">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="fw_700 fs_18px lh_22px fc_5d5d5d mtb0px">
-                          Introduction
-                        </h4>
-                      </div>
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="fw_400 fs_15px lh_22px fc_5d5d5d mtb0px">
-                          01:03
-                        </h4>
-                      </div>
-                    </div>
-                    <div class="col-md-2 col-sm-3 col-xs-3 tright">
-                      <a routerLink="/adults/curated/be-happier-transcript">
-                        <button class="btn flex_ai btn_pn">
-                          <img
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dm_transcript.svg"
-                            alt="" class="crimg">
-                        </button>
-                      </a>
-                    </div>
-                  </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt0px mb15px">
+                  <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">
+                    Be happier
+                  </h4>
                 </div>
               </div>
 
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                    We all want to be happy and at peace, but often find that difficult. We cannot control external events or other people, but can control how we respond. Living with wisdom allows us to explore what gets in the way of being happy now.
+                  </h4>
+                </div>
+              </div>
+
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
+
+              <!-- audio player -->
+              <div class="row mb60px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <ngx-circular-player 
+                      id="aud4" 
+                      strokeColor="#FFFFFF"
+                      source="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/audios/be_happier.mp3"
+                      progressStrokeColor=rgba(229,141,130,1)>
+                    </ngx-circular-player>
+                  </div>
+                  
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="fw_400 fs_12px lh_140p fc_64688e mtb0px">
+                        01:03
+                      </h4>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
+                    <a routerLink="/adults/curated/be-happier-transcript">
+                      <button class="btn flex_ai btn_pn">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" class="img-responsive">
+                      </button>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <!-- /audio player -->
+
               <!-- feel better now -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01 dm_panel">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_ghn" aria-expanded="true">
-
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_fbn" aria-expanded="true">
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
-                                    Feel better now!
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                    Feel better now
                                   </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                  <a routerLink="/adults/feel-better-now/">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
+                                      View all
+                                    </h2>
+                                  </a>
                                 </div>
                               </div>
                             </div>
                           </a>
                         </h4>
                       </div>
-                      <div id="ca_ghn" class="panel-collapse collapse in">
-                        <div class="panel-body p0">
+                      <div id="ca_fbn" class="panel-collapse collapse in">
+                        <div class="panel-body">
 
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl5px pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="getsupport('/adults/get-support-now/s71001', 71)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/01.svg"
-                                    alt="Stress Management" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    Stress
-                                  </h4>
-                                </a>
+                          <div class="div_fbn">
+                            <a routerLink="/feel-better-now/stress">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Stress
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
                               </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="getsupport('/adults/get-support-now/s71002', 71)">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/get_help_now/02.svg"
-                                    alt="Solution for Anxiety" class="crimg">
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    Anxiety
-                                  </h4>
-                                </a>
+                            </a>
+              
+                            <a routerLink="/feel-better-now/anxiety">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Anxiety
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
                               </div>
-                            </div>
+                            </a>
                           </div>
 
                         </div>
@@ -173,140 +165,263 @@
               <!-- /accordion -->
               <!-- /feel better now -->
 
-              <!-- topics to explore -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_mte" aria-expanded="true">
-
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <div class="">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
-                                    Topics to explore
-                                  </h2>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="ca_mte" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
-
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv pl5px pr15px">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeHappiness(0)">
-                                  <div class="img-gradient">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/42.png"
-                                      alt="Happiness" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Happiness</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="happinessP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeLivingWithPeace(0)">
-                                  <div class="img-gradient">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/40.png"
-                                      alt="Living with Peace" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Living with Peace</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="livingwithpeaceP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routePleasure(0)">
-                                  <div class="img-gradient">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/30.png"
-                                      alt="Pleasure" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Pleasure</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="pleasureP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeInnerBoredom(0)">
-                                  <div class="img-gradient">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/27.png"
-                                      alt="Inner Boredom" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Inner Boredom</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="ibP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                                <a (click)="routeComparison(0)">
-                                  <div class="img-gradient">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/dashboard/vectorless/21.png"
-                                      alt="Comparison & Envy" class="ctimg">
-                                  </div>
-                                  <h4 class="tcenter txt31 attitle">Comparison & Envy</h4>
-                                  <div class="progress dprogress">
-                                    <div class="progress-bar" role="progressbar" [style.width]="comparisonP + '%'"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
                 </div>
               </div>
-              <!-- /accordion -->
-              <!-- /topics to explore -->
+              <!-- /hr -->
+
+              <!-- pathway -->
+              <!-- five dots -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 phbtns">
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+
+                  <a>
+                    <button type="button" class="btn"></button>
+                  </a>
+                </div>
+              </div>
+              <!-- /five dots -->
+  
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px mb15px">
+                  <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">
+                    PATHWAY
+                  </h4>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                    Delve deeper and explore these modules to overcome stress for the long term.
+                  </h4>
+                </div>
+              </div>
+  
+              <div class="row mt40px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
+                  
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="routeHappiness(0)">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                Happiness
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                5 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+  
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="routeLivingWithPeace(0)">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                Living with peace
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                2 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="routePleasure(0)">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/20.png" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                Pleasure
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                4 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+  
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="routeInnerBoredom(0)">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/56.png" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                Inner Boredom
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                2 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="routeComparison(0)">
+                      <div class="row box_v3_04">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+  
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/07.png" class="img-responsive">
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                Comparison & Envy
+                              </h4>
+                            </div>
+                          </div>  
+      
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                9 sessions
+                              </h4>
+                            </div>
+                          </div> 
+  
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+  
+                </div>
+              </div>
+              <!-- /pathway -->
+
+              <!-- go to pathway -->
+              <a routerLink="/pathway">
+                <div class="row mt30px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                      Go to PATHWAY
+                    </h4>
+                  </div>
+                </div>
+              </a>
+              <!-- /go to pathway -->
+
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
 
               <!-- life stories -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#ca_ls" aria-expanded="true">
-
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                     Life stories
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                   <a routerLink="/adults/wisdom-stories">
-                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
                                   </a>
@@ -317,130 +432,96 @@
                         </h4>
                       </div>
                       <div id="ca_ls" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
-
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv dinline_box">
-                              <!-- story 1 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0" (click)="toRead('37')">
-                                <a class="center_flex life_stories">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg"
-                                      alt="" class="w100 c150px">
+                        <div class="panel-body">
+                          
+                          <div class="ls">
+                            <a (click)="toRead('37')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
+                                  
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                                    <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                      A Checklist for Happiness
+                                    </h4>
 
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize">
-                                            A Checklist for Happiness
-                                          </h6>
-                                        </div>
-                                      </div>
-
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          There was a checklist to happiness. My f...
-                                        </h6>
-                                      </div>
-                                    </div>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      There was a checklist to happiness. My f...
+                                    </h4>
                                   </div>
-                                </a>
+                  
+                                </div>
                               </div>
-                              <!-- /story 1 -->
+                            </a>
 
-                              <!-- story 2 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0" (click)="toRead('49')">
-                                <a class="center_flex life_stories">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/daniel-norin-lBhhnhndpE0-unsplash.jpg"
-                                      alt="" class="w100 c150px">
+                            <a (click)="toRead('49')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
+                                  
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/daniel-norin-lBhhnhndpE0-unsplash.jpg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                                    <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                      It Makes Us Happy
+                                    </h4>
 
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize">
-                                            It Makes Us Happy
-                                          </h6>
-                                        </div>
-                                      </div>
-
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          Yusuf leaned into his beanbag, tired. He...
-                                        </h6>
-                                      </div>
-                                    </div>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      Yusuf leaned into his beanbag, tired. He...
+                                    </h4>
                                   </div>
-                                </a>
+                  
+                                </div>
                               </div>
-                              <!-- /story 2 -->
+                            </a>
 
-                              <!-- story 3 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0" (click)="toRead('26')">
-                                <a class="center_flex life_stories">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/ben-blennerhassett-L7JGC_bgWyU-unsplash.jpg"
-                                      alt="" class="w100 c150px">
+                            <a (click)="toRead('26')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
+                                  
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/ben-blennerhassett-L7JGC_bgWyU-unsplash.jpg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                                    <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                      The Monster was Called Depression.
+                                    </h4>
 
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize">
-                                            The Monster was Called Depression.
-                                          </h6>
-                                        </div>
-                                      </div>
-
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          Maria’s children & grandchildren were th...
-                                        </h6>
-                                      </div>
-                                    </div>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      Maria’s children & grandchildren were th...
+                                    </h4>
                                   </div>
-                                </a>
+                  
+                                </div>
                               </div>
-                              <!-- /story 3 -->
+                            </a>
 
-                              <!-- story 4 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 p0" (click)="toRead('50')">
-                                <a class="center_flex life_stories">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/jason-abdilla-Dfl6S3PIUvg-unsplash.jpg"
-                                      alt="" class="w100 c150px">
+                            <a (click)="toRead('50')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
+                                  
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/wisdom_stories/jason-abdilla-Dfl6S3PIUvg-unsplash.jpg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                                    <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                      5 Things To Be Grateful For.
+                                    </h4>
 
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize">
-                                            5 Things To Be Grateful For.
-                                          </h6>
-                                        </div>
-                                      </div>
-
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          Andre dragged himself off the couch, let...
-                                        </h6>
-                                      </div>
-                                    </div>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      Andre dragged himself off the couch, let...
+                                    </h4>
                                   </div>
-                                </a>
+                  
+                                </div>
                               </div>
-                              <!-- /story 4 -->
-                            </div>
+                            </a>
                           </div>
 
                         </div>
@@ -452,26 +533,33 @@
               <!-- /accordion -->
               <!-- /life stories -->
 
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
+
               <!-- guided questions -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_guidedqtns" aria-expanded="true">
-
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_gq" aria-expanded="true">
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                     Guided questions
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                   <a (click)="routeGuided()">
-                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
                                   </a>
@@ -481,59 +569,64 @@
                           </a>
                         </h4>
                       </div>
-                      <div id="ca_guidedqtns" class="panel-collapse collapse in">
-                        <div class="panel-body m0px">
+                      <div id="ca_gq" class="panel-collapse collapse in">
+                        <div class="panel-body">
 
-                          <a (click)="enableRoute('/journal/being-happier')">
-                            <div class="row guidedqtns_row bg_gray">
-                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                  <h4 class="session_name mtb0px">
-                                    Be happier
-                                  </h4>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_questions_right_arrow.svg"
-                                    alt="" class="img-responsive">
+                          <div class="div_fbn">
+                            <a (click)="enableRoute('/journal/being-happier')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Be happier
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
                                 </div>
                               </div>
-                            </div>
-                          </a>
-
-                          <a (click)="enableRoute('/journal/pleasure')">
-                            <div class="row guidedqtns_row bg_gray">
-                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                  <h4 class="session_name mtb0px">
-                                    Exploring pleasure
-                                  </h4>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_questions_right_arrow.svg"
-                                    alt="" class="img-responsive">
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-
-                          <a (click)="enableRoute('/journal/positive-mindset')">
-                            <div class="row guidedqtns_row bg_gray">
-                              <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0">
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                  <h4 class="session_name mtb0px">
-                                    Develop a positive mindset
-                                  </h4>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-2 tright">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/guided_questions_right_arrow.svg"
-                                    alt="" class="img-responsive">
+                            </a>
+              
+                            <a (click)="enableRoute('/journal/pleasure')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Exploring pleasure
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
                                 </div>
                               </div>
-                            </div>
-                          </a>
+                            </a>
+
+                            <a (click)="enableRoute('/journal/positive-mindset')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                  
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Develop a positive mindset
+                                    </h4>
+                                  </div>
+                  
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+                          </div>
 
                         </div>
                       </div>
@@ -544,126 +637,218 @@
               <!-- /accordion -->
               <!-- /guided questions -->
 
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
+
               <!-- short videos -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_ws" aria-expanded="true">
-
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_sv" aria-expanded="true">
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                     Short videos
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                   <a routerLink="/adults/wisdom-shorts">
-                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
                                   </a>
                                 </div>
                               </div>
                             </div>
-
                           </a>
                         </h4>
                       </div>
-                      <div id="ca_ws" class="panel-collapse collapse in">
-                        <div class="panel-body p0">
+                      <div id="ca_sv" class="panel-collapse collapse in">
+                        <div class="panel-body">
 
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl5px pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="s3video('1.34.mp4')">
+                          <div class="row cmr-20pxi">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
+  
+                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                                <a class="" (click)="s3video('1.34.mp4')">
                                   <div class="prelative">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/23.svg"
-                                      alt="Stress Management" class="br10px w100">
-                                    <div class="play_black_ac">
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg"
-                                        alt="Stress Management" class="img-responsive">
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/23.svg" class="img-responsive w100">
+                                      </div>
+                                    </div>
+    
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                      </div>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    3 tips to be happy
-                                  </h4>
-                                </a>
-                              </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="s3video('1.35.mp4')">
-                                  <div class="prelative">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/24.svg"
-                                      alt="Stress Management" class="br10px w100">
-                                    <div class="play_black_ac">
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg"
-                                        alt="Stress Management" class="img-responsive">
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                          3 tips to be happy
+                                        </h4>
+                                      </div>
+
+                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                          00:00
+                                        </h4>
+                                      </div>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    Being grateful
-                                  </h4>
                                 </a>
                               </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="s3video('1.36.mp4')">
+  
+                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                                <a class="" (click)="s3video('1.35.mp4')">
                                   <div class="prelative">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/25.svg"
-                                      alt="Stress Management" class="br10px w100">
-                                    <div class="play_black_ac">
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg"
-                                        alt="Stress Management" class="img-responsive">
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/24.svg" class="img-responsive w100">
+                                      </div>
+                                    </div>
+    
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                      </div>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    Being kind
-                                  </h4>
-                                </a>
-                              </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="s3video('1.37.mp4')">
-                                  <div class="prelative">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/26.svg"
-                                      alt="Stress Management" class="br10px w100">
-                                    <div class="play_black_ac">
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg"
-                                        alt="Stress Management" class="img-responsive">
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                          Being grateful
+                                        </h4>
+                                      </div>
+
+                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                          00:00
+                                        </h4>
+                                      </div>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    Key to happiness
-                                  </h4>
                                 </a>
                               </div>
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="s3video('1.38.mp4')">
+
+                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                                <a class="" (click)="s3video('1.36.mp4')">
                                   <div class="prelative">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/27.svg"
-                                      alt="Stress Management" class="br10px w100">
-                                    <div class="play_black_ac">
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg"
-                                        alt="Stress Management" class="img-responsive">
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/25.svg" class="img-responsive w100">
+                                      </div>
+                                    </div>
+    
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                      </div>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    Noticing beauty
-                                  </h4>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                          Being kind
+                                        </h4>
+                                      </div>
+
+                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                          00:00
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </a>
                               </div>
+
+                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                                <a class="" (click)="s3video('1.37.mp4')">
+                                  <div class="prelative">
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/26.svg" class="img-responsive w100">
+                                      </div>
+                                    </div>
+    
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                          Key to happiness
+                                        </h4>
+                                      </div>
+
+                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                          00:00
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                                <a class="" (click)="s3video('1.38.mp4')">
+                                  <div class="prelative">
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/wisdom_shorts/27.svg" class="img-responsive w100">
+                                      </div>
+                                    </div>
+    
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                          Noticing beauty
+                                        </h4>
+                                      </div>
+
+                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                          00:00
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+
                             </div>
                           </div>
 
@@ -676,26 +861,33 @@
               <!-- /accordion -->
               <!-- /short videos -->
 
-              <!-- podcasts -->
-              <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_guidedqtns" aria-expanded="true">
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
 
+              <!-- podcast -->
+              <!-- accordion -->
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_p" aria-expanded="true">
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                     Podcast
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                   <a routerLink="/adults/podcast">
-                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
                                   </a>
@@ -705,21 +897,162 @@
                           </a>
                         </h4>
                       </div>
-                      <div id="" class="panel-collapse collapse in">
+                      <div id="ca_p" class="panel-collapse collapse in">
                         <div class="panel-body">
+                          
+                          <div class="box_v3_07">
 
-                          <!-- podcast widget -->
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                              <!-- <iframe title="The HumanWisdom Project Podcast" allowtransparency="true" height="260" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=5&filter=tags&tag=16106794&ss=70b5ca715afd6f269244e4c9e4159071&btn-skin=60a0c8&size=260" allowfullscreen=""></iframe> -->
-                              <iframe title="The HumanWisdom Project Podcast" allowtransparency="true" height="260"
-                                width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no"
-                                data-name="pb-iframe-player"
-                                src="https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&skin=3267a3&font-color=auto&logo_link=podcast_page&order=episodic&limit=5&filter=tags&tag=16106794&ss=70b5ca715afd6f269244e4c9e4159071&btn-skin=60a0c8&size=260"
-                                allowfullscreen=""></iframe>
+                            <!-- <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p15px">
+                                <h4 class="mtb0px fw_500 fs_15px lh_130p fc_ffffff">
+                                  Avoiding and overcoming anxiety
+                                </h4>
+                              </div>
                             </div>
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              </div>
+                            </div> -->
+
+                            <a (click)="audioevent(mediaUrl.pc01)">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                    <div class="prelative">
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_01.svg" class="img-responsive w100">
+                                        </div>
+                                      </div>
+      
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                  
+                                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff">
+                                      Coping with an illness
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      45:05
+                                    </h4>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+
+                            <hr class="hr_style_v3_04">
+
+                            <a (click)="audioevent(mediaUrl.pc02)">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                    <div class="prelative">
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_01.svg" class="img-responsive w100">
+                                        </div>
+                                      </div>
+      
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                  
+                                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff">
+                                      Empowering Your Mind: Human Wisdom for Overcoming Depression
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      56:48
+                                    </h4>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+
+                            <hr class="hr_style_v3_04">
+
+                            <a (click)="audioevent(mediaUrl.pc03)">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                    <div class="prelative">
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_01.svg" class="img-responsive w100">
+                                        </div>
+                                      </div>
+      
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                  
+                                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff">
+                                      The Resilience Mindset: Lessons from HumanWisdom
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      47:57
+                                    </h4>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
+
+                            <hr class="hr_style_v3_04">
+
+                            <a (click)="audioevent(mediaUrl.pc04)">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                                    <div class="prelative">
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_01.svg" class="img-responsive w100">
+                                        </div>
+                                      </div>
+      
+                                      <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                  
+                                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff">
+                                      The Art of Living and Dying: Lessons from HumanWisdom
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      43:30
+                                    </h4>
+                                  </div>
+                  
+                                </div>
+                              </div>
+                            </a>
                           </div>
-                          <!-- /podcast widget -->
 
                         </div>
                       </div>
@@ -728,60 +1061,84 @@
                 </div>
               </div>
               <!-- /accordion -->
-              <!-- /podcasts -->
+              <!-- /podcast -->
 
-              <!-- events -->
+               <!-- hr -->
+               <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
+
+              <!-- past events -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01 dm_panel">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_events" aria-expanded="true">
-
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_pe" aria-expanded="true">
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
-                                    Events
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                    Past events
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                   <a routerLink="/adults/events">
-                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
                                   </a>
                                 </div>
                               </div>
                             </div>
-
                           </a>
                         </h4>
                       </div>
-                      <div id="ca_events" class="panel-collapse collapse in">
-                        <div class="panel-body p0">
+                      <div id="ca_pe" class="panel-collapse collapse in">
+                        <div class="panel-body">
 
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 ghn dinline_box pl5px pr15px">
-                              <div class="col-md-6 col-sm-7 col-xs-7 plr5px">
-                                <a (click)="youtube('FIAb3U28OOY')">
+                          <div class="row cmr-20pxi">
+                            <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
+  
+                              <div class="col-md-6 col-sm-7 col-xs-7 p0">
+                                <a class="" (click)="youtube('FIAb3U28OOY')">
                                   <div class="prelative">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/08.svg"
-                                      alt="Stress Management" class="br10px w100">
-                                    <div class="play_black_ac">
-                                      <img
-                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg"
-                                        alt="Stress Management" class="img-responsive">
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/08.svg" class="img-responsive w100">
+                                      </div>
+                                    </div>
+    
+                                    <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play.svg" class="img-responsive">
+                                      </div>
                                     </div>
                                   </div>
-                                  <h4 class="fw_500 fs_16px lh_19px fc_5d5d5d tile_title whitespace_preline">
-                                    Being happy at work
-                                  </h4>
+
+                                  <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
+                                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                          Being happy at work
+                                        </h4>
+                                      </div>
+
+                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                        <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                          00:00
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </a>
                               </div>
+
                             </div>
                           </div>
 
@@ -792,190 +1149,162 @@
                 </div>
               </div>
               <!-- /accordion -->
-              <!-- /events -->
+              <!-- /past events -->
+
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
 
               <!-- guided meditation -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01 dm_panel">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_gmeditation"
-                            aria-expanded="true">
-
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_gm" aria-expanded="true">
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                     Guided meditation
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                   <a routerLink="/adults/guided-meditation">
-                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
                                   </a>
                                 </div>
                               </div>
                             </div>
-
                           </a>
                         </h4>
                       </div>
-                      <div id="ca_gmeditation" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m0px">
-                          <!-- audio row -->
-                          <a
-                            (click)="audiopage('/guided-meditation/audios/guided-meditation+1.21.mp3', 'Exploring our opinions', '1')">
-                            <div class="row crow box bg_dark_blue p0 cd_gm">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10pxi flex_ai">
-                                <div class="col-md-2 col-sm-2 col-xs-2 landing_tile">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg"
-                                    alt="" class="p0">
-                                </div>
+                      <div id="ca_gm" class="panel-collapse collapse in">
+                        <div class="panel-body">
 
-                                <div class="col-md-10 col-sm-10 col-xs-10 pr10px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
-                                      <h4 class="session_name mtb0px">
-                                        Exploring our opinions
-                                      </h4>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="session_time mtb0px">
-                                        4 mins
-                                      </h4>
-                                    </div>
+                          <div class="box_v3_07">
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.21.mp3', 'Exploring our opinions', '1')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/headphone.svg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff ellipsis">
+                                      Exploring our opinions
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5">
+                                      04:00
+                                    </h4>
+                                  </div>
+                  
                                 </div>
                               </div>
-                            </div>
-                          </a>
-                          <!-- /audio row -->
+                            </a>
 
-                          <!-- audio row -->
-                          <a
-                            (click)="audiopage('/guided-meditation/audios/guided-meditation+1.22.mp3', 'Exploring expectations', '2')">
-                            <div class="row crow box bg_dark_blue p0 cd_gm">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10pxi flex_ai">
-                                <div class="col-md-2 col-sm-2 col-xs-2 landing_tile">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg"
-                                    alt="" class="p0">
-                                </div>
+                            <hr class="hr_style_v3_03">
 
-                                <div class="col-md-10 col-sm-10 col-xs-10 pr10px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
-                                      <h4 class="session_name mtb0px">
-                                        Exploring expectations
-                                      </h4>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="session_time mtb0px">
-                                        5 mins
-                                      </h4>
-                                    </div>
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.22.mp3', 'Exploring expectations', '2')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/headphone.svg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff ellipsis">
+                                      Exploring expectations
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5">
+                                      05:00
+                                    </h4>
+                                  </div>
+                  
                                 </div>
                               </div>
-                            </div>
-                          </a>
-                          <!-- /audio row -->
+                            </a>
 
-                          <!-- audio row -->
-                          <a
-                            (click)="audiopage('/guided-meditation/audios/guided-meditation+1.23.mp3', 'Be present in your own life', '3')">
-                            <div class="row crow box bg_dark_blue p0 cd_gm">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10pxi flex_ai">
-                                <div class="col-md-2 col-sm-2 col-xs-2 landing_tile">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg"
-                                    alt="" class="p0">
-                                </div>
+                            <hr class="hr_style_v3_03">
 
-                                <div class="col-md-10 col-sm-10 col-xs-10 pr10px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
-                                      <h4 class="session_name mtb0px">
-                                        Be present in your own life
-                                      </h4>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="session_time mtb0px">
-                                        4 mins
-                                      </h4>
-                                    </div>
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.23.mp3', 'Be present in your own life', '3')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/headphone.svg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff ellipsis">
+                                      Be present in your own life
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5">
+                                      04:00
+                                    </h4>
+                                  </div>
+                  
                                 </div>
                               </div>
-                            </div>
-                          </a>
-                          <!-- /audio row -->
+                            </a>
 
-                          <!-- audio row -->
-                          <a
-                            (click)="audiopage('/guided-meditation/audios/guided-meditation+1.24.mp3', 'Be at ease with yourself', '4')">
-                            <div class="row crow box bg_dark_blue p0 cd_gm">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10pxi flex_ai">
-                                <div class="col-md-2 col-sm-2 col-xs-2 landing_tile">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg"
-                                    alt="" class="p0">
-                                </div>
+                            <hr class="hr_style_v3_03">
 
-                                <div class="col-md-10 col-sm-10 col-xs-10 pr10px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
-                                      <h4 class="session_name mtb0px">
-                                        Be at ease with yourself
-                                      </h4>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="session_time mtb0px">
-                                        5 mins
-                                      </h4>
-                                    </div>
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.24.mp3', 'Be at ease with yourself', '4')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/headphone.svg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff ellipsis">
+                                      Be at ease with yourself
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5">
+                                      05:00
+                                    </h4>
+                                  </div>
+                  
                                 </div>
                               </div>
-                            </div>
-                          </a>
-                          <!-- /audio row -->
+                            </a>
 
-                          <!-- audio row -->
-                          <a
-                            (click)="audiopage('/guided-meditation/audios/guided-meditation+1.20.mp3', 'Don’t take people for granted', '5')">
-                            <div class="row crow box bg_dark_blue p0 cd_gm">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10pxi flex_ai">
-                                <div class="col-md-2 col-sm-2 col-xs-2 landing_tile">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc_audio.svg"
-                                    alt="" class="p0">
-                                </div>
+                            <hr class="hr_style_v3_03">
 
-                                <div class="col-md-10 col-sm-10 col-xs-10 pr10px">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                                    <div class="col-md-10 col-sm-10 col-xs-10">
-                                      <h4 class="session_name mtb0px">
-                                        Don’t take people for granted
-                                      </h4>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="session_time mtb0px">
-                                        4 mins
-                                      </h4>
-                                    </div>
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.20.mp3', 'Don’t take people for granted', '5')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
+                                  
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/headphone.svg" class="img-responsive w100">
                                   </div>
+                  
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pl15px">
+                                    <h4 class="mt0px mb5px fw_500 fs_15px lh_130p fc_ffffff ellipsis">
+                                      Don’t take people for granted
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5">
+                                      04:00
+                                    </h4>
+                                  </div>
+                  
                                 </div>
                               </div>
-                            </div>
-                          </a>
-                          <!-- /audio row -->
+                            </a>
+                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -985,26 +1314,33 @@
               <!-- /accordion -->
               <!-- /guided meditation -->
 
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+              <!-- /hr -->
+
               <!-- blog -->
               <!-- accordion -->
-              <div class="row mlr-10px_01 accordion_row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 cp0_03">
-                  <div class="panel-group dpanelgroup" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading p0">
-                        <h4 class="panel-title dpaneltitle">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_blogs" aria-expanded="true">
-
+              <div class="row accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default cpanel">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#ca_b" aria-expanded="true">
                             <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_700 fs_20px lh_23px fc_5d5d5d mtb0px">
-                                    Blogs
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                    Blog
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                  <a routerLink="/adults/blog">
-                                    <h2 class="fw_500 fs_16px lh_19px fc_5d5d5d underline mtb0px tright">
+                                  <a routerLink="blogs">
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                       View all
                                     </h2>
                                   </a>
@@ -1014,40 +1350,30 @@
                           </a>
                         </h4>
                       </div>
-                      <div id="ca_blogs" class="panel-collapse collapse in">
-                        <div class="panel-body p0 m-1px">
+                      <div id="ca_b" class="panel-collapse collapse in">
+                        <div class="panel-body">
 
-                          <div class="row cmr-10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 odiv dinline_box">
-                              <!-- blog 1 -->
-                              <div class="col-lg-9 col-md-10 col-sm-10 col-xs-10 center_flex p0 life_stories">
-                                <a class="center_flex" (click)="viewblog('2')">
-                                  <div class="col-md-3 col-sm-2 col-xs-3 p0">
-                                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/2.jpg" alt=""
-                                      class="w100 c150px">
+                          <div class="ls">
+                            <a (click)="viewblog('2')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
+                                  
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/2.jpg" class="img-responsive w100">
                                   </div>
-
-                                  <div class="col-md-9 col-sm-10 col-xs-9">
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <h6 class="fw_500 fs_18px lh_130p fc_5d5d5d mtb0px capitalize">
-                                            A positive attitude
-                                          </h6>
-                                        </div>
-                                      </div>
-
-                                      <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h6 class="fw_400 fs_14px lh_130p fc_5d5d5d ellipsis">
-                                          Master the Art of Positive Thinking Using Wisdom
-                                        </h6>
-                                      </div>
-                                    </div>
+                  
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                                    <h4 class="mt0px mb10px fw_500 fs_15px lh_130p fc_ffffff ellipsis">
+                                      A positive attitude
+                                    </h4>
+                                    <h4 class="mtb0px fs_12px lh_130p fc_ffffff_0_5 ellipsis">
+                                      Master the Art of Positive Thinking Using Wisdom
+                                    </h4>
                                   </div>
-                                </a>
+                  
+                                </div>
                               </div>
-                              <!-- /blog 1 -->
-                            </div>
+                            </a>
                           </div>
 
                         </div>
@@ -1059,32 +1385,39 @@
               <!-- /accordion -->
               <!-- /blog -->
 
-              <div class="row center_flex dm_eot">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <a routerLink="/adults/search">
-                    <h4 class="fw_600 fs_16px lh_19px fc_1092a7 mtb0px tcenter">
-                      Explore other topics
-                    </h4>
-                  </a>
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
                 </div>
               </div>
+              <!-- /hr -->
 
-              <div class="pagebreak"></div>
+              <!-- explore other topics -->
+              <a routerLink="/adults/search">
+                <div class="row mt60px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
+                    <h4 class="mtb0px fs_15px lh_140p fc_ffffff tcenter underline">
+                      Explore other topics
+                    </h4>
+                  </div>
+                </div>
+              </a>
+              <!-- /explore other topics -->
 
-            </form>
+            </div>
+
+            <div class="pagebreak"></div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/Class -->
+  <!--/class -->
 </div>
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 <!-- /footer -->
-
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
-  [content]="'Please subscribe to access your online journal'">
-</app-modal>

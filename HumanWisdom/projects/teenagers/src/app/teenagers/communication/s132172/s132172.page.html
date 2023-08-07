@@ -1,0 +1,5 @@
+<app-audio-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [transcriptPage]="transcriptPage" [progName]="progName"></app-audio-header>
+
+<app-audio-diagram [title]="title" [bg]="bg" [imageLink]="imageLink" [audioLink]="audioLink" (sendAvDuration)="receiveAvDuration($event)"></app-audio-diagram>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
