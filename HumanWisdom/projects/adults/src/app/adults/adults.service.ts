@@ -405,8 +405,8 @@ export class AdultsService {
         }
         sessionStorage.setItem("pgResume", pgResume)
         mediaPercent = parseInt(res.MediaPercent);
-        let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
+        // let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
         
         localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(qrList))
