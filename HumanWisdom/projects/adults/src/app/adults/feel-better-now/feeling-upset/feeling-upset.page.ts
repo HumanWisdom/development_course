@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+
+
 import { Location } from '@angular/common';
 
 @Component({
@@ -10,6 +12,7 @@ import { Location } from '@angular/common';
 export class FeelingUpsetPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
   mediaUrl: any;
 
@@ -24,9 +27,7 @@ export class FeelingUpsetPage implements OnInit {
   ngOnInit() {
   }
 
-  audioevent(url) {
-    this.router.navigate(['feel-better-now/feeling-upset/audiopage/', url, "Manage expectations", Math.random()])
-  }
+
 
   routeToYoutube(url) {
     this.router.navigate(['feel-better-now/feeling-upset/youtubelink/',url]);
@@ -41,4 +42,13 @@ export class FeelingUpsetPage implements OnInit {
   goBack() {
     this.location.back()
   }
+
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url])
+    }else{
+     let concat = this.mediaAudio+url;
+     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+    }
+ }
 }

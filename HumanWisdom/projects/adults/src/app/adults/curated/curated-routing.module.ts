@@ -2,6 +2,7 @@ import { SingleAudioContentComponent } from '../../../../../shared/component/sin
 import { YoutubeContentComponent } from '../../../../../shared/component/youtube-content/youtube-content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdultsAudioMeditationComponent } from '../../../../../shared/component/adults-audio-meditation/adults-audio-meditation.component';
 
 const routes: Routes = [
   {
@@ -78,7 +79,8 @@ const routes: Routes = [
   },
   {
     path: 'audiopage/:audiolink/:title/:RowId',
-    component: SingleAudioContentComponent
+    // component: SingleAudioContentComponent
+    component: AdultsAudioMeditationComponent
   },
 
 ];

@@ -397,10 +397,17 @@ export class AdultsService {
         localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
         let qrList = res
         pgResume = "s" + res.lastVisitedScreen
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
         sessionStorage.setItem("pgResume", pgResume)
         mediaPercent = parseInt(res.MediaPercent);
         let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
         localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
+        
         localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(qrList))
         console.log(qrList)
@@ -550,5 +557,9 @@ export class AdultsService {
 
   addUserRefPost(data: any): Observable<any> {
     return this.http.post(this.path + '/AddUserRefPost', data)
+  }
+
+  AddUserPreference(data:any): Observable<any>{
+    return this.http.post(this.path + `/AddUserPreference/${data}`, null)
   }
 }

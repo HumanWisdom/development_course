@@ -1,3 +1,104 @@
 .circular-player-container {
     transform: rotate(-360deg) scaleX(-1);
   }
+
+  .circular-player-container {
+    transform: rotate(-360deg) scaleX(-1);
+  }
+  
+  // audio::-webkit-media-controls-panel {
+  //   background-color:#ffcd9cf7
+  // }
+  
+  audio::-webkit-media-controls-play-button {
+    background-color: #178da8 !important;
+    border-radius: 15px;
+  }
+  
+  audio::-webkit-media-controls-current-time-display {
+    color: #000 !important;
+    font-weight: bold;
+  }
+  
+  audio::-webkit-media-controls-time-remaining-display {
+    color: #000 !important;
+    font-weight: bold;
+  }
+  
+  /* Customize the range input (slider) */
+  audio::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  audio::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  audio::-ms-thumb {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Customize other audio player controls */
+  audio::-webkit-media-controls-panel {
+    filter: invert(1);
+  }
+  
+  audio::-webkit-media-controls-play-button {
+    color: white; /* For Chrome and Safari */
+  }
+  
+  
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    color: white;
+  } 
+  
+  /* Customize the play and pause icons */
+  audio::-webkit-media-controls-play-button::before,
+  audio::-webkit-media-controls-pause-button::before {
+  content: ''; /* Hide default play and pause icons */
+  }
+  
+  /* Custom play button */
+  audio::-webkit-media-controls-play-button::after {
+  content: '▶'; /* Play icon */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  color: white; /* Set the color of the play icon */
+  }
+  
+  /* Custom pause button */
+  audio::-webkit-media-controls-pause-button::after {
+  content: '||'; /* Pause icon */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  color: white; /* Set the color of the pause icon */
+  }
+  
+  audio::-webkit-media-controls-enclosure {
+    background: rgb(18, 15, 64);
+  }
