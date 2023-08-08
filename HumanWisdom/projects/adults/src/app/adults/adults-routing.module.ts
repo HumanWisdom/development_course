@@ -465,7 +465,6 @@ const routes: Routes = [
   },
   {
     path: 'videopage/:videolink',
-    canActivate:[ActiveGuard],
     component: S3VideoComponent
   }
 ];

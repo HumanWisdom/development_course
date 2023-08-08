@@ -48,7 +48,7 @@ export class S133001Page implements OnInit,OnDestroy {
   )
   { 
    
-    this.getSetModuleData(112);
+    this.getSetModuleData(133);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
