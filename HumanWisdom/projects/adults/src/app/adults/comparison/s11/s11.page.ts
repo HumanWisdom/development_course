@@ -101,11 +101,12 @@ export class S11Page implements OnInit {
     {
       this.option = opt.OptId
       sessionStorage.setItem("sessionOptions11", JSON.stringify(this.option))
-      document.getElementById(opt.OptId).style.background = '#FFC455';
+      document.getElementById(opt.OptId).style.background = '#E58D82';
+      document.getElementById(opt.OptId+ 'text').style.color = '#FFFFFF';
       if (this.falseans !== '') {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
-        document.getElementById(this.falseans).style.opacity = '0.75';
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
+        // document.getElementById(this.falseans).style.opacity = '0.1';
         this.falseans = opt.OptId
       } 
       else 
@@ -117,17 +118,17 @@ export class S11Page implements OnInit {
     {
       if (this.falseans !== '') 
       {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
-        document.getElementById(this.falseans).style.opacity = '0.75';
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
+        // document.getElementById(this.falseans).style.opacity = '0.1';
         this.falseans = opt.OptId
       } 
       else 
       {
         this.falseans = opt.OptId
       }
-      document.getElementById(opt.OptId).style.background = '#5D5D5D';
-      document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
+      document.getElementById(opt.OptId).style.background = '#120F40';
+      // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
   }
 
