@@ -69,6 +69,13 @@ export class S134068Page implements OnInit {
       this.bookmark=0
     sessionStorage.setItem("bookmark134068",JSON.stringify(this.bookmark))
   }
+  
+  receiveAvDuration(e) {
+    console.log(e)
+    this.avDuration = e
+
+  }
+
 
   submitProgress()
   {

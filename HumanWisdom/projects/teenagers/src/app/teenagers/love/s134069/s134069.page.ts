@@ -70,6 +70,12 @@ export class S134069Page implements OnInit {
     sessionStorage.setItem("bookmark134069",JSON.stringify(this.bookmark))
   }
 
+  receiveAvDuration(e) {
+    console.log(e)
+    this.avDuration = e
+
+  }
+
   submitProgress()
   {
     this.router.navigate(['/love/s134070'])
