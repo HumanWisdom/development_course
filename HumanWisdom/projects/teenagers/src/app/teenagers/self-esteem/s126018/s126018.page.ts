@@ -16,7 +16,9 @@ export class S126018Page implements OnInit
   bg = "teal_w4"
   hint = "It may make people not like themselves for who they are, for example."
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

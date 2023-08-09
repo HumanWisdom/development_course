@@ -30,7 +30,9 @@ export class S81022Page implements OnInit {
   //sendOption=[]
   sessionOption81022=JSON.parse(sessionStorage.getItem("sessionOption81022"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption81022"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/wisdom-brings-change/s81001"
 
   constructor(private router: Router,

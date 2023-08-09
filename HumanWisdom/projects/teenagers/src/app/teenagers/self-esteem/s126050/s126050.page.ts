@@ -16,7 +16,9 @@ export class S126050Page implements OnInit
   bg = "teal_w3"
   hint = " It may mean not taking it personally, or seeing if there is something to learn from that."
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

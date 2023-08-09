@@ -16,7 +16,9 @@ export class S131127Page implements OnInit
   bg = "purple_w11"
   hint = "For example if a teacher does not praise your work, you can feel bad."
   toc = "/relationships/s131001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

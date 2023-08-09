@@ -16,7 +16,9 @@ export class S125202Page implements OnInit
   bg = "dark_blue_w6"
   hint = "I have two examples in the previous slide. Can you think of one from your own life?"
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

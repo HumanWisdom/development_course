@@ -16,7 +16,9 @@ export class S131091Page implements OnInit
   bg = "purple_w12"
   hint = " It's okay. It's human. Being aware of it without justifying it or condemning it is the beginning of wisdom."
   toc = "/relationships/s131001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -16,7 +16,9 @@ export class S125208Page implements OnInit
   bg = "dark_blue_w12"
   hint = "Asking the question allows you to respond with wisdom. How many can you add to this list? So much stress can dissolve as a result."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

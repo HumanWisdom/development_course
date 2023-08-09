@@ -16,7 +16,9 @@ export class S131094Page implements OnInit
   bg = "purple_w3"
   hint = " It could be to meet and have fun with friends, or seek physical intimacy."
   toc = "/relationships/s131001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

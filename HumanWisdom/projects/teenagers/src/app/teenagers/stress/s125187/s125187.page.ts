@@ -16,7 +16,9 @@ export class S125187Page implements OnInit
   bg = "dark_blue_w5"
   hint = "No one can do this for you, but a feeling that you have the gift of life flowing through you and appreciating that, and understanding how conditioning and comparison work, may help."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
