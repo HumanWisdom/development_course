@@ -16,7 +16,9 @@ export class S111068Page implements OnInit
   bg = "green_yellow_w11"
   hint = "First- notice the different ways it works in your relationship, and then ask what is the intelligent way to respond"
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

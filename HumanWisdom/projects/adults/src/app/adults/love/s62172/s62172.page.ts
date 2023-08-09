@@ -24,7 +24,9 @@ export class S62172Page implements OnInit,OnDestroy {
   transcriptPage="love/s62172t"
   toc="love/s62001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

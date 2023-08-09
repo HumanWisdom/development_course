@@ -15,7 +15,9 @@ export class S45061Page implements OnInit {
   bg = "purple_w5"
   hint = " Escaping usually does not take the pain away. It just distracts us for a while. "
   toc = "/habit-addiction/s45001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

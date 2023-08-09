@@ -17,7 +17,9 @@ export class S612Page implements OnInit {
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   toc="/fear-anxiety/s486"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
  
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))

@@ -30,7 +30,9 @@ export class S105112Page implements OnInit
   //sendOption=[]
   sessionOption105112=JSON.parse(sessionStorage.getItem("sessionOption105112"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption105112"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/conditioning/s105001"
 
   constructor

@@ -15,7 +15,9 @@ export class S21057Page implements OnInit {
   bg = "dark_blue_w10"
   hint = "With a deeper understanding of how you acquired them and their roots in your thinking, it may happen naturally "
   toc = "/identity/s21001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

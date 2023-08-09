@@ -22,7 +22,9 @@ export class S22021Page implements OnInit,OnDestroy {
   transcriptPage="meditation/s22021t"
   toc="meditation/s22001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

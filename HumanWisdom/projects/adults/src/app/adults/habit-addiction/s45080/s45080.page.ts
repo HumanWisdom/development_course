@@ -15,7 +15,9 @@ export class S45080Page implements OnInit {
   bg = "purple_w11"
   hint = "   It could make you work all day, or want to be on your phone, or be with people. It is not wrong, but operates in the background. "
   toc = "/habit-addiction/s45001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

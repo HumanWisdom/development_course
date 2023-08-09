@@ -15,7 +15,9 @@ export class S73021Page implements OnInit {
   bg = "red_pink_w10"
   hint = "  You may have been brought up thinking that we have to accumulate money for the future, and that what you ended up doing"
   toc = "/money/s73001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

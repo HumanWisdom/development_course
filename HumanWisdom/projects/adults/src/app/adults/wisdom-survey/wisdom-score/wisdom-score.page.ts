@@ -19,7 +19,9 @@ export class WisdomScorePage implements OnInit {
   overallPercentage:any
   bookmark=0
   toc=""
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   points=localStorage.getItem("wisdomScore")
 
 isUseCloseButton:boolean;

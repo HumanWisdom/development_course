@@ -24,7 +24,9 @@ export class S56047Page implements OnInit {
   totalTime:any
   bookmark=0
   toc="inner-boredom/s56001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

@@ -15,7 +15,9 @@ export class S62120Page implements OnInit {
   bg = "blue_pink_w5"
   hint = "It could be because you reap what you sow, and because loving others enriches your spirit."
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

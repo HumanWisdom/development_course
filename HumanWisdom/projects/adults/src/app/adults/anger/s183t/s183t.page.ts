@@ -15,7 +15,9 @@ export class S183tPage implements OnInit {
   bg="anger_w4"    
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/anger/s183"
   toc="/anger/s162p0"
   

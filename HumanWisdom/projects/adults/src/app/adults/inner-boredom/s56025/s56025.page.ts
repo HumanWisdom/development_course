@@ -19,7 +19,9 @@ export class S56025Page implements OnInit {
     transcriptPage="inner-boredom/s56025t"
     toc="inner-boredom/s56001"
     bookmark=0
-    path=this.router.url
+    path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
     avDuration:any
     userId:any
     saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

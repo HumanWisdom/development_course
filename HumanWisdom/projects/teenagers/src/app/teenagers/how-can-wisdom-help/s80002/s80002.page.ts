@@ -31,7 +31,9 @@ export class S80002Page implements OnInit,OnDestroy {
   totalTime:any
   toc="/how-can-wisdom-help/s80001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  

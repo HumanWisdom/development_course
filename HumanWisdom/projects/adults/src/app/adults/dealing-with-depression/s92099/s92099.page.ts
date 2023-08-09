@@ -30,7 +30,9 @@ export class S92099Page implements OnInit {
   //sendOption=[]
   sessionOption92099=JSON.parse(sessionStorage.getItem("sessionOption92099"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption92099"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/dealing-with-depression/s92001"
 
   constructor(private router: Router,

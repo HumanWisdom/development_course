@@ -34,7 +34,9 @@ export class S51000Page implements OnInit, OnDestroy {
   lastvisited = false;
   stories: any = []
   baseUrl: string;
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   mediaUrl: any;
 
   constructor(

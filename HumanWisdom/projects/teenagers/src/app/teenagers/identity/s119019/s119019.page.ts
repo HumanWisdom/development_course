@@ -16,7 +16,9 @@ export class S119019Page implements OnInit
   bg="dark_blue_w6"
   hint = "  If someone criticized your religion, or country, or schoolcompany would you feel personally as if you were being personally attacked. "
   toc = "/identity/s119001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

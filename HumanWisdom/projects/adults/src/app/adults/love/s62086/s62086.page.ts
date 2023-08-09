@@ -15,7 +15,9 @@ export class S62086Page implements OnInit {
   bg = "blue_pink_w9"
   hint = " What role does your conditioning play? "
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

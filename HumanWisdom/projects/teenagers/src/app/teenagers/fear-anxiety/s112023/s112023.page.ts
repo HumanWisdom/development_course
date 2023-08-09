@@ -28,7 +28,9 @@ export class S112023Page implements OnInit {
   endTime:any
   totalTime:any
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   progName="teenagers"  
   avDuration:any
   

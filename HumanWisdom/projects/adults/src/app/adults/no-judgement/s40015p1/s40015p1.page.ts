@@ -20,7 +20,9 @@ export class S40015p1Page implements OnInit {
   overallPercentage:any
   bookmark=0
   toc="no-judgement/s40000"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,

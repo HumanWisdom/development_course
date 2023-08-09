@@ -27,7 +27,9 @@ export class S54003Page implements OnInit, OnDestroy {
   transcriptPage = "reactive-mind/s54003t"
   toc = "reactive-mind/s54001"
   bookmark = 0
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration: any
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

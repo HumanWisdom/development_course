@@ -16,7 +16,9 @@ export class S117087Page implements OnInit
   bg = "green_yellow_w12"
   hint = " Maybe realise that despite our mind that pushes us to be unique, we need to stay closely connected with others"
   toc = "/loneliness/s117001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

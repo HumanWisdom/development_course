@@ -15,7 +15,9 @@ export class S64025Page implements OnInit {
   bg = "teal_w3"
 
   toc = "/dealing-with-death/s64001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

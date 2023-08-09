@@ -34,7 +34,7 @@ export class ForumLandingPage implements OnInit {
   selectIndex = 0;
   token = '';
   urlT: any
-  address = this.router.url;
+  address :any;
   isLoggedIn: boolean = false;
   activeCommentPost;
   actionType: string = '';
@@ -108,7 +108,7 @@ export class ForumLandingPage implements OnInit {
     this.UserID = localStorage.getItem('userId');
     console.log(this.UserID);
     this.token = JSON.parse(localStorage.getItem("token"));
-
+    this.address = this.router.url;
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     
     this.isloggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;

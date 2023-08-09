@@ -15,7 +15,9 @@ export class S22049Page implements OnInit {
   bg = "blue_w1"
   hint = "We become attached to our opinions which come from our conditioning  "
   toc = "/meditation/s22001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

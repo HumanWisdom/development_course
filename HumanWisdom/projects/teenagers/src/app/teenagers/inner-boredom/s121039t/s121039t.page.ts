@@ -14,7 +14,9 @@ export class S121039tPage implements OnInit
   bg_cft="bg_purple_blue"
   bg="purple_blue_w3"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/inner-boredom/s121039"
   toc="/inner-boredom/s121001"
   screenType=localStorage.getItem("audio")

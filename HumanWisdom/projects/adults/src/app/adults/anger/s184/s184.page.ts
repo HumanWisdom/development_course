@@ -32,7 +32,9 @@ export class S184Page implements OnInit,AfterViewInit
   toc="/anger/s162p0"
   transcriptPage="/anger/s184t"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   
   constructor

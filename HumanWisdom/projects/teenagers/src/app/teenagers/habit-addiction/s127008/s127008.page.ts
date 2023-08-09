@@ -16,7 +16,9 @@ export class S127008Page implements OnInit
   bg = "purple_w6"
   hint = " It could be a habit like using your phone too much, or an addiction to alcohol. "
   toc = "/habit-addiction/s127001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
