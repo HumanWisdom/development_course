@@ -456,9 +456,17 @@ const routes: Routes = [
     loadChildren: () => import('./change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
   },
   {
-    path: 'find-answers',
+    path: 'find-answers/:url',
     loadChildren: () => import('./find-answers/find-answers.module').then( m => m.FindAnswersModule)
   },
+  {
+    path:'change-topic',
+    loadChildren: () => import('./change-topic/change-topic.module').then(m=>m.ChangeTopicPageModule)
+  },
+  {
+    path: 'videopage/:videolink',
+    component: S3VideoComponent
+  }
 ];
 
  @NgModule({

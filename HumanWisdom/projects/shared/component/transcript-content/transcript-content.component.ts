@@ -10,6 +10,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 })
 export class TranscriptContentComponent implements OnInit,AfterViewInit {
   @Input() bg: string;
+  @Input() title: string;
 
   scrId:any
   @ViewChild('screen', { static: true }) screen: any;

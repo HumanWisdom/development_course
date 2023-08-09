@@ -25,7 +25,7 @@ export class S76001Page implements OnInit, OnDestroy {
   totalTime: any
   bookmark: any
   bookmarkList = []
-  bullyingResume = sessionStorage.getItem("bullyingResume")
+  bullyingResume = sessionStorage.getItem("pgResume")
 
   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/76.png"
   tocColor = "white"

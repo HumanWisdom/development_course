@@ -7,7 +7,7 @@
   <!-- Class -->  
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 comparison_envy_w9">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
         <div class="x_panel p0">                                                
           <div class="x_content p0 tcenter">
             <form>
@@ -18,8 +18,8 @@
               <div class="clearfix"></div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_yes_no">
+                  <!-- <div class="row">
                     <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList0" class="btn btn-default btn_grp txt12"  (click)="selectOption(o.OptId)">
                         <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
@@ -27,7 +27,25 @@
                         </div>
                       </label>
                     </div>
+                  </div> -->
+
+                  <!-- seperate buttons -->
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <button type="button" class="btn">
+                      <h4 class="mtb0px">
+                        Yes
+                      </h4>
+                    </button>
                   </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                    <button type="button" class="btn">
+                      <h4 class="mtb0px">
+                        No
+                      </h4>
+                    </button>
+                  </div>
+                  <!-- /seperate buttons -->
                 </div>
               </div>
 

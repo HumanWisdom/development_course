@@ -42,7 +42,7 @@ export class S44021Page implements OnInit {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
     var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+    var active_color = "#E58D82";
 
     var i;
     

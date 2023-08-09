@@ -26,43 +26,43 @@ const routes: Routes = [
     path: 's30002',
     canActivate: [ActiveGuard],
     component: S30002Page,
-    data: { animation: 0 }
+    // data: { animation: 0 }
   },
   {
     path: 's30002t',
     canActivate: [ActiveGuard],
     component: S30002tPage,
-    data: { animation: 1 }
+    // data: { animation: 1 }
   },
   {
     path: 's30003',
     canActivate: [ActiveGuard],
     component: S30003Page,
-    data: { animation: 2 }
+    // data: { animation: 2 }
   },
   {
     path: 's30004',
     canActivate: [ActiveGuard],
     component: S30004Page,
-    data: { animation: 3 }
+    // data: { animation: 3 }
   },
   {
     path: 's30005',
     canActivate: [ActiveGuard],
     component: S30005Page,
-    data: { animation: 4 }
+    // data: { animation: 4 }
   },
   {
     path: 's30006',
     canActivate: [ActiveGuard],
     component: S30006Page,
-    data: { animation: 5 }
+    // data: { animation: 5 }
   },
   {
     path: 's30007',
     canActivate: [ActiveGuard],
     component: S30007Page,
-    data: { animation: 6 }
+    // data: { animation: 6 }
   },
 
 ];

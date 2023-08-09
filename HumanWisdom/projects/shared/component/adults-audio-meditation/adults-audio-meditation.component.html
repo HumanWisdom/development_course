@@ -1,0 +1,73 @@
+<app-bg-video></app-bg-video>
+
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Audio meditation
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+
+    <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+      <div class="progress progress-sm hprogress" [ngStyle]="{'visibility': !showheaderbar ? 'hidden' : 'visible'}">
+        <div class="progress-bar" role="progressbar"
+          [ngStyle]="{'min-width': progress + '%',
+           'max-width': progress + '%', 'width': progress + '%', 'transition':'width 0.5s, max-width 0.5s, min-width 0.5s'}" aria-valuemax="100"></div>
+      </div>
+    </div> -->
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_02">
+  <!-- class -->
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 bg_292d56">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form>
+
+              <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h1 class="txt1 ww_break_word mtb0px">
+                    {{audioTitle}}
+                  </h1>
+                </div>
+              </div>
+
+              <div class="row tcenter">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px" *ngIf="audioLink !== ''">
+                  <audio id="aud1" controls controlsList="nodownload" #audio>
+                    <source [src]="audioLink" type="audio/mpeg">
+                  </audio>
+                </div>
+              </div>
+
+            </form>
+
+            <div class="pagebreak"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/class -->
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
+<!-- /footer -->

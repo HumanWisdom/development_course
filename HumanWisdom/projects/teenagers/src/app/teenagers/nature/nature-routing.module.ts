@@ -33,67 +33,67 @@ const routes: Routes = [
   {
     path: 's106003',
     component: S106003Page,
-    data: { animation: 0 }
+    // data: { animation: 0 }
   },
   {
     path: 's106004',
     component: S106004Page,
-    data: { animation: 1 }
+    // data: { animation: 1 }
   },
   {
     path: 's106005',
     component: S106005Page,
-    data: { animation: 2 }
+    // data: { animation: 2 }
   },
   {
     path: 's106006',
     component: S106006Page,
-    data: { animation: 3 }
+    // data: { animation: 3 }
   },
   {
     path: 's106007',
     component: S106007Page,
-    data: { animation: 4 }
+    // data: { animation: 4 }
   },
   {
     path: 's106008',
     component: S106008Page,
-    data: { animation: 5 }
+    // data: { animation: 5 }
   },
   {
     path: 's106009',
     component: S106009Page,
-    data: { animation: 6 }
+    // data: { animation: 6 }
   },
   {
     path: 's106010',
     component: S106010Page,
-    data: { animation: 7 }
+    // data: { animation: 7 }
   },
   {
     path: 's106011',
     component: S106011Page,
-    data: { animation: 8 }
+    // data: { animation: 8 }
   },
   {
     path: 's106012',
     component: S106012Page,
-    data: { animation: 9 }
+    // data: { animation: 9 }
   },
   {
     path: 's106013',
     component: S106013Page,
-    data: { animation: 10 }
+    // data: { animation: 10 }
   },
   {
     path: 's106014',
     component: S106014Page,
-    data: { animation: 11 }
+    // data: { animation: 11 }
   },
   {
     path: 's106015',
     component: S106015Page,
-    data: { animation: 12 }
+    // data: { animation: 12 }
   },
 ];
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -10,9 +11,23 @@ export class IndexPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location) { }
+  defaultUrl = 'how-can-i';
+  activeClass = 'active';
+  constructor(private location: Location, private router:Router,private activatedRoute: ActivatedRoute) {
+   var data = this.activatedRoute.snapshot.paramMap.get('url');
+    if(data != null){
+      this.defaultUrl= data;
+    }
+   }
 
   ngOnInit() {
+  }
+
+  getActiveClass(param){
+    if(this.defaultUrl == param){
+      return 'active'
+    }
+    return '';
   }
 
   getclcickevent(event) 
@@ -26,6 +41,22 @@ export class IndexPage implements OnInit {
   goBack() 
   {
     this.location.back()
+  }
+
+  routeToTab(param){
+    this.defaultUrl = param;
+    localStorage.setItem('lastRoute',param);
+    this.changeURLParams(param);
+  }
+
+  changeURLParams(parameter: string) {
+    const newUrl = this.location.path().split('/')[0] + `${parameter}`;
+    this.location.replaceState('/find-answers/'+newUrl);
+    this.router.navigate(['adults/find-answers/'+newUrl])
+  }
+
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
   }
 
 }
