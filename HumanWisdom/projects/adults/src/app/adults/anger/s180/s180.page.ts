@@ -103,7 +103,6 @@ export class S180Page implements OnInit,OnDestroy {
   }
   previous(){
     this.router.navigate(['/adults/anger/s179'])
-    
   }
 
   ngOnDestroy(){
