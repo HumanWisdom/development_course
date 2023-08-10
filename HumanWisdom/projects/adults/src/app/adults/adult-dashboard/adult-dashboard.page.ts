@@ -1541,62 +1541,62 @@ export class AdultDashboardPage implements OnInit {
         })
 
         //static progress
-        this.angerP = res.ModUserScrPc.find(e => e.Module == "Anger")?.Percentage
-        this.comparisonP = res.ModUserScrPc.find(e => e.Module == "Comparison & Envy")?.Percentage
-        this.awarenessP = res.ModUserScrPc.find(e => e.Module == "Awareness")?.Percentage
-        this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
-        this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
-        this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
-        this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
-        this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
-        this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of self-awareness")?.Percentage
-        this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
-        this.identityP = res.ModUserScrPc.find(e => e.Module == "Identity")?.Percentage
-        this.keyP = res.ModUserScrPc.find(e => e.Module == "Key Ideas")?.Percentage
-        this.selfEsteemP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
-        this.conditioningP = res.ModUserScrPc.find(e => e.Module == "Conditioning")?.Percentage
-        this.fiveCirclesP = res.ModUserScrPc.find(e => e.Module == "5 Circles of Wisdom")?.Percentage
-        this.happinessP = res.ModUserScrPc.find(e => e.Module == "Happiness")?.Percentage
-        this.threeStepsP = res.ModUserScrPc.find(e => e.Module == "Three Steps to Enquiry")?.Percentage
-        this.noJudgementP = res.ModUserScrPc.find(e => e.Module == "No Judgement")?.Percentage
-        this.discoveringP = res.ModUserScrPc.find(e => e.Module == "Discovering Wisdom")?.Percentage
-        this.beginP = res.ModUserScrPc.find(e => e.Module == "How to Begin?")?.Percentage
-        this.insightP = res.ModUserScrPc.find(e => e.Module == "Insight")?.Percentage
-        this.pleasureP = res.ModUserScrPc.find(e => e.Module == "Pleasure")?.Percentage
-        this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
-        this.criticismP = res.ModUserScrPc.find(e => e.Module == "Criticism")?.Percentage
-        this.stressP = res.ModUserScrPc.find(e => e.Module == "Stress")?.Percentage
-        this.relationshipsP = res.ModUserScrPc.find(e => e.Module == "Relationships")?.Percentage
-        this.natureP = res.ModUserScrPc.find(e => e.Module == "Nature")?.Percentage
-        this.breathingP = res.ModUserScrPc.find(e => e.Module == "Breathing")?.Percentage
-        this.ntP = res.ModUserScrPc.find(e => e.Module == "Noticing Thoughts")?.Percentage
-        this.gamP = res.ModUserScrPc.find(e => e.Module == "Guided Audio Meditation")?.Percentage
-        this.communicationP = res.ModUserScrPc.find(e => e.Module == "Communication")?.Percentage
-        this.siP = res.ModUserScrPc.find(e => e.Module == "Self Image")?.Percentage
-        this.rmP = res.ModUserScrPc.find(e => e.Module == "Reactive Mind")?.Percentage
-        this.sinP = res.ModUserScrPc.find(e => e.Module == "Self Interest")?.Percentage
-        this.enP = res.ModUserScrPc.find(e => e.Module == "Emotional Needs")?.Percentage
-        this.ibP = res.ModUserScrPc.find(e => e.Module == "Inner Boredom")?.Percentage
-        this.wP = res.ModUserScrPc.find(e => e.Module == "Work")?.Percentage
-        this.lP = res.ModUserScrPc.find(e => e.Module == "Leadership")?.Percentage
-        this.niP = res.ModUserScrPc.find(e => e.Module == "The Nature of the I")?.Percentage
-        this.seP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
-        this.lonelinessP = res.ModUserScrPc.find(e => e.Module == "Loneliness")?.Percentage
-        this.livingwithpeaceP = res.ModUserScrPc.find(e => e.Module == "Living With Peace")?.Percentage
-        this.loveP = res.ModUserScrPc.find(e => e.Module == "Love")?.Percentage
-        this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing with Death")?.Percentage
-        this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
-        this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
-        this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
-        this.foodP = res.ModUserScrPc.find(e => e.Module == "Food and Health")?.Percentage
-        this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
-        this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
-        this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
-        this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
-        this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
-        this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
-        this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
-        this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
+        // this.angerP = res.ModUserScrPc.find(e => e.Module == "Anger")?.Percentage
+        // this.comparisonP = res.ModUserScrPc.find(e => e.Module == "Comparison & Envy")?.Percentage
+        // this.awarenessP = res.ModUserScrPc.find(e => e.Module == "Awareness")?.Percentage
+        // this.obstaclesP = res.ModUserScrPc.find(e => e.Module == "Obstacles to Enquiry")?.Percentage
+        // this.meditationP = res.ModUserScrPc.find(e => e.Module == "Meditation")?.Percentage
+        // this.benefitsWisdomP = res.ModUserScrPc.find(e => e.Module == "Benefits of Wisdom")?.Percentage
+        // this.guideP = res.ModUserScrPc.find(e => e.Module == "Start Here")?.Percentage
+        // this.fearP = res.ModUserScrPc.find(e => e.Module == "Fear & Anxiety")?.Percentage
+        // this.benefitsEnquiryP = res.ModUserScrPc.find(e => e.Module == "Benefits of self-awareness")?.Percentage
+        // this.questionsP = res.ModUserScrPc.find(e => e.Module == "Questions are Key")?.Percentage
+        // this.identityP = res.ModUserScrPc.find(e => e.Module == "Identity")?.Percentage
+        // this.keyP = res.ModUserScrPc.find(e => e.Module == "Key Ideas")?.Percentage
+        // this.selfEsteemP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
+        // this.conditioningP = res.ModUserScrPc.find(e => e.Module == "Conditioning")?.Percentage
+        // this.fiveCirclesP = res.ModUserScrPc.find(e => e.Module == "5 Circles of Wisdom")?.Percentage
+        // this.happinessP = res.ModUserScrPc.find(e => e.Module == "Happiness")?.Percentage
+        // this.threeStepsP = res.ModUserScrPc.find(e => e.Module == "Three Steps to Enquiry")?.Percentage
+        // this.noJudgementP = res.ModUserScrPc.find(e => e.Module == "No Judgement")?.Percentage
+        // this.discoveringP = res.ModUserScrPc.find(e => e.Module == "Discovering Wisdom")?.Percentage
+        // this.beginP = res.ModUserScrPc.find(e => e.Module == "How to Begin?")?.Percentage
+        // this.insightP = res.ModUserScrPc.find(e => e.Module == "Insight")?.Percentage
+        // this.pleasureP = res.ModUserScrPc.find(e => e.Module == "Pleasure")?.Percentage
+        // this.withoutLanguageP = res.ModUserScrPc.find(e => e.Module == "Look without Language")?.Percentage
+        // this.criticismP = res.ModUserScrPc.find(e => e.Module == "Criticism")?.Percentage
+        // this.stressP = res.ModUserScrPc.find(e => e.Module == "Stress")?.Percentage
+        // this.relationshipsP = res.ModUserScrPc.find(e => e.Module == "Relationships")?.Percentage
+        // this.natureP = res.ModUserScrPc.find(e => e.Module == "Nature")?.Percentage
+        // this.breathingP = res.ModUserScrPc.find(e => e.Module == "Breathing")?.Percentage
+        // this.ntP = res.ModUserScrPc.find(e => e.Module == "Noticing Thoughts")?.Percentage
+        // this.gamP = res.ModUserScrPc.find(e => e.Module == "Guided Audio Meditation")?.Percentage
+        // this.communicationP = res.ModUserScrPc.find(e => e.Module == "Communication")?.Percentage
+        // this.siP = res.ModUserScrPc.find(e => e.Module == "Self Image")?.Percentage
+        // this.rmP = res.ModUserScrPc.find(e => e.Module == "Reactive Mind")?.Percentage
+        // this.sinP = res.ModUserScrPc.find(e => e.Module == "Self Interest")?.Percentage
+        // this.enP = res.ModUserScrPc.find(e => e.Module == "Emotional Needs")?.Percentage
+        // this.ibP = res.ModUserScrPc.find(e => e.Module == "Inner Boredom")?.Percentage
+        // this.wP = res.ModUserScrPc.find(e => e.Module == "Work")?.Percentage
+        // this.lP = res.ModUserScrPc.find(e => e.Module == "Leadership")?.Percentage
+        // this.niP = res.ModUserScrPc.find(e => e.Module == "The Nature of the I")?.Percentage
+        // this.seP = res.ModUserScrPc.find(e => e.Module == "Self Esteem")?.Percentage
+        // this.lonelinessP = res.ModUserScrPc.find(e => e.Module == "Loneliness")?.Percentage
+        // this.livingwithpeaceP = res.ModUserScrPc.find(e => e.Module == "Living With Peace")?.Percentage
+        // this.loveP = res.ModUserScrPc.find(e => e.Module == "Love")?.Percentage
+        // this.dealingwithdeathP = res.ModUserScrPc.find(e => e.Module == "Dealing with Death")?.Percentage
+        // this.opinionsandbeliefsP = res.ModUserScrPc.find(e => e.Module == "Opinions and Beliefs")?.Percentage
+        // this.successandfailureP = res.ModUserScrPc.find(e => e.Module == "Success and Failure")?.Percentage
+        // this.addictionP = res.ModUserScrPc.find(e => e.Module == "Addiction")?.Percentage
+        // this.foodP = res.ModUserScrPc.find(e => e.Module == "Food and Health")?.Percentage
+        // this.moneyP = res.ModUserScrPc.find(e => e.Module == "Money")?.Percentage
+        // this.sorrowandlossP = res.ModUserScrPc.find(e => e.Module == "Sorrow and Loss")?.Percentage
+        // this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
+        // this.bullyingP = res.ModUserScrPc.find(e => e.Module == "Bullying")?.Percentage
+        // this.making_better_decisionsP = res.ModUserScrPc.find(e => e.Module == "Making better decisions")?.Percentage
+        // this.diversity_and_inclusionP = res.ModUserScrPc.find(e => e.Module == "Diversity and Inclusion")?.Percentage
+        // this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
+        // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
 
       })
 
@@ -1617,229 +1617,285 @@ export class AdultDashboardPage implements OnInit {
     let id = '';
     if (enableLastVisited) {
       id = this.resumeLastvisited.length !== 0 ? this.resumeLastvisited[0]['screenno'].substring(0, 2) : '23';
-    } else {
-      id = r.ModuleId.toString();
     }
+    // else {
+    //   id = r.ModuleId.toString();
+    // }
     localStorage.setItem("pageaction", 'next');
     switch (id) {
       case "07": {
-        this.routeComparison(1)
+        this.service.setmoduleID(id, '/adults/comparison', '/adults/comparison/s0');
+        // this.routeComparison(1)
         break
       }
       case "14": {
-        this.routeAnger(1)
+        this.service.setmoduleID(id, '/adults/anger', '/adults/anger/s162p0');
+        // this.routeAnger(1)
         break
       }
       case "15": {
+        this.service.setmoduleID(id, '/adults/conditioning', '/adults/conditioning/s232');
         this.routeConditioning(1)
         break
       }
       case "16": {
-        this.routeCriticism(1)
+        this.service.setmoduleID(id, '/adults/criticism', '/adults/criticism/s324');
+        // this.routeCriticism(1)
         break
       }
       case "17": {
-        this.routeSelfEsteem(1)
+        this.service.setmoduleID(id, '/adults/self-esteem', '/adults/self-esteem/s433');
+        // this.routeSelfEsteem(1)
         break
       }
       case "18": {
-        this.routeEmotionalNeeds(1)
+        this.service.setmoduleID(id, '/adults/emotional-needs', '/adults/emotional-needs/s18001');
+        // this.routeEmotionalNeeds(1)
         break
       }
       case "19": {
-        this.routeFearAnxiety(1)
+        this.service.setmoduleID(id, '/adults/fear-anxiety', '/adults/fear-anxiety/s486');
+        // this.routeFearAnxiety(1)
         break
       }
       case "20": {
-        this.routePleasure(1)
+        this.service.setmoduleID(id, '/adults/pleasure', '/adults/pleasure/s20001');
+        // this.routePleasure(1)
         break
       }
       case "21": {
-        this.routeIdentity(1)
+        this.service.setmoduleID(id, '/adults/identity', '/adults/identity/s21001');
+        // this.routeIdentity(1)
         break
       }
       case "22": {
-        this.routeMeditation(1)
+        this.service.setmoduleID(id, '/adults/meditation', '/adults/meditation/s22001');
+        // this.routeMeditation(1)
         break
       }
       case "23": {
-        this.routeHappiness(1)
+        this.service.setmoduleID(id, '/adults/happiness', '/adults/happiness/s23001');
+        // this.routeHappiness(1)
         break
       }
       case "25": {
-        this.routeSelfImage(1)
+        this.service.setmoduleID(id, '/adults/self-image', '/adults/self-image/s25001');
+        // this.routeSelfImage(1)
         break
       }
       case "26": {
-        this.routeBenefitsEnquiry(1)
+        this.service.setmoduleID(id, '/adults/benefits-of-enquiry', '/adults/benefits-of-enquiry/s26001');
+        // this.routeBenefitsEnquiry(1)
         break
       }
       case "27": {
-        this.routeDiscoveringWisdom(1)
+        this.service.setmoduleID(id, '/adults/discovering-wisdom', '/adults/discovering-wisdom/s27001');
+        // this.routeDiscoveringWisdom(1)
         break
       }
       case "28": {
-        this.routeNature(1)
+        this.service.setmoduleID(id, '/adults/nature', '/adults/nature/s28001');
+        // this.routeNature(1)
         break
       }
       case "29": {
-        this.routeBreathing(1)
+        this.service.setmoduleID(id, '/adults/breathing', '/adults/breathing/s29000');
+        // this.routeBreathing(1)
         break
       }
       case "30": {
-        this.routeNoticingThoughts(1)
+        this.service.setmoduleID(id, '/adults/noticing-thoughts', '/adults/noticing-thoughts/s30001');
+        // this.routeNoticingThoughts(1)
         break
       }
       case "32": {
-        this.routeBenefits(1)
+        this.service.setmoduleID(id, '/adults/benefits-of-wisdom', '/adults/benefits-of-wisdom/s32001');
+        // this.routeBenefits(1)
         break
       }
       case "33": {
-        this.routeCircles(1)
+        this.service.setmoduleID(id, '/adults/five-circles', '/adults/five-circles/s33001');
+        // this.routeCircles(1)
         break
       }
       case "34": {
-        this.routeIdeas(1)
+        this.service.setmoduleID(id, '/adults/key-ideas', '/adults/key-ideas/s34001');
+        // this.routeIdeas(1)
         break
       }
       case "35": {
-        this.routeGuide(1)
+        this.service.setmoduleID(id, '/adults/program-guide', '/adults/program-guide/s35001');
+        // this.routeGuide(1)
         break
       }
       case "36": {
-        this.routeHowToBegin(1)
+        this.service.setmoduleID(id, '/adults/how-to-begin', '/adults/how-to-begin/s36000');
+        // this.routeHowToBegin(1)
         break
       }
       case "37": {
-        this.routeThreeSteps(1)
+        this.service.setmoduleID(id, '/adults/three-steps-enquiry', '/adults/three-steps-enquiry/s37000');
+        // this.routeThreeSteps(1)
         break
       }
       case "38": {
-        this.routeInsights(1)
+        this.service.setmoduleID(id, '/adults/insight', '/adults/insight/s38000');
+        // this.routeInsights(1)
         break
       }
       case "39": {
-        this.routeAwareness(1)
+        this.service.setmoduleID(id, '/adults/awareness', '/adults/awareness/s39000');
+        // this.routeAwareness(1)
         break
       }
       case "40": {
-        this.routeNoJudgement(1)
+        this.service.setmoduleID(id, '/adults/no-judgement', '/adults/no-judgement/s40000');
+        // this.routeNoJudgement(1)
         break
       }
       case "41": {
-        this.routeQuestionsAreKey(1)
+        this.service.setmoduleID(id, '/adults/questions-are-key', '/adults/questions-are-key/s41000');
+        // this.routeQuestionsAreKey(1)
         break
       }
       case "42": {
-        this.routeLookWithoutLanguage(1)
+        this.service.setmoduleID(id, '/adults/without-language', '/adults/without-language/s42000');
+        // this.routeLookWithoutLanguage(1)
         break
       }
       case "43": {
-        this.routeObstacles(1)
+        this.service.setmoduleID(id, '/adults/obstacles-enquiry', '/adults/obstacles-enquiry/s43000');
+        // this.routeObstacles(1)
         break
       }
       case "44": {
-        this.routeStress(1)
+        this.service.setmoduleID(id, '/adults/stress', '/adults/stress/s44001');
+        // this.routeStress(1)
         break
       }
       case "45": {
-        this.routeAddiction(1)
+        this.service.setmoduleID(id, '/adults/habit-addiction', '/adults/habit-addiction/s45001');
+        // this.routeAddiction(1)
         break
       }
       case "46": {
-        this.routeFood(1)
+        this.service.setmoduleID(id, '/adults/food-health', '/adults/food-health/s46001');
+        // this.routeFood(1)
         break
       }
       case "47": {
-        this.routeRelationships(1)
+        this.service.setmoduleID(id, '/adults/relationships', '/adults/relationships/s47000');
+        // this.routeRelationships(1)
         break
       }
       case "48": {
-        this.routeSuccessAndFailure(1)
+        this.service.setmoduleID(id, '/adults/success-failure', '/adults/success-failure/s48001');
+        // this.routeSuccessAndFailure(1)
         break
       }
       case "49": {
-        this.routeOpinionsAndBeliefs(1)
+        this.service.setmoduleID(id, '/adults/opinions-beliefs', '/adults/opinions-beliefs/s49001');
+        // this.routeOpinionsAndBeliefs(1)
         break
       }
       case "51": {
-        this.routeGuidedMeditation(1)
+        this.service.setmoduleID(id, '/adults/guided-meditation', '/adults/guided-meditation/s51000');
+        // this.routeGuidedMeditation(1)
         break
       }
       case "53": {
-        this.routeCommunication(1)
+        this.service.setmoduleID(id, '/adults/communication', '/adults/communication/s53001');
+        // this.routeCommunication(1)
         break
       }
       case "54": {
-        this.routeReactiveMind(1)
+        this.service.setmoduleID(id, '/adults/reactive-mind', '/adults/reactive-mind/s54001');
+        // this.routeReactiveMind(1)
         break
       }
       case "55": {
-        this.routeSelfInterest(1)
+        this.service.setmoduleID(id, '/adults/self-interest', '/adults/self-interest/s55001');
+        // this.routeSelfInterest(1)
         break
       }
       case "56": {
-        this.routeInnerBoredom(1)
+        this.service.setmoduleID(id, '/adults/inner-boredom', '/adults/inner-boredom/s56001');
+        // this.routeInnerBoredom(1)
         break
       }
       case "57": {
-        this.routeNatureOfI(1)
+        this.service.setmoduleID(id, '/adults/nature-of-i', '/adults/nature-of-i/s57001');
+        // this.routeNatureOfI(1)
         break
       }
       case "58": {
-        this.routeWork(1)
+        this.service.setmoduleID(id, '/adults/work', '/adults/work/s58001');
+        // this.routeWork(1)
         break
       }
       case "59": {
-        this.routeLeadership(1)
+        this.service.setmoduleID(id, '/adults/leadership', '/adults/leadership/s59001');
+        // this.routeLeadership(1)
         break
       }
       case "60": {
-        this.routeSorrowandLoss(1)
+        this.service.setmoduleID(id, '/adults/sorrow', '/adults/sorrow/s60001');
+        // this.routeSorrowandLoss(1)
         break
       }
       case "61": {
-        this.routeLoneliness(1)
+        this.service.setmoduleID(id, '/adults/loneliness', '/adults/loneliness/s61001');
+        // this.routeLoneliness(1)
         break
       }
       case "62": {
-        this.routeLove(1)
+        this.service.setmoduleID(id, '/adults/love', '/adults/love/s62001');
+        // this.routeLove(1)
         break
       }
       case "63": {
-        this.routeLivingWithPeace(1)
+        this.service.setmoduleID(id, '/adults/living-with-peace', '/adults/living-with-peace/s63001');
+        // this.routeLivingWithPeace(1)
         break
       }
       case "64": {
-        this.routeDealingWithDeath(1)
+        this.service.setmoduleID(id, '/adults/dealing-with-death', '/adults/dealing-with-death/s64001');
+        // this.routeDealingWithDeath(1)
         break
       }
       case "73": {
-        this.routeMoney(1)
+        this.service.setmoduleID(id, '/adults/money', '/adults/money/s73001');
+        // this.routeMoney(1)
         break
       }
       case "74": {
-        this.routehowcanwisdomhelp(1)
+        this.service.setmoduleID(id, '/adults/how-can-wisdom-help', '/adults/how-can-wisdom-help/s74001');
+        // this.routehowcanwisdomhelp(1)
         break
       }
       case "76": {
-        this.routeBullying(1)
+        this.service.setmoduleID(id, '/adults/bullying', '/adults/bullying/s76001');
+        // this.routeBullying(1)
         break
       }
       case "77": {
-        this.routeMakingBetterDecisions(1)
+        this.service.setmoduleID(id, '/adults/making-better-decisions', '/adults/making-better-decisions/s77001');
+        // this.routeMakingBetterDecisions(1)
         break
       }
       case "92": {
-        this.routeDealingWithDepression(1)
+        this.service.setmoduleID(id, '/adults/dealing-with-depression', '/adults/dealing-with-depression/s92001');
+        // this.routeDealingWithDepression(1)
         break
       }
       case "91": {
-        this.routeExternalApproval(1)
+        this.service.setmoduleID(id, '/adults/external-approval', '/adults/external-approval/s91001');
+        // this.routeExternalApproval(1)
         break
       }
       case "143": {
-        this.routeDiversityandInclusion(1)
+        this.service.setmoduleID(id, '/adults/diversity-and-inclusion', '/adults/diversity-and-inclusion/s143001');
+        // this.routeDiversityandInclusion(1)
         break
       }
 
