@@ -39,22 +39,22 @@ export class HaveFulfillingRelationshipsPage implements OnInit {
         pc01: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
-          title: 'The art (and benefits) of understanding our own ego.'
+          title: 'Understanding our own ego.'
         },
         pc02: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying: Lessons from HumanWisdom'
+          title: 'The Art of Living and Dying'
         },
         pc03: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/5.mp3',
-          title: 'Emotional Wellness in Relationships: Overcoming Hurt and Building Resilience'
+          title: 'Emotional Wellness in Relationships'
         },
         pc04: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/9.mp3',
-          title: 'Wisdom in Action: Living a Life of Compassion and Empathy'
+          title: 'Living with Compassion'
         }
       }
      }

@@ -38,12 +38,12 @@ export class OvercomeStressAnxietyPage implements OnInit {
         pc01: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
-          title: 'The art (and benefits) of understanding our own ego.'
+          title: 'Understanding our own ego'
         },
         pc02: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
-          title: 'Anxiety No More: Unlocking the Path to Fearless Living'
+          title: 'How can we overcome anxiety?'
         }
       }
     }
