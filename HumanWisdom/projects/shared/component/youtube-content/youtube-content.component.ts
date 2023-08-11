@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'HumanWisdom-youtube-content',
@@ -10,11 +11,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class YoutubeContentComponent implements OnInit {
   public videoLink: any;
   public linkcode: any;
- 
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   @Input() bg: string;
   
-  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router) {
+  constructor(private route: ActivatedRoute,private _sanitizer: DomSanitizer, private router: Router, private location: Location) {
     this.linkcode = this.route.snapshot.paramMap.get('videolink')
    
     let accesscode = 'rdtfghjhfdg'
@@ -54,13 +56,26 @@ export class YoutubeContentComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     let code = `https://www.youtube.com/embed/${this.linkcode}`;
     this.videoLink = this.getSafeUrl(code);
   }
 
-  getSafeUrl(url) {
+  getSafeUrl(url) 
+  {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url)
-}
+  }
+
+  goBack() 
+  {
+    this.location.back()
+  }
+
+  getclcickevent(event) {
+    if (event === 'enablepopup') {
+      this.enablepopup.nativeElement.click();
+    }
+  }
 
 }

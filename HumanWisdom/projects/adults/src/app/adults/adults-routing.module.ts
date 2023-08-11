@@ -462,6 +462,10 @@ const routes: Routes = [
   {
     path:'change-topic',
     loadChildren: () => import('./change-topic/change-topic.module').then(m=>m.ChangeTopicPageModule)
+  },
+  {
+    path: 'videopage/:videolink',
+    component: S3VideoComponent
   }
 ];
 

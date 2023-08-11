@@ -22,7 +22,7 @@ export class S159Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark: any
-
+  toc = "/comparison/s0";
   constructor
   (
     private router: Router,
@@ -32,7 +32,7 @@ export class S159Page implements OnInit, OnDestroy
   { }
 
   ngOnInit() 
-  {
+  {16
     if (this.saveUsername == false) 
     { 
       this.userId = JSON.parse(sessionStorage.getItem("userId")) 

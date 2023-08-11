@@ -11,19 +11,17 @@ import { Location } from '@angular/common';
 export class BoredomPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
-  audioData:any;
+
+ 
 
   constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location) { }
 
   ngOnInit() {
-    this.audioData={
-      url:'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.32.mp3'
-    }
+   
   }
-  audioevent(url) {
-      this.router.navigate(['feel-better-now/boredom/audiopage/', url ,"Be present in your own life",Math.random() ])
-  }
+  
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
@@ -34,4 +32,13 @@ export class BoredomPage implements OnInit {
   goBack() {
     this.location.back()
   }
+
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url])
+    }else{
+     let concat = this.mediaAudio+url;
+     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+    }
+ }
 }

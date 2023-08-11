@@ -1,0 +1,19 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Especially in the age of social media, it is easy to fall into a trap where we judge our self-worth based on what others think of us, and how many likes we have or how popular we are. The mind does this subtly, and automatically, because it craves pleasure, and being liked by others gives us that dopamine boost we need. There is nothing wrong with pleasure, but this unconscious pattern of thinking can also trap us into needing more and more of it, and then feeling inadequate if we don’t get that. The first step is to become aware our mind is doing this. If you do the exercises in the nurture a quiet mind section your mind becomes calm and you realise you don’t need external approval to be at peace with who you are. Being alive and having the gift of life is enough.
+          </h3>            
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

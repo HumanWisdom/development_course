@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our emotional needs are part of being human. They operate in the background, unconsciously directing our actions. If we are not aware of them, we can use our relationships to meet them, and call that love. If we demand that others meet them and make that a condition of our loving them, then all love vanishes, and is replaced by conflict. To change, the first step is to become aware of them without judgement and see how they impact our relationships. We can then take ownership of them and ask questions, like ‘ Why do I expect others to meet my emotional needs?’ When both people in a relationship are aware of them they can be expressed as a request and not a demand. We could then stop making our love conditional on others meeting these needs. That allows us to be more loving’
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

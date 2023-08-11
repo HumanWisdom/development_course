@@ -55,4 +55,8 @@ export class IndexPage implements OnInit {
     this.router.navigate(['adults/find-answers/'+newUrl])
   }
 
+  youtube(link) {
+    this.router.navigate(['/adults/curated/youtubelink', link])
+  }
+
 }

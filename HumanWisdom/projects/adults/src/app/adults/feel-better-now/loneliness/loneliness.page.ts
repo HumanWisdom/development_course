@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 export class LonelinessPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
   mediaUrl: any;
 
@@ -23,10 +24,7 @@ export class LonelinessPage implements OnInit {
 
   ngOnInit() {}
   
-  audioevent(url) {
-      this.router.navigate(['feel-better-now/loneliness/audiopage/', url ,"Dealing with loneliness",Math.random() ])
-  }
-
+  
   routeToYoutube(url) {
     this.router.navigate(['feel-better-now/feeling-upset/youtubelink/',url]);
   }
@@ -40,4 +38,13 @@ export class LonelinessPage implements OnInit {
   goBack() {
     this.location.back()
   }
+
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url])
+    }else{
+     let concat = this.mediaAudio+url;
+     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+    }
+ }
 }
