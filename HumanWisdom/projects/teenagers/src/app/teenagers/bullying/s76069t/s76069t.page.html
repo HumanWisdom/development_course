@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            If you are the one feeling bullied, what are your options?
+            One of course is to say or do nothing, or pretend that it is not happening, but that is just going to prolong your misery, and give the bully more confidence.
+          </p>
+
+          <p>
+            Begin by asking yourself why the other person is behaving in the way they are, and if they are aware of their own actions?
+          </p>
+
+          <p>
+            If you think they are just hurting inside and not aware of their behaviour, you could try speaking to them - You could say - Are you aware of the hurt your actions are causing others?
+          </p>
+
+          <p>
+            The tone of your voice needs to be calm, and the conversation needs to happen outside the acute event.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Bullying in intimate relationships is common and the bully may be unaware of their actions. It affects up to 1 in 3 relationships in some studies. At its root it is one person wanting power over another or trying to exert control over another. It can take several forms including verbal abuse, sarcasm, controlling behaviour, anger, constant criticism, putting others down, withholding affection if they do not get what they want, and so on.
+          </p>
+
+          <p>
+            In any relationship where there is abuse or bullying there is no love, and without love, something vital is lost
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

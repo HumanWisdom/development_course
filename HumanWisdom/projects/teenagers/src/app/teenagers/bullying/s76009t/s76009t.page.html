@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Bullying behaviour can be:
+          </p>
+
+          <p>
+            Physical – pushing, poking, kicking, hitting, biting, pinching etc.
+          </p>
+
+          <p>
+            Verbal  - name calling, sarcasm, spreading rumours, threats, teasing, belittling.
+          </p>
+
+          <p>
+            Emotional – isolating others, threatening gestures, ridicule, humiliation, intimidating, manipulation and coercion.
+          </p>
+
+          <p>
+            Sexual – unwanted physical contact, inappropriate touching, abusive comments, homophobic abuse
+          </p>
+
+          <p>
+            Online /cyber – posting on social media, sharing photos, sending nasty text messages, social exclusion
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

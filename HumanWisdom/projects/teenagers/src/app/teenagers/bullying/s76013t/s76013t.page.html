@@ -1,0 +1,17 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            How does bullying impact the people being bullied? There is stress and emotional suffering on a scale that is difficult to estimate. Because it is repeated it also creates an anxiety of it happening again. It robs people of their sense of self-esteem and can lead to self harm and suicidal thoughts. Sometimes victims blame themselves because that is what they have been told by people who have bullied them. People leave schools, jobs, and their relationships because of it. Some are not so lucky and don’t have the option of leaving and continue to suffer
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
