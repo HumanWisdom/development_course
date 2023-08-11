@@ -21360,8 +21360,10 @@ and (orientation : portrait)
 #div_graph
 {
   margin: 0 -22px !important;
-  background: #ffffff;
-  border-bottom: 1px solid #ADADAD;
+  /* background: #ffffff;
+  border-bottom: 1px solid #ADADAD; */
+  border-radius: 10px;
+  background: #120F40;
 }
 
 .mb30px
@@ -33327,4 +33329,78 @@ body *
 {
   color: rgba(255,255,255,0.50) !important;
 }
+
+.btn_e58d82
+{
+  height: 50px;
+  width: 100%;
+  border: 0;
+  box-shadow: unset;
+  margin: 0;
+  border-radius: 100px;
+  background: #E58D82;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+/* progress tab */
+.progress_tabs
+{
+  border-bottom: 0;
+  border-radius: 12px;
+  background: #120F40;
+  padding: 8px;
+}
+
+.progress_tabs>li
+{
+  margin-bottom: -2px;
+  width: 50%;
+}
+
+.progress_tabs>li.active>a, 
+.progress_tabs>li.active>a:focus, 
+.progress_tabs>li.active>a:hover
+{
+  height: 40px;
+  border: 0;
+  border-radius: 6px;
+  background: #E58D82;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress_tabs>li>a 
+{
+  color: #A0A3BD;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  height: 40px;
+  border: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+.div_tv
+{
+  border-radius: 10px;
+  background: #120F40;
+  padding: 15px;
+}
+
+.div_tv .row:last-child
+{
+  margin-bottom: 0;
+}
+/* /progress tab */
 /* /version - 03 */
