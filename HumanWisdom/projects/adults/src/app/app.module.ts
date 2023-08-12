@@ -35,6 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MoengageService } from './moengage.service';
 import { AdultsService } from './adults/adults.service';
 import { initDependency } from './initdependency';
+import { AudioVideoGuard } from './audio-video.guard';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -111,6 +112,7 @@ export class MyHammerConfig extends HammerGestureConfig {
           deps: [AdultsService],
           multi: true,
         },
+        AudioVideoGuard
     ],
     bootstrap: [AppComponent]
 })

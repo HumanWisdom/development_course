@@ -13,8 +13,8 @@ export class CopingWithIllnessPage implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
   mediaUrl:any;
-  
-  constructor(private router: Router, private location: Location) 
+
+  constructor(private router: Router, private location: Location)
   {
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.30.mp3',
@@ -44,10 +44,10 @@ export class CopingWithIllnessPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
-     this.router.navigate([url])
+     this.router.navigate([url, '', 'F'])
     }else{
      let concat = this.mediaAudio+url;
-     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+     this.router.navigate(['adults/audiopage/', concat, title, '1', 'F'])
     }
  }
 }
