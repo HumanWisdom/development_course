@@ -44,7 +44,7 @@ export class DepressionPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
-     this.router.navigate([url, 'F', ''])
+     this.router.navigate([url, 'F', title])
     }else{
      let concat = this.mediaAudio+url;
      this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
