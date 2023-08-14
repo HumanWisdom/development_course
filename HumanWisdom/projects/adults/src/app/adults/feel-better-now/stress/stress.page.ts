@@ -29,10 +29,10 @@ export class StressPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
      if(type === 'video') {
-      this.router.navigate([url, '', 'T'])
+      this.router.navigate([url, 'T', ''])
      }else{
       let concat = this.mediaAudio+url;
-      this.router.navigate(['adults/audiopage/', concat, title, '1', 'T'])
+      this.router.navigate(['adults/audiopage/', concat, '1', 'T', title])
      }
   }
 

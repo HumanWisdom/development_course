@@ -466,12 +466,22 @@ const routes: Routes = [
     loadChildren: () => import('./change-topic/change-topic.module').then(m=>m.ChangeTopicPageModule)
   },
   {
-    path: 'videopage/:videolink/:title/:enable',
+    path: 'videopage/:videolink/:enable',
     canActivate: [AudioVideoGuard],
     component: S3VideoComponent
   },
   {
-    path: 'audiopage/:audiolink/:title/:RowId/:enable',
+    path: 'videopage/:videolink/:enable/:title',
+    canActivate: [AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable',
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
   }
