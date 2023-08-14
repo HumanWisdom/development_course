@@ -14,7 +14,7 @@ export class LonelinessPage implements OnInit {
 
   mediaUrl: any;
 
-  constructor(private router: Router, private location: Location) 
+  constructor(private router: Router, private location: Location)
   {
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.29.mp3',
@@ -23,8 +23,8 @@ export class LonelinessPage implements OnInit {
   }
 
   ngOnInit() {}
-  
-  
+
+
   routeToYoutube(url) {
     this.router.navigate(['feel-better-now/feeling-upset/youtubelink/',url]);
   }
@@ -41,10 +41,10 @@ export class LonelinessPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
-     this.router.navigate([url])
+     this.router.navigate([url, '', 'F'])
     }else{
      let concat = this.mediaAudio+url;
-     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+     this.router.navigate(['adults/audiopage/', concat, title, '1', 'F'])
     }
  }
 }

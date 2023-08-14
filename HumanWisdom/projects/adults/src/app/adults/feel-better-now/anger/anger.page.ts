@@ -29,10 +29,10 @@ export class AngerPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
-     this.router.navigate([url])
+     this.router.navigate([url, '', 'F'])
     }else{
      let concat = this.mediaAudio+url;
-     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+     this.router.navigate(['adults/audiopage/', concat, title, '1', 'F'])
     }
  }
 
