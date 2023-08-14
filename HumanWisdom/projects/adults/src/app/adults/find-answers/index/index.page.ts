@@ -21,6 +21,7 @@ export class IndexPage implements OnInit {
    }
 
   ngOnInit() {
+    debugger;
   }
 
   getActiveClass(param){
@@ -41,7 +42,7 @@ export class IndexPage implements OnInit {
   goBack() 
   {
     this.location.back()
-  }
+  } 
 
   routeToTab(param){
     this.defaultUrl = param;
@@ -51,8 +52,8 @@ export class IndexPage implements OnInit {
 
   changeURLParams(parameter: string) {
     const newUrl = this.location.path().split('/')[0] + `${parameter}`;
-    this.location.replaceState('/find-answers/'+newUrl);
-    this.router.navigate(['adults/find-answers/'+newUrl])
+    this.location.replaceState('adults/find-answers/'+newUrl);
+    this.router.navigate(['adults/find-answers/'+newUrl], { replaceUrl: true, skipLocationChange: true })
   }
 
   youtube(link) {

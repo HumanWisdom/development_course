@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
 import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video.component';
 import { ActiveGuard } from '../active.guard';
+import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
+import { AudioVideoGuard } from '../audio-video.guard';
 
 const routes: Routes = [
   {
@@ -464,8 +466,14 @@ const routes: Routes = [
     loadChildren: () => import('./change-topic/change-topic.module').then(m=>m.ChangeTopicPageModule)
   },
   {
-    path: 'videopage/:videolink',
+    path: 'videopage/:videolink/:title/:enable',
+    canActivate: [AudioVideoGuard],
     component: S3VideoComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:title/:RowId/:enable',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
   }
 ];
 

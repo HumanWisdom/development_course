@@ -14,8 +14,8 @@ export class DepressionPage implements OnInit {
 
   mediaUrl:any;
 
-  constructor(private router: Router, private location: Location) 
-  { 
+  constructor(private router: Router, private location: Location)
+  {
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.31.mp3',
       youtubeUrl: 'Liq_aj6jYd4'
@@ -23,7 +23,7 @@ export class DepressionPage implements OnInit {
   }
 
   ngOnInit() {}
-  
+
   audioevent(url) {
       this.router.navigate(['feel-better-now/depression/audiopage/', url ,"Deal with depression",Math.random() ])
   }
@@ -44,10 +44,10 @@ export class DepressionPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
-     this.router.navigate([url])
+     this.router.navigate([url, '', 'F'])
     }else{
      let concat = this.mediaAudio+url;
-     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+     this.router.navigate(['adults/audiopage/', concat, title, '1', 'F'])
     }
  }
 }
