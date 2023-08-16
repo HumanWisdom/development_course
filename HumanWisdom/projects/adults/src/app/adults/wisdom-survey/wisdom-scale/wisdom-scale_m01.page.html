@@ -2,20 +2,22 @@
 
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
-      </a>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 gqtns_index_tn">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">                          
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="p0">
+      </a>  
     </div>
-
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Wisdom Survey
-      </h1>
+    
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a  class="">                       
+        <h1 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px tcenter">
+          Wisdom Survey
+        </h1>            
+      </a>  
     </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
     </div>
   </div>
 </div>
@@ -24,11 +26,11 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01">				
+<div class="right_col mc_01" role="main">				
   <!-- Class -->  
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -45,29 +47,27 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                     </div>
                   </div>
-
-                </div>
-              </div>
-
-              <div class="row mtb30px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <button type="button" class="btn btn_e58d82" routerLink="/adults/wisdom-survey/progress">
-                    View your progress
-                  </button>
+                  
+                  <div class="row mb30px" style="margin-top: 30px">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <button type="button" class="btn btn-warning btn_vdi w100" routerLink="/adults/wisdom-survey/wisdom-survey-insight" data-dismiss="modal">View Survey Insights</button>
+                    </div>
+                  </div>
+            
                 </div>
               </div>
           
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_24px fw_600 lh_150p fc_ffffff">
+              <div class="row mt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h4 class="fw_500 fs_24px lh_28px fc_5d5d5d tcenter mb0px">
                     Take the survey
                   </h4>
                 </div>
               </div>
           
-              <div class="row mt10px mb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+              <div class="row mb30px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h6 class="fw_400 fs_12px lh_14px fc_5d5d5d tcenter">
                     We recommend taking this survey at least twice a month
                   </h6>
                 </div>
@@ -97,7 +97,7 @@
               <div class="row mt30px mb40px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <a (click)="submitProgress()">
-                    <button type="button" class="btn btn_e58d82">Submit</button>
+                    <button type="button" class="btn btn-warning btn_ws_submit w100">Submit</button>
                   </a>
                 </div>
               </div>

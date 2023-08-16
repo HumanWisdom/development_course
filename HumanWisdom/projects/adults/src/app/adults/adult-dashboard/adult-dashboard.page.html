@@ -244,7 +244,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="">
                                 <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                  For {{name}}
+                                   {{name.trim() === 'guest' ? 'Featured' : 'For ' + name}}
                                 </h2>
                               </div>
                             </div>

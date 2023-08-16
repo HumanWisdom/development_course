@@ -1,5 +1,5 @@
 import { Platform } from '@angular/cdk/platform';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+
 @Component({
   selector: 'app-adult-dashboard',
   templateUrl: './adult-dashboard.page.html',
@@ -55,7 +56,7 @@ export class AdultDashboardPage implements OnInit {
   // public obstaclesP: any
   // public meditationP: any
   // public benefitsWisdomP: any
-  public guideP: any
+  public guideP = '50';
   // public fearP: any
   // public benefitsEnquiryP: any
   // public questionsP: any
@@ -180,8 +181,8 @@ export class AdultDashboardPage implements OnInit {
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     setTimeout(() => {
-      this.getModuleList();
-      this.GetWisdomScreens();
+      // this.getModuleList();
+      // this.GetWisdomScreens();
     }, 1500);
     let app = localStorage.getItem("fromapp")
     if (app && app === 'T') {
@@ -295,9 +296,9 @@ export class AdultDashboardPage implements OnInit {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
 
-    if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
-      this.getProgress();
-    }
+    // if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
+    //   this.getProgress();
+    // }
 
     this.getLastvisitedScr();
 
@@ -363,10 +364,10 @@ export class AdultDashboardPage implements OnInit {
 
     this.logeventservice.logEvent('view_home_page');
     this.dash = this.router.url.includes('adult-dashboard');
-    this.getuserDetail();
+    // this.getuserDetail();
     setTimeout(() => {
-      this.getUsershorts()
-      this.getUserstories()
+      // this.getUsershorts()
+      // this.getUserstories()
       this.GetDashboardFeatures();
     }, 1000)
 
@@ -472,33 +473,33 @@ export class AdultDashboardPage implements OnInit {
     localStorage.setItem("pageaction", 'next')
   }
 
-  curatedDash(name: any) {
-    if (name === 'Manage your emotions') {
-      localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
-      this.router.navigate(['/adults/curated/manage-your-emotions'])
-    } else if (name === 'Overcome stress and anxiety') {
-      localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
-      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
-    } else if (name === 'Wisdom for the workplace') {
-      localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
-      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-    } else if (name === 'Have fulfilling relationships') {
-      localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
-      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
-    } else if (name === 'Be happier') {
-      localStorage.setItem('curatedurl', '/adults/curated/be-happier');
-      this.router.navigate(['/adults/curated/be-happier'])
-    } else if (name === 'Change unhelpful habits') {
-      localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
-      this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    } else if (name === 'Deal with sorrow and loss') {
-      localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
-      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
-    } else if (name === 'Mindfulness') {
-      localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
-      this.router.navigate(['/adults/curated/have-calm-mind'])
-    }
-  }
+  // curatedDash(name: any) {
+  //   if (name === 'Manage your emotions') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
+  //     this.router.navigate(['/adults/curated/manage-your-emotions'])
+  //   } else if (name === 'Overcome stress and anxiety') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
+  //     this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+  //   } else if (name === 'Wisdom for the workplace') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
+  //     this.router.navigate(['/adults/curated/wisdom-for-workplace'])
+  //   } else if (name === 'Have fulfilling relationships') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
+  //     this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
+  //   } else if (name === 'Be happier') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/be-happier');
+  //     this.router.navigate(['/adults/curated/be-happier'])
+  //   } else if (name === 'Change unhelpful habits') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
+  //     this.router.navigate(['/adults/curated/change-unhelpful-habits'])
+  //   } else if (name === 'Deal with sorrow and loss') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
+  //     this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
+  //   } else if (name === 'Mindfulness') {
+  //     localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
+  //     this.router.navigate(['/adults/curated/have-calm-mind'])
+  //   }
+  // }
 
   getplaystore(event) {
     this.enablebanner = false
@@ -531,60 +532,60 @@ export class AdultDashboardPage implements OnInit {
     })
   }
 
-  toRead(obj) {
-    localStorage.setItem("story", JSON.stringify(obj))
-    let res = localStorage.getItem("isloggedin");
-    this.sId = obj.ScenarioID
-    if (res && res === 'T') {
-      this.service.clickStory(obj.ScenarioID).subscribe(() => {
+  // toRead(obj) {
+  //   localStorage.setItem("story", JSON.stringify(obj))
+  //   let res = localStorage.getItem("isloggedin");
+  //   this.sId = obj.ScenarioID
+  //   if (res && res === 'T') {
+  //     this.service.clickStory(obj.ScenarioID).subscribe(() => {
 
-        this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${this.sId}` } })
-      })
-    } else {
-      this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${this.sId}` } })
-    }
+  //       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${this.sId}` } })
+  //     })
+  //   } else {
+  //     this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${this.sId}` } })
+  //   }
 
-  }
+  // }
 
-  getUsershorts() {
-    this.shortsList = []
-    this.service.getdashshorts().subscribe((res) => {
-      if (res) {
-        this.shortsList = res;
-      }
-    })
-  }
+  // getUsershorts() {
+  //   this.shortsList = []
+  //   this.service.getdashshorts().subscribe((res) => {
+  //     if (res) {
+  //       this.shortsList = res;
+  //     }
+  //   })
+  // }
 
-  getUserstories() {
-    this.lifestoriesList = []
-    this.service.getdashstories().subscribe((res) => {
-      if (res) {
-        this.lifestoriesList = res
-      }
-    })
-  }
+  // getUserstories() {
+  //   this.lifestoriesList = []
+  //   this.service.getdashstories().subscribe((res) => {
+  //     if (res) {
+  //       this.lifestoriesList = res
+  //     }
+  //   })
+  // }
 
   wisdomshortsclick(url) {
     this.router.navigate([url])
   }
 
-  getsupport(url, id, ind = 0) {
-    let index = ind + 1
-    url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
-    this.service.clickModule(id, this.userId)
-      .subscribe(res => {
-        localStorage.setItem('activemoduleid', id);
-        localStorage.setItem('moduleId', id);
-        this.router.navigate([url])
-        localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
-      },
-        error => {
-          console.log(error)
-        },
-        () => {
+  // getsupport(url, id, ind = 0) {
+  //   let index = ind + 1
+  //   url = url === '/adults/get-support-now/s7100' ? '/adults/get-support-now/s7100' + index : url
+  //   this.service.clickModule(id, this.userId)
+  //     .subscribe(res => {
+  //       localStorage.setItem('activemoduleid', id);
+  //       localStorage.setItem('moduleId', id);
+  //       this.router.navigate([url])
+  //       localStorage.setItem("supportwisdomstories", JSON.stringify(res['scenarios']))
+  //     },
+  //       error => {
+  //         console.log(error)
+  //       },
+  //       () => {
 
-        })
-  }
+  //       })
+  // }
 
   youtube(link) {
     this.router.navigate(['/adults/curated/youtubelink', link])
@@ -620,24 +621,24 @@ export class AdultDashboardPage implements OnInit {
     // this.enableDailypopup();
   }
 
-  freescreens() {
-    this.service.freeScreens().subscribe(res => {
-      this.x = []
-      let result = res.map(a => a.FreeScrs);
-      let arr;
-      result = result.forEach(element => {
-        if (element && element.length !== 0) {
-          this.x.push(element.map(a => a.ScrNo))
-          arr = Array.prototype.concat.apply([], this.x);
-        }
-      })
-      localStorage.setItem("freeScreens", JSON.stringify(arr))
-    }
+  // freescreens() {
+  //   this.service.freeScreens().subscribe(res => {
+  //     this.x = []
+  //     let result = res.map(a => a.FreeScrs);
+  //     let arr;
+  //     result = result.forEach(element => {
+  //       if (element && element.length !== 0) {
+  //         this.x.push(element.map(a => a.ScrNo))
+  //         arr = Array.prototype.concat.apply([], this.x);
+  //       }
+  //     })
+  //     localStorage.setItem("freeScreens", JSON.stringify(arr))
+  //   }
 
 
 
-    )
-  }
+  //   )
+  // }
 
 
   subscribenow() {
@@ -729,7 +730,6 @@ export class AdultDashboardPage implements OnInit {
               // window.alert('You have enetered wrong credentials. Please try again.')
               // this.email=""
               // this.password=""
-
             }
             else {
               // this.showAlert=false
@@ -743,19 +743,12 @@ export class AdultDashboardPage implements OnInit {
                 localStorage.setItem("userId", JSON.stringify(this.userId))
                 localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
                 localStorage.setItem("userName", JSON.stringify(this.userName))
-
               }
-
               else {
                 sessionStorage.setItem("userId", JSON.stringify(this.userId))
                 sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
                 sessionStorage.setItem("userName", JSON.stringify(this.userName))
-
-
               }
-
-
-
               let acceptCookie = localStorage.getItem('activeCode');
               let subscribePage = localStorage.getItem('subscribepage');
               if (acceptCookie === 'T' || subscribePage === 'T') {
@@ -794,25 +787,21 @@ export class AdultDashboardPage implements OnInit {
         //this.router.navigate[('/onboarding/addcart')]
         // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
       });
-
-
-
-
   }
-  getModuleList(isLoad?) {
-    if (this.moduleList.length == 0) {
-      this.service.getModuleList().subscribe(res => {
-        this.moduleList = res;
-        if (isLoad == true) {
-          if (this.searchinp == '') {
-            this.searchResult = this.moduleList;
-          } else {
-            this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
-          }
-        }
-      });
-    }
-  }
+  // getModuleList(isLoad?) {
+  //   if (this.moduleList.length == 0) {
+  //     this.service.getModuleList().subscribe(res => {
+  //       this.moduleList = res;
+  //       if (isLoad == true) {
+  //         if (this.searchinp == '') {
+  //           this.searchResult = this.moduleList;
+  //         } else {
+  //           this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+  //         }
+  //       }
+  //     });
+  //   }
+  // }
   fbLogin(d = '') {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.authService.authState.subscribe((user) => {
@@ -881,18 +870,12 @@ export class AdultDashboardPage implements OnInit {
                   localStorage.setItem("userId", JSON.stringify(this.userId))
                   localStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
                   localStorage.setItem("userName", JSON.stringify(this.userName))
-
                 }
-
                 else {
                   sessionStorage.setItem("userId", JSON.stringify(this.userId))
                   sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail))
                   sessionStorage.setItem("userName", JSON.stringify(this.userName))
-
-
                 }
-
-
                 let acceptCookie = localStorage.getItem('activeCode');
                 let subscribePage = localStorage.getItem('subscribepage');
                 if (acceptCookie === 'T' || subscribePage === 'T') {
@@ -916,8 +899,6 @@ export class AdultDashboardPage implements OnInit {
                     this.router.navigate(['/adults/adult-dashboard'])
                   }
                 }
-
-
                 /* if(this.urlEmail)
                   {
                     this.service.verifyUser(this.userId)
@@ -948,21 +929,15 @@ export class AdultDashboardPage implements OnInit {
       "Pwd": this.registrationForm.get('password').value,
     })
       .subscribe(res => {
-
         if (res > 0) {
           this.userId = res
           this.email = this.registrationForm.get('email').value
           this.firstpage = false;
           this.secondpage = true;
-
         }
-
-
       },
         error => {
           window.alert(error.error.Message)
-
-
         },
         () => {
         }
@@ -1025,7 +1000,6 @@ export class AdultDashboardPage implements OnInit {
         () => {
         }
       )
-
   }
 
 
@@ -1129,8 +1103,8 @@ export class AdultDashboardPage implements OnInit {
           }
           this.streak = res.Streak
           console.log(this.streak)
-          this.getProgress()
-          this.freescreens();
+          // this.getProgress()
+          // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -1152,7 +1126,7 @@ export class AdultDashboardPage implements OnInit {
             this.userName = JSON.parse(sessionStorage.getItem("userName"))
 
           }
-          this.getBookmarks()
+          // this.getBookmarks()
           if (res.UserId == 0) {
 
           }
@@ -1213,8 +1187,8 @@ export class AdultDashboardPage implements OnInit {
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
     this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-    this.getProgress()
-    this.freescreens();
+    // this.getProgress()
+    // this.freescreens();
     localStorage.setItem("text", JSON.stringify(this.text))
     localStorage.setItem("video", JSON.stringify(this.video))
     localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -1235,7 +1209,7 @@ export class AdultDashboardPage implements OnInit {
       this.userId = JSON.parse(sessionStorage.getItem("userId"))
       this.userName = JSON.parse(sessionStorage.getItem("userName"))
     }
-    this.getBookmarks()
+    // this.getBookmarks()
     if (res.UserId == 0) {
     }
     else {
@@ -1331,9 +1305,9 @@ export class AdultDashboardPage implements OnInit {
           }
           //this.getBookmarks()
           setTimeout(() => {
-            this.getProgress()
-            this.freescreens();
-            this.getBookmarks()
+            // this.getProgress()
+            // this.freescreens();
+            // this.getBookmarks()
           }, 1000);
 
           if (res.UserId == 0) {
@@ -1391,8 +1365,8 @@ export class AdultDashboardPage implements OnInit {
           }
           this.streak = this.loginResponse.Streak
           console.log(this.streak)
-          this.getProgress()
-          this.freescreens();
+          // this.getProgress()
+          // this.freescreens();
           localStorage.setItem("text", JSON.stringify(this.text))
           localStorage.setItem("video", JSON.stringify(this.video))
           localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -1414,7 +1388,7 @@ export class AdultDashboardPage implements OnInit {
             this.userName = JSON.parse(sessionStorage.getItem("userName"))
 
           }
-          this.getBookmarks()
+          // this.getBookmarks()
           if (this.loginResponse.UserId == 0) {
           }
           else {
@@ -1515,31 +1489,31 @@ export class AdultDashboardPage implements OnInit {
     }
   }
 
-  getProgress() {
-    this.service.getPoints(this.userId)
-      .subscribe(res => {
+  // getProgress() {
+  //   this.service.getPoints(this.userId)
+  //     .subscribe(res => {
 
-        this.points = parseInt(res.PointsScored)
-        this.goToPage = res.LastScrNo
-        this.daysVisited = res.noOfDaysVisited
-        this.timeSpent = res.noOfDaysVisited
-        this.percentage = parseInt(res.overallPercentage)
-        this.guideP = this.percentage;
-        this.resume = []
-        localStorage.setItem("overallPercentage", this.percentage)
+        // this.points = parseInt(res.PointsScored)
+        // this.goToPage = res.LastScrNo
+        // this.daysVisited = res.noOfDaysVisited
+        // this.timeSpent = res.noOfDaysVisited
+        // this.percentage = parseInt(res.overallPercentage)
+        // this.guideP = this.percentage;
+        // this.resume = []
+        // localStorage.setItem("overallPercentage", this.percentage)
         //resume section
-        res.ModUserScrPc.filter(x => {
-          if (parseFloat(x.Percentage) < 100) {
-            if (x.ModuleId != 71 && x.ModuleId != 72 && x.ModuleId != 75) {
-              if (x.ModuleId < 10) {
-                x.ModuleId = "0" + x.ModuleId
-              }
-              x.imgPath = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
-              this.resume.push(x)
-              this.resume.sort((val1, val2) => { return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn) })
-            }
-          }
-        })
+        // res.ModUserScrPc.filter(x => {
+        //   if (parseFloat(x.Percentage) < 100) {
+        //     if (x.ModuleId != 71 && x.ModuleId != 72 && x.ModuleId != 75) {
+        //       if (x.ModuleId < 10) {
+        //         x.ModuleId = "0" + x.ModuleId
+        //       }
+        //       x.imgPath = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/${x.ModuleId}.png`
+        //       this.resume.push(x)
+        //       this.resume.sort((val1, val2) => { return <any>new Date(val2.LastUpdatedOn) - <any>new Date(val1.LastUpdatedOn) })
+        //     }
+        //   }
+        // })
 
         //static progress
         // this.angerP = res.ModUserScrPc.find(e => e.Module == "Anger")?.Percentage
@@ -1599,21 +1573,21 @@ export class AdultDashboardPage implements OnInit {
         // this.dealingwithdepressionP = res.ModUserScrPc.find(e => e.Module == "Dealing with Depression")?.Percentage
         // this.externalapprovalP = res.ModUserScrPc.find(e => e.Module == "Need for approval")?.Percentage
 
-      })
+  //     })
 
-  }
+  // }
 
-  getBookmarks() {
-    this.service.getBookmarks(this.userId)
-      .subscribe(res => {
-        this.bookmarks = res
-        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
-        localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
-        this.bookmarkLength = this.bookmarks.length
+  // getBookmarks() {
+  //   this.service.getBookmarks(this.userId)
+  //     .subscribe(res => {
+  //       this.bookmarks = res
+  //       this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+  //       localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
+  //       this.bookmarkLength = this.bookmarks.length
 
-      })
+  //     })
 
-  }
+  // }
   routeResume(r, enableLastVisited = false) {
     let id = '';
     if (enableLastVisited) {
@@ -3688,14 +3662,14 @@ export class AdultDashboardPage implements OnInit {
     this.logeventservice.logEvent('click_wisdom_score');
     this.router.navigate(['/adults/wisdom-survey'], { state: { 'isUseCloseButton': true } });
   }
-  onFocus() {
-    this.getModuleList(true);
-    if (this.searchinp == '') {
-      this.searchResult = this.moduleList;
-    } else {
-      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
-    }
-  }
+  // onFocus() {
+  //   this.getModuleList(true);
+  //   if (this.searchinp == '') {
+  //     this.searchResult = this.moduleList;
+  //   } else {
+  //     this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+  //   }
+  // }
 
   // routehowcanwisdomhelp(cont: any = 1) {
   //   var hcwhR
@@ -3732,19 +3706,16 @@ export class AdultDashboardPage implements OnInit {
   //       })
   // }
 
-  getuserDetail() {
-    let userId = JSON.parse(localStorage.getItem("userId"))
-    if (userId != null) {
-      this.services.getuser(userId).subscribe((res: any) => {
-
-
-
-        localStorage.setItem("isPartner", res[0].IsPartner);
-        localStorage.setItem('PartnerOption', res[0].PartnerOption);
-        localStorage.setItem("SubscriberType", res[0].SubscriberType)
-      });
-    }
-  }
+  // getuserDetail() {
+  //   let userId = JSON.parse(localStorage.getItem("userId"))
+  //   if (userId != null) {
+  //     this.services.getuser(userId).subscribe((res: any) => {
+  //       localStorage.setItem("isPartner", res[0].IsPartner);
+  //       localStorage.setItem('PartnerOption', res[0].PartnerOption);
+  //       localStorage.setItem("SubscriberType", res[0].SubscriberType)
+  //     });
+  //   }
+  // }
 
   /*  routewisdomexercise(cont: any = 1) {
      var weR = '75001'
@@ -3786,134 +3757,134 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate([`/adults/wisdom-exercise/s75001`])
   }
 
-  getinp(event) {
-    let url = `/adults/site-search/${event}`
-    this.router.navigate([url])
-  }
+  // getinp(event) {
+  //   let url = `/adults/site-search/${event}`
+  //   this.router.navigate([url])
+  // }
 
-  getAutoCompleteList(value) {
-    if (this.moduleList.length > 0) {
-      if (value == null || value == "") {
-        this.searchResult = this.moduleList;
-      } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
-      }
-    }
-  }
+  // getAutoCompleteList(value) {
+  //   if (this.moduleList.length > 0) {
+  //     if (value == null || value == "") {
+  //       this.searchResult = this.moduleList;
+  //     } else {
+  //       this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
+  //     }
+  //   }
+  // }
 
-  onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 500);
-  }
-  clearSearch() {
-    this.searchinp = "";
-    this.searchResult = [];
-  }
+  // onFocusOutEvent() {
+  //   setTimeout(() => {
+  //     this.searchResult = [];
+  //   }, 500);
+  // }
+  // clearSearch() {
+  //   this.searchinp = "";
+  //   this.searchResult = [];
+  // }
 
-  searchEvent(module) {
-    this.searchinp = module;
-    this.searchResult = [];
-    this.getinp(module);
-  }
-
-
+  // searchEvent(module) {
+  //   this.searchinp = module;
+  //   this.searchResult = [];
+  //   this.getinp(module);
+  // }
 
 
-  GetWisdomScreens() {
-    this.service.GetWisdomScreens().subscribe(res => {
-      this.wisdomExerciseList = res;
-      var allCompletedScreen: boolean = false;
-      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
-      if (this.wisdomExerciseList.length == data.length) {
-        allCompletedScreen = true;
-      }
-      console.log(data.length);
-      let exercise: any
-      let emptyList = false;
-      let increaseExcercise = false;
+
+
+  // GetWisdomScreens() {
+  //   this.service.GetWisdomScreens().subscribe(res => {
+  //     this.wisdomExerciseList = res;
+  //     var allCompletedScreen: boolean = false;
+  //     let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+  //     if (this.wisdomExerciseList.length == data.length) {
+  //       allCompletedScreen = true;
+  //     }
+  //     console.log(data.length);
+  //     let exercise: any
+  //     let emptyList = false;
+  //     let increaseExcercise = false;
       // Any of the exercise is not completed
-      if (data.length == 0) {
-        emptyList = true;
-        data = this.wisdomExerciseList;
-        exercise = data[0];
-      }
-      else {
-        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
-        if (incomppletedExercise.length > 0) {
-          exercise = incomppletedExercise[0];
-        } else {
-          exercise = data[data.length - 1];
-        }
+      // if (data.length == 0) {
+      //   emptyList = true;
+      //   data = this.wisdomExerciseList;
+      //   exercise = data[0];
+      // }
+      // else {
+      //   var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+      //   if (incomppletedExercise.length > 0) {
+      //     exercise = incomppletedExercise[0];
+      //   } else {
+      //     exercise = data[data.length - 1];
+      //   }
         // It contains data may be some exercise is completed
-        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
-        if (completed.length == 0) {
-          increaseExcercise = true;
-          emptyList = true;
-        }
-      }
+      //   var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+      //   if (completed.length == 0) {
+      //     increaseExcercise = true;
+      //     emptyList = true;
+      //   }
+      // }
       //Setting final title and Exercise no
-      this.Title = exercise.Title;
+      // this.Title = exercise.Title;
 
-      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
-        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+      // this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+      //   : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
 
-      if (allCompletedScreen) {
-        this.exerciseNo = "1";
-      }
-      if (this.exerciseNo == "13") {
-        this.exerciseNo = "1";
-      }
+      // if (allCompletedScreen) {
+      //   this.exerciseNo = "1";
+      // }
+      // if (this.exerciseNo == "13") {
+      //   this.exerciseNo = "1";
+      // }
       //Checking the length if its less than 10  to append for current session number
-      if (this.exerciseNo.length == 1) {
-        this.exerciseNo = "0" + this.exerciseNo;
-      }
-      if (incomppletedExercise && incomppletedExercise.length > 0) {
-        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
-      } else {
-        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
-      }
-      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+      // if (this.exerciseNo.length == 1) {
+      //   this.exerciseNo = "0" + this.exerciseNo;
+      // }
+      // if (incomppletedExercise && incomppletedExercise.length > 0) {
+      //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+      // } else {
+      //   this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+      // }
+      // var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
 
 
       //Pushing final list for display
-      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
-        let obj = {
-          " SessionNo": item.SessionNo,
-          "ScreenNo": item.ScreenNo,
-          "completed": item.completed,
-          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
-          "Title": item.Title
-        }
-        this.currentList.push(obj);
-      }
-      if (this.currentList.length > 0) {
-        this.Title = this.currentList[0].Title;
-      }
+      // for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+      //   let obj = {
+      //     " SessionNo": item.SessionNo,
+      //     "ScreenNo": item.ScreenNo,
+      //     "completed": item.completed,
+      //     "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+      //     "Title": item.Title
+      //   }
+      //   this.currentList.push(obj);
+      // }
+      // if (this.currentList.length > 0) {
+      //   this.Title = this.currentList[0].Title;
+      // }
       //Dynamic Scroll
-      setTimeout(() => {
-        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
-        var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
-        if (document.querySelector(".wediv")) {
-          document.querySelector(".wediv").scrollLeft = editable - wediv;
-        }
+  //     setTimeout(() => {
+  //       var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+  //       var wediv = document.querySelector(".wediv")?.getBoundingClientRect().x;
+  //       if (document.querySelector(".wediv")) {
+  //         document.querySelector(".wediv").scrollLeft = editable - wediv;
+  //       }
 
-      }, 3000);
+  //     }, 3000);
 
-      console.log(this.currentList);
-    })
-  }
+  //     console.log(this.currentList);
+  //   })
+  // }
 
 
-  getWisdomClass(exercise) {
-    if (exercise.completed == '1') {
-      return 'inactive';
-    } else if (exercise.completed == '0' && this.day == exercise.day) {
-      return 'editable';
-    } else {
-      return 'active';
-    }
-  }
+  // getWisdomClass(exercise) {
+  //   if (exercise.completed == '1') {
+  //     return 'inactive';
+  //   } else if (exercise.completed == '0' && this.day == exercise.day) {
+  //     return 'editable';
+  //   } else {
+  //     return 'active';
+  //   }
+  // }
 
 
   DashboardLogevent(route, params, evtName) {
