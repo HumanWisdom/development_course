@@ -25,7 +25,9 @@ export class S45099Page implements OnInit,OnDestroy {
   
   bookmark=0
   toc="habit-addiction/s45001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

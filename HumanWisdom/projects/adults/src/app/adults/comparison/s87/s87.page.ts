@@ -15,7 +15,9 @@ export class S87Page implements OnInit {
   bg = "comparison_envy_w3"
   hint = "When my friend tells me he did 50 pushups, I quietly tell myself I’ll do 51. Do you do the same? When was the last time you compared yourself to another?"
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

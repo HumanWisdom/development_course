@@ -15,7 +15,9 @@ export class S92207Page implements OnInit {
   bg = "dark_blue_w7"
   hint = "it could be that you are alive today, your health, the beauty of a blue sky, food on your plate, or people who love you"
   toc = "/dealing-with-depression/s92001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

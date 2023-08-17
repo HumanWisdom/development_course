@@ -32,7 +32,9 @@ export class S125047Page implements OnInit,AfterViewInit
   toc="/stress/s125001"
   transcriptPage="/stress/s125047t"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   progName= "teenagers";
   

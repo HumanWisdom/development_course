@@ -14,7 +14,9 @@ export class S296Page implements OnInit {
   bg="conditioning_w5"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/conditioning/s232"
  
   qrList=JSON.parse(localStorage.getItem("qrList"))

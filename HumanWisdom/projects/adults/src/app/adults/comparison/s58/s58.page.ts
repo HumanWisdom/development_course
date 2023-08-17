@@ -30,7 +30,9 @@ export class S58Page implements OnInit {
   reflectionA: any
   userResponse58 = JSON.parse(sessionStorage.getItem("userResponse58"))
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   r58 = JSON.parse(sessionStorage.getItem("r58"))
 
 

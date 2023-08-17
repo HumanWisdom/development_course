@@ -16,7 +16,9 @@ export class S113074Page implements OnInit
   bg = "light_blue_w1"
   hint = "Our mind is most reactive in conversations. This allows you to slow your reactions down."
   toc = "/reactive-mind/s113001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

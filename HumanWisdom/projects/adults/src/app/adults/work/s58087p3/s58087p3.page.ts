@@ -29,7 +29,9 @@ export class S58087p3Page implements OnInit {
   totalTime: any
   toc = "/work/s58001"
   bookmark = 0
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration: any
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 

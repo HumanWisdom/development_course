@@ -16,7 +16,9 @@ export class S103013Page implements OnInit {
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   toc="without-language/s103001"
-  path=this.router.url 
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000); 
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
   screenType=JSON.parse(localStorage.getItem("question"))

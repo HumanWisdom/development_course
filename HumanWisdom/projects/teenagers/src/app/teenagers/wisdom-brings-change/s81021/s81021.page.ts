@@ -15,7 +15,9 @@ export class S81021Page implements OnInit {
   bg = "purple_blue_w7"
   hint = "It may help your relationships, or reduce your stress, or anxiety, for example."
   toc = "/wisdom-brings-change/s81001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

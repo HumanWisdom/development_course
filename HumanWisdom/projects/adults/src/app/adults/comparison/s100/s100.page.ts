@@ -30,7 +30,9 @@ export class S100Page implements OnInit {
   optionList=[]
   sessionOption100=JSON.parse(sessionStorage.getItem("sessionOption100"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption100"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/comparison/s0"
   
 

@@ -40,7 +40,9 @@ export class S164Page implements OnInit {
   toc="/anger/s162p0"
   transcriptPage="/anger/s164t"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

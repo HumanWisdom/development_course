@@ -16,7 +16,9 @@ export class S125152Page implements OnInit
   bg = "dark_blue_w11"
   hint = "Anxiety can make us avoid people or situations, if we feel we cannot cope with the stress we will feel."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

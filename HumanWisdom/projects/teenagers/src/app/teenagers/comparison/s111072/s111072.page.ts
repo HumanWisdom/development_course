@@ -19,7 +19,9 @@ export class S111072Page implements OnInit,OnDestroy
   transcriptPage="comparison/s111072t"
   toc="comparison/s111001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

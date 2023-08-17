@@ -16,7 +16,9 @@ export class S125222Page implements OnInit
   bg = "dark_blue_w2"
   hint = "For example, you could learn that your unmet expectations made you stressed, or a feeling that you were not listened to."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

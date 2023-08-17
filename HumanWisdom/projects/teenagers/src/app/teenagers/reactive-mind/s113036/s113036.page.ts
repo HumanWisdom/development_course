@@ -16,7 +16,9 @@ export class S113036Page implements OnInit
   bg = "light_blue_w6"
   hint = "For example, when you ended a friendship because you were disappointed with someone"
   toc = "/reactive-mind/s113001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

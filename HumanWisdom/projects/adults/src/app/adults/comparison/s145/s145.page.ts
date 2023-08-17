@@ -15,7 +15,9 @@ export class S145Page implements OnInit {
   bg = "comparison_envy_w5"
   hint = "No - because it comes from the automatic, unconscious process of comparison."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -16,7 +16,9 @@ export class S126057Page implements OnInit
   bg = "teal_w8"
   hint = "You may feel you are not attractive. Why do you think that? Where does that thought come from? Who decided the rules of what ‘attractive’ is?"
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

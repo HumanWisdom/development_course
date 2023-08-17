@@ -15,7 +15,9 @@ export class S27019Page implements OnInit {
   bg = "purple_blue_w1"
   hint = "It may help improve your relationships. The more you understand yourself, the easier it is to understand others. Wisdom enables you to listen deeply, reflect on what you are going to say, and consider how it is going to be received. It allows you to be more compassionate"
   toc = "discovering-wisdom/s27001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

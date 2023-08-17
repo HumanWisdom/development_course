@@ -53,18 +53,12 @@ export class AdvertsHwpPage implements OnInit {
   public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   public userName: any
   public showWarning = false
-  public registrationForm = this.fb.group({
-    fname: ['', [Validators.required, Validators.minLength(3)]],
-    lname: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(3)]],
-    confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
-  }, { validator: this.PasswordValidator })
+
 
   enableAlert = false;
   content = '';
   enablecancel = false;
-
+  public registrationForm : any;
   constructor(
     public platform: Platform,
     private router: Router,
@@ -74,6 +68,13 @@ export class AdvertsHwpPage implements OnInit {
     public authService: SocialAuthService,
     public logeventservice: LogEventService
   ) {
+    this.registrationForm = this.fb.group({
+      fname: ['', [Validators.required, Validators.minLength(3)]],
+      lname: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
+    }, { validator: this.PasswordValidator })
     localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
     let firsttime = localStorage.getItem('first');

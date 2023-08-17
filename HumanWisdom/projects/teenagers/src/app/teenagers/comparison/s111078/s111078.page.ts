@@ -16,7 +16,9 @@ export class S111078Page implements OnInit
   bg = "green_yellow_w7"
   hint = "You could be free to follow your own path in life."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

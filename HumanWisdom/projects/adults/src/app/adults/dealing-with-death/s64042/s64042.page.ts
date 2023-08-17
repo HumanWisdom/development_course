@@ -15,7 +15,9 @@ export class S64042Page implements OnInit {
   bg = "teal_w2"
   hint = " It could make you ask what you really wanted to do in your life, for example.  "
   toc = "/dealing-with-death/s64001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

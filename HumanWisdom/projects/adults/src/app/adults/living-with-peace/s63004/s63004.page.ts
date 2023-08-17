@@ -25,7 +25,9 @@ export class S63004Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="/living-with-peace/s63001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   constructor(

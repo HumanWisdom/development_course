@@ -15,7 +15,9 @@ export class S32008Page implements OnInit {
   bg = "purple_blue_w1"
   hint = "You could say it is the ability to understand oneself and others, to be able to live with compassion and a sense of peace."
   toc = "benefits-of-wisdom/s32001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

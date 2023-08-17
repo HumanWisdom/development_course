@@ -24,7 +24,9 @@ poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/vid
   
  
  
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")

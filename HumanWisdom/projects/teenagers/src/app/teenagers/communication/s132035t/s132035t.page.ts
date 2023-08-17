@@ -15,7 +15,9 @@ export class S132035tPage implements OnInit
   bg_cft="bg_blue"
   bg="blue_w3"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/communication/s132035"
   toc="/communication/s132001"
   screenType=localStorage.getItem("audio")

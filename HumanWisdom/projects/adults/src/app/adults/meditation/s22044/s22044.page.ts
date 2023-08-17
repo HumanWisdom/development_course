@@ -15,7 +15,9 @@ export class S22044Page implements OnInit {
   bg = "blue_w8"
   hint = "It could be from your childhood, or experience, or social media or TV etc.  "
   toc = "/meditation/s22001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

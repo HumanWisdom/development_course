@@ -16,7 +16,9 @@ export class S13Page implements OnInit
   bg = "comparison_envy_w8"
   hint = "This could be when you wanted something someone had and felt jealous, or were better than someone, and felt really good"
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

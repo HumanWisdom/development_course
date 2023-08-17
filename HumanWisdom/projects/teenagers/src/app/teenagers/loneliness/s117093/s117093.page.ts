@@ -16,7 +16,9 @@ export class S117093Page implements OnInit
   bg = "green_yellow_w6"
   hint = ""
   toc = "/loneliness/s117001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

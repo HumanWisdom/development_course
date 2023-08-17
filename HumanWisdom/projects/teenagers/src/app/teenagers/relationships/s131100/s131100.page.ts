@@ -16,7 +16,9 @@ export class S131100Page implements OnInit
   bg = "purple_w5"
   hint = "What are you afraid of in your relationships?"
   toc = "/relationships/s131001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
