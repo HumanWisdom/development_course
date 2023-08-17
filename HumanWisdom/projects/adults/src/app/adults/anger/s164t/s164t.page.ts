@@ -24,7 +24,9 @@ export class S164tPage implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/anger/s164"
   toc="/anger/s162p0"
   avDuration=localStorage.getItem("av164")

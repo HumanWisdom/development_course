@@ -15,7 +15,9 @@ export class S62027Page implements OnInit {
   bg = "blue_pink_w1"
   hint = " It could be a child, a friend or a partner. The real test of love is acceptance.  "
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

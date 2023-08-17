@@ -15,7 +15,9 @@ export class S27014Page implements OnInit {
   bg = "purple_blue_w1"
   hint = "Some people think it comes with age or experience, but what we are referring to is to live with this wisdom even when you are young."
   toc = "discovering-wisdom/s27001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

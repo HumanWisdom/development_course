@@ -16,7 +16,9 @@ import { LogEventService } from '../../../../../../shared/services/log-event.ser
 
 export class PodcastTocPage implements OnInit {
  
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   tag='all';
   iframeSrc:SafeResourceUrl;
   constructor(private ngNavigatorShareService: NgNavigatorShareService,

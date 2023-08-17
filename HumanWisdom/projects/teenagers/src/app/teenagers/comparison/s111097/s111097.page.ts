@@ -16,7 +16,9 @@ export class S111097Page implements OnInit
   bg = "green_yellow_w3"
   hint = "You probably just felt the pleasure of being better than others, and did not see the comparison behind it."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

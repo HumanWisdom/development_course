@@ -19,7 +19,9 @@ export class S130039Page implements OnInit,OnDestroy
   transcriptPage="dealing-with-death/s130039t"
   toc="dealing-with-death/s130001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

@@ -13,7 +13,9 @@ export class S102005tPage implements OnInit {
   bg_cft="bg_blue_pink"
   bg="blue_pink_w3"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/questions-are-key/s102005"
   toc="questions-are-key/s102001"
   avDuration=localStorage.getItem("avDuration102005")

@@ -26,7 +26,9 @@ export class S131037tPage implements OnInit {
   bookmark: any
   shared: any
   confirmed: any 
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/relationships/s131037"
   avDuration=localStorage.getItem("avDuration131037")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

@@ -21,7 +21,9 @@ export class S112088Page implements OnInit {
   toc="/fear-anxiety/s112001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=112088

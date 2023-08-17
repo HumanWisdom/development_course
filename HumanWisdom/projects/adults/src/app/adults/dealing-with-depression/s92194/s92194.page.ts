@@ -15,7 +15,9 @@ export class S92194Page implements OnInit {
   bg = "dark_blue_w6"
   hint = "It is normal for our mind to assume others or our situation is responsible for how we feel"
   toc = "/dealing-with-depression/s92001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

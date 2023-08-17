@@ -15,7 +15,9 @@ export class S25012Page implements OnInit {
   bg = "blue_w4"
   hint = "My boss was critical of me last week. That hurt me. When I see him and he asks me to do something, I am less likely to do it for him."
   toc = "/self-image/s25001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

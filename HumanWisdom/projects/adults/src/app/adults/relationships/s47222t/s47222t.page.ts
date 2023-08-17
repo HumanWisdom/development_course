@@ -14,7 +14,9 @@ export class S47222tPage implements OnInit {
   bg="purple_w10"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/relationships/s47222"
   toc="/relationships/s47000"
   

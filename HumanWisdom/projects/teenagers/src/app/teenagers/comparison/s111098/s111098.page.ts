@@ -16,7 +16,9 @@ export class S111098Page implements OnInit
   bg = "green_yellow_w4"
   hint = "This is not easy. Its just helps us to explore and learn about ourselves. Its not about you being right or wrong."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

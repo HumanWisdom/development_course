@@ -16,7 +16,9 @@ export class S113024Page implements OnInit
   bg = "light_blue_w4"
   hint = "It could be to cause stress, for example"
   toc = "/reactive-mind/s113001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

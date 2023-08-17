@@ -15,7 +15,9 @@ export class S107Page implements OnInit {
   bg = "comparison_envy_w11"
   hint = "You probably just felt the pleasure of being better than others, and did not see the comparison behind it."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

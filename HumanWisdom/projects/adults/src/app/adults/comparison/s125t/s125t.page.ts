@@ -15,7 +15,9 @@ export class S125tPage implements OnInit {
   bg="comparison_envy_w5"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/comparison/s125"
   toc="/comparison/s0"
   

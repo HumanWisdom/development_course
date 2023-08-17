@@ -15,7 +15,9 @@ export class S156Page implements OnInit {
   bg = "comparison_envy_w2"
   hint = "I learnt how to be free by being more conscious and taking ownership of my envy. "
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

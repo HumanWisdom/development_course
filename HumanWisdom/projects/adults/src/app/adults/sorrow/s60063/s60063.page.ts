@@ -15,7 +15,9 @@ export class S60063Page implements OnInit {
   bg = "purple_w7"
   hint = " Do you want to escape from it, or make your peace with it?  "
   toc = "/sorrow/s60001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

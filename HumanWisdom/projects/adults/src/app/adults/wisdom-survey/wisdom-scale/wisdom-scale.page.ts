@@ -70,16 +70,16 @@ export class WisdomScalePage implements OnInit {
   sessionOption = JSON.parse(sessionStorage.getItem("sessionOption"))
   sendOption = []
 
-  rating1 = 0
-  rating2 = 0
-  rating3 = 0
-  rating4 = 0
-  rating5 = 0
-  rating6 = 0
-  rating7 = 0
-  rating8 = 0
-  rating9 = 0
-  rating10 = 0
+  rating1 = 5
+  rating2 = 5
+  rating3 = 1
+  rating4 = 1
+  rating5 = 1
+  rating6 = 5
+  rating7 = 5
+  rating8 = 1
+  rating9 = 1
+  rating10 = 1
   wisdomScore: any
   nextPath: any
   constructor(private router: Router,
@@ -164,73 +164,77 @@ export class WisdomScalePage implements OnInit {
 
     switch (e.Id) {
       case "1": {
-        this.rating1 = e.Rating
+     
+        this.rating1 = (e.Rating==5)?1: (5-e.Rating)
         console.log(this.rating1)
-        this.s1 = this.optionList1.find(x => x.Points == e.Rating).OptId
+        this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
         console.log("selected rating", this.s1)
         break;
 
       }
       case "2": {
-        this.rating2 = e.Rating
+       
+        this.rating2 = (e.Rating==5)?1: (5-e.Rating)
         // this.optionList2.forEach((x)=>{ x.OptId=parseInt(x.OptId) });
         // this.optionList2.sort((a, b) => a.OptId - b.OptId);
         // this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
-        this.s2 = this.optionList2.find(x => x.Points == e.Rating).OptId
+        this.s2 = this.optionList2.find(x => x.Points == this.rating2).OptId
         console.log(this.s2)
         break;
 
 
       }
       case "3": {
-        this.rating3 = e.Rating
-        this.s3 = this.optionList3.find(x => x.Points == e.Rating).OptId
+       
+        this.rating3 = (e.Rating==0)?(1):e.Rating
+        this.s3 = this.optionList3.find(x => x.Points ==  this.rating3).OptId
         console.log("selected rating", this.s3)
         break;
 
       } case "4": {
-        this.rating4 = e.Rating
-        this.s4 = this.optionList4.find(x => x.Points == e.Rating).OptId
+        this.rating4 = (e.Rating==0)?(1):e.Rating     
+        this.s4 = this.optionList4.find(x => x.Points ==  this.rating4).OptId
         console.log("selected rating", this.s4)
         break;
 
       } case "5": {
-        this.rating5 = e.Rating
-        this.s5 = this.optionList5.find(x => x.Points == e.Rating).OptId
+        this.rating5 = (e.Rating==0)?(1):e.Rating    
+        this.s5 = this.optionList5.find(x => x.Points ==  this.rating5).OptId
         console.log("selected rating", this.s5)
         break;
 
       } case "6": {
-        this.rating6 = e.Rating
-        this.s6 = this.optionList6.find(x => x.Points == e.Rating).OptId
+       
+        this.rating6 = (e.Rating==5)?1: (5-e.Rating)
+        this.s6 = this.optionList6.find(x => x.Points ==   this.rating6).OptId
         console.log("selected rating", this.s6)
         break;
 
       }
       case "7": {
-        this.rating7 = e.Rating
-        this.s7 = this.optionList7.find(x => x.Points == e.Rating).OptId
+        this.rating7 = (e.Rating==5)?1: (5-e.Rating)
+        this.s7 = this.optionList7.find(x => x.Points ==  this.rating7).OptId
         console.log("selected rating", this.s7)
         break;
 
       }
       case "8": {
-        this.rating8 = e.Rating
-        this.s8 = this.optionList8.find(x => x.Points == e.Rating).OptId
+        this.rating8 = (e.Rating==0)?(1):e.Rating    
+        this.s8 = this.optionList8.find(x => x.Points ==  this.rating8).OptId
         console.log("selected rating", this.s8)
         break;
 
       }
       case "9": {
-        this.rating9 = e.Rating
-        this.s9 = this.optionList9.find(x => x.Points == e.Rating).OptId
+        this.rating9 = (e.Rating==0)?(1):e.Rating    
+        this.s9 = this.optionList9.find(x => x.Points ==  this.rating9).OptId
         console.log("selected rating", this.s9)
         break;
 
       }
       case "10": {
-        this.rating10 = e.Rating
-        this.s10 = this.optionList10.find(x => x.Points == e.Rating).OptId
+        this.rating10 = (e.Rating==0)?(1):e.Rating    
+        this.s10 = this.optionList10.find(x => x.Points == this.rating10).OptId
         console.log("selected rating", this.s10)
         break;
 

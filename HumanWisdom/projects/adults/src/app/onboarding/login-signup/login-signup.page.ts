@@ -71,19 +71,19 @@ export class LoginSignupPage implements OnInit {
   message: any;
 
   get fullname() {
-    return this.registrationForm.get("fullname");
+    return this.registrationForm?.get("fullname");
   }
   get emailvalid() {
-    return this.registrationForm.get("email");
+    return this.registrationForm?.get("email");
   }
   get passwordvalid() {
-    return this.registrationForm.get("password");
+    return this.registrationForm?.get("password");
   }
   get confirmpasswordvalid() {
-    return this.registrationForm.get("confirmPassword");
+    return this.registrationForm?.get("confirmPassword");
   }
   get passwordvalidation() {
-    return this.registrationForm.get("confirmPassword").value !== this.registrationForm.get("password").value;
+    return this.registrationForm?.get("confirmPassword").value !== this.registrationForm.get("password").value;
   }
   // registrationForm=new FormGroup({
   //   firstName:new FormControl(''),
@@ -92,15 +92,7 @@ export class LoginSignupPage implements OnInit {
   //   password:new FormControl(''),
   //   confirmPassword:new FormControl('')
   // })
-  registrationForm = this.fb.group(
-    {
-      fullname: ["", [Validators.required, Validators.minLength(6)]],
-      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      password: ["", [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
-    },
-    { validator: this.PasswordValidator }
-  );
+  registrationForm :any;
 
   content = '';
   enableAlert = false;
@@ -113,6 +105,15 @@ export class LoginSignupPage implements OnInit {
     private aservice: AdultsService,
     private service: OnboardingService
   ) {
+    this.registrationForm = this.fb.group(
+      {
+        fullname: ["", [Validators.required, Validators.minLength(6)]],
+        email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+        password: ["", [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
+      },
+      { validator: this.PasswordValidator }
+    );
     // let acceptCookie = localStorage.getItem('acceptcookie');
     // if(acceptCookie === null)
     //   this.router.navigate(['/adults/help-support/cookie-policy'])

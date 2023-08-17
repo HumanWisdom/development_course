@@ -15,7 +15,9 @@ export class S22043Page implements OnInit {
   bg = "blue_w7"
   hint = " You typically go through a phase where you are aware of your breathing, and another where you are not and are thinking something, and then become aware of breathing again.  "
   toc = "/meditation/s22001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

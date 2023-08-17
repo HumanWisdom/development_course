@@ -32,7 +32,9 @@ export class S112041Page implements OnInit {
 
   shared: any
   confirmed: any
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor

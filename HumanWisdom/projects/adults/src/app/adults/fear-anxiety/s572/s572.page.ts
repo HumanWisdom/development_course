@@ -29,7 +29,9 @@ export class S572Page implements OnInit {
   toc="/fear-anxiety/s486"
   transcriptPage="/fear-anxiety/s572t"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   

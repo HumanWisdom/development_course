@@ -15,7 +15,9 @@ export class S62168Page implements OnInit {
   bg = "blue_pink_w4"
   hint = "  If you are human, you’ve made mistakes. You are in good company.  "
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,9 @@ export class S18060Page implements OnInit {
   bg = "blue_pink_w3"
   hint = "It could make you want to earn more money, or be tied to a belief system."
   toc = "/emotional-needs/s18001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

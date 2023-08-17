@@ -32,7 +32,9 @@ export class S78Page implements OnInit {
   shared: any
   confirmed: any
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,

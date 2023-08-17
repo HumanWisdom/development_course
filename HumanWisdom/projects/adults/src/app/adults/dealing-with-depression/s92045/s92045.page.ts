@@ -28,7 +28,9 @@ export class S92045Page implements OnInit,OnDestroy {
   totalTime:any
   toc="/dealing-with-depression/s92001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  

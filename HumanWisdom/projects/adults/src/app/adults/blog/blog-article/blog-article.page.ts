@@ -23,7 +23,9 @@ export class BlogArticlePage implements OnInit {
   BlogCommentsLen = 0;
   BlogCommentsList = 0;
   BlogCommentsListabove = []
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   content = '';
   enableAlert = false;
   enablecancel = false;

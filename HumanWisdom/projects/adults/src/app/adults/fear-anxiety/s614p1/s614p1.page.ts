@@ -13,7 +13,9 @@ export class S614p1Page implements OnInit {
   bg_cft = "bg_purple_red"
   bg = "purple_red_w9"
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   hint = ""
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -107,7 +107,9 @@ export class S78009Page implements OnInit {
   totalTime:any
   bookmark=0
   toc="start-here/s78001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
 
   constructor(

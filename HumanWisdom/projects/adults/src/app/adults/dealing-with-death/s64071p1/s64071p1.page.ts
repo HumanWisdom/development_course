@@ -29,7 +29,9 @@ export class S64071p1Page implements OnInit {
   totalTime: any
   toc = "/dealing-with-death/s64001"
   bookmark = 0
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration: any
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 

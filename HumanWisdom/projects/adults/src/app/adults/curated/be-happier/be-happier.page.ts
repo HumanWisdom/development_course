@@ -40,17 +40,17 @@ export class BeHappierPage implements OnInit {
         pc02: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/40.mp3',
-          title: 'Empowering Your Mind: Human Wisdom for Overcoming Depression'
+          title: 'Overcoming Depression'
         },
         pc03: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/45.mp3',
-          title: 'The Resilience Mindset: Lessons from HumanWisdom'
+          title: 'The Resilience Mindset'
         },
         pc04: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying: Lessons from HumanWisdom'
+          title: 'The Art of Living and Dying'
         }
       }
     }

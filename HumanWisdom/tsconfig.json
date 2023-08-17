@@ -1,0 +1,23 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "./dist/out-tsc",
+      "sourceMap": true,
+      "declaration": false,
+      "experimentalDecorators": true,
+      "module": "ES2020",
+      "moduleResolution": "node",
+      "skipLibCheck": true,
+      "importHelpers": true,
+      "target": "ES5",
+      "lib": [
+        "es2018",
+        "dom"
+      ],
+      "downlevelIteration": true,
+      "typeRoots": [
+        "node_modules/@types"
+      ]
+    },
+  }

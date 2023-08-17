@@ -15,7 +15,9 @@ export class S37007tPage implements OnInit {
   bg="pink_orange_w6"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/three-steps-enquiry/s37007"
   toc="three-steps-enquiry/s37000"
   

@@ -22,7 +22,9 @@ export class S73Page implements OnInit,OnDestroy {
   transcriptPage="comparison/s73t"
   toc="comparison/s0"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

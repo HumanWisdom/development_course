@@ -16,7 +16,9 @@ export class S128069Page implements OnInit
   bg="green_w6"
   hint = "  Our belief maybe we are overweight, or but when we actually weight ourselves, our weight is healthy.  "
   toc = "/food-health/s128001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

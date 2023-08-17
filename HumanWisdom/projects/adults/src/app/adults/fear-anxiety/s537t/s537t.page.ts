@@ -15,7 +15,9 @@ export class S537tPage implements OnInit {
   bg="purple_red_w1" 
   
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/fear-anxiety/s537"
   toc="/fear-anxiety/s486"
   

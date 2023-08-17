@@ -15,7 +15,9 @@ export class S64058tPage implements OnInit {
   bg="teal_w8"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/dealing-with-death/s64058"
   toc="/dealing-with-death/s64001"
   

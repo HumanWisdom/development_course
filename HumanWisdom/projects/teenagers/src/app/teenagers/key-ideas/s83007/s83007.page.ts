@@ -15,7 +15,9 @@ export class S83007Page implements OnInit {
   bg = "purple_blue_w5"
   hint = "They come from our many past influences."
   toc = "/key-ideas/s83001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -30,7 +30,9 @@ export class S27Page implements OnInit
   //sendOption=[]
   sessionOption27=JSON.parse(sessionStorage.getItem("sessionOption27"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption27"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/comparison/s0"
 
   constructor

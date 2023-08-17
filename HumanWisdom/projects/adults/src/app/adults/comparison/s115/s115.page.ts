@@ -20,7 +20,9 @@ export class S115Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/comparison/audios/comparison+6.8.mp3'
 
   toc="comparison/s0"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

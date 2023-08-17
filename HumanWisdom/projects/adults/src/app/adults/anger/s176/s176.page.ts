@@ -26,7 +26,9 @@ export class S176Page implements OnInit, OnDestroy {
   reflectionA: any
   r176 = JSON.parse(sessionStorage.getItem("r176"))
   hint = "My son did not call on my birthday, My anger is caused by my own expectations";
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
   bg = "bg_176"

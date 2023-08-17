@@ -14,14 +14,14 @@ export class BoredomPage implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
 
- 
+
 
   constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location) { }
 
   ngOnInit() {
-   
+
   }
-  
+
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
@@ -35,10 +35,10 @@ export class BoredomPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
-     this.router.navigate([url])
+     this.router.navigate([url, 'T', title])
     }else{
      let concat = this.mediaAudio+url;
-     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+     this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
     }
  }
 }

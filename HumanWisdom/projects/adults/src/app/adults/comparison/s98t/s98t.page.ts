@@ -15,7 +15,9 @@ export class S98tPage implements OnInit {
   bg="comparison_envy_w4"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/comparison/s98"
   toc="/comparison/s0"
   

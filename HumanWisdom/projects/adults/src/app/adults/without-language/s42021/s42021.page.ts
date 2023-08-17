@@ -20,7 +20,9 @@ export class S42021Page implements OnInit {
   overallPercentage:any
   bookmark=0
   toc="without-language/s42000"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,

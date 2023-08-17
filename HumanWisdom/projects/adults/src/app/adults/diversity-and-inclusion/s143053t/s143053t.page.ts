@@ -15,7 +15,9 @@ export class S143053tPage implements OnInit
   bg_cft="bg_292d56"
   bg="bg_292d56"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/diversity-and-inclusion/s143053"
   toc="/diversity-and-inclusion/s143001"
   screenType=localStorage.getItem("audio")

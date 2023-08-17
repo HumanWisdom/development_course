@@ -16,7 +16,9 @@ export class S111118Page implements OnInit
   bg = "green_yellow_w7"
   hint = "When I get angry, I feel bad and blame myself for not having enough self-control"
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

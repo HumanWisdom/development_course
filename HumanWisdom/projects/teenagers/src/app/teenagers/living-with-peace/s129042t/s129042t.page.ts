@@ -14,7 +14,9 @@ export class S129042tPage implements OnInit
   bg_cft="bg_blue"
   bg="blue_w2" 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/living-with-peace/s129042"
   toc="/living-with-peace/s129001"
   screenType=localStorage.getItem("audio")
