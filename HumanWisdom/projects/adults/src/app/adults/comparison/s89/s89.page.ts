@@ -15,7 +15,9 @@ export class S89Page implements OnInit {
   bg = "comparison_envy_w5"
   hint = "A friend purchased a new pair of shoes. So I purchased an even better pair. It didn’t make me happy. Have you ever done something similar? Did it make you happy? For how long?"
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

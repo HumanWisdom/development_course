@@ -16,7 +16,9 @@ export class S119012Page implements OnInit
   bg="dark_blue_w6"
   hint = " You could be British, Scottish, Catholic, and so on. "
   toc = "/identity/s119001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

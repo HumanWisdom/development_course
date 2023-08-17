@@ -16,7 +16,9 @@ export class S127119Page implements OnInit
   bg = "purple_w9"
   hint = "These could be simple ones, like reducing the amount of TV you watch"
   toc = "/habit-addiction/s127001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -156,15 +156,8 @@ export class AdultDashboardPage implements OnInit {
   currentList = [];
   maxExceriseCount = "12;";
   public YourTopicofChoice = [];
-
-  public registrationForm = this.fb.group({
-    fname: ['', [Validators.required, Validators.minLength(3)]],
-    lname: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(3)]],
-    confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
-  }, { validator: this.PasswordValidator })
-
+  public registrationForm :any;
+ 
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -177,6 +170,14 @@ export class AdultDashboardPage implements OnInit {
     //   localStorage.setItem('guest', 'T')
     //   this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     // }
+ this.registrationForm = this.fb.group({
+      fname: ['', [Validators.required, Validators.minLength(3)]],
+      lname: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
+    }, { validator: this.PasswordValidator })
+  
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     setTimeout(() => {

@@ -20,7 +20,9 @@ export class S173Page implements OnInit {
   
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
  screenType=localStorage.getItem("video")
 avDuration:any

@@ -77,7 +77,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   getDataForCertificate() {
    var currentModuleName:any;
     this.userId = JSON.parse(localStorage.getItem("userId"))
-    let path = this.router.url.split("/");
+    let  path = this.router.url.split("/");
      currentModuleName = path[path.length - 2];
     this.service.getPoints(this.userId).subscribe(res => {
       let data = res?.ModUserScrPc?.find(e => e.Module.toLowerCase().replace("&","").

@@ -15,7 +15,9 @@ export class S61011Page implements OnInit {
   bg = "green_yellow_w9"
   hint = "  It could be because they do not feel understood  "
   toc = "/loneliness/s61001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

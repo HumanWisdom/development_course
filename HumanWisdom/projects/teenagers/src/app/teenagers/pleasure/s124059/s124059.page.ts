@@ -16,7 +16,9 @@ export class S124059Page implements OnInit
   bg = "pink_orange_w3"
   hint = "Has the fleeting nature of pleasure played a role?"
   toc = "/pleasure/s124001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

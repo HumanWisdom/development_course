@@ -15,7 +15,9 @@ export class S45114Page implements OnInit {
   bg = "purple_w2"
   toc = "/habit-addiction/s45001"
   hint = "These could be simple ones, like reducing the amount of TV you watch"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

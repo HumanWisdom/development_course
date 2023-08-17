@@ -16,7 +16,9 @@ export class S119059Page implements OnInit
   bg="dark_blue_w6"
   hint = " It may make you want to be with only people like you, for example  "
   toc = "/identity/s119001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

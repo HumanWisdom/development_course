@@ -14,7 +14,9 @@ export class S108002tPage implements OnInit {
   bg_cft = "bg_blue"
   bg = "blue_w1"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/noticing-thoughts/s108002"
   toc=""
   screenType=localStorage.getItem("audio")

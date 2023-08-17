@@ -16,7 +16,9 @@ export class S111025Page implements OnInit
   bg = "green_yellow_w7"
   hint = "It is okay to feel envious. It’s only human. How did it affect you and how did you respond?"
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

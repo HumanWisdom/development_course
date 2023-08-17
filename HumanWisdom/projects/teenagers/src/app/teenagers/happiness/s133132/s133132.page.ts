@@ -23,7 +23,9 @@ export class S133132Page implements OnInit,OnDestroy
   totalTime:any
   bookmark=0
   toc="/happiness/s125001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
   constructor
   (

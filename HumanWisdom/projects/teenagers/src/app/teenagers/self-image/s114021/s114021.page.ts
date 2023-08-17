@@ -15,7 +15,9 @@ export class S114021Page implements OnInit
   bg = "blue_w2"
   hint = "It could be you think of yourself as beautiful, and someone criticized your looks"
   toc = "/self-image/s114001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -15,7 +15,9 @@ export class S83018Page implements OnInit {
   bg = "purple_blue_w3"
   hint = "Most human beings share the same emotions, want more than they had yesterday, and seek pleasure…"
   toc = "/key-ideas/s83001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,9 @@ export class S63050tPage implements OnInit {
   bg="blue_w5"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/living-with-peace/s63050"
   toc="/living-with-peace/s63001"
   

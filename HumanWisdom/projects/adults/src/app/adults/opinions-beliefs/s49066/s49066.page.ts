@@ -15,7 +15,9 @@ export class S49066Page implements OnInit {
   bg = "purple_red_w3"
   hint = " You may believe that you don’t know how to cook, for example,  without even trying. "
   toc = "/opinions-beliefs/s49001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

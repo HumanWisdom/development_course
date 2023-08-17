@@ -16,7 +16,9 @@ export class S131151Page implements OnInit
   bg = "purple_w5"
   hint = "You could talk about what has happened, share how you feel, say sorry, or try and understand how the other person feels."
   toc = "/relationships/s131001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

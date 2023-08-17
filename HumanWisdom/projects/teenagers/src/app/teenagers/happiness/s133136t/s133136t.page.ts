@@ -15,7 +15,9 @@ export class S133136tPage implements OnInit
   bg_cft="bg_red_pink"
   bg="red_pink_w12"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/happiness/s133136"
   toc="/happiness/s133001"
   screenType=localStorage.getItem("audio")

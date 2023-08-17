@@ -19,7 +19,9 @@ export class S51006p4Page implements OnInit {
   transcriptPage=""
   toc="guided-meditation/s51000"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

@@ -15,7 +15,9 @@ export class S25034Page implements OnInit {
   bg = "blue_w4"
   hint = ""
   toc = "/self-image/s25001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

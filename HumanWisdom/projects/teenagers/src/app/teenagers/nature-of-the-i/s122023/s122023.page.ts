@@ -16,7 +16,9 @@ export class S122023Page implements OnInit
   bg="green_w6"
   hint = ""
   toc = "/nature-of-the-i/s122001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

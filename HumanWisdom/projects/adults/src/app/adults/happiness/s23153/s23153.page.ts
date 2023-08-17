@@ -15,7 +15,9 @@ export class S23153Page implements OnInit {
   bg = "red_pink_w11"
   hint = "It means seeing the best in people and situations, asking what we can learn, always looking for the bright side of any situation.  "
   toc = "/happiness/s23001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

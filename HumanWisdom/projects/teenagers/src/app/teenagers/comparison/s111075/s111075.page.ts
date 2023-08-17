@@ -16,7 +16,9 @@ export class S111075Page implements OnInit
   bg = "green_yellow_w4"
   hint = "When my friend tells me he did 50 pushups, I quietly tell myself I’ll do 51. Do you do the same? When was the last time you compared yourself to another?"
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

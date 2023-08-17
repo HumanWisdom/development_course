@@ -30,7 +30,7 @@ export class AudioHeaderComponent implements OnInit {
   shared = false
   token = JSON.parse(localStorage.getItem("token"))
   socialShare = false
-  address = this.router.url
+  address :any;
   scrNumber: any
   showheaderbar = true
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
@@ -49,6 +49,8 @@ export class AudioHeaderComponent implements OnInit {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
+    this.address = this.router.url;
+    this.path = this.router.url;
   }
 
   ngOnInit() {

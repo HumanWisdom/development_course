@@ -156,7 +156,9 @@ export class S82016Page implements OnInit {
   totalTime:any
   bookmark=0
   toc="five-circles-of-wisdom/s82001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
 
   constructor(

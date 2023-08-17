@@ -18,13 +18,14 @@ export class FeatureHeaderComponent implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   token=JSON.parse(localStorage.getItem("token"))
   socialShare=false
-  address=this.router.url
+  address: any;
   path="https://humanwisdom.me/adults/wisdom-stories"
 
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
     private location:Location,
     private ac:ActivatedRoute) {
+      this.address=this.router.url;
       this.urlT=this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
      }
 

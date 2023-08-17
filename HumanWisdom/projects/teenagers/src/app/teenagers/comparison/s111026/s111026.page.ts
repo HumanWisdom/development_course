@@ -14,7 +14,9 @@ export class S111026Page implements OnInit
   bg_cft="bg_green_yellow"
   bookmark=0
   toc="comparison/s111001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 

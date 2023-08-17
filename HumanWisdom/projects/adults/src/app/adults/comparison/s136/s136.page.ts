@@ -15,7 +15,9 @@ export class S136Page implements OnInit {
   bg = "comparison_envy_w3"
   hint = "I am feeling jealous as my sister tells me about her amazing holiday which I cannot afford to go on. An alternative way is to feel happy for her, ask to see her photos and share her joy. My wisdom allows me to do this."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,9 @@ export class S26018Page implements OnInit
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w5"
   toc = "benefits-of-enquiry/s26001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

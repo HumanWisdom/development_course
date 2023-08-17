@@ -22,7 +22,9 @@ export class S39017Page implements OnInit,OnDestroy {
   transcriptPage="awareness/s39017t"
   toc="awareness/s39000"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

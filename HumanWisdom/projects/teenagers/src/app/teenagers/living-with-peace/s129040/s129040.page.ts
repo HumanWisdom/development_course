@@ -16,7 +16,9 @@ export class S129040Page implements OnInit
   bg="blue_w6"
   hint = " you could stop comparing yourself with others, and accept yourself for who you are. "
   toc = "/living-with-peace/s129001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

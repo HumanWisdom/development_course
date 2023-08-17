@@ -15,7 +15,9 @@ export class S34016Page implements OnInit {
   bg = "purple_blue_w1"
   hint = "This could be a feeling of irritation at someone, or jealousy, or anger. This could allow you to observe it more closely."
   toc = "key-ideas/s34001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

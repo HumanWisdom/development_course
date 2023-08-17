@@ -15,7 +15,9 @@ export class S57007p2Page implements OnInit {
   bg = "green_w7"
   hint = " It may be because you now have a new set of memories you identify with as ‘you’. "
   toc = "/nature-of-i/s57001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -16,7 +16,9 @@ export class S125112Page implements OnInit
   bg = "dark_blue_w9"
   hint = "For example, I may not like myself for who I am as a person. The root of that could be an ideal I have of who I should be, and that comes from my unconscious conditioning."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

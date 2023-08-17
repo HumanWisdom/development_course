@@ -15,7 +15,9 @@ export class S60061Page implements OnInit {
   bg = "purple_w5"
   hint = " When a loved one dies, we may be afraid of the future. Or if we lose our looks, our sense of identity as someone beautiful is gone and we feel that as pain."
   toc = "/sorrow/s60001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

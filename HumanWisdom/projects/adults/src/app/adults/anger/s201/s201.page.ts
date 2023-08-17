@@ -36,7 +36,9 @@ export class S201Page implements OnInit,AfterViewInit {
   toc="/anger/s162p0"
   transcriptPage="/anger/s201t"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   
   constructor(private router: Router,

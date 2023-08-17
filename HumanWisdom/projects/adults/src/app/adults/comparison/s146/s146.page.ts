@@ -15,7 +15,9 @@ export class S146Page implements OnInit {
   bg = "comparison_envy_w6"
   hint = "That is the way our mind works - we assume others are responsible for how we feel and think. Long term, it could affect their friendship."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

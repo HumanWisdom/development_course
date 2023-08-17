@@ -15,7 +15,9 @@ export class S61089Page implements OnInit {
   bg = "green_yellow_w8"
   hint = " It may help you feel less lonely  "
   toc = "/loneliness/s61001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

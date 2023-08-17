@@ -16,7 +16,9 @@ export class S111137Page implements OnInit
   bg = "green_yellow_w6"
   hint = "That is the way our mind works - we assume others are responsible for how we feel and think. Long term, it could affect their friendship."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

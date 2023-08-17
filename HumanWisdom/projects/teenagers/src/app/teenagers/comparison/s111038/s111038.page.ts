@@ -16,7 +16,9 @@ export class S111038Page implements OnInit
   bg = "green_yellow_w8"
   hint = "For example, when you have more homework to do than what you expected to have."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -16,7 +16,9 @@ export class S126042Page implements OnInit
   bg = "teal_w7"
   hint = "You may want to be more attractive, or popular, or funny. All these come from our conditioning influences"
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

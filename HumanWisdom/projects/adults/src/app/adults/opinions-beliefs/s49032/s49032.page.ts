@@ -15,7 +15,9 @@ export class S49032Page implements OnInit {
   bg = "purple_red_w8"
 
   toc = "/opinions-beliefs/s49001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   hint = "Do you get defensive? Or angry? Or try and convince the other person of your point of view?"
 
   userId: any
