@@ -15,7 +15,9 @@ export class S82010Page implements OnInit {
   bg = "purple_blue_w8"
   hint = "You could judge yourself as right or wrong, or good or bad"
   toc = "/five-circles-of-wisdom/s82001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

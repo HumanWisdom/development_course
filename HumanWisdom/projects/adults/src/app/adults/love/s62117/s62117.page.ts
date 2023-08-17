@@ -32,7 +32,9 @@ export class S62117Page implements OnInit {
   //sendOption=[]
   sessionOption62117=JSON.parse(sessionStorage.getItem("sessionOption62117"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption62117"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/love/s62001"
  
  

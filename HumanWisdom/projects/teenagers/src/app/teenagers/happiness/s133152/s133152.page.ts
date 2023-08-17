@@ -15,7 +15,9 @@ export class S133152Page implements OnInit {
   bg = "red_pink_w8"
   hint = "Be sensitive. Notice the beauty in small things. A tree, the smell of a tomato, the extraordinary sky. What will you notice?  "
   toc = "/happiness/s133001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

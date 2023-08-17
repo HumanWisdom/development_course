@@ -15,7 +15,9 @@ export class S21052Page implements OnInit {
   bg = "dark_blue_w5"
   hint = "It may make you feel less divided from others who have a different identity, for example."
   toc = "/identity/s21001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

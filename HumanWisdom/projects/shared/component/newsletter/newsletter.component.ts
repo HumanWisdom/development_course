@@ -8,11 +8,13 @@ import {UntypedFormBuilder , Validators } from '@angular/forms';
 export class NewsletterComponent implements OnInit {
   constructor(  public fb: UntypedFormBuilder) {}
 
-  public newsletterForm = this.fb.group({
-       email: ['', [Validators.required, Validators.email]]    
-  }, )
+  public newsletterForm :any;
 
-  ngOnInit() {}
+  ngOnInit() {
+  this.newsletterForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]]    
+ }, )
+  }
 
  /*  get emailvalid() {
     return this.newsletterForm.get('email')

@@ -15,7 +15,9 @@ export class S58050Page implements OnInit {
   bg = "dark_blue_w1"
   hint = "Do you welcome it as an opportunity for growth, or does it feel hurtful and make you resentful? "
   toc = "/work/s58001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

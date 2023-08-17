@@ -14,7 +14,9 @@ export class S569Page implements OnInit {
   bg = "purple_red_w9"
   hint = " This could be a fear of meeting people, or of spiders, or of aliens  "
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

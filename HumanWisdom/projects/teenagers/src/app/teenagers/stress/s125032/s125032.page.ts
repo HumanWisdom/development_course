@@ -16,7 +16,9 @@ export class S125032Page implements OnInit
   bg = "dark_blue_w7"
   hint = "Look at all the symptoms of stress, and see how many of them apply to you"
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

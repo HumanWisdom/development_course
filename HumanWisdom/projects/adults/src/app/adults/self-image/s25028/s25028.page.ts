@@ -15,7 +15,9 @@ export class S25028Page implements OnInit {
   bg = "blue_w4"
   hint = " You may pretend you are successful when you are not, or that you farewell read, when you are not. "
   toc = "/self-image/s25001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

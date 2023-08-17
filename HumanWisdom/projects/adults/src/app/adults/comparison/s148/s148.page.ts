@@ -15,7 +15,9 @@ export class S148Page implements OnInit {
   bg = "comparison_envy_w8"
   hint = "That Sharon is just telling her about her holiday and not showing off, and she could be happy for her."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

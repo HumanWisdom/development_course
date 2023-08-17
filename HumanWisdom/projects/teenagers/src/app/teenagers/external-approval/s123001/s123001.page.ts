@@ -20,7 +20,9 @@ export class S123001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
   freeScreens=JSON.parse(localStorage.getItem("freeScreens"))

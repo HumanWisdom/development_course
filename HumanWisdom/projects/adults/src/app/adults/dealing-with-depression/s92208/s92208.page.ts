@@ -15,7 +15,9 @@ export class S92208Page implements OnInit {
   bg = "dark_blue_w8"
   hint = "It may mean accepting that someone no longer loves us, or accepting our financial situation or or  our health, or that we are going to die one day"
   toc = "/dealing-with-depression/s92001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

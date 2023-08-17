@@ -15,7 +15,9 @@ export class S46070tPage implements OnInit {
   bg="green_w12"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/food-health/s46070"
   toc="/food-health/s46001"
   

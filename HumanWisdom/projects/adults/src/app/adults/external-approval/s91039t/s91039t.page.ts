@@ -14,7 +14,9 @@ export class S91039tPage implements OnInit {
   bg="blue_w3"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/external-approval/s91039"
   toc="/external-approval/s91001"
   screenType=localStorage.getItem("audio")

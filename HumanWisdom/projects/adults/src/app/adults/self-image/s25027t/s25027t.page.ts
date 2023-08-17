@@ -14,7 +14,9 @@ export class S25027tPage implements OnInit {
   bg="blue_w7"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/self-image/s25027"
   toc="/self-image/s25001"
   

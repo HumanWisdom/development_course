@@ -34,7 +34,9 @@ export class S37Page implements OnInit {
   confirmed: any
 
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,

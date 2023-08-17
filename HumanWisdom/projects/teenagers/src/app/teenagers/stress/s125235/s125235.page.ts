@@ -16,7 +16,9 @@ export class S125235Page implements OnInit
   bg = "dark_blue_w3"
   hint = " Forgiveness does not come easily to us, because we carry the pain with us for a long time, but through self-enquiry it is much easier. Try it and see. You’ll find a burden lifted from your heart."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

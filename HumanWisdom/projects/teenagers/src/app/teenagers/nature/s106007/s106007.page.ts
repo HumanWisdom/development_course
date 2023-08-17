@@ -28,7 +28,9 @@ export class S106007Page implements OnInit {
   totalTime: any
   toc = "/nature/s106001"
   bookmark = 0
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration: any
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 

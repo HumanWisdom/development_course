@@ -21,7 +21,9 @@ export class S131237Page implements OnInit {
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("reflection")
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   screenNumber = 131237
   startTime: any
   endTime: any

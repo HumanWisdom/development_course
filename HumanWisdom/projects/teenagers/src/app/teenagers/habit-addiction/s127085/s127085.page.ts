@@ -16,7 +16,9 @@ export class S127085Page implements OnInit
   bg = "purple_w10"
   hint = "Someone may have a bigger house than you, or get better grades in school - and this can make you feel less than them, and not good about yourself."
   toc = "/habit-addiction/s127001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

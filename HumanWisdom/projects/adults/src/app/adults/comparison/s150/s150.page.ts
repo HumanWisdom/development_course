@@ -15,7 +15,9 @@ export class S150Page implements OnInit {
   bg = "comparison_envy_w10"
   hint = "That one needs to judge how something is going to be received before speaking."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

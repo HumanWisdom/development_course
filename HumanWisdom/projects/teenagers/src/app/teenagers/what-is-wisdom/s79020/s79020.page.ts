@@ -15,7 +15,9 @@ export class S79020Page implements OnInit {
   bg = "purple_blue_w3"
   hint = "It could be stress, anxiety, relationship challenges, or just not feeling at ease with yourself."
   toc = "/what-is-wisdom/s79001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

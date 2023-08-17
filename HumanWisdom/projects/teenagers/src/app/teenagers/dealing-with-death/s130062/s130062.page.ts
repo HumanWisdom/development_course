@@ -16,7 +16,9 @@ export class S130062Page implements OnInit
   bg = "teal_w6"
   hint = "You may make peace with all your loved ones, and say thank you for all they have given you, for example.  "
   toc = "/dealing-with-death/s130001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

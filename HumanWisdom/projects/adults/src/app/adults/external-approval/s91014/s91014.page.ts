@@ -15,7 +15,9 @@ export class S91014Page implements OnInit {
   bg = "blue_w12"
   hint = "It could be expecting others to praise you, or have more likes for your post on social media"
   toc = "/external-approval/s91001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

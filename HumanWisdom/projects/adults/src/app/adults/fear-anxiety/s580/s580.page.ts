@@ -14,7 +14,9 @@ export class S580Page implements OnInit {
   bg = "purple_red_w6"
 
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   hint = "This could be an object, a person, or a pet"
 
   userId: any

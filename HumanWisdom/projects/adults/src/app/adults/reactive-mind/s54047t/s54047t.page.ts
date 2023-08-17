@@ -14,7 +14,9 @@ export class S54047tPage implements OnInit {
   bg="light_blue_w2"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/reactive-mind/s54047"
   toc="/reactive-mind/s54001"
   

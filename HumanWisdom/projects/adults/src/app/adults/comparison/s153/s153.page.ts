@@ -18,7 +18,9 @@ export class S153Page implements OnInit,OnDestroy {
   toc="/comparison/s0"
 
   userId:any
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")

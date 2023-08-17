@@ -15,7 +15,9 @@ export class S33010Page implements OnInit {
   bg = "purple_blue_w1"
   hint = "You could judge yourself as right or wrong, or this enquiry may feel unfamiliar and you may react to that."
   toc = "five-circles/s33001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
