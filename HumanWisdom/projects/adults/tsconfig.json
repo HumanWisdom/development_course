@@ -12,14 +12,14 @@
     "skipLibCheck": true,
     "importHelpers": true,
     "target": "ES2022",
+    "typeRoots": [
+      "node_modules/@typeRoots"
+    ],
     "lib": [
       "es2018",
       "dom"
     ],
     "types": ["tslib"],
+
   },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
 }
