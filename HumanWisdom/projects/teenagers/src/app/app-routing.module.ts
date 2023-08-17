@@ -207,6 +207,10 @@ const routes: Routes = [
     path: 'love',
     loadChildren: () => import('./teenagers/love/love.module').then(m => m.LoveModule)
   },
+  {
+    path: 'bullying',
+    loadChildren: () => import('./bullying/bullying.module').then(m => m.BullyingModule)
+  },
 ];
   
 

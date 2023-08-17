@@ -14,7 +14,7 @@ export class S135025Page implements OnInit,OnDestroy
   bg_cft="bg_pink_orange"
   bg="pink_orange_w11"
   title="Scenario 3 - We feel we are being bullied but may not be"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/bullying/audios/bullying+1.8.mp3'
   transcriptPage="bullying/s135025t"
   toc="bullying/s135001"

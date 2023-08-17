@@ -14,7 +14,7 @@ export class S135009Page implements OnInit,OnDestroy
   bg_cft="bg_pink_orange"
   bg="pink_orange_w7"
   title="Types of bullying"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/bullying/audios/bullying+1.2.mp3'
   transcriptPage="bullying/s135009t"
   toc="bullying/s135001"

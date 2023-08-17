@@ -15,7 +15,7 @@ export class S135022Page implements OnInit,OnDestroy
   bg="pink_orange_w8"
   title="Scenario 1 - Overt bullying"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/bullying/audios/bullying+1.6.mp3'
+  audioLink=this.mediaAudio+'/bullying/audios/1.6.mp3'
   transcriptPage="bullying/s135022t"
   toc="bullying/s135001"
   bookmark=0

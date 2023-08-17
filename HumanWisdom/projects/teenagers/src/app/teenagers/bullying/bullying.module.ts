@@ -4,247 +4,235 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {SharedModule} from '../../../../../shared/shared.module'
-import {AdultsService} from '../adults.service';
+import { S135001Page } from './s135001/s135001.page';  
+import { S135002Page } from './s135002/s135002.page';  
+import { S135003Page } from './s135003/s135003.page';  
+import { S135004Page } from './s135004/s135004.page';  
+import { S135005Page } from './s135005/s135005.page';  
+import { S135006Page } from './s135006/s135006.page';  
+import { S135006tPage } from './s135006t/s135006t.page';  
+import { S135007Page } from './s135007/s135007.page';  
+import { S135008Page } from './s135008/s135008.page';  
+import { S135009Page } from './s135009/s135009.page';  
+import { S135009tPage } from './s135009t/s135009t.page';  
+import { S135010Page } from './s135010/s135010.page';  
+import { S135011Page } from './s135011/s135011.page'; 
+import { S135012Page } from './s135012/s135012.page';  
+import { S135013Page } from './s135013/s135013.page'; 
+import { S135013tPage } from './s135013t/s135013t.page';   
+import { S135014Page } from './s135014/s135014.page';  
+import { S135014tPage } from './s135014t/s135014t.page';  
+import { S135015Page } from './s135015/s135015.page';  
+import { S135015tPage } from './s135015t/s135015t.page';
+import { S135016Page } from './s135016/s135016.page';  
+import { S135017Page } from './s135017/s135017.page';  
+import { S135018Page } from './s135018/s135018.page'; 
+import { S135019Page } from './s135019/s135019.page';  
+import { S135020Page } from './s135020/s135020.page';  
+import { S135021Page } from './s135021/s135021.page';  
+import { S135022Page } from './s135022/s135022.page';  
+import { S135022tPage } from './s135022t/s135022t.page';  
+import { S135023Page } from './s135023/s135023.page';  
+import { S135024Page } from './s135024/s135024.page';  
+import { S135024tPage } from './s135024t/s135024t.page';  
+import { S135025Page } from './s135025/s135025.page';  
+import { S135025tPage } from './s135025t/s135025t.page';  
+import { S135026Page } from './s135026/s135026.page';
+import { S135027Page } from './s135027/s135027.page';  
+import { S135028Page } from './s135028/s135028.page';  
+import { S135029Page } from './s135029/s135029.page';  
+import { S135030Page } from './s135030/s135030.page';  
+import { S135031Page } from './s135031/s135031.page';  
+import { S135032Page } from './s135032/s135032.page';  
+import { S135033Page } from './s135033/s135033.page';  
+import { S135034Page } from './s135034/s135034.page';  
+import { S135035Page } from './s135035/s135035.page';  
+import { S135035tPage } from './s135035t/s135035t.page';  
+import { S135036Page } from './s135036/s135036.page';  
+import { S135037Page } from './s135037/s135037.page';  
+import { S135038Page } from './s135038/s135038.page';
+import { S135039Page } from './s135039/s135039.page';
+import { S135040Page } from './s135040/s135040.page';
+import { S135040tPage } from './s135040t/s135040t.page';
+import { S135041Page } from './s135041/s135041.page';
+import { S135042Page } from './s135042/s135042.page';
+import { S135043Page } from './s135043/s135043.page';
+import { S135043tPage } from './s135043t/s135043t.page';
+import { S135044Page } from './s135044/s135044.page';
+import { S135045Page } from './s135045/s135045.page';
+import { S135046Page } from './s135046/s135046.page';
+import { S135046tPage } from './s135046t/s135046t.page';
+import { S135047Page } from './s135047/s135047.page';
+import { S135048Page } from './s135048/s135048.page';
+import { S135049Page } from './s135049/s135049.page';
+import { S135049tPage } from './s135049t/s135049t.page';
+import { S135050Page } from './s135050/s135050.page';
+import { S135051Page } from './s135051/s135051.page';
+import { S135052Page } from './s135052/s135052.page';
+import { S135053Page } from './s135053/s135053.page';
+import { S135053tPage } from './s135053t/s135053t.page';
+import { S135054Page } from './s135054/s135054.page';
+import { S135055Page } from './s135055/s135055.page';
+import { S135056Page } from './s135056/s135056.page';
+import { S135056tPage } from './s135056t/s135056t.page';
+import { S135057Page } from './s135057/s135057.page';
+import { S135058Page } from './s135058/s135058.page';
+import { S135059Page } from './s135059/s135059.page';
+import { S135060Page } from './s135060/s135060.page';
+import { S135061Page } from './s135061/s135061.page';
+import { S135062Page } from './s135062/s135062.page';
+import { S135063Page } from './s135063/s135063.page';
+import { S135064Page } from './s135064/s135064.page';
+import { S135065Page } from './s135065/s135065.page';
+import { S135065tPage } from './s135065t/s135065t.page';
+import { S135066Page } from './s135066/s135066.page';
+import { S135067Page } from './s135067/s135067.page';
+import { S135068Page } from './s135068/s135068.page';
+import { S135069Page } from './s135069/s135069.page';
+import { S135069tPage } from './s135069t/s135069t.page';
+import { S135070Page } from './s135070/s135070.page';
+import { S135071Page } from './s135071/s135071.page';
+import { S135072Page } from './s135072/s135072.page';
+import { S135073Page } from './s135073/s135073.page';
+import { S135074Page } from './s135074/s135074.page';
+import { S135074tPage } from './s135074t/s135074t.page';
+import { S135075Page } from './s135075/s135075.page';
+import { S135076Page } from './s135076/s135076.page';
+import { S135077Page } from './s135077/s135077.page';
+import { S135078Page } from './s135078/s135078.page';
+import { S135079Page } from './s135079/s135079.page';
+import { S135080Page } from './s135080/s135080.page';
+import { S135081Page } from './s135081/s135081.page';
+import { S135082Page } from './s135082/s135082.page';
+import { S135083Page } from './s135083/s135083.page';
+import { S135083tPage } from './s135083t/s135083t.page';
+import { S135084Page } from './s135084/s135084.page';
+import { S135085Page } from './s135085/s135085.page';
+import { S135085tPage } from './s135085t/s135085t.page';
+import { S135086Page } from './s135086/s135086.page';
+import { S135087Page } from './s135087/s135087.page';
+import { S135088Page } from './s135088/s135088.page';
+import { S135089Page } from './s135089/s135089.page';
+import { S135090Page } from './s135090/s135090.page';
+import { S135091Page } from './s135091/s135091.page';
 
-import { S76001Page } from './s135001/s76001.page';  
-import { S76002Page } from './s135002/s76002.page';  
-import { S76003Page } from './s135003/s76003.page';  
-import { S76004Page } from './s135004/s76004.page';  
-import { S76005Page } from './s135005/s76005.page';  
-import { S76006Page } from './s135006/s76006.page';  
-import { S76006tPage } from './s135006t/s76006t.page';  
-import { S76007Page } from './s135007/s76007.page';  
-import { S76008Page } from './s135008/s76008.page';  
-import { S76009Page } from './s135009/s76009.page';  
-import { S76009tPage } from './s135009t/s76009t.page';  
-import { S76010Page } from './s135010/s76010.page';  
-import { S76011Page } from './s135011/s76011.page'; 
-import { S76012Page } from './s135012/s76012.page';  
-import { S76013Page } from './s135013/s76013.page'; 
-import { S76013tPage } from './s135013t/s76013t.page';   
-import { S76014Page } from './s135014/s76014.page';  
-import { S76014tPage } from './s135014t/s76014t.page';  
-import { S76015Page } from './s135015/s76015.page';  
-import { S76015tPage } from './s135015t/s76015t.page';  
-import { S76015p0Page} from './s135016/s76015p0.page'; 
-import { S76016Page } from './s135017/s76016.page';  
-import { S76017Page } from './s135018/s76017.page';  
-import { S76018Page } from './s135020/s76018.page'; 
-import { S76019Page } from './s135021/s76019.page';  
-import { S76020Page } from './s135022/s76020.page';  
-import { S76020tPage } from './s135022t/s76020t.page';  
-import { S76020p0Page} from './s135023/s76020p0.page'; 
-import { S76021Page } from './s135024/s76021.page';  
-import { S76021tPage } from './s135025/s76021t.page';  
-import { S76022Page } from './s135026/s76022.page';  
-import { S76022tPage } from './s135025t/s76022t.page';  
-import { S76023Page } from './s76023/s76023.page';  
-import { S76024Page } from './s76024/s76024.page';  
-import { S76025Page } from './s76025/s76025.page';  
-import { S76026Page } from './s76026/s76026.page';
-import { S76027Page } from './s76027/s76027.page';  
-import { S76028Page } from './s76028/s76028.page';  
-import { S76029Page } from './s76029/s76029.page';  
-import { S76030Page } from './s76030/s76030.page';  
-import { S76031Page } from './s76031/s76031.page';  
-import { S76032Page } from './s76032/s76032.page';  
-import { S76032tPage } from './s76032t/s76032t.page';  
-import { S76033Page } from './s76033/s76033.page';  
-import { S76034Page } from './s76034/s76034.page';  
-import { S76035Page } from './s76035/s76035.page';  
-import { S76036Page } from './s76036/s76036.page';  
-import { S76037Page } from './s76037/s76037.page';  
-import { S76037tPage } from './s76037t/s76037t.page';  
-import { S76038Page } from './s76038/s76038.page';  
-import { S76039Page } from './s76039/s76039.page';  
-import { S76040Page } from './s76040/s76040.page';  
-import { S76040tPage } from './s76040t/s76040t.page';  
-import { S76041Page } from './s76041/s76041.page';  
-import { S76042Page } from './s76042/s76042.page';  
-import { S76043Page } from './s76043/s76043.page';  
-import { S76043tPage } from './s76043t/s76043t.page';  
-import { S76044Page } from './s76044/s76044.page';  
-import { S76045Page } from './s76045/s76045.page';  
-import { S76046Page } from './s76046/s76046.page';  
-import { S76046tPage } from './s76046t/s76046t.page';  
-import { S76047Page } from './s76047/s76047.page';  
-import { S76048Page } from './s76048/s76048.page';  
-import { S76049Page } from './s76049/s76049.page';  
-import { S76050Page } from './s76050/s76050.page';  
-import { S76050tPage } from './s76050t/s76050t.page';  
-import { S76051Page } from './s76051/s76051.page';  
-import { S76052Page } from './s76052/s76052.page';  
-import { S76053Page } from './s76053/s76053.page';  
-import { S76053tPage } from './s76053t/s76053t.page';  
-import { S76054Page } from './s76054/s76054.page';  
-import { S76055Page } from './s76055/s76055.page';  
-import { S76056Page } from './s76056/s76056.page';  
-import { S76057Page } from './s76057/s76057.page';
-import { S76058Page } from './s76058/s76058.page';  
-import { S76059Page } from './s76059/s76059.page';  
-import { S76060Page } from './s76060/s76060.page';  
-import { S76061Page } from './s76061/s76061.page';  
-import { S76062Page } from './s76062/s76062.page';  
-import { S76062tPage } from './s76062t/s76062t.page';  
-import { S76063Page } from './s76063/s76063.page';  
-import { S76064Page } from './s76064/s76064.page';  
-import { S76065Page } from './s76065/s76065.page';  
-import { S76065tPage } from './s76065t/s76065t.page';  
-import { S76066Page } from './s76066/s76066.page';  
-import { S76067Page } from './s76067/s76067.page';  
-import { S76068Page } from './s76068/s76068.page';
-import { S76069Page } from './s76069/s76069.page';  
-import { S76069tPage } from './s76069t/s76069t.page';  
-import { S76070Page } from './s76070/s76070.page'; 
-import { S76071Page } from './s76071/s76071.page';  
-import { S76072Page } from './s76072/s76072.page';  
-import { S76073Page } from './s76073/s76073.page';  
-import { S76074Page } from './s76074/s76074.page'; 
-import { S76075Page } from './s76075/s76075.page';  
-import { S76076Page } from './s76076/s76076.page';  
-import { S76077Page } from './s76077/s76077.page';  
-import { S76078Page } from './s76078/s76078.page';  
-import { S76078tPage } from './s76078t/s76078t.page';  
-import { S76079Page } from './s76079/s76079.page';  
-import { S76080Page } from './s76080/s76080.page';  
-import { S76080tPage } from './s76080t/s76080t.page';  
-import { S76081Page } from './s76081/s76081.page';  
-import { S76082Page } from './s76082/s76082.page';  
-import { S76082tPage } from './s76082t/s76082t.page';  
-import { S76083Page } from './s76083/s76083.page';  
-import { S76084Page } from './s76084/s76084.page';  
-import { S76085Page } from './s76085/s76085.page';  
-import { S76086Page } from './s76086/s76086.page';  
-import { S76087Page } from './s76087/s76087.page';  
-import { S76088Page } from './s76088/s76088.page';  
-import { S76089Page } from './s76089/s76089.page';  
-import { S76090Page } from './s76090/s76090.page';  
-import { S76091Page } from './s76091/s76091.page';  
-import { S76092Page } from './s76092/s76092.page';  
-import { S76092p1Page } from './s76092p1/s76092p1.page';  
-import { S76093Page } from './s76093/s76093.page';  
 
 import { BullyingRoutingModule } from './bullying-routing.module';
+import { TeenagersService } from '../teenagers.service';
 
 @NgModule({
   declarations: [
-    S76001Page,
-    S76002Page,
-    S76003Page,
-    S76004Page,
-    S76005Page,
-    S76006Page,
-    S76006tPage,
-    S76007Page,
-    S76008Page,
-    S76009Page,
-    S76009tPage,
-    S76010Page,
-    S76011Page,
-    S76012Page,
-    S76013Page,
-    S76013tPage,
-    S76014Page,   
-    S76014tPage,   
-    S76015Page,
-    S76015tPage,
-    S76015p0Page,
-    S76016Page,    
-    S76017Page,
-    S76018Page,
-    S76019Page,
-    S76020Page,
-    S76020tPage,
-    S76020p0Page,
-    S76021Page,
-    S76021tPage,
-    S76022Page,
-    S76022tPage,
-    S76023Page,
-    S76024Page,
-    S76025Page,
-    S76026Page,
-    S76027Page,
-    S76028Page,
-    S76029Page,
-    S76030Page,
-    S76031Page,
-    S76032Page,
-    S76032tPage,
-    S76033Page,
-    S76034Page,
-    S76035Page,
-    S76036Page,
-    S76037Page,
-    S76037tPage,
-    S76038Page,
-    S76039Page,
-    S76040Page,
-    S76040tPage,
-    S76041Page,
-    S76042Page,
-    S76043Page,
-    S76043tPage,
-    S76044Page,
-    S76045Page,
-    S76046Page,
-    S76046tPage,
-    S76047Page,   
-    S76048Page,
-    S76049Page,
-    S76050Page,
-    S76050tPage,
-    S76051Page,
-    S76052Page,
-    S76053Page,
-    S76053tPage,
-    S76054Page,
-    S76055Page,
-    S76056Page,
-    S76057Page,
-    S76058Page,
-    S76059Page,
-    S76060Page,
-    S76061Page,
-    S76062Page,
-    S76062tPage,
-    S76063Page,
-    S76064Page,
-    S76065Page,
-    S76065tPage,
-    S76066Page,
-    S76067Page,
-    S76068Page,
-    S76069Page,
-    S76069tPage,
-    S76070Page,
-    S76071Page,
-    S76072Page,
-    S76073Page,
-    S76074Page,    
-    S76075Page,
-    S76076Page,
-    S76077Page,
-    S76078Page,
-    S76078tPage,
-    S76079Page,
-    S76080Page,
-    S76080tPage,
-    S76081Page,
-    S76082Page,
-    S76082tPage,
-    S76083Page,
-    S76084Page,
-    S76085Page,
-    S76086Page,
-    S76087Page,
-    S76088Page, 
-    S76089Page, 
-    S76090Page, 
-    S76091Page, 
-    S76092Page, 
-    S76092p1Page, 
-    S76093Page,
+    S135001Page,
+    S135002Page,
+    S135003Page,
+    S135004Page,
+    S135005Page,
+    S135006Page,
+    S135006tPage,
+    S135007Page,
+    S135008Page,
+    S135009Page,
+    S135009tPage,
+    S135010Page,
+    S135011Page,
+    S135012Page,
+    S135013Page,
+    S135013tPage,
+    S135014Page,   
+    S135014tPage,   
+    S135015Page,
+    S135015tPage,
+    S135016Page,    
+    S135017Page,
+    S135018Page,
+    S135019Page,
+    S135020Page,
+    S135021Page,
+    S135022Page,
+    S135022tPage,
+    S135023Page,
+    S135024Page,
+    S135024tPage,
+    S135025Page,
+    S135025tPage,
+    S135026Page,
+    S135027Page,
+    S135028Page,
+    S135029Page,
+    S135030Page,
+    S135031Page,
+    S135032Page,
+    S135033Page,
+    S135034Page,
+    S135035Page,
+    S135035tPage,
+    S135036Page,
+    S135037Page,
+    S135038Page,
+    S135039Page,
+    S135040Page,
+    S135040tPage,
+    S135041Page,
+    S135042Page,
+    S135043Page,
+    S135043tPage,
+    S135044Page,
+    S135045Page,
+    S135046Page,
+    S135046tPage,
+    S135047Page,   
+    S135048Page,
+    S135049Page,
+    S135049tPage,
+    S135050Page,
+    S135051Page,
+    S135052Page,
+    S135053Page,
+    S135053tPage,
+    S135054Page,
+    S135055Page,
+    S135056Page,
+    S135056tPage,
+    S135057Page,
+    S135058Page,
+    S135059Page,
+    S135060Page,
+    S135061Page,
+    S135062Page,
+    S135063Page,
+    S135064Page,
+    S135065Page,
+    S135065tPage,
+    S135066Page,
+    S135067Page,
+    S135068Page,
+    S135069Page,
+    S135069tPage,
+    S135070Page,
+    S135071Page,
+    S135072Page,
+    S135073Page,
+    S135074Page,  
+    S135074tPage,    
+    S135075Page,
+    S135076Page,
+    S135077Page,
+    S135078Page,
+    S135079Page,
+    S135080Page,
+    S135081Page,
+    S135082Page,
+    S135083Page,
+    S135083tPage,
+    S135084Page,
+    S135085Page,
+    S135085tPage,
+    S135086Page,
+    S135087Page,
+    S135088Page, 
+    S135089Page, 
+    S135090Page, 
+    S135091Page, 
   ],
   imports: [
     CommonModule,
@@ -254,7 +242,7 @@ import { BullyingRoutingModule } from './bullying-routing.module';
     BullyingRoutingModule
   ],
   providers:[
-    AdultsService
+    TeenagersService
   ]
 })
 export class BullyingModule { }

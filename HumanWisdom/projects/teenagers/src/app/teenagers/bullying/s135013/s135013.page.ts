@@ -14,7 +14,7 @@ export class S135013Page implements OnInit,OnDestroy
   bg_cft="bg_pink_orange"
   bg="pink_orange_w11"
   title="Short term impact of bullying"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/bullying/audios/bullying+1.3.mp3'
   transcriptPage="bullying/s135013t"
   toc="bullying/s135001"
