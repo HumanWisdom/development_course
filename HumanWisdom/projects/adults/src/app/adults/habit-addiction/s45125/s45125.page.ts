@@ -15,7 +15,9 @@ export class S45125Page implements OnInit {
   bg = "purple_w2"
   toc = "/habit-addiction/s45001"
   hint = "For example, I noticed for example that when I sit at my desk, I tend to slouch. "
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

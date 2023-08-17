@@ -15,7 +15,9 @@ export class S73025Page implements OnInit {
   bg = "red_pink_w2"
   hint = " It may make you break the law, or act in corrupt ways, for example.  "
   toc = "/money/s73001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

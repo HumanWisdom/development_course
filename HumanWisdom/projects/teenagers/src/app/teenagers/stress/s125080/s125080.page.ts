@@ -16,7 +16,9 @@ export class S125080Page implements OnInit
   bg = "dark_blue_w3"
   hint = "When some expectation we have is not met, the stress we feel is automatic and can be huge. Has this happened to you?"
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

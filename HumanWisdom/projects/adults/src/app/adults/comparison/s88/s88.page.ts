@@ -15,7 +15,9 @@ export class S88Page implements OnInit {
   bg = "comparison_envy_w4"
   hint = "Constantly trying to fill someone else’s shoes instead of being myself makes me unhappy. It then leads to conflict within myself. Can you think of an instance when you’ve experienced conflict caused by comparison?"
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -15,7 +15,9 @@ export class S32004tPage implements OnInit {
   bg="purple_blue_w1"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/benefits-of-wisdom/s32004"
   toc="benefits-of-wisdom/s32001"
   

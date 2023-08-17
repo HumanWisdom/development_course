@@ -28,7 +28,9 @@ export class S121004Page implements OnInit,OnDestroy
   transcriptPage="inner-boredom/s121004t"
   toc="inner-boredom/s121001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

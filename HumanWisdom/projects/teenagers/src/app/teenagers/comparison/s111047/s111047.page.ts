@@ -16,7 +16,9 @@ export class S111047Page implements OnInit
   bg = "green_yellow_w5"
   hint = "For example parents sometimes say ‘ Why cant you be like your brother or sister or cousin or friend who is…’, or something similar."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

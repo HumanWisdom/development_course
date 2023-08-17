@@ -15,7 +15,9 @@ export class S22tPage implements OnInit {
   bg="comparison_envy_w5"  
   
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/comparison/s22"
   toc="/comparison/s0"
 

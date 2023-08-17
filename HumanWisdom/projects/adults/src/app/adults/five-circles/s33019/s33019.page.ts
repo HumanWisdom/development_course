@@ -15,7 +15,9 @@ export class S33019Page implements OnInit {
   bg = "purple_blue_w1"
   hint = "It could be subjects like stress, anxiety, or your relationships."
   toc = "five-circles/s33001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -16,7 +16,9 @@ export class S130029Page implements OnInit
   bg = "teal_w9"
   hint = "you may think people go to heaven, or not be sure."
   toc = "/dealing-with-death/s130001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

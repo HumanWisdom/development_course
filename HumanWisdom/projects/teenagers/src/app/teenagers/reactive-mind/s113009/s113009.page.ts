@@ -16,7 +16,9 @@ export class S113009Page implements OnInit
   bg = "light_blue_w7"
   hint = "It could have been to avoid a snake, or a car, or to catch a glass before it fell to the floor"
   toc = "/reactive-mind/s113001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -19,7 +19,9 @@ export class S129042Page implements OnInit,OnDestroy
   transcriptPage="living-with-peace/s129042t"
   toc="living-with-peace/s129001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

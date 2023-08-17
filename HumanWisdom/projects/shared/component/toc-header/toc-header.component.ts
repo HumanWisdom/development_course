@@ -15,7 +15,9 @@ export class TocHeaderComponent implements OnInit {
   @Input() tocColor: string;
   @Input() tocAlt: string;
   @Input() moduleName = 'Stress';
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   baseUrl:string;
   programName:'';
   constructor(private ngNavigatorShareService: NgNavigatorShareService,

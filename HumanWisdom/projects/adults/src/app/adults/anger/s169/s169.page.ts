@@ -22,7 +22,9 @@ export class S169Page implements OnInit,AfterViewInit {
   transcriptPage="anger/s169t"
   toc="anger/s162p0"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   screenType=localStorage.getItem("audio")
   userId:any

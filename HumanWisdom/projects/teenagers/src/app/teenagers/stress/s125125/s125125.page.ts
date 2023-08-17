@@ -16,7 +16,9 @@ export class S125125Page implements OnInit
   bg = "dark_blue_w10"
   hint = "Our opinions become part of our identity, of ‘who we think we are’ and that results in attachment and stress when they are challenged."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

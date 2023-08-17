@@ -16,7 +16,9 @@ export class S131143Page implements OnInit
   bg = "purple_w9"
   hint = "This may include checking the tone of your voice, or asking permission to say something critical, or saying something positive first"
   toc = "/relationships/s131001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

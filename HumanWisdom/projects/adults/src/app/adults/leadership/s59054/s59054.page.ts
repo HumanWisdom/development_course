@@ -15,7 +15,9 @@ export class S59054Page implements OnInit {
   bg = "blue_w5"
   hint = " Embody what you want others to do. If you want them to be punctual, be punctual yourself. "
   toc = "/leadership/s59001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

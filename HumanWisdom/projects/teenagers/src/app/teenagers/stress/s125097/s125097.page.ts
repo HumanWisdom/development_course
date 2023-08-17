@@ -16,7 +16,9 @@ export class S125097Page implements OnInit
   bg = "dark_blue_w6"
   hint = "This is not always easy to see because it occurs in the background. Look out for it next time."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

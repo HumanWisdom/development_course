@@ -24,7 +24,9 @@ export class S46031Page implements OnInit,OnDestroy {
   transcriptPage="food-health/s46031t"
   toc="food-health/s46001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

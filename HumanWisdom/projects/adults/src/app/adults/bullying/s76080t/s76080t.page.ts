@@ -14,7 +14,9 @@ export class S76080tPage implements OnInit {
   bg="pink_orange_w8"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/bullying/s76080"
   toc="/bullying/s76001"
   screenType=localStorage.getItem("audio")

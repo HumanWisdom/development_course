@@ -22,7 +22,9 @@ export class S38008Page implements OnInit,OnDestroy {
   transcriptPage="insight/s38008t"
   toc="insight/s38000"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

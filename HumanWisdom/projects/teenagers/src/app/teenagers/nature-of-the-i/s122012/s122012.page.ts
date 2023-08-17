@@ -16,7 +16,9 @@ export class S122012Page implements OnInit
   bg="green_w6"
   hint = "Perhaps the process is unconscious. We are conditioned by our past and not aware of it.   "
   toc = "/nature-of-the-i/s122001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -15,7 +15,9 @@ export class S157Page implements OnInit {
   bg = "comparison_envy_w3"
   hint = "I’m more conscious of how my mind works, my understanding of envy, judgement, and stress has expanded. I hope understanding my feelings will transform my life. "
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -15,7 +15,9 @@ export class S113076tPage implements OnInit
   bg_cft="bg_light_blue"
   bg="light_blue_w3"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/reactive-mind/s113076"
   toc="/reactive-mind/s113001"
   screenType=localStorage.getItem("audio")

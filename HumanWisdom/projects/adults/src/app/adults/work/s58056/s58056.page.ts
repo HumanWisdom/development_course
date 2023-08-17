@@ -15,7 +15,9 @@ export class S58056Page implements OnInit {
   bg = "dark_blue_w7"
   hint = " You may compare yourself with others and become envious, or lose your self-confidence, for example. "
   toc = "/work/s58001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

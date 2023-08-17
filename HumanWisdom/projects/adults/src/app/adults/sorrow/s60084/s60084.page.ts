@@ -15,7 +15,9 @@ export class S60084Page implements OnInit {
   bg = "purple_w5"
   hint = "  It could be your stress went away when you accepted your taxi was caught in a traffic jam,  and you were going to miss your train  "
   toc = "/sorrow/s60001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

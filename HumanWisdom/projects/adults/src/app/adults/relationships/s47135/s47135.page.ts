@@ -19,7 +19,9 @@ export class S47135Page implements OnInit {
   transcriptPage="relationships/s47135t"
   toc="relationships/s47000"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

@@ -14,7 +14,9 @@ export class S46062Page implements OnInit {
   bg_cft = "bg_green"
   bg = "green_w4"
   toc = "/food-health/s46001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

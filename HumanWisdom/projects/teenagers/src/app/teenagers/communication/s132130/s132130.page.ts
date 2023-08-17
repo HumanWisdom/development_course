@@ -25,7 +25,9 @@ export class S132130Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="/communication/s132001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
   constructor(
     private router: Router,

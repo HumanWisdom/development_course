@@ -15,7 +15,9 @@ export class S76086Page implements OnInit {
   bg = "pink_orange_w2"
   hint = ""
   toc = "/bullying/s76001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

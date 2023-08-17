@@ -15,7 +15,9 @@ export class S42015tPage implements OnInit {
   bg="purple_blue_w2"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/without-language/s42015"
   toc="without-language/s42000"
   

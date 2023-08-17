@@ -16,7 +16,9 @@ export class S133014Page implements OnInit {
 
   hint = "It could be your family, or a pet, or your health"
   toc = "/happiness/s133001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

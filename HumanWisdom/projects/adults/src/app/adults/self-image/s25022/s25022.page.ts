@@ -15,7 +15,9 @@ export class S25022Page implements OnInit {
   bg = "blue_w4"
   hint = " It feels like an automatic process and we can’t help it. We want to protect our image."
   toc = "/self-image/s25001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -15,7 +15,9 @@ export class S144Page implements OnInit {
   bg = "comparison_envy_w4"
   hint = "She felt hurt, jealous, and that resulted in anger."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

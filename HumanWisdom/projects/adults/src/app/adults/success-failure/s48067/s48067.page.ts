@@ -15,7 +15,9 @@ export class S48067Page implements OnInit {
   bg = "light_blue_w1"
   hint = " It could be a fear of financial insecurity "
   toc = "/success-failure/s48001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

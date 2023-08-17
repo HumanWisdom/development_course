@@ -16,7 +16,9 @@ export class S111065Page implements OnInit
   bg = "green_yellow_w8"
   hint = "It could make you feel vain, or bitter, and that’s okay - it’s just human. Explore the process of comparison that operates in the background."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

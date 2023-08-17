@@ -16,7 +16,9 @@ export class S118029Page implements OnInit
   bg = "red_pink_w1"
   hint = "Answer in this module."
   toc = "/anger/s118001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

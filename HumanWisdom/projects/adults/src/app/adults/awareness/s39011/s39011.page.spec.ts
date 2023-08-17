@@ -33,13 +33,15 @@ export class S39011Page implements OnInit,OnDestroy {
   
   toc="awareness/s39002"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   
   
- 
+  
   constructor(
     private router: Router,
     private service:AdultsService,
