@@ -39,22 +39,22 @@ export class ManageYourEmotionsPage implements OnInit {
         pc01: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
-          title: 'The art (and benefits) of understanding our own ego.'
+          title: 'Understanding our own ego'
         },
         pc02: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying: Lessons from HumanWisdom'
+          title: 'The Art of Living and Dying'
         },
         pc03: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/37.mp3',
-          title: 'Stress-Free Living: Five Practices for Greater Well-Being'
+          title: 'Five ways to avoid stress'
         },
         pc04: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/31.mp3',
-          title: 'Cultivating Calm: Using Your Own Wisdom to Tame Anger'
+          title: 'Cultivating Calm: Deal with Anger'
         }
       }
      }

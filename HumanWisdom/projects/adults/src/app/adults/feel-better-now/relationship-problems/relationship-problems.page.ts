@@ -18,9 +18,9 @@ export class RelationshipProblemsPage implements OnInit {
   constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location) { }
 
   ngOnInit() {
-   
+
   }
-  
+
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
@@ -34,10 +34,10 @@ export class RelationshipProblemsPage implements OnInit {
 
   routeVideoaudio(type, url, title = '') {
     if(type === 'video') {
-     this.router.navigate([url])
+     this.router.navigate([url, 'F', title])
     }else{
      let concat = this.mediaAudio+url;
-     this.router.navigate(['feel-better-now/relationship-problems/audiopage/', concat, title, '1'])
+     this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
     }
  }
 }

@@ -33,6 +33,8 @@ export class TnDashboardV03Component implements OnInit {
   ios = false;
   cardlist = [];
   countryCode: any;
+  userDetails: any = [];
+
   constructor(private router: Router, private Onboardingservice: OnboardingService, public platform: Platform) {
     this.roleid = JSON.parse(localStorage.getItem('RoleID'));
     let userid = localStorage.getItem('isloggedin');
@@ -55,6 +57,7 @@ export class TnDashboardV03Component implements OnInit {
       let userId = JSON.parse(localStorage.getItem("userId"))
 
       this.Onboardingservice.getuser(userId).subscribe((res) => {
+        this.userDetails = res;
         let userdetail = res[0];
         this.url = userdetail['UserImagePath'].split('\\')[1]
         this.name = localStorage.getItem('name');
