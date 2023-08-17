@@ -22,7 +22,8 @@ export class S162Page implements OnInit, OnDestroy {
   startTime: any
   endTime: any
   totalTime: any
-  bookmark = 0
+  bookmark = 0;
+  path:any;
   toc = "/anger/s162p0"
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   angerResume = sessionStorage.getItem("pgResume")
@@ -33,6 +34,7 @@ export class S162Page implements OnInit, OnDestroy {
     private service: AdultsService,
     private location: Location
   ) {
+    this.path = this.router.url;
     this.service.setmoduleID(14);
   }
 
