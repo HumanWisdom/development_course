@@ -14,7 +14,9 @@ export class S104022Page implements OnInit {
   bg = "teal_w8"
   hint = "We have explored how this is a challenge many people face. What can you do to meet this challenge?"
   toc = "/obstacles-enquiry/s104001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

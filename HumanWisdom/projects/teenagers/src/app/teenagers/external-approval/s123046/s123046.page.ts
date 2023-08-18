@@ -30,7 +30,9 @@ export class S123046Page implements OnInit
   //sendOption=[]
   sessionOption123046=JSON.parse(sessionStorage.getItem("sessionOption123046"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption123046"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/external-approval/s123001"
 
   constructor

@@ -15,7 +15,9 @@ export class S62165Page implements OnInit {
   bg = "blue_pink_w1"
   hint = "  This is not unique to you and is not wrong, but just needs to be understood, and questioned. "
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -15,7 +15,9 @@ export class S46067Page implements OnInit {
   bg = "green_w9"
   toc = "/food-health/s46001"
   hint = " It could be that we need to have 4 meals a day, or that every meal needs to include something sweet, or that fizzy drinks are good for health"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

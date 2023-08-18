@@ -28,7 +28,9 @@ export class S37015Page implements OnInit, OnDestroy {
 
   bookmark = 0
   toc = "three-steps-enquiry/s37000"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))

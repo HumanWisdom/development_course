@@ -21,7 +21,9 @@ export class S100008Page implements OnInit,OnDestroy
   yellow="#FFC455"
   toc="awareness/s100001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

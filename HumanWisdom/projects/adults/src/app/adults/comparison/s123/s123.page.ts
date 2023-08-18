@@ -15,7 +15,9 @@ export class S123Page implements OnInit {
   bg = "comparison_envy_w3"
   hint = "I notice I am stressed when I am talking to a friend who has different political views to mine. I realise that I am just comparing his views with my idea of normal, and that is causing my stress."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

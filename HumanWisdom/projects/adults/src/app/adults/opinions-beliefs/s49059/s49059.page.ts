@@ -15,7 +15,9 @@ export class S49059Page implements OnInit {
   bg = "purple_red_w9"
   hint = "Our religious and political beliefs may come from our family or culture, for example"
   toc = "/opinions-beliefs/s49001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

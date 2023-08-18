@@ -16,7 +16,9 @@ export class S132179Page implements OnInit
   bg = "blue_w10"
   hint = "It could be you were too nervous to say anything"
   toc = "/communication/s132001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

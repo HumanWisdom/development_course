@@ -14,7 +14,9 @@ export class S573Page implements OnInit {
   bg = "purple_red_w2"
   hint = "For example, if you have been hurt in a relationship before, is your anxiety caused by your current relationship, or a reaction to your past?  "
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

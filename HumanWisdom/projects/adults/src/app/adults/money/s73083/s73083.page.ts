@@ -15,7 +15,9 @@ export class S73083Page implements OnInit {
   bg = "red_pink_w6"
   hint = " Why do I want to be rich? Does money make me happy? How many rich people are really happy? And so on... "
   toc = "/money/s73001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

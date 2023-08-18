@@ -15,7 +15,9 @@ export class S73023Page implements OnInit {
   bg = "red_pink_w12"
   hint = "  This can make us feel smug, or inferior in some way. Is it possible not to compare at all?  "
   toc = "/money/s73001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

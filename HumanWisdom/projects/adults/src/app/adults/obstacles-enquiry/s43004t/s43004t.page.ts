@@ -15,7 +15,9 @@ export class S43004tPage implements OnInit {
   bg="teal_w3"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/obstacles-enquiry/s43004"
   toc="obstacles-enquiry/s43000"
   

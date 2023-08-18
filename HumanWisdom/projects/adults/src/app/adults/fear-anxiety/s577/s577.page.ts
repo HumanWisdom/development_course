@@ -14,7 +14,9 @@ export class S577Page implements OnInit {
   bg = "purple_red_w2"
 
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   hint = ""
 
   userId: any

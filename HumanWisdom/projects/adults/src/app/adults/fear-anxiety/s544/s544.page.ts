@@ -14,7 +14,9 @@ export class S544Page implements OnInit {
   bg = "purple_red_w10"
   hint = "It could be aliens, or that foreigners are going to take over the country, for example.  "
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

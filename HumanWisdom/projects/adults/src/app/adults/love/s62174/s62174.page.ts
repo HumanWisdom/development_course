@@ -15,7 +15,9 @@ export class S62174Page implements OnInit {
   bg = "blue_pink_w10"
   hint = "  You can find these in our section on nurturing a quiet mind. "
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -17,7 +17,9 @@ export class S273tPage implements OnInit {
   bg_cft="bg_pink_orange"
   bg="conditioning_w6"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/conditioning/s273"
   toc="/conditioning/s232"
 

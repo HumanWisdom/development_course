@@ -16,7 +16,9 @@ export class S130059Page implements OnInit
   bg = "teal_w3"
   hint = " It may be you value your close relationships, but do not put enough energy into them "
   toc = "/dealing-with-death/s130001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

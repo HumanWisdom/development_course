@@ -25,7 +25,9 @@ export class S61028Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="loneliness/s61001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

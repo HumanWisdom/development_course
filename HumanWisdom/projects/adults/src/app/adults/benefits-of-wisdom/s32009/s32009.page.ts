@@ -15,7 +15,9 @@ export class S32009Page implements OnInit {
   bg = "purple_blue_w1"
   hint = "It may help your relationships, or reduce your stress, or anxiety, for example."
   toc = "benefits-of-wisdom/s32001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

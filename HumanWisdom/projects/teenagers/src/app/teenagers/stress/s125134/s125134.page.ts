@@ -16,7 +16,9 @@ export class S125134Page implements OnInit
   bg = "dark_blue_w7"
   hint = "You may notice an anxiety to be liked, or notice that it has become a habit. How often are you correct anyway?"
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

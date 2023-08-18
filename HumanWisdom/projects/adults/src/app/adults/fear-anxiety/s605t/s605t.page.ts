@@ -15,7 +15,9 @@ export class S605tPage implements OnInit {
   bg="purple_red_w9" 
   
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/fear-anxiety/s605"
   toc="/fear-anxiety/s486"
   

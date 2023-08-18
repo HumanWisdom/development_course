@@ -15,7 +15,9 @@ export class S57007p6Page implements OnInit {
   bg = "green_w10"
   hint = "We may be able to meet people who are different with affection. We may be able to move on from all our hurts."
   toc = "/nature-of-i/s57001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

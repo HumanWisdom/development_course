@@ -16,7 +16,9 @@ export class S527Page implements OnInit {
   hint = " It could make you worry about retirement, or make you spend a lot of time on your phone, for example."
 
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

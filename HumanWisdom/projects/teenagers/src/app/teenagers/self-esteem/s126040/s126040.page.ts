@@ -16,7 +16,9 @@ export class S126040Page implements OnInit
   bg = "teal_w5"
   hint = "We are usually not aware of this process. If we can shine a light on it, it changes of its own accord."
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

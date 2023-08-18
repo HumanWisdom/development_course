@@ -16,7 +16,9 @@ export class S127060Page implements OnInit
   bg = "purple_w9"
   hint = "You may have just spoken to a friend, or played a computer game, or something similar"
   toc = "/habit-addiction/s127001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

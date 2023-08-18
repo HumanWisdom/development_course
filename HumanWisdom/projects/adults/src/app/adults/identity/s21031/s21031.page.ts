@@ -15,7 +15,9 @@ export class S21031Page implements OnInit {
   bg = "dark_blue_w6"
   hint = "It could be based on national or religious identity  "
   toc = "/identity/s21001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

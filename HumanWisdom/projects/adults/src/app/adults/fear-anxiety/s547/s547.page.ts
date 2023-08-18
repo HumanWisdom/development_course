@@ -14,7 +14,9 @@ export class S547Page implements OnInit {
   bg = "purple_red_w1"
   hint = " This could be to double check you had locked the house when you were pretty sure you had the first time.  "
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

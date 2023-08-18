@@ -16,7 +16,9 @@ export class S131164Page implements OnInit
   bg = "purple_w9"
   hint = "it may be that you are not flexible enough, or not a good listener for example. "
   toc = "/relationships/s131001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

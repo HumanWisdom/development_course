@@ -16,7 +16,9 @@ export class S126053Page implements OnInit
   bg = "teal_w6"
   hint = "For example, success for me could have meant being wealthy. Now success could mean having really happy relationships."
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

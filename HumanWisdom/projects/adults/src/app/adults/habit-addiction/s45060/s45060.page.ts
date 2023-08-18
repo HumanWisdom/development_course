@@ -15,7 +15,9 @@ export class S45060Page implements OnInit {
   bg = "purple_w4"
   hint = "You may have just spoken to a friend, or drunk alcohol, or something similar "
   toc = "/habit-addiction/s45001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

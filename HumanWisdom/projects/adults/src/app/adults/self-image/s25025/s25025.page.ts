@@ -15,7 +15,9 @@ export class S25025Page implements OnInit {
   bg = "blue_w4"
   hint = " You may spend a lot of money on cosmetics or clothes, or just be anxious that you are not attractive, and that may make you less self-confident."
   toc = "/self-image/s25001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -16,7 +16,9 @@ export class S125049Page implements OnInit
   bg = "dark_blue_w10"
   hint = "Are you ever critical of yourself? I may be critical about some aspect of my personality and that is a recurring thought in my head. What’s yours?"
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

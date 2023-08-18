@@ -16,7 +16,9 @@ export class S115037Page implements OnInit
   bg = "purple_red_w3"
   hint = "You could stop speaking to a good friend, and try and be friends with someone who is popular, just so you can also be popular"
   toc = "/self-interest/s115001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

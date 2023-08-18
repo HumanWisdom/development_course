@@ -14,7 +14,9 @@ export class S557Page implements OnInit {
   bg = "purple_red_w11"
   hint = " A fear of not feeling important may make you go after positions of authority in your organisation, for example.  "
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

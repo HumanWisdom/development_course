@@ -26,7 +26,9 @@ export class S42007Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="without-language/s42000"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   constructor(

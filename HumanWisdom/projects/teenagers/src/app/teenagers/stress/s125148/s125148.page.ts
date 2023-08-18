@@ -16,7 +16,9 @@ export class S125148Page implements OnInit
   bg = "dark_blue_w7"
   hint = "Escaping from our stress is a normal coping mechanism, but sometimes it causes more harm than the original problem. Waking up to this allows us to respond with intelligence."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

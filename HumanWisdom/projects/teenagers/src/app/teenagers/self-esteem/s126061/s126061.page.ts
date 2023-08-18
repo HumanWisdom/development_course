@@ -16,7 +16,9 @@ export class S126061Page implements OnInit
   bg = "teal_w2"
   hint = "It could be a quality you have, like kindness, or the clouds moving across the sky, or the extraordinary beauty of a tree"
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

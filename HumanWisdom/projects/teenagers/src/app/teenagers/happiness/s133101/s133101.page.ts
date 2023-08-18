@@ -16,7 +16,9 @@ export class S133101Page implements OnInit
   bg = "red_pink_w3"
   hint = "We explore this fully in the module on relationships."
   toc = "/happiness/s133001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

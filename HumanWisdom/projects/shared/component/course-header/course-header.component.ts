@@ -29,7 +29,9 @@ export class CourseHeaderComponent implements OnInit {
   urlT: any
   shared = false
   showheaderbar = true
-  address = this.router.url
+  address = setTimeout(() => {
+    return this.router.url;
+  }, 500);
   modName: any
   scrNumber: any
   programName: string;
@@ -78,7 +80,7 @@ export class CourseHeaderComponent implements OnInit {
 
     // var modLast=module.lastIndexOf("/")
     //this.modName=module.substring(modLast+1);
-
+    this.path = this.router.url;
     var lastSlash = this.path.lastIndexOf("/");
     this.scrNumber = this.path.substring(lastSlash + 2);
     this.getProgress(this.scrNumber)

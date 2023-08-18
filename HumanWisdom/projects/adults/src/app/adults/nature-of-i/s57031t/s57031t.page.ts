@@ -15,7 +15,9 @@ export class S57031tPage implements OnInit {
   bg="green_w4"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/nature-of-i/s57031"
   toc="/nature-of-i/s57001"
   
