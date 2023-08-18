@@ -33135,6 +33135,25 @@ body *
 {
   background: #F2C6C1;
 }
+
+.ct_next
+{
+  height: 50px;
+  width: 500px;
+  border-radius: 100px;
+  background: #E58D82;
+  border: 0;
+  box-shadow: unset;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.ct_next.disabled 
+{
+  background: #F2C6C1;
+}
+
+
 /* /find answers navtabs */
 
 /* change topic buttons */
