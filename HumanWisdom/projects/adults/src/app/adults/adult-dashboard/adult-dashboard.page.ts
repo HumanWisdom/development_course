@@ -179,6 +179,7 @@ export class AdultDashboardPage implements OnInit {
     // }
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
+    localStorage.setItem('feelbetternow', 'F')
     setTimeout(() => {
       // this.getModuleList();
       // this.GetWisdomScreens();
