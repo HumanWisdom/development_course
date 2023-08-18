@@ -15,7 +15,9 @@ export class S127Page implements OnInit {
   bg = "comparison_envy_w7"
   hint = "When I get angry, I feel bad and blame myself for not having enough self-control"
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

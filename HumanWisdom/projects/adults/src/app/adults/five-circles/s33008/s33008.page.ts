@@ -83,7 +83,9 @@ totalTime:any
 
 bookmark=0
 toc="five-circles/s33001"
-path=this.router.url
+path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
 bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

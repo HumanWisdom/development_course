@@ -15,7 +15,9 @@ export class S122005tPage implements OnInit
   bg_cft="bg_green"
   bg="green_w11"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/nature-of-the-i/s122005"
   toc="/nature-of-the-i/s122001"
   screenType=localStorage.getItem("audio")

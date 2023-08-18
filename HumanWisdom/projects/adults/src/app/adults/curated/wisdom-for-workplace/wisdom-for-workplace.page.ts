@@ -41,27 +41,27 @@ export class WisdomForWorkplacePage implements OnInit {
         pc01: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/46.mp3',
-          title: 'The art (and benefits) of understanding our own ego.'
+          title: 'Understanding our own ego'
         },
         pc02: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/47.mp3',
-          title: 'Anxiety No More: Unlocking the Path to Fearless Living'
+          title: 'How can we overcome anxiety?'
         },
         pc03: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/45.mp3',
-          title: 'The Resilience Mindset: Lessons from HumanWisdom'
+          title: 'The Resilience Mindset'
         },
         pc04: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying: Lessons from HumanWisdom'
+          title: 'The Art of Living and Dying'
         },
         pc05: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/4.mp3',
-          title: 'The Wise Leader: Navigating Success with Wisdom and Insight'
+          title: 'The Wise Leader'
         }
       }
      }

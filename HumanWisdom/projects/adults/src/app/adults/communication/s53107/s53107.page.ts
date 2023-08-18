@@ -19,7 +19,9 @@ export class S53107Page implements OnInit {
   transcriptPage="communication/s53107t"
   toc="communication/s53001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

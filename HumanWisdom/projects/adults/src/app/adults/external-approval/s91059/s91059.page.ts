@@ -15,7 +15,9 @@ export class S91059Page implements OnInit {
   bg = "blue_w9"
   hint = ""
   toc = "/external-approval/s91001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

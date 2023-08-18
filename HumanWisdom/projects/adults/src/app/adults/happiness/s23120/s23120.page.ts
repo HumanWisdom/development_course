@@ -15,7 +15,9 @@ export class S23120Page implements OnInit {
   bg = "red_pink_w5"
   hint = "First be aware of them in the background. Ask where they came from. Then explore letting them go. Share what happens."
   toc = "/happiness/s23001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -16,7 +16,9 @@ export class S132041Page implements OnInit
   bg = "blue_w9"
   hint = "It could be when you meet a person for the first time, you get a sense of whether they are calm or agitated."
   toc = "/communication/s132001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

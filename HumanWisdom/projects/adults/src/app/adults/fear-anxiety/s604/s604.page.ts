@@ -24,7 +24,9 @@ export class S604Page implements OnInit {
   
  
  
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")

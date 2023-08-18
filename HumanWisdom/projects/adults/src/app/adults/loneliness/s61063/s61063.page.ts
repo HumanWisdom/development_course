@@ -13,7 +13,9 @@ export class S61063Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "green_yellow_w1"
   toc = "/loneliness/s61001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

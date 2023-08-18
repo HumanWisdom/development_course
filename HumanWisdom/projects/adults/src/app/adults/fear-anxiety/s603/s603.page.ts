@@ -30,7 +30,9 @@ export class S603Page implements OnInit, AfterViewInit
   toc="/fear-anxiety/s486"
   transcriptPage="/fear-anxiety/s603t"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"));
   reachedLimit = false;

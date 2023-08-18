@@ -15,7 +15,9 @@ export class S92249Page implements OnInit {
   bg = "dark_blue_w9"
   hint = "It could mean changing your job, or the relationship you are in"
   toc = "/dealing-with-depression/s92001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

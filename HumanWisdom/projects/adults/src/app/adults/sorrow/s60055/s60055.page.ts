@@ -15,7 +15,9 @@ export class S60055Page implements OnInit {
   bg = "purple_w12"
   hint = " This is a personal question, only you can answer. It could be any kind of loss - even the loss of a friendship or a pet."
   toc = "/sorrow/s60001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

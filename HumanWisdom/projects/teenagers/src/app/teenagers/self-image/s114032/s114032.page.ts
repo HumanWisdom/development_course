@@ -15,7 +15,9 @@ export class S114032Page implements OnInit
   bg = "blue_w1"
   hint = "You may pretend you are confident when you are not"
   toc = "/self-image/s114001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

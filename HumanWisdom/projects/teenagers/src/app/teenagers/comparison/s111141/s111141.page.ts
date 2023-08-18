@@ -16,7 +16,9 @@ export class S111141Page implements OnInit
   bg = "green_yellow_w10"
   hint = "That one needs to judge how something is going to be received before speaking."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

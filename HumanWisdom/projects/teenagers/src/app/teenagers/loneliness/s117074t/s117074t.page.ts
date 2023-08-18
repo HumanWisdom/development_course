@@ -15,7 +15,9 @@ export class S117074tPage implements OnInit {
   bg="green_yellow_w3"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/loneliness/s117074"
   toc="/loneliness/s117001"
   

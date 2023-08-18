@@ -32,7 +32,9 @@ export class S65Page implements OnInit {
   
   sessionOption65=JSON.parse(sessionStorage.getItem("sessionOption65"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption65"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/comparison/s0"
   
 

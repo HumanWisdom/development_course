@@ -16,7 +16,9 @@ export class S118007Page implements OnInit
   bg = "red_pink_w5"
   hint = "For example,  I get angry when someone does not do what they said they would, and when my friend forgets my birthday"
   toc = "/anger/s118001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

@@ -15,7 +15,9 @@ export class S44094tPage implements OnInit {
   bg="dark_blue_w12"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/stress/s44094"
   toc="/stress/s44001"
   

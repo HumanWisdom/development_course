@@ -19,7 +19,9 @@ export class S228p3Page implements OnInit {
   transcriptPage=""
   toc="anger/s162p0"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

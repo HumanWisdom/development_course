@@ -15,7 +15,9 @@ export class S73085Page implements OnInit {
   bg = "red_pink_w8"
   hint = " What am I afraid of? How does this influence my actions?  "
   toc = "/money/s73001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

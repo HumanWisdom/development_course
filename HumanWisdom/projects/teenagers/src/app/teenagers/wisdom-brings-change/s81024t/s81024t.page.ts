@@ -15,7 +15,9 @@ export class S81024tPage implements OnInit {
   bg="purple_blue_w10"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/wisdom-brings-change/s81024"
   toc="/wisdom-brings-change/s81001"
   screenType=localStorage.getItem("audio")

@@ -15,7 +15,9 @@ export class S59039Page implements OnInit {
   bg = "blue_w2"
   hint = ""
   toc = "/leadership/s59001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

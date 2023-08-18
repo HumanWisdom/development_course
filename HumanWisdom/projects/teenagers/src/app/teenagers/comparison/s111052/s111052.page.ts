@@ -16,7 +16,9 @@ export class S111052Page implements OnInit
   bg = "green_yellow_w10"
   hint = "It could be because it brings you pleasure, or be able to recognise people you know"
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

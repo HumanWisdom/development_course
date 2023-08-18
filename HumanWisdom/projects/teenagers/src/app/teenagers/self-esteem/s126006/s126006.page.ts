@@ -15,7 +15,9 @@ export class S126006Page implements OnInit {
   bg_cft = "bg_teal"
   bg = "teal_w9"
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

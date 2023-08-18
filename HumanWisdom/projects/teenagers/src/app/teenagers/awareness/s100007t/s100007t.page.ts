@@ -15,7 +15,9 @@ export class S100007tPage implements OnInit {
   bg_cft="bg_red_pink"
   bg="red_pink_w5"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/awareness/s100007"
   toc="awareness/s100001"
 

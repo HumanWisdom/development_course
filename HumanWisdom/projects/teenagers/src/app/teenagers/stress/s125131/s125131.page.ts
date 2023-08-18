@@ -16,7 +16,9 @@ export class S125131Page implements OnInit
   bg = "dark_blue_w4"
   hint = "If we stop, turn around and face up to being alone, and just be with the feelings that rise, they can transform into solitude."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

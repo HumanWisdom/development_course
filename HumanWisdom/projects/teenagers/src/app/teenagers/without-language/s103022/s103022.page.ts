@@ -32,7 +32,9 @@ export class S103022Page implements OnInit {
   r103022 = JSON.parse(sessionStorage.getItem("r103022"))
   shared: any
   confirmed: any
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   constructor
   (

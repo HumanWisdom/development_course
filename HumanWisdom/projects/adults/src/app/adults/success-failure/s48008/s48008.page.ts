@@ -15,7 +15,9 @@ export class S48008Page implements OnInit {
   bg = "light_blue_w6"
 
   toc = "/success-failure/s48001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

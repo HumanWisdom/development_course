@@ -14,7 +14,9 @@ export class S22013tPage implements OnInit {
   bg_cft="bg_blue"
   bg="blue_w11"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/meditation/s22013"
   toc="meditation/s22001"
 

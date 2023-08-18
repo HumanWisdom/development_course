@@ -15,7 +15,9 @@ export class S82011tPage implements OnInit {
   bg="purple_blue_w9"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/five-circles-of-wisdom/s82011"
   toc="/five-circles-of-wisdom/s82001"
   screenType=localStorage.getItem("audio")

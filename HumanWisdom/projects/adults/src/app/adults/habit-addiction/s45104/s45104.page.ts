@@ -22,7 +22,9 @@ export class S45104Page implements OnInit,OnDestroy {
   transcriptPage="habit-addiction/s45104t"
   toc="habit-addiction/s45001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

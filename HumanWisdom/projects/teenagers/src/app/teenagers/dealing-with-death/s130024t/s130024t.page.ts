@@ -15,7 +15,9 @@ export class S130024tPage implements OnInit
   bg_cft="bg_teal"
   bg="teal_w4"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/dealing-with-death/s130024"
   toc="/dealing-with-death/s130001"
   screenType=localStorage.getItem("audio")

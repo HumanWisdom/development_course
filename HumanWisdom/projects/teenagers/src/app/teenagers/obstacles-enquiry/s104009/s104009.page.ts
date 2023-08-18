@@ -14,7 +14,9 @@ export class S104009Page implements OnInit {
   bg = "teal_w5"
   hint = "Examples of this could be that I’m not good enough, or going over a painful memory I want to forget, or confronting a fear I may have."
   toc = "/obstacles-enquiry/s104001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

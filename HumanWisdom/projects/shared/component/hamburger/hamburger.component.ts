@@ -35,6 +35,8 @@ export class HamburgerComponent implements OnInit {
   enableAlert = false;
   content = '';
   enablebecomepartner = false;
+  @Input()
+  userDetails = [];
 
   constructor(
     private router: Router,
@@ -83,12 +85,25 @@ export class HamburgerComponent implements OnInit {
       if (userid === "T") {
         this.isloggedIn = true;
       }
-      let userId = JSON.parse(localStorage.getItem("userId"));
-      console.log(userid)
-      this.Onboardingservice.getuser(userId).subscribe((res) => {
-        let userdetail = res[0];
-        localStorage.setItem("isPartner", res[0].IsPartner);
-        localStorage.setItem("PartnerOption", res[0].PartnerOption);
+      // let userId = JSON.parse(localStorage.getItem("userId"));
+      // console.log(userid)
+      // this.Onboardingservice.getuser(userId).subscribe((res) => {
+      //   let userdetail = res[0];
+      //   localStorage.setItem("isPartner", res[0].IsPartner);
+      //   localStorage.setItem("PartnerOption", res[0].PartnerOption);
+      //   this.url =
+      //     userdetail["UserImagePath"].split("\\")[1] +
+      //     "?" +
+      //     new Date().getTime();
+      //   this.isPartner = localStorage.getItem("isPartner");
+      //   this.partnerOption = localStorage.getItem("PartnerOption");
+      //   this.partnerOption = localStorage.getItem("PartnerOption");
+      //   this.subscriberType = localStorage.getItem("SubscriberType");
+      // });
+      if(this.userDetails.length !== 0) {
+        let userdetail = this.userDetails[0];
+        localStorage.setItem("isPartner", this.userDetails[0].IsPartner);
+        localStorage.setItem("PartnerOption", this.userDetails[0].PartnerOption);
         this.url =
           userdetail["UserImagePath"].split("\\")[1] +
           "?" +
@@ -97,7 +112,7 @@ export class HamburgerComponent implements OnInit {
         this.partnerOption = localStorage.getItem("PartnerOption");
         this.partnerOption = localStorage.getItem("PartnerOption");
         this.subscriberType = localStorage.getItem("SubscriberType");
-      });
+      }
       if (sub === "1" || sub === 1) {
         this.subscriber = true;
       }

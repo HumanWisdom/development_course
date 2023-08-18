@@ -19,7 +19,9 @@ export class WisdomShortsS01Page implements OnInit {
   toc = "/wisdom-shorts"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   screenType = localStorage.getItem("video")
   moduleId = localStorage.getItem("moduleId")

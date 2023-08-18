@@ -14,7 +14,9 @@ export class S26Page implements OnInit
   bg_cft="bg_green_yellow"
   bookmark=0
   toc="comparison/s0"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 

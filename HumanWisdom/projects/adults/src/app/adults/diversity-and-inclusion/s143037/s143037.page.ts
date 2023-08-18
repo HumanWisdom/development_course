@@ -16,7 +16,9 @@ export class S143037Page implements OnInit
   bg = "bg_292d56"
   hint = "It is not easy to admit this but if you look carefully we all have some."
   toc = "/diversity-and-inclusion/s143001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
