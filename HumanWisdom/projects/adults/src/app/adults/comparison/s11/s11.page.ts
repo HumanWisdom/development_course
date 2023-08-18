@@ -13,7 +13,9 @@ export class S11Page implements OnInit {
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w7"
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

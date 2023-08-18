@@ -15,7 +15,9 @@ export class S49033Page implements OnInit {
   bg = "purple_red_w9"
   hint = "How can you build bridges, instead of walls?"
   toc = "/opinions-beliefs/s49001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

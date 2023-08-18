@@ -14,7 +14,9 @@ export class S56017tPage implements OnInit {
   bg="purple_blue_w3"
 
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   audioPage="/inner-boredom/s56017"
   toc="/inner-boredom/s56001"
   

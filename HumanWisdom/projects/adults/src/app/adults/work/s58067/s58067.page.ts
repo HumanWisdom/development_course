@@ -15,7 +15,9 @@ export class S58067Page implements OnInit {
   bg = "dark_blue_w6"
   hint = "You may be afraid of failure, of your boss, or what others think of you, for example.  "
   toc = "/work/s58001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

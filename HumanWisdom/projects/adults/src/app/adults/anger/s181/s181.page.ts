@@ -38,7 +38,9 @@ export class S181Page implements OnInit,AfterViewInit {
   toc="/anger/s162p0"
   
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   
   constructor(private router: Router,

@@ -20,7 +20,9 @@ export class S27035Page implements OnInit {
   overallPercentage:any
   bookmark=0
   toc="discovering-wisdom/s27001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,

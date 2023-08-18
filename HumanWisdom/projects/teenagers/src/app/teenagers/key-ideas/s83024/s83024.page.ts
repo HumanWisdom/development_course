@@ -15,7 +15,9 @@ export class S83024Page implements OnInit {
   bg = "purple_blue_w9"
   hint = "For example, when I discovered that my opinions just came from my conditioning and were not originally mine anyway, I became less attached to them."
   toc = "/key-ideas/s83001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

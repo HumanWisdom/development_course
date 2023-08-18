@@ -7,7 +7,7 @@ import { environment} from '../../../../environments/environment'
 import { OnboardingService } from '../../../../shared/services/onboarding.service';
 import { SharedService } from "../../../../shared/services/shared.service";
 import { ProgramType } from "../../../../shared/models/program-model";
-
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -58,6 +58,7 @@ export class AdultsService {
   constructor(private http: HttpClient,
      handler: HttpBackend,
       private services: OnboardingService,
+      private router: Router
      ) {
         if(SharedService.ProgramId!=null){
           this.programId=SharedService.ProgramId;
@@ -370,9 +371,9 @@ export class AdultsService {
     return this.http.get(this.path + `/GetModules/` + id)
   }
 
-  setmoduleID(id) {
+  setmoduleID(id, lastVisitedurl = '', indexUrl = '') {
     if (localStorage.getItem("isloggedin") === 'T') {
-      this.activateModule(id);
+      this.activateModule(id, lastVisitedurl, indexUrl);
     } else {
       this.emaillogin(id);
     }
@@ -387,7 +388,7 @@ export class AdultsService {
     return this.http.get(this.path + `/GetDashboard_Features/${data}`)
   }
 
-  activateModule(id) {
+  activateModule(id, lastVisitedurl = '', indexUrl = '') {
     let userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
     let pgResume;
     let mediaPercent;
@@ -405,12 +406,23 @@ export class AdultsService {
         }
         sessionStorage.setItem("pgResume", pgResume)
         mediaPercent = parseInt(res.MediaPercent);
-        let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
-        
+        // let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
+
         localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(qrList))
         console.log(qrList)
+      },error => {
+        console.log(error)
+      },
+      () => {
+        if(lastVisitedurl !== '' && indexUrl !== '') {
+          if (pgResume && pgResume !== '') {
+            this.router.navigate([`${lastVisitedurl}/${pgResume}`])
+          } else {
+            this.router.navigate([`${indexUrl}`])
+          }
+        }
       })
   }
 

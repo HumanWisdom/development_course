@@ -16,7 +16,9 @@ export class S514Page implements OnInit {
   hint = "It could make you distrust others, or not get close to them "
 
   toc = "/fear-anxiety/s486"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

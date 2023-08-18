@@ -10,7 +10,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./s75001.page.scss'],
 })
 export class S75001Page implements OnInit {
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   constructor(
     public ngNavigatorShareService: NgNavigatorShareService,
     private router: Router,

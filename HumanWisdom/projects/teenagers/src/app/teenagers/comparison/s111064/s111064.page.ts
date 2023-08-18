@@ -16,7 +16,9 @@ export class S111064Page implements OnInit
   bg = "green_yellow_w7"
   hint = "It's okay to be honest. But then explore why, and is the process of comparison operating in the background"
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

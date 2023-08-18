@@ -21,7 +21,9 @@ export class S133001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url  
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);  
  
   token="1234"
   shareUrl=this.path+"?t="+this.token
@@ -48,7 +50,7 @@ export class S133001Page implements OnInit,OnDestroy {
   )
   { 
    
-    this.getSetModuleData(112);
+    this.getSetModuleData(133);
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []

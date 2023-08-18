@@ -1,0 +1,21 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Our mind is naturally self-absorbed. We spend most of our time thinking about ourselves or the people we identify with as ours - like friends and family. We don’t like to accept this because we think it's selfish. It's not you personally, the human mind is wired like that. This self-interest operates in the background, without our awareness. When we meet people we often think ‘What's in this for me’, and that denies love. We can however use our intelligence to change that. The first step is to be aware of it as we interact with people and make decisions. The second step is to accept it without judgement - not justifying it or being critical of yourself. As you observe it, you can ask yourself if that is an intelligent way to be, and change follows. Naturally
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

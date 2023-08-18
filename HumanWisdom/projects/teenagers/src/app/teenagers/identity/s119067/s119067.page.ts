@@ -16,7 +16,9 @@ export class S119067Page implements OnInit
   bg="dark_blue_w6"
   hint = "  With a deeper understanding of how you acquired them and their roots in your thinking, it may happen naturally  "
   toc = "/identity/s119001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

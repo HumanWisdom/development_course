@@ -16,7 +16,9 @@ export class S143060Page implements OnInit
   bg = "bg_292d56"
   hint = "For example if you have never seen a Trans person before, how would you react if you met one?"
   toc = "/diversity-and-inclusion/s143001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

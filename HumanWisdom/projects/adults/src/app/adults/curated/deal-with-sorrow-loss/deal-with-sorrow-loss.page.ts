@@ -41,17 +41,17 @@ export class DealWithSorrowLossPage implements OnInit {
         pc02: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying: Lessons from HumanWisdom'
+          title: 'The Art of Living and Dying'
         },
         pc03: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/28.mp3',
-          title: 'From Suffering to Strength: Using Wisdom to Heal Emotional Pain'
+          title: 'Healing Emotional Pain'
         },
         pc04: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/10.mp3',
-          title: 'From Darkness to Hope: Wisdom to Overcome Grief and Find Meaning'
+          title: 'Overcome Grief and Find Meaning'
         }
       }
   }

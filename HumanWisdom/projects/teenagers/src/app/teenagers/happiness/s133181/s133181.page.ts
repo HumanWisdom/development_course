@@ -17,7 +17,9 @@ export class S133181Page implements OnInit {
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   toc="/happiness/s133001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
  
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
@@ -64,8 +66,8 @@ export class S133181Page implements OnInit {
 
     this.questionA=this.qrList?.ListOfQueOpts
     
-    this.question=this.findQuestion(104).Question
-    this.optionList=this.findQuestion(104).optionList
+    this.question=this.findQuestion(505).Question
+    this.optionList=this.findQuestion(505).optionList
     console.log(this.optionList,this.question)
    
   

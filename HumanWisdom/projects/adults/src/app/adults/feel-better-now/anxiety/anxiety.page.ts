@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-anxiety',
   templateUrl: './anxiety.page.html',
@@ -8,8 +10,9 @@ import { Location } from '@angular/common';
 export class AnxietyPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private router: Router ) { }
 
   ngOnInit() {
   }
@@ -23,5 +26,14 @@ export class AnxietyPage implements OnInit {
   goBack() {
     this.location.back()
   }
+
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url, 'F', title])
+    }else{
+     let concat = this.mediaAudio+url;
+     this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
+    }
+ }
 
 }

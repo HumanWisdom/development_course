@@ -22,7 +22,9 @@ export class S97010Page implements OnInit,OnDestroy {
   transcriptPage="three-steps-enquiry/s97010t"
   toc="three-steps-enquiry/s97001"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))

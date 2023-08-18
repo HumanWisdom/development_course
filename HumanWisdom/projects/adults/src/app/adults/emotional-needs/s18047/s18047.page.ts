@@ -14,7 +14,9 @@ export class S18047Page implements OnInit {
   bg = "blue_pink_w3"
   hint = "If you don’t feel loved, how does that make you feel?"
   toc = "/emotional-needs/s18001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

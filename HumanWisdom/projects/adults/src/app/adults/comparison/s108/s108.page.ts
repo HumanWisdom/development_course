@@ -15,7 +15,9 @@ export class S108Page implements OnInit {
   bg = "comparison_envy_w12"
   hint = "This is not easy. Its just helps us to explore and learn about ourselves. Its not about you being right or wrong."
   toc = "/comparison/s0"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

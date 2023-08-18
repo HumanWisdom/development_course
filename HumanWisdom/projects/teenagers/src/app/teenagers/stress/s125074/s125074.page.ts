@@ -16,7 +16,9 @@ export class S125074Page implements OnInit
   bg = "dark_blue_w9"
   hint = "It could be that when you were angry with your friend you said you wouldn’t talk to them again, or if you lost a loved one, you drank too much alcohol."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

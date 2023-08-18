@@ -16,7 +16,9 @@ export class S125171Page implements OnInit
   bg = "dark_blue_w1"
   hint = "You may decide to cut down on screen time, or take time to eat consciously, or walk to the shops instead of driving there."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

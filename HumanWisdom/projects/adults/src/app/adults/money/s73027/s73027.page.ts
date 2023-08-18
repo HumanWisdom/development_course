@@ -15,7 +15,9 @@ export class S73027Page implements OnInit {
   bg = "red_pink_w4"
   hint = "  You may switch jobs and do something you loved doing, for example  "
   toc = "/money/s73001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

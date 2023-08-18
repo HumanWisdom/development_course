@@ -15,7 +15,9 @@ export class S83019Page implements OnInit {
   bg = "purple_blue_w4"
   hint = "If you see that fear makes us all behave irrationally, you may have more compassion for someone else reacting to fear."
   toc = "/key-ideas/s83001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

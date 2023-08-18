@@ -15,7 +15,9 @@ export class S21035Page implements OnInit {
   bg = "dark_blue_w10"
   hint = "I can think of Scottish devolution, for example, but there are others. "
   toc = "/identity/s21001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

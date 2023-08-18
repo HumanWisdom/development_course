@@ -34,17 +34,17 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
         pc01: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/42.mp3',
-          title: 'The Art of Living and Dying: Lessons from HumanWisdom'
+          title: 'The Art of Living and Dying'
         },
         pc02: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/1.mp3',
-          title: 'Addiction and Wisdom: A Conversation on Overcoming and Avoiding'
+          title: 'Avoiding and overcoming addiction'
         },
         pc03: 
         {
           url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/podcasts/17.mp3',
-          title: 'Healing Hearts: Navigating Sorrow and Loss with Human Wisdom'
+          title: 'Navigating Sorrow and Loss'
         }
       }
     }

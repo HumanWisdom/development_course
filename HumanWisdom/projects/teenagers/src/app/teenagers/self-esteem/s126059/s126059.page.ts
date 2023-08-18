@@ -16,7 +16,9 @@ export class S126059Page implements OnInit
   bg = "teal_w12"
   hint = "If we are not important, it affects our self-esteem. Important people are no happier than others. The more important you are, the more envy you attract."
   toc = "/self-esteem/s126001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

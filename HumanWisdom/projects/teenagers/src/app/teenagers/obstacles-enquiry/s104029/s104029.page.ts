@@ -26,7 +26,9 @@ export class S104029Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="obstacles-enquiry/s104001"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   constructor(

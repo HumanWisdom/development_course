@@ -16,7 +16,9 @@ export class S113041Page implements OnInit
   bg = "light_blue_w11"
   hint = "You get angry in the same way with the same trigger each time - for example if a person calls you a ‘Fatso’ or a ‘A Nerd’"
   toc = "/reactive-mind/s113001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

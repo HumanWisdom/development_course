@@ -15,7 +15,9 @@ export class S133053Page implements OnInit {
   bg = "red_pink_w9"
   hint = "It could be your friends, or sunshine, or going for a run"
   toc = "/happiness/s133001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

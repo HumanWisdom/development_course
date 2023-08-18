@@ -15,7 +15,9 @@ export class S62125Page implements OnInit {
   bg = "blue_pink_w10"
   hint = " You may only do things for people who can help you in return. Are you aware of it? "
   toc = "/love/s62001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -16,7 +16,9 @@ export class S115011Page implements OnInit
   bg = "purple_red_w9"
   hint = "It could be preferring to speak rather than listen, or turning the conversation to talk about ourselves"
   toc = "/self-interest/s115001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

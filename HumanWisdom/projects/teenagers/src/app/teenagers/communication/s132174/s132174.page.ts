@@ -16,7 +16,9 @@ export class S132174Page implements OnInit
   bg = "blue_w4"
   hint = "For example, if you are conditioned to prefer right wing politics, you will struggle to listen to someone with a left wing point of view."
   toc = "/communication/s132001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

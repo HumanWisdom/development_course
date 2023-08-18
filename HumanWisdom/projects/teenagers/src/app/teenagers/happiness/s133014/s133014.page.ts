@@ -9,13 +9,16 @@ import { TeenagersService } from '../../teenagers.service';
   styleUrls: ['./s133014.page.scss'],
 })
 export class S133014Page implements OnInit {
+  
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
   bg = "red_pink_w7"
 
   hint = "It could be your family, or a pet, or your health"
   toc = "/happiness/s133001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

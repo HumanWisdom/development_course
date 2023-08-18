@@ -16,7 +16,9 @@ export class S111140Page implements OnInit
   bg = "green_yellow_w9"
   hint = "Yes - if she had an understanding of the process behind envy."
   toc = "/comparison/s111001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

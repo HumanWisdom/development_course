@@ -10,10 +10,11 @@ import { Location } from '@angular/common';
 export class LonelinessPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
   mediaUrl: any;
 
-  constructor(private router: Router, private location: Location) 
+  constructor(private router: Router, private location: Location)
   {
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.29.mp3',
@@ -22,10 +23,7 @@ export class LonelinessPage implements OnInit {
   }
 
   ngOnInit() {}
-  
-  audioevent(url) {
-      this.router.navigate(['feel-better-now/loneliness/audiopage/', url ,"Dealing with loneliness",Math.random() ])
-  }
+
 
   routeToYoutube(url) {
     this.router.navigate(['feel-better-now/feeling-upset/youtubelink/',url]);
@@ -40,4 +38,13 @@ export class LonelinessPage implements OnInit {
   goBack() {
     this.location.back()
   }
+
+  routeVideoaudio(type, url, title = '') {
+    if(type === 'video') {
+     this.router.navigate([url, 'F', title])
+    }else{
+     let concat = this.mediaAudio+url;
+     this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
+    }
+ }
 }

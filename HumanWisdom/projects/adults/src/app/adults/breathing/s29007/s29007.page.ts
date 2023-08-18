@@ -32,7 +32,9 @@ export class S29007Page implements OnInit {
   
   toc="/breathing/s29000"
   bookmark=0
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   avDuration:any
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

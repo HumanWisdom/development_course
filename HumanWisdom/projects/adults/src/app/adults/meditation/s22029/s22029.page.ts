@@ -15,7 +15,9 @@ export class S22029Page implements OnInit {
   bg = "blue_w10"
   hint = "Some thoughts are loud. Others, really quiet, subtle and fleeting. Notice those.  "
   toc = "/meditation/s22001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

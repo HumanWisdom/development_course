@@ -16,7 +16,9 @@ export class S125128Page implements OnInit
   bg = "dark_blue_w1"
   hint = "It is normal to feel overwhelmed sometimes. We can respond with wisdom, with a positive attitude and face those challenges and look actively for solutions."
   toc = "/stress/s125001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))

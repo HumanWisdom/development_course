@@ -20,7 +20,9 @@ export class S104034Page implements OnInit {
   overallPercentage:any
   bookmark=0
   toc="obstacles-enquiry/s104000"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
 
   constructor(private router: Router,

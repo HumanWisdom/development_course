@@ -25,7 +25,9 @@ export class S614p01Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark=0
   toc="fear-anxiety/s486"
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   
 
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))

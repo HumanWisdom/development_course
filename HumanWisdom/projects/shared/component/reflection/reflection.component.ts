@@ -25,7 +25,7 @@ export class ReflectionComponent implements OnInit {
   @Output() goPrevious = new EventEmitter<string>();
   shared: any
   confirmed: any
-  path = this.router.url
+   path :any;
   scrNumber: any
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
   showheaderbar = true
@@ -46,8 +46,9 @@ export class ReflectionComponent implements OnInit {
 
   ngOnInit() {
     this.showheaderbar = true
-    var lastSlash = this.path.lastIndexOf("/");
-    this.scrNumber = this.path.substring(lastSlash + 2);
+    this.path = this.router.url;
+    var lastSlash = this.path?.lastIndexOf("/");
+    this.scrNumber = this.path?.substring(lastSlash + 2);
     console.log(this.scrNumber)
     this.getProgress(this.scrNumber)
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;

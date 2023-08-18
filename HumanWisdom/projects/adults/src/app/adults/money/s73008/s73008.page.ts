@@ -15,7 +15,9 @@ export class S73008Page implements OnInit {
   bg_cft = "bg_red_pink"
   bg = "red_pink_w5"
   toc = "/money/s73001"
-  path = this.router.url
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
