@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'HumanWisdom-s135032',
@@ -94,7 +95,7 @@ export class S135032Page implements OnInit {
     },
     error => { console.log(error) },
     () => {
-      //this.router.navigate(['/bullying/s234'])
+      this.router.navigate(['/bullying/s135033'])
     })
   }
 

@@ -209,7 +209,7 @@ const routes: Routes = [
   },
   {
     path: 'bullying',
-    loadChildren: () => import('./bullying/bullying.module').then(m => m.BullyingModule)
+    loadChildren: () => import('./teenagers/bullying/bullying.module').then(m => m.BullyingModule)
   },
 ];
   

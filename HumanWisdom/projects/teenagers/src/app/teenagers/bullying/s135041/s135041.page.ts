@@ -112,11 +112,11 @@ export class S135041Page implements OnInit {
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/bullying/s135041'])
+        this.router.navigate(['/bullying/s135042'])
 
       },
       () => {
-        this.router.navigate(['/bullying/s135041'])
+        this.router.navigate(['/bullying/s135042'])
       })
   }
 

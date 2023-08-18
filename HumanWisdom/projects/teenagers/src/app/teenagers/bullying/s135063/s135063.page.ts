@@ -94,7 +94,7 @@ export class S135063Page implements OnInit {
     },
     error => { console.log(error) },
     () => {
-      //this.router.navigate(['/bullying/s234'])
+      this.router.navigate(['/bullying/s135064'])
     })
   }
 
