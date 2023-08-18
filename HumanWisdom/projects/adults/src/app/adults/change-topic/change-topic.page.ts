@@ -1,8 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { AdultsService } from '../adults.service';
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { NavigationStart, Router } from '@angular/router';
 @Component({
   selector: 'app-change-topic',
   templateUrl: './change-topic.page.html',
@@ -15,7 +16,16 @@ export class ChangeTopicPage implements OnInit {
   changeTopicList: any;
   isSelected: boolean = false;
   selectedId: any = "0";
-  constructor(private location: Location, private service: AdultsService, public router: Router, public activatedRoute: ActivatedRoute) { }
+  isRoutedFromLogin = false;
+  constructor(private location: Location, private service: AdultsService, 
+    public router: Router, public activatedRoute: ActivatedRoute) {
+      this.router.events
+      .pipe(filter(e => e instanceof NavigationStart))
+      .subscribe((e: NavigationStart) => {
+        const navigation = this.router.getCurrentNavigation();
+        this.isRoutedFromLogin = navigation.extras.state ? navigation.extras.state.routedFromLogin : false;
+      });
+     }
 
   ngOnInit() {
     this.changeTopicList = this.service.personalisedforyoulist;
