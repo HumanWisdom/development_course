@@ -46,7 +46,7 @@ export class FreeLimitPage implements OnInit, AfterViewInit {
       } else if(feelbetternow !== 'T' && curatedurl && curatedurl !== 'F'){
         this.router.navigate([curatedurl])
       } else if(feelbetternow === 'T'){
-        this.router.navigate(['/adults/feel-better-now'])
+        this.location.back()
       }else {
         this.location.back()
       }
