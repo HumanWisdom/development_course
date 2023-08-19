@@ -16,14 +16,14 @@ export class ChangeTopicPage implements OnInit {
   changeTopicList: any;
   isSelected: boolean = false;
   selectedId: any = "0";
-  isRoutedFromLogin = true;
+  isRoutedFromLogin = false;
   constructor(private location: Location, private service: AdultsService, 
     public router: Router, public activatedRoute: ActivatedRoute) {
       this.router.events
       .pipe(filter(e => e instanceof NavigationStart))
       .subscribe((e: NavigationStart) => {
         const navigation = this.router.getCurrentNavigation();
-        this.isRoutedFromLogin = navigation.extras.state ? navigation.extras.state.routedFromLogin : true;
+        this.isRoutedFromLogin = navigation.extras.state ? navigation.extras.state.routedFromLogin : false;
       });
      }
 
