@@ -19,7 +19,7 @@ export class AudioHeaderComponent implements OnInit {
   @Input() toc: string;//path of table of contents
   @Input() dashboard: string;//path to the dashboard
   @Input() transcriptPage: string;
-  @Input() progName : string;
+  @Input() progName: string;
   progUrl: string;
   note: any
   t = new Date()
@@ -30,13 +30,13 @@ export class AudioHeaderComponent implements OnInit {
   shared = false
   token = JSON.parse(localStorage.getItem("token"))
   socialShare = false
-  address :any;
+  address: any;
   scrNumber: any
   showheaderbar = true
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
-  baseUrl:string;
+  baseUrl: string;
   @Output() sendBookmark = new EventEmitter<boolean>();
-  programName:string='';
+  programName: string = '';
   placeHolder = 'Type your note here...';
   guest = false;
   Subscriber = false;
@@ -49,27 +49,26 @@ export class AudioHeaderComponent implements OnInit {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
     this.Subscriber = localStorage.getItem('Subscriber') === '1' ? true : false;
-    this.address = this.router.url;
-    this.path = this.router.url;
+    this.address = JSON.parse(JSON.stringify(this.router.url));
+    this.path = JSON.parse(JSON.stringify(this.router.url));
   }
 
   ngOnInit() {
-    if(this.guest || !this.Subscriber) {
+    if (this.guest || !this.Subscriber) {
       this.placeHolder = "Please subscribe to access your online journal";
     }
 
-   this.progUrl=this.router.url.substring(0, this.router.url.indexOf('/',1)+1);
-    console.log("url="+ this.progUrl)
-
+    this.progUrl = JSON.parse(JSON.stringify(this.router.url.substring(0, this.router.url.indexOf('/', 1) + 1)));
+    console.log("url=" + this.progUrl);
     this.showheaderbar = true;
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
-    if(this.programName=='teenagers'){
-      this.programName='';
+    if (this.programName == 'teenagers') {
+      this.programName = '';
     }
-    var lastSlash = this.path.lastIndexOf("/");
-    this.scrNumber = this.path.substring(lastSlash + 2);
+    var lastSlash = this.router.url?.lastIndexOf("/");
+    this.scrNumber = this.router.url?.substring(lastSlash + 2);
     this.getProgress(this.scrNumber)
 
     if (this.urlT) {
@@ -111,25 +110,25 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   courseNote() {
-    this.router.navigate(['/'+this.programName+'/coursenote', { path: this.path }])
+    this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
 
   goToToc() {
-    this.router.navigate(['/'+this.programName+'/' + this.toc])
+    this.router.navigate(['/' + this.programName + '/' + this.toc])
   }
 
   goToDash() {
-    if(SharedService.ProgramId == ProgramType.Adults){
+    if (SharedService.ProgramId == ProgramType.Adults) {
       this.router.navigate(['/adults/adult-dashboard'])
     }
-    else{
-      this.programName="";
-      this.router.navigate([this.programName +  '/teenager-dashboard'])
-  }
+    else {
+      this.programName = "";
+      this.router.navigate([this.programName + '/teenager-dashboard'])
+    }
   }
 
   goToTranscript() {
-    let progNamePath = this.progName == "teenagers" ?  '/' : '/adults/';
+    let progNamePath = this.progName == "teenagers" ? '/' : '/adults/';
     if (this.urlT) {
       this.router.navigate([progNamePath + this.transcriptPage], { queryParams: { t: this.urlT } })
     }
@@ -178,19 +177,19 @@ export class AudioHeaderComponent implements OnInit {
       });
   }
 
-  shareUrl (programType) {
+  shareUrl(programType) {
     switch (programType) {
       case ProgramType.Adults:
-        this.baseUrl=SharedService.AdultsBaseUrl;
-      break;
+        this.baseUrl = SharedService.AdultsBaseUrl;
+        break;
       case ProgramType.Teenagers:
-        this.baseUrl=SharedService.TeenagerBaseUrl;
-       break;
+        this.baseUrl = SharedService.TeenagerBaseUrl;
+        break;
       default:
-      this.baseUrl=SharedService.TeenagerBaseUrl;
+        this.baseUrl = SharedService.TeenagerBaseUrl;
     }
   }
-  getProgramTypeName(value: number): string  {
+  getProgramTypeName(value: number): string {
     const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
     return enumKey as string;
   }
@@ -206,7 +205,6 @@ export class AudioHeaderComponent implements OnInit {
           }, 100)
         }
       )
-
   }
 
   getAlertcloseEvent(event) {

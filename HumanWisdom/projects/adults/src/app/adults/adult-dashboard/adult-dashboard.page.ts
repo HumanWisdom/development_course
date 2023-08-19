@@ -3962,7 +3962,11 @@ export class AdultDashboardPage implements OnInit {
   }
   changeTopic() {
     localStorage.setItem('lastRoute',this.dasboardUrl);
-    this.router.navigate(['/change-topic/']);
+    this.router.navigate(["/change-topic"], {
+      state: {
+        routedFromLogin: false,
+      }
+    });
   }
 
   routeToFindAnswer(param){
