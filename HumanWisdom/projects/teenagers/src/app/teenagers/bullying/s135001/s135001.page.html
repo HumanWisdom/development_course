@@ -1,0 +1,198 @@
+<app-toc-header [moduleName]="'Bullying'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+   
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          Welcome. Bullying affects between 20-30% of people and impacts their wellbeing and happiness. We are going to explore the impact of bullying, why people bully others, how it can be prevented, and how we can respond with our innate wisdom. Remember the basic principles of enquiry:
+          <ul>
+            <li>
+              Be curious and have a mind open to learning
+            </li>
+
+            <li>
+              Pause judgement of yourself and others during this enquiry
+            </li>
+
+            <li>
+              We are just looking and learning about ourselves
+            </li>
+
+            <li>
+              Deep down our minds function in similar ways 
+            </li>
+          </ul>
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
+        <a [routerLink]="['/bullying', bullyingResume]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_pink_orange" data-dismiss="modal">Continue where you left</button>
+        </a>
+        <!-- <a routerLink="/bullying/s1">
+          <button type="button" class="btn btn_default mb0 txt_pink_orange" data-dismiss="modal">Start from the beginning</button>
+        </a> -->
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/bullying/s135002">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+            <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+              Session #1
+            </h4>
+            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+              The impact of bullying
+            </h4>
+            <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+              08:00
+            </h4>
+          </div>
+
+          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+          </div>
+
+        </div>
+      </div>
+    </a>
+
+    <a routerLink="/bullying/s135032">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+            <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+              Session #2
+            </h4>
+            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+              Why do people bully others?
+            </h4>
+            <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+              17:00
+            </h4>
+          </div>
+
+          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+          </div>
+
+        </div>
+      </div>
+    </a>
+
+    <a routerLink="/bullying/s135063">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+            <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+              Session #3
+            </h4>
+            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+              How can we respond with wisdom?
+            </h4>
+            <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+              07:00
+            </h4>
+          </div>
+
+          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+          </div>
+
+        </div>
+      </div>
+    </a>
+
+    <!-- video row -->
+    <a (click)="youtube('Y2PkEh7ARLk')">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+            <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/22.svg" alt="" class="p0 session_img">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+            </div>
+
+            <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #4
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                Understand yourself
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                48:00
+              </h4>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- /video row -->
+
+    <!-- video row -->
+    <a routerLink="/bullying/s76092p1">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+            <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/23.svg" alt="" class="p0 session_img">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+            </div>
+
+            <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                Session #5
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                Dealing with Bullying
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                47:11
+              </h4>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- /video row -->
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+    
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>
