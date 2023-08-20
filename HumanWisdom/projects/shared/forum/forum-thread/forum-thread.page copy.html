@@ -4,7 +4,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" routerLink="/forum/forum-landing/">
+      <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
@@ -41,20 +41,12 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                         <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff">
-                          <!-- Jennifer Hitchner -->
-                          {{posttread.UserName}}
+                          Jennifer Hitchner
                         </h4>
                       </div>
 
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" (click)="follow(posttread)">
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='0'">
-                          <i class="fa fa-plus mr3px"></i>
-                          <span class="underline">
-                            Follow
-                          </span>
-                        </button>
-
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='1'">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82">
                           <i class="fa fa-plus mr3px"></i>
                           <span class="underline">
                             Follow
@@ -67,8 +59,7 @@
                   <div class="row mt5px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
-                        <!-- March 26 -->
-                        {{getLocalPostDate(posttread.PostDate)| date: 'medium' }}
+                        March 26
                       </h4>
                     </div>
                   </div>
@@ -92,8 +83,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                        <!-- Freedom from active addiction they say addicts are addicted because we have had childhood trauma... which can be a number of different things that have happened... question is., what's the solution!??? can't find book or video that's helpful! please help -->
-                        {{posttread.POST}}
+                        Freedom from active addiction they say addicts are addicted because we have had childhood trauma... which can be a number of different things that have happened... question is., what's the solution!??? can't find book or video that's helpful! please help
                       </h4>
                     </div>
                   </div>
@@ -104,8 +94,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
-                            <!-- 24 -->
-                            {{posttread.PostLikeCount}}
+                            24
                           </button>
                         </div>
 
@@ -135,7 +124,7 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <textarea type="text" rows="5" placeholder="Comment here" class="ta_forum_comment" id="PostComment" [(ngModel)]="PostComment"></textarea>
+                      <textarea type="text" rows="5" placeholder="Comment here" class="ta_forum_comment"></textarea>
                     </div>
                   </div>
                 </a>
@@ -151,51 +140,47 @@
               </div>
 
               <!-- comment -->
-              <ng-container *ngIf="list && list.ReplyPost">
-                <div class="div_comment_list" *ngFor="let item of replyPost();let index=index">
-                  <div class="row mb5px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
-                        <!-- Manoj Krishna -->
-                        {{item.ReplyPostUserName}}
-                      </h4>
-                    </div>
+              <div class="div_comment_list">
+                <div class="row mb5px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
+                      Manoj Krishna
+                    </h4>
                   </div>
+                </div>
 
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff" *ngIf="(editCommentId != item.ReplyPostID)">
-                        <!-- It is possible to move on from our past experiences and heal ourselves - see the modules on stress, conditioning in the app. See the podcast on Overcoming emotional pain in the app. -->
-                        {{item.ReplyPost}}
-                      </h4>
-                    </div>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                      It is possible to move on from our past experiences and heal ourselves - see the modules on stress, conditioning in the app. See the podcast on Overcoming emotional pain in the app.
+                    </h4>
                   </div>
+                </div>
 
-                  <div class="row div_forum_post mt20px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
-                          24
-                        </button>
-                      </div>
-
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
-                          Report
-                        </button>
-                      </div>
+                <div class="row div_forum_post mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                      <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
+                        24
+                      </button>
                     </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <hr class="hr_style_v3_05 mtb20px">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                      <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
+                        Report
+                      </button>
                     </div>
                   </div>
                 </div>
-              </ng-container>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <hr class="hr_style_v3_05 mtb20px">
+                  </div>
+                </div>
+              </div>
               <!-- /comment -->
 
               <div class="pagebreak"></div>
