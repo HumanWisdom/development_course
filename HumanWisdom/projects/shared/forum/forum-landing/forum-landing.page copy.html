@@ -11,14 +11,11 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Forum
+        Find answers
       </h1>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-      <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" alt="" class="p0">
-      </a>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
     </div>
   </div>
 </div>
@@ -37,12 +34,22 @@
             <form>
 
               <!-- search -->
-              <div class="row mt30px mb30px prelative">
+              <!-- <div class="row mt30px mb30px prelative">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" #threadsearch id="inputSuccess2" name="searchEn" placeholder="Search forum">
+                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search for a topic">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                  <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
                 </div>
-              </div>
+
+                <div class="row adsearch">
+                  <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                    <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
+                      <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                        class="is-search list-group-item">{{item.ModuleName}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div> -->
               <!-- /search -->
 
               <div class="row">
@@ -83,28 +90,20 @@
 
               <!-- post -->
               <div class="div_forum_post">
-                <a class="" *ngFor="let item of posts;let index=index;">
+                <a class="">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" (click)="postnavigate(item)">
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
-                          <!-- Jennifer Hitchner -->
-                          {{item.UserName}}
+                          Jennifer Hitchner
                         </h4>
                       </div>
 
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" (click)="follow(item,index)">
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='0'">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82">
                           <i class="fa fa-plus mr3px"></i>
                           <span class="underline">
                             Follow
-                          </span>
-                        </button>
-
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='1'">
-                          <i class="fa fa-minus mr3px"></i>
-                          <span class="underline">
-                            Unfollow
                           </span>
                         </button>
                       </div>
@@ -130,7 +129,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                        {{item.POST}}
+                        Freedom from active addiction they say addicts are addicted because we have had childhood trauma... which can be a number of different things that have happened... question is., what's the solution!??? can't find book or video that's helpful! please help
                       </h4>
                     </div>
                   </div>
@@ -141,19 +140,19 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
-                            {{item.PostLikeCount}}
+                            24
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'comment')">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" class="img-responsive mr5px">
-                            {{item.ReplyCount}}
+                            0
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'report')">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
                             Share
                           </button>
@@ -266,6 +265,7 @@
     </div>
     <!-- /modal content -->
   </div>
+
   <!-- /modal-body -->
 </div>
 <!-- /signup_login modal -->
