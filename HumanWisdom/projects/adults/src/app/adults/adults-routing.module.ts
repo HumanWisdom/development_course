@@ -435,7 +435,8 @@ const routes: Routes = [
   },
   {
     path: 'repeat-user',
-    loadChildren: () => import('./repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule)
+    loadChildren: () => import('./repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'feel-better-now',
@@ -455,7 +456,8 @@ const routes: Routes = [
   },
   {
     path: 'change-topic',
-    loadChildren: () => import('./change-topic/change-topic.module').then( m => m.ChangeTopicPageModule)
+    loadChildren: () => import('./change-topic/change-topic.module').then( m => m.ChangeTopicPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'find-answers/:url',
