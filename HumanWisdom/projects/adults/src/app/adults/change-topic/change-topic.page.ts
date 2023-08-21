@@ -1,8 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { AdultsService } from '../adults.service';
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { NavigationStart, Router } from '@angular/router';
 @Component({
   selector: 'app-change-topic',
   templateUrl: './change-topic.page.html',
@@ -15,9 +16,13 @@ export class ChangeTopicPage implements OnInit {
   changeTopicList: any;
   isSelected: boolean = false;
   selectedId: any = "0";
-  constructor(private location: Location, private service: AdultsService, public router: Router, public activatedRoute: ActivatedRoute) { }
+  isRoutedFromLogin = false;
+  constructor(private location: Location, private service: AdultsService,
+    public router: Router, public activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.isRoutedFromLogin = window.history?.state?.routedFromLogin ? window.history?.state?.routedFromLogin : false;
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();
   }
@@ -44,10 +49,10 @@ export class ChangeTopicPage implements OnInit {
     this.service.AddUserPreference(this.selectedId).subscribe(res => {
       if (res) {
         this.url = localStorage.getItem('lastRoute')?.toString();
-        if(this.url==null){
-          this.url ='/adult-dashboard';
+        if (this.url == null) {
+          this.url = '/adult-dashboard';
         }
-        localStorage.setItem('lastRoute',null);
+        localStorage.setItem('lastRoute', null);
         this.router.navigate([this.url]);
       }
     });
@@ -58,5 +63,10 @@ export class ChangeTopicPage implements OnInit {
     if (parseInt(id) > 0) {
       this.isSelected = true;
     }
+  }
+
+  next(){
+    window.history.state.routedFromLogin = false;
+    this.router.navigate(['/adult-dashboard']);
   }
 }

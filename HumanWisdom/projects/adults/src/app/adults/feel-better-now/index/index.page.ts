@@ -13,7 +13,9 @@ export class IndexPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location, private router: Router) { }
+  constructor(private location: Location, private router: Router) {
+    localStorage.setItem('feelbetternow', 'T')
+   }
 
   ngOnInit() {
     this.isSubscriber = localStorage.getItem('Subscriber') === '1' ? true : false;

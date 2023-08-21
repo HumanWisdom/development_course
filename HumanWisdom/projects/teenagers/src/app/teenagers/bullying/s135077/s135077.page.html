@@ -1,0 +1,17 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      Alternatively, if you are being teased, if you ignore them, it takes the pleasure out of it for them, and they may stop. Be aware of your reaction to being teased - don’t let others have power over you.
+      </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

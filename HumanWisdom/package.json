@@ -5,7 +5,8 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "node --max_old_space_size=16432 ./node_modules/@angular/cli/bin/ng serve -o",
+    "adults": "node --max_old_space_size=16432 ./node_modules/@angular/cli/bin/ng serve --project=adults",
+    "teenagers": "node --max_old_space_size=16432 ./node_modules/@angular/cli/bin/ng serve --project=teenagers",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
