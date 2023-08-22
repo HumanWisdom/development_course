@@ -137,14 +137,16 @@ const routes: Routes = [
   },
   {
     path: 's162',   
+    canActivate:[ActiveGuard],
     component: S162Page,
   },
   {
-    path: 's162p0',   
+    path: 's162p0',      
     component: S162p0Page,
   },
   {
     path: 's163',   
+    canActivate:[ActiveGuard],
     component: S163Page,
   },
   {

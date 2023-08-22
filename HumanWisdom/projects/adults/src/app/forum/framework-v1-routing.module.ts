@@ -6,7 +6,6 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('../../../../shared/forum/forum-landing/forum-landing.module').then( m => m.ForumLandingPageModule)
   },
- 
   {
     path: 'forum-landing',
     loadChildren: () => import('../../../../shared/forum/forum-landing/forum-landing.module').then( m => m.ForumLandingPageModule)
@@ -19,7 +18,10 @@ const routes: Routes = [
     path: 'forum-thread-start-new',
     loadChildren: () => import('../../../../shared/forum/forum-thread-start-new/forum-thread-start-new.module').then( m => m.ForumThreadStartNewPageModule)
   },
-
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
 ];
 
 @NgModule({
