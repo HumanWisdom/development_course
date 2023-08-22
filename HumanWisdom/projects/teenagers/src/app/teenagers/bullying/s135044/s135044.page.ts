@@ -15,7 +15,9 @@ export class S135044Page implements OnInit {
   bg = "pink_orange_w12"
   hint = " If people have been mean to you, you may think its normal to be mean to others "
   toc = "/bullying/s135001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

@@ -15,7 +15,9 @@ export class S135041Page implements OnInit {
   bg = "pink_orange_w9"
   hint = " It may be in the playground where you do not want your friend to talk to others"
   toc = "/bullying/s135001"
-  path = this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
