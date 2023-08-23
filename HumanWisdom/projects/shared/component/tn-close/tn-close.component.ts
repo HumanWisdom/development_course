@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-tn-close',
@@ -8,13 +10,17 @@ import { Location } from '@angular/common';
 })
 export class TnCloseComponent implements OnInit {
 
-  constructor(private location:Location) { }
+  constructor(private location:Location, private service: AdultsService,  private router: Router) { }
 
   ngOnInit() {
   }
 
   goBack(){
-    this.location.back()
+    if (this.service.previousUrl !== '') {
+      this.location.back()
+    } else {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
   }
 
 }
