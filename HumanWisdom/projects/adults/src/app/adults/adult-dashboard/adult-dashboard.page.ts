@@ -318,7 +318,7 @@ export class AdultDashboardPage implements OnInit {
     // $("#signuplogin").modal("hide");
     this.closepopup.nativeElement.click();
     localStorage.setItem('introoption', 'T')
-    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.router.navigate(['/onboarding/login'])
   }
 
   getLastvisitedScr() {
@@ -1465,7 +1465,7 @@ export class AdultDashboardPage implements OnInit {
     // localStorage.clear();
     localStorage.setItem('isloggedin', 'F')
     localStorage.setItem('guest', 'T')
-    this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+    this.router.navigate(['/onboarding/login'])
   }
 
   friendName(value) {

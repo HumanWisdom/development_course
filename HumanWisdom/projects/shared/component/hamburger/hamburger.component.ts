@@ -260,10 +260,7 @@ export class HamburgerComponent implements OnInit {
             localStorage.setItem("guest", "T");
             localStorage.setItem("navigateToUpgradeToPremium", "true");
             localStorage.setItem("btnClickBecomePartner", "true");
-            this.router.navigate(["/onboarding/login"], {
-              replaceUrl: true,
-              skipLocationChange: true
-            });
+            this.router.navigate(["/onboarding/login"]);
         }else{
           this.Onboardingservice.navigateToUpgradeToPremium = true;
           this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
@@ -275,10 +272,7 @@ export class HamburgerComponent implements OnInit {
           localStorage.setItem("guest", "T");
           localStorage.setItem("navigateToUpgradeToPremium", "false");
           localStorage.setItem("btnClickBecomePartner", "false");
-          this.router.navigate(["/onboarding/login"], {
-            replaceUrl: true,
-            skipLocationChange: true
-          });
+          this.router.navigate(["/onboarding/login"]);
         }
       }
     }
