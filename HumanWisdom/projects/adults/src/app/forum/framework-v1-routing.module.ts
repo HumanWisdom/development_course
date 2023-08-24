@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('../../../../shared/forum/profile/profile.module').then( m => m.ProfilePageModule)
   },
 ];
 

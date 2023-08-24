@@ -17962,6 +17962,7 @@ ngx-circular-player svg
 {
   width: 100%;
   max-height: 100%;
+  border-radius: 12px;
 }
 /* /video player */
 
@@ -18638,12 +18639,20 @@ ngx-circular-player svg
 }
 
 /* introduction program content accordion */
-.pc_panel,
+.pc_panel
+{
+  background: transparent;
+  border: 0;
+  box-shadow: unset;
+  padding: 0 !important;
+}
+
 .pc_panel>.panel-heading
 {
   background: transparent;
   border: 0;
   box-shadow: unset;
+  padding: 0 15px !important;
 }
 
 .pc_hr
@@ -33119,6 +33128,7 @@ body *
 {
   margin-bottom: 0;
 }
+/* /find answers navtabs */
 
 .ct_update 
 {
@@ -33140,7 +33150,7 @@ body *
 .ct_next
 {
   height: 50px;
-  width: 500px;
+  width: 100%;
   border-radius: 100px;
   background: #E58D82;
   border: 0;
@@ -33151,11 +33161,13 @@ body *
 
 .ct_next.disabled 
 {
-  background: #F2C6C1;
+  background: rgba(229, 141, 130, 0.25);
 }
 
-
-/* /find answers navtabs */
+.ct_next.disabled h4
+{
+  color: rgba(255, 255, 255, 0.25);
+}
 
 /* change topic buttons */
 .div_ct button:hover
@@ -33706,5 +33718,100 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border-radius: 8px;
   background: #424675;
   padding: 24px;
+}
+
+.forum_all_threads 
+{
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.10);
+  padding: 20px
+}
+
+.btn_all_threads 
+{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #E8A880;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.btn_all_threads:hover,
+.btn_all_threads:focus
+{
+  filter: unset !important;
+  color: #E8A880;
+}
+
+.forum_profile_desc
+{
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_profile_box.svg) no-repeat;
+  background-size:cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  margin-top: -12%;
+  padding: 20px;
+}
+
+.forum_profile_img 
+{
+  border: 2px solid #292d5e;
+  border-radius: 50%;
+}
+
+.dropdown-menu::before 
+{
+  border-bottom: 9px solid rgba(0, 0, 0, 0.2);
+  border-left: 9px solid rgba(0, 0, 0, 0);
+  border-right: 9px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  /* left: 86px; */
+  position: absolute;
+  top: -8px;
+  right: 5%;
+}
+
+.dropdown-menu::after 
+{
+  border-bottom: 8px solid #120F40;
+  border-left: 9px solid rgba(0, 0, 0, 0);
+  border-right: 9px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  /* left: 86px; */
+  position: absolute;
+  top: -7px;
+  right: 5%;
+}
+
+.cfdm 
+{
+  border-radius: 8px 8px;
+  background: #120F40;
+  border: 0;
+  padding: 16px 12px;
+  width: 100%;
+  top: 150%;
+}
+
+.hr_style_v3_07
+{
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  margin: 0;
+}
+
+.absolute_edit 
+{
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 /* /version - 03 */
