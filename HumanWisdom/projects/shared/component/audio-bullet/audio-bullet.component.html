@@ -1,31 +1,32 @@
 <app-bg-video></app-bg-video>
 
-<div class="right_col mc_01" #screen>
-  <!-- Class -->
+<div class="right_col mc_02" #screen>
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 bg_292d56">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form class="">
 
-              <h1 class="txt1 tcenter">
+              <div class="row mt10px mb20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <a class="">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <h1 class="txt1">
                 {{title}}
               </h1>
 
-
-
-              <!-- angular audio player plugin  -->
-              <!-- <ngx-circular-player></ngx-circular-player>   -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt30px">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 mtb30px">
                   <audio id="aud1" controls controlsList="nodownload" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
-                  <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                   -->
                 </div>
               </div>
-              <!-- /angular audio player plugin -->
 
               <h3 *ngFor="let l of list;let i = index"class="txt8 oneliner_txt_pointer">
                   {{i+1}}. {{l}}
@@ -38,10 +39,8 @@
       </div>
     </div>
   </div>
-  <!--/Class -->
 </div>
 <!-- /page content -->
-
 
 <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
   [content]="'You have reached your free limit. Please subscribe to Premium to  unlock full access to the app'">

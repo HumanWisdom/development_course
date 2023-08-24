@@ -1,34 +1,38 @@
 <app-bg-video></app-bg-video>
 
-<!-- page content -->
-<div class="right_col mc_02" #screen role="main">
+<div class="right_col mc_01" #screen>
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 bg_292d56">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01" [ngClass]="bg">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form class="p0">
+            <form class="">
 
-              <h1 class="txt1">
+              <h1 class="txt1 tcenter">
                 {{title}}
               </h1>
 
+
+
               <!-- angular audio player plugin  -->
+              <!-- <ngx-circular-player></ngx-circular-player>   -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 mtb30px">
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex pt30px">
                   <audio id="aud1" controls controlsList="nodownload" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
-                  <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" #audio ></ngx-circular-player>                   -->
+                  <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                   -->
                 </div>
               </div>
               <!-- /angular audio player plugin -->
 
-              <img [src]="imageLink" alt="" class="p0">
+              <h3 *ngFor="let l of list;let i = index"class="txt8 oneliner_txt_pointer">
+                  {{i+1}}. {{l}}
+              </h3>
 
+              <div class="pagebreak"></div>
             </form>
-            <div class="pagebreak"></div>
           </div>
         </div>
       </div>
@@ -37,6 +41,7 @@
   <!--/Class -->
 </div>
 <!-- /page content -->
+
 
 <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
   [content]="'You have reached your free limit. Please subscribe to Premium to  unlock full access to the app'">
