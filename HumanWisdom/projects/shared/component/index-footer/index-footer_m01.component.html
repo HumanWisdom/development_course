@@ -2,21 +2,22 @@
 <!-- <div class="sidebar-footer prelative"> -->
 <div class="mfooter p0">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex ftray">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex ftray">
 
       <a (click)="routeDash()" class="footer_index">
+
         <div *ngIf="!dash">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_home_inactive.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
+          <p class="mb0px silver_chalice">
             Home
           </p>
         </div>
 
         <div *ngIf="dash">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_home_active.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/home_active.svg"
             alt="">
-          <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
+          <p class="mb0px">
             Home
           </p>
         </div>
@@ -24,7 +25,7 @@
 
       <!-- <a (click)="routeSearch()" class="footer_index">
         <div *ngIf="!search">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/search.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search.svg"
             alt="">
           <p class="mb0px silver_chalice">
             Search
@@ -34,7 +35,7 @@
 
         <div *ngIf="search">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/search_active.svg"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/search_active.svg"
             alt="">
           <p class="mb0px">
             Search
@@ -44,9 +45,9 @@
 
       <a (click)="routeSearch()" class="footer_index">
         <div *ngIf="!search">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_explore_inactive.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/for_you.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
+          <p class="mb0px silver_chalice">
             Explore
           </p>
         </div>
@@ -54,28 +55,35 @@
 
         <div *ngIf="search">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_explore_active.svg"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/for_you_active.svg"
             alt="">
-          <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
+          <p class="mb0px">
             Explore
           </p>
         </div>
       </a>
 
+      <!-- <a (click)="routeJournal()" class="footer_index">        
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg" alt="">
+        <p class="mb0px">
+          Journal
+        </p>
+      </a> -->
+
       <a (click)="routeJournal()" class="footer_index">
         <div *ngIf="!journal">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_journal_inactive.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
+          <p class="mb0px silver_chalice">
             Journal
           </p>
         </div>
 
         <div *ngIf="journal">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_journal_active.svg"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/journal_active.svg"
             alt="">
-          <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
+          <p class="mb0px">
             Journal
           </p>
         </div>
@@ -83,38 +91,37 @@
 
       <a (click)="routeForum()" class="footer_index">
         <div *ngIf="!fourm">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_forum_inactive.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
+          <p class="mb0px silver_chalice">
             Forum
           </p>
         </div>
 
         <div *ngIf="fourm">
           <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/v3_footer_forum_active.svg"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/forum_active.svg"
             alt="">
-          <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
+          <p class="mb0px">
             Forum
           </p>
         </div>
       </a>
 
-      <!--
-      <a class="footer_index"> 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/more.svg" alt="">        
-        <p class="mb0px">
+      <!-- <a class="footer_index"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more.svg" alt=""> -->
+      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/more_active.svg" alt=""> -->
+      <!-- <p class="mb0px">
           More
         </p>
-      </a>
-      -->
+      </a> -->
 
       <a (click)="profileclickevent()" class="footer_index">
         <div *ngIf="!enableprofile && isloggedIn && !profile">
           <img
             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_inactive.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
+          <p class="mb0px silver_chalice">
             Profile
           </p>
         </div>
@@ -123,7 +130,7 @@
           <img
             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg"
             alt="">
-          <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
+          <p class="mb0px">
             Profile
           </p>
         </div>

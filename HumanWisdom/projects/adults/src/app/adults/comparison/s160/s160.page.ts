@@ -126,7 +126,6 @@ export class S160Page implements OnInit
       // var active_color = "rgb(237, 40, 70)";
       var base_color = "rgba(196,196,196,1)";
       var active_color = "#E58D82";
-
       var i;
       var child = 1;
       var length = $("section").length - 1;
