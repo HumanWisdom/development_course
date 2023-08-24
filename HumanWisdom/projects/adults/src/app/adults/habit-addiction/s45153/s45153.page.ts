@@ -116,8 +116,8 @@ export class S45153Page implements OnInit {
     $(document).ready(function () {
       // var base_color = "rgb(45153,45153,45153)";
       // var active_color = "rgb(237, 40, 70)";
-      var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#60A757";
+     var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
       var i;
 
