@@ -11,6 +11,10 @@ import { ProgramModel } from '../../../../../../shared/models/program-model';
   styleUrls: ['./s135001.page.scss'],
 })
 export class S135001Page implements OnInit,OnDestroy {
+  
+  bg_tn = "bg_pink_orange"
+  bg_cft = "bg_pink_orange"
+  bg = "pink_orange_w1"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -22,7 +26,9 @@ export class S135001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
   localFreeScreens =localStorage.getItem("freeScreens");
@@ -181,6 +187,13 @@ export class S135001Page implements OnInit,OnDestroy {
       this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
       console.log(res[0].lastScreen)
      });
+  }
+   youtube(link) 
+  {
+    this.router.navigate(['/curated/youtubelink', link],{
+    state: {
+      class: this.bg,
+    }})
   }
 
 }

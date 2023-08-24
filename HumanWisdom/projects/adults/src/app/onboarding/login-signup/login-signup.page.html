@@ -10,12 +10,12 @@
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs login_signup_tab flex_ai">
-                <li id="SignupTab" class="active">
-                  <a data-toggle="tab" (click)="getsignuptab()" href="#tab1">
+                <li id="SignupTab" [ngClass]="{'active' : isSignUp }" class="active">
+                  <a data-toggle="tab" (click)="getsignuptab()" >
                     Sign up
                   </a>
                 </li>
-                <li id="LoginTab" #enabletab onclick="$('#tab2').trigger('click')">
+                <li id="LoginTab" #enabletab [ngClass]="{'active' : !isSignUp }" (click)="getLoginTab()">
                   <a data-toggle="tab" href="#tab2">
                     Login
                   </a>
@@ -24,7 +24,7 @@
 
               <div class="tab-content mt40px">
                 <!-- signup -->
-                <div id="tab1" class="tab-pane fade in active">
+                <div id="tab1" *ngIf="isSignUp" class="tab-pane fade" [ngClass]="{' in active' : isSignUp }">
                   <form [formGroup]="registrationForm">
 
                     <div class="row ls_connect_with">
@@ -245,7 +245,7 @@
                 <!-- /signup -->
 
                 <!-- login -->
-                <div id="tab2" class="tab-pane fade">
+                <div id="tab2" *ngIf="!isSignUp"  class="tab-pane fade"  [ngClass]="{' in active' : !isSignUp }">
 
                   <div class="row ls_connect_with">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
