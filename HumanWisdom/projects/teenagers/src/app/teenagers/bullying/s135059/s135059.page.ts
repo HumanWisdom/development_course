@@ -30,7 +30,9 @@ export class S135059Page implements OnInit {
   //sendOption=[]
   sessionOption135059=JSON.parse(sessionStorage.getItem("sessionOption135059"))
   sendOption=JSON.parse(sessionStorage.getItem("sessionOption135059"))
-  path=this.router.url
+  path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
   toc="/bullying/s135001"
 
   constructor(private router: Router,

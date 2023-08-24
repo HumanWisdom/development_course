@@ -110,7 +110,7 @@ createScreen(){
 
   }
   prev(){
-    this.router.navigate(['/adults/nature-of-i/s56061'])
+    this.router.navigate(['/adults/nature-of-i/s57061'])
 
   }
   
