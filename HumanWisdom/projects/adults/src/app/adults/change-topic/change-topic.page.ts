@@ -105,7 +105,12 @@ export class ChangeTopicPage implements OnInit {
 
   next(){
     window.history.state.routedFromLogin = false;
-    this.router.navigate(['/adult-dashboard']);
+    this.service.AddUserPreference(this.selectedId).subscribe(res => {
+      if (res) {
+        this.url = '/adult-dashboard';
+        this.router.navigate([this.url]);
+      }
+    });
   }
 
   loginadult(res) {
