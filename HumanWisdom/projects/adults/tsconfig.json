@@ -16,7 +16,7 @@
       "node_modules/@typeRoots"
     ],
     "lib": [
-      "es2018",
+      "ES2022",
       "dom"
     ],
     "types": ["tslib"],
