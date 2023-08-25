@@ -268,7 +268,7 @@
 
 .bg_292d56
 {
-  background: #292D56;
+  background: #292D56 !important;
 }
 
 .bg_183c79
@@ -278,7 +278,8 @@
 
 .v1_3_bg_splash
 {  
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/splash.svg) no-repeat center center fixed !important;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/splash.svg) no-repeat center center fixed !important; */
+  background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
