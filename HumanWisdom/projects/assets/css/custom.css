@@ -33410,7 +33410,7 @@ body *
 
 .btn_e58d82t
 {
-  height: 50px;
+  /* height: 50px; */
   width: 100%;
   border: 0;
   box-shadow: unset;
@@ -33421,6 +33421,7 @@ body *
   color: #E58D82;
   font-weight: 600;
   line-height: 150%;
+  padding: 0;
 }
 
 /* progress tab */
@@ -33869,5 +33870,11 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   color: #FFF;
   outline: none;
+}
+
+.ptb40pxi 
+{
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
 }
 /* /version - 03 */
