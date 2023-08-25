@@ -13,7 +13,7 @@ export class SingleAudioContentComponent implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    this.audioLink = this.mediaAudio + this.route.snapshot.paramMap.get('audiolink').replaceAll('+','/');
+    this.audioLink = this.mediaAudio + this.route.snapshot.paramMap.get('audiolink').replace(/\+/g, '/');
     this.audioTitle = this.route.snapshot.paramMap.get('title')
   }
 
