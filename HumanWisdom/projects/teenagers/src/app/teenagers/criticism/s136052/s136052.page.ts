@@ -9,12 +9,13 @@ import { TeenagersService } from '../../teenagers.service';
   styleUrls: ['./s136052.page.scss'],
 })
 export class S136052Page implements OnInit {
-  
+
+
   bg_tn = "bg_green"
   bg_cft = "bg_green"
   bg = "criticism_overlay_w7"
 
-  mediaVideo = JSON.parse(localStorage.getItem("mediaVideo"))
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink = this.mediaVideo + '/Criticism/videos/3.2.mp4'
   title = "How do we respond to criticism?"
   poster = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/criticism/criticism_02.jpg"
@@ -36,6 +37,7 @@ export class S136052Page implements OnInit {
   bookmark = 0
   avDuration: any
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+
 
   constructor
     (

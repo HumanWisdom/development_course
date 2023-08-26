@@ -1,0 +1,54 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {Location } from '@angular/common'
+
+@Component({
+  selector: 'app-s136112',
+  templateUrl: './s136112.page.html',
+  styleUrls: ['./s136112.page.scss'],
+})
+export class S136112Page implements OnInit {
+  
+  toc="criticism/s136001"
+  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
+  
+  // bg=""
+  // moduleLink="/adults/opinions-beliefs"
+  // moduleName="Opinions and Beliefs"
+  // sectionName= "Transform your life - I";
+  // moduleId=49
+
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/47.png"
+  
+  bg=""
+  moduleLink="/relationships"
+  moduleName=" Relationships"
+  sectionName= "Transform your life - I";
+  moduleId=131
+  moduleList: any = [
+    {
+      name: 'Comparison & Envy',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/07.png',
+      link: '/comparison',
+      id: 111
+    },
+    {
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
+      link: '/conditioning',
+      id: 105
+    },
+    {
+      name: 'Reactive mind',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/54.png',
+      link: '/reactive-mind',
+      id: 113
+  
+    },
+  ]
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+}
