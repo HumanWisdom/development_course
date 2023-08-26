@@ -10,7 +10,7 @@ import { AdultsService } from "src/app/adults/adults.service";
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 
-
+declare var $:any;
 @Component({
   selector: "app-login-signup",
   templateUrl: "./login-signup.page.html",
@@ -49,7 +49,7 @@ export class LoginSignupPage implements OnInit {
   enableLogin = false;
   scrId: any;
   x = [];
-
+  isSignUp = true;
   value: number = 100;
   showWarning = false;
   showMessage = false;
@@ -105,15 +105,7 @@ export class LoginSignupPage implements OnInit {
     private aservice: AdultsService,
     private service: OnboardingService
   ) {
-    this.registrationForm = this.fb.group(
-      {
-        fullname: ["", [Validators.required, Validators.minLength(6)]],
-        email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-        password: ["", [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
-      },
-      { validator: this.PasswordValidator }
-    );
+    this.initializeRegistrationForm();
     // let acceptCookie = localStorage.getItem('acceptcookie');
     // if(acceptCookie === null)
     //   this.router.navigate(['/adults/help-support/cookie-policy'])
@@ -241,9 +233,10 @@ export class LoginSignupPage implements OnInit {
               "signupfirst",
               'T'
             );
+            this.initializeRegistrationForm();
             this.closeotpmodal.nativeElement.click();
-            window.location.reload();
-          //  this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
+            this.isSignUp =  false;
+            // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
           }
         },
         (err) => {
@@ -854,6 +847,7 @@ export class LoginSignupPage implements OnInit {
   }
 
   getsignuptab() {
+    this.isSignUp = true;
     this.showAlert = false;
   }
 
@@ -901,4 +895,19 @@ export class LoginSignupPage implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
+
+  getLoginTab(){
+    this.isSignUp = false;
+  }
+ initializeRegistrationForm(){
+  this.registrationForm = this.fb.group(
+    {
+      fullname: ["", [Validators.required, Validators.minLength(6)]],
+      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      password: ["", [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
+    },
+    { validator: this.PasswordValidator }
+  );
+ }
 }
