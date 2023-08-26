@@ -32,7 +32,7 @@ export class TranscriptHeaderComponent implements OnInit {
   shared=false
   token=JSON.parse(localStorage.getItem("token"))
   socialShare=false
-  address=this.router.url
+  address:any;
   scrNumber:any
   progress:any
   placeHolder = 'Type your note here...';
@@ -52,6 +52,7 @@ export class TranscriptHeaderComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.address=this.router.url;
     if(this.guest || !this.Subscriber) {
       this.placeHolder = "Please subscribe to access your online journal";
     }

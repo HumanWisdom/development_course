@@ -93,6 +93,11 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
+  gotoTranscript(){
+    const url = this.router.url+"t";
+    this.router.navigate([url]);
+  }
+
   onChange(value) {
     let aud: any = document.getElementById("aud1");
     aud.playbackRate = Number(value);
