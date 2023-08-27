@@ -10,6 +10,7 @@ import { WisdomScalePageRoutingModule } from './wisdom-scale-routing.module';
 
 import { WisdomScalePage } from './wisdom-scale.page';
 import {SharedModule} from '../../../../../../shared/shared.module'
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {SharedModule} from '../../../../../../shared/shared.module'
     NgxChartsModule,
     IonicModule,
     WisdomScalePageRoutingModule,
-    SharedModule
+    SharedModule,
+    ChartsModule
   ],
   declarations: [WisdomScalePage]
 })

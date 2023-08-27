@@ -558,10 +558,7 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      let signup = localStorage.getItem(
-                        "signupfirst"
-                      );
-                      if(signup === 'T') {
+                      if(this.loginResponse?.NoOfVisits === 0) {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
