@@ -385,10 +385,7 @@ export class LoginSignupPage implements OnInit {
                         state: { quan: "1", plan: persub },
                       });
                     } else {
-                      let signup = localStorage.getItem(
-                        "signupfirst"
-                      );
-                      if(signup === 'T') {
+                      if(this.loginResponse?.NoOfVisits === 0) {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
@@ -770,10 +767,7 @@ export class LoginSignupPage implements OnInit {
                         this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
                       }
                     } else {
-                      let signup = localStorage.getItem(
-                        "signupfirst"
-                      );
-                      if(signup === 'T') {
+                      if(this.loginResponse?.NoOfVisits === 0) {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
