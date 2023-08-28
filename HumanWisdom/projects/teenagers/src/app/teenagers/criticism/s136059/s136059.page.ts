@@ -14,7 +14,7 @@ export class S136059Page implements OnInit {
   bg_cft = "bg_green"
   bg = "criticism_w2"
   title = "Step #4  If appropriate, say sorry"
-  mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink = this.mediaAudio + '/Criticism/audios/criticism+3.5.mp3'
 
   toc = "/criticism/s136001"

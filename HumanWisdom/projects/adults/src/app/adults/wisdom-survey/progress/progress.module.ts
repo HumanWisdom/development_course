@@ -9,6 +9,8 @@ import { SharedModule } from '../../../../../../shared/shared.module';
 import { ProgressPageRoutingModule } from './progress-routing.module';
 
 import { ProgressPage } from './progress.page';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   imports: [
@@ -16,7 +18,8 @@ import { ProgressPage } from './progress.page';
     FormsModule,
     IonicModule,
     SharedModule,
-    ProgressPageRoutingModule
+    ProgressPageRoutingModule,
+    ChartsModule
   ],
   declarations: [ProgressPage]
 })
