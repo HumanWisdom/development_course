@@ -33,8 +33,8 @@ export class S136056Page implements OnInit {
   avDuration: any
   transcriptPage = "/criticism/s136056t"
 
-
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
+  progName = "teenagers"
 
   constructor(
     private router: Router,
