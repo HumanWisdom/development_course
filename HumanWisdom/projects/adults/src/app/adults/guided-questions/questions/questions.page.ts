@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AdultsService } from '../../adults.service';
@@ -10,6 +10,7 @@ import { AdultsService } from '../../adults.service';
 })
 export class QuestionsPage implements OnInit {
   data: any;
+  @ViewChild('saveBtn') saveBtn: any;
   counter = 1;
   maintitile = new BehaviorSubject(1);
   title = '';
@@ -24,8 +25,8 @@ export class QuestionsPage implements OnInit {
   }
   ngOnInit() {
     var id = +this.router.snapshot.queryParamMap.get("Qid");
-    var attempt=+this.router.snapshot.queryParamMap.get("Attempt");
-    this.adultService.GetGuidedQs_Response(id,attempt).subscribe(x => {
+    var attempt = +this.router.snapshot.queryParamMap.get("Attempt");
+    this.adultService.GetGuidedQs_Response(id, attempt).subscribe(x => {
       if (x) {
         this.data = x;
         this.numSlides = this.data.length;
@@ -105,7 +106,7 @@ export class QuestionsPage implements OnInit {
     this.maintitile.next(slideNumber);
   }
 
-  SubmitButton() {
+  SaveBtn() {
     let data: any;
     let res = this.data[this.numSlides - 1];
     if (res.ResponseID != null) {
@@ -129,8 +130,11 @@ export class QuestionsPage implements OnInit {
       };
     }
     this.adultService.AddGuidedQs_Response(data).subscribe(res => {
-      this.route.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+      this.saveBtn.nativeElement.click();
     });
   }
 
+  SubmitButton() {
+    this.route.navigate(['/adults/journal'], { queryParams: { "isGuided": true } })
+  }
 }

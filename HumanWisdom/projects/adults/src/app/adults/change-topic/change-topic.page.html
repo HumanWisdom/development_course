@@ -1,22 +1,27 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0"  *ngIf="!isRoutedFromLogin">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back" *ngIf="!isRoutedFromLogin">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter" *ngIf="!isRoutedFromLogin">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
         Change topic
-      </h1>
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter" *ngIf="isRoutedFromLogin">
-        Pick a topic you're intrested in
       </h1>
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back" *ngIf="isRoutedFromLogin">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter" >
+        Pick a topic you’re interested in
+      </h1>
     </div>
   </div>
 </div>
@@ -32,23 +37,17 @@
           <div class="x_content p0">
 
             <div class="mt40px div_ct">
-
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
                   <div  (click)="updateList(item.id)" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of changeTopicList">
                     <button [ngClass]="item.id == selectedId ? 'topic-op-point-5': 'topic-op-one'">
-                      <h4   class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
+                      <h4 class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
                         {{item.name}}
                       </h4>
                     </button>
                   </div>
-
-
-
                 </div>
               </div>
-
             </div>
 
             <div class="row mt40px" *ngIf="isRoutedFromLogin">

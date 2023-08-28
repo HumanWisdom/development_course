@@ -14,7 +14,7 @@ export class S136056Page implements OnInit {
   bg_cft = "bg_green"
   bg = "criticism_w11"
   title = "Step #1  Don’t react to the hurt you feel"
-  mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink = this.mediaAudio + '/Criticism/audios/criticism+3.2.mp3'
 
   toc = "/criticism/s136001"
@@ -32,40 +32,38 @@ export class S136056Page implements OnInit {
   }, 1000);
   avDuration: any
   transcriptPage = "/criticism/s136056t"
-  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
 
+  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers"
 
-  constructor
-    (
-      private router: Router,
-      private service: TeenagersService,
-      private location: Location
-    ) { }
-
+  constructor(
+    private router: Router,
+    private service: TeenagersService,
+    private location: Location
+  ) { }
   ngOnInit() {
-    if (this.saveUsername == false) {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-    }
-    this.startTime = Date.now();
-    this.startTime = Date.now();
+    //localStorage.removeItem("bookmarkList")
     this.createScreen()
+
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    this.startTime = Date.now();
+
+    this.startTime = Date.now();
+
     if (JSON.parse(sessionStorage.getItem("bookmark136056")) == 0)
       this.bookmark = 0
     else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark136056")) == 1)
       this.bookmark = 1
-  }
 
-  createScreen() {
-    this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => { })
+
+
+
+
+  }
+  receiveAvDuration(e) {
+    this.avDuration = e
+
   }
 
   receiveBookmark(e) {
@@ -76,13 +74,20 @@ export class S136056Page implements OnInit {
       this.bookmark = 0
     sessionStorage.setItem("bookmark136056", JSON.stringify(this.bookmark))
   }
+  createScreen() {
+    this.service.createScreen({
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {
 
-  receiveAvDuration(e) {
-    console.log(e)
-    this.avDuration = e
+    })
+
+
   }
-
   submitProgress() {
+
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/criticism/s136057'])
@@ -95,18 +100,23 @@ export class S136056Page implements OnInit {
       "timeSpent": this.totalTime,
       "avDuration": this.avDuration
     }).subscribe(res => {
+
       this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
       localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
     })
-  }
 
+
+
+
+  }
   prev() {
     this.router.navigate(['/criticism/s136055'])
-  }
 
+  }
   ngOnDestroy() {
-    localStorage.setItem("totalTime136056", this.totalTime)
-    localStorage.setItem("avDuration136056", this.avDuration)
+    localStorage.setItem("totalTime435", this.totalTime)
+    localStorage.setItem("avDuration435", this.avDuration)
+
   }
 
 }
