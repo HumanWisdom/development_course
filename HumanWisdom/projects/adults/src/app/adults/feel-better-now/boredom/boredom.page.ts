@@ -37,7 +37,7 @@ export class BoredomPage implements OnInit {
     if(type === 'video') {
      this.router.navigate([url, 'T', title])
     }else{
-      let concat = url.replaceAll('/','+');
+      let concat = encodeURIComponent(url.replaceAll('/','~'));
      this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
     }
  }
