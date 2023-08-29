@@ -74,6 +74,11 @@ export class AudioCirclesComponent implements OnInit, AfterViewInit {
     }
   }
 
+  gotoTranscript(){
+    const url = this.router.url+"t";
+    this.router.navigate([url]);
+  }
+
   ngOnDestroy() {
     if (this.interval) {
       clearInterval(this.interval);

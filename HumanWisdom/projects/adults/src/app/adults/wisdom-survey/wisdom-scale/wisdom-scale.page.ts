@@ -1,9 +1,11 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AdultsService } from '../../adults.service'; 
+import { AdultsService } from '../../adults.service';
 import { LogEventService } from '../../../../../../shared/services/log-event.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { Color, Label } from 'ng2-charts';
 
 
 @Component({
@@ -82,11 +84,28 @@ export class WisdomScalePage implements OnInit {
   rating10 = 1
   wisdomScore: any
   nextPath: any
+  public lineChartData: ChartDataSets[] = [
+    { data: [], label: 'Wisdom Survey' },
+  ];
+  public lineChartLabels: Label[] = [];
+  public lineChartOptions: ChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false
+  };
+  public lineChartColors: Color[] = [
+    {
+      borderColor: '#E58D82',
+      backgroundColor: 'rgba(229, 141, 130, 0.2)',
+    },
+  ];
+  public lineChartLegend = false;
+  public lineChartType: ChartType = 'line';
+
   constructor(private router: Router,
     private service: AdultsService,
     private location: Location,
     public logeventservice: LogEventService,
-    private ac: ActivatedRoute, 
+    private ac: ActivatedRoute,
     private meta: Meta, private title: Title) {
 
     this.ac.queryParams.subscribe(params => {
@@ -105,7 +124,7 @@ export class WisdomScalePage implements OnInit {
     this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Wisdom Survey for a More Fulfilling Life'})
     this.meta.updateTag({ property: 'description', content: 'Discover mindful insights with our wisdom survey. Share your thoughts on meditation, spirituality, and other topics related to a more fulfilling life.' })
     this.meta.updateTag({ property: 'keywords', content: 'Personal growth survey,Self-improvement survey,Mindfulness survey,Happiness survey,Success survey,Mental health survey,Life lessons survey,Positive mindset survey' })
-  
+
 
     this.createScreen()
     if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
@@ -141,17 +160,19 @@ export class WisdomScalePage implements OnInit {
           this.optionList9 = this.findQuestion(130).optionList
           this.q10 = this.findQuestion(131).Question
           this.optionList10 = this.findQuestion(131).optionList
-          /* console.log(this.q1,this.optionList1)
-           console.log(this.q2,this.optionList2)
-           console.log(this.q3,this.optionList3)
-           console.log(this.q4,this.optionList4)
-           console.log(this.q5,this.optionList5)*/
-
         })
 
-
-
-
+        this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
+          console.log(r)
+          var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          r.forEach((d) => {
+            let name = monthNames[d['month'] - 1];
+            if (!(this.lineChartLabels.some((t) => t === name.substring(0, 3)))) {
+              this.lineChartData[0]['data'].push(parseInt(d['Score']));
+              this.lineChartLabels.push(name.substring(0, 3));
+            }
+          })
+        });
   }
 
   onSelect(event) {
@@ -161,19 +182,15 @@ export class WisdomScalePage implements OnInit {
   receiveRating(e) {
     console.log(e)
     e = JSON.parse(e)
-
     switch (e.Id) {
       case "1": {
-     
         this.rating1 = (e.Rating==5)?1: (5-e.Rating)
         console.log(this.rating1)
         this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
         console.log("selected rating", this.s1)
         break;
-
       }
       case "2": {
-       
         this.rating2 = (e.Rating==5)?1: (5-e.Rating)
         // this.optionList2.forEach((x)=>{ x.OptId=parseInt(x.OptId) });
         // this.optionList2.sort((a, b) => a.OptId - b.OptId);
@@ -181,30 +198,23 @@ export class WisdomScalePage implements OnInit {
         this.s2 = this.optionList2.find(x => x.Points == this.rating2).OptId
         console.log(this.s2)
         break;
-
-
       }
       case "3": {
-       
         this.rating3 = (e.Rating==0)?(1):e.Rating
         this.s3 = this.optionList3.find(x => x.Points ==  this.rating3).OptId
         console.log("selected rating", this.s3)
         break;
-
       } case "4": {
-        this.rating4 = (e.Rating==0)?(1):e.Rating     
+        this.rating4 = (e.Rating==0)?(1):e.Rating
         this.s4 = this.optionList4.find(x => x.Points ==  this.rating4).OptId
         console.log("selected rating", this.s4)
         break;
-
       } case "5": {
-        this.rating5 = (e.Rating==0)?(1):e.Rating    
+        this.rating5 = (e.Rating==0)?(1):e.Rating
         this.s5 = this.optionList5.find(x => x.Points ==  this.rating5).OptId
         console.log("selected rating", this.s5)
         break;
-
       } case "6": {
-       
         this.rating6 = (e.Rating==5)?1: (5-e.Rating)
         this.s6 = this.optionList6.find(x => x.Points ==   this.rating6).OptId
         console.log("selected rating", this.s6)
@@ -219,21 +229,21 @@ export class WisdomScalePage implements OnInit {
 
       }
       case "8": {
-        this.rating8 = (e.Rating==0)?(1):e.Rating    
+        this.rating8 = (e.Rating==0)?(1):e.Rating
         this.s8 = this.optionList8.find(x => x.Points ==  this.rating8).OptId
         console.log("selected rating", this.s8)
         break;
 
       }
       case "9": {
-        this.rating9 = (e.Rating==0)?(1):e.Rating    
+        this.rating9 = (e.Rating==0)?(1):e.Rating
         this.s9 = this.optionList9.find(x => x.Points ==  this.rating9).OptId
         console.log("selected rating", this.s9)
         break;
 
       }
       case "10": {
-        this.rating10 = (e.Rating==0)?(1):e.Rating    
+        this.rating10 = (e.Rating==0)?(1):e.Rating
         this.s10 = this.optionList10.find(x => x.Points == this.rating10).OptId
         console.log("selected rating", this.s10)
         break;
@@ -244,8 +254,6 @@ export class WisdomScalePage implements OnInit {
         break;
       }
     }
-
-
   }
 
   createScreen() {
@@ -255,10 +263,7 @@ export class WisdomScalePage implements OnInit {
       "GSetID": this.screenType,
       "ScreenNo": this.screenNumber
     }).subscribe(res => {
-
     })
-
-
   }
 
   findQuestion(q) {
@@ -269,36 +274,19 @@ export class WisdomScalePage implements OnInit {
         this.questionA[i].CorrectAns = false
       else
         this.questionA[i].CorrectAns = true
-
-
       if (q == this.questionA[i].QueId) {
-
         var question = this.questionA[i].Que
-
         optionList.push(this.questionA[i])
-
-        //this.optionList.push(this.questionA[i])
-
       }
-
-
     }
     console.log(question, optionList)
     return ({ "Question": question, "optionList": optionList })
-
   }
-
-
-
 
   submitProgress() {
     this.logeventservice.logEvent('click_survey_submit');
-
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-
-
-
     var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
     this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2
     localStorage.setItem("wisdomScore", this.wisdomScore)
@@ -328,17 +316,7 @@ export class WisdomScalePage implements OnInit {
         });
   }
 
-
-  ngOnDestroy() {
-
-
-  }
-
   goBack() {
     this.location.back()
   }
-
-
-
-
 }

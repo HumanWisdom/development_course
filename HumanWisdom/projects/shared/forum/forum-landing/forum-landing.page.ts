@@ -164,6 +164,13 @@ export class ForumLandingPage implements OnInit {
   }
   }
 
+  DeletePost(item){
+    this.serivce.deletePost(item.PostID).subscribe(res=>{
+      if(res){
+          this.getAllposts(0);
+      }
+    })
+  }
 
   commentPost(item) {
     this.replyflag = !this.replyflag;

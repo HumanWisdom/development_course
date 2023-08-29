@@ -43,7 +43,7 @@ export class LonelinessPage implements OnInit {
     if(type === 'video') {
      this.router.navigate([url, 'F', title])
     }else{
-     let concat = this.mediaAudio+url;
+      let concat = encodeURIComponent(url.replaceAll('/','~'));
      this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
     }
  }

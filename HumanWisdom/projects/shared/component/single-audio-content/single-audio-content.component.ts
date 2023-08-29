@@ -10,10 +10,12 @@ export class SingleAudioContentComponent implements OnInit {
   yellow = "#FFC455"
   @Input() audioLink = ""
   @Input() audioTitle = ''
-
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    this.audioLink = this.route.snapshot.paramMap.get('audiolink')
+    debugger;
+    const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
+    this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
     this.audioTitle = this.route.snapshot.paramMap.get('title')
   }
 
