@@ -20,7 +20,7 @@ import { ProgramType } from "../../models/program-model";
 export class ForumLandingPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-
+  @ViewChild('closeCategory') closeCategory: any;
   @ViewChild('threadsearch', { static: true }) threadsearch: ElementRef;
   UserID = "107";
   activereply;
@@ -38,6 +38,7 @@ export class ForumLandingPage implements OnInit {
   isLoggedIn: boolean = false;
   activeCommentPost;
   actionType: string = '';
+  buttonText:string ="All threads"
   threadlist = [{
     value: 0, label: 'All threads'
   }, {
@@ -48,6 +49,19 @@ export class ForumLandingPage implements OnInit {
     value: 3, label: 'Reflections'
   }];
 
+
+  categoryList = [{
+    value: 1, label: 'Mental Health'
+  }, {
+    value: 2, label: 'Relationships'
+  }, {
+    value: 3, label: 'Work'
+  }, {
+    value: 4, label: 'Nuggets of Inspiration'
+  },
+  {
+    value: 5, label: 'Ask a coach'
+  }]
   isloggedIn = false;
   searchinp = '';
   public user: any
@@ -93,7 +107,8 @@ export class ForumLandingPage implements OnInit {
   public moduleId = 7
   public bookmarks = []
   public resume = []
-  public bookmarkLength: any
+  public bookmarkLength: any;
+  
   public programType :ProgramType.Adults;
   constructor(private serivce: ForumService, public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,
@@ -138,6 +153,7 @@ export class ForumLandingPage implements OnInit {
         })
         if (!flag) {
           element.child = [];
+          element.isEditPost = false;
           temp.push(element);
           flag = false;
         } else {
@@ -225,9 +241,36 @@ export class ForumLandingPage implements OnInit {
       }
     });
   }
+
+  filterBasedOnTags(tagId){
+    const data = this.categoryList.filter(x=>x.value==tagId);
+    if(data!=null && data.length>0){
+      this.buttonText =  data[0].label;
+    }
+    this.serivce.getposts(0, null, this.UserID).subscribe((res) => {
+      if (res) {
+        const filteredData = res.filter(x=>parseInt(x.TagIds) == tagId);
+        this.list(filteredData);
+        setTimeout(() => {
+          this.closeCategoryModal();
+        }, 100);
+      }
+    });
+  }
+
   onChange(e) {
-    this.selectIndex = this.selectthread;
+    this.selectIndex = e;
+    this.selectthread= e;
+    const data = this.threadlist.filter(x=>x.value==e);
+    if(data!=null && data.length>0){
+      this.buttonText=data[0].label;
+    }else{
+      this.buttonText = "All threads";
+    }
     this.getAllposts(e);
+    setTimeout(() => {
+      this.closeCategoryModal();
+    }, 100);
   }
   ngOnInit() {
 
@@ -241,7 +284,7 @@ export class ForumLandingPage implements OnInit {
 
 
 
-
+    this.userName = localStorage.getItem('name');
     this.selectthread = this.threadlist[0].value;
     this.getAllposts(0);
     fromEvent(this.threadsearch.nativeElement, 'keyup').pipe(
@@ -524,5 +567,30 @@ export class ForumLandingPage implements OnInit {
       this.enableAlert = false;
       this.router.navigate(['/login'])
     }
+  }
+
+  closeCategoryModal(){
+    this.closeCategory.nativeElement.click();
+  }
+
+  editPost(modelData,index) {
+    var model = {
+      "PostId": modelData.PostID,
+      "Post": modelData.POST,
+      "UserId":modelData.UserId,
+      "ParentPostID": "0",
+      "ReflectionID": "0",
+      "TagIds": modelData.TagIds
+    };
+    this.posts[index].isEditPost = false;
+    this.serivce.UpdatePost(model).subscribe(res => {
+      if (res) {
+       this.posts[index].Post = model.Post;
+      }
+    });
+  }
+
+  callEditPost(item,index){
+    this.posts[index].isEditPost = true;
   }
 }
