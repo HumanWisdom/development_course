@@ -48,20 +48,7 @@ export class ForumLandingPage implements OnInit {
   }, {
     value: 3, label: 'Reflections'
   }];
-
-
-  categoryList = [{
-    value: 1, label: 'Mental Health'
-  }, {
-    value: 2, label: 'Relationships'
-  }, {
-    value: 3, label: 'Work'
-  }, {
-    value: 4, label: 'Nuggets of Inspiration'
-  },
-  {
-    value: 5, label: 'Ask a coach'
-  }]
+  categoryList= [];
   isloggedIn = false;
   searchinp = '';
   public user: any
@@ -127,6 +114,7 @@ export class ForumLandingPage implements OnInit {
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     
     this.isloggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
+    this.categoryList = this.serivce.GetTagList();
   }
   like(item, index) {
     if (this.isLoggedIn) {
@@ -247,13 +235,14 @@ export class ForumLandingPage implements OnInit {
     if(data!=null && data.length>0){
       this.buttonText =  data[0].label;
     }
+    setTimeout(() => {
+      this.closeCategoryModal();
+    }, 100);
     this.serivce.getposts(0, null, this.UserID).subscribe((res) => {
       if (res) {
         const filteredData = res.filter(x=>parseInt(x.TagIds) == tagId);
         this.list(filteredData);
-        setTimeout(() => {
-          this.closeCategoryModal();
-        }, 100);
+    
       }
     });
   }
@@ -593,4 +582,10 @@ export class ForumLandingPage implements OnInit {
   callEditPost(item,index){
     this.posts[index].isEditPost = true;
   }
+ 
+  startNewThread(tagId){
+    localStorage.setItem('tagId',tagId);
+    this.router.navigate(['/forum/forum-thread-start-new']);
+  }
+   
 }
