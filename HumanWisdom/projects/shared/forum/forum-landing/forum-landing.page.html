@@ -9,7 +9,7 @@
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
         Forum
       </h1>
@@ -39,7 +39,8 @@
               <!-- search -->
               <div class="row mt30px mb30px prelative">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" #threadsearch id="inputSuccess2" name="searchEn" placeholder="Search forum">
+                  <input type="search" class="form-control has-feedback-left pfy_search hide_search" #threadsearch
+                    id="inputSuccess2" name="searchEn" placeholder="Search forum">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                 </div>
               </div>
@@ -59,22 +60,23 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="rojounaw">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                     <!-- <select (change)="onChange($event)" name="threadlist" class="form-select forum_v3_select_all_threads" [(ngModel)]="selectthread">
                       <option *ngFor="let titl of threadlist" [ngValue]="titl.value">{{titl.label}}</option>
                     </select> -->
                     <!-- choose category -->
-                    <button type="button" class="btn btn_all_threads" data-toggle="modal" data-target="#choose_category">                      
-                      All threads
+                    <button type="button"  class="btn btn_all_threads" data-toggle="modal"
+                      data-target="#choose_category" [innerText]="buttonText">
                       <i class="fa fa-angle-down ml10px pt3px"></i>
                     </button>
                     <!-- /choose category -->
                   </div>
 
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                    <button class="btn btn_aan" [routerLink]="['/forum/forum-thread-start-new']" routerLinkActive="router-link-active">
+                    <button class="btn btn_aan" [routerLink]="['/forum/forum-thread-start-new']"
+                      routerLinkActive="router-link-active">
                       <i class="fa fa-plus"></i>
                     </button>
                   </div>
@@ -85,82 +87,24 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <hr class="hr_style_v3_05 mtb20px">
                 </div>
-              </div>              
+              </div>
 
               <!-- post -->
               <div class="div_forum_post">
                 <a class="" *ngFor="let item of posts;let index=index;">
-                  <div class="row mb10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                        <button type="button" class="btn fs_10px fw_700 lh_140p fc_ffffff ttuppercase btn_fpfy btn_fpfy_mh">
-                          Nuggets of Inspiration
-                        </button>
-                      </div>
-
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_more.svg" class="img-responsive">
-                          </button>
-                          <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                      Edit
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_edit.svg" class="img-responsive">
-                                  </div>
-                                </div>
-                              </div>
-                            </a>
-
-                            <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <hr class="hr_style_v3_07 mtb10pxi">
-                              </div>
-                            </div>
-                            
-                            <a class="dropdown-item" href="#">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                      Delete
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_trash.svg" class="img-responsive">
-                                  </div>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mb10px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_nuggets_of_wisdom_02.svg" class="img-responsive w100">
-                    </div>
-                  </div>
 
                   <div class="row mb10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" (click)="postnavigate(item)">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" (click)="postnavigate(item)">
                         <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
                           <!-- Jennifer Hitchner -->
                           {{item.UserName}}
                         </h4>
                       </div>
 
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" (click)="follow(item,index)">
+                  
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright" *ngIf="item.UserName != userName" (click)="follow(item,index)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='0'">
                           <i class="fa fa-plus mr3px"></i>
                           <span class="underline">
@@ -175,14 +119,107 @@
                           </span>
                         </button>
                       </div>
+
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright" *ngIf="item.UserName == userName" (click)="follow(item,index)">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='0'">
+                          <i class="fa fa-plus mr3px"></i>
+                          <span class="underline">
+                            Follow
+                          </span>
+                        </button>
+
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='1'">
+                          <i class="fa fa-minus mr3px"></i>
+                          <span class="underline">
+                            Unfollow
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="item.UserName == userName">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_more.svg"
+                              class="img-responsive">
+                          </button>
+                          <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost(item,index)">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Edit
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_edit.svg"
+                                      class="img-responsive">
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <hr class="hr_style_v3_07 mtb10pxi">
+                              </div>
+                            </div>
+
+                            <a class="dropdown-item" (click)="DeletePost(item)">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Delete
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_trash.svg"
+                                      class="img-responsive">
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      
                     </div>
                   </div>
 
                   <div class="row mb10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <button *ngIf="item.TagName && item.TagName!=null" type="button"
+                          class="btn fs_10px fw_700 lh_140p fc_ffffff ttuppercase btn_fpfy btn_fpfy_mh">
+                          {{item.TagName}}
+                        </button>
+                      </div>
+
+            
+                    </div>
+                  </div>
+
+                  <div class="row mb10px" *ngIf="item.ImagePath!=''">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                      <img
+                        [src]="item.ImagePath"
+                        class="img-responsive w100">
+                    </div>
+                  </div>
+
+
+
+                  <div class="row mb10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 *ngIf="!item.isEditPost"  class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                         {{item.POST}}
                       </h4>
+                      <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text"name="Post" id="Post" [(ngModel)]="item.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
                     </div>
                   </div>
 
@@ -191,32 +228,75 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                            <img *ngIf="item.Liked=='0'" (click)="like(item,index)" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
-                            <img *ngIf="item.Liked=='1'" (click)="like(item,index)" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg" class="img-responsive mr5px">
+                            <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                              class="img-responsive mr5px">
+                            <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              class="img-responsive mr5px">
                             {{item.PostLikeCount}}
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'comment')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" class="img-responsive mr5px">
+                          <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
+                            class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'comment')">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg"
+                              class="img-responsive mr5px">
                             {{item.ReplyCount}}
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'report')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
+                          <button (click)="share()" type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg"
+                              class="img-responsive mr5px">
                             Share
                           </button>
                         </div>
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
+                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82"
+                          (click)="reportpost(item,'report')">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg"
+                            class="img-responsive mr5px">
                           Report
                         </button>
+                      </div>
+                    </div>
+                  </div>
+
+                     
+                  <div class="row forum_pt20px" *ngIf="isLoggedIn && replyflag && activereply.PostID === item.PostID">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="actionType=='report'">
+                          <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
+                            required="required" class="form-control fc_comment" placeholder="Report Post">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn && actionType=='comment'">
+                          <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
+                            required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
+                        </div>
+    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                          *ngIf="isLoggedIn && actionType=='comment'">
+                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                            Comment
+                          </button>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                          *ngIf="isLoggedIn && actionType=='report'">
+                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                            Report
+                          </button>
+                        </div>
+    
                       </div>
                     </div>
                   </div>
@@ -226,12 +306,19 @@
                       <hr class="hr_style_v3_05 mtb30px">
                     </div>
                   </div>
+             
+                  
                 </a>
               </div>
+
+              <!-- report post + comment -->
+          
+              <!-- /report post + comment -->
               <!-- /post -->
 
-              <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true" [content]="'Please register to use this feature'"></app-modal>
-              
+              <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)"
+                [okText]="'Ok'" [enableCancel]="true" [content]="'Please register to use this feature'"></app-modal>
+
               <div class="pagebreak"></div>
 
             </form>
@@ -311,7 +398,7 @@
                 </div>
               </div>
             </div>
-     
+
           </div>
         </form>
       </div>
@@ -335,14 +422,15 @@
             </h4>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-            <button type="button" class="btn_popup_close m0px" data-dismiss="modal" aria-label="close">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_close_modal.svg" class="img-responsive fright">
+            <button type="button" class="btn_popup_close m0px" #closeCategory   data-dismiss="modal" aria-label="close">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_close_modal.svg"
+                class="img-responsive fright">
             </button>
           </div>
         </div>
       </div>
 
-      <a class="">
+      <a class="" (click)="filterBasedOnTags(1)">
         <div class="row mb5px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -351,7 +439,7 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" >
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
               Stress, anxiety, depression and mental health issues
@@ -366,7 +454,7 @@
         </div>
       </a>
 
-      <a class="">
+      <a class="" (click)="filterBasedOnTags(2)">
         <div class="row mb5px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -390,7 +478,7 @@
         </div>
       </a>
 
-      <a class="">
+      <a class="" (click)="filterBasedOnTags(3)">
         <div class="row mb5px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -414,7 +502,7 @@
         </div>
       </a>
 
-      <a class="">
+      <a class="" (click)="filterBasedOnTags(4)">
         <div class="row mb5px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -438,7 +526,7 @@
         </div>
       </a>
 
-      <a class="">
+      <a class="" (click)="filterBasedOnTags(5)">
         <div class="row mb5px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -470,8 +558,8 @@
         </div>
       </div>
 
-      <div class="forum_all_threads">
-        <a class="">
+      <div class="forum_all_threads" >
+        <a class=""  (click)="onChange(1)">
           <div class="row mb5px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -487,7 +575,7 @@
           </div>
         </div>
 
-        <a class="">
+        <a class=""  (click)="onChange(2)">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -503,7 +591,7 @@
           </div>
         </div>
 
-        <a class="">
+        <a class=""  (click)="onChange(3)">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
@@ -519,7 +607,7 @@
           </div>
         </div>
 
-        <a class="">
+        <a class="" (click)="onChange(0)">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
