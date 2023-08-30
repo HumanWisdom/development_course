@@ -25,14 +25,13 @@
 
               <hr class="hr_style_v3_06">
 
-              <textarea id="message" required="required" class="form-control b0 p0 txt19" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r49099"></textarea>
+              <textarea id="message" required="required" class="form-control textarea_fs" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r49099"></textarea>
 
               <br>
-
             </div>                    
           </a>
         </div>
-      </div>  
+      </div>
     </section>
     <section></section>
     <section></section>
@@ -40,8 +39,4 @@
   </form>
 </app-feedback-question>
 
-<!-- feedback survey footer  -->
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
-<!-- /feedback survey footer -->
-           
-         
+<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>         
