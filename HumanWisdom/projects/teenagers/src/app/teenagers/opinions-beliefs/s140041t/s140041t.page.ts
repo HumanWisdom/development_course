@@ -27,12 +27,10 @@ export class S140041tPage implements OnInit {
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
 
-  
- 
-  
   avDuration=localStorage.getItem("avDuration140041")
   totalTime=localStorage.getItem("totalTime140041")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
   
   constructor
   (

@@ -13,6 +13,7 @@ export class S140008Page implements OnInit,OnDestroy {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_w6"
+  
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/opinions-beliefs/videos/1.1.mp4'  
   title="What is an opinion? Is it different from a fact?  "

@@ -56,7 +56,7 @@ export class S140110Page implements OnInit {
       this.moduleLink = "/opinions-beliefs"
       this.moduleName = "Opinions and Beliefs"
       this.sectionName = "Transform your life";
-      this.moduleId = 49
+      this.moduleId = 140
     
     }
    }

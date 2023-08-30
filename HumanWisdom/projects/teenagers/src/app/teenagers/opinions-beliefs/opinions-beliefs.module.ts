@@ -257,8 +257,8 @@ import { TeenagersService } from '../teenagers.service';
   imports: [
     CommonModule,
     FormsModule,
-    //IonicModule,
-    //SharedModule,
+    IonicModule,
+    SharedModule,
     OpinionsBeliefsRoutingModule
   ],
   providers:[

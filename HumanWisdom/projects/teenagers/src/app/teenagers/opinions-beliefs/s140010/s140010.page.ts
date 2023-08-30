@@ -115,7 +115,7 @@ export class S140010Page implements OnInit, OnDestroy {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/adults/comparison/s140011'])
+    this.router.navigate(['/opinions-beliefs/s140011'])
   }
 
   ngOnDestroy() 

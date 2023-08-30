@@ -17,7 +17,7 @@ export class S140052Page implements OnInit {
   userName:any
   progressPercent:any
   progressText="1/2"
-  link="/opinions-beliefs/s140052"
+  link="/opinions-beliefs/s140053"
   name="#2  The power of belief"
   progressImg=""
   toc="opinions-beliefs/s140001"

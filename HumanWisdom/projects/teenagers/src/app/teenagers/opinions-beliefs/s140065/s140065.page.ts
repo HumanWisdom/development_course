@@ -30,12 +30,10 @@ export class S140065Page implements OnInit {
   totalTime:any
   bookmark=0
   path=this.router.url
-  
-
-  
   avDuration:any
   
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers"; 
   
   constructor
   (

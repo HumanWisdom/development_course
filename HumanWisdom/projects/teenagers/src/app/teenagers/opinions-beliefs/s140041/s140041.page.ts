@@ -35,6 +35,8 @@ export class S140041Page implements OnInit,OnDestroy {
   totalTime:any
   
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+  progName= "teenagers";
+  
   
   constructor
   (
