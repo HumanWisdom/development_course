@@ -48,7 +48,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <button type="button" class="btn btn_forum_ask_a_coach">
+                  <button type="button"  (click)="startNewThread(5)" class="btn btn_forum_ask_a_coach">
                     Ask a coach
                   </button>
                 </div>
@@ -75,8 +75,8 @@
                   </div>
 
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                    <button class="btn btn_aan" [routerLink]="['/forum/forum-thread-start-new']"
-                      routerLinkActive="router-link-active">
+                    <button class="btn btn_aan" (click)="startNewThread(1)"
+                      >
                       <i class="fa fa-plus"></i>
                     </button>
                   </div>
@@ -96,7 +96,11 @@
                   <div class="row mb10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" (click)="postnavigate(item)">
-                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
+                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5" *ngIf="item.Anonymous=='1'">
+                          <!-- Jennifer Hitchner -->
+                          Anonymous
+                        </h4>
+                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5" *ngIf="item.Anonymous=='0'">
                           <!-- Jennifer Hitchner -->
                           {{item.UserName}}
                         </h4>
