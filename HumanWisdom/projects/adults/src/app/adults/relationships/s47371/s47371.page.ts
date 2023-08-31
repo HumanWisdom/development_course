@@ -23,7 +23,7 @@ export class S47371Page implements OnInit {
   
   bg=""
   moduleLink="/adults/communication"
-  moduleName="02. Communication"
+  moduleName="2. Communication"
   sectionName= "Transform your life - II";
   moduleId=53
 

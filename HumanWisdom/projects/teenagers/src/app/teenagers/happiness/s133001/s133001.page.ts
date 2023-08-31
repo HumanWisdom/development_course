@@ -38,9 +38,7 @@ export class S133001Page implements OnInit,OnDestroy {
   stories: any = []
 
   pgResume=sessionStorage.getItem("pgResume")
-  resumeBenefitsEnquiry=sessionStorage.getItem("resumeBenefitsEnquiry");
   moduleData:ProgramModel;
-  addictionResume=sessionStorage.getItem("addictionResume")
  
  constructor
   (

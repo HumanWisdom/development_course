@@ -15,7 +15,7 @@ export class S51013Page implements OnInit {
   
   bg=""
   moduleLink="/adults/nature"
-  moduleName="05. Nature"
+  moduleName="5. Nature"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=22
   moduleList: any = [

@@ -15,7 +15,7 @@ export class S30007Page implements OnInit {
   
   bg=""
   moduleLink="/adults/meditation"
-  moduleName="04. Meditation"
+  moduleName="4. Meditation"
   sectionName= "Nurturing a Quiet Mind";
   moduleId=51
   moduleList: any = [

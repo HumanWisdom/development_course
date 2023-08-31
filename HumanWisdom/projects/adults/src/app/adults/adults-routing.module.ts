@@ -491,6 +491,10 @@ const routes: Routes = [
     path: 'audiopage/:audiolink/:RowId/:enable',
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
+  },
+  {
+    path: 'awareness-exercises-transcript',
+    loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then( m => m.AwarenessExercisesTranscriptPageModule)
   }
 ];
 
