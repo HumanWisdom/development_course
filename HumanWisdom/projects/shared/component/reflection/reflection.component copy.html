@@ -16,20 +16,6 @@
         <a aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
         </a>
-        <!-- <a aria-expanded="false" id="dropdownMenuButton" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
-        </a> -->
-        <!-- /dropdown -->
-        <div class="dropdown-menu rdm" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item">
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                Aliquam erat volutpat. Maecenas sit amet velit mollis, ornare mi ac, ullamcorper leo. Pellentesque eget volutpat purus. Etiam dolor quam, suscipit nec porttitor at, imperdiet bibendum magna. Nunc sollicitudin ornare.
-              </div>
-            </div>
-          </a>
-        </div>
-        <!-- dropdown -->
       </div>
     </div>
     <!-- /v1.3 -->
@@ -177,12 +163,21 @@
               <!-- /condition 3 -->
 
               <!-- modal -->
-              <div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+              <div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="false">
                 <div class="row center_flex">
-                  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
-                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
-                      {{hint}}
-                    </h4>
+                  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ex_modal_body">
+                    <button type="button" class="close ex_close" data-dismiss="modal">
+                      <span aria-hidden="true">&times;</span>
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/header/close.png" alt="" class=""> -->
+                      <span class="sr-only">Close</span>
+                    </button>
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="lh2_5rem tleft">
+                          {{hint}}
+                        </h4>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -203,7 +198,7 @@
 <!-- footer  -->
 <div class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex fctray">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tcenter center_flex fctray" [ngClass]="bg_cft">
       <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 btn_p0">
         <button type="button" class="btn w100 mb0 btn_prev" (click)="previous()">Previous</button>
       </div>
