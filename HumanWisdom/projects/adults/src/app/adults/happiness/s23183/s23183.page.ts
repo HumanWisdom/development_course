@@ -15,7 +15,7 @@ export class S23183Page implements OnInit {
   
   // bg=""
   // moduleLink="/adults/communication"
-  // moduleName="02. Communication"
+  // moduleName="2. Communication"
   // sectionName= "Transform your life - II";
   // moduleId=53
 
