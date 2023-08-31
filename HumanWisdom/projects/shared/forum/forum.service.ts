@@ -27,6 +27,22 @@ public postdataSource = new BehaviorSubject<any>([]);
   constructor( private http: HttpClient,handler: HttpBackend,public toastr:ToastrService) {
     this.toastrService=this.toastr;
    }
+
+  public GetTagList(){
+    return  [{
+      value: 1, label: 'Mental Health'
+    }, {
+      value: 2, label: 'Relationships'
+    }, {
+      value: 3, label: 'Work'
+    }, {
+      value: 4, label: 'Nuggets of Inspiration'
+    },
+    {
+      value: 5, label: 'Ask a coach'
+    }];
+  }  
+
   getposts(index:Number,searchText,uID):Observable<any>{
     let url='';
     console.log(index);
