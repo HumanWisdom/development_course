@@ -123,7 +123,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[0]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[0]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -134,7 +134,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[1]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[1]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -145,7 +145,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[2]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[2]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -156,7 +156,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[3]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[3]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -167,7 +167,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[4]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[4]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -178,7 +178,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[5]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[5]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -189,7 +189,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[6]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[6]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -200,7 +200,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[7]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[7]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -211,7 +211,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[8]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[8]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
@@ -222,7 +222,7 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[9]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': (parseInt(d['Score']) / 5) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
         this.chartData[9]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
