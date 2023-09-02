@@ -9,14 +9,14 @@
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" *ngIf="profileUsername">
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Jennifer Hitchner
+       {{profileUsername}}
       </h1>
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-      <a class="">
+      <a class="" (click)="share()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" alt="" class="p0">
       </a>
     </div>
@@ -38,20 +38,22 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_profile_user.svg" alt="" class="img-responsive forum_profile_img"/>
+                      <img 
+                      src="{{ profileImage  === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.profileImage.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + profileImage)}}"
+                      alt="" class="p0 opaque_border_inner img-responsive img_profile_01"/>
                     </div>
                   </div>
 
-                  <div class="forum_profile_desc">
+                  <div class="forum_profile_desc" *ngIf="profileUsername">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mt15px mb20px fs_18px fw_600 lh_150p fc_ffffff">
-                          Jennifer Hitchner
+                          {{profileUsername}}
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
                           <h4 class="mt0px mb10px fs_15px fw_700 lh_150p fc_ffffff">
@@ -83,7 +85,7 @@
                           </h4>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -95,40 +97,57 @@
               </div>
 
               <!-- post -->
-              <div class="div_forum_post">
+              <div class="div_forum_post" *ngFor="let item of posts;let index=index;">
                 <a class="">
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                         <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff">
-                          Jennifer Hitchner
+                          {{item.UserName}}
                         </h4>
                       </div>
 
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright"  *ngIf="item.UserName != userName" (click)="follow(item,index)">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='0'">
                           <i class="fa fa-plus mr3px"></i>
                           <span class="underline">
                             Follow
+                          </span>
+                        </button>
+
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='1'">
+                          <i class="fa fa-minus mr3px"></i>
+                          <span class="underline">
+                            Unfollow
                           </span>
                         </button>
                       </div>
                     </div>
                   </div>
 
+                 
+
+                  <div class="row mb10px" (click)="postnavigate(item)" *ngIf="item.ImagePath!=''">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img
+                        src="https://d1tenzemoxuh75.cloudfront.net{{item.ImagePath}}"
+                        class="img-responsive w100">
+                    </div>
+                  </div>
+
                   <div class="row mt5px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
-                        March 26
+                       {{item.postTime}}
                       </h4>
                     </div>
                   </div>
 
-                  <div class="row mtb15px">
+                  <div class="row mtb15px" *ngIf="item.TagName!=null && item.TagName!=''">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <button type="button" class="btn fs_10px fw_700 lh_140p fc_ffffff ttuppercase btn_fpfy btn_fpfy_mh">
-                          MENTAL HEALTH
+                           {{item.TagName}}
                         </button>
                       </div>
 
@@ -140,47 +159,93 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row" (click)="postnavigate(item)">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                        Freedom from active addiction they say addicts are addicted because we have had childhood trauma... which can be a number of different things that have happened... question is., what's the solution!??? can't find book or video that's helpful! please help
+                        {{item.POST}}
                       </h4>
                     </div>
                   </div>
 
-                  <div class="row mt30px mb20px">
+                  
+                  <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
-                            24
+                            <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                              class="img-responsive mr5px">
+                            <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              class="img-responsive mr5px">
+                            {{item.PostLikeCount}}
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" class="img-responsive mr5px">
-                            1
+                          <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
+                            class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'comment')">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg"
+                              class="img-responsive mr5px">
+                            {{item.ReplyCount}}
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
+                          <button (click)="share()" type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg"
+                              class="img-responsive mr5px">
                             Share
                           </button>
                         </div>
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
+                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82"
+                          (click)="reportpost(item,'report')">
+                          <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg"
+                            class="img-responsive mr5px">
                           Report
                         </button>
                       </div>
                     </div>
                   </div>
+
+
+                  <div class="row forum_pt20px" *ngIf="isLoggedIn && replyflag && activereply.PostID === item.PostID">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="actionType=='report'">
+                          <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
+                            required="required" class="form-control fc_comment" placeholder="Report Post">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn && actionType=='comment'">
+                          <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
+                            required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
+                        </div>
+    
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                          *ngIf="isLoggedIn && actionType=='comment'">
+                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                            Comment
+                          </button>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                          *ngIf="isLoggedIn && actionType=='report'">
+                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                            Report
+                          </button>
+                        </div>
+    
+                      </div>
+                    </div>
+                  </div>
+
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
