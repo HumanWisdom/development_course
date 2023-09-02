@@ -63,6 +63,7 @@ export class ForumThreadStartNewPage implements OnInit {
     });
   }
   post() {
+    
     this.service.submitPost(
       {
         Post: this.thread,
@@ -70,8 +71,8 @@ export class ForumThreadStartNewPage implements OnInit {
         ParentPostID: this.postID,
         ReflectionID: '0',
         TagIds: this.selectedOption.toString(),
-        Anonymourse: this.isChecked ? "1" : "0",
-        ImagePath: this.fileToUpload
+        Anonymous: this.isChecked ? "1" : "0",
+        PostImg: this.fileToUpload
       }
     ).subscribe(res => {
       if (res) {
@@ -99,15 +100,13 @@ export class ForumThreadStartNewPage implements OnInit {
       return;
     }
     const reader = new FileReader();
-    this.fileToUpload = files;
+    // this.fileToUpload = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       let byte: any = reader.result;
       byte = byte.split('base64,')
       if (byte[1] !== undefined && byte[1] !== '') {
-        let obj = {
-          "byteArray": byte[1]
-        }
+      this.fileToUpload = byte[1];
       }
     }
   }

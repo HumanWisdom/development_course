@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/forum/forum-thread-start-new/forum-thread-start-new.module').then( m => m.ForumThreadStartNewPageModule)
   },
   {
-    path: 'profile',
+    path: 'profile/:userId',
     loadChildren: () => import('../../../../shared/forum/profile/profile.module').then( m => m.ProfilePageModule)
   },
 ];
