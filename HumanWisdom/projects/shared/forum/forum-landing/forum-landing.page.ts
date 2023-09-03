@@ -20,7 +20,7 @@ import { ProgramType } from "../../models/program-model";
 export class ForumLandingPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
-
+  @ViewChild('closeCategory') closeCategory: any;
   @ViewChild('threadsearch', { static: true }) threadsearch: ElementRef;
   UserID = "107";
   activereply;
@@ -38,6 +38,7 @@ export class ForumLandingPage implements OnInit {
   isLoggedIn: boolean = false;
   activeCommentPost;
   actionType: string = '';
+  buttonText:string ="All threads"
   threadlist = [{
     value: 0, label: 'All threads'
   }, {
@@ -47,7 +48,7 @@ export class ForumLandingPage implements OnInit {
   }, {
     value: 3, label: 'Reflections'
   }];
-
+  categoryList= [];
   isloggedIn = false;
   searchinp = '';
   public user: any
@@ -56,14 +57,14 @@ export class ForumLandingPage implements OnInit {
   public email: any;
   public showAlert = false
   public loginResponse: any
-  public socialFirstName: any
-  public socialLastName: any
-  public socialEmail: any
-  public userName: any
-  public video = 3
-  public audio = 4
-  public password: any
-  public saveUsername = false
+  public socialFirstName: any;
+  public socialLastName: any;
+  public socialEmail: any;
+  public userName: any;
+  public video = 3;
+  public audio = 4;
+  public password: any;
+  public saveUsername = false;
   public mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com"
   public moduleList = [];
@@ -79,7 +80,7 @@ export class ForumLandingPage implements OnInit {
   public fiveCirclesP: any
   public hcwhP: any
   public percentage: any
-
+  searchInput : any;
   mediaPercent: any
   freeScreens = []
   isWelcomePopup = false;
@@ -93,7 +94,8 @@ export class ForumLandingPage implements OnInit {
   public moduleId = 7
   public bookmarks = []
   public resume = []
-  public bookmarkLength: any
+  public bookmarkLength: any;
+  
   public programType :ProgramType.Adults;
   constructor(private serivce: ForumService, public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,
@@ -112,6 +114,7 @@ export class ForumLandingPage implements OnInit {
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     
     this.isloggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
+    this.categoryList = this.serivce.GetTagList();
   }
   like(item, index) {
     if (this.isLoggedIn) {
@@ -125,32 +128,7 @@ export class ForumLandingPage implements OnInit {
       this.enableAlert = true;
     }
   }
-  list(data) {
-    if (data) {
-      let temp = [];
-      let flag = false;
-      data.forEach(element => {
-        temp.forEach((res) => {
-          if (res.PostID === Number(element.ParentPOstID)) {
-            // res.child.push(element);
-            flag = true;
-          }
-        })
-        if (!flag) {
-          element.child = [];
-          temp.push(element);
-          flag = false;
-        } else {
-          flag = false;
-        }
 
-      });
-      temp.sort(function (a, b) {
-        return b.PostID - a.PostID;
-      });
-      this.posts = temp;
-    }
-  }
   reportpost(item, actionType) {
     if(this.isLoggedIn){
     if (this.actionType == '' || this.actionType == actionType) {
@@ -202,6 +180,7 @@ export class ForumLandingPage implements OnInit {
       })
     }
   }
+
   follow(item, index) {
     if(this.isLoggedIn){
       this.serivce.followPost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
@@ -214,65 +193,74 @@ export class ForumLandingPage implements OnInit {
       this.enableAlert=true;
     }
   }
+
   postnavigate(item) {
     this.serivce.postdataSource.next(item);
     this.router.navigateByUrl('/forum/forum-thread',{ state: { programType: this.programType }});
   }
-  getAllposts(index) {
-    this.serivce.getposts(this.selectthread, null, this.UserID).subscribe((res) => {
+
+  onFocusOutEvent(){
+    this.serivce.getposts(0,this.searchInput,null).subscribe((res) => {
       if (res) {
-        this.list(res);
+       this.posts = this.serivce.FormatForumPostData(res);
       }
     });
   }
+
+  gotToProfile(item){
+    //localStorage.setItem('forumUserID',item.UserId);
+
+    //this.router.navigate(['/forum/profile', concat, '1', 'T', title])
+    this.router.navigate(['/forum/profile/',item.UserId]);
+  }
+
+  getAllposts(index) {
+    this.serivce.getposts(this.selectthread, null, this.UserID).subscribe((res) => {
+      if (res) {
+     this.posts=this.serivce.FormatForumPostData(res);
+      }
+    });
+  }
+
+  filterBasedOnTags(tagId){
+    const data = this.categoryList.filter(x=>x.value==tagId);
+    if(data!=null && data.length>0){
+      this.buttonText =  data[0].label;
+    }
+    setTimeout(() => {
+      this.closeCategoryModal();
+    }, 100);
+    this.serivce.getposts(0, null, this.UserID).subscribe((res) => {
+      if (res) {
+        const filteredData = res.filter(x=>parseInt(x.TagIds) == tagId);
+      this.posts =  this.serivce.FormatForumPostData(filteredData);
+    
+      }
+    });
+  }
+
   onChange(e) {
-    this.selectIndex = this.selectthread;
+    this.selectIndex = e;
+    this.selectthread= e;
+    const data = this.threadlist.filter(x=>x.value==e);
+    if(data!=null && data.length>0){
+      this.buttonText=data[0].label;
+    }else{
+      this.buttonText = "All threads";
+    }
     this.getAllposts(e);
+    setTimeout(() => {
+      this.closeCategoryModal();
+    }, 100);
   }
   ngOnInit() {
-
     this.title.setTitle('Online Community for Wisdom Exchange')
     this.meta.updateTag({ property: 'title', content: 'Online Community for Wisdom Exchange' })
     this.meta.updateTag({ property: 'description', content: 'Join our discussion forum for inspirational discussions and exchange of wisdom on personal growth and mental wellness. Find emotional support and engage in mindful conversations.' })
     this.meta.updateTag({ property: 'keywords', content: 'Online community,Discussion forum,Wisdom exchange,Inspirational discussions,Self-improvement forum,Personal growth community,Mental wellness community,Mindful conversations,Emotional support forum,Personal development discussions' })
-
-
-
-
-
-
-
+    this.userName = localStorage.getItem('name');
     this.selectthread = this.threadlist[0].value;
     this.getAllposts(0);
-    fromEvent(this.threadsearch.nativeElement, 'keyup').pipe(
-
-      // get value
-      map((event: any) => {
-        return event.target.value;
-      })
-      // if character length greater then 2
-      , filter(res => res.length > 2)
-
-      // Time in milliseconds between key events
-      , debounceTime(1000)
-
-      // If previous query is diffent from current
-      , distinctUntilChanged()
-
-      // subscription for response
-    ).subscribe((text: string) => {
-
-      console.log(text);
-      this.serivce.getposts(this.selectIndex, text, this.UserID).subscribe((res) => {
-        if (res) {
-
-          this.list(res);
-
-        }
-      });
-
-    });
-
   }
 
   share() {
@@ -302,11 +290,7 @@ export class ForumLandingPage implements OnInit {
         console.log(error);
       });
   }
-  getLocalPostDate(date: string) {
-    var dateLocal = new Date(date);
-    var newDate = new Date(dateLocal.getTime() - dateLocal.getTimezoneOffset() * 60 * 1000);
-    return newDate;
-  }
+ 
 
   getOrderbyLatestPost(childs) {
     childs.sort(function (a, b) {
@@ -517,6 +501,7 @@ export class ForumLandingPage implements OnInit {
     this.closepopup.nativeElement.click();
     this.router.navigate(['/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
   }
+  
   getAlertcloseEvent($event) {
     if ($event == 'cancel') {
       this.enableAlert = false;
@@ -525,4 +510,35 @@ export class ForumLandingPage implements OnInit {
       this.router.navigate(['/login'])
     }
   }
+
+  closeCategoryModal(){
+    this.closeCategory.nativeElement.click();
+  }
+
+  editPost(modelData,index) {
+    var model = {
+      "PostId": modelData.PostID,
+      "Post": modelData.POST,
+      "UserId":modelData.UserId,
+      "ParentPostID": "0",
+      "ReflectionID": "0",
+      "TagIds": modelData.TagIds
+    };
+    this.posts[index].isEditPost = false;
+    this.serivce.UpdatePost(model).subscribe(res => {
+      if (res) {
+       this.posts[index].Post = model.Post;
+      }
+    });
+  }
+
+  callEditPost(item,index){
+    this.posts[index].isEditPost = true;
+  }
+ 
+  startNewThread(tagId){
+    localStorage.setItem('tagId',tagId);
+    this.router.navigate(['/forum/forum-thread-start-new']);
+  }
+   
 }

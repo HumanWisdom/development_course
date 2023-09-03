@@ -106,7 +106,7 @@ createScreen(){
   }
  
   prev(){
-    this.router.navigate(['/love/s134128'])
+    this.router.navigate(['/love/s134126'])
   }
  
   ngOnDestroy(){

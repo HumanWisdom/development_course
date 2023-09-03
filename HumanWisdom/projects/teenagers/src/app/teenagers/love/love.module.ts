@@ -242,6 +242,11 @@ import { S134206Page } from './s134206/s134206.page';
 import { S134207Page } from './s134207/s134207.page';
 import { S134208Page } from './s134208/s134208.page';
 import { S134209Page } from './s134209/s134209.page';
+import { S134210Page } from './s134210/s134210.page';
+import { S134211Page } from './s134211/s134211.page';
+import { S134212Page } from './s134212/s134212.page';
+import { S134213Page } from './s134213/s134213.page';
+import { S134214Page } from './s134214/s134214.page';
 import { TeenagersService } from '../teenagers.service';
 
 @NgModule({
@@ -482,6 +487,11 @@ import { TeenagersService } from '../teenagers.service';
     S134207Page,
     S134208Page,
     S134209Page,
+    S134210Page,
+    S134211Page,
+    S134212Page,
+    S134213Page,
+    S134214Page,
   ],
   imports: [
     CommonModule,

@@ -168,7 +168,8 @@ export class WisdomScalePage implements OnInit {
           r.forEach((d) => {
             let name = monthNames[d['month'] - 1];
             if (!(this.lineChartLabels.some((t) => t === name.substring(0, 3)))) {
-              this.lineChartData[0]['data'].push(parseInt(d['Score']));
+              let cal = (parseInt(d['Score']) / 5) * 100;
+              this.lineChartData[0]['data'].push(cal);
               this.lineChartLabels.push(name.substring(0, 3));
             }
           })

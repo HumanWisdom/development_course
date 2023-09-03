@@ -24,25 +24,25 @@ export class S135091Page implements OnInit {
   moduleLink="/criticism"
   moduleName=" Criticism"
   sectionName= "Transform your life - I";
-  moduleId=16
+  moduleId=136
   moduleList: any = [
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
-      id: 19
+      id: 112
     },
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/conditioning',
-      id: 15
+      id: 105
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
   ]
 
