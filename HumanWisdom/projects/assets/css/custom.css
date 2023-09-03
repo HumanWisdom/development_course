@@ -33533,6 +33533,19 @@ body *
   color: #FFF;
 }
 
+.cfc_v3_01::-webkit-input-placeholder
+{
+  color: rgba(255, 255, 255, 0.30);
+}
+
+.cfc_v3_01:focus,
+.cta1:focus
+{
+  color: #FFF;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 .fctray_gqtns
 {
   padding: 0 20px;
@@ -33883,6 +33896,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
+  color: #FFF;
 }
 
 .v3_reflection_ta::-webkit-input-placeholder
@@ -33966,5 +33980,12 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   position: absolute;
   top: -8px;
   right: 3%;
+}
+
+.modal_cc 
+{
+  top: 10%;
+  height: auto;
+  overflow: overlay;
 }
 /* /version - 03 */
