@@ -45,6 +45,8 @@ export class ForumThreadPage implements OnInit {
     Followed: '0',
     Liked: '0',
     UserId: '',
+    Anonymous:'0',
+    TagName:''
   }
   posttext = '';
   address ="";
