@@ -126,7 +126,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[0]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[0]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[0]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 123) {
@@ -137,7 +137,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[1]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[1]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[1]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 124) {
@@ -148,7 +148,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[2]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[2]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[2]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 125) {
@@ -159,7 +159,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[3]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[3]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[3]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 126) {
@@ -170,7 +170,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[4]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[4]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[4]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 127) {
@@ -181,7 +181,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[5]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[5]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[5]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 128) {
@@ -192,7 +192,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[6]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[6]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[6]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 129) {
@@ -203,7 +203,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[7]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[7]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[7]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 130) {
@@ -214,7 +214,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[8]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[8]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[8]['lineChartLabels'].push(name.substring(0, 3));
       }
       if (d['QuestionID'] === 131) {
@@ -225,7 +225,7 @@ export class ProgressPage implements OnInit {
             'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[9]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 10);
+        this.chartData[9]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
         this.chartData[9]['lineChartLabels'].push(name.substring(0, 3));
       }
     });
