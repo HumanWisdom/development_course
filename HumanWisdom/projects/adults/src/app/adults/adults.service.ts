@@ -574,4 +574,8 @@ export class AdultsService {
   AddUserPreference(data:any): Observable<any>{
     return this.http.post(this.path + `/AddUserPreference/${data}`, null)
   }
+
+  GetPodcastList(): Observable<any> {
+    return this.http.get(this.path + '/GetPodcastsListing');
+  }
 }
