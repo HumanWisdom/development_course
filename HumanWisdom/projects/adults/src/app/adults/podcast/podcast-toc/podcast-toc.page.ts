@@ -6,6 +6,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Platform } from "@angular/cdk/platform";
 import { Meta, Title } from '@angular/platform-browser';
 import { LogEventService } from '../../../../../../shared/services/log-event.service';
+import { AdultsService } from '../../adults.service';
 
 
 @Component({
@@ -15,28 +16,32 @@ import { LogEventService } from '../../../../../../shared/services/log-event.ser
 })
 
 export class PodcastTocPage implements OnInit {
- 
+
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
   tag='all';
   iframeSrc:SafeResourceUrl;
+  podcastList = [];
+
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
     private activatedRoute:ActivatedRoute,
-    private location: Location,    
+    private location: Location,
     public logeventservice: LogEventService,
     private sanitizer: DomSanitizer,
-    private meta: Meta, private title: Title) {
+    private meta: Meta, private title: Title,
+    private service: AdultsService
+    ) {
      }
 
   ngOnInit() {
-
+    this.getPodcast()
     this.title.setTitle('Inspiring Your Best Life: Our Motivational Podcast')
     this.meta.updateTag({ property: 'title', content: 'Inspiring Your Best Life: Our Motivational Podcast'})
     this.meta.updateTag({ property: 'description', content: 'Get motivated with our inspiring podcast. Our experts share tips on positive mindset, motivation, and more to help you unlock your full potential.' })
     this.meta.updateTag({ property: 'keywords', content: 'Wisdom podcast,Personal growth podcast,Self-improvement podcast,Mindfulness podcast,Inspirational podcast,Motivational podcast,Self-help podcast,Life lessons podcast,Philosophy podcast,Happiness podcast,Success podcast,Mental health podcast,Emotional intelligence podcast,Spiritual growth podcast,Life coaching podcast,Positive mindset podcast' })
-  
+
     this.logeventservice.logEvent('view_humanwisdom_podcast');
   let routTag=   this.activatedRoute.snapshot.paramMap.get('tag');
   if(routTag && routTag!=null && routTag !='' && routTag =='sorrow'){
@@ -71,5 +76,23 @@ export class PodcastTocPage implements OnInit {
     .catch( (error) => {
       console.log(error);
     });
+  }
+
+  getPodcast() {
+    this.service.GetPodcastList().subscribe((res) => {
+      if (res) {
+        this.podcastList = res;
+      }
+    })
+  }
+
+  audioevent(data) {
+    let sub: any = localStorage.getItem("Subscriber")
+    if (sub == 0 && data['PodcastID'] >= 4) {
+      this.router.navigate(['/onboarding/free-limit']);
+    } else {
+      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
+      this.router.navigate(['adults/guided-meditation/audiopage/', data['Text_URL'], data['Title'], data['PodcastID']])
+    }
   }
 }

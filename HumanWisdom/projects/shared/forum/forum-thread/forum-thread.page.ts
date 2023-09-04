@@ -6,6 +6,7 @@ import { ForumService } from '../forum.service';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-forum-thread',
@@ -44,10 +45,18 @@ export class ForumThreadPage implements OnInit {
     Followed: '0',
     Liked: '0',
     UserId: '',
+    Anonymous:'0',
+    TagName:''
   }
   posttext = '';
-  constructor(private service: ForumService, private router: Router) {
+  address ="";
+  token="";
+  urlT = "";
+  path = "";
+  constructor(private service: ForumService, private router: Router,  private ngNavigatorShareService: NgNavigatorShareService,) {
     this.userID = localStorage.getItem('userId');
+    this.token = JSON.parse(localStorage.getItem("token"));
+    this.address = this.router.url;
     this.UserName =localStorage.getItem('name');
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
     this.service.toastrService.overlayContainer = this.toastContainer;
@@ -85,6 +94,32 @@ export class ForumThreadPage implements OnInit {
     } else {
       this.enableAlert = true;
     }
+  }
+
+    share() {
+
+    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
+       alert(`This service/api is not supported in your Browser`);
+       return;
+     } */
+    if (this.urlT) {
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
+
+    }
+    else {
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
+    }
+
+    this.ngNavigatorShareService.share({
+      title: 'HumanWisdom Program',
+      text: 'Hey, check out the HumanWisdom Program',
+      url: this.path
+    }).then((response) => {
+      console.log(response);
+    })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   onChange($event) {
@@ -179,6 +214,16 @@ export class ForumThreadPage implements OnInit {
         this.reploadpage();
       } else {
         this.service.toastrService.error('', 'Error!');
+      }
+    });
+  }
+
+  onFocusOut(){
+    this.service.reportPost({ PostID: this.posttread.PostID, UserID: this.userID, Comment: this.commenttext }).subscribe(res => {
+      if (res) {
+        this.replyflag = !this.replyflag;
+        this.reploadpage();
+        this.commenttext = '';
       }
     });
   }

@@ -15,7 +15,7 @@ export class S37018Page implements OnInit {
   
   bg=""
   moduleLink="/adults/insight/s38000"
-  moduleName="04. Insight"
+  moduleName="4. Insight"
   sectionName= "Art of Enquiry";
   moduleId=38
   moduleList: any = [
