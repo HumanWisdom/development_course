@@ -81,7 +81,7 @@ export class S296Page implements OnInit {
     if(this.optionList && this.sessionOption296) {
       this.optionList.forEach((d) => {
         if(this.sessionOption296.includes(d['OptId'])) {
-          document.getElementById(d['OptStr']).style.backgroundColor = '#FFC455';
+          document.getElementById(d['OptStr']).style.backgroundColor = '#E58D82';
         }
       }) 
     }   
@@ -126,7 +126,7 @@ export class S296Page implements OnInit {
    console.log(id,e)
    if(e==true)
    {
-   document.getElementById(divid).style.backgroundColor = '#E58D82';
+    document.getElementById(divid).style.backgroundColor = '#E58D82';
      this.sendOption.push(id)
    }
    else if(e==false)
@@ -175,7 +175,7 @@ export class S296Page implements OnInit {
   sessionFetch(id, divid){
     if(this.sessionOption296.includes(id))
     {
-      //document.getElementById(divid).style.backgroundColor = '#E58D82';
+      // document.getElementById(divid).style.backgroundColor = '#E58D82';
       return true
     }
 
