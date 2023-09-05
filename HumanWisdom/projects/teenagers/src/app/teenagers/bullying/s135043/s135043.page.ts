@@ -19,7 +19,7 @@ export class S135043Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/bullying/audios/bullying+2.3.mp3'
 
   transcriptPage="bullying/s135043t"
-  toc="bullying/s76001"
+  toc="bullying/s135001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;

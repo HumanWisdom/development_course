@@ -237,6 +237,11 @@ import { S134206Page } from './s134206/s134206.page';
 import { S134207Page } from './s134207/s134207.page';
 import { S134208Page } from './s134208/s134208.page';
 import { S134209Page } from './s134209/s134209.page';
+import { S134210Page } from './s134210/s134210.page';
+import { S134211Page } from './s134211/s134211.page';
+import { S134212Page } from './s134212/s134212.page';
+import { S134213Page } from './s134213/s134213.page';
+import { S134214Page } from './s134214/s134214.page';
 
 const routes: Routes = [
   {
@@ -1427,6 +1432,31 @@ const routes: Routes = [
     path: 's134209',
 
     component: S134209Page,
+  },
+  {
+    path: 's134210',
+
+    component: S134210Page,
+  },
+  {
+    path: 's134211',
+
+    component: S134211Page,
+  },
+  {
+    path: 's134212',
+
+    component: S134212Page,
+  },
+  {
+    path: 's134213',
+
+    component: S134213Page,
+  },
+  {
+    path: 's134214',
+
+    component: S134214Page,
   },
 ];
 

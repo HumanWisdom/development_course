@@ -30,10 +30,10 @@
           <div class="x_content p0">
             <form> 
 
-              <div class="row">
+              <div class="row" *ngIf="categoryList.length>0">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <select name="threadlist" class="form-select forum_v3_start_new_thread">
-                    <option>Mental health</option>
+                  <select [(ngModel)]="selectedOption" name="categoryListName" id="categoryListName" class="form-select forum_v3_start_new_thread">
+                    <option *ngFor="let item of categoryList" [value]="item.value" >{{item.label}}</option>
                   </select>
                 </div>
               </div>
@@ -59,21 +59,25 @@
                     <h4 class="mb0px mt15px fs_12px fw_500 lh_150p fc_e58d82">
                       Upload image (max 2MB)
                     </h4>
-                    <input id="forum_thread_img" type="file" class="">
+                    <input id="forum_thread_img" (change)="getFileUpload($event)" type="file">
                   </label>
                 </div>
               </div>
 
               <div class="row mtb20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <textarea type="text" class="mtb0px ta_new_thread" rows="10" placeholder="Talk about issues related to stress, anxiety, depression and mental health." maxlength="256" [(ngModel)]="thread" required="required"></textarea>
+                  <textarea type="text" class="mtb0px ta_new_thread" id="Post" name="Post" 
+                   rows="10" 
+                   placeholder="Talk about issues related to stress, anxiety, depression and mental health."
+                    maxlength="256" 
+                  [(ngModel)]="thread" required="required"></textarea>
                 </div>
               </div>
 
               <div class="row mtb20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <label for="forum_post_checkbox" class="tcenter chkb_post_anonymously mt0px">
-                    <input id="forum_post_checkbox" type="checkbox" class="">
+                    <input id="forum_post_checkbox" #checkboxSelect [(ngModel)]="isChecked" [value]="isChecked" type="checkbox" class="">
                     <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff">
                       <span class="ml10px">
                         Post anonymously
@@ -83,9 +87,9 @@
                 </div>
               </div>
 
-              <div class="row">                  
+              <div class="row" style="display: none;">                  
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
-                  <button type="button" class="btn btn_v3_nt_post" data-toggle="modal" data-target="#posted_successfully">                      
+                  <button type="button" class="btn btn_v3_nt_post" #postModal data-toggle="modal" data-target="#posted_successfully">                      
                     Posted modal
                   </button>  
                 </div>
@@ -121,7 +125,7 @@
 
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="button" class="btn_popup_close m0px" data-dismiss="modal" aria-label="close">
+          <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-dismiss="modal" aria-label="close">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_close_modal.svg" class="img-responsive fright">
           </button>
         </div>
