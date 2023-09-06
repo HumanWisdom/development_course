@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange } from "@angular/core";
+ndimport { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Location } from "@angular/common";
 import * as $ from 'jquery';
