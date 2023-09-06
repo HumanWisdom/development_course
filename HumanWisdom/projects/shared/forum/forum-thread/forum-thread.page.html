@@ -126,7 +126,7 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="shareOnThread()">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="shareOnThread(posttread)">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
                             Share
                           </button>
@@ -134,7 +134,7 @@
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item)">
+                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(posttread)">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
                           Report
                         </button>
@@ -166,7 +166,7 @@
               <ng-container *ngIf="list && list.ReplyPost.ReplyPostUserID!=''">
                 <div class="div_comment_list" *ngFor="let item of list.ReplyPost;let index=index">
                   <div class="row mb5px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="gotToProfile(posttread.ReplyPostUserID)">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="gotToProfile(item.ReplyPostUserID)">
                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
                         <!-- Manoj Krishna -->
                         {{item.ReplyPostUserName}}
