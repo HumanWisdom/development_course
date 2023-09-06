@@ -18,7 +18,9 @@ export class S3VideoComponent implements OnInit {
     if(url.includes('videopage')) {
       this.wisdomshort = false;
       this.linkcode = this.route.snapshot.paramMap.get('videolink');
-      this.linkcode = this.linkcode.replaceAll('-', '/');
+      let name = this.linkcode.split('-videos')[0]
+      let link = this.linkcode.split('-videos')[1]
+      this.linkcode = name + '/videos' + link.replaceAll('-', '/');
       this.videoTitle = this.route.snapshot.paramMap.get('title');
     }else {
       this.linkcode = this.route.snapshot.paramMap.get('videolink')
@@ -31,6 +33,7 @@ export class S3VideoComponent implements OnInit {
       code = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_shorts/videos/${this.linkcode}`;
     }else {
       code = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/${this.linkcode}`;
+      // code = `https://d1tenzemoxuh75.cloudfront.net/${this.linkcode}`;
     }
     this.videoLink = this.getSafeUrl(code);
   }

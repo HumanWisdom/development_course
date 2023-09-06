@@ -13,8 +13,8 @@ export class S133182Page implements OnInit {
   bg_tn = "bg_red_pink"
   bg_cft = "bg_red_pink"
   bg = "red_pink_w2"
-  hint = ""
-  toc = "/happiness/s23001"
+  hint = "of all the ideas you have come across - which one has appealed the most?"
+  toc = "/happiness/s133001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);

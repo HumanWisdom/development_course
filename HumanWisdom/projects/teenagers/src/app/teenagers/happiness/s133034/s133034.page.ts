@@ -14,7 +14,7 @@ export class S133034Page implements OnInit,OnDestroy {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w1"
-  title="Happiness and Pleasure"
+  title=""
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/happiness/audios/happiness+2.1.mp3'
 

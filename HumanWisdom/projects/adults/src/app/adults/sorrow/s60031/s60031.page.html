@@ -2,10 +2,11 @@
 
 <app-multi-select [bg]="bg">
   <form>
-    <h4 class="txt4">
-      {{question}}
 
+    <h4 class="txt4">
+    {{question}}
     </h4>
+
     <div class="clearfix"></div>
 
     <h6 class="txt5 pb10p">
@@ -16,9 +17,9 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
           <a class="">
-            <div class="box cb_box tleft flex_left cb1_box" [id]="o.OptStr">                        
+            <div class="">                        
               <!-- svg checkbox -->
-              <input class="inp-cbx" [id]="o.OptId" type="checkbox" [checked]="sessionFetch(o.OptId, o.OptStr)" (click)="selectOption(o.OptId,$event.target.checked, o.OptStr)"/>
+              <!-- <input class="inp-cbx" [id]="o.OptId" type="checkbox" [checked]="sessionFetch(o.OptId, o.OptStr)" (click)="selectOption(o.OptId,$event.target.checked, o.OptStr)"/>
               <label class="cbx mt0px" [for]="o.OptId">
                 <span>
                   <svg width="12px" height="10px">
@@ -26,9 +27,32 @@
                   </svg>
                 </span>
                 <span class="txt46 cb_span">
-                  {{o.OptStr}}
+                 {{o.OptStr}}
                 </span>
-              </label>
+              </label> -->
+
+              <!-- test -->
+              <div class="row cb_box" [id]="o.OptStr">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                    <span class="txt46 ellipsis">
+                      {{o.OptStr}}
+                     </span>
+                  </div>
+                  
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                    <input class="inp-cbx" [id]="o.OptId" type="checkbox" [checked]="sessionFetch(o.OptId, o.OptStr)" (click)="selectOption(o.OptId,$event.target.checked, o.OptStr)"/>
+                    <label class="cbx mt0px" [for]="o.OptId">
+                      <span>
+                        <svg width="12px" height="10px">
+                          <use xlink:href="#check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- /test -->
               <!--SVG Sprites-->
               <svg class="inline-svg">
                 <symbol id="check" viewbox="0 0 12 10">
@@ -46,7 +70,7 @@
     </div>
   
     <div class="pagebreak"></div>
-  </form>      
+  </form>
 </app-multi-select>
 
 <app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
