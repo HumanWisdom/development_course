@@ -92,7 +92,7 @@ export class PodcastTocPage implements OnInit {
       this.router.navigate(['/onboarding/free-limit']);
     } else {
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      this.router.navigate(['adults/guided-meditation/audiopage/', data['Text_URL'], data['Title'], data['PodcastID']])
+      this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
   }
 }

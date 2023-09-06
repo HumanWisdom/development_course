@@ -165,11 +165,16 @@ export class WisdomScalePage implements OnInit {
         this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
           console.log(r)
           var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          r = r.sort((a,b) => new Date(a['wsDate']).getMonth() + 1 - new Date(b['wsDate']).getMonth() + 1);
+          r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
+          r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
           r.forEach((d) => {
             let name = monthNames[d['month'] - 1];
-            if (!(this.lineChartLabels.some((t) => t === name.substring(0, 3)))) {
-              this.lineChartData[0]['data'].push(parseInt(d['Score']));
-              this.lineChartLabels.push(name.substring(0, 3));
+            this.lineChartData[0]['data'].push(parseInt(d['Score']));
+            if(!(this.lineChartLabels.find(a =>a.includes(d['year'].slice(-2))))) {
+              this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3)+ "'" + d['year'].slice(-2));
+            }else {
+              this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3));
             }
           })
         });
