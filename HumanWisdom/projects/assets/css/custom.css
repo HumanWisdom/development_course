@@ -34158,4 +34158,32 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   color: #FFF;
 }
+
+.sr_fc_01
+{
+  height: 50px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #292D56;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  text-align: left;
+  padding: 13px 20px;
+}
+
+.sr_fc_01::-webkit-input-placeholder 
+{
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.sr_fc_01:focus.subscription_code
+{
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 /* /version - 03 */
