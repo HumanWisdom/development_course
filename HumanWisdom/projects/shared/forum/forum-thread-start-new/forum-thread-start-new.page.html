@@ -38,7 +38,7 @@
                 </div>
               </div>
 
-              <div class="row mt20px">
+              <div class="row mt20px" *ngIf="selectedOption == 4">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <label for="img-edit" class="tcenter w100 prelative">
                     <div class="">
@@ -52,7 +52,7 @@
                 </div>
               </div>
 
-              <div class="row mtb20px">
+              <div class="row mtb20px" *ngIf="selectedOption == 4">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex div_ftui">
                   <label for="forum_thread_img" class="tcenter">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_upload_img.svg" clas="img-respsonsive">
@@ -74,7 +74,7 @@
                 </div>
               </div>
 
-              <div class="row mtb20px">
+              <div class="row mtb20px" *ngIf="selectedOption == 5">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <label for="forum_post_checkbox" class="tcenter chkb_post_anonymously mt0px">
                     <input id="forum_post_checkbox" #checkboxSelect [(ngModel)]="isChecked" [value]="isChecked" type="checkbox" class="">

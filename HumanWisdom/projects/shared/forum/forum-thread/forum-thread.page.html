@@ -35,7 +35,7 @@
             <form>
 
               <!-- post -->
-              <div class="div_forum_post">
+              <div class="div_forum_post" *ngIf="posttread">
                 <a class="">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -45,7 +45,7 @@
                           Anonymous
                         </h4>
 
-                        <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff" *ngIf="posttread.Anonymous=='0'">
+                        <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff" (click)="gotToProfile(posttread.UserId)" *ngIf="posttread.Anonymous=='0'">
                           <!-- Jennifer Hitchner -->
                           {{posttread.UserName}}
                         </h4>
@@ -73,7 +73,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
                         <!-- March 26 -->
-                        {{getLocalPostDate(posttread.PostDate)| date: 'medium' }}
+                        {{getLocalPostDate(posttread?.PostDate)}}
                       </h4>
                     </div>
                   </div>
@@ -108,10 +108,14 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="like(posttread.PostID,null,0)">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
-                            <!-- 24 -->
+                            <img *ngIf="posttread.Liked=='0'"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                            class="img-responsive mr5px">
+                          <img *ngIf="posttread.Liked=='1'"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                            class="img-responsive mr5px">
                             {{posttread.PostLikeCount}}
-                          </button>
+                        </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
@@ -122,7 +126,7 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="share()">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="shareOnThread()">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_share.svg" class="img-responsive mr5px">
                             Share
                           </button>
@@ -130,7 +134,7 @@
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item)">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
                           Report
                         </button>
@@ -138,7 +142,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row"  >
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <textarea type="text" rows="5" 
                       placeholder="Comment here" class="ta_forum_comment" 
@@ -159,10 +163,10 @@
               </div>
 
               <!-- comment -->
-              <ng-container *ngIf="list && list.ReplyPost">
-                <div class="div_comment_list" *ngFor="let item of replyPost();let index=index">
+              <ng-container *ngIf="list && list.ReplyPost.ReplyPostUserID!=''">
+                <div class="div_comment_list" *ngFor="let item of list.ReplyPost;let index=index">
                   <div class="row mb5px">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="gotToProfile(posttread.ReplyPostUserID)">
                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
                         <!-- Manoj Krishna -->
                         {{item.ReplyPostUserName}}
@@ -183,13 +187,19 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
                         <button type="button"  (click)="like(item.ReplyPostID,posttread.PostID,index)"  class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg" class="img-responsive mr5px">
-                          <span [innerText]="posttread.PostLikeCount"></span>
+                          
+                          <img *ngIf="item.Liked=='0'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like.svg"
+                          class="img-responsive mr5px">
+                        <img *ngIf="item.Liked=='1'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                          class="img-responsive mr5px">
+                          <span [innerText]="item.ReplyPostLikeCount"></span>
                         </button>
                       </div>
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                        <button type="button"  (click)="reportpost(item)" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                        <button type="button"  (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
                           Report
                         </button>
@@ -203,11 +213,11 @@
                     </div> -->
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">                      
-                        <input type="text" name="posttext" id="comment" [(ngModel)]="posttext" required="required" class="form-control fc_comment" placeholder="Report Post">                    
+                        <input type="text" name="posttext" id="comment" [(ngModel)]="reportText" required="required" class="form-control fc_comment" placeholder="Report Post">                    
                       </div> 
 
                       <div class="col-md-12 col-sm-12 col-xs-12 forum_pt10px p0 tright mt5px">
-                        <button type="submit" class="btn btn-warning btn_post" (click)="post(item)">
+                        <button type="submit" class="btn btn-warning btn_post" (click)="reportComment(item)">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/post_grey.svg" alt="" class="" > -->
                           Report
                         </button>             
