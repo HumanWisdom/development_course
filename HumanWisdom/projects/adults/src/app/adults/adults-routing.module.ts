@@ -341,6 +341,11 @@ const routes: Routes = [
     component: S3VideoComponent
   },
   {
+    path: 'wisdom-shorts/:videolink/:enable',
+    canActivate:[AudioVideoGuard],
+    component: S3VideoComponent
+  },
+  {
     path: 'how-can-wisdom-help',
     loadChildren: () => import('./how-can-wisdom-help/how-can-wisdom-help.module').then(m => m.HowCanWisdomHelpModule)
   },
@@ -486,6 +491,10 @@ const routes: Routes = [
     path: 'audiopage/:audiolink/:RowId/:enable',
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
+  },
+  {
+    path: 'awareness-exercises-transcript',
+    loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then( m => m.AwarenessExercisesTranscriptPageModule)
   }
 ];
 

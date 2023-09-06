@@ -115,6 +115,8 @@ export class ProgressPage implements OnInit {
   let userId = JSON.parse(localStorage.getItem("userId"))
   this.service.wisdomSurveyinsights(userId).subscribe((r) => {
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    r = r.sort((a,b) => a['month'] - b['month']);
+    r = r.sort((a,b) => a['year'] - b['year']);
     r.forEach((d) => {
       let name = monthNames[d['month'] - 1];
 
@@ -123,110 +125,143 @@ export class ProgressPage implements OnInit {
           {
             'No': this.tableData[0]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[0]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[0]['lineChartLabels'].push(name.substring(0, 3));
+        this.chartData[0]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[0]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[0]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[0]['lineChartLabels'].push(name.substring(0, 3));
+        }
       }
       if (d['QuestionID'] === 123) {
         this.tableData[1]['value'].push(
           {
             'No': this.tableData[1]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[1]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[1]['lineChartLabels'].push(name.substring(0, 3));
+        this.chartData[1]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[1]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[1]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[1]['lineChartLabels'].push(name.substring(0, 3));
+        }
       }
       if (d['QuestionID'] === 124) {
         this.tableData[2]['value'].push(
           {
             'No': this.tableData[2]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[2]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[2]['lineChartLabels'].push(name.substring(0, 3));
-      }
+        this.chartData[2]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[2]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[2]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[2]['lineChartLabels'].push(name.substring(0, 3));
+        }      }
       if (d['QuestionID'] === 125) {
         this.tableData[3]['value'].push(
           {
             'No': this.tableData[3]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[3]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[3]['lineChartLabels'].push(name.substring(0, 3));
-      }
+        this.chartData[3]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[3]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[3]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[3]['lineChartLabels'].push(name.substring(0, 3));
+        }      }
       if (d['QuestionID'] === 126) {
         this.tableData[4]['value'].push(
           {
             'No': this.tableData[4]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[4]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[4]['lineChartLabels'].push(name.substring(0, 3));
-      }
+        this.chartData[4]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[4]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[4]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[4]['lineChartLabels'].push(name.substring(0, 3));
+        }      }
       if (d['QuestionID'] === 127) {
         this.tableData[5]['value'].push(
           {
             'No': this.tableData[5]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[5]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[5]['lineChartLabels'].push(name.substring(0, 3));
-      }
+        this.chartData[5]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[5]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[5]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[5]['lineChartLabels'].push(name.substring(0, 3));
+        }      }
       if (d['QuestionID'] === 128) {
         this.tableData[6]['value'].push(
           {
             'No': this.tableData[6]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[6]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[6]['lineChartLabels'].push(name.substring(0, 3));
-      }
+        this.chartData[6]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[6]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[6]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[6]['lineChartLabels'].push(name.substring(0, 3));
+        }      }
       if (d['QuestionID'] === 129) {
         this.tableData[7]['value'].push(
           {
             'No': this.tableData[7]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[7]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[7]['lineChartLabels'].push(name.substring(0, 3));
-      }
+        this.chartData[7]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[7]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[7]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[7]['lineChartLabels'].push(name.substring(0, 3));
+        }      }
       if (d['QuestionID'] === 130) {
         this.tableData[8]['value'].push(
           {
             'No': this.tableData[8]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[8]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[8]['lineChartLabels'].push(name.substring(0, 3));
-      }
+        this.chartData[8]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[8]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[8]['lineChartLabels'].push(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[8]['lineChartLabels'].push(name.substring(0, 3));
+        }      }
       if (d['QuestionID'] === 131) {
         this.tableData[9]['value'].push(
           {
             'No': this.tableData[9]['value'].length + 1,
             'Month': name.substring(0, 3),
-            'Perc': parseInt(d['Score']) * 10
+            'Perc': (parseInt(d['Score']) / 5) * 100
           }
         )
-        this.chartData[9]['lineChartData'][0]['data'].push(parseInt(d['Score']));
-        this.chartData[9]['lineChartLabels'].push(name.substring(0, 3));
+        this.chartData[9]['lineChartData'][0]['data'].push((parseInt(d['Score']) / 5) * 100);
+        if(!(this.chartData[9]['lineChartLabels'].find(a =>a.includes(d['year'].slice(-2))))) {
+          this.chartData[9]['lineChartLabels'].unshift(name.substring(0, 3)+ "'" + d['year'].slice(-2));
+        }else {
+          this.chartData[9]['lineChartLabels'].unshift(name.substring(0, 3));
+        }
       }
     });
   });

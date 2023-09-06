@@ -19,7 +19,7 @@ export class S133158tPage implements OnInit {
     return this.router.url;
   }, 1000);
   audioPage="/happiness/s133158"
-  toc="/happiness/s23001"
+  toc="/happiness/s133001"
   
   screenType=localStorage.getItem("audio")
   userId:any
