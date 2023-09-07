@@ -1,6 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ForumService } from '../forum.service';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
@@ -46,16 +46,20 @@ export class ForumThreadPage implements OnInit {
     Liked: '0',
     UserId: '',
     Anonymous:'0',
-    TagName:''
+    TagName:'',
+    ImagePath:''
   }
   posttext = '';
+  reportText='';
   address ="";
   token="";
   urlT = "";
   path = "";
-  constructor(private service: ForumService, private router: Router,  private ngNavigatorShareService: NgNavigatorShareService,) {
+  sharedPostId='';
+  constructor(private service: ForumService, private router: Router, private activateRoute:ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService,) {
     this.userID = localStorage.getItem('userId');
     this.token = JSON.parse(localStorage.getItem("token"));
+    this.sharedPostId= this.activateRoute.snapshot.paramMap.get('sharedPostId');
     this.address = this.router.url;
     this.UserName =localStorage.getItem('name');
     this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
@@ -67,6 +71,47 @@ export class ForumThreadPage implements OnInit {
         this.programType = navigation.extras.state ? navigation.extras.state.programType : ProgramType.Adults;
       });
   }
+
+  ngOnInit() {
+    this.getPostData()
+  }
+
+
+getPostData(){
+  if(this.sharedPostId!='' && this.sharedPostId!=null){
+    this.service.getPostDetail(this.sharedPostId).subscribe(res => {
+      if (res) {
+        this.list = [];
+        this.list = res;
+        this.setValueForParentPost(res.ParentPost[0])
+        this.service.postdataSource.next(this.posttread);
+      }
+    })
+  }else{
+    this.reploadpage();
+  }
+}
+
+  setValueForParentPost(parentPost:any){
+   this.posttread = {
+    PostID: parentPost.ParentPostID,
+    POST: parentPost.ParentPost,
+    PostDate: parentPost.ParentPostDate,
+    ParentPOstID: '',
+    PostLikeCount: parentPost.ParentPostLikeCount,
+    ReplyCount: parentPost.ParentPostReplyCount,
+    UserImage: '',
+    UserName: parentPost.ParentPostUserName,
+    Followed: parentPost.Followed,
+    Liked: parentPost.Liked,
+    UserId: parentPost.ParentPostUserID,
+    Anonymous:parentPost.ParentPostAnonymous,
+    TagName:'',
+    ImagePath:parentPost.ParentPostImagePath,
+
+  }
+  }
+
   toggle(item) {
     this.replyflag = !this.replyflag;
     this.activereply = item;
@@ -97,29 +142,7 @@ export class ForumThreadPage implements OnInit {
   }
 
     share() {
-
-    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser) ) {
-       alert(`This service/api is not supported in your Browser`);
-       return;
-     } */
-    if (this.urlT) {
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
-
-    }
-    else {
-      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
-    }
-
-    this.ngNavigatorShareService.share({
-      title: 'HumanWisdom Program',
-      text: 'Hey, check out the HumanWisdom Program',
-      url: this.path
-    }).then((response) => {
-      console.log(response);
-    })
-      .catch((error) => {
-        console.log(error);
-      });
+      this.shareOnThread({PostID:this.sharedPostId});
   }
 
   onChange($event) {
@@ -181,6 +204,7 @@ export class ForumThreadPage implements OnInit {
     this.sub = this.service.postdatavalue.subscribe(res => {
       if (res) {
         this.posttread = res;
+        this.sharedPostId = this.posttread.PostID;
         this.service.getPostDetail(res.PostID).subscribe(res => {
           if (res) {
             this.list = [];
@@ -254,10 +278,7 @@ export class ForumThreadPage implements OnInit {
     this.service.postdataSource.next(temp);
     this.reploadpage();
   }
-  ngOnInit() {
-    this.reploadpage();
-
-  }
+ 
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
@@ -271,8 +292,26 @@ export class ForumThreadPage implements OnInit {
     } else {
       this.enableAlert = true;
     }
-
   }
+
+  shareOnThread(item){
+    this.path = "http://humanwisdom.me/forum/forum-thread/"+item.PostID;
+  // } else {
+  //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
+  // }
+
+  this.ngNavigatorShareService.share({
+    title: 'HumanWisdom Program',
+    text: 'Hey, check out the HumanWisdom Program',
+    url: this.path
+  }).then((response) => {
+    console.log(response);
+  })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
   postreport(item) {
     console.log(item);
     if (this.isLoggedIn) {
@@ -299,6 +338,21 @@ export class ForumThreadPage implements OnInit {
   }
   }
 
+gotToProfile(UserId){
+  this.router.navigate(['/forum/profile/',UserId]);
+}
+
+reportComment(item){
+  this.service.reportPost({ PostID: this.posttread.PostID, UserID: this.userID, Comment: this.reportText }).subscribe(res => {
+    if (res) {
+      this.replyflag = !this.replyflag;
+      this.activereply=null;
+      this.reploadpage();
+      this.reportText = '';
+    }
+  });
+}
+
   follow(item) {
     if (this.isLoggedIn) {
       this.service.followPost({ PostID: item.PostID, UserID: this.userID }).subscribe(res => {
@@ -311,9 +365,7 @@ export class ForumThreadPage implements OnInit {
     }
   }
   getLocalPostDate(date: string) {
-    var dateLocal = new Date(date);
-    var newDate = new Date(dateLocal.getTime() - dateLocal.getTimezoneOffset() * 60 * 1000);
-    return newDate;
+   return  this.service.getLocalPostDate(date);
   }
   submitComment() {
     if (this.isLoggedIn) {
