@@ -18,6 +18,7 @@ export class ForumThreadStartNewPage implements OnInit {
     userimage: null,
     username: '',
   };
+  imageUrl: string | ArrayBuffer | null = null;
   isChecked = false;
   categoryList: any = [];
   fileToUpload: File = null;
@@ -91,6 +92,7 @@ export class ForumThreadStartNewPage implements OnInit {
   }
 
   getFileUpload(event) {
+    this.imageUrl = null;
     const files = event.target.files;
     if (files.length === 0)
       return;
@@ -104,6 +106,7 @@ export class ForumThreadStartNewPage implements OnInit {
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       let byte: any = reader.result;
+      this.imageUrl=_event.target.result;
       byte = byte.split('base64,')
       if (byte[1] !== undefined && byte[1] !== '') {
       this.fileToUpload = byte[1];

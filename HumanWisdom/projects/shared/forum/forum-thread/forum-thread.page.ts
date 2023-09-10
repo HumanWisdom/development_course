@@ -83,6 +83,9 @@ getPostData(){
       if (res) {
         this.list = [];
         this.list = res;
+        if(this.list.ReplyPost == null){
+          this.list.ReplyPost = [];
+       }
         this.setValueForParentPost(res.ParentPost[0])
         this.service.postdataSource.next(this.posttread);
       }
@@ -106,7 +109,7 @@ getPostData(){
     Liked: parentPost.Liked,
     UserId: parentPost.ParentPostUserID,
     Anonymous:parentPost.ParentPostAnonymous,
-    TagName:'',
+    TagName:parentPost.ParentPostTagName,
     ImagePath:parentPost.ParentPostImagePath,
 
   }
@@ -126,7 +129,7 @@ getPostData(){
     if (this.isLoggedIn) {
       this.service.likePost({ PostID: PostID, UserID: this.userID }).subscribe(res => {
         if (res) {
-          if (ParentPOstID != null) {
+          if (ParentPOstID != null && this.list.ReplyPost.length>0) {
             this.list.ReplyPost[index].ReplyPostLikeCount = res;
             this.list.ReplyPost[index].Liked = this.list.ReplyPost[index].Liked == "1" ? "0" : "1";
             // this.refreshPage(ParentPOstID);
@@ -209,7 +212,10 @@ getPostData(){
           if (res) {
             this.list = [];
             this.list = res;
-            if (this.list.ReplyPost.length > 0) {
+            if(this.list.ReplyPost == null){
+               this.list.ReplyPost = [];
+            }
+            if (this.list.ReplyPost !=null && this.list.ReplyPost.length > 0) {
               this.isPostEditable = false;
             } else {
               this.isPostEditable = true;

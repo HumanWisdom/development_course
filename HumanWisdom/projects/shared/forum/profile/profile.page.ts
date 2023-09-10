@@ -195,7 +195,8 @@ export class ProfilePage implements OnInit {
     if (this.isLoggedIn) {
       this.forumService.likePost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
         if (res) {
-          this.getAllPosts(2, this.userId);
+          this.posts[index].PostLikeCount = res;
+          this.posts[index].Liked = this.posts[index].Liked == "1" ? "0" : "1";
         }
       });
     } else {
