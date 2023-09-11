@@ -22,7 +22,7 @@ export class S141094Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/success-failure/audios/success-failure+4.3.mp3'
 
   transcriptPage="success-failure/s141094t"
-  toc="success-failure/s48001"
+  toc="success-failure/s141001"
   bookmark=0
   path=this.router.url
   avDuration:any

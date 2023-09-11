@@ -25,7 +25,7 @@ export class S109073Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1430
+  rId = 1429
   reflection: any
   reflectionA: any
   r109073 = JSON.parse(sessionStorage.getItem("r109073"))
@@ -126,26 +126,7 @@ export class S109073Page implements OnInit {
         base_color
       );
 
-      // first
-      $("#svg_form_time rect").css("fill", active_color);
-      $("#svg_form_time circle").css("fill", active_color);
-      $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-      var circle_child = child + 1;
-      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-        "fill",
-        base_color
-      );
-      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-        "fill",
-        base_color
-      );
+
 
 
     });

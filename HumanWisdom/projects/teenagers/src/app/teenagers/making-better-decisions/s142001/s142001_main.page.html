@@ -1,0 +1,109 @@
+<app-toc-header [moduleName]="'Making better Decisions'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+
+<app-index-content>
+
+  <form>                                
+   
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="txt_comparison">
+          How can we use our wisdom to ensure that we make better decisions?
+          We make so many decisions that impact our lives - about our careers, our friends, our habits, our choice of spouse or partner, where we live, and how we react to others. In this module we explore all the factors which go into making decisions, including the hidden drivers in our thinking, and how we can make better decisions in our lives. 
+        </h4>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
+        <a [routerLink]="['/adults/making-better-decisions', making_better_decisionsResume]" *ngIf="lastvisited">
+          <button type="button" class="btn btn-success mb0 btn_begin_here bg_light_blue" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>                    
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <a routerLink="/adults/making-better-decisions/s77002">
+      <div class="row crow box bg_light_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #1
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Values that shape decision making
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              8 min
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>                
+
+    <a routerLink="/adults/making-better-decisions/s77044">
+      <div class="row crow box bg_light_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #2
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Drivers behind decision making
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              17 min
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <a routerLink="/adults/making-better-decisions/s77075">
+      <div class="row crow box bg_light_blue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h6 class="session_no mtb0px">
+            Session #3
+          </h6>                    
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-md-10 col-sm-10 col-xs-10">                    
+            <h4 class="session_name mtb0px">
+              Making better decisions
+            </h4>    
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 p0">   
+            <h4 class="session_time mtb0px">
+              7 min
+            </h4>    
+          </div>
+        </div>                    
+      </div>
+    </a>
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"></app-related-wisdom-stories-tiles>
+
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>
