@@ -20,6 +20,7 @@ export class CourseFooterComponent implements OnInit {
   @Input() bg: string;
   @Input() bg_cft: string;
   @Input() isUseCloseButton:boolean=false;
+  @Input() enableDashboard:boolean=false;
   progUrl: string;
   urlT:any
   shared=false;
@@ -34,7 +35,7 @@ export class CourseFooterComponent implements OnInit {
     private sharedService:SharedService,
     //private captureService:NgxCaptureService
     public logeventservice: LogEventService
-  ) { 
+  ) {
     if(this.router.getCurrentNavigation()) {
       this.urlT=this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t: ''
     }
@@ -72,7 +73,7 @@ export class CourseFooterComponent implements OnInit {
     }
    this.goToDash();
   }
-  
+
   goToDash() {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.router.navigate(['/adults/adult-dashboard'])
@@ -84,7 +85,7 @@ export class CourseFooterComponent implements OnInit {
       this.router.navigate(['/adults/adult-dashboard'])
     }
   }
-  
+
   getProgramTypeName(value: number): string {
     const enumKey = Object.keys(ProgramType).find(key => ProgramType[key] === value);
     return enumKey as string;
