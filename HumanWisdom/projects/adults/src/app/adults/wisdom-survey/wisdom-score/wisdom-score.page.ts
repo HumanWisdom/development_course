@@ -15,14 +15,15 @@ export class WisdomScorePage implements OnInit {
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  
+
   overallPercentage:any
   bookmark=0
   toc=""
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  points=localStorage.getItem("wisdomScore")
+  points=localStorage.getItem("wisdomScore");
+  enableDash = false;
 
 isUseCloseButton:boolean;
   constructor(private router: Router,
@@ -36,6 +37,10 @@ isUseCloseButton:boolean;
       {this.userId=JSON.parse(localStorage.getItem("userId"))}
       const {isUseCloseButton} = window.history.state;
       this.isUseCloseButton=isUseCloseButton;
+
+      if (this.service.previousUrl === '/adults/wisdom-survey') {
+        this.enableDash = true;
+      }
   }
   receiveBookmark(e)
 {
@@ -46,9 +51,9 @@ isUseCloseButton:boolean;
     this.bookmark=0
 }
 
-  
+
   submitProgress(){
-    
+
     this.router.navigate(['/adults/discovering-wisdom/s27032'])
 
   }
