@@ -34186,4 +34186,67 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   text-transform: uppercase;
   letter-spacing: 3px;
 }
+
+.cart_cnt 
+{
+  margin-right: 10%;
+  margin-bottom: -3px;
+}
+
+.subscription_box 
+{
+  border-radius: 16px;
+  background: #120F40;
+  padding: 20px;
+}
+
+.subscription_btn_mp 
+{
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: unset;
+}
+
+.sr_fc_01:focus.voucher_code
+{
+  text-transform: uppercase;
+}
+
+.btn_subscription_apply 
+{
+  margin: 0;
+  width: 98px;
+  height: 50px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #E58D82;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+}
+
+.hr_style_v3_10
+{
+  border: none;
+  height: 1px;
+  background: repeating-linear-gradient(90deg,#fff,#fff 5px,transparent 5px,transparent 10px);
+  opacity: 0.5;
+}
+
+.flex_ai_end
+{
+  display: flex;
+  align-items: end;
+}
+
+.hr_style_v3_11
+{
+  border: 1px solid #FFFFFF;
+  opacity: 0.1;
+  margin: 20px -20px;
+}
 /* /version - 03 */
