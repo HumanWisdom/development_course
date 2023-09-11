@@ -27,7 +27,7 @@ export class S112159p2Page implements OnInit {
   startTime: any
   endTime: any
   totalTime: any
-  toc = "/fear-anxiety/s125001"
+  toc = "/fear-anxiety/s112001"
   bookmark = 0
    path = setTimeout(() => {
     return this.router.url;
