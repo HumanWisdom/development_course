@@ -175,7 +175,7 @@ export class S51000Page implements OnInit, OnDestroy {
       this.router.navigate(['/onboarding/free-limit']);
     } else {
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      this.router.navigate(['adults/guided-meditation/audiopage/', data['Text_URL'], data['Title'], data['RowID']])
+      this.router.navigate(['adults/guided-meditation/audiopage/', data['Text_URL'], data['Title'], data['RowID'], 'Audio'])
     }
   }
 
