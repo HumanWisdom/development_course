@@ -26,9 +26,8 @@ export class S109052Page implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
- 
- 
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
+   
   constructor(
     private router: Router,
     private service:TeenagersService,
@@ -93,91 +92,70 @@ export class S109052Page implements OnInit {
     $('#svg_form_time circle').css('fill',base_color);
     $("circle:nth-of-type(1)").css("fill", active_color);
     
-    
-   // second
-   $("#svg_form_time rect").css("fill", active_color);
-   $("#svg_form_time circle").css("fill", active_color);
-   $("#prev").removeClass("disabled");
-     if (child >= length) {
-       $(this).addClass("disabled");
-       $('#submit').removeClass("disabled");
-     }
-     if (child <= length) {
-       child++;
-     }
-   var circle_child = child + 1;
-   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-     "fill",
-     base_color
-   );
-   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-     "fill",
-     base_color
-   );
+    // second
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
         
-   // second
-   $("#svg_form_time rect").css("fill", active_color);
-   $("#svg_form_time circle").css("fill", active_color);
-   $("#prev").removeClass("disabled");
-     if (child >= length) {
-       $(this).addClass("disabled");
-       $('#submit').removeClass("disabled");
-     }
-     if (child <= length) {
-       child++;
-     }
-   var circle_child = child + 1;
-   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-     "fill",
-     base_color
-   );
-   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-     "fill",
-     base_color
-   );
+    // second
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
         
-   // second
-   $("#svg_form_time rect").css("fill", active_color);
-   $("#svg_form_time circle").css("fill", active_color);
-   $("#prev").removeClass("disabled");
-     if (child >= length) {
-       $(this).addClass("disabled");
-       $('#submit').removeClass("disabled");
-     }
-     if (child <= length) {
-       child++;
-     }
-   var circle_child = child + 1;
-   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-     "fill",
-     base_color
-   );
-   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-     "fill",
-     base_color
-   );
-        
-   // second
-   $("#svg_form_time rect").css("fill", active_color);
-   $("#svg_form_time circle").css("fill", active_color);
-   $("#prev").removeClass("disabled");
-     if (child >= length) {
-       $(this).addClass("disabled");
-       $('#submit').removeClass("disabled");
-     }
-     if (child <= length) {
-       child++;
-     }
-   var circle_child = child + 1;
-   $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-     "fill",
-     base_color
-   );
-   $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-     "fill",
-     base_color
-   );
-         
+    // second
+    $("#svg_form_time rect").css("fill", active_color);
+    $("#svg_form_time circle").css("fill", active_color);
+    $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+    var circle_child = child + 1;
+    $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+      "fill",
+      base_color
+    );
+    $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+      "fill",
+      base_color
+    );
+          
+   
       
     
   });
@@ -197,7 +175,7 @@ export class S109052Page implements OnInit {
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109052"))==1)
       this.bookmark=1
-      
+   
   }
   receiveBookmark(e)
   {
@@ -241,14 +219,13 @@ createScreen(){
       },
       error=>{console.log(error)},
       ()=>{
-       
+        
       })
     
 
   }
   prev(){
     this.router.navigate(['/meditation/s109051'])
-
 
   }
 

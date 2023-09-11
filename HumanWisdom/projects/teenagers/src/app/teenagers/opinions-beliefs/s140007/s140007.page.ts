@@ -13,7 +13,7 @@ export class S140007Page implements OnInit {
   bg_tn = "bg_green_yellow"
   bg_cft = "bg_green_yellow"
   bg = "comparison_envy_w8"
-  hint = "This could be when you wanted something someone had and felt jealous, or were better than someone, and felt really good"
+  hint = "What are the factors that influenced you to have this opinion?"
   toc = "/opinions-beliefs/s140001"
   path = this.router.url
   userId: any
@@ -26,7 +26,7 @@ export class S140007Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1777
+  rId = 1848
   reflection: any
   reflectionA: any
   r140007 = JSON.parse(sessionStorage.getItem("r140007"))

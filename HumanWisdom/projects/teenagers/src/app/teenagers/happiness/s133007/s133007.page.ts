@@ -147,7 +147,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/happiness/s133008'])
+    this.router.navigate(['/happiness/s133006'])
     if (this.userId === 563) return;
 
     this.service.submitProgressText({

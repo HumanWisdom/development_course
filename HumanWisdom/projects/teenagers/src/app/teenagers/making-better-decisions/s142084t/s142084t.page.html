@@ -1,0 +1,29 @@
+<app-transcript-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are always other ways of looking at a situation - but our mind usually jumps to conclusions - for example, if you are called to see theheadteache in her office, our mind assumes there is a problem, when in fact there may not be.
+          </p>
+
+          <p>
+            Or at school if you are faced with a problem it is worth stepping back and exploring other, less obvious ways of looking at the situation.  If you are worried about what other people think of you and assume they are thinking bad things, pause and consider they may not be thinking about you at all.
+          </p>
+
+          <p>
+            Or, if a  friend doesn't call you, rather than get upset, it is possible the phone ran out of battery, and so on.
+          </p>
+
+          <p>
+            If is therefore worth asking - what assumptions am I making here, and can I re-examine them?
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

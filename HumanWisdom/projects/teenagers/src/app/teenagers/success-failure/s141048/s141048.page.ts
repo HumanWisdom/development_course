@@ -14,7 +14,7 @@ export class S141048Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w8"
   hint = "  What excites you? What do you love doing?  "
-  toc = "/success-failure/s48001"
+  toc = "/success-failure/s141001"
   path = this.router.url
 
   userId: any

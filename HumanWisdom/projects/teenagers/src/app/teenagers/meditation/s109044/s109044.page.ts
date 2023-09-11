@@ -9,45 +9,46 @@ import { TeenagersService } from '../../teenagers.service';
   styleUrls: ['./s109044.page.scss'],
 })
 export class S109044Page implements OnInit {
+
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w3"
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  userId:any
-  userName:any
-  progressPercent:any
-  progressText="2/3"
-  link="/meditation/s109045"
-  name="#3  Tips for a mediation practice"
-  progressImg=""
-  toc="meditation/s109001"
+  bg="blue_w2"
 
-  constructor(private router: Router, private location:Location,private service: TeenagersService) { }
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
+  overallPercentage:any
+
+
+  constructor(private router: Router,
+    private service:TeenagersService,
+    private location:Location) { }
 
   ngOnInit() {
-   
     if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-      this.userName=JSON.parse(sessionStorage.getItem("userName"))
-    }
+    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-      this.userName=JSON.parse(localStorage.getItem("userName"))
-  
-    }
-      this.getProgress()
-  
+      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    this.sessionPoints()
   }
-  getProgress(){
-    this.service.getPoints(this.userId)
-    .subscribe(res=>{
-      
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Meditation").Percentage)
-     console.log(this.progressPercent)
-    
-    })
-  }
-}
 
+  sessionPoints(){
+    this.service.sessionPoints({"UserId":this.userId,
+    "ScreenNos":"109019,109020,109021,1090109,109023,109024,109025,109026,109027,109028,109029,109030,109031,109031,109033"})
+    .subscribe(res=>
+      {console.log("points",res)
+      this.points=res
+    })
+   
+
+  }
+
+  submitProgress(){
+    this.router.navigate(['/meditation/s109044'])
+  }
+  prev(){
+    this.router.navigate(['/meditation/s109042'])
+
+  }
+
+}

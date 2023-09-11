@@ -13,7 +13,7 @@ export class S135038Page implements OnInit {
   bg_tn = "bg_pink_orange"
   bg_cft = "bg_pink_orange"
   bg = "pink_orange_w6"
-  hint = ""
+  hint = "it may have been an unkind word, or some sarcasm, or ignoring someone deliberately"
   toc = "/bullying/s135001"
   path = setTimeout(() => {
     return this.router.url;
