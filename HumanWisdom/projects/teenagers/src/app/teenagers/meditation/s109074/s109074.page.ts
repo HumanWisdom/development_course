@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
-
 @Component({
   selector: 'app-s109074',
   templateUrl: './s109074.page.html',
@@ -26,7 +25,7 @@ export class S109074Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1431
+  rId = 1430
   reflection: any
   reflectionA: any
   r109074 = JSON.parse(sessionStorage.getItem("r109074"))
@@ -49,7 +48,6 @@ export class S109074Page implements OnInit {
     this.startTime = Date.now();
 
 
-    // multistep wizard
     $(document).ready(function () {
       // var base_color = "rgb(230,230,230)";
       // var active_color = "rgb(237, 40, 70)";
@@ -127,28 +125,8 @@ export class S109074Page implements OnInit {
         "fill",
         base_color
       );
-      // second
-      $("#svg_form_time rect").css("fill", active_color);
-      $("#svg_form_time circle").css("fill", active_color);
-      $("#prev").removeClass("disabled");
-      if (child >= length) {
-        $(this).addClass("disabled");
-        $('#submit').removeClass("disabled");
-      }
-      if (child <= length) {
-        child++;
-      }
-      var circle_child = child + 1;
-      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
-        "fill",
-        base_color
-      );
-      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
-        "fill",
-        base_color
-      );
 
-      // third
+      // first
       $("#svg_form_time rect").css("fill", active_color);
       $("#svg_form_time circle").css("fill", active_color);
       $("#prev").removeClass("disabled");

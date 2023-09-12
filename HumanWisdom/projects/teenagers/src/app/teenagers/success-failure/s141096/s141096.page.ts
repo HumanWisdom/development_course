@@ -10,9 +10,9 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S141096Page implements OnInit {
 
-  bg_tn = "bg_green_yellow"
-  bg_cft = "bg_green_yellow"
-  bg = "comparison_envy_w8"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
+  bg="light_blue_w10"
   hint = "This could be when you wanted something someone had and felt jealous, or were better than someone, and felt really good"
   toc = "/success-failure/s141001"
   path = this.router.url

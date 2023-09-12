@@ -1,0 +1,12 @@
+<app-course-header [toc]="toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+ 
+ <app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Well done for completing this module. How are you going to apply what you have learned to your life? Keep reviewing this module as you travel through life. Write what you are learning in your journal and share your thoughts on the forum.
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text> 
+ 
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

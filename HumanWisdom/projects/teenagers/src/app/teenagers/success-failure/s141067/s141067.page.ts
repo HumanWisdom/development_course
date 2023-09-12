@@ -11,9 +11,9 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S141067Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_green_yellow"
-  bg_cft="bg_green_yellow"
-  bg="comparison_envy_w1"
+  bg_tn="bg_light_blue"
+  bg_cft="bg_light_blue"
+  bg="light_blue_w10"
 
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
@@ -24,7 +24,7 @@ export class S141067Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark=0
-  toc="success/s141001"
+  toc="success-failure/s141001"
   path=this.router.url
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
  

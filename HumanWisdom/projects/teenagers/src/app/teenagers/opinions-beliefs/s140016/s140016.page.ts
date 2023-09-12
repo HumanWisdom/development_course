@@ -109,7 +109,7 @@ export class S140016Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/adults/comparison/s3'])
+    this.router.navigate(['/opinions-beliefs/s140015'])
   }
 
   ngOnDestroy()

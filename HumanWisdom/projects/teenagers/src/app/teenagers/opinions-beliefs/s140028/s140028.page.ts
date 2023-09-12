@@ -13,7 +13,7 @@ export class S140028Page implements OnInit {
   bg_tn = "bg_purple_red"
   bg_cft = "bg_purple_red"
   bg = "purple_red_w4"
-  hint=""
+  hint="For example, the divisions seen around the abortion debate in America, or between the Shias and Sunnis."
 
   toc = "/opinions-beliefs/s140001"
   path = this.router.url

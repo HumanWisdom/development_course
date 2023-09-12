@@ -13,7 +13,7 @@ export class S140014Page implements OnInit {
   bg_tn = "bg_purple_red"
   bg_cft = "bg_purple_red"
   bg = "purple_red_w11"
-  hint = " Why are you attached to your opinions, which are not yours anyway?  "
+  hint = "Why are you attached to your opinions, which are not yours anyway?"
   toc = "/opinions-beliefs/s140001"
   path = this.router.url
 
@@ -27,7 +27,7 @@ export class S140014Page implements OnInit {
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1778
+  rId = 1846
   reflection: any
   reflectionA: any
   r140014 = JSON.parse(sessionStorage.getItem("r140014"))
