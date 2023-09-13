@@ -12,7 +12,7 @@ export class S109066Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w2" 
+  bg="blue_w1" 
   
   toc="meditation/s109001"
   userId:any
@@ -66,7 +66,7 @@ export class S109066Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark109066",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark109060",JSON.stringify(this.bookmark))
   }
 
   createScreen()

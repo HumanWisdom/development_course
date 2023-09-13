@@ -1,0 +1,29 @@
+<app-transcript-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Any strong emotion, like stress, anxiety or anger can cloud our judgment and influence our decision making.
+          </p>
+
+          <p>
+            When our emotions are running high, like when we're angry, we can make decisions without considering all the options - a sort of knee jerk reaction.
+          </p>
+
+          <p>
+            If we are anxious, we may not go to school sometimes, or not go out to meet friends.
+          </p>
+
+          <p>
+            It is common sense to postpone any decisions to when we are feeling more calm.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -14,7 +14,7 @@ export class S141023Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w9"
   hint = "  What are your ideas of what it's like to be successful on the inside?  "
-  toc = "/success-failure/s131001"
+  toc = "/success-failure/s141001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);

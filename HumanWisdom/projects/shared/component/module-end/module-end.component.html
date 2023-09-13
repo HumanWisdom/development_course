@@ -1,15 +1,15 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_03" role="main">				
-    <!-- Class -->  
+<div class="right_col mc_03" role="main">
+    <!-- Class -->
     <div class="cw100p">
       <div class="row center_flex">
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
           <div class="x_panel p0">
             <div class="x_content tcenter p0">
-              <form>                
-                
+              <form>
+
                 <div class="row me_box center_flex safari_dblock">
                   <div class="col-md-4 col-sm-4 col-xs-4 p0">
                     <button class="" (click)="routeJournal()" >
@@ -23,11 +23,11 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h1 class="txt22 tcenter pt10px_so">
                           Fill your journal
-                        </h1>           
+                        </h1>
                       </div>
                     </button>
                   </div>
-  
+
                   <div class="col-md-4 col-sm-4 col-xs-4 p0">
                     <button class="" (click)="routeForum()">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -40,7 +40,7 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h1 class="txt22 tcenter pt10px_so">
                           Join a discussion
-                        </h1>           
+                        </h1>
                       </div>
                     </button>
                   </div>
@@ -57,11 +57,11 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <h1 class="txt22 tcenter pt10px_so">
                         Consult a coach
-                      </h1>           
+                      </h1>
                     </div>
                   </div>
                    -->
-                   
+
                    <div class="col-md-4 col-sm-4 col-xs-4 p0">
                     <button class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" (click)="shareIndex()">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -69,11 +69,11 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_share.svg" alt="">
                         </button>
                       </div>
-                    
+
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h1 class="txt22 tcenter pt10px_so">
                           Share with friends
-                        </h1>   
+                        </h1>
                       </div>
                     </button>
                   </div>
@@ -84,33 +84,33 @@
                 </h6> -->
 
                 <app-certification [isModuleCompleted]="isModuleCompleted"  [moduleName]="currentModuleName"></app-certification>
-                
+
                 <div class="row certificate-share-btn" [ngStyle]="{'display': !isShowDownload? 'none' : 'block'}">
                   <div class="col-md-6 col-sm-6 col-xs-6">
-                    <button type="button"  (click)="saveAsPDF(false)" class="btn btn_se " data-dismiss="modal">Download</button>  
+                    <button type="button"  (click)="saveAsPDF(false)" class="btn btn_se " data-dismiss="modal">Download</button>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <button type="button" (click)="saveAsPDF(true)"  class="btn mb0 btn_se" data-dismiss="modal">Share</button>
                   </div>
                 </div>
-                  
+
                 <div>
-                  <div class="row center_flex safari_dblock mt30px " *ngIf="9 == programType;else OtherModule">                  
+                  <div class="row center_flex safari_dblock mt30px " *ngIf="9 == programType;else OtherModule">
                     <a (click)="proceed()">
                       <div class="col-md-12 col-sm-12 col-xs-12 tcenter prelative float_none" >
-                        
+
                         <img [src]="moduleImg"  class="module_img w100" alt="">
-                        
+
                         <div class="me_overlay"></div>
-    
+
                         <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 me_module_title">
                           {{sectionName}}
                         </h6>
-    
+
                         <h6 class="fw_500 fs_20px lh_130p fc_ffffff me_session_title">
                           {{moduleName}}
                         </h6>
-    
+
                         <!-- <div>
                           <button type="button" class="btn btn-success mb0 btn_se me_module_btn" data-dismiss="modal">Continue to this module</button>
                         </div> -->
@@ -118,20 +118,20 @@
                     </a>
                   </div>
                   <ng-template #OtherModule>
-                    <div class="row me_next_module center_flex safari_dblock">                  
+                    <div class="row me_next_module center_flex safari_dblock">
                       <a (click)="ContinueToThisModule()">
                         <div class="col-md-10 col-sm-10 col-xs-10 tcenter p0 prelative float_none" >
                           <img [src]="moduleImg"  class="module_img w100" alt="">
                           <div class="me_overlay"></div>
-      
+
                           <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 me_module_title">
                               {{sectionName}}
                           </h6>
-      
+
                           <h6 class="fw_500 fs_20px lh_130p fc_ffffff me_session_title">
                               {{moduleName}}
                           </h6>
-      
+
                           <!-- <div>
                             <button type="button" class="btn btn-success mb0 btn_se me_module_btn" data-dismiss="modal">Continue to this module</button>
                           </div> -->
@@ -143,25 +143,25 @@
 
                 <div class="row mt20px mb30px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <button type="button" class="btn btn-success mb0 btn_se" data-dismiss="modal" (click)="ContinueToThisModule()">Continue to this module</button>
+                    <button type="button" class="btn btn-success mb0 btn_se" data-dismiss="modal" (click)="proceed()">Continue to this module</button>
                   </div>
                 </div>
-                
+
                 <!-- related modules -->
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow tleft">
-  
+
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of moduleList">
                       <a (click)="routeResume(item['id'],item['link'])">
                         <div class="row box_v3_04">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-  
+
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <img src="{{item['image']}}" class="img-responsive">
                               </div>
                             </div>
-  
+
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
@@ -169,7 +169,7 @@
                                 </h4>
                               </div>
                             </div>
-  
+
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
@@ -177,7 +177,7 @@
                                 </h4>
                               </div>
                             </div>
-  
+
                           </div>
                         </div>
                       </a>
@@ -186,17 +186,17 @@
                   </div>
                 </div>
                 <!-- /related modules -->
-                
+
                 <div class="pagebreak"></div>
-                
+
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--/Class --> 
+    <!--/Class -->
   </div>
   <!-- /page content -->
-  
+
   <app-bottom-navigation [programType]="programType"></app-bottom-navigation>

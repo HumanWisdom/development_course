@@ -196,7 +196,7 @@ export class ForumLandingPage implements OnInit {
 
   postnavigate(item) {
     this.serivce.postdataSource.next(item);
-    this.router.navigateByUrl('/forum/forum-thread',{ state: { programType: this.programType }});
+    this.router.navigateByUrl('/forum/forum-thread/',item.PostID);
   }
 
   onFocusOutEvent(){
@@ -205,6 +205,24 @@ export class ForumLandingPage implements OnInit {
        this.posts = this.serivce.FormatForumPostData(res);
       }
     });
+  }
+
+  shareOnThread(item){
+      this.path = "http://humanwisdom.me/forum/forum-thread/"+item.PostID;
+    // } else {
+    //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
+    // }
+
+    this.ngNavigatorShareService.share({
+      title: 'HumanWisdom Program',
+      text: 'Hey, check out the HumanWisdom Program',
+      url: this.path
+    }).then((response) => {
+      console.log(response);
+    })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   gotToProfile(item){

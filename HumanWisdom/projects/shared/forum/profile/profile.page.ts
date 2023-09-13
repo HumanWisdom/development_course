@@ -71,6 +71,26 @@ export class ProfilePage implements OnInit {
     this.getAllPosts(2, this.userId);
   }
 
+  
+  shareOnThread(item){
+    this.path = "http://humanwisdom.me/forum/forum-thread/"+item.PostID;
+  // } else {
+  //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
+  // }
+
+  this.ngNavigatorShareService.share({
+    title: 'HumanWisdom Program',
+    text: 'Hey, check out the HumanWisdom Program',
+    url: this.path
+  }).then((response) => {
+    console.log(response);
+  })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
   share() {
     if (this.urlT) {
       console.log("url")
@@ -175,7 +195,8 @@ export class ProfilePage implements OnInit {
     if (this.isLoggedIn) {
       this.forumService.likePost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
         if (res) {
-          this.getAllPosts(2, this.userId);
+          this.posts[index].PostLikeCount = res;
+          this.posts[index].Liked = this.posts[index].Liked == "1" ? "0" : "1";
         }
       });
     } else {

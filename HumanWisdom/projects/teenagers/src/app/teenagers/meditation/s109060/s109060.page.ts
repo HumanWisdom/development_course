@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
@@ -8,27 +8,31 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s109060.page.html',
   styleUrls: ['./s109060.page.scss'],
 })
-export class S109060Page implements OnInit {
+export class S109060Page implements OnInit,OnDestroy {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
-  bg="blue_w9" 
-  
-  toc="meditation/s109001"
+  bg="blue_w8"
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/meditation/videos/2.2.mp4'  
+  title="Tips for meditation"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/meditation/meditation_06.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("text")
+  screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=109060
   startTime:any
   endTime:any
-  totalTime:any
+  totalTime:any 
+  toc="meditation/s109001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
+  avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
- 
+
   constructor
   (
     private router: Router,
@@ -41,7 +45,6 @@ export class S109060Page implements OnInit {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
-    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -76,9 +79,7 @@ export class S109060Page implements OnInit {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      { 
-      })
+    }).subscribe(res=>{})
   }
 
   submitProgress()
@@ -86,29 +87,24 @@ export class S109060Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     this.router.navigate(['/meditation/s109061'])
-    this.service.submitProgressText({
+    this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime
+      "timeSpent":this.totalTime,
+      "avDuration":this.avDuration
     }).subscribe(res=>
       { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      },
-      error=>{console.log(error)},
-      ()=>{
-        //this.router.navigate(['/adults/conditioning/s234'])
       })
   }
-
   prev()
   {
     this.router.navigate(['/meditation/s109059'])
   }
-
   ngOnDestroy()
   {}
 

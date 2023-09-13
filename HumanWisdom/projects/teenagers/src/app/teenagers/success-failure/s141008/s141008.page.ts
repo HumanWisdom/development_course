@@ -14,7 +14,7 @@ export class S141008Page implements OnInit {
   bg_cft = "bg_light_blue"
   bg = "light_blue_w6"
   hint=""
-  toc = "/success-failure/s48001"
+  toc = "/success-failure/s141001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
