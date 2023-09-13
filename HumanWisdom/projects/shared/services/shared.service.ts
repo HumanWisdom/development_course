@@ -9,4 +9,18 @@
     
   constructor() {
   }
+    
+  public static setDataInLocalStorage(key:string,value:string){
+    if(key && key !=null){
+      localStorage.setItem(key,value);
+    }
+  }
+
+  public static getDataFromLocalStorage(key){
+     if(key && key!=null ){
+      return localStorage.getItem(key);
+     }
+     return null;
+  }
+
 }

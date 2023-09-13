@@ -300,6 +300,10 @@ const routes: Routes = [
     loadChildren: () => import('./podcast/podcast.module').then(m => m.PodcastModule)
   },
   {
+    path: 'subscription',
+    loadChildren: () => import('../adults/subscription/subscription.module').then(m => m.SubscriptionModule)
+  },
+  {
     path: 'podcast/:tag',
     loadChildren: () => import('./podcast/podcast.module').then(m => m.PodcastModule),
   },
