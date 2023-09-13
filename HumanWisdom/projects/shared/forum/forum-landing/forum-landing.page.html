@@ -60,16 +60,18 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex m-bottom ">
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                     <!-- <select (change)="onChange($event)" name="threadlist" class="form-select forum_v3_select_all_threads" [(ngModel)]="selectthread">
                       <option *ngFor="let titl of threadlist" [ngValue]="titl.value">{{titl.label}}</option>
                     </select> -->
                     <!-- choose category -->
-                    <button type="button" class="btn btn_all_threads" data-toggle="modal" data-target="#choose_category">                      
-                      All threads
-                      <i class="fa fa-angle-down ml10px pt3px"></i>
+                    <div class="row">
+                    <button type="button"  class="btn btn_all_threads btn-thread" data-toggle="modal"
+                      data-target="#choose_category" [innerText]="buttonText">                                        
                     </button>
+                    <i data-toggle="modal" data-target="#choose_category" class="fa fa-angle-down btn-down"></i>   
+                  </div>
                     <!-- /choose category -->
                   </div>
 
@@ -81,11 +83,6 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <hr class="hr_style_v3_05 mtb20px">
-                </div>
-              </div>              
 
               <!-- post -->
               <div class="div_forum_post">
