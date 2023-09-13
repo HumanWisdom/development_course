@@ -14,8 +14,8 @@ export class S128070Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w11" 
   title="Explore fasting  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/food-health/audios/2.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/food-health/audios/food-health+2.4.mp3'
   transcriptPage="food-health/s128070t"
   toc="food-health/s128001"
   bookmark=0

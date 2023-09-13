@@ -15,8 +15,8 @@ export class S128065Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w4"
   title=" How do you break a food habit? "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/food-health/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/food-health/audios/food-health+2.2.mp3'
   transcriptPage="food-health/s128065t"
   toc= "food-health/s128001"
   bookmark=0

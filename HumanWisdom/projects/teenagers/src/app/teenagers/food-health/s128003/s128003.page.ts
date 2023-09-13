@@ -15,8 +15,8 @@ export class S128003Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w1"
   title="Introduction "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/food-health/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/food-health/audios/food-health+1.1.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
         "Nurture a quiet mind",
