@@ -168,12 +168,12 @@ export class S27Page implements OnInit
   {
     if(this.sessionOption27.includes(id))
     {
-      // document.getElementById(divid).style.backgroundColor = '#FFC455';
+      //document.getElementById(divid).style.backgroundColor = '#E58D82';
       return true
     }
     else 
     {
-      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.75)';
+      // document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
       return false
     }
   }

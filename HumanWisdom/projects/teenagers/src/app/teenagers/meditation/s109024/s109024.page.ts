@@ -18,7 +18,7 @@ export class S109024Page implements OnInit {
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber="109024"
+  screenNumber=109024
   startTime:any
   endTime:any
   totalTime:any
@@ -26,8 +26,7 @@ export class S109024Page implements OnInit {
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))  
  
   constructor(
     private router: Router,
@@ -35,12 +34,13 @@ export class S109024Page implements OnInit {
     private location:Location
   ) { }
  ngOnInit() {
-   // multistep wizard
-   $( document ).ready(function() {
+
+  // multistep wizard
+  $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+   var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
     var i;
     
@@ -91,14 +91,10 @@ export class S109024Page implements OnInit {
     
     $('#svg_form_time rect').css('fill',base_color);
     $('#svg_form_time circle').css('fill',base_color);
-    $("circle:nth-of-type(1)").css("fill", active_color);
-    
-    
-   
-      
-    
+    $("circle:nth-of-type(1)").css("fill", active_color);  
   });
   // /multistep wizard
+
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
     
@@ -109,12 +105,13 @@ export class S109024Page implements OnInit {
     this.startTime = Date.now();
   
     this.startTime = Date.now();
+
     
     if(JSON.parse(sessionStorage.getItem("bookmark109024"))==0)
       this.bookmark=0
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark109024"))==1)
       this.bookmark=1
-    
+
   }
   receiveBookmark(e)
   {
@@ -135,8 +132,7 @@ createScreen(){
       {
         
       })
-    
- 
+     
   }
 
   submitProgress(){
@@ -154,31 +150,25 @@ createScreen(){
       {
         
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))   
+     
       },
       error=>{console.log(error)},
       ()=>{
-        
+      
+       // this.router.navigate(['/meditation/s109024p1'])
       })
     
 
   }
   prev(){
     this.router.navigate(['/meditation/s109023'])
-  }
-
-  goNext(){
-   
-  }
+  }  
 
   ngOnDestroy(){
-    
-
-
 
   }
+ 
 
-  
-
+ 
 }
-

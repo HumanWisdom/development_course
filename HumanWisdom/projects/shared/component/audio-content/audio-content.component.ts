@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
-
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'app-audio-content',
   templateUrl: './audio-content.component.html',
-  styleUrls: ['./audio-content.component.scss'],
+  styleUrls: [ ProgramType.Adults == SharedService.ProgramId ?  './audio-content.component.scss' : './audio-content-teenager.component.scss']
 })
 export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   yellow = "#FFC455"
@@ -20,7 +21,7 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
   t: any
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   localStorageFreeScreens = localStorage.getItem("freeScreens");
-  freeScreens = this.localStorageFreeScreens!= "undefined" ? JSON.parse(this.localStorageFreeScreens) : "";
+  freeScreens = this.localStorageFreeScreens != "undefined" ? JSON.parse(this.localStorageFreeScreens) : "";
   scrId: any
   @ViewChild('audio') audio;
   @ViewChild('screen', { static: true }) screen: any;
@@ -93,8 +94,8 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
-  gotoTranscript(){
-    const url = this.router.url+"t";
+  gotoTranscript() {
+    const url = this.router.url + "t";
     this.router.navigate([url]);
   }
 

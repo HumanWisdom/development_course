@@ -14,7 +14,7 @@ describe('S109073Page', () => {
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(S109072Page);
+    fixture = TestBed.createComponent(S109073Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

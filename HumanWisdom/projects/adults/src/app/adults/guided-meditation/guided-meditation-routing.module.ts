@@ -22,94 +22,94 @@ import { S51013Page } from './s51013/s51013.page';
 
 const routes: Routes = [
   {
-    path: '',    
+    path: '',
      component: S51000Page,
-  }, 
+  },
   {
-    path: 's51000',    
-   canActivate:[ActiveGuard],  
+    path: 's51000',
+   canActivate:[ActiveGuard],
     component: S51000Page,
   },   {
 
     path: 's51001',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51001Page,
   },
   {
     path: 's51002',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51002Page,
-  },  
+  },
   {
     path: 's51003',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51003Page,
-  },  
+  },
   {
     path: 's51004',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51004Page,
-  },  
+  },
   {
     path: 's51005',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51005Page,
-  },  
+  },
   {
     path: 's51006',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51006Page,
   },
   {
     path: 's51006p1',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51006p1Page,
-  },    
+  },
   {
     path: 's51006p2',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51006p2Page,
-  },    
+  },
   {
     path: 's51012',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51012Page,
   },
   {
     path: 's51013',
-   canActivate:[ActiveGuard],  
+   canActivate:[ActiveGuard],
     component: S51013Page,
   },
   {
     path: 's51006p3',
-    canActivate:[ActiveGuard],  
+    canActivate:[ActiveGuard],
     component: S51006p3Page,
   },
   {
     path: 's51006p4',
-    canActivate:[ActiveGuard],  
+    canActivate:[ActiveGuard],
     component: S51006p4Page,
   },
   {
     path: 's51006p5',
-    canActivate:[ActiveGuard],  
+    canActivate:[ActiveGuard],
     component: S51006p5Page,
   },
   {
     path: 's51006p6',
-    canActivate:[ActiveGuard],  
+    canActivate:[ActiveGuard],
     component: S51006p6Page,
   },
   {
     path: 's51006p7',
-    canActivate:[ActiveGuard],  
+    canActivate:[ActiveGuard],
     component: S51006p7Page,
   },
   {
-    path: 'audiopage/:audiolink/:title/:RowId',
+    path: 'audiopage/:audiolink/:title/:RowId/:type',
     component: AdultsAudioMeditationComponent
   },
-  
+
 ];
 
 @NgModule({

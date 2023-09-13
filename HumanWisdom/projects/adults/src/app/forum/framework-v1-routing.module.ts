@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/forum/forum-landing/forum-landing.module').then( m => m.ForumLandingPageModule)
   },
   {
-    path: 'forum-thread',
+    path: 'forum-thread/:sharedPostId',
     loadChildren: () => import('../../../../shared/forum/forum-thread/forum-thread.module').then( m => m.ForumThreadPageModule)
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/forum/forum-thread-start-new/forum-thread-start-new.module').then( m => m.ForumThreadStartNewPageModule)
   },
   {
-    path: 'profile',
+    path: 'profile/:userId',
     loadChildren: () => import('../../../../shared/forum/profile/profile.module').then( m => m.ProfilePageModule)
   },
 ];

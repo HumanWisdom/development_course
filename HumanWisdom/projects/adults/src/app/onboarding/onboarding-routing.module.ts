@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authLoginGuard } from '../auth-login.guard';
 import { AuthGuard } from '../auth.guard';
+import { EnableRouteGuard } from '../enable-route.guard';
 
 const routes: Routes = [
   {
@@ -68,7 +69,8 @@ const routes: Routes = [
   },
   {
     path: 'user-profile',
-    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule),
+    canActivate:[EnableRouteGuard]
   },
   {
     path: 'set-password',
@@ -90,7 +92,7 @@ const routes: Routes = [
     path: 'payment-details',
     loadChildren: () => import('./duplicate-subscription-payment/duplicate-subscription-payment.module').then(m => m.DuplicateSubscriptionPaymentModule)
   },
-  
+
 ];
 
 @NgModule({

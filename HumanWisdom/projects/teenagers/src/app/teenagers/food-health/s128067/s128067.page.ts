@@ -14,8 +14,8 @@ export class S128067Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w2" 
   title="Question your narratives or internal beliefs around food"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/food-health/audios/2.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/food-health/audios/food-health+2.3.mp3'
   transcriptPage="food-health/s128067t"
   toc="food-health/s128001"
   bookmark=0
