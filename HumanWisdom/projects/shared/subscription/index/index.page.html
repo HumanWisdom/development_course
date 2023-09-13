@@ -175,7 +175,7 @@
               </a>
 
               <a class="" (click)="SelectSubscriptionType('Monthly')" > 
-                <div class="row div_monthly mt15px" >
+                <div class="row div_monthly mt15px"  [ngClass]="{'adult-selected-plan-border': SelectedSubscription === 'Monthly'}">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                     <div class="row mb5px">
@@ -210,7 +210,7 @@
               </div>
 
               <a class="">
-                <div class="row div_monthly" [ngClass]="{'adult-selected-plan-border': SelectedSubscription === 'Monthly'}">
+                <div class="row div_monthly">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
                       Redeem subscription code
