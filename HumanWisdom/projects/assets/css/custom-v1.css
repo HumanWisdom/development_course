@@ -220,3 +220,21 @@ margin-bottom: 8%;
 }
 /* /certficate */
 
+/* /forum */
+.m-bottom{
+  margin-bottom: 3rem; 
+}
+.btn-down{
+  color:#E8A880;
+  background: transparent;
+  cursor: pointer;
+  padding-left: 9px;
+  font-size: 16px;
+}
+.btn-thread{
+  display: contents!important;
+}
+.choose-category-popup{
+  top: 40%;
+}
+
