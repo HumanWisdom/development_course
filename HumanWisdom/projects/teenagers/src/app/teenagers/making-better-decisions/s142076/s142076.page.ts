@@ -18,7 +18,7 @@ export class S142076Page implements OnInit
   userName:any
   progressPercent:any
   progressText="1/9"
-  link="/making-better-decisions/s142076"
+  link="/making-better-decisions/s142077"
   name="#2  Four ways comparison impacts our life"
   progressImg=""
   toc="making-better-decisions/s142001"
