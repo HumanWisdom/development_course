@@ -6,7 +6,7 @@
     public static ProgramId:ProgramType=ProgramType.Adults;
     public static TeenagerBaseUrl:string='https://staging.humanwisdom.me/teenagers/#/';
     public static AdultsBaseUrl:string='https://humanwisdom.me/';
-    
+ 
   constructor() {
   }
     
@@ -16,11 +16,11 @@
     }
   }
 
-  public static getDataFromLocalStorage(key){
+  public static getDataFromLocalStorage(key:string) : string{
      if(key && key!=null ){
       return localStorage.getItem(key);
      }
-     return null;
+     return  null;
   }
 
 }

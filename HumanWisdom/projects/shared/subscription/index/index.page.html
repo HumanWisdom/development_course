@@ -129,11 +129,11 @@
                 </div>
               </div>
 
-              <a class="" (click)="SelectSubscriptionType('Annual')">
+              <a class="" (click)="SelectSubscriptionType(Annual)">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                    <div class="row div_best_value">
+                    <div class="row div_best_value" [ngClass]="{'adult-best-value-annual': selectedSubscription === Annual}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_500 lh_140p fc_ffffff">
                           Best value
@@ -141,7 +141,7 @@
                       </div>
                     </div>
 
-                    <div class="div_annual" [ngClass]="{'adult-selected-plan-border': SelectedSubscription === 'Annual'}">
+                    <div class="div_annual" [ngClass]="{'adult-selected-plan-border': selectedSubscription === Annual}">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
@@ -174,8 +174,8 @@
                 </div>
               </a>
 
-              <a class="" (click)="SelectSubscriptionType('Monthly')" > 
-                <div class="row div_monthly mt15px"  [ngClass]="{'adult-selected-plan-border': SelectedSubscription === 'Monthly'}">
+              <a class="" (click)="SelectSubscriptionType(Monthly)" > 
+                <div class="row div_monthly mt15px"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Monthly}">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                     <div class="row mb5px">
@@ -209,8 +209,8 @@
                 </div>
               </div>
 
-              <a class="">
-                <div class="row div_monthly">
+              <a class="" (click)="SelectSubscriptionType(Redeem)">
+                <div class="row div_monthly"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Redeem}">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
                       Redeem subscription code
@@ -254,7 +254,7 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
       <a>
-        <button type="button" class="btn btn_tfas">
+        <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas">
           Try free and subscribe
         </button>
       </a>

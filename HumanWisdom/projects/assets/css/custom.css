@@ -34020,7 +34020,6 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_best_value
 {
   border-radius: 16px 16px 0px 0px;
-
   text-align: center;
   padding: 8px 10px;
 }
