@@ -14,8 +14,9 @@ export class S119063Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2" 
   title="What are the benefits of letting go of our attachment?  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/identity/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/identity/audios/identity+3.2.mp3'
+
   transcriptPage="identity/s119063t"
   toc="identity/s119001"
   bookmark=0
