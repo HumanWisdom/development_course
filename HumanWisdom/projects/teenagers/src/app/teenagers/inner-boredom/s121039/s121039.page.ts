@@ -14,8 +14,8 @@ export class S121039Page implements OnInit,OnDestroy
   bg_cft="bg_purple_blue"
   bg="purple_blue_w3"
   title="How can we face our emptiness?  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/inner-boredom/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+2.2.mp3'
   transcriptPage="inner-boredom/s121039t"
   toc="inner-boredom/s121001"
   bookmark=0

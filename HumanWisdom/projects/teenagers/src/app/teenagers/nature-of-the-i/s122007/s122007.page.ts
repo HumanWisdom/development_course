@@ -14,8 +14,8 @@ export class S122007Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w2" 
   title="How is the ‘I’ formed?  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/nature-of-the-i/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+1.3.mp3'
   transcriptPage="nature-of-the-i/s122007t"
   toc="nature-of-the-i/s122001"
   bookmark=0
