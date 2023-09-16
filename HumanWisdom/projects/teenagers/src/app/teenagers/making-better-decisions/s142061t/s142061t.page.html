@@ -1,0 +1,29 @@
+<app-transcript-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            At the core of our thinking is our self-interest. We may not be aware of it, or not want to acknowledge it because we don’t like to think of ourselves as ‘selfish’. But it influences all our decisions if you take the care to notice. It is not wrong - but being aware of it operating in us allows us to make the right choices for ourselves and others.
+          </p>
+
+          <p>
+            Notice when you meet people - the voice in your head may be saying ‘What's in it for me?’ Just notice it without justifying it or being critical.
+          </p>
+
+          <p>
+            At school, notice when someone asks you to play a game or go somewhere, how you feel an initial resistance, and want them to play your favourite game instead.
+          </p>
+
+          <p>
+            It is just a fact of being human - being aware of it allows us to make the unconscious - conscious - so we can be aware of what is happening in our own thinking and decide what the right thing to do is.
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -15,7 +15,7 @@ export class S140037Page implements OnInit,OnDestroy {
   bg="purple_red_w12"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   videoLink=this.mediaVideo+'/opinions-beliefs/videos/1.5.mp4'  
-  title="How do we meet someone different, with intelligence?  "
+  title="How do opinions impact listening? "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/opinions_&_beliefs/opinions_&_beliefs_05.jpg"
   
   userId:any

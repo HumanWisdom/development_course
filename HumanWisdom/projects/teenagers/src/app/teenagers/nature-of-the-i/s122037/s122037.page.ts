@@ -14,8 +14,8 @@ export class S122037Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w2" 
   title="#5 The ‘I’ seeks to strengthen itself  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/nature-of-the-i/audios/1.10.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+1.11.mp3' 
   transcriptPage="nature-of-the-i/s122037t"
   toc="nature-of-the-i/s122001"
   bookmark=0

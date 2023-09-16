@@ -18,11 +18,14 @@ export class ForumThreadStartNewPage implements OnInit {
     userimage: null,
     username: '',
   };
+  buttonText:string ="Mental health"
+  imageUrl: string | ArrayBuffer | null = null;
   isChecked = false;
   categoryList: any = [];
   fileToUpload: File = null;
   @ViewChild('postModal') postModal: any;
   @ViewChild('checkboxSelect') checkboxSelect: any;
+  @ViewChild('closeCategory') closeCategory: any;
   programType: ProgramType.Adults;
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
     this.userID = localStorage.getItem('userId');
@@ -91,6 +94,7 @@ export class ForumThreadStartNewPage implements OnInit {
   }
 
   getFileUpload(event) {
+    this.imageUrl = null;
     const files = event.target.files;
     if (files.length === 0)
       return;
@@ -104,6 +108,7 @@ export class ForumThreadStartNewPage implements OnInit {
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       let byte: any = reader.result;
+      this.imageUrl=_event.target.result;
       byte = byte.split('base64,')
       if (byte[1] !== undefined && byte[1] !== '') {
       this.fileToUpload = byte[1];
@@ -111,5 +116,18 @@ export class ForumThreadStartNewPage implements OnInit {
     }
   }
 
+  closeCategoryModal(){
+    this.closeCategory.nativeElement.click();
+  }
+  filterBasedOnTags(value){
+    this.selectedOption = parseInt(value);
+    const data = this.categoryList.filter(x=>x.value== this.selectedOption);
+    if(data!=null && data.length>0){
+      this.buttonText =  data[0].label;
+    }
+    setTimeout(() => {
+      this.closeCategoryModal();
+    }, 100);
+  }
 
 }

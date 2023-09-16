@@ -219,6 +219,14 @@ const routes: Routes = [
     path: 'opinions-beliefs',
     loadChildren: () => import('./teenagers/opinions-beliefs/opinions-beliefs.module').then(m => m.OpinionsBeliefsModule)
   },
+  {
+    path: 'success-failure',
+    loadChildren: () => import('./teenagers/success-failure/success-failure.module').then(m => m.SuccessFailureModule)
+  },
+  {
+    path: 'making-better-decisions',
+    loadChildren: () => import('./teenagers/making-better-decisions/making-better-decisions.module').then(m => m.MakingBetterDecisionsModule)
+  }
 ];
   
 

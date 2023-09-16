@@ -115,8 +115,9 @@ export class S95023Page implements OnInit {
     {
       // var base_color = "rgb(95023,95023,95023)";
       // var active_color = "rgb(237, 40, 70)";
-      var base_color = "rgba(255,255,255,0.2)";
-      var active_color = "#60A757";
+     var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
+
       var i;
       var child = 1;
       var length = $("section").length - 1;

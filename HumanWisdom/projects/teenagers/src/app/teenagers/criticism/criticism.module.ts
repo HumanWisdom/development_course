@@ -75,6 +75,8 @@ import { S136057tPage } from './s136057t/s136057t.page';
 import { S136058Page } from './s136058/s136058.page';
 import { S136058tPage } from './s136058t/s136058t.page';
 import { S136059Page } from './s136059/s136059.page';
+import { S136059tPage } from './s136059t/s136059t.page';
+import { S136060Page } from './s136060/s136060.page';
 import { S136060tPage } from './s136060t/s136060t.page';
 import { S136061Page } from './s136061/s136061.page';
 import { S136062Page } from './s136062/s136062.page';
@@ -142,8 +144,13 @@ import { S136109Page } from './s136109/s136109.page';
 import { S136110Page } from './s136110/s136110.page';
 import { S136111Page } from './s136111/s136111.page';
 import { S136112Page } from './s136112/s136112.page';
-import { S136060Page } from './s136060/s136060.page';
-import { S136059tPage } from './s136059t/s136059t.page';
+import { S136113Page } from './s136113/s136113.page';
+import { S136114Page } from './s136114/s136114.page';
+import { S136115Page } from './s136115/s136115.page';
+import { S136116Page } from './s136116/s136116.page';
+
+
+
 import { TeenagersService } from '../teenagers.service';
 
 @NgModule({
@@ -286,6 +293,10 @@ S136109Page,
 S136110Page,
 S136111Page,
 S136112Page,
+S136113Page,
+S136114Page,
+S136115Page,
+S136116Page,
   ],
   imports: [
     CommonModule,

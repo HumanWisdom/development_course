@@ -1,0 +1,34 @@
+<app-transcript-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We often make decisions on incomplete information and that makes for bad decisions.
+            It is worth pausing to ask if you have all the facts to hand before deciding. 
+          </p>
+
+          <p>
+            For example, when choosing which subject to study in senior school, you may assume that its going to be harder work than it is, or assume you are not capable - and both of those assumptions may not be correct. 
+          </p>
+
+          <p>
+            Or you may assume that taking drugs is harmless and everyone does that - and that may damage your health.
+          </p>
+
+          <p>
+            We also make assumptions about people - for example we may assume someone does not like us, and be mean to them - but that may not be the case.
+          </p>
+
+          <p>
+            Or, when you get upset with someone because they were supposed to call you and didn’t, it is worth finding out why beforehand - they may have met with an unforeseen problem 
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

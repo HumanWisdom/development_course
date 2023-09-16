@@ -14,8 +14,9 @@ export class S119007Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2" 
   title="How is our identity formed?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/identity/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/identity/audios/identity+1.2.mp3'
+
   transcriptPage="identity/s119007t"
   toc="identity/s119001"
   bookmark=0
