@@ -107,7 +107,7 @@ export class S95014Page implements OnInit {
     if (opt.CorrectAns) {
       this.option = opt.OptId
       sessionStorage.setItem("sessionOptions95014", JSON.stringify(this.option))
-      document.getElementById(opt.OptId).style.background = '#FFC455';
+      document.getElementById(opt.OptId).style.background = '#E58D82';
       if (this.falseans !== '') {
         document.getElementById(this.falseans).style.background = '#FFFFFF';
         document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
