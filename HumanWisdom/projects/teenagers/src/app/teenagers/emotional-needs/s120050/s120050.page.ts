@@ -15,8 +15,8 @@ export class S120050Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w12"
   title="Pleasure in relationships  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/emotional-needs/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+2.2.mp3'
   transcriptPage="emotional-needs/s120050t"
   toc="emotional-needs/s120001"
   bookmark=0

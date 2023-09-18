@@ -15,8 +15,8 @@ export class S128032Page implements OnInit,OnDestroy
   bg_cft="bg_green"
   bg="green_w4"
   title=" Food "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/food-health/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/food-health/audios/food-health+1.3.mp3'
   transcriptPage="food-health/s128032t"
   toc="food-health/s128001"
   bookmark=0

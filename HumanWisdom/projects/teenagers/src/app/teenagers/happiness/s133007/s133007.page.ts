@@ -39,8 +39,8 @@ export class S133007Page implements OnInit {
    $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+   var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
     var i;
     
@@ -147,7 +147,7 @@ createScreen(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/happiness/s133006'])
+    this.router.navigate(['/happiness/s133008'])
     if (this.userId === 563) return;
 
     this.service.submitProgressText({
@@ -172,7 +172,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/happiness/s133008'])
+    this.router.navigate(['/happiness/s133006'])
 
 
   }
