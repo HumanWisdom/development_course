@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
@@ -13,8 +13,9 @@ import { ProceedToPaymentPage } from './proceed-to-payment.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ProceedToPaymentPageRoutingModule
+    ProceedToPaymentPageRoutingModule,
   ],
-  declarations: [ProceedToPaymentPage]
+  declarations: [ProceedToPaymentPage],
+  providers:[DatePipe]
 })
 export class ProceedToPaymentPageModule {}

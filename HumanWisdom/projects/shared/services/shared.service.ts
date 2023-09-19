@@ -1,5 +1,4 @@
 
-  import { Injectable } from '@angular/core';
   import {ProgramType} from './../models/program-model';
 
    export class  SharedService {
@@ -22,5 +21,18 @@
      }
      return  null;
   }
+
+  public static setDataInSessionStorage(key:string,value:string){
+    if(key && key !=null){
+      sessionStorage.setItem(key,value);
+    }
+  }
+
+  public static getDataFromSessionStorage(key:string) : string{
+    if(key && key!=null ){
+     return sessionStorage.getItem(key);
+    }
+    return  null;
+ }
 
 }

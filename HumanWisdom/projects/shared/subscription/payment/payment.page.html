@@ -52,42 +52,27 @@
                 </div>
               </div>
 
-              <div class="mtb30px">
-                <div class="row">                    
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="text" id="name" class="sp_fc mb10px fc_name" placeholder="Cardholder’s Name">
+             <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <form id="payment-form">
+                  <div id="payment-element">
+                    <!-- Elements will create form elements here -->
                   </div>
-                </div>
-
-                <div class="row">                    
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="text" id="name" class="sp_fc mb10px" placeholder="Card Number">
+                  <button id="submit" class="btn" >Pay now</button>
+                  <div id="error-message">
+                    <!-- Display error message to your customers here -->
                   </div>
-                </div>
-  
-                <div class="row">                    
-                  <div class="col-md-6 col-sm-6 col-xs-6 pl0px pr5px">
-                    <input type="text" id="name" class="sp_fc mb10px" placeholder="MM/YY">
-                  </div>
-  
-                  <div class="col-md-6 col-sm-6 col-xs-6 pr0px pl5px">
-                    <input type="text" id="name" class="sp_fc mb10px" placeholder="CVV">
-                  </div>
-                </div>
-                
-                <div class="row">                    
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="text" id="name" class="sp_fc" placeholder="Postal code">
-                  </div>
-                </div>
+                </form>
               </div>
+
+             </div>
 
               <div class="row">                    
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
                     Total due today
                     <span class="fs_16px fw_700 lh_140p fc_ffffff">
-                      ₹0.00
+                      {{pricingModel.CurSymbol}} 0.00
                     </span>
                   </h4>
                 </div>
@@ -96,9 +81,9 @@
               <div class="row">                    
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                    Payable on Jul 30, 2023
+                    Payable on {{selectedPlanModel.startingDate}}
                     <span class="fs_16px fw_700 lh_140p fc_ffffff">
-                      ₹12,228.00
+                      {{pricingModel.CurSymbol}}  {{ selectedSubscription == Monthly ?  pricingModel.Monthly :  pricingModel.Annual}}
                     </span>
                   </h4>
                 </div>
@@ -114,7 +99,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <ul class="fs_10px fw_400 lh_150p fc_ffffff_0_7 pl10px">
                     <li class="">
-                      Billing starts at the end of the free trial. Starting on Jul 30, 2023, you’ll be charged ₹12,228.00 automatically every year until you cancel. Your price may change as described in the
+                      Billing starts at the end of the free trial. Starting on {{selectedPlanModel.startingDate}}, you’ll be charged ₹12,228.00 automatically every year until you cancel. Your price may change as described in the
                       <a class="fs_10px fw_400 lh_150p fc_ffffff_0_7 underline">
                         Terms of Service.
                       </a>
@@ -150,7 +135,7 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
       <a>
-        <button type="button" class="btn btn_tfas">
+        <button type="button" class="btn btn_tfas" >
           Save payment details
         </button>
       </a>

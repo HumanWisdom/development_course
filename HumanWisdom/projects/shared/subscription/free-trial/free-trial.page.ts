@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-free-trial',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FreeTrialPage implements OnInit {
 
-  constructor() { }
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  routeToDashboard(){
+    this.router.navigateByUrl('/adults/adult-dashboard');
+  }
+
+  manageSubscription(){
+    this.router.navigateByUrl('/adults/adult-dashboard');
+  }
 }

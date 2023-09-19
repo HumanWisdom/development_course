@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { CommonModule, DatePipe } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +13,10 @@ import { PaymentPage } from './payment.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     PaymentPageRoutingModule
   ],
-  declarations: [PaymentPage]
+  declarations: [PaymentPage],
+  providers:[DatePipe]
 })
 export class PaymentPageModule {}

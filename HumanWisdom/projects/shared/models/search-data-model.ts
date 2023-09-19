@@ -48,3 +48,16 @@ interface ModuleRe {
   MediaPrcnt: string;
   Screen: string;
 }
+
+export interface paymentIntentModel {
+  ProgID:string;
+  PlanID:string;
+  RateID:string;
+  UserID:string;
+  DiscountCode:string;
+}
+
+export interface StripeModel {
+  stripeKey : string;
+  clientSecretId: string;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-failed',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentFailedPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
-
+  routeToIndex(){
+    this.router.navigateByUrl('/adults/subscription/free-trial');
+  }
 }
