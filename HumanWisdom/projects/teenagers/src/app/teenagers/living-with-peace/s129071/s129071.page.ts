@@ -14,8 +14,8 @@ export class S129071Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w2" 
   title="#8 Don’t allow the behavior of others to affect you  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/living-with-peace/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/living-with-peace/audios/living-with-peace+2.10.mp3'
   transcriptPage="living-with-peace/s129071t"
   toc="living-with-peace/s129001"
   bookmark=0

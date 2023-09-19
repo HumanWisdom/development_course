@@ -13,8 +13,8 @@ export class S129013Page implements OnInit,OnDestroy {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/living-with-peace/videos/2.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/living-with-peace/videos/1.2.mp4'  
   title="Why is our mind not at peace?  "
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/living_with_peace/living_with_peace_01.jpg"
   userId:any

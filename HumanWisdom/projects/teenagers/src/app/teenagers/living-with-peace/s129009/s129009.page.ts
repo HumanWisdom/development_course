@@ -13,8 +13,8 @@ export class S129009Page implements OnInit
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w11"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/living-with-peace/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/living-with-peace/audios/living-with-peace+1.1.mp3'
   title="An example  "
   toc="/living-with-peace/s129001"
   transcriptPage="living-with-peace/s129009t"

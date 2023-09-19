@@ -18,12 +18,14 @@ export class ForumThreadStartNewPage implements OnInit {
     userimage: null,
     username: '',
   };
+  buttonText:string ="Mental health"
   imageUrl: string | ArrayBuffer | null = null;
   isChecked = false;
   categoryList: any = [];
   fileToUpload: File = null;
   @ViewChild('postModal') postModal: any;
   @ViewChild('checkboxSelect') checkboxSelect: any;
+  @ViewChild('closeCategory') closeCategory: any;
   programType: ProgramType.Adults;
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
     this.userID = localStorage.getItem('userId');
@@ -114,5 +116,18 @@ export class ForumThreadStartNewPage implements OnInit {
     }
   }
 
+  closeCategoryModal(){
+    this.closeCategory.nativeElement.click();
+  }
+  filterBasedOnTags(value){
+    this.selectedOption = parseInt(value);
+    const data = this.categoryList.filter(x=>x.value== this.selectedOption);
+    if(data!=null && data.length>0){
+      this.buttonText =  data[0].label;
+    }
+    setTimeout(() => {
+      this.closeCategoryModal();
+    }, 100);
+  }
 
 }

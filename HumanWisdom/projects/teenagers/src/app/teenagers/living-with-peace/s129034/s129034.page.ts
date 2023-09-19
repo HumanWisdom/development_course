@@ -14,8 +14,8 @@ export class S129034Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w2" 
   title="Introduction  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/living-with-peace/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/living-with-peace/audios/living-with-peace+2.1.mp3'
   transcriptPage="living-with-peace/s129034t"
   toc="living-with-peace/s129001"
   bookmark=0

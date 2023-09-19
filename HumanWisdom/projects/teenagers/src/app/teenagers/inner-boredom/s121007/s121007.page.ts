@@ -13,8 +13,9 @@ export class S121007Page implements OnInit
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w1"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/inner-boredom/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/inner-boredom/audios/inner-boredom+1.2.mp3'
+
   title="Understanding emptiness  "
   toc="/inner-boredom/s121001"
   transcriptPage="inner-boredom/s121007t"

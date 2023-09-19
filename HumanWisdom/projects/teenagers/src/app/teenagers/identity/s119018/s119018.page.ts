@@ -14,8 +14,8 @@ export class S119018Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2" 
   title="Why do we get attached to our identities? "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/identity/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/identity/audios/identity+1.3.mp3'
   transcriptPage="identity/s119018t"
   toc="identity/s119001"
   bookmark=0

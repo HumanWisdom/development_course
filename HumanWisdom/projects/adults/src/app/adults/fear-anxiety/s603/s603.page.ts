@@ -163,4 +163,9 @@ export class S603Page implements OnInit, AfterViewInit
       }
   }
 
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
+  }
+
 }

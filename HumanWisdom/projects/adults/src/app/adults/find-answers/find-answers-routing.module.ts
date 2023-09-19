@@ -122,6 +122,10 @@ const routes: Routes = [
     path: 'how-can-i-a15',
     loadChildren: () => import('./how-can-i-a15/how-can-i-a15.module').then( m => m.HowCanIA15PageModule)
   },
+  {
+    path: 'how-can-i-a16',
+    loadChildren: () => import('./how-can-i-a16/how-can-i-a16.module').then( m => m.HowCanIA16PageModule)
+  },
 ];
 
 @NgModule({

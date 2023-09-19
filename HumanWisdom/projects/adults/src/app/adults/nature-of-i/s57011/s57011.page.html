@@ -13,19 +13,34 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form class="">
-              <h1 class="txt1 tcenter pb0px mb0px">
+              <div class="row mt10px mb20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" (click)="gotoTranscript()">
+                    <a class="">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt="">
+                    </a>
+                  </div>
+              </div>
+
+              <div class="row tcenter">
+                  <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px pb30px">
+                      <audio id="aud1" controls controlsList="nodownload" #audio>
+                          <source [src]="audioLink" type="audio/mpeg">
+                      </audio>
+                  </div>
+              </div>
+
+              <h1 class="txt1">
                 The psychological body
               </h1>  
 
               <!-- angular audio player plugin  -->                                            
-              <div class="row tcenter">
+              <!-- <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 p7rem">
                   <audio id="aud2" controls controlsList="nodownload noplaybackrate" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
-                  <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player>                   -->
                 </div>
-              </div>
+              </div> -->
               <!-- /angular audio player plugin -->     
 
               <div class="row">

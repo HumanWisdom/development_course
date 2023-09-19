@@ -15,8 +15,9 @@ export class S120071Page implements OnInit,OnDestroy
   bg_cft="bg_blue_pink"
   bg="blue_pink_w2"
   title="How can we respond with wisdom?  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/emotional-needs/audios/3.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/emotional-needs/audios/emotional-needs+3.1.mp3'
+
   transcriptPage="emotional-needs/s120071t"
   toc="emotional-needs/s120001"
   bookmark=0
