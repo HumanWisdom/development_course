@@ -10847,11 +10847,12 @@ body,
   color: #fff;
   border: 0;
   opacity: 0;
-  transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+  /* transition: opacity 0.3s ease-out, bottom 0.3s ease-out; */
   overflow: hidden;
   /* border-radius: 10px 10px 0 0; */
   border-radius: 24px 24px 0 0;
   z-index: 999;
+  transition: all 1s;
 }
 
 .close {
@@ -14653,7 +14654,8 @@ input[type="number"] {
 
 .progress-bar
 {
-  background: linear-gradient(90deg, #FFC455 131.91%, #E69B5A 157.31%);
+  /* background: linear-gradient(90deg, #FFC455 131.91%, #E69B5A 157.31%); */
+  background: #E8A880;
   box-shadow: 1px 0px 2px rgb(0 0 0 / 25%);
   /* border-radius: 0 5px 5px 0; */
   border-radius: 0;
@@ -29585,6 +29587,7 @@ svg path
 {
   background: rgba(93,93,93,0.1);
   backdrop-filter: blur(5px);
+  overflow: hidden !important;
 }
 
 .evideo
@@ -33920,9 +33923,9 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .btn_se:active,
 .btn_se:focus
 {
-  background: white;
-  color: #E58D82;
-  filter: unset;
+  background: white !important;
+  color: #E58D82 !important;
+  filter: unset !important;
 }
 
 .ae_days > [class^="col-"]
@@ -34248,5 +34251,11 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border: 1px solid #FFFFFF;
   opacity: 0.1;
   margin: 20px -20px;
+}
+
+.cfc_v3_01[readonly]
+{
+  background: transparent !important;
+  cursor: not-allowed;
 }
 /* /version - 03 */
