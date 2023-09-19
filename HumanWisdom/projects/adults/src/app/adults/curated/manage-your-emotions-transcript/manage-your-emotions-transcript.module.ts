@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { ManageYourEmotionsTranscriptPageRoutingModule } from './manage-your-emotions-transcript-routing.module';
 
 import { ManageYourEmotionsTranscriptPage } from './manage-your-emotions-transcript.page';
@@ -13,6 +15,7 @@ import { ManageYourEmotionsTranscriptPage } from './manage-your-emotions-transcr
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     ManageYourEmotionsTranscriptPageRoutingModule
   ],
   declarations: [ManageYourEmotionsTranscriptPage]

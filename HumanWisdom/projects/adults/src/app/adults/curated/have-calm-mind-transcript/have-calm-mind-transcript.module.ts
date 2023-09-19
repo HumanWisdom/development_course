@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { HaveCalmMindTranscriptPageRoutingModule } from './have-calm-mind-transcript-routing.module';
 
 import { HaveCalmMindTranscriptPage } from './have-calm-mind-transcript.page';
@@ -13,6 +15,7 @@ import { HaveCalmMindTranscriptPage } from './have-calm-mind-transcript.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     HaveCalmMindTranscriptPageRoutingModule
   ],
   declarations: [HaveCalmMindTranscriptPage]
