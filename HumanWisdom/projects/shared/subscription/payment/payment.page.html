@@ -99,7 +99,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <ul class="fs_10px fw_400 lh_150p fc_ffffff_0_7 pl10px">
                     <li class="">
-                      Billing starts at the end of the free trial. Starting on {{selectedPlanModel.startingDate}}, you’ll be charged ₹12,228.00 automatically every year until you cancel. Your price may change as described in the
+                      Billing starts at the end of the free trial. Starting on {{selectedPlanModel.startingDate}}, you’ll be charged {{pricingModel.CurSymbol}}  {{ selectedSubscription == Monthly ?  pricingModel.Monthly :  pricingModel.Annual}} automatically every {{ selectedSubscription == Monthly ?  'month' :  'year' }} until you cancel. Your price may change as described in the
                       <a class="fs_10px fw_400 lh_150p fc_ffffff_0_7 underline">
                         Terms of Service.
                       </a>
