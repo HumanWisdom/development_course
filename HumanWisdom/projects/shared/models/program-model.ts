@@ -16,3 +16,8 @@ Teenagers=11,
 Parents=12,
 Young_Adults=13
 }
+
+export enum SubscriptionType {
+    Monthly = 1,
+    Annual = 2
+}
