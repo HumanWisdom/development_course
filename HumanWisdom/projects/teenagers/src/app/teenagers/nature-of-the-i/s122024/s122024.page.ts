@@ -13,10 +13,10 @@ export class S122024Page implements OnInit,OnDestroy {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/nature-of-the-i/videos/2.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  videoLink=this.mediaVideo+'/nature-of-i/videos/1.3.mp4' 
   title="Where do our emotions come from?  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nature-of-the-i/nature-of-the-i_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nature_of_i/noi_03.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")

@@ -51,7 +51,7 @@
                         </h4>
                       </div>
 
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" (click)="follow(posttread)">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright" *ngIf="posttread.UserName != UserName" (click)="follow(posttread)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='0'">
                           <i class="fa fa-plus mr3px"></i>
                           <span class="underline">
@@ -60,12 +60,85 @@
                         </button>
 
                         <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='1'">
-                          <i class="fa fa-plus mr3px"></i>
+                          <i class="fa fa-minus mr3px"></i>
                           <span class="underline">
                             Unfollow
                           </span>
                         </button>
                       </div>
+
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright" *ngIf="posttread.UserName == UserName"  (click)="follow(posttread)">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='0'">
+                          <i class="fa fa-plus mr3px"></i>
+                          <span class="underline">
+                            Follow
+                          </span>
+                        </button>
+
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="posttread.Followed=='1'">
+                          <i class="fa fa-minus mr3px"></i>
+                          <span class="underline">
+                            Unfollow
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="(posttread.UserName == UserName) && (posttread.ReplyCount=='0')">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_more.svg"
+                              class="img-responsive">
+                          </button>
+                          <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost()">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Edit
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_edit.svg"
+                                      class="img-responsive">
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <hr class="hr_style_v3_07 mtb10pxi">
+                              </div>
+                            </div>
+
+                            <a class="dropdown-item"  (click)="deletePost()">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                      Delete
+                                    </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/dropdown_trash.svg"
+                                      class="img-responsive">
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+
+
+
                     </div>
                   </div>
 
@@ -96,10 +169,11 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="!posttread.isEditPost">
                         <!-- Freedom from active addiction they say addicts are addicted because we have had childhood trauma... which can be a number of different things that have happened... question is., what's the solution!??? can't find book or video that's helpful! please help -->
                         {{posttread.POST}}
                       </h4>
+                      <textarea *ngIf="posttread.isEditPost" (focusout)="editPost()" type="text"name="Post" id="Post" [(ngModel)]="posttread.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
                     </div>
                   </div>
 
@@ -120,7 +194,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" class="img-responsive mr5px">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_comment.svg" (click)="enableCommentTextBox()" class="img-responsive mr5px">
                           {{posttread.ReplyCount}}
                           </button>
                         </div>
@@ -133,23 +207,45 @@
                         </div>
                       </div>
 
-                      <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(posttread)">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost()">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px">
                           Report
                         </button>
-                      </div> -->
+                      </div>
                     </div>
                   </div>
 
-                  <div class="row"  >
+                  <div class="row"  *ngIf="isEditComment">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <textarea type="text" rows="5" 
                       placeholder="Comment here" class="ta_forum_comment" 
-                      id="PostComment" (focusout)="submitComment()"  name="PostComment"
+                      id="PostComment" name="PostComment"
                         [(ngModel)]="PostComment"></textarea>
                     </div>
                   </div>
+
+                  <div class="row"  *ngIf="isReportPost">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <textarea type="text" rows="5" 
+                      placeholder="Report here" class="ta_forum_comment" 
+                      id="PostComment" name="PostComment"
+                        [(ngModel)]="PostComment"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                  *ngIf="isLoggedIn && isEditComment">
+                  <button type="submit" class="btn btn-warning btn_post" (click)="commentPost()">
+                    Comment
+                  </button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                  *ngIf="isLoggedIn && isReportPost">
+                  <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
+                    Report
+                  </button>
+                </div>
                 </a>
               </div>
               <!-- /post -->

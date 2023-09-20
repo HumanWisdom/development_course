@@ -32,9 +32,18 @@
 
               <div class="row" *ngIf="categoryList.length>0">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <select [(ngModel)]="selectedOption" name="categoryListName" id="categoryListName" class="form-select forum_v3_start_new_thread">
+                  <!-- <select [(ngModel)]="selectedOption" name="categoryListName" id="categoryListName" class="form-select forum_v3_start_new_thread">
                     <option *ngFor="let item of categoryList" [value]="item.value" >{{item.label}}</option>
-                  </select>
+                  </select> -->
+
+                  <div class="row">
+                    <button type="button"  class="btn btn_all_threads btn-thread" data-toggle="modal"
+                      data-target="#choose_category"[innerText]="buttonText" >   
+                                                     
+                    </button>
+                    <i data-toggle="modal" data-target="#choose_category" class="fa fa-angle-down btn-down"></i>   
+                  </div>
+
                 </div>
               </div>
 
@@ -42,7 +51,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <label for="img-edit" class="tcenter w100 prelative">
                     <div class="">
-                      <img [src]="imageUrl" class="img-responsive w100">
+                      <img [src]="imageUrl" class="img-responsive w100 h-250 img-forum">
                     </div>
                     <div class="absolute_edit">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_img_edit.svg" class="img-responsive">
@@ -149,3 +158,150 @@
   </div>
 </div>
 <!-- /posted successfully -->
+
+
+<!-- choose category -->
+<div class="modal fade" id="choose_category" data-keyboard="false" data-backdrop="false">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_cc choose-category-popup">
+
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+            <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              CHOOSE CATEGORY
+            </h4>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+            <button type="button" class="btn_popup_close m0px" #closeCategory   data-dismiss="modal" aria-label="close">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_close_modal.svg"
+                class="img-responsive fright">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <a class="" (click)="filterBasedOnTags(1)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Mental health
+            </h3>
+          </div>
+        </div>
+
+        <div class="row" >
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Stress, anxiety, depression and mental health issues
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(2)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Relationships
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              The many different relationships we have, with ourselves and others
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(3)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Work
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Work related issues
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(4)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Nuggets of Inspiration
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Stories, quotes, and what makes you happy
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+      <a class="" (click)="filterBasedOnTags(5)">
+        <div class="row mb5px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+              Ask a coach
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              Questions for our team of HumanWisdom coaches
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0">
+            <hr class="hr_style_v3_04 mtb10pxi">
+          </div>
+        </div>
+      </a>
+
+     </div>
+  </div>
+</div>
+<!-- /choose category -->

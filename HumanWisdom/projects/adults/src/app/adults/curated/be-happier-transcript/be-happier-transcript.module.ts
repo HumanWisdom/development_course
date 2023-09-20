@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { BeHappierTranscriptPageRoutingModule } from './be-happier-transcript-routing.module';
 
 import { BeHappierTranscriptPage } from './be-happier-transcript.page';
@@ -13,6 +15,7 @@ import { BeHappierTranscriptPage } from './be-happier-transcript.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     BeHappierTranscriptPageRoutingModule
   ],
   declarations: [BeHappierTranscriptPage]

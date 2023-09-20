@@ -112,7 +112,7 @@ export class TnDashboardV03Component implements OnInit {
   }
 
   Subscribe() {
-    this.router.navigate(['/onboarding/add-to-cart']);
+    this.router.navigate(['/subscription']);
   }
 
   clickbanner(url = '') {

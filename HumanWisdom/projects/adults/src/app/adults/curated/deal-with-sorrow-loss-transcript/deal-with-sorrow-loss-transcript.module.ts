@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { DealWithSorrowLossTranscriptPageRoutingModule } from './deal-with-sorrow-loss-transcript-routing.module';
 
 import { DealWithSorrowLossTranscriptPage } from './deal-with-sorrow-loss-transcript.page';
@@ -13,6 +15,7 @@ import { DealWithSorrowLossTranscriptPage } from './deal-with-sorrow-loss-transc
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     DealWithSorrowLossTranscriptPageRoutingModule
   ],
   declarations: [DealWithSorrowLossTranscriptPage]
