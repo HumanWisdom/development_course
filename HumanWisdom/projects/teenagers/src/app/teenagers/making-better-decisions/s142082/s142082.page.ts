@@ -16,7 +16,7 @@ export class S142082Page implements OnInit,OnDestroy {
   bg="light_blue_w5"
   title="#2 Listen to your inner voice, your gut instinct"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/3.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/3.3.mp3'
 
   transcriptPage="making-better-decisions/s142082t"
   toc="making-better-decisions/s142001"

@@ -16,7 +16,7 @@ export class S142010Page implements OnInit,OnDestroy {
   bg="light_blue_w7"
   title="Some decisions are not easy"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/1.2.mp3'
 
   transcriptPage="making-better-decisions/s142010t"
   toc="making-better-decisions/s142001"

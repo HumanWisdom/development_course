@@ -16,7 +16,7 @@ export class S142041Page implements OnInit,OnDestroy {
   bg="light_blue_w3"
   title="Do a risk analysis"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/2.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/2.1.mp3'
 
   transcriptPage="making-better-decisions/s142041t"
   toc="making-better-decisions/s142001"

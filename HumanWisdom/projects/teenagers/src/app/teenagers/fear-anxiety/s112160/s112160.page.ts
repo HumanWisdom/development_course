@@ -1,7 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
-import { ProgramType } from '../../../../../../shared/models/program-model';
+import { TeenagersService } from '../../teenagers.service';
 
 @Component({
   selector: 'app-s112160',
@@ -9,50 +9,94 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
   styleUrls: ['./s112160.page.scss'],
 })
 export class S112160Page implements OnInit {
-  programType : ProgramType = ProgramType.Teenagers;
-  toc="fear-anxiety/s112001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/92.png"
-  
-  bg=""
-  moduleLink="/dealing-with-depression"
-  moduleName=" Dealing with depression"
-  sectionName= "Manage your emotions";
-  moduleId=113
-  moduleList: any = [
-    {
-      name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
-      link: '/stress',
-      id: 44
-    },
-    {
-      name: 'Living with Peace',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png',
-      link: '/living-with-peace',
-      id: 63
- 
-    },
-    {
-      name: 'Happiness',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png',
-      link: '/happiness',
-      id: 23
-  
-    },
-  ]
 
-  constructor() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'stress') {
-      this.moduleImg = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/conditioning.png"
-     
-      this.moduleLink = "/conditioning"
-      this.moduleName = "Conditioning"
-      this.sectionName = "Explore How Your Mind Works";
-      this.moduleId = 15
-    
-    }
-  }
+  bg_tts = "bg_purple_red"
+  bg_tn = "bg_purple_red"
+  bg_cft = "bg_purple_red"
+  bg = "fear_anxiety_flat"
+  toc = "fear-anxiety/s112001"
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  screenType = localStorage.getItem("text")
+  moduleId = localStorage.getItem("moduleId")
+  screenNumber = 112160
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark = 0
+   path = setTimeout(() => {
+    return this.router.url;
+  }, 1000);
+
+
+  constructor(private router: Router,
+    private service: TeenagersService,
+    private location: Location) { }
+
   ngOnInit() {
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    this.startTime = Date.now();
+
+    this.startTime = Date.now();
+    this.createScreen()
   }
+  createScreen() {
+    this.service.createScreen({
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {
+
+    })
+
+
+  }
+  receiveBookmark(e) {
+    console.log(e)
+    if (e == true)
+      this.bookmark = 1
+    else
+      this.bookmark = 0
+  }
+
+
+  submitProgress() {
+    this.service.submitProgressText({
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime
+    }).subscribe(res => {
+
+    },
+      error => { console.log(error) },
+      () => {
+      })
+
+
+  }
+
+  goNext() {
+    this.router.navigate(['/fear-anxiety/s112161'])
+    this.endTime = Date.now();
+    this.totalTime = this.endTime - this.startTime;
+
+    if (this.userId !== 563) this.submitProgress()
+
+  }
+
+  ngOnDestroy() {
+
+
+
+
+  }
+
+
+
+
 }

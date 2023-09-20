@@ -16,7 +16,7 @@ export class S142092Page implements OnInit,OnDestroy {
   bg="light_blue_w2"
   title="#7 Are you avoiding making a decision because it is tough, or out of your comfort zone?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/3.8.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/3.8.mp3'
 
   transcriptPage="making-better-decisions/s142092t"
   toc="making-better-decisions/s142001"

@@ -16,7 +16,7 @@ export class S142054Page implements OnInit,OnDestroy {
   bg="light_blue_w8"
   title="#3 Our many hidden fears"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/2.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/2.4.mp3'
 
   transcriptPage="making-better-decisions/s142054t"
   toc="making-better-decisions/s142001"

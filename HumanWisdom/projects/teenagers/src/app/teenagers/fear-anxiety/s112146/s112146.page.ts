@@ -15,7 +15,7 @@ export class S112146Page implements OnInit {
   bg="purple_red_w11"
   title="Benefits of living without fear"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.19.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.19.mp3'
   transcriptPage="/fear-anxiety/s112146t"
   toc="fear-anxiety/s112001"  
 

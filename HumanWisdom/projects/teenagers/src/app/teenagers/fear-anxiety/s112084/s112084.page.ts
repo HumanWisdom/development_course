@@ -15,7 +15,7 @@ export class S112084Page implements OnInit {
   bg="purple_red_w1"
   title="#8 Unconscious fears"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.13.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.13.mp3'
   transcriptPage="/fear-anxiety/s112084t"
   toc="fear-anxiety/s112001"  
 
