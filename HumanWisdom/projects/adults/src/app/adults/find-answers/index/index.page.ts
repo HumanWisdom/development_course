@@ -21,7 +21,7 @@ export class IndexPage implements OnInit {
    }
 
   ngOnInit() {
-    debugger;
+    // debugger;
   }
 
   getActiveClass(param){
