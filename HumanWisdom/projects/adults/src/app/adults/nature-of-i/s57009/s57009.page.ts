@@ -131,4 +131,9 @@ export class S57009Page implements OnInit,OnDestroy {
     localStorage.setItem("avDuration57009",this.avDuration)
  
   }
+
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
+  }
 }
