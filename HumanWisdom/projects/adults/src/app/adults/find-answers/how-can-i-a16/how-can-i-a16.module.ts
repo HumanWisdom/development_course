@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SharedModule } from '../../../../../../shared/shared.module';
+
 import { HowCanIA16PageRoutingModule } from './how-can-i-a16-routing.module';
 
 import { HowCanIA16Page } from './how-can-i-a16.page';
@@ -13,6 +15,7 @@ import { HowCanIA16Page } from './how-can-i-a16.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     HowCanIA16PageRoutingModule
   ],
   declarations: [HowCanIA16Page]
