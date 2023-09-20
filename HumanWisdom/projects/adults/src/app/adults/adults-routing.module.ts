@@ -5,6 +5,7 @@ import { S3VideoComponent } from '../../../../shared/component/s3-video/s3-video
 import { ActiveGuard } from '../active.guard';
 import { SingleAudioContentComponent } from '../../../../shared/component/single-audio-content/single-audio-content.component';
 import { AudioVideoGuard } from '../audio-video.guard';
+import { RedeemCongratulationPage } from './redeem-congratulation/redeem-congratulation.page';
 
 const routes: Routes = [
   {
@@ -495,6 +496,14 @@ const routes: Routes = [
   {
     path: 'awareness-exercises-transcript',
     loadChildren: () => import('./awareness-exercises-transcript/awareness-exercises-transcript.module').then( m => m.AwarenessExercisesTranscriptPageModule)
+  },
+  {
+    path: 'redeem-subscription',
+    loadChildren: () => import('./redeem-subscription/redeem-subscription.module').then(m => m.RedeemSubscriptionPageModule)
+  },
+  {
+    path: 'redeem-congratulation',
+    loadChildren: () => import('./redeem-congratulation/redeem-congratulation.module').then(m => m.RedeemCongratulationPageModule)
   }
 ];
 

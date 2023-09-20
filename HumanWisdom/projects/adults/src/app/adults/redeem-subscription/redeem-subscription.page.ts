@@ -8,11 +8,11 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 
 @Component({
-  selector: 'HumanWisdom-adverts-hwp',
-  templateUrl: './adverts-hwp.page.html',
-  styleUrls: ['./adverts-hwp.page.scss'],
+  selector: 'redeem-subscription',
+  templateUrl: './redeem-subscription.page.html',
+  styleUrls: ['./redeem-subscription.page.scss'],
 })
-export class AdvertsHwpPage implements OnInit {
+export class RedeemSubscriptionPage implements OnInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
   @ViewChild('redeemsubscription') redeemsubscription: ElementRef;
 
@@ -53,12 +53,12 @@ export class AdvertsHwpPage implements OnInit {
   public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   public userName: any
   public showWarning = false
-
-
   enableAlert = false;
   content = '';
   enablecancel = false;
   public registrationForm : any;
+  enabledModal = false;
+
   constructor(
     public platform: Platform,
     private router: Router,
@@ -97,6 +97,10 @@ export class AdvertsHwpPage implements OnInit {
     } else {
       this.isLoggedIn = false;
     }
+    let namedata = localStorage.getItem('name').split(' ')
+    this.modaldata['email'] = localStorage.getItem('email');
+    this.modaldata['firstname'] = namedata[0];
+    this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
   }
 
   ngOnInit() {
@@ -210,13 +214,13 @@ export class AdvertsHwpPage implements OnInit {
             this.thirdpage = false;
             this.subfirstpage = true;
             this.sixthpage = true;
+            this.router.navigate(['/adults/redeem-congratulation'])
           } else {
             this.subthirdpage = true
           }
         },
         error => {
           this.subthirdpage = true
-
           console.log(error);
         },
         () => {
@@ -226,7 +230,6 @@ export class AdvertsHwpPage implements OnInit {
     if (this.showWarning === false) {
       this.subthirdpage = true
     }
-
   }
 
   routedashboard(val = '') {
@@ -252,8 +255,7 @@ export class AdvertsHwpPage implements OnInit {
         this.modaldata['email'] = localStorage.getItem('email');
         this.modaldata['firstname'] = namedata[0];
         this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-        this.router.navigate(['/adults/redeem-subscription'])
-        // this.redeemsubscription.nativeElement.click()
+        this.redeemsubscription.nativeElement.click()
       } else {
         this.firstpage = true;
         this.redeemsubscription.nativeElement.click()
@@ -271,20 +273,11 @@ export class AdvertsHwpPage implements OnInit {
   }
 
   already(value) {
-    /* this.actclosemodal.nativeElement.click()
-    this.firstpage = true;
-    this.fourthpage = false;
-    this.thirdpage = false;
-    this.secondpage = false;
-    this.fifthpage = false;
-    this.sixthpage = false; */
-    if (value === 'home') {
-      this.actclosemodal.nativeElement.click()
-      let userid = localStorage.getItem('isloggedin');
-      if (userid === 'T') {
-        window.location.reload();
-      }
-    } else if (value === 'login') {
+    if(!this.enabledModal) {
+      this.enabledModal = true;
+      this.redeemsubscription.nativeElement.click();
+    }
+    if (value === 'login') {
       this.firstpage = false;
       this.fourthpage = false;
       this.thirdpage = false;
@@ -370,21 +363,15 @@ export class AdvertsHwpPage implements OnInit {
             localStorage.setItem("isloggedin", 'T')
             localStorage.setItem("remember", 'T')
             this.fifthpage = false;
-            this.thirdpage = true;
-            this.router.navigate(['/adults/redeem-subscription'])
           } else if (val === 'second') {
             localStorage.setItem("isloggedin", 'T')
             localStorage.setItem("remember", 'T')
             this.secondpage = false;
-            this.thirdpage = true;
-            this.router.navigate(['/adults/redeem-subscription'])
           }
-
-
           this.firstpage = false
           this.fifthpage = false
           this.thirdpage = true
-
+          this.enabledModal = false
           localStorage.setItem("isloggedin", 'T')
           this.isLoggedIn = true
           this.loginResponse = res
@@ -447,7 +434,7 @@ export class AdvertsHwpPage implements OnInit {
               localStorage.setItem("isloggedin", 'T')
             }
           }
-          this.router.navigate(['/adults/redeem-subscription'])
+          this.actclosemodal.nativeElement.click()
         },
         error => { console.log(error) },
         () => {
@@ -478,6 +465,7 @@ export class AdvertsHwpPage implements OnInit {
             this.firstpage = false
             this.fifthpage = false
             this.thirdpage = true
+            this.enabledModal = false
             this.loginResponse = res
             localStorage.setItem('guest', 'F');
             localStorage.setItem("remember", 'T')
@@ -537,7 +525,7 @@ export class AdvertsHwpPage implements OnInit {
                 localStorage.setItem("isloggedin", 'T')
               }
             }
-            this.router.navigate(['/adults/redeem-subscription'])
+            this.actclosemodal.nativeElement.click()
           }
         })
     },
@@ -570,6 +558,7 @@ export class AdvertsHwpPage implements OnInit {
               this.firstpage = false
               this.fifthpage = false
               this.thirdpage = true
+              this.enabledModal = false
               this.loginResponse = res
               localStorage.setItem('guest', 'F');
               localStorage.setItem("remember", 'T')
@@ -629,7 +618,7 @@ export class AdvertsHwpPage implements OnInit {
                   localStorage.setItem("isloggedin", 'T')
                 }
               }
-              this.router.navigate(['/adults/redeem-subscription'])
+              this.actclosemodal.nativeElement.click()
             }
           })
       } else {
@@ -674,6 +663,10 @@ export class AdvertsHwpPage implements OnInit {
           this.router.navigate(["/onboarding/login"]);
         }
     }
+  }
+
+  closeModal() {
+    this.enabledModal = false;
   }
 }
 
