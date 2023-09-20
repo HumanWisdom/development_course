@@ -17,7 +17,7 @@ export class ProceedToPaymentPage implements OnInit {
   Annual: string;
   MonthPlanFreeTrial = 7;
   AnnualPlanFreeTrial = 14;
-  SelectedPlanModel: {};
+  SelectedPlanModel: any;
   pricingModel: any;
   countryCode: string;
   defaultCountry: string;
