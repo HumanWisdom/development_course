@@ -15,7 +15,7 @@ export class S112137Page implements OnInit {
   bg="purple_red_w2"
   title="#5 Am I imagining the worst possible outcome"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/fear-anxiety/audios/1.17.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.17.mp3'
   transcriptPage="/fear-anxiety/s112137t"
   toc="fear-anxiety/s112001"  
 

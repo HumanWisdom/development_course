@@ -16,7 +16,7 @@ export class S142086Page implements OnInit,OnDestroy {
   bg="light_blue_w9"
   title="#4 Is there another way to respond?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/3.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/3.5.mp3'
 
   transcriptPage="making-better-decisions/s142086t"
   toc="making-better-decisions/s142001"

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { ForumService } from '../forum.service';
 import { filter } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { ProgramType } from '../../models/program-model';
   templateUrl: './forum-thread-start-new.page.html',
   styleUrls: ['./forum-thread-start-new.page.scss'],
 })
-export class ForumThreadStartNewPage implements OnInit {
+export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   thread = '';
   userID = "107";
   postID = '0';
@@ -44,12 +44,7 @@ export class ForumThreadStartNewPage implements OnInit {
   }
 
   ngOnInit() {
-    this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 1;
-    if (this.selectedOption == 5) {
-      this.isChecked = true;
-      // this.checkboxSelect.nativeElement.checked = true;
-    }
-    this.categoryList = this.service.GetTagList();
+   
   }
 
   ngOnDestroy(): void {
@@ -128,6 +123,26 @@ export class ForumThreadStartNewPage implements OnInit {
     setTimeout(() => {
       this.closeCategoryModal();
     }, 100);
+  }
+
+
+  ngAfterViewInit(){
+    setTimeout(()=>{
+      this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 1;
+      if (this.selectedOption == 5) {
+      this.isChecked = true;
+  
+      this.categoryList = this.service.GetTagList();
+      const data = this.categoryList.filter(x=>x.value== this.selectedOption);
+      if(data!=null && data.length>0){
+        this.buttonText =  data[0].label;
+      }
+    }},1000);
+    setTimeout(()=>{
+    let el= document.getElementById('forum_post_checkbox') as any;
+    if(el){
+     el.checked = true;
+    }},4000);
   }
 
 }

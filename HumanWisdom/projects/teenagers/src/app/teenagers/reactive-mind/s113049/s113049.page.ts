@@ -15,8 +15,8 @@ export class S113049Page implements OnInit,OnDestroy
   bg_cft="bg_light_blue"
   bg="light_blue_w2"
   title="Introduction"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/reactive-mind/audios/3.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/reactive-mind/audios/3.1.mp3'
   transcriptPage="reactive-mind/s113049t"
   toc="reactive-mind/s113001"
   bookmark=0

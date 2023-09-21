@@ -17,7 +17,7 @@ export class S135085Page implements OnInit,OnDestroy {
   title="How do you stop your experience of bullying impacting the rest of your life?"
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/bullying/audios/3.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/bullying/audios/3.5.mp3'
 
   transcriptPage="bullying/s135085t"
   toc="bullying/s135001"

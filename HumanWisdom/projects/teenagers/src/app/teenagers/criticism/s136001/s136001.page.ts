@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import {Location } from '@angular/common'
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s136001',
@@ -36,6 +37,8 @@ export class S136001Page implements OnInit,OnDestroy {
   tocColor="white"
   lastvisited = false;
   stories: any = []
+  pgResume = sessionStorage.getItem("pgResume")
+  moduleData:ProgramModel;
 
   constructor(
     private router: Router,
@@ -179,6 +182,15 @@ export class S136001Page implements OnInit,OnDestroy {
 
   routeJournal(){
     this.router.navigate(['/adults/journal'])
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }
