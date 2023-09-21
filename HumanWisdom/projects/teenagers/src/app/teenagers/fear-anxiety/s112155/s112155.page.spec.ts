@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { S112155Page } from './s112155.page';
 
 describe('S112155Page', () => {
-     
+  // let    
     let component:  S112155Page;
   let fixture: ComponentFixture<S112155Page>;
 

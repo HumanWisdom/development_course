@@ -14,8 +14,10 @@ export class S125104Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w1"
   title="#5 Unmet emotional needs"
+
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/stress/audios/1.10.mp3'
+
   transcriptPage="stress/s125104t"
   toc="stress/s125001"
   bookmark=0

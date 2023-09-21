@@ -14,8 +14,10 @@ export class S125132Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w5"
   title="#14 What others think of us"
+
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/stress/audios/1.14.mp3'
+
   transcriptPage="stress/s125132t"
   toc="stress/s125001"
   bookmark=0

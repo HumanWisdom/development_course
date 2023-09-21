@@ -16,7 +16,7 @@ export class S142040Page implements OnInit,OnDestroy {
   bg="light_blue_w3"
   title="How do you weigh up different factors, and come to one decision?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/1.4.mp3'
 
   transcriptPage="making-better-decisions/s142040t"
   toc="making-better-decisions/s142001"

@@ -14,8 +14,10 @@ export class S125143Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2"
   title="#1 We try to fix the problem"
+
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
   audioLink=this.mediaAudio+'/modules/stress/audios/1.15.mp3'
+
   transcriptPage="/stress/s125143t"
   toc="/stress/s125001"
   bookmark=0
