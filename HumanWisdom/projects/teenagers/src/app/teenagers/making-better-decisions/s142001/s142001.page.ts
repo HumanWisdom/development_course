@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
@@ -25,17 +26,20 @@ export class S142001Page implements OnInit, OnDestroy {
   totalTime: any
   bookmark: any
   bookmarkList = []
-  making_better_decisionsResume = sessionStorage.getItem("pgResume")
+  pgResume = sessionStorage.getItem("pgResume")
 
   tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.png"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
+  t:any
+  moduleData:ProgramModel;
 
   constructor(
     private router: Router,
     private service: TeenagersService,
-    private location: Location
+    private location: Location,
+    private url: ActivatedRoute
   )
   /*
   { 
@@ -56,6 +60,10 @@ export class S142001Page implements OnInit, OnDestroy {
     }
   */ {
     this.service.setmoduleID(142);
+    this.getSetModuleData(142);
+    this.url.queryParams.subscribe(params => {
+      this.t = params['t'];
+    })
     let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
     let splitarr = []
@@ -157,6 +165,15 @@ export class S142001Page implements OnInit, OnDestroy {
   }
   goBack() {
     this.location.back()
+  }
+
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+    this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      console.log(res[0].lastScreen)
+     });
   }
 
 }

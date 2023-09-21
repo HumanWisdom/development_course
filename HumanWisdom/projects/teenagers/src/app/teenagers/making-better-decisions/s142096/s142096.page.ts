@@ -16,7 +16,7 @@ export class S142096Page implements OnInit,OnDestroy {
   bg="light_blue_w6"
   title="#9 On big decisions, it is worthwhile talking to others"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/3.10.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/3.10.mp3'
 
   transcriptPage="making-better-decisions/s142096t"
   toc="making-better-decisions/s142001"

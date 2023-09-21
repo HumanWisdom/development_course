@@ -16,7 +16,7 @@ export class S142098Page implements OnInit,OnDestroy {
   bg="light_blue_w8"
   title="#10 Have you got all the facts? What assumptions have you made?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/3.11.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/3.11.mp3'
 
   transcriptPage="making-better-decisions/s142098t"
   toc="making-better-decisions/s142001"

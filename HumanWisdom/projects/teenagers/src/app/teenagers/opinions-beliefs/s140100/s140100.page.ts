@@ -20,7 +20,7 @@ export class S140100Page implements OnInit,OnDestroy {
   
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/opinions-and-beliefs/audios/2.7.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/opinions-and-beliefs/audios/2.7.mp3'
 
   transcriptPage="opinions-beliefs/s140100t"
   toc="opinions-beliefs/s140001"

@@ -16,7 +16,7 @@ export class S142084Page implements OnInit,OnDestroy {
   bg="light_blue_w7"
   title="#3 Is there another way of seeing this situation?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/3.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/3.4.mp3'
 
   transcriptPage="making-better-decisions/s142084t"
   toc="making-better-decisions/s142001"

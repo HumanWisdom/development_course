@@ -15,7 +15,7 @@ export class S125182Page implements OnInit,OnDestroy
   bg="dark_blue_w12"
   title="#8 Live simply, within your means"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/stress/audios/1.20.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/stress/audios/1.20.mp3'
   transcriptPage="stress/s125182t"
   toc="stress/s125001"
   bookmark=0

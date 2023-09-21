@@ -1,51 +1,22 @@
-<app-feedback-question skipToPage="/fear-anxiety/s112159">
-  <form>
-    <h2 class="mt0px fs_24px fw_600 lh_150p fc_ffffff">
-      Feedback Survey
-    </h2>
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
 
-      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-     Fear & Anxiety Module
+<app-tap-start [bg_tts]="bg_tts" [bg]="bg" (nextEmitter)="goNext()">   
+   <form>
+    <h4 class="mtb0px comparison">
+      Fear & Anxiety
     </h4>
+    <div class="clearfix"></div>
 
-    <!-- multistep wizard -->
-    <div id="svg_wrap"></div>                 
+    <h5 class="mtb0px session">
+      Session #6
+    </h5>
+    <div class="clearfix"></div>
 
-  <section>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <a class="sb_anchor">
-            <div class="box textarea_box">
-              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff display_flex">
-               1. 
-                <p class="mtb0px ml5px">
-                  {{reflection}}
-                </p>
-              </h4>    
+    <br>
 
-              <hr class="hr_style_v3_06">
-
-              <textarea id="message" required="required" class="form-control textarea_fs" name="message" rows="15" name="p1" placeholder="Write your answer here" [(ngModel)]="r112156"></textarea>
-
-            <br>
-
-          </div>                    
-        </a>
-      </div>
-    </div>  
-
-  </section>
-  <section> </section>
-  <section></section>
-  <section></section>
-                       
-
-     
-  </form>
-</app-feedback-question>
-
-<!-- feedback survey footer  -->
-<app-feedback-footer [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-feedback-footer>
-<!-- /feedback survey footer -->
-           
-         
+    <h1 class="session_title ">
+      Anxiety in Teenagers - a conversation
+          </h1>
+        <div class="clearfix"></div>
+  </form> 
+</app-tap-start>

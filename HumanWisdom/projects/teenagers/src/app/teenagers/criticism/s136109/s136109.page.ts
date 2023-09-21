@@ -15,7 +15,7 @@ export class S136109Page implements OnInit {
   bg="criticism_overlay_w2" 
   
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/criticism/videos/1.1.mp4'  
+  videoLink=this.mediaVideo+'/teenagers/modules/criticism/videos/1.1.mp4'  
   title="A conversation with a teenager on dealing with criticism"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/criticism/criticism_03.jpg"
 

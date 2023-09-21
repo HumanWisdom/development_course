@@ -204,9 +204,17 @@ import { S112156Page } from './s112156/s112156.page';
 import { S112157Page } from './s112157/s112157.page';
 import { S112158Page } from './s112158/s112158.page';
 import { S112159Page } from './s112159/s112159.page';
-import { S112159p1Page } from './s112159p1/s112159p1.page';
-import { S112159p2Page } from './s112159p2/s112159p2.page';
-import { S112160Page } from './s112160/s112160.page'; 
+import { S112160Page } from './s112160/s112160.page';
+import { S112161Page } from './s112161/s112161.page';
+import { S112162Page } from './s112162/s112162.page';
+import { S112163Page } from './s112163/s112163.page';
+import { S112164Page } from './s112164/s112164.page';
+import { S112165Page } from './s112165/s112165.page';
+import { S112166Page } from './s112166/s112166.page';
+import { S112167Page } from './s112167/s112167.page';
+import { S112167p1Page } from './s112167p1/s112167p1.page';
+import { S112167p2Page } from './s112167p2/s112167p2.page';
+import { S112168Page } from './s112168/s112168.page';
 
 import { FearAnxietyRoutingModule } from './fear-anxiety-routing.module';
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
@@ -413,9 +421,17 @@ S112156Page,
 S112157Page,
 S112158Page,
 S112159Page,
-S112159p1Page,
-S112159p2Page,
 S112160Page,
+S112161Page,
+S112162Page,
+S112163Page,
+S112164Page,
+S112165Page,
+S112166Page,
+S112167Page,
+S112167p1Page,
+S112167p2Page,
+S112168Page,
   ],
   imports: [
     CommonModule,

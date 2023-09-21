@@ -16,7 +16,7 @@ export class S133049Page implements OnInit,OnDestroy {
   bg="red_pink_w5"
   title="Money and pleasure"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/happiness/audios/2.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/happiness/audios/2.2.mp3'
 
   transcriptPage="happiness/s133049t"
   toc="/happiness/s133001"

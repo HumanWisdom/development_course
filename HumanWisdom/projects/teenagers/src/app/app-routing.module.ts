@@ -226,6 +226,10 @@ const routes: Routes = [
   {
     path: 'making-better-decisions',
     loadChildren: () => import('./teenagers/making-better-decisions/making-better-decisions.module').then(m => m.MakingBetterDecisionsModule)
+  },
+  {
+    path: 'kindness',
+    loadChildren: () => import('./teenagers/kindness/kindness.module').then(m => m.KindnessModule)
   }
 ];
   

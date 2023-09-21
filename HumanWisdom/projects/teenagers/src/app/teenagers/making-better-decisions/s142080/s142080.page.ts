@@ -16,7 +16,7 @@ export class S142080Page implements OnInit,OnDestroy {
   bg="light_blue_w3"
   title="#1 Timing. Pause before acting"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/3.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/3.2.mp3'
 
   transcriptPage="making-better-decisions/s142080t"
   toc="making-better-decisions/s142001"
