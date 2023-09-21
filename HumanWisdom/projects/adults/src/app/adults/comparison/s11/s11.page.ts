@@ -37,16 +37,17 @@ export class S11Page implements OnInit {
   elseSelected = false
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
+  enableTick = false;
 
   constructor
   (
     private router: Router,
     private service: AdultsService,
     private location: Location
-  ) 
+  )
   { }
 
-  ngOnInit() 
+  ngOnInit()
   {
     if (JSON.parse(sessionStorage.getItem("bookmark115")) == 0)
       this.bookmark = 0
@@ -57,18 +58,18 @@ export class S11Page implements OnInit {
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
     this.findQuestion()
-    if (this.saveUsername == false) 
-    { 
-      this.userId = JSON.parse(sessionStorage.getItem("userId")) 
+    if (this.saveUsername == false)
+    {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    { 
-      this.userId = JSON.parse(localStorage.getItem("userId")) 
+    else
+    {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
     }
     this.startTime = Date.now();
   }
 
-  createScreen() 
+  createScreen()
   {
     this.service.createScreen({
       "ScrId": 0,
@@ -78,28 +79,30 @@ export class S11Page implements OnInit {
     }).subscribe(res => {})
   }
 
-  findQuestion() 
+  findQuestion()
   {
-    for (var i = 0; i < this.questionA.length; i++) 
+    for (var i = 0; i < this.questionA.length; i++)
     {
-      if (this.questionA[i].CorrectAns == "0")
+      if (this.questionA[i].CorrectAns == "0"){
         this.questionA[i].CorrectAns = false
-      else
+      } else{
+        this.enableTick = true;
         this.questionA[i].CorrectAns = true
-
-      if (this.queId == this.questionA[i].QueId) 
-      {
+      }
+      if (this.queId == this.questionA[i].QueId) {
         this.question = this.questionA[i].Que
         this.optionList.push(this.questionA[i])
       }
     }
     console.log(this.question, this.optionList)
+    console.log(this.enableTick)
   }
 
-  checkOption(opt) 
+  checkOption(opt, enableTick)
   {
     this.sessionOption = []
-    if (opt.CorrectAns) 
+    this.enableTick = enableTick;
+    if (opt.CorrectAns)
     {
       this.option = opt.OptId
       sessionStorage.setItem("sessionOptions11", JSON.stringify(this.option))
@@ -110,31 +113,32 @@ export class S11Page implements OnInit {
         document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
         // document.getElementById(this.falseans).style.opacity = '0.1';
         this.falseans = opt.OptId
-      } 
-      else 
+      }
+      else
       {
         this.falseans = opt.OptId
       }
-    } 
-    else 
+    }
+    else
     {
-      if (this.falseans !== '') 
+      if (this.falseans !== '')
       {
         document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
         document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
         // document.getElementById(this.falseans).style.opacity = '0.1';
         this.falseans = opt.OptId
-      } 
-      else 
+      }
+      else
       {
         this.falseans = opt.OptId
       }
       document.getElementById(opt.OptId).style.background = '#120F40';
       // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
+    console.log(this.enableTick)
   }
 
-  submitProgress() 
+  submitProgress()
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
@@ -151,7 +155,7 @@ export class S11Page implements OnInit {
       .subscribe((res) => { });
   }
 
-  receiveBookmark(e) 
+  receiveBookmark(e)
   {
     console.log(e)
     if (e == true)
@@ -161,12 +165,12 @@ export class S11Page implements OnInit {
     sessionStorage.setItem("bookmark11", JSON.stringify(this.bookmark))
   }
 
-  prev() 
+  prev()
   {
     this.router.navigate(['/adults/comparison/s10'])
   }
 
-  ngOnDestroy() 
+  ngOnDestroy()
   {}
 
 }
