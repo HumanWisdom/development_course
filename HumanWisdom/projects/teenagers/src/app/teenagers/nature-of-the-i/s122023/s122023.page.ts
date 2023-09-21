@@ -14,7 +14,7 @@ export class S122023Page implements OnInit
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  hint = ""
+  hint = "Sometimes we may avoid trying to make new friends because we are afraid of being rejected."
   toc = "/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
@@ -29,7 +29,7 @@ export class S122023Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1924
   reflection: any
   reflectionA: any
   r122023 = JSON.parse(sessionStorage.getItem("r122023"))
