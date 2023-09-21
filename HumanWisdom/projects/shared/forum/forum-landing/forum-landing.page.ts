@@ -308,7 +308,33 @@ export class ForumLandingPage implements OnInit {
         console.log(error);
       });
   }
- 
+  onEnterKey(event: Event): void {
+    event.preventDefault(); 
+    this.onFocusOutEvent();
+  }
+
+  shareLandingPage(){
+     if (this.urlT) {
+      console.log("url")
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.urlT}`
+
+    }
+    else {
+      console.log("local")
+      this.path = "https://humanwisdom.me/" + this.address + `?t=${this.token}`
+    }
+
+    this.ngNavigatorShareService.share({
+      title: 'HumanWisdom Program',
+      text: 'Hey, check out the HumanWisdom Program',
+      url: this.path
+    }).then((response) => {
+      console.log(response);
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   getOrderbyLatestPost(childs) {
     childs.sort(function (a, b) {
