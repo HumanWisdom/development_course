@@ -14,8 +14,10 @@ export class S125129Page implements OnInit,OnDestroy
   bg_cft="bg_dark_blue"
   bg="dark_blue_w2"
   title="#13 Loneliness"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/stress/audios/1.13.mp3'
+
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/stress/audios/1.13.mp3'
+
   transcriptPage="stress/s125129t"
   toc="stress/s125001"
   bookmark=0
