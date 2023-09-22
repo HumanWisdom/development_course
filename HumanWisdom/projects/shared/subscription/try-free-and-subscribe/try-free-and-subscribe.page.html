@@ -3,7 +3,7 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="back()" alt="" class="p0">
       </a>
     </div>
 
@@ -15,7 +15,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" (click)="routeToDashboard()" alt="" class="p0">
       </a>
     </div>
   </div>
@@ -39,11 +39,11 @@
                 </div>
               </div>
 
-              <a class="">
+              <a class="" (click)="SelectSubscriptionType(Annual)">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                    <div class="row div_best_value">
+                    <div class="row div_best_value" [ngClass]="{'adult-best-value-annual': selectedSubscription === Annual}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_500 lh_140p fc_ffffff">
                           Best value
@@ -51,7 +51,7 @@
                       </div>
                     </div>
 
-                    <div class="div_annual">
+                    <div class="div_annual" [ngClass]="{'adult-selected-plan-border': selectedSubscription === Annual}">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
@@ -63,9 +63,9 @@
                       <div class="row mtb5px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_24px fw_600 lh_170p fc_ffffff">
-                            ₹ 12,228.00 
+                            {{pricingModel.CurSymbol}} {{pricingModel.Annual}}
                             <span class="fs_15px fw_400 lh_170p fc_ffffff_0_5">
-                              (₹ 1,019.00/month)
+                              ({{pricingModel.CurSymbol}}  {{ this.pricingModel.PerMonthAmountOnAnnual }}/month)
                             </span>
                           </h4>
                         </div>
@@ -84,8 +84,8 @@
                 </div>
               </a>
 
-              <a class="">
-                <div class="row div_monthly mt15px">
+              <a class="" (click)="SelectSubscriptionType(Monthly)" > 
+                <div class="row div_monthly mt15px"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Monthly}">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                     <div class="row mb5px">
@@ -99,7 +99,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_24px fw_600 lh_170p fc_ffffff">
-                          ₹ 1,499.00/
+                          {{pricingModel.CurSymbol}} {{pricingModel.Monthly}}
                           <span class="fs_15px fw_400 lh_170p fc_ffffff_0_5">
                             month after 7-day trial
                           </span>
@@ -118,9 +118,9 @@
                   </h4>
                 </div>
               </div>
-
-              <a class="">
-                <div class="row div_monthly">
+     
+              <a class="" (click)="SelectSubscriptionType(Redeem)">
+                <div class="row div_monthly"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Redeem}">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
                       Redeem subscription code
@@ -160,11 +160,13 @@
 <!-- /page content -->
 
 <!-- footer  -->
+
+<!-- footer  -->
 <div class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
       <a>
-        <button type="button" class="btn btn_tfas">
+        <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas">
           Try free and subscribe
         </button>
       </a>

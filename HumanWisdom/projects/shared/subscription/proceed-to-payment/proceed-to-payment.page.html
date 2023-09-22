@@ -33,7 +33,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                    <div class="row div_best_value">
+                    <div class="row div_best_value"  [ngClass]="{'adult-best-value-annual': selectedSubscription === Annual}" >
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_500 lh_140p fc_ffffff">
                           Best value
@@ -41,7 +41,7 @@
                       </div>
                     </div>
 
-                    <div class="div_annual">
+                    <div class="div_annual" [ngClass]="{'adult-selected-plan-border': selectedSubscription === Annual}">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
@@ -138,7 +138,51 @@
       
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
                           <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                            {{pricingModel.Annual}}/year
+                            {{pricingModel.CurSymbol}}  {{pricingModel.Annual}}/year
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row mtb40px" *ngIf="selectedSubscription == Monthly">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svertical_dots.svg" class="img-responsive">
+                  </div>
+
+                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                    <div class="row mb15px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            Starting today
+                          </h4>
+                        </div>
+      
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            7-day free trial
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                            Starting {{ SelectedPlanModel.startingDate }}
+                          </h4>
+                        </div>
+      
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                          {{pricingModel.CurSymbol}}  {{pricingModel.Monthly}}/month
                           </h4>
                         </div>
                       </div>
