@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { S122001Page } from './s122001/s122001.page';
 import { S122002Page } from './s122002/s122002.page';
 import { S122003Page } from './s122003/s122003.page';
+import { S122003p1Page } from './s122003p1/s122003p1.page';
 import { S122004Page } from './s122004/s122004.page';
 import { S122004tPage } from './s122004t/s122004t.page';
 import { S122005Page } from './s122005/s122005.page';
@@ -18,6 +19,7 @@ import { S122011Page } from './s122011/s122011.page';
 import { S122012Page } from './s122012/s122012.page';
 import { S122013Page } from './s122013/s122013.page';
 import { S122014Page } from './s122014/s122014.page';
+import { S122014p1Page } from './s122014p1/s122014p1.page';
 import { S122015Page } from './s122015/s122015.page';
 import { S122015tPage } from './s122015t/s122015t.page';
 import { S122016Page } from './s122016/s122016.page';
@@ -115,6 +117,10 @@ const routes: Routes = [
     component: S122003Page,
   },
   {
+    path: 's122003p1',
+    component: S122003p1Page,
+  },
+  {
     path: 's122004',
     component: S122004Page,
   },
@@ -172,6 +178,10 @@ const routes: Routes = [
   {
     path: 's122014',
     component: S122014Page,
+  },
+  {
+    path: 's122014p1',
+    component: S122014p1Page,
   },
   {
     path: 's122015',
@@ -505,6 +515,8 @@ const routes: Routes = [
     path: 's122080',
     component: S122080Page,
   },
+ 
+ 
   
 ];
 

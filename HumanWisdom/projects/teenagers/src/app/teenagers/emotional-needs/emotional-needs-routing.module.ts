@@ -22,6 +22,7 @@ import { S120017Page } from './s120017/s120017.page';
 import { S120018Page } from './s120018/s120018.page';
 import { S120019Page } from './s120019/s120019.page';
 import { S120019tPage } from './s120019t/s120019t.page';
+import { S120019p1Page } from './s120019p1/s120019p1.page';
 import { S120020Page } from './s120020/s120020.page';
 import { S120021Page } from './s120021/s120021.page';
 import { S120022Page } from './s120022/s120022.page';
@@ -215,6 +216,10 @@ const routes: Routes = [
   {
     path: 's120019t',
     component: S120019tPage,
+  },
+  {
+    path: 's120019p1',
+    component: S120019p1Page,
   },
   {
     path: 's120020',
@@ -622,6 +627,7 @@ const routes: Routes = [
     path: 's120104',
     component: S120104Page,
   },
+ 
  
  
  

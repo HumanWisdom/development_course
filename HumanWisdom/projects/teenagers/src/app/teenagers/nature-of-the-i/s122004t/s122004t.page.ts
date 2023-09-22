@@ -82,7 +82,7 @@ export class S122004tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122003'])
+    this.router.navigate(['/nature-of-the-i/s122003p1'])
   }
 
 }

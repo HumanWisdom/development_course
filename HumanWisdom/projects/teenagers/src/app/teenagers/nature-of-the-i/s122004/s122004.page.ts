@@ -122,7 +122,7 @@ export class S122004Page implements OnInit,OnDestroy
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/nature-of-the-i/s122003'])
+    this.router.navigate(['/nature-of-the-i/s122003p1'])
   }
 
   ngOnDestroy()
