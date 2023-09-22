@@ -28,8 +28,8 @@ export class PaymentPage implements OnInit,AfterViewInit {
     this.selectedSubscription =
       this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
-    this.GetDataFromLocalStorage();
     this.initializeModel();
+    this.GetDataFromLocalStorage();
   }
 
   initializeModel(){
@@ -88,10 +88,11 @@ export class PaymentPage implements OnInit,AfterViewInit {
       const form = document.getElementById('payment-form');
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
+        console.log('production '+this.isProduction)
         const {error} = await stripe.confirmSetup({
           elements,
           confirmParams: {
-            return_url: this.isProduction ? 'https://humanwisdom.me/adults/subscription/free-trial' : 'https://staging.humanwisdom.me/adults/subscription/free-trial' 
+            return_url: this.isProduction ? 'https://staging.humanwisdom.me/adults/subscription/free-trial' : 'https://staging.humanwisdom.me/adults/subscription/free-trial' 
           }
         });
       
