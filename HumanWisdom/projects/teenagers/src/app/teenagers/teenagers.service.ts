@@ -72,7 +72,7 @@ export class TeenagersService {
     return this.http.get(this.path + `/clickModule/${data}/${userId}`)
   }
   getPoints(data: any): Observable<any> {
-    return this.http.get(this.path + `/UserScore/${data}`)
+    return this.http.get(this.path + `/UserScore/${data}/11`)
   }
   viewJournal(data: any): Observable<any> {
 
