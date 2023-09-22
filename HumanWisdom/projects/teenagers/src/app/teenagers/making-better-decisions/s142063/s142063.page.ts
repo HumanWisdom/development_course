@@ -16,7 +16,7 @@ export class S142063Page implements OnInit,OnDestroy {
   bg="light_blue_w5"
   title="#6 Our need to feel important and be recognised"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/2.7.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/2.7.mp3'
 
   transcriptPage="making-better-decisions/s142063t"
   toc="making-better-decisions/s142001"

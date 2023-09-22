@@ -16,7 +16,7 @@ export class S135015Page implements OnInit,OnDestroy
   title="Relationship bullying"
 
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/bullying/audios/1.5.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/bullying/audios/1.5.mp3'
   transcriptPage="bullying/s135015t"
   toc="bullying/s135001"
   bookmark=0

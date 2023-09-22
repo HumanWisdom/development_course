@@ -14,8 +14,8 @@ export class S104018Page implements OnInit,OnDestroy {
   bg_cft="bg_teal"
   bg="teal_w4"
   title="#4 Our expectations are not met"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/obstacles-enquiry/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/obstacles-enquiry/audios/1.3.mp3'
   transcriptPage="obstacles-enquiry/s104018t"
   toc="obstacles-enquiry/s104001"
   bookmark=0

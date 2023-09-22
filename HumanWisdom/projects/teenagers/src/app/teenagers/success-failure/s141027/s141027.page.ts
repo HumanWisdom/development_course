@@ -18,7 +18,7 @@ export class S141027Page implements OnInit,OnDestroy {
   title="The beauty of a balanced life  "  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/success-failure/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/success-failure/audios/1.4.mp3'
 
   transcriptPage="success-failure/s141027t"
   toc="success-failure/s141001"

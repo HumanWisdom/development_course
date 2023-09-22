@@ -34040,7 +34040,6 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_best_value
 {
   border-radius: 16px 16px 0px 0px;
-  background: #E58D82;
   text-align: center;
   padding: 8px 10px;
 }
@@ -34048,7 +34047,6 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .div_annual 
 {
   border-radius: 0px 0px 16px 16px;
-  border: 1px solid #E58D82;
   background: #120F40;
   padding: 20px;
 }

@@ -16,7 +16,7 @@ export class S142069Page implements OnInit,OnDestroy {
   bg="light_blue_w11"
   title="#8  Our stress, anxiety, anger, and emotional pain"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/making-better-decisions/audios/2.9.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/making-better-decisions/audios/2.9.mp3'
 
   transcriptPage="making-better-decisions/s142069t"
   toc="making-better-decisions/s142001"

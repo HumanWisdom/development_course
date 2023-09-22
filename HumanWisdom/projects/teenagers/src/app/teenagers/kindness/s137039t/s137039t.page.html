@@ -1,0 +1,27 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Sometimes we are kind to others in order to get something back from them. It could be we want a favour, or want to join their group of friends, or want them to like us. Observe this in yourself and see if it is true. It is neither right or wrong - just the way our mind works and needs to be understood.
+            We may not even be aware that we are being kind because we want something back - but are first aware of the painful disappointment we feel when we don’t get what we want - and get angry at the other person for not returning the favour.
+            ‘I did so much for you and you couldn’t even do this little thing for me’ - is the thought that arises and we feel justified in our hurt.
+            This form of kindness invariably leads to disappointment, and others can also see through it.
+            Its in this cycle of thinking that our minds are caught, and it is one of the main reasons relationships get strained and breakdown. 
+            Just observing this in ourselves helps us to let go of any expectations in return for our kindness
+           
+          </p>
+        </h3>                 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

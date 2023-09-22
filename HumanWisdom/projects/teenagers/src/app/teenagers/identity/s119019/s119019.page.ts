@@ -14,7 +14,7 @@ export class S119019Page implements OnInit
   bg_tn="bg_dark_blue"
   bg_cft="bg_dark_blue"
   bg="dark_blue_w6"
-  hint = "  If someone criticized your religion, or country, or schoolcompany would you feel personally as if you were being personally attacked. "
+  hint = "  If someone criticized your religion, or country, or school would you feel as if you were being personally attacked. "
   toc = "/identity/s119001"
    path = setTimeout(() => {
     return this.router.url;
@@ -29,7 +29,7 @@ export class S119019Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1882
   reflection: any
   reflectionA: any
   r119019 = JSON.parse(sessionStorage.getItem("r119019"))

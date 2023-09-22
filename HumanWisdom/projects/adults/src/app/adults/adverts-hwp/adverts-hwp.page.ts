@@ -236,16 +236,14 @@ export class AdvertsHwpPage implements OnInit {
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
-    }
-    else if (val === 'dashboard') {
+    } else if (val === 'dashboard') {
       this.redeemsubscription.nativeElement.click()
       if (!this.isLoggedIn) {
         this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
-    }
-    else if (val === 'redeem') {
+    } else if (val === 'redeem') {
       let res = localStorage.getItem("isloggedin")
       if (res === 'T') {
         this.firstpage = false
@@ -254,9 +252,10 @@ export class AdvertsHwpPage implements OnInit {
         this.modaldata['email'] = localStorage.getItem('email');
         this.modaldata['firstname'] = namedata[0];
         this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-        this.redeemsubscription.nativeElement.click()
+        this.router.navigate(['/adults/redeem-subscription'])
+        // this.redeemsubscription.nativeElement.click()
       } else {
-        this.firstpage = true
+        this.firstpage = true;
         this.redeemsubscription.nativeElement.click()
       }
     } else if (!this.isLoggedIn) {
@@ -372,11 +371,13 @@ export class AdvertsHwpPage implements OnInit {
             localStorage.setItem("remember", 'T')
             this.fifthpage = false;
             this.thirdpage = true;
+            this.router.navigate(['/adults/redeem-subscription'])
           } else if (val === 'second') {
             localStorage.setItem("isloggedin", 'T')
             localStorage.setItem("remember", 'T')
             this.secondpage = false;
             this.thirdpage = true;
+            this.router.navigate(['/adults/redeem-subscription'])
           }
 
 
@@ -446,6 +447,7 @@ export class AdvertsHwpPage implements OnInit {
               localStorage.setItem("isloggedin", 'T')
             }
           }
+          this.router.navigate(['/adults/redeem-subscription'])
         },
         error => { console.log(error) },
         () => {
@@ -476,7 +478,6 @@ export class AdvertsHwpPage implements OnInit {
             this.firstpage = false
             this.fifthpage = false
             this.thirdpage = true
-
             this.loginResponse = res
             localStorage.setItem('guest', 'F');
             localStorage.setItem("remember", 'T')
@@ -536,6 +537,7 @@ export class AdvertsHwpPage implements OnInit {
                 localStorage.setItem("isloggedin", 'T')
               }
             }
+            this.router.navigate(['/adults/redeem-subscription'])
           }
         })
     },
@@ -568,7 +570,6 @@ export class AdvertsHwpPage implements OnInit {
               this.firstpage = false
               this.fifthpage = false
               this.thirdpage = true
-
               this.loginResponse = res
               localStorage.setItem('guest', 'F');
               localStorage.setItem("remember", 'T')
@@ -628,6 +629,7 @@ export class AdvertsHwpPage implements OnInit {
                   localStorage.setItem("isloggedin", 'T')
                 }
               }
+              this.router.navigate(['/adults/redeem-subscription'])
             }
           })
       } else {

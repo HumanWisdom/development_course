@@ -8,47 +8,46 @@ import { TeenagersService } from '../../teenagers.service';
   templateUrl: './s112159.page.html',
   styleUrls: ['./s112159.page.scss'],
 })
-export class S112159Page implements OnInit {
 
+export class S112159Page implements OnInit {
   bg_tn="bg_purple_red"
   bg_cft="bg_purple_red"
   bg="purple_red_flat"
-
-  userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
+  userId:any
+  userName:any
+  progressPercent:any
+  progressText="6/7"
+  link="/fear-anxiety/s112160"
+  name="Anxiety in school - a conversation"
+  progressImg=""
+  toc="fear-anxiety/s112001"
 
-
-  constructor(private router: Router,
-    private service:TeenagersService,
-    private location:Location) { }
+  constructor(private router: Router, private location:Location,private service: TeenagersService) { }
 
   ngOnInit() {
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-    this.sessionPoints()
-  }
-
-  sessionPoints(){
-    this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"112119,112120,112121,112122,112123,112124,112125,112126,112127,112128,112129,112130,112131,112132,112133,112134,112135,112136,112137,112138,112139,112140,112141,112142,112143,112144,112145,112146,112147,112148,112149,112150,112151,112152,112153,112154,112155,112156,112157,112158"})
-    .subscribe(res=>
-      {console.log("points",res)
-      this.points=res
-    })
    
-
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+      this.userName=JSON.parse(sessionStorage.getItem("userName"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+      this.userName=JSON.parse(localStorage.getItem("userName"))
+  
+    }
+      this.getProgress()
+  
   }
-
-  submitProgress(){
-    this.router.navigate(['/fear-anxiety/s112159p1'])
+  getProgress(){
+    this.service.getPoints(this.userId)
+    .subscribe(res=>{
+      
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Fear & Anxiety").Percentage)
+     console.log(this.progressPercent)
+    
+    })
   }
-  prev(){
-    this.router.navigate(['/fear-anxiety/s112158'])
-
-  }
-
 }

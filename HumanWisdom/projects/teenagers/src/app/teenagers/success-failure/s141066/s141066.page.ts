@@ -19,7 +19,7 @@ export class S141066Page implements OnInit,OnDestroy {
   
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/success-failure/audios/3.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/success-failure/audios/3.4.mp3'
   transcriptPage="success-failure/s141066t"
   toc="success-failure/s141001"
   bookmark=0
