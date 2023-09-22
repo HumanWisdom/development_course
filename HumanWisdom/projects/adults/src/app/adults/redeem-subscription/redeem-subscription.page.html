@@ -92,33 +92,34 @@
           </div>
 
           <div class="pagebreak"></div>
-
-          <div class="mfooter" *ngIf="subfirstpage">
-            <div class="row center_flex">
-              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
-                <a>
-                  <button type="button" class="btn btn_tfas" [disabled]="activationCode === ''"
-                    (click)="verifyactkey()">
-                    Submit
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="mfooter" *ngIf="subsecondpage">
-            <div class="row center_flex">
-              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
-                <a>
-                  <button type="button" class="btn btn_tfas" (click)="submitcode()">
-                    Activate now
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
+          
         </form>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="mfooter" *ngIf="subfirstpage">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
+      <a>
+        <button type="button" class="btn btn_tfas" [disabled]="activationCode === ''"
+          (click)="verifyactkey()">
+          Submit
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mfooter" *ngIf="subsecondpage">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
+      <a>
+        <button type="button" class="btn btn_tfas" (click)="submitcode()">
+          Activate now
+        </button>
+      </a>
     </div>
   </div>
 </div>
