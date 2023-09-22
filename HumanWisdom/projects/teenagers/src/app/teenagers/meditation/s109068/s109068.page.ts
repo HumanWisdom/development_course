@@ -14,7 +14,7 @@ export class S109068Page implements OnInit,OnDestroy {
   bg_cft="bg_blue"
   bg="blue_w3"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/meditation/videos/2.2.mp4'  
+  videoLink=this.mediaVideo+'/meditation/videos/3.3.mp4'  
   title="How can we carry our awareness through the day?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/meditation/meditation_02.jpg"
   userId:any

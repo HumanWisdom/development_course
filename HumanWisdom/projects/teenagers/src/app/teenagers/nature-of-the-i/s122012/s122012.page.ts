@@ -14,7 +14,7 @@ export class S122012Page implements OnInit
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  hint = "You could say I am British, I am Catholic, I am a Labour Party supporter, I am not good enough, I am pretty, I am homosexual, and so on."
+  hint = "You could say I am British, I am Catholic, I am a Labour Party supporter, I am not good enough, I am pretty, I am homosexual, and so on.  "
   toc = "/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;

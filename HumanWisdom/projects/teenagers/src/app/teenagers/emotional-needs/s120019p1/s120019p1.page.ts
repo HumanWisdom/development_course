@@ -1,38 +1,33 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeenagersService } from '../../teenagers.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s122014',
-  templateUrl: './s122014.page.html',
-  styleUrls: ['./s122014.page.scss'],
+  selector: 'app-s120019p1',
+  templateUrl: './s120019p1.page.html',
+  styleUrls: ['./s120019p1.page.scss'],
 })
-export class S122014Page implements OnInit,OnDestroy {
+export class S120019p1Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_green"
-  bg_cft="bg_green"
-  bg="green_w6"
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/nature-of-i/videos/1.2.mp4'
-  title="Is the ‘I’ created by thinking?  "
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nature_of_i/noi_02.jpg"
+  bg_tn="bg_blue_pink"
+  bg_cft="bg_blue_pink"
+  bg="blue_pink_w6"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("video")
+  screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=122014
+  screenNumber="120019p1"
   startTime:any
   endTime:any
-  totalTime:any  
-  toc="/nature-of-the-i/s122001"
+  totalTime:any
   bookmark=0
+  toc="emotional-needs/s120001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  avDuration:any
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
-  
+ 
   constructor
   (
     private router: Router,
@@ -45,6 +40,7 @@ export class S122014Page implements OnInit,OnDestroy {
   {
     //localStorage.removeItem("bookmarkList")
     this.createScreen()
+    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -56,9 +52,9 @@ export class S122014Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
     this.startTime = Date.now();
     
-    if(JSON.parse(sessionStorage.getItem("bookmark122014"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark120019p1"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark122014"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark120019p1"))==1)
       this.bookmark=1
   }
 
@@ -69,7 +65,7 @@ export class S122014Page implements OnInit,OnDestroy {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark122014",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark120019p1",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -79,32 +75,37 @@ export class S122014Page implements OnInit,OnDestroy {
       "ModuleId":this.moduleId,
       "GSetID":this.screenType,
       "ScreenNo":this.screenNumber
-    }).subscribe(res=>{})
+    }).subscribe(res=>
+      { 
+      })
   }
 
   submitProgress()
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/nature-of-the-i/s122014p1'])
-    this.service.submitProgressAv({
+    this.router.navigate(['/emotional-needs/s120020'])
+    this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
       "BookMark":this.bookmark,
       "ModuleId":this.moduleId,
       "screenType":this.screenType,
-      "timeSpent":this.totalTime,
-      "avDuration":this.avDuration
+      "timeSpent":this.totalTime
     }).subscribe(res=>
       { 
         this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
+      },
+      error=>{console.log(error)},
+      ()=>{
+        //this.router.navigate(['/conditioning/s234'])
       })
   }
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122013'])
+    this.router.navigate(['/emotional-needs/s120019'])
   }
 
   ngOnDestroy()

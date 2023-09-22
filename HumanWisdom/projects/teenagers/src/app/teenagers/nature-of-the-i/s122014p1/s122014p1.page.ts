@@ -4,17 +4,17 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s122023',
-  templateUrl: './s122023.page.html',
-  styleUrls: ['./s122023.page.scss'],
+  selector: 'app-s122014p1',
+  templateUrl: './s122014p1.page.html',
+  styleUrls: ['./s122014p1.page.scss'],
 })
-export class S122023Page implements OnInit 
+export class S122014p1Page implements OnInit 
 {
 
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  hint = "Sometimes we may avoid trying to make new friends because we are afraid of being rejected  "
+  hint = "When you can stay with the feeling without labeling it - it can dissolve into peace"
   toc = "/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
@@ -24,15 +24,15 @@ export class S122023Page implements OnInit
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("reflection")
-  screenNumber = 122023
+  screenNumber = "122014p1"
   startTime: any
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1924
+  rId = 1920
   reflection: any
   reflectionA: any
-  r122023 = JSON.parse(sessionStorage.getItem("r122023"))
+  r122014p1 = JSON.parse(sessionStorage.getItem("r122014p1"))
   shared: any
   confirmed: any
 
@@ -99,9 +99,9 @@ export class S122023Page implements OnInit
     console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r122023", JSON.stringify(e))
-    this.r122023 = sessionStorage.getItem("r122023")
-    console.log(this.r122023)
+    sessionStorage.setItem("r122014p1", JSON.stringify(e))
+    this.r122014p1 = sessionStorage.getItem("r122014p1")
+    console.log(this.r122014p1)
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -110,21 +110,21 @@ export class S122023Page implements OnInit
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": this.r122023
+      "Resp": this.r122014p1
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/nature-of-the-i/s122024'])
+        this.router.navigate(['/nature-of-the-i/s122015'])
 
       },
       () => {
-        this.router.navigate(['/nature-of-the-i/s122024'])
+        this.router.navigate(['/nature-of-the-i/s122015'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/nature-of-the-i/s122022'])
+    this.router.navigate(['/nature-of-the-i/s122014'])
   }
 
   ngOnDestroy() 
