@@ -13,7 +13,7 @@ export class S122071Page implements OnInit,OnDestroy
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w2" 
-  title="Enquiry begins where you are, and can lead to the sacred  "
+  title="Enquiry begins where you are, and can lead to  peace "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
   audioLink=this.mediaAudio+'/nature-of-i/audios/nature-of-i+2.3.mp3' 
   transcriptPage="nature-of-the-i/s122071t"
@@ -109,7 +109,7 @@ export class S122071Page implements OnInit,OnDestroy
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122070'])
+    this.router.navigate(['/nature-of-the-i/s122069'])
   }
 
   ngOnDestroy()

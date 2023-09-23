@@ -15,7 +15,7 @@ export class S120074p1Page implements OnInit
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_w1" 
-  hint = "you could for example meet your need for peasure and stimulation by going for a walk or taking up a hobby"
+  hint = "you could for example meet your need for pleasure and stimulation by going for a walk or taking up a hobby"
   toc = "/emotional-needs/s120001"
    path = setTimeout(() => {
     return this.router.url;
@@ -30,7 +30,7 @@ export class S120074p1Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1910
   reflection: any
   reflectionA: any
   r120074p1 = JSON.parse(sessionStorage.getItem("r120074p1"))

@@ -14,7 +14,7 @@ export class S109060Page implements OnInit,OnDestroy {
   bg_cft="bg_blue"
   bg="blue_w8"
   mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/meditation/videos/2.2.mp4'  
+  videoLink=this.mediaVideo+'/meditation/videos/3.1.mp4'  
   title="Tips for meditation"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/meditation/meditation_06.jpg"
   userId:any

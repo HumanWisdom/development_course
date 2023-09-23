@@ -112,7 +112,7 @@ export class TnDashboardV03Component implements OnInit {
   }
 
   Subscribe() {
-    this.router.navigate(['/subscription']);
+    this.router.navigate(['/subscription/start-your-free-trial']);
   }
 
   clickbanner(url = '') {

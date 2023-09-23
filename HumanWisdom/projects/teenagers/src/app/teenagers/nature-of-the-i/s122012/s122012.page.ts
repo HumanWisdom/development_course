@@ -14,7 +14,7 @@ export class S122012Page implements OnInit
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  hint = "Perhaps the process is unconscious. We are conditioned by our past and not aware of it.   "
+  hint = "You could say I am British, I am Catholic, I am a Labour Party supporter, I am not good enough, I am pretty, I am homosexual, and so on.  "
   toc = "/nature-of-the-i/s122001"
    path = setTimeout(() => {
     return this.router.url;
@@ -29,7 +29,7 @@ export class S122012Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1921
   reflection: any
   reflectionA: any
   r122012 = JSON.parse(sessionStorage.getItem("r122012"))
