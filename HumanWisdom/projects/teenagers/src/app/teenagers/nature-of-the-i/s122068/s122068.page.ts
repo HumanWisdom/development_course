@@ -100,7 +100,7 @@ export class S122068Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/nature-of-the-i/s122067'])
+    this.router.navigate(['/nature-of-the-i/s122065'])
   }
 
   goNext() 
