@@ -960,6 +960,12 @@
     {
         height: 155px;
     }
+
+    .modal.fade.in .lab-modal-body
+    {
+        overflow-y: overlay !important;
+        height: 100%;
+    }
 }
 
 @media (max-width: 1024px)
