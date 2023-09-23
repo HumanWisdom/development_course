@@ -25,7 +25,7 @@ export class S103017Page implements OnInit,OnDestroy {
   moduleId=localStorage.getItem("moduleId")
   screenNumber=103017
   startTime:any
-  endTime:any
+  endTime:any                                                                                                                                                                                                                                                                                                                                                                                     
   totalTime:any  
   toc="without-language/s103001"
   bookmark=0
