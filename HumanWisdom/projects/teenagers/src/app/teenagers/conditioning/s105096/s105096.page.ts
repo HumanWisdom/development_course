@@ -16,7 +16,7 @@ export class S105096Page implements OnInit,OnDestroy
   bg="pink_orange_w3"
   title="Understanding conditioning can bring freedom from emotional pain"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/3.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/3.3.mp3'
   transcriptPage="conditioning/s105096t"
   toc="conditioning/s105001"
   bookmark=0

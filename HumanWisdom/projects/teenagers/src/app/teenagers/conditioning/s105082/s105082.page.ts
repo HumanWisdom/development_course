@@ -16,7 +16,7 @@ export class S105082Page implements OnInit,OnDestroy
   bg="pink_orange_w7"
   title="Understanding conditioning awakens compassion"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/3.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/3.2.mp3'
   transcriptPage="conditioning/s105082t"
   toc="conditioning/s105001"
   bookmark=0

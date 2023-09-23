@@ -524,7 +524,7 @@ const routes: Routes = [
     component: S142079Page,
   },
   {
-    path: 's1420780',   
+    path: 's142080',   
     component: S142080Page,
   },
   {

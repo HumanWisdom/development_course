@@ -14,7 +14,7 @@ export class S132208Page implements OnInit {
   bg_cft="bg_blue"
   bg="blue_w10"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/communication/audios/6.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/communication/audios/6.2.mp3'
   title="Difficult conversations - what's going on in our thinking?"
 
   toc="communication/s132001"

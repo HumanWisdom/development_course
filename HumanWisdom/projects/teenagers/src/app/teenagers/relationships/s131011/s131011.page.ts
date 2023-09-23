@@ -23,7 +23,7 @@ export class S131011Page implements OnInit {
   totalTime:any
   
   bookmark=0
-  toc="relationships/s131011"
+  toc="relationships/s131001"
   path = setTimeout(() => {
     return this.router.url;
   }, 1000); 
