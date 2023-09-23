@@ -10,6 +10,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./s75001.page.scss'],
 })
 export class S75001Page implements OnInit {
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/wisdom_exercise.svg"
+  tocColor="white"
+
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
