@@ -15,11 +15,10 @@ export class S117074Page implements OnInit,OnDestroy {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w3"
-  title="  "
-  
+  title="  "  
   
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/loneliness/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/loneliness/audios/1.2.mp3'
 
   transcriptPage="loneliness/s117074t"
   toc="loneliness/s117001"

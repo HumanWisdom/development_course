@@ -14,7 +14,7 @@ export class S118023Page implements OnInit,OnDestroy {
   bg_cft="bg_red_pink"
   bg="red_pink_w7"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/anger/videos/1.1.mp4'
+  videoLink=this.mediaVideo+'/teenagers/modules/anger/videos/1.1.mp4'
   poster="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/video_posters/anger/anger_01.jpg"
   title="Anger and blame"
   userId:any

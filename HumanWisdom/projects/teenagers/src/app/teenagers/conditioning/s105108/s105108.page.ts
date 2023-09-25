@@ -16,7 +16,7 @@ export class S105108Page implements OnInit,OnDestroy
   bg="pink_orange_w3"
   title="Our conditioning creates our prejudices"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/3.6.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/3.6.mp3'
   transcriptPage="conditioning/s105108t"
   toc="conditioning/s105001"
   bookmark=0

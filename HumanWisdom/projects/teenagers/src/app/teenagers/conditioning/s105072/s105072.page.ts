@@ -16,7 +16,7 @@ export class S105072Page implements OnInit,OnDestroy
   bg="pink_orange_w3"
   title="Identity and conflict"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/2.6.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/2.6.mp3'
   transcriptPage="conditioning/s105072t"
   toc="conditioning/s105001"
   bookmark=0

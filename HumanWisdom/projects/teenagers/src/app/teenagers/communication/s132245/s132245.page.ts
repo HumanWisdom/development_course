@@ -16,7 +16,7 @@ export class S132245Page implements OnInit {
   
   title="Early warning signs of an argument"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/communication/audios/7.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/communication/audios/7.2.mp3'
 
   transcriptPage="communication/s132245t"
   toc="communication/s132001"

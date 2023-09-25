@@ -16,7 +16,7 @@ export class S105053Page implements OnInit,OnDestroy
   bg="pink_orange_w8"
   title="Conditioning, belief, and religion"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/2.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/2.2.mp3'
   transcriptPage="conditioning/s105053t"
   toc="conditioning/s105001"
   bookmark=0
