@@ -1,0 +1,20 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          This need for approval can make us anxious about what others are thinking about us. It can become a habit that creates chronic anxiety. We are certain that we know what others are thinking and can react to that and feel upset. The truth is that most people are thinking mainly of themselves, not us, and whatever we imagine they are thinking is usually incorrect anyway. If we really want to know, it is simpler just to ask them. 
+
+          </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

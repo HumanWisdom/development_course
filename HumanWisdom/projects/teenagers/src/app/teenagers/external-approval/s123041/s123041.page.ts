@@ -14,8 +14,8 @@ export class S123041Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="Our need for external approval can influence our behaviour  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/external-approval/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/external-approval/audios/1.8.mp3'
   transcriptPage="external-approval/s123041t"
   toc="external-approval/s123001 "
   bookmark=0
@@ -106,10 +106,10 @@ export class S123041Page implements OnInit,OnDestroy
         localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
       })
   }
-
+ 
   prev()
   {
-    this.router.navigate(['/external-approval/s123040'])
+    this.router.navigate(['/external-approval/s123040p1'])
   }
 
   ngOnDestroy()

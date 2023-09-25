@@ -14,8 +14,8 @@ export class S123060Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="#2 Observe the different ways it operates in your life. Don’t try to change it.  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/external-approval/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/external-approval/audios/2.3.mp3'
   transcriptPage="external-approval/s123060t"
   toc="external-approval/s123001  "
   bookmark=0
