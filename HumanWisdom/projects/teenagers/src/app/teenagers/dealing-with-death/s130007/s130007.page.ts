@@ -15,7 +15,7 @@ export class S130007Page implements OnInit,OnDestroy
   bg="teal_w5"
   title="Let’s talk about death  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/dealing-with-death/audios/dealing-with-death+1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/dealing-with-death/audios/dealing-with-death+1.2.mp3'
   transcriptPage="dealing-with-death/s130007t"
   toc="dealing-with-death/s130001"
   bookmark=0

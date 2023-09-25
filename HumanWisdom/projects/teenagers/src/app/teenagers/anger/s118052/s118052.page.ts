@@ -14,7 +14,7 @@ export class S118052Page implements OnInit,OnDestroy {
   bg_cft="bg_red_pink"
   bg="red_pink_w10"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/anger/videos/1.3.mp4'
+  videoLink=this.mediaVideo+'/teenagers/modules/anger/videos/1.3.mp4'
   poster="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/video_posters/anger/anger_03.jpg"
   title="How do we respond when others are angry with us?"
   userId:any

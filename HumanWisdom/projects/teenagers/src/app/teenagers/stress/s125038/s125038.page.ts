@@ -24,7 +24,7 @@ export class S125038Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "stress/s125037"
+  toc = "stress/s125001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);

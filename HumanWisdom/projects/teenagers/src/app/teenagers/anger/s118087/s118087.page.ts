@@ -16,7 +16,7 @@ export class S118087Page implements OnInit,OnDestroy
   bg="red_pink_w12"
   title="Acceptance dissolves anger" 
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/anger/audios/1.3.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/anger/audios/1.3.mp3'
   transcriptPage="anger/s118087t"
   toc="anger/s118001"
   bookmark=0
