@@ -13,7 +13,7 @@ export class S136007Page implements OnInit {
   bg_tn = "bg_green"
   bg_cft = "bg_green"
   bg = "criticism_w5"
-  hint = ""
+  hint = " You may get defensive, or even angry."
 
   toc = "/criticism/s136001"
   userId: any

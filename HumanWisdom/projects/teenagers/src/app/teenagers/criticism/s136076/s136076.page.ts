@@ -13,7 +13,7 @@ export class S136076Page implements OnInit {
   bg_tn = "bg_green"
   bg_cft = "bg_green"
   bg = "criticism_w5"
-  hint = ""
+  hint = "Usually its an automatic reaction from our thinking "
   toc = "criticism/s136001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))

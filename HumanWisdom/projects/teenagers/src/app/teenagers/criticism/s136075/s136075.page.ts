@@ -13,7 +13,7 @@ export class S136075Page implements OnInit {
   bg_tn = "bg_green"
   bg_cft = "bg_green"
   bg = "criticism_w4"
-  hint = ""
+  hint = " It could make you lose your confidence "
 
   toc = "criticism/s136001"
   userId: any
@@ -122,7 +122,7 @@ export class S136075Page implements OnInit {
 
   previous() 
   {
-    this.router.navigate(['/criticism/s136075'])
+    this.router.navigate(['/criticism/s136074'])
   }
 
   ngOnDestroy() 
