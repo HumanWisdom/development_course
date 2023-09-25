@@ -125,4 +125,9 @@ export class S63067Page implements OnInit,OnDestroy {
     localStorage.setItem("avDuration63067",this.avDuration)
 
   }
+  gotoTranscript() {
+    const url = this.router.url + "t";
+    this.router.navigate([url]);
+  }
+  
 }
