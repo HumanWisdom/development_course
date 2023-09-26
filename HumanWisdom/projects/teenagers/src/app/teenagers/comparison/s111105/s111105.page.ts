@@ -14,8 +14,8 @@ export class S111105Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w11"
   title="Is it possible to be free of envy?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/6.9.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/6.9.mp3'
   transcriptPage="comparison/s111105t"
   toc="comparison/s111001"
   bookmark=0
