@@ -14,8 +14,8 @@ export class S123029Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="How does the need for external approval cause suffering?  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/external-approval/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/external-approval/audios/1.4.mp3'
   transcriptPage="external-approval/s123029t"
   toc="external-approval/s123001 "
   bookmark=0

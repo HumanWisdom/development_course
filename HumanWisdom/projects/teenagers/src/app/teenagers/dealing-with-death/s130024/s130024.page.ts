@@ -15,7 +15,7 @@ export class S130024Page implements OnInit,OnDestroy
   bg="teal_w5"
   title="How does the fear of death shape our lives?  "
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/dealing-with-death/audios/1.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/dealing-with-death/audios/1.2.mp3'
   transcriptPage="dealing-with-death/s130024t"
   toc="dealing-with-death/s130001"
   bookmark=0

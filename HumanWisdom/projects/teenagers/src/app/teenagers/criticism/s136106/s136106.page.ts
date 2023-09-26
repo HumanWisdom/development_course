@@ -13,7 +13,7 @@ export class S136106Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w9"
-
+  toc = "/criticism/s136001"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   points:any

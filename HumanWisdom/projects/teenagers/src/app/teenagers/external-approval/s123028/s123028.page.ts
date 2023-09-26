@@ -106,7 +106,7 @@ export class S123028Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123027'])
+    this.router.navigate(['/external-approval/s123027p1'])
   }
 
   ngOnDestroy()

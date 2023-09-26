@@ -16,7 +16,7 @@ export class S131037Page implements OnInit {
 
   title="What relationship do you have with your teachers?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/2.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/relationships/audios/2.2.mp3'
 
   transcriptPage="relationships/s131037t"
   toc="relationships/s131001"

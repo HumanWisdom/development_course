@@ -16,7 +16,7 @@ export class S105032Page implements OnInit,OnDestroy
   bg="pink_orange_w2"
   title="We become attached to our conditioning"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/1.4.mp3'
   transcriptPage="conditioning/s105032t"
   toc="conditioning/s105001"
   bookmark=0

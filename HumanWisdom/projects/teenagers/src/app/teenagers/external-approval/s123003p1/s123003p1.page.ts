@@ -3,27 +3,27 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 @Component({
-  selector: 'app-s122067',
-  templateUrl: './s122067.page.html',
-  styleUrls: ['./s122067.page.scss'],
+  selector: 'app-s123003p1',
+  templateUrl: './s123003p1.page.html',
+  styleUrls: ['./s123003p1.page.scss'],
 })
-export class S122067Page implements OnInit, OnDestroy 
+export class S123003p1Page implements OnInit, OnDestroy 
 {
 
-  bg_tn="bg_green"
-  bg_cft="bg_green"
-  bg="green_w8"
+  bg_tn = "bg_blue"
+  bg_cft = "bg_blue"
+  bg = "blue_w1"
 
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
-  screenNumber = 122067
+  screenNumber = "123003p1"
   startTime: any
   endTime: any
   totalTime: any
   bookmark = 0
-  toc = "nature-of-the-i/s122001"
+  toc = "external-approval/s123001"
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -53,9 +53,9 @@ export class S122067Page implements OnInit, OnDestroy
     this.startTime = Date.now();
     this.startTime = Date.now();
 
-    if (JSON.parse(sessionStorage.getItem("bookmark122067")) == 0)
+    if (JSON.parse(sessionStorage.getItem("bookmark123003p1")) == 0)
       this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark122067")) == 1)
+    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark123003p1")) == 1)
       this.bookmark = 1
   }
 
@@ -66,7 +66,7 @@ export class S122067Page implements OnInit, OnDestroy
       this.bookmark = 1
     else
       this.bookmark = 0
-    sessionStorage.setItem("bookmark122067", JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark123003p1", JSON.stringify(this.bookmark))
   }
 
   createScreen() 
@@ -100,16 +100,16 @@ export class S122067Page implements OnInit, OnDestroy
 
   prev() 
   {
-    this.router.navigate(['/nature-of-the-i/s122066'])
+    this.router.navigate(['/external-approval/s123003'])
   }
 
   goNext() 
   {
-    // this.router.navigate(['/nature-of-the-i/s122067'])
+    // this.router.navigate(['/external-approval/s123003p1'])
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     if (this.userId !== 563) this.submitProgress()
-    this.router.navigate(['/nature-of-the-i/s122068'])
+    this.router.navigate(['/external-approval/s123004'])
   }
 
   ngOnDestroy() 

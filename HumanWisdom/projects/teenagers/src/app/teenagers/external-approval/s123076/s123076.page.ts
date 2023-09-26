@@ -29,7 +29,7 @@ export class S123076Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1945
   reflection: any
   reflectionA: any
   r123076 = JSON.parse(sessionStorage.getItem("r123076"))
@@ -124,7 +124,7 @@ export class S123076Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/external-approval/s123075'])
+    this.router.navigate(['/external-approval/s123075p2'])
   }
 
   ngOnDestroy() 

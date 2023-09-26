@@ -15,7 +15,7 @@ export class S132231Page implements OnInit {
   bg = "blue_w2"
   title = "Introduction"
   mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink = this.mediaAudio + '/communication/audios/7.1.mp3'
+  audioLink = this.mediaAudio + '/teenagers/modules/communication/audios/7.1.mp3'
 
   transcriptPage = "communication/s132231t"
   toc = "communication/s132001"

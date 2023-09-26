@@ -14,8 +14,8 @@ export class S114022Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="What others think. How does that shape our lives?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/self-image/audios/1.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/self-image/audios/1.3.mp3'
   transcriptPage="self-image/s114022t"
   toc="self-image/s114001"
   bookmark=0

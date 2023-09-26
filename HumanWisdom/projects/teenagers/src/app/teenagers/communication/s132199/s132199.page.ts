@@ -15,7 +15,7 @@ export class S132199Page implements OnInit {
   bg="blue_w1"
   title="Having difficult conversations"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/communication/audios/6.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/communication/audios/6.1.mp3'
 
   transcriptPage="communication/s132199t"
   toc="communication/s132001"
