@@ -1,0 +1,19 @@
+
+<app-course-header  [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      #6 Notice how your mind thinks about what others are thinking about you. This usually happens in the background and creates anxiety. Ask yourself if this serves you in any way, and let that go.
+
+          </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

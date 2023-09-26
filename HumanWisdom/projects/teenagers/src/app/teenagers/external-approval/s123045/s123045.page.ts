@@ -14,8 +14,8 @@ export class S123045Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="External approval becomes a determinant of our success  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/external-approval/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/external-approval/audios/1.9.mp3'
   transcriptPage="external-approval/s123045t"
   toc="external-approval/s123001 "
   bookmark=0
