@@ -22,4 +22,8 @@ export class Constant {
     public static SelectedPlanModel ="SelectedPlanModel";
     public static MonthPlanFreeTrial = 7;
     public static AnnualPlanFreeTrial = 14;
+    public static One = 1;
+    public static guest = 'guest';
+    public static subscriber = 'Subscriber';
+    
 }

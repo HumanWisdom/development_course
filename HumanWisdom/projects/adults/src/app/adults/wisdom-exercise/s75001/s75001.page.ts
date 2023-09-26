@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../adults.service";
 import { Location } from '@angular/common';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../../shared/services/constant';
 
 @Component({
   selector: 'HumanWisdom-s75001',
@@ -12,7 +14,7 @@ import { Location } from '@angular/common';
 export class S75001Page implements OnInit {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/wisdom_exercise.svg"
   tocColor="white"
-
+  isGuest : boolean =  true;
    path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -25,6 +27,8 @@ export class S75001Page implements OnInit {
  
   ngOnInit() {
     this.service.setmoduleID(75);
+    this.isGuest = SharedService.getDataFromLocalStorage(Constant.guest) == Constant.ShortTrue ||
+                   SharedService.getDataFromLocalStorage(Constant.subscriber) != Constant.One.toString() 
   }
   share(){
     this.ngNavigatorShareService.share({
