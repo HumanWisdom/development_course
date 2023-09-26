@@ -16,7 +16,7 @@ export class S105104Page implements OnInit,OnDestroy
   bg="pink_orange_w11"
   title="Understanding awakens wisdom. Wisdom brings change"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/3.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/3.4.mp3'
   transcriptPage="conditioning/s105104t"
   toc="conditioning/s105001"
   bookmark=0

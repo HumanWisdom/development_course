@@ -13,8 +13,8 @@ export class S122006Page implements OnInit,OnDestroy {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_w6"
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  videoLink=this.mediaVideo+'/nature-of-i/videos/1.1.mp4'
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/nature-of-i/videos/1.1.mp4'
   title="What is the ‘I’ ?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nature_of_i/noi_01.jpg"
   userId:any

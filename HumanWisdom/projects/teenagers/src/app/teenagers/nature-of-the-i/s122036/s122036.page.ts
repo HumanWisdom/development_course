@@ -106,7 +106,7 @@ export class S122036Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/nature-of-the-i/s122035'])
+    this.router.navigate(['/nature-of-the-i/s122035p1'])
   }
 
   ngOnDestroy()

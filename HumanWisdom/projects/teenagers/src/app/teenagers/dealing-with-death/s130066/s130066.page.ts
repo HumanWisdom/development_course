@@ -364,12 +364,12 @@ export class S130066Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/dealing-with-death/s130067'])
+    this.router.navigate(['/dealing-with-death/s130065'])
   }
 
   routeNext() 
   {
-    this.router.navigate(['/dealing-with-death/s130065'])
+    this.router.navigate(['/dealing-with-death/s130067'])
   }
 
   ngOnDestroy() {}
