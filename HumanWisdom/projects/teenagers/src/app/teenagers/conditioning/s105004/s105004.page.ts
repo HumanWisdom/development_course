@@ -16,7 +16,7 @@ export class S105004Page implements OnInit,OnDestroy
   bg="pink_orange_w3"
   title="Conditioning – an introduction"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/conditioning/audios/1.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/conditioning/audios/1.1.mp3'
   transcriptPage="conditioning/s105004t"
   toc="conditioning/s105001"
   bookmark=0

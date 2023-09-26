@@ -15,7 +15,7 @@ export class S131051Page implements OnInit {
   bg="purple_w3"
   title="What relationship do we have with nature?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/2.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/relationships/audios/2.4.mp3'
 
   transcriptPage="relationships/s131051t"
   toc="relationships/s131001"

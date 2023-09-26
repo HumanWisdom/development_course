@@ -12,8 +12,8 @@ export class S118011Page implements OnInit
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_w9"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
-  audioLink=this.mediaAudio+'/modules/anger/audios/1.1.mp3'
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/teenagers/modules/anger/audios/1.1.mp3'
   title="Anger based on conditioning"
   toc="/anger/s118001"
   transcriptPage="anger/s118011t"

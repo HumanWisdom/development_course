@@ -9,6 +9,7 @@ export class S117118Page implements OnInit {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_flat"
+  toc = "/loneliness/s117001";
 
   constructor() { }
 

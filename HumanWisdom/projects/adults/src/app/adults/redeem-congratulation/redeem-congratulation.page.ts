@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./redeem-congratulation.page.scss'],
 })
 export class RedeemCongratulationPage {
+  public yearormonth = ''
 
   constructor(
     private router: Router
   ) {
-
+    this.yearormonth = localStorage.getItem('yearormonth');
   }
 
   route(event) {

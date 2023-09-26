@@ -15,7 +15,7 @@ export class S131036Page implements OnInit {
   bg="purple_w5"
   title="Friends vs. Spouses/Partners"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/2.1.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/relationships/audios/2.1.mp3'
 
   transcriptPage="relationships/s131036t"
   toc="relationships/s131001"

@@ -15,7 +15,7 @@ export class S131073Page implements OnInit,OnDestroy
   bg="purple_w6"
   title="How does comparison affect relationships?"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/relationships/audios/3.2.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/relationships/audios/3.2.mp3'
   transcriptPage="relationships/s131073t"
   toc="relationships/s131001"
   bookmark=0

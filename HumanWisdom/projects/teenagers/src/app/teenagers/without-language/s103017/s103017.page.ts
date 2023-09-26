@@ -15,8 +15,8 @@ export class S103017Page implements OnInit,OnDestroy {
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w3"
-  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
-  videoLink=this.mediaVideo+'/modules/without-language/videos/1.2.mp4'   
+  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
+  videoLink=this.mediaVideo+'/teenagers/modules/without-language/videos/1.1.mp4'  
   title="Notice every thought that comes along, as you watch this video.Can you look and listen without language?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_02.jpg"
   userId:any
@@ -25,7 +25,7 @@ export class S103017Page implements OnInit,OnDestroy {
   moduleId=localStorage.getItem("moduleId")
   screenNumber=103017
   startTime:any
-  endTime:any
+  endTime:any                                                                                                                                                                                                                                                                                                                                                                                     
   totalTime:any  
   toc="without-language/s103001"
   bookmark=0
