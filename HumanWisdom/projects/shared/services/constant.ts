@@ -26,6 +26,6 @@ export class Constant {
     public static One = 1;
     public static guest = 'guest';
     public static subscriber = 'Subscriber';
-    public static SubscribeType = 'SubscribeType';
+    public static SubscriberType = 'SubscriberType';
 
 }
