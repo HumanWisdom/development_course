@@ -14,8 +14,8 @@ export class S111087Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w5"
   title="Is envy bad? Is envy good?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/6.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/6.3.mp3'
   transcriptPage="comparison/s111087t"
   toc="comparison/s111001"
   bookmark=0

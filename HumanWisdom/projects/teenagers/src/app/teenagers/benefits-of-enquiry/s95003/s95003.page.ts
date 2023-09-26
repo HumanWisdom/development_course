@@ -17,8 +17,8 @@ export class S95003Page implements OnInit,OnDestroy {
   bg = "green_yellow_w2"
   
   title="Welcome to the art of enquiry"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/benefits-of-enquiry/audios/1.1.mp3'
 
   colours=["btn_5circles_01 disabled"," btn_5circles_02"," btn_5circles_03 disabled"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[

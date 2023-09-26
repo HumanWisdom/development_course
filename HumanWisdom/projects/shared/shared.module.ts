@@ -1,7 +1,7 @@
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 import { FtPrevNextComponent } from '../shared/component/ft-prev-next/ft-prev-next.component';
 import { FtPrevComponent } from '../shared/component/ft-prev/ft-prev.component';
@@ -88,6 +88,7 @@ import { VideoContentCrossComponent } from './component/video-content-cross/vide
 import { VideoYoutubeComponent } from './component/video-youtube/video-youtube.component';
 import { YoutubeContentComponent } from './component/youtube-content/youtube-content.component';
 import { AdultsAudioMeditationComponent } from './component/adults-audio-meditation/adults-audio-meditation.component';
+import { LoginRegisterModalComponent } from './component/login-register-modal/login-register-modal.component';
 @NgModule({
   declarations: [
     TnCrossComponent,
@@ -169,7 +170,8 @@ import { AdultsAudioMeditationComponent } from './component/adults-audio-meditat
     CertificationComponent,
     VideoContentCrossComponent,
     ModalComponent,
-    AdultsAudioMeditationComponent
+    AdultsAudioMeditationComponent,
+    LoginRegisterModalComponent
   ],
   imports: [
     CommonModule,
@@ -182,6 +184,7 @@ import { AdultsAudioMeditationComponent } from './component/adults-audio-meditat
       debug: true
     }),
     ShareIconsModule,
+    ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       "radius": 75,
       "space": -5,
@@ -276,6 +279,7 @@ import { AdultsAudioMeditationComponent } from './component/adults-audio-meditat
     VideoContentCrossComponent,
     ModalComponent,
     AdultsAudioMeditationComponent,
+    LoginRegisterModalComponent
   ]
 })
 export class SharedModule { }
