@@ -14,8 +14,8 @@ export class S111124Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w1"
   title="Understanding the deeper layers of our thinking"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/7.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/7.4.mp3'
   transcriptPage="comparison/s111124t"
   toc="comparison/s111001"
   bookmark=0
