@@ -69,6 +69,7 @@ export class AdvertsHwpPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getCountry()
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
 
@@ -125,7 +126,7 @@ export class AdvertsHwpPage implements OnInit {
     } else if (val === 'redeem') {
       let res = localStorage.getItem("isloggedin")
       if(res === 'T') {
-        this.router.navigate(['/adults/redeem-subscription'])  
+        this.router.navigate(['/adults/redeem-subscription'])
       }else {
         this.enabledModal = true;
       }
