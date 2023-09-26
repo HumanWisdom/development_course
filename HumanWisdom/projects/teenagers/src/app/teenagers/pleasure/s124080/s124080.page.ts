@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s124080',
@@ -19,7 +20,7 @@ export class S124080Page implements OnInit
   moduleName=" Sorrow and Loss"
   sectionName= "Understand Emotions";
   moduleId=116
-
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Happiness',

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s105137',
@@ -18,7 +20,8 @@ export class S105137Page implements OnInit
   moduleLink="/comparison"
   moduleName=" Comparison"
   sectionName= "Explore How Your Mind Works";
-  moduleId=7
+  moduleId=111
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Stress',
