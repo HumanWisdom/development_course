@@ -3,6 +3,7 @@ export class Constant {
     public static HwpSubscriptionPlan: string = "HwpSubscriptionPlan";
     public static MonthlyPlan = 'Monthly';
     public static AnnualPlan = 'Annual';
+    public static Free = 'Free';
     public static Redeem = 'Redeem';
     public static Name = 'name';
     public static Email = 'email';
@@ -25,5 +26,6 @@ export class Constant {
     public static One = 1;
     public static guest = 'guest';
     public static subscriber = 'Subscriber';
-    
+    public static SubscribeType = 'SubscribeType';
+
 }
