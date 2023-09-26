@@ -801,7 +801,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
             <input type="text" id="name" class="sp_fc" placeholder="Password" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="password" required>
             <div class="fc_img">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg" class="img-responsive">
             </div>
             <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
               <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
@@ -814,7 +814,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
             <input type="text" id="name" class="sp_fc" placeholder="Required Password" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
             <div class="fc_img">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg" class="img-responsive">
             </div>
             <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
               <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat password</small>
@@ -983,7 +983,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
             <input type="text" id="name" class="sp_fc" placeholder="Password" [(ngModel)]="this.loginpassword">
             <div class="fc_img">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg" class="img-responsive">
             </div>
           </div>
         </div>
