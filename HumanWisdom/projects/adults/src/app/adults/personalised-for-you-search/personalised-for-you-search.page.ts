@@ -119,8 +119,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
       
       this.getModuleList();
       this.getProgress();
-      this.GetWisdomScreens();
     }
+    this.GetWisdomScreens();
      this.getUserPreference();
   }
 
