@@ -121,7 +121,7 @@ export class S141104Page implements OnInit {
 
   previous() 
   {
-    this.router.navigate(['/success-failure/s141104'])
+    this.router.navigate(['/success-failure/s141103'])
   }
 
   ngOnDestroy() 

@@ -16,7 +16,7 @@ export class S141084Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="1/9"
+  progressText="3/4"
   link="/success-failure/s141085"
   name="#2  Four ways comparison impacts our life"
   progressImg=""

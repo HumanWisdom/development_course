@@ -15,8 +15,8 @@ export class S82004Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w2"
   title="Once you start walking, the way opens"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/five-circles-of-wisdom/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/five-circles-of-wisdom/audios/1.1.mp3'
   colours=["btn_5circles_01"," btn_5circles_02"," btn_5circles_03"," btn_5circles_04"," btn_5circles_05"]
   text=[
         "Nurture a quiet mind",
