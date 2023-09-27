@@ -16,8 +16,8 @@ export class S95018Page implements OnInit,OnDestroy {
   bg_cft="bg_green_yellow"
   bg="green_yellow_w2"
   title="Understanding yourself helps you to understand others"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/benefits-of-enquiry/audios/1.6.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/benefits-of-enquiry/audios/1.6.mp3'
 
   transcriptPage="benefits-of-enquiry/s95018t"
   toc="benefits-of-enquiry/s95001"

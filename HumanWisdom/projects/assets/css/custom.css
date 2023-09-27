@@ -19784,12 +19784,12 @@ input{
 
 .active_programs
 {
-  /* margin: 0 -10px 0 -10px; */
-  padding: 0 10px 0 10px;
-  background: #EBEBEB;
+  padding: 15px 20px;
+  background: #120F40;
   height: 40px;
   display: flex;
   align-items: center;
+  margin: 0 -20px;
 }
 
 .ml-20px
@@ -29452,7 +29452,7 @@ svg path
 
 .spanelgroup .panel
 {
-  background: #FFF;
+  background: transparent;
   border: 0;
   box-shadow: unset;
 }
@@ -34073,7 +34073,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .v1_3_sfooter_ext
 {
-  background: #292D56;
+  background: #424675;
   box-shadow: unset;
 }
 
@@ -34304,5 +34304,123 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .we_ft a:last-child .btn_wec
 {
   margin-right: 0;
+}
+
+.btn_ms 
+{
+  height: 40px;
+  width: 148px;
+  margin: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #E58D82;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+}
+
+.panel-body .ms_program 
+{
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-top: 30px;
+}
+
+.panel-body .ms_program:last-child
+{
+  /* padding-bottom: 0; */
+  border-bottom: none;
+}
+
+.mb10pxi
+{
+  margin-bottom: 10px !important;
+}
+
+.prog_count 
+{
+  border-radius: 15px;
+  background: #1F2241;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_subscription_cancel 
+{
+  margin: 0;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid #E58D82;
+  background: transparent;
+  padding: 10px 20px;
+  color: #E58D82;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.rgdiv .row
+{
+  border-radius: 16px;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  background: #120F40;
+  padding: 24px;
+  margin-bottom: 15px;
+}
+
+.rgdiv .row:last-child 
+{
+  margin-bottom: 0;
+}
+
+.rgdivs input[type=radio]:checked
+{
+  -webkit-appearance: none;
+  background: #E58D82!important;
+  border-radius: 100%;
+  width: 16px !important;
+  height: 16px;
+  border: 2px solid white;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+}
+
+.rgdivs input[type=radio]
+{
+  -webkit-appearance: none;
+  background: transparent!important;
+  border-radius: 100%;
+  width: 16px !important;
+  height: 16px;
+  border: 2px solid #E58D82;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+}
+
+.rgdivs input[type=radio]:focus
+{
+  outline: none;
+}
+
+.cs_reason .row
+{
+  margin-bottom: 15px;
+}
+
+.cs_reason .row:last-child 
+{
+  margin-bottom: 0;
 }
 /* /version - 03 */

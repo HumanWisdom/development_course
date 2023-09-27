@@ -14,8 +14,8 @@ export class S111028Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w10"
   title="Why do we want to compete and be better than others?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/2.3.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/2.3.mp3'
   transcriptPage="comparison/s111028t"
   toc="comparison/s111001"
   bookmark=0

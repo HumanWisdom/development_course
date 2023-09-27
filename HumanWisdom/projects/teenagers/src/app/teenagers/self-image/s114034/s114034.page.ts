@@ -14,8 +14,8 @@ export class S114034Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="How can I be free of my images, and be the authentic ‘me’?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/self-image/audios/1.6.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/self-image/audios/1.6.mp3'
   transcriptPage="self-image/s114034t"
   toc="self-image/s114001"
   bookmark=0

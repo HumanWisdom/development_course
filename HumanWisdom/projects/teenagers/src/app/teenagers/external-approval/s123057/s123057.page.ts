@@ -14,8 +14,8 @@ export class S123057Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w3"
   title="#1 Accept it as a fact without judgement  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/external-approval/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
+  audioLink=this.mediaAudio+'/external-approval/audios/2.2.mp3'
   transcriptPage="external-approval/s123057t"
   toc="external-approval/s123001 "
   bookmark=0

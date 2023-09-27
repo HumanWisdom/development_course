@@ -14,8 +14,8 @@ export class S111060Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w3"
   title="Navigating the process of comparison"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/comparison/audios/4.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/comparison/audios/4.2.mp3'
   transcriptPage="comparison/s111060t"
   toc="comparison/s111001"
   bookmark=0
