@@ -125,7 +125,7 @@ export class S141034Page implements OnInit {
 
   previous() {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/success-failure/s48033'])
+    this.router.navigate(['/adults/success-failure/s141033'])
   }
 
   ngOnDestroy() {
