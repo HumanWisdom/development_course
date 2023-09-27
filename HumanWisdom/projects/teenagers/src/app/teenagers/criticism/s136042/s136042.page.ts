@@ -55,7 +55,7 @@ export class S136042Page implements OnInit {
     this.router.navigate(['/criticism/s136043'])
   }
   prev(){
-    this.router.navigate(['/criticism/136041'])
+    this.router.navigate(['/criticism/s136041'])
   }
 
 
