@@ -28,7 +28,7 @@ export class TocHeaderComponent implements OnInit {
   ngOnInit() {}
   goBack(){
     var url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
-    if(url && url!=null){
+    if(url && url!=null && url != 'null'){
       this.router.navigate([url]);
     }else{
       this.location.back();
