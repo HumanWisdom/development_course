@@ -3,12 +3,12 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_01">				
-  <!-- Class -->  
+<div class="right_col mc_01">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 comparison_envy_w9">
-        <div class="x_panel p0">                                                
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+        <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
 
@@ -18,15 +18,24 @@
               <div class="clearfix"></div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_yes_no">
                   <div class="row">
-                    <div class="btn-group" data-toggle="buttons">
+                    <!-- <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList0" class="btn btn-default btn_grp txt12"  (click)="selectOption(o.OptId)">
                         <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input  type="radio" name="options1" id="o.OptId"> {{o.OptStr}}
                         </div>
                       </label>
-                    </div>
+                    </div> -->
+
+                     <!-- seperate buttons -->
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" *ngFor="let o of optionList0" (click)="selectOption(o.OptId)">
+                    <button type="button" class="btn" [ngStyle]="{'background-color': sendOptions.includes(o.OptId) ? '#E58D82' : ''}">
+                      <h4 class="mtb0px">
+                        {{o.OptStr}}
+                      </h4>
+                    </button>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -39,15 +48,22 @@
               <div class="clearfix"></div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_yes_no">
                   <div class="row">
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" *ngFor="let o of optionList1" (click)="selectOption(o.OptId)">
+                      <button type="button" class="btn" [ngStyle]="{'background-color': sendOptions.includes(o.OptId) ? '#E58D82' : ''}">
+                        <h4 class="mtb0px">
+                          {{o.OptStr}}
+                        </h4>
+                      </button>
+                    </div>
+                    <!-- <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList1" class="btn btn-default btn_grp txt12"  (click)="selectOption(o.OptId)">
                         <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input type="radio" name="options2" id="o.OptId"> {{o.OptStr}}
                         </div>
                       </label>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -60,15 +76,22 @@
               <div class="clearfix"></div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_yes_no">
                   <div class="row">
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" *ngFor="let o of optionList2" (click)="selectOption(o.OptId)">
+                      <button type="button" class="btn" [ngStyle]="{'background-color': sendOptions.includes(o.OptId) ? '#E58D82' : ''}">
+                        <h4 class="mtb0px">
+                          {{o.OptStr}}
+                        </h4>
+                      </button>
+                    </div>
+                    <!-- <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList2" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
                         <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input type="radio" name="options" id="option1"> {{o.OptStr}}
                         </div>
                       </label>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -81,15 +104,22 @@
               <div class="clearfix"></div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_yes_no">
                   <div class="row">
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" *ngFor="let o of optionList3" (click)="selectOption(o.OptId)">
+                      <button type="button" class="btn" [ngStyle]="{'background-color': sendOptions.includes(o.OptId) ? '#E58D82' : ''}">
+                        <h4 class="mtb0px">
+                          {{o.OptStr}}
+                        </h4>
+                      </button>
+                    </div>
+                    <!-- <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList3" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
                         <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}" >
                           <input type="radio" name="options" id="option2"> {{o.OptStr}}
                         </div>
-                      </label> 
-                    </div>
+                      </label>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -102,15 +132,23 @@
               <div class="clearfix"></div>
 
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_yes_no">
                   <div class="row">
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" *ngFor="let o of optionList4" (click)="selectOption(o.OptId)">
+                      <button type="button" class="btn" [ngStyle]="{'background-color': sendOptions.includes(o.OptId) ? '#E58D82' : ''}">
+                        <h4 class="mtb0px">
+                          {{o.OptStr}}
+                        </h4>
+                      </button>
+                    </div>
+
+                    <!-- <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList4" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
                         <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
                           <input  type="radio" name="options" id="option3"> {{o.OptStr}}
                         </div>
-                      </label> 
-                    </div>
+                      </label>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -121,17 +159,25 @@
                 {{q5}}
               </h5>
               <div class="clearfix"></div>
-              
+
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_yes_no">
                   <div class="row">
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" *ngFor="let o of optionList5" (click)="selectOption(o.OptId)">
+                      <button type="button" class="btn"
+                      [ngStyle]="{'background-color': sendOptions.includes(o.OptId) ? '#E58D82' : ''}">
+                        <h4 class="mtb0px">
+                          {{o.OptStr}}
+                        </h4>
+                      </button>
+                    </div>
+                    <!-- <div class="btn-group" data-toggle="buttons">
                       <label *ngFor="let o of optionList5" class="btn btn-default btn_grp txt12" (click)="selectOption(o.OptId)">
                         <div [ngClass]="{'txt12_btn': sendOptions.includes(o.OptId)}">
-                          <input  type="radio" name="options" id="option4">{{o.OptStr}} 
+                          <input  type="radio" name="options" id="option4">{{o.OptStr}}
                         </div>
-                      </label> 
-                    </div>
+                      </label>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -144,7 +190,7 @@
       </div>
     </div>
   </div>
-  <!--/Class --> 
+  <!--/Class -->
 </div>
 <!-- /page content -->
 
