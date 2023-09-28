@@ -14,7 +14,7 @@ export class S123061Page implements OnInit
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
   bg = "blue_w7"
-  hint = ""
+  hint = "Likes on social media can make you glow with pride, or feel sad if others get more  "
   toc = "/external-approval/s123001"
    path = setTimeout(() => {
     return this.router.url;
@@ -29,7 +29,7 @@ export class S123061Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1943
   reflection: any
   reflectionA: any
   r123061 = JSON.parse(sessionStorage.getItem("r123061"))

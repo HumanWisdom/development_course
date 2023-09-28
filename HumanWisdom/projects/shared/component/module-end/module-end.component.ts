@@ -37,6 +37,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   @Input() programType :ProgramType = ProgramType.Adults;
   isShowDownload=false;
   moduleData:Array<ProgramModel>;
+
+  
   @Input() moduleList: any = [
     {
       name: 'Breathing',
@@ -137,12 +139,14 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   proceed() {
     localStorage.setItem("progressbarvalue", '')
-    this.routeResume(this.moduleId, '')
+    this.routeResume(this.moduleId, this.moduleLink)
   }
 
   routeResume(r, link) {
     if(ProgramType.Teenagers == this.programType){
-      let moduleData=this.moduleData.filter(x=>x.path.includes(link))
+      console.log("moduledata1=" + this.moduleData)
+      console.log("Link=" + link)
+      let moduleData=this.moduleData.filter(x=>x.moduleId==r)
       if(moduleData && moduleData!=null && moduleData.length>0) {
        this.RouteToModule(moduleData[0]);
       }
@@ -2767,13 +2771,16 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
     GetModuleDataBasedOnProgramType(){
      this.moduleData= new Array<ProgramModel>();
-     this.service.getModules(+this.programType).subscribe(res=>{
+     this.service.getModules(this.programType).subscribe(res=>{
       this.moduleData=res;
      });
     }
 
 
     ContinueToThisModule(){
+      console.log("moduledata=" + this.moduleData);
+      console.log("moduleId=" +this.moduleId);
+
      let moduleData=this.moduleData.filter(x=>x.moduleId==this.moduleId);
      if(moduleData && moduleData!=null && moduleData.length>0) {
       this.RouteToModule(moduleData[0]);
@@ -2809,7 +2816,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
             //     moduleData.path=moduleData.path.replace('teenagers/#/','');
             // }
             moduleData.path=moduleData.path.replace('teenagers/#/','');
-            this.router.navigate([''+moduleData.path+'/s'+moduleData.firstScreen]);
+            //this.router.navigate([''+moduleData.path+'/s'+moduleData.firstScreen]);
+            this.router.navigate([''+moduleData.path]);
           })
     }
 

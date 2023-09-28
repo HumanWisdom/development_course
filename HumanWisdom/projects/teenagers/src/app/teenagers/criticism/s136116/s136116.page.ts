@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s136116',
@@ -8,7 +9,7 @@ import {Location } from '@angular/common'
   styleUrls: ['./s136116.page.scss'],
 })
 export class S136116Page implements OnInit {
-  
+  programType : ProgramType = ProgramType.Teenagers;
   toc="criticism/s136001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/opinions_&_beliefs.jpg"
   

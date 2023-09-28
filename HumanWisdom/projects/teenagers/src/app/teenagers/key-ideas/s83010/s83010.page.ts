@@ -15,8 +15,8 @@ export class S83010Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w8"
   title="Our minds function in similar ways"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/key-ideas/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/key-ideas/audios/1.2.mp3'
 
   transcriptPage="key-ideas/s83010t"
   toc="key-ideas/s83001"

@@ -14,8 +14,8 @@ export class S114027Page implements OnInit,OnDestroy
   bg_cft="bg_blue"
   bg="blue_w8"
   title="My appearance"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/self-image/audios/1.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/self-image/audios/1.4.mp3'
   transcriptPage="self-image/s114027t"
   toc="self-image/s114001"
   bookmark=0
