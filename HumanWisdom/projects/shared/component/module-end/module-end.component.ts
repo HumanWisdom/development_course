@@ -146,7 +146,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     if(ProgramType.Teenagers == this.programType){
       console.log("moduledata1=" + this.moduleData)
       console.log("Link=" + link)
-      let moduleData=this.moduleData.filter(x=>x.moduleId==this.moduleId)
+      let moduleData=this.moduleData.filter(x=>x.moduleId==r)
       if(moduleData && moduleData!=null && moduleData.length>0) {
        this.RouteToModule(moduleData[0]);
       }
