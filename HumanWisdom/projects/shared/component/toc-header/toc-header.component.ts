@@ -4,6 +4,7 @@ import {Location } from '@angular/common'
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
+import { Constant } from '../../services/constant';
 
 @Component({
   selector: 'app-toc-header',
@@ -26,7 +27,12 @@ export class TocHeaderComponent implements OnInit {
 
   ngOnInit() {}
   goBack(){
-    this.location.back()
+    var url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+    if(url && url!=null && url != 'null'){
+      this.router.navigate([url]);
+    }else{
+      this.location.back();
+    }
   }
 
   share(){

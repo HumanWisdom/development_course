@@ -117,11 +117,12 @@ import { S49100Page } from './s49100/s49100.page';
 import { S49101Page } from './s49101/s49101.page';
 import { S49102Page } from './s49102/s49102.page';
 import { S49103Page } from './s49103/s49103.page';
-
+import {RouteHistoryGuard} from '../../../../../shared/guard/router-history-guard';
 const routes: Routes = [
   {
     path: '',    
      component: S49001Page,
+     canActivate:[RouteHistoryGuard]
   }, 
   {
     path: 's49001',
