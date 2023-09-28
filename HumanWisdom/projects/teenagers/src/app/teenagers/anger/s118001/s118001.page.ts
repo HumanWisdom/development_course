@@ -11,7 +11,7 @@ import { ProgramModel } from '../../../../../../shared/models/program-model';
   styleUrls: ['./s118001.page.scss'],
 })
 export class S118001Page implements OnInit,OnDestroy {
-
+  pgResume=sessionStorage.getItem("pgResume")
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -32,12 +32,11 @@ export class S118001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  angerResume=sessionStorage.getItem("angerResume")
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.png"
+   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
-  pgResume=sessionStorage.getItem("pgResume")
+
   moduleData:ProgramModel;
 
   constructor

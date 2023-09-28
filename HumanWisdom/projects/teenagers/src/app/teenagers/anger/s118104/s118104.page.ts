@@ -20,7 +20,7 @@ export class S118104Page implements OnInit
   moduleLink="/comparison"
   moduleName="Fear & Anxiety "
   sectionName= "Understand Emotions";
-  moduleId=19 
+  moduleId=112 
   moduleList: any = [
     {
       name: 'Reactive mind',

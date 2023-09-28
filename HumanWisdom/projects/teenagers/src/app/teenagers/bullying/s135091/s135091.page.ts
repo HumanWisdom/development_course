@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
+import {  ProgramType } from "../../../../../../shared/models/program-model";
+
 
 @Component({
   selector: 'HumanWisdom-s135091',
@@ -8,15 +10,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s135091.page.scss'],
 })
 export class S135091Page implements OnInit {
-  
+  programType : ProgramType = ProgramType.Teenagers;
   toc="bullying/s135001"
-  // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
- 
-  // bg=""
-  // moduleLink="/adults/stress"
-  // moduleName=" Stress"
-  // sectionName= "Transform your life - I";
-  // moduleId=44
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/16.png"
   
@@ -25,6 +20,7 @@ export class S135091Page implements OnInit {
   moduleName=" Criticism"
   sectionName= "Transform your life - I";
   moduleId=136
+
   moduleList: any = [
     {
       name: 'Fear & Anxiety',
