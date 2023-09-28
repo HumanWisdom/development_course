@@ -13,8 +13,8 @@ export class S82009Page implements OnInit,OnDestroy {
   bg_tn="bg_purple_blue"
   bg_cft="bg_purple_blue"
   bg="purple_blue_w7"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/five-circles-of-wisdom/videos/1.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/five-circles-of-wisdom/videos/1.1.mp4'  
   title="Overcoming the anxiety of looking inwards"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/introduction_01.jpg"
   

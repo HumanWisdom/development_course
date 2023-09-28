@@ -13,7 +13,7 @@ export class S141096Page implements OnInit {
   bg_tn="bg_light_blue"
   bg_cft="bg_light_blue"
   bg="light_blue_w10"
-  hint = "This could be when you wanted something someone had and felt jealous, or were better than someone, and felt really good"
+  hint = "It could keep you in a job you don’t like, for example."
   toc = "/success-failure/s141001"
   path = this.router.url
   userId: any

@@ -120,7 +120,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
   
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                      <a class="prelative" routerLink="/adults/pathway/develop-a-calm-mind">
+                      <a class="prelative" (click)="navigateToPathway('/adults/pathway/develop-a-calm-mind')">
                         <div class="prelative">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_01.svg" alt="Happiness" class="ctimg">
                           
@@ -152,7 +152,7 @@
                     </div>
   
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                      <a class="prelative" routerLink="/adults/pathway/understand-yourself">
+                      <a class="prelative"  (click)="navigateToPathway('/adults/pathway/understand-yourself')">
                         <div class="prelative">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_02.svg" alt="Happiness" class="ctimg">
                           
@@ -184,7 +184,7 @@
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                      <a class="prelative" routerLink="/adults/pathway/understand-how-your-mind-works">
+                      <a class="prelative" (click)="navigateToPathway('/adults/pathway/understand-how-your-mind-works')">
                         <div class="prelative">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_03.svg" alt="Happiness" class="ctimg">
                           
@@ -216,7 +216,7 @@
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                      <a class="prelative" routerLink="/adults/pathway/manage-your-emotions">
+                      <a class="prelative" (click)="navigateToPathway('/adults/pathway/manage-your-emotions')">
                         <div class="prelative">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_04.svg" alt="Happiness" class="ctimg">
                           
@@ -248,7 +248,7 @@
                     </div>
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
-                      <a class="prelative" routerLink="/adults/pathway/live-your-best-life">
+                      <a class="prelative" (click)="navigateToPathway('/adults/pathway/live-your-best-life')">
                         <div class="prelative">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_05.svg" alt="Happiness" class="ctimg">
                           
@@ -552,7 +552,7 @@
                                   Awareness exercises
                                 </h2>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="RouteToWisdomExercise(null)">
                                 <a>
                                   <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
                                     View all
@@ -614,7 +614,7 @@
                           <div class="row pt20px">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="fw_500 fs_15px lh_140p fc_ffffff mtb0px">
-                                #1 See the world freshly
+                                #{{exerciseNo}} {{Title}}
                               </h4>
                             </div>
                           </div>
@@ -622,38 +622,24 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv ae_days">
-
-                            <div class="col-md-3 col-sm-3 col-xs-4">
-                              <a>
-                                <button type="button" class="btn m0px btn_wec uneditable">
+                            <ng-container *ngFor="let item of currentList">
+                            <div class="col-md-3 col-sm-3 col-xs-4" (click)="RouteToWisdomExercise(item)">
+                              <a  *ngIf="item.day =='0';else notIntro">
+                                <button type="button"  [ngClass]="getWisdomClass(item)"  class="btn m0px btn_wec">
                                   Intro
                                 </button>
                               </a>
                             </div>
-                            
-                            <div class="col-md-3 col-sm-3 col-xs-4">
+                            <ng-template #notIntro>
+                            <div class="col-md-3 col-sm-3 col-xs-4" (click)="RouteToWisdomExercise(item)">
                               <a>
-                                <button type="button" class="btn m0px btn_wec editable">
-                                  Day 1
+                                <button type="button"   [ngClass]="getWisdomClass(item)" class="btn m0px btn_wec">
+                                Day  {{item.day}}
                                 </button>
                               </a>
                             </div>
-                            
-                            <div class="col-md-3 col-sm-3 col-xs-4">
-                              <a>
-                                <button type="button" class="btn m0px btn_wec">
-                                  Day 2
-                                </button>
-                              </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-3 col-xs-4">
-                              <a>
-                                <button type="button" class="btn m0px btn_wec">
-                                  Day 3
-                                </button>
-                              </a>
-                            </div>
+                            </ng-template>   
+                            </ng-container>
 
                           </div>
                         </div>

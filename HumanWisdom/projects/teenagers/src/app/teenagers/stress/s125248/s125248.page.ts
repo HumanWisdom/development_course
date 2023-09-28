@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s125248',
@@ -18,7 +19,9 @@ export class S125248Page implements OnInit
   moduleLink="/self-esteem/s126001"
   moduleName="Self Esteem"
   sectionName= "Transform your life - II";
-  moduleId=17
+  moduleId=126
+  programType : ProgramType = ProgramType.Teenagers;
+
   moduleList: any = [
     {
       name: 'Conditioning',

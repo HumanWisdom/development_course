@@ -13,8 +13,8 @@ export class S111024Page implements OnInit,OnDestroy {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
   bg="green_yellow_w6"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/comparison/videos/2.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/comparison/videos/2.1.mp4'  
   title="A conversation on envy"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
   userId:any

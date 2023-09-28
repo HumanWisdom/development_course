@@ -42,7 +42,6 @@ export class S131001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  relationshipsResume=sessionStorage.getItem("relationshipsResume")
   pgResume=sessionStorage.getItem("pgResume")
   moduleData:ProgramModel;
 

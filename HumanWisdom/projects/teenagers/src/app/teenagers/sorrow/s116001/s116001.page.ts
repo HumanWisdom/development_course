@@ -24,15 +24,15 @@ export class S116001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   bookmarkList=[]
-  sorrowandlossResume=sessionStorage.getItem("sorrowandlossResume")
+  pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/60.png"
   tocColor="white"
   lastvisited = false;
   stories: any = [];
-  pgResume=sessionStorage.getItem("pgResume")
-  resumeBenefitsEnquiry=sessionStorage.getItem("resumeBenefitsEnquiry");
+
+ 
   moduleData:ProgramModel;
-  addictionResume=sessionStorage.getItem("addictionResume")
+ 
 
   constructor(
     private router: Router,

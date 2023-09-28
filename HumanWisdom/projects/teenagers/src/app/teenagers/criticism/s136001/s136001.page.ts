@@ -28,16 +28,16 @@ export class S136001Page implements OnInit,OnDestroy {
  
   token="1234"
   shareUrl=this.path+"?t="+this.token
-  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  criticismResume=sessionStorage.getItem("pgResume")
+  pgResume = sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/16.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
-  pgResume = sessionStorage.getItem("pgResume")
   moduleData:ProgramModel;
 
   constructor(

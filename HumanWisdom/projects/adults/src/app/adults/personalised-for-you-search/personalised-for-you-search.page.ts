@@ -5,6 +5,9 @@ import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { Location } from '@angular/common';
+import { ShareService } from 'ngx-sharebuttons';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -65,7 +68,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public bookmarks = []
   public resume = []
   public bookmarkLength: any
-
+  wisdomExerciseList = [];
+  currentList = [];
+  public Title: string = '';
+  public day: string = '';
+  public bullyingP: any
+  public externalapprovalP: any;
+  public exerciseNo : any;
+  //static progress mapping
   constructor(private route: Router, private aservice: AdultsService,
     public authService: SocialAuthService, public service: OnboardingService, public logeventservice: LogEventService,
     public cd: ChangeDetectorRef,
@@ -73,6 +83,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     private router: Router,
   ) {
 
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom,Constant.NullValue);
     this.logeventservice.logEvent('View_For_you');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
@@ -109,9 +120,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
           this.welcome.nativeElement.click();
         }, 1000);
       }
+      
       this.getModuleList();
-      this.getProgress()
+      this.getProgress();
     }
+    this.GetWisdomScreens();
      this.getUserPreference();
   }
 
@@ -866,4 +879,143 @@ export class PersonalisedForYouSearchPage implements OnInit {
   navigate(url) {
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
+
+ GetWisdomScreens() {
+    this.aservice.GetWisdomScreens().subscribe(res => {
+      this.wisdomExerciseList = res;
+      var allCompletedScreen: boolean = false;
+      let data = this.wisdomExerciseList.filter(x => x.completed == '1');
+      if (this.wisdomExerciseList.length == data.length) {
+        allCompletedScreen = true;
+      }
+      console.log(data.length);
+      let exercise: any
+      let emptyList = false;
+      let increaseExcercise = false;
+   //   Any of the exercise is not completed
+      if (data.length == 0) {
+        emptyList = true;
+        data = this.wisdomExerciseList;
+        exercise = data[0];
+      }
+      else {
+        var incomppletedExercise = this.wisdomExerciseList.filter(x => x.completed == '0');
+        if (incomppletedExercise.length > 0) {
+          exercise = incomppletedExercise[0];
+        } else {
+          exercise = data[data.length - 1];
+        }
+       // It contains data may be some exercise is completed
+        var completed = this.wisdomExerciseList.filter(x => x.SessionNo == exercise.SessionNo && x.completed == '0');
+        if (completed.length == 0) {
+          increaseExcercise = true;
+          emptyList = true;
+        }
+      }
+     // Setting final title and Exercise no
+      this.Title = exercise.Title;
+
+      this.exerciseNo = !increaseExcercise ? exercise.SessionNo.substring(exercise.SessionNo.length - 2)
+        : ((parseInt(exercise.SessionNo.substring(exercise.SessionNo.length - 2))) + 1).toString();
+
+      if (allCompletedScreen) {
+        this.exerciseNo = "1";
+      }
+      if (this.exerciseNo == "13") {
+        this.exerciseNo = "1";
+      }
+     // Checking the length if its less than 10  to append for current session number
+      if (this.exerciseNo.length == 1) {
+        this.exerciseNo = "0" + this.exerciseNo;
+      }
+      if (incomppletedExercise && incomppletedExercise.length > 0) {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length))).toString() : "0";
+      } else {
+        this.day = !emptyList ? (parseInt(exercise.ScreenNo.substring(6, exercise.ScreenNo.length)) + 1).toString() : "0";
+      }
+      var sessionNo = exercise.SessionNo.substring(0, exercise.SessionNo.length - 2) + this.exerciseNo;
+
+
+      //Pushing final list for display
+      for (let item of this.wisdomExerciseList.filter(x => x.SessionNo == sessionNo)) {
+        let obj = {
+          " SessionNo": item.SessionNo,
+          "ScreenNo": item.ScreenNo,
+          "completed": item.completed,
+          "day": item.ScreenNo.substring(6, item.ScreenNo.length),
+          "Title": item.Title
+        }
+        this.currentList.push(obj);
+      }
+      if (this.currentList.length > 0) {
+        this.Title = this.currentList[0].Title;
+      }
+      // Dynamic Scroll
+      setTimeout(() => {
+        var editable = document.querySelector(".editable")?.getBoundingClientRect().x;
+        var wediv = document.querySelector(".ae_days")?.getBoundingClientRect().x;
+        if (document.querySelector(".ae_days")) {
+          document.querySelector(".ae_days").scrollLeft = editable-wediv;
+        }
+
+      }, 5000);
+
+      console.log(this.currentList);
+    })
+  }
+
+
+
+  getWisdomClass(exercise) {
+    if (exercise.completed == '1') {
+      return 'uneditable';
+    } else if (exercise.completed == '0' && this.day == exercise.day) {
+      return 'editable';
+    } else {
+      return 'active';
+    }
+  }
+
+  RouteToWisdomExercise(exercise) {
+    var weR = exercise?.ScreenNo;
+    localStorage.setItem("moduleId", JSON.stringify(75))
+    this.aservice.clickModule(75, this.userId)
+      .subscribe(res => {
+        console.log(res)
+        this.qrList = res
+        weR = "s" + res.lastVisitedScreen
+        // continue where you left
+        if (res.lastVisitedScreen === '') {
+          localStorage.setItem("lastvisited", 'F')
+        }
+        else {
+          localStorage.setItem("lastvisited", 'T')
+        }
+        // /continue where you left
+        sessionStorage.setItem("weR", weR)
+        this.mediaPercent = parseInt(res.MediaPercent)
+        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
+        localStorage.setItem("qrList", JSON.stringify(this.qrList))
+        if (exercise != null) {
+          this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
+            state: {
+              day: exercise.day,
+            }
+          });
+        } else {
+          this.router.navigate(['adults/wisdom-exercise/']);
+        }
+      },
+        error => {
+          console.log(error)
+        });
+  }
+  navigateToPathway(url){
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.router.navigate([url]);
+  }
+
+  
 }

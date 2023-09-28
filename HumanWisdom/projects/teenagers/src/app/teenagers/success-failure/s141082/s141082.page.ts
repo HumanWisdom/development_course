@@ -113,7 +113,7 @@ createScreen(){
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/success-failure/s48081'])
+    this.router.navigate(['/success-failure/s141081'])
 
   }
   
