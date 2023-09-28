@@ -5,6 +5,9 @@ import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { Location } from '@angular/common';
+import { ShareService } from 'ngx-sharebuttons';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 
 @Component({
   selector: 'app-personalised-for-you-search',
@@ -80,6 +83,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     private router: Router,
   ) {
 
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom,Constant.NullValue);
     this.logeventservice.logEvent('View_For_you');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
@@ -119,8 +123,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
       
       this.getModuleList();
       this.getProgress();
-      this.GetWisdomScreens();
     }
+    this.GetWisdomScreens();
      this.getUserPreference();
   }
 
@@ -1008,4 +1012,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         });
   }
+  navigateToPathway(url){
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.router.navigate([url]);
+  }
+
+  
 }

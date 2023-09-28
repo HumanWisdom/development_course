@@ -27,5 +27,7 @@ export class Constant {
     public static guest = 'guest';
     public static subscriber = 'Subscriber';
     public static SubscriberType = 'SubscriberType';
+    public static NaviagtedFrom = 'NaviagtedFrom';
+    public static NullValue = null;
 
 }

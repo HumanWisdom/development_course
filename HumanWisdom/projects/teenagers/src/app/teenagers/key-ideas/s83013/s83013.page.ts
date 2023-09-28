@@ -15,8 +15,8 @@ export class S83013Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w10"
   title="Observing without judgement"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/key-ideas/audios/1.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/key-ideas/audios/1.4.mp3'
 
   transcriptPage="key-ideas/s83013t"
   toc="key-ideas/s83001"
