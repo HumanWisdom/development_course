@@ -223,16 +223,16 @@ export class S141107Page implements OnInit {
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
 
-    this.q1 = this.findQuestion(238).Question
-    this.optionList1 = this.findQuestion(238).optionList
-    this.q2 = this.findQuestion(239).Question
-    this.optionList2 = this.findQuestion(239).optionList
-    this.q3 = this.findQuestion(240).Question
-    this.optionList3 = this.findQuestion(240).optionList
-    this.q4 = this.findQuestion(241).Question
-    this.optionList4 = this.findQuestion(241).optionList
-    this.q5 = this.findQuestion(242).Question
-    this.optionList5 = this.findQuestion(242).optionList
+    this.q1 = this.findQuestion(516).Question
+    this.optionList1 = this.findQuestion(516).optionList
+    this.q2 = this.findQuestion(517).Question
+    this.optionList2 = this.findQuestion(517).optionList
+    this.q3 = this.findQuestion(518).Question
+    this.optionList3 = this.findQuestion(518).optionList
+    this.q4 = this.findQuestion(519).Question
+    this.optionList4 = this.findQuestion(519).optionList
+    this.q5 = this.findQuestion(520).Question
+    this.optionList5 = this.findQuestion(520).optionList
     console.log(this.q1, this.optionList1)
     console.log(this.q2, this.optionList2)
     console.log(this.q4, this.optionList4)
