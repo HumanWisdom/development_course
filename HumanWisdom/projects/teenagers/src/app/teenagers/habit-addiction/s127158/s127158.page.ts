@@ -22,7 +22,7 @@ export class S127158Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark: any
-
+  toc="/habit-addiction/s127001"
   constructor
   (
     private router: Router,
