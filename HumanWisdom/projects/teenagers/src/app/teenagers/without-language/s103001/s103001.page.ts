@@ -32,13 +32,13 @@ export class S103001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  comparisonR=sessionStorage.getItem("comparisonR")
+  pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/42.png"
   tocColor="white"
   lastvisited = false;
   stories: any = []
   moduleData:ProgramModel;
-  pgResume=sessionStorage.getItem("pgResume")
+ 
 
   constructor
   (
