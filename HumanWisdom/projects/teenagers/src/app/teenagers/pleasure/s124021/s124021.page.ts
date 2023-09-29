@@ -15,8 +15,8 @@ export class S124021Page implements OnInit,OnDestroy
   bg_cft="bg_pink_orange"
   bg="pink_orange_w5"
   title="Some of our desires and pleasures are unconscious"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/pleasure/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/pleasure/audios/2.2.mp3'
   transcriptPage="pleasure/s124021t"
   toc="pleasure/s124001"
   bookmark=0
