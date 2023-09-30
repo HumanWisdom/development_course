@@ -92,4 +92,10 @@ ngAfterViewInit(){
 getAlertcloseEvent(event) {
   this.enableAlert = false;
 }
+
+
+transcript(){
+  this.router.navigate([this.router.url+"t"]);
+}
+
 }
