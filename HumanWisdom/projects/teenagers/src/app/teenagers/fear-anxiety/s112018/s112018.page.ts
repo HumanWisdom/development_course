@@ -15,8 +15,8 @@ export class S112018Page implements OnInit {
   bg="purple_red_w10"
   title="Causes of fear"
   toc="fear-anxiety/s112001"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/fear-anxiety/audios/1.2.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/fear-anxiety/audios/1.3.mp3'
   transcriptPage="/fear-anxiety/s112018t"
   
   userId:any
