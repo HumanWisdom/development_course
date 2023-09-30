@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   templateUrl: './s111026.page.html',
   styleUrls: ['./s111026.page.scss'],
 })
-export class S111026Page implements OnInit 
+export class S111026Page implements OnInit
 {
   bg_tn="bg_green_yellow"
   bg_cft="bg_green_yellow"
@@ -19,7 +19,7 @@ export class S111026Page implements OnInit
   }, 1000);
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList")) 
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   qrList=JSON.parse(localStorage.getItem("qrList"))
   moduleId=JSON.parse(localStorage.getItem("moduleId"))
   screenType=JSON.parse(localStorage.getItem("question"))
@@ -49,10 +49,10 @@ export class S111026Page implements OnInit
     private router: Router,
     private service:TeenagersService,
     private location:Location
-  ) 
+  )
   { }
 
-  ngOnInit() 
+  ngOnInit()
   {
     console.log("sessionOptions",this.sessionOptions)
     this.createScreen()
@@ -60,7 +60,7 @@ export class S111026Page implements OnInit
     {
       this.qrList.ListOfQueOpts[i].OptId=parseInt(this.qrList.ListOfQueOpts[i].OptId)
     }
-   
+
     this.questionA=this.qrList.ListOfQueOpts
     this.q0=this.findQuestion(424).Question
     this.optionList0=this.findQuestion(424).optionList
@@ -115,7 +115,7 @@ export class S111026Page implements OnInit
       {
         var question=this.questionA[i].Que
         this.optionList.push(this.questionA[i])
-      }  
+      }
     }
     return({"Question":question,"optionList":this.optionList})
   }
@@ -127,140 +127,142 @@ export class S111026Page implements OnInit
     {
       if(this.sendOptions.includes(id)==false)
       {
-        if(id==39)
+        if(id==1848)
         {
-          if(this.sendOptions.includes(40))
+          if(this.sendOptions.includes(1849))
           {
-            var index=this.sendOptions.indexOf(40)
+            var index=this.sendOptions.indexOf(1849)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id) 
-          }
-          else if(this.sendOptions.indexOf(39)===-1)
-          {
             this.sendOptions.push(id)
-          } 
-        }
-        if(id==40)
-        {
-          if(this.sendOptions.includes(39))
-          {
-            var index=this.sendOptions.indexOf(39)
-            this.sendOptions.splice(index,1)
-            this.sendOptions.push(id) 
           }
-          else if(this.sendOptions.indexOf(40)===-1)
+          else if(this.sendOptions.indexOf(1848)===-1)
           {
             this.sendOptions.push(id)
           }
         }
-        if(id==41)
+        if(id==1849)
         {
-          if(this.sendOptions.includes(42))
+          if(this.sendOptions.includes(1848))
           {
-            var index=this.sendOptions.indexOf(42)
+            var index=this.sendOptions.indexOf(1848)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id) 
+            this.sendOptions.push(id)
           }
-          else if(this.sendOptions.indexOf(42)===-1)
+          else if(this.sendOptions.indexOf(1849)===-1)
           {
             this.sendOptions.push(id)
-          } 
+          }
         }
-        if(id==42)
+        if(id==1850)
         {
-          if(this.sendOptions.includes(41))
+          if(this.sendOptions.includes(1851))
           {
-            var index=this.sendOptions.indexOf(41)
+            var index=this.sendOptions.indexOf(1851)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
+          }
+          else if(this.sendOptions.indexOf(1850)===-1)
+          {
+            this.sendOptions.push(id)
+          }
+        }
+        if(id==1851)
+        {
+          if(this.sendOptions.includes(1850))
+          {
+            var index=this.sendOptions.indexOf(1850)
+            this.sendOptions.splice(index,1)
+            this.sendOptions.push(id)
+          }
+          else if(this.sendOptions.indexOf(1851)===-1)
+          {
+            this.sendOptions.push(id)
+          }
+        }
+        if(id==1852)
+        {
+          if(this.sendOptions.includes(1853))
+          {
+            var index=this.sendOptions.indexOf(1853)
+            this.sendOptions.splice(index,1)
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
-        if(id==44)
+        if(id==1853)
         {
-          if(this.sendOptions.includes(45))
+          if(this.sendOptions.includes(1852))
           {
-            var index=this.sendOptions.indexOf(45)
+            var index=this.sendOptions.indexOf(1852)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
-        if(id==45)
+        if(id==1854)
         {
-          if(this.sendOptions.includes(44))
+          if(this.sendOptions.includes(1855))
           {
-            var index=this.sendOptions.indexOf(44)
+            var index=this.sendOptions.indexOf(1855)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
-        if(id==46)
+        if(id==1855)
         {
-          if(this.sendOptions.includes(47))
+          if(this.sendOptions.includes(1854))
           {
-            var index=this.sendOptions.indexOf(47)
+            var index=this.sendOptions.indexOf(1854)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
-        if(id==47)
+        if(id==1856)
         {
-          if(this.sendOptions.includes(46))
+          if(this.sendOptions.includes(1857))
           {
-            var index=this.sendOptions.indexOf(46)
+            var index=this.sendOptions.indexOf(1857)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
-        if(id==48)
+        if(id==1857)
         {
-          if(this.sendOptions.includes(49))
+          if(this.sendOptions.includes(1856))
           {
-            var index=this.sendOptions.indexOf(49)
+            var index=this.sendOptions.indexOf(1856)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
-        if(id==49)
+        if(id==1858)
         {
-          if(this.sendOptions.includes(48))
+          if(this.sendOptions.includes(1859))
           {
-            var index=this.sendOptions.indexOf(48)
+            var index=this.sendOptions.indexOf(1859)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
+            this.sendOptions.push(id)
           }
           else
             this.sendOptions.push(id)
         }
-        if(id==50)
+        if(id==1859)
         {
-          if(this.sendOptions.includes(51))
+          if(this.sendOptions.includes(1858))
           {
-            var index=this.sendOptions.indexOf(51)
+            var index=this.sendOptions.indexOf(1858)
             this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
-          }
-          else
             this.sendOptions.push(id)
-        }
-        if(id==51)
-        {
-          if(this.sendOptions.includes(50))
-          {
-            var index=this.sendOptions.indexOf(50)
-            this.sendOptions.splice(index,1)
-            this.sendOptions.push(id)  
           }
           else
             this.sendOptions.push(id)
@@ -312,7 +314,7 @@ export class S111026Page implements OnInit
     else
       this.bookmark=0
   }
-  
+
   ngOnDestroy()
   {}
 
