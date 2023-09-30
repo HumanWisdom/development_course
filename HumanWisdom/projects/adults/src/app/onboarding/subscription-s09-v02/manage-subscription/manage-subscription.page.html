@@ -1,0 +1,149 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a class="">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+        Manage subscription
+      </h1>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- <app-bg-video></app-bg-video> -->
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+            <form *ngIf="manageSubscriptionData">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                  {{manageSubscriptionData.ConsumedName}}
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row mt20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff" *ngIf="manageSubscriptionData.PlanID == '2'">
+                    Yearly subscription
+                  </h4>
+
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff" *ngIf="manageSubscriptionData.PlanID == '1'">
+                    Monthly subscription
+                  </h4>
+
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff" *ngIf="manageSubscriptionData.isTrial == 'IsTrial'">
+                    Monthly subscription
+                  </h4>
+
+                </div>
+              </div>
+
+              <div class="row mb20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                    Program Code: {{manageSubscriptionData.ActKey}}
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                    Next payment: 
+                    <span class="fw_700">
+                      {{pricingModel.CurSymbol}} {{ manageSubscriptionData.PlanID == '1' ? pricingModel.Monthly : pricingModel.Annual}}
+                    </span>
+                    on {{formatDate(manageSubscriptionData.ExpDate)}}
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_18px fw_400 lh_140p fc_ffffff">
+                    Upcoming charges
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row mt20px mb20px">
+                <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                  <h6 class="mtb0px fw_400 fs_12px fw_400 lh_150p fc_ffffff">
+                    Starting {{formatDate(manageSubscriptionData.ExpDate)}}
+                  </h6>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf=" manageSubscriptionData.PlanID == '1'">
+                    {{pricingModel.CurSymbol}} {{ pricingModel.Monthly}} /month 
+                  </h4>
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf=" manageSubscriptionData.PlanID == '2'">
+                    {{pricingModel.CurSymbol}} {{ pricingModel.Annual}} /year 
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row center_flex">
+                <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    Primary payment method
+                  </h4>
+
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="paymentDetail">
+                       {{paymentDetail['CCName'] + ' ' + 'xxxx xxxx xxxx ' + paymentDetail['CCNumber']}}
+                  </h4>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6 p0 tright" routerLink="/onboarding/payment-details">
+                  <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                    Update
+                  </h4>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+<!-- footer  -->
+<div class="mfooter">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext">
+      <a (click)="cancelSubscription()">
+        <button type="button"  class="btn btn_subscription_cancel">
+          Cancel subscription
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /footer -->

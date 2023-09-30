@@ -9,7 +9,7 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
       <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Journal
+        {{ !isGuidedQueestionsTab ? 'Journal' : 'Guided questions'}}
       </h1>
     </div>
 
@@ -41,7 +41,7 @@
                 </li>
               </ul> -->
 
-              <div class="row">
+              <div class="row" *ngIf="!isGuidedQueestionsTab">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback mb0px">
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                     <input
@@ -88,7 +88,7 @@
                               </h4>
   
                               <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
-                                Explore questions on different topics and consider fresh ways of thinking.
+                                Explore questions on different topics. They help you consider fresh ways of thinking.
                               </h4>
                             </div>
   
