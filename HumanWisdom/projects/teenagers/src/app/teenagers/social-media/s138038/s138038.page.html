@@ -1,0 +1,41 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-lengthy-text [bg]="bg">
+  <form>
+    <h1 class="txt2 fw_500 lengthy_txt_title">
+      How do you know you may have a phone addiction?
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      01. You lie about how much time you spend on the phone
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      02. Your loved ones comment on the amount of time you are on the phone
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">
+      03. You neglect home work, or house work
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      04. You are constantly checking people’s profiles and endlessly scrolling social media
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      05. You become isolated and don’t talk to loved ones
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      06. You check your phone at night
+    </h3>
+
+    <h3 class="txt2 lengthy_txt_pointer">      
+      07. You struggle to switch your phone off
+    </h3>
+
+  </form>
+</app-lengthy-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -12,23 +12,23 @@ export class S137039tPage implements OnInit {
 
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
-  bg="pink_orange_w3"
+  bg="pink_orange_w11"
 
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  audioPage="/kindness/s137038"
+  audioPage="/kindness/s137039"
   toc="/kindness/s137001"
   screenType=localStorage.getItem("audio")
   userId:any
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=137038
+  screenNumber=137039
   startTime:any
   endTime:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  avDuration=localStorage.getItem("avDuration137038")
-  totalTime=localStorage.getItem("totalTime137038")
+  avDuration=localStorage.getItem("avDuration137039")
+  totalTime=localStorage.getItem("totalTime137039")
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers"
   
@@ -50,9 +50,9 @@ export class S137039tPage implements OnInit {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
-    if(JSON.parse(sessionStorage.getItem("bookmark137038"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark137039"))==0)
     this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark137038"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark137039"))==1)
       this.bookmark=1
   }
 
@@ -63,7 +63,7 @@ export class S137039tPage implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark137038",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark137039",JSON.stringify(this.bookmark))
   }
 
   submitProgress()

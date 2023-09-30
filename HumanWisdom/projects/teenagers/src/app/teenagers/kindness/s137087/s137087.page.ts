@@ -155,7 +155,7 @@ export class S137087Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/kindness/s137088'])
+    this.router.navigate(['/kindness/s137086'])
   }
 
   sessionFetch(id, divid)

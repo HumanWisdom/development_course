@@ -1,0 +1,30 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          You may be a teenager but your social media history is there for others to see for life, and is a reflection of your character and your values. If you post anything that calls your character into question, that is a red flag for employers.
+          <p>
+            34% of employers say they check someone’s social media when considering hiring a person, and if you have posted something vulgar, or racist, that can impact your chances. Employers even check your use of language online.
+          </p>
+        
+          <p>
+            You can lose a job if you posted something demeaning years ago, and someone comes across it and shares it again.
+          </p>
+
+          <p>
+             The best way to guard against this is to be very careful what you post publicly.
+          </p>
+        </h3> 
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

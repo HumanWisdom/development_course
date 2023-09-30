@@ -230,6 +230,10 @@ const routes: Routes = [
   {
     path: 'kindness',
     loadChildren: () => import('./teenagers/kindness/kindness.module').then(m => m.KindnessModule)
+  },
+  {
+    path: 'social-media',
+    loadChildren: () => import('./teenagers/social-media/social-media.module').then(m => m.SocialMediaModule)
   }
 ];
   
