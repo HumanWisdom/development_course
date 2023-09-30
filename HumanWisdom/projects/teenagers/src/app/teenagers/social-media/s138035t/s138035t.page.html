@@ -1,0 +1,22 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Data varies but it is estimated that around 24% of young people are now addicted to their phones.  It is classed as a behavioural addiction.  Part of the problem is that we can do much more with them for news, emails, messages, studying etc.Social media is just one part of it, but perhaps the most addictive.
+          Social media content is designed to be stimulating - short videos on an endless scroll. We will discuss why our mind gets so easily hooked.
+          When a message comes in we feel compelled to answer it as soon as possible, or if we have a thought we instantly reach for the phone. Teens on average pick up the phone 150 times/day.
+          Sometimes we may open the phone to do one thing, but quickly get swallowed in rotating between different social media platforms.
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

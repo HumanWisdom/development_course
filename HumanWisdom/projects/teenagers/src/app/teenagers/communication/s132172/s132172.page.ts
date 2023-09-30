@@ -27,7 +27,8 @@ export class S132172Page implements OnInit {
   }, 1000);
   avDuration:any
   userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  localSaveUsername =localStorage.getItem("saveUsername");
+  saveUsername= this.localSaveUsername != "undefined"? JSON.parse(localStorage.getItem("saveUsername")):"";
   screenType=localStorage.getItem("audio")
   moduleId=localStorage.getItem("moduleId")
   screenNumber=132172
@@ -43,6 +44,7 @@ export class S132172Page implements OnInit {
         private location:Location) { }
      
       ngOnInit() {
+        debugger
         if(this.saveUsername==false)
         {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
         else

@@ -1,0 +1,17 @@
+<app-course-header [toc]="this.toc" [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+ <app-simple-text [bg]="bg">
+
+  <form>
+
+    <h1 class="txt1">
+      Just because you may be suffering inside, does not mean that you have to take it out on others. You are better than that. Try and always be kind. If you can’t be kind, say nothing.               
+    </h1>
+
+    <div class="clearfix"></div>
+
+  </form>
+
+</app-simple-text> 
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

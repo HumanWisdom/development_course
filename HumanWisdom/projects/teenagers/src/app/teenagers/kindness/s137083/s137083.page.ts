@@ -362,7 +362,7 @@ export class S137083Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/kindness/s137083'])
+    this.router.navigate(['/kindness/s137084'])
 
 
   }
