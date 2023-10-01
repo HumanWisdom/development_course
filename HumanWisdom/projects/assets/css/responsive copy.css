@@ -636,11 +636,6 @@
     {
         width: 60%;
     }
-
-    .oli_tray 
-    {
-        padding: 0 58px;
-    }
 }
 
 @media (min-width: 1025px)
@@ -957,11 +952,6 @@
     {
         padding-top: 2%;
     }
-
-    .oli_tray 
-    {
-        bottom: 8% !important;
-    }
 }
 
 @media (min-width: 1024px) and (max-width: 1200px)
@@ -1017,11 +1007,6 @@
         overflow: unset;
         height: auto;
         z-index: unset;
-    }
-
-    .oli_tray
-    {
-        padding: 0 !important;
     }
 }
 
