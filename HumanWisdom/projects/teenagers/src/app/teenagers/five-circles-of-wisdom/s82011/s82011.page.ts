@@ -15,8 +15,8 @@ export class S82011Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w9"
   title=""
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/five-circles-of-wisdom/audios/1.4.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/five-circles-of-wisdom/audios/1.4.mp3'
   colours=["btn_5circles_01 disabled"," btn_5circles_02 disabled"," btn_5circles_03"," btn_5circles_04 disabled"," btn_5circles_05 disabled"]
   text=[
         "Nurture a quiet mind",

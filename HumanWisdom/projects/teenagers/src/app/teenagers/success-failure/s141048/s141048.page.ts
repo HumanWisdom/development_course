@@ -21,20 +21,18 @@ export class S141048Page implements OnInit {
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
-  screenType = localStorage.getItem("reflection")
+  screenType = localStorage.getItem("text")
   screenNumber = 141048
   startTime: any
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 712
-  reflection: any
-  reflectionA: any
-  r141048 = JSON.parse(sessionStorage.getItem("r141048"))
+  
+
 
   shared: any
   confirmed: any
-  bookmarkList: any;
+  bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
 
 
   constructor

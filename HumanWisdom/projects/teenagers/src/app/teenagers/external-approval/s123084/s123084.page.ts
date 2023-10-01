@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-s123084',
@@ -17,7 +18,8 @@ export class S123084Page implements OnInit
   moduleLink="/reactive-mind"
   moduleName=" Reactive Mind"
   sectionName= "How the Mind Works";
-  moduleId=112
+  moduleId=113
+  programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
       name: 'Stress',

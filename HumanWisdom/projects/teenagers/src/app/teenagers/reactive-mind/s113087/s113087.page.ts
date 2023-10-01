@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s113087',
@@ -18,6 +19,8 @@ export class S113087Page implements OnInit
   moduleName = "Self Image"
   sectionName = "How the Mind Works";
   moduleId = 114
+  programType : ProgramType = ProgramType.Teenagers;
+
   moduleList: any = [
     {
       name: 'Stress',

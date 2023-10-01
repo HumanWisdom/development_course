@@ -42,8 +42,8 @@ export class S137083Page implements OnInit {
   $( document ).ready(function() {
     // var base_color = "rgb(230,230,230)";
     // var active_color = "rgb(237, 40, 70)";
-    var base_color = "rgba(255,255,255,0.2)";
-    var active_color = "#FFC455";
+    var base_color = "rgba(196,196,196,1)";
+      var active_color = "#E58D82";
 
     var i;
     
@@ -362,7 +362,7 @@ export class S137083Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/kindness/s137083'])
+    this.router.navigate(['/kindness/s137084'])
 
 
   }

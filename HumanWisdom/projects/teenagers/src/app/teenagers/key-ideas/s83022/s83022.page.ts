@@ -15,8 +15,8 @@ export class S83022Page implements OnInit,OnDestroy {
   bg_cft="bg_purple_blue"
   bg="purple_blue_w7"
   title="What does water taste like?"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/key-ideas/audios/1.6.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/key-ideas/audios/1.6.mp3'
 
   transcriptPage="key-ideas/s83022t"
   toc="key-ideas/s83001"
