@@ -16,7 +16,7 @@ export class S117105Page implements OnInit,OnDestroy
   bg="green_yellow_w6"
   title="Looking after our relationships  "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.7.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.8.mp3'
   transcriptPage="loneliness/s117105t"
   toc="loneliness/s117001"
   bookmark=0
