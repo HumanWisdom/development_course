@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 
 @Component({
   selector: 'app-subscription-s09-v02',
@@ -129,5 +131,12 @@ if(res) {
   myselfEvent(event) {
     this.myself = event.checked ? 1 : 0
     this.startinvite = event.checked ? 'Start Program' : 'Send Invite'
+  }
+
+  RouteToManageSubscription(item){
+    if((new Date(item['ExpDate']).getTime() > new Date().getTime())){
+      SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData,JSON.stringify(item));
+      this.router.navigate(["/myprogram/manage-subscription"]);
+    }
   }
 }

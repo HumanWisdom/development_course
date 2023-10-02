@@ -49,6 +49,11 @@
     font-size: 30px;
 }
 
+.fs_32px 
+{
+    font-size: 32px;
+}
+
 .fs_33px 
 {
     font-size: 33px;
@@ -62,5 +67,12 @@
 .fs_45px 
 {
     font-size: 45px;
+}
+
+.oli_tray 
+{
+    padding: 0 58px;
+    bottom: 0;
+    box-shadow: unset;
 }
 /* /font size */
