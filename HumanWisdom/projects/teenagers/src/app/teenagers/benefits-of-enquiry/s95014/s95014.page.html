@@ -23,42 +23,38 @@
         <div class="col-md-12 col-sm-12 col-xs-12  p0">
 
           <div *ngIf="!o.CorrectAns">
-            <!-- <a class="sb_anchor" data-toggle="modal" [attr.data-target]="'#lab-slide-bottom-popup'+o.OptId" > -->
-            <a class="sb_anchor" (click)="checkOption(o)" data-toggle="modal" data-target="#lab-slide-bottom-popup">
-              <div id="{{o.OptId}}" [ngClass]="{'single_select_active': o.OptId==this.sessionOption}"
-                class="box select_box fleft">
-
+            <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
+              <div id="{{o.OptId}}"  (click)="checkOption(o)" [ngClass]="{'single_select_active': o.OptId==this.sessionOption}" class="box select_box fleft">
                 <div>
                   <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}
-                    <!-- Having done something before and succeeded -->
                   </h3>
                 </div>
-
               </div>
             </a>
           </div>
+
           <div *ngIf="o.CorrectAns">
             <a class="sb_anchor">
-              <div id="{{o.OptId}}" (click)="checkOption(o)"
-                [ngClass]="{'single_select_active': o.OptId==this.sessionOption}" class="box select_box  fleft">
+              <div id="{{o.OptId}}" (click)="checkOption(o)" [ngClass]="{'single_select_active': false}" class="box select_box fleft">
                 <div>
                   <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}
-                    <!-- Having done something before and succeeded -->
                   </h3>
-
                 </div>
-
               </div>
             </a>
-
           </div>
-
         </div>
       </div>
       
       <br>
+    </div>
+
+    <div class="row mt20px" *ngIf="enableTick">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_correct.svg" class="img-responsive">
+      </div>
     </div>
 
     <!-- modal test -->
