@@ -15,8 +15,8 @@ export class S117025Page implements OnInit,OnDestroy
   bg_cft="bg_green_yellow"
   bg="green_yellow_w5"
   title="Why do we feel lonely in relationships?  "
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/teenagers/modules/loneliness/audios/1.1.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/loneliness/audios/1.3.mp3'
   transcriptPage="loneliness/s117025t"
   toc="loneliness/s117001"
   bookmark=0
