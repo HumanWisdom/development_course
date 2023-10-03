@@ -22,7 +22,6 @@ export class RouteHistoryGuard implements CanActivate {
     state: RouterStateSnapshot
   ): boolean {
     // You can do something with the route history here if needed
-     debugger;
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
    
     return true; // Allow navigation

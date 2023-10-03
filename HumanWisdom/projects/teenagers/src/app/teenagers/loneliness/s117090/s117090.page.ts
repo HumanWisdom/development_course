@@ -16,7 +16,7 @@ export class S117090Page implements OnInit,OnDestroy
   bg="green_yellow_w3"
   title="Travel inwards. Make peace.  "
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.4.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.5.mp3'
   transcriptPage="loneliness/s117090t"
   toc="loneliness/s117001"
   bookmark=0

@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Research is showing that excessive phone use can cause many problems.
+          It leads to a sleep deficit which impacts your ability to concentrate and be creative in the day. This can impact your school grades.
+          It can lead to anxiety because we worry what others are thinking about us, and how popular or not we are. It can also cause stress if we do not get the likes we want, or the recognition we want online.
+          It has been shown to impact our communication skills - our ability to listen deeply, speak with care, and be able to understand what people are saying - and this can affect all our friendships. Would you want to share things with a friend who was looking at their phone at the same time? 
+          If we spend more time on the phone rather than actually meeting people we can begin to feel lonely and insecure, as if we are not loved and appreciated for who we really are.
+          Smartphone addiction has also been linked to self-harm, depression, and 
+          All our other hobbies fade away - people stop reading books, for example
+         </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
