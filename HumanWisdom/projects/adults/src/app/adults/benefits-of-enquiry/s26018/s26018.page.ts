@@ -103,20 +103,20 @@ export class S26018Page implements OnInit
     console.log(this.question, this.optionList)
     console.log(this.enableTick)
   }
-
-  checkOption(opt, enableTick)
+  checkOption(opt)
   {
-    this.enableTick = enableTick;
     this.sessionOption = []
+   
     if (opt.CorrectAns)
     {
+      this.enableTick = true;
       this.option = opt.OptId
-      sessionStorage.setItem("sessionOptions26018", JSON.stringify(this.option))
-      document.getElementById(opt.OptId).style.background = '#FFC455';
-      if (this.falseans !== '')
-      {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
+      sessionStorage.setItem("sessionOptions111012", JSON.stringify(this.option))
+      document.getElementById(opt.OptId).style.background = '#E58D82';
+      document.getElementById(opt.OptId+ 'text').style.color = '#FFFFFF';
+      if (this.falseans !== '') {
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
       }
@@ -127,23 +127,23 @@ export class S26018Page implements OnInit
     }
     else
     {
+      this.enableTick = false;
       if (this.falseans !== '')
       {
-        document.getElementById(this.falseans).style.background = '#FFFFFF';
-        document.getElementById(this.falseans + 'text').style.color = '#5D5D5D';
-        document.getElementById(this.falseans).style.opacity = '0.75';
+        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
+        // document.getElementById(this.falseans).style.opacity = '0.1';
         this.falseans = opt.OptId
       }
       else
       {
         this.falseans = opt.OptId
       }
-      document.getElementById(opt.OptId).style.background = '#5D5D5D';
-      document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
+      document.getElementById(opt.OptId).style.background = '#120F40';
+      // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
     }
     console.log(this.enableTick)
   }
-
   submitProgress()
   {
     this.endTime = Date.now();
