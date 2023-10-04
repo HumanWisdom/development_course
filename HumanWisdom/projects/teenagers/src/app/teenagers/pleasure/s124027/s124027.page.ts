@@ -16,7 +16,7 @@ export class S124027Page implements OnInit,OnDestroy
   bg="pink_orange_w10"
   title="Pleasure can lead to pain"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/pleasure/audios/1.4.mp3'
+  audioLink=this.mediaAudio+'/teenagers/modules/pleasure/audios/1.4.mp3'
   transcriptPage="pleasure/s124027t"
   toc="pleasure/s124001"
   bookmark=0
