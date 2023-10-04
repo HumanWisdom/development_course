@@ -4,6 +4,7 @@ import { OnboardingService } from '../../../../../../shared/services/onboarding.
 import {Location } from '@angular/common'
 import { AdultsService } from 'src/app/adults/adults.service';
 import { LogEventService } from "../../../../../../shared/services/log-event.service";
+import { ForumService } from '../../../../../../shared/forum/forum.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class SubscriptionS01V04Page implements OnInit {
   selectedCountry:any
   selectedBracket:any
   selectedPlan:any
-  cartList:any
+  cartList = []
   //userId=sessionStorage.getItem("userId")
   userId:any
   cartId:any
@@ -59,7 +60,18 @@ export class SubscriptionS01V04Page implements OnInit {
   yearormonth = ''
   isActivateModal=false;
   public showWarning=false
-  constructor(private router: Router,public service:OnboardingService, public services:AdultsService, private location:Location, public logeventservice: LogEventService,  private cd: ChangeDetectorRef) {
+  enableEmailbox = false
+  enableMonthEmailbox = false
+
+  constructor(
+    private router: Router,
+    public service:OnboardingService,
+     public services:AdultsService,
+      private location:Location,
+       public logeventservice: LogEventService,
+         private cd: ChangeDetectorRef,
+         private forumservice: ForumService
+         ) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     if(localStorage.getItem('subscribepage') === 'T') {
@@ -85,7 +97,7 @@ export class SubscriptionS01V04Page implements OnInit {
   ngOnInit() {
     if(localStorage.getItem('giftwisdom') === 'F')   {
       this.enableGift = true;
-    } 
+    }
     let popup = JSON.parse(localStorage.getItem("Subscriber"))
     if(popup === 1) this.enablepopup = true
     this.isSubscribe = popup === 0 ? false : true;
@@ -97,18 +109,44 @@ export class SubscriptionS01V04Page implements OnInit {
     console.log("userID",this.userId)
     this.getCountry();
     this.viewCart();
-   
+
 setTimeout(() => {
   console.log(this.cartList)
 }, 7000)
-    
+
+  }
+
+  enableEmailboxEvent(enable, plan, id = 9) {
+    if(enable) {
+      this.loggedUser()
+      this.planWarning=false
+      console.log(plan,id)
+
+      for(var i=0;i<this.cartList.length;i++){
+        if(this.cartList[i].ProgID === id)
+        {
+          this.cartList[i].selectedSubscription=plan
+          if(plan=="Annual")
+            this.cartList[i].price= this.cartList[i].Annual
+          else
+            this.cartList[i].price= this.cartList[i].Monthly
+        }
+      }
+      console.log(this.cartList)
+    }
+    this.learnermail = '';
+    if(plan !=='Annual') {
+      this.enableMonthEmailbox = enable
+    }else {
+      this.enableEmailbox = enable
+    }
   }
 
   viewCart() {
     this.service.viewCart({ "Id":this.userId})
     .subscribe(res=>
       {
-        
+
         if(res && res.length !== 0) {
           this.cartitemList = res;
           if(res[0]['Plan'] === 'Annual') this.typeList.splice(1, 1);
@@ -119,13 +157,13 @@ setTimeout(() => {
             if(localStorage.getItem('giftwisdom') === 'F')   {
               this.myself = 1
               this.enableMySelf = true
-            } 
+            }
           }
         }else {
           if(localStorage.getItem('giftwisdom') === 'F')   {
             this.myself = 1
             this.enableMySelf = true
-          } 
+          }
         }
 
       },
@@ -139,7 +177,7 @@ setTimeout(() => {
     this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
   }
 
- 
+
  proceedcart() {
   this.logeventservice.logEvent('click_view_cart');
    this.router.navigate(['/onboarding/viewcart'])
@@ -188,15 +226,15 @@ verifyactkey() {
       }
       // this.enableActivate = true;
       // this.closemodal.nativeElement.click()
-      
+
       // this.router.navigate(['/adults/adult-dashboard'])
     },
     error=>{
       console.log(error);
-     
+
       // window.alert(error.error['Message'])
     },
-    ()=>{    
+    ()=>{
     });
     if(this.showWarning===false){
       this.secondpage = false;
@@ -210,13 +248,13 @@ Confirm(){
 
 submitcode(){
   this.logeventservice.logEvent('click_activation_code_submit');
- 
-  
+
+
   this.service.verifyActivationKey(this.activationCode,this.userId, this.countryCode)
   .subscribe(
     res=>
     {
-     
+
       for(var i=0;i<this.cartitemList.length;i++){
         if(this.cartitemList[i].MySelf=="True")
         {
@@ -247,10 +285,10 @@ submitcode(){
             this.secondpage = false;
               this.thirdpage = true
           },
-         
+
           ()=>{
-            
-      
+
+
           }
         )
             this.service.isActivationFlow=true;
@@ -279,7 +317,7 @@ submitcode(){
       this.enableemail = false;
     }
   }
-  
+
   someoneradioevent(event) {
     if(event.target.checked) {
       this.myself = 0;
@@ -293,25 +331,25 @@ submitcode(){
 
   msginput(event) {
     this.learnermsg = event.target.value;
-  } 
+  }
 
   getCountry(){
-    this.service.getCountry().subscribe((res:any)=>{  
-      
+    this.service.getCountry().subscribe((res:any)=>{
+
       if(res['in_eu']) {
         this.countryCode = 'EUR'
       }else {
         this.countryCode = res['country_code_iso3']
       }
       this.getPricing()
-      this.defaultCountry=res.country_name
+      this.defaultCountry=res?.country_name
     },
 
       error=>{
         console.log(error)
       },
       ()=>{
-      });  
+      });
 
   }
 
@@ -319,7 +357,7 @@ submitcode(){
     console.log("my country", this.defaultCountry)
     this.service.getCurrencies().subscribe(res=>
       {
-        
+
         this.countryList=res.filter((item, i, arr) => arr.findIndex((t) => t.CountryId=== item.CountryId) === i);
         console.log(this.countryList)
        let found=this.countryList.find(o=>o.Country==this.defaultCountry)
@@ -337,14 +375,14 @@ submitcode(){
     )
   }
 
- 
+
 
   selectCountry(countryId){
     // console.log(country)
     // this.selectedCountryId=this.countryList.filter(r=>{return r.Country==country})[0].CID
     this.selectedCountryId=countryId
     console.log(this.selectedCountryId)
-    
+
     this.getPricing()
   }
 
@@ -355,7 +393,7 @@ submitcode(){
     {
       this.cartProdutionList=this.productList.map(({ProgID,Program,CountryID,Monthly})=>({ProgID,Program,CountryID,Monthly}))
       this.cartList = this.cartList.map(elm => ({ProgID: elm.ProgID,
-        Program:elm.Program, 
+        Program:elm.Program,
         CountryID:elm.CountryID,
         price: elm.Monthly,
         qty:0}));
@@ -364,13 +402,13 @@ submitcode(){
     else{
       this.cartList=this.productList.map(({ProgID,Program,CountryID,Annual})=>({ProgID,Program,CountryID,Annual}))
       this.cartList = this.cartList.map(elm => ({ProgID: elm.ProgID,
-        Program:elm.Program, 
+        Program:elm.Program,
         CountryID:elm.CountryID,
         price: elm.Annual,
       qty:0}));
       console.log(this.cartList)
     }
-    
+
 
 
 
@@ -382,16 +420,16 @@ submitcode(){
       this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
 
     }
-     
-    
+
+
 
   }
-  
+
   selectPlan(plan,id){
     this.loggedUser()
     this.planWarning=false
     console.log(plan,id)
-   
+
     for(var i=0;i<this.cartList.length;i++){
       if(this.cartList[i].ProgID === id)
       {
@@ -400,16 +438,16 @@ submitcode(){
           this.cartList[i].price= this.cartList[i].Annual
         else
           this.cartList[i].price= this.cartList[i].Monthly
-        
+
 
       }
-         
-      
+
+
     }
     console.log(this.cartList)
   }
-  
-  
+
+
 
   getPricing(){
     this.service.getPricing(this.countryCode).subscribe(res=>
@@ -432,125 +470,104 @@ submitcode(){
         window.alert(err.error['Message'])
       }
     )
-  }  
+  }
 
   addToCart(){
-    this.logeventservice.logEvent('click_done');
-    this.loggedUser()
-    let pid = this.cartList[0]['ProgID']
-    console.log(pid)
-   
-    
-    for(var i=0;i<this.cartList.length;i++){
-      
+    if(!this.ValidateEmail()) {
+      this.logeventservice.logEvent('click_done');
+      this.loggedUser()
+      let pid = this.cartList[0]['ProgID']
+      console.log(pid)
+      for(var i=0;i<this.cartList.length;i++){
+        if(this.cartList[i].ProgID === pid)
+        {
+          this.checkPopup(this.cartList[i])
+            this.showCart=true
+            this.planWarning=false
+            this.totalItemCount+=1
+            this.cartList[i].qty +=1;
+            if(this.cartList[i].selectedSubscription=="Monthly")
+            {
+              this.cartList[i].selectedSubscription="Monthly"
+              this.cartList[i].price=this.cartList[i].Monthly * this.cartList[i].qty
+              this.cartList[i].planId=1
+            }
+            else{
+              this.cartList[i].selectedSubscription="Annual"
+              this.cartList[i].price=this.cartList[i].Annual* this.cartList[i].qty
+              this.cartList[i].planId=2
 
-     
+            }
+              this.service.addItem({
+                "UserId":this.userId,
+                "RateId":this.cartList[i].RateID,
+                "Qty":this.cartList[i].qty,
+                "PlanId":this.cartList[i].planId,
+                "MySelf": this.myself,
+                "LearnerEmail": this.learnermail,
+                "LearnerMsg": this.learnermsg,
+                })
+                .subscribe(res=>{
+                  console.log(res,"cartId")
+                  this.cartId=res
+                  for(var i=0;i<this.cartList.length;i++){
+                    if(this.cartList[i].ProgID === pid){
+                      this.cartList[i].cartId=res
+                    }
 
-      if(this.cartList[i].ProgID === pid)
-      {  
-        this.checkPopup(this.cartList[i])
-          this.showCart=true
-          this.planWarning=false
-          this.totalItemCount+=1
-          this.cartList[i].qty +=1;
-          if(this.cartList[i].selectedSubscription=="Monthly")
-          {
-            this.cartList[i].selectedSubscription="Monthly"
-            this.cartList[i].price=this.cartList[i].Monthly * this.cartList[i].qty
-            this.cartList[i].planId=1
-          }
-          else{
-            this.cartList[i].selectedSubscription="Annual"
-            this.cartList[i].price=this.cartList[i].Annual* this.cartList[i].qty
-            this.cartList[i].planId=2
-  
-          }
-          //call service
-         
-            this.service.addItem({
-              "UserId":this.userId,
-              "RateId":this.cartList[i].RateID,
-              "Qty":this.cartList[i].qty,
-              "PlanId":this.cartList[i].planId,
-              "MySelf": this.myself,
-              "LearnerEmail": this.learnermail,
-              "LearnerMsg": this.learnermsg,
-              })
-              .subscribe(res=>{
-                console.log(res,"cartId")
-                this.cartId=res
-                for(var i=0;i<this.cartList.length;i++){
-                  if(this.cartList[i].ProgID === pid){
-                    this.cartList[i].cartId=res
                   }
-                  
-                }
-                if(this.enableMySelf) this.enableMySelf = false;
-                this.enableadd = true; 
-                this.myself = 0,
-                this.learnermail = '',
-                this.learnermsg = '',
-                this.enableemail = false
-                this.cd.detectChanges()
-                this.viewCart()
-              },
-              error=>{
-                console.log(error)
-              },
-              ()=>{
-                console.log(this.cartList[i])
-                console.log(this.cartList,"afteraddidtion")
-                this.totalPrice()  
-              })
-            
-             
-  
-          
-  
-         /* else{
-            this.cartList[i].cartId=this.cartId
-            this.service.editCart(
-              {"Id":parseInt(this.cartId)},
-              {"Id":parseInt(this.cartList[i].qty)}
-              )
-              .subscribe(res=>
-                {
-                  
-            })
-          }*/
-        
-       
-       
-          
-          
-      } 
-            
+                  if(this.enableMySelf) this.enableMySelf = false;
+                  this.enableadd = true;
+                  this.myself = 0,
+                  this.learnermail = '',
+                  this.learnermsg = '',
+                  this.enableemail = false
+                  this.forumservice.toastrService.success('', 'Updated Successfully !');
+                  if(this.cartList[0]?.selectedSubscription === 'Monthly') {
+                    this.enableMonthEmailbox = false
+                  }else {
+                    this.enableEmailbox = false
+                  }
+                  this.cd.detectChanges()
+                  this.viewCart()
+                },
+                error=>{
+                  this.forumservice.toastrService.success('', error);
+                  console.log(error)
+                },
+                ()=>{
+                  console.log(this.cartList[i])
+                  console.log(this.cartList,"afteraddidtion")
+                  this.totalPrice()
+                })
+        }
+
+      }
+    }else{
+      this.forumservice.toastrService.success('', 'Email address is invalid');
     }
-    
-    
-
-
   }
+
   checkPopup(item){
     console.log(item)
     if(item.later==1)
       console.log("do not show popup")
     else{
       console.log("show")
-      
+
     }
 
 
   }
 
   removeFromCart(cid,pid){
-   
-    
+
+
     if(this.totalItemCount!=0)
       this.totalItemCount-=1
     if(this.totalItemCount==0)
       this.showCart=false
-   
+
     console.log(pid)
     for(var i=0;i<this.cartList.length;i++){
       /*if(this.cartList[i].qty=1)
@@ -558,13 +575,13 @@ submitcode(){
         this.showCart=false
       }*/
       if(this.cartList[i].ProgID === pid)
-      {  
+      {
         if(this.cartList[i].qty==1)
          { console.log("delete from d/b and add DeleteCart service")
           this.service.deleteItem({"Id":parseInt(this.cartList[i].cartId)})
           .subscribe((res) => {});
         }
-        
+
         if(this.cartList[i].qty==0)
           console.log("cannot remove")
         else
@@ -580,7 +597,7 @@ submitcode(){
             this.cartList[i].selectedSubscription="Annual"
             this.cartList[i].price=this.cartList[i].Annual * this.cartList[i].qty
             this.cartList[i].planId=2
-  
+
           }
 
         }
@@ -595,25 +612,25 @@ submitcode(){
 
             })
             .subscribe(res=>{
-              
+
             })*/
 
-           
+
             this.service.editCart(
               {"Id":parseInt(this.cartList[i].cartId)},
               {"Id":parseInt(this.cartList[i].qty)}
               )
               .subscribe(res=>
                 {
-                  
+
             })
 
         }
-      } 
-            
+      }
+
     }
     console.log(this.cartList,"afterRemoval")
-    this.totalPrice()  
+    this.totalPrice()
   }
 
   ValidateEmail() {
@@ -650,7 +667,7 @@ submitcode(){
     sessionStorage.setItem("cartList",JSON.stringify(this.cartList))
     if(localStorage.getItem('giftwisdom') === 'T')   {
       localStorage.setItem('giftwisdom', 'F')
-    } 
+    }
   //   totalCartValue:any
   // totalItemCount=0
   }
@@ -694,5 +711,9 @@ submitcode(){
         $("#optionsRadios10").prop("checked", true);
       }
     }, 100);
+  }
+
+  editPost(){
+
   }
 }
