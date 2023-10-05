@@ -17,9 +17,9 @@ export class S128037Page implements OnInit
   userId:any
   userName:any
   progressPercent:any
-  progressText="1/3"
+  progressText="1/2"
   link="/food-health/s128038"
-  name="#2 Four ways food-health impacts our life"
+  name="#2 How can we respond with wisdom?"
   progressImg=""
   toc="food-health/s128001"
 
@@ -50,7 +50,7 @@ export class S128037Page implements OnInit
   {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="food-health").Percentage)
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==128).Percentage)
      console.log(this.progressPercent)
     })
   }
