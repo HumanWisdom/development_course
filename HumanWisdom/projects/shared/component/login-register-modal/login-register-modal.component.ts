@@ -294,7 +294,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
             }
           }
           this.actclosemodal?.nativeElement?.click();
-          this.closeModal.emit(true);
+          this.closeModal.emit(false);
           if(this.isAdvertpage) {
             this.router.navigate(['/adults/redeem-subscription'])
           }
@@ -389,7 +389,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
               }
             }
             this.actclosemodal.nativeElement.click();
-            this.closeModal.emit(true);
+            this.closeModal.emit(false);
             if(this.isAdvertpage) {
               this.router.navigate(['/adults/redeem-subscription'])
             }
@@ -486,7 +486,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                 }
               }
               this.actclosemodal.nativeElement.click();
-              this.closeModal.emit(true);
+              this.closeModal.emit(false);
               if(this.isAdvertpage) {
                 this.router.navigate(['/adults/redeem-subscription'])
               }
@@ -519,7 +519,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
 
   closeModalevent() {
     this.enabledModal = false;
-    this.closeModal.emit(true)
+    this.closeModal.emit(false)
   }
 
 
