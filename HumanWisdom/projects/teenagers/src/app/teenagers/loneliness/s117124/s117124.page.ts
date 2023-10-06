@@ -17,26 +17,28 @@ export class S117124Page implements OnInit {
   moduleLink="/anger"
   moduleName=" Anger"
   sectionName= "Understand Emotions";
-  moduleId=14
+  moduleId=118
+
+
   moduleList: any = [
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
-      id: 47
+      id: 131
     },
     {
       name: 'The Nature of the ‘I’',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/57.png',
       link: '/nature-of-i',
-      id: 57
+      id: 122
  
     },
     {
       name: 'Sorrow and Loss',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/60.png',
       link: '/sorrow',
-      id: 60
+      id: 116
   
     },
   ]
@@ -50,7 +52,7 @@ export class S117124Page implements OnInit {
       this.moduleLink = "/anger"
       this.moduleName = "Anger"
       this.sectionName = "Manage your emotions";
-      this.moduleId = 14
+      this.moduleId = 118
     
     }
    }
