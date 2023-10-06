@@ -57,6 +57,6 @@ export class S128079Page implements OnInit
 
   prev()
   {
-    this.router.navigate(['/food-health/s128078'])
+    this.router.navigate(['/food-health/s128074'])
   }
 }
