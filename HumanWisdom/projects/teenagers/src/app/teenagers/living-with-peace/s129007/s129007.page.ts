@@ -14,7 +14,7 @@ export class S129007Page implements OnInit
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"
-  hint = ""
+  hint = "it could be you don’t like others, because you think they are different."
   toc = "/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
@@ -29,7 +29,7 @@ export class S129007Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1997
   reflection: any
   reflectionA: any
   r129007 = JSON.parse(sessionStorage.getItem("r129007"))
