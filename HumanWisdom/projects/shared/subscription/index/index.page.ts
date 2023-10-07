@@ -22,6 +22,8 @@ export class IndexPage implements OnInit {
   paymentIntentModel: paymentIntentModel;
   pricingModel: any;
   userId: number;
+  enabledModal = false;
+  
   constructor(private router: Router, private onboardingService: OnboardingService) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
@@ -32,6 +34,10 @@ export class IndexPage implements OnInit {
   ngOnInit() {
     this.InitializeDefaultValues();
     this.getCountry();
+  }
+
+  getClosemodalEvent(event){
+    this.enabledModal = false;
   }
 
   InitializeDefaultValues() {
@@ -77,7 +83,8 @@ export class IndexPage implements OnInit {
         this.router.navigateByUrl('/adults/subscription/redeem-activate-now');
       }
     } else {
-      this.router.navigateByUrl('/login');
+      // this.router.navigateByUrl('/login');
+      this.enabledModal = true;
     }
   }
 

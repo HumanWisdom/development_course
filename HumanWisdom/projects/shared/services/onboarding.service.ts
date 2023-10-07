@@ -181,6 +181,6 @@ export class OnboardingService {
   }
 
   cancelSubscription(code): Observable<any> {
-    return this.http.post(this.path + `/CancelSubscription/${code}`, {})
+    return this.http.post(this.path + `/CancelSubscription/${code}`, {});
   }
 }
