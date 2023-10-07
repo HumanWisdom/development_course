@@ -4,19 +4,17 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s129007',
-  templateUrl: './s129007.page.html',
-  styleUrls: ['./s129007.page.scss'],
+  selector: 'app-s129027p1',
+  templateUrl: './s129027p1.page.html',
+  styleUrls: ['./s129027p1.page.scss'],
 })
-export class S129007Page implements OnInit 
+export class S129027p1Page implements OnInit 
 {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"
-
-  hint = "it could be you don’t like others, because you think they are different."
-
+  hint = "  It could be your own expectations, or your need for approval from others "
   toc = "/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;
@@ -26,15 +24,15 @@ export class S129007Page implements OnInit
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("reflection")
-  screenNumber = 129007
+  screenNumber = "129027p1"
   startTime: any
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1997
+  rId = 2009
   reflection: any
   reflectionA: any
-  r129007 = JSON.parse(sessionStorage.getItem("r129007"))
+  r129027p1 = JSON.parse(sessionStorage.getItem("r129027p1"))
   shared: any
   confirmed: any
 
@@ -101,9 +99,9 @@ export class S129007Page implements OnInit
     console.log("returned response", e)
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r129007", JSON.stringify(e))
-    this.r129007 = sessionStorage.getItem("r129007")
-    console.log(this.r129007)
+    sessionStorage.setItem("r129027p1", JSON.stringify(e))
+    this.r129027p1 = sessionStorage.getItem("r129027p1")
+    console.log(this.r129027p1)
     this.service.submitProgressReflection({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,
@@ -112,21 +110,21 @@ export class S129007Page implements OnInit
       "screenType": this.screenType,
       "timeSpent": this.totalTime,
       "ReflectionId": this.rId,
-      "Resp": this.r129007
+      "Resp": this.r129027p1
     }).subscribe(res => {},
       error => {
         console.log(error)
-        this.router.navigate(['/living-with-peace/s129008'])
+        this.router.navigate(['/living-with-peace/s129028'])
 
       },
       () => {
-        this.router.navigate(['/living-with-peace/s129008'])
+        this.router.navigate(['/living-with-peace/s129028'])
       })
   }
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129006'])
+    this.router.navigate(['/living-with-peace/s129027'])
   }
 
   ngOnDestroy() 
