@@ -19449,10 +19449,9 @@ share-buttons button
 
 .bluediv
 {
-  background: #1092A7;
-  /* padding: 20px; */
-  padding: 10px;
-  border-radius: 5px;
+  border-radius: 12px;
+  background: #120F40;
+  padding: 12px;
 }
 
 .ws_hr_01
@@ -25137,8 +25136,9 @@ a
 
 .onscrollws_active
 {
-  background: #FFFFFF !important;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25) !important;
+  /* background: #FFFFFF !important;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25) !important; */
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
 .ellipsis
@@ -34788,5 +34788,93 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .pl12px
 {
   padding-left: 12px;
+}
+
+.absolute_ls_like
+{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.ls_story_img 
+{
+  margin: -20px -20px 0 -20px;
+}
+
+.div_like_cnt 
+{
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_ls_tags
+{
+  margin: 0;
+  border: 0;
+  box-shadow: unset;
+  width: auto;
+  height: 34px;
+  border-radius: 360px;
+  background: #120F40;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.div_tag_btns .btn_ls_tags:last-child 
+{
+  margin-right: 0;
+}
+
+.div_ls_comments .row
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.div_ls_comments .row:last-child
+{
+  margin-bottom: 0;
+}
+
+.sp_fc_01
+{
+  height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #120F40;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.50);
+  text-align: left;
+  padding: 10px 20px;
+}
+
+.btn_ls_post_comment
+{
+  margin: 0;
+  border: 0;
+  box-shadow: unset;
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  background: #FFF;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #E58D82;
+  text-align: center;
 }
 /* /version - 03 */
