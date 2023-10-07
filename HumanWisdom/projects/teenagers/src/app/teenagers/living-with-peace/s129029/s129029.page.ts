@@ -124,7 +124,7 @@ export class S129029Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129028'])
+    this.router.navigate(['/living-with-peace/s129028p1'])
   }
 
   ngOnDestroy() 

@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s129026',
-  templateUrl: './s129026.page.html',
-  styleUrls: ['./s129026.page.scss'],
+  selector: 'app-s129026p1',
+  templateUrl: './s129026p1.page.html',
+  styleUrls: ['./s129026p1.page.scss'],
 })
-export class S129026Page implements OnInit {
+export class S129026p1Page implements OnInit {
 
   bg_tn="bg_blue"
   bg_cft="bg_blue"
@@ -19,7 +19,7 @@ export class S129026Page implements OnInit {
   screenType=localStorage.getItem("text")
   moduleId=localStorage.getItem("moduleId")
 
-  screenNumber="129026"
+  screenNumber="129026p1"
   startTime:any
   endTime:any
   totalTime:any
@@ -339,6 +339,28 @@ export class S129026Page implements OnInit {
      );
      // /to be copied
      
+     // /to be copied
+     $("#svg_form_time rect").css("fill", active_color);
+     $("#svg_form_time circle").css("fill", active_color);
+     $("#prev").removeClass("disabled");
+     if (child >= length) {
+       $(this).addClass("disabled");
+       $('#submit').removeClass("disabled");
+     }
+     if (child <= length) {
+       child++;
+     }
+     var circle_child = child + 1;
+     $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+       "fill",
+       base_color
+     );
+     $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+       "fill",
+       base_color
+     );
+     // /to be copied
+     
      
     
     
@@ -359,9 +381,9 @@ export class S129026Page implements OnInit {
     this.startTime = Date.now();
 
     
-    if(JSON.parse(sessionStorage.getItem("bookmark129026"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark129026p1"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark129026"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark129026p1"))==1)
       this.bookmark=1
 
    
@@ -378,7 +400,7 @@ export class S129026Page implements OnInit {
     this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark129026",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark129026p1",JSON.stringify(this.bookmark))
   }
 createScreen(){
     this.service.createScreen({
@@ -397,7 +419,7 @@ createScreen(){
   submitProgress(){
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/living-with-peace/s129026p1'])
+    this.router.navigate(['/living-with-peace/s129026p2'])
     this.service.submitProgressText({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -417,13 +439,13 @@ createScreen(){
       error=>{console.log(error)},
       ()=>{
       
-       // this.router.navigate(['/adults/living-with-peace/s129026p1'])
+       // this.router.navigate(['/adults/living-with-peace/s129026p1p1'])
       })
     
 
   }
   prev(){
-    this.router.navigate(['/living-with-peace/s129025'])
+    this.router.navigate(['/living-with-peace/s129026'])
 
 
   }
