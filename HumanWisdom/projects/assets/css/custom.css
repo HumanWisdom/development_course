@@ -19389,34 +19389,36 @@ share-buttons button
 
 .btn_submit_story
 {
-  height: 50px;
-  background: #FFC455;
+  height: 32px;
+  width: 100%;
+  margin: 0;
+  border:0;
+  background: #FFF;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
+  border-radius: 8px;
   margin: 0;
   border: 0;
-
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
   text-align: center;
-  color: #5D5D5D;
+  color: #E58D82;
 }
 
 .c128px
 {
   min-height: 128px !important;
   object-fit: cover;
-  border-radius: 10px 0 0 10px;
+  /* border-radius: 10px 0 0 10px; */
+  border-radius: 6px;
 }
 
 .c150px
 {
   min-height: 150px !important;
   object-fit: cover;
-  border-radius: 10px 0 0 10px;
+  /* border-radius: 10px 0 0 10px; */
+  border-radius: 6px;
 }
 
 @media (max-width: 768px)
@@ -26161,13 +26163,13 @@ h1
 
 #mdp_carousel .carousel-indicators
 {
-  position: fixed;
+  /* position: fixed;
   bottom: 0 !important;
   right: 0;
   left: 0;
   margin: 0 auto;
   padding: 0;
-  width: 100% !important;
+  width: 100% !important; */
 }
 
 #mdp_carousel .fctray_gqtns
@@ -26236,37 +26238,37 @@ h1
   margin: 0;
   border: 0;
   height: 50px;
-  background: #40ACB2;
-  border-radius: 10px;
-
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
-  color: #FFFFFF;
   width: 100%;
-
-  margin: 20px 0 14px 0;
+  border-radius: 100px;
+  background: #E58D82;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
 }
 
 .mdp_answer_here
 {
   height: 163px;
   width: 100%;
-  background: #FFFFFF;
-  box-shadow: inset 1px 1px 2px rgb(0 0 0 / 25%);
-  border-radius: 10px;
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  color: #ADADAD;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #120F40;
   padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.mdp_answer_here::-webkit-input-placeholder
+{
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.mdp_answer_here:focus
+{
+  color: #FFF;
   outline: none;
-  margin: 41px 0 0 0;
 }
 
 .flex_jc_center
@@ -32947,6 +32949,7 @@ body *
   margin-bottom: 0 !important;
   display: flex;
   align-items: center;
+  color: #fff !important;
 }
 
 .btn_next_v3
@@ -34498,7 +34501,9 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .border_profile_img
 {
   border: 10px solid #292D56 !important;
-  border-radius: 100px;
+  border-radius: 50%;
+  width: 82px;
+  height: 82px;
 }
 
 .mt35px
@@ -34635,7 +34640,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 }
 
 
-#ic_carousel .carousel-indicators li
+#ic_carousel .carousel-indicators li,
+#mdp_carousel .carousel-indicators li
 {
   width: 8px;
   height: 8px;
@@ -34645,7 +34651,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border: 0;
 }
 
-#ic_carousel .carousel-indicators li.active
+#ic_carousel .carousel-indicators li.active,
+#mdp_carousel .carousel-indicators li.active
 {
   width: 24px;
   height: 8px;
@@ -34719,5 +34726,67 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   padding: 20px;
   text-align: center;
+}
+
+.mdp_oli_tray 
+{
+  box-shadow: unset;
+  position: fixed;
+  bottom: 70px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 999;
+  background: #292D56;
+  height: 50px;
+}
+
+#mdp_carousel .skip 
+{
+  position: absolute;
+  left: 58px !important;
+  padding: 0;
+  z-index: 99;
+}
+
+#mdp_carousel .next 
+{
+  position: absolute;
+  right: 58px !important;
+  padding: 0;
+  z-index: 99;
+}
+
+#mdp_carousel .carousel-indicators 
+{
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: auto;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div_ls_01 
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 16px
+}
+
+.div_is_01 
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.pl12px
+{
+  padding-left: 12px;
 }
 /* /version - 03 */
