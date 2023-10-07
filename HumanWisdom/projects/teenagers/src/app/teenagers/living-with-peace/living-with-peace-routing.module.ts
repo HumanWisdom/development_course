@@ -11,6 +11,7 @@ import { S129006tPage } from './s129006t/s129006t.page';
 import { S129007Page } from './s129007/s129007.page';
 import { S129008Page } from './s129008/s129008.page';
 import { S129008tPage } from './s129008t/s129008t.page';
+import { S129008p1Page } from './s129008p1/s129008p1.page';
 import { S129009Page } from './s129009/s129009.page';
 import { S129009tPage } from './s129009t/s129009t.page';
 import { S129010Page } from './s129010/s129010.page';
@@ -30,8 +31,12 @@ import { S129023Page } from './s129023/s129023.page';
 import { S129024Page } from './s129024/s129024.page';
 import { S129025Page } from './s129025/s129025.page';
 import { S129026Page } from './s129026/s129026.page';
+import { S129026p1Page } from './s129026p1/s129026p1.page';
+import { S129026p2Page } from './s129026p2/s129026p2.page';
 import { S129027Page } from './s129027/s129027.page';
+import { S129027p1Page } from './s129027p1/s129027p1.page';
 import { S129028Page } from './s129028/s129028.page';
+import { S129028p1Page } from './s129028p1/s129028p1.page';
 import { S129029Page } from './s129029/s129029.page';
 import { S129030Page } from './s129030/s129030.page';
 import { S129031Page } from './s129031/s129031.page';
@@ -145,6 +150,10 @@ const routes: Routes = [
     path: 's129008t',
     component: S129008tPage,
   },
+  {
+    path: 's129008p1',
+    component: S129008p1Page,
+  },
  
   {
     path: 's129009',
@@ -227,12 +236,28 @@ const routes: Routes = [
     component: S129026Page,
   },
   {
+    path: 's129026p1',
+    component: S129026p1Page,
+  },
+  {
+    path: 's129026p2',
+    component: S129026p2Page,
+  },
+  {
     path: 's129027',
     component: S129027Page,
   },
   {
+    path: 's129027p1',
+    component: S129027p1Page,
+  },
+  {
     path: 's129028',
     component: S129028Page,
+  },
+  {
+    path: 's129028p1',
+    component: S129028p1Page,
   },
   
   {
@@ -507,6 +532,9 @@ const routes: Routes = [
     path: 's129082',
     component: S129082Page,
   },
+ 
+ 
+ 
 ];
 
 @NgModule({

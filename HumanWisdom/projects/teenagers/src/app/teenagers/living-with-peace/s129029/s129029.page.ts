@@ -29,7 +29,7 @@ export class S129029Page implements OnInit
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1272
+  rId = 1998
   reflection: any
   reflectionA: any
   r129029 = JSON.parse(sessionStorage.getItem("r129029"))
@@ -124,7 +124,7 @@ export class S129029Page implements OnInit
 
   previous() 
   {
-    this.router.navigate(['/living-with-peace/s129028'])
+    this.router.navigate(['/living-with-peace/s129028p1'])
   }
 
   ngOnDestroy() 

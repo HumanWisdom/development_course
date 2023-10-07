@@ -10,14 +10,14 @@
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs login_signup_tab flex_ai m0px">
-                <li id="SignupTab" [ngClass]="{'active' : isSignUp }" class="active">
-                  <a data-toggle="tab" href="#tab1" (click)="getsignuptab()">
-                    Sign up
-                  </a>
-                </li>
                 <li id="LoginTab" #enabletab [ngClass]="{'active' : !isSignUp }" (click)="getLoginTab()">
                   <a data-toggle="tab" href="#tab2">
                     Login
+                  </a>
+                </li>
+                <li id="SignupTab" [ngClass]="{'active' : isSignUp }" class="active">
+                  <a data-toggle="tab" href="#tab1" (click)="getsignuptab()">
+                    Sign up
                   </a>
                 </li>
               </ul>
@@ -78,11 +78,10 @@
                           <div class="fc_img">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
                           </div>
-
-                          <div *ngIf="fullname.invalid && fullname.touched">
-                            <small *ngIf="fullname.errors?.required" class="text danger">Full Name is required</small>
-                            <small *ngIf="fullname.errors?.minlength" class="text danger">Full Name must be at least 6 characters</small>
-                          </div>
+                        </div>
+                        <div *ngIf="fullname.invalid && fullname.touched">
+                          <small *ngIf="fullname.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name is required</small>
+                          <small *ngIf="fullname.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name must be at least 6 characters</small>
                         </div>
                       </div>
 
@@ -101,11 +100,10 @@
                           <div class="fc_img">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
                           </div>
-
-                          <div *ngIf="emailvalid.invalid && emailvalid.touched">
-                            <small *ngIf="emailvalid.errors?.required" class="text danger">Please enter email address</small>
-                            <small *ngIf="emailvalid.errors?.pattern" class="text danger">Please enter a valid email</small>
-                          </div>
+                        </div>
+                        <div *ngIf="emailvalid.invalid && emailvalid.touched">
+                          <small *ngIf="emailvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter email address</small>
+                          <small *ngIf="emailvalid.errors?.pattern" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter a valid email</small>
                         </div>
                       </div>
 
@@ -120,15 +118,10 @@
                               <img *ngIf="!passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
                               class="img-responsive" >
                           </div>
-
-                          <!-- <div class="fc_img">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
-                          </div> -->
-
-                          <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
-                            <small *ngIf="passwordvalid.errors?.required" class="text danger">Please enter password</small>
-                            <small *ngIf="passwordvalid.errors?.minlength" class="text danger">password must be at least 6 characters</small>
-                          </div>
+                        </div>
+                        <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
+                          <small *ngIf="passwordvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter password</small>
+                          <small *ngIf="passwordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">password must be at least 6 characters</small>
                         </div>
                       </div>
 
@@ -143,18 +136,13 @@
                               <img *ngIf="!confirmpasswordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
                               class="img-responsive">
                           </div>
-
-                          <!-- <div class="fc_img">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_password.svg" class="img-responsive">
-                          </div> -->
-
-                          <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
-                            <small *ngIf="confirmpasswordvalid.errors?.required" class="text danger">Please enter Repeat password</small>
-                            <small *ngIf="confirmpasswordvalid.errors?.minlength" class="text danger">Repeat password must be at least 6 characters</small>
-                          </div>
-                          <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
-                            <small *ngIf="passwordvalidation" class="text danger">Password and Repeat password must be same</small>
-                          </div>
+                        </div>
+                        <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
+                          <small *ngIf="confirmpasswordvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter Repeat password</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Repeat password must be at least 6 characters</small>
+                        </div>
+                        <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
+                          <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Password and Repeat password must be same</small>
                         </div>
                       </div>
                     </div>
@@ -183,6 +171,27 @@
                         <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid" (click)="signup()">
                           Sign up
                         </button>
+                      </div>
+                    </div>
+
+                    <div class="row mt10px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 tleft">
+                          <h4 class="mtb0px fs_15px fw_400 lh_21px fc_e58d82">
+                            <span class="">
+                              Already a user?
+                            </span>
+                            <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')" data-toggle="tab" href="#tab2">
+                              Login here
+                            </a>
+                          </h4>
+                        </div>
+
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
+                          <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="routedashboard()">
+                            Continue as Guest
+                          </a>
+                        </div>
                       </div>
                     </div>
 
@@ -268,19 +277,35 @@
                     </div>
                   </div>
 
-                  <div class="row mt10px">
+                  <!-- <div class="row mt10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
                       <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" routerLink="/onboarding/forgotpassword">
                         Forgot password ?
                       </a>
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="row mt40px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <button type="btn" class="btn btn_ctd" [disabled]="!this.email||!this.password" (click)="emailLogin()">
                         Sign in
                       </button>
+                    </div>
+                  </div>
+
+                  <div class="row mt10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                        <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" routerLink="/onboarding/forgotpassword">
+                          Forgot password ?
+                        </a>
+                      </div>
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                        <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="routedashboard()">
+                          Continue as Guest
+                        </a>
+                      </div>
                     </div>
                   </div>
 
