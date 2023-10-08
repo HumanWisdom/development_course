@@ -15592,16 +15592,14 @@ input[type="search"].dark::-webkit-search-cancel-button {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
-.searchtxt::-webkit-input-placeholder
+/* .searchtxt::-webkit-input-placeholder
 {
-  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 130%;
-  /* identical to box height, or 16px */
   color: #FFFFFF !important ;
-}
+} */
 
 .cptitle
 {
@@ -19416,6 +19414,14 @@ share-buttons button
 .c150px
 {
   min-height: 150px !important;
+  object-fit: cover;
+  /* border-radius: 10px 0 0 10px; */
+  border-radius: 6px;
+}
+
+.c120px
+{
+  min-height: 120px !important;
   object-fit: cover;
   /* border-radius: 10px 0 0 10px; */
   border-radius: 6px;
@@ -23729,29 +23735,34 @@ a
 /* searchtxt_02 */
 #searchtxt_02
 {
-  background: #EBEBEB;
-  /* opacity: 0.5; */
-  /* font-family: Roboto; */
+  /* background: #EBEBEB;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 130%;
-  /* identical to box height, or 16px */
   color: #000000 !important;
-  text-align: left;
+  text-align: left; */
+  background: #120F40;
+  border-radius: 100px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.50)!important;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
 }
 
-#searchtxt_02::-webkit-input-placeholder
+/* #searchtxt_02::-webkit-input-placeholder
 {
-  /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 130%;
-  /* identical to box height, or 16px */
   color: #5D5D5D;
   text-align: left;
-}
+} */
 
 #searchtxt_02::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -23879,8 +23890,7 @@ a
 
 .blog_vac
 {
-  margin-top: 30px;
-  margin-bottom: 33px;
+  margin-top: 20px;
 }
 
 .hr_style_12
@@ -25119,10 +25129,10 @@ a
   color: transparent !important;
 }
 
-#inputSuccess2::-webkit-input-placeholder
+/* #inputSuccess2::-webkit-input-placeholder
 {
   font-size: 14px !important;
-}
+} */
 
 .ws_view_more
 {
@@ -34876,5 +34886,47 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   line-height: 22px;
   color: #E58D82;
   text-align: center;
+}
+
+.plr12px
+{
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.img_blog 
+{
+  width: 100%;
+  height: 201px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.blog_bg
+{
+  border-radius: 12px;
+  background: #120F40;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.blog_img
+{
+  object-fit: cover;
+  height: 375px;
+  border-radius: 0px 0px 20px 20px;
+  padding: 0 !important;
+}
+
+.img_comment 
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.blog_vac .panel 
+{
+  background: transparent !important;
 }
 /* /version - 03 */
