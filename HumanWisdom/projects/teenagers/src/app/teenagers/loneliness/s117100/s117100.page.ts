@@ -16,7 +16,7 @@ export class S117100Page implements OnInit,OnDestroy
   bg="green_yellow_w1"
   title="Travel outwards. Deepen your connections."
   mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.6.mp3'
+  audioLink=this.mediaAudio+'/loneliness/audios/loneliness+3.7.mp3'
   transcriptPage="loneliness/s117100t"
   toc="loneliness/s117001"
   bookmark=0

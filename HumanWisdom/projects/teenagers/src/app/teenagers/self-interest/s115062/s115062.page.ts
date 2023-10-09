@@ -18,26 +18,26 @@ export class S115062Page implements OnInit
   moduleLink="/conditioning"
   moduleName=" Conditioning"
   sectionName= "How the Mind Works";
-  moduleId=112
+  moduleId=105
   moduleList: any = [
     {
       name: 'Love',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/62.png',
       link: '/love',
-      id: 62
+      id: 134
     },
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
-      id: 47
+      id: 131
  
     },
     {
       name: 'Emotional Needs',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
       link: '/emotional-needs',
-      id: 18
+      id: 120
   
     },
   ]

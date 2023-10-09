@@ -478,6 +478,25 @@
         }
       });
 
+      
+      window.addEventListener('cancelButtonClicked', function () {
+       
+        var key='';
+        if(localStorage.getItem('ActivationKey') && localStorage.getItem('ActivationKey').toString() !=null ){
+          this.key=localStorage.getItem('ActivationKey').toString();
+        }
+
+        if (window.webkit) {
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("CancelSubscription" + key);
+        }
+       
+        if (window.AndroidHandler) {
+            window.AndroidHandler.DownloadFile(this.fileName, myFileContentData);
+          }
+        // Perform the download action here
+      });
+    });
+
       window.addEventListener('downloadButtonClicked', function () {
         console.log('fileName1:' + localStorage.getItem('fileName'));
          var fileName='Completion';
@@ -500,7 +519,6 @@
         }
         // Perform the download action here
       });
-    });
 
     window.addEventListener('ShareEvent', function () {
       var fileName='Completion Certificate' ;

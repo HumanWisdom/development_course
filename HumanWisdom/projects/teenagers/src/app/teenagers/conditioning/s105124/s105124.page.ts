@@ -16,7 +16,7 @@ export class S105124Page implements OnInit,OnDestroy {
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/teenagers/modules/conditioning/videos/4.2.mp4'  
   title="Now watch this video, where Sophie and Charlotte are joined By Jackie, to talk about what happened. Explore the questions that follow."
-  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_01.jpg"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/conditioning/conditioning_03.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")

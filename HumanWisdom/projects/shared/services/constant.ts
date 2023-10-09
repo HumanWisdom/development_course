@@ -29,5 +29,7 @@ export class Constant {
     public static SubscriberType = 'SubscriberType';
     public static NaviagtedFrom = 'NaviagtedFrom';
     public static NullValue = null;
+    public static ManageSubscriptionData = 'ManageSubscriptionData';
+    public static ActivationKey = 'ActivationKey';
 
 }

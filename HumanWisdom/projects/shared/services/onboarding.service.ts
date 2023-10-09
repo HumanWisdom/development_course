@@ -179,4 +179,8 @@ export class OnboardingService {
   createSetupIntent(paymentIntent:paymentIntentModel){
     return this.http.post(this.path + '/CreateSetupIntent/', paymentIntent);
   }
+
+  cancelSubscription(code): Observable<any> {
+    return this.http.post(this.path + `/CancelSubscription/${code}`, {});
+  }
 }
