@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import {OnboardingService} from '../../../../../shared/services/onboarding.service'
-import * as $ from 'jquery' 
+import * as $ from 'jquery'
 import { LogEventService } from "../../../../../shared/services/log-event.service";
+import { ForumService } from '../../../../../shared/forum/forum.service';
 
 @Component({
   selector: 'app-viewcart',
@@ -43,8 +44,17 @@ export class ViewcartPage implements OnInit {
   enableLoginSubscriber=false;
   enablepopup=false;
   isSubscribe=false;
-  
-  constructor(private router: Router,private service:OnboardingService, private location:Location, public logeventservice: LogEventService) { 
+  couponCodeApplied = false;
+  percentage = 20.00;
+  enableEmailbox = false
+
+  constructor(
+    private router: Router,
+    private service:OnboardingService,
+     private location:Location,
+      public logeventservice: LogEventService,
+      private forumservice: ForumService
+      ) {
     let res = localStorage.getItem("isloggedin")
     if(res !== 'T') this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
     if(localStorage.getItem("email") === 'guest@humanwisdom.me') {
@@ -59,7 +69,7 @@ export class ViewcartPage implements OnInit {
   }
 
   ngOnInit() {
-    
+
     this.isUpgradeToPremium = localStorage.getItem('upgradeToPremium');
     this.userEmail=JSON.parse(localStorage.getItem("userEmail"))
     localStorage.setItem("couponid", '0')
@@ -90,10 +100,10 @@ export class ViewcartPage implements OnInit {
           if (item.Qty < obj.Qty) {
               item.Qty = obj.Qty;
           }
-          
+
           return;
       }
-      
+
       this.arrayFiltered.push(obj);
   });
   this.cartList=this.arrayFiltered
@@ -105,7 +115,7 @@ export class ViewcartPage implements OnInit {
     this.service.viewCart({ "Id":this.userId})
     .subscribe(res=>
       {
-        
+
         this.cartList=res
         if(this.cartList.length>0){
           this.symbol=this.cartList[0].Symbol;
@@ -120,11 +130,11 @@ export class ViewcartPage implements OnInit {
           this.cartList[i].ProgID = 9
         }
        // console.log(this.getMax(),"hey")
-        
 
-       
 
-       
+
+
+
        if(res && res.length !== 0) {
         if(res.some((d) => d['MySelf'] === "True")) {
           this.enableMySelf = false
@@ -132,10 +142,10 @@ export class ViewcartPage implements OnInit {
           if(localStorage.getItem('giftwisdom') === 'F')   {
             this.myself = 1
             this.enableMySelf = true
-          } 
+          }
         }
       }
-        
+
 
 
 
@@ -144,7 +154,7 @@ export class ViewcartPage implements OnInit {
         console.log(error)
       },
       ()=>this.totalPrice())
-    
+
   }
 
   editCard(card) {
@@ -188,7 +198,7 @@ export class ViewcartPage implements OnInit {
           console.log(error)
         },
         ()=>{
-          this.totalPrice()  
+          this.totalPrice()
         })
     }
   }
@@ -213,7 +223,7 @@ export class ViewcartPage implements OnInit {
           console.log(error)
         },
         ()=>{
-          this.totalPrice()  
+          this.totalPrice()
         })
     }
   }
@@ -231,16 +241,16 @@ export class ViewcartPage implements OnInit {
 
        // var oneItem=this.cartList[i].Amt/this.cartList[i].Qty
         this.cartList[i].Qty+=1
-    
+
         this.cartList[i].price+=(this.cartList[i].Amt)
-        
+
         //call service
         this.service.editactiveCart(
           this.activeCard
           )
           .subscribe(res=>
             {
-              
+
         })
       }
     }
@@ -252,7 +262,7 @@ export class ViewcartPage implements OnInit {
   removeFromCart(cartId){
     console.log(cartId)
     for(var i=0;i<this.cartList.length;i++){
-     
+
       if(this.cartList[i].CartId==cartId)
       {
         // if()
@@ -270,7 +280,7 @@ export class ViewcartPage implements OnInit {
         // else{
         //  // var oneItem=this.cartList[i].Amt/this.cartList[i].Qty
         //   this.cartList[i].Qty-=1
-      
+
         //   this.cartList[i].Amt-=(this.cartList[i].Amt)
         //   this.cartList.splice(i,1)
         //   //call service
@@ -280,27 +290,27 @@ export class ViewcartPage implements OnInit {
         //     )
         //     .subscribe(res=>
         //       {
-       
-                
+
+
         //   })
 
         // }
-       
-        
+
+
       }
     }
 
     console.log(this.cartList)
   }
 
- 
+
 
   totalPrice(){
     this.totalCartValue = 0;
-    
+
     for(var i=0;i<this.cartList.length;i++){
       this.totalCartValue += this.cartList[i].Amt;
-     
+
     }
     console.log(this.totalCartValue)
     this.totalCartValueDiscount=this.totalCartValue
@@ -316,14 +326,18 @@ export class ViewcartPage implements OnInit {
       {
         if(res.length !== 0)
         {
+          this.couponCodeApplied = true;
+          this.forumservice.toastrService.success('', 'Coupon applied successfully');
           this.msg = 'Coupon applied successfully'
           this.discount=parseFloat(res[0].Discount)
           localStorage.setItem("couponid", res[0]['CouponID'])
           this.totalCartValueDiscount=this.totalCartValue-this.discount
           localStorage.setItem('totalAmount', this.totalCartValueDiscount)
+          this.percentage = res[0].Percentage
         }
-          
+
         else {
+          this.forumservice.toastrService.success('', 'Please enter a valid coupon code. ');
           this.msg = 'Please enter a valid coupon code. '
         }
 
@@ -338,7 +352,7 @@ export class ViewcartPage implements OnInit {
     this.logeventservice.logEvent('click_proceed_to_pay');
     this.router.navigate(['/onboarding/payment'], { state: { quan:  this.cartList.length.toString(), plan: this.cartList[0]['Plan']}})
   }
-  
+
   radioevent(event) {
     if(event.target.checked) {
       this.myself = 1;
@@ -354,7 +368,7 @@ export class ViewcartPage implements OnInit {
       this.enableemail = false;
     }
   }
-  
+
   someoneradioevent(event) {
     if(event.target.checked) {
       this.myself = 0;
@@ -364,23 +378,18 @@ export class ViewcartPage implements OnInit {
 
 
   addtoCart(){
+    if(!this.ValidateEmail()) {
     let pid = this.cartList[0]['ProgID']
     console.log(pid)
-   
+
     if(this.cartList[0].Plan=="Monthly")
     {
       this.cartList[0].planId=1
     }
     else{
       this.cartList[0].planId=2
-
     }
-
-    
           this.totalItemCount+=1
-         
-          //call service
-         
             this.service.addItem({
               "UserId":this.userId,
               "RateId":this.cartList[0].RateId,
@@ -396,14 +405,16 @@ export class ViewcartPage implements OnInit {
                   if(this.cartList[i].ProgID === pid){
                     this.cartList[i].cartId=res
                   }
-                  
+
                 }
                 if(this.enableMySelf) this.enableMySelf = false;
                 this.myself = 0,
                 this.learnermail = '',
                 this.learnermsg = '',
                 this.enableemail = false
+                this.enableEmailbox = false
                 // this.cd.detectChanges()
+                this.forumservice.toastrService.success('', 'Updated Successfully !');
                 this.viewCart()
               },
               error=>{
@@ -411,24 +422,12 @@ export class ViewcartPage implements OnInit {
               },
               ()=>{
                 console.log(this.cartList,"afteraddidtion")
-                this.totalPrice()  
+                this.totalPrice()
               })
-            
-             
-  
-          
-  
-         /* else{
-            this.cartList[i].cartId=this.cartId
-            this.service.editCart(
-              {"Id":parseInt(this.cartId)},
-              {"Id":parseInt(this.cartList[i].qty)}
-              )
-              .subscribe(res=>
-                {
-                  
-            })
-          }*/
+
+            }else{
+              this.forumservice.toastrService.success('', 'Email address is invalid');
+            }
   }
 
 
@@ -478,8 +477,24 @@ export class ViewcartPage implements OnInit {
         return true;
       }
     }
-  
-    
+
+    calculate() {
+      return this.cartList.reduce((a, d) =>{
+        return a = a ? a + parseInt(d.Amt) : 0 + parseInt(d.Amt);
+      }, 0)
+    }
+
+    closeApplycoupon() {
+      this.couponCodeApplied = false;
+      this.discount = 0;
+      this.totalPrice();
+    }
+
+    enableEmailboxEvent(enable) {
+      this.learnermail = '';
+     this.enableEmailbox = enable;
+    }
+
   }
 
 

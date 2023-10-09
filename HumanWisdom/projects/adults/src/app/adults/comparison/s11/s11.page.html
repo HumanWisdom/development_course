@@ -20,7 +20,7 @@
 
           <div *ngIf="!o.CorrectAns">
             <a class="sb_anchor" (click)="checkOption(o, false)" data-toggle="modal" data-target="#lab-slide-bottom-popup">
-              <div id="{{o.OptId}}" [ngClass]="{'single_select_active': o.OptId==this.sessionOption}" class="box select_box fleft">
+              <div id="{{o.OptId}}" [ngClass]="{'single_select_active': false}" class="box select_box fleft">
                 <div>
                   <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}
@@ -32,7 +32,7 @@
 
           <div *ngIf="o.CorrectAns">
             <a class="sb_anchor">
-              <div id="{{o.OptId}}" (click)="checkOption(o, true)" [ngClass]="{'single_select_active': enableTick}" class="box select_box  fleft">
+              <div id="{{o.OptId}}" (click)="checkOption(o, true)" [ngClass]="{'single_select_active': false}" class="box select_box  fleft">
                 <div>
                   <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                     {{o.OptStr}}

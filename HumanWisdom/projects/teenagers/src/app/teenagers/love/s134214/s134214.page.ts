@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import {Location } from '@angular/common';
+import { ProgramType } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s134214',
@@ -8,7 +10,8 @@ import {Location } from '@angular/common'
   styleUrls: ['./s134214.page.scss'],
 })
 export class S134214Page implements OnInit {
-  
+  programType : ProgramType = ProgramType.Teenagers;
+
   toc="love/s134001"
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/76.png"
@@ -23,13 +26,13 @@ export class S134214Page implements OnInit {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
-      id: 47
+      id: 131
     },
     {
       name: 'Living with Peace',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png',
       link: '/living-with-peace',
-      id: 63
+      id: 129
  
  
     },
@@ -37,7 +40,7 @@ export class S134214Page implements OnInit {
       name: 'Self Interest',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/55.png',
       link: '/self-interest',
-      id: 55
+      id: 115
   
     },
   ]
@@ -51,7 +54,7 @@ export class S134214Page implements OnInit {
       this.moduleLink = "/opinions-beliefs"
       this.moduleName = "Opinions and Beliefs"
       this.sectionName = "Transform your life";
-      this.moduleId = 49
+      this.moduleId = 140
     
     }
    }

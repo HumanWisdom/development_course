@@ -12,8 +12,8 @@ export class S124029Page implements OnInit
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
   bg="pink_orange_w1"
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
-  audioLink=this.mediaAudio+'/pleasure/audios/1.5.mp3'
+  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  audioLink=this.mediaAudio+'/modules/pleasure/audios/2.5.mp3'
   title="Pleasure distracts us from our emptiness"
   toc="/pleasure/s124001"
   transcriptPage="pleasure/s124029t"

@@ -81,12 +81,13 @@ export class S11Page implements OnInit {
 
   findQuestion()
   {
+    this.enableTick = false;
     for (var i = 0; i < this.questionA.length; i++)
     {
       if (this.questionA[i].CorrectAns == "0"){
         this.questionA[i].CorrectAns = false
       } else{
-        this.enableTick = true;
+       
         this.questionA[i].CorrectAns = true
       }
       if (this.queId == this.questionA[i].QueId) {
@@ -96,22 +97,25 @@ export class S11Page implements OnInit {
     }
     console.log(this.question, this.optionList)
     console.log(this.enableTick)
+    //this.checkOption(this.sessionOption,false)
   }
 
   checkOption(opt, enableTick)
   {
     this.sessionOption = []
-    this.enableTick = enableTick;
+   
+    this.option = opt.OptId;
+    sessionStorage.setItem("sessionOptions11", JSON.stringify(this.option))
     if (opt.CorrectAns)
     {
-      this.option = opt.OptId
-      sessionStorage.setItem("sessionOptions11", JSON.stringify(this.option))
+      this.enableTick = true;
+      
       document.getElementById(opt.OptId).style.background = '#E58D82';
       document.getElementById(opt.OptId+ 'text').style.color = '#FFFFFF';
       if (this.falseans !== '') {
         document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
         document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
-        // document.getElementById(this.falseans).style.opacity = '0.1';
+        document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
       }
       else
@@ -121,6 +125,8 @@ export class S11Page implements OnInit {
     }
     else
     {
+      this.enableTick = false;
+
       if (this.falseans !== '')
       {
         document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';

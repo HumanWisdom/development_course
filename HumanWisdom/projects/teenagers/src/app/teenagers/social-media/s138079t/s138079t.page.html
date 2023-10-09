@@ -1,0 +1,25 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          Try this exercise. After you have browsed the phone for an hour, pause and ask yourself what you remember of what you have read and what you learned. Was it a useful use of your time, or just a way to numb your mind and pass the time, because your mind has forgotten how to be creative.
+          <p>    
+            We can waste so much of our life being on our phones, with the illusion we are doing something, but all it is doing is stealing our time from being in the real world - meeting real people, or exercising, or reading, or whatever you want to do.
+            The more time you spend on your phone, the more bored you feel without it, and the more time you need to spend on it - and soon you are on your phone for hours a day.
+            Time is life’s most precious commodity - ask yourself if you are using it wisely. Are you being creative with your life, or just a passive observer?
+           </p>
+          </h3>  
+
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -19,7 +19,7 @@ export class S126069Page implements OnInit
   moduleLink="/habit-addiction"
   moduleName=" Addiction"
   sectionName= "Transform your life - II";
-  moduleId=45
+  moduleId=127
   moduleList: any = [
     {
       name: 'Self Image',
@@ -31,7 +31,7 @@ export class S126069Page implements OnInit
       name: 'Criticisms',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/16.png',
       link: '/criticism',
-      id: 16
+      id: 136
  
     },
     {

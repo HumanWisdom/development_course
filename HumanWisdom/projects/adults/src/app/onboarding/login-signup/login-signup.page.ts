@@ -96,6 +96,8 @@ export class LoginSignupPage implements OnInit {
 
   content = '';
   enableAlert = false;
+  passwordhide : boolean = true;
+  confirmpasswordhide : boolean = true;
 
   constructor(
     private fb: UntypedFormBuilder,
@@ -843,6 +845,8 @@ export class LoginSignupPage implements OnInit {
   getsignuptab() {
     this.isSignUp = true;
     this.showAlert = false;
+    this.passwordhide = true;
+    this.confirmpasswordhide = true;
   }
 
   freescreens() {
@@ -892,6 +896,8 @@ export class LoginSignupPage implements OnInit {
 
   getLoginTab(){
     this.isSignUp = false;
+    this.passwordhide = true;
+    this.confirmpasswordhide = true;
   }
  initializeRegistrationForm(){
   this.registrationForm = this.fb.group(
@@ -904,4 +910,12 @@ export class LoginSignupPage implements OnInit {
     { validator: this.PasswordValidator }
   );
  }
+
+ hideFunction(type) {
+  if(type === 'password') {
+    this.passwordhide = !this.passwordhide;
+  }else {
+    this.confirmpasswordhide = !this.confirmpasswordhide;
+  }
+}
 }
