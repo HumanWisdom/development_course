@@ -89,6 +89,25 @@ export class SubscriptionPaymentPage implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       if (this.stripeId !== undefined) {
+        var style = {
+          base: {
+            iconColor: '#c4f0ff',
+             color: '#fff',  
+            '::placeholder': {
+         
+            },
+            ':-webkit-autofill': {
+              color: '#fff',
+            },
+            ':focus': {
+              color: '#fff',
+            },
+          },
+          invalid: {
+            iconColor: '#FFC7EE',
+            color: '#FFC7EE',
+          },
+        };
         let stripe = Stripe(this.stripeKey);
         let elements = stripe.elements();
         var paymentRequest = stripe.paymentRequest({
@@ -186,9 +205,29 @@ export class SubscriptionPaymentPage implements OnInit {
         });
 
 
-        var cardNumberElement = elements.create('cardNumber', { placeholder: 'Card Number' });
-        var cardExpiryElement = elements.create('cardExpiry');
-        var cardCvcElement = elements.create('cardCvc');
+        var cardNumberElement = elements.create('cardNumber', {
+        placeholder: 'Card Number' ,
+        style: style,
+        classes: {
+          base: 'form-control w-full',
+          complete: 'is-valid',
+          empty: 'is-empty',
+          invalid: 'is-invalid',
+        },});
+        var cardExpiryElement = elements.create('cardExpiry',{style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },});
+        var cardCvcElement = elements.create('cardCvc',{ style: style,
+          classes: {
+            base: 'form-control w-full',
+            complete: 'is-valid',
+            empty: 'is-empty',
+            invalid: 'is-invalid',
+          },});
 
         cardNumberElement.mount('#card-number');
         cardExpiryElement.mount('#card-expiry');
