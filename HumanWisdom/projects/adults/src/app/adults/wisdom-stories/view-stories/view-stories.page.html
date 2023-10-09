@@ -1,22 +1,22 @@
 <!-- top navigation -->
 <!-- unscrolled header -->
 <div class="row center_flex ws_unscrolled">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header onscrollbs">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back onscrollbs">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="img-responsive">
       </a>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a>
-        <h1 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px tcenter">
+        <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
           Wisdom Stories
         </h1>
       </a>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a (click)="addToken()" id="btnShare"  >                                       
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_01.svg" alt="" class="img-responsive fright">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" alt="" class="img-responsive fright">
       </a>
     </div>
   </div>
@@ -25,22 +25,22 @@
 
 <!-- onscrolled header -->
 <div class="row center_flex ws_dnone">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header onscrollws"  *ngIf="story !== undefined">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back onscrollws"  *ngIf="story !== undefined">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_grey.svg" alt="" class="img-responsive">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="img-responsive">
       </a>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a>
-        <h1 class="fw_500 fs_14px lh_16px fc_5d5d5d mtb0px tcenter">
+        <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
           {{story.Title}}
         </h1>    
       </a>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a (click)="addToken()">                                       
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_blue_01.svg" alt="" class="img-responsive fright">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" alt="" class="img-responsive fright">
       </a>
     </div>
   </div>
@@ -55,85 +55,97 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_white">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form class="" *ngIf="story !== undefined">   
               
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <img class="ws_view_story img-responsive w100" src="{{story.Img}}">                            
+              <div class="row ls_story_img">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex prelative">
+                  <img class="ws_view_story img-responsive w100" src="{{story.Img}}">
+                  <!-- <a class="absolute_ls_like">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_like_unfilled.svg" class="img-responsive">
+                  </a> -->
                 </div>
               </div>
 
-              <div class="row pt30px pb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h6 class="fw_400 fs_30px lh_130p fc_000000 mtb0px">
+              <div class="row mt20px mb15px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                    <h6 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff ellipsis">
                       {{story.Title}}
                     </h6>
                   </div>
-                  <!-- <div class="col-md-2 col-sm-2 col-xs-2 tcenter">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws_like_active.svg" alt="">
-                    <h6 class="fw_500 fs_12px lh_130p fc_adadad mtb0px">
-                      102
-                    </h6>
-                  </div> -->
+                  <div class="col-md-2 col-sm-2 col-xs-2 p0 tright center_flex">
+                    <!-- <div class="div_like_cnt">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_like_filled_b.svg" alt="">
+                      <span class="mtb0px fs_15px fw_600 lh_150p fc_ffffff ml5px">
+                        102
+                      </span>
+                    </div> -->
+                  </div>
                 </div>      
               </div>
           
-              <!-- <div class="row">
+              <!-- <div class="row mtb15px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <div class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="col-md-2 col-sm-2 col-xs-2 p0">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/ws_01.svg" alt="">
                   </div>
-                  <div class="col-md-9 col-sm-9 col-xs-9 p0">        
-                    <h6 class="fw_500 fs_16px lh_130p fc_f55858 mtb0px">
-                      Anonymous
+                  <div class="col-md-10 col-sm-10 col-xs-10 pr0px">        
+                    <h6 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 mb5px">
+                      Bailey Pierce
                     </h6>
-                    <h6 class="fw_400 fs_12px lh_130p fc_5d5d5d mtb0px">
+                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
                       {{story.PublishedOn|date:'dd MMM yy'}}| 5 mins
                     </h6>
                   </div>
                 </div>      
               </div>     -->
           
-              <div class="row plr20px">
+              <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h6 class="fw_300 fs_18px lh_150p fc_5d5d5d mt0px" style="white-space: pre-line" [innerHTML]="story.Story">
-                  
-                  </h6>
+                  <h6 class="mt0px fs_12px fw_400 lh_150p fc_ffffff" style="white-space: pre-line" [innerHTML]="story.Story"></h6>
                 </div>
               </div>
 
               <!-- <br> -->
                     
-              <div class="row center_flex plr20px pt20px">
+              <div class="row center_flex mt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="col-md-12 col-sm-12 col-xs-12 bluediv">
                     <div class="row center_flex">
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/ws.svg" alt="" class="p0">
+                      <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_team_star.svg" alt="" class="p0">
                       </div>
                 
-                      <div class="col-md-10 col-sm-10 col-xs-10">
-                        <h6 class="fw_500 fs_18px lh_150p fc_ffffff">
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                        <h6 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                           HumanWisdom Team
                         </h6>
                       </div>
                     </div>
-
-                    <hr class="ws_hr_01">
+                    
+                    <div class="row mtb20px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <hr class="hr_style_v3_04">
+                      </div>
+                    </div>
 
                     <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h6 class="fw_300 fs_18px lh_150p fc_ffffff">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                          {{story.Msg}}
                         </h6>
                 
-                        <h6 class="fw_300 fs_18px lh_150p fc_ffffff ws_modules">
+                        <h6 class="ws_modules mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
                           Now explore the modules on
-                          <span *ngFor="let l of links"><a (click)="loadReflections(l.id)" class="fw_500 fs_18px lh_150p fc_ffc455 underline" routerLink="{{l.route}}">{{l.module}},</a></span>which you may find helpful.
+                          <span *ngFor="let l of links">
+                            <a (click)="loadReflections(l.id)" class="fs_12px fw_600 lh_150p fc_e58d82" routerLink="{{l.route}}">{{l.module}},</a>
+                          </span>
+                          <span class="fs_12px fw_400 lh_150p fc_ffffff">
+                            which you may find helpful.
+                          </span>
                         </h6>
                       </div>
                     </div>
@@ -141,6 +153,185 @@
                   </div>
                 </div>      
               </div>
+
+              <!-- <div class="row mt20px mb15px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                    Tags
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 div_tag_btns">
+                  <button type="submit" class="btn btn_ls_tags">
+                    eating disorder
+                  </button>
+
+                  <button type="submit" class="btn btn_ls_tags">
+                    stress
+                  </button>
+
+                  <button type="submit" class="btn btn_ls_tags">
+                    body image
+                  </button>
+                </div>
+              </div>
+
+              <div class="row mt20px mb15px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                    Comments(0)
+                  </h4>
+                </div>
+              </div>
+
+              <div class="div_ls_comments">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_comment_user_01.svg" alt="">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">        
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          Ray Gunn
+                        </h4>
+                      </div>
+                    </div>      
+
+                  
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                        Ray Gunn Etiam est sem, fringilla eu tortor quis, bibendum molestie dolor. Duis suscipit lectus in leo dapibus, eget vehicula arcu vehicula. Nullam in felis eu nulla eleifend auctor eu sit amet
+                      </h4>
+                    </div>
+
+                  
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 tright">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                        6h
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_comment_user_02.svg" alt="">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">        
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          Marwin Kloet
+                        </h4>
+                      </div>
+                    </div>      
+
+                  
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                        Donec vestibulum finibus lacinia. Praesent vel maximus arcu. Sed vestibulum
+                      </h4>
+                    </div>
+
+                  
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 tright">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                        6h
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_comment_user_03.svg" alt="">
+                      </div>
+                      <div class="col-md-10 col-sm-10 col-xs-10 p0">        
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          Trey Ott
+                        </h4>
+                      </div>
+                    </div>      
+
+                  
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                        Aenean placerat suscipit justo
+                      </h4>
+                    </div>
+
+                  
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 tright">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                        6h
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mtb15px">                    
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <input type="text" id="name" class="sp_fc_01" placeholder="Leave a comment">
+                </div>
+              </div>
+
+              <div class="row">                    
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <button type="button" class="btn btn_ls_post_comment">
+                    Post comment
+                  </button>
+                </div>
+              </div>
+
+              <div class="row mtb20px">                    
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_04">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_18px fw_600 lh_140p fc_ffffff">
+                    Related Stories
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row mt20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow" *ngFor="let data of wisdomstories">
+                  
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of data">
+                    <a (click)="viewstory(item)">
+                      <div class="row box_v3_04a">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img src="{{item['Img']}}" class="img-responsive">
+                            </div>
+                          </div>  
+            
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px mb10px fw_500 fs_12px lh_130p fc_ffffff">
+                                {{item['Title']}}
+                              </h4>
+                            </div>
+                          </div>  
+            
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+              
+                </div>
+              </div> -->
 
               <div class="pagebreak"></div>
           
