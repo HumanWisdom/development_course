@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import {  ProgramType } from "../../../../../../shared/models/program-model";
+
 
 @Component({
   selector: 'app-s140110',
@@ -8,7 +10,7 @@ import {Location } from '@angular/common'
   styleUrls: ['./s140110.page.scss'],
 })
 export class S140110Page implements OnInit {
-  
+  programType : ProgramType = ProgramType.Teenagers;
   toc="opinions-beliefs/s140001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/self_esteem.jpg"
   
@@ -24,26 +26,26 @@ export class S140110Page implements OnInit {
   moduleLink="/success-failure"
   moduleName=" Success and Failure"
   sectionName= "Transform your life - II";
-  moduleId=48
+  moduleId=141
   moduleList: any = [
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/conditioning',
-      id: 15
+      id: 105
     },
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
  
     },
     {
       name: 'Identity',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/21.png',
       link: '/identity',
-      id: 21
+      id: 119
     },
   ]
 
