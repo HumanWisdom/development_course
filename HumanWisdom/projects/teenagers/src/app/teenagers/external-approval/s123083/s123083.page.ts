@@ -96,6 +96,8 @@ export class S123083Page implements OnInit
   rating4 = 0
   rating5 = 0
   rating6 = 0
+  toc="/external-approval/s123001"
+
 
   constructor
   (
