@@ -1,0 +1,40 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            It is not just the time you spend studying that is important. 
+
+          </p> 
+          <p>
+            The quality of focus you bring to your study is perhaps even more important. One hour of focused study is worth much more than two hours where your mind is constantly distracted.
+          </p> 
+          <p>
+            By focus we mean when you are studying can you sit in one place and read and absorb the information without getting distracted by other thoughts in your mind, or your phone, or music.
+
+          </p> 
+          <p>
+            Most young people have a smart phone and it has been shown that if we use it a lot it affects our ability to focus and to concentrate - so limiting your phone use during your studies may help you focus better. It may be better to switch it off completely and place it in another room if possible.
+          </p> 
+          <p>
+            Focus is also improved by getting enough sleep every night. A lack of sleep can result in fatigue, loss of concentration, and a loss of focus. 
+
+          </p> 
+         <p>
+          Other tips to improve focus are to do regular breathing exercises, to take short breaks of say 5 minutes every 30 minutes, and to make physical exercise a part of your routine.
+          </p>
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -15,8 +15,8 @@ export class S124065Page implements OnInit,OnDestroy
   bg_cft="bg_pink_orange"
   bg="pink_orange_w9"
   title="How do you explore a feeling like pleasure?"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com'
-  audioLink=this.mediaAudio+'/pleasure/audios/pleasure+4.5.mp3'
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/teenagers/modules/pleasure/audios/1.8.mp3'
   transcriptPage="pleasure/s124065t"
   toc="pleasure/s124001"
   bookmark=0

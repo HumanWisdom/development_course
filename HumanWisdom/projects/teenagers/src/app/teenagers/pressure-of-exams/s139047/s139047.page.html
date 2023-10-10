@@ -1,0 +1,40 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-oneline-text [bg]="bg">
+  <form>
+    <h1 class="txt8 fw_500 oneliner_txt_title">
+      Revision tips
+    </h1>
+    <div class="clearfix"></div>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+     1.  Breaking learning into small chunks
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+     2.  Make notes or flashcards or mind maps 
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+     3.  Create a timetable and stick to it
+
+    </h3>
+
+    <h3 class="txt8 oneliner_txt_pointer">
+      4.  There is no substitute for hard work
+     </h3>
+
+     <h3 class="txt8 oneliner_txt_pointer">
+      5.  Stress decreases your mental capacity - so make learning fun
+
+     </h3>
+
+     <h3 class="txt8 oneliner_txt_pointer">
+      6.  Ask someone to check your learning
+     </h3>
+
+    </form>          
+</app-oneline-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
