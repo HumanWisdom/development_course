@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { ProgramType } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s133186',
@@ -8,13 +10,13 @@ import {Location } from '@angular/common'
   styleUrls: ['./s133186.page.scss'],
 })
 export class S133186Page implements OnInit {
-  
+  programType : ProgramType = ProgramType.Teenagers;
   toc="happiness/s133001"
 
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/62.png"
   
   bg=""
-  moduleLink="/love/"
+  moduleLink="/love"
   moduleName=" Love"
   sectionName= "Transform your life - I";
   moduleId=134
@@ -36,7 +38,7 @@ export class S133186Page implements OnInit {
       name: 'Living with Peace',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png',
       link: '/living-with-peace',
-      id: 63
+      id: 129
   
     },
   ]

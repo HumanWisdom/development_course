@@ -25,20 +25,20 @@ export class S107011Page implements OnInit {
       name: 'Nature',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
       link: '/nature',
-      id: 28
+      id: 106
     },
     {
       name: 'Noticing Thoughts',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
       link: '/noticing-thoughts',
-      id: 30
+      id: 108
  
     },
     {
       name: 'Guided Audio Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
       link: '/guided-meditation',
-      id: 51
+      id: 109
   
     },
   ]
