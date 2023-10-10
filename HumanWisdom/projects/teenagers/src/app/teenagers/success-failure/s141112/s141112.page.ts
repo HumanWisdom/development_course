@@ -34,13 +34,13 @@ export class S141112Page implements OnInit {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
-      id: 19
+      id: 112
  
     },
     {

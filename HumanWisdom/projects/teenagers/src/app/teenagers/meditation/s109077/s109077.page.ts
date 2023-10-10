@@ -9,8 +9,8 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
   styleUrls: ['./s109077.page.scss'],
 })
 export class S109077Page implements OnInit {
-
-  toc="meditation/s109001"
+ 
+  toc=""
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
   
   bg=""
@@ -19,7 +19,29 @@ export class S109077Page implements OnInit {
   sectionName= "Nurturing a Quiet Mind";
   moduleId=110
   programType : ProgramType = ProgramType.Teenagers;
-  
+
+ moduleList: any = [
+  {
+    name: 'Breathing',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+    link: '/breathing',
+    id: 107
+  },
+  {
+    name: 'Noticing Thoughts',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
+    link: '/noticing-thoughts',
+    id: 108
+
+  },
+  {
+    name: 'Guided Audio Meditation',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
+    link: '/guided-meditation',
+    id: 109
+
+  },
+]
   constructor() {
     let cur = localStorage.getItem('curated');
     if (cur && cur === 'mind') {
@@ -33,7 +55,7 @@ export class S109077Page implements OnInit {
     }
    
     
-  }
+   }
 
   ngOnInit() {
   }
