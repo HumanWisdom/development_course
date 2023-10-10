@@ -1,0 +1,36 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            There are many different reasons why exams create stress and anxiety.
+            There could be a fear of failure, or not getting the grades you want and you think this could impact your future plans. You may worry about others doing better than you and comparing yourself with others. Or, you may worry about letting your parents down, or be afraid of being criticised for getting poor grades.
+            </p>
+            <p>
+            Since everyone around you is stressed that may rub off on you too.
+            </p>
+            <p>
+            Your teachers and parents may tell you that if you don't get those grades your future will be affected, and that can create even more stress.
+          </p>
+          <p>
+            You may get stressed thinking about the exam and the questions you will be asked - and wonder if you will know the answers.
+            </p>
+            <p>
+            Whatever the reason, the stress you experience is very real indeed
+            
+
+          </p>
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

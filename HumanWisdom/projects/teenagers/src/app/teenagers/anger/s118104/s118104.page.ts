@@ -26,19 +26,19 @@ export class S118104Page implements OnInit
       name: 'Reactive mind',
       image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/54.png',
       link: '/reactive-mind',
-      id: 54
+      id: 113
     },
     {
       name: 'Stress',
       image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Relationships',
       image: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/47.png',
       link: '/relationships',
-      id: 47
+      id: 131
     },
   ]
 
@@ -50,7 +50,7 @@ export class S118104Page implements OnInit
       this.moduleLink = "/adults/reactive-mind"
       this.moduleName = "Reactive Mind"
       this.sectionName = "Explore how your mind works";
-      this.moduleId = 54
+      this.moduleId = 113
     
     }
    }

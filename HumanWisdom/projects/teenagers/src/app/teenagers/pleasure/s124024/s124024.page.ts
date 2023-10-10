@@ -15,8 +15,8 @@ export class S124024Page implements OnInit,OnDestroy
   bg_cft="bg_pink_orange"
   bg="pink_orange_w8"
   title="Pleasure can make us do things we may regret"
-  mediaAudio='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
-  audioLink=this.mediaAudio+'/modules/pleasure/audios/2.3.mp3'
+  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  audioLink=this.mediaAudio+'/teenagers/modules/pleasure/audios/1.3.mp3'
   transcriptPage="pleasure/s124024t"
   toc="pleasure/s124001"
   bookmark=0

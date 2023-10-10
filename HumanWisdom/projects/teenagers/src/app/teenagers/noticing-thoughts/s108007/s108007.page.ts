@@ -23,19 +23,19 @@ export class S108007Page implements OnInit {
       name: 'Breathing',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
       link: '/breathing',
-      id: 29
+      id: 107
     },
     {
       name: 'Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
       link: '/meditation',
-      id: 22
+      id: 109
     },
     {
       name: 'Nature',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
       link: '/nature',
-      id: 28
+      id: 106
     },
   ]
 

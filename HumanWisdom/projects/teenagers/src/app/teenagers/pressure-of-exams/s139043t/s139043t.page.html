@@ -1,0 +1,31 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn"
+  [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            We humans love measuring and comparing don’t we? Exam results are easy to measure and compare students, schools, and countries with each other. Universities use them to decide whom to admit to their courses, and employers to decide whom to hire.
+          </p>
+          <p>
+            Yet these results do not reflect the person you are, or determine if you will be successful in life.
+            Your strength may not be in academics, in the sciences or maths, or memorising and repeating information. Instead you may excel at sports, or music, or acting, or making things, or art, or organizing events, or making friends, or in public speaking, or writing - all of which can form the foundation of successful careers in the future.
+            </p>
+
+          <p>There are other things we cannot measure which are perhaps even more important for your future - your sense of integrity, you ability to cope with pressure without getting anxious or stressed, your ability to get on with people who are different to you, your positive attitude, your ability to cope with failure, being able to question your thoughts and feelings, your values, and so on. Value these skills, and develop them in yourself, because they are not routinely taught.</p>
+
+         
+
+        </h3>
+      </div>
+    </div>
+
+  </form>
+
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

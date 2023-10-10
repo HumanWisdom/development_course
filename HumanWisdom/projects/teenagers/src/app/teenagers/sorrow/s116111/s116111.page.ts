@@ -23,19 +23,19 @@ export class S116111Page implements OnInit {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Identity',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/21.png',
       link: '/identity',
-      id: 21
+      id: 119
     },
     {
       name: 'Love',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/62.png',
       link: '/love',
-      id: 18
+      id: 134
     },
   ]
 
@@ -47,7 +47,7 @@ export class S116111Page implements OnInit {
       this.moduleLink = "/adults/dealing-with-deathe"
       this.moduleName = " Dealing with Death"
       this.sectionName = "Transform your life";
-      this.moduleId = 64
+      this.moduleId = 130
     
     }
    
