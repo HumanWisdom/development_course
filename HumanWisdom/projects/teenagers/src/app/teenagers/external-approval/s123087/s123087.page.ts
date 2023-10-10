@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-s123078',
-  templateUrl: './s123078.page.html',
-  styleUrls: ['./s123078.page.scss'],
+  selector: 'app-s123087',
+  templateUrl: './s123087.page.html',
+  styleUrls: ['./s123087.page.scss'],
 })
-export class S123078Page implements OnInit 
+export class S123087Page implements OnInit 
 {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
@@ -42,7 +42,7 @@ export class S123078Page implements OnInit
   sessionPoints()
   {
     this.service.sessionPoints({"UserId":this.userId,
-    "ScreenNos":"123002,123003,123004,123005,123006,123007,123008,123009,123010,123011,123012,123013,123014,123015,123078,123017,123018,123019,123020,123021,123022,123023,123024,123025,123027,123028,123029,123030,123031,123032,123033,123034,123035,123036,123037,123038,123039,123040,123041,123042,123043,123044,123045,123046,123047"})
+    "ScreenNos":"123079,123080,123081,123082,123083,123084,123085,123086"})
     .subscribe(res=>
     {
       console.log("points",res)
@@ -52,11 +52,11 @@ export class S123078Page implements OnInit
 
   submitProgress()
   {
-    this.router.navigate(['/external-approval/s123079'])
+    this.router.navigate(['/external-approval/s123088'])
   }
 
   prev()
   {
-    this.router.navigate(['/external-approval/s123077'])
+    this.router.navigate(['/external-approval/s123086'])
   }
 }
