@@ -11,11 +11,11 @@ import {  ProgramType } from "../../../../../../shared/models/program-model";
 export class S131327Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="relationships/s131001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/53.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
   
   bg=""
-  moduleLink="/communication"
-  moduleName="02. Communication"
+  moduleLink="/stress"
+  moduleName="Stress"
   sectionName= "Transform your life - II";
   moduleId=132
 
@@ -30,14 +30,14 @@ export class S131327Page implements OnInit {
       name: 'Emotional Needs',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
       link: '/emotional-needs',
-      id: 18
+      id: 120
  
     },
     {
       name: 'Self Interest',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/55.png',
       link: '/self-interest',
-      id: 55
+      id: 126
   
     },
   ]

@@ -37,7 +37,7 @@ export class S106015Page implements OnInit {
       name: 'Guided Audio Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
       link: '/guided-meditation',
-      id: 109
+      id: 110
   
     },
   ]

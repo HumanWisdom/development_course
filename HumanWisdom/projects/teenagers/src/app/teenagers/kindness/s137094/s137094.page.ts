@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import {  ProgramType } from "../../../../../../shared/models/program-model";
+
 
 @Component({
   selector: 'HumanWisdom-s137094',
@@ -8,7 +10,7 @@ import {Location } from '@angular/common'
   styleUrls: ['./s137094.page.scss'],
 })
 export class S137094Page implements OnInit {
-  
+   programType : ProgramType = ProgramType.Teenagers;
   toc="kindness/s137001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/stress.jpg"
  
@@ -21,10 +23,10 @@ export class S137094Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
   
   bg=""
-  moduleLink="/self-interest"
-  moduleName="Self-interest"
+  moduleLink="/social-media"
+  moduleName="Social Media"
   sectionName= "Transform your life - I";
-  moduleId=115
+  moduleId=138
   moduleList: any = [
     {
       name: 'Stress',
@@ -33,7 +35,7 @@ export class S137094Page implements OnInit {
       id: 125
     },
     {
-      name: 'Anxiety',
+      name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/anxiety',
       id: 105
