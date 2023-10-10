@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../../shared/services/constant';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
-import { DatePipe } from '@angular/common';
+import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,13 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./manage-subscription.page.scss'],
 })
 export class ManageSubscriptionPage implements OnInit {
-   manageSubscriptionData:any;
-   pricingModel:any;
-   public countryCode:any;
-   public defaultCountry :any;
-   public defaultCurrencySymbol : any;
-   paymentDetail:any;
-  constructor(public onboardingService:OnboardingService,private datePipe: DatePipe,private router:Router) { 
+  manageSubscriptionData: any;
+  pricingModel: any;
+  public countryCode: any;
+  public defaultCountry: any;
+  public defaultCurrencySymbol: any;
+  paymentDetail: any;
+  constructor(public onboardingService: OnboardingService, private datePipe: DatePipe,
+    private router: Router, private location: Location) {
 
     this.pricingModel = {
       "RateID": '',
@@ -69,34 +70,41 @@ export class ManageSubscriptionPage implements OnInit {
     return value.toFixed(2);
   }
 
-  formatDate(date){
+  formatDate(date) {
     return this.datePipe.transform(new Date(date), 'MMM dd, yyyy');
   }
 
 
   ngOnInit() {
-   var localData = SharedService.getDataFromLocalStorage(Constant.ManageSubscriptionData);
-   if(localData && localData !=null && localData != 'null'){
+    var localData = SharedService.getDataFromLocalStorage(Constant.ManageSubscriptionData);
+    if (localData && localData != null && localData != 'null') {
       this.manageSubscriptionData = JSON.parse(localData);
-   }
-   this.getCountry();
-   let userId = JSON.parse(localStorage.getItem("userId"))
-   this.onboardingService.getpaymentdetail(userId).subscribe((res) => {
-     if (res) {
-       this.paymentDetail = res[0]
-     }
-   });
+    }
+    this.getCountry();
+    let userId = JSON.parse(localStorage.getItem("userId"))
+    this.onboardingService.getpaymentdetail(userId).subscribe((res) => {
+      if (res) {
+        this.paymentDetail = res[0]
+      }
+    });
 
-   
+
 
   }
 
 
-  cancelSubscription(){
-    this.onboardingService.cancelSubscription(this.manageSubscriptionData.ActKey).subscribe(res=>{
-      if(res){
-        this.router.navigate(["onboarding/myprogram"]);
-      }
-    })
+  cancelSubscription() {
+    // this.onboardingService.cancelSubscription(this.manageSubscriptionData.ActKey).subscribe(res=>{
+    //   if(res){
+    //        this.router.navigate(["onboarding/myprogram"]);
+    SharedService.setDataInLocalStorage(Constant.ActivationKey,this.manageSubscriptionData.ActKey);
+    this.router.navigate(["/myprogram/cancel-subscription"]);
+  //}
+  // })
+  }
+
+
+  goBack() {
+    this.location.back();
   }
 }

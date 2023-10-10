@@ -82,7 +82,7 @@ export class S129009tPage implements OnInit
 
   prev()
   {
-    this.router.navigate(['/living-with-peace/s129008'])
+    this.router.navigate(['/living-with-peace/s129008p1'])
   }
 
 }

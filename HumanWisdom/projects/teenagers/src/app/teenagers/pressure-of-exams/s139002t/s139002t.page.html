@@ -1,0 +1,32 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            Welcome to this module where we are going to explore how we can better cope with the pressure of exams. They are a huge cause of stress and anxiety for students, parents, and increasingly for teachers who are also judged on how their students perform in the exams.
+          </p> 
+          <p>
+            The need for exams is a matter of debate and we have to ask how relevant they are in the 21st century, given that all knowledge is on our phones anyway, so the need to memorise and repeat information in an exam is not one we use in our daily life. 
+          </p>
+          <p>
+            It is perhaps far more important to stay curious and develop the love for learning, because learning does not stop when you leave school - it continues all your life. The jobs you will be doing have not been created yet - so you will always need to keep learning and growing.
+          </p>
+          <p>
+            We are going to explore practical tips on how we can better prepare for exams and deal with all the stress, anxiety, and disappointment they can create 
+          </p>
+          
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

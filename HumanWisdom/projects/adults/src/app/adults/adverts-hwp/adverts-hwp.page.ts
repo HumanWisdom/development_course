@@ -123,7 +123,7 @@ export class AdvertsHwpPage implements OnInit {
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
       }
-    } else if (val === 'redeem') {
+    } else if (val === 'redeem' || val == 'Monthly' || val == 'Yearly') {
       let res = localStorage.getItem("isloggedin")
       if(res === 'T') {
         this.router.navigate(['/adults/redeem-subscription'])
@@ -179,6 +179,7 @@ export class AdvertsHwpPage implements OnInit {
 
   getClosemodalEvent(event) {
     this.enabledModal = event
+    this.enabledModal = false;
   }
 }
 

@@ -1,0 +1,34 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+
+  <form>
+                
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            As a young person you have to deal with so many expectations. You may have expectations of yourself, or your parents may have expectations of you, or the expectation can come from teachers to reach a certain goal. You may also face competition from other students and that can add to the pressure.
+</p>
+<p>
+            All of these expectations can create pressure and stress, and sometimes you can struggle to cope. Some expectations are healthy as they motivate you to work hard, but too much pressure can have the opposite effect and reduce your performance - so what are the ways you could deal with it?
+          </p>
+          <p>    
+            The first thing to realise is that your parents mean well and want the best for you.
+            They may be anxious about your future and that pushes them to push you to study harder.
+            If you feel the pressure is too much to cope with and interfering with your ability to work then it's useful to have a conversation and tell them that the pressure they are putting you under is actually going to reduce your performance. 
+          </p>
+          <p>
+            It is possible to work hard and enjoy learning without putting yourself under too much pressure or being afraid of the future. Just focus on what you are doing now, and let the future take care of itself. 
+            
+           </p>
+          
+        </h3>                
+      </div>
+    </div>
+    
+  </form>
+  
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -26,20 +26,20 @@ export class S113087Page implements OnInit
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/teenagers/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Anger',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
       link: '/teenagers/anger',
-      id: 14
+      id: 118
 
     },
     {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/teenagers/fear-anxiety',
-      id: 19
+      id: 112
 
     },
   ]

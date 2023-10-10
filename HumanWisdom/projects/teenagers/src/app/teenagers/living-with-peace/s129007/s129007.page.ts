@@ -14,7 +14,9 @@ export class S129007Page implements OnInit
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_w6"
+
   hint = "it could be you don’t like others, because you think they are different."
+
   toc = "/living-with-peace/s129001"
    path = setTimeout(() => {
     return this.router.url;

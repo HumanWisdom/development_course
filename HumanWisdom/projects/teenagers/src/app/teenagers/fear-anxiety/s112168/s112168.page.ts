@@ -17,26 +17,26 @@ export class S112168Page implements OnInit {
   moduleLink="/dealing-with-depression"
   moduleName=" Dealing with depression"
   sectionName= "Manage your emotions";
-  moduleId=113
+  moduleId=156
   moduleList: any = [
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Living with Peace',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/63.png',
       link: '/living-with-peace',
-      id: 63
+      id: 129
  
     },
     {
       name: 'Happiness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png',
       link: '/happiness',
-      id: 23
+      id: 133
   
     },
   ]

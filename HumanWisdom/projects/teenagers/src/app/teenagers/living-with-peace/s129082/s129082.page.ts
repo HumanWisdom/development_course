@@ -24,24 +24,24 @@ export class S129082Page implements OnInit
 
   moduleList: any = [
     {
-      name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
-      link: '/stress',
-      id: 125
-    },
-    {
-      name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
-      link: '/self-esteem',
-      id: 126
+      name: 'Pleasure',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/20.png',
+      link: '/pleasure',
+      id: 124
  
     },
     {
-      name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
-      link: '/anger',
-      id: 118
-  
+      name: 'Comparison & Envy',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/07.png',
+      link: '/comparison',
+      id: 111
+
+    },
+    {
+      name: 'Breathing',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      link: '/breathing',
+      id: 107
     },
   ]
 
