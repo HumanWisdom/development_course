@@ -13,18 +13,18 @@ export class S121060Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="inner-boredom/s121001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/57.png"
   bg=""
-  moduleLink="/reactive-mind"
-  moduleName=" Reactive Mind"
+  moduleLink="/nature-of-the-i"
+  moduleName=" The Nature Of The 'I'"
   sectionName= "How the Mind Works";
-  moduleId=113
+  moduleId=122
   moduleList: any = [
     {
       name: 'Stress',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
       link: '/stress',
-      id: 44
+      id: 125
     },
     {
       name: 'Pleasure',

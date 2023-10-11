@@ -14,12 +14,12 @@ export class S119086Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="identity/s119001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/18.png"
   bg=""
-  moduleLink="/reactive-mind"
-  moduleName=" Reactive Mind"
+  moduleLink="/emotional-needs"
+  moduleName=" Emotional Needs"
   sectionName= "How the Mind Works";
-  moduleId=113
+  moduleId=120
   moduleList: any = [
     {
       name: 'Emotional Needs',

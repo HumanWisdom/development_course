@@ -13,12 +13,12 @@ export class S123084Page implements OnInit
 {  
   
   toc="external-approval/s123001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
   bg=""
-  moduleLink="/reactive-mind"
-  moduleName=" Reactive Mind"
+  moduleLink="/conditioning"
+  moduleName=" Conditioning"
   sectionName= "How the Mind Works";
-  moduleId=113
+  moduleId=105
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
