@@ -22,6 +22,7 @@ import { IndexPageRoutingModule } from './index-routing.module';
   providers:[
     
   ],
+  exports:[IndexPage],
   declarations: [IndexPage]
 })
 export class IndexPageModule {}

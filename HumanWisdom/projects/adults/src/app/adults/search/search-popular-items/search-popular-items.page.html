@@ -373,29 +373,14 @@
 
                   <!-- forum -->
                   <div id="tab2" *ngIf="tabName=='Forum'" class="tab-pane fade in active">
-                     <app-forum-landing [defaultShow]="false"></app-forum-landing>
+                     <app-forum-landing [defaultShow]="false" [search]="search"></app-forum-landing>
                     <!-- /section 2 -->
                   </div>
                   <!-- /forum -->
 
                   <!-- journal -->
-                  <div id="tab3" *ngIf="tabName=='Journal'" class="tab-pane fade in active">
-                    <ng-container *ngFor="let item of searchData.JournalRes">
-                      <div class="row plr10px">
-                        <div class="col-md-12 col-sm-12 col-xs-12 plr20px">
-                          <div class="panel panel-default prelative panel_search">
-                            <div class="panel-heading absolute_ptitle">
-                              <h4 class="panel-title">{{item.ModuleName}}</h4>
-                            </div>
-                            <div class="panel-body">
-                              <h4 class="txt36 opacity_pt5">{{item.Date | date: 'medium' }}</h4>
-                              <h4 class="txt37">{{item.TitleQue}}</h4>
-                              <h4 class="txt38">{{item.Response}}</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </ng-container>
+                  <div id="tab3" *ngIf="tabName=='Journal'"  class="tab-pane fade in active">
+                    <app-index [defaultShow]="false"  [search]="search" ></app-index>
                   </div>
                   <!-- /journal -->
 

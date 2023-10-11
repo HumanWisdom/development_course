@@ -10,6 +10,7 @@ import { SearchPopularItemsPage } from './search-popular-items.page';
 
 import {SharedModule} from '../../../../../../shared/shared.module';
 import { ForumLandingPageModule } from '../../../../../../shared/forum/forum-landing/forum-landing.module';
+import { IndexPageModule } from '../../guided-questions/index/index.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { ForumLandingPageModule } from '../../../../../../shared/forum/forum-lan
     IonicModule,
     SearchPopularItemsPageRoutingModule,
     SharedModule,
-    ForumLandingPageModule
+    ForumLandingPageModule,
+    IndexPageModule 
   ],
   declarations: [SearchPopularItemsPage,]
 })
