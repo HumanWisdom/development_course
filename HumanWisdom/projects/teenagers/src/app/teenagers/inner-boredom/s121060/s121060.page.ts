@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s121060',
@@ -10,14 +11,14 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S121060Page implements OnInit 
 {  
-  
+  programType : ProgramType = ProgramType.Teenagers;
   toc="inner-boredom/s121001"
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
   bg=""
   moduleLink="/reactive-mind"
   moduleName=" Reactive Mind"
   sectionName= "How the Mind Works";
-  moduleId=112
+  moduleId=113
   moduleList: any = [
     {
       name: 'Stress',
@@ -26,18 +27,18 @@ export class S121060Page implements OnInit
       id: 44
     },
     {
-      name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
-      link: '/self-esteem',
-      id: 17
+      name: 'Pleasure',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/20.png',
+      link: '/pleasure',
+      id: 124
  
     },
     {
-      name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
-      link: '/anger',
-      id: 14
-  
+      name: 'Happiness',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/23.png',
+      link: '/happiness',
+      id: 133
+      
     },
   ]
 
