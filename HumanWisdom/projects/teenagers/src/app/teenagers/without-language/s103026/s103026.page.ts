@@ -39,7 +39,7 @@ export class S103026Page implements OnInit {
       name: 'Nature',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
       link: '/nature',
-      id: 28
+      id: 106
   
     },
   ]
