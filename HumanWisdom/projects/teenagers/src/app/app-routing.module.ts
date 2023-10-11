@@ -234,6 +234,10 @@ const routes: Routes = [
   {
     path: 'social-media',
     loadChildren: () => import('./teenagers/social-media/social-media.module').then(m => m.SocialMediaModule)
+  },
+  {
+    path: 'pressure-of-exams',
+    loadChildren: () => import('./teenagers/pressure-of-exams/pressure-of-exams.module').then(m => m.PressureOfExamsModule)
   }
 ];
   
