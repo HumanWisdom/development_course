@@ -3956,7 +3956,12 @@ export class AdultDashboardPage implements OnInit {
     } else if (res['FeatureType'] === "LIFE STORY") {
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
-    } else {
+    }
+    else if (res['FeatureType'] === "PODCAST") {
+      
+      this.router.navigate(['adults/guided-meditation/audiopage/'], res['Url'] )
+    }
+    else {
       this.router.navigate([res['Url']]);
     }
   }
