@@ -40,23 +40,24 @@
 
               <!-- radio group -->
               <div class="cs_reason">
-                <div class="row">
+                <div class="row" *ngFor="let item of reasonList">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tleft rgdivs">
                       <div class=""  data-toggle="modal" data-target="#register">
-                        <input id="rg_1" type="radio" name="radio_group" value="1" checked>
+                        <input id="rg_1" type="radio" name="radio_group" [(ngModel)]="selectedId"  [value]="item.ReasonId" checked>
                         <label for="rg_1" class=""></label>
                       </div>
                     </div>
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                        Cost-related reasons
+                      {{item.Reason}}
                       </h4>
                     </div>
                   </div>
                 </div>
+                </div>
 
-                <div class="row">
+                <!-- <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tleft rgdivs">
                       <div class="">
@@ -135,7 +136,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- /radio group -->
 
               <button type="button" style="display: none;" class="btn mt10px" data-toggle="modal" data-target="#cancel_subscription_add_info">
