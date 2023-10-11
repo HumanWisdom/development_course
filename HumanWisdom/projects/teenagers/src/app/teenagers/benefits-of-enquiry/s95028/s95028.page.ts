@@ -10,32 +10,32 @@ export class S95028Page implements OnInit {
   
   toc="benefits-of-enquiry/s95001"
   bg=""
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/36.png"
-  moduleLink="/how-to-begin/s96001"
-  moduleName="How to begin?"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/37.png"
+  moduleLink="/three-steps-enquiry"
+  moduleName="Three Steps to Enquiry"
   sectionName= "Understand yourself";
   moduleId=96;
   programType : ProgramType = ProgramType.Teenagers;
 
   moduleList: any = [
     {
-      name: 'Begin your journey',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/36.png',
-      link: '/how-to-begin',
-      id: 96
+      name: 'Breathing',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
+      link: '/breathing',
+      id: 107
     },
     {
-      name: 'Three Steps to Enquiry',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/37.png',
-      link: '/three-steps-enquiry',
-      id: 37
+      name: 'Noticing Thoughts',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
+      link: '/noticing-thoughts',
+      id: 108
  
     },
     {
-      name: 'Insight',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/38.png',
-      link: '/insight',
-      id: 38
+      name: 'Guided Audio Meditation',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
+      link: '/guided-meditation',
+      id: 110
   
     },
   ]

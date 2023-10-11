@@ -11,13 +11,13 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S112168Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   toc="fear-anxiety/s112001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/92.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/20.png"
   
   bg=""
-  moduleLink="/dealing-with-depression"
-  moduleName=" Dealing with depression"
+  moduleLink="/pleasure"
+  moduleName=" Pleasure"
   sectionName= "Manage your emotions";
-  moduleId=156
+  moduleId=124
   moduleList: any = [
     {
       name: 'Stress',

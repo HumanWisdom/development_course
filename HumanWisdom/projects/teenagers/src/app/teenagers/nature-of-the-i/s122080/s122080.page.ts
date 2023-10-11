@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import {  ProgramType } from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s122080',
@@ -10,34 +11,34 @@ import { TeenagersService } from '../../teenagers.service';
 })
 export class S122080Page implements OnInit 
 {
+  programType : ProgramType = ProgramType.Teenagers;
   
   toc="nature-of-the-i/s120001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/91.png"
   bg=""
-  moduleLink="/reactive-mind"
-  moduleName="Reactive Mind"
+  moduleLink="/external-approval"
+  moduleName="Need For Approval"
   sectionName= "How the Mind Works";
-  moduleId=112
+  moduleId=123
   moduleList: any = [
     {
-      name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
-      link: '/stress',
-      id: 44
+      name: 'Identity',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/21.png',
+      link: '/identity',
+      id: 119
     },
     {
-      name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
-      link: '/self-esteem',
-      id: 17
- 
-    },
-    {
-      name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
-      link: '/anger',
-      id: 14
+      name: 'Self Interest',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/55.png',
+      link: '/self-interest',
+      id: 115
   
+    },
+    {
+      name: 'Self Image',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/25.png',
+      link: '/teenagers/self-image',
+      id: 114
     },
   ]
 

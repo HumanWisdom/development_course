@@ -29,6 +29,9 @@ export class ChangePasswordPage implements OnInit {
   user: any
   content = '';
   enableAlert = false;
+  passwordhide : boolean = true;
+  confirmpasswordhide : boolean = true;
+  oldpasswordhide : boolean = true;
 
   constructor(private router: Router,
     private service: OnboardingService,
@@ -344,6 +347,16 @@ export class ChangePasswordPage implements OnInit {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+  }
+
+  hideFunction(type) {
+    if(type === 'password') {
+      this.passwordhide = !this.passwordhide;
+    }else if(type === 'confirmpassword') {
+      this.confirmpasswordhide = !this.confirmpasswordhide;
+    }else {
+      this.oldpasswordhide = !this.oldpasswordhide
+    }
   }
 
 }

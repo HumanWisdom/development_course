@@ -19,13 +19,13 @@ export class S432Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=49
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/47.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/58.png"
   
   bg=""
-  moduleLink="/adults/relationships"
-  moduleName=" Relationships"
+  moduleLink="/adults/work"
+  moduleName=" Work"
   sectionName= "Transform your life - I";
-  moduleId=47
+  moduleId=58
   moduleList: any = [
     {
       name: 'Comparison & Envy',

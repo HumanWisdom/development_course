@@ -13,33 +13,31 @@ export class S123084Page implements OnInit
 {  
   
   toc="external-approval/s123001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/15.png"
   bg=""
-  moduleLink="/reactive-mind"
-  moduleName=" Reactive Mind"
+  moduleLink="/conditioning"
+  moduleName=" Conditioning"
   sectionName= "How the Mind Works";
-  moduleId=113
+  moduleId=105
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
-      name: 'Stress',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/44.png',
-      link: '/stress',
-      id: 44
+      name: 'Love',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/62.png',
+      link: '/love',
+      id: 134
     },
     {
-      name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
-      link: '/self-esteem',
-      id: 17
- 
+      name: 'Emotional Needs',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/18.png',
+      link: '/emotional-needs',
+      id: 120
     },
     {
-      name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
-      link: '/anger',
-      id: 14
-  
+      name: 'Relationships',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
+      link: '/relationships',
+      id: 131
     },
   ]
 
