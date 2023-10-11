@@ -13,16 +13,27 @@ import { Router } from '@angular/router';
 export class CancelSubscriptionReasonPage implements OnInit {
 
   constructor(private location:Location,private onboardingService:OnboardingService,private router :Router) { }
-
+   reasonList = [];
+   selectedId = 1;
   ngOnInit() {
+    this.getReason();
   }
+
+   getReason(){
+    this.onboardingService.getCancelReason().subscribe(res=>{
+      if(res){
+        this.reasonList = res;
+      }
+    });
+    
+   }
 
   cancelSubscription() {
     var key = SharedService.getDataFromLocalStorage(Constant.ActivationKey);
     if(key!=undefined && key != null && key !='null'){
     let event = new CustomEvent('cancelButtonClicked');
     window.dispatchEvent(event);
-    this.onboardingService.cancelSubscription(key).subscribe(res => {
+    this.onboardingService.cancelSubscription(key,this.selectedId).subscribe(res => {
       if (res) {
         this.router.navigate(["/myprogram/cancelled"]);
       }
