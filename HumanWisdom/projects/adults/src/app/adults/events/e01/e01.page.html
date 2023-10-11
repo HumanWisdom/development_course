@@ -3,83 +3,80 @@
 <app-index-content>
 
 
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <h1 class="module_title">
+  <div class="row mt20px">
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <h1 class="mtb0px fs_24px fw_600 lh_150p fc_ffffff">
         {{eventData['Title']}}
       </h1>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <h4 class="txt_comparison">
+  <div class="row mtb20px">
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
         {{eventData['EventDesc']}}
       </h4>
     </div>
   </div>
 
+  <div class="row mb5px">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5 flex_ai">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_date.svg" class="img-responsive mr5px">
+        Date: {{eventData['Event_Date']}}
+      </h4>
+    </div>
+  </div>
+  
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft">
-        Date:
-        <span class="fw_700">
-          {{eventData['Event_Date']}}
-        </span>
-      </h2>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5 flex_ai">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_time.svg" class="img-responsive mr5px">
+        {{eventData['EventTiming']}}
+      </h4>
     </div>
   </div>
 
-  <div class="row mt5px">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <h2 class="fw_400 fs_12px lh_14px fc_000000 mtb0px tleft">
-        Time:
-        <span class="fw_700">
-          {{eventData['EventTiming']}}
-        </span>
-      </h2>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <hr class="hr_style_v3_05 mtb30px">
     </div>
   </div>
-
-  <br>
 
   <div *ngIf="enableRegister">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <h4 class="txt201 tleft">
+    <div class="row mb20px">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="mtb0px fs_18px fw_600 lh_140p fc_ffffff">
           Register Here
         </h4>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <hr class="hr_style_7">
+    <div class="row mb10px">                    
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+        <input type="text" class="sp_fc fc_name" placeholder="Name" required [(ngModel)]="name">
+        <div class="fc_img">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
+        </div>
       </div>
+      <small class="text danger ml-10">{{namevalidation()}}</small>
     </div>
 
-    <div class="row mt20px">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="name" placeholder="Name" required>
+    <div class="row mb10px">                    
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
+        <input type="text" class="sp_fc fc_name" placeholder="Email address" required [(ngModel)]="email">
+        <div class="fc_img">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+        </div>
       </div>
+      <small class="text danger ml-10">{{emailvalidation()}}</small>
     </div>
 
-    <small class="text danger ml-10">{{namevalidation()}}</small>
-
-    <div class="row mt10px">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <input type="text" class="form-control cfc3 tleft" [(ngModel)]="email" placeholder="E-mail" required>
-      </div>
-    </div>
-
-    <small class="text danger ml-10">{{emailvalidation()}}</small>
-
-    <div class="row center_flex mt20px">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-        <a>
-          <button type="button" [disabled]="disabled()" class="btn btn-success mb0 btn_begin_here bg_green_yellow"
-            (click)="registerEvent()">Register</button>
-        </a>
+    <div class="row center_flex mt30px">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <button type="button" class="btn btn_ctd" [disabled]="disabled()" (click)="registerEvent()">
+          Register
+        </button>
       </div>
     </div>
   </div>
