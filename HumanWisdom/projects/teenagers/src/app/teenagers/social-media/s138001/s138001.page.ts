@@ -49,7 +49,7 @@ export class S138001Page implements OnInit,OnDestroy {
     private url: ActivatedRoute
   ) 
   { 
-    this.getSetModuleData(141);
+    this.getSetModuleData(138);
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
     })
