@@ -3,7 +3,7 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
         <a class="">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="goBack()" alt="" class="p0">
         </a>
       </div>
   
@@ -66,22 +66,22 @@
                                     </h4>
                                   </div>
                                 </div>
-                                <div class="row center_flex mt10px mb20px" (click)="RouteToManageSubscription(item)">
-                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanId==1">
+                                <div class="row center_flex mt10px mb20px">
+                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tleft"  (click)="RouteToManageSubscription(item)">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='1'">
                                         Monthly Subscription
                                     </h4>
-                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanId==2">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.PlanID=='2'">
                                       Yearly Subscription
                                   </h4>
-                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.isTrial=='IsTrial'">
+                                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" *ngIf="item.isTrial=='1'">
                                     Free Trial
                                   </h4>
                                  </div>
         
                                   <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
                                     <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1'">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
+                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
                                             Auto-renew
                                         </h4>
             

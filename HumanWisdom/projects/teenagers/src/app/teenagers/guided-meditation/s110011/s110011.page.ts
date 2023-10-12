@@ -11,13 +11,13 @@ import { ProgramType } from '../../../../../../shared/models/program-model';
 export class S110011Page implements OnInit {
   
   toc="guided-meditation/s110001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/28.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/22.png"
   
   bg=""
-  moduleLink="/nature"
-  moduleName="05. Nature"
+  moduleLink="/meditation"
+  moduleName="04. meditation"
   sectionName= "Nurturing a Quiet Mind";
-  moduleId=106
+  moduleId=109
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {

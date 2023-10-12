@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange,Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
@@ -13,6 +13,8 @@ import { LogEventService } from "../../../../../../shared/services/log-event.ser
   styleUrls: ["./index.page.scss"],
 })
 export class IndexPage implements OnInit, AfterViewInit {
+  @Input() defaultShow = true;
+  @Input() search = '';
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
   userId: any;
   journalList = [];
@@ -27,11 +29,15 @@ export class IndexPage implements OnInit, AfterViewInit {
   jrList = [];
   jrListC = [];
   topic = [];
+
+
+
   searchedText: string;
   isReloadList = true;
   enableAlert = false;
   guest = false;
   Subscriber = false;
+
 
   constructor(
     private router: Router,
@@ -48,8 +54,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
-    if (this.saveUsername == false)
+      if (this.saveUsername == false)
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
     else {
       this.userId = JSON.parse(localStorage.getItem("userId"));
@@ -62,6 +67,8 @@ export class IndexPage implements OnInit, AfterViewInit {
       this.isGuidedQueestionsTab = true;
       this.isDiary = false;
     }
+    
+
   }
 
   viewJournalAndReflections() {
@@ -71,6 +78,9 @@ export class IndexPage implements OnInit, AfterViewInit {
         return <any>new Date(val2.Date) - <any>new Date(val1.Date);
       });
       this.jrListC = this.jrList;
+      if(!this.defaultShow){
+        this.searchjournal(this.search);
+      }
     });
   }
   showGuidedQuestions() {
@@ -198,6 +208,25 @@ export class IndexPage implements OnInit, AfterViewInit {
           ) ||
           it?.TitleQue?.toLowerCase().includes(
             $event.target.value.toLowerCase()
+          )
+      );
+    }
+  }
+
+ searchjournal(text) {
+    this.logeventservice.logEvent('click_search');
+    if (text == "") {
+      this.viewJournalAndReflections();
+      this.getDailyQuestion();
+
+    } else if (text != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          it?.Response?.toLowerCase().includes(
+            text.toLowerCase()
+          ) ||
+          it?.TitleQue?.toLowerCase().includes(
+            text.toLowerCase()
           )
       );
     }

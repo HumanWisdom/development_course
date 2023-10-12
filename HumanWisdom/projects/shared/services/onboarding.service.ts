@@ -180,7 +180,13 @@ export class OnboardingService {
     return this.http.post(this.path + '/CreateSetupIntent/', paymentIntent);
   }
 
-  cancelSubscription(code): Observable<any> {
-    return this.http.post(this.path + `/CancelSubscription/${code}`, {})
+  cancelSubscription(code,reasonId): Observable<any> {
+    return this.http.post(this.path + `/CancelSubscription/${code}/${reasonId}`, {});
   }
+  
+  getCancelReason(): Observable<any> {
+    return this.http.get(this.path + '/cancelReasons/');
+  }
+
+
 }

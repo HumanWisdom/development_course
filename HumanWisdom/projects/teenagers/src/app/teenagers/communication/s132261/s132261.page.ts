@@ -17,27 +17,27 @@ export class S132261Page implements OnInit {
   moduleLink="/happiness"
   moduleName=" Happiness"
   sectionName= "Transform your life - II";
-  moduleId=23
+  moduleId=133
 
   moduleList: any = [
     {
       name: 'Conditioning',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
       link: '/conditioning',
-      id: 15
+      id: 105
  
     },
     {
       name: 'Reactive mind',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/54.png',
       link: '/reactive-mind',
-      id: 54
+      id: 113
     },
     {
       name: 'Relationships',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/47.png',
       link: '/relationships',
-      id: 47
+      id: 131
     },
   ]
 

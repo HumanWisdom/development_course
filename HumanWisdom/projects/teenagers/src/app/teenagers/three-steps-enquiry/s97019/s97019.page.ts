@@ -23,20 +23,20 @@ export class S97019Page implements OnInit {
       name: 'Awareness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
       link: '/awareness',
-      id: 39
+      id: 100
     },
     {
       name: 'Questions are Key',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/41.png',
       link: '/questions-are-key',
-      id: 41
+      id: 102
  
     },
     { 
       name: 'Insight',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/38.png',
       link: '/insight',
-      id: 38
+      id: 99
   
     },
   ]

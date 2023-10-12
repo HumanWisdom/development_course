@@ -13,19 +13,19 @@ export class S130071Page implements OnInit
 {  
   programType : ProgramType = ProgramType.Teenagers;
   toc="self-esteem/s130001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/47.png"
  
   bg=""
-  moduleLink="/stress"
-  moduleName=" Stress"
+  moduleLink="/relationships"
+  moduleName=" Relationships"
   sectionName= "Transform your life - I";
-  moduleId=125
+  moduleId=131
   moduleList: any = [
     {
       name: 'Sorrow and Loss',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/60.png',
       link: '/sorrow',
-      id: 60
+      id: 116
 
     },
     {
@@ -39,7 +39,7 @@ export class S130071Page implements OnInit
       name: 'Breathing',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
       link: '/breathing',
-      id: 29
+      id: 107
     },
   ]
 

@@ -4,7 +4,10 @@ import { Router } from '@angular/router';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
-
+import {Location } from '@angular/common';
+import {
+  Platform,
+} from "@angular/cdk/platform";
 @Component({
   selector: 'app-subscription-s09-v02',
   templateUrl: './subscription-s09-v02.page.html',
@@ -25,15 +28,23 @@ export class SubscriptionS09V02Page implements OnInit {
 
   constructor(private service: OnboardingService,
     private dc: ChangeDetectorRef,
-    private router: Router) { }
+    private router: Router,
+    private location :Location,
+    public platform: Platform) { }
 
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId"))
     this.service.myprogram(userId)
       .subscribe(res => {
-        
-        this.myprograms = res.filter((d) => d['Active'] === 1)
-        this.notmyprograms = res.filter((d) => d['Active'] === 0)
+        if(this.platform.IOS){
+          this.myprograms = res.filter((d) => d['Active'] === 1)
+          this.notmyprograms = res.filter((d) => d['Active'] === 0);
+        }
+       else{
+        this.myprograms = res.filter((d) => d['Active'] === 1 && d['IOS']==0)
+        this.notmyprograms = res.filter((d) => d['Active'] === 0  && d['IOS']==0)
+       }
+       
         this.dc.detectChanges()
       },
         (error: HttpErrorResponse) => {
@@ -66,8 +77,14 @@ if(res) {
       .subscribe(res => {
 
         alert('Successfully Invited');
-        this.myprograms = res.filter((d) => d['Active'] === 1)
-        this.notmyprograms = res.filter((d) => d['Active'] === 0)
+        if(this.platform.IOS){
+          this.myprograms = res.filter((d) => d['Active'] === 1)
+          this.notmyprograms = res.filter((d) => d['Active'] === 0);
+        }
+       else{
+        this.myprograms = res.filter((d) => d['Active'] === 1 && d['IOS']==0)
+        this.notmyprograms = res.filter((d) => d['Active'] === 0  && d['IOS']==0)
+       }
         this.dc.detectChanges()
       },
         (error: HttpErrorResponse) => {
@@ -134,9 +151,13 @@ if(res) {
   }
 
   RouteToManageSubscription(item){
-    if((new Date(item['ExpDate']).getTime() > new Date().getTime())){
+    if((new Date(item['ExpDate']).getTime() > new Date().getTime()) || item.Active == 1){
       SharedService.setDataInLocalStorage(Constant.ManageSubscriptionData,JSON.stringify(item));
       this.router.navigate(["/myprogram/manage-subscription"]);
     }
+  }
+
+  goBack(){
+    this.location.back();
   }
 }

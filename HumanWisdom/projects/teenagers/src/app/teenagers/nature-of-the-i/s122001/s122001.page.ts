@@ -29,7 +29,11 @@ export class S122001Page implements OnInit,OnDestroy {
   }, 1000);
   token="1234"
   shareUrl=this.path+"?t="+this.token
-  freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+  // freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
+
+
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any

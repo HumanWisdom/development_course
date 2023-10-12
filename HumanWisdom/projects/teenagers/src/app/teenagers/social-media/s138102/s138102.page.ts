@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import {  ProgramType } from "../../../../../../shared/models/program-model";
+
 
 @Component({
   selector: 'HumanWisdom-s138102',
@@ -8,7 +10,7 @@ import {Location } from '@angular/common'
   styleUrls: ['./s138102.page.scss'],
 })
 export class S138102Page implements OnInit {
-  
+  programType : ProgramType = ProgramType.Teenagers;
   toc="social-media/s138001"
   // moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/happiness.jpg"
  
@@ -18,13 +20,13 @@ export class S138102Page implements OnInit {
   // sectionName= "Transform your life - II";
   // moduleId=23
 
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/58.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/53.png"
   
   bg=""
-  moduleLink="/work/s58001"
-  moduleName=" Work"
+  moduleLink="/communication"
+  moduleName=" Communication"
   sectionName= "Transform your life - II";
-  moduleId=58
+  moduleId=132
   moduleList: any = [
     {
       name: 'Conditioning',
@@ -34,7 +36,7 @@ export class S138102Page implements OnInit {
     },
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
       id: 112
     },

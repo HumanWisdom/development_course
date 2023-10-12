@@ -13,6 +13,14 @@ const routes: Routes = [
     path: "manage-subscription",
     loadChildren: () => import('./manage-subscription/manage-subscription.module').then(m => m.ManageSubscriptionPageModule)
   },
+  {
+    path: "cancel-subscription",
+    loadChildren: () => import('./cancel-subscription-reason/cancel-subscription-reason.module').then(m => m.CancelSubscriptionReasonPageModule)
+  },
+  {
+    path: "cancelled",
+    loadChildren: () => import('./cancelled/cancelled.module').then(m => m.CancelledPageModule)
+  },
 ];
 
 @NgModule({

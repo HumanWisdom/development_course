@@ -107,6 +107,11 @@ import { S123081Page } from './s123081/s123081.page';
 import { S123082Page } from './s123082/s123082.page';
 import { S123083Page } from './s123083/s123083.page';
 import { S123084Page } from './s123084/s123084.page';
+import { S123085Page } from './s123085/s123085.page';
+import { S123086Page } from './s123086/s123086.page';
+import { S123087Page } from './s123087/s123087.page';
+import { S123088Page } from './s123088/s123088.page';
+
 
 
 const routes: Routes = [
@@ -552,14 +557,23 @@ const routes: Routes = [
     path: 's123084',
     component: S123084Page,
   },
- 
-  
- 
- 
-  
- 
- 
-  
+  {
+    path: 's123085',
+    component: S123085Page,
+  },
+  {
+    path: 's123086',
+    component: S123086Page,
+  },
+  {
+    path: 's123087',
+    component: S123087Page,
+  },
+  {
+    path: 's123088',
+    component: S123088Page,
+  },
+
 ];
 
 @NgModule({
