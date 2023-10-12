@@ -261,7 +261,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03">
                               <a (click)="youtube('gUM9Ln_xo7k')" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_09.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_09.svg" alt="Happiness" class="ctimg_dash">
                                   <!-- <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div> -->
@@ -301,7 +301,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
                               <a (click)="routeResume('23', true)" class="prelative">
                                 <div class="prelative">
-                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_01.svg" alt="Happiness" class="ctimg">
+                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/us_01.svg" alt="Happiness" class="ctimg_dash">
                                   <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -344,7 +344,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 prelative box_v3_03" *ngFor="let res of dashboardFeature">
                               <a (click)="routeForUser(res)" class="prelative">
                                 <div class="prelative">
-                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg">
+                                  <img src="{{res['ImgPath']}}" alt="Happiness" class="ctimg_dash">
                                   <!-- <div class="progress dprogress">
                                     <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div> -->
