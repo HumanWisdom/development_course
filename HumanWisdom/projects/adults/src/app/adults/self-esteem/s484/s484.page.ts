@@ -47,7 +47,7 @@ export class S484Page implements OnInit {
     this.router.navigate(['/adults/self-esteem/s485'])
   }
   prev(){
-    this.router.navigate(['/adults/self-esteem/s483p4'])
+    this.router.navigate(['/adults/self-esteem/s483'])
 
   }
 
