@@ -210,12 +210,15 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
           localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
           // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
       }, error => {
         localStorage.setItem("email", 'guest@humanwisdom.me');
         localStorage.setItem("pswd", '12345');
         localStorage.setItem('guest', 'T');
+        localStorage.setItem('isloggedin', 'F');
+
       },
       )
     }
