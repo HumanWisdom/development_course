@@ -22,10 +22,10 @@ export class S142116Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/58.png"
   
   bg=""
-  moduleLink="/work/s58001"
-  moduleName=" Work"
+  moduleLink="/kindness"
+  moduleName=" Kindness"
   sectionName= "Transform your life - II";
-  moduleId=58
+  moduleId=137
   moduleList: any = [
     {
       name: 'Conditioning',
@@ -35,7 +35,7 @@ export class S142116Page implements OnInit {
     },
     {
       name: 'Fear & Anxiety',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
       id: 112
     },

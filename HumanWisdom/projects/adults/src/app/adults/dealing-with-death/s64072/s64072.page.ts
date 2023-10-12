@@ -20,13 +20,13 @@ export class S64072Page implements OnInit {
   // sectionName= "Transform your life - I";
   // moduleId=76
   
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/44.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/47.png"
  
   bg=""
-  moduleLink="/adults/stress"
-  moduleName=" Stress"
+  moduleLink="/adults/relationships"
+  moduleName=" Relationships"
   sectionName= "Transform your life - I";
-  moduleId=44
+  moduleId=47
   moduleList: any = [
     {
       name: 'Sorrow and Loss',

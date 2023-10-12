@@ -23,19 +23,19 @@ export class S104035Page implements OnInit {
       name: 'Fear & Anxiety',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/19.png',
       link: '/fear-anxiety',
-      id: 19
+      id: 112
     },
     {
       name: 'No Judgement',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/40.png',
       link: '/no-judgement',
-      id: 40
+      id: 101
     },
     {
       name: 'Key Ideas',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/34.png',
       link: '/key-ideas',
-      id: 34
+      id: 83
     },
   ]
 

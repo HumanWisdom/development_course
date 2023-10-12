@@ -366,7 +366,7 @@ export class S123083Page implements OnInit
 
   prev() 
   {
-    this.router.navigate(['/external-approval/s123082'])
+    this.router.navigate(['/external-approval/s123078'])
   }
 
   routeNext() 

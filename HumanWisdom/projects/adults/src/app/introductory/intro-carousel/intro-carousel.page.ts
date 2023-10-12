@@ -39,11 +39,13 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    document.getElementById('inactivenext').style.display = 'none';
+    if(document.getElementById('inactivenext')){
+      document.getElementById('inactivenext').style.display = 'none';
+    }
     $('#ic_carousel').on('slid.bs.carousel', function (data) {
       let arr = data['relatedTarget']['classList'];
       let istrue = false;
-      if (Array.from(arr)[1] === '4') moveleft = true
+      if (Array.from(arr)[1] === '3') moveleft = true
       else moveleft = false
       arr.forEach((d, ind) => {
         if (d === '4') {
@@ -77,8 +79,10 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   };
 
   skip() {
+    localStorage.setItem('personalised', 'F');
+    localStorage.setItem('fromlandingpage', 'F');
     this.logeventservice.logEvent('click_skip_onboarding');
-    this.router.navigate(['/intro/personalised-for-you']);
+    this.router.navigate(['/onboarding/login']);
   }
 
   onLoad() {
@@ -89,9 +93,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     this.logeventservice.logEvent(evtName);
     if(params !='' && route !='') {
       this.router.navigate([route, params]);
-    }else if(route !='') { 
-      this.router.navigate([route]) 
+    }else if(route !='') {
+      this.router.navigate([route])
       }
     }
-    
+
 }
