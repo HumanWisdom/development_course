@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
@@ -17,6 +17,8 @@ import {
   styleUrls: ["./hamburger.component.scss"],
 })
 export class HamburgerComponent implements OnInit {
+  @ViewChild('closemodal') closemodal: ElementRef;
+
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(", ");
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
@@ -49,6 +51,10 @@ export class HamburgerComponent implements OnInit {
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
     }
+  }
+
+  closemenuevent(){
+    this.closemodal.nativeElement.click();
   }
 
   ngOnInit() {
