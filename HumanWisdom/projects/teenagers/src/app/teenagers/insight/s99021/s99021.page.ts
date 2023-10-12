@@ -24,19 +24,19 @@ export class S99021Page implements OnInit {
       name: 'Awareness',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/39.png',
       link: '/awareness',
-      id:39
+      id:100
     },
     {
       name: 'Look without Language',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/42.png',
       link: '/without-language',
-      id:42
+      id:103
     },
     {
       name: 'Meditation',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
       link: '/meditation',
-      id:22
+      id:109
     },
   ]
   constructor() { }

@@ -151,4 +151,8 @@ export class ForumService {
     const formattedDate = `${month} ${day < 10 ? '0' : ''}${day}`;
     return formattedDate;
   }
+
+  getForumSearchDataSite(data): Observable<any> {
+    return this.http.get(this.path + `/GetAllPosts/${data}`);
+  }
 }

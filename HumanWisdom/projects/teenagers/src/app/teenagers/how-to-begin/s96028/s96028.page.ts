@@ -21,6 +21,28 @@ export class S96028Page implements OnInit
   sectionName= "Art of Enquiry";
   moduleId=97
   programType : ProgramType = ProgramType.Teenagers;
+  moduleList: any = [
+    {
+      name: 'Begin your journey',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/36.png',
+      link: '/how-to-begin',
+      id: 96
+    },
+    {
+      name: 'Three Steps to Enquiry',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/37.png',
+      link: '/three-steps-enquiry',
+      id: 97
+ 
+    },
+    {
+      name: 'Insight',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/38.png',
+      link: '/insight',
+      id: 99
+  
+    },
+  ]
   constructor() 
   { }
 

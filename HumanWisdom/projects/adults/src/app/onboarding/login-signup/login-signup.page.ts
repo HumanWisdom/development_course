@@ -49,7 +49,7 @@ export class LoginSignupPage implements OnInit {
   enableLogin = false;
   scrId: any;
   x = [];
-  isSignUp = true;
+  isSignUp = false;
   value: number = 100;
   showWarning = false;
   showMessage = false;

@@ -115,6 +115,10 @@ import { S123081Page } from './s123081/s123081.page';
 import { S123082Page } from './s123082/s123082.page';
 import { S123083Page } from './s123083/s123083.page';
 import { S123084Page } from './s123084/s123084.page';
+import { S123085Page } from './s123085/s123085.page';
+import { S123086Page } from './s123086/s123086.page';
+import { S123087Page } from './s123087/s123087.page';
+import { S123088Page } from './s123088/s123088.page';
 
 
 @NgModule({
@@ -236,6 +240,11 @@ import { S123084Page } from './s123084/s123084.page';
     S123082Page,
     S123083Page,
     S123084Page,
+    S123085Page,
+    S123086Page,
+    S123087Page,
+    S123088Page,
+   
   ],
   imports: [
     CommonModule,

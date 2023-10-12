@@ -1,6 +1,6 @@
 import { Platform } from "@angular/cdk/platform";
 import { Location } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationStart, Router } from '@angular/router';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
@@ -23,12 +23,15 @@ export class ForumLandingPage implements OnInit {
   @ViewChild('closeCategory') closeCategory: any;
   @ViewChild('threadsearch', { static: true }) threadsearch: ElementRef;
   UserID = "107";
+  @Input() defaultShow = true;
+  @Input() search = ''
   activereply;
   commenttext = '';
   PostComment = ''
   replyflag = false;
   selectthread;
   searchText = '';
+  
   path = '';
   posts = [];
   selectIndex = 0;
@@ -142,6 +145,43 @@ export class ForumLandingPage implements OnInit {
   }
   }
 
+  getForumSearchData() {
+    this.serivce.getposts(0,this.search,null).subscribe((res) => {
+      if (res) {
+       this.posts = this.serivce.FormatForumPostData(res);
+      }
+    });
+  }
+
+  list(data) {
+    if (data) {
+      let temp = [];
+      let flag = false;
+      data.forEach(element => {
+        temp.forEach((res) => {
+          if (res.PostID === Number(element.ParentPOstID)) {
+            res.child.push(element);
+            flag = true;
+          }
+        })
+        if (!flag) {
+          element.child = [];
+          temp.push(element);
+          flag = false;
+        } else {
+          flag = false;
+        }
+
+      });
+      temp.sort(function (a, b) {
+        return b.PostID - a.PostID;
+      });
+      this.posts = temp;
+    }
+  }
+
+
+
   DeletePost(item){
     this.serivce.deletePost(item.PostID).subscribe(res=>{
       if(res){
@@ -155,7 +195,6 @@ export class ForumLandingPage implements OnInit {
     this.activeCommentPost = item;
   }
   commentPostSave(item) {
-
   }
 
   postreport(item, actionType) {
@@ -278,7 +317,11 @@ export class ForumLandingPage implements OnInit {
     this.meta.updateTag({ property: 'keywords', content: 'Online community,Discussion forum,Wisdom exchange,Inspirational discussions,Self-improvement forum,Personal growth community,Mental wellness community,Mindful conversations,Emotional support forum,Personal development discussions' })
     this.userName = localStorage.getItem('name');
     this.selectthread = this.threadlist[0].value;
-    this.getAllposts(0);
+    if(this.defaultShow){
+      this.getAllposts(0);
+    }else{
+        this.getForumSearchData();
+    }
   }
 
   share() {
