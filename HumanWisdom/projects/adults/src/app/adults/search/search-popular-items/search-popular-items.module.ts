@@ -9,6 +9,8 @@ import { SearchPopularItemsPageRoutingModule } from './search-popular-items-rout
 import { SearchPopularItemsPage } from './search-popular-items.page';
 
 import {SharedModule} from '../../../../../../shared/shared.module';
+import { ForumLandingPageModule } from '../../../../../../shared/forum/forum-landing/forum-landing.module';
+import { IndexPageModule } from '../../guided-questions/index/index.module';
 
 @NgModule({
   imports: [
@@ -16,8 +18,10 @@ import {SharedModule} from '../../../../../../shared/shared.module';
     FormsModule,
     IonicModule,
     SearchPopularItemsPageRoutingModule,
-    SharedModule
+    SharedModule,
+    ForumLandingPageModule,
+    IndexPageModule 
   ],
-  declarations: [SearchPopularItemsPage]
+  declarations: [SearchPopularItemsPage,]
 })
 export class SearchPopularItemsPageModule {}
