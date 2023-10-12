@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./s3-video.component.scss'],
 })
 export class S3VideoComponent implements OnInit {
-  tocColor = "white"
+  public tocColor : string='white';
   public videoLink: any;
   public videoTitle: any;
   public linkcode: any;
