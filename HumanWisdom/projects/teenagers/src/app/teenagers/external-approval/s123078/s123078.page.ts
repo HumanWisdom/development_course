@@ -10,13 +10,20 @@ import { Location } from '@angular/common';
 })
 export class S123078Page implements OnInit 
 {
-  bg_tn="bg_blue"
-  bg_cft="bg_blue"
-  bg="blue_flat"
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  points:any
-  overallPercentage:any
+
+  bg_tn = "bg_blue"
+  bg_cft = "bg_blue"
+  bg = "blue_flat"
+  toc="external-approval/s123001"
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  screenType = localStorage.getItem("text")
+  moduleId = localStorage.getItem("moduleId")
+  screenNumber = 123078
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
 
   constructor
   (
