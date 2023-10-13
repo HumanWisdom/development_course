@@ -17,7 +17,7 @@ export class S123049Page implements OnInit
   userId:any
   userName:any
   progressPercent:any
-  progressText="1/2"
+  progressText="1/3"
   link="/external-approval/s123050"
   name="#2 Four ways external-approval impacts our life"
   progressImg=""

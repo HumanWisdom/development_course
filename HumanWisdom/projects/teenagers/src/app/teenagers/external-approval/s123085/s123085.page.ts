@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 
 @Component({
-  selector: 'app-s123084',
-  templateUrl: './s123084.page.html',
-  styleUrls: ['./s123084.page.scss'],
+  selector: 'app-s123085',
+  templateUrl: './s123085.page.html',
+  styleUrls: ['./s123085.page.scss'],
 })
-export class S123084Page implements OnInit 
+export class S123085Page implements OnInit 
 {
 
   bg_tn = "bg_blue"
@@ -20,15 +20,15 @@ export class S123084Page implements OnInit
   qrList = JSON.parse(localStorage.getItem("qrList"))
   moduleId = localStorage.getItem("moduleId")
   screenType = localStorage.getItem("feedbackSurvey")
-  screenNumber = "123084"
+  screenNumber = "123085"
   startTime: any
   endTime: any
   totalTime: any
   bookmark: any
-  rId = 1462
+  rId = 1463
   reflection: any
   reflectionA: any
-  r123084 = JSON.parse(sessionStorage.getItem("r123084"))
+  r123085 = JSON.parse(sessionStorage.getItem("r123085"))
 
   constructor
   (
@@ -40,7 +40,7 @@ export class S123084Page implements OnInit
 
   ngOnInit() 
   {
-    console.log(this.r123084)
+    console.log(this.r123085)
     this.createScreen()
     this.reflectionA = this.qrList.ListOfReflection
     this.findReflection()
@@ -171,6 +171,27 @@ export class S123084Page implements OnInit
         "fill",
         base_color
       );
+
+      // second
+      $("#svg_form_time rect").css("fill", active_color);
+      $("#svg_form_time circle").css("fill", active_color);
+      $("#prev").removeClass("disabled");
+      if (child >= length) {
+        $(this).addClass("disabled");
+        $('#submit').removeClass("disabled");
+      }
+      if (child <= length) {
+        child++;
+      }
+      var circle_child = child + 1;
+      $("#svg_form_time rect:nth-of-type(n + " + child + ")").css(
+        "fill",
+        base_color
+      );
+      $("#svg_form_time circle:nth-of-type(n + " + circle_child + ")").css(
+        "fill",
+        base_color
+      );
     });
     // /multistep wizard
   }
@@ -202,10 +223,10 @@ export class S123084Page implements OnInit
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    sessionStorage.setItem("r123084", this.r123084)
-    this.r123084 = sessionStorage.getItem("r123084")
-    console.log(this.r123084)
-    if (this.r123084 != "undefined") 
+    sessionStorage.setItem("r123085", this.r123085)
+    this.r123085 = sessionStorage.getItem("r123085")
+    console.log(this.r123085)
+    if (this.r123085 != "undefined") 
     {
       this.service.submitProgressReflection({
         "ScrNumber": this.screenNumber,
@@ -215,25 +236,25 @@ export class S123084Page implements OnInit
         "screenType": this.screenType,
         "timeSpent": this.totalTime,
         "ReflectionId": this.rId,
-        "Resp": this.r123084
+        "Resp": this.r123085
       }).subscribe(res => {},
         error => {
           console.log(error)
-          this.router.navigate(['/external-approval/s123085'])
+          this.router.navigate(['/external-approval/s123086'])
         },
         () => {
-          this.router.navigate(['/external-approval/s123085'])
+          this.router.navigate(['/external-approval/s123086'])
         })
     }
     else 
     {
-      this.router.navigate(['/external-approval/s123085'])
+      this.router.navigate(['/external-approval/s123086'])
     }
   }
 
   prev() 
   {
-    this.router.navigate(['/external-approval/s123083'])
+    this.router.navigate(['/external-approval/s123084'])
   }
 
   ngOnDestroy() 
