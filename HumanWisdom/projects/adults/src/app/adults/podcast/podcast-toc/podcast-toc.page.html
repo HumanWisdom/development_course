@@ -2,7 +2,7 @@
 
 
 <!-- top navigation -->
-<div class="tn_bv">
+<div class="tn_bv" *ngIf="!isdefaultShow">
 
   <div class="row center_flex bg_bv">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
@@ -34,36 +34,12 @@
     </div>
   </div>
 </div>
-<!-- /top navigation -->
 
-<!-- top navigation -->
-<!-- <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mdp_header onscrollbs">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/back_white_01.svg" alt="" class="img-responsive">
-      </a>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <a>
-        <h1 class="fw_500 fs_18px lh_21px fc_ffffff mtb0px tcenter">
-          Podcast
-        </h1>
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-      <a id="btnShare" (click)="share()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_white_02.svg" alt="" class="img-responsive fright">
-      </a>
-    </div>
-  </div>
-</div> -->
-<!-- /top navigation -->
 
-<app-bg-video></app-bg-video>
+<app-bg-video  *ngIf="!isdefaultShow" ></app-bg-video>
 
 <!-- page content -->
-<div class="right_col imain_container mc_03">
+<div  *ngIf="!isdefaultShow" class="right_col imain_container mc_03">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -135,6 +111,34 @@
 </div>
 <!-- /page content -->
 
+<div class="toc_adiv" *ngIf="isdefaultShow">
+  <!-- audio row -->
+  <a *ngFor="let data of podcastList; let i=index" (click)="audioevent(data)">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+          <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+            Podcast #{{data['PodcastID']}}
+          </h4>
+          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
+            {{data['Title']}}
+          </h4>
+          <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+            {{data['Timing']}} mins
+          </h4>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+          <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+        </div>
+
+      </div>
+    </div>
+  </a>
+  <!-- /audio row -->
+</div>
+
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<app-bottom-navigation *ngIf="!isdefaultShow"></app-bottom-navigation>
 <!-- /footer -->
