@@ -56,6 +56,6 @@ export class S114047Page implements OnInit
 
   prev()
   {
-    this.router.navigate(['/self-image/s114046'])
+    this.router.navigate(['/self-image/s114042'])
   }
 }
