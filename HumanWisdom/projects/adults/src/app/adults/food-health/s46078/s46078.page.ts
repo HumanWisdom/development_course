@@ -47,7 +47,7 @@ export class S46078Page implements OnInit {
     this.router.navigate(['/adults/food-health/s46079'])
   }
   prev(){
-    this.router.navigate(['/adults/food-health/s46077'])
+    this.router.navigate(['/adults/food-health/s46073'])
 
   }
 
