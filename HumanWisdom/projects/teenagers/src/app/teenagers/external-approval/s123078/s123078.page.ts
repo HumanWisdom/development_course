@@ -17,6 +17,7 @@ export class S123078Page implements OnInit
   toc="external-approval/s123001"
   userId: any
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  points:any
   screenType = localStorage.getItem("text")
   moduleId = localStorage.getItem("moduleId")
   screenNumber = 123078
