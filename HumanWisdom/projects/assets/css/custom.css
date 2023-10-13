@@ -19160,6 +19160,7 @@ ngx-circular-player svg
   line-height: 23px;
   text-align: center;
   color: #FFFFFF;
+  white-space: pre-wrap;
 }
 
 circle-progress circle
@@ -24089,19 +24090,15 @@ a
 {
   margin: 0;
   border: 0;
-
-  height: 60px;
-  width: 90px;
-  background: #FFC455;
-
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 109.9%;
-  /* identical to box height, or 18px */
+  height: 40px;
+  width: 92px;
+  background: #FFF;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
   text-align: center;
-  color: #5D5D5D;
+  color: #CB6171;
 }
 
 .dheader
@@ -26172,7 +26169,7 @@ h1
   /* position: absolute;
   bottom: -24px; */
   position: fixed;
-  bottom: 12%;
+  /* bottom: 12%; */
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -29565,7 +29562,7 @@ svg path
 
     #ic_carousel .carousel-indicators
     {
-      bottom: 5%;
+      /* bottom: 5%; */
     }
 
     .we_carousel .carousel-indicators
@@ -34703,7 +34700,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border: 0;
 }
 
-#ic_carousel .skip
+/* #ic_carousel .skip
 {
   position: absolute;
   bottom: 5%;
@@ -34719,7 +34716,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   right: 58px!important;
   padding: 0;
   z-index: 99;
-}
+} */
 
 .oli_tray 
 {
@@ -35067,4 +35064,45 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border: 0 !important;
 }
 
+.ic_tray_ext 
+{
+  box-shadow: unset;
+  position: fixed;
+  bottom: 0 !important;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 999;
+  background: #1e1544;
+  padding: 30px 0 70px 0;
+}
+
+.ic_tray_ext .skip 
+{
+  position: absolute;
+  left: 58px !important;
+  padding: 0;
+  z-index: 99;
+}
+
+.ic_tray_ext .next 
+{
+  position: absolute;
+  right: 58px !important;
+  padding: 0;
+  z-index: 99;
+}
+
+.ic_tray_ext .carousel-indicators 
+{
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: auto;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* /version - 03 */

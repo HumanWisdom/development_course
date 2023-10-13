@@ -18,6 +18,11 @@ import { S29005Page } from './s29005/s29005.page';
 import { S29006Page } from './s29006/s29006.page';
 import { S29007Page } from './s29007/s29007.page';
 import { S29008Page } from './s29008/s29008.page';
+import { S29008p1Page } from './s29008p1/s29008p1.page';
+import { S29008p2Page } from './s29008p2/s29008p2.page';
+import { S29008p3Page } from './s29008p3/s29008p3.page';
+import { S29008p4Page } from './s29008p4/s29008p4.page';
+import { S29008p5Page } from './s29008p5/s29008p5.page';
 import { S29009Page } from './s29009/s29009.page';
 import { S29010Page } from './s29010/s29010.page';
 
@@ -33,6 +38,11 @@ import { S29010Page } from './s29010/s29010.page';
     S29006Page,
     S29007Page,
     S29008Page,
+    S29008p1Page,
+    S29008p2Page,
+    S29008p3Page,
+    S29008p4Page,
+    S29008p5Page,
     S29009Page,
     S29010Page   
   ],
