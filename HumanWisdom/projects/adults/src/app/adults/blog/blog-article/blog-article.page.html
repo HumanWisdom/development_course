@@ -40,8 +40,9 @@
               <div class="row ls_story_img">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex prelative">
                   <img class="ws_view_story img-responsive w100" src="{{blogList['ImgPath']}}">
-                  <a class="absolute_ls_like">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_like_unfilled.svg" class="img-responsive">
+                  <a class="absolute_ls_like" (click)="likebtn()">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_like_unfilled.svg" class="img-responsive" *ngIf="this.likecount === 0">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_like_filled.svg" class="img-responsive" *ngIf="this.likecount !== 0">
                   </a>
                 </div>
               </div>
