@@ -10,6 +10,7 @@ export class S91078Page implements OnInit {
   bg_tn="bg_blue"
   bg_cft="bg_blue"
   bg="blue_flat"
+  toc="external-approval/s91001"
   
   constructor() { }
 

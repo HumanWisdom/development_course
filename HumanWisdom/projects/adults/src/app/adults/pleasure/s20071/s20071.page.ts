@@ -49,7 +49,7 @@ export class S20071Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/pleasure/s20070p4'])
+    this.router.navigate(['/adults/pleasure/s20070'])
 
   }
 
