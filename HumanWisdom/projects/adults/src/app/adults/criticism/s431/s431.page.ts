@@ -55,7 +55,7 @@ export class S431Page implements OnInit {
     this.router.navigate(['/adults/criticism/s432'])
   }
   prev(){
-    this.router.navigate(['/adults/criticism/s430'])
+    this.router.navigate(['/adults/criticism/s426'])
   }
   
 

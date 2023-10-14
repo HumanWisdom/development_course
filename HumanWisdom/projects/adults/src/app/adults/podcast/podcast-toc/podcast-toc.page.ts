@@ -22,7 +22,8 @@ export class PodcastTocPage implements OnInit {
   }, 1000);
   tag='all';
   iframeSrc:SafeResourceUrl;
-  podcastList = [];
+  @Input() podcastList = [];
+  @Input() isdefaultShow = false;
 
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public platform: Platform,
@@ -36,7 +37,9 @@ export class PodcastTocPage implements OnInit {
      }
 
   ngOnInit() {
-    this.getPodcast()
+    if(!this.isdefaultShow){
+      this.getPodcast()
+    }
     this.title.setTitle('Inspiring Your Best Life: Our Motivational Podcast')
     this.meta.updateTag({ property: 'title', content: 'Inspiring Your Best Life: Our Motivational Podcast'})
     this.meta.updateTag({ property: 'description', content: 'Get motivated with our inspiring podcast. Our experts share tips on positive mindset, motivation, and more to help you unlock your full potential.' })
@@ -91,8 +94,13 @@ export class PodcastTocPage implements OnInit {
     if (sub == 0 && data['PodcastID'] >= 4) {
       this.router.navigate(['/onboarding/free-limit']);
     } else {
+       if(data['MediaUrl'].includes('https://d1tenzemoxuh75.cloudfront.net/')){
+        data['MediaUrl'] =  data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/','/');
+       }
+      let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/','~'));
+      this.router.navigate(['adults/audiopage/', concat, '1', 'T', data['Title']])
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
+      // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
     }
   }
 }
