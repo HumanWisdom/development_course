@@ -23,7 +23,6 @@ export class S111151Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark: any
-  toc="comparison/s111001"
 
   constructor
   (
