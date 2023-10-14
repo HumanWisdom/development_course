@@ -30,8 +30,15 @@
                               <li data-target="#ic_carousel" data-slide-to="3"></li>
                             </ol>
                           </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="!nextBtnDis">
                             <a href="#ic_carousel" data-slide="next" class="next" (click)="Logevent('', '', 'click_next_onboarding')">
+                              <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
+                                Next
+                              </button>
+                            </a>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="nextBtnDis">
+                            <a data-slide="next" class="next" (click)="skip()">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
