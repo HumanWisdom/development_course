@@ -48,7 +48,7 @@ export class S29009Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/breathing/s29008'])
+    this.router.navigate(['/adults/breathing/s29008p5'])
 
 
   }

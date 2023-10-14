@@ -639,7 +639,7 @@
 
     .oli_tray 
     {
-        padding: 0 58px;
+        /* padding: 0 58px; */
     }
 }
 
@@ -841,7 +841,7 @@
 
     #ic_carousel .carousel-indicators
     {
-        bottom: 8%;
+        /* bottom: 8%; */
     }
 
     .mpfy
@@ -960,7 +960,7 @@
 
     .oli_tray 
     {
-        bottom: 8% !important;
+        /* bottom: 8% !important; */
     }
 }
 
@@ -1021,7 +1021,7 @@
 
     .oli_tray
     {
-        padding: 0 !important;
+        /* padding: 0 !important; */
     }
 }
 

@@ -2,26 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { AdultsService } from "../../adults.service";
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-@Component({
-  selector: 'app-s29008',
-  templateUrl: './s29008.page.html',
-  styleUrls: ['./s29008.page.scss'],
-})
 
-export class S29008Page implements OnInit {
+@Component({
+  selector: 'app-s29008p1',
+  templateUrl: './s29008p1.page.html',
+  styleUrls: ['./s29008p1.page.scss'],
+})
+export class S29008p1Page implements OnInit {
 
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg="teal_w1"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/breathing/videos/1.7.mp4'  
-  title="Breathing exercise 6"
+  videoLink=this.mediaVideo+'/breathing/videos/1.8.mp4'  
+  title="Breathing exercise 7"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/nurturing_quiet_mind/naqm_01.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
   moduleId=localStorage.getItem("moduleId")
-  screenNumber=29008
+  screenNumber="29008p1"
   startTime:any
   endTime:any
   totalTime:any  
@@ -52,9 +52,9 @@ export class S29008Page implements OnInit {
     }
     this.startTime = Date.now();
     this.startTime = Date.now();
-    if(JSON.parse(sessionStorage.getItem("bookmark29008"))==0)
+    if(JSON.parse(sessionStorage.getItem("bookmark29008p1"))==0)
       this.bookmark=0
-    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark29008"))==1)
+    else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark29008p1"))==1)
       this.bookmark=1
   }
 
@@ -65,7 +65,7 @@ export class S29008Page implements OnInit {
       this.bookmark=1
     else
       this.bookmark=0
-    sessionStorage.setItem("bookmark29008",JSON.stringify(this.bookmark))
+    sessionStorage.setItem("bookmark29008p1",JSON.stringify(this.bookmark))
   }
 
   createScreen()
@@ -85,7 +85,7 @@ export class S29008Page implements OnInit {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
     localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/breathing/s29008p1'])
+    this.router.navigate(['/adults/breathing/s29008p2'])
     this.service.submitProgressAv({
       "ScrNumber":this.screenNumber,
       "UserId":this.userId,
@@ -104,7 +104,7 @@ export class S29008Page implements OnInit {
   prev()
   {
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/breathing/s29007'])
+    this.router.navigate(['/adults/breathing/s29008'])
   }
 
   ngOnDestroy(){}
