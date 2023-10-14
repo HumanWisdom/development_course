@@ -228,18 +228,17 @@ export class S130066Page implements OnInit
     this.createScreen()
     console.log(this.qrList.ListOfQueOpts)
     this.questionA = this.qrList.ListOfQueOpts
-    this.q1 = this.findQuestion(402).Question
-    this.optionList1 = this.findQuestion(402).optionList
-    this.q2 = this.findQuestion(403).Question
-    this.optionList2 = this.findQuestion(403).optionList
-    this.q3 = this.findQuestion(404).Question
-    this.optionList3 = this.findQuestion(404).optionList
-    this.q4 = this.findQuestion(405).Question
-    this.optionList4 = this.findQuestion(405).optionList
-    this.q5 = this.findQuestion(406).Question
-    this.optionList5 = this.findQuestion(406).optionList
-    this.q6 = this.findQuestion(407).Question
-    this.optionList6 = this.findQuestion(407).optionList
+    this.q1 = this.findQuestion(554).Question
+    this.optionList1 = this.findQuestion(554).optionList
+    this.q2 = this.findQuestion(555).Question
+    this.optionList2 = this.findQuestion(555).optionList
+    this.q3 = this.findQuestion(556).Question
+    this.optionList3 = this.findQuestion(556).optionList
+    this.q4 = this.findQuestion(557).Question
+    this.optionList4 = this.findQuestion(557).optionList
+    this.q5 = this.findQuestion(558).Question
+    this.optionList5 = this.findQuestion(558).optionList
+  
     console.log(this.q1, this.optionList1)
     console.log(this.q2, this.optionList2)
     console.log(this.q3, this.optionList3)
