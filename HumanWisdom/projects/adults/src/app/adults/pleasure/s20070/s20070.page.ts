@@ -9,6 +9,7 @@ export class S20070Page implements OnInit {
   bg_tn="bg_pink_orange"
   bg_cft="bg_pink_orange"
   bg="pink_orange_flat"
+  toc="pleasure/s20001"
 
   constructor() { }
 

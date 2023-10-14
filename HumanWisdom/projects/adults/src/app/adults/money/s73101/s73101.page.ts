@@ -10,6 +10,7 @@ export class S73101Page implements OnInit {
   bg_tn="bg_red_pink"
   bg_cft="bg_red_pink"
   bg="red_pink_flat"
+  toc="money/s73001"
 
   constructor() { }
 

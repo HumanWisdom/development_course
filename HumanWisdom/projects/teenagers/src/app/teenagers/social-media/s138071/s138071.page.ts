@@ -17,7 +17,7 @@ export class S138071Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="1/3"
+  progressText="2/5"
   link="/social-media/s138072"
   name="Using social media with intelligence"
   progressImg=""
@@ -50,7 +50,7 @@ export class S138071Page implements OnInit {
   {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Comparison & Envy").Percentage)
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==138).Percentage)
      console.log(this.progressPercent)
     })
   }

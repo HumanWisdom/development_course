@@ -10,7 +10,7 @@ export class S45152Page implements OnInit {
   bg_tn="bg_purple"
   bg_cft="bg_purple"
   bg="purple_flat"
-
+toc="habit-addiction/s45001"
   constructor() { }
 
   ngOnInit() {

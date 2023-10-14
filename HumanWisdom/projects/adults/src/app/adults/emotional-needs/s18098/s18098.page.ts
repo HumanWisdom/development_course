@@ -9,6 +9,7 @@ export class S18098Page implements OnInit {
   bg_tn="bg_blue_pink"
   bg_cft="bg_blue_pink"
   bg="blue_pink_flat"
+  toc="emotional-needs/s18001"
 
   constructor() { }
 

@@ -11,6 +11,8 @@ export class S64066Page implements OnInit {
   bg_cft="bg_teal"
   bg="teal_flat"
 
+  toc="dealing-with-death/s64001"
+
   constructor() { }
 
   ngOnInit() {

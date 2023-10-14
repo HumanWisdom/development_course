@@ -10,7 +10,7 @@ export class S138096Page implements OnInit {
   bg_tn=""
   bg_cft=""
   bg=""
-  toc="/social-medial/s138001"
+  toc="social-media/s138001"
   constructor() { }
 
   ngOnInit() {

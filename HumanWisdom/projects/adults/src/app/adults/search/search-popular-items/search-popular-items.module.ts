@@ -11,6 +11,7 @@ import { SearchPopularItemsPage } from './search-popular-items.page';
 import {SharedModule} from '../../../../../../shared/shared.module';
 import { ForumLandingPageModule } from '../../../../../../shared/forum/forum-landing/forum-landing.module';
 import { IndexPageModule } from '../../guided-questions/index/index.module';
+import { PodcastTocPageModule } from '../../podcast/podcast-toc/podcast-toc.module';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { IndexPageModule } from '../../guided-questions/index/index.module';
     SearchPopularItemsPageRoutingModule,
     SharedModule,
     ForumLandingPageModule,
-    IndexPageModule 
+    IndexPageModule,
+    PodcastTocPageModule 
   ],
   declarations: [SearchPopularItemsPage,]
 })
