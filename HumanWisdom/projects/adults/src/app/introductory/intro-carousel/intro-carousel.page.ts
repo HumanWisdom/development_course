@@ -4,11 +4,7 @@ import 'bcswipe';
 import { AdultsService } from 'src/app/adults/adults.service';
 import { LogEventService } from "../../../../../shared/services/log-event.service";
 
-
 declare var $: any;
-
-var moveleft = false;
-
 @Component({
   selector: 'app-intro-carousel',
   templateUrl: './intro-carousel.page.html',
@@ -16,13 +12,13 @@ var moveleft = false;
 })
 export class IntroCarouselPage implements OnInit, AfterViewInit {
   public loading = false;
+  nextBtnDis = false;
 
   constructor(private router: Router, private service: AdultsService,
     public logeventservice: LogEventService) { }
 
   ngOnInit() {
     let authtoken = JSON.parse(localStorage.getItem("token"))
-    let app = localStorage.getItem("fromapp")
     if (authtoken) {
       localStorage.setItem('socialLogin', 'T');
       this.service.verifytoken(authtoken).subscribe((res) => {
@@ -42,16 +38,17 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     if(document.getElementById('inactivenext')){
       document.getElementById('inactivenext').style.display = 'none';
     }
-    $('#ic_carousel').on('slid.bs.carousel', function (data) {
+    $('#ic_carousel').on('slid.bs.carousel',  (data) => {
       let arr = data['relatedTarget']['classList'];
       let istrue = false;
-      if (Array.from(arr)[1] === '3') moveleft = true
-      else moveleft = false
+      arr.forEach((d) => {
+        if (d === '2') {
+          this.nextBtnDis = true;
+        }
+      })
       arr.forEach((d, ind) => {
         if (d === '4') {
           istrue = true;
-        } else if (!istrue) {
-          istrue = false;
         }
       })
       if (istrue) {
@@ -62,27 +59,15 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         document.getElementById('inactivenext') ? document.getElementById('inactivenext').style.display = 'none' : '';
       }
     })
-    var container = document.querySelector(".carousel");
-
-    container.addEventListener("touchstart", this.startTouch.bind(this), false);
-    container.addEventListener("touchmove", this.moveTouch.bind(this), false);
 
     $('.carousel').bcSwipe({ threshold: 50 });
   }
 
-  startTouch(e) {
-    if (moveleft) this.skip()
-  };
-
-  moveTouch(e) {
-    if (moveleft) this.skip()
-  };
-
   skip() {
+    this.router.navigate(['/onboarding/login']);
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
     this.logeventservice.logEvent('click_skip_onboarding');
-    this.router.navigate(['/onboarding/login']);
   }
 
   onLoad() {
