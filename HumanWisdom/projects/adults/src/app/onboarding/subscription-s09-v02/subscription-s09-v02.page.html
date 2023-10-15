@@ -80,6 +80,19 @@
                                  </div>
         
                                   <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                            
+                                    
+                                    <div *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenewText">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
+                                        Next Payment
+                                      </h4>
+          
+                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
+                                          {{ item['ExpDate'] | date : 'dd LLL yy'}}
+                                      </h4>
+                                  </div>
+                                    
+                                  <ng-template #autoRenewText>
                                     <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '1'">
                                         <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82" (click)="autorenew(item)">
                                             Auto-renew
@@ -89,6 +102,7 @@
                                             {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                         </h4>
                                     </div>
+                                  </ng-template>
                                     <div *ngIf="!donotautorenew(item, 'compareauto')">
                                         <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82">
                                             Expired
@@ -121,6 +135,17 @@
                                   </div>
         
                                   <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
+                                    
+                                  <button 
+                                    *ngIf="item.isTrial==1 && item['MySelf'] === '1'; else autoRenew"
+                                        type="button" 
+                                        class="btn btn_ms"
+                                        id="{{'Cancel' + item['ActKey']}}"
+                                        (click)="RouteToManageSubscription(item)"
+                                        >
+                                        Cancel Subscription
+                                    </button>
+                                 <ng-template #autorenew>
                                     <button 
                                         type="button" 
                                         class="btn btn_ms"
@@ -129,6 +154,8 @@
                                         (click)="donotautorenew(item['ActKey'], 'autorenew' + item['ActKey'], item['ActKey'], 'donot')">
                                         Do not auto-renew
                                     </button>
+                                  </ng-template>
+
 
                                     <button 
                                         type="button" 
