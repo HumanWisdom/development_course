@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange,Input } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
@@ -54,7 +54,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-      if (this.saveUsername == false)
+    if (this.saveUsername == false)
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
     else {
       this.userId = JSON.parse(localStorage.getItem("userId"));
@@ -67,7 +67,7 @@ export class IndexPage implements OnInit, AfterViewInit {
       this.isGuidedQueestionsTab = true;
       this.isDiary = false;
     }
-    
+
 
   }
 
@@ -78,24 +78,37 @@ export class IndexPage implements OnInit, AfterViewInit {
         return <any>new Date(val2.Date) - <any>new Date(val1.Date);
       });
       this.jrListC = this.jrList;
-      if(!this.defaultShow){
+      if (!this.defaultShow) {
         this.searchjournal(this.search);
       }
     });
   }
   showGuidedQuestions() {
-    this.jrList = this.jrListC.filter((p) => p.JrType == "Guided Questions");
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          (it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+            it?.TitleQue?.toLowerCase().includes(
+              this.searchedText.toLowerCase())
+          ) &&
+          it?.JrType == "Guided Questions"
+      );
+    } else {
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Guided Questions");
+    }
   }
 
   goToNote(jId, jTitle, jNotes, type) {
-      if (this.guest || !this.Subscriber) {
-        this.enableAlert = true;
-      } else {
-        this.router.navigate([
-          "/adults/note",
-          { title: jTitle, jId: jId, jNotes: jNotes, type: type },
-        ]);
-      }
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    } else {
+      this.router.navigate([
+        "/adults/note",
+        { title: jTitle, jId: jId, jNotes: jNotes, type: type },
+      ]);
+    }
   }
   Note() {
     return false;
@@ -105,8 +118,12 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    var data = this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
-    data[0].addEventListener('click', this.clearInput.bind(this));
+    setTimeout(() => {
+      var data = this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
+      if(data && data!=null){
+        data[0].addEventListener('click', this.clearInput.bind(this));
+      }
+    }, 1000);
   }
 
   RouteToToQuestions(item) {
@@ -213,7 +230,7 @@ export class IndexPage implements OnInit, AfterViewInit {
     }
   }
 
- searchjournal(text) {
+  searchjournal(text) {
     this.logeventservice.logEvent('click_search');
     if (text == "") {
       this.viewJournalAndReflections();
@@ -233,14 +250,53 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   showAll() {
-    this.viewJournalAndReflections();
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+          it?.TitleQue?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          )
+      );
+    }else{
+      this.viewJournalAndReflections();
+    }
   }
 
   showReflections() {
-    this.jrList = this.jrListC.filter((p) => p.JrType == "Reflections");
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          (it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+            it?.TitleQue?.toLowerCase().includes(
+              this.searchedText.toLowerCase())
+          ) &&
+          it?.JrType == "Reflections"
+      );
+    } else {
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Reflections");
+    }
   }
   showNotes() {
-    this.jrList = this.jrListC.filter((p) => p.JrType == "Diary");
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          (it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+            it?.TitleQue?.toLowerCase().includes(
+              this.searchedText.toLowerCase())
+          ) &&
+          it?.JrType == "Diary"
+      );
+    } else {
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Diary");
+    }
+
   }
 
   GetGuidedQs_Topics() {

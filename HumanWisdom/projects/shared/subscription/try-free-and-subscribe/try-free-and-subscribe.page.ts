@@ -37,8 +37,15 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   InitializeDefaultValues() {
-    this.selectedSubscription = (Object.keys(SubscriptionType).find((key) => SubscriptionType[key] === SubscriptionType.Annual))?.toString();
-    SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan, this.selectedSubscription);
+    var sub = SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan);
+    if (sub == Constant.AnnualPlan ||
+      sub == Constant.MonthlyPlan) {
+      this.selectedSubscription = sub;
+    } else {
+      this.selectedSubscription = (Object.keys(SubscriptionType).find((key) => SubscriptionType[key] === SubscriptionType.Annual))?.toString();
+      SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan, this.selectedSubscription);
+    }
+
     this.userId = SharedService.getDataFromLocalStorage('userId') != null ? parseInt(SharedService.getDataFromLocalStorage('userId')) : 0;
     this.pricingModel = {
       "RateID": '',
@@ -141,10 +148,10 @@ export class TryFreeAndSubscribePage implements OnInit {
     return false;
   }
 
-  back(){
+  back() {
     this.location.back();
   }
-  routeToDashboard(){
+  routeToDashboard() {
     this.router.navigateByUrl('/adults/adult-dashboard');
   }
 }
