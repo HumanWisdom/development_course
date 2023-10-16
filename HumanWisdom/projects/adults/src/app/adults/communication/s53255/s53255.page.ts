@@ -49,7 +49,7 @@ export class S53255Page implements OnInit {
   }
   prev(){
     localStorage.setItem("pageaction", 'prev')
-    this.router.navigate(['/adults/communication/s53254'])
+    this.router.navigate(['/adults/communication/s53250'])
 
   }
 

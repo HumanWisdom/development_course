@@ -9,6 +9,7 @@ import { LogEventService } from '../../../../../shared/services/log-event.servic
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -3963,8 +3964,7 @@ export class AdultDashboardPage implements OnInit {
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
     }
     else if (res['FeatureType'] === "PODCAST") {
-      
-      this.router.navigate(['adults/guided-meditation/audiopage/'], res['Url'] )
+       this.router.navigate([res['Url']]);
     }
     else {
       this.router.navigate([res['Url']]);

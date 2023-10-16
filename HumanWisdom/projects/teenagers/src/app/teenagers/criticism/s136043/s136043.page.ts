@@ -17,7 +17,7 @@ export class S136043Page implements OnInit {
   userId:any
   userName:any
   progressPercent:any
-  progressText="2/5"
+  progressText="2/6"
   link="/criticism/s136044"
   name="#3  Why is criticism so painful?"
   progressImg=""
@@ -45,7 +45,7 @@ export class S136043Page implements OnInit {
     this.service.getPoints(this.userId)
     .subscribe(res=>{
       
-     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.Module=="Criticism").Percentage)
+     this.progressPercent=parseInt(res.ModUserScrPc.find(e=>e.ModuleId==136).Percentage)
      console.log(this.progressPercent)
     
     })
