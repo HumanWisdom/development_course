@@ -25,12 +25,13 @@
 <!-- /footer -->
 
 <!-- footer  -->
-<div *ngIf="shared || enableDashboard" class="sidebar-footer hidden-small">
-  <div class="row lh5rem">
-    <div class="col-md-12 col-sm-12 col-xs-12 tcenter center_flex">
-      <a (click)="routeDashboard()" class="width_inherit">
-        <i class="fa  fs_16px fc_e58d82"></i>
-        <button type="button" class="btn btn-default iw100 mb0 btn_next">Continue to Dashboard</button>
+<div class="mfooter" *ngIf="shared || enableDashboard">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter">
+      <a (click)="routeDashboard()">
+        <button type="button" class="btn btn_tfas">
+          Continue to Dashboard
+        </button>
       </a>
     </div>
   </div>

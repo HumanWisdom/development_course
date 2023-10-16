@@ -18,6 +18,7 @@ import { SharedModule } from '../../../../../../shared/shared.module';
     PodcastTocPageRoutingModule,
     SharedModule
   ],
-  declarations: [PodcastTocPage]
+  declarations: [PodcastTocPage],
+  exports:[PodcastTocPage]
 })
 export class PodcastTocPageModule {}
