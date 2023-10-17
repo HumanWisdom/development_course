@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AdultsService } from '../adults.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 
 @Component({
   selector: 'HumanWisdom-adverts-hwp',
@@ -125,10 +127,19 @@ export class AdvertsHwpPage implements OnInit {
         this.router.navigate(['/adults/adult-dashboard'])
       }
     } else if (val === 'redeem' || val == 'Monthly' || val == 'Yearly') {
+      if(val === 'Monthly') {
+        SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan,Constant.MonthlyPlan );
+      } 
+      else if(val === 'Yearly') {
+        SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan,Constant.AnnualPlan );
+      }
       let res = localStorage.getItem("isloggedin")
-      if(res === 'T') {
+      if(res === 'T'  &&  val === 'redeem') {
         this.router.navigate(['/adults/redeem-subscription'])
-      }else {
+      }
+      else if(res === 'T'  &&  (val === 'Monthly' || val === 'Yearly' )) {
+        this.router.navigate(['/adults/subscription'])
+      }else{
         this.enabledModal = true;
       }
     } else if (!this.isLoggedIn) {
