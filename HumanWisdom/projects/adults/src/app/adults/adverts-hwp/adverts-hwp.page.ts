@@ -115,7 +115,9 @@ export class AdvertsHwpPage implements OnInit {
   routedashboard(val = '') {
     if (val === 'free') {
       if (!this.isLoggedIn) {
-        localStorage.setItem("fromlandingpage", 'T')
+        if(!(localStorage.getItem('fromlandingpage'))){
+          localStorage.setItem("fromlandingpage", 'T')
+        }
         this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
       } else {
         this.router.navigate(['/adults/adult-dashboard'])
