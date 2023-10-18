@@ -7,6 +7,8 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 import { concat } from 'rxjs';
 
 @Component({
@@ -4008,6 +4010,11 @@ export class AdultDashboardPage implements OnInit {
       this.logeventservice.logEvent('click_calm_mind');
       this.router.navigate(['/adults/curated/have-calm-mind'])
     }
+  }
+
+  readMore(str){
+    SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
+    this.router.navigate(['/adults/testimonials'])
   }
 
 }
