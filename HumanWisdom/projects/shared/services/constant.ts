@@ -33,4 +33,5 @@ export class Constant {
     public static ActivationKey = 'ActivationKey';
     public static TestimonialId = 'TestimonialId';
     public static EmptyString ='';
+    public static userId = 'userId';
 }
