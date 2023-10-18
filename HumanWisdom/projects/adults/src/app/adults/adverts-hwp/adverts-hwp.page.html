@@ -179,11 +179,10 @@
                                       <button type="submit" [disabled]="isSubscriber" (click)="routedashboard('Yearly')"
                                         class="btn btn_subscription_options">
                                         <h4 class="fw_500 fs_18px lh_21px mtb0px mb5px">
-                                          Yearly
+                                          Annual
                                         </h4>
                                         <h4 class="fw_400 fs_18px lh_21px mtb0px">
-                                          {{cardlist['CurSymbol'] + ' ' + cardlist['Annual'] / 12}}/month, billed
-                                          annually
+                                          {{cardlist['CurSymbol'] + ' ' + cardlist['Annual'] / 12}}/month after 14-day trial
                                         </h4>
                                       </button>
                                     </div>
@@ -201,7 +200,7 @@
                                   Monthly
                                 </h4>
                                 <h4 class="fw_400 fs_18px lh_21px mtb0px">
-                                  {{cardlist['CurSymbol'] + ' ' + cardlist['Monthly']}}/month
+                                  {{cardlist['CurSymbol'] + ' ' + cardlist['Monthly']}}/month after 7-day trial
                                 </h4>
                               </button>
                             </div>

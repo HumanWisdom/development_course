@@ -85,7 +85,7 @@ nav
         @include transform(translate3d(450px, 0px,0px));
         @include transition(transform 0.35s);
         z-index: 99;
-        overflow: hidden;
+        overflow: overlay;
         //   background-color: #fff;
         background: #292D56;
         box-shadow: unset;
@@ -132,7 +132,7 @@ nav
         {
             height: 100%;
             height: -webkit-fill-available;
-            overflow-y: auto;
+            overflow-y: unset;
             background: #292D56;
             box-shadow: unset;
             list-style-type: none!important;
@@ -200,14 +200,16 @@ nav
         ~ .m-menu__overlay
         {
             display: block;
+            pointer-events: none;
         }
         ~ .m-menu
         {
             @include transform(translate3d(0, 0, 0));
+            overflow-y: auto;
+            overflow-x: hidden;
         }
     }
 }
-
 
 ul.dh_ul li:last-child
 {

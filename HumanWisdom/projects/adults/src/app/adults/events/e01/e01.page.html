@@ -1,4 +1,4 @@
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
+<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor" [moduleName]="'Events'"></app-toc-header>
 
 <app-index-content>
 
@@ -54,7 +54,7 @@
 
     <div class="row mb10px">                    
       <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-        <input type="text" class="sp_fc fc_name" placeholder="Name" required [(ngModel)]="name">
+        <input type="text" class="sp_fc" placeholder="Name" required [(ngModel)]="name">
         <div class="fc_img">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
         </div>
@@ -64,7 +64,7 @@
 
     <div class="row mb10px">                    
       <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-        <input type="text" class="sp_fc fc_name" placeholder="Email address" required [(ngModel)]="email">
+        <input type="text" class="sp_fc" placeholder="Email address" required [(ngModel)]="email">
         <div class="fc_img">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
         </div>
