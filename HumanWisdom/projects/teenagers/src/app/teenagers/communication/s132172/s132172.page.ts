@@ -39,11 +39,15 @@ export class S132172Page implements OnInit {
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers";
       
-      constructor(private router: Router,
-        private service:TeenagersService,
-        private location:Location) { }
+  constructor
+  (
+    private router: Router, 
+    private location:Location,
+    private service: TeenagersService
+  ) 
+  { }
      
-      ngOnInit() {
+  ngOnInit() {
         debugger
         if(this.saveUsername==false)
         {this.userId=JSON.parse(sessionStorage.getItem("userId"))}

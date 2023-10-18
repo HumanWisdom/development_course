@@ -17,7 +17,7 @@ export class S134154Page implements OnInit
   userId:any
   userName:any
   progressPercent:any
-  progressText="3/6"
+  progressText="4/6"
   link="/love/s134155"
   name="#5  How Can We Learn to Love Ourselves?"
   progressImg=""
