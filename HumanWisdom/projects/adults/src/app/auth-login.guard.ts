@@ -75,6 +75,9 @@ export class authLoginGuard implements CanActivate, OnInit {
     if (giftwisdom) {
       localStorage.setItem('giftwisdom', giftwisdom);
     }
+    if (fromlanding) {
+      localStorage.setItem('fromlandingpage', fromlanding);
+    }
     if (m[1] !== undefined && m[1] !== '') {
     } else {
       localStorage.setItem("emailCode", 'F')
@@ -87,7 +90,7 @@ export class authLoginGuard implements CanActivate, OnInit {
       localStorage.setItem('personalisedlist', persdata);
       localStorage.setItem('cartlist', cartdata);
     }
-    if (fromlanding === 'T' && pers === 'T') {
+    if (fromlanding === 'T') {
       this.router.navigate(['/intro/intro-carousel'])
       return false;
     }
