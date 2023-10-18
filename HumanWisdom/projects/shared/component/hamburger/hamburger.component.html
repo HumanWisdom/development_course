@@ -1,11 +1,11 @@
 <nav class="lh0">
   <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox mc_main">
-  <label class="m-menu__toggle m0px" for="menu">
+  <label class="m-menu__toggle m0px ihamburger" for="menu">
     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tn_hamburger.svg" class="" alt="" (click)="getmenuevent()">
   </label>
   <label class="m-menu__overlay" #closemodal for="menu"></label>
   <!-- submenu -->
-  <div class="m-menu">
+  <div class="m-menu menu_parent">
     <div class="m-menu__header">
       <div class="row w100">
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
               <a class="" (click)="closemenuevent()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0 iclose">
               </a>
             </div>
           </div>
@@ -39,7 +39,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/18.svg" class="img-responsive">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hb_stp.svg" class="img-responsive">
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -87,7 +87,7 @@
 
       <!-- multilayer li for partnership -->
       <li>
-        <label class="a-label__chevron" for="item-partnership">
+        <label class="a-label__chevron title_p" for="item-partnership">
           <!-- Item 2 -->
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -100,8 +100,7 @@
                 </h4>
               </div>
               <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg"
-                  alt="" class="img-responsive">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/chevron_right_white.svg" alt="" class="img-responsive">
               </div>
             </div>
           </div>
@@ -116,7 +115,7 @@
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr20px">
                     <img
                       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hb_back.svg"
-                      alt="" class="img-responsive">
+                      alt="" class="img-responsive back_p">
                   </div>
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
@@ -335,7 +334,7 @@
 
       <!-- multilayer li for about us -->
       <li>
-        <label class="a-label__chevron" for="item-about_us">
+        <label class="a-label__chevron title_au" for="item-about_us">
           <!-- Item 2 -->
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -365,7 +364,7 @@
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr20px">
                     <img
                       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hb_back.svg"
-                      alt="" class="img-responsive ">
+                      alt="" class="img-responsive back_au">
                   </div>
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
@@ -438,7 +437,7 @@
 
       <!-- multilayer li for help & support -->
       <li class="border_0i">
-        <label class="a-label__chevron" for="item-2">
+        <label class="a-label__chevron title_hs" for="item-2">
           <!-- Item 2 -->
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -468,7 +467,7 @@
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr20px">
                     <img
                       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hb_back.svg"
-                      alt="" class="img-responsive ">
+                      alt="" class="img-responsive back_hs">
                   </div>
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
@@ -605,23 +604,6 @@
         </div>
       </li>
       <!-- /multilayer li for help & support -->
-
-      <li (click)="logout()" *ngIf="isloggedIn">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-            <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/14.svg" alt=""
-                class="img-responsive">
-            </div>
-            <div class="col-md-11 col-sm-11 col-xs-11 p0">
-              <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                Logout
-              </h4>
-            </div>
-          </div>
-        </div>
-      </li>
-
       <div class="row mtb50px">
         <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0">
           <a class="" href="https://www.facebook.com/humanwisdomguide" target="_top">
