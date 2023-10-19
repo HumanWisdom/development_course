@@ -10,6 +10,7 @@ export class S46073Page implements OnInit {
   bg_tn="bg_green"
   bg_cft="bg_green"
   bg="green_flat"
+  toc="food-health/s46001"
 
   constructor() { }
 

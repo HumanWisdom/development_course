@@ -14,12 +14,12 @@ export class S128080Page implements OnInit
   programType : ProgramType = ProgramType.Teenagers;
 
   toc="food-health/s128001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/63.png"
   bg=""
-  moduleLink="/reactive-mind"
-  moduleName=" Reactive Mind"
-  sectionName= "How the Mind Works";
-  moduleId=113
+  moduleLink="/living-with-peace"
+  moduleName=" Living With Peace"
+  sectionName= " Live your best life ";
+  moduleId=129
   moduleList: any = [
     {
       name: 'Stress',
@@ -28,18 +28,18 @@ export class S128080Page implements OnInit
       id: 125
     },
     {
-      name: 'Self-Esteem',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/17.png',
-      link: '/self-esteem',
-      id: 126
- 
+      name: 'Conditioning',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/15.png',
+      link: '/conditioning',
+      id: 105
+
     },
     {
-      name: 'Anger',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/14.png',
-      link: '/anger',
-      id: 118
-  
+      name: 'Pleasure',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/20.png',
+      link: '/pleasure',
+      id: 124
+ 
     },
   ]
 

@@ -7,6 +7,9 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-adult-dashboard',
@@ -49,6 +52,7 @@ export class AdultDashboardPage implements OnInit {
   public bookmarkLength: any
   searchinp = '';
   public dash = false;
+  public isSubscriber = false;
   //static progress mapping
   // public angerP: any
   // public comparisonP: any
@@ -157,7 +161,7 @@ export class AdultDashboardPage implements OnInit {
   maxExceriseCount = "12;";
   public YourTopicofChoice = [];
   public registrationForm :any;
- 
+
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder, public authService: SocialAuthService,
@@ -177,7 +181,7 @@ export class AdultDashboardPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(3)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(3)]],
     }, { validator: this.PasswordValidator })
-  
+
     this.getUserPreference();
     this.logeventservice.logEvent('view_adult-dashboard');
     localStorage.setItem('feelbetternow', 'F')
@@ -210,12 +214,15 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
           localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
           // this.router.navigate(['/onboarding/login'],{replaceUrl:true,skipLocationChange:true})
         }
       }, error => {
         localStorage.setItem("email", 'guest@humanwisdom.me');
         localStorage.setItem("pswd", '12345');
         localStorage.setItem('guest', 'T');
+        localStorage.setItem('isloggedin', 'F');
+
       },
       )
     }
@@ -370,6 +377,7 @@ export class AdultDashboardPage implements OnInit {
       // this.getUsershorts()
       // this.getUserstories()
       this.GetDashboardFeatures();
+      this.isSubscriber  = SharedService.isSubscriber();
     }, 1000)
 
     if (localStorage.getItem('acceptcookie') === null) {
@@ -3956,7 +3964,11 @@ export class AdultDashboardPage implements OnInit {
     } else if (res['FeatureType'] === "LIFE STORY") {
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
-    } else {
+    }
+    else if (res['FeatureType'] === "PODCAST") {
+       this.router.navigate([res['Url']]);
+    }
+    else {
       this.router.navigate([res['Url']]);
     }
   }
@@ -3972,6 +3984,39 @@ export class AdultDashboardPage implements OnInit {
   routeToFindAnswer(param){
     localStorage.setItem('lastRoute',param);
     this.router.navigate(['/find-answers/'+param]);
+  }
+
+  activeTopicRoute(name) {
+    if (name === 'Manage your emotions') {
+      this.logeventservice.logEvent('click_emotions');
+      this.router.navigate(['/adults/curated/manage-your-emotions'])
+    } else if (name === 'Mental Health') {
+      this.logeventservice.logEvent('click_stress_anxiety');
+      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
+    } else if (name === 'Work and Leadership') {
+      this.logeventservice.logEvent('click_workplace');
+      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
+    } else if (name === 'Have fulfilling relationships') {
+      this.logeventservice.logEvent('click_relationships');
+      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
+    } else if (name === 'Be happier') {
+      this.logeventservice.logEvent('click_be_happier');
+      this.router.navigate(['/adults/curated/be-happier'])
+    } else if (name === 'Habits and Addiction') {
+      this.logeventservice.logEvent('click_be_happier');
+      this.router.navigate(['/adults/curated/change-unhelpful-habits'])
+    } else if (name === 'Deal with sorrow and loss') {
+      this.logeventservice.logEvent('click_sorrow_loss');
+      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
+    } else if (name === 'Meditation') {
+      this.logeventservice.logEvent('click_calm_mind');
+      this.router.navigate(['/adults/curated/have-calm-mind'])
+    }
+  }
+
+  readMore(str){
+    SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
+    this.router.navigate(['/adults/testimonials'])
   }
 
 }

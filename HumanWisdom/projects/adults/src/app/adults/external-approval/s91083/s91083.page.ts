@@ -49,7 +49,7 @@ export class S91083Page implements OnInit {
 
   prev()
   {
-    this.router.navigate(['/adults/external-approval/s91082'])
+    this.router.navigate(['/adults/external-approval/s91078'])
   }
 
 }

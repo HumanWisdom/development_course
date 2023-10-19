@@ -2,7 +2,7 @@
 <div class="right_col mc_03">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p0 sc_01 div_intro">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 div_intro">
         <div class="x_panel p0">
           <div class="x_content p0 tcenter">
             <form>
@@ -14,15 +14,15 @@
                   <ol class="">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray">
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft">
-                            <a href="#ic_carousel" data-slide="prev" class="skip" (click)="skip()">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray ic_tray_ext">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
+                            <a data-slide="prev" class="skip" (click)="skip()">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Skip
                               </button>
                             </a>
                           </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
                             <ol class="carousel-indicators" [ngStyle]="{'visibility': loading ? 'visible' : 'hidden'}">
                               <li data-target="#ic_carousel" data-slide-to="0" class="active"></li>
                               <li data-target="#ic_carousel" data-slide-to="1"></li>
@@ -30,14 +30,15 @@
                               <li data-target="#ic_carousel" data-slide-to="3"></li>
                             </ol>
                           </div>
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                            <a href="#ic_carousel" data-slide="next" class="next" routerLink="/intro/personalised-for-you">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="!nextBtnDis">
+                            <a href="#ic_carousel" data-slide="next" class="next" (click)="Logevent('', '', 'click_next_onboarding')">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
                             </a>
-
-                            <a href="#ic_carousel" data-slide="next" class="next" (click)="Logevent('', '', 'click_next_onboarding')">
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex" *ngIf="nextBtnDis">
+                            <a data-slide="next" class="next" (click)="skip()">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
                               </button>
@@ -133,7 +134,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
                             <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                              Explore our 5-step guided program to learn about yourself, grow as a person, and lead a happier life. 
+                              Explore our 5-step guided program to learn about yourself, grow as a person, and lead a happier life.
                             </h4>
                           </div>
                         </div>
@@ -163,7 +164,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
                             <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                              Find solutions to common questions. Feel better now, and then explore the root cause of problems for long-term benefit.
+                              Find solutions to common questions. Feel better now, and then explore the root cause of problems forlong-term benefit.
                             </h4>
                           </div>
                         </div>

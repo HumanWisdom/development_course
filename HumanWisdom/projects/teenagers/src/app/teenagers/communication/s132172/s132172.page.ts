@@ -39,12 +39,17 @@ export class S132172Page implements OnInit {
   bookmarkList=JSON.parse(localStorage.getItem("bookmarkList"))
   progName = "teenagers";
       
-      constructor(private router: Router,
-        private service:TeenagersService,
-        private location:Location) { }
+  constructor
+  (
+    private router: Router, 
+    private location:Location,
+    private service: TeenagersService
+  ) 
+  { }
      
-      ngOnInit() {
-        debugger
+  ngOnInit() 
+  {
+     
         if(this.saveUsername==false)
         {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
         else
@@ -58,21 +63,18 @@ export class S132172Page implements OnInit {
         else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark132172"))==1)
           this.bookmark=1
      
-      }
+  }
      
-      createScreen(){
+  createScreen()
+  {
         this.service.createScreen({
           "ScrId":0,
           "ModuleId":this.moduleId,
           "GSetID":this.screenType,
           "ScreenNo":this.screenNumber
-        }).subscribe(res=>
-          {
-            
-          })
-        
-     
-      }
+        }).subscribe(res=>{            
+          })   
+  }
      
       receiveBookmark(e)
       {
@@ -105,8 +107,7 @@ export class S132172Page implements OnInit {
           "timeSpent":this.totalTime,
           "avDuration":this.avDuration
         }).subscribe(res=>
-          {
-            
+          {            
             this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
             localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
           })

@@ -20,6 +20,7 @@ import { SharedModule } from '../../shared.module';
     ForumLandingPageRoutingModule,
     SharedModule
   ],
-  declarations: [ForumLandingPage]
+  declarations: [ForumLandingPage],
+  exports:[ForumLandingPage]
 })
 export class ForumLandingPageModule {}

@@ -1,19 +1,20 @@
-<app-tn-close></app-tn-close>
+<app-toc-header [moduleName]="''" [tocColor]="tocColor"></app-toc-header>
 
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_02">
+<div class="right_col mc_02" #screen>
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_292d56">
-        <div>
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 bg_292d56">
+        <div class="x_panel p0">
           <div class="x_content p0">
             <form>
+
               <h1 class="txt1">
                 {{videoTitle}}
               </h1>
-
+              
               <!-- video  -->
               <div class="row tcenter">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -23,6 +24,7 @@
                 </div>
               </div>
               <!-- /video -->
+
             </form>
           </div>
         </div>

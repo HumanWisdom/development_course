@@ -12,7 +12,7 @@
   <!-- /guided question - save to diary button -->
 
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex ftray">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex ftray col_cw">
 
       <a (click)="routeDash()" class="footer_index">
         <div *ngIf="!dash">
@@ -130,8 +130,8 @@
         </div>
 
         <div *ngIf="enableprofile && profile">
-          <img
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/profile_active.svg"
+          <img class="footer-user-profile"
+          src="{{url ===undefined ? defaultUrl :  (this.url.includes('undefined') ? defaultUrl : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url)}}"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ffffff">
             Profile
@@ -139,9 +139,9 @@
         </div>
 
         <div *ngIf="!isloggedIn">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/footer/dashboard/login.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_footer_login.svg"
             alt="">
-          <p class="mb0px davy-s_grey">
+          <p class="mb0px fw_400 fs_10px lh_15px fc_ffffff_0_5">
             Login
           </p>
         </div>

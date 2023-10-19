@@ -14,10 +14,10 @@ export class S109077Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/51.png"
   
   bg=""
-  moduleLink="/guided-meditation/s110001"
-  moduleName=" Guided Audio Meditation"
+  moduleLink="/nature/s106001"
+  moduleName="Nature-Meditation"
   sectionName= "Nurturing a Quiet Mind";
-  moduleId=110
+  moduleId=106
   programType : ProgramType = ProgramType.Teenagers;
 
  moduleList: any = [
@@ -28,18 +28,16 @@ export class S109077Page implements OnInit {
     id: 107
   },
   {
-    name: 'Noticing Thoughts',
-    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
-    link: '/noticing-thoughts',
-    id: 108
-
+    name: 'Nature',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/28.png',
+    link: '/nature',
+    id: 106
   },
   {
-    name: 'Guided Audio Meditation',
-    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/51.png',
-    link: '/guided-meditation',
+    name: 'Meditation',
+    image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
+    link: '/meditation',
     id: 109
-
   },
 ]
   constructor() {

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChange, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AdultsService } from "../../adults.service";
 import { Location } from "@angular/common";
@@ -13,6 +13,8 @@ import { LogEventService } from "../../../../../../shared/services/log-event.ser
   styleUrls: ["./index.page.scss"],
 })
 export class IndexPage implements OnInit, AfterViewInit {
+  @Input() defaultShow = true;
+  @Input() search = '';
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
   userId: any;
   journalList = [];
@@ -27,11 +29,15 @@ export class IndexPage implements OnInit, AfterViewInit {
   jrList = [];
   jrListC = [];
   topic = [];
+
+
+
   searchedText: string;
   isReloadList = true;
   enableAlert = false;
   guest = false;
   Subscriber = false;
+
 
   constructor(
     private router: Router,
@@ -48,7 +54,6 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
     if (this.saveUsername == false)
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
     else {
@@ -62,6 +67,8 @@ export class IndexPage implements OnInit, AfterViewInit {
       this.isGuidedQueestionsTab = true;
       this.isDiary = false;
     }
+
+
   }
 
   viewJournalAndReflections() {
@@ -71,21 +78,37 @@ export class IndexPage implements OnInit, AfterViewInit {
         return <any>new Date(val2.Date) - <any>new Date(val1.Date);
       });
       this.jrListC = this.jrList;
+      if (!this.defaultShow) {
+        this.searchjournal(this.search);
+      }
     });
   }
   showGuidedQuestions() {
-    this.jrList = this.jrListC.filter((p) => p.JrType == "Guided Questions");
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          (it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+            it?.TitleQue?.toLowerCase().includes(
+              this.searchedText.toLowerCase())
+          ) &&
+          it?.JrType == "Guided Questions"
+      );
+    } else {
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Guided Questions");
+    }
   }
 
   goToNote(jId, jTitle, jNotes, type) {
-      if (this.guest || !this.Subscriber) {
-        this.enableAlert = true;
-      } else {
-        this.router.navigate([
-          "/adults/note",
-          { title: jTitle, jId: jId, jNotes: jNotes, type: type },
-        ]);
-      }
+    if (this.guest || !this.Subscriber) {
+      this.enableAlert = true;
+    } else {
+      this.router.navigate([
+        "/adults/note",
+        { title: jTitle, jId: jId, jNotes: jNotes, type: type },
+      ]);
+    }
   }
   Note() {
     return false;
@@ -95,8 +118,12 @@ export class IndexPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    var data = this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
-    data[0].addEventListener('click', this.clearInput.bind(this));
+    setTimeout(() => {
+      var data = this.elementRef.nativeElement.getElementsByClassName('gqtns_search');
+      if(data && data!=null){
+        data[0].addEventListener('click', this.clearInput.bind(this));
+      }
+    }, 1000);
   }
 
   RouteToToQuestions(item) {
@@ -203,15 +230,73 @@ export class IndexPage implements OnInit, AfterViewInit {
     }
   }
 
+  searchjournal(text) {
+    this.logeventservice.logEvent('click_search');
+    if (text == "") {
+      this.viewJournalAndReflections();
+      this.getDailyQuestion();
+
+    } else if (text != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          it?.Response?.toLowerCase().includes(
+            text.toLowerCase()
+          ) ||
+          it?.TitleQue?.toLowerCase().includes(
+            text.toLowerCase()
+          )
+      );
+    }
+  }
+
   showAll() {
-    this.viewJournalAndReflections();
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+          it?.TitleQue?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          )
+      );
+    }else{
+      this.viewJournalAndReflections();
+    }
   }
 
   showReflections() {
-    this.jrList = this.jrListC.filter((p) => p.JrType == "Reflections");
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          (it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+            it?.TitleQue?.toLowerCase().includes(
+              this.searchedText.toLowerCase())
+          ) &&
+          it?.JrType == "Reflections"
+      );
+    } else {
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Reflections");
+    }
   }
   showNotes() {
-    this.jrList = this.jrListC.filter((p) => p.JrType == "Diary");
+    if (this.searchedText != "") {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          (it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+            it?.TitleQue?.toLowerCase().includes(
+              this.searchedText.toLowerCase())
+          ) &&
+          it?.JrType == "Diary"
+      );
+    } else {
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Diary");
+    }
+
   }
 
   GetGuidedQs_Topics() {

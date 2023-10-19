@@ -20,22 +20,23 @@ export class S102022Page implements OnInit {
   programType : ProgramType = ProgramType.Teenagers;
   moduleList: any = [
     {
-      name: 'Breathing',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png',
-      link: '/breathing',
-      id: 29
+      name: 'KeyIdeas',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/34.png',
+      link: '/keyideas',
+      id: 83
     },
     {
-      name: 'Noticing Thoughts',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/30.png',
-      link: '/noticing-thoughts',
-      id: 30
+      name: 'The Nature of the ‘I’',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/57.png',
+      link: '/nature-of-i',
+      id: 122
+  
     },
     {
-      name: 'Meditation',
-      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/22.png',
-      link: '/meditation',
-      id: 22
+      name: 'No Judgemnet',
+      image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/40.png',
+      link: '/no-judgement',
+      id: 101
     },
   ]
   

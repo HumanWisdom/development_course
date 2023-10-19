@@ -47,7 +47,7 @@ export class S22059Page implements OnInit {
     this.router.navigate(['/adults/meditation/s22060'])
   }
   prev(){
-    this.router.navigate(['/adults/meditation/s22058'])
+    this.router.navigate(['/adults/meditation/s22054'])
 
   }
 

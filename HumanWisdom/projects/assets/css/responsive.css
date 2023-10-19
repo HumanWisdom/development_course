@@ -639,7 +639,7 @@
 
     .oli_tray 
     {
-        padding: 0 58px;
+        /* padding: 0 58px; */
     }
 }
 
@@ -841,7 +841,7 @@
 
     #ic_carousel .carousel-indicators
     {
-        bottom: 8%;
+        /* bottom: 8%; */
     }
 
     .mpfy
@@ -960,7 +960,12 @@
 
     .oli_tray 
     {
-        bottom: 8% !important;
+        /* bottom: 8% !important; */
+    }
+
+    .col_cw
+    {
+        width: 30%;
     }
 }
 
@@ -1021,7 +1026,7 @@
 
     .oli_tray
     {
-        padding: 0 !important;
+        /* padding: 0 !important; */
     }
 }
 
@@ -1057,6 +1062,12 @@
     {
         font-size: 35px;
     }
+
+    /* .lab-modal-body 
+    {
+        height: 400px !important;
+        overflow: overlay;
+    } */
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) 
@@ -1072,5 +1083,25 @@
     .box_v3_03 
     {
         height: 430px;
+    }
+}
+
+@media (min-width: 1300px)
+{
+    .lab-modal-body
+    {
+        top: 0;
+        overflow: auto;
+    }
+}
+
+@media (max-width: 300px)
+{
+    .fs_18px {
+        font-size: 12px !important;
+    }
+
+    .fs_12px {
+        font-size: 10px !important;
     }
 }

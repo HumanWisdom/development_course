@@ -101,6 +101,7 @@ import { S137090Page } from './s137090/s137090.page';
 import { S137091Page } from './s137091/s137091.page';
 import { S137092Page } from './s137092/s137092.page';
 import { S137093Page } from './s137093/s137093.page';
+import { S137093p1Page } from './s137093p1/s137093p1.page';
 import { S137094Page } from './s137094/s137094.page';
 
 
@@ -517,9 +518,15 @@ const routes: Routes = [
     component: S137093Page,
   },
   {
+    path: 's137093p1',   
+    component: S137093p1Page,
+  },
+  {
     path: 's137094',   
     component: S137094Page,
   },
+  
+
 
   
   

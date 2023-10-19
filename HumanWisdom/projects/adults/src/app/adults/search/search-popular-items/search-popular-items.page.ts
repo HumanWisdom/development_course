@@ -192,7 +192,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
   journalSearchRecords() {
     if (this.searchData) {
-      return this.searchData.JournalRes.length;
+      return this.searchData.JournalRes;
     }
     return 0;
   }

@@ -27,9 +27,7 @@ export class S75001Page implements OnInit {
  
   ngOnInit() {
     this.service.setmoduleID(75);
-    this.isGuest = SharedService.getDataFromLocalStorage(Constant.guest) == Constant.ShortTrue ||
-                   SharedService.getDataFromLocalStorage(Constant.subscriber) != Constant.One.toString() ||
-                   SharedService.getDataFromLocalStorage(Constant.SubscriberType) == Constant.Free 
+    this.isGuest = !SharedService.isSubscriber();
   }
   share(){
     this.ngNavigatorShareService.share({

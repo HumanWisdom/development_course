@@ -13,12 +13,12 @@ export class S129082Page implements OnInit
 {  
   
   toc="living-with-peace/s129001"
-  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/54.png"
+  moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/64.png"
   bg=""
-  moduleLink="/reactive-mind"
-  moduleName=" Reactive Mind"
-  sectionName= "How the Mind Works";
-  moduleId=113
+  moduleLink="/dealing-with-death"
+  moduleName=" Fear of Death"
+  sectionName= " Live your best life ";
+  moduleId=130
   programType : ProgramType = ProgramType.Teenagers;
 
 
