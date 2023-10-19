@@ -6,6 +6,8 @@ import { LogEventService } from "../../services/log-event.service";
 import { Platform } from '@angular/cdk/platform';
 import { Router } from "@angular/router";
 import { OnboardingService } from "../../services/onboarding.service";
+import { SharedService } from "../../services/shared.service";
+import { Constant } from "../../services/constant";
 
 @Component({
   selector: 'Login-register-modal',
@@ -296,7 +298,13 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
           this.actclosemodal?.nativeElement?.click();
           this.closeModal.emit(false);
           if(this.isAdvertpage) {
-            this.router.navigate(['/adults/redeem-subscription'])
+            if(SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+            SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+            ){
+              this.router.navigate(['/adults/subscription']);
+            }else{
+              this.router.navigate(['/adults/redeem-subscription']);
+            }
           }
         },
         error => { console.log(error) },
@@ -391,7 +399,13 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
             this.actclosemodal.nativeElement.click();
             this.closeModal.emit(false);
             if(this.isAdvertpage) {
-              this.router.navigate(['/adults/redeem-subscription'])
+              if(SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+              SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+              ){
+                this.router.navigate(['/adults/subscription']);
+              }else{
+                this.router.navigate(['/adults/redeem-subscription']);
+              }
             }
           }
         })
@@ -488,7 +502,13 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
               this.actclosemodal.nativeElement.click();
               this.closeModal.emit(false);
               if(this.isAdvertpage) {
-                this.router.navigate(['/adults/redeem-subscription'])
+                if(SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+                SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+                ){
+                  this.router.navigate(['/adults/subscription']);
+                }else{
+                  this.router.navigate(['/adults/redeem-subscription']);
+                }
               }
             }
           })

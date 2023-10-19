@@ -46,6 +46,7 @@ export class AuthGuard implements CanActivate, OnInit {
       affreftoken = localStorage.getItem('Affreftoken');
     }
     let getalertdate = localStorage.getItem('getalertdate');
+    let fromlanding = localStorage.getItem("fromlandingpage");
     let cookie = localStorage.getItem('acceptcookie')
     if (token[1] !== undefined && token[1] !== '') {
       let persub = localStorage.getItem('personalised subscription');
@@ -59,6 +60,9 @@ export class AuthGuard implements CanActivate, OnInit {
       }
       if (affreftoken !== '') {
         localStorage.setItem("Affreftoken", affreftoken)
+      }
+      if (fromlanding) {
+        localStorage.setItem('fromlandingpage', fromlanding);
       }
       let authtoken = token[1].split('=')[1];
       localStorage.setItem("enablebanner", 'F')

@@ -126,10 +126,15 @@ export class SubscriptionS01V04Page implements OnInit {
       this.planWarning = false;
       let id = [];
       console.log(plan, id)
-      id = this.cartList.map((d) => d['Program'] === type)
+      id = this.cartList.filter((d) => d['Program'] === type)
 
       for (var i = 0; i < this.cartList.length; i++) {
         if (this.cartList[i].ProgID === id[0].ProgID) {
+          if (plan == "Monthly") {
+            this.cartList[i].planId = 1
+          } else {
+            this.cartList[i].planId = 2
+          }
           this.cartList[i].selectedSubscription = plan
           if (plan == "Annual")
             this.cartList[i].price = this.cartList[i].Annual
@@ -432,27 +437,6 @@ export class SubscriptionS01V04Page implements OnInit {
 
   }
 
-  selectPlan(plan, id) {
-    this.loggedUser()
-    this.planWarning = false
-    console.log(plan, id)
-
-    for (var i = 0; i < this.cartList.length; i++) {
-      if (this.cartList[i].ProgID === id) {
-        this.cartList[i].selectedSubscription = plan
-        if (plan == "Annual")
-          this.cartList[i].price = this.cartList[i].Annual
-        else
-          this.cartList[i].price = this.cartList[i].Monthly
-
-
-      }
-
-
-    }
-    console.log(this.cartList)
-  }
-
 
 
   getPricing() {
@@ -488,9 +472,12 @@ export class SubscriptionS01V04Page implements OnInit {
       this.logeventservice.logEvent('click_done');
       this.loggedUser()
       let pid = this.cartList.filter((d) => d['Program'] === type)
-      console.log(pid)
+      let activeId = null;
       for (var i = 0; i < this.cartList.length; i++) {
         if (this.cartList[i].ProgID === pid[0]['ProgID']) {
+          if(!activeId) {
+            activeId = i
+          }
           this.checkPopup(this.cartList[i])
           this.showCart = true
           this.planWarning = false
@@ -517,7 +504,6 @@ export class SubscriptionS01V04Page implements OnInit {
             "LearnerMsg": this.learnermsg,
           })
             .subscribe(res => {
-              console.log(res, "cartId")
               this.cartId = res
               for (var i = 0; i < this.cartList.length; i++) {
                 if (this.cartList[i].ProgID === pid[0]['ProgID']) {
@@ -534,13 +520,13 @@ export class SubscriptionS01V04Page implements OnInit {
               this.forumservice.toastrService.success('', 'Updated Successfully !');
 
               if (type === 'Adults') {
-                if (this.cartList[i]?.selectedSubscription === 'Annual') {
+                if (this.cartList[activeId]?.selectedSubscription === 'Annual') {
                   this.aaenableEmailbox = false
                 } else {
                   this.aenableMonthEmailbox = false
                 }
               } else if (type === 'Teenagers') {
-                if (this.cartList[i]?.selectedSubscription === 'Annual') {
+                if (this.cartList[activeId]?.selectedSubscription === 'Annual') {
                   this.teenageraenableEmailbox = false
                 } else {
                   this.teenagerenableMonthEmailbox = false
@@ -738,7 +724,12 @@ export class SubscriptionS01V04Page implements OnInit {
     }, 100);
   }
 
-  editPost() {
-
+  getValue(res = '', type = '', program = '') {
+    let result: any = '';
+    if(res === 'qty') {
+      let fil = this.cartitemList.filter((d) => d['Program'] === program && type === d['Plan'])
+      result = fil.length;
+    }
+    return result;
   }
 }

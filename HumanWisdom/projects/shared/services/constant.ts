@@ -31,5 +31,6 @@ export class Constant {
     public static NullValue = null;
     public static ManageSubscriptionData = 'ManageSubscriptionData';
     public static ActivationKey = 'ActivationKey';
-
+    public static TestimonialId = 'TestimonialId';
+    public static EmptyString ='';
 }
