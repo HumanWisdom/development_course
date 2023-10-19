@@ -5,6 +5,7 @@ import { Constant } from '../../services/constant';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { paymentIntentModel } from '../../models/search-data-model';
+import { DatePipe, Location } from '@angular/common';
 @Component({
   selector: 'app-index',
   templateUrl: './index.page.html',
@@ -24,7 +25,8 @@ export class IndexPage implements OnInit {
   userId: number;
   enabledModal = false;
   
-  constructor(private router: Router, private onboardingService: OnboardingService) {
+  constructor(private router: Router, private onboardingService: OnboardingService,
+    private location: Location) {
     this.Monthly = Constant.MonthlyPlan;
     this.Annual = Constant.AnnualPlan;
     this.Redeem = Constant.Redeem;
@@ -86,6 +88,10 @@ export class IndexPage implements OnInit {
       // this.router.navigateByUrl('/login');
       this.enabledModal = true;
     }
+  }
+
+  back(){
+    this.location.back();
   }
 
   getCountry() {

@@ -7,6 +7,8 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'a
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { SharedService } from '../../../../../shared/services/shared.service';
+import { Constant } from '../../../../../shared/services/constant';
 import { concat } from 'rxjs';
 
 @Component({
@@ -50,6 +52,7 @@ export class AdultDashboardPage implements OnInit {
   public bookmarkLength: any
   searchinp = '';
   public dash = false;
+  public isSubscriber = false;
   //static progress mapping
   // public angerP: any
   // public comparisonP: any
@@ -374,6 +377,7 @@ export class AdultDashboardPage implements OnInit {
       // this.getUsershorts()
       // this.getUserstories()
       this.GetDashboardFeatures();
+      this.isSubscriber  = SharedService.isSubscriber();
     }, 1000)
 
     if (localStorage.getItem('acceptcookie') === null) {
@@ -4008,6 +4012,11 @@ export class AdultDashboardPage implements OnInit {
       this.logeventservice.logEvent('click_calm_mind');
       this.router.navigate(['/adults/curated/have-calm-mind'])
     }
+  }
+
+  readMore(str){
+    SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
+    this.router.navigate(['/adults/testimonials'])
   }
 
 }

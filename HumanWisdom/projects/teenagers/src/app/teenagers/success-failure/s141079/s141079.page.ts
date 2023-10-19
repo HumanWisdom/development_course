@@ -105,7 +105,7 @@ export class S141079Page implements OnInit,OnDestroy {
 
   prev()
   {
-    this.router.navigate(['/success-failuren/s141078'])
+    this.router.navigate(['/success-failure/s141078'])
   }
 
   ngOnDestroy()
