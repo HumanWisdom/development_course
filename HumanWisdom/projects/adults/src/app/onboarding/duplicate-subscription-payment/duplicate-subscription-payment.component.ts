@@ -51,7 +51,7 @@ cardCaptureReady = false
         },
         invalid: {
           iconColor: '#FFC7EE',
-          color: '#FFC7EE',
+          color: '#fff',
         },
       };
         let stripe = Stripe(this.stripeKey);
