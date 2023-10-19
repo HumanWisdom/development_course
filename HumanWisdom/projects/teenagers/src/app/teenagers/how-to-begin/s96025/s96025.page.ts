@@ -16,9 +16,9 @@ export class S96025Page implements OnInit,OnDestroy {
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg="teal_w11"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/how-to-begin/videos/1.2.mp4'  
-  title="How do we begin to look at ourselves?"
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+ videoLink=this.mediaVideo+'/modules/how-to-begin/videos/1.2.mp4'
+ title="How do we begin to look at ourselves?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_02.jpg"
   
   userId:any

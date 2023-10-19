@@ -41,7 +41,7 @@ export class S131008Page implements OnInit {
 
   ngOnInit() {
     this.questionA=this.qrList.ListOfQueOpts
-    this.q1=this.findQuestion(160).Question
+    this.q1=this.findQuestion(622).Question
     this.optionList1=this.findQuestion(160).optionList
    
     if(this.saveUsername==false)
