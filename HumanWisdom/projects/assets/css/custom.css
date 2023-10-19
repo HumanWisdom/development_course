@@ -23782,7 +23782,7 @@ a
   height: 1em;
   width: 1em;
   border-radius: 50em;
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_black_01.svg) no-repeat 50% 50%;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_black_01.svg) no-repeat 50% 50%; */
   background-size: contain;
   opacity: 1;
   pointer-events: none;
@@ -27019,7 +27019,17 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 
 #ic_carousel .carousel-inner
 {
-  height: 100vh;
+  /* height: 100vh; */
+  /* min-height: 100vh;
+  overflow: inherit; */
+}
+
+#ic_carousel .carousel-inner>.item
+{
+  min-height: 100vh;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  overflow: initial;
 }
 
 #ic_carousel .carousel-control
@@ -35104,5 +35114,21 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.overflow_hiddeni 
+{
+  overflow: hidden !important;
+}
+
+.overflow_auto 
+{
+  overflow: auto !important;
+}
+
+.mdp_oli_tray_ext01 
+{
+  bottom: 109px;
+  padding-bottom: 20px;
 }
 /* /version - 03 */
