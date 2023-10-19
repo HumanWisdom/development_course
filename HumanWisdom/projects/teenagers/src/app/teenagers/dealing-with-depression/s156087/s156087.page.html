@@ -1,0 +1,12 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      I drank every night, every day, as much as possible. I was alone and confused carrying painful memories from my childhood that created a thorny tangle in my chest. Being lost at sea was a comfort. I have two stars that helped me navigate to safer waters - friendship and forgiveness
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

@@ -1,0 +1,12 @@
+<app-course-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [toc]="toc" [path]="path" [bg_tn]="bg_tn"></app-course-header>
+
+<app-simple-text [bg]="bg">
+  <form>
+    <h1 class="txt1">
+      Depression originates in our thinking. By having a clearer understanding of our thinking, and why we think, feel, and act in the way we do, many problems that originate in our thinking can be prevented, and more easily overcome. Explore this module with curiosity and an open mind, and see if it benefits you
+    </h1>
+    <div class="clearfix"></div>
+  </form>
+</app-simple-text>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>
