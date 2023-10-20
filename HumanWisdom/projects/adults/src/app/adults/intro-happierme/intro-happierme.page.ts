@@ -18,4 +18,8 @@ export class IntroHappiermePage implements OnInit {
     this.location.back();
   }
 
+  getclcickevent($event){
+
+  }
+
 }
