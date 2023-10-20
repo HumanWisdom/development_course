@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from "@angular/common";
 
 @Component({
@@ -8,6 +8,8 @@ import { Location } from "@angular/common";
 })
 export class IntroHappiermePage implements OnInit {
 
+  @ViewChild('enablepopup') enablepopup: ElementRef;
+
   constructor(private location: Location) { }
 
   ngOnInit() {
@@ -16,6 +18,14 @@ export class IntroHappiermePage implements OnInit {
   goBack() 
   {
     this.location.back();
+  }
+
+  getclcickevent(event) 
+  {
+    if (event === 'enablepopup') 
+    {
+      this.enablepopup.nativeElement.click();
+    }
   }
 
 }
