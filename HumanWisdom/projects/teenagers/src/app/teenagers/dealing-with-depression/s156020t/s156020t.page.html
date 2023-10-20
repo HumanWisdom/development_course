@@ -1,0 +1,37 @@
+<app-transcript-header [bookmark]="bookmark" (sendBookmark)="receiveBookmark($event)" [path]="path" [bg_tn]="bg_tn" [toc]="toc" [audioPage]="audioPage" [progName]="progName"></app-transcript-header>
+
+<app-transcript-content [bg]="bg">
+  <form>        
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3 class="transcript_txt">
+          <p>
+            1 in 7 women will experience depression after childbirth - it's called post-partum depression and occurs usually within 6 weeks of giving birth.
+          </p>
+
+          <p>
+            It can also occur after a challenging life event - like bereavement, or failure in exams, or the loss of a friendship, or bullying.
+          </p>
+
+          <p>
+            Childhood trauma and neglect can manifest years later and cause depression.
+          </p>
+
+          <p>
+            It can also be caused by substance abuse - alcohol or drugs.
+          </p>
+
+          <p>
+            It can be the result of long-term, chronic stress.
+          </p>
+
+          <p>
+            Depression can be a side-effect of taking some medicines, and can also be triggered by several medical conditions like a diagnosis of a serious illness..
+          </p>
+        </h3>                
+      </div>
+    </div>
+  </form>
+</app-transcript-content>
+
+<app-course-footer [bg_cft]="bg_cft" (nextEmitter)="submitProgress()" (previousEmitter)="prev()"></app-course-footer>

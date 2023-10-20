@@ -238,6 +238,10 @@ const routes: Routes = [
   {
     path: 'pressure-of-exams',
     loadChildren: () => import('./teenagers/pressure-of-exams/pressure-of-exams.module').then(m => m.PressureOfExamsModule)
+  },
+  {
+    path: 'dealing-with-depression',
+    loadChildren: () => import('./teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
   }
 ];
   
