@@ -748,9 +748,9 @@
               </div>
             </div>
             <!-- /hr -->
-
+          <ng-container *ngIf="isSubscriber">
             <!-- what people are saying -->
-            <div class="row mb30px" *ngIf="isSubscriber">
+            <div class="row mb30px" >
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                 <div class="col-md-8 col-sm-8 col-xs-8 p0">
                   <h2 class="mtb0px fw_600 fs_18px lh_140p fc_ffffff">
@@ -770,7 +770,7 @@
             <!-- /what people are saying -->
 
             <!-- testimonials -->
-            <div class="row" *ngIf="isSubscriber">
+            <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 odiv">
 
                 <div class="col-md-10 col-sm-10 col-xs-10 prelative">
@@ -1209,7 +1209,7 @@
               </div>
             </div>
             <!-- /testimonials -->
-
+          </ng-container>
             <div class="pagebreak"></div>
 
           </div>
