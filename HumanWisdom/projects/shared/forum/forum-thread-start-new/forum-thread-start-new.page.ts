@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { ForumService } from '../forum.service';
 import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-forum-thread-start-new',
@@ -27,6 +28,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   @ViewChild('checkboxSelect') checkboxSelect: any;
   @ViewChild('closeCategory') closeCategory: any;
   programType: ProgramType.Adults;
+  isSubscriber:boolean;
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute) {
     this.userID = localStorage.getItem('userId');
     this.router.events
@@ -41,6 +43,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       console.log(p);
       this.postID = p;
     }
+    this.isSubscriber = SharedService.isSubscriber(); 
   }
 
   ngOnInit() {

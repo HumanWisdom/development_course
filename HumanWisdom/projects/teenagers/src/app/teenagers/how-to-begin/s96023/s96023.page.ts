@@ -16,8 +16,9 @@ export class S96023Page implements OnInit,OnDestroy {
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg="teal_w9"
-  mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
-  videoLink=this.mediaVideo+'/how-to-begin/videos/1.1.mp4'  
+  mediaVideo='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers'
+  videoLink=this.mediaVideo+'/modules/how-to-begin/videos/1.1.mp4'
+
   title="How can we prepare for our journey of enquiry?"
   poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/art_of_enquiry/art_of_enquiry_01.jpg"
   
