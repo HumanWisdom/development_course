@@ -56,10 +56,10 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   enableAlert = false;
   content = '';
   enablecancel = false;
-  public registrationForm : any;
+  public registrationForm: any;
   enabledModal = false;
-  passwordhide : boolean = true;
-  confirmpasswordhide : boolean = true;
+  passwordhide: boolean = true;
+  confirmpasswordhide: boolean = true;
 
   constructor(
     public platform: Platform,
@@ -99,10 +99,12 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     } else {
       this.isLoggedIn = false;
     }
-    let namedata = localStorage.getItem('name').split(' ')
+    let namedata = localStorage.getItem('name')?.split(' ')
     this.modaldata['email'] = localStorage.getItem('email');
-    this.modaldata['firstname'] = namedata[0];
-    this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    if (namedata.length > 0) {
+      this.modaldata['firstname'] = namedata[0];
+      this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
+    }
   }
 
   ngOnInit() {
@@ -130,7 +132,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   }
 
   already(value) {
-    if(!this.enabledModal) {
+    if (!this.enabledModal) {
       this.enabledModal = true;
       this.redeemsubscription.nativeElement.click();
     }
@@ -297,12 +299,12 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
           }
           this.actclosemodal?.nativeElement?.click();
           this.closeModal.emit(false);
-          if(this.isAdvertpage) {
-            if(SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
-            SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
-            ){
-              this.router.navigate(['/adults/subscription']);
-            }else{
+          if (this.isAdvertpage) {
+            if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+              SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+            ) {
+              this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
+            } else {
               this.router.navigate(['/adults/redeem-subscription']);
             }
           }
@@ -398,12 +400,12 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
             }
             this.actclosemodal.nativeElement.click();
             this.closeModal.emit(false);
-            if(this.isAdvertpage) {
-              if(SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
-              SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
-              ){
-                this.router.navigate(['/adults/subscription']);
-              }else{
+            if (this.isAdvertpage) {
+              if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+                SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+              ) {
+                this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
+              } else {
                 this.router.navigate(['/adults/redeem-subscription']);
               }
             }
@@ -501,12 +503,12 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
               }
               this.actclosemodal.nativeElement.click();
               this.closeModal.emit(false);
-              if(this.isAdvertpage) {
-                if(SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
-                SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
-                ){
-                  this.router.navigate(['/adults/subscription']);
-                }else{
+              if (this.isAdvertpage) {
+                if (SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.AnnualPlan ||
+                  SharedService.getDataFromLocalStorage(Constant.HwpSubscriptionPlan) == Constant.MonthlyPlan
+                ) {
+                  this.router.navigateByUrl('/adults/subscription/proceed-to-payment');;
+                } else {
                   this.router.navigate(['/adults/redeem-subscription']);
                 }
               }
@@ -525,15 +527,15 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     this.content = '';
     this.enablecancel = false;
     this.enableAlert = false;
-    if(event === 'ok') {
+    if (event === 'ok') {
       this.logeventservice.logEvent('click_logout_Hamburger')
-        if (this.platform.isBrowser) {
-          localStorage.setItem("isloggedin", "F");
-          localStorage.setItem("guest", "T");
-          localStorage.setItem("navigateToUpgradeToPremium", "false");
-          localStorage.setItem("btnClickBecomePartner", "false");
-          this.router.navigate(["/onboarding/login"]);
-        }
+      if (this.platform.isBrowser) {
+        localStorage.setItem("isloggedin", "F");
+        localStorage.setItem("guest", "T");
+        localStorage.setItem("navigateToUpgradeToPremium", "false");
+        localStorage.setItem("btnClickBecomePartner", "false");
+        this.router.navigate(["/onboarding/login"]);
+      }
     }
   }
 
@@ -543,11 +545,11 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   }
 
 
-hideFunction(type) {
-  if(type === 'password') {
-    this.passwordhide = !this.passwordhide;
-  }else {
-    this.confirmpasswordhide = !this.confirmpasswordhide;
+  hideFunction(type) {
+    if (type === 'password') {
+      this.passwordhide = !this.passwordhide;
+    } else {
+      this.confirmpasswordhide = !this.confirmpasswordhide;
+    }
   }
-}
 }

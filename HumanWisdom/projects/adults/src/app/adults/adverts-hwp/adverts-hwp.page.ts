@@ -6,6 +6,8 @@ import { OnboardingService } from '../../../../../shared/services/onboarding.ser
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import { SubscriptionType } from '../../../../../shared/models/program-model';
+import { paymentIntentModel } from '../../../../../shared/models/search-data-model';
 
 @Component({
   selector: 'HumanWisdom-adverts-hwp',
@@ -37,8 +39,8 @@ export class AdvertsHwpPage implements OnInit {
   public registrationForm : any;
   enabledModal = false;
   public countryCode: any = '';
-  public cardlist = []
-
+  public cardlist:any=[]
+  paymentIntentModel:any;
   constructor(
     public platform: Platform,
     private router: Router,
@@ -104,6 +106,7 @@ export class AdvertsHwpPage implements OnInit {
   getPricing() {
     this.services.getPricing(this.countryCode).subscribe(res => {
       this.cardlist = res[0];
+      this.cardlist.PerMonthAmountOnAnnual = this.formatToDecimal((this.cardlist.Annual / 12));
     }, (err) => {
       this.content = err.error['Message'];
       this.enableAlert = true;
@@ -111,6 +114,29 @@ export class AdvertsHwpPage implements OnInit {
     }
     )
   }
+
+  formatToDecimal(value) {
+    if (Number.isInteger(value)) {
+      return `${value}.00`;
+    }
+    return value.toFixed(2);
+  }
+
+  SetDataInLocalStorage() {
+    SharedService.setDataInLocalStorage(Constant.ProgramModel, JSON.stringify(this.cardlist));
+    SharedService.setDataInLocalStorage(Constant.PaymentIntentModel, JSON.stringify(this.paymentIntentModel));
+  }
+
+  SetPaymentIntentModel(selectedSubscription) {
+    this.paymentIntentModel = {
+      DiscountCode: "0",
+      PlanID: selectedSubscription == Constant.MonthlyPlan ? SubscriptionType.Monthly.toString() : SubscriptionType.Annual.toString(),
+      ProgID: SharedService.ProgramId.toString(),
+      RateID: this.cardlist?.RateID?.toString(),
+      UserID: this.userId.toString()
+    } as paymentIntentModel
+  }
+
 
   routedashboard(val = '') {
     if (val === 'free') {
@@ -130,17 +156,22 @@ export class AdvertsHwpPage implements OnInit {
       }
     } else if (val === 'redeem' || val == 'Monthly' || val == 'Yearly') {
       if(val === 'Monthly') {
+      
         SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan,Constant.MonthlyPlan );
+        this.SetPaymentIntentModel(val);
+        this.SetDataInLocalStorage();
       } 
       else if(val === 'Yearly') {
         SharedService.setDataInLocalStorage(Constant.HwpSubscriptionPlan,Constant.AnnualPlan );
+        this.SetPaymentIntentModel(val);
+        this.SetDataInLocalStorage();
       }
       let res = localStorage.getItem("isloggedin")
       if(res === 'T'  &&  val === 'redeem') {
         this.router.navigate(['/adults/redeem-subscription'])
       }
       else if(res === 'T'  &&  (val === 'Monthly' || val === 'Yearly' )) {
-        this.router.navigate(['/adults/subscription'])
+        this.router.navigateByUrl('/adults/subscription/proceed-to-payment');
       }else{
         this.enabledModal = true;
       }

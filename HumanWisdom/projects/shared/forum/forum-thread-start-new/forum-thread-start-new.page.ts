@@ -131,11 +131,12 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   ngAfterViewInit(){
     setTimeout(()=>{
+      this.categoryList = this.service.GetTagList();
       this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 1;
       if (this.selectedOption == 5) {
       this.isChecked = true;
   
-      this.categoryList = this.service.GetTagList();
+
       const data = this.categoryList.filter(x=>x.value== this.selectedOption);
       if(data!=null && data.length>0){
         this.buttonText =  data[0].label;
