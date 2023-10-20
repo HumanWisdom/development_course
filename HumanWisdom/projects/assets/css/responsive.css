@@ -1105,3 +1105,11 @@
         font-size: 10px !important;
     }
 }
+
+@media (min-width: 1500px)
+{
+    .col_cw
+    {
+        width: 20%;
+    }
+}
