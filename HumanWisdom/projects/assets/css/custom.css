@@ -35152,4 +35152,20 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 3px auto;
   background-color: #FFF !important;
 }
+
+.toc_adiv_img a>.row 
+{
+  border-radius: 12px;
+  border: 0;
+  background: #120F40;
+  min-height: 88px;
+  margin-bottom: 10px;
+  padding: 20px;
+  /* margin: 0 10px 10px 10px; */
+}
+
+.toc_adiv_img a:last-child>.row
+{
+  margin-bottom: 0;
+}
 /* /version - 03 */
