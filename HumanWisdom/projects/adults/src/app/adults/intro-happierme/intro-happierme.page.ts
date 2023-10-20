@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from "@angular/common";
 
 @Component({
@@ -7,6 +7,8 @@ import { Location } from "@angular/common";
   styleUrls: ['./intro-happierme.page.scss'],
 })
 export class IntroHappiermePage implements OnInit {
+
+  @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location) { }
 
@@ -17,9 +19,13 @@ export class IntroHappiermePage implements OnInit {
   {
     this.location.back();
   }
-
-  getclcickevent($event){
-
+  
+  getclcickevent(event) 
+  {
+    if (event === 'enablepopup') 
+    {
+      this.enablepopup.nativeElement.click();
+    }
   }
 
 }
